@@ -1,0 +1,746 @@
+{
+ "id": "rep.cities-skylines",
+ "name": "Cities: Skylines",
+ "card": "steam:255710",
+ "genre": "builder",
+ "family": "fam.flat-dark-sim",
+ "pack": "cityBuilder",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "city",
+  "values": {
+   "camera.angle": "high",
+   "color.saturation": 1.05
+  }
+ },
+ "base": {
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "hud.style": "godotDefault",
+  "ctx.timeModel": "pausable",
+  "col.source": "uiPalette",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#2f3a45",
+  "col.surface2": "#43505c",
+  "col.text": "#eef3f6",
+  "col.accent": "#3fb0f0",
+  "col.accent2": "#8bd43f",
+  "col.focus": "#7ccfff",
+  "col.coding": [
+   "status",
+   "lineId"
+  ],
+  "col.semantic": "accentOnly",
+  "vis.corner": "round",
+  "vis.cornerSize": 4,
+  "vis.fill": "gradient",
+  "vis.opacity": 0.92,
+  "vis.blur": 0,
+  "vis.stroke": "none",
+  "vis.depth": "softDrop",
+  "vis.gloss": "none",
+  "vis.pattern": "none",
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "vis.iconStyle": "flat",
+  "ast.iconSet": "asset",
+  "ast.core": "procedural",
+  "typ.body.family": "sans",
+  "typ.body.weight": "regular",
+  "typ.display.family": "same",
+  "typ.display.weight": "bold",
+  "typ.display.case": "asIs",
+  "typ.numerals.family": "tabular",
+  "typ.legibility": "none",
+  "typ.baseSize": 24,
+  "typ.scale": 1.3,
+  "cmp.tab": "icon",
+  "cmp.tabIndicator": "filled",
+  "cmp.button": "icon",
+  "cmp.gauge": "thinBar",
+  "lay.grouping": "tonalInset",
+  "lay.grid": "grid8",
+  "hier.cta": "color",
+  "hier.inline": "keyword",
+  "rel.harmony": "neutral",
+  "rel.worldRender": "billboard",
+  "mo.enter": "slide",
+  "mo.duration": 0.2,
+  "mo.easing": "easeOut",
+  "mo.valueChange": "countUp",
+  "mo.idle": "none",
+  "mo.juice": 0.1,
+  "ix.focus": "bar",
+  "ix.press": "darken",
+  "st.alert": "warnIcon",
+  "st.statusMark": "icon",
+  "st.locked": "lock"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": null,
+   "values": {
+    "uip.layout": "layout.builder",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "edgeBar",
+    "lay.edgeBarSlots": [
+     "el.profile|el.resources",
+     "el.meter",
+     "el.toolbar",
+     "el.clock|el.gameSpeed"
+    ],
+    "rel.hudVisibility": "always",
+    "rel.semanticZoom": "labels",
+    "cnt.density": 3,
+    "cnt.elements": [
+     "el.toolbar",
+     "el.profile",
+     "el.resources",
+     "el.meter",
+     "el.clock",
+     "el.gameSpeed",
+     "el.notify",
+     "el.selection",
+     "el.overlay",
+     "el.cost"
+    ],
+    "el.toolbar.form": "drawer",
+    "el.toolbar.screenAnchor": "bc",
+    "el.toolbar.scale": 1.05,
+    "el.toolbar.priority": "secondary",
+    "cmp.slot": "cell",
+    "cmp.slot@el.toolbar": "thumbCard",
+    "el.profile.form": "levelBar",
+    "el.profile.screenAnchor": "bl",
+    "el.profile.scale": 0.7,
+    "el.profile.priority": "ambient",
+    "el.resources.form": "iconNumber",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "bl",
+    "el.resources.scale": 0.8,
+    "el.resources.valueLabel": "delta",
+    "el.meter.form": "demandBars",
+    "cmp.gauge@el.meter": "bar",
+    "el.meter.screenAnchor": "bl",
+    "el.meter.scale": 0.6,
+    "el.clock.form": "clock",
+    "el.clock.screenAnchor": "br",
+    "el.clock.scale": 0.8,
+    "el.gameSpeed.form": "speedBar",
+    "el.gameSpeed.screenAnchor": "br",
+    "el.gameSpeed.scale": 0.85,
+    "el.notify.form": [
+     "socialFeed"
+    ],
+    "el.notify.screenAnchor": "tc",
+    "el.notify.scale": 0.8,
+    "cnt.companion": "mascot",
+    "el.selection.form": "panel",
+    "el.selection.attachTo": "target",
+    "el.selection.scale": 0.85,
+    "lay.detail": "transient",
+    "el.overlay.form": [
+     "statusIcons",
+     "guides"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "billboard",
+    "ix.mode": "freePlace",
+    "ix.confirm": "instant",
+    "el.selection.attachOffset": "right",
+    "el.cost.form": "iconNumber",
+    "el.cost.attachTo": "cursor",
+    "cmp.badge@el.overlay": "roundel",
+    "cmp.badge@el.profile": "none"
+   }
+  },
+  {
+   "key": "infoview",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_255710_3.jpg",
+   "values": {
+    "uip.layout": "layout.builder",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "edgeBar",
+    "rel.hudVisibility": "always",
+    "rel.semanticZoom": "heatmap",
+    "rel.sceneTone": [
+     "none"
+    ],
+    "cnt.dataShape": "spatial",
+    "cnt.focal": "data",
+    "cnt.density": 1,
+    "cnt.elements": [
+     "el.overlay"
+    ],
+    "el.overlay.form": [
+     "routeLines"
+    ],
+    "el.overlay.count": 6,
+    "el.overlay.legendStyle": "statRows",
+    "el.overlay.legendAnchor": "tl",
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "decal",
+    "el.overlay.priority": "primary",
+    "col.coding": [
+     "lineId",
+     "status"
+    ],
+    "hier.emphasis": [
+     "color",
+     "value"
+    ],
+    "color.saturation": 0.08,
+    "color.brightness": 1.35,
+    "color.contrast": 0.85,
+    "material.preset": "clay"
+   }
+  },
+  {
+   "key": "economy",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.settings",
+    "cnt.screen": "screen.manage",
+    "lay.container": "window",
+    "lay.panelSize": 0.6,
+    "vis.opacity": 0.98,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "lay.nav": "tabsTop",
+    "cmp.tab": "text",
+    "cmp.tabIndicator": "filled",
+    "cnt.dataShape": "form",
+    "cnt.density": 3,
+    "lay.arrangement": "column",
+    "lay.columns": 2,
+    "lay.grouping": "colorBlock",
+    "lay.preview": false,
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "slider"
+    ],
+    "cmp.optionRange": "slider",
+    "cmp.optionBool": "checkbox",
+    "cmp.optionEnum": "dropdown",
+    "st.statViz": "inlineBar",
+    "col.coding": [
+     "status"
+    ],
+    "ix.mode": "slider",
+    "ix.confirm": "instant",
+    "ix.dismiss": "button",
+    "ix.close": "xTopRight",
+    "flow.entry": "tapEntry",
+    "flow.stacking": "stack",
+    "mo.enter": "cut"
+   }
+  },
+  {
+   "key": "title",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.title",
+    "cnt.screen": "screen.title",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "live",
+    "rel.dim": 0.2,
+    "cnt.focal": "title",
+    "lay.focalSide": "top",
+    "lay.arrangement": "column",
+    "cmp.button": "text",
+    "cmp.buttonBox": true,
+    "cnt.elements": [
+     "el.title"
+    ],
+    "el.title.form": "logo",
+    "ops.entries": "bannerStack",
+    "ops.compliance": [
+     "version"
+    ],
+    "vis.opacity": 0.85,
+    "ix.mode": "select"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "infoview",
+   "what": "信息视图把整座城市重绘成无贴图的白 / 灰黏土模型，数据色只画在这层白模上；UI 参数没有\"重绘世界\"的手段，这一屏仍临时借画面参数（color.saturation / color.brightness / color.contrast / material.preset = clay）模拟，rel.sceneTone = desaturate 对局内 HUD 不生效",
+   "severity": "high",
+   "kind": "worldSpace",
+   "proposal": "el.overlay 叠层期间可把世界切成白模 / 灰模（新增 rel.sceneTone = clay，局内 HUD 也生效，而不只是模板界面的背后压色），由叠层开关驱动场景材质替换"
+  },
+  {
+   "screen": "infoview",
+   "what": "参考的主体是沿道路画的彩色线路样条（每条公交 / 地铁线一个身份色，多线共走一段时并排，站点是小圆点），几乎铺满整屏；el.overlay 只有热力圆斑、居中四根箭头、虚线椭圆范围圈，画不出贴路的线路网",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "el.overlay.form 新增 routeLines：画 N 条 col.coding = lineId 色的样条 + 站点圆点，重叠段并排偏移；先在屏幕空间画折线，接入场景道路图后再贴路",
+   "partialBy": "M12b-26（el.overlay.form = routeLines：多色线路 + 站点圆点 + 并排共线段）；线是从中心放射的屏幕空间直线，不沿道路（贴路属 M12c）"
+  },
+  {
+   "screen": "infoview",
+   "what": "el.overlay.form 是多选，但渲染器只画第一个取值（forms[0]）；参考同时有线路网、车站旁的红色热区、绿色方向光柱和选中车站的蓝色高亮，现在只能选一种（选了 heatmap）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "渲染器按顺序叠画 el.overlay.form 里的全部取值，各取值的图例合并成一块",
+   "resolvedBy": "M12a-14（el.overlay 多选画法逐个叠画：热力斑 + 箭头 + 范围圈；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "infoview",
+   "what": "el.overlay.worldRender = decal 不生效：热力斑是围着目标点的屏幕空间径向渐变，罩在楼体立面上，不贴地、不随视角透视",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "worldRender = decal 时把热力 / 范围类叠层投到地面（贴花或地面网格的顶点色），屏幕空间画法只作 billboard / 无场景时的兜底"
+  },
+  {
+   "screen": "infoview",
+   "what": "叠层图例写死在右下角、固定 150×80 的三档色块小面板；原作的信息视图图例在左上角（标题 + 渐变色条 + 低 / 高两端 + 几行统计）",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "el.overlay 增加图例子参数：图例锚点（读 el.overlay.screenAnchor）+ 图例样式（渐变条 / 分类色块 / 统计行），面板宽度按内容排",
+   "resolvedBy": "M12b-26（el.overlay.legendStyle = statRows + legendAnchor = tl：左上带色签的线路图例）"
+  },
+  {
+   "screen": "infoview",
+   "what": "图例标题和档位来自内容包的一组固定数据（\"房价分布 · 高 / 中 / 低\"），与叠层要表达的数据（这里是公共交通线路）对不上",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "cityBuilder 内容包为每类信息视图（交通线路 / 地价 / 污染 / 覆盖范围）各给一组图例样例，由 el.overlay.form 选用",
+   "resolvedBy": "M12b-62（叠层图例按画法取：公交线路 1–3 号线 / 地铁 A 线 / 每月人次）"
+  },
+  {
+   "screen": "hud",
+   "what": "所有常用控件收在贴底的一整条深色工具带里（左：里程碑 / 人口 / 资金 / RCI，中：分类页签，右：日期 / 倍速 / 推土机）；lay.hudOrg = edgeBar 只进了解析表、渲染没有实现，元素各自悬浮在角落，资源数字直接压在世界上",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "lay.hudOrg = edgeBar 时，在锚点落在同一边的元素后面画一条整宽面板带（高度取该边元素的最大高 + 边距），元素在带内横排、各段之间画细分隔",
+   "resolvedBy": "M12a-16（lay.hudOrg = edgeBar：贴底整宽工具带；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.toolbar = categoryTabs 不读 cmp.tab / cmp.tabIndicator：五个页签全部画成强调色填满的梯形牌 + 粗白字（plate 写死 accent），没有选中 / 未选中之分，成了全屏最抢眼的一块",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "categoryTabs 的页签按 cmp.tab（text / icon）与 cmp.tabIndicator 画：只有选中页签用强调色，其余用 surface2 底 + 正文色",
+   "resolvedBy": "M12b-17（el.toolbar.form = drawer：下层分类图标排只有选中项是强调色实底）"
+  },
+  {
+   "screen": "hud",
+   "what": "底部工具栏是两层：下层是一排分类图标按钮，上层抽屉是小号文字子页签 + 一排缩略卡（悬停出价格与维护费）；categoryTabs 只有\"一排页签 + 一行图标\"，没有下层分类图标排，抽屉里也不能放卡片",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "el.toolbar 新增 drawer 结构：下层分类图标排 + 上层子页签 + 卡片行（卡片读 cmp.slot@el.toolbar，cmp.slot 新增 thumbCard：缩略图 + 底部价格）",
+   "resolvedBy": "M12b-17（el.toolbar.form = drawer + cmp.slot@el.toolbar = thumbCard：分类图标排 + 文字子页签 + 带价格缩略卡）"
+  },
+  {
+   "screen": "hud",
+   "what": "抽屉里的缩略卡是建筑模型的实时渲染图；ast.iconSet 已有 runtimeRender 取值，但 HUD 渲染器没有实现",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "ast.iconSet = runtimeRender 时用离屏相机把场景里的建筑网格渲成缩略图（缓存成图集），没有场景时退回程序图标"
+  },
+  {
+   "screen": "hud",
+   "what": "Chirper：顶部正中一只小鸟吉祥物按钮，点开往下展开推文气泡（头像 + 名字 + 一句话，白底）；现在 el.notify = toast 在上中画成一张深色胶囊提示卡，没有小鸟入口、头像和白底气泡",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "el.notify.form 新增 socialFeed（头像气泡流，可选浅色底），入口可配 cnt.companion = mascot 画在气泡流上方",
+   "partialBy": "M12b-20（el.notify.form = socialFeed + cnt.companion = mascot：顶部正中入口圆钮 + 白底头像推文气泡）；R4 对照图上圆钮里是 ♪ 字形，不是 Chirper 小鸟"
+  },
+  {
+   "screen": "hud",
+   "what": "徽章写死 crystal：el.profile = levelBar 的等级徽章和 el.overlay = statusIcons 的问题图标都画成 crystal，ast.iconSet = asset 时换成 ui_badges 图集里的紫色水晶星芒；statusIcons 还把每个图标自带的颜色丢掉、不读 st.alert；cmp.badge 也没有扁平圆章可选。原作问题图标是红底白符号圆章，里程碑是扁平进度条",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "levelBar / statusIcons 的徽章读 cmp.badge 与 vis.iconStyle（flat 时画程序圆章，不走图集），statusIcons 按 st.alert 与图标自带颜色上底色；cmp.badge 新增 roundel（扁平圆章）",
+   "resolvedBy": "cmp.badge@el.overlay, cmp.badge@el.profile"
+  },
+  {
+   "screen": "hud",
+   "what": "el.resources.valueLabel = delta 不画：资源元素不读 valueLabel（只有血条调用 valueText），资金旁没有每周收支增量",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "el.resources 的 iconNumber / pills 读 valueLabel，delta 时在数字后画小号正绿 / 负红的增量",
+   "resolvedBy": "M12a-13（el.resources 读 valueLabel = delta：资金旁有增量；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "RCI 需求：三根并排的小竖条（住宅绿 / 商业蓝 / 工业黄）+ R / C / I 字母；el.meter = stack 只能画三行横条（cmp.gauge@el.meter = vertical 也只是在横行里从下往上填）",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.meter.form 新增 demandBars（固定身份色的并排竖条 + 底部字母），或让 stack 在 cmp.gauge = vertical 时改成并排竖条",
+   "resolvedBy": "M12b-27（el.meter.form = demandBars：并排竖条 + R / C / I）"
+  },
+  {
+   "screen": "hud",
+   "what": "修路 / 放建筑时贴着光标的造价、长度、角度浮动读数；el.cost.attachTo = cursor 在渲染器里不生效（round 1 造价框照锚点排到了左上角），所以配方去掉了 el.cost",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "渲染器让 attachTo = cursor 的元素画在光标挂点旁（光标位置取模拟指针，避开屏幕边）",
+   "resolvedBy": "el.cost.attachTo"
+  },
+  {
+   "screen": "hud",
+   "what": "修路时的吸附辅助线（平行 / 垂直参考线 + 角度读数）；el.overlay.form 没有对应取值",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.overlay.form 新增 guides（吸附线 + 角度 / 长度读数）",
+   "resolvedBy": "M12b-26（el.overlay.form 含 guides：虚线吸附线 + 长度 / 角度读数）"
+  },
+  {
+   "screen": "economy",
+   "what": "没有\"经营管理面板\"界面类型（预算 / 税率 / 贷款 / 政策），只能借设置模板；预算页两栏、每个服务一行\"图标 + 名称 + 白天 / 夜间两根滑条 + 百分比 + 维护费\"，而设置模板只按内容包的设置行画（滑条 / 勾选 / 下拉混排），cmp.listRow 对它不起作用",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "cnt.screen 新增 screen.manage（经营 / 预算 / 政策），其表单行读 cmp.listRow（新增 slider 字段）+ lay.columns",
+   "resolvedBy": "M12b-13（cnt.screen = screen.manage + cmp.listRow 的 slider + lay.columns 2：服务行 + 日 / 夜两根滑条 + 维护费）"
+  },
+  {
+   "screen": "economy",
+   "what": "cityBuilder 内容包没有预算 / 税率 / 贷款的样例行，设置模板的标题仍写\"设置\"、页签是住房 / 商业 / 工业",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "cityBuilder 包补一组经营样例：服务名 + 图标 + 日 / 夜比例 + 维护费，税率行按 R / C / I 分组，标题\"预算\"",
+   "resolvedBy": "M12b-62（经营样本：预算标题、服务 / 收入 / 资金页签，电力 / 交通 / 医疗 / 绿地与税率行）"
+  },
+  {
+   "screen": "title",
+   "what": "标题界面仍画模板页眉（\"标题\" + 右上关闭 X）；cmp.modal = floating 只去掉面板框，ix.close 没有\"无\"这个取值（兜底是 xTopRight）",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "ix.close 新增 none；cnt.screen = screen.title 时默认不画页眉",
+   "resolvedBy": "lay.titlePos, ix.close（tpl.title 预设，目检修复）"
+  },
+  {
+   "screen": "title",
+   "what": "主菜单是左侧一列：LOGO 在上、按钮竖排在正下方；tpl.title 只能\"LOGO 一栏 + 菜单一栏\"左右分开（focalSide = left 时菜单跑到画面正中），focalSide = top 时 LOGO 横向居中且菜单被挤到底部、少一项",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "lay.composition 新增 stackLeft（主体叠在菜单上方、同一栏贴左），标题模板按它排",
+   "resolvedBy": "lay.focalSide"
+  },
+  {
+   "screen": "title",
+   "what": "右侧的新闻 / DLC 推荐面板：drawOps 只在 screen.hud / screen.lobby 画 ops.entries，标题界面的 bannerStack 不画；而且 bannerStack 的字样写死成手游运营（首充双倍 / 七日签到 / 赛季通行证），不是新闻 / 扩展包",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "drawOps 在 screen.title 也画 ops.entries，菜单另一侧竖向堆叠横幅（标题 + 缩略图 + 一行说明）；横幅字样从内容包取（PC 包给新闻 / 扩展包条目）"
+  },
+  {
+   "screen": "global",
+   "what": "分类页签图标是多色小插画，而系统按钮、状态图标是单色扁平；现有图标都是单色程序字形，没有城建分类的多色插画图标集，vis.iconStyle 也只有一个全局值",
+   "severity": "low",
+   "kind": "asset",
+   "proposal": "补一套城建分类的多色插画图标（道路 / 分区 / 水电 / 公共服务 / 交通 / 装饰…），并让渲染器读取 vis.iconStyle@el.toolbar 的作用域覆盖"
+  },
+  {
+   "screen": "title",
+   "what": "ix.focus = bar 作用在标题菜单的文字按钮上时，选中项画成浅色半透明强调带 + 强调色字，在浅色天空上几乎读不出（第 2 轮同一配方是强调色实底白字）",
+   "severity": "medium",
+   "proposal": "bar 焦点的字色按焦点带与背后画面的明度做对比检查（浅底换深字 / 白字），焦点带不透明度不低于约 0.8，或菜单按钮的焦点带用 col.focus 实底",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-67（R4 对照图：焦点带浅蓝实底 + 深色字，可读）"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 3,
+    "elements": 4,
+    "palette": 7,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 7,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "infoview": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 3,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 5,
+    "type": 6,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 6,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "economy": [
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "title": [
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "建造栏（el.toolbar，scale 1.4 且 primary 再 ×1.15）太宽，和左下资源列横向重叠，被避让逻辑一路推到画面上三分之一处；游戏里工具栏永远贴底",
+   "分类页签画成五块强调色大梯形牌 + 大字，抽屉里一行单色大图标，整块是全屏最抢眼的东西；游戏里抽屉子页签是小号文字页签，下面是缩略卡",
+   "左上角多出一个孤零零的'52,000'（el.cost = iconNumber；attachTo = cursor 不生效，按锚点排到了左上）",
+   "通知（el.notify = feed）是三条深色字条，被挤到画面中部；Chirper 应在顶部正中",
+   "RCI 需求画成三根很细的横线（stack 行里用 vertical 填充），看不出是需求条",
+   "缺里程碑进度条；没有贴底的整条深色工具带",
+   "状态图标是紫色水晶闪光，不像游戏里红底白符号的问题图标",
+   "右中的建筑信息面板大体对（左圆形 + 名称 + 两根状态条），位置可接受"
+  ],
+  "infoview": [
+   "参考图没有任何面板：只有白模城市和画在上面的数据；我们底部仍有工具栏、资源、时钟和倍速条",
+   "数据画成三团柔和的红 / 黄 / 绿热力圆斑；参考的主体是沿路的彩色线路网（多色样条 + 站点），另有一块红色热区和几道绿色方向光柱",
+   "热力图图例被右下角的时钟面板压住",
+   "世界去色变成灰白（借画面参数），明暗气氛接近参考"
+  ],
+  "economy": [
+   "行内容是通用设置（两根滑条、两个 iOS 式开关、◁ ▷ 语言切换）；游戏的预算 / 税率页每行都是'图标 + 名称 + 滑条 + 百分比 + 金额'，两栏排",
+   "开关和 ◁ ▷ 不是这款游戏的控件，它用勾选框和下拉框",
+   "第一行外面套了一个偏移的青色键盘焦点描边框；这是鼠标界面，只有悬停变亮",
+   "窗口、顶部文字页签、右上 X、板岩灰蓝底与小圆角都对"
+  ],
+  "title": [
+   "整屏盖了一块大圆角面板，带页眉'标题'和右上关闭 X；游戏主菜单没有窗口",
+   "LOGO 在左中、菜单在画面正中；游戏是左侧一列（LOGO 在上、按钮在下），右侧是新闻 / DLC 面板",
+   "第一项强调色填充 + 其余半透明底条、右下版本号，这部分接近"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "建造栏回到贴底正中（对），但五个页签全是强调色填满的大梯形牌 + 粗白字，下面一行单色强调色图标，仍是全屏最抢眼的一块；原作是深色底带上一排低调的分类图标，抽屉里是小号文字子页签 + 缩略卡",
+   "左下（里程碑条、资金 / 人口 / 数量、RCI）和右下（时钟、倍速）各自悬在世界上、没有背板，资源数字直接压在亮天空和白楼顶上，读起来费劲；原作是一条贴底整宽的深色工具带",
+   "里程碑等级徽章和建筑头顶的状态图标都是紫色水晶星芒（ui_badges 图集），与扁平板岩灰蓝的整体风格冲突；原作里程碑是扁平进度条，问题图标是红底白符号圆章",
+   "资金只有总数，没有收支增量（el.resources.valueLabel = delta 没画出来）",
+   "RCI 仍是三根横条（绿 / 紫 / 黄，配心 / 云 / 币图标），原作是绿 / 蓝 / 黄三根并排竖条 + 底部 R / C / I 字母",
+   "倍速是\"速度\" + 10 格分段条，原作是暂停钮 + 三档箭头小按钮（配方可下轮试 el.gameSpeed = playFF）",
+   "顶部正中的提示卡位置对了，但仍是深色胶囊 + 星标一行字，没有小鸟入口和白底推文气泡",
+   "右中建筑信息面板（圆形人像 + 名称 + 两根状态条）位置与信息量可接受；原作头部是建筑名称条，没有人物头像"
+  ],
+  "infoview": [
+   "工具栏、资源、时钟都去掉了（对），参考也没有任何面板；画面只剩数据和右下一块图例",
+   "数据仍是三团屏幕空间的红 / 黄 / 绿径向渐变，罩在楼体立面上而不是贴地；参考主体是沿道路的多色线路网（绿 / 黄 / 红 / 橙 / 蓝，站点是小圆点），外加车站旁一块红色热区、几道绿色方向光柱和选中车站的蓝色高亮块",
+   "信息密度完全不同：参考满屏细线、层级靠线色区分，我们只有三块大色斑",
+   "图例在右下、标题写死为\"房价分布\"（内容包），与交通视图的内容不符；固定 150×80 的面板里色块只占左侧四成，右边空着；原作图例在左上",
+   "白模世界仍靠借画面参数（低饱和 + 提亮 + clay 材质）模拟，明暗与灰白气氛接近参考"
+  ],
+  "economy": [
+   "选项控件已换成勾选框和下拉框，焦点改成整行浅色 + 左侧色条，去掉了偏移的描边框（对）；但浅色悬停带在约六成宽处变成另一种深浅，像两段拼接",
+   "内容仍是通用设置（音乐音量 / 音效音量 / 字幕 / 镜头晃动 / 语言），标题写\"设置\"；原作是预算 / 税率 / 贷款页，每行\"服务图标 + 名称 + 白天 / 夜间两根滑条 + 百分比 + 维护费\"，两栏排",
+   "单栏 5 行，密度偏低；原作一页十多行、两栏，数字列右对齐",
+   "面板明显透出背后的楼群，原作的经营面板几乎不透明",
+   "顶部文字页签（选中强调色填充、未选深色）、右上 X、板岩灰蓝底与小圆角接近原作"
+  ],
+  "title": [
+   "整屏大圆角面板去掉了（对），但左上仍有页眉\"标题\"、右上仍有关闭 X，原作主菜单两者都没有",
+   "LOGO 在左侧中部、菜单列在画面正中（约 44%–76% 宽）；原作 LOGO 在左上、按钮在它正下方同一栏贴左",
+   "右侧没有新闻 / DLC 推荐面板（ops.entries = bannerStack 在标题模板里不画）",
+   "菜单条半透明、背后城市只压暗 0.2，楼体的橙色窗格透过按钮，非选中项文字对比偏弱",
+   "第一项强调色填充 + 左侧色条、其余半透明深条 + 细分隔、右下版本号，这部分接近"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "底部已是一条贴底整宽的深色工具带（左资源 + 增量 / RCI、中分类、右日期 / 倍速钮），但里程碑条浮在工具带上方左侧，没有收进左段（凭记忆）",
+   "中段只有一层：梯形图标页签 + 一行强调色图标；原作下层是一排多色分类图标按钮，上层抽屉是小号文字子页签 + 缩略卡",
+   "RCI 仍是三根横条（绿 / 紫 / 黄），原作是绿 / 蓝 / 黄三根并排竖条 + R / C / I 字母",
+   "顶部正中仍是深色胶囊提示卡，没有小鸟入口和白底推文气泡",
+   "建筑信息面板头部是圆形人像，原作是建筑名称条"
+  ],
+  "infoview": [
+   "三种叠层（热力斑 + 箭头 + 范围圈）都画出来了，但仍是屏幕空间的色斑、蓝箭头和虚线椭圆，罩在楼体上；参考主体是沿道路的多色线路网 + 车站旁红色热区 + 绿色方向光柱",
+   "整屏被压成中灰（rel.sceneTone = desaturate 在局内生效后叠在已低饱和的白模上），参考是很亮的灰白白模",
+   "图例仍在右下、标题写「房价分布」、固定小面板；原作图例在左上、与交通视图对应",
+   "密度差得远：参考满屏细线、层级靠线色区分，我们只有一处色斑"
+  ],
+  "economy": [
+   "内容仍是通用设置（音量 / 字幕 / 镜头晃动 / 语言），标题写「设置」；原作（凭记忆）是预算 / 税率 / 贷款页，每行服务图标 + 名称 + 白天 / 夜间两根滑条 + 百分比 + 维护费",
+   "单栏 5 行，密度偏低；原作一页十多行、两栏，数字列右对齐",
+   "面板明显透出背后的楼群，原作几乎不透明",
+   "焦点行的浅色带在约六成宽处变成另一种深浅，像两段拼接"
+  ],
+  "title": [
+   "选中项「继续游戏」是浅蓝半透明带 + 强调色字，压在蓝天上几乎读不出（第 2 轮是强调色实底白字）",
+   "右侧没有新闻 / DLC 推荐面板（凭记忆）",
+   "菜单条是浅色半透明，背后城市透过来，非选中项对比偏弱"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "（凭记忆）时钟 / 倍速一格被挤出底部工具带，浮在带上方右侧，带的右段空着",
+   "抽屉缩略卡是 RPG 道具图（矿石 / 齿轮 / 水晶……），原作是建筑模型缩略图",
+   "建筑信息面板头部仍是圆形人像，原作是建筑名称条",
+   "下层分类钮是单色字形，原作是多色小插画图标"
+  ],
+  "infoview": [
+   "线路是从中心放射的屏幕空间直线，不沿道路走；参考是贴着道路的细线网铺满全城",
+   "缺车站旁的红色热区和绿色方向光柱",
+   "线比参考粗、条数少，层级与密度仍低于参考"
+  ],
+  "economy": [
+   "（凭记忆）服务只有 4 行（两栏各 2 行），税率行只在左栏，右下大片空；原作一页十多行",
+   "滑条与数字很小，各列没有对齐成表"
+  ],
+  "title": [
+   "（凭记忆）右侧没有新闻 / DLC 推荐面板",
+   "菜单条仍是浅色半透明，非选中项与天空的对比偏弱"
+  ]
+ },
+ "revisions": [
+  "hud：el.toolbar 由 scale 1.4 / primary 改成 1.05 / secondary（primary 会再乘 1.15），el.resources 缩到 0.8——左下列与建造栏不再横向重叠，建造栏回到贴底正中",
+  "hud：去掉 el.cost（光标挂点不生效，只会在锚点处多出一个价格），修路读数记入缺口",
+  "hud：el.notify 由 feed 改 toast、锚点上中、0.8——Chirper 的位置与'一张圆角提示卡'",
+  "hud：cmp.gauge@el.meter 由 vertical 改 bar、el.meter 缩到 0.6——三根短横条（绿 / 紫 / 黄）至少读得出是三项需求",
+  "hud：新增 el.profile = levelBar（左下、0.7、背景优先级）当里程碑进度条（等级徽章 + 进度条 + 7,850 / 12,000），删掉'里程碑没有元素'这条缺口",
+  "hud：时钟 0.8、倍速 0.85、选中面板显式锚右中并缩到 0.85；el.overlay 只留 statusIcons（多选只画第一项，buildGrid 本来就没画）",
+  "infoview：元素只留 el.overlay（参考截图没有任何面板），heatmap 排第一（顺带出图例），密度降到 1；去掉工具栏 / 资源 / 时钟 / 倍速及其子参数",
+  "economy：cmp.optionBool 改 checkbox、cmp.optionEnum 改 dropdown（这款游戏的选项控件）",
+  "base：ix.focus 由 outline 改 bar——鼠标界面的悬停整行浅色 + 左侧色条，去掉经济页那个偏移的焦点描边框",
+  "title：cmp.modal = floating 去掉整屏大面板（页眉与 X 仍在，记缺口），rel.dim 0.2 稍压背后实时城市；删掉不起作用的 el.title.screenAnchor 与 lay.panelSize。试过 lay.focalSide = top / right：top 让 LOGO 横向居中且菜单少一项，right 把 LOGO 放到新闻面板的位置，最后保留 left",
+  "R3 前（M12a 之后）：hud 的 el.selection 冲突按原作取挂点——保留 attachTo = target（原作建筑信息面板浮在被点的建筑旁），删掉不再生效的 screenAnchor mr，加 attachOffset = right；el.cost 加回 cnt.elements（form = iconNumber、attachTo = cursor：修路 / 放建筑时贴光标的造价）；cmp.badge@el.overlay = roundel（红底白符号问题圆章）、cmp.badge@el.profile = none（里程碑不画晶体徽章）；title 加 lay.focalSide = top（LOGO 与菜单叠成一栏贴左），页头与 ✕ 已由 tpl.title 预设去掉（不再写）。",
+  "R4 前（M12b 之后）：hud：el.toolbar.form = drawer（下层分类图标排 + 上层子页签 + 缩略卡）+ cmp.slot@el.toolbar = thumbCard（这一屏全局写了 cmp.slot = cell，不按目标写抽屉会画成普通格子）、el.meter.form = demandBars（RCI 并排竖条 + 字母）、el.notify.form = [socialFeed] + cnt.companion = mascot（Chirper 小鸟 + 白底推文气泡）、el.overlay.form 加 guides（修路吸附线与角度 / 长度读数）、lay.edgeBarSlots = [el.profile|el.resources, el.meter, el.toolbar, el.clock|el.gameSpeed]（里程碑收进工具带左段，不再浮在带上方）；infoview：el.overlay.form = [routeLines]（多色线路网 + 站点，代替热力斑 / 箭头 / 范围圈）、el.overlay.count 6（参考满屏线路）、el.overlay.legendStyle = statRows + legendAnchor = tl（左上带色签的线路图例，内容包已按叠层给图例）、rel.sceneTone = [none]（去掉叠在白模上的去饱和，参考白模很亮）；economy：cnt.screen = screen.manage（经营预算页签与样本，不再是通用设置）、lay.columns 2、cmp.listRow = [icon, title, slider]（服务行 + 日 / 夜滑条）、vis.opacity 0.98（原作面板几乎不透明）"
+ ],
+ "notes": "板岩灰蓝的小圆角半透明面板 + 浅蓝强调，零装饰，资金与正数用绿色，鼠标界面只有悬停变亮；所有常用操作收进贴底的一整条工具栏（左里程碑 / 人口 / 资金 / 需求、中分类页签 + 缩略图抽屉、右日期与倍速），Chirper 在顶部正中，建筑信息面板浮在被点的建筑旁。真正的识别点是信息视图：城市变成白模，数据用彩色热力与线路色直接画在世界上，UI 的主体在场景里而不在面板上。"
+}

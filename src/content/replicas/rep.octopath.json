@@ -1,0 +1,1010 @@
+{
+  "id": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "card": "steam:921570",
+  "genre": "rpg",
+  "family": "fam.jrpg-hd2d",
+  "pack": "rpg",
+  "art": {
+    "recipe": "hd2d-sprite",
+    "scene": "hd2d-town",
+    "values": {
+      "color.brightness": 0.9
+    }
+  },
+  "base": {
+    "hud.style": "darkHairline",
+    "uip.platform": "platform.pc",
+    "uip.business": "business.premium",
+    "ctx.timeModel": "turn",
+    "rel.harmony": "unified",
+    "col.source": "skin",
+    "col.lightness": "dark",
+    "col.strategy": "neutralAccent",
+    "col.surface": "#16336a",
+    "col.surface2": "#0a1430",
+    "col.text": "#f4f3ee",
+    "col.accent": "#3f74c4",
+    "col.accent2": "#8fb3dd",
+    "col.focus": "#dbe8ff",
+    "col.border": "#b8c6dc",
+    "vis.corner": "sharp",
+    "vis.fill": "gradient",
+    "vis.opacity": 0.65,
+    "vis.blur": 0,
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 1,
+    "vis.strokeColor": "custom",
+    "vis.strokeSides": "topBottom",
+    "vis.strokeGlow": 0,
+    "vis.depth": "flat",
+    "vis.gloss": "none",
+    "vis.motif": "none",
+    "vis.ornament": 1,
+    "ast.ornaments": [
+      "dividers"
+    ],
+    "ast.core": "procedural",
+    "ast.frame": "procedural",
+    "vis.silhouette@avatar": "diamond",
+    "vis.iconStyle": "silhouette",
+    "typ.body.family": "sans",
+    "typ.body.weight": "regular",
+    "typ.body.case": "asIs",
+    "typ.display.family": "serif",
+    "typ.display.weight": "regular",
+    "typ.display.case": "asIs",
+    "typ.numerals.family": "display",
+    "typ.titleFx": "outlineShadow",
+    "typ.legibility": "shadow",
+    "typ.baseSize": 26,
+    "mo.enter": "fade",
+    "mo.duration": 0.3,
+    "mo.easing": "easeOut",
+    "mo.textReveal": "typewriter",
+    "mo.valueChange": "countUp",
+    "ix.focus": "bar",
+    "ix.continueCue": "blinkArrow",
+    "st.locked": "question",
+    "st.statusMark": "text",
+    "ast.ornamentScope": "templatePanels",
+    "cmp.plate@title": "flankLines",
+    "col.accent@el.party": "#5f9e57",
+    "col.accent2@el.party": "#8fa3c4"
+  },
+  "screens": [
+    {
+      "key": "battle",
+      "ref": "qa/refs-cache/r2/arpg/img/steam_921570_2.jpg",
+      "values": {
+        "uip.layout": "layout.strategyTurn",
+        "cnt.screen": "screen.hud",
+        "lay.container": "overlay",
+        "game.scene": "cave",
+        "color.brightness": 0.38,
+        "lay.hudOrg": "scattered",
+        "rel.hudVisibility": "always",
+        "ctx.timeModel": "turn",
+        "cnt.density": 2,
+        "cnt.elements": [
+          "el.turnOrder",
+          "el.party",
+          "el.threat",
+          "el.feedback"
+        ],
+        "el.turnOrder.form": "icons",
+        "el.turnOrder.screenAnchor": "tl",
+        "el.turnOrder.arrangement": "row",
+        "el.turnOrder.scale": 1.4,
+        "vis.silhouette@el.turnOrder": "diamond",
+        "el.threat.form": [
+          "weaknessGrid"
+        ],
+        "el.threat.diegesis": "spatial",
+        "el.threat.attachTo": "target",
+        "el.threat.worldRender": "billboard",
+        "vis.silhouette@el.threat": "shield",
+        "el.feedback.form": [
+          "floatNumbers",
+          "rating"
+        ],
+        "el.feedback.attachTo": "target",
+        "el.feedback.scale": 1.2,
+        "el.feedback.priority": "primary",
+        "typ.numerals.style": "upright",
+        "hier.emphasis": [
+          "size",
+          "value"
+        ],
+        "col.accent@el.feedback": "#f7e8e4",
+        "typ.outlineColor@el.feedback": "#8a1424",
+        "el.party.form": "statusStrip",
+        "el.party.pointsRow": "lightUp",
+        "el.party.valueLabel": "currentMax",
+        "el.party.count": 1,
+        "el.party.screenAnchor": "tr",
+        "el.party.scale": 0.8,
+        "vis.fade@el.party": "both",
+        "el.party.priority": "secondary",
+        "cmp.gauge@el.party": "thinBar",
+        "el.turnOrder.track": "double",
+        "el.turnOrder.segments": true,
+        "el.turnOrder.spacing": "tight",
+        "el.feedback.count": 1,
+        "typ.fillStyle@el.feedback": "gradient",
+        "typ.fillColors@el.feedback": [
+          "#ffe4ec",
+          "#ffd0dc"
+        ],
+        "typ.shadowOffset@el.feedback": 6
+      }
+    },
+    {
+      "key": "battle-boss",
+      "ref": "qa/refs-cache/r2/arpg/img/steam_921570_3.jpg",
+      "values": {
+        "uip.layout": "layout.strategyTurn",
+        "cnt.screen": "screen.hud",
+        "lay.container": "overlay",
+        "game.scene": "cave",
+        "color.brightness": 0.38,
+        "lay.hudOrg": "scattered",
+        "rel.hudVisibility": "always",
+        "ctx.timeModel": "turn",
+        "cnt.density": 1,
+        "cnt.elements": [
+          "el.turnOrder",
+          "el.notify",
+          "el.party",
+          "el.threat",
+          "el.feedback"
+        ],
+        "el.turnOrder.form": "icons",
+        "el.turnOrder.screenAnchor": "tl",
+        "el.turnOrder.arrangement": "row",
+        "el.turnOrder.scale": 1.2,
+        "vis.silhouette@el.turnOrder": "diamond",
+        "el.threat.form": [
+          "weaknessGrid"
+        ],
+        "el.threat.diegesis": "spatial",
+        "el.threat.attachTo": "target",
+        "el.threat.worldRender": "billboard",
+        "vis.silhouette@el.threat": "shield",
+        "el.notify.form": [
+          "label"
+        ],
+        "el.notify.screenAnchor": "tc",
+        "el.notify.scale": 0.75,
+        "el.notify.priority": "secondary",
+        "el.feedback.form": [
+          "floatNumbers"
+        ],
+        "el.feedback.attachTo": "target",
+        "el.feedback.scale": 1.2,
+        "el.feedback.priority": "primary",
+        "hier.emphasis": [
+          "size",
+          "value"
+        ],
+        "el.feedback.occlusion": "none",
+        "col.accent@el.feedback": "#f7e8e4",
+        "typ.outlineColor@el.feedback": "#8a1424",
+        "el.party.form": "statusStrip",
+        "el.party.pointsRow": "lightUp",
+        "el.party.valueLabel": "currentMax",
+        "el.party.count": 1,
+        "el.party.screenAnchor": "tr",
+        "el.party.scale": 0.8,
+        "vis.fade@el.party": "both",
+        "el.party.priority": "secondary",
+        "cmp.gauge@el.party": "thinBar",
+        "el.turnOrder.track": "double",
+        "el.turnOrder.segments": true,
+        "el.turnOrder.spacing": "tight",
+        "el.turnOrder.roundSize": 1,
+        "el.feedback.count": 1,
+        "typ.fillStyle@el.feedback": "gradient",
+        "typ.fillColors@el.feedback": [
+          "#ffe4ec",
+          "#ffd0dc"
+        ],
+        "typ.shadowOffset@el.feedback": 6
+      }
+    },
+    {
+      "key": "field",
+      "ref": "qa/refs-cache/r2/arpg/img/steam_921570_0.jpg",
+      "values": {
+        "uip.layout": "layout.explore",
+        "cnt.screen": "screen.hud",
+        "lay.container": "overlay",
+        "lay.hudOrg": "scattered",
+        "rel.hudVisibility": "contextual",
+        "ctx.timeModel": "realtime",
+        "cnt.density": 0,
+        "cnt.elements": [
+          "el.interact",
+          "el.minimap",
+          "el.meter"
+        ],
+        "el.interact.form": [
+          "iconBubble"
+        ],
+        "el.interact.diegesis": "spatial",
+        "el.interact.attachTo": "poi",
+        "el.interact.worldRender": "billboard",
+        "el.interact.scale": 0.6,
+        "el.minimap.form": "plan",
+        "el.minimap.screenAnchor": "br",
+        "el.minimap.scale": 0.75,
+        "el.minimap.priority": "ambient",
+        "el.minimap.visibility": "always",
+        "el.meter.form": "dangerDot",
+        "el.meter.dockTo": "el.minimap",
+        "el.meter.dockSide": "cornerBR"
+      }
+    },
+    {
+      "key": "battle-command",
+      "ref": null,
+      "values": {
+        "uip.layout": "layout.strategyTurn",
+        "cnt.screen": "screen.hud",
+        "lay.container": "overlay",
+        "game.scene": "cave",
+        "color.brightness": 0.38,
+        "lay.hudOrg": "scattered",
+        "rel.hudVisibility": "always",
+        "ctx.timeModel": "turn",
+        "cnt.density": 2,
+        "cnt.elements": [
+          "el.turnOrder",
+          "el.party",
+          "el.choices",
+          "el.threat",
+          "el.prompt"
+        ],
+        "el.turnOrder.form": "icons",
+        "el.turnOrder.screenAnchor": "tl",
+        "el.turnOrder.arrangement": "row",
+        "el.turnOrder.scale": 1.4,
+        "vis.silhouette@el.turnOrder": "diamond",
+        "el.party.form": "statusStrip",
+        "el.party.screenAnchor": "tr",
+        "el.party.arrangement": "column",
+        "el.party.scale": 0.8,
+        "cmp.gauge@el.party": "thinBar",
+        "el.choices.form": "commandList",
+        "el.choices.arrangement": "column",
+        "el.choices.screenAnchor": "mr",
+        "el.choices.scale": 0.7,
+        "el.choices.priority": "primary",
+        "ix.focus": "bar",
+        "ix.mode": "select",
+        "el.threat.form": [
+          "weaknessGrid"
+        ],
+        "el.threat.diegesis": "spatial",
+        "el.threat.attachTo": "target",
+        "el.threat.worldRender": "billboard",
+        "vis.silhouette@el.threat": "shield",
+        "el.prompt.form": [
+          "legend"
+        ],
+        "el.prompt.screenAnchor": "br",
+        "el.prompt.scale": 0.8,
+        "el.prompt.priority": "ambient",
+        "el.party.pointsRow": "lightUp",
+        "el.party.valueLabel": "currentMax",
+        "vis.fade@el.party": "both",
+        "el.turnOrder.track": "double",
+        "el.turnOrder.segments": true,
+        "el.turnOrder.spacing": "tight",
+        "el.choices.dockTo": "el.party",
+        "el.choices.dockSide": "left",
+        "el.choices.dockFollow": "active"
+      }
+    },
+    {
+      "key": "dialogue",
+      "ref": null,
+      "values": {
+        "uip.screen": "tpl.npc",
+        "cnt.screen": "screen.dialogue",
+        "cnt.subtype": "npc",
+        "lay.container": "tray",
+        "lay.panelSize": 0.45,
+        "cmp.dialogBox": "bar",
+        "rel.behind": "live",
+        "cnt.focal": "none",
+        "cmp.plate@name": "none",
+        "vis.corner": "sharp",
+        "vis.opacity": 0.75,
+        "vis.fill": "gradient",
+        "vis.strokeSides": "topBottom",
+        "cnt.elements": [],
+        "cnt.textLength": "short",
+        "mo.textReveal": "typewriter",
+        "ix.continueCue": "blinkArrow",
+        "ix.dismiss": "tapAnywhere",
+        "ix.mode": "readOnly",
+        "ix.skip": "none",
+        "cnt.tone": "narrative",
+        "ast.ornaments": [
+          "-dividers"
+        ]
+      }
+    },
+    {
+      "key": "pause",
+      "ref": null,
+      "values": {
+        "uip.screen": "tpl.pausePc",
+        "cnt.screen": "screen.pause",
+        "cnt.subtype": "pause",
+        "lay.container": "fullscreen",
+        "rel.behind": "frozen",
+        "rel.dim": 0.6,
+        "rel.sceneBlur": 6,
+        "lay.composition": "splitLR",
+        "cnt.dataShape": "collection",
+        "lay.arrangement": "column",
+        "lay.grouping": "divider",
+        "cmp.button": "text",
+        "cmp.buttonBox": false,
+        "vis.strokeSides@listRow": "bottom",
+        "ix.focus": "bar",
+        "ix.mode": "select",
+        "cnt.elements": [
+          "el.party",
+          "el.resources",
+          "el.clock",
+          "el.prompt"
+        ],
+        "el.party.form": "statusStrip",
+        "el.party.arrangement": "column",
+        "el.party.screenAnchor": "mr",
+        "el.party.scale": 0.9,
+        "cmp.gauge@el.party": "thinBar",
+        "el.resources.form": "iconNumber",
+        "el.resources.screenAnchor": "bl",
+        "el.clock.form": "clock",
+        "el.clock.screenAnchor": "bl",
+        "el.prompt.form": [
+          "legend"
+        ],
+        "el.prompt.screenAnchor": "br",
+        "el.prompt.scale": 0.85,
+        "ix.dismiss": "key",
+        "ix.close": "none",
+        "el.party.pointsRow": "lightUp",
+        "el.party.valueLabel": "currentMax",
+        "vis.fade@el.party": "both",
+        "cmp.listRow@el.party": [
+          "level"
+        ]
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "screen": "battle",
+      "kind": "composite",
+      "severity": "high",
+      "what": "名牌（battle / battle-boss 右上一条，battle-command 满员时右侧一列，pause 队伍栏）的内容是「名字 + BP 宝石行（1–5 颗橙色小宝石，加成时逐颗点亮）+ HP / SP 两行（小标签 + 大当前值 / 小上限 + 细条）」、没有头像；round 2 借 el.selection = panel 多了圆头像与「门派 / 战力」行、两条条子不写数值，el.party = frames 是圆头像 + 名字 + 一条条子，都放不进点亮格行",
+      "proposal": "el.party.form = statusStrip（名字行 + 可选点亮格行 cmp.gauge = lightUp，颜色读 col.accent2@el.party + N 行 label / 当前 / 上限 / 细条，不画头像），读 el.party.valueLabel = currentMax",
+      "resolvedBy": "M12b-18（el.party.form = statusStrip + pointsRow = lightUp + valueLabel = currentMax：名字 + BP 点亮格 + HP / SP 数字细条、无头像）"
+    },
+    {
+      "screen": "battle",
+      "kind": "missingParam",
+      "severity": "high",
+      "what": "名牌与指令带是左右两端渐隐为透明的宝蓝横带；现在只能画成上下描边的竖向渐变（宝蓝 → 深藏青）整块矩形，横向渐隐、两端透明都表达不了",
+      "proposal": "col.gradient 加方向（横 / 竖 / 径向）+ vis.opacity 渐隐端（左 / 右 / 两端，0–1）（G-gradient-fade）",
+      "resolvedBy": "M12b-41（vis.fade@el.party = both：两端渐隐的宝蓝带；指令窗向左渐隐）"
+    },
+    {
+      "screen": "battle",
+      "kind": "newDrawing",
+      "severity": "high",
+      "what": "行动顺序是贯穿顶部的一条细双线，线上串着菱形头像框：当前行动者的大菱形单独在最左，本回合其余人小菱形紧挨着排开，「>>> NEXT TURN」之后是下回合的顺序（Boss 战只剩一个大菱形 + 线）；el.turnOrder.form = icons 只能按固定 52px 间距画 5 个纯色菱形 + 首字，没有轨道线、分段标签，数量与间距不可调",
+      "proposal": "el.turnOrder 子参数：轨道线（无 / 单线 / 双线、长度到屏宽）、分段标签（本回合 / 下回合）、间距（紧挨 / 均分）、本回合人数",
+      "resolvedBy": "M12b-18（el.turnOrder.track = double + segments + spacing = tight + roundSize：细双线轨道、NEXT TURN、首位大菱形）"
+    },
+    {
+      "screen": "battle",
+      "kind": "renderBug",
+      "severity": "medium",
+      "what": "el.turnOrder.form = portraitQueue 的头像不认 vis.silhouette@el.turnOrder（avatar() 永远画圆），icons 的菱形又只能写首字：「菱形框 + 头像」两者拼不起来",
+      "proposal": "avatar() 读 vis.silhouette@<元素> 把头像裁成菱形 / 盾形；icons 画法可选内画头像",
+      "resolvedBy": "M12a-09（avatar 读 vis.silhouette@<元素>：菱形头像；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "battle",
+      "kind": "asset",
+      "severity": "low",
+      "what": "行动顺序菱形与名牌列里画的是角色像素小像（头像素材），现在只有首字或灰色剪影占位",
+      "proposal": "头像素材槽（ast.portraits：按角色 id 取小像，缺省回落首字），与 HD-2D 画面配方共用角色像素图"
+    },
+    {
+      "screen": "battle",
+      "kind": "newDrawing",
+      "severity": "high",
+      "what": "弱点格：每个敌人脚下一行「VULNERABLE」小字 + 蓝色盾牌护盾数 + 一排问号方格（命中后翻成武器 / 元素图标）；现在只有 intent 的盾形徽章 + 红数字，而且浮在画面上中",
+      "proposal": "el.threat.form = weaknessGrid（护盾数 + 弱点格，未揭示 = st.locked 问号，位置在目标脚下）（G-el-hud）",
+      "resolvedBy": "M12b-19（el.threat.form = weaknessGrid：VULNERABLE + 盾形护盾数 + 问号格）"
+    },
+    {
+      "screen": "battle",
+      "kind": "worldSpace",
+      "severity": "medium",
+      "what": "原作每个敌人各挂一组弱点格、伤害数字压在被打的那个敌人身上；el.threat / el.feedback 的 attachTo = target 只有一个目标点（还落在画面上中，离唯一的角色很远），多敌人各挂一组画不出来",
+      "proposal": "attachTo = target 支持多目标（按世界里的敌方单位逐个投影，挂脚下 / 身体中心可选），没有敌方单位时回落到画面中部偏下"
+    },
+    {
+      "screen": "battle",
+      "kind": "missingParam",
+      "severity": "medium",
+      "what": "伤害数字只有一个超大衬线数字（浅粉白填充 + 深红描边 + 投影）；floatNumbers 固定画三个数字、首个写死金色，数字的填充 / 描边色不可调",
+      "proposal": "飘字数量（1–3）；暴击 / 首个数字颜色读 col.accent@el.feedback；数字填充 / 描边色做成 typ.titleFx 子参数（G-title-fx）",
+      "resolvedBy": "M12b-20（el.feedback.count = 1 + typ.fillStyle / fillColors / shadowOffset@el.feedback：一个浅粉白深红描边的大数字）"
+    },
+    {
+      "screen": "battle",
+      "kind": "renderBug",
+      "severity": "medium",
+      "what": "WEAK / BREAK 是叠在伤害数字上的评价字；el.feedback.form 列多个画法时只画第一个（floatNumbers + rating 不能同屏），所以 round 2 已把 rating 删掉",
+      "proposal": "el.feedback 按列表画全部画法，rating 默认叠在第一个飘字上方",
+      "resolvedBy": "el.feedback.form（多画法逐个画）"
+    },
+    {
+      "screen": "battle-command",
+      "kind": "renderBug",
+      "severity": "medium",
+      "what": "el.party = frames 与 el.selection = panel 的条子在元素代码里写死成 'bar'，不读 cmp.gauge@el.party = thinBar（画成 7px 粗条）；selection 的第二条颜色写死黄色 #e3b341，原作 SP 条是灰蓝",
+      "proposal": "两处都改读 cmp.gauge@<元素>；多条状态的颜色按 col.accent / col.accent2@<元素> 取，而不是按序号写死",
+      "resolvedBy": "cmp.gauge@el.selection, col.accent2@el.selection"
+    },
+    {
+      "screen": "*",
+      "kind": "renderBug",
+      "severity": "medium",
+      "what": "逐元素的颜色 / 形状覆盖（col.accent@el.feedback、col.surface@el.interact、vis.corner@el.notify……）参数体系允许，但渲染器的元素上下文只读全局皮肤，覆盖不生效：白色「…」气泡、深红伤害字都因此画不出来",
+      "proposal": "makeCtx 按 <参数>@<元素> 重建该元素的 token（面板底色、描边、圆角、强调色）",
+      "resolvedBy": "M12a-01（逐元素颜色 / 外形：伤害字深红描边等；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "battle",
+      "kind": "renderBug",
+      "severity": "medium",
+      "what": "typ.titleFx = outlineShadow 的描边写死 2.5px：小字号的名字（名牌里的「剑灵·青光」）被黑描边填满字怀，读起来像一块黑底；原作名字是干净的白字 + 软投影",
+      "proposal": "描边宽度按字号比例（约字号 × 0.08，下限 1px），小于阈值的字号只留投影",
+      "resolvedBy": "M12a-33（描边宽随字号：名字不再糊黑；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "battle",
+      "kind": "missingParam",
+      "severity": "low",
+      "what": "ast.ornaments = dividers 会在每个面板底边画「细线 + 菱点 + 细线」，连右上小名牌、对话框底边也有；原作只在菜单 / 标题处用细线",
+      "proposal": "饰件作用范围（全屏界面 / 模板面板 / 全部面板），或让 ast.ornaments@<元素> 生效；面板高于阈值才画分隔饰条",
+      "resolvedBy": "ast.ornamentScope"
+    },
+    {
+      "screen": "battle-command",
+      "kind": "layoutEngine",
+      "severity": "medium",
+      "what": "战斗指令窗挂在当前行动角色名牌的左侧（随行动者换行），每条指令是一条向左渐隐的深色横带、左对齐，选中项更亮并带指针；现在借 el.choices（buttons）放在右中、排在名牌列下方，文字居中",
+      "proposal": "新信息元素 el.command（指令列表，挂在当前行动者名牌左侧、向左展开），或 elx.attachTo 加「另一元素的槽位」（party 第 N 条）；按钮文字对齐读 lay.align",
+      "resolvedBy": "M12b-22 / M12b-05（el.choices.form = commandList + dockTo el.party + dockFollow = active：挂在当前行动者名牌左侧、向左渐隐的指令带 + 指针）"
+    },
+    {
+      "screen": "battle-command",
+      "kind": "content",
+      "severity": "medium",
+      "what": "rpg 内容包没有战斗指令：el.choices 写的是对话回复（弟子这就去 / 秘境里有什么 / 先回门派），按键图例是动作游戏的拾取 / 剑气 / 选敌 / 背包",
+      "proposal": "rpg 包加战斗指令列表（攻击 / 能力 / 道具 / 防御 / 逃跑 / 职业技）与回合制按键图例（确认 / 返回 / 加成 / 减成）",
+      "resolvedBy": "M12b-62（rpg 包的战斗指令：攻击 / 剑法 / 丹药 / 防御 / 换人 / 撤退；回合制按键图例：确认 / 返回 / 加成 / 减成）"
+    },
+    {
+      "screen": "battle-boss",
+      "kind": "missingOption",
+      "severity": "low",
+      "what": "技能名提示是行动顺序线下方一个贴字宽的小深色框 + 细亮边，只写技能名；el.notify = toast 画成带 ✦ 图标的宽横条，内容是「成就解锁：初入江湖」",
+      "proposal": "el.notify.form = label（贴字宽、无图标的小名签）；rpg 包的提示内容加敌方技能名",
+      "resolvedBy": "M12b-20（el.notify.form = label：贴字宽的深色技能名签）"
+    },
+    {
+      "screen": "pause",
+      "kind": "content",
+      "severity": "medium",
+      "what": "tpl.pausePc 的菜单项是标题画面那一套（继续游戏 / 新游戏 / 读取存档 / 制作人员），原作局内菜单是道具 / 能力 / 装备 / 状态 / 队伍 / 存档 / 设置；队伍行也缺等级与 HP / SP 数值",
+      "proposal": "pause 模板按 cnt.subtype 区分「系统暂停」与「局内主菜单」，rpg 包给局内主菜单的条目与队员等级 / HP / SP",
+      "resolvedBy": "M12b-62 / M12b-13（局内主菜单：技能 / 物品 / 装备 / 状态 / 门派 / 存档 / 设置；cmp.listRow@el.party = [level] 写 Lv，状态带写 HP / SP 数值）"
+    },
+    {
+      "screen": "dialogue",
+      "kind": "missingOption",
+      "severity": "low",
+      "what": "对话框没有关闭钮：模板框（tray）永远在右上画 X（ix.close 没有「无」这个取值，兜底是 xTopRight）",
+      "proposal": "ix.close 加 none",
+      "resolvedBy": "ix.close 派生 none（tapAnywhere）"
+    },
+    {
+      "screen": "dialogue",
+      "kind": "renderBug",
+      "severity": "low",
+      "what": "原作说话人名是框左上的一行小字、框窄于画面；cmp.plate@name = tab 不作用到模板标题位（画成大号衬线「NPC 对话」界面标题），lay.panelSize 对 tray 只管高度，框总是占满整宽",
+      "proposal": "cmp.plate@name 作用到模板标题位（说话人名）；lay.panelSize 对 tray 同时控制宽度（居中）",
+      "resolvedBy": "cmp.plate@name（说话人名）, lay.panelSize（tray 宽度）"
+    },
+    {
+      "screen": "field",
+      "kind": "missingOption",
+      "severity": "low",
+      "what": "可交谈 / 可用路径技能的 NPC 头顶是只有「…」的白色小圆气泡，没有文字也没有按键，多个 NPC 同时显示；el.interact = bubble 会写按键 + 动作名，且只挂一处",
+      "proposal": "el.interact.form = iconBubble（只有图标的世界内小气泡，可挂多个 poi）",
+      "resolvedBy": "M12b-19（el.interact.form = iconBubble：多个 POI 头顶的“…”小气泡）"
+    },
+    {
+      "screen": "field",
+      "kind": "missingOption",
+      "severity": "low",
+      "what": "参考图是宣传截图（隐藏了 HUD）；右下小地图与遇敌危险度圆点（蓝 → 黄 → 红）按记忆编码，危险度指示没有对应画法",
+      "proposal": "el.meter.form = dangerDot，可挂在小地图角上",
+      "resolvedBy": "M12b-27 / M12b-05（el.meter.form = dangerDot 停在小地图右下角）"
+    },
+    {
+      "screen": "*",
+      "kind": "missingOption",
+      "severity": "low",
+      "what": "分隔饰条已能画成「细线 + 中间菱点 + 细线」，但原作标题两侧是「菱点端头的细线」夹住标题字，这种夹标题的花线没有",
+      "proposal": "cmp.plate = flankLines（标题两侧细线 + 菱点端头）（G-plate-lib）",
+      "resolvedBy": "M12b-46（cmp.plate@title = flankLines：pause 标题两侧菱点细线）"
+    },
+    {
+      "screen": "battle",
+      "kind": "content",
+      "severity": "low",
+      "what": "el.feedback 的评级字取内容包 events.rating，rpg 包写的是节奏游戏式的“S / PERFECT”；原作叠在伤害数字上的是弱点评价字 WEAK / BREAK",
+      "proposal": "rpg 包的 rating 改成 WEAK / BREAK（或按 cnt.subtype = combat 取一组弱点评价字）",
+      "resolvedBy": "M12b-61（rpg 包战斗评级字 WEAK · BREAK；评级的画法与位置见新缺口）"
+    },
+    {
+      "screen": "battle-command / pause",
+      "kind": "renderBug",
+      "severity": "low",
+      "what": "头像按 vis.silhouette@avatar = diamond 裁成菱形后，首字仍按圆形头像的底部位置写，落在菱形外下方、溢出名牌行",
+      "proposal": "avatar() 的首字位置按外形的内切区取（菱形 / 盾形居中写在形内）",
+      "resolvedBy": "M12b-18 / M12b-67（名牌改 statusStrip 不画头像；行动顺序菱形里首字居中）"
+    },
+    {
+      "screen": "battle",
+      "kind": "missingOption",
+      "severity": "medium",
+      "what": "el.feedback 的 rating 画成右上角独立的评级块（大号“破”+ 一行“WEAK · BREAK”），不叠在伤害数字上；原作是压在被打敌人身上、叠在伤害数上方的一个斜体描边词 WEAK / BREAK",
+      "proposal": "rating 加 wordOnly 画法（只画评价词，字样走 typ.fillStyle@el.feedback），attachTo = target 时叠在第一个飘字上方"
+    }
+  ],
+  "notes": "把 JRPG 的「窗」稀释成细线与宝蓝渐变横带：右上名牌（名字 + HP / SP 细条 + BP 宝石）、顶部细线上的菱形头像行动顺序、敌人脚下的盾形护盾数与问号弱点格。巨大的衬线伤害数字和 WEAK / BREAK 字是唯一「大声」的元素，其余都是白字、小而克制；探索时几乎零 HUD，只有 NPC 头顶的省略号气泡，让 HD-2D 的移轴景深做主角。",
+  "scores": {
+    "battle": [
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 4,
+        "type": 5,
+        "shape": 3,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 5,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 5,
+        "palette": 7,
+        "type": 6,
+        "shape": 6,
+        "density": 5,
+        "overall": 5,
+        "round": 3
+      },
+      {
+        "layout": 6,
+        "elements": 7,
+        "palette": 7,
+        "type": 6,
+        "shape": 7,
+        "density": 6,
+        "overall": 6,
+        "round": 4
+      }
+    ],
+    "battle-boss": [
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 4,
+        "type": 5,
+        "shape": 3,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 4,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 5,
+        "palette": 7,
+        "type": 6,
+        "shape": 6,
+        "density": 4,
+        "overall": 5,
+        "round": 3
+      },
+      {
+        "layout": 6,
+        "elements": 7,
+        "palette": 7,
+        "type": 6,
+        "shape": 7,
+        "density": 6,
+        "overall": 6,
+        "round": 4
+      }
+    ],
+    "field": [
+      {
+        "layout": 4,
+        "elements": 4,
+        "palette": 5,
+        "type": 5,
+        "shape": 4,
+        "density": 3,
+        "overall": 4,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 5,
+        "type": 5,
+        "shape": 4,
+        "density": 6,
+        "overall": 5,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 5,
+        "type": 5,
+        "shape": 4,
+        "density": 6,
+        "overall": 5,
+        "round": 3
+      },
+      {
+        "layout": 6,
+        "elements": 6,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 7,
+        "overall": 6,
+        "round": 4
+      }
+    ],
+    "battle-command": [
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 4,
+        "type": 5,
+        "shape": 3,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 5,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 5,
+        "overall": 4,
+        "round": 3
+      },
+      {
+        "layout": 7,
+        "elements": 7,
+        "palette": 7,
+        "type": 6,
+        "shape": 6,
+        "density": 6,
+        "overall": 7,
+        "round": 4
+      }
+    ],
+    "dialogue": [
+      {
+        "layout": 3,
+        "elements": 2,
+        "palette": 5,
+        "type": 5,
+        "shape": 4,
+        "density": 3,
+        "overall": 2,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 5,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 7,
+        "elements": 6,
+        "palette": 6,
+        "type": 6,
+        "shape": 6,
+        "density": 6,
+        "overall": 6,
+        "round": 3
+      },
+      {
+        "layout": 7,
+        "elements": 7,
+        "palette": 6,
+        "type": 6,
+        "shape": 6,
+        "density": 7,
+        "overall": 6,
+        "round": 4
+      }
+    ],
+    "pause": [
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 4,
+        "type": 5,
+        "shape": 5,
+        "density": 5,
+        "overall": 4,
+        "round": 1
+      },
+      {
+        "layout": 6,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 5,
+        "overall": 5,
+        "round": 2
+      },
+      {
+        "layout": 6,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 7,
+        "density": 5,
+        "overall": 6,
+        "round": 3
+      },
+      {
+        "layout": 7,
+        "elements": 7,
+        "palette": 6,
+        "type": 6,
+        "shape": 7,
+        "density": 6,
+        "overall": 7,
+        "round": 4
+      }
+    ]
+  },
+  "round1Diffs": {
+    "battle": [
+      "右上没有名牌横带：el.party.form = tag 把名字挂到了世界里的三个单位头顶（青山 / 阿月 / 白衣），参考是右上一条宝蓝横带（名字 + HP / SP 数值 + 细条）",
+      "行动顺序画成圆形头像 + 红绿圈，vis.silhouette@el.turnOrder = diamond 对 portraitQueue 不生效；参考是菱形，首位放大",
+      "三个飘字（1286 / 420 / 366）放大 1.6 倍后挤在画面顶端、被裁掉一半；参考只有一个大伤害数字压在敌人身上",
+      "el.feedback.form 里的 rating 没画（只画第一个画法），没有 WEAK 字",
+      "强调色是金色、意图盾牌是金色；参考 UI 几乎全是白字 + 宝蓝，金色只在伤害数字上",
+      "背景是正午的城堡与蓝天，参考是暗色洞穴：浅色 UI 的对比关系完全不同"
+    ],
+    "battle-boss": [
+      "同 battle：名牌变成世界里的名字标签、圆形头像队列、飘字挤在顶端",
+      "技能名提示卡（el.notify toast）被推到行动顺序下方，和飘字 / 意图徽章叠在一起",
+      "参考的 Boss 战顶部只有当前行动者一个大菱形 + 细线，右侧是下回合顺序"
+    ],
+    "field": [
+      "左上一条很宽的「发现新区域」横幅（el.notify banner），参考画面里没有任何横幅",
+      "交互提示是带按键的胶囊卡，参考是 NPC 头顶只有「…」的白色小气泡",
+      "小地图偏大（0.9），参考截图隐藏了 HUD"
+    ],
+    "battle-command": [
+      "BP 被画成右上一条带「灵草 24/30」字样的绿色横条，不像名牌里的宝石行",
+      "指令列表是画面中部的三行编号文字（1. 2. 3.），没有底带、没有选中高亮带",
+      "队伍仍是世界里的名字标签；行动顺序是圆形头像"
+    ],
+    "dialogue": [
+      "模板主体 = 场景，画面中间压了一大块「场景（需素材）」灰盒",
+      "台词画成框中间一条黑色字幕条（cmp.dialogBox = bar 让 el.subtitle 变成带底字幕），框里还有「确定」按钮与右上 X",
+      "原作对话框是深蓝半透明通栏 + 左上说话人名 + 白字段落 + 右下闪烁箭头"
+    ],
+    "pause": [
+      "右侧队伍栏没画出来：el.party.form = tag 把名字挂到了世界里",
+      "选中行是整条金色实底，原作是更亮的蓝带",
+      "底部分隔饰条是同心圆（vis.motif = geometric），原作是细线 + 菱点"
+    ]
+  },
+  "round2Diffs": {
+    "battle": [
+      "配色对上了：宝蓝渐变底 + 白字 + 银蓝细描边，金色只剩伤害数字；暗色洞穴背景让浅色 UI 的明暗关系接近参考",
+      "行动顺序是左上 5 个蓝色菱形 + 首字（首位略大），按固定 52px 间距撒开约 40% 屏宽；参考是 1 大 2 小菱形紧挨着排、框里是角色小像，后面接一条贯穿顶部的细双线与「NEXT TURN」下回合段",
+      "右上名牌的位置、尺寸、宝蓝底对上了，但内容仍是圆头像 +「门派 / 战力」行 + 两条粗条子（绿 / 黄）且不写数值；参考没有头像，是「名字 + BP 宝石行 + HP 310/462、SP 25/43 大数字 + 细条（绿 / 灰蓝）」",
+      "名牌底带是上下描边的整块竖向渐变矩形，左右两端不透明；参考是横向渐隐、两端透明的宝蓝带",
+      "名字「剑灵·青光」被 2.5px 黑描边糊成一块黑底；名牌底边还多了一条「细线 + 菱点 + 细线」分隔饰条，参考名牌没有",
+      "伤害仍是三个数字（金色 1286 + 白色 366 / 420）挤在画面上中，旁边一个蓝盾红字 86 意图徽章；参考是压在敌人身上的一个超大浅粉白衬线数字（深红描边）+ 叠在上面的 WEAK 字",
+      "敌人脚下的「VULNERABLE + 盾形护盾数 + 一排问号弱点格」（每个敌人一组）完全没有"
+    ],
+    "battle-boss": [
+      "与 battle 相同：配色对上；行动顺序、名牌内容、名牌渐隐、伤害数字、弱点格的差异不变",
+      "参考 Boss 战顶部只有当前行动者一个大菱形 + 细线 + 线上「NEXT TURN」与下回合小像；我们仍是 5 个菱形，顶排偏挤",
+      "技能名提示的位置对上了（上中、行动顺序下方），但画成带 ✦ 图标的宽横条、写「成就解锁：初入江湖」；参考是贴字宽的小深色框 + 细亮边，只写一个技能名",
+      "伤害数字在画面上方；参考 867 压在 Boss 身体下部，弱点格在 Boss 脚下居中"
+    ],
+    "field": [
+      "「发现新区域」横幅已删，探索时近乎零 HUD 的密度对上了",
+      "交互提示仍是「F 采集灵草」的深蓝胶囊（按键帽 + 动作名），只挂在一处；参考是好几个 NPC 头顶各一个只有「…」的白色小圆气泡",
+      "右下小地图是方形描边小框（参考宣传图隐藏了 HUD，按记忆编码），没有遇敌危险度圆点"
+    ],
+    "battle-command": [
+      "右侧名牌列 4 条的位置、数量、宝蓝底 + 细描边对上了；但每条是圆头像 + 名字 + 一条粗条（cmp.gauge@el.party = thinBar 没生效），没有 HP / SP 数值和 BP 宝石",
+      "指令列表是名牌列下方右中的 3 条居中按钮带（选中项整条宝蓝实底），内容是对话回复；原作（凭记忆）挂在当前行动者名牌左侧，是向左渐隐的左对齐指令带（攻击 / 能力 / 道具 / 防御 / 逃跑），选中项更亮 + 指针",
+      "画面中部浮着一个蓝盾红字 86 的意图徽章；原作是敌人脚下的护盾数 + 弱点格",
+      "右下按键图例（F 拾取 / 1 剑气 / Tab 选敌 / B 背包）是动作游戏的内容，原作是确认 / 返回 / 加成键",
+      "左上行动顺序与 battle 相同（5 个菱形 + 首字，没有轨道线）"
+    ],
+    "dialogue": [
+      "灰盒、黑色字幕条、「确定」按钮都去掉了：深蓝渐变通栏 + 左对齐白字段落 + 右下蓝色 ▼ 闪烁箭头，基调对上了",
+      "左上是大号衬线「NPC 对话」界面标题（黑描边 + 投影），不是说话人名小字",
+      "右上仍有关闭 X",
+      "框几乎占满画面宽（左右各约 20px 边距），原作框窄于画面",
+      "底边多了一条「细线 + 菱点 + 细线」饰条",
+      "台词是三行长段告示，原作多是一两句对白"
+    ],
+    "pause": [
+      "round 1 的三处都修好了：右侧四条宝蓝名牌画出来了，选中行是宝蓝实底 + 左侧亮竖条，底部饰条是细线 + 菱点",
+      "菜单项是标题画面的「继续游戏 / 新游戏 / 读取存档 / 设置 / 制作人员 / 退出」；原作局内菜单（凭记忆）是道具 / 能力 / 装备 / 状态 / 队伍 / 存档 / 设置等",
+      "队伍行仍是圆头像 + 名字 + 一条粗血条，没有角色小像、等级与 HP / SP 数值",
+      "选中行是整条实底；原作是更亮的渐隐蓝带 + 指针",
+      "左下金钱行与带框时钟、右下按键图例的位置合理；原作金钱与游戏时间是不带框的白字行"
+    ]
+  },
+  "round3Diffs": {
+    "battle": [
+      "伤害数字已是浅粉白填充 + 深红描边的衬线字（配色对上、不再是金色），但仍是三个数字（1286 / 420 / 366）挤在画面上中，旁边一个蓝盾红字 86 意图徽章；参考是压在敌人身上的一个超大数字",
+      "评级字是右侧单独一处的“S PERFECT”（内容包的节奏评级，且不叠在数字上）；参考是叠在伤害数字上的 WEAK",
+      "名牌已是菱形头像 + 气血 / 内力两条细条（内力灰蓝）、底边没有饰条、名字不再糊黑描边；但仍有头像与“门派 / 战力”行，不写 HP / SP 数值、没有 BP 宝石",
+      "行动顺序仍是 5 个固定间距的纯色菱形 + 首字，没有贯穿顶部的细双线与 NEXT TURN 段",
+      "敌人脚下的 VULNERABLE + 护盾数 + 问号弱点格没有；名牌是两端不透明的竖向渐变块"
+    ],
+    "battle-boss": [
+      "同 battle：伤害数字配色、名牌细条与菱形头像对上；仍是三个数字浮在画面上中，参考 867 压在 Boss 身体下部",
+      "技能名提示仍是带 ✦ 的宽条“成就解锁：初入江湖”；参考是行动顺序下方贴字宽的小名签，只写技能名",
+      "顶部仍是 5 个菱形，参考只有一个大菱形 + 细线 + NEXT TURN 与下回合小像",
+      "Boss 脚下的 VULNERABLE + 弱点格没有"
+    ],
+    "field": [
+      "与第二轮相同：探索时近乎零 HUD 的密度对上",
+      "交互提示仍是“F 采集灵草”的深蓝胶囊（按键帽 + 动作名），只挂一处；参考是多个 NPC 头顶只有“…”的白色小圆气泡",
+      "右下小地图是方形描边小框，没有遇敌危险度圆点（按记忆编码）"
+    ],
+    "battle-command": [
+      "（凭记忆）右侧名牌列已是菱形头像 + 细条；但首字压在菱形下角、伸出名牌底边，仍没有 HP / SP 数值与 BP 宝石",
+      "指令仍是名牌列下方右中的 3 条居中按钮带（选中项整条宝蓝实底），内容是对话回复；原作挂在当前行动者名牌左侧，是向左渐隐的左对齐指令带 + 指针",
+      "画面中部浮着蓝盾红字 86 的意图徽章；原作是敌人脚下的护盾数 + 弱点格",
+      "右下按键图例是动作游戏内容（拾取 / 剑气 / 选敌 / 背包）；左上行动顺序与 battle 相同"
+    ],
+    "dialogue": [
+      "（凭记忆）框已按 lay.panelSize 收窄居中、✕ 与底边饰条去掉、大号“NPC 对话”标题换成了说话人名——基调对上",
+      "说话人名是宝蓝实底梯形名签“掌门”；原作是框左上一行不垫底的小字",
+      "台词是三行长段告示，原作多是一两句对白"
+    ],
+    "pause": [
+      "（凭记忆）菜单行已不垫灰底，选中项是半透明浅蓝带 + 左亮竖条 + 蓝字，名牌列是菱形头像 + 细条——更接近原作的细线与渐隐蓝带",
+      "菜单项仍是标题画面那一套（继续游戏 / 新游戏 / 读取存档 / 设置 / 制作人员 / 退出）",
+      "名牌没有等级与 HP / SP 数值，首字压在菱形下角",
+      "右上仍有“Esc 返回”药丸；左下金钱行与时钟仍带框"
+    ]
+  },
+  "round4Diffs": {
+    "battle": [
+      "伤害数字是右上方一个大号“1286”，评级字是它右边单独一块大红“破”+“WEAK · BREAK”；参考是压在被打敌人身上的伤害数 + 叠在上面的斜体 WEAK",
+      "弱点格只有一组（VULNERABLE + 盾 4 + 问号格），浮在画面中部唯一角色的头顶；参考每个敌人脚下各一组",
+      "行动顺序已是细双线轨道 + 菱形 + NEXT TURN，但菱形是红 / 绿描边 + 剪影 + 首字，参考是银框里的角色像素小像",
+      "右上状态带（名字 + BP + HP / SP 数字细条、两端渐隐）已对上，只是 BP 是白点、参考是橙色小宝石"
+    ],
+    "battle-boss": [
+      "伤害数字“1286”浮在右上方，参考 867 压在 Boss 身体下部",
+      "弱点格在画面中部的角色头顶，参考在 Boss 脚下居中",
+      "技能名已是贴字宽的深色小名签，但画在轨道线上方，参考在线下方",
+      "顶部一个大菱形 + NEXT TURN + 下回合小菱形已对上；菱形里没有像素小像"
+    ],
+    "field": [
+      "多个“…”白色小气泡挂在城墙的几个 POI 上、位置偏高偏散，参考挂在城镇里一个个 NPC 头顶",
+      "右下小地图是方形描边小框 + 角上黄色危险度圆点（参考宣传图隐藏了 HUD，按记忆编码，无法核对）"
+    ],
+    "battle-command": [
+      "（凭记忆）指令窗已挂在当前行动者名牌左侧、向左渐隐、左对齐 + ▶ 指针，但是一整块带行分隔的面板，原作每条指令是一条独立的渐隐蓝带",
+      "弱点格只有一组、浮在画面中部的角色头顶，原作每个敌人脚下各一组",
+      "名牌与行动顺序没有角色像素小像，BP 是白点而非橙色宝石；右下按键图例已是确认 / 返回 / 加成 / 减成"
+    ],
+    "dialogue": [
+      "（凭记忆）说话人名已是框左上不垫底的小字，台词是一句对白——对上",
+      "台词前多一段“掌门看着你：”的叙述前缀，原作框里只有引号里的对白",
+      "框比两行字高出不少、下半空着"
+    ],
+    "pause": [
+      "（凭记忆）选中行“技能”是浅蓝字压在浅蓝实底带上，几乎读不出；原作是更亮的渐隐蓝带 + 白字 + 指针",
+      "左下时钟仍装在带框的小盒里，原作金钱与游戏时间是不带框的白字行",
+      "名牌没有角色像素小像；底边一条“细线 + 菱点 + 细线”饰条横贯全屏",
+      "局内主菜单项、名牌的 Lv 与 HP / SP 数字、标题两侧菱点细线、去掉 Esc 药丸都已对上"
+    ]
+  },
+  "revisions": [
+    "整体配色从深藏青 + 金改为宝蓝渐变底（col.surface #16336a → col.surface2 #0a1430，vis.fill = gradient，vis.opacity 0.65）、白字、强调色宝蓝 #3f74c4（菱形头像、盾形徽章、选中行、按键帽都跟着变蓝）、第二强调淡钢蓝；描边改自定义银蓝（vis.strokeColor = custom，col.border #b8c6dc），金色只留在伤害数字",
+    "vis.motif 改为 none（分隔饰条中间的符号回落成菱形），饰件只留 dividers：面板底部的花线变成「细线 + 菱点 + 细线」",
+    "画面换成暗色洞穴（art.scene = cave，color.brightness 0.38），让浅色 UI 的明暗关系接近参考；field 一屏单独换回城堡城下町（game.scene = castle，color.brightness 0.9）",
+    "battle / battle-boss：行动顺序改用 el.turnOrder.form = icons（菱形、首位放大），scale 1.4 / 1.2；右上名牌改用 el.selection.form = panel（宝蓝渐变底带 + 名字 + 两条条子，scale 0.72）代替会挂进世界的 el.party = tag；飘字 scale 降到 1.2 / 1.4，不再顶出画面；删掉不会被画出来的 rating",
+    "battle-boss：技能名提示卡缩到 0.75、行动顺序缩到 1.2，两者在顶排不再横向重叠，提示卡留在上中，不再被推下去压住飘字",
+    "field：删掉参考里没有的「发现新区域」横幅，信息密度降到 0；交互气泡保持 0.6，小地图缩到 0.75 并设为背景优先级",
+    "battle-command：队伍改为 el.party.form = frames 竖排四条（满员时的右侧名牌列）；指令改为 el.choices.form = buttons（选中项为宝蓝实底带），放在右中、缩到 0.7；删掉画成横条的 BP（el.resources），按键图例缩到 0.8",
+    "dialogue：主体改为 none（去掉「场景（需素材）」灰盒），cnt.elements 置空（不再画中间的黑色字幕条），ix.mode = readOnly（去掉「确定」按钮），lay.panelSize 0.45；短段台词由模板的文本块画成左对齐白字段落 + 右下闪烁箭头；直角、上下两条描边",
+    "pause：队伍改为 el.party.form = frames（右中竖排四条，scale 1.3），按键图例缩到 0.85；选中行随强调色变为宝蓝",
+    "gaps：删掉已能表达的「菱点分隔线」大部分（改记夹标题花线）；新增名牌内容（statusStrip）、逐元素覆盖不生效、对话框关闭钮 / 宽度三条；行动顺序、伤害数字两条按现状改写",
+    "R3 前（M12a 之后）：base 加 ast.ornamentScope = templatePanels（分隔饰条只画在界面主面板上，HUD 小名牌不再带）；battle / battle-boss 加 cmp.gauge@el.selection = thinBar + col.accent2@el.selection 灰蓝（HP / SP 细条，SP 不再写死黄）、col.accent@el.feedback 浅粉白 + typ.outlineColor@el.feedback 深红（伤害数字配色）；battle 把 rating 加回 el.feedback.form（WEAK 评价字）；battle-boss 加 el.feedback.occlusion none、scale 1.4 → 1.2（目检修复后大号飘字找不到不压面板的位置就不画，参考的伤害数字就压在 Boss 身上）；dialogue 加 ast.ornaments [-dividers]（对话框底边不画饰条）。dialogue 的 lay.panelSize 0.45 保留：tray 现在按它取宽并居中，正合原作「框窄于画面」。",
+    "R4 前（M12b 之后）：base 加 cmp.plate@title = flankLines（标题两侧菱点细线，#21）、col.accent@el.party 绿 / col.accent2@el.party 灰蓝（状态带 HP / SP 细条色）；battle / battle-boss 的 cnt.elements 把 el.selection 换成 el.party（去掉 el.selection.* 与 @el.selection 键），el.party.form = statusStrip + pointsRow = lightUp + valueLabel = currentMax + count 1 + screenAnchor tr + scale 0.8 + vis.fade@el.party = both（名字 + BP 点亮格 + HP / SP 数值细条、无头像、两端渐隐的宝蓝带，#0 / #1），el.turnOrder.track = double + segments + spacing tight（顶部细双线 + NEXT TURN，battle-boss 再写 roundSize 1：一个大菱形，#2），el.threat.form intent → weaknessGrid（脚下 VULNERABLE + 护盾数 + 问号格，#5），el.feedback.count 1 + typ.fillStyle@el.feedback = gradient + fillColors 浅粉 + shadowOffset 6（一个大伤害数字，#7）；battle-boss el.notify.form toast → label（贴字宽技能名签，#15）；field el.interact.form bubble → iconBubble（多个 NPC 头顶的「…」小气泡，#19），加 el.meter = dangerDot 停在小地图右下角（dockTo el.minimap、dockSide cornerBR，#20）；battle-command el.party frames → statusStrip（同上）、行动顺序同 battle、el.threat → weaknessGrid，el.choices.form buttons → commandList + dockTo el.party + dockSide left + dockFollow active（挂在当前行动者名牌左侧、向左渐隐的指令带，#13）；dialogue cmp.plate@name tab → none（说话人名是不垫底的小字）；pause el.party frames → statusStrip（scale 1.3 → 0.9，四条状态带放得下）+ cmp.listRow@el.party = [level]（名字行写 Lv，#16 部分）+ vis.fade@el.party = both，ix.close keyGlyph → none（去掉 Esc 返回药丸）。",
+    "2026-10 2D 场景改指向（审查修复 22）：探索画面换成俯视小镇（art.scene = tileTown，color.brightness 0.9；field 一屏不再单独换城堡，直接用它）；battle / battle-boss / battle-command 三屏单独换回暗色洞穴（game.scene = cave，color.brightness 0.38），浅色 UI 的明暗关系仍接近参考",
+    "2026-10-23 技术补全（轨道 Z2）：探索画面从俯视小镇换成 HD-2D 小镇（art.scene = hd2d-town：木筋墙房子、卵石街、像素小人、透视长焦 + 移轴，原作 field 截图的那条街）；battle 三屏仍是暗色洞穴，俯视小镇留在场景图库的「换环境」里"
+  ]
+}

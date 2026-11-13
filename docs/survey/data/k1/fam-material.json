@@ -1,0 +1,1116 @@
+{
+  "meta": {
+    "task": "K1 · UI 风格族分析：纸 / 笔记本 / 羊皮纸材质族 + 4 个无参考卡皮肤（新粗野主义、毛玻璃、新拟态、构成主义）",
+    "date": "2026-10-14",
+    "method": "uiRefs.json 里 family = 手绘笔记本（15 张）/ 羊皮纸任务书（11 张）共 26 张卡全部看过联系表或单图（TUNIC、Don't Starve 的 Steam 商店图无 UI，改看 IIG 图与卡注）；另看了 12 张跨族但带纸面语法的卡（TOEM、The WereCleaner、Do Not Feed the Monkeys、Obra Dinn、Little Goody Two Shoes、Bear and Breakfast、Kingdom Rush、Defender's Quest、World of Warcraft、Overwatch、Hi-Fi RUSH、蛋仔派对）。评论只用 ui-review-stats.json 的计数。4 个无卡皮肤用网页检索 + 已有卡的近似证据，每条标可信度。",
+    "outOfScope": "四张 GameUI 手游卡（gameui:2752、gameui:2630、gameui:3105、gameui:4239）里的首充、签到、礼包截图不参与推导，只用它们的非商业化画面（藏宝图关卡路线、选王国、加载地图、下载确认弹窗）。",
+    "notes": "assignments 里有 4 张卡建议换族（见各族 misfits）：Inkulinati、Wildermyth 改到羊皮纸任务书的子族；Cozy Grove、魔术精品店改判圆润友好。"
+  },
+  "families": [
+    {
+      "family": "手绘笔记本",
+      "skin": "skin.handdrawn",
+      "noCards": false,
+      "definition": "界面像玩家或角色亲手写画在纸上的东西：练习本、素描本、手账、日记。它的识别点不是纸色，而是手留下的痕迹：歪线、手写字、涂改、贴纸、胶带、页边涂鸦，以及纸张随手斜放的样子。它把界面从「系统」变成「某个人的记录」，所以常和发现、成长、童年、日常这几类题材绑在一起。",
+      "whenToUse": "适合玩家视角就是「我在记录 / 我在想象」的游戏：探索收集（图鉴 = 手账）、解谜推理（玩家自己填答案）、童年 / 回忆叙事、轻度卡牌与生存。不适合高速动作的常驻 HUD（手写数字与抖线在快速扫读时出错）和需要冷静权威感的系统（军事、硬科幻）。",
+      "grammar": {
+        "shape": "纸张是矩形但不规整：撕下的一侧做撕边或锯齿，装订侧保持齐边，角可以折起；贴纸是剪刀剪出的不规则外形，带一圈白边。要把普通面板改成这个族：先给面板一侧加撕边，再整体随手转 1–4°，但面板里的列表行和数字保持水平。",
+        "line": "线是笔画，不是边框：铅笔、圆珠笔、马克笔线，宽 1.5–3px，带轻微抖动和断头。纸张本身多数不描边，靠纸色和投影与背景分开；描边只给手画的框、圈、下划线和箭头。",
+        "surface": "米白或浅黄纸，可加低对比的横线或方格（蓝灰线）和一条红色页边线；素描本是无线白纸；手账拼贴在纸上再叠彩色卡纸、胶带、便签。纸纹颗粒要轻，文字底不能花。",
+        "color": "底是纸色，字是墨色（深蓝灰 / 铅灰，不用纯黑）。强调色像荧光笔、红笔批改、蜡笔原色；素描本子族几乎单色，只在关键状态上着色。",
+        "type": "标题用手写体（马克笔大写或儿童字）；正文用有手写感但易读的字（楷体、圆体、规整手写体）；数字用印刷体或等宽，不用手写数字。",
+        "material": "纸、胶带、回形针、图钉、铅笔、橡皮、蜡笔、剪刀。这些文具既是饰件，也可以直接做成按钮（RPG Time 的铅笔、橡皮、铃铛都可以点）。",
+        "ornament": "页边涂鸦、星星、箭头、感叹号贴纸、对勾、圈出、划掉。装饰预算中等，但每个装饰都要像「人画上去的」，不能是对称的花边。",
+        "icon": "手绘彩绘或铅笔线稿图标，和世界里的物件同一画法；图鉴物品可以做成剪下来贴上的贴纸（带白边）。",
+        "motion": "翻页；纸张滑入后带一点回弹落下；贴纸「啪」地贴上；笔画描出、划掉、圈出的书写动画；画面有线条抖动时 UI 线条也按一拍二同步抖。",
+        "layout": "摊开的本子：左页列表、右页详情；书签从本子边缘伸出来做页签；元素自由散落但有一条看不见的基线；整屏可以是一张书桌，HUD 是桌上的文具。"
+      },
+      "params": {
+        "ast.core": "texture",
+        "ast.coreMat": "paper",
+        "ast.container": "notebook",
+        "vis.edge": "torn",
+        "vis.jitter": 0.45,
+        "vis.tilt": 2,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 2,
+        "vis.strokeColor": "ink",
+        "vis.depth": "softDrop",
+        "vis.iconStyle": "painted",
+        "col.lightness": "light",
+        "col.strategy": "neutralAccent",
+        "typ.display.family": "handwritten",
+        "typ.body.family": "kai",
+        "typ.numerals.family": "tabular",
+        "rel.harmony": "sameMedium",
+        "st.done": "strike",
+        "ix.focus": "brushSwash",
+        "cmp.input": "underline",
+        "cmp.plate": "tab",
+        "el.objective.form": ["checklist", "note"],
+        "mo.enter": "slide",
+        "mo.easing": "overshoot"
+      },
+      "artPairing": [
+        { "artStyle": "笔记本涂鸦 (Notebook doodle)", "relation": "sameMedium", "why": "画面本身就是作业本铅笔画时，UI 用同一支笔、同一张纸最自然（steam:1839510）。" },
+        { "artStyle": "铅笔素描 (Graphite)", "relation": "sameMedium", "why": "素描卡牌、素描本图鉴与灰阶画面同源，只需决定哪里上色（steam:2095150、steam:2501600）。" },
+        { "artStyle": "蜡笔／儿童画 (Crayon)", "relation": "sameMedium", "why": "OMORI 的蜡笔头像框和手画选项云朵，与儿童画式的世界一致（steam:1150690）。" },
+        { "artStyle": "马克笔／填色书 (Coloring book)", "relation": "sameMedium", "why": "Chicory 的世界是待上色的线稿，UI 用黑底手写气泡，与粗墨线一致（steam:1123450）。" },
+        { "artStyle": "暗黑童话／蒂姆·伯顿式 (Burtonesque)", "relation": "sameMedium", "why": "刮擦墨线 + 旧纸按钮 + 带刺铁艺相框，正是 Don't Starve 的画面语言（iig:dont-starve）。" },
+        { "artStyle": "卡通渲染／风之杖式 (Toon cartoon)", "relation": "contrast", "why": "3D 卡通世界配手账 UI，用来表现「孩子在本子上想象这场冒险」，对比有叙事理由（steam:1586800）。" },
+        { "artStyle": "平滑低模／色板贴图 (Smooth low poly)", "relation": "contrast", "why": "扁平色块的世界配一本黑白素描笔记，笔记被读成主角的个人记录，与世界分开（steam:1931770）。" },
+        { "artStyle": "卡纸剪贴 (Construction paper)", "relation": "neutral", "why": "剪纸、贴纸感的卡片既能贴在 3D 卡通上也能贴在 2D 上，是最容易嫁接的子语法（steam:592480）。" },
+        { "artStyle": "照片写实 (Photorealism)", "relation": "contrast", "why": "只在叙事内物件上成立（主角的笔记本、拿在手里的清单）；做常驻 HUD 会显得廉价。" }
+      ],
+      "genres": [
+        { "genre": "life", "count": 2, "why": "养成 / 探索收集把「我的本子」做成图鉴和背包（Lil Gator Game、Chicory）。" },
+        { "genre": "card", "count": 2, "why": "卡牌本身就是纸，铅笔卡面 + 书本卡组管理顺理成章（Wash Card、DICEOMANCER）。" },
+        { "genre": "survival", "count": 2, "why": "Don't Starve 的刮擦墨线与旧纸按钮，把生存的寒酸感做进界面。" },
+        { "genre": "puzzle", "count": 1, "why": "Chants of Sennaar 让玩家在笔记里自己填词义，笔记就是解谜工具。" },
+        { "genre": "rpg", "count": 1, "why": "RPG Time 整个游戏是作业本上的 RPG，HUD 是桌上的文具。" },
+        { "genre": "explore", "count": 1, "why": "Knights And Bikes 的改装页是一排贴纸卡，童年题材。" },
+        { "genre": "horror", "count": 1, "why": "OMORI 用儿童画的天真来反衬恐怖。" },
+        { "genre": "action", "count": 1, "why": "TUNIC 的说明书是游戏里捡到的纸页，局内 HUD 仍很克制。" }
+      ],
+      "exemplars": [
+        { "card": "steam:1586800", "why": "手账拼贴的完整样本：线圈本、横线纸、回形针、图钉、胶带、贴纸、蜡笔、剪刀，页签从本子顶边伸出，已装备用绿色对勾贴纸。" },
+        { "card": "steam:1839510", "why": "整屏书桌：玩法区是作业本上的铅笔画，HUD 是贴在桌面四周的手工卡纸与实物文具，地图是纸板立体书。" },
+        { "card": "steam:2501600", "why": "书本容器的教科书：摊开的书左右页放卡格，顶边插着带图标的书签页签，左缘伸出分类标签，桌上放羽毛笔、墨水瓶、骷髅。" },
+        { "card": "steam:1931770", "why": "叙事内手记：左页墨笔插图、右页符号，玩家自己填写词义；书签页签在上缘，符号用黑底圆章。" },
+        { "card": "iig:dont-starve", "why": "哥特刮擦子族：黑底毛边面板、撕边旧纸按钮、手写名字缎带、带刺铁艺椭圆相框、木纹背景。" },
+        { "card": "steam:1123450", "why": "墨线涂鸦子族：黑色手画气泡 + 白色手写字，与黑白线稿世界同一支笔。" },
+        { "card": "steam:592480", "why": "贴纸卡片排：底部一排纸质卡片页签，选中项是米白纸 + 折角，未选是棕色卡纸，手写大写标签与橙色感叹号贴纸。" },
+        { "card": "steam:2095150", "why": "素描卡牌：铅笔线稿卡摆在木纹灰桌上，空位是虚线框，效果只用红 / 蓝 / 绿三块色标出。" }
+      ],
+      "crossFamilyEvidence": [
+        { "card": "steam:1307580", "why": "TOEM（极简单色族）：白卡粗黑描边 + 错位硬投影 + 手写大写字 + 集章圆格，是笔记本族与新粗野主义之间的桥。" },
+        { "card": "steam:2795000", "why": "The WereCleaner（漫画对话框族）：结算是叠放的报告纸（错位纸叠）、便签、日历、箭头形菜单标签，全部随手斜放在桌面上。" },
+        { "card": "steam:658850", "why": "Do Not Feed the Monkeys（拟物族）：线圈记事本上用圆珠笔把线索词圈成思维导图。" },
+        { "card": "steam:837470", "why": "Untitled Goose Game（极简单色族）：零 HUD，待办清单是一张手写纸条，完成即划掉。" },
+        { "card": "steam:653530", "why": "Return of the Obra Dinn（极简单色族）：航海日志书是主界面，19 世纪书页衬线排版；skin.handdrawn 把它列为参考，其实它属于印刷书页而不是手绘笔记本。" },
+        { "card": "steam:762940", "why": "Mineko's Night Market（圆润友好族）：日记是翻开的浮世绘风书。" }
+      ],
+      "misfits": [
+        { "card": "gameui:4239", "suggestedFamily": "圆润友好", "why": "能看到的只有下载确认弹窗：米白圆角卡 + 波浪分隔 + 紫色胶囊按钮，没有任何纸 / 笔迹语法；其余是开场插画。" },
+        { "card": "steam:1458100", "suggestedFamily": "圆润友好", "why": "HUD、对话、商店都是米白圆角卡 + 茶色标题条 + 绿色胶囊按钮；只有制作页是两页笔记本，算圆润友好里的笔记本局部。" },
+        { "card": "steam:957960", "suggestedFamily": "羊皮纸任务书 / 手抄本与木刻", "why": "整局在一本摊开的中世纪古书上：泛黄书页、墨滴、卷尾名牌、圆章头像，是手抄本而不是笔记本。" },
+        { "card": "steam:763890", "suggestedFamily": "羊皮纸任务书 / 冒险日志与藏宝图", "why": "事件页是毛边旧纸上的漫画分格，用来记录英雄传说，语法更接近冒险日志。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "手账拼贴 / 贴纸练习本",
+          "skin": null,
+          "noCards": false,
+          "definition": "线圈本或练习本上叠贴纸、胶带、便签、彩色卡纸，像小孩或少年的手账。饱和、热闹、随手，层叠和倾斜本身就是层级手段：越靠上、越斜、越花的，越像「刚贴上去的新东西」。",
+          "grammar": {
+            "shape": "主面板是线圈本或撕下的练习本页（一侧撕边）；信息块是剪下来的彩色卡纸矩形或不规则贴纸，带白边。",
+            "line": "马克笔粗线写标题，圆珠笔细线写说明；框线很少，靠卡纸色块分组。",
+            "surface": "横线纸 + 红色页边线，或方格纸；上面叠绿 / 粉 / 黄卡纸和半透明胶带。",
+            "color": "骨架多色、饱和偏高：卡纸原色 + 蜡笔色；文字底保持白或浅色卡纸。",
+            "type": "标题马克笔大写手写，正文圆润手写或圆体，字号偏大。",
+            "material": "胶带、回形针、图钉、蜡笔、剪刀直接画在画面边缘当道具。",
+            "ornament": "星星、感叹号、对勾贴纸；页面角落的小涂鸦。",
+            "icon": "手绘彩绘物品，选中的物品像贴纸一样带白边与投影。",
+            "motion": "贴纸弹出贴上（回弹）；页签切换时本子跳一下。",
+            "layout": "左页是列表 / 网格，中间是大卡片详情，右侧是角色或预览；页签沿本子上缘排开，带手柄键提示（LB / RB）。"
+          },
+          "params": {
+            "ast.coreMat": "paper",
+            "ast.container": "notebook",
+            "vis.pattern": "grid",
+            "vis.patternOpacity": 0.35,
+            "vis.edge": "torn",
+            "vis.tilt": 4,
+            "vis.depth": "softDrop",
+            "col.strategy": "polychrome",
+            "col.saturation": 1.15,
+            "typ.display.family": "handwritten",
+            "typ.display.case": "upper",
+            "typ.body.family": "round",
+            "vis.iconStyle": "painted",
+            "st.selected": "check",
+            "cmp.tab": "icon",
+            "cmp.tabIndicator": "raised",
+            "lay.layering": "breakout",
+            "lay.arrangement": "scatter",
+            "hier.inline": "chip",
+            "mo.enter": "pop",
+            "mo.easing": "overshoot"
+          },
+          "artPairing": [
+            { "artStyle": "卡通渲染／风之杖式 (Toon cartoon)", "relation": "contrast", "why": "Lil Gator Game：3D 卡通世界 + 孩子的手账，对比即叙事。" },
+            { "artStyle": "笔记本涂鸦 (Notebook doodle)", "relation": "sameMedium", "why": "RPG Time：画面就是作业本铅笔画。" },
+            { "artStyle": "卡纸剪贴 (Construction paper)", "relation": "sameMedium", "why": "Knights And Bikes 的贴纸卡片与剪纸感世界同源。" }
+          ],
+          "genres": [
+            { "genre": "life", "count": 1, "why": "收集 / 换装图鉴。" },
+            { "genre": "explore", "count": 1, "why": "童年冒险的改装页。" },
+            { "genre": "rpg", "count": 1, "why": "作业本 RPG 的整屏书桌。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1586800", "why": "线圈本 + 横线纸 + 回形针 + 胶带 + 贴纸 + 页签。" },
+            { "card": "steam:1839510", "why": "整屏书桌，HUD 是手工卡纸与文具。" },
+            { "card": "steam:592480", "why": "贴纸卡片排做页签，选中项折角。" },
+            { "card": "steam:2795000", "why": "跨族：桌面上的报告纸叠、便签、日历。" },
+            { "card": "steam:1307580", "why": "跨族：集章卡的单色版本。" }
+          ],
+          "variants": [
+            { "name": "整屏书桌", "diff": "ast.containerSurface = desk、lay.hudOrg = inMargin；按钮做成桌上实物（铅笔、橡皮、铃铛），HUD 占据玩法区外的整圈桌面。", "cards": ["steam:1839510", "steam:2795000"] },
+            { "name": "贴纸卡片排", "diff": "不画本子，只保留一排纸卡（cmp.slot = tallCard），选中卡折角并换成米白纸。", "cards": ["steam:592480"] }
+          ],
+          "failureModes": [
+            { "desc": "道具太多会挤占玩法区：书桌式布局四周全是文具，信息密度极高（卡注记为极密）。", "evidence": ["steam:1839510"] },
+            { "desc": "把倾斜也加到列表行和数字上会妨碍扫读；Lil Gator Game 只让贴纸和装饰倾斜，列表和说明保持水平。", "evidence": ["steam:1586800"] }
+          ],
+          "skinGap": "skin.handdrawn 只有方格纸 + 歪圆角黑框，没有撕边、胶带、贴纸白边、彩色卡纸层，也没有骨架多色；它更像「一个手画边框的面板」，不像手账。",
+          "paramGaps": ["横线纸 + 红色页边线（vis.pattern 只有方格纸）", "线圈装订 / 打孔", "胶带、回形针、图钉、贴纸白边这类饰件（ast.ornaments 没有）", "单个元素各自随机倾斜（vis.tilt 是全局一个角度）"]
+        },
+        {
+          "family": "铅笔素描本",
+          "skin": null,
+          "noCards": false,
+          "definition": "近乎单色的铅笔 / 墨笔素描本：灰阶线稿、排线阴影、留白。颜色被压到只剩一两处，用来标出效果、状态或玩家写下的答案，所以颜色本身就是最强的强调手段。",
+          "grammar": {
+            "shape": "书页或白卡片，矩形，四角干净；空位用虚线框画出。",
+            "line": "细铅笔线 1–1.5px，轻抖；阴影用排线，不用渐变。",
+            "surface": "无线白纸或米白素描纸，纹理很轻。",
+            "color": "骨架单色（铅灰 + 纸白）；只有效果 / 状态色块（红、蓝、绿）或一处书皮色（红色书皮）有饱和度。",
+            "type": "手写标题，正文小号印刷体以保证可读。",
+            "material": "书、书签、羽毛笔与墨水瓶（DICEOMANCER 的桌面道具）。",
+            "ornament": "极少：页边菱形花纹、书签上的小图标。",
+            "icon": "铅笔线稿图标，和卡面插图同一画法。",
+            "motion": "翻页；铅笔描出卡面；色块像水彩一样晕开。",
+            "layout": "左右对开：左页插图、右页文字或卡格；顶边插书签当页签。"
+          },
+          "params": {
+            "ast.coreMat": "paper",
+            "ast.container": "book",
+            "col.strategy": "mono",
+            "col.saturation": 0.15,
+            "col.lightness": "light",
+            "col.coding": ["status"],
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1.5,
+            "vis.strokeColor": "ink",
+            "vis.jitter": 0.35,
+            "vis.pattern": "hatching",
+            "vis.patternOpacity": 0.2,
+            "vis.depth": "flat",
+            "vis.iconStyle": "line",
+            "st.emptySlot": "dashed",
+            "hier.emphasis": ["value", "isolation"],
+            "typ.display.family": "handwritten",
+            "cmp.tab": "icon",
+            "lay.composition": "splitLR",
+            "rel.harmony": "sameMedium",
+            "mo.enter": "pageTurn"
+          },
+          "artPairing": [
+            { "artStyle": "铅笔素描 (Graphite)", "relation": "sameMedium", "why": "Wash Card、DICEOMANCER 的卡面本身就是铅笔画。" },
+            { "artStyle": "钢笔淡彩 (Ink & wash)", "relation": "sameMedium", "why": "Chants of Sennaar 笔记里的墨笔淡彩插图。" },
+            { "artStyle": "平滑低模／色板贴图 (Smooth low poly)", "relation": "contrast", "why": "高饱和扁平世界配单色笔记，笔记被读成「我的记录」。" }
+          ],
+          "genres": [
+            { "genre": "card", "count": 2, "why": "卡面就是素描，桌面就是牌桌。" },
+            { "genre": "puzzle", "count": 1, "why": "玩家填写的笔记就是谜题界面。" }
+          ],
+          "exemplars": [
+            { "card": "steam:2095150", "why": "铅笔卡 + 虚线空位 + 三色效果块。" },
+            { "card": "steam:2501600", "why": "书本卡组管理 + 书签页签 + 升级前后对比。" },
+            { "card": "steam:1931770", "why": "墨笔插图 + 玩家自填符号表。" }
+          ],
+          "variants": [
+            { "name": "叙事内手记", "diff": "rel.diegesis = diegetic；内容由玩家推理填写，笔记替代任务日志。", "cards": ["steam:1931770", "steam:553420"] }
+          ],
+          "failureModes": [
+            { "desc": "笔记成了唯一的导航和记录工具、又没有地图时，玩家会迷路：Chants of Sennaar 抽样评论里地图相关抱怨 5 条（400 条样本）。", "evidence": ["steam:1931770"] },
+            { "desc": "状态只靠一小块颜色区分（红 / 蓝 / 绿），色盲玩家难辨；需要加形状或图标冗余（推断，Wash Card 无评论样本）。", "evidence": ["steam:2095150"] }
+          ],
+          "skinGap": "skin.handdrawn 没有单色骨架 + 状态色块的组合，也没有排线阴影与虚线空位；它的方格纸底对素描本是多余的。",
+          "paramGaps": ["铅笔 / 炭笔线质（vis.stroke 只有实线、双线、虚线）", "书签从书页边缘伸出的页签位置", "水彩晕开式的着色动画"]
+        },
+        {
+          "family": "墨线涂鸦 / 儿童画",
+          "skin": null,
+          "noCards": false,
+          "definition": "粗黑墨线 + 蜡笔 / 马克笔色块的涂鸦式 UI：气泡是手画的云朵或黑色团块，字是手写体，线条抖动。和手账不同，它不强调纸张，而强调「画」：UI 是用画世界的同一支笔画上去的。",
+          "grammar": {
+            "shape": "手画的不规则气泡、云朵、团块；头像框是手画方框。",
+            "line": "粗墨线 3px 左右，明显抖动；可以一拍二沸腾。",
+            "surface": "纯色平涂（黑底或蜡笔色），不加纸纹。",
+            "color": "黑白骨架 + 高饱和蜡笔色；OMORI 的情绪状态用整块颜色编码。",
+            "type": "手写体，常用全大写儿童字。",
+            "material": "无实物材质，只有墨和蜡笔。",
+            "ornament": "星星、爱心、涂鸦小人。",
+            "icon": "蜡笔或马克笔画的图标。",
+            "motion": "线条抖动、气泡弹出；一拍二。",
+            "layout": "气泡挂在角色旁；战斗时四角各一个头像框，选项气泡围着当前角色。"
+          },
+          "params": {
+            "ast.core": "procedural",
+            "vis.opacity": 1,
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 3,
+            "vis.strokeColor": "ink",
+            "vis.jitter": 0.7,
+            "vis.edge": "brush",
+            "vis.depth": "flat",
+            "col.lightness": "dark",
+            "col.strategy": "polychrome",
+            "cmp.dialogBox": "bubble",
+            "el.choices.form": "bubbles",
+            "typ.display.family": "handwritten",
+            "typ.body.family": "kai",
+            "vis.iconStyle": "painted",
+            "mo.frameRate": "onTwos",
+            "rel.harmony": "sameMedium"
+          },
+          "artPairing": [
+            { "artStyle": "马克笔／填色书 (Coloring book)", "relation": "sameMedium", "why": "Chicory 的世界是待上色的线稿。" },
+            { "artStyle": "蜡笔／儿童画 (Crayon)", "relation": "sameMedium", "why": "OMORI 的头像与选项云朵。" },
+            { "artStyle": "动态抖线 (Line boil)", "relation": "sameMedium", "why": "UI 线条与画面同步沸腾才不穿帮。" }
+          ],
+          "genres": [
+            { "genre": "life", "count": 1, "why": "Chicory 的上色冒险。" },
+            { "genre": "horror", "count": 1, "why": "OMORI 用天真笔触反衬恐怖。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1123450", "why": "黑色手画气泡 + 白色手写字。" },
+            { "card": "steam:1150690", "why": "铅笔线稿标题页、蜡笔头像框、手画选项云朵；正文仍用像素字保证可读。" }
+          ],
+          "variants": [
+            { "name": "RPG Maker 黑框 + 手绘混搭", "diff": "OMORI：对话与背包仍是黑底白框（JRPG 窗口），只有头像、标题和选项气泡是手绘；col.lightness = dark、cmp.dialogBox = bar。", "cards": ["steam:1150690"] }
+          ],
+          "failureModes": [
+            { "desc": "手写体做长段正文会累；OMORI 把手绘留给头像和选项，正文用像素字，是可取做法。", "evidence": ["steam:1150690"] }
+          ],
+          "skinGap": "skin.handdrawn 的线只有 2px、抖动 0.6，没有黑底气泡、没有蜡笔色、没有一拍二；做不出 Chicory / OMORI 的粗墨线涂鸦感。",
+          "paramGaps": ["蜡笔 / 马克笔笔触质感", "手画云朵形气泡外形（vis.silhouette 没有云朵）"]
+        },
+        {
+          "family": "哥特刮擦墨线",
+          "skin": null,
+          "noCards": false,
+          "definition": "Edward Gorey / Tim Burton 式的刮擦墨线插画 UI：黑底或深木底上放撕边旧纸按钮，标题写在纸缎带上，头像装在带刺铁艺的椭圆相框里。它把笔记本族的「手痕」推向阴郁、维多利亚、童话恐怖。",
+          "grammar": {
+            "shape": "黑色面板边缘是刮擦笔触毛边；按钮是撕边旧纸小卡；头像是椭圆浮雕相框。",
+            "line": "细而乱的刮擦墨线，线头飞出。",
+            "surface": "深色木纹、黑底；按钮与物品格是米白旧纸。",
+            "color": "低饱和暗棕、黑、旧纸米黄；少量血红与金。",
+            "type": "手绘窄体衬线，略带怪诞。",
+            "material": "木、旧纸、铁艺、黄铜齿轮（日夜钟外圈）。",
+            "ornament": "带刺卷须、蝙蝠、骷髅式的铁艺框饰。",
+            "icon": "手绘彩绘，粗线条物件。",
+            "motion": "轻微抖动；整体动效少。",
+            "layout": "生存 HUD 分散：右上日夜钟 + 三个圆形计量，左侧竖排制作栏，底部物品格。"
+          },
+          "params": {
+            "col.lightness": "dark",
+            "col.saturation": 0.4,
+            "col.strategy": "neutralAccent",
+            "ast.core": "texture",
+            "ast.coreMat": "paper",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "wood",
+            "vis.edge": "brush",
+            "vis.jitter": 0.4,
+            "vis.motif": "skulls",
+            "vis.ornament": 2,
+            "cmp.plate": "ribbon",
+            "typ.display.family": "handwritten",
+            "vis.iconStyle": "painted",
+            "cmp.gauge@el.vitals": "orb",
+            "el.clock.form": "sunDial",
+            "st.locked": "silhouette",
+            "cmp.slot": "cell",
+            "lay.hudOrg": "scattered"
+          },
+          "artPairing": [
+            { "artStyle": "暗黑童话／蒂姆·伯顿式 (Burtonesque)", "relation": "sameMedium", "why": "Don't Starve 本身就是这一画风的代表作。" },
+            { "artStyle": "粗线黑块／羊皮纸哥特", "relation": "neutral", "why": "同样暖纸 + 黑块，但 Darkest Dungeon 的 UI 是石雕底座，偏重装饰族。" }
+          ],
+          "genres": [
+            { "genre": "survival", "count": 2, "why": "生存游戏的寒酸、阴郁基调。" }
+          ],
+          "exemplars": [
+            { "card": "iig:dont-starve", "why": "选角页：手写名字缎带、带刺相框、黑底毛边说明框、撕边纸按钮；局内：圆形计量、日夜钟、木框物品格。" },
+            { "card": "steam:219740", "why": "同作 Steam 卡（商店图无 UI，按已知 HUD 记）。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "深色底 + 低饱和，物品格里的小数字和耐久百分比偏小（推断）；抽样评论里背包相关抱怨 1 条（277 条样本），问题不大。", "evidence": ["steam:219740"] }
+          ],
+          "skinGap": "现有皮肤里没有深色底的手绘族；skin.handdrawn 只有浅色纸。",
+          "paramGaps": ["刮擦式飞白线头（vis.edge brush 偏毛笔）", "铁艺卷须相框（vis.motif 没有维多利亚铁艺）"]
+        }
+      ],
+      "variants": [
+        { "name": "叙事内手记（发现即记录）", "diff": "rel.diegesis = diegetic；笔记由角色或玩家写下，替代任务日志 / 教程 / 图鉴；TUNIC 甚至用读不懂的文字写说明书，让读手册本身成为探索。", "cards": ["steam:553420", "steam:1931770", "steam:658850", "steam:837470"] },
+        { "name": "整屏书桌", "diff": "ast.containerSurface = desk；玩法区是桌上的本子，HUD 是四周的文具和卡纸。", "cards": ["steam:1839510", "steam:2501600", "steam:2795000"] },
+        { "name": "纸偶 / 卡纸剪贴", "diff": "角色和 UI 都是剪下来的卡纸片，带白边或撕边，有立体投影；与卡纸剪贴画风同源。", "cards": ["steam:592480", "steam:763890"] },
+        { "name": "圆润手绘边界（不属于本族）", "diff": "只有图标是手绘，面板是干净圆角米白卡：这是圆润友好族，不要用笔记本皮肤去套。", "cards": ["steam:1458100", "gameui:4239"] }
+      ],
+      "failureModes": [
+        { "desc": "本子代替地图和引导之后，玩家容易迷路：抽样评论里地图相关抱怨，Chants of Sennaar 5 条、Lil Gator Game 2 条、跨族的 TOEM 4 条。", "evidence": ["steam:1931770", "steam:1586800", "steam:1307580"] },
+        { "desc": "手写体用在正文和数字上，小字号难读，中文手写字库还常缺字（06 文档 B7 陷阱）。做得好的作品把手写留给标题和标签，正文用印刷体或像素字。", "evidence": ["steam:1150690", "steam:2501600"] },
+        { "desc": "文具、贴纸、道具堆满屏幕，显得杂乱、挡视野：Cozy Grove 抽样评论里 HUD 太乱的抱怨 3 条（100 条样本）；RPG Time 卡注记为极密。", "evidence": ["steam:1458100", "steam:1839510"] },
+        { "desc": "整张面板倾斜、抖动也作用到列表和数字上，扫读变慢、数字易错读（推断）；Lil Gator Game 只倾斜装饰，列表保持水平。", "evidence": ["steam:1586800"] },
+        { "desc": "素描单色里状态只靠一点颜色区分，有色盲风险（推断）。", "evidence": ["steam:2095150"] }
+      ],
+      "skinGap": "skin.handdrawn（方格纸、2px 黑色歪圆角框、楷体正文、线性图标、平面、整板 -0.6° 旋转）只覆盖了「学生方格本」这一个子族，而且有四处和参考卡不符：① 原手绘笔记本族 15 张卡里有 11 张标注手绘彩绘图标（改判后留在本族的 11 张里有 10 张），皮肤却给线性图标；② 没有撕边、纸张投影、胶带 / 贴纸饰件，纸只是一层程序图案，没有纸纹；③ 每个元素都描 2px 黑框，真实作品里纸张本身不描边，框线只给手画的圈和下划线；④ 整板旋转连列表和数字一起转。另外 refs 里的 Obra Dinn 其实是印刷书页，Doodle Jump 不在参考库里。渲染层（src/hud/skins.ts）用的是 ruled 横线图案，而 uiSpec 的皮肤值写的是 grid，二者不一致。皮肤也没有给出 st.done = strike、cmp.input = underline、el.objective.form = checklist 这类「本子语义」的组件默认值。",
+      "paramGaps": [
+        "横线纸 + 红色页边线（vis.pattern 只有方格纸 grid，渲染层却已有 ruled）",
+        "线圈装订 / 打孔 / 撕下的齐边与毛边分侧（vis.edge 是四边统一）",
+        "胶带、回形针、图钉、贴纸白边、便签（ast.ornaments 没有文具类饰件）",
+        "手画圈出 / 荧光笔涂抹作焦点（ix.focus 只有毛笔笔触垫底 brushSwash，最接近但语义不同）",
+        "铅笔、圆珠笔、蜡笔、马克笔的线质（vis.stroke 只有实线 / 双线 / 虚线）",
+        "书签式页签从容器边缘伸出（cmp.tab 没有位置 / 形态）",
+        "折角、错位纸叠（多张纸叠放）",
+        "每个元素各自随机倾斜，而不是全局一个 vis.tilt",
+        "书写动画：笔画描出、划掉、圈出（mo.textReveal 没有手写描出）",
+        "页边涂鸦作水印层（ast.watermark 没有涂鸦）"
+      ]
+    },
+    {
+      "family": "羊皮纸任务书",
+      "skin": "skin.parchment",
+      "noCards": false,
+      "definition": "旧世界的纸面文书：羊皮纸、手抄本、航海日志、藏宝图、报纸、告示。和手绘笔记本相比，它是「被书写、被印刷的正式文献」：衬线或黑字体、对称版式、缎带与火漆、棕墨双线框、木刻插图。它给界面一种历史感和权威感，同时暗示「这是一份记录或契约」。",
+      "whenToUse": "适合中世纪 / 近代 / 大航海 / 西部 / 炼金题材，以及界面本身就是文献的场景：任务日志、事件抉择、地图、编年史、图鉴、卡牌。常驻战斗 HUD 不宜整块铺纸（纹理底太重）；最常见的成功做法是 HUD 保持中性，羊皮纸留给打开的书、地图和事件页。",
+      "grammar": {
+        "shape": "纸页带毛边或焦边；卷轴有上下轴或卷曲端；标题板是带卷尾的缎带或卷花牌；按钮是小缎带条、皮革条或带编号的横条；徽记是盾徽或火漆印。要把普通面板改成这个族：底换成羊皮纸纹理并加四周焦黄暗角，边换成毛边，标题压到一条卷尾缎带上，分隔线换成带花饰的饰条。",
+        "line": "棕墨深褐色细线，页框常用双线（外粗内细）；阴影用木刻 / 铜版排线；分隔用花饰饰条。",
+        "surface": "羊皮纸 / 旧纸纹理，中心亮、边缘焦黄（内阴影）；可有污渍、折痕、墨渍。暗色变体是黑底毛边卷轴（Armello 事件框、RDR 提示框）。",
+        "color": "棕褐单色系 + 一两个矿物色（朱红、铜绿、群青）+ 少量金；整体饱和度低；文字用深褐墨，不用纯黑。",
+        "type": "正文用人文主义 / 旧式衬线；标题用哥特黑字、书法体、木刻粗衬线（西部）或罗马大写；可用首字下沉；Pentiment 让每个角色用不同字体说话。",
+        "material": "羊皮纸、皮革封面、木框木轴、火漆、金箔、绳。",
+        "ornament": "页边涂鸦（中世纪怪诞小画）、结绳纹边框、花叶卷草、罗盘玫瑰、纹章；装饰预算 1–2，HUD 上降到 0–1。",
+        "icon": "木刻 / 版画风的手绘彩色小插图；Pentiment 用圆形徽章底，Potion Craft 用手绘植物插图。",
+        "motion": "卷轴展开、翻书、墨迹渗出或逐字写出、火漆盖印、纸张抖落；节奏慢、缓出。",
+        "layout": "书页对开（左叙述、右选项）；地图摊开压在桌上；从侧边抽出一大张纸（Armello）；页边留白宽；选项是编号条（1. 2. 3.），日记右上角写日期（Day 1）。"
+      },
+      "params": {
+        "ast.core": "texture",
+        "ast.coreMat": "parchment",
+        "ast.frame": "procedural",
+        "vis.edge": "torn",
+        "vis.depth": "innerShadow",
+        "vis.stroke": "double",
+        "vis.strokeWidth": 1.5,
+        "vis.strokeColor": "darker",
+        "col.lightness": "light",
+        "col.strategy": "neutralAccent",
+        "col.saturation": 0.4,
+        "typ.body.family": "serif",
+        "typ.display.family": "serif",
+        "typ.display.case": "smallCaps",
+        "cmp.plate": "ribbon",
+        "vis.ornament": 1,
+        "vis.motif": "floral",
+        "ast.ornaments": ["ribbons", "dividers"],
+        "vis.iconStyle": "painted",
+        "vis.mapStyle": "parchment",
+        "vis.mapUnexplored": "blank",
+        "vis.connector": "dashed",
+        "st.done": "stamp",
+        "mo.enter": "unroll",
+        "mo.textReveal": "fade"
+      },
+      "artPairing": [
+        { "artStyle": "中世纪手抄本 (Illuminated manuscript)", "relation": "sameMedium", "why": "Pentiment、Inkulinati：画面就是手抄本，UI 与页面同源。" },
+        { "artStyle": "木刻／麻胶版 (Woodcut/linocut)", "relation": "sameMedium", "why": "Potion Craft 的排线插图与按钮、图标同一刀法。" },
+        { "artStyle": "钢笔淡彩 (Ink & wash)", "relation": "sameMedium", "why": "Pentiment 的人物与对话卷轴。" },
+        { "artStyle": "水彩 (Watercolor)", "relation": "sameMedium", "why": "Wingspan 的米白卡 + 水彩鸟类插图，图鉴式纸卡。" },
+        { "artStyle": "手绘贴图风格化 (Hand-painted texture)", "relation": "neutral", "why": "Armello、WoW 的 3D 手绘世界配羊皮纸页，统一在「奇幻」气质上而不是同一媒介。" },
+        { "artStyle": "现代高位像素 (Hi-bit)", "relation": "contrast", "why": "Curious Expedition：左侧羊皮纸日记、右侧像素场景，纸页像旁白。" },
+        { "artStyle": "电影化写实 (Cinematic)", "relation": "contrast", "why": "RDR：写实世界里羊皮纸只出现在角色手里的地图上，HUD 用黑底毛边小卡。" },
+        { "artStyle": "美漫墨线叙事／Telltale式", "relation": "neutral", "why": "Wildermyth：漫画分格贴在毛边纸页上，纸是「传说之书」的载体。" }
+      ],
+      "genres": [
+        { "genre": "strategy", "count": 5, "why": "事件抉择、路线地图、阵营纹章，策略游戏最需要「文书」感（Inkulinati、Wildermyth、ShapeHero Factory、无限王国、哈利波特魔法觉醒）。" },
+        { "genre": "card", "count": 3, "why": "卡牌即纸卡，羊皮纸卡面与侧抽纸页（Armello、Wingspan、Curious Expedition）。" },
+        { "genre": "life", "count": 1, "why": "Potion Craft 整屏是炼金手抄本。" },
+        { "genre": "narrative", "count": 1, "why": "Pentiment：书页即世界，字体即角色。" },
+        { "genre": "explore", "count": 1, "why": "RDR 的叙事内地图与西部印刷字。" },
+        { "genre": "builder", "count": 1, "why": "Anno 1800 编年史是报纸版式。" },
+        { "genre": "puzzle", "count": 1, "why": "俄罗斯方块环游记的藏宝图关卡路线。" }
+      ],
+      "exemplars": [
+        { "card": "steam:1210320", "why": "整屏中世纪手抄本：结绳纹边框、双细线格、木刻排线插图、卷轴地图上的虚线航线、天平交易；只有一两个暗绿 / 暗红按钮色。" },
+        { "card": "steam:1205520", "why": "缎带选项条（尾端红色卷曲）+ 左侧圆形徽章图标 + 指示手（manicule）当焦点光标 + 每个角色不同字体 + 书页页边涂鸦。" },
+        { "card": "steam:358130", "why": "冒险日志：右上写 Day 1，深色皮条编号选项，书皮露出皮革边，与像素场景并排。" },
+        { "card": "steam:290340", "why": "侧抽大张羊皮纸 + 卷花标题牌 + 毛边插画卡 + 顶部纹章挂旗；事件是黑底毛边卷轴 + 盾徽。" },
+        { "card": "steam:916440", "why": "编年史 = 报纸：大写衬线报头、分栏头条、版画插图、政策小卡 + 红色标签条，左侧人物侧图。" },
+        { "card": "steam:2668510", "why": "叙事内地图（双手拿着的鱼类图，卷花标题 + 缎带图例 + 罗盘）；HUD 本身是黑底毛笔边小卡 + 木刻字，羊皮纸色只留给圆形雷达。" },
+        { "card": "steam:2389040", "why": "木框里摊开的书 + 羊皮纸地图上的虚线路线节点 + 撕边图例便条 + 羽毛笔按钮。" },
+        { "card": "steam:957960", "why": "整局在一本摊开的古书上：卷尾名牌、圆章头像、墨滴、真实的手入画。" }
+      ],
+      "crossFamilyEvidence": [
+        { "card": "iig:world-of-warcraft", "why": "暗金族里的经典 MMO 任务书：皮革褐纸面板 + 阵营徽记水印 + 金色标题 + 圆形图标行；skin.parchment 实际在模仿这一支。" },
+        { "card": "steam:218410", "why": "Defender's Quest（JRPG 窗口族）：选关是上下卷曲的卷轴 + 大星星难度。" },
+        { "card": "steam:1812370", "why": "Little Goody Two Shoes（重装饰族）：焦边羊皮纸对话条 + 红边卷轴名牌，压在彩绘立绘上。" },
+        { "card": "steam:1136370", "why": "Bear and Breakfast（像素木框族）：木框 + 米黄纸内芯贯穿背包 / 角色 / 烹饪，是田园木作关键词的版本。" },
+        { "card": "steam:246420", "why": "Kingdom Rush（拟物族）：木牌 + 羊皮纸面板 + 手绘地图。" },
+        { "card": "steam:955900", "why": "了不起的修仙模拟器（国风水墨族）：米黄纸卷轴面板 + 木轴头，羊皮纸语法的东方版。" },
+        { "card": "steam:867210", "why": "Songs of Conquest（暗金族）：战前对阵面板是暗红羊皮纸 + 双方纹章。" },
+        { "card": "steam:289070", "why": "文明 VI（暗金族）：地图未探索区是古地图纸面。" },
+        { "card": "steam:367520", "why": "Hollow Knight（线描花饰族）：地图是羊皮纸手绘。" },
+        { "card": "steam:2084000", "why": "Shogun Showdown（像素木框族）：地图是卷边羊皮纸。" },
+        { "card": "steam:653530", "why": "Return of the Obra Dinn：标题页是 19 世纪印刷海报 / 书页排版，属于印刷品子族。" }
+      ],
+      "misfits": [
+        { "card": "gameui:2630", "suggestedFamily": "羊皮纸任务书（弱）", "why": "选王国画面是桌上的卷轴、羽毛笔、烛台围着一个 3D 沙盘；但信息面板本身是深色半透明渐变 + 金色纹章，并非羊皮纸。只作「书桌沙盘」容器的证据。" },
+        { "card": "gameui:3105", "suggestedFamily": "羊皮纸任务书（弱）", "why": "只拿到新手过场：加载画面是羊皮纸墨线地图，局内只有一个卷轴小图标。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "手抄本与木刻",
+          "skin": null,
+          "noCards": false,
+          "definition": "中世纪手抄本和早期印刷书：结绳纹或花叶边框、双细线格、首字下沉、页边怪诞小画、木刻排线插图、哥特黑字。界面像在一本正在写的书里操作，书页本身就是玩法区。",
+          "grammar": {
+            "shape": "书页与格子都是规整矩形，靠双线勾框；选项是带卷尾的缎带条；图标装在圆章里。",
+            "line": "棕黑墨 1px 双线；插图阴影用木刻排线。",
+            "surface": "米黄羊皮纸，暗角轻；整屏外圈可以是结绳纹饰带。",
+            "color": "褐墨单色 + 朱红 / 铜绿 / 群青三选一；金只用在首字母。",
+            "type": "哥特黑字或书法标题，正文旧式衬线；角色可各用一种字体。",
+            "material": "羊皮纸、书、墨水瓶、羽毛笔。",
+            "ornament": "页边怪诞小画（兔子骑士、蛙）、花叶卷草、结绳纹。",
+            "icon": "木刻风手绘彩色小插图，常放在圆章里。",
+            "motion": "翻页、墨迹写出、墨滴落下。",
+            "layout": "书页对开或整屏一页；选项列表靠左，说明卡靠右；焦点用指示手（☞）指着。"
+          },
+          "params": {
+            "ast.coreMat": "parchment",
+            "ast.container": "book",
+            "vis.stroke": "double",
+            "vis.strokeWidth": 1,
+            "vis.strokeColor": "ink",
+            "vis.pattern": "hatching",
+            "vis.patternOpacity": 0.25,
+            "vis.motif": "floral",
+            "vis.ornament": 2,
+            "ast.ornaments": ["dividers", "corners"],
+            "typ.display.family": "gothic",
+            "typ.body.family": "serif",
+            "typ.numbering": "roman",
+            "cmp.plate": "ribbon",
+            "ix.focus": "cursor",
+            "vis.iconStyle": "painted",
+            "vis.silhouette": "circle",
+            "cmp.dialogBox": "bubble",
+            "col.strategy": "neutralAccent",
+            "col.saturation": 0.35,
+            "rel.harmony": "sameMedium",
+            "mo.enter": "pageTurn",
+            "lay.hudOrg": "inMargin"
+          },
+          "artPairing": [
+            { "artStyle": "中世纪手抄本 (Illuminated manuscript)", "relation": "sameMedium", "why": "Pentiment、Inkulinati。" },
+            { "artStyle": "木刻／麻胶版 (Woodcut/linocut)", "relation": "sameMedium", "why": "Potion Craft 的排线插图。" },
+            { "artStyle": "铜版／蚀刻 (Engraving/etching)", "relation": "sameMedium", "why": "更精细的排线版本，可用于图鉴插图。" }
+          ],
+          "genres": [
+            { "genre": "life", "count": 1, "why": "Potion Craft 炼金经营。" },
+            { "genre": "narrative", "count": 1, "why": "Pentiment 叙事推理。" },
+            { "genre": "strategy", "count": 1, "why": "Inkulinati 书页上的回合战斗。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1210320", "why": "结绳纹饰带 + 双线格 + 卷轴地图 + 木刻插图。" },
+            { "card": "steam:1205520", "why": "缎带选项 + 圆章图标 + 指示手焦点 + 页边怪诞小画。" },
+            { "card": "steam:957960", "why": "古书即战场：卷尾名牌、圆章头像、墨滴、真实的手。" }
+          ],
+          "variants": [
+            { "name": "书页即战场", "diff": "lay.playfield = boardWindow，玩法区就是一页书；单位名牌是卷尾小纸条，资源（墨水量）画成墨水瓶。", "cards": ["steam:957960"] }
+          ],
+          "failureModes": [
+            { "desc": "书法 / 黑字体和小号衬线压在纹理纸上看不清：Pentiment 抽样评论里字小抱怨 2 条（275 条样本）。", "evidence": ["steam:1205520"] },
+            { "desc": "整屏信息都画进手抄本，密度过高：Potion Craft 抽样评论里 HUD 太乱的抱怨 2 条（314 条样本）。", "evidence": ["steam:1210320"] }
+          ],
+          "skinGap": "skin.parchment 没有双线框、排线、页边小画、黑字体标题、指示手焦点；它的 Cinzel 是罗马石刻大写字，和手抄本不是一个时代。",
+          "paramGaps": ["首字下沉", "结绳纹 / 凯尔特交织纹（vis.motif 没有）", "指示手 ☞ 光标（ix.focus cursor 太笼统）", "按说话人切换字体", "墨迹书写式文字出现"]
+        },
+        {
+          "family": "冒险日志与藏宝图",
+          "skin": null,
+          "noCards": false,
+          "definition": "探险者的日记、摊开的地图、事件书页：纸是旅途的记录载体，地图上画虚线路线，事件写成带日期的日记段落，选项写成编号条。它常与其他画风并排（像素、3D 写实），纸页起旁白作用。",
+          "grammar": {
+            "shape": "日记本对开或单页，边缘破旧；地图是摊开的大张纸，角上卷起或压着物件；标题可盖火漆印。",
+            "line": "褐墨线；路线用虚线，终点画 ✕。",
+            "surface": "羊皮纸 + 焦边；书皮露出皮革或木框。",
+            "color": "棕褐 + 路线红 / 目的地红；选项条用深褐皮革色。",
+            "type": "衬线正文，右上角写 Day N；标题衬线或手写。",
+            "material": "皮革书皮、木框、火漆、桌面（烛台、羽毛笔、卷轴）。",
+            "ornament": "罗盘玫瑰、宝箱、小图钉、手绘山峰与海怪。",
+            "icon": "手绘小地标与宝箱节点。",
+            "motion": "卷轴展开、路线一段段画出、盖印。",
+            "layout": "左纸页叙述 + 右场景（Curious Expedition）；或整屏地图 + 角落图例便条（ShapeHero Factory）。"
+          },
+          "params": {
+            "ast.container": "handMap",
+            "ast.containerSurface": "table",
+            "ast.coreMat": "parchment",
+            "ast.frameMat": "leather",
+            "vis.edge": "torn",
+            "vis.depth": "softDrop",
+            "vis.mapStyle": "parchment",
+            "vis.mapUnexplored": "blank",
+            "vis.connector": "dashed",
+            "cmp.node": "chest",
+            "cmp.plate@title": "seal",
+            "lay.arrangement": "path",
+            "lay.composition": "splitLR",
+            "el.choices.form": "buttons",
+            "el.objective.form": ["note"],
+            "typ.numbering": "arabic",
+            "typ.body.family": "serif",
+            "rel.diegesis": "diegetic",
+            "mo.enter": "unroll"
+          },
+          "artPairing": [
+            { "artStyle": "现代高位像素 (Hi-bit)", "relation": "contrast", "why": "Curious Expedition 的纸页旁白 + 像素场景。" },
+            { "artStyle": "美漫墨线叙事／Telltale式", "relation": "neutral", "why": "Wildermyth 的毛边纸页 + 漫画分格。" },
+            { "artStyle": "等距布景 (Isometric diorama)", "relation": "contrast", "why": "无限王国选王国：桌上的卷轴围着 3D 沙盘。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 4, "why": "路线选择、王国选择、英雄传说事件。" },
+            { "genre": "card", "count": 1, "why": "Curious Expedition 的探险事件。" },
+            { "genre": "puzzle", "count": 1, "why": "关卡路线做成藏宝图。" }
+          ],
+          "exemplars": [
+            { "card": "steam:358130", "why": "日记页 + Day 1 + 编号皮条选项。" },
+            { "card": "steam:2389040", "why": "书中羊皮纸地图 + 虚线路线 + 撕边图例便条。" },
+            { "card": "steam:763890", "why": "毛边纸页上的漫画分格事件 + 分格式选项。" },
+            { "card": "gameui:2752", "why": "藏宝图关卡路线：火漆印标题、木牌缎带、虚线路径、宝箱节点、提示便签（只用这张，不用首充图）。" },
+            { "card": "gameui:3105", "why": "加载画面是羊皮纸墨线地图（弱证据）。" }
+          ],
+          "variants": [
+            { "name": "书桌沙盘", "diff": "ast.container = desk；地图做成桌上的 3D 沙盘，四周摆卷轴与羽毛笔，信息面板可以不是纸。", "cards": ["gameui:2630"] },
+            { "name": "传说之书（纸偶漫画）", "diff": "事件页是毛边纸 + 漫画分格，选项本身也是分格（el.choices.form = banners）。", "cards": ["steam:763890"] }
+          ],
+          "failureModes": [
+            { "desc": "纸页里的小字：Wildermyth 抽样评论里字小抱怨 2 条（164 条样本）。", "evidence": ["steam:763890"] },
+            { "desc": "手游把藏宝图纸页当作首充弹窗的外皮；这属于商业化，不在研究范围，推导时排除。", "evidence": ["gameui:2752"] }
+          ],
+          "skinGap": "skin.parchment 没有火漆印、皮革书皮、虚线路线、日期编号这些「日志语义」；它只是一块渐变纸底。",
+          "paramGaps": ["火漆印与普通印章区分（cmp.plate seal 是中式印章语义）", "路线终点 ✕ 与逐段画出的路线动画", "卷曲的纸角 / 压在纸上的物件"]
+        },
+        {
+          "family": "桌游卡面与纹章",
+          "skin": null,
+          "noCards": false,
+          "definition": "实体桌游的纸卡与配件被搬进屏幕：米白或羊皮纸卡面、插画窗、属性图标、纹章挂旗、侧抽大纸页。纸张是「印刷品」，边缘干净或刷黑毛边，比手抄本更现代、更规整。",
+          "grammar": {
+            "shape": "圆角纸卡（Wingspan）或刷黑毛边插画卡（Armello）；纹章是燕尾挂旗。",
+            "line": "卡框是印刷色带或刷黑毛边，不是棕墨手绘线。",
+            "surface": "米白卡纸或羊皮纸，柔投影让卡浮在桌上。",
+            "color": "按花色 / 栖息地分色（col.coding）；骨架仍是纸色。",
+            "type": "衬线标题，小号正文，数字放在角标。",
+            "material": "卡纸、木质配件、骰子。",
+            "ornament": "卷花标题牌、纹章、空槽里的淡色绗缝纹样。",
+            "icon": "手绘彩色图标（食物、栖息地、能力）。",
+            "motion": "卡牌滑入、翻牌、从侧边抽出纸页。",
+            "layout": "网格卡格；玩家板按行；侧边抽屉式大纸页。"
+          },
+          "params": {
+            "ast.container": "tableTop",
+            "ast.coreMat": "parchment",
+            "cmp.card": "tcg",
+            "cmp.panelArt": "window",
+            "vis.corner": "round",
+            "vis.cornerSize": 6,
+            "vis.depth": "softDrop",
+            "vis.edge": "brush",
+            "cmp.badge": "crest",
+            "cmp.plate@title": "scrollHead",
+            "st.emptySlot": "silhouette",
+            "st.rarityCue": ["border"],
+            "col.coding": ["team"],
+            "lay.arrangement": "grid",
+            "lay.container": "drawer",
+            "vis.iconStyle": "painted",
+            "typ.display.family": "serif",
+            "typ.body.family": "serif",
+            "rel.harmony": "unified"
+          },
+          "artPairing": [
+            { "artStyle": "桌游棋子／木玩 (Board-game pieces)", "relation": "sameMedium", "why": "实体桌游的数字化，卡纸与木质配件同源。" },
+            { "artStyle": "水彩 (Watercolor)", "relation": "sameMedium", "why": "Wingspan 的鸟类插图。" },
+            { "artStyle": "手绘贴图风格化 (Hand-painted texture)", "relation": "neutral", "why": "Armello 的 3D 手绘棋盘。" }
+          ],
+          "genres": [
+            { "genre": "card", "count": 2, "why": "桌游改编与卡牌对战。" }
+          ],
+          "exemplars": [
+            { "card": "steam:290340", "why": "侧抽羊皮纸页 + 卷花标题牌 + 毛边插画卡 + 纹章挂旗 + 淡纹空槽。" },
+            { "card": "steam:1054490", "why": "米白圆角纸卡 + 水彩插画 + 属性图标 + 柔投影。" }
+          ],
+          "variants": [
+            { "name": "自然图鉴米白卡", "diff": "Wingspan：ast.coreMat = paper、vis.edge = clean、cmp.card = statCard；没有纹章与毛边，接近印刷图鉴。", "cards": ["steam:1054490"] },
+            { "name": "暗色卷轴事件框", "diff": "Armello 事件：col.lightness = dark，黑底毛边卷轴 + 卷尾 + 盾徽，选项卡仍是浅纸。", "cards": ["steam:290340"] }
+          ],
+          "failureModes": [
+            { "desc": "卡面信息极密时（Wingspan 卡注记为极密），抽样评论里只有 1 条菜单抱怨（232 条样本）；说明规整印刷版式能扛住高密度，问题主要在手写 / 书法字体而不在纸面本身。", "evidence": ["steam:1054490"] }
+          ],
+          "skinGap": "skin.parchment 没有卡牌结构、纹章与挂旗、侧抽纸页；也没有「印刷卡」与「手抄纸」的区分。",
+          "paramGaps": ["刷黑毛边卡框（介于 vis.edge brush 与卡框之间）", "燕尾挂旗作页签"]
+        },
+        {
+          "family": "印刷品与报刊海报",
+          "skin": null,
+          "noCards": false,
+          "definition": "报纸、告示、通缉令、书名页：纸张承载的是排版与活字，而不是手迹。层级全靠字号、字体反差和分栏：大写衬线报头、木刻粗衬线大字、细线分隔。可以是浅纸（报纸）也可以反转成深色（RDR 的黑底毛边提示框）。",
+          "grammar": {
+            "shape": "规整矩形与分栏；告示框边缘是毛笔刷出的毛边。",
+            "line": "细分隔线和双线报头线；深色变体无描边，靠毛边轮廓。",
+            "surface": "新闻纸 / 旧纸；或黑底。",
+            "color": "近双色：墨黑 + 纸色，再加一个红（标题副行、政策标签）。",
+            "type": "大写衬线报头、木刻粗衬线或西部活字；正文衬线；字号阶梯大。",
+            "material": "新闻纸、木刻活字。",
+            "ornament": "报头徽章、版次号、细线框。",
+            "icon": "版画插图。",
+            "motion": "报纸旋转飞入、印章盖下；提示框直接淡入。",
+            "layout": "三栏报纸版式：头条居中，两侧栏目，底部一排政策小卡；人物侧图压在左下。"
+          },
+          "params": {
+            "ast.coreMat": "paper",
+            "typ.display.family": "slabWestern",
+            "typ.display.case": "upper",
+            "typ.display.weight": "black",
+            "typ.body.family": "serif",
+            "hier.emphasis": ["size", "typeface"],
+            "lay.composition": "three",
+            "lay.grouping": "divider",
+            "vis.edge": "brush",
+            "vis.stroke": "none",
+            "col.strategy": "duotone",
+            "col.saturation": 0.3,
+            "cmp.panelArt": "side",
+            "cmp.plate": "tab",
+            "el.notify.form": ["toast"],
+            "vis.mapStyle": "parchment"
+          },
+          "artPairing": [
+            { "artStyle": "电影化写实 (Cinematic)", "relation": "contrast", "why": "RDR、Anno 1800：写实世界里，印刷品是叙事内物件，UI 借用它的排版。" },
+            { "artStyle": "1-bit抖动3D／Obra Dinn式", "relation": "sameMedium", "why": "Obra Dinn 的书名页与 1-bit 画面同为 19 世纪印刷品气质。" },
+            { "artStyle": "木刻／麻胶版 (Woodcut/linocut)", "relation": "sameMedium", "why": "木刻活字与版画插图。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 1, "why": "Anno 1800 编年史与政策。" },
+            { "genre": "explore", "count": 1, "why": "RDR 西部开放世界。" }
+          ],
+          "exemplars": [
+            { "card": "steam:916440", "why": "报纸版式的编年史 + 政策小卡 + 人物侧图。" },
+            { "card": "steam:2668510", "why": "黑底毛边提示框 + 木刻字地名 + 红色副标题；地图是手里的纸。" },
+            { "card": "steam:653530", "why": "跨族：19 世纪书名页排版。" }
+          ],
+          "variants": [
+            { "name": "西部告示（深色）", "diff": "RDR：col.lightness = dark、vis.edge = brush、typ.display.family = slabWestern；纸色只留给雷达底和地图。", "cards": ["steam:2668510"] },
+            { "name": "报纸编年史（浅色）", "diff": "Anno 1800：col.lightness = light、typ.display.family = serif、lay.composition = three。", "cards": ["steam:916440"] }
+          ],
+          "failureModes": [
+            { "desc": "报纸版式的信息层级重、操作入口不明显：Anno 1800 抽样评论里菜单抱怨 2 条、引导不清 3 条（299 条样本）。", "evidence": ["steam:916440"] }
+          ],
+          "skinGap": "skin.parchment 只有一种浅纸，做不出深色告示变体，也没有报纸分栏与活字层级。",
+          "paramGaps": ["多栏正文排版（lay.composition three 是三区布局，不是报纸分栏）", "报头 / 版次号这类印刷元件"]
+        }
+      ],
+      "variants": [
+        { "name": "西幻 MMO 任务书（经典式）", "diff": "皮革褐纸面板 + 阵营徽记水印（ast.watermark = factionEmblem）+ 金色标题与外框（ast.frameMat = gold）；装饰预算 2。skin.parchment 原本模仿的就是这一支，但它在参考卡里属于暗金族。", "cards": ["iig:world-of-warcraft", "steam:218410"] },
+        { "name": "暗色卷轴 / 黑底毛边", "diff": "col.lightness = dark、vis.edge = brush；羊皮纸只做标题与选项，主体是黑底毛边卷轴。适合在亮色 3D 场景上保证对比。", "cards": ["steam:290340", "steam:2668510", "iig:dont-starve"] },
+        { "name": "焦边对话条", "diff": "cmp.dialogBox = bar + vis.edge = torn + 卷尾名牌缎带，压在大立绘下沿。", "cards": ["steam:1812370"] },
+        { "name": "木框 + 纸芯（田园）", "diff": "ast.frame = plainNinePatch、ast.frameMat = wood、ast.coreMat = paper / parchment；纸只是内芯，识别度主要来自木框（kw.rustic）。", "cards": ["steam:1136370", "steam:246420", "steam:2389040"] },
+        { "name": "东方卷轴", "diff": "ast.coreMat = xuan / parchment + 木轴头 + 书法竖排标题；与国风水墨族交界。", "cards": ["steam:955900"] }
+      ],
+      "failureModes": [
+        { "desc": "小号衬线、书法、黑字体压在纹理纸上看不清：抽样评论里字小抱怨 Pentiment 2 条、Wildermyth 2 条，跨族的 Obra Dinn 2 条；06 文档测得棕墨配米黄的对比度只有约 4:1。", "evidence": ["steam:1205520", "steam:763890", "steam:653530"] },
+        { "desc": "整屏都画成手抄本 / 报纸，信息太密、入口难找：Potion Craft HUD 太乱抱怨 2 条（314 条样本）；Anno 1800 菜单抱怨 2 条、引导不清 3 条；跨族的 Bear and Breakfast 背包抱怨 2 条、杂乱 2 条。", "evidence": ["steam:1210320", "steam:916440", "steam:1136370"] },
+        { "desc": "把羊皮纸铺满实时动作 HUD 会抢画面；RDR 的做法是 HUD 用小块黑底毛边卡，羊皮纸只留给拿在手里的地图。", "evidence": ["steam:2668510"] },
+        { "desc": "纸面板和写实 3D 世界的光照、分辨率不一致时，纸会像一张贴图；无限王国干脆把信息面板做成深色半透明，只让桌上的卷轴当道具（推断）。", "evidence": ["gameui:2630"] },
+        { "desc": "手游用藏宝图纸页包装首充弹窗：商业化，不在研究范围，推导时已排除。", "evidence": ["gameui:2752"] }
+      ],
+      "skinGap": "skin.parchment（径向渐变纸色、2px 棕框、4px 圆角、内阴影、Cinzel 衬线、小型大写标题、卷轴展开入场）有五处不足：① 渲染层只画一个渐变，没有纸纹；uiSpec 把纸纹放在 kw.questBook 关键词里，单选皮肤时不会出现。② 边缘是一圈干净的 2px 实线框，但本族 13 张卡里有 8 张左右用毛边、焦边或刷黑毛边（Curious Expedition、ShapeHero Factory、RDR、Armello 卡面、Wildermyth、Inkulinati、两张手游藏宝图），干净边的几张（Potion Craft、Anno 1800、Wingspan）用的是双线框、报纸细线或印刷卡框，单一 2px 实线框几乎没有。③ 缎带标题在关键词里（cmp.plate@title = ribbon），皮肤本身不带；双线框、饰条、火漆这些识别元件都没有。④ Cinzel 是罗马石刻大写，适合碑铭，不适合手抄本（黑字体 / 旧式衬线）、报纸（报头衬线）、西部（木刻粗衬线）三条子线。⑤ 只有浅色一种，没有黑底毛边的暗色变体，而 Armello 和 RDR 在亮色 3D 场景上用的正是暗色变体。refs 里的 Civ VI 属于暗金族，只有地图用了羊皮纸。",
+      "paramGaps": [
+        "毛边、焦边、撕边是三种不同的边（vis.edge 只有 torn 一种）",
+        "纸张做旧程度：暗角焦黄强度、污渍、折痕（只能借 vis.depth innerShadow）",
+        "首字下沉",
+        "结绳纹 / 交织纹边框（vis.motif 没有）",
+        "火漆印（cmp.plate seal 是中式印章语义）",
+        "指示手 ☞ 焦点光标（ix.focus cursor 不区分形状）",
+        "按说话人切换字体",
+        "墨迹逐字写出（mo.textReveal 没有）",
+        "木刻 / 铜版风图标（vis.iconStyle painted 太笼统）",
+        "报纸多栏正文排版",
+        "罗盘玫瑰、比例尺等地图元件"
+      ]
+    },
+    {
+      "family": "新粗野主义",
+      "skin": "skin.neobrutal",
+      "noCards": true,
+      "definition": "从网页设计来的风格（约 2021 年起流行）：纯黑粗描边、无模糊的错位硬投影、高饱和纯色块、粗黑无衬线字，结构直接暴露。在游戏里很少成体系出现，多是局部借用：派对 / 休闲游戏的菜单、独立游戏的卡片面板；和漫画族、Persona 拼贴族共享「粗黑边 + 硬影」，区别在于它是正交、规整、不倾斜、不加网点的。",
+      "whenToUse": "适合平涂卡通、低多边形、派对与本地多人、轻度卡牌 / roguelite、关卡编辑器这类需要「大、直接、好点」的菜单；HUD 只宜局部（粗边会占屏）。与写实画面搭配只在刻意荒诞或元游戏时成立。",
+      "grammar": {
+        "shape": "直角或很小的圆角（0–8px）矩形块，块与块之间对齐网格；按钮就是一块带硬影的色块。要把普通面板改成这个族：去掉渐变和柔影，加 3px 纯黑描边，再加一个向右下错位 4–6px、不模糊的纯黑投影。",
+        "line": "所有东西同一粗细的纯黑线：面板、按钮、输入框、图标、分隔线，2–4px。",
+        "surface": "纯色平涂，不用纹理和渐变；底色用米白或浅灰，色块用 1–3 个高饱和色。",
+        "color": "黑 + 米白 + 黄 / 粉 / 薄荷绿 / 钴蓝里挑两三个；允许撞色，但文字只放在高对比的组合上。",
+        "type": "粗黑怪诞无衬线做标题（全大写可）；正文粗体无衬线但保持原样大小写；数字等宽。",
+        "material": "没有材质，最多像贴纸或剪下的卡纸。",
+        "ornament": "零装饰；可以有星号、箭头、贴纸式小标签。",
+        "icon": "粗线单色图标，线宽与描边一致。",
+        "motion": "按下时整块平移到阴影位置、阴影归零；线性、短促，不回弹。",
+        "layout": "网格明确，大块卡片，留白少；层级靠尺寸与色块，而不是阴影深浅。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 3,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 3,
+        "vis.strokeColor": "ink",
+        "vis.depth": "hardDrop",
+        "vis.fill": "solid",
+        "vis.opacity": 1,
+        "vis.gloss": "none",
+        "vis.ornament": 0,
+        "col.lightness": "light",
+        "col.strategy": "polychrome",
+        "col.saturation": 1.3,
+        "typ.display.family": "sans",
+        "typ.display.weight": "black",
+        "typ.display.case": "upper",
+        "typ.body.family": "sans",
+        "typ.body.weight": "bold",
+        "typ.body.case": "asIs",
+        "vis.iconStyle": "line",
+        "ix.press": "sink",
+        "ix.focus": "invert",
+        "mo.easing": "linear",
+        "mo.duration": 0.12,
+        "lay.grouping": "card"
+      },
+      "artPairing": [
+        { "artStyle": "矢量扁平 (Vector flat)", "relation": "sameMedium", "why": "平涂色块 + 黑线，与 UI 同一套语言。" },
+        { "artStyle": "波普 (Pop art)", "relation": "sameMedium", "why": "撞色与粗线的共同祖先。" },
+        { "artStyle": "卡纸剪贴 (Construction paper)", "relation": "sameMedium", "why": "硬影像剪下来贴上的卡纸，TOEM 式的单色版本最接近。" },
+        { "artStyle": "平滑低模／色板贴图 (Smooth low poly)", "relation": "neutral", "why": "纯色低模场景不和 UI 抢风格。" },
+        { "artStyle": "照片写实 (Photorealism)", "relation": "contrast", "why": "只在刻意荒诞 / 元游戏时成立，否则像网页覆盖在游戏上。" }
+      ],
+      "genres": [
+        { "genre": "party", "count": 0, "why": "派对 / 本地多人：大按钮、好点、对比强（推断）。" },
+        { "genre": "card", "count": 0, "why": "轻度卡牌 / 骰子 roguelite 的卡片面板天然是色块（Dicey Dungeons，可信度待核实）。" },
+        { "genre": "life", "count": 0, "why": "TOEM 的单色变体证明它能用在治愈探索里。" },
+        { "genre": "puzzle", "count": 0, "why": "关卡编辑器 / 工具型界面，结构外露反而是优点（推断）。" }
+      ],
+      "exemplars": [
+        { "card": null, "game": "TOEM", "appid": 1307580, "nearestCard": "steam:1307580", "confidence": "verified-by-card", "why": "白卡 + 粗黑描边 + 右下错位硬投影 + 手写大写字：去掉颜色的新粗野主义。" },
+        { "card": null, "game": "Hi-Fi RUSH", "appid": 1817230, "nearestCard": "iig:hi-fi-rush", "confidence": "verified-by-card", "why": "商店页是黑色刷边斜切卡块 + 红色错位硬影 + 背景虚化；属于漫画族与新粗野的混合（多了斜切和拟声字）。" },
+        { "card": null, "game": "The WereCleaner", "appid": 2795000, "nearestCard": "steam:2795000", "confidence": "verified-by-card", "why": "粗棕描边的平涂纸卡与按钮，没有渐变；缺硬投影，是偏手绘的近邻。" },
+        { "card": null, "game": "Dicey Dungeons", "appid": 861540, "confidence": "unverified", "why": "印象中是粗深色描边 + 高饱和平涂面板 + 粗体字；未在本地参考库里核对截图。" },
+        { "card": null, "game": "Cassette Beasts", "appid": 1321440, "confidence": "unverified", "why": "印象中菜单是平涂色块 + 描边 + 硬投影；未核对截图。" },
+        { "card": null, "game": "Hypnospace Outlaw", "appid": 844590, "nearestCard": "steam:844590", "confidence": "verified-by-card", "why": "祖先形态：90 年代原始网页的粗野（系统字、默认蓝链接、杂乱个人主页），新粗野主义就是把它规整化。" }
+      ],
+      "nearestCards": [
+        { "card": "steam:1307580", "why": "单色新粗野：硬影 + 粗黑描边。" },
+        { "card": "iig:hi-fi-rush", "why": "漫画 + 硬影混合。" },
+        { "card": "steam:2795000", "why": "粗描边平涂纸卡。" },
+        { "card": "gameui:3055", "why": "蓝黄撞色 + 白底描边卡（捏脸页）；偏糖果圆润，只作配色参考。" }
+      ],
+      "variants": [
+        { "name": "单色粗野", "diff": "col.strategy = mono：只有黑白 + 硬影，靠手写字和图标增加性格（TOEM）。", "cards": ["steam:1307580"] },
+        { "name": "漫画粗野", "diff": "加 vis.skew 与 mo.enter = slashIn、网点、拟声字：滑向漫画 / Persona 族（Hi-Fi RUSH）。", "cards": ["iig:hi-fi-rush", "steam:1817230"] },
+        { "name": "原始网页粗野", "diff": "系统默认字体、默认蓝链接、表格线、不对齐：Web 1.0 式粗野，常做叙事内电脑界面。", "cards": ["steam:844590"] }
+      ],
+      "failureModes": [
+        { "desc": "亮色撞色（黄配青、粉配薄荷）上的文字对比不达标（06 文档 B1 陷阱）。", "evidence": [] },
+        { "desc": "所有元素一样粗、一样响，层级被拉平；按钮和静态卡片长得一样，可点击暗示变弱（06 文档 B1）。", "evidence": [] },
+        { "desc": "粗边框放进常驻 HUD 会占屏（06 文档 B27 把 HUD 记为 △）。", "evidence": [] },
+        { "desc": "硬投影的方向与场景光照相反时显得假；只在 UI 层统一方向，不要随场景变。", "evidence": [] }
+      ],
+      "skinGap": "skin.neobrutal 基本正确，但有三处偏差：① typ.body.case = upper 让正文也全大写，中文无影响，英文长句难读；网页原型是标题大写、正文原样。② 没有给 ix.focus，用手柄时焦点不明显，新粗野的焦点通常是反色（底变黑字变白）或加粗外框。③ 没有饱和度提升和撞色色板，col.strategy = polychrome 但默认色板是项目通用色，出不来那种刺眼的撞色。",
+      "paramGaps": ["硬投影的偏移距离与方向（vis.depth hardDrop 没有大小参数）", "按下位移量与阴影收回动画", "贴纸式小标签 / 星号饰件", "文字自身的粗黑描边（与面板描边分开）"]
+    },
+    {
+      "family": "毛玻璃",
+      "skin": "skin.glass",
+      "noCards": true,
+      "definition": "半透明面板 + 背景模糊 + 1px 亮边 + 柔和大投影：面板像一块磨砂玻璃，背后的画面被虚化但颜色透出来。游戏里有两种做法：① 面板本身是玻璃（Overwatch 的浅色数据卡、崩坏：星穹铁道的烟熏深色切角面板）；② 面板实心，但把背后的场景整体虚化（暂停菜单、Hi-Fi RUSH 商店）。后者在游戏里更常见。",
+      "whenToUse": "适合系统菜单、暂停、设置、数据统计、科幻 / 现代都市题材，以及需要「界面轻、世界仍在」的时刻。常驻 HUD 慎用：背景每帧在变，可读性不稳定，模糊还很费性能。雪地、白天这种亮场景上要换成烟熏深色玻璃。",
+      "grammar": {
+        "shape": "游戏里多用直角、切角或小圆角（Overwatch 直角、星穹铁道切角），网页常见的大圆角胶囊反而少。要把普通面板改成这个族：底不透明度降到 0.3–0.6，背后加 10–16px 模糊，加一条只在上沿和左沿更亮的 1px 亮边，去掉其它描边。",
+        "line": "1px 半透明白色亮边，上 / 左亮、下 / 右暗，模拟光从上方照来。",
+        "surface": "半透明白或半透明深色，带极淡的竖向渐变和一点颗粒噪点（防止色带）。",
+        "color": "中性骨架 + 一个强调色；文字在浅玻璃上用深色、深玻璃上用白色，并加投影。",
+        "type": "细到常规字重的无衬线；数字用大号窄体（Overwatch 的大号数字）。",
+        "material": "磨砂玻璃、亚克力。",
+        "ornament": "零；层级靠透明度差。",
+        "icon": "线性或扁平白色图标。",
+        "motion": "淡入 + 轻微放大；模糊程度随打开过程渐变；关闭时反向。",
+        "layout": "卡片网格浮在虚化的世界上；顶部页签条；大数字 + 小标签的数据瓦片。"
+      },
+      "params": {
+        "vis.opacity": 0.4,
+        "vis.blur": 16,
+        "vis.fill": "gradient",
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeColor": "highlightEdge",
+        "vis.depth": "softDrop",
+        "vis.corner": "round",
+        "vis.cornerSize": 4,
+        "vis.gloss": "topShine",
+        "col.lightness": "light",
+        "col.strategy": "neutralAccent",
+        "typ.body.family": "sans",
+        "typ.body.weight": "regular",
+        "typ.display.family": "condensed",
+        "typ.numerals.family": "display",
+        "typ.legibility": "shadow",
+        "rel.behind": "live",
+        "rel.sceneBlur": 10,
+        "mo.enter": "fade",
+        "mo.easing": "easeOut",
+        "ix.focus": "outline",
+        "lay.grouping": "card",
+        "hier.emphasis": ["value", "size"]
+      },
+      "artPairing": [
+        { "artStyle": "风格化PBR／英雄射击风 (Stylized PBR)", "relation": "neutral", "why": "Overwatch：干净的 3D 世界虚化后，浅色玻璃卡浮在上面。" },
+        { "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)", "relation": "neutral", "why": "崩坏：星穹铁道、原神的半透明面板。" },
+        { "artStyle": "照片写实 (Photorealism)", "relation": "neutral", "why": "模拟 / 竞速 / 城市建造的系统菜单常用实心面板 + 场景虚化。" },
+        { "artStyle": "全息投影 (Hologram)", "relation": "sameMedium", "why": "发光的半透明面板，与玻璃共享透明度语言，但更亮、有扫描线。" },
+        { "artStyle": "像素 / 手绘纸面类", "relation": "contrast", "why": "与纸、像素、手绘冲突：玻璃是「屏幕里的屏幕」，会把手作感冲掉。" }
+      ],
+      "genres": [
+        { "genre": "shooter", "count": 0, "why": "服务型射击的生涯 / 数据 / 系统菜单（Overwatch 卡）。" },
+        { "genre": "rpg", "count": 0, "why": "二次元大世界的任务、背包面板（星穹铁道、原神卡）。" },
+        { "genre": "builder", "count": 0, "why": "城市 / 岛屿建造的底部胶囊工具条（ISLANDERS、Before We Leave 卡）。" },
+        { "genre": "racing", "count": 0, "why": "竞速和模拟类的暂停 / 车库菜单常用场景虚化（推断）。" }
+      ],
+      "exemplars": [
+        { "card": null, "game": "Overwatch", "appid": 2357570, "nearestCard": "iig:overwatch", "confidence": "verified-by-card", "why": "生涯数据：浅色磨砂直角瓦片 + 大号数字 + 小号大写标签，浮在虚化的淡紫背景上；顶部深色页签条。" },
+        { "card": null, "game": "崩坏：星穹铁道", "appid": null, "nearestCard": "gameui:8283", "confidence": "verified-by-card", "why": "烟熏深色半透明切角面板 + 白色细字 + 白色胶囊按钮。" },
+        { "card": null, "game": "ISLANDERS", "appid": 1046030, "nearestCard": "steam:1046030", "confidence": "verified-by-card", "why": "底部半透明胶囊工具条，HUD 级的轻量用法。" },
+        { "card": null, "game": "Before We Leave", "appid": 1073910, "nearestCard": "steam:1073910", "confidence": "verified-by-card", "why": "深蓝半透明边栏 + 顶部资源条。" },
+        { "card": null, "game": "The Legend of Zelda: Breath of the Wild", "appid": null, "nearestCard": "iig:the-legend-of-zelda-breath-of-the-wild", "confidence": "verified-by-card", "why": "对话是半透明黑底圆角框：深色玻璃最朴素的形态。" },
+        { "card": null, "game": "Hi-Fi RUSH", "appid": 1817230, "nearestCard": "iig:hi-fi-rush", "confidence": "verified-by-card", "why": "实心卡块 + 背景整屏虚化：第二种做法（场景虚化而非面板透明）。" },
+        { "card": null, "game": "Microsoft Flight Simulator (2020)", "appid": 1250410, "confidence": "unverified", "why": "印象中工具栏与面板是深色半透明 + 模糊；未在本地参考库核对。" }
+      ],
+      "nearestCards": [
+        { "card": "iig:overwatch", "why": "浅色玻璃数据卡。" },
+        { "card": "gameui:8283", "why": "深色玻璃切角面板。" },
+        { "card": "steam:1046030", "why": "HUD 胶囊。" },
+        { "card": "steam:1073910", "why": "深蓝半透明边栏。" },
+        { "card": "steam:600480", "why": "Megaquarium：深蓝半透明圆角面板。" },
+        { "card": "steam:1062090", "why": "Timberborn：深色半透明面板 + 绿色强调。" },
+        { "card": "steam:3314060", "why": "The Sims 旧作：Frutiger Aero 光泽玻璃，玻璃的亮面近亲。" }
+      ],
+      "variants": [
+        { "name": "浅色霜玻璃", "diff": "col.lightness = light、vis.opacity 0.4–0.6、深色文字；需要背景本身偏暗或已虚化（Overwatch）。", "cards": ["iig:overwatch"] },
+        { "name": "烟熏深色玻璃", "diff": "col.lightness = dark、vis.opacity 0.5–0.8、白字 + 投影、vis.corner = chamfer；在亮场景（雪地、白天）上更稳。", "cards": ["gameui:8283", "steam:1062090", "steam:281990"] },
+        { "name": "实心面板 + 场景虚化", "diff": "vis.opacity = 1、vis.blur = 0，改用 rel.sceneBlur 10–16 + rel.dim；性能最好、可读性最好，是游戏里最常见的「玻璃感」。", "cards": ["iig:hi-fi-rush"] }
+      ],
+      "failureModes": [
+        { "desc": "文字下面的背景每帧在变，可读性不稳定；NN/g 建议背景越花模糊越重，并提供降低透明度 / 提高对比的选项（06 文档 B2）。", "evidence": [] },
+        { "desc": "WebGL 画布上每帧重新模糊，大面积大半径时开销明显；应改为在渲染管线里做一次降采样模糊再当面板底（06 文档 B2）。", "evidence": [] },
+        { "desc": "玻璃叠玻璃（弹窗套弹窗）时颜色互相污染、层级变糊（推断）。", "evidence": [] },
+        { "desc": "白色亮边 + 白字的浅玻璃放在雪地 / 天空上会整体消失（推断；正对本项目的雪线旅人示例）。", "evidence": [] }
+      ],
+      "skinGap": "skin.glass 有四处偏差：① vis.cornerSize = 33（按短边百分比，基本是胶囊），游戏里的玻璃面板多为直角、切角或小圆角；② vis.opacity = 0.18 太透，只适合背景已虚化的大面板，带文字的游戏面板一般在 0.4–0.8；③ 文字色固定白色，浅玻璃叠在亮场景上会看不清，应按面板明度切深 / 浅字；④ 没有「实心 + 场景虚化」这一最常见的游戏做法（应由 rel.sceneBlur 给出），也没有亮边只在上 / 左沿的光照方向感和防色带噪点。",
+      "paramGaps": ["背景饱和度提升（backdrop saturate）", "玻璃着色色调与面板底色分开", "颗粒噪点（防色带）", "亮边的光照方向（只亮上沿 / 左沿）", "模糊质量 / 降采样级别（性能档位）", "液态玻璃折射与边缘高光"]
+    },
+    {
+      "family": "新拟态",
+      "skin": "skin.neumorph",
+      "noCards": true,
+      "definition": "元素与背景同色，用一对方向相反的柔和明暗阴影做出凸起或压入的软塑料效果。几乎没有游戏把它当主风格；成体系的例子只在小型解谜应用里（如 iOS 上直接以 Neumorphism 命名的拼图游戏、网页小游戏 Neumorphic Knot）。在游戏里最有用的是它的局部：压入的凹槽空位、按下状态。它高饱和的近亲是糖果卡通族的软塑料双向阴影（vis.depth = soft3d 同一取值）。",
+      "whenToUse": "只适合全屏静态菜单（设置、关卡选择、禅意解谜）且背景是均匀纯色的场合；局内 HUD 不适用，因为它需要「背景与面板同色」，叠在实时 3D 画面上就失效。想要它的柔和感又要可读，就只取凹槽空位和按下态，其余用扁平 / 圆润友好。",
+      "grammar": {
+        "shape": "大圆角矩形和正圆，按钮像从底板里鼓出来；空位像压进去的凹坑。要把普通面板改成这个族：把面板色改成和背景完全一样，去掉描边，加左上亮影 + 右下暗影；按下或选中时把两层阴影改成内阴影。",
+        "line": "没有线；边界全靠明暗阴影。",
+        "surface": "单一浅灰蓝或米色（如 #E0E5EC 一类），可加与光源方向一致的极淡渐变。",
+        "color": "单色骨架；必须额外给主按钮一个强调色，否则没有主次。",
+        "type": "低对比灰色无衬线或圆体；标题与正文同一字族。",
+        "material": "软塑料、硅胶、黏土。",
+        "ornament": "无。",
+        "icon": "细线灰色图标，或同样凸起 / 压入的图标。",
+        "motion": "按下时阴影从外投影过渡到内阴影；缓出、柔和。",
+        "layout": "大留白、少元素、居中；分组靠压入的明度差区域。"
+      },
+      "params": {
+        "vis.depth": "soft3d",
+        "vis.stroke": "none",
+        "vis.fill": "solid",
+        "vis.opacity": 1,
+        "vis.gloss": "none",
+        "vis.corner": "round",
+        "vis.cornerSize": 18,
+        "vis.ornament": 0,
+        "col.lightness": "light",
+        "col.strategy": "mono",
+        "col.saturation": 0.25,
+        "typ.body.family": "round",
+        "typ.body.weight": "regular",
+        "typ.display.family": "same",
+        "vis.iconStyle": "line",
+        "ix.press": "sink",
+        "st.emptySlot": "pit",
+        "lay.grouping": "tonalInset",
+        "hier.cta": "color",
+        "rel.behind": "replaced",
+        "mo.enter": "fade",
+        "mo.easing": "easeOut"
+      },
+      "artPairing": [
+        { "artStyle": "白盒极简＋强调色 (White minimal)", "relation": "sameMedium", "why": "同为单色、柔光、无纹理。" },
+        { "artStyle": "黏土质感CG (Claymation-look CG)", "relation": "sameMedium", "why": "软塑料 / 黏土的凸起感一致。" },
+        { "artStyle": "平滑低模／色板贴图 (Smooth low poly)", "relation": "neutral", "why": "柔和纯色的低模场景（Dorfromantik、ISLANDERS 一类）气质接近，但局内要换成扁平。" },
+        { "artStyle": "任天堂玩具感 (Nintendo toy-like)", "relation": "neutral", "why": "高饱和版本就是糖果卡通的软塑料阴影。" }
+      ],
+      "genres": [
+        { "genre": "puzzle", "count": 0, "why": "禅意 / 极简解谜的菜单与棋盘（Neumorphism iOS 拼图、Neumorphic Knot 网页拼图）。" },
+        { "genre": "builder", "count": 0, "why": "柔和玩具式建造的设置页（推断，参考 Dorfromantik、Townscaper 卡的气质）。" }
+      ],
+      "exemplars": [
+        { "card": null, "game": "Neumorphism（iOS 解谜，2020）", "appid": null, "confidence": "verified-by-web", "why": "以风格命名的翻板解谜，整盘面板都是凸起 / 压入的同色块。" },
+        { "card": null, "game": "Neumorphic Knot（网页解谜，2022）", "appid": null, "confidence": "verified-by-web", "why": "交换拼块的网页小游戏，被固定的拼块用阴影区分。" },
+        { "card": null, "game": "Dorfromantik", "appid": 1455840, "nearestCard": "steam:1455840", "confidence": "verified-by-card", "why": "近邻而非本族：柔和纯色背景 + 极少 UI，是新拟态唯一可能成立的画面条件。" },
+        { "card": null, "game": "Townscaper", "appid": 1291340, "nearestCard": "steam:1291340", "confidence": "verified-by-card", "why": "近邻：零 UI，只有一个很淡的颜色选择器。" },
+        { "card": null, "game": "Squad Busters（爆裂小队）", "appid": null, "nearestCard": "gameui:13024", "confidence": "verified-by-card", "why": "高饱和近亲：结算与大厅用软塑料双向阴影（soft3d），说明同一阴影配方加上颜色后就进了糖果卡通族。" }
+      ],
+      "nearestCards": [
+        { "card": "steam:1455840", "why": "柔和纯色背景、极简 UI。" },
+        { "card": "steam:1291340", "why": "零 UI 玩具建造。" },
+        { "card": "steam:1046030", "why": "极简柔和的建造 HUD。" },
+        { "card": "gameui:13024", "why": "soft3d 的高饱和版本。" }
+      ],
+      "variants": [
+        { "name": "局部凹槽", "diff": "只把空槽和输入框做成压入（st.emptySlot = pit、cmp.input = darkInset），其余面板保持扁平；游戏里最实用的取法。", "cards": [] },
+        { "name": "彩色软塑料（转入糖果卡通）", "diff": "col.strategy = polychrome、col.saturation > 1、加描边与立体字：就不再是新拟态。", "cards": ["gameui:13024"] },
+        { "name": "暗色新拟态", "diff": "col.lightness = dark：背景接近纯黑时阴影失效，不推荐（06 文档 B3）。", "cards": [] }
+      ],
+      "failureModes": [
+        { "desc": "边界靠阴影，对比极弱；对比检查工具通常忽略阴影，低视力与色觉障碍玩家看不清（06 文档 B3）。", "evidence": [] },
+        { "desc": "按钮像静态内容，悬停 / 焦点 / 错误 / 禁用 / 选中都难表达；压入态同时被用作「按下」和「选中」会撞车（06 文档 B3）。", "evidence": [] },
+        { "desc": "必须「背景 = 面板色」，叠在实时 3D 画面上就失效，所以不能做 HUD（06 文档 B27 记 HUD ✗）。", "evidence": [] }
+      ],
+      "skinGap": "skin.neumorph：① col.strategy = mono 且没有 hier.cta，主按钮与普通按钮分不出来；② vis.cornerSize = 42（短边百分比，接近胶囊），可以保留给按钮，但面板应更小；③ 没有把空槽设为压入（st.emptySlot = pit）、分组设为明度内嵌（lay.grouping = tonalInset）这两个最能体现风格的组件默认值；④ 没有给 rel.behind = replaced，皮肤落在实时场景上时会直接失效；⑤ 没有高对比回退（打开 a11y.highContrast 时应补 1px 描边）。",
+      "paramGaps": ["阴影光源方向角", "亮影 / 暗影各自的距离与柔度", "选中态 = 压入（st.selected 没有 inset 取值）", "「面板色必须等于背景色」这一约束无法表达"]
+    },
+    {
+      "family": "构成主义",
+      "skin": "skin.constructivist",
+      "noCards": true,
+      "definition": "1920 年代苏联先锋派平面设计：红、黑、米白三色，对角线构图，楔形、圆、长条等几何块，粗压缩无衬线字，网点照片拼贴。游戏里最明确的 UI 例子是 Persona 5 Tactica（评论认为它把 Persona 5 的朋克拼贴换成了构成主义，更好读）；Amanita Design 的 Phonopolis 则把构成主义做成纸板实物的整体美术。它和 Persona 拼贴族都是红黑白 + 斜向，但构成主义是有秩序的几何，Persona 是混乱的勒索信拼贴。",
+      "whenToUse": "适合反乌托邦、政治 / 宣传、革命、工业题材，标题、菜单、章节卡、宣传海报式加载页；局内 HUD 斜排不利于快速读数，只宜借用色带和字。要注意题材语境：它和政治符号的关联很强。",
+      "grammar": {
+        "shape": "楔形、正圆、长条、直角块；块按 15–30° 对角线排布，彼此穿插。要把普通面板改成这个族：面板本身保持水平（文字要读），在面板后面压一条斜向红色长条和一个黑色圆或楔形，标题放在斜条上。",
+        "line": "几乎不用描边；用粗黑长条做分隔和引导线。",
+        "surface": "米白纸底 + 纯色平涂；照片做成单色网点。",
+        "color": "红 #C8102E 一类 + 黑 + 米白；严格双色（不算纸色），最多再加一个灰。",
+        "type": "粗压缩无衬线全大写，大字号，可竖排或沿斜线排；正文粗体无衬线。",
+        "material": "印刷纸、网点照片；Phonopolis 式的纸板实物版本。",
+        "ornament": "几何块本身就是装饰，不加花饰。",
+        "icon": "剪影或几何化的单色图标。",
+        "motion": "斜向冲入、遮罩擦除；线性、有力。",
+        "layout": "对角线分屏，主体压在一条斜向轴上；大字与几何块形成动势，信息块按网格对齐。"
+      },
+      "params": {
+        "vis.corner": "sharp",
+        "vis.skew": -8,
+        "vis.stroke": "none",
+        "vis.depth": "flat",
+        "vis.fill": "solid",
+        "col.lightness": "light",
+        "col.strategy": "duotone",
+        "col.accent": "#c8102e",
+        "col.accent2": "#111111",
+        "col.saturation": 1.1,
+        "typ.display.family": "condensed",
+        "typ.display.weight": "black",
+        "typ.display.case": "upper",
+        "typ.body.family": "sans",
+        "typ.body.weight": "bold",
+        "vis.pattern": "halftone",
+        "vis.patternOpacity": 0.3,
+        "vis.motif": "geometric",
+        "lay.composition": "diagonalSplit",
+        "cmp.plate": "slashBand",
+        "mo.enter": "slashIn",
+        "mo.easing": "linear",
+        "ix.focus": "invert",
+        "vis.iconStyle": "silhouette",
+        "hier.emphasis": ["size", "color"]
+      },
+      "artPairing": [
+        { "artStyle": "构成主义 (Constructivism)", "relation": "sameMedium", "why": "画面与 UI 同源（Phonopolis 的整体美术）。" },
+        { "artStyle": "纸板／瓦楞 (Cardboard)", "relation": "sameMedium", "why": "Phonopolis 用真实纸板做构成主义城市再数字化，和纸面族形成联系。" },
+        { "artStyle": "限色／双色调 (Limited palette/duotone)", "relation": "sameMedium", "why": "红黑双色本身就是限色。" },
+        { "artStyle": "柴油朋克 (Dieselpunk)", "relation": "neutral", "why": "工业、宣传、战时题材的共同气质（Atomic Heart 一类，UI 未核实）。" },
+        { "artStyle": "Q版／大头 (Chibi 3D)", "relation": "contrast", "why": "Persona 5 Tactica：Q 版角色配构成主义菜单，评论认为好看但题材意义不太贴合。" }
+      ],
+      "genres": [
+        { "genre": "strategy", "count": 0, "why": "战术 RPG 的菜单与章节卡（Persona 5 Tactica）。" },
+        { "genre": "puzzle", "count": 0, "why": "反乌托邦点击解谜（Phonopolis）。" },
+        { "genre": "narrative", "count": 0, "why": "政治 / 审查题材的叙事模拟（Papers, Please 的宣传海报气质）。" }
+      ],
+      "exemplars": [
+        { "card": null, "game": "Persona 5 Tactica", "appid": 2254740, "confidence": "verified-by-web", "why": "评测指出菜单从朋克拼贴转向构成主义：粗无衬线、斜向网格、几何版式，并且更易读。" },
+        { "card": null, "game": "Phonopolis", "appid": 1206070, "confidence": "verified-by-web", "why": "Amanita Design：以 1920 年代构成主义（兼及未来主义、至上主义）为灵感，用纸板模型拍摄后数字化；UI 细节未核实。" },
+        { "card": null, "game": "Papers, Please", "appid": 239030, "confidence": "partial", "why": "skin.constructivist 的唯一参考；虚构东欧国家的宣传海报美学主要出现在标题和海报上，局内是像素书桌。" },
+        { "card": null, "game": "Atomic Heart", "appid": 668580, "confidence": "unverified", "why": "苏联复古未来题材，海报与标识带构成主义元素；局内 HUD 是科幻风，未核实。" },
+        { "card": null, "game": "Command & Conquer: Red Alert 3（苏联阵营界面）", "appid": 17480, "confidence": "unverified", "why": "06 文档列为未核实；appid 也待核实。" },
+        { "card": null, "game": "The Proofreader（itch.io）", "appid": null, "confidence": "verified-by-web", "why": "开发日志称 UI 取材宣传海报与粗野主义建筑，限定红、黑、蓝、白。" }
+      ],
+      "nearestCards": [
+        { "card": "steam:1687950", "why": "Persona 5 Royal：红黑白斜排，但属于勒索信拼贴的朋克版本。" },
+        { "card": "steam:870780", "why": "CONTROL：黑底瑞士式表格 + 大号无衬线，受包豪斯 / 粗野主义影响，是不带红色的现代主义近邻。" },
+        { "card": "steam:1278540", "why": "Esports Godfather：红蓝双色斜切横幅 + 窄体字。" },
+        { "card": "steam:1252330", "why": "DEATHLOOP：60 年代海报风彩色斜切块 + 拼贴大字。" }
+      ],
+      "variants": [
+        { "name": "宣传海报式", "diff": "海报作为叙事内物件（rel.diegesis = diegetic），局内 UI 可以是别的风格（Papers, Please、Atomic Heart）。", "cards": [] },
+        { "name": "纸板构成", "diff": "ast.coreMat = paper、实物纸板质感 + 构成主义几何：与纸面族交界（Phonopolis）。", "cards": [] },
+        { "name": "包豪斯中性版", "diff": "去掉红色、col.strategy = mono、vis.skew = 0：滑向瑞士几何族（CONTROL）。", "cards": ["steam:870780"] },
+        { "name": "表现主义木刻（相邻，不属于本族）", "diff": "Through the Darkest of Times（appid 1003090）的魏玛表现主义：同为红黑与政治题材，但是木刻人物与扭曲透视，不是几何构成。", "cards": [] }
+      ],
+      "failureModes": [
+        { "desc": "斜排文字难读，局内 HUD 读数变慢（06 文档 B16）。", "evidence": [] },
+        { "desc": "大面积红黑带来压迫感，且与政治符号关联强，要注意题材语境（06 文档 B16）。", "evidence": [] },
+        { "desc": "强调色是红，警示也是红：警示必须换通道（闪烁、图标或黄黑条），否则淹没在骨架色里（推断）。", "evidence": [] },
+        { "desc": "风格与题材意义不贴合时显得只是装饰：评论对 Persona 5 Tactica 的构成主义菜单有这种批评，另有评测抱怨其菜单分层不合直觉（只转述，未统计）。", "evidence": [] }
+      ],
+      "skinGap": "skin.constructivist：① 整块面板 skewX -6，文字跟着斜，读起来累；参考作品是让色带和几何块斜、文字块保持水平。② 没有楔形、圆、长条这些几何母题（vis.motif 也只有几何线 / 同心圆），没有网点照片拼贴，画面只剩「红色左边条 + 米白底」，和瑞士族很难分开。③ 默认入场是 slashIn 但缓动未给，应为线性。④ refs 只有 Papers, Please，而它的局内 UI 并不是构成主义。",
+      "paramGaps": ["楔形 / 正圆 / 长条作为版式元素（vis.motif geometric 是几何线与同心圆）", "装饰层与文字层分开倾斜（vis.skew 只有一个值）", "网点照片拼贴素材槽", "沿斜线或竖排的拉丁大字（typ.direction 只有横排 / 竖排标题）"]
+    }
+  ],
+  "assignments": {
+    "steam:1586800": "手账拼贴 / 贴纸练习本",
+    "steam:592480": "手账拼贴 / 贴纸练习本",
+    "steam:1839510": "手账拼贴 / 贴纸练习本",
+    "steam:2095150": "铅笔素描本",
+    "steam:2501600": "铅笔素描本",
+    "steam:1931770": "铅笔素描本",
+    "steam:1123450": "墨线涂鸦 / 儿童画",
+    "steam:1150690": "墨线涂鸦 / 儿童画",
+    "steam:219740": "哥特刮擦墨线",
+    "iig:dont-starve": "哥特刮擦墨线",
+    "steam:553420": "手绘笔记本",
+    "steam:1458100": "圆润友好",
+    "gameui:4239": "圆润友好",
+    "steam:1210320": "手抄本与木刻",
+    "steam:1205520": "手抄本与木刻",
+    "steam:957960": "手抄本与木刻",
+    "steam:358130": "冒险日志与藏宝图",
+    "steam:2389040": "冒险日志与藏宝图",
+    "steam:763890": "冒险日志与藏宝图",
+    "gameui:2752": "冒险日志与藏宝图",
+    "gameui:3105": "冒险日志与藏宝图",
+    "gameui:2630": "冒险日志与藏宝图",
+    "steam:290340": "桌游卡面与纹章",
+    "steam:1054490": "桌游卡面与纹章",
+    "steam:916440": "印刷品与报刊海报",
+    "steam:2668510": "印刷品与报刊海报"
+  }
+}

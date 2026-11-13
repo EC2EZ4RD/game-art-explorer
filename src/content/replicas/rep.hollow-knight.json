@@ -1,0 +1,1118 @@
+{
+ "id": "rep.hollow-knight",
+ "name": "Hollow Knight",
+ "card": "steam:367520",
+ "genre": "platformer",
+ "family": "fam.filigree",
+ "pack": "platformer",
+ "art": {
+  "recipe": "moebius",
+  "scene": "sideStage-cave",
+  "values": {
+   "color.palette": "night",
+   "color.temperature": -0.4,
+   "color.saturation": 0.75,
+   "color.brightness": 0.75
+  }
+ },
+ "base": {
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "hud.style": "filigree",
+  "uip.keyword": "none",
+  "ctx.input": "pad",
+  "ix.glyphs": "xbox",
+  "typ.baseSize": 28,
+  "typ.scale": 1.3,
+  "typ.body.family": "serif",
+  "typ.body.weight": "regular",
+  "typ.body.case": "asIs",
+  "typ.display.family": "serif",
+  "typ.display.weight": "regular",
+  "typ.display.case": "smallCaps",
+  "typ.numerals.family": "body",
+  "typ.titleFx": "none",
+  "typ.legibility": "shadow",
+  "col.lightness": "dark",
+  "col.strategy": "mono",
+  "col.source": "skin",
+  "col.surface": "#000000",
+  "col.surface2": "#0d0f14",
+  "col.text": "#efede6",
+  "col.accent": "#f4f2ec",
+  "col.focus": "#a9c6ff",
+  "col.border": "#ece9e1",
+  "vis.opacity": 0,
+  "vis.stroke": "none",
+  "vis.strokeWidth": 1.5,
+  "vis.strokeColor": "custom",
+  "vis.depth": "flat",
+  "vis.corner": "sharp",
+  "ast.frame": "procedural",
+  "ast.frameMat": "lineArt",
+  "vis.motif": "floral",
+  "vis.ornament": 2,
+  "ast.ornaments": [],
+  "vis.iconStyle": "painted",
+  "ast.iconSet": "procedural",
+  "rel.harmony": "sameMedium",
+  "rel.followPost": "crisp",
+  "ix.focus": "cursor",
+  "st.emptySlot": "pit",
+  "cmp.modal": "floating",
+  "lay.pageIndicator": "arrows",
+  "mo.enter": "fade",
+  "mo.easing": "easeOut",
+  "mo.duration": 0.35,
+  "mo.juice": 0.5,
+  "vis.strokeFade": 0.35,
+  "col.ornament": "#ece9e1"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/card/img/steam_367520_1.jpg",
+   "values": {
+    "uip.layout": "layout.metroidvania",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "lay.safeMargin": 5,
+    "rel.hudVisibility": "always",
+    "cnt.density": 1,
+    "vis.opacity": 0,
+    "typ.legibility": "shadow",
+    "cnt.elements": [
+     "el.abilities",
+     "el.vitals",
+     "el.resources"
+    ],
+    "el.abilities.form": "ultimate",
+    "el.abilities.screenAnchor": "tl",
+    "el.abilities.scale": 0.7,
+    "el.abilities.priority": "secondary",
+    "el.abilities.valueLabel": "none",
+    "col.accent@el.abilities": "#f2f1ec",
+    "el.vitals.count": 1,
+    "cmp.gauge@el.vitals": "icons",
+    "el.vitals.screenAnchor": "tl",
+    "el.vitals.priority": "secondary",
+    "el.vitals.valueLabel": "none",
+    "el.vitals.scale": 1.25,
+    "el.resources.form": "bigNumber",
+    "el.resources.screenAnchor": "tl",
+    "el.resources.scale": 0.65,
+    "el.resources.priority": "secondary",
+    "mo.valueChange@el.resources": "countUp",
+    "mo.valueChange": "segment",
+    "rel.metaFx": [
+     "hitFlash"
+    ],
+    "el.vitals.stackDir": "row",
+    "cmp.gauge@el.abilities": "orb",
+    "el.vitals.labels": "none",
+    "el.abilities.group": "g1",
+    "el.vitals.group": "g1",
+    "el.abilities.groupConnector": "flourish"
+   }
+  },
+  {
+   "key": "map",
+   "ref": "qa/refs-cache/iig/img/hollow-knight__hollow-knight-map.jpg",
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.subtype": "worldmap",
+    "cnt.screen": "screen.map",
+    "lay.container": "modal",
+    "cmp.modal": "floating",
+    "lay.panelSize": 0.55,
+    "rel.behind": "live",
+    "rel.dim": 0.6,
+    "rel.hudVisibility": "always",
+    "cnt.dataShape": "spatial",
+    "cnt.focal": "none",
+    "lay.nav": "none",
+    "lay.detail": "none",
+    "vis.mapStyle": "chalk",
+    "vis.mapUnexplored": "dashedExits",
+    "cmp.node": "iconBadge",
+    "col.accent": "#c8e4f2",
+    "col.accent2": "#5fc3d4",
+    "col.coding": [
+     "lineId"
+    ],
+    "lay.overflow": "single",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "ix.blocking": "none",
+    "flow.entry": "hotkey",
+    "flow.stacking": "overHud",
+    "mo.enter": "fade",
+    "uip.layout": "layout.metroidvania",
+    "el.vitals.count": 1,
+    "el.vitals.labels": "none",
+    "el.vitals.scale": 1.25,
+    "lay.titleAlign": "center",
+    "vis.mapLabels": "onMap"
+   }
+  },
+  {
+   "key": "character",
+   "ref": "qa/refs-cache/iig/img/hollow-knight__hollow-knight-charms.jpg",
+   "values": {
+    "uip.screen": "tpl.loadout",
+    "cnt.subtype": "loadout",
+    "cnt.screen": "screen.character",
+    "lay.container": "fullscreen",
+    "cmp.modal": "standard",
+    "rel.behind": "frozen",
+    "rel.dim": 0.88,
+    "vis.opacity": 0,
+    "cnt.focal": "none",
+    "cnt.dataShape": "collection",
+    "cnt.density": 2,
+    "lay.composition": "splitLR",
+    "lay.arrangement": "hexGrid",
+    "lay.columns": 10,
+    "cnt.itemCount": 32,
+    "cmp.slot": "cell",
+    "vis.silhouette@slot": "circle",
+    "st.emptySlot": "pit",
+    "st.selected": "glow",
+    "st.locked": "dimmed",
+    "st.newCue": "none",
+    "st.rarityCue": [
+     "none"
+    ],
+    "col.rarityScale": "metal",
+    "st.delta": "newOnly",
+    "lay.detail": "persistent",
+    "lay.grouping": "divider",
+    "lay.nav": "carousel",
+    "lay.overflow": "single",
+    "ast.frame": "procedural",
+    "ast.frameMat": "lineArt",
+    "vis.ornament": 3,
+    "vis.motif": "floral",
+    "ast.ornaments": [
+     "none",
+     "corners"
+    ],
+    "cnt.textLength": "short",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "ix.focus": [
+     "cornerFlourish"
+    ],
+    "flow.entry": "hotkey",
+    "flow.stacking": "replace",
+    "mo.enter": "fade",
+    "lay.focalSide": "center",
+    "lay.titleAlign": "center",
+    "cmp.slotBadge": "none",
+    "cnt.fillRatio": 0.08,
+    "col.focus": "#a8d8ff",
+    "cmp.plate@title": "flourish",
+    "lay.sections": [
+     "row",
+     "grid"
+    ],
+    "cmp.detailFields": [
+     "name",
+     "progressDots",
+     "art",
+     "desc"
+    ],
+    "lay.cellSize": 40,
+    "lay.gap": 52
+   }
+  },
+  {
+   "key": "inventory",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.inventory",
+    "cnt.subtype": "bag",
+    "cnt.screen": "screen.inventory",
+    "lay.container": "fullscreen",
+    "cmp.modal": "standard",
+    "rel.behind": "frozen",
+    "rel.dim": 0.88,
+    "vis.opacity": 0,
+    "cnt.dataShape": "collection",
+    "cnt.focal": "none",
+    "lay.composition": "splitLR",
+    "lay.arrangement": "fixedGroups",
+    "lay.columns": 6,
+    "cnt.itemCount": 10,
+    "cmp.slot": "bare",
+    "st.emptySlot": "hidden",
+    "st.newCue": "none",
+    "st.selected": "glow",
+    "st.rarityCue": [
+     "none"
+    ],
+    "col.rarityScale": "metal",
+    "st.delta": "newOnly",
+    "lay.detail": "persistent",
+    "lay.grouping": "whitespace",
+    "lay.nav": "none",
+    "lay.navDepth": 0,
+    "lay.overflow": "single",
+    "vis.ornament": 3,
+    "vis.motif": "floral",
+    "ast.ornaments": [
+     "none",
+     "corners"
+    ],
+    "cnt.textLength": "short",
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "ix.focus": "focusGlow",
+    "flow.entry": "hotkey",
+    "flow.stacking": "replace",
+    "mo.enter": "fade",
+    "st.locked": "dimmed",
+    "lay.titleAlign": "center",
+    "cmp.slotBadge": "none",
+    "cmp.slotGroup": "plain"
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.subtype": "npc",
+    "cnt.screen": "screen.dialogue",
+    "lay.container": "banner",
+    "lay.panelSize": 0.45,
+    "cmp.dialogBox": "topBox",
+    "cnt.focal": "none",
+    "cnt.companion": "none",
+    "lay.layering": "separate",
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "rel.hudVisibility": "always",
+    "vis.opacity": 0.8,
+    "vis.fill": "gradient",
+    "col.surface": "#050506",
+    "vis.strokeSides": "topBottom",
+    "cnt.elements": [
+     "el.subtitle"
+    ],
+    "el.subtitle.screenAnchor": "tc",
+    "cnt.textLength": "short",
+    "cnt.tone": "character",
+    "typ.legibility": "none",
+    "mo.textReveal": "typewriter",
+    "ix.continueCue": "ornament",
+    "ix.skip": "none",
+    "ix.dismiss": "key",
+    "flow.entry": "worldInteract",
+    "el.subtitle.scale": 1.15,
+    "lay.safeMargin": 6,
+    "el.subtitle.form": "lineOnly",
+    "col.surface@dialog": "#050506",
+    "vis.opacity@dialog": 0.8,
+    "vis.stroke@dialog": "solid",
+    "vis.strokeSides@dialog": "topBottom",
+    "vis.strokeColor@dialog": "custom"
+   }
+  },
+  {
+   "key": "chapter",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.chapterCard",
+    "cnt.subtype": "chapter",
+    "cnt.layer": "overlay",
+    "lay.container": "overlay",
+    "rel.behind": "live",
+    "rel.hudVisibility": "always",
+    "cnt.focal": "none",
+    "cnt.elements": [
+     "el.title",
+     "el.abilities",
+     "el.vitals",
+     "el.resources"
+    ],
+    "el.title.form": "areaCard",
+    "el.title.screenAnchor": "center",
+    "el.title.scale": 0.7,
+    "el.title.priority": "primary",
+    "typ.display.case": "upper",
+    "typ.display.tracking": 0.12,
+    "typ.numbering": "none",
+    "typ.direction": "horizontal",
+    "el.vitals.count": 1,
+    "cmp.gauge@el.vitals": "icons",
+    "el.vitals.screenAnchor": "tl",
+    "el.vitals.valueLabel": "none",
+    "el.vitals.scale": 1.25,
+    "el.resources.form": "bigNumber",
+    "el.resources.screenAnchor": "tl",
+    "el.resources.scale": 0.65,
+    "el.abilities.form": "ultimate",
+    "el.abilities.screenAnchor": "tl",
+    "el.abilities.scale": 0.7,
+    "lay.safeMargin": 5,
+    "cnt.textLength": "title",
+    "mo.enter": "fade",
+    "mo.duration": 1.0,
+    "ix.mode": "readOnly",
+    "ix.dismiss": "timed",
+    "ix.blocking": "none",
+    "flow.entry": "event",
+    "el.vitals.stackDir": "row",
+    "cmp.gauge@el.abilities": "orb",
+    "el.vitals.labels": "none",
+    "el.abilities.group": "g1",
+    "el.vitals.group": "g1",
+    "el.abilities.groupConnector": "flourish",
+    "el.abilities.valueLabel": "none"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "kind": "composite",
+   "severity": "high",
+   "what": "左上是一个锁扣：大圆灵魂容器在最左、面具横排在它右侧、吉欧数在面具下方，三者由一道白色牛角飞白花线连成一体；同锚点（tl）的元素只能竖着堆成『面具 / 吉欧 / 灵魂环』三行，灵魂容器掉到最下面",
+   "proposal": "元素组合锁扣：elx.dockTo（挂在另一元素的右侧 / 下方 + 偏移），可选连接饰线（ast.ornaments 加 connector，沿锁扣画一道飞白花线）",
+   "resolvedBy": "cnt.elements 顺序 + el.vitals.stackDir = row（锁扣；连接饰线仍缺）"
+  },
+  {
+   "screen": "hud",
+   "kind": "renderBug",
+   "severity": "medium",
+   "what": "灵魂容器借 el.abilities = ultimate 表达：这个画法写死成进度圆环 + 环心百分比 + ✦ 符号，不读 cmp.gauge@el.abilities（orb）也不读 el.abilities.valueLabel = none（round 2 仍画出『66%』）；原作是不写字的液面圆球",
+   "proposal": "ultimate 画法读 cmp.gauge@el.abilities（orb / ring）与 elx.valueLabel，符号可关；或新增 el.mana（第二资源球）",
+   "resolvedBy": "cmp.gauge@el.abilities"
+  },
+  {
+   "screen": "hud",
+   "kind": "missingParam",
+   "severity": "medium",
+   "what": "el.vitals 每一行左边固定写生命名标签（『灯火』），没法关；原作面具前没有任何文字",
+   "proposal": "新增 elx.label（显示 / 隐藏元素名称），与 elx.valueLabel 并列",
+   "resolvedBy": "el.vitals.labels"
+  },
+  {
+   "screen": "hud",
+   "kind": "renderBug",
+   "severity": "medium",
+   "what": "el.vitals 的第一行颜色写死为『坏』色（红），col.accent@el.vitals 不生效，面具只能画成红心；原作是白色面具",
+   "proposal": "el.vitals 各行的填充色先读 col.accent@el.vitals（有作用域取值时覆盖 bad / accent2 / good）",
+   "resolvedBy": "M12a-02（col.strategy = mono：面具画成强调色白）"
+  },
+  {
+   "screen": "hud",
+   "kind": "renderBug",
+   "severity": "low",
+   "what": "el.resources = bigNumber 时货币图标写死成金色 ◆（#e3b341），不读 col.accent@el.resources；原作是灰白吉欧石",
+   "proposal": "主货币图标颜色读 col.accent@el.resources，未设时才用金色",
+   "resolvedBy": "M12a-02 / 03（主货币走色板角色，mono 下为白）"
+  },
+  {
+   "screen": "hud",
+   "kind": "motion",
+   "severity": "low",
+   "what": "拾取吉欧时总数右边先显示 '+N' 暂存数，停顿后滚进总数；掉血时面具碎裂、回血时重新长出",
+   "proposal": "mo.valueChange 加 pendingDelta；图标列加碎裂 / 重生的逐格动效（mo.iconLoss = shatter）"
+  },
+  {
+   "screen": "character",
+   "kind": "newDrawing",
+   "severity": "high",
+   "what": "白色巴洛克大角花与饰线：程序矢量角花只是等宽粗线的 L 形两条线 + 一个小卷曲，底边是两段平直粗线 + 心形卷涡；原作是大幅书法卷草，线条有粗细调制、涡旋收尾，四角互不相连（护符页与物品栏共用）",
+   "proposal": "矢量角花加 baroque 画法（S 形卷草 + 涡旋收尾，按装饰预算加枝）；vis.stroke 加 calligraphic（沿路径粗细调制、两端收尖）",
+   "resolvedBy": "ast.ornaments [none, corners]（白描位图巴洛克角花；R3 对照图确认）"
+  },
+  {
+   "screen": "character",
+   "kind": "renderBug",
+   "severity": "medium",
+   "what": "白色角花要靠绕路才画得出：皮肤关键词点名的 corners 一律用金色位图图集（不管 frameMat = lineArt、饰色是白），ast.ornaments 是并集合并，手动给空列表清不掉关键词层的值，只能 uip.keyword = none + 空饰件列表",
+   "proposal": "角花图集按饰色着色（frameMat = lineArt 时用描线版）；ast.ornaments 的手动值改为替换而非并集",
+   "resolvedBy": "ast.ornaments [none, corners]"
+  },
+  {
+   "screen": "character",
+   "kind": "renderBug",
+   "severity": "low",
+   "what": "装饰预算画在顶边正中的母题符号被放在面板外沿上，渲染出来只剩半个圆弧、另一半被屏幕顶边截掉",
+   "proposal": "顶边母题的锚点内收到安全区内（或与标题花托合并画在标题两侧）",
+   "partialBy": "R4 对照图：顶边母题内收、整枚可见，但压在标题字上",
+   "resolvedBy": "R4 回归修复 C1 ⑤（居中标题与顶边正中的心形卷涡相交时页头行挪到饰件下沿以下：护符页 / 背包的标题不再被压）"
+  },
+  {
+   "screen": "character",
+   "kind": "layoutEngine",
+   "severity": "medium",
+   "what": "角花与内容互相不避让：左上角花的横线穿过页标题，右上角花压在关闭胶囊上，左侧稀有度竖条和角花竖线并在一起（护符页与物品栏都有）",
+   "proposal": "饰件占位进入版式计算：画角花时把面板内容区按角花尺寸内缩（lay.ornamentInset，或由装饰预算自动推算）",
+   "resolvedBy": "M12a-08 饰件占位 + lay.titleAlign center + ix.close none（标题与角花不再相压）"
+  },
+  {
+   "screen": "character",
+   "kind": "newDrawing",
+   "severity": "high",
+   "what": "页标题 'Charms' 居中坐在一条左右对称的大花线正中（标题花托）；模板没有这种标题牌，装饰预算只在顶边正中补一个小母题符号，两者是分开的",
+   "proposal": "cmp.plate 加 flourish（标题两侧对称书法花线、中间下垂一个小尖饰），与 lay.titleAlign = center 一起用",
+   "partialBy": "cmp.plate@title = flourish（标题两侧小花线有了；与顶边心形卷涡叠在一起）"
+  },
+  {
+   "screen": "all",
+   "kind": "missingParam",
+   "severity": "medium",
+   "what": "菜单页标题与快捷地图的区域名都居中在顶部（'Charms'、'Forgotten Crossroads'）；模板标题固定在面板左上角",
+   "proposal": "新增 lay.titleAlign（left / center），作用于所有界面模板的页标题",
+   "resolvedBy": "lay.titleAlign"
+  },
+  {
+   "screen": "character",
+   "kind": "renderBug",
+   "severity": "high",
+   "what": "护符格应是圆形暗坑（◎）；vis.silhouette@slot = circle 不被网格格子使用，格子仍按方格布位，选中框也是方形",
+   "proposal": "网格格子与选中框的外形读 vis.silhouette@slot（circle 时画圆坑 + 圆形高亮）",
+   "resolvedBy": "M12a-09（vis.silhouette@slot = circle 画圆坑）"
+  },
+  {
+   "screen": "character",
+   "kind": "missingParam",
+   "severity": "high",
+   "what": "原作护符网格几乎全是空槽、只有一两枚护符；模板网格把每一格都填满物品，空槽表现（st.emptySlot = pit）因此永远不出现",
+   "proposal": "新增 cnt.fillRatio（集合里多少格已占用，其余按 st.emptySlot 画）",
+   "resolvedBy": "cnt.fillRatio"
+  },
+  {
+   "screen": "character",
+   "kind": "missingOption",
+   "severity": "low",
+   "what": "每格都带数量角标（3 / 2 / 1 …）；护符是唯一物品，没有数量",
+   "proposal": "cmp.slot 加 noQty（或 elx.valueLabel 作用到格子：none 时不画数量）",
+   "resolvedBy": "cmp.slotBadge"
+  },
+  {
+   "screen": "character",
+   "kind": "missingOption",
+   "severity": "medium",
+   "what": "稀有度提示关不掉：网格固定给三分之一的物品稀有度，st.rarityCue 每个取值都会画彩色记号（strip + metal 仍有金 / 银竖条）；原作没有稀有度",
+   "proposal": "st.rarityCue 加 none（或 col.rarityScale 加 mono）",
+   "resolvedBy": "st.rarityCue"
+  },
+  {
+   "screen": "character",
+   "kind": "newDrawing",
+   "severity": "medium",
+   "what": "选中光标是四个小角花包住目标 + 背后淡蓝光晕；ix.focus 只有描边 / 发光方框 / 三角光标等，光晕色也不读 col.focus",
+   "proposal": "ix.focus 加 cornerFlourish（四角小卷草，复用角花画法缩小），光晕色取 col.focus",
+   "resolvedBy": "ix.focus = cornerFlourish + col.focus #a8d8ff（四角小花 + 淡蓝光晕）"
+  },
+  {
+   "screen": "character",
+   "kind": "newDrawing",
+   "severity": "medium",
+   "what": "页面导航是轮播：左上 'LT Inventory'、右上 'Map RT'（相邻页名 + 肩键图标），两侧中部白色菱形翻页箭头；lay.nav 只有页签 / 宫格 / 热区，现在只能不画导航",
+   "proposal": "lay.nav 加 carousel（只显示前后页名 + 按键图标 + 两侧菱形箭头，箭头形状跟 vis.motif）",
+   "partialBy": "lay.nav = carousel（LT / RT 相邻页名有了；两侧箭头很小、不是菱形）"
+  },
+  {
+   "screen": "all",
+   "kind": "missingOption",
+   "severity": "low",
+   "what": "ix.close 没有『不画』：护符页、物品栏、地图右上角都多出一枚『ESC 返回』胶囊；原作菜单不显示关闭提示（靠相邻页名与按键说明）",
+   "proposal": "ix.close 加 none",
+   "resolvedBy": "ix.close"
+  },
+  {
+   "screen": "all",
+   "kind": "renderBug",
+   "severity": "low",
+   "what": "按键 / 胶囊 / 主按钮的底色 = 强调色、字色固定白色：本作强调色近白，『ESC 返回』胶囊、详情栏『使用』按钮、地图上的淡蓝胶囊都成了白底白字",
+   "proposal": "按键字色按底色明度自动取黑 / 白（或新增 col.onAccent）",
+   "resolvedBy": "M12a-04（onAccent：‘使用’按钮浅底深字）"
+  },
+  {
+   "screen": "character",
+   "kind": "layoutEngine",
+   "severity": "medium",
+   "what": "hexGrid 给奇数行加半格偏移，但列宽仍按整列数均分、没把半格算进网格宽度：错位行的最后一列伸进右侧详情栏，与『亮度 / 纯度』标签叠在一起",
+   "proposal": "hexGrid 按 (列数 + 0.5) 格宽求网格宽度与列宽，超出时自动缩格或减列",
+   "resolvedBy": "M12a-28（hexGrid 半格偏移算进网格宽，不再伸进详情栏）"
+  },
+  {
+   "screen": "character",
+   "kind": "layoutEngine",
+   "severity": "medium",
+   "what": "左半区是多个带小标题的分区：上方 'Equipped' 已装备一行与 'Notches' 凹槽计数，中间一条横贯、两端渐隐的分隔线，网格在下半区（4 行 × 10 列）；模板只有一个网格，占左上半区、下半屏空着",
+   "proposal": "面板内允许多个带标题的小分区（lay.sections：标题 + 内容类型 + 占比），分区间用 lay.grouping = divider 画分隔线",
+   "resolvedBy": "lay.sections [row, grid]（上方一行 + 渐隐分隔线 + 网格）"
+  },
+  {
+   "screen": "all",
+   "kind": "missingParam",
+   "severity": "medium",
+   "what": "菜单里的长分隔线两端渐隐到透明；程序饰线 / 分隔线两端是齐头的",
+   "proposal": "新增 vis.strokeFadeEnds（饰线 / 分隔线两端渐隐长度）",
+   "resolvedBy": "vis.strokeFade 0.35（分隔线 / 底边饰线两端渐隐）"
+  },
+  {
+   "screen": "character",
+   "kind": "missingOption",
+   "severity": "low",
+   "what": "lay.columns 的取值范围上限是 8，原作护符网格是 10 列",
+   "proposal": "lay.columns 上限放宽到 12（窄屏再按格宽自动减列）",
+   "resolvedBy": "lay.columns"
+  },
+  {
+   "screen": "character",
+   "kind": "missingParam",
+   "severity": "medium",
+   "what": "右栏只有名字、Cost 凹槽、大图标与两段描述；模板详情栏固定画两条属性条 +『使用 / 查看』按钮",
+   "proposal": "详情栏字段可选：cmp.detail = name / cost / art / desc / stats / buttons 多选",
+   "resolvedBy": "cmp.detailFields [name, progressDots, art, desc]"
+  },
+  {
+   "screen": "character",
+   "kind": "missingOption",
+   "severity": "low",
+   "what": "'Cost' 后面是 N 个凹槽小圆图标（用重复图标数表示消耗）；el.cost 的 slots 是格子而不是重复的小图标",
+   "proposal": "el.cost.form 加 pips（重复图标计数，图标形跟 st.emptySlot = pit）",
+   "partialBy": "cmp.detailFields progressDots（名字下一排凹槽点；没有 Cost 字样）"
+  },
+  {
+   "screen": "inventory",
+   "kind": "layoutEngine",
+   "severity": "medium",
+   "what": "（凭记忆）物品栏不是网格：骨钉、法术、梦之钉、钥匙、遗物、面具碎片等按固定位置分组摆放，图标直接放在黑底上、没有格框；模板只能排成等距方格网格",
+   "proposal": "lay.arrangement 加 fixedGroups（按分组的固定位次摆放，每组可带小标题），或由 lay.sections 承载多个小分区",
+   "partialBy": "lay.arrangement = fixedGroups（按组摆放 + 小标题；图标仍带方框）"
+  },
+  {
+   "screen": "map",
+   "kind": "renderBug",
+   "severity": "high",
+   "what": "vis.mapStyle = chalk 没有画出粉笔线：除羊皮纸 / 水彩外（chalk、glowSilhouette、tactical……）都只把场景烘焙图平铺成灰绿色块 + 圆角矩形；原作是暗底上淡蓝白粉笔线勾的房间轮廓 + 深色内填，没有矩形边界",
+   "proposal": "vis.mapStyle = chalk：按烘焙图描边画房间轮廓（线色 col.accent、内填 col.surface），不画底板矩形",
+   "resolvedBy": "R4 回归修复 C4（chalk 搬进程序画风表：底色压暗的内填 + 陆地边与房间的并集轮廓，地图外透明；vis.mapUnexplored = dashedExits 改成把未探索区从地图上抠掉，不再盖一块不透明的面板底色）+ R4 审查修复 ③⑰（透明地图开着时垫底的居中小地图自动不画，不用写 el.minimap.underlay = hide）。浏览器目检待 lead；写值建议：vis.mapRevealRadius 约 0.35（静帧里看得到房间轮廓）、要淡蓝白线写 vis.mapInk = #c8e4f2"
+  },
+  {
+   "screen": "map",
+   "kind": "missingOption",
+   "severity": "low",
+   "what": "未走过的出口画成伸出房间的虚线",
+   "proposal": "vis.mapUnexplored 加 dashedExits"
+  },
+  {
+   "screen": "map",
+   "kind": "layoutEngine",
+   "severity": "medium",
+   "what": "快捷地图打开时局内 HUD（面具 / 灵魂 / 吉欧）仍留在左上并被压暗；模板界面只能把元素排进容器框内，不能叠在局内 HUD 之上，所以这一屏没有 HUD",
+   "proposal": "界面模板加 flow.stacking = overHud：先画当前品类布局的局内元素（按 rel.dim 压暗），再画模板",
+   "resolvedBy": "uip.layout + flow.stacking = overHud"
+  },
+  {
+   "screen": "map",
+   "kind": "missingOption",
+   "severity": "low",
+   "what": "地图标记是圆形徽章内画图标，按类别着色（长椅青、鹿角站橙、骑士头像白），地名是衬线小字直接写在地图上；现在是绿色 / 淡蓝水滴图钉 + 左上一枚地名胶囊",
+   "proposal": "cmp.node 加 badge（圆徽章 + 内图标），按类别着色（col.coding = lineId 作用到节点）；地名标签加 bare（无底衬线小字）",
+   "partialBy": "cmp.node = iconBadge（圆徽章有了；没按类别着色）"
+  },
+  {
+   "screen": "dialogue",
+   "kind": "newDrawing",
+   "severity": "medium",
+   "what": "对话框在屏幕上方居中、约半屏宽、两三行居中文字：近黑羽化底 + 上下两条对称白色花线，底部中央一个小花饰作继续提示，没有名牌与立绘；现在只能借字幕元素画一行带『说话人：』前缀的平涂暗底字条，外框 / 饰件 / 填充参数都不作用到它",
+   "proposal": "cmp.dialogBox 加 topBox（上方居中、宽度读 lay.panelSize、多行居中、无名牌、羽化底），饰件 dividers 作用到对话框上下边；ix.continueCue 加 ornament",
+   "partialBy": "ix.continueCue = ornament（底部小花饰）；topBox 的近黑羽化底与上下花线没画出来"
+  },
+  {
+   "screen": "chapter",
+   "kind": "newDrawing",
+   "severity": "medium",
+   "what": "区域标题卡：上方一行小字（'The' / 副标题）、中间大号全大写衬线区域名、下方一条对称花线；现在借 el.title = logo：居中大字 + 下方一行字距拉开的小字，没有花线，小字位置在下",
+   "proposal": "el.title.form 加 areaCard（上小字 + 主标题 + 花托），按首次 / 再访切大小（再访只在角落小字闪现）",
+   "resolvedBy": "el.title.form = areaCard（上小字 + 区域名 + 花托）"
+  },
+  {
+   "screen": "all",
+   "kind": "asset",
+   "severity": "medium",
+   "what": "图标是单色手绘蚀刻（护符、面具、吉欧石、地图标记、物品）；手绘图集是全彩厚涂，只好用程序几何符号（白色单色，但只是 ✦ ♥ ■ ● ▲ 这类通用符号）",
+   "proposal": "素材：ast.iconSet = asset 加一套单色蚀刻图集（vis.iconStyle 加 etched，或按 col.strategy = mono 去色）；面具做成生命图标列的素材槽"
+  },
+  {
+   "screen": "dialogue",
+   "what": "el.subtitle 有底条就必带‘说话人：’前缀（boxed），不带前缀（lineOnly）就没有底条，@dialog 的底色与上下白线也随之不画；原作是无名牌的近黑底对话框",
+   "severity": "medium",
+   "proposal": "说话人前缀与底条拆成两个开关（el.subtitle.speaker = prefix / none，与 form 独立），或新增 boxedLine（有底条、无前缀）",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "map",
+   "what": "tpl.worldmap 页头只能写模板名‘世界地图’；原作快捷地图顶部居中写当前区域名（Forgotten Crossroads）",
+   "severity": "low",
+   "proposal": "内容包给当前区域名（screens.mapRegion），worldmap 页头优先写它",
+   "kind": "content",
+   "resolvedBy": "R4 对照图：地图页头写区域名（菌林）"
+  },
+  {
+   "screen": "hud / chapter",
+   "what": "写了 el.abilities / el.vitals 同组（elx.group g1）+ el.abilities.groupConnector = flourish，灵魂球与面具之间仍没有连线；组员都锚 tl，可能是组外的吉欧数落进组的外接框、被判成 C-group-split",
+   "severity": "medium",
+   "proposal": "组的连接饰线只按组员自身的框画（旁边的组外元素不打断）；画不出时检查给出原因",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C3 ③：组员之间的饰线只要组员在同一锚点就画（外接框里落进组外的吉欧数不再整组不画，只有空当本身压着组外元素的那一段才不画）；组框（groupFrame）照旧要外接框干净；R4 审查修复 ⑱：花饰长随组员（至少矮的那块高 × 0.6）"
+  },
+  {
+   "screen": "inventory",
+   "what": "（凭记忆）lay.arrangement = fixedGroups 时格子不读 cmp.slot = bare：每枚图标仍套细灰方框",
+   "severity": "low",
+   "proposal": "fixedGroups 的格子按 cmp.slot 画（bare = 无底无框，只给焦点格高亮）",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C2 ⑨（固定分组 / 两侧列的格组读 cmp.slot = bare：不画格底与格框，空槽只画淡剪影）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "（凭记忆）tpl.npc + lay.container = banner + cmp.dialogBox = topBox 时对话框没画出来，只剩 el.subtitle（lineOnly）的一行无底字；文档说一句话由对话框画、字幕元素不另画",
+   "severity": "medium",
+   "proposal": "有 cmp.dialogBox 版式的对话类模板里，cnt.elements 的 el.subtitle 不抢画正文（或在检查里提示两者冲突）；topBox 在横幅容器上画近黑羽化底 + 上下花线",
+   "kind": "renderBug"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 3,
+    "density": 6,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 7,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 1,
+    "elements": 1,
+    "palette": 3,
+    "type": 3,
+    "shape": 2,
+    "density": 2,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 2,
+    "palette": 3,
+    "type": 3,
+    "shape": 2,
+    "density": 3,
+    "overall": 2,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 4,
+    "density": 3,
+    "overall": 4,
+    "round": 4
+   }
+  ],
+  "character": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 2,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "inventory": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 2,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "dialogue": [
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 3,
+    "density": 6,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 3,
+    "density": 6,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 2,
+    "density": 6,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 3,
+    "density": 6,
+    "overall": 4,
+    "round": 4
+   }
+  ],
+  "chapter": [
+   {
+    "layout": 2,
+    "elements": 2,
+    "palette": 5,
+    "type": 3,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 7,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 3,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 3,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "灵魂容器画成直径约 240px 的进度圆环（大招充能 scale 1.5 × 主优先级），占掉左侧三分之一，环心大字『66%』；原作是约 65px、不写字的液面圆球",
+   "面具变成『灯火』标签 + 红色心形，单独一行在圆环上方；原作是圆球右侧的 5 个白色面具",
+   "吉欧变成三种货币（紫晶 / 蓝晶 / 白点）一行，带彩色图标；原作只有一个吉欧图标 + 数字",
+   "三个元素竖着拉开约 350px，整体字号偏大（typ.baseSize 22 → 版面缩放 1.57）；原作整组只占左上约 210 × 70px"
+  ],
+  "map": [
+   "根本没画地图：容器设成 overlay 时界面模板构图器不运行，只画了元素",
+   "页眉元素 el.title = header 画成屏幕中部一条巨大的淡蓝底『收 集』色条",
+   "局内 HUD 的巨大圆环与三种货币仍在左上，比原作被压暗的 HUD 醒目得多",
+   "没有区域名、没有地图标记"
+  ],
+  "character": [
+   "没设 uip.screen，落到了通用背包样本：大标题 + 货币行 + 顶部四个页签（选中页签白底白字）+ 右上『Esc 返回』胶囊",
+   "格子是带边框的方格，里面是彩色厚涂物品图（水晶、药水、钥匙……）+ 紫 / 蓝稀有度框 + ✕ 锁标 + 数量；原作是圆形暗坑网格、单色护符",
+   "没有任何花饰：描边 solid 让面板成了一圈细线框，角花、标题花托、底部饰条都没出来",
+   "详情栏有两条属性条 + 绿色『→ 74』；原作只有名字、Cost 凹槽、大图标和描述",
+   "全屏字号约为原作的 1.6 倍，格子行把版面塞满"
+  ],
+  "inventory": [
+   "顶部一排页签（选中页签白底白字），原作没有页签，靠左右相邻页名切换",
+   "彩色厚涂物品图 + 方框格子；原作是单色手绘图标直接摆在黑底上",
+   "没有角花与标题花托，标题字号过大"
+  ],
+  "dialogue": [
+   "只有一行贴着屏幕顶边的暗底字条，带『说话人：』前缀；原作是上方居中、约半屏宽的多行对话框",
+   "没有上下两条对称白色花线与底部花饰继续提示"
+  ],
+  "chapter": [
+   "章节标题卡元素放大到约 1040px 宽（scale 1.6 × 主优先级 × 版面 1.57），成了横贯全屏的一条框，文字左对齐",
+   "标题卡与局内 HUD 的巨大圆环重叠",
+   "上方是『第二区』序号行；原作是居中的大号区域名 + 一行小字 + 下方花线"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "尺寸已回到原作比例（灵魂环直径约 65px、吉欧数字约 20px），整组留在左上、其余画面全空，这一点对上了",
+   "三个元素仍竖排成三行（面具行 → 吉欧 → 灵魂环），整组约 70 × 170px；原作是灵魂球在最左、面具与吉欧上下叠在它右侧的横向锁扣，约 230 × 85px",
+   "灵魂容器仍是进度圆环 + 环心『66%』+ ✦（valueLabel = none 不生效）；原作是不写字的液面圆球，球顶带一道白色牛角飞白",
+   "面具仍是『灯火』标签 + 红心（3 实 2 空）；原作是 5 个白色面具、无标签",
+   "吉欧图标是金色 ◆；原作是灰白吉欧石 + 衬线数字",
+   "没有把三者连起来的白色花线"
+  ],
+  "map": [
+   "构图对上了：地图居中浮在压暗的实时画面上，无外框",
+   "地图本体仍是烘焙图的灰绿色块平铺 + 右侧黑色渐隐（chalk 没画出来）；原作是暗底上淡蓝白粉笔线勾的房间轮廓、深色内填，未走过的出口画虚线",
+   "面板左上写『世界地图』标题、右上淡蓝『ESC 返回』胶囊（白字几乎看不清）、地图左上一枚『菌林』胶囊；原作只有居中压在地图上方的区域名，没有关闭提示和胶囊",
+   "标记是绿色 / 淡蓝水滴图钉；原作是圆徽章内画图标（长椅青、鹿角站橙、骑士头像白）+ 地名衬线小字直接写在地图上",
+   "左上局内 HUD（压暗的面具 / 灵魂 / 吉欧）没有画",
+   "地图是圆角实底矩形块；原作只有线条、没有矩形边界"
+  ],
+  "character": [
+   "近黑罩层 + 透明面板 + 白色饰件 + 衬线字的总基调对上了；hexGrid 奇偶行错半格也对上了（4 行 × 8 列）",
+   "矢量角花是等宽粗线的 L 形两条线 + 一个小卷曲，像粗笔描的回形针；顶边正中的母题画成半个圆弧、被屏幕顶边截掉一半，底边正中是心形卷涡、两侧两段平直粗线；原作是大幅书法卷草（粗细调制、涡旋收尾）",
+   "左上角花的横线穿过页标题『装备纸娃娃』，右上角花压在『ESC 返回』胶囊上",
+   "页标题在左上角，没有居中坐在顶部对称花线上；没有 LT / RT 相邻页名与两侧菱形翻页箭头",
+   "网格占左上半区、下半屏全空；原作上方是 Equipped / Notches 小分区 + 一条两端渐隐的横线，网格在左下半区 4 × 10",
+   "格子仍是白 / 灰几何符号 + 数量角标 + 金 / 银稀有度竖条（竖条还和左侧角花竖线并在一起）；原作几乎全是空的圆形暗坑，只有一枚护符",
+   "错位行的第 8 列伸进右侧详情栏，『亮度 / 纯度』标签和格子的数量角标叠在一起",
+   "详情栏仍有两条属性条 +『使用』（白底白字）/『查看』按钮；原作只有名称、Cost 凹槽、大图标与两段描述",
+   "选中物是发光方框；原作是四个小角花包住 + 背后淡蓝光晕"
+  ],
+  "inventory": [
+   "与护符页共用一套外观：黑底白饰件的基调对上了，同样有角花粗线、标题被角花横线穿过、ESC 胶囊被角花压住的问题",
+   "物品仍是 6 列方格网格里的几何符号 + 数量角标 + 金 / 银稀有度竖条；原作（凭记忆）骨钉、法术、钥匙、遗物按固定位置分组摆放，单色手绘图标直接放在黑底上",
+   "详情栏两条属性条 + 两个按钮同护符页；原作右栏是名称 + 大图标 + 描述",
+   "下半屏空着，没有原作中部的分隔线与分组小标题"
+  ],
+  "dialogue": [
+   "位置与宽度已接近：上方居中、约半屏宽",
+   "仍是一行带『老菌：』前缀的平涂暗底字条（借字幕元素）；原作是两三行居中文字、近黑羽化底、无名牌",
+   "没有上下两条对称白色花线，也没有底部中央的小花饰继续提示（blinkArrow 也没画出来）",
+   "vis.fill = gradient、vis.strokeSides = topBottom 都不起作用：字幕元素不读外框参数，且 base 的 vis.stroke = none"
+  ],
+  "chapter": [
+   "居中大号衬线区域名 + 一行字距拉开的小号副标题已对上，局内 HUD 留在左上（原作区域标题出现时 HUD 也在）",
+   "小字在主标题下方；原作小字（\"The\" / 副标题）在主标题上方",
+   "主标题下没有对称白色花线（花托），这是原作标题卡最显眼的饰件",
+   "中文主标题做不出大写 + 小型大写的 Trajan 感，笔画偏细",
+   "左上 HUD 的问题同 hud 屏（竖排三行、红心、金 ◆、66% 圆环）"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "锁扣构图已对上（灵魂球在左、面具与吉欧上下叠在右侧，球不写字、图标都是白色）；但面具是白色心形（3 实 2 空），参考是 5 个骑士面具",
+   "灵魂球是下半白色实心液面 + 细灰边，参考是暗色球体里一团白色灵魂、球顶带一道白色牛角飞白",
+   "没有把三者连起来的白色牛角飞白花线",
+   "吉欧图标是白色 ◆，参考是灰白吉欧石"
+  ],
+  "map": [
+   "地图本体是一块纯黑实底矩形，只有三枚水滴图钉，没有任何房间轮廓（chalk 仍没画出来）；参考是暗底上淡蓝白粉笔线勾的房间 + 虚线出口，没有矩形边界",
+   "下垫的局内 HUD 是布局默认样子（淡蓝心形一行 + 下方大号灵魂球写‘66/99’），不是 hud 屏的锁扣",
+   "标题是模板名‘世界地图’、居中在地图上方；参考是区域名‘Forgotten Crossroads’居中在画面顶部，地图上写地名",
+   "标记仍是白 / 淡青水滴图钉，参考是圆徽章内画图标（长椅青、鹿角站橙、骑士头像白）"
+  ],
+  "character": [
+   "白色巴洛克位图角花、居中标题、10 列错位的圆形暗坑（几乎全空）已对上；但坑偏大、一个挨一个，参考是小圆点坑、间距宽",
+   "网格仍占左上半区、下半屏空着，缺 Equipped / Notches 小分区与两端渐隐的横线",
+   "标题上方是一枚被屏幕顶边截掉的心形卷涡，不是标题两侧的对称花线（花托）",
+   "没有 LT / RT 相邻页名与两侧菱形翻页箭头",
+   "详情栏仍是两条属性条 + 使用 / 查看按钮，参考只有名称、Cost 凹槽、大图标与描述",
+   "选中物是方形蓝光框套在圆坑上，参考是四个小角花 + 淡蓝光晕"
+  ],
+  "inventory": [
+   "（凭记忆）白色巴洛克角花与居中标题已对上；物品仍是 6 列方格网格（多了细灰格框）+ 几何符号，原作按固定位置分组摆放、图标直接放在黑底上",
+   "详情栏两条属性条 + 两个按钮，原作右栏是名称 + 大图标 + 描述",
+   "下半屏空着，没有中部分隔线与分组小标题；标题上方心形卷涡被顶边截掉"
+  ],
+  "dialogue": [
+   "（凭记忆）说话人前缀去掉后，台词成了一行无底白字（lineOnly 不画底条），写在 @dialog 上的近黑底与上下两条白线都没画出来；原作是近黑羽化底 + 上下对称白色花线的半屏对话框",
+   "只有一行字、没有继续提示；原作两三行居中文字 + 底部中央一个小花饰"
+  ],
+  "chapter": [
+   "（凭记忆）区域名上方已有一行小字（第二区 · 菌林），但下方仍有一行字距拉开的英文小字；原作主标题下是对称白色花线（花托），没有第二行小字",
+   "左上锁扣 HUD 的灵魂球里仍写‘66%’ + ✦（本屏没写 el.abilities.valueLabel = none）",
+   "锁扣其余同 hud：心形面具、白 ◆ 吉欧、没有连接花线"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "与第 3 轮相同：锁扣构图对（灵魂球在左、面具与吉欧上下叠在右侧），但写了 groupConnector = flourish 的牛角飞白连线没画出来",
+   "面具是白色心形（3 实 2 空），参考是 5 个骑士面具",
+   "灵魂球是下半白色实心液面 + 细灰边，参考是暗色球体里一团白色灵魂、球顶一道白色牛角飞白",
+   "吉欧图标是白色 ◆，参考是灰白吉欧石"
+  ],
+  "map": [
+   "地图本体仍是一块纯黑实底矩形，房间轮廓只露出几段淡青短线；参考是暗底上淡蓝白粉笔线勾满房间 + 虚线出口，没有矩形边界",
+   "下垫 HUD 仍是布局默认的心形一行 + 大号灰色灵魂球写‘66/99’，不是 hud 屏的锁扣",
+   "节点已是圆徽章（圆点 / 菱形 / ?），但都是白圈，没按类别着色（长椅青、鹿角站橙）",
+   "页头已写区域名‘菌林’，但是黑体白字；参考是衬线小字 Forgotten Crossroads，地图上还写多个地名"
+  ],
+  "character": [
+   "标题两侧已有小花线，但顶边的心形卷涡整枚压在标题‘装备纸娃娃’上；参考标题坐在对称花线正中，上方没有卷涡",
+   "右栏插画位是一大块斜纹灰框‘插画（需素材）’，参考只是一枚居中的护符大图标",
+   "两侧翻页箭头只是很小的卷涡记号，参考是醒目的白色菱形箭头；LT / RT 页名偏小",
+   "‘道具’行是一整排 6 枚物品 + 空坑，参考 Equipped 区只有一两枚、下面是 Notches 小圆点计数；网格只有 3 行半"
+  ],
+  "inventory": [
+   "（凭记忆）物品已按分组（武器 / 法术 / 钥匙 / 面具 / 护符）摆放并带小标题，但每枚图标仍套着细灰方框，原作图标直接放在黑底上",
+   "右栏仍是两条属性条 + 使用 / 查看按钮，原作是名称 + 大图标 + 描述",
+   "分组挤在左上，下半屏空着",
+   "标题上方心形卷涡压在‘背包’两字上"
+  ],
+  "dialogue": [
+   "（凭记忆）台词仍是一行无底白字：cmp.dialogBox = topBox 的近黑羽化底与上下对称白色花线没画出来",
+   "继续提示已是一枚小花饰，但悬在字下方的空处（没有框可依附）",
+   "只有一行字，原作两三行居中"
+  ],
+  "chapter": [
+   "（凭记忆）已是上小字‘第二区’+ 区域名 + 下方花托，但区域名字号偏小（约屏高 5%），原作是画面中部的大号衬线字",
+   "花托只是标题下一条细小卷线，两侧伸展短",
+   "锁扣同 hud：心形面具、白 ◆ 吉欧、没有连接花线"
+  ]
+ },
+ "revisions": [
+  "base：typ.baseSize 22 → 15（版面缩放从 1.57 降到约 1.08，字号与 HUD 尺寸回到原作比例）；typ.display.case → smallCaps（原作标题是 Trajan 式大写 + 小型大写）",
+  "base：vis.stroke solid → none、ast.frame cornersOnly → procedural：原作菜单没有框线、四个角花互不相连；cornersOnly 的 L 形材质包角会和角花叠成两层",
+  "base：uip.keyword = none + ast.ornaments = []：皮肤关键词默认点名的 corners 会调金色位图角花，且饰件是并集合并清不掉；关掉关键词层后由装饰预算 3 画白色矢量角花、顶边正中的花饰和底边花饰分隔条——四角不相连、颜色取正文色",
+  "base：ast.iconSet asset → procedural：手绘图集是全彩厚涂，程序符号是白色单色，更接近原作的单色图标（缺口另记）",
+  "hud：元素顺序改为 面具（el.vitals 图标列，scale 1.25）→ 吉欧（el.resources = bigNumber，只剩一种货币，scale 0.65）→ 灵魂环（el.abilities = ultimate，scale 0.7，约 70px）；三者都降为 secondary；lay.safeMargin 3 → 5，与原作左上留边一致",
+  "map：lay.container overlay → modal + cmp.modal = floating + lay.panelSize 0.55：模板构图器才会运行，画出居中、无框的地图浮在压暗的实时画面上（rel.dim 0.5 → 0.6）；vis.mapUnexplored blank → dark（blank 会刷成纸色）；去掉页眉色条与 HUD 元素",
+  "character：uip.screen = tpl.loadout（护符就是技能装配，不再落到通用背包样本）；lay.nav = none；lay.arrangement = hexGrid（奇偶行错开半格）8 列 32 项；st.locked = dimmed（后面的格子压暗，读起来像暗坑）；st.rarityCue = strip + col.rarityScale = metal（稀有度关不掉，取最不显眼的）；st.delta = newOnly（去掉绿色 →74）；ix.focus = focusGlow；cmp.modal = standard（透明面板承载角花与饰条）；删掉 el.prompt / el.cost",
+  "inventory：同样的透明面板 + 白色花饰；tpl.inventory 去掉左侧页签，6 列 10 项，稀有度改 strip",
+  "dialogue：lay.safeMargin 6、el.subtitle.scale 1.15，让字条离开顶边、略大；删掉对叠加字幕不起作用的外框 / 饰件键",
+  "chapter：uip.screen = tpl.chapterCard + lay.container = overlay（只画元素、背后是实时画面）；el.title = logo（居中大号区域名 + 下方字距拉开的小字）scale 0.7，替换放大三倍的 titleCard 面板；HUD 元素与 hud 屏一致",
+  "R3 前（M12a 之后）：hud / chapter 把 cnt.elements 排成 [el.abilities, el.vitals, el.resources] 并写 el.vitals.stackDir = row（灵魂球在左、面具与吉欧上下叠在右侧的锁扣）、cmp.gauge@el.abilities = orb（不写字的液面球）、el.vitals.labels none；map 加 uip.layout = layout.metroidvania + flow.stacking = overHud（快捷地图下垫压暗的局内 HUD；布局自带的面具 + 灵魂球，el.vitals 单行、无标签）、lay.titleAlign center、ix.close none、vis.mapLabels = onMap（地名直写在图上；节点圆徽仍缺）；character / inventory 的 ast.ornaments [] → [none, corners]（点名白描位图角花）、lay.titleAlign center、ix.close none、cmp.slotBadge none、st.rarityCue strip → [none]；character 另加 lay.columns 8 → 10、cnt.fillRatio 0.08（几乎全是空的圆坑）；dialogue 加 el.subtitle.form = lineOnly（无名牌前缀）与对白框部件 dialog 的底与上下两条白线（col.surface / vis.opacity / vis.stroke / vis.strokeSides / vis.strokeColor@dialog）。",
+  "R3 评分（M12a 之后，未改取值）：补第 3 轮 scores 与 round3Diffs；新增缺口 2 条；按第 3 轮对照图给已画对的 7 条缺口标 resolvedBy。",
+  "R4 前（M12b 之后）：base 加 vis.strokeFade 0.35（分隔线 / 饰线两端渐隐，#22）、col.ornament #ece9e1（白描饰色）；hud / chapter 把 el.abilities 与 el.vitals 编成一组（el.*.group g1）+ el.abilities.groupConnector flourish（灵魂球与面具之间一道白色花饰连线，近似牛角飞白；吉欧不进组）；chapter 加 el.title.form logo → areaCard + cnt.focal none（上小字 + 区域名 + 花托，不再画两遍，#32）、el.abilities.valueLabel none（球里不写 66%）；map 加 cmp.node pin → iconBadge（圆徽章 + 类别色，#30）、vis.mapUnexplored dark → dashedExits（未走过的出口画虚线，#28）；character 加 ix.focus [cornerFlourish] + col.focus #a8d8ff（四角小花 + 淡蓝光晕，#16）、cmp.plate@title flourish（标题两侧对称花线，#10）、lay.nav none → carousel（LT / RT 相邻页名 + 两侧菱形箭头，#17；去掉 lay.navDepth 0）、lay.sections [row, grid]（Equipped 一行 + 渐隐分隔线 + 下方网格，#21）、cmp.detailFields [name, progressDots, art, desc]（右栏名称 + 凹槽点 + 大图标 + 描述，不再是属性条 + 按钮，#24 / #25 近似）、lay.cellSize 40 + lay.gap 52（小圆坑、宽间距）；没写 B7 建议的 el.cost.form pips（tpl.loadout 本来没有 el.cost，加进来位置定不了，且与详情的凹槽点重复）；inventory 加 lay.arrangement grid → fixedGroups + cmp.slot bare + cmp.slotGroup plain（固定分组、图标直接放黑底，#26）；dialogue 加 cmp.dialogBox bar → topBox + ix.continueCue blinkArrow → ornament（上方居中近黑羽化底 + 上下花线 + 底部小花饰，#31 / #34）。",
+  "R4 评分（M12b 之后，未改取值）：补第 4 轮 scores 与 round4Diffs；新增缺口 3 条；按第 4 轮对照图给 6 条缺口标 resolvedBy、7 条标 partialBy。"
+ ],
+ "notes": "局内只有左上一组锁扣（灵魂容器 + 面具 + 吉欧数），其余全留给画面。菜单是近黑罩层（冻结画面压到约 90% 黑）上的白色巴洛克线描：四个不相连的大角花、标题花托、中部两端渐隐的横线、两侧菱形翻页箭头，面板完全透明，衬线字、标题是大写 + 小型大写；选中物是四个小角花 + 淡蓝光晕。快捷地图是暗底淡蓝粉笔线，HUD 不收起。复刻要点：关掉皮肤关键词层、饰件给空列表，靠装饰预算 3 画白色矢量花饰；图标改用程序单色符号。物品栏、对话框、区域标题卡凭记忆编码，无参考图。"
+}

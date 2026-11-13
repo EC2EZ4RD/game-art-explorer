@@ -1,0 +1,10 @@
+{
+ "files": {
+  "height": "clay_fingerprint_h.png",
+  "normal": "clay_fingerprint_n.png"
+ },
+ "seam": 1.062061044246745,
+ "normalStrength": 4.0,
+ "normalConvention": "OpenGL (+Y up)",
+ "id": "clay_fingerprint"
+}

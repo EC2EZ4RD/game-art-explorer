@@ -1,0 +1,13 @@
+{
+ "files": {
+  "field": "peel_mask.png"
+ },
+ "crop": [
+  2044,
+  2044
+ ],
+ "seam": 1.1408023169189152,
+ "coverageBlack": 0.2069263458251953,
+ "use": "剥落 = field < 做旧程度；0.5 = 原图里的剥落范围",
+ "id": "peel_mask"
+}

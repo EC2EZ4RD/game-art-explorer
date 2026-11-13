@@ -1,0 +1,1109 @@
+{
+  "meta": {
+    "task": "K1 品类需求 · 卡牌 / 构筑 / 手机触屏",
+    "date": "2026-10-14",
+    "scope": "卡牌品类全部 33 张卡 + 手机品类全部 39 张卡；另引用 15 张跨品类卡（卡牌机制或触屏操作出现在策略 / 解谜 / 竞速等品类里）。手游只看局内 HUD、触屏布局与非商业化界面；商城、奖励、抽卡、签到、首充、通行证、红包、广告、活动入口墙一律不分析、不推原则。",
+    "sheetsViewed": [
+      "qa/refs-cache/r2/card/sheet-01.jpg", "qa/refs-cache/r2/card/sheet-02.jpg", "qa/refs-cache/r2/card/sheet-03.jpg",
+      "qa/refs-cache/r2/card/sheet-11.jpg", "qa/refs-cache/r2/card/sheet-12.jpg", "qa/refs-cache/r2/card/sheet-13.jpg",
+      "qa/refs-cache/r2/card/sheet-14.jpg", "qa/refs-cache/r2/card/sheet-15.jpg",
+      "qa/refs-cache/r2/mobile/sheet-port-01.jpg", "qa/refs-cache/r2/mobile/sheet-port-02.jpg",
+      "qa/refs-cache/r2/mobile/sheet-land-01.jpg", "qa/refs-cache/r2/mobile/sheet-land-02.jpg",
+      "qa/refs-cache/r2/mobile/sheet-land-03.jpg", "qa/refs-cache/r2/mobile/sheet-land-04.jpg",
+      "qa/refs-cache/r2/strategy/sheet-11.jpg"
+    ],
+    "gamesViewed": 75,
+    "singleShotsViewed": "杀戮尖塔战斗、Balatro、Alina、Chrono Ark、Loop Hero、Inscryption、Wingspan、DICEOMANCER、弈仙牌；手游 寻光之旅、英杰传、暖雪、铸仙之境 的单张原图（放大看锚点与数字）",
+    "otherSources": "docs/survey/09 总览、06（A13 卡牌与桌面 + 0.5 可读性）、14-r2-card、15-r4-mobile、12-r3-reviews + ui-review-stats.json、ui-param-system.json 里现有的 layout.card / layout.mobileArpg / layout.autobattler / platform.phone* 预设",
+    "reviewNote": "评测只用计数：uiMention = 提到界面的评测条数，neg = 其中来自差评的条数；抱怨类别按 R3 规则（某类 ≥ 2 条才算出处）。GameUI 手游卡没有 Steam 评测，手机部分的评测证据取自上过 Steam 的手游起家作品。"
+  },
+  "genres": [
+    {
+      "genre": "card",
+      "label": "卡牌 / 构筑 / 数字桌游",
+      "subgenres": [
+        "构筑 Roguelike 卡牌（顶栏 + 底部手牌 + 敌人意图）",
+        "扑克 / 老虎机式数值构筑（算分公式就是主角）",
+        "卡牌 × 地图 / 放置混合（卡牌当地块或建筑）",
+        "第一人称牌桌 / 叙事内牌桌",
+        "集换式 / 对战卡牌（PvP，双方镜像）",
+        "数字桌游（棋盘、骰子、多名玩家轮流）",
+        "卡牌化叙事 / 事件抉择（日记页 + 编号选项）",
+        "派对与经理模拟（卡牌化的选人、对阵）",
+        "竖屏手游卡牌 RPG / 放置卡牌（底部英雄卡条 + 倍速）",
+        "格子战场卡牌（六边形 / 车道 / 棋盘上出牌）"
+      ],
+      "cards": 33,
+      "relatedCards": ["steam:1948800", "steam:2179850", "steam:2084000", "steam:1972440", "steam:2738490", "steam:1455840", "steam:1599600", "steam:262060"],
+      "coreQuestions": [
+        "这回合还剩多少能量 / 法力（当前 / 上限），哪几张手牌现在打得出、哪几张打不出——可出与不可出必须一眼分开",
+        "每个敌人下回合要干什么：攻击几点、打几段、上 Buff 还是减益（意图图标 + 数字，挂在敌人头顶或排成队列）",
+        "我和敌人的生命与格挡 / 护盾各是多少；这张牌打出去后对方还剩多少、我会不会死（预计值）",
+        "这张牌做什么：费用、类型、效果数字；关键词能悬停或长按看解释",
+        "抽牌堆 / 弃牌堆 / 消耗堆各剩几张（决定下回合能抽到什么）",
+        "离失败条件还有多远：层数、回合数、目标分数、到期倒计时（Luck be a Landlord 的房租、Balatro 的盲注分数线）",
+        "已有的被动构筑件（护符 / 小丑 / 装备）有哪些、什么时候触发",
+        "数值构筑类：本次出牌的结算公式（基础 × 倍率 = 得分）每一步都可见",
+        "结束回合在哪，是否还有没用完的行动（防误按）",
+        "对战 / 桌游：轮到谁、对手手牌数与场面、每位玩家的状态"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "顶栏 + 底部手牌 + 两个下角（左下能量、右下结束回合）+ 敌人头顶意图——构筑 Roguelike 的通用骨架",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "ctx.timeModel": "turn",
+            "el.abilities.form": "cards",
+            "el.abilities.arrangement": "fan",
+            "el.abilities.screenAnchor": "bc",
+            "el.resources.form": "gauge",
+            "cmp.gauge@el.resources": "orb",
+            "el.resources.valueLabel": "currentMax",
+            "el.resources.screenAnchor": "bl",
+            "el.vitals.attachTo": "player",
+            "el.threat.form": ["intent"],
+            "el.threat.attachTo": "target",
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "br",
+            "el.crosshair.form": ["aimArrow"]
+          },
+          "share": "PC 卡牌 18 张里 4 张（杀戮尖塔、Alina、DICEOMANCER、Chrono Ark 的变体），另有跨品类 2 张（Cobalt Core、Shogun Showdown）",
+          "examples": ["iig:slay-the-spire", "steam:1668690", "steam:2501600", "steam:1188930", "steam:2179850", "steam:2084000"],
+          "notes": "顶栏放全局读数（名字 / 生命 / 金币 / 药水 / 层数 / 地图与牌组入口），下面一行是被动构筑件；手牌数量变化大，所以用扇形或叠压；能量球挨着手牌放在左下，是因为每次出牌前都要先看它。Chrono Ark 把手牌改成左侧竖列表、结束回合放左上，队伍头像排在底部，是这一型里信息最密的变体。"
+        },
+        {
+          "pattern": "竖向整条侧栏当计分台（大号数字 + 公式），玩法区留给牌",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "el.timer.form": "gauge",
+            "el.timer.screenAnchor": "ml",
+            "el.resources.form": "bigNumber",
+            "el.resources.screenAnchor": "ml",
+            "typ.numerals.family": "pixel",
+            "st.statViz": "bigNumber",
+            "el.abilities.arrangement": "row",
+            "el.abilities.screenAnchor": "bc",
+            "el.cta.form": "dual"
+          },
+          "share": "PC 卡牌 18 张里 3 张（Balatro 左栏、Loop Hero 右栏、Armello 左侧玩家列），跨品类 1 张（Cobalt Core 左侧船员列）",
+          "examples": ["steam:2379780", "steam:1282730", "steam:290340", "steam:2179850"],
+          "notes": "数值构筑游戏的核心是'算'：把目标分、本轮得分、牌型 × 倍率、剩余出牌 / 弃牌次数、金钱、底注 / 回合纵向堆在一条栏里，读的顺序就是结算顺序。Loop Hero 的右栏是装备格 + 属性 + 说明，密度到 4，代价见 pitfalls。"
+        },
+        {
+          "pattern": "叙事内牌桌 / 实物容器：牌桌、卡册、日记本、玩家板本身就是界面",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "ast.container": "tableTop",
+            "ast.containerSurface": "table",
+            "rel.harmony": "sameMedium",
+            "ast.frameMat": "wood",
+            "cnt.density": "1",
+            "el.notify.form": ["banner"],
+            "el.notify.screenAnchor": "tc"
+          },
+          "share": "PC 卡牌 18 张里 5 张至少有一屏这样做（Inscryption 整局、炉石收藏是皮面卡册、DICEOMANCER 卡组是摊开的书、Curious Expedition 事件是日记页、Wingspan 是玩家板）",
+          "examples": ["steam:1092790", "iig:hearthstone-heroes-of-warcraft", "steam:2501600", "steam:358130", "steam:1054490"],
+          "notes": "卡牌本来就是实物，所以这个品类最容易做'界面即物件'：计分是天平上的砝码、地图是桌上的立体模型。Inscryption 屏幕上只留顶端一行大写提示字。"
+        },
+        {
+          "pattern": "桌游棋盘 + 四周玩家牌（多名玩家轮流）",
+          "params": {
+            "ctx.players": "board",
+            "ctx.timeModel": "turn",
+            "el.party.form": "frames",
+            "el.party.screenAnchor": "ml",
+            "el.timer.form": "turnBanner",
+            "cnt.density": "3",
+            "vis.corner": "round"
+          },
+          "share": "PC 卡牌 18 张里 4 张（100% Orange Juice 四角头像牌、Armello 左侧四人竖列、Wingspan 栖息地三行玩家板、Jackbox 玩家名压在对白框下）",
+          "examples": ["steam:282800", "steam:290340", "steam:1054490", "steam:1211630"],
+          "notes": "多人轮流时，'轮到谁'比任何数值都重要：当前玩家的头像要放大或高亮，其余压暗。100% OJ 战斗时切成斜切蓝白横幅 + 大号骰子数字，把一次掷骰做成小演出。"
+        },
+        {
+          "pattern": "对镜 PvP：双方头像在上两角，双方牌组 / 手牌在下沿左右对放",
+          "params": {
+            "ctx.players": "versus",
+            "lay.focalSide": "both",
+            "el.party.form": "portraits",
+            "el.party.screenAnchor": "tl",
+            "el.abilities.form": "cards",
+            "el.abilities.arrangement": "row",
+            "el.abilities.screenAnchor": "bc",
+            "el.feedback.form": ["comicSFX"]
+          },
+          "share": "卡牌 33 张里 1 张（Esports Godfather 的 VS 大字与选英雄），跨品类 1 张（弈仙牌：两侧头像 + 底部左右两副牌，对手的牌背朝上）；手机里寻光之旅同型",
+          "examples": ["steam:1278540", "steam:1948800", "gameui:6868"],
+          "notes": "1v1 由 D-players 自动镜像锚点；对手的隐藏信息（牌背、剩余张数）要和自己的明牌用同一尺寸并排，便于比较。"
+        },
+        {
+          "pattern": "竖屏手游卡牌 RPG：上半战场、下沿一排英雄卡 / 头像（点或拖出放技能），倍速在角落",
+          "params": {
+            "ctx.orientation": "portrait",
+            "ix.thumbZone": "oneHand",
+            "lay.composition": "splitTB",
+            "el.party.form": "unitCards",
+            "el.party.screenAnchor": "bc",
+            "cmp.card": "fullArt",
+            "el.gameSpeed.form": "x2",
+            "el.gameSpeed.screenAnchor": "br"
+          },
+          "share": "GameUI 卡牌手游 15 张里能看到战斗 HUD 的 4 张（AFK 剑与远征、圣树唤歌、艾尔多战记、AFK 2 布阵）；其余 11 张只拍到对话 / 标题 / 读取页",
+          "examples": ["gameui:1168", "gameui:3059", "gameui:2827", "gameui:5744"],
+          "notes": "和手机品类的'竖屏上看下点'是同一型，卡面用整幅立绘 + 少字，因为竖屏下沿一张卡只有约 1/5 屏宽。"
+        },
+        {
+          "pattern": "卡牌化叙事：左右分栏，一边是场景插画，一边是长文本 + 编号选项",
+          "params": {
+            "lay.composition": "splitLR",
+            "cmp.dialogBox": "chatThread",
+            "el.choices.form": "buttons",
+            "el.choices.screenAnchor": "ml",
+            "typ.display.family": "serif",
+            "ast.frameMat": "parchment"
+          },
+          "share": "PC 卡牌 18 张里 2 张（Curious Expedition 左侧羊皮纸日记 + 编号选项，Depersonalization 左像素场景 + 右黑底长文）",
+          "examples": ["steam:358130", "steam:1477070"],
+          "notes": "选项前标编号、写出代价（理智 −10 之类），是把'事件卡'当成一张可读的牌来设计。"
+        },
+        {
+          "pattern": "玩法区居中，两侧边距放牌与读数（棋盘窗口 + 边框里的 HUD）",
+          "params": {
+            "lay.hudOrg": "inMargin",
+            "lay.playfield": "boardWindow",
+            "cmp.card": "iconCard",
+            "lay.arrangement": "column",
+            "vis.pixelScale": "world"
+          },
+          "share": "卡牌 33 张里 0 张；跨品类 2 张（Shotgun King 棋盘两侧竖排增益牌、Sol Cesto 塔罗牌式雕花立柱边框）",
+          "examples": ["steam:1972440", "steam:2738490"],
+          "notes": "适合 4:3 或正方形的核心玩法放进 16:9 屏：多出的两条边距正好放牌组，不用盖玩法区。"
+        },
+        {
+          "pattern": "零 HUD / 极简：路线节点或桌面物件就是全部界面",
+          "params": {
+            "cnt.density": "0",
+            "rel.hudVisibility": "hidden",
+            "lay.container": "overlay",
+            "vis.ornament": "0"
+          },
+          "share": "卡牌 33 张里 1 张（Lara Croft GO 回合解谜），跨品类 1 张（Dorfromantik 右下叠起来的地块'牌堆' + 剩余数圆标）",
+          "examples": ["steam:540840", "steam:1455840"],
+          "notes": "只有当'手牌'只有一张（下一个要放的东西）时才成立；手牌一多就必须回到前面几型。"
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.abilities",
+          "formParam": "el.abilities.form + el.abilities.arrangement",
+          "forms": ["cards", "fan", "row", "column"],
+          "anchors": ["bc", "ml"],
+          "why": "手牌是主操作面：放在下沿离鼠标 / 拇指最近，牌桌上方留给敌人。扇形（杀戮尖塔）在手牌数变化大时不用改布局，代价是牌互相遮挡、要悬停放大；平铺一排（Balatro、Alina 的六边形牌、Cobalt Core）每张牌位置固定，适合 ≤ 8 张；竖列表（Chrono Ark 左侧 1–6 编号 + 牌名 + 费用）最省空间、能按数字键出牌，但牺牲了卡图。第一人称牌桌（Inscryption）手牌是拿在手里的实物。",
+          "examples": ["iig:slay-the-spire", "steam:2379780", "steam:1668690", "steam:1188930", "steam:1092790"]
+        },
+        {
+          "element": "el.resources",
+          "formParam": "el.resources.form（能量用 cmp.gauge@el.resources = orb）",
+          "forms": ["gauge", "iconNumber", "bigNumber"],
+          "anchors": ["bl", "tl", "ml"],
+          "why": "能量 / 法力是每次出牌前都要看的数，所以做成手牌左侧的大圆球（杀戮尖塔 3/4、Alina 2/4），并且标'当前 / 上限'；金币、药水这类不常用的读数进顶栏。数值构筑类把钱和出牌次数放进侧栏计分台。",
+          "examples": ["iig:slay-the-spire", "steam:1668690", "steam:2379780", "steam:1404850"]
+        },
+        {
+          "element": "el.threat",
+          "formParam": "el.threat.form",
+          "forms": ["intent", "healthBar"],
+          "anchors": ["attachTo:target", "mr", "ml"],
+          "why": "构筑卡牌的决策核心是'看对面下一步再决定这回合打什么'，所以意图必须是图标 + 数字（攻击 18、4×3），不能只给图标。挂在敌人头顶最直观（杀戮尖塔、Alina、Shogun Showdown 还带倒计时）；敌人多或技能复杂时改成侧边列表（Chrono Ark 右侧施法列表、Alina 左侧意图说明框）。这和策略品类 Into the Breach 的'把意图画出来'是同一条原则。",
+          "examples": ["iig:slay-the-spire", "steam:1668690", "steam:1188930", "steam:2084000"]
+        },
+        {
+          "element": "el.vitals",
+          "formParam": "cmp.gauge@el.vitals",
+          "forms": ["bar", "number"],
+          "anchors": ["attachTo:player", "tl", "bl"],
+          "why": "生命条挂在角色脚下并在左侧叠一个格挡盾牌数字（杀戮尖塔），同时顶栏再写一次——战斗里看脚下，地图上看顶栏。第一人称牌桌没有角色可挂，就放到左下（DICEOMANCER 心形 50/50）。",
+          "examples": ["iig:slay-the-spire", "steam:2501600", "steam:1668690"]
+        },
+        {
+          "element": "el.cta",
+          "formParam": "el.cta.form",
+          "forms": ["wide", "round", "dual"],
+          "anchors": ["br", "mr", "tl"],
+          "why": "结束回合是每回合必按、按错代价高的键：放在右下（杀戮尖塔、DICEOMANCER、Cobalt Core）与手牌和能量分开，形状和颜色与出牌区不同。Balatro 没有'结束回合'，而是手牌下方一对按钮（出牌 / 弃牌）。Chrono Ark 放在左上，是这批里唯一的反例。",
+          "examples": ["iig:slay-the-spire", "steam:2501600", "steam:2379780", "steam:1188930"]
+        },
+        {
+          "element": "el.timer",
+          "formParam": "el.timer.form",
+          "forms": ["number", "gauge", "smallText", "badge"],
+          "anchors": ["tc", "ml", "tl"],
+          "why": "卡牌 Roguelike 的'计时'是进度与失败线：层数（杀戮尖塔顶栏）、底注 / 回合（Balatro 侧栏）、到期还剩几次（Luck be a Landlord 顶行'几次后交房租'）、回合数（Chrono Ark 顶部居中）。失败线越单一越该放大。",
+          "examples": ["iig:slay-the-spire", "steam:2379780", "steam:1404850", "steam:1188930"]
+        },
+        {
+          "element": "el.selection",
+          "formParam": "el.selection.form",
+          "forms": ["tooltip", "card"],
+          "anchors": ["attachTo:cursor", "mr", "ml"],
+          "why": "小尺寸手牌上的规则文字不能是唯一信息源：悬停放大（杀戮尖塔）、点开详情框（Chrono Ark 暗色细边框弹窗，旁边再挂关键词说明块）、或在右侧常驻一张大卡（DICEOMANCER、Wingspan 放大的鸟卡）。触屏没有悬停，要改成长按或常驻。",
+          "examples": ["iig:slay-the-spire", "steam:1188930", "steam:2501600", "steam:1054490"]
+        },
+        {
+          "element": "el.feedback",
+          "formParam": "el.feedback.form",
+          "forms": ["floatNumbers", "comicSFX", "combo"],
+          "anchors": ["attachTo:target", "center"],
+          "why": "回合制没有动作手感，反馈全靠数字演出：Balatro 每张牌飞出 +10 并让总分数字燃烧抖动；DICEOMANCER 第一人称挥拳 + 漫画爆炸框里的巨大伤害数字；Alina 右上 COMBO；弈仙牌用书法飘字报'再次行动'。演出越强越要能加速 / 跳过。",
+          "examples": ["steam:2379780", "steam:2501600", "steam:1668690", "steam:1948800"]
+        },
+        {
+          "element": "el.party",
+          "formParam": "el.party.form",
+          "forms": ["portraitRow", "frames", "portraits"],
+          "anchors": ["bc", "ml", "tl", "tr"],
+          "why": "多角色构筑（Chrono Ark 底部头像条 + 各自血条、Cobalt Core 左侧船员列：每个船员对应一组牌）要让'这张牌属于谁'可追溯——牌面颜色或头像角标与队伍栏对应。桌游里同一个元素用来显示'轮到谁'。",
+          "examples": ["steam:1188930", "steam:2179850", "steam:290340", "steam:282800"]
+        },
+        {
+          "element": "el.crosshair",
+          "formParam": "el.crosshair.form",
+          "forms": ["aimArrow"],
+          "anchors": ["attachTo:cursor"],
+          "why": "需要选目标的牌在拖出后画一条指向曲线（杀戮尖塔的一串箭头），目标敌人四角出现括号——把'这张牌会打谁'在松手前就确认掉。",
+          "examples": ["iig:slay-the-spire"]
+        },
+        {
+          "element": "el.turnOrder",
+          "formParam": "el.turnOrder.form",
+          "forms": ["icons", "portraitQueue"],
+          "anchors": ["mr", "tc"],
+          "why": "卡牌 × 回合 RPG 混合体里敌人行动有先后：Chrono Ark 把敌人即将施放的技能排成右侧'施法列表'（带倒计时数字），相当于意图队列。",
+          "examples": ["steam:1188930"]
+        },
+        {
+          "element": "el.overlay",
+          "formParam": "el.overlay.form",
+          "forms": ["gridHighlight", "buildGrid", "rangeRing"],
+          "anchors": ["attachTo:target"],
+          "why": "格子战场卡牌要在出牌前高亮影响范围：Alina 的六边形格黄色高亮、Shogun Showdown 的左右车道、Loop Hero 把地形卡拖到路边时的可放置格。",
+          "examples": ["steam:1668690", "steam:2084000", "steam:1282730"]
+        },
+        {
+          "element": "el.notify",
+          "formParam": "el.notify.form",
+          "forms": ["banner", "band", "toast"],
+          "anchors": ["tc", "center"],
+          "why": "首领规则、叙事提示、回合开始用一条横幅说清楚：Balatro 首领盲注的'必须打 5 张牌'大字、Inscryption 屏幕顶端一行红色大写字、炉石结算的缎带横幅。",
+          "examples": ["steam:2379780", "steam:1092790", "iig:hearthstone-heroes-of-warcraft"]
+        },
+        {
+          "element": "el.choices",
+          "formParam": "el.choices.form",
+          "forms": ["buttons", "text"],
+          "anchors": ["ml", "bc"],
+          "why": "事件节点是'没有费用的牌'：Curious Expedition 日记页下方编号选项、Depersonalization 带框选项按钮。选项要把代价写在选项行里。",
+          "examples": ["steam:358130", "steam:1477070"]
+        },
+        {
+          "element": "el.reward",
+          "formParam": "el.reward.form",
+          "forms": ["cards"],
+          "anchors": ["center"],
+          "why": "这里只指战斗后的'选一张牌加入牌组'（局内成长，不是商业化奖励）：三张卡平铺居中 + 跳过按钮（Alina、Cobalt Core 的大字标题、Luck be a Landlord 三张深色像素卡带稀有度）。",
+          "examples": ["steam:1668690", "steam:2179850", "steam:1404850"]
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.cards",
+          "conventions": "战斗屏（cnt.subtype = deck 的战斗态）：上 1/8 顶栏 → 中间牌桌（敌我站位、意图）→ 下 1/4 手牌区；左下能量、右下结束回合；牌堆计数在两个下角（杀戮尖塔左下抽牌堆 13、右下弃牌堆 3）。牌桌整体降饱和降对比，卡框提亮（06 A13）。卡组浏览态：规则网格 4–5 列 + 纵向滚动 + 按类型 / 费用排序，或做成摊开的书（DICEOMANCER 左右页卡格、炉石两页 4×2 + 右侧牌组列表）。",
+          "examples": ["iig:slay-the-spire", "steam:2379780", "steam:1668690", "steam:2501600", "iig:hearthstone-heroes-of-warcraft", "steam:1282730"]
+        },
+        {
+          "screen": "screen.levelselect",
+          "conventions": "路线节点地图（routeMap）：自下而上或自左向右的分叉路线，节点图标按类型区分（战斗 / 精英 / 休息 / 商人 / 事件 / 首领），已走过的划掉或连线变实。Alina 是骷髅图标节点 + 暗底；Curious Expedition 是羊皮纸六边形地图；Inscryption 是桌上的立体模型地图。",
+          "examples": ["steam:1668690", "steam:358130", "steam:1092790"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "战后选牌（draft3 浮层）：三张卡平铺 + 跳过，背后冻结压暗；本局总结（runSummary）列出层数、击败数、关键牌。胜负页用一个大字定调（AFK 2 斜体 VICTORY / DEFEAT + 半透明灰底的成员数据行）。",
+          "examples": ["steam:1668690", "steam:2179850", "gameui:5744", "iig:hearthstone-heroes-of-warcraft"]
+        },
+        {
+          "screen": "screen.craft",
+          "conventions": "升级 / 改造一张牌（forge）：左右前后对比 + 中间箭头，改变的数字用颜色标出（Alina、Cobalt Core、DICEOMANCER 都是这一型）。",
+          "examples": ["steam:1668690", "steam:2179850", "steam:2501600"]
+        },
+        {
+          "screen": "screen.journal",
+          "conventions": "事件页：叙事段落 2–4 句 + 编号选项，选项行内写代价与结果预告；可用日记本 / 羊皮纸容器（Curious Expedition）或黑底长文本（Depersonalization）。",
+          "examples": ["steam:358130", "steam:1477070"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "选角：整幅角色插画占满背景，左侧写角色名与一句说明，底部一排可选角色 + 开始按钮（杀戮尖塔）；电竞经理类是斜切横幅 + 六边形英雄池（Esports Godfather）。手游养成页是暗底 + 左侧竖排细线页签 + 星级（重返未来：1999）。",
+          "examples": ["iig:slay-the-spire", "steam:1278540", "gameui:4596"]
+        },
+        {
+          "screen": "screen.codex",
+          "conventions": "卡牌图鉴：规则网格，未获得的牌用黑剪影或问号，已获得的显示卡面；可做成卡册翻页（炉石皮面木框卡册）。手游图鉴多是头像方格（神觉者）。",
+          "examples": ["iig:hearthstone-heroes-of-warcraft", "gameui:3767"]
+        },
+        {
+          "screen": "screen.match",
+          "conventions": "对阵 / 布阵：左右镜像 + 中间 VS 大字（Esports Godfather 红蓝双色）；手游布阵是下方阵容格 + 保存阵容按钮（AFK 2）。",
+          "examples": ["steam:1278540", "gameui:5744", "gameui:3860"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "卡牌手游的剧情对话：横屏半透明暗金底条 + 书法名字（忘川风华录）、竖屏霓虹色气泡（神觉者 Dislyte）、竖屏底部对话框配暗紫插画（魔镜物语）。对话皮肤跟随该作的美术主题，与战斗 HUD 可以不同。",
+          "examples": ["gameui:2150", "gameui:4373", "gameui:3239"]
+        },
+        {
+          "screen": "screen.shop",
+          "conventions": "仅指 Roguelike 局内商人 / 局内商店（只用本局金币，属于玩法节点，不是付费商城）：商品是卡牌 / 护符 / 药水，价签贴在卡下方，钱不够时价签变红；有'删一张牌'服务。Balatro 的局内商店是核心循环的一部分；100% OJ 的卡片墙是米白卡片格。",
+          "examples": ["steam:2379780", "steam:1404850", "steam:282800"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "暗色细线", "count": 5, "why": "暗色奇幻 / 二次元卡牌 RPG（Chrono Ark、Alina、Depersonalization、重返未来、魔镜物语）：卡牌说明文字多，暗底 + 细线框让长文本与卡图都不被框抢戏。" },
+        { "family": "暗金金属牌", "count": 4, "why": "集换式卡牌传统（杀戮尖塔的金属铭牌按钮、手游 AFK / 圣树唤歌 / 艾尔多战记的木金框）：金属与木框给'牌'一种实物质感。" },
+        { "family": "国风水墨 / 墨笔", "count": 4, "why": "全部是国内卡牌手游（忘川风华录、花亦山心之月、我自为道、炼仙传说）：书法竖排大字 + 屏风 / 卷轴，主要出现在标题、读取、对话，不在战斗 HUD。跨品类的弈仙牌把宣纸 + 竹枝水墨用到了整套界面。" },
+        { "family": "羊皮纸任务书", "count": 3, "why": "桌游血统（Armello、Wingspan、Curious Expedition）：纸卡、日记页、地图都是纸媒介，与卡牌'可以拿在手里'的属性一致。" },
+        { "family": "二次元白卡细线", "count": 3, "why": "100% Orange Juice、AFK 2、神觉者：浅色圆角卡 + 撞色，适合角色立绘多、偏轻松的作品。" },
+        { "family": "手绘笔记本", "count": 2, "why": "Wash Card 铅笔线稿卡、DICEOMANCER 手绘卡与书本卡组：卡面就是草图，UI 与画面同一媒介。" },
+        { "family": "像素位图", "count": 2, "why": "Loop Hero、Luck be a Landlord（以及跨品类的 Shogun Showdown、Cobalt Core、Shotgun King）：独立 Roguelike 的低成本与小尺寸可读性兼得，像素数字在小卡上依然清楚。" },
+        { "family": "极简单色", "count": 2, "why": "Inscryption（界面即牌桌）与 Lara Croft GO：把 UI 交给世界里的物件。" },
+        { "family": "糖果卡通（Q 版）", "count": 2, "why": "休闲卡牌手游（魔魔打勇士、上古王冠）：圆角 + 高饱和撞色。" },
+        { "family": "CRT 终端", "count": 1, "why": "Balatro：赌场 / 街机情绪，整屏弯曲 + 漩涡背景，但计分数字是巨大的扁平像素块，所以没牺牲可读性。" },
+        { "family": "倾斜动感", "count": 1, "why": "Esports Godfather：电竞转播语法（斜切横幅、VS、红蓝双色）。" },
+        { "family": "孟菲斯", "count": 1, "why": "Jackbox：派对游戏的描边大标题 + 漫画对白框。" },
+        { "family": "重装饰雕花框", "count": 1, "why": "炉石：皮面木框卡册、缎带横幅——把收藏做成奢华实物。" },
+        { "family": "合成波 / 蒸汽波", "count": 1, "why": "神觉者 Dislyte：都市霓虹主题；跨品类的 Cobalt Core 也是紫红霓虹像素。" },
+        { "family": "扁平 / Material", "count": 1, "why": "伊甸之战：蓝白卡通大厅 + 斜切对战卡，偏竞技手游。" }
+      ],
+      "exemplars": [
+        { "card": "iig:slay-the-spire", "why": "构筑卡牌的通用骨架：顶栏全局读数、扇形手牌、左下能量球、右下结束回合、敌人头顶意图 + 数字、拖牌时的指向曲线、两个下角的牌堆计数——几乎每个元素都有固定位置。" },
+        { "card": "steam:2379780", "why": "'计算可见'的范本：左侧整条栏按结算顺序列出目标分 → 本轮得分 → 牌型 × 倍率 → 出牌 / 弃牌次数 → 钱 → 底注 / 回合；CRT 弯曲与漩涡背景很重，但数字是大号扁平像素块。" },
+        { "card": "steam:1092790", "why": "叙事内牌桌做到底：牌、天平计分、地图模型都是桌上的物件，屏幕上只剩一行提示字。" },
+        { "card": "steam:1188930", "why": "高密度变体：手牌改成左侧编号竖列表（可按数字键出牌），敌人技能排成右侧施法队列，队伍头像 + 血条排在底部。" },
+        { "card": "steam:1668690", "why": "格子战场 + 六边形卡牌：卡牌外轮廓与战场格同形；意图既挂在敌人头顶又在左侧列成说明框；升级页是左右前后对比。" },
+        { "card": "steam:1054490", "why": "数字桌游：米白纸卡 + 水彩插画 + 属性图标，玩家板按栖息地分三行；右侧常驻一张放大的卡做详情。" },
+        { "card": "steam:1404850", "why": "失败线只有一个（还剩几次要交房租），所以顶行把它和金币并排放大；三选一是三张深色像素卡，名字 / 稀有度 / 说明三段式。" },
+        { "card": "steam:358130", "why": "事件卡化：左侧羊皮纸日记页 + 编号选项，右侧像素场景；顶部理智条是唯一常驻读数。" },
+        { "card": "steam:2501600", "why": "第一人称战斗 + 漫画爆炸框伤害数字；卡组管理是一本摊开的书，升级页是前后对比。" },
+        { "card": "steam:1948800", "why": "PvP 卡牌的镜像布局：双方头像在上两角，下沿左右两副牌，对手的牌背朝上；宣纸 + 水墨装饰贯穿全部界面。" },
+        { "card": "steam:2179850", "why": "多角色构筑：左侧船员列与牌一一对应，下沿一排牌 + 右下结束回合；选牌页用整屏大字标题。" },
+        { "card": "iig:hearthstone-heroes-of-warcraft", "why": "收藏页是皮面木框卡册（两页 4×2 + 右侧牌组列表），结算是缎带横幅——实物容器做到奢华一档。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "侧栏 / 装备格信息过密，像素小字在 1080p 下难读；新手不知道先看哪一块",
+          "examples": ["steam:1282730", "steam:290340"],
+          "reviewEvidence": "Loop Hero：提到界面的 23 条评测里 9 条来自差评（约 39%，本组最高之一）；Armello：7 条里 3 条来自差评。两款都没有某一类抱怨达到 ≥ 2 条，属于弱信号。对照：同样是侧栏的 Balatro 49 条里只有 2 条来自差评——区别在 Balatro 侧栏只有大号数字，没有说明文字。"
+        },
+        {
+          "desc": "卡组 / 菜单管理层级深、操作繁琐（查看牌组、整理、比较要点好几下）",
+          "examples": ["steam:1188930", "steam:282800", "steam:1054490", "steam:1455840"],
+          "reviewEvidence": "'菜单 / 界面难用'：Chrono Ark 2 条（达到出处门槛）、Dorfromantik 2 条；100% Orange Juice、Wingspan 各 1 条。"
+        },
+        {
+          "desc": "出牌 / 结算演出太长，拖慢节奏（尤其对战与自动结算）",
+          "examples": ["steam:1948800", "steam:2379780"],
+          "reviewEvidence": "弈仙牌'UI 卡顿 / 响应慢'2 条，是 R3 这一类 6 款出处之一。设计上要配 mo.duration 与倍速 / 跳过；Balatro 演出很重但未出现这类抱怨（是否因为有游戏速度设置未核实）。"
+        },
+        {
+          "desc": "华丽卡框挤占规则文字；卡图缩小后变成色块",
+          "examples": ["iig:hearthstone-heroes-of-warcraft", "gameui:3059"],
+          "reviewEvidence": "本组没有直接评测证据；出自 06 文档 A13 的常见美术陷阱，测试片段是'卡高 120 px 时规则文字是否可读'。"
+        },
+        {
+          "desc": "只靠颜色区分卡牌类型 / 稀有度 / 效果，色盲或灰度下分不开",
+          "examples": ["steam:2095150", "steam:1404850"],
+          "reviewEvidence": "无评测证据（Wash Card 在英文 / 简中都没有评测）；依据 06 文档 0.5 第 8 条与 A13'稀有度用边框或宝石形状 + 颜色'。Luck be a Landlord 的稀有度同时写成文字（普通 / 罕见 / 稀有），是正例。"
+        },
+        {
+          "desc": "叙事内牌桌把规则藏进世界，新手不知道去哪看数值",
+          "examples": ["steam:1092790"],
+          "reviewEvidence": "Inscryption 本身未出现引导类抱怨（提到界面 46 条，6 条来自差评）——它的牌面数字仍是清晰平面字。但 R3 里'界面就是画面'的作品引导抱怨集中（Scorn 10 条、Kingdom Two Crowns 7 条），照搬时要保留屏幕层的数字。"
+        },
+        {
+          "desc": "CRT / 弯曲 / 颗粒后处理压在小字上",
+          "examples": ["steam:2379780"],
+          "reviewEvidence": "Balatro 本身是反例（49 条提到界面的评测里 47 条来自好评、无'字太小'抱怨），可读性来自巨大的扁平数字；06 文档 A13 建议这类效果提供开关。照搬滤镜而不放大数字才是陷阱。"
+        },
+        {
+          "desc": "多人桌游四角堆满玩家信息，'轮到谁'不突出",
+          "examples": ["steam:282800", "steam:290340"],
+          "reviewEvidence": "100% Orange Juice：提到界面 59 条，其中 11 条来自差评、'菜单难用'1 条；Armello 见上。均为弱信号。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "手牌：扇形叠压 vs 平铺一排",
+          "a": { "el.abilities.form": "cards", "el.abilities.arrangement": "fan", "el.abilities.screenAnchor": "bc", "cmp.card": "tcg", "lay.detail": "transient" },
+          "b": { "el.abilities.form": "cards", "el.abilities.arrangement": "row", "el.abilities.screenAnchor": "bc", "cmp.card": "iconCard", "lay.detail": "persistent" },
+          "lookAt": "手牌从 5 张加到 10 张：扇形不改布局但互相遮挡，要靠悬停放大；平铺每张位置固定、一眼数得清，但超过 8 张就挤，详情改成常驻侧栏。"
+        },
+        {
+          "title": "HUD 组织：顶栏 + 四角 vs 竖向侧栏计分台",
+          "a": { "lay.hudOrg": "edgeBar", "el.resources.form": "gauge", "cmp.gauge@el.resources": "orb", "el.resources.screenAnchor": "bl", "el.timer.screenAnchor": "tc", "el.cta.screenAnchor": "br" },
+          "b": { "lay.hudOrg": "edgeBar", "el.resources.form": "bigNumber", "el.resources.screenAnchor": "ml", "el.timer.form": "gauge", "el.timer.screenAnchor": "ml", "typ.numerals.family": "pixel", "st.statViz": "bigNumber", "el.cta.form": "dual" },
+          "lookAt": "视线路径：a 是绕屏幕一圈（顶栏 → 敌人 → 手牌 → 两个下角），b 是从左栏上到下读一遍就是一次结算；b 适合'分数 / 倍率'类构筑，a 适合'血量 / 意图'类构筑。"
+        },
+        {
+          "title": "屏幕叠加 vs 叙事内牌桌",
+          "a": { "rel.diegesis": "screen", "ast.container": "none", "rel.harmony": "neutral", "cnt.density": "2" },
+          "b": { "rel.diegesis": "diegetic", "ast.container": "tableTop", "ast.containerSurface": "table", "ast.frameMat": "wood", "rel.harmony": "sameMedium", "cnt.density": "1", "el.notify.form": ["banner"], "el.notify.screenAnchor": "tc" },
+          "lookAt": "同一组卡牌与计分：b 里计分变成桌上物件、屏幕只剩顶端一行提示，氛围强但新手要找数字；检查 b 的牌面数字是否仍清晰。"
+        },
+        {
+          "title": "敌人意图：挂在头顶 vs 侧边施法队列",
+          "a": { "el.threat.form": ["intent"], "el.threat.attachTo": "target", "el.threat.valueLabel": "current" },
+          "b": { "el.threat.form": ["intent"], "el.threat.attachTo": "none", "el.threat.screenAnchor": "mr", "el.threat.arrangement": "column", "el.turnOrder.form": "icons", "el.turnOrder.screenAnchor": "mr" },
+          "lookAt": "敌人从 1 个加到 5 个：头顶意图直观但会和特效、血条挤在一起；队列把先后顺序和倒计时也表达出来，代价是要在队列和敌人之间来回对照。"
+        },
+        {
+          "title": "卡面：插画窗 + 费用角标 vs 桌游纸卡（名牌 + 属性表）",
+          "a": { "cmp.card": "tcg", "vis.iconStyle": "painted", "vis.ornament": "2", "col.lightness": "dark", "st.rarityCue": ["border", "rarityGlow"] },
+          "b": { "cmp.card": "statCard", "ast.coreMat": "paper", "col.lightness": "light", "vis.ornament": "0", "vis.iconStyle": "flat", "st.rarityCue": ["letter", "strip"] },
+          "lookAt": "把卡缩到 120 px 高：a 的卡图仍是主角、规则文字最先糊；b 的属性图标与数字更耐缩，适合规则多、比较多的桌游类。"
+        },
+        {
+          "title": "卡牌详情：悬停临时放大 vs 右侧常驻大卡",
+          "a": { "lay.detail": "transient", "el.selection.form": "tooltip", "el.selection.attachTo": "cursor", "hier.inline": "keyword" },
+          "b": { "lay.detail": "persistent", "el.selection.form": "card", "el.selection.screenAnchor": "mr", "hier.inline": "keyword" },
+          "lookAt": "切到触屏输入（D-input 会把悬停改成弹窗）：a 在触屏上要多点一下；b 永远占一块屏幕但不需要额外操作，适合竖屏或手柄。"
+        },
+        {
+          "title": "数值反馈：克制飘字 vs 燃烧大数字",
+          "a": { "el.feedback.form": ["floatNumbers"], "mo.valueChange": "smooth", "mo.juice": 0.3 },
+          "b": { "el.feedback.form": ["comicSFX", "combo"], "mo.valueChange": "countUp", "mo.juice": 1, "ast.fx": ["glitch"], "rel.metaFx": ["glitch"] },
+          "lookAt": "连续打出 5 张牌：b 每张都有爆字和抖动，爽但慢——同时打开减少动效（a11y.reduceMotion）看 b 能否退化成 a。"
+        },
+        {
+          "title": "卡组浏览：滚动网格 vs 卡册翻页",
+          "a": { "cnt.subtype": "deck", "lay.container": "fullscreen", "lay.arrangement": "grid", "lay.columns": 5, "lay.overflow": "scrollV", "ast.container": "none" },
+          "b": { "cnt.subtype": "deck", "lay.container": "fullscreen", "ast.container": "book", "lay.composition": "splitLR", "lay.arrangement": "grid", "lay.columns": 4, "lay.overflow": "paged", "lay.pageIndicator": "arrows" },
+          "lookAt": "40 张牌的牌组：滚动网格一屏能看最多；卡册翻页每页 8 张、有'翻书'的实物感，但找一张牌要翻好几页。"
+        }
+      ],
+      "contentPack": {
+        "names": {
+          "resources": ["能量 3 / 3", "金币 127", "药水槽 2 / 3", "抽牌堆 12", "弃牌堆 5", "消耗堆 2", "格挡 8", "本手得分 = 基础 40 × 倍率 3", "目标分 1,200", "还剩 4 次出牌 / 2 次弃牌", "距离交租还有 3 轮"],
+          "units": [
+            "主角「流浪剑客」HP 54 / 72",
+            "敌人「锈甲卫兵」HP 38 / 40，意图：攻击 12",
+            "敌人「孢子术士」HP 22 / 22，意图：施加虚弱 2 回合",
+            "敌人「双头獒」HP 30 / 30，意图：攻击 4 × 3",
+            "精英「钟楼看守」HP 88 / 88，意图：蓄力（2 回合后攻击 30）",
+            "多角色构筑队友：「机修师」「领航员」「炮手」"
+          ],
+          "items": [
+            "攻击牌「劈砍」1 费：造成 6 点伤害",
+            "技能牌「举盾」1 费：获得 5 点格挡",
+            "攻击牌「连环刺」2 费：造成 3 点伤害 3 次",
+            "技能牌「余烬」0 费：抽 1 张牌，消耗",
+            "能力牌「铁壁姿态」2 费：每回合开始获得 4 点格挡",
+            "升级示例「劈砍 → 劈砍+」伤害 6 → 9",
+            "护符「旧怀表」：每 3 回合多抽 1 张",
+            "护符「裂纹吊坠」：每场战斗第一次受伤减半",
+            "药水「苦艾酊」：获得 2 点能量",
+            "桌游卡「灰背雀」：栖息地 森林，分值 4，产卵 2"
+          ],
+          "stats": ["层数 7 / 15", "回合 4", "底注 2 / 8", "牌组 31 张", "本局击败 23", "最高单次伤害 64", "关键词：消耗、保留、虚弱、易伤、灼烧、连击"],
+          "objectives": ["击败第 15 层守卫", "本回合结束前打出 3 张攻击牌", "达到目标分 1,200", "在交租前攒够 350 金币", "首领规则：本场必须一次打出 5 张牌"],
+          "dialogue": [
+            "事件「坍塌的祭坛」：石缝里透出微光，有人在下面低声数数。1）伸手去够（失去 6 生命，获得一件护符）2）献上一张牌（从牌组移除 1 张）3）离开",
+            "回合提示：敌方回合 / 你的回合",
+            "对局开场旁白：坐吧，这一局由我先手。"
+          ],
+          "mapFeatures": ["路线节点：普通战斗、精英、营火（休息 / 升级）、局内商人、事件「?」、宝箱、首领", "分叉路线 3 条，已走路径实线、未走虚线", "桌游棋盘：起点、陷阱格、商店格、宝箱格、对战格"]
+        }
+      },
+      "paramGaps": [
+        {
+          "gap": "牌堆计数（抽牌堆 / 弃牌堆 / 消耗堆）没有对应元素",
+          "evidence": "杀戮尖塔左下抽牌堆 13、右下弃牌堆 3；Alina 左侧两个计数；Balatro 右下牌堆 41 / 52",
+          "proposal": "新增元素 el.piles，画法 form = 牌背叠层 + 数字 / 纯数字 / 牌背厚度；默认锚点 bl（抽牌）与 br（弃牌），点击打开牌组浮层"
+        },
+        {
+          "gap": "被动构筑件栏（护符 / 小丑 / 遗物一排图标，带触发计数）没有对应元素",
+          "evidence": "杀戮尖塔顶栏下一行；Balatro 顶部小丑牌行（4 / 5 上限）",
+          "proposal": "新增元素 el.passives：form = 图标行 / 卡牌行；带'槽位上限'与'触发闪光'；默认锚点 tl 或 tc"
+        },
+        {
+          "gap": "结算公式条（基础 × 倍率 = 得分，逐步累加）无法表达",
+          "evidence": "Balatro 侧栏蓝色 40 × 红色 2 的公式块与燃烧的总分",
+          "proposal": "st.statViz 增加取值 formula（公式块：左值 × 右值 → 结果，每张牌结算时逐项跳动），或 el.meter.form 增加 product"
+        },
+        {
+          "gap": "'可出 / 不可出 / 就绪'状态编码：现有 st.cooldown 只覆盖冷却，没有'费用不足 / 无合法目标 / 已就绪可释放'",
+          "evidence": "杀戮尖塔可出的牌描青色亮边；手游大招就绪时头像发光（神州风闻录）",
+          "proposal": "新增 st.playable：亮边 / 不可出压暗 / 费用数字变红 / 就绪脉冲；与 st.cooldown、st.selected 一起参加两两不撞车检查"
+        },
+        {
+          "gap": "手牌溢出策略：手牌数变化时是叠压、缩小、换行还是改列表",
+          "evidence": "扇形叠压（杀戮尖塔）、平铺（Balatro 8 张上限）、竖列表（Chrono Ark）",
+          "proposal": "新增 cmp.hand.overflow：overlap / shrink / wrap / list，配 cnt.itemCount 演示 3→12 张"
+        },
+        {
+          "gap": "预计值显示：出牌前预览'打完后剩多少血 / 实际伤害（算上易伤与格挡）'",
+          "evidence": "构筑卡牌的核心问题之一；现有 elx.valueLabel 只有当前 / 上限 / 百分比 / 变化量",
+          "proposal": "elx.valueLabel 增加 projected（幽灵段预览：血条上显示将被扣掉的一截 + 预计数字）"
+        },
+        {
+          "gap": "卡牌类型编码（攻击 / 技能 / 能力）没有语义色维度",
+          "evidence": "杀戮尖塔卡框形状随类型变化；Wash Card 用红 / 蓝 / 绿色块标效果",
+          "proposal": "col.coding 增加 cardType，并要求与 vis.silhouette@el.abilities 或卡框形状冗余"
+        },
+        {
+          "gap": "随机结果展示（骰子 / 转轴 / 翻牌）没有元素",
+          "evidence": "DICEOMANCER 六边形骰盘、Curious Expedition 木框骰子、100% OJ 大号骰子数字、Luck be a Landlord 的转轴",
+          "proposal": "新增元素 el.dice：form = 骰子 / 转轴 / 翻牌 / 轮盘；配 mo.reveal 的翻牌 / 旋转（只做玩法内随机，不含抽卡）"
+        },
+        {
+          "gap": "关键词说明链：卡牌详情旁再挂一列关键词解释块（嵌套）",
+          "evidence": "Chrono Ark 详情框右侧的关键词块；杀戮尖塔悬停时卡牌旁的说明块",
+          "proposal": "el.selection.form 增加 stackedTooltips，或 lay.detail 增加 transientStack"
+        },
+        {
+          "gap": "对手隐藏信息（对手手牌背面、剩余牌数）",
+          "evidence": "弈仙牌右下对手牌背朝上",
+          "proposal": "el.party 增加子参数 hiddenInfo：牌背行 / 数字 / 不显示"
+        }
+      ]
+    },
+    {
+      "genre": "mobile",
+      "label": "手机触屏（只看局内 HUD、触屏布局与非商业化界面）",
+      "subgenres": [
+        "竖屏自动战斗 / 放置卡牌 RPG（底部英雄头像条 + 倍速 / 托管）",
+        "竖屏回合战斗（行动顺序条 + 竖排控制键）",
+        "竖屏消除 / 合成 / 三消对战（上战斗下棋盘）",
+        "竖屏地牢 / Roguelike（上场景下地图格）",
+        "横屏 ARPG / MMO（左摇杆 + 右下大攻击键 + 技能弧）",
+        "横屏派对 / 休闲动作（摇杆 + 跳跃大圆钮）",
+        "横屏横版（十字键 + 两个大键）",
+        "横屏回合战棋（选中单位面板 + 待机大键）",
+        "横屏塔防 / 出兵（底部单位卡）",
+        "横屏大军团即时战略（几乎无 HUD）",
+        "主城 / 家园 / 模拟经营大地图（点地移动 + 底部功能条）"
+      ],
+      "cards": 39,
+      "relatedCards": ["steam:1927720", "steam:1677740", "steam:960090", "steam:1367550", "steam:1267910", "gameui:1691", "gameui:13082", "gameui:12994", "gameui:3830", "gameui:4456"],
+      "coreQuestions": [
+        "我该点哪里：主操作在拇指够得着的区域（竖屏下 1/3、横屏左右下角），而且够大",
+        "战斗是自动的还是手动的：当前倍速档位、托管开没开",
+        "哪个英雄的大招 / 技能现在就绪（头像发光、充能满、冷却扇形走完）",
+        "双方血量 / 比分 / 回合数 / 剩余时间",
+        "这一关怎么算赢（胜利目标一句话）",
+        "我的手指会不会挡住要看的东西（读数在上、操作在下）",
+        "刚才那一下点到了没有（按下反馈、拖拽轨迹）",
+        "怎么暂停、跳过、撤退或退出"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "竖屏'上看下点'：顶部只读（资源、回合、目标），中间战场，下沿一排英雄头像 / 卡（点或拖放技能）",
+          "params": {
+            "ctx.orientation": "portrait",
+            "ctx.input": "touch",
+            "ix.thumbZone": "oneHand",
+            "ix.touchStick": "none",
+            "ix.touchCluster": "row",
+            "lay.composition": "splitTB",
+            "el.party.form": "unitCards",
+            "el.party.screenAnchor": "bc",
+            "el.gameSpeed.form": "x2",
+            "el.gameSpeed.screenAnchor": "br",
+            "el.resources.screenAnchor": "tc"
+          },
+          "share": "竖屏 21 张里 13 张是战斗画面，其中 6 张以下沿头像 / 卡条为主操作（梦想指针、放置七骑士、疯狂宝贝、铸仙之境、幻界之境、巫师血脉）；竖屏 21 张全部单手握持",
+          "examples": ["gameui:12746", "gameui:10348", "gameui:7101", "gameui:7082", "gameui:6836", "gameui:6814"],
+          "notes": "自动战斗时玩家唯一的输入是'什么时候放大招'，所以英雄头像本身就是按钮，就绪时发光；疯狂宝贝把三张大英雄卡做成拖出释放。"
+        },
+        {
+          "pattern": "竖屏半屏棋盘：上 1/3 战斗或比分，下 2/3 是可触摸的棋盘",
+          "params": {
+            "ctx.orientation": "portrait",
+            "ix.thumbZone": "oneHand",
+            "lay.composition": "splitTB",
+            "lay.playfield": "boardWindow",
+            "ix.touchStick": "swipe",
+            "el.timer.form": "scorePill",
+            "el.timer.screenAnchor": "tc",
+            "el.feedback.form": ["combo"]
+          },
+          "share": "手机 39 张里 4 张（宝石小伙伴 比分 52 : 40、酱游记 上回合战斗下消除、萌宠解谜 7 × 8 合成格、代号肉鸽 上场景下地图格）；跨品类解谜里还有 2 张（Call of Antia、小小传说）",
+          "examples": ["gameui:7035", "gameui:6889", "gameui:7039", "gameui:7155", "gameui:3830", "gameui:4456"],
+          "notes": "棋盘必须在拇指区，所以永远在下；战斗 / 比分只读，放上面。道具按钮放在棋盘下方两角。"
+        },
+        {
+          "pattern": "横屏双拇指：左半屏摇杆，右下一个大攻击键 + 技能沿四分之一圆弧排布",
+          "params": {
+            "ctx.orientation": "landscape",
+            "ctx.input": "touch",
+            "ix.thumbZone": "twoThumbs",
+            "ix.touchStick": "floating",
+            "ix.touchCluster": "arc",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "ring",
+            "el.abilities.screenAnchor": "br",
+            "vis.silhouette@el.abilities": "circle",
+            "el.prompt.form": ["touchButtons"],
+            "el.prompt.screenAnchor": "bl"
+          },
+          "share": "横屏 18 张里 6 张双拇指握持；其中大键 + 弧形 3 张战斗画面（天涯明月刀、三界天骄、暖雪）+ 主界面 1 张（元梦之星），十字键 + 两个大键 1 张（空之要塞启航）",
+          "examples": ["gameui:12771", "gameui:6729", "gameui:6750", "gameui:11388", "gameui:7134"],
+          "notes": "大攻击键在拇指自然落点，技能键离得越远越不常用；MMO 在技能键上加键位字母，让同一套 UI 兼容键鼠 / 手柄。与现有 layout.mobileArpg 预设一致。"
+        },
+        {
+          "pattern": "横屏自动 / 回合战斗：战场占满，下沿一排头像或单位卡，倍速与暂停缩在上角",
+          "params": {
+            "ctx.orientation": "landscape",
+            "ix.thumbZone": "twoThumbs",
+            "ix.touchStick": "none",
+            "ix.touchCluster": "row",
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "bc",
+            "el.gameSpeed.form": "autoBattle",
+            "el.gameSpeed.screenAnchor": "tl",
+            "el.timer.form": "badge",
+            "el.timer.screenAnchor": "tc"
+          },
+          "share": "横屏 18 张里 4 张（神州风闻录、奇缘之旅、死亡突围 点卡出兵、寻光之旅 底部卡牌 + 顶部两侧血条）",
+          "examples": ["gameui:6853", "gameui:6904", "gameui:11009", "gameui:6868"],
+          "notes": "横屏把倍速放上角，是因为下沿已被头像占满，而倍速一场只按一次。"
+        },
+        {
+          "pattern": "竖屏控制键竖排在右缘（倍速 / 暂停 / 下一角色 / 跳过），左下是当前单位面板，下沿是行动顺序",
+          "params": {
+            "ctx.orientation": "portrait",
+            "ix.thumbZone": "oneHand",
+            "el.gameSpeed.form": "speedBar",
+            "el.gameSpeed.screenAnchor": "mr",
+            "el.gameSpeed.arrangement": "column",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "bl",
+            "el.turnOrder.form": "portraitQueue",
+            "el.turnOrder.screenAnchor": "bc",
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "tl",
+            "el.notify.form": ["feed"]
+          },
+          "share": "手机 39 张里 1 张完整（铸仙之境 右缘四键竖排 + 左上'胜利目标'一句 + 战斗日志）；小虾米战三国 是同一思路的上角版本（右上一排自动 / ×2 / 撤退圆印章、左上回合 / 胜负 / 聊天竖排、左下跳过）",
+          "examples": ["gameui:7082", "gameui:6922"],
+          "notes": "回合制给了玩家读信息的时间，所以竖屏也能放得下单位属性面板与行动顺序；控制键竖排在右缘，右手拇指沿边缘一划就到。"
+        },
+        {
+          "pattern": "横屏战棋：左下选中单位面板，右下一个圆形大键（待机 / 结束），格子高亮在战场上",
+          "params": {
+            "ctx.orientation": "landscape",
+            "ctx.timeModel": "turn",
+            "ix.touchStick": "none",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "bl",
+            "el.cta.form": "round",
+            "el.cta.screenAnchor": "br",
+            "el.overlay.form": ["gridHighlight"],
+            "el.timer.form": "badge",
+            "el.timer.screenAnchor": "tr"
+          },
+          "share": "手机 39 张里 1 张（英杰传），与策略品类的回合战术布局同源",
+          "examples": ["gameui:7158"],
+          "notes": "移动范围用半透明青色格、攻击范围用红色格，右上回合 1 / 20。"
+        },
+        {
+          "pattern": "几乎无 HUD：大军团或演出型战斗，只在顶部两侧留双方主将头像与兵力",
+          "params": {
+            "ctx.orientation": "landscape",
+            "cnt.density": "1",
+            "ix.touchStick": "none",
+            "el.party.form": "portraits",
+            "el.party.screenAnchor": "tc",
+            "el.notify.form": ["band"]
+          },
+          "share": "手机 39 张里 3 张（霸业、半世界之旅 '战斗开始'大字横贯、风车之家）；跨品类 Monument Valley 是竖屏零 HUD 的代表",
+          "examples": ["gameui:8901", "gameui:6951", "gameui:6997", "steam:1927720"],
+          "notes": "画面本身就是卖点时，把 HUD 压到顶部一条，演出用整屏横贯带大字。"
+        },
+        {
+          "pattern": "主城 / 家园（只看非商业化部分）：点地移动 / 点地建造，底部一排功能或 4–5 个页签，中间偏下一个大 CTA（挑战 / 开始）",
+          "params": {
+            "cnt.screen": "screen.lobby",
+            "ix.touchStick": "tapToMove",
+            "lay.nav": "tabsBottom",
+            "flow.navPersistent": true,
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "bc",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc"
+          },
+          "share": "手机 39 张里主界面 15 张：底部页签 6 张（战斗画面幻界之境也带底部页签）、中间大 CTA 5 张（苏打世界 PLAY、Royal Match 关卡号、小小霸主、阿尔米娅赞歌 挑战、Epic Age 招募）、点地移动 4 张",
+          "examples": ["gameui:6728", "gameui:12543", "gameui:9383", "gameui:6727", "gameui:6864"],
+          "notes": "两侧竖排活动入口、红点墙是商业化层（ops.*），不在本次分析范围；这里只取'底部页签 + 大 CTA + 拇指区'的骨架。"
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.party",
+          "formParam": "el.party.form",
+          "forms": ["unitCards", "portraitRow", "frames", "portraits"],
+          "anchors": ["bc", "tc"],
+          "why": "自动 / 半自动战斗里英雄头像就是技能按钮：放下沿拇指区，大招就绪用发光 / 充能满表示（神州风闻录）；血条可以画在头像上，但同一单位的头顶也要有一条，因为手指按着头像时看不到它。",
+          "examples": ["gameui:12746", "gameui:7101", "gameui:6853", "gameui:7082"]
+        },
+        {
+          "element": "el.gameSpeed",
+          "formParam": "el.gameSpeed.form",
+          "forms": ["x2", "autoBattle", "speedBar", "pauseMenu"],
+          "anchors": ["br", "mr", "tr", "tl", "bl"],
+          "why": "放置 / 自动战斗玩家最常用的系统键。锚点取决于下沿是否被头像占满：没占满放右下（战神之决 ×2 / ×5），占满了竖排到右缘（铸仙之境）或上角（小虾米战三国、奇缘之旅）。这批样本里倍速 / 暂停键明显小于主按钮（约 36–44pt，见 R4），一场只按一两次所以可接受，但不能小于触控下限。国风作品把这组键做成圆印章（小虾米战三国），是皮肤可以接管的典型小组件。",
+          "examples": ["gameui:7312", "gameui:7082", "gameui:6922", "gameui:6904", "gameui:12746"]
+        },
+        {
+          "element": "el.abilities",
+          "formParam": "el.abilities.form + el.abilities.arrangement",
+          "forms": ["slots", "cards", "ring", "row"],
+          "anchors": ["br", "bc"],
+          "why": "动作类：大攻击键在右下拇指落点，3–5 个技能沿圆弧环绕（天涯明月刀、三界天骄、暖雪），越常用越近；卡牌 / 自动类：下沿一排卡（寻光之旅底部卡牌、死亡突围点卡出兵）。",
+          "examples": ["gameui:12771", "gameui:6729", "gameui:6750", "gameui:6868", "gameui:11009"]
+        },
+        {
+          "element": "el.prompt",
+          "formParam": "el.prompt.form",
+          "forms": ["touchButtons"],
+          "anchors": ["bl"],
+          "why": "虚拟摇杆 / 十字键在左下：固定摇杆有底盘，新手一眼知道能移动；浮动摇杆（暖雪）左半屏任意处按下即生成，画面最干净，但静态画面里看不出可以移动，首次要有提示。",
+          "examples": ["gameui:6750", "gameui:7134", "gameui:12771", "steam:1677740", "gameui:13082"]
+        },
+        {
+          "element": "el.cta",
+          "formParam": "el.cta.form",
+          "forms": ["round", "wide"],
+          "anchors": ["br", "bc"],
+          "why": "每屏只有一个最大的键：横屏是右下圆钮（英杰传'待机'、MMO 大攻击键），竖屏是下 1/3 居中的宽按钮（阿尔米娅赞歌'挑战'、苏打世界 PLAY、巫师血脉中间大战斗键）。",
+          "examples": ["gameui:7158", "gameui:6728", "gameui:12543", "gameui:6814"]
+        },
+        {
+          "element": "el.vitals",
+          "formParam": "cmp.gauge@el.vitals",
+          "forms": ["bar", "segmented"],
+          "anchors": ["attachTo:target", "tl", "tr", "tc"],
+          "why": "每个单位头顶一条小血条几乎是手游战斗的默认（几乎所有战斗样本都有）；1v1 或 PvE 首领战再在顶部两侧放双方大血条（寻光之旅斜切血条 + 中间倒计时、千鸟飞绝顶部两侧头像）。动作类单人只在左上一条（暖雪）。",
+          "examples": ["gameui:6868", "gameui:6826", "gameui:6750", "gameui:7312"]
+        },
+        {
+          "element": "el.timer",
+          "formParam": "el.timer.form",
+          "forms": ["scorePill", "badge", "number"],
+          "anchors": ["tc", "tr"],
+          "why": "比分 / 回合 / 倒计时永远在顶部居中——只读、两只手都不会挡住。宝石小伙伴是蓝红对半的比分胶囊，回合制是'回合 1 / 18'小徽章。",
+          "examples": ["gameui:7035", "gameui:6922", "gameui:6868", "gameui:7158"]
+        },
+        {
+          "element": "el.objective",
+          "formParam": "el.objective.form",
+          "forms": ["text", "checklist"],
+          "anchors": ["tl", "ml"],
+          "why": "胜利条件用一句话钉在左上（铸仙之境'胜利目标：击败敌方所有目标'）；MMO 的任务清单是左侧可折叠列表（天涯明月刀、三界天骄），占据左中但避开摇杆区。",
+          "examples": ["gameui:7082", "gameui:12771", "gameui:6729"]
+        },
+        {
+          "element": "el.feedback",
+          "formParam": "el.feedback.form",
+          "forms": ["floatNumbers", "combo"],
+          "anchors": ["attachTo:target", "center"],
+          "why": "手机屏小、单位密，伤害飘字常常叠成一串（幻界之境一列 -35）；更好读的做法是加一个汇总数（神州风闻录、奇缘之旅底部'总伤害'大字，小虾米战三国顶部'总伤害'横幅）或连消大字（酱游记）。",
+          "examples": ["gameui:6836", "gameui:6853", "gameui:6904", "gameui:6922", "gameui:6889"]
+        },
+        {
+          "element": "el.notify",
+          "formParam": "el.notify.form",
+          "forms": ["band", "feed"],
+          "anchors": ["center", "tl"],
+          "why": "'战斗开始'这类节拍用整屏横贯大字（半世界之旅）；回合制的治疗 / 增益日志用左上两行半透明滚动条（铸仙之境）。",
+          "examples": ["gameui:6951", "gameui:7082", "gameui:6814"]
+        },
+        {
+          "element": "el.selection",
+          "formParam": "el.selection.form",
+          "forms": ["panel"],
+          "anchors": ["bl"],
+          "why": "回合制给了阅读时间，左下放当前单位面板（立绘、血 / 蓝、四项属性、技能图标）——左手拇指不需要操作时那块区域是空的。",
+          "examples": ["gameui:7158", "gameui:7082"]
+        },
+        {
+          "element": "el.turnOrder",
+          "formParam": "el.turnOrder.form",
+          "forms": ["portraitQueue"],
+          "anchors": ["bc"],
+          "why": "竖屏回合战斗把行动顺序做成下沿圆形头像队列 + '行动 2 / 120'计数（铸仙之境）；幻界之境是底部 VS 回合条。",
+          "examples": ["gameui:7082", "gameui:6836"]
+        },
+        {
+          "element": "el.overlay",
+          "formParam": "el.overlay.form",
+          "forms": ["gridHighlight"],
+          "anchors": ["attachTo:target"],
+          "why": "触屏没有悬停预览，战棋只能在选中后直接把移动 / 攻击范围铺在地上（英杰传青色 + 红色格、铸仙之境敌方红格）。",
+          "examples": ["gameui:7158", "gameui:7082"]
+        },
+        {
+          "element": "el.resources",
+          "formParam": "el.resources.form",
+          "forms": ["iconNumber"],
+          "anchors": ["tc", "tl", "tr"],
+          "why": "战斗中的局内资源（死亡突围左上勇气 / 怒气两条、萌宠解谜顶部资源）放在顶部只读带。主界面资源条上的'+'购买入口属商业化层，不在本次范围。",
+          "examples": ["gameui:11009", "gameui:7039"]
+        },
+        {
+          "element": "el.toolbar",
+          "formParam": "el.toolbar.form",
+          "forms": ["buttonRow"],
+          "anchors": ["bc"],
+          "why": "家园 / 经营：建造、仓库、居民等功能一排放在下沿（解忧小村落、飞龙岛历险记），点地选位置、点按钮确认。",
+          "examples": ["gameui:6727", "gameui:6849"]
+        },
+        {
+          "element": "el.chat",
+          "formParam": "el.chat.form",
+          "forms": ["collapsed"],
+          "anchors": ["bl"],
+          "why": "只有 MMO 有：左下两三行折叠聊天，挤在摇杆上方（三界天骄）——是横屏 MMO 最拥挤的一角。",
+          "examples": ["gameui:6729"]
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "竖屏：顶部只读带（资源、回合、目标）→ 中间战场或棋盘 → 下 1/3 操作区（头像条 / 卡条 / 道具键）；倍速、暂停、跳过放右缘或下角。横屏：四角分工——左上头像 / 血量、右上小地图或回合、左下摇杆、右下大键 + 技能弧；中间尽量空。主按钮触控尺寸 ≥ 88 px@1080p（约 44pt），次要键也不低于触控下限。",
+          "examples": ["gameui:7082", "gameui:7035", "gameui:12771", "gameui:6750", "gameui:7158"]
+        },
+        {
+          "screen": "screen.lobby",
+          "conventions": "只取非商业化骨架：底部 4–5 个页签常驻（flow.navPersistent），下 1/3 居中一个最大的'开始 / 挑战'键，顶部一条身份 + 资源只读带。两侧活动入口墙属于运营层，不学。",
+          "examples": ["gameui:6728", "gameui:12543", "gameui:9383", "gameui:7090"]
+        },
+        {
+          "screen": "screen.levelselect",
+          "conventions": "章节路径地图：竖屏长卷，节点沿蜿蜒小路自下而上，当前关卡带头像标记，'挑战'大按钮固定在下 1/3（阿尔米娅赞歌）；水墨长卷主城把地名竖排书法写在山间（代号：梦山海）。",
+          "examples": ["gameui:6728", "gameui:7090"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "胜负结算：一个大字定调（胜利 / VICTORY / DEFEAT），下方成员贡献行（伤害横条），按钮在底部；立绘可以压在一侧（战斗恋爱的胜利页是大立绘 + 浅蓝切角卡）。",
+          "examples": ["gameui:11234", "gameui:5744"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "竖屏角色页：上半立绘，下半属性 / 技能卡片，页签在底部或左侧窄列（战斗恋爱浅蓝白切角卡）；横屏养成页是左侧竖排细线页签 + 右侧立绘（重返未来：1999）。",
+          "examples": ["gameui:11234", "gameui:4596"]
+        },
+        {
+          "screen": "screen.match",
+          "conventions": "匹配等待：居中圆形加载 + 一句状态（伊甸之战）；对阵：斜切分屏 VS 卡；布阵：上方地图 / 战场预览，下方阵容格 + 保存按钮（AFK 2）。",
+          "examples": ["gameui:3860", "gameui:5744"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "竖屏对话：底部对话框 + 半身立绘在上，或聊天气泡流（神觉者 Dislyte、绯闻港口）；继续靠点任意处。",
+          "examples": ["gameui:4373", "gameui:3239", "gameui:4834"]
+        },
+        {
+          "screen": "screen.frontend",
+          "conventions": "登录 / 选服：米黄或白底列表卡居中（上古王冠选服），古风作品用屏风背景 + 白底卷轴弹窗（花亦山心之月）；确认按钮在弹窗底部居中。",
+          "examples": ["gameui:2946", "gameui:2596"]
+        },
+        {
+          "screen": "screen.loading",
+          "conventions": "读取：整幅主题插画（花亦山心之月金色水墨旗帜）+ 底部细进度条 + 一行提示；竖屏可用竖排书法标题（我自为道、炼仙传说）。",
+          "examples": ["gameui:2596", "gameui:11870", "gameui:4897"]
+        },
+        {
+          "screen": "screen.build",
+          "conventions": "家园 / 村落经营：等距地图占满，左上竖排日期（解忧小村落的季节 + 日期），底部一排建造功能；点地选位置。",
+          "examples": ["gameui:6727", "gameui:6842", "gameui:6849"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "糖果卡通（Q 版）", "count": 9, "why": "休闲、派对、三消、模拟经营：高饱和 + 圆角 + 粗描边，在小屏上轮廓最好认，触控目标看起来就'能按'。" },
+        { "family": "国风水墨 / 墨笔", "count": 8, "why": "国内仙侠 / 三国 / 古风经营：书法字、印章形按钮（小虾米战三国）、山水长卷主城；战斗 HUD 本身仍是标准触屏布局，风格主要落在按钮外形、标题字与背景。" },
+        { "family": "暗色细线", "count": 6, "why": "MMO、SLG、动作 Roguelite（天涯明月刀、Epic Age、暖雪）：写实或暗调场景上用暗底细线，HUD 退后让场景说话。" },
+        { "family": "暗金金属牌", "count": 5, "why": "自动战斗 RPG 的'战力感'（梦想指针、战神之决、千鸟飞绝、三界天骄）：金边、大字战力横幅。" },
+        { "family": "圆润友好", "count": 3, "why": "战棋与合成（英杰传、萌宠解谜、慢慢生活）：圆角、浅色，适合需要长时间看格子的玩法。" },
+        { "family": "倾斜动感", "count": 2, "why": "竞技 / 体育（寻光之旅、足球天才）：斜切血条、斜切面板，借用格斗与体育转播的语法。" },
+        { "family": "像素位图 / 像素木框", "count": 2, "why": "复古塔防与古风经营（死亡突围、古代收租日记）。" },
+        { "family": "孟菲斯", "count": 1, "why": "苏打世界：斜切 PLAY 大按钮 + 撞色几何，偏潮流音乐 / 派对。" },
+        { "family": "科幻 HUD", "count": 1, "why": "风车之家的回合战斗说明框（置信度低）。" },
+        { "family": "重装饰雕花框", "count": 1, "why": "巫师血脉：魔幻主题的华丽回合横幅。" },
+        { "family": "二次元白卡细线", "count": 1, "why": "战斗恋爱：浅蓝白切角卡 + 大立绘，二次元养成的通用皮肤。" }
+      ],
+      "exemplars": [
+        { "card": "gameui:7082", "why": "竖屏回合战斗最完整的一张：左上一句胜利目标 + 两行战斗日志、右缘四个竖排控制键、左下单位面板、下沿行动顺序头像队列，读写分区清楚。" },
+        { "card": "gameui:6750", "why": "横屏动作的减法：左上一条血 + 怒气，右下大攻击键 + 三个技能弧，浮动摇杆不画底盘——HUD 密度 0。" },
+        { "card": "gameui:7035", "why": "竖屏棋盘对战：顶部蓝红比分胶囊 + 双方头像，中间回合条，宝石盘占下 2/3，两个道具键在底角。" },
+        { "card": "gameui:7158", "why": "触屏战棋：选中后直接铺移动 / 攻击格，左下单位面板，右下一个'待机'大圆键。" },
+        { "card": "gameui:6868", "why": "横屏卡牌对战：顶部两侧斜切血条 + 中间倒计时，下沿一张卡 + 能量水晶，镜像对称。" },
+        { "card": "gameui:7101", "why": "拖拽式技能：底部三张大英雄卡（带星级），拖出卡释放技能，右侧 ×2 倍速。" },
+        { "card": "gameui:12771", "why": "横屏 MMO 的完整触屏骨架：技能键标注键位字母，同一套 UI 兼容键鼠 / 手柄；也展示了'四边全满'的代价。" },
+        { "card": "gameui:6922", "why": "皮肤接管小组件：自动 / ×2 / 撤退做成右上一排圆印章，左上回合数下面竖排胜负 / 聊天，跳过放左下，与水墨主题一致；顶部一条'总伤害'横幅汇总伤害。" },
+        { "card": "gameui:6728", "why": "非商业化主界面的骨架：章节路径地图 + 下 1/3 居中'挑战'大按钮 + 底部五页签。" },
+        { "card": "gameui:8901", "why": "大军团战斗几乎无 HUD：只有顶部两侧主将头像与兵力，战场占满。" },
+        { "card": "steam:1927720", "why": "跨品类对照：竖屏解谜零 HUD，只有左上一个小圆点菜单；提到界面的 48 条评测只有 1 条来自差评。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "横屏 MMO 四边全满（顶部功能入口排 + 左侧任务 + 左下聊天 + 右下技能弧），战场只剩中间一小块",
+          "examples": ["gameui:12771", "gameui:6729"],
+          "reviewEvidence": "GameUI 卡无评测；上过 Steam 的手游起家作品里，Bloons TD 6 有 5 条'HUD 太乱 / 挡视野'（R3 这一类的头部出处），Stumble Guys 提到界面的 12 条评测里 5 条来自差评。"
+        },
+        {
+          "desc": "伤害飘字与技能特效叠成一团，盖住单位与头顶血条",
+          "examples": ["gameui:6836", "gameui:6853"],
+          "reviewEvidence": "无直接评测；R3'HUD 太乱 / 挡视野'共 22 款出处（如 Hades II 4 条、Bloons TD 6 5 条）。对应 chk.fxOcclusion 与'总伤害汇总数'做法。"
+        },
+        {
+          "desc": "次要键（倍速、暂停、跳过）做得太小或贴着屏幕圆角 / 刘海",
+          "examples": ["gameui:7312", "gameui:6904", "gameui:6814"],
+          "reviewEvidence": "无评测；R4 看图估计这批样本的倍速 / 暂停键约 36–44pt，低于主按钮，接近触控下限（ix.touchSize 默认手机 88 px@1080p）。"
+        },
+        {
+          "desc": "关键读数放在拇指正下方（只在头像上画血条，按住头像时看不到）",
+          "examples": ["gameui:12746", "gameui:10348"],
+          "reviewEvidence": "无评测证据；依据'读数在上、操作在下'原则。正例：多数样本在单位头顶再画一条血（gameui:7312、gameui:6826）。"
+        },
+        {
+          "desc": "浮动摇杆完全不可见，新手不知道左半屏可以拖动",
+          "examples": ["gameui:6750"],
+          "reviewEvidence": "无评测证据；R3'提示 / 引导不清'是 9 类里出处最多的一类（47 款）。建议首次进入时在左半屏画一个提示圈（el.guide.form = ring）。"
+        },
+        {
+          "desc": "触屏 UI 原样移植到 PC / 手柄：大圆钮、拖拽、长按都没有对应输入，缩放不对",
+          "examples": ["steam:1367550", "steam:1267910", "steam:960090"],
+          "reviewEvidence": "Kingdom Rush Vengeance'手柄 / 键位不好'2 条；Melvor Idle'UI 缩放 / 分辨率'2 条，提到界面的 28 条评测里 12 条来自差评。"
+        },
+        {
+          "desc": "竖屏把确认 / 关闭键放在顶角，单手够不到",
+          "examples": ["gameui:13082", "gameui:6728"],
+          "reviewEvidence": "无评测；R4 观察到竖屏 21 张样本全部把主按钮、页签、确认放在下 1/3（贪吃怪大作战的弹窗把关闭叉也放在底部，是正例）。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "握持：竖屏单手 vs 横屏双拇指",
+          "a": { "ctx.orientation": "portrait", "ctx.input": "touch", "ix.thumbZone": "oneHand", "ix.touchStick": "none", "ix.touchCluster": "row", "lay.composition": "splitTB", "el.party.form": "unitCards", "el.party.screenAnchor": "bc" },
+          "b": { "ctx.orientation": "landscape", "ctx.input": "touch", "ix.thumbZone": "twoThumbs", "ix.touchStick": "floating", "ix.touchCluster": "arc", "el.abilities.form": "slots", "el.abilities.arrangement": "ring", "el.abilities.screenAnchor": "br" },
+          "lookAt": "打开拇指区示意：a 的全部操作在下 1/3、上 2/3 只读；b 的操作在左右两个下角、中间与上沿只读。同一套元素换握持后哪些锚点被改写。"
+        },
+        {
+          "title": "自动战斗控制：右下横排倍速 vs 右缘竖排印章",
+          "a": { "el.gameSpeed.form": "x2", "el.gameSpeed.screenAnchor": "br", "el.gameSpeed.arrangement": "row" },
+          "b": { "el.gameSpeed.form": "speedBar", "el.gameSpeed.screenAnchor": "mr", "el.gameSpeed.arrangement": "column", "vis.silhouette@el.gameSpeed": "circle", "cmp.plate@el.gameSpeed": "seal", "typ.display.family": "calligraphy" },
+          "lookAt": "下沿已有 5 个英雄头像时：a 和头像条抢位置；b 让出下沿，并且展示皮肤如何接管一个系统小组件（印章外形 + 书法字）。"
+        },
+        {
+          "title": "技能输入：大键 + 弧形环绕 vs 下沿卡条拖放",
+          "a": { "ix.touchCluster": "arc", "el.abilities.form": "slots", "el.abilities.arrangement": "ring", "el.abilities.screenAnchor": "br", "ix.mode": "select" },
+          "b": { "ix.touchCluster": "row", "el.abilities.form": "cards", "el.abilities.arrangement": "row", "el.abilities.screenAnchor": "bc", "ix.mode": "drag", "cmp.card": "fullArt" },
+          "lookAt": "a 适合实时动作（拇指不离开右下）；b 适合有'放哪儿'决策的卡牌 / 塔防（拖到战场上的位置本身是信息）。"
+        },
+        {
+          "title": "竖屏布局：全屏战场 vs 上战斗下棋盘",
+          "a": { "ctx.orientation": "portrait", "lay.composition": "single", "lay.playfield": "full", "el.timer.form": "badge", "el.timer.screenAnchor": "tc" },
+          "b": { "ctx.orientation": "portrait", "lay.composition": "splitTB", "lay.playfield": "boardWindow", "el.timer.form": "scorePill", "el.timer.screenAnchor": "tc", "ix.touchStick": "swipe", "el.feedback.form": ["combo"] },
+          "lookAt": "b 把可操作区（棋盘）整块放进拇指区，战斗变成只读的'结果显示器'；对比两者上半屏的信息量。"
+        },
+        {
+          "title": "摇杆：固定底盘 vs 浮动无底盘",
+          "a": { "ix.touchStick": "fixed", "el.prompt.form": ["touchButtons"], "el.prompt.screenAnchor": "bl", "cnt.density": "2" },
+          "b": { "ix.touchStick": "floating", "cnt.density": "0", "rel.hudVisibility": "contextual", "el.guide.form": "ring" },
+          "lookAt": "静止截图里 b 看不出能移动，靠首次提示圈；a 永远占左下一块但新手零学习成本。"
+        },
+        {
+          "title": "触控尺寸：44pt 主按钮 vs 偏小的系统键",
+          "a": { "ix.touchSize": 88, "chk.touch": true },
+          "b": { "ix.touchSize": 64, "chk.touch": true },
+          "lookAt": "打开触控尺寸检查：b 下倍速 / 暂停 / 跳过被标红；同时看它们离屏幕圆角和刘海（chk.safeArea）有多近。"
+        },
+        {
+          "title": "伤害反馈：逐个飘字 vs 汇总大数",
+          "a": { "el.feedback.form": ["floatNumbers"], "mo.juice": 0.8, "chk.fxOcclusion": true },
+          "b": { "el.feedback.form": ["floatNumbers", "combo"], "el.feedback.screenAnchor": "bc", "mo.valueChange": "countUp", "mo.juice": 0.5, "chk.fxOcclusion": true },
+          "lookAt": "5 名英雄同时出手：a 的飘字叠成一列盖住单位；b 每个单位只留小飘字，底部一个滚动的总伤害数承担'爽感'。"
+        }
+      ],
+      "contentPack": {
+        "names": {
+          "resources": ["金币 12.4 万", "经验 3,420 / 5,000", "回合 3 / 15", "行动 2 / 120", "倍速 ×1 / ×2 / ×4", "自动：开", "比分 52 : 40", "剩余步数 18", "局内能量 6 / 10"],
+          "units": [
+            "英雄「青锋」剑士 HP 1,245 / 1,245，大招「星落」已就绪",
+            "英雄「白芷」医师 HP 860 / 900，大招「回春」充能 70%",
+            "英雄「铁砧」坦克、「疾羽」弓手、「玄烛」术士",
+            "敌人「沼泽巨蟾」「骷髅弓手」「藤蔓傀儡」",
+            "首领「熔岩领主」HP 48,000，阶段 2 / 3",
+            "战棋单位属性：攻击 167、防御 122、速度 253、移动 2"
+          ],
+          "items": ["道具「锤子」：敲碎一个格子", "道具「刷新」：重排棋盘", "合成链：木枝 → 木板 → 木箱 → 宝匣（局内道具，非付费）", "消除元素：红晶 / 蓝晶 / 绿晶 / 黄晶 / 紫晶"],
+          "stats": ["战力 4,802", "总伤害 17,471", "2 连消", "通关用时 01:26", "MVP：青锋 伤害占比 38%"],
+          "objectives": ["胜利目标：击败敌方所有目标", "坚持 60 秒", "保护商队马车抵达终点", "收集 30 颗蓝晶", "第 11 关 3 星条件：剩余步数 ≥ 5"],
+          "dialogue": [
+            "引导：按住左半屏任意处拖动来移动",
+            "引导：把英雄卡拖到战场上释放技能",
+            "战斗节拍：战斗开始！ / 首领登场 / 敌方行动中…",
+            "村民：入秋了，粮仓还差两间。"
+          ],
+          "mapFeatures": ["章节路径 1-1 … 1-10，第 10 关为首领", "村落建筑：粮仓、铁匠铺、学堂、渡口、茶馆", "战棋地形：河流（不可通行）、树林（防御 +）、山路", "大地图：六边形领地、资源点、关隘"]
+        }
+      },
+      "paramGaps": [
+        {
+          "gap": "拇指可达区没有可视化检查",
+          "evidence": "R4：竖屏 21 张全部把主操作放在下 1/3、横屏双拇指 6 张都是左右下角；现有 chk.touch 只查尺寸，chk.safeArea 只查刘海",
+          "proposal": "新增工具项 chk.thumbReach：按 ix.thumbZone 叠加'易达 / 可达 / 难达'热区，主按钮落在难达区时警告"
+        },
+        {
+          "gap": "竖屏上下分屏的比例无法设置",
+          "evidence": "宝石小伙伴、酱游记 是 1 : 2；萌宠解谜 棋盘约占 3/4；小小英雄 上战场下阵容",
+          "proposal": "新增 lay.splitRatio（range 0.2–0.8，作用于 lay.composition = splitTB / splitLR）"
+        },
+        {
+          "gap": "触屏的'查看详情'方式（触屏没有悬停）",
+          "evidence": "D-input 只把临时详情改成弹窗；实际有长按、点 i 按钮、首次点击预览 + 再点确认三种",
+          "proposal": "新增 ix.inspect：longPress / infoButton / tapPreviewTapConfirm"
+        },
+        {
+          "gap": "技能键的拖动瞄准与取消区",
+          "evidence": "疯狂宝贝 拖出英雄卡释放；横屏 ARPG 技能键按住拖动定方向",
+          "proposal": "新增 ix.skillAim：tap / dragAim / dragToPlace，并配一个取消区位置（按钮上方 / 屏幕顶部）"
+        },
+        {
+          "gap": "技能键上同时标触屏图标与键位字母",
+          "evidence": "天涯明月刀 技能键标 R / X / Shift / Space",
+          "proposal": "ix.glyphs 增加 touchPlusKey（触屏外形 + 角标键位），对应 cmp.button 的 hotkeyBadge"
+        },
+        {
+          "gap": "大招就绪 / 可用状态没有独立编码",
+          "evidence": "神州风闻录 头像发光；手游普遍用充能满 + 发光",
+          "proposal": "与卡牌组的 st.playable 合并（就绪脉冲 / 亮边 / 充能满跳动）"
+        },
+        {
+          "gap": "触觉反馈（振动）",
+          "evidence": "手机特有的反馈通道，静态截图看不到，但会影响'按到没有'",
+          "proposal": "新增 mo.haptics：无 / 轻 / 按事件分级（受击、大招、结算），减少动效开时一并关闭"
+        },
+        {
+          "gap": "浮动摇杆底盘的显示策略",
+          "evidence": "暖雪 完全不画底盘；贪吃怪大作战、Stumble Guys 画固定底盘",
+          "proposal": "ix.touchStick = floating 时增加子参数 stickBase：hidden / onTouch / always"
+        },
+        {
+          "gap": "自动战斗的'撤退 / 认输'键没有取值",
+          "evidence": "小虾米战三国 右上自动 / ×2 / 撤退 三键一排",
+          "proposal": "el.gameSpeed.form 增加 autoSpeedRetreat（或在 speedBar 里允许加入撤退项）"
+        }
+      ]
+    }
+  ]
+}

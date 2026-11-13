@@ -1,0 +1,946 @@
+{
+ "id": "rep.factorio",
+ "name": "Factorio",
+ "card": "steam:427520",
+ "genre": "builder",
+ "family": "fam.dark-hairline-data-panel",
+ "pack": "factory",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "factory",
+  "values": {
+   "color.palette": "desert",
+   "color.saturation": 0.95,
+   "color.temperature": 0.3,
+   "camera.projection": "ortho",
+   "camera.angle": "top"
+  }
+ },
+ "base": {
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "hud.style": "greybox",
+  "ctx.device": "pc",
+  "ctx.input": "kbm",
+  "ctx.timeModel": "realtime",
+  "col.source": "skin",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#313031",
+  "col.surface2": "#1f1e1f",
+  "col.text": "#ffffff",
+  "col.accent": "#ffa62b",
+  "col.accent2": "#5eb663",
+  "col.focus": "#ffb230",
+  "col.border": "#8e8e8e",
+  "col.saturation": 0.9,
+  "col.coding": [
+   "status"
+  ],
+  "col.semantic": "greenRed",
+  "col.rarityScale": "diablo",
+  "vis.opacity": 1,
+  "vis.fill": "solid",
+  "vis.corner": "round",
+  "vis.cornerSize": 3,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 2,
+  "vis.strokeColor": "darker",
+  "vis.depth": "bevel",
+  "vis.gloss": "none",
+  "vis.blur": 0,
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "ast.core": "procedural",
+  "ast.frame": "procedural",
+  "vis.iconStyle": "render3d",
+  "ast.iconSet": "asset",
+  "typ.body.family": "sans",
+  "typ.body.weight": "regular",
+  "typ.display.family": "same",
+  "typ.display.weight": "bold",
+  "typ.display.case": "asIs",
+  "typ.numerals.family": "body",
+  "typ.legibility": "shadow",
+  "typ.baseSize": 26,
+  "lay.grid": "grid8",
+  "cmp.slot": "cell",
+  "vis.silhouette@slot": "box",
+  "st.emptySlot": "pit",
+  "st.statusMark": "dot",
+  "st.selected": "outline",
+  "st.locked": "none",
+  "st.cooldown": "none",
+  "st.newCue": "none",
+  "st.rarityCue": [
+   "cornerIcon"
+  ],
+  "ix.press": "sink",
+  "ix.glyphs": "keycap",
+  "rel.harmony": "neutral",
+  "mo.enter": "cut",
+  "mo.easing": "linear",
+  "mo.duration": 0,
+  "mo.valueChange": "instant",
+  "mo.juice": 0.1,
+  "mo.idle": "none",
+  "hier.emphasis": [
+   "value"
+  ],
+  "col.control": "#8e8e8e",
+  "col.controlText": "#1a1a1a",
+  "col.heading": "#ffe6c0",
+  "cmp.plate@title": "dragHandle",
+  "vis.depth@frame": "bevel",
+  "vis.depth@well": "innerShadow"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_427520_3.jpg",
+   "values": {
+    "uip.layout": "layout.factory",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "lay.safeMargin": 0.5,
+    "cnt.density": 2,
+    "rel.diegesis": "screen",
+    "rel.hudVisibility": "always",
+    "rel.semanticZoom": "chart",
+    "cnt.elements": [
+     "el.minimap",
+     "el.objective",
+     "el.selection",
+     "el.abilities",
+     "el.abilities#2",
+     "el.toolbar",
+     "el.overlay",
+     "el.interact",
+     "el.notify",
+     "el.worldLabel"
+    ],
+    "el.minimap.form": "plan",
+    "el.minimap.screenAnchor": "tr",
+    "el.minimap.scale": 1.1,
+    "vis.silhouette@el.minimap": "box",
+    "el.objective.form": [
+     "text"
+    ],
+    "el.objective.screenAnchor": "tr",
+    "el.objective.scale": 0.85,
+    "cmp.gauge@el.objective": "thinBar",
+    "el.selection.form": "entityInfo",
+    "el.selection.screenAnchor": "tr",
+    "el.selection.scale": 0.85,
+    "el.selection.visibility": "contextual",
+    "el.abilities.form": "hotbar",
+    "el.abilities.arrangement": "row",
+    "el.abilities.screenAnchor": "bc",
+    "el.abilities.scale": 1,
+    "el.toolbar.form": "buttonRow",
+    "el.toolbar.arrangement": "row",
+    "el.toolbar.screenAnchor": "br",
+    "el.toolbar.scale": 0.6,
+    "el.overlay.form": [
+     "statusIcons",
+     "arrows"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "billboard",
+    "el.overlay.visibility": "contextual",
+    "el.overlay.scale": 0.75,
+    "el.interact.form": [
+     "bracket"
+    ],
+    "el.interact.attachTo": "poi",
+    "st.alert": "blink",
+    "typ.legibility": "shadow",
+    "el.abilities.count": 20,
+    "el.abilities.rows": 2,
+    "el.abilities.pages": 3,
+    "el.interact.valueLabel": "none",
+    "el.minimap.stackWidth": "match",
+    "el.objective.stackWidth": "match",
+    "el.selection.stackWidth": "match",
+    "el.selection.portrait": "render",
+    "el.abilities#2.form": "slots",
+    "el.abilities#2.count": 3,
+    "el.abilities#2.dockTo": "el.abilities",
+    "el.abilities#2.dockSide": "left",
+    "el.toolbar.dockTo": "el.abilities",
+    "el.toolbar.dockSide": "right",
+    "el.notify.form": [
+     "alertIcons"
+    ],
+    "el.notify.screenAnchor": "br",
+    "el.worldLabel.form": [
+     "altIcons"
+    ]
+   }
+  },
+  {
+   "key": "inventory",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.inventory",
+    "cnt.screen": "screen.inventory",
+    "cnt.layer": "overlay",
+    "lay.container": "modal",
+    "lay.panelSize": 0.9,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "lay.composition": "dualGrid",
+    "cnt.dataShape": "collection",
+    "cnt.density": 4,
+    "cnt.itemCount": 40,
+    "lay.arrangement": "grid",
+    "lay.columns": 10,
+    "lay.nav": "tabsTop",
+    "lay.navDepth": 1,
+    "cmp.tab": "icon",
+    "cmp.tabIndicator": "filled",
+    "lay.grouping": "wells",
+    "lay.detail": "none",
+    "st.newCue": "none",
+    "st.emptySlot": "pit",
+    "st.statusMark": "rowTint",
+    "cmp.plate": "none",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "xTopRight",
+    "ix.blocking": "none",
+    "flow.entry": "hotkey",
+    "flow.stacking": "stack",
+    "typ.legibility": "shadow",
+    "st.delta": "newOnly",
+    "st.locked": "redTint",
+    "ix.focus": [
+     "fill"
+    ]
+   }
+  },
+  {
+   "key": "craft",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.forge",
+    "cnt.screen": "screen.craft",
+    "cnt.layer": "overlay",
+    "lay.container": "windowPair",
+    "lay.panelSize": 0.55,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "lay.composition": "splitLR",
+    "lay.focalSide": "left",
+    "cnt.focal": "apparatus",
+    "cmp.panelArt": "none",
+    "cnt.dataShape": "record",
+    "lay.arrangement": "row",
+    "lay.grouping": "wells",
+    "lay.detail": "none",
+    "st.emptySlot": "pit",
+    "st.delta": "newOnly",
+    "st.statusMark": "dot",
+    "cmp.gauge@progress": "bar",
+    "cnt.elements": [
+     "el.cost"
+    ],
+    "el.cost.form": "recipeRow",
+    "el.cost.screenAnchor": "br",
+    "el.cost.scale": 0.8,
+    "hier.cta": "color",
+    "ix.mode": "readOnly",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "xTopRight",
+    "ix.blocking": "none",
+    "flow.entry": "worldInteract",
+    "flow.stacking": "stack",
+    "typ.legibility": "shadow",
+    "lay.dockContent": "inventory",
+    "el.cost.moduleSlots": 2,
+    "ast.fx": [
+     "-magicCircle"
+    ]
+   }
+  },
+  {
+   "key": "skilltree",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.skilltree",
+    "cnt.screen": "screen.skilltree",
+    "lay.container": "fullscreen",
+    "rel.behind": "live",
+    "rel.dim": 0.5,
+    "lay.composition": "splitLR",
+    "cnt.dataShape": "hierarchy",
+    "cnt.density": 4,
+    "lay.arrangement": "tree",
+    "lay.overflow": "pan",
+    "lay.detail": "persistent",
+    "cmp.card": "tile",
+    "cmp.node": "techCard",
+    "vis.connector": "straight",
+    "st.statusMark": "rowTint",
+    "st.locked": "redTint",
+    "st.done": "check",
+    "ix.mode": "singleCTA",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "xTopRight",
+    "flow.entry": "hotkey",
+    "typ.legibility": "shadow",
+    "st.delta": "newOnly",
+    "cnt.itemCount": 40,
+    "cmp.detailFields": [
+     "derive"
+    ]
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "all",
+   "what": "窗口语法是三层嵌套：浅灰倒角外框 → 深灰内芯 → 更深的凹槽（放格子和列表）。vis.depth = bevel 只给一层倒角，现在各屏都是单层深灰圆角面板 + 细暗边，“框凸、芯平、槽凹”三层表达不了。",
+   "severity": "high",
+   "proposal": "vis.depth 分别指定框 / 芯 / 槽三层（或 vis.depth@frame / @well 作用域生效），lay.grouping 的凹槽画成真正下凹（G-depth-bevel）",
+   "kind": "missingParam",
+   "partialBy": "vis.depth@frame = bevel + vis.depth@well = innerShadow + lay.grouping = wells（格子放进更深的凹槽）；外框仍是深色细边，不是浅灰倒角"
+  },
+  {
+   "screen": "all",
+   "what": "格子与按钮是同一种浅灰凸起方块（物品图标压在浅灰底上、按钮黑字）；渲染里 slot() 和按钮直接用面板样式，格子永远与面板同色（深灰），按钮只能是强调色或面板色。",
+   "severity": "high",
+   "proposal": "新色板角色 col.control（按钮 / 格子的面色与字色），或让 col.surface@slot、vis.fill@slot 生效（G-color-roles）",
+   "kind": "missingParam",
+   "resolvedBy": "col.control, col.controlText"
+  },
+  {
+   "screen": "all",
+   "what": "标题栏 = 粗体米橙标题 + 一条横纹拖拽把手填满剩余宽度 + 右端方形灰色 X；cmp.plate 没有对应画法，现在标题后面是空白，关闭钮是深色描边方块。",
+   "severity": "medium",
+   "proposal": "cmp.plate 新取值 dragHandle（标题后接横纹把手条，关闭钮并入标题栏）（G-window-system）",
+   "kind": "newDrawing",
+   "resolvedBy": "cmp.plate@title = dragHandle（粗体标题 + 横纹拖拽把手 + 右端方形 X）"
+  },
+  {
+   "screen": "all",
+   "what": "标题字色是米橙（#ffe6c0），正文与数量白色，次要说明灰色；col 只有一个 col.text，标题色无法单独指定，各屏标题都是白色。",
+   "severity": "medium",
+   "proposal": "col 角色新增 heading 文字色（G-color-roles）",
+   "kind": "missingParam",
+   "resolvedBy": "col.heading"
+  },
+  {
+   "screen": "all",
+   "what": "确认按钮绿色、返回按钮红色：col.semantic = greenRed 只是记录，渲染里主按钮一律用强调色（橙底），科技树的“开始研究”无法变绿；col.accent@el.cta 之类按元素配色被校验接受但渲染不读。",
+   "severity": "medium",
+   "proposal": "按钮按角色（确认 / 返回 / 危险）取 col.semantic 的颜色；渲染支持 col.*@el.* 作用域覆盖",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-35（按钮按角色取 col.semantic：确认钮绿色；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "确认 / 返回按钮是带右 / 左箭头的形状，成对放在窗口底部两角；cmp.button 只有 text / icon / iconText，没有箭头形，也没有“底部两角”放置。",
+   "severity": "medium",
+   "proposal": "cmp.button 新取值 confirmBack（箭头形 + 底部两角放置）（G-control-lib）",
+   "kind": "newDrawing"
+  },
+  {
+   "screen": "all",
+   "what": "悬停 / 焦点时整格（整块按钮）填成橙黄；ix.focus 没有“整块填强调色”的画法（invert 是反色混合，会把物品图标反色，所以没用）。",
+   "severity": "medium",
+   "proposal": "ix.focus 新取值 fill（整格填强调色，图标不反色）",
+   "kind": "missingOption",
+   "resolvedBy": "ix.focus = [fill]（聚焦格整格填橙）"
+  },
+  {
+   "screen": "all",
+   "what": "图标一律是预渲染 3D 物品图标（白色工具图标）；factory 包只有矿石 / 晶体 / 绳索等少数物品有渲染图，齿轮、菱形以及快捷栏、工具条的图标全是橙色线性符号，vis.iconStyle = render3d 只覆盖到一半。",
+   "severity": "medium",
+   "proposal": "factory 包补一套 render3d 物品与工具图标（ast.iconSet = asset 覆盖快捷栏 / 工具条 / 网格）",
+   "kind": "asset"
+  },
+  {
+   "screen": "all",
+   "what": "详情栏在背包 / 机器 / 科技树三屏都画同一种物品样本（名称 + 说明 + 两条属性条 + 放置 / 丢弃）；Factorio 科技详情是成本行（科技包图标 × 数量 + 时间）+ 解锁配方图标行 + 一颗“开始研究”，机器窗是配方行。科技树屏因此底部出现三颗按钮（详情的放置 / 丢弃 + ix.confirm 的确认选择）。",
+   "severity": "medium",
+   "proposal": "详情栏按 cnt.dataShape 换画法：hierarchy → 成本行 + 解锁图标行 + 单颗确认按钮（与 ix.confirm 合并不重复）；record → 配方行",
+   "kind": "newDrawing",
+   "resolvedBy": "cmp.detailFields = [derive]（科技详情：成本 chips + 解锁图标行 + 一颗开始研究）"
+  },
+  {
+   "screen": "all",
+   "what": "模板标题与动作文案不随内容包：机器窗标题写“锻造”、科技树写“技能树”，背包详情写“放置 / 丢弃”；factory 包应给出机器名、“科技”、“开始研究”等。",
+   "severity": "low",
+   "proposal": "内容包按 uip.screen 提供标题与动作按钮文案",
+   "kind": "content",
+   "resolvedBy": "R4 核对：机器窗标题「组装机 2 型」、科技树「科技」、按钮「开始研究」"
+  },
+  {
+   "screen": "all",
+   "what": "st.cooldown、st.locked 都没有“无”：Factorio 快捷栏没有冷却、背包没有锁定格，现在只能用 desat / dimmed 近似，结果快捷栏格子深浅混杂、背包第 2 行起整格调暗。",
+   "severity": "low",
+   "proposal": "st.cooldown / st.locked 新取值 none",
+   "kind": "missingOption",
+   "resolvedBy": "st.cooldown, st.locked"
+  },
+  {
+   "screen": "all",
+   "what": "样本状态压不掉：快捷栏样本按序号自带冷却 / 锁定，网格样本从第 6 格起一律锁定，格子总带稀有度（现在用 strip 侧条 + diablo 色阶压低）；factory 包的物品应是统一的普通格。",
+   "severity": "low",
+   "proposal": "样本状态随 st.* 与内容包可关（factory 包物品无稀有度、无锁定）",
+   "kind": "content",
+   "resolvedBy": "M12a-10（样本状态逐条声明，factory 包不演示锁定 / 冷却；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "参考图关掉了 GUI，信息靠世界物件本身承担：传送带按等级着色（黄 / 红 / 蓝）、带上的物品流、电线杆之间的铜色电线、熔炉火光、机械臂朝向；“世界物件本身的颜色就是语义编码”没有参数，el.overlay 只能近似。",
+   "severity": "medium",
+   "proposal": "叙事内编码新参数（数值 / 等级 → 物件颜色、亮度）（G-diegetic-encoding）",
+   "kind": "worldSpace"
+  },
+  {
+   "screen": "hud",
+   "what": "alt 模式：按住 Alt 时机器上叠配方图标、箱子上叠内容图标、传送带显示方向，整体切换；el.overlay 没有逐实体挂图标的叠层，也没有按键整体切换。",
+   "severity": "medium",
+   "proposal": "el.overlay 新增 altIcons 画法（逐实体挂在世界坐标上）+ 显隐 onKey",
+   "kind": "worldSpace",
+   "resolvedBy": "el.worldLabel = [altIcons]（实体上挂配方 / 内容小图标）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.overlay = statusIcons 把三个状态图标都画成紫色晶石徽章 + 白字（info.ts 里状态色被 void 掉），缺电 / 缺燃料读起来像地图标记而不是警告；Factorio 是红色闪电、黄色火焰并闪烁。",
+   "severity": "medium",
+   "proposal": "statusIcons 按各自状态色画警告形（红闪电 / 黄火焰 / 满仓），不用 crystal 徽章",
+   "kind": "renderBug",
+   "resolvedBy": "st.alert"
+  },
+  {
+   "screen": "hud",
+   "what": "el.overlay.form 多选（statusIcons + arrows）时只画第一种，方向箭头没画出来。",
+   "severity": "low",
+   "proposal": "多选画法逐个绘制",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-14（el.overlay 多选画法逐个画；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "警报：机器状态出问题时屏幕右下出现同款警报小图标一列；el.notify 没有“纯图标警报列”画法（emblem 是纹章盾牌，已删掉），st.alert 也只能选一种。",
+   "severity": "medium",
+   "proposal": "el.notify 新画法 alertIcons（右下竖排小图标）；st.alert 改多选",
+   "kind": "newDrawing",
+   "resolvedBy": "el.notify = [alertIcons]（右下竖排红闪电 / 黄 ! 警报图标）"
+  },
+  {
+   "screen": "hud",
+   "what": "研究进度是“科技图标 + 名称 + 细进度条”；el.objective.form = text 只画小标题 + 一行字，cmp.gauge@el.objective = thinBar 校验通过但渲染不画进度条，也没有图标位。",
+   "severity": "medium",
+   "proposal": "让 cmp.gauge@el.objective 生效并加图标位，或 el.objective 新画法 progress",
+   "kind": "renderBug",
+   "partialBy": "R4 核对：研究进度已有细进度条；没有科技图标位与窗口底板"
+  },
+  {
+   "screen": "hud",
+   "what": "同一锚点纵向堆叠的元素各按自己的宽度摆：研究进度浮字左缘比小地图靠左约 50px，实体信息框又比小地图宽；Factorio 右上三块同宽、外缘对齐。",
+   "severity": "low",
+   "proposal": "同锚点堆叠时统一列宽并对齐外缘（elx 新增 stackWidth = match）",
+   "kind": "layoutEngine",
+   "resolvedBy": "elx.stackWidth"
+  },
+  {
+   "screen": "hud",
+   "what": "悬停实体时的信息框：标题行 + 实体小渲染图 + 状态行（绿点 Working）+ 配方 + 血量 / 耗电；el.selection 的 panel 画法强制带圆形头像，tooltip 画法只有标题 + 两行字，还多一行“按 E 开采”动作提示。",
+   "severity": "medium",
+   "proposal": "el.selection 新画法 entityInfo（或 portrait 子参数 none / avatar / render + 状态点行）（G-card-node）",
+   "kind": "newDrawing",
+   "resolvedBy": "el.selection.form = entityInfo + portrait = render（标题 + 实体小图位 + 绿点「运行中」+ 配方 + 进度条）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.interact = bracket 的黄色四角选中框已对，但框下固定多画一行“[E] 动作名”；Factorio 只有括号，动作写在信息框里。",
+   "severity": "low",
+   "proposal": "bracket 读 elx.valueLabel = none 时不写动作字（动作字归 keyPrompt）",
+   "kind": "renderBug",
+   "resolvedBy": "el.interact.valueLabel"
+  },
+  {
+   "screen": "hud",
+   "what": "快捷栏是 2 行 × 10 格（可翻页）；el.abilities 的 hotbar 固定 1 行 8 格。",
+   "severity": "medium",
+   "proposal": "el.abilities 新增 count / rows / pages 子参数",
+   "kind": "missingParam",
+   "resolvedBy": "el.abilities.count, el.abilities.rows, el.abilities.pages"
+  },
+  {
+   "screen": "hud",
+   "what": "底部长条由三段拼成：左侧武器 / 弹药 / 护甲格 + 中间快捷栏 + 右侧快捷工具条（蓝图、复制粘贴、拆除规划、开关）；元素之间不能左右拼接（同锚点只会纵向堆叠），工具条只能单独放到右下角。",
+   "severity": "medium",
+   "proposal": "elx 新增“贴在另一元素左 / 右侧”的相对锚点，或组合元素 el.quickbar（装备格 + 快捷栏 + 工具条）",
+   "kind": "composite",
+   "resolvedBy": "el.abilities#2（武器 / 弹药 / 护甲 3 格）停在快捷栏左边 + el.toolbar 停在右边（elx.dockTo）"
+  },
+  {
+   "screen": "hud",
+   "what": "镜头拉远切进地图视图（2.0 无缝缩放）：世界变成按类别着色的 chart 色块图，小地图也是同样的 chart；rel.semanticZoom = iconize 只能近似，小地图 plan 画法是网格示意图。",
+   "severity": "low",
+   "proposal": "rel.semanticZoom 新取值 chart；el.minimap 跟随同一 chart 着色（G-map-lib）",
+   "kind": "missingOption",
+   "partialBy": "rel.semanticZoom = chart（小地图换成暗色 chart）；只有一块浅色地块和几个点，没有按类别着色的地表"
+  },
+  {
+   "screen": "inventory",
+   "what": "角色窗口是一个窗口里并排两块网格：左边背包 10 列，右边制作区（上方 4 枚大图标分类页签、下面按子组分行的配方格，能合成灰底、缺材料整格红底）；没有“第二块网格”，现在用常驻详情栏占住右半边。",
+   "severity": "medium",
+   "proposal": "lay.composition 新取值 dualGrid（两块网格并排，各自页签）",
+   "kind": "missingOption",
+   "resolvedBy": "lay.composition = dualGrid（背包 + 制作区两块网格并排）"
+  },
+  {
+   "screen": "inventory",
+   "what": "cmp.tab = icon 在页签渲染里不生效（tabsTop 只读文字），制作区的 4 枚大图标页签画成文字块。",
+   "severity": "medium",
+   "proposal": "页签按 cmp.tab 画图标 / 图标 + 字",
+   "kind": "renderBug",
+   "resolvedBy": "R4 核对：制作区上方 4 枚页签画成图标"
+  },
+  {
+   "screen": "inventory",
+   "what": "lay.columns 实际上限 8，网格画法还按 40px 最小格宽减列，Factorio 的 10 列小格排不出来。",
+   "severity": "low",
+   "proposal": "lay.columns 上限放到 12，格宽随 cnt.density 缩到约 32px",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.columns"
+  },
+  {
+   "screen": "inventory",
+   "what": "悬停 tooltip 停在窗口右外侧；lay.detail = transient 只会停在网格中间（盖住几列），所以本轮改用 persistent。",
+   "severity": "low",
+   "proposal": "lay.detail = transient 增加位置子参数（窗口外侧）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.detail = transient（M12a-26 浮框放外侧）"
+  },
+  {
+   "screen": "inventory",
+   "what": "物品品质（2.0）是格子左下角的一枚小品质图标（普通 / 罕见绿 / 稀有蓝 / 史诗紫 / 传说橙）；st.rarityCue 没有“角落小图标”，现在用 strip 侧条近似。",
+   "severity": "low",
+   "proposal": "st.rarityCue 新取值 cornerIcon（左下角小徽标）",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "craft",
+   "what": "机器窗口左上是机器的实时小镜头（游戏内实时渲染）+ 状态行（绿点 Working）；现在用 cnt.focal = apparatus 的斜纹灰盒占位。",
+   "severity": "medium",
+   "proposal": "cmp.panelArt 新取值 liveView（ast.iconSet = runtimeRender 的面板版，把世界里的实体渲染进面板）",
+   "kind": "worldSpace"
+  },
+  {
+   "screen": "craft",
+   "what": "cmp.panelArt 校验通过但渲染完全不读（window 等取值都不画）。",
+   "severity": "low",
+   "proposal": "实现 cmp.panelArt 的各取值（至少画占位框）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-36（cmp.panelArt 各取值画出插画槽 / 灰盒；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "craft",
+   "what": "机器窗右侧是一行“原料格 → 橙色进度条 → 产物格”，下面插件槽；el.cost = slots 只画原料格（挤在右下角按钮旁），没有箭头、进度条和产物格。",
+   "severity": "medium",
+   "proposal": "el.cost 新画法 recipeRow（原料 → 进度条 → 产物，可带插件槽行）",
+   "kind": "newDrawing",
+   "resolvedBy": "el.cost.form = recipeRow + moduleSlots 2（原料 → 进度条 → 产物 + 插件槽）"
+  },
+  {
+   "screen": "craft",
+   "what": "打开机器时玩家背包窗口贴在左侧，两个窗口并排拼成一组；屏幕模板只能出一个窗口。",
+   "severity": "medium",
+   "proposal": "多窗口拼接 / 停靠（lay.windowDock：左右贴靠、同高）（G-window-system）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.container = windowPair + lay.dockContent = inventory（机器窗与背包窗并排同高）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "科技树节点是方形科技卡：大图标 + 名称 + 底部一排科技包图标 × 数量，卡底色按状态（已研究绿、可研究黄、不可研究红）；cmp.node 没有带成本行的方形卡。",
+   "severity": "high",
+   "proposal": "cmp.node 新取值 techCard（G-card-node）",
+   "kind": "newDrawing",
+   "resolvedBy": "cmp.node = techCard（图标 + 名称 + 成本行，底色按状态）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "cmp.node = building 在渲染里没有画法（drawNode 无此分支），退回编号圆点。",
+   "severity": "low",
+   "proposal": "实现 building 画法（或校验时提示退回）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-29（cmp.node = building：方形图标块；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "不可研究的科技卡是红底；st.locked 只有灰 / 暗 / 锁等，没有“红 = 条件不满足”的状态色。",
+   "severity": "low",
+   "proposal": "st.locked 新取值 redTint（按 col.semantic 的坏色）",
+   "kind": "missingOption",
+   "resolvedBy": "st.locked = redTint（不可研究的科技卡、缺材料的配方格红底）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "科技树样本只有 12 个节点，cnt.density = 4 也不加；Factorio 是成百张卡片的可拖动大图。",
+   "severity": "low",
+   "proposal": "树样本节点数随 cnt.density / cnt.itemCount 放大",
+   "kind": "content",
+   "partialBy": "cnt.itemCount 40 + 长图滚动（视窗里只露出两层 5 张卡）"
+  },
+  {
+   "screen": "inventory",
+   "what": "cmp.tab = icon 现在会画图标页签，但 factory 包没有分类图标，页签退回成标签首字（全 / 矿 / 部 / 建），读起来像被截断的文字",
+   "severity": "low",
+   "proposal": "内容包给页签分类图标（tabs[].icon）；没有图标时退回 iconText 而不是首字",
+   "kind": "content",
+   "resolvedBy": "R4 核对：页签画成图标，不再是首字"
+  },
+  {
+   "screen": "skilltree",
+   "what": "ix.mode = singleCTA 时仍是两颗按钮：常驻详情栏画第一颗（放置），模板右下又画确认钮（确定）",
+   "severity": "low",
+   "proposal": "singleCTA 时详情栏按钮与模板确认钮只留一颗（优先模板的主按钮，文案取内容包的主动作）",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-14（ix.mode = singleCTA + 常驻详情：详情栏不再画按钮，模板按钮行那一颗写详情的主动作「开始研究」；B8 快照核过）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "长图滚到当前节点时，顶层的科技卡被视窗上沿裁掉一半",
+   "severity": "low",
+   "proposal": "滚动定位给视窗上沿留出一张卡的边距，或裁剪时整卡让位",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 回归修复 C2 ⑫（长图里顺着生长方向只露出一截的节点整个不画，那一侧照旧渐隐）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "techCard 的成本行是一枚色点 × 数量：factory 包没有科技包图标（红 / 绿 / 蓝瓶）",
+   "severity": "low",
+   "proposal": "factory 包补科技包图标，成本行按图标 × 数量画",
+   "kind": "asset"
+  }
+ ],
+ "notes": "工具感的灰色倒角窗口：浅灰外框 + 深灰内芯 + 更深的凹槽三层，粗体米橙标题配拖拽把手，按钮浅灰黑字、悬停整块变橙，确认绿、返回红；图标是预渲染 3D 物品，格子里只有数量。HUD 极少（底部快捷栏、右上小地图、研究进度、右下警报），所有动效几乎都是硬切。真正的信息层在世界里：传送带等级色、物品流、机器状态图标与 alt 模式叠层——商店截图干脆把 GUI 全关掉，工厂本身就是界面。",
+ "scores": {
+  "hud": [
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 6,
+    "type": 6,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 6,
+    "shape": 4,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 5,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 7,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "inventory": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 6,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 7,
+    "type": 6,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "craft": [
+   {
+    "layout": 3,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 6,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 5,
+    "type": 6,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "skilltree": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 6,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 6,
+    "overall": 7,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "参考截图关掉了 GUI，按游戏常识比：实体信息应在右上小地图正下方，我们是右中一块带圆形头像的大面板（Factorio 没有头像）",
+   "右下多了一枚纹章盾牌 + “产线连通”大字（el.notify = emblem），Factorio 的警报是右下一列小图标",
+   "快捷栏上方飘着“生命”标签 + 红细条（el.vitals），Factorio 平时不显示角色血条",
+   "快捷栏只有 1 行 8 格，带冷却扇形、✕ 锁定标记；Factorio 是 2 行 × 10 格，缺货格只是图标变灰，左侧还有武器 / 弹药 / 护甲格",
+   "研究进度只是左上一行小字（无图标、无进度条），位置是 1.x 版式",
+   "悬停提示是鼠标箭头 + 动作字；Factorio 的标志是黄色四角选中框",
+   "面板描边是 2px 半透明白亮边，比 Factorio 的暗色外框 + 倒角亮得多"
+  ],
+  "inventory": [
+   "没有页签和标题可读：el.cost 的三个材料格压在标题和页签上",
+   "el.abilities 的快捷栏画进了窗口，压在网格最下一行",
+   "网格只有 8 列 × 3 行的大格（约画面宽 1/12），Factorio 是 10 列小格、行数多，窗口里两块网格（背包 + 制作）并排",
+   "临时详情 tooltip 停在网格中间，盖住三列",
+   "第一格被 ix.focus = invert 反色，物品图标变成怪色；格子带蓝 / 紫稀有度边框和 ✕ 锁定标记，Factorio 没有",
+   "格子是深灰底，Factorio 是浅灰凸起方块"
+  ],
+  "craft": [
+   "装置灰盒压在窗口上中央、详情挤在下方，材料格压在标题位置；Factorio 是左侧实时机器镜头、右侧“原料 → 进度条 → 产物”",
+   "属性条带“→ 74”的前后对比（st.delta = arrow），机器窗口没有对比",
+   "没有产物格与状态行（绿点 Working）",
+   "整体像锻造 / 强化面板而不是机器面板"
+  ],
+  "skilltree": [
+   "节点是编号圆点，Factorio 是方形科技卡（图标 + 名称 + 科技包成本行）",
+   "“开始降落”宽按钮又大又橙，压在详情栏自带的两个按钮上；Factorio 的“开始研究”是绿色中号按钮，放在详情底部",
+   "详情栏属性条带“→ 74”对比，Factorio 详情是成本与解锁内容",
+   "标题“技能树”第三个字缺字形（字体子集问题，与参数无关）",
+   "状态色（已研究绿 / 当前橙 / 未解锁灰）与 Factorio 的绿 / 黄 / 红大体对得上"
+  ]
+ },
+ "revisions": [
+  "base：加 uip.platform = platform.pc、uip.business = business.premium（买断制：无红点、无运营层）；描边色 highlightEdge → darker（2px 半透明白亮边换成比底色深的暗边，配合 bevel 的内亮边更接近 Factorio 的暗框 + 倒角）",
+  "base：去掉 ix.focus = invert（键鼠时它把第一格做反色混合，物品图标变怪色；Factorio 的“悬停整格变橙”记进 gaps）；删掉不生效的 vis.depth@slot",
+  "base：st.locked = grayscale、st.cooldown = desat、st.newCue = none——快捷栏样本的 ✕ 锁定、冷却扇形、红点变成“缺货格图标变灰”，贴近 Factorio 快捷栏；st.rarityCue = strip + col.rarityScale = diablo，把样本格子强制带的稀有度从粗彩边降成细侧条，色阶与 2.0 品质（灰 / 绿 / 蓝 / 紫 / 橙）一致",
+  "art：color.temperature 0.15 → 0.3、饱和度 0.85 → 0.95，地面更接近参考的橙褐色（只为明暗与氛围）",
+  "hud：按 2.0 版式把右上做成一列——小地图 → 研究进度（el.objective 也锚 tr，按 cnt.elements 顺序堆在小地图下）→ 实体信息（el.selection 由带圆形头像的 panel 改成 tooltip，scale 0.85，同锚 tr）",
+  "hud：删掉 el.notify（纹章盾牌 + 大字不是 Factorio 的警报图标列，记入 gaps）和 el.vitals（Factorio 平时不显示角色血条）",
+  "hud：el.interact 由 cursor 改成 bracket 并挂在兴趣点上——Factorio 的黄色四角选中框；el.overlay 显隐 onDemand → contextual（缺电 / 缺燃料图标出问题就常亮，不再 35% 半透明；scale 0.75，免得紫色晶石徽章喧宾夺主）",
+  "hud：快捷栏去掉 primary（scale 1.0），工具条 scale 0.8 → 0.6，免得下中快捷栏与右下工具条横向重叠被避让规则整列上推",
+  "inventory：去掉 el.cost 与 el.abilities（它们压在标题、页签和网格上）；cnt.itemCount 40、panelSize 0.75 → 0.9；lay.detail transient → persistent：右侧常驻栏占住 Factorio 制作区的位置，网格因此收窄成约 8 列 × 5 行的小格，密度接近 Factorio 的背包；cmp.plate@title（不生效）改成 cmp.plate = none；样本里第 6 格起的条目按 st.locked 画成锁定，背包屏改 dimmed（图标变淡、不打 ✕），st.delta = newOnly 去掉详情栏的“→ 74”",
+  "craft：lay.focalSide = left + splitLR：实时机器镜头的灰盒（需素材，记 gaps）放左侧、详情放右侧；st.delta arrow → newOnly 去掉“→ 74”对比；el.cost 材料格锚到右下（scale 0.8），不再压标题；panelSize 0.6 → 0.55",
+  "skilltree：去掉 el.cta（巨型橙按钮压在详情按钮上），改由 ix.confirm = selectConfirm 在右下画“确认选择”按钮 + 详情栏自带按钮，对应 Factorio 详情底部的“开始研究”；lay.composition three → splitLR（树在左、详情在右，与实际构图一致）；去掉不生效的 cnt.itemCount、el.cost、col.accent@el.cta；st.delta = newOnly 去掉详情栏的“→ 74”",
+  "gaps：删掉已能表达的“同锚点纵向堆叠”（同锚点 + 元素顺序即可）与“数量角标右下”（cmp.slot = cell 已画）；新增格子 / 按钮浅灰面色、快捷栏冷却与锁定样本、研究进度条、实体信息框、选中框多余动作字、警报图标列、背包双网格与图标页签、品质角标、按元素覆盖不生效等缺口",
+  "R3 前（M12a 之后）：base 加 st.cooldown / st.locked = none（快捷栏无冷却、背包无锁格）、col.control 浅灰 + col.controlText 近黑（格子与按钮是同一种浅灰凸起方块）、col.heading 米橙（标题色）；hud 加 el.abilities.count 20 + rows 2 + pages 3（2 × 10 快捷栏可翻页）、el.interact.valueLabel none（括号框下不写动作）、右上三块的 stackWidth = match（小地图 / 研究进度 / 实体信息同宽对齐）；inventory 去掉本屏 st.locked dimmed，lay.columns 8 → 10、lay.detail 写回 transient（浮框现在放在网格外侧，也不再画放置 / 丢弃）；craft 加 ix.mode = readOnly（机器窗没有放置 / 丢弃按钮）；skilltree 加 ix.mode = singleCTA + ix.confirm = instant（只剩一颗按钮，不再三颗）。st.alert = blink 第二轮已写在 hud。",
+  "R4 前（M12b 之后）：base 加 cmp.plate@title = dragHandle（粗体标题 + 横纹拖拽把手，#2）、vis.depth@frame = bevel + vis.depth@well = innerShadow（框凸、芯平、槽凹三层，#0）、st.rarityCue strip → [cornerIcon]（2.0 的左下品质小徽，#28；factory 包没有品质样本，画面暂不变）；hud 的 rel.semanticZoom iconize → chart（小地图换成类别色块，#23）、el.selection.form tooltip → entityInfo + portrait = render（标题 + 实体小图 + Working 状态行，#19）、cnt.elements 加 el.abilities#2（slots、3 格、停在快捷栏左边：武器 / 弹药 / 护甲）+ el.toolbar 停到快捷栏右边（底部三段长条，#22）、el.notify = [alertIcons] 放右下（警报图标列，#16）、el.worldLabel = [altIcons]（alt 模式的逐实体图标，#13）；inventory 的 lay.composition splitLR → dualGrid + lay.detail transient → none（背包 + 制作区两块网格，#24）、lay.navDepth 2 → 1（去掉多出来的二级页签行）、lay.grouping tonalInset → wells（#0）、st.locked = redTint（缺材料的配方格红底）、ix.focus = [fill]（悬停整格变橙，#6）；craft 的 lay.container modal → windowPair + lay.dockContent = inventory（机器窗与背包窗并排，#32）、lay.grouping → wells、cmp.panelArt window → none（去掉「插画（需素材）」横带）、去掉 lay.layering = separate（整个窗口回到一块面板里）、el.cost.form slots → recipeRow + moduleSlots 2（原料 → 进度条 → 产物 + 插件槽，#31）、ast.fx = [-magicCircle]（去掉 tpl.forge 的法阵）；skilltree 的 cmp.node building → techCard（#33）、cnt.itemCount = 40（长图滚动，#36 部分：上限 60）、cmp.detailFields = [derive]（成本 + 解锁 + 一颗按钮，#8）、st.locked grayscale → redTint（不可研究红底，#35）。没写 vis.silhouette@button = arrowRight / el.cta = confirmBack：这几屏都没有确认 / 返回成对按钮（机器窗没有按钮，科技页只有一颗开始研究）。"
+ ],
+ "round2Diffs": {
+  "hud": [
+   "参考图仍是关掉 GUI 的世界截图，HUD 按 2.0 版式常识比",
+   "右上一列“小地图 → 研究进度 → 实体信息”的次序对了，但三块不等宽、不对齐：研究进度是无底板的两行浮字，左缘比小地图靠左约 50px，实体信息框又比小地图宽；Factorio 三块同宽、各有窗口底板",
+   "研究进度只有“生产 / 解锁 电路时代”两行字，缺科技图标与细进度条",
+   "实体信息框只有标题 + 两行字，缺实体小渲染图、绿点状态行（Working）与配方 / 耗电行；多了一行橙色“按 E 开采”",
+   "黄色四角选中框对了，但框下多写了“[E] 打开电炉”",
+   "世界里的状态图标画成紫色晶石徽章 + 白字（像地图标记），Factorio 是红色缺电闪电、黄色缺燃料火焰；el.overlay 的第二种画法 arrows 没画出来",
+   "快捷栏 1 行 8 格，格子深浅混杂（2 / 4 / 6 格因 desat 发灰，3 / 5 格深色，7 / 8 格透明露出地面）；Factorio 是 2 行 × 10 格统一的浅灰凸起格",
+   "快捷栏与工具条的图标是橙色线性符号，Factorio 是预渲染 3D 物品图标与白色工具图标",
+   "快捷工具条单独缩在右下角，Factorio 贴在快捷栏右侧连成一条；右下没有警报图标列（纹章盾牌与血条已去掉，这两项对了）",
+   "小地图是青色网格 + 橙色齿轮的示意图，Factorio 是按类别着色的地表 chart"
+  ],
+  "inventory": [
+   "版式已对：标题 → 页签 → 左网格右详情，标题与页签不再被压；但右半边应是制作区（大图标分类页签 + 配方格），我们是一栏物品详情（名称 / 说明 / 纯度与重量两条橙条）",
+   "页签是文字块（全部 / 矿石 / 部件 / 建筑），cmp.tab = icon 没画成大图标页签",
+   "网格 8 列 × 5 行、格子偏大；Factorio 背包 10 列、行数更多、格子更小",
+   "格子是深灰底 + 暗描边，Factorio 是浅灰凸起格嵌在更深的凹槽里；网格后面没有凹槽底",
+   "第 2 行起整格调暗（st.locked = dimmed），约一半格子带紫 / 蓝侧条（稀有度）；Factorio 背包没有锁定格，1.x 没有品质，2.0 品质是左下角小图标",
+   "图标混用：矿石 / 晶体 / 绳索等是 3D 渲染物品，齿轮与菱形是橙色扁平符号",
+   "详情栏底部多了“放置 / 丢弃”橙 / 深两颗按钮，Factorio 背包没有这类按钮",
+   "标题“背包”白色、字号偏大；Factorio 标题米橙、与正文字号差距小，右侧接拖拽把手条",
+   "窗口是单层深灰圆角面板 + 细暗边，没有浅灰倒角外框"
+  ],
+  "craft": [
+   "“左机器 / 右数据”的构图对了（原料格不再压标题、“→ 74”已去掉），但左边是“装置（需素材）”斜纹灰盒，不是机器实时镜头，也没有绿点 Working 状态行",
+   "右侧是物品详情（铁矿说明 + 纯度 / 重量属性条），Factorio 是一行“原料格 → 橙色进度条 → 产物格”，下方插件槽",
+   "原料格（50/52、5/7、120/122）挤在右下角按钮旁，没有箭头、进度条和产物格",
+   "“放置 / 丢弃”按钮与机器窗口无关",
+   "标题写“锻造”，应是机器名（组装机 / 熔炉）",
+   "玩家背包窗口没有贴在左侧拼成一组",
+   "详情栏中段大片空白，Factorio 的机器窗紧凑",
+   "窗口与背包屏同一种单层深灰圆角，无倒角外框 / 凹槽 / 拖拽把手"
+  ],
+  "skilltree": [
+   "树在左、详情在右、按钮在右下，构图对了；巨型橙按钮与“→ 74”已去掉，标题缺字形已修好",
+   "节点仍是编号圆点（cmp.node = building 没有画法，退回 circleNumber），Factorio 是方形科技卡（大图标 + 名称 + 底部科技包 × 数量）",
+   "12 个节点稀疏地摆在左侧约 60% 的区域，Factorio 是成百张卡片的可拖动大图",
+   "详情栏仍是物品样本（铁矿 / 纯度 / 重量），缺成本行（科技包 × 数量、时间）与解锁配方图标行",
+   "底部三颗按钮：详情栏自带的“放置 / 丢弃” + ix.confirm 的橙色“确认选择”；Factorio 只有一颗绿色“开始研究”",
+   "状态色绿 / 橙 / 灰与 Factorio 的绿 / 黄 / 红大体对得上，但不可研究应是红底而不是暗灰"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "（参考图关了 GUI，按 2.0 版式常识比）快捷栏与工具条的图标仍是橙色线性符号 / 三角占位，Factorio 是预渲染 3D 物品图标与白色工具图标",
+   "实体信息框只有标题 + 两行字 + 橙色「按 E 开采」，缺实体小渲染图与绿点 Working 状态行",
+   "研究进度已有细进度条，但没有科技图标，也没有窗口底板",
+   "小地图仍是青色网格 + 橙齿轮示意图，Factorio 是按类别着色的地表 chart",
+   "右下没有警报图标列"
+  ],
+  "inventory": [
+   "（凭记忆）右半边仍不是制作区（大图标分类页签 + 配方格），只有一块浮动物品说明",
+   "页签画成单字（全 / 矿 / 部 / 建），下面还多一行二级页签（矿 / 部 / 建）；Factorio 是制作区上方 4 枚大图标页签",
+   "网格只有 4 行，窗口下半空着；Factorio 背包行数更多",
+   "窗口仍是单层深灰圆角面板，没有浅灰倒角外框与凹槽，标题后没有拖拽把手",
+   "图标混用：3D 渲染的矿石与橙色扁平符号"
+  ],
+  "craft": [
+   "（凭记忆）窗口面板不见了：标题「锻造」和 ✕ 浮在场景上，只有右侧详情一栏有底板",
+   "顶部多出一条斜纹「插画（需素材）」横带",
+   "背后露出 tpl.forge 自带的橙色法阵圆环",
+   "左边仍是「装置（需素材）」斜纹灰盒、右边是物品详情；Factorio 是机器实时镜头 + 一行「原料 → 进度条 → 产物」",
+   "标题写「锻造」，应是机器名"
+  ],
+  "skilltree": [
+   "（凭记忆）节点已是方形图标块，但很小（约画面宽 2%），没有名称和底部科技包 × 数量行",
+   "节点不按状态着底色（已研究绿 / 可研究黄 / 不可研究红），已研究的也没有记号",
+   "底部仍有两颗绿按钮（详情栏的「放置」+ 右下「确定」）；Factorio 只有一颗「开始研究」",
+   "详情栏仍是物品样本（铁矿 / 纯度 / 重量），不是成本行与解锁配方",
+   "树只有二十来个节点、只占左侧"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "（参考图关了 GUI，按 2.0 版式常识比）快捷栏、装备格与工具条的图标仍是橙色线性符号 / 三角占位，Factorio 是预渲染 3D 物品图标",
+   "小地图 chart 是暗灰底上一块浅色地块和几个点，没有按类别着色的地表",
+   "装备格（武器 / 弹药 / 护甲）和快捷栏的首格都画了金色选中框",
+   "研究进度没有科技图标和窗口底板；实体信息的小图是「需素材」占位，标签字溢出框右边"
+  ],
+  "inventory": [
+   "（凭记忆）背包上方多一行图标页签 +「全部」块，Factorio 背包没有页签",
+   "窗口外框是深色细边，不是浅灰倒角外框",
+   "制作区的 4 枚图标页签偏小，像一排按钮",
+   "两块网格只有 5 行、窗口下半空着；图标混用 3D 渲染矿石与橙色扁平符号"
+  ],
+  "craft": [
+   "（凭记忆）左侧背包窗只有 6 个物品、4 列，大半空着；Factorio 背包是满宽 10 列",
+   "机器窗左半是「装置（需素材）」斜纹灰盒，不是机器实时小镜头 + 绿点 Working",
+   "配方行（原料 → 进度条 → 产物）和插件槽缩在右下角、很小，Factorio 在窗口上部显眼处",
+   "窗口外框是深色细边，不是浅灰倒角"
+  ],
+  "skilltree": [
+   "（凭记忆）科技卡底部的成本行是一枚色点 × 数量，不是科技包图标 × 数量",
+   "视窗里只露出两层 5 张卡，顶层的卡被视窗上沿裁掉",
+   "卡上的图标是符号占位，不是科技插画",
+   "树区右下仍有「拖动查看」提示"
+  ]
+ }
+}

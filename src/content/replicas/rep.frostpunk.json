@@ -1,0 +1,1529 @@
+{
+ "id": "rep.frostpunk",
+ "name": "Frostpunk",
+ "card": "steam:323190",
+ "genre": "builder",
+ "family": "fam.filigree",
+ "pack": "colony",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "snowVillage",
+  "values": {
+   "color.palette": "winter",
+   "color.temperature": -0.45,
+   "color.saturation": 0.7,
+   "color.contrast": 1.15,
+   "color.brightness": 0.65,
+   "camera.projection": "persp",
+   "camera.angle": "high",
+   "camera.fov": 40
+  }
+ },
+ "base": {
+  "hud.style": "filigree",
+  "uip.keyword": "none",
+  "ctx.device": "pc",
+  "ctx.input": "kbm",
+  "ctx.timeModel": "pausable",
+  "col.source": "skin",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#0f1a26",
+  "col.surface2": "#1c2b3a",
+  "col.text": "#e6ecef",
+  "col.accent": "#58d0dc",
+  "col.accent2": "#c8312d",
+  "col.focus": "#7fe6ee",
+  "col.border": "#b7c3cb",
+  "col.saturation": 0.8,
+  "col.coding": [
+   "status"
+  ],
+  "vis.opacity": 0.72,
+  "vis.fill": "gradient",
+  "vis.corner": "chamfer",
+  "vis.cornerSize": 8,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1.5,
+  "vis.strokeColor": "custom",
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.ornament": 2,
+  "vis.motif": "ironScroll",
+  "vis.iconStyle": "silhouette",
+  "ast.iconSet": "procedural",
+  "ast.core": "procedural",
+  "ast.frame": "procedural",
+  "ast.frameMat": "iron",
+  "typ.body.family": "serif",
+  "typ.body.weight": "regular",
+  "typ.display.family": "serif",
+  "typ.display.weight": "regular",
+  "typ.display.case": "upper",
+  "typ.display.tracking": 0.06,
+  "typ.numerals.family": "tabular",
+  "typ.legibility": "shadow",
+  "rel.harmony": "unified",
+  "st.alert": "redTint",
+  "st.statusMark": "icon",
+  "ix.focus": "focusGlow",
+  "ix.glyphs": "keycap",
+  "mo.enter": "fade",
+  "mo.easing": "easeOut",
+  "mo.duration": 0.35,
+  "mo.valueChange": "smooth",
+  "mo.idle": "none",
+  "vis.silhouette@button": "hexagon",
+  "vis.silhouette@tab": "hexagon",
+  "col.good": "#58d0dc",
+  "col.nodeDone": "#58d0dc",
+  "col.ornament": "#c8d2d8"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_323190_2.jpg",
+   "values": {
+    "uip.layout": "layout.builder",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "lay.safeMargin": 1,
+    "cnt.density": 2,
+    "rel.diegesis": "screen",
+    "rel.hudVisibility": "always",
+    "rel.semanticZoom": "none",
+    "vis.opacity": 0.6,
+    "hier.emphasis": [
+     "isolation"
+    ],
+    "cnt.elements": [
+     "el.clock",
+     "el.clock#2",
+     "el.resources",
+     "el.gameSpeed",
+     "el.timer",
+     "el.objective",
+     "el.meter",
+     "el.toolbar",
+     "el.toolbar#2",
+     "el.toolbar#3",
+     "el.notify",
+     "el.population",
+     "el.overlay"
+    ],
+    "el.clock.form": [
+     "bigTemp"
+    ],
+    "el.clock.screenAnchor": "tc",
+    "el.clock.scale": 0.65,
+    "el.clock.priority": "primary",
+    "el.clock.valueLabel": "current",
+    "el.clock.valueLabelPos": "center",
+    "cmp.gauge@el.clock": "number",
+    "vis.silhouette@el.clock": "circle",
+    "ast.core@el.clock": "texture",
+    "ast.coreMat@el.clock": "ice",
+    "el.resources.form": "iconNumberBar",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "tc",
+    "el.resources.scale": 0.8,
+    "el.resources.valueLabel": "current",
+    "col.accent@el.resources": "#e9b730",
+    "el.gameSpeed.form": "speedBar",
+    "el.gameSpeed.screenAnchor": "tc",
+    "el.gameSpeed.scale": 0.65,
+    "el.meter.form": "paired",
+    "cmp.gauge@el.meter": "bar",
+    "el.meter.arrangement": "column",
+    "el.meter.screenAnchor": "bc",
+    "el.meter.scale": 0.75,
+    "el.meter.priority": "primary",
+    "el.meter.valueLabel": "none",
+    "el.toolbar.form": "buttonRow",
+    "el.toolbar.screenAnchor": "bc",
+    "el.toolbar.arrangement": "row",
+    "el.toolbar.scale": 0.85,
+    "vis.silhouette@el.toolbar": "circle",
+    "el.objective.form": [
+     "storyTracker"
+    ],
+    "el.objective.screenAnchor": "bl",
+    "el.objective.scale": 0.8,
+    "el.overlay.form": [
+     "statusIcons"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "billboard",
+    "el.overlay.priority": "ambient",
+    "typ.legibility": "shadow",
+    "vis.silhouette@button": "circle",
+    "el.gameSpeed.steps": 3,
+    "el.toolbar.count": 2,
+    "el.overlay.attachTo": "target",
+    "cmp.badge@el.overlay": "roundel",
+    "col.warn@el.overlay": "#d83a2e",
+    "el.clock#2.form": [
+     "timelineRuler"
+    ],
+    "el.clock#2.dockTo": "el.clock",
+    "el.clock#2.dockSide": "right",
+    "el.clock#2.dockConnector": "ironBeam",
+    "el.clock#2.scale": 0.6,
+    "el.resources.dockTo": "el.clock",
+    "el.resources.dockSide": "left",
+    "el.resources.dockConnector": "ironBeam",
+    "typ.numerals.family@el.resources": "odometer",
+    "typ.numerals.digits@el.resources": 4,
+    "el.gameSpeed.dockTo": "el.resources",
+    "el.gameSpeed.dockSide": "below",
+    "el.timer.form": "smallText",
+    "el.timer.scale": 0.7,
+    "el.timer.dockTo": "el.gameSpeed",
+    "el.timer.dockSide": "right",
+    "el.meter.satellites": [
+     "counters"
+    ],
+    "cmp.gaugeCap@el.meter": "motif",
+    "el.toolbar.dockTo": "el.meter",
+    "el.toolbar.dockSide": "flankL",
+    "el.toolbar#2.form": "buttonRow",
+    "el.toolbar#2.arrangement": "row",
+    "el.toolbar#2.count": 2,
+    "el.toolbar#2.scale": 0.85,
+    "el.toolbar#2.dockTo": "el.meter",
+    "el.toolbar#2.dockSide": "flankR",
+    "el.population.screenAnchor": "br",
+    "ast.ornamentAnchor": [
+     "panelCorners",
+     "panelEdges",
+     "elementEnds"
+    ],
+    "col.icon@el.toolbar": "#e6ecef",
+    "el.notify.form": [
+     "alertIcons"
+    ],
+    "el.notify.dockTo": "el.meter",
+    "el.notify.dockSide": "above",
+    "el.notify.dockAlign": "center",
+    "el.toolbar#3.form": "buttonRow",
+    "el.toolbar#3.arrangement": "row",
+    "el.toolbar#3.count": 3,
+    "el.toolbar#3.scale": 0.6,
+    "el.toolbar#3.screenAnchor": "tr"
+   }
+  },
+  {
+   "key": "hud-building",
+   "ref": "qa/refs-cache/iig/img/frostpunk__frostpunk-beacon.jpg",
+   "values": {
+    "uip.layout": "layout.builder",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "lay.safeMargin": 1,
+    "cnt.density": 3,
+    "rel.semanticZoom": "none",
+    "vis.opacity": 0.78,
+    "cnt.elements": [
+     "el.clock",
+     "el.clock#2",
+     "el.resources",
+     "el.gameSpeed",
+     "el.timer",
+     "el.notify",
+     "el.notify#2",
+     "el.party",
+     "el.selection",
+     "el.objective",
+     "el.meter",
+     "el.toolbar",
+     "el.toolbar#2",
+     "el.population",
+     "el.overlay"
+    ],
+    "el.clock.form": [
+     "bigTemp"
+    ],
+    "el.clock.screenAnchor": "tc",
+    "el.clock.scale": 0.65,
+    "el.clock.priority": "primary",
+    "el.clock.valueLabel": "current",
+    "cmp.gauge@el.clock": "number",
+    "vis.silhouette@el.clock": "circle",
+    "ast.core@el.clock": "texture",
+    "ast.coreMat@el.clock": "ice",
+    "el.resources.form": "iconNumberBar",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "tc",
+    "el.resources.scale": 0.8,
+    "col.accent@el.resources": "#e9b730",
+    "el.gameSpeed.form": "speedBar",
+    "el.gameSpeed.screenAnchor": "tc",
+    "el.gameSpeed.scale": 0.65,
+    "el.notify.form": [
+     "toast"
+    ],
+    "el.notify.screenAnchor": "tl",
+    "el.notify.scale": 0.8,
+    "el.party.form": "portraits",
+    "el.party.arrangement": "column",
+    "el.party.screenAnchor": "tr",
+    "el.party.scale": 0.7,
+    "el.selection.form": "buildingPanel",
+    "el.selection.screenAnchor": "mr",
+    "el.selection.scale": 1.25,
+    "el.selection.priority": "secondary",
+    "el.objective.form": [
+     "storyTracker"
+    ],
+    "el.objective.screenAnchor": "bl",
+    "el.objective.scale": 0.8,
+    "el.meter.form": "paired",
+    "cmp.gauge@el.meter": "bar",
+    "el.meter.arrangement": "column",
+    "el.meter.screenAnchor": "bc",
+    "el.meter.scale": 0.75,
+    "el.meter.priority": "primary",
+    "el.toolbar.form": "buttonRow",
+    "el.toolbar.screenAnchor": "bc",
+    "el.toolbar.scale": 0.85,
+    "vis.silhouette@el.toolbar": "circle",
+    "el.overlay.form": [
+     "statusIcons"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "billboard",
+    "el.overlay.priority": "ambient",
+    "cmp.panelArt": "header",
+    "cmp.quantity": "stepperMinMax",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "value",
+     "action"
+    ],
+    "col.semantic": "accentOnly",
+    "lay.overflow": "scrollV",
+    "st.statusMark": "text",
+    "typ.legibility": "shadow",
+    "vis.silhouette@button": "circle",
+    "el.gameSpeed.steps": 3,
+    "el.toolbar.count": 2,
+    "el.overlay.attachTo": "target",
+    "cmp.badge@el.overlay": "roundel",
+    "col.warn@el.overlay": "#d83a2e",
+    "el.clock#2.form": [
+     "timelineRuler"
+    ],
+    "el.clock#2.dockTo": "el.clock",
+    "el.clock#2.dockSide": "right",
+    "el.clock#2.dockConnector": "ironBeam",
+    "el.clock#2.scale": 0.6,
+    "el.resources.dockTo": "el.clock",
+    "el.resources.dockSide": "left",
+    "el.resources.dockConnector": "ironBeam",
+    "typ.numerals.family@el.resources": "odometer",
+    "typ.numerals.digits@el.resources": 4,
+    "el.gameSpeed.dockTo": "el.resources",
+    "el.gameSpeed.dockSide": "below",
+    "el.timer.form": "smallText",
+    "el.timer.scale": 0.7,
+    "el.timer.dockTo": "el.gameSpeed",
+    "el.timer.dockSide": "right",
+    "el.meter.satellites": [
+     "counters"
+    ],
+    "cmp.gaugeCap@el.meter": "motif",
+    "el.toolbar.dockTo": "el.meter",
+    "el.toolbar.dockSide": "flankL",
+    "el.toolbar#2.form": "buttonRow",
+    "el.toolbar#2.arrangement": "row",
+    "el.toolbar#2.count": 2,
+    "el.toolbar#2.scale": 0.85,
+    "el.toolbar#2.dockTo": "el.meter",
+    "el.toolbar#2.dockSide": "flankR",
+    "el.population.screenAnchor": "br",
+    "ast.ornamentAnchor": [
+     "panelCorners",
+     "panelEdges",
+     "elementEnds"
+    ],
+    "col.icon@el.toolbar": "#e6ecef",
+    "el.notify#2.form": [
+     "alertIcons"
+    ],
+    "el.notify#2.dockTo": "el.meter",
+    "el.notify#2.dockSide": "above",
+    "el.notify#2.dockAlign": "center",
+    "cmp.detailFields@el.selection": [
+     "name",
+     "statusRow",
+     "quantity",
+     "memberList"
+    ],
+    "el.selection.satellites": [
+     "tab",
+     "toggle",
+     "button"
+    ],
+    "el.selection.satelliteSide": "r",
+    "el.selection.satelliteCount": 1,
+    "el.party.count": 1,
+    "el.party.memberPill": "timer",
+    "el.party.satellites": [
+     "button"
+    ],
+    "el.party.satelliteSide": "r"
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_323190_4.jpg",
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.screen": "screen.dialogue",
+    "cnt.layer": "overlay",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "cmp.dialogBox": "bare",
+    "rel.behind": "frozen",
+    "rel.dim": 0.72,
+    "rel.sceneBlur": 6,
+    "rel.sceneTone": "none",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "model3d",
+    "lay.composition": "splitLR",
+    "lay.focalSide": "right",
+    "cnt.dataShape": "text",
+    "cnt.textLength": "short",
+    "cnt.tone": "narrative",
+    "cnt.elements": [
+     "el.choices"
+    ],
+    "el.choices.form": "buttons",
+    "el.choices.arrangement": "column",
+    "el.choices.screenAnchor": "ml",
+    "el.choices.scale": 0.8,
+    "vis.opacity": 0.55,
+    "typ.display.case": "asIs",
+    "typ.display.weight": "bold",
+    "typ.scale": 1.4,
+    "hier.inline": "keyword",
+    "hier.emphasis": [
+     "size",
+     "color"
+    ],
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.focus": "focusGlow",
+    "ix.dismiss": "forced",
+    "ix.skip": "none",
+    "ix.continueCue": "none",
+    "flow.entry": "event",
+    "mo.enter": "fade",
+    "mo.textReveal": "fade",
+    "typ.legibility": "shadow",
+    "col.accent": "#2f8f99",
+    "lay.titlePos": "none",
+    "lay.splitRatio": 0.6,
+    "hier.kicker": "smallCapsRule",
+    "hier.callout": "centredLine",
+    "hier.inlineMap": [
+     "keyword"
+    ],
+    "lay.dataAlign": "center",
+    "typ.align@body": "center",
+    "el.choices.keyBadge": "end",
+    "el.choices.focusMark": "shift",
+    "ast.screenEdge": [
+     "frostSmoke"
+    ]
+   }
+  },
+  {
+   "key": "skilltree",
+   "ref": "qa/refs-cache/iig/img/frostpunk__frostpunk-book-of-laws.jpg",
+   "values": {
+    "uip.screen": "tpl.skilltree",
+    "cnt.screen": "screen.skilltree",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "starfield",
+    "ast.fx": [
+     "stardust"
+    ],
+    "vis.opacity": 0,
+    "vis.stroke": "none",
+    "vis.ornament": 0,
+    "cnt.dataShape": "network",
+    "cnt.itemCount": 14,
+    "lay.arrangement": "radialTree",
+    "lay.focalSide": "center",
+    "lay.overflow": "single",
+    "lay.detail": "transient",
+    "cmp.node": "rosette",
+    "vis.connector": "straight",
+    "st.locked": "dimmed",
+    "st.done": "tag",
+    "hier.dimInactive": 0.7,
+    "typ.display.case": "asIs",
+    "typ.display.weight": "light",
+    "typ.scale": 1.9,
+    "cmp.button": "text",
+    "cmp.buttonBox": true,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.close": "xTopRight",
+    "ix.dismiss": "button",
+    "flow.entry": "tapEntry",
+    "typ.legibility": "shadow",
+    "ix.back": "labeled",
+    "cmp.plate@title": "bracketFrame",
+    "lay.titleSubtitle": "italic",
+    "ast.screenEdge": [
+     "frostSmoke"
+    ],
+    "col.surface2": "#0c1014"
+   }
+  },
+  {
+   "key": "research",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.skilltree",
+    "cnt.screen": "screen.skilltree",
+    "lay.container": "fullscreen",
+    "rel.behind": "frozen",
+    "rel.dim": 0.75,
+    "rel.sceneBlur": 6,
+    "rel.sceneTone": "none",
+    "vis.opacity": 0.55,
+    "lay.nav": "tabsTop",
+    "cmp.tab": "iconText",
+    "cmp.tabIndicator": "filled",
+    "cnt.dataShape": "hierarchy",
+    "lay.arrangement": "tree",
+    "cmp.node": "building",
+    "vis.connector": "straight",
+    "st.locked": "dimmed",
+    "st.selected": "glow",
+    "lay.detail": "transient",
+    "cnt.elements": [],
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "ix.close": "xTopRight",
+    "ix.dismiss": "button",
+    "typ.legibility": "shadow",
+    "lay.titlePos": "none",
+    "lay.flowDir": "up",
+    "ast.screenEdge": [
+     "frostSmoke"
+    ]
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "vis.opacity": 0.8,
+    "vis.mapStyle": "frostSketch",
+    "vis.mapUnexplored": "fog",
+    "cmp.node": "circleNumber",
+    "vis.connector": "dashed",
+    "lay.overflow": "pan",
+    "lay.detail": "persistent",
+    "cnt.elements": [
+     "el.party"
+    ],
+    "el.party.form": "portraits",
+    "el.party.arrangement": "column",
+    "el.party.screenAnchor": "ml",
+    "el.party.scale": 0.8,
+    "ix.mode": "select",
+    "ix.close": "xTopRight",
+    "ix.dismiss": "button",
+    "typ.legibility": "shadow",
+    "lay.titlePos": "none",
+    "vis.mapRoute": "dashed",
+    "lay.currentMarker": "avatar",
+    "col.fog": "#4a535c"
+   }
+  },
+  {
+   "key": "results",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.runSummary",
+    "cnt.screen": "screen.results",
+    "cnt.stage": "result",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "replaced",
+    "ast.bgArt": "sceneArt",
+    "cnt.focal": "title",
+    "cnt.dataShape": "none",
+    "cnt.characterRender": "sketch",
+    "cnt.elements": [],
+    "col.saturation": 0.15,
+    "col.text": "#2a2f35",
+    "lay.overflow": "paged",
+    "lay.pageIndicator": "none",
+    "cnt.textLength": "short",
+    "cnt.tone": "narrative",
+    "typ.display.case": "asIs",
+    "typ.display.weight": "light",
+    "typ.scale": 1.8,
+    "mo.enter": "fade",
+    "mo.textReveal": "fade",
+    "mo.transition": "crossfade",
+    "mo.reveal": "direct",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "tapAnywhere",
+    "ix.continueCue": "keyGlyph",
+    "ix.skip": "none",
+    "typ.legibility": "shadow",
+    "lay.titlePos": "none",
+    "ops.actions": [],
+    "ast.bgArtRender": "charcoal"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "顶部中央的‘温度透镜 + 双翼’复合组件：圆形霜玻璃透镜里一个大号细体温度数字，下挂温度计热力图开关，左右各伸出一条铁艺翼梁——左翼挂煤 / 木 / 钢 / 蒸汽核心 + 倍速钮 + 工时，右翼挂食物类资源 + 日数 + 时间尺。现状 el.clock = weather 只能画成胶囊（hud 屏，圆角 50）或切角方块（hud-building 屏），资源一行、倍速一行在它下面竖叠成一列，同锚点元素无法分到两翼。",
+   "severity": "high",
+   "proposal": "新复合组件‘中央仪表 + 左右翼梁’（lay.hudOrg = console 的对称变体；elx 新子参数声明元素挂左翼 / 右翼 / 翼下）；el.clock.form 新取值 bigTemp（圆盘透镜 + 大号细体数字）；G-el-hud",
+   "kind": "composite",
+   "partialBy": "el.clock.form = bigTemp + el.clock#2 timelineRuler + dockTo / dockConnector = ironBeam（透镜两翼有了；透镜是浅色霜面，下挂的热力图开关没有）"
+  },
+  {
+   "screen": "hud",
+   "what": "资源项画法：黄色剪影图标 + 带变暗前导零的计数（里程表式）+ 下方一根极细容量条；el.resources = iconNumber 只有图标 + 数字，没有容量细条，typ.numerals 也没有‘前导零变暗’的里程表字形。",
+   "severity": "medium",
+   "proposal": "el.resources.form 新取值 iconNumberBar；typ.numerals.family 新取值 odometer（G-typeface-lib）",
+   "kind": "missingOption",
+   "resolvedBy": "el.resources.form = iconNumberBar + typ.numerals.family@el.resources = odometer"
+  },
+  {
+   "screen": "hud",
+   "what": "逐元素主题不生效：HUD 渲染器只建一套全局主题，vis.*@el / col.*@el / ast.*@el 覆盖都不读——col.accent@el.resources = 金黄只让第一项变金（其余仍青色）；vis.silhouette@el.toolbar = circle 在 hud-building 屏不起作用（按钮跟着全局切角变成切角方钮）；hud 屏只能把全局 vis.corner 设成圆角 50 换圆钮，结果温度表也变胶囊、倍速钮的选中项又吃全局 vis.silhouette = 六边形，和其余圆钮混搭。Frostpunk 同时要圆形 HUD 按钮和切角 / 缺口矩形面板，全局主题表达不了。",
+   "severity": "medium",
+   "proposal": "HUD 按元素构建主题（makeCtx 读 vis.*@el.<id>、col.*@el.<id>、ast.*@el.<id> 后重算 token）；面板外形也读 vis.silhouette（现在只给按键）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-01 / 09（作用域主题与外形进渲染：资源全部金黄、HUD 按钮读 vis.silhouette@button = circle；R3 对照图确认）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.meter = paired 的定义就是 Frostpunk 的希望 / 不满（两项对立），渲染器却画成一条红条 + 两端小字（冻 / 暖）；参考是上下两条独立横条，全大写标签写在条正中（不满红条、希望在红底上用青色填充）。",
+   "severity": "medium",
+   "proposal": "paired 画成两条叠放的横条，标签居中写在条内，两条分别读 col.accent2 / col.accent",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-11（paired 画成上下两条对立横条、标签在条内；R3 对照图确认）"
+  },
+  {
+   "screen": "hud",
+   "what": "底部中央的对称编排：两条态势条被左右各两颗圆形霜玻璃大按钮夹住，条上方堆危机警报图标（红圆白符号），条下挂病号 / 伤员两枚小圆图标 + 数字；同锚点元素只能上下叠，所以态势条压在按钮排上方、警报图标没有位置可挂。",
+   "severity": "medium",
+   "proposal": "elx 新子参数：相对另一元素定位（flank 夹住 / above / below）；el.meter 子项可挂小计数徽章；el.notify = emblem 可锚到另一元素上方",
+   "kind": "layoutEngine",
+   "partialBy": "el.toolbar / el.toolbar#2 dockSide flankL / flankR + el.meter.satellites counters + el.notify alertIcons dockSide above（警报竖叠成方块、右翼与条之间留空）"
+  },
+  {
+   "screen": "hud",
+   "what": "底部按钮排的数量：参考是 4 颗（科研 / 建造 | 法典 / 经济），el.toolbar = buttonRow 固定画 7 颗，没有条目数参数。",
+   "severity": "low",
+   "proposal": "el.toolbar 新增条目数（elx.count 或 cnt.itemCount@el.toolbar）",
+   "kind": "missingParam",
+   "resolvedBy": "el.toolbar.count"
+  },
+  {
+   "screen": "hud",
+   "what": "el.gameSpeed = speedBar 的定义是‘暂停 / 1x / 2x 按钮条’（参考卡就是 Frostpunk），渲染器却画成‘速度’两字 + 分段条；复刻只能借 playFF（画成暂停 + 三档三角的四颗圆钮，形态反而正确）。",
+   "severity": "low",
+   "proposal": "speedBar 按定义画成暂停 / 1x / 2x / 3x 小方钮条，档数可配",
+   "kind": "renderBug",
+   "resolvedBy": "el.gameSpeed.form = speedBar, el.gameSpeed.steps"
+  },
+  {
+   "screen": "hud",
+   "what": "工时与日历：左翼下‘WORK TIME + 时刻’，右翼下‘DAY + 天数’ + 一条带天数刻度的时间尺（用来标寒潮预报）；el.clock 已被温度占用，也没有‘时间线刻度尺 + 预报标记’画法。",
+   "severity": "medium",
+   "proposal": "el.clock.form 新取值 timelineRuler（刻度尺 + 当前日 + 预报标记）；同一元素允许多个子件（温度 + 工时 + 日历）",
+   "kind": "missingOption",
+   "resolvedBy": "el.clock#2.form = timelineRuler + el.timer smallText（工时）"
+  },
+  {
+   "screen": "hud",
+   "what": "左下剧情条：红色圆章里写倒计时数字 + 全大写衬线标题 + 右端‘倾向’小徽章，下面一行圆形勾选的子目标；el.objective = checklist 只有金色小标题 + 方形勾选框，没有圆章计数头，也不能和 el.timer 合成一条。",
+   "severity": "medium",
+   "proposal": "el.objective.form 新取值 storyTracker（圆章计数头 + 标题 + 子目标，勾选框可选圆形）",
+   "kind": "missingOption",
+   "resolvedBy": "el.objective.form = storyTracker（红圆章计数 + 标题 + 圆形勾选）"
+  },
+  {
+   "screen": "hud",
+   "what": "右下人口胶囊（放大镜按钮 + 已分配 / 总人口）与右上三颗圆形快捷钮（供暖、侦察队、地图）都没有对应元素：人口不是资源也不是队伍；el.toolbar 已用在底部按钮排，一屏只能有一个实例。",
+   "severity": "low",
+   "proposal": "新元素 el.population；元素允许多个实例（如 el.toolbar#2 = microMenu 放右上）",
+   "kind": "missingParam",
+   "resolvedBy": "el.population + el.toolbar#3（右下人口胶囊、右上三颗圆钮）"
+  },
+  {
+   "screen": "hud",
+   "what": "世界里的建筑状态图标：el.overlay = statusIcons 画成强调色青色菱形（带 ! / Z），参考是红圆 + 白色符号；底座形状不读 vis.silhouette@el.overlay，颜色不读 st.alert。",
+   "severity": "low",
+   "proposal": "statusIcons 的底座形状读 vis.silhouette@el.overlay、警报类颜色读 st.alert / col.accent2",
+   "kind": "renderBug",
+   "resolvedBy": "cmp.badge@el.overlay, col.warn@el.overlay"
+  },
+  {
+   "screen": "hud",
+   "what": "世界空间的状态图标与屏幕 HUD 不互相避让：hud、hud-building 两屏都有一枚菱形状态图标正压在倍速钮上。",
+   "severity": "low",
+   "proposal": "屏幕空间元素的矩形登记为禁区，world billboard 投影后落进禁区时隐藏或推到边缘（与 HUD 避让共用一张占位表）",
+   "kind": "layoutEngine",
+   "resolvedBy": "el.overlay.attachTo（遮挡推开）"
+  },
+  {
+   "screen": "hud",
+   "what": "天气徽标画的是太阳图标却写‘大雪’（内容包的天气图标与文字不一致）；Frostpunk 的温度表只写温度，不写天气字。",
+   "severity": "low",
+   "proposal": "colony 包的天气样本图标与文字按同一天气取；bigTemp 画法只显示温度",
+   "kind": "content",
+   "resolvedBy": "R3 对照图：天气徽标与文字一致（雪花 + 大雪）"
+  },
+  {
+   "screen": "all",
+   "what": "铁艺花线：组件两端、面板角、底部按钮两侧伸出的冷银维多利亚铸铁卷须（细线 + 涡旋端头，线宽有起伏）。第二轮用 uip.keyword = none 关掉位图角花后，vis.motif = 花叶 派生的矢量角饰已是冷银色（研究 / 地图 / 选中卡的 S 形卷 + 边中卷花），方向对了，但线宽均匀、涡旋收尾是通用卷草，不是铸铁卷须。",
+   "severity": "high",
+   "proposal": "vis.motif 新取值 ironScroll（线宽调制 + 涡旋端点，G-motif-lib、G-stroke-type）；位图角花按 ast.frameMat 换色（铁 / 银）",
+   "kind": "missingOption",
+   "resolvedBy": "vis.motif = ironScroll + col.ornament #c8d2d8（冷银铸铁卷须）"
+  },
+  {
+   "screen": "hud",
+   "what": "HUD 小组件（温度透镜、圆钮、态势条、剧情条）两端都挂着铁艺卷须，现在 vis.ornament / vis.motif 派生的饰件只画在面板四角与边中，HUD 小组件两端什么都不画。",
+   "severity": "medium",
+   "proposal": "饰件挂点扩展到 HUD 元素：元素两端 / 底部的卷须端饰（G-ornament-placement），长度与方向随元素尺寸",
+   "kind": "newDrawing",
+   "resolvedBy": "ast.ornamentAnchor elementEnds + cmp.gaugeCap@el.meter = motif（HUD 小件两端卷须）"
+  },
+  {
+   "screen": "hud-building",
+   "what": "建筑面板：深藏青半透明 + 细银线切角框，内容是建筑头图 + 运行状态行 + 侦察队（头像 + 所需资源 + 新建按钮）+ 队伍列表，几乎通高；el.selection = card 是单位卡（大圆头像 + 名字 + 三条属性条），panel 是属性 / 命令面板，都不是‘头图 + 状态 + 列表’。",
+   "severity": "medium",
+   "proposal": "el.selection.form 新取值 buildingPanel（头图 + 状态行 + 列表，高度可到屏高 80%）",
+   "kind": "missingOption",
+   "partialBy": "el.selection.form = buildingPanel + cmp.detailFields@el.selection（头图 + 状态 + 工人钮有了；队伍列表没画、面板不到通高）"
+  },
+  {
+   "screen": "hud-building",
+   "what": "cmp.panelArt = header（面板顶部一条插画）在 HUD 选中面板里没有画出来，建筑面板的头图位置是空的。",
+   "severity": "medium",
+   "proposal": "实现 cmp.panelArt = header：选中面板顶部按比例画头图（缺素材时用场景烘焙图或占位）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-36（选中面板画出头图位，缺素材时为占位；素材见新缺口）"
+  },
+  {
+   "screen": "hud-building",
+   "what": "框外的耳标：建筑面板左上骑出一只带温度计图标的小标签（供暖），右上骑出 ON / OFF 拨杆，右侧边缘还挂一颗拆除小钮；面板框只能整体画，部件不能骑边出框。",
+   "severity": "low",
+   "proposal": "面板‘耳标’部件：在框边指定位置骑出带图标 / 开关的小标签（G-ornament-placement）",
+   "kind": "newDrawing",
+   "resolvedBy": "el.selection.satellites [tab, toggle, button]（供暖签 + ON 拨杆 + 拆除钮）"
+  },
+  {
+   "screen": "hud-building",
+   "what": "右上侦察队：一个圆头像 + 下方青色倒计时胶囊，旁边两颗圆钮；el.party = portraits 画成 4 个带健康色环（绿 / 红）的头像列，数量来自内容包，头像下没有计时胶囊。",
+   "severity": "low",
+   "proposal": "el.party 子项新取值：头像下挂计时胶囊（elx.valueLabel = timer）；队伍人数可配",
+   "kind": "missingOption",
+   "resolvedBy": "el.party count 1 + memberPill timer + satellites（侦察队头像 + 计时胶囊 + 两颗圆钮）"
+  },
+  {
+   "screen": "hud-building",
+   "what": "工人分配行是 无 / −1 / 数字 / +1 / 满 五段方钮 + 右侧灰字可用人数；cmp.quantity = stepper 没有两端的 无 / 满 键，选中面板里也画不出数量控件。",
+   "severity": "low",
+   "proposal": "cmp.quantity 新取值 stepperMinMax；选中面板可挂数量控件",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.quantity = stepperMinMax"
+  },
+  {
+   "screen": "all",
+   "what": "‘好’语义色固定绿色：法典 / 研究 / 地图节点的完成态、选中卡属性条、队员头像环都画成 pal.good 绿；Frostpunk 的已签署 / 进度用强调青、危机用红，没有绿。只能靠无障碍色盲预设改，没有设计参数。",
+   "severity": "medium",
+   "proposal": "col.good（语义好色）进色板角色，或 st.done 增加‘强调色点亮’取值",
+   "kind": "missingParam",
+   "resolvedBy": "col.good, col.nodeDone"
+  },
+  {
+   "screen": "dialogue",
+   "what": "事件屏的主视觉是一张人物群像舞台（一家人 + 工人 + 提灯暖光）占右侧六成；现在用 cnt.focal = 角色 + 3D 实时模型的青色剪影占位（带‘需素材’标），cnt.characterMedium 也没有‘多人群像’。",
+   "severity": "high",
+   "proposal": "需素材：事件群像插画 / 3D 展台渲染；cnt.characterMedium 或 cnt.companion 新取值 crowd",
+   "kind": "asset"
+  },
+  {
+   "screen": "all",
+   "what": "白色冰雾 / 墨烟晕边：事件屏和法典屏四周被白色冰雾、墨点飞溅吃掉，中间留暗——这是 Frostpunk 全屏页的外框；ast.fx 只有 墨晕（画成面板左下一团黑点）和 星尘（零星白点），没有‘四周晕边遮罩’。",
+   "severity": "high",
+   "proposal": "ast.fx 新取值 frostSmoke（颜色、密度、方向可调的边缘晕染遮罩，G-edge、G-bg-watermark）",
+   "kind": "missingOption",
+   "partialBy": "ast.screenEdge = frostSmoke（边缘遮罩有了，但画成一圈浓白雾，不是暗色墨烟 + 冰晶）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "选项按钮形状：只有第一条（主按钮）吃到 vis.silhouette = 六边形（两端切尖），后两条按面板画成切角条，三条不一致；参考三条都是两端切尖的半透明深青长条。",
+   "severity": "low",
+   "proposal": "非主按钮也读 vis.silhouette@button",
+   "kind": "renderBug",
+   "resolvedBy": "vis.silhouette@button"
+  },
+  {
+   "screen": "dialogue",
+   "what": "选项的附件：每个选项右端骑一枚圆形按键徽章，选中项整条提亮并在左侧出现小箭头、整条略向右错开；徽章骑边、选中箭头都没有画法。",
+   "severity": "medium",
+   "proposal": "G-ornament-placement（按键徽章骑在按钮端头）、G-focus-cursor（选中箭头 + 位移）",
+   "kind": "newDrawing",
+   "resolvedBy": "el.choices.keyBadge = end + el.choices.focusMark = shift"
+  },
+  {
+   "screen": "dialogue",
+   "what": "文本列位置：整列（标题、正文、决断语、选项）居中排在画面左侧三分之一、垂直居中；现在标题贴左上角，正文按 splitLR 固定比例左对齐铺满左侧 58%，选项与正文左对齐。",
+   "severity": "low",
+   "proposal": "lay.composition 分栏比例参数（splitRatio）+ 文本列垂直 / 水平对齐；标题可写在数据栏顶部",
+   "kind": "layoutEngine"
+  },
+  {
+   "screen": "dialogue",
+   "what": "文本层级：小号类别 + 细分隔线 → 粗体标题 → 正文（关键词青色）→ 居中的青色‘决断语’一行 → 更小的青色说明；hier.inline = keyword 只能给关键词着色，‘类别 + 分隔线’和‘决断行’这两层没有。",
+   "severity": "low",
+   "proposal": "G-inline-rules：正文内新增 callout 行样式；标题上方可挂类别小字 + 分隔线",
+   "kind": "missingOption",
+   "partialBy": "hier.kicker smallCapsRule + hier.callout centredLine（类别 + 分隔线、决断语有了；粗体标题一级没有）"
+  },
+  {
+   "screen": "all",
+   "what": "模板自带的控件去不掉：ix.close 没有 none，事件屏（只能选项离开）和结局屏（点任意处继续）都多出右上 X；ops.actions 是并集合并，tpl.runSummary 自带的 retry 在结局屏右下画成‘再抽 10 次’运营按钮；全屏模板总在左上写模板名当标题（NPC 对话 / 技能树 / 世界地图 / 本局总结）。",
+   "severity": "medium",
+   "proposal": "ix.close 增加 none（ix.dismiss = forced / tapAnywhere 时默认 none）；ops.actions 增加 none 或显式空数组按替换合并；模板标题可关（lay.header = none 或 cmp.plate 之外的‘不写标题’）",
+   "kind": "missingOption",
+   "resolvedBy": "lay.titlePos, ops.actions []（ix.close 由 forced / tapAnywhere 派生 none）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "返回与关闭两颗都要：参考左上带字的长六边形返回钮、右上带红 X 的关闭钮；ix.close 单选（这里选返回，画成一个小‘‹’箭头，不读 cmp.button = 文字和 vis.silhouette）。",
+   "severity": "low",
+   "proposal": "ix.close 改多选；返回 / 关闭钮读 cmp.button、vis.silhouette",
+   "kind": "missingParam",
+   "resolvedBy": "ix.back, ix.close"
+  },
+  {
+   "screen": "all",
+   "what": "全屏模板标题的字体：typ.display.family = 衬线 只在粗体时生效（事件屏标题是衬线粗体），常规 / 细体时标题落成黑体（研究、地图、法典、结局四屏）；参考的法典标题是高反差衬线细体。",
+   "severity": "medium",
+   "proposal": "检查全屏模板标题的字体栈与字重回退：GAE Serif 只打包了 400 / 700，细体应回退到 400 衬线而不是换成黑体",
+   "kind": "renderBug",
+   "partialBy": "R4 对照图：法典标题画成衬线（其余全屏页本轮不写标题，未复核）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "法令节点 = 圆形图标 + 四周对称的冰霜卷叶花托；已签署时整朵青色发光、头顶黄色小字 SIGNED、下面写法令名，可签署的是银色空心环 + 顶部花饰，锁定的几乎透明；cmp.node = 发光点只有光斑，节点下没有名字，st.done = tag 也不能放在节点上方。",
+   "severity": "high",
+   "proposal": "cmp.node 新取值 rosette（圆章 + 花托，按状态换色，带名字与状态小字）（G-card-node、G-ornament-lib）",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.node = rosette"
+  },
+  {
+   "screen": "skilltree",
+   "what": "放射树：中心是盾徽 + 天平纹章 + 缎带名牌，法令沿直线向外辐射成‘轮辐 + 分支’；constellation 画成挂在顶部的两棵小树，ring 只对集合有效、中心是灰盒。",
+   "severity": "medium",
+   "proposal": "lay.arrangement 新取值 radialTree（中心徽章 + 轮辐，节点数读 cnt.itemCount）（G-arrangement）",
+   "kind": "missingOption",
+   "partialBy": "lay.arrangement = radialTree（中心仍是普通节点，不是盾徽 + 缎带名牌）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "lay.arrangement = constellation 固定画 9 个点，cnt.itemCount = 14 不生效。",
+   "severity": "low",
+   "proposal": "constellation 按 cnt.itemCount 生成节点",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-29（constellation 按 cnt.itemCount 生成 14 个节点；R3 对照图确认）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "标题区：大号高反差衬线标题 + 小副标题，被一条开口的细银括号线框住，线端收成卷花；cmp.plate 没有‘开口括号框 + 卷花’，模板标题也没有副标题行。",
+   "severity": "medium",
+   "proposal": "cmp.plate 新取值 bracketFrame（G-plate-lib）；模板标题加副标题行",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.plate@title = bracketFrame + lay.titleSubtitle"
+  },
+  {
+   "screen": "skilltree",
+   "what": "背景画法：ast.bgArt = 星空 / 氛围展台在渲染器里落成浅色天空渐变，ast.fx = 墨晕 是面板左下角一团黑点；只好用 纯色 + 星尘 近似近黑墨底。",
+   "severity": "low",
+   "proposal": "starfield / spotlightStage 补成深色画法；墨晕改成可铺满边缘的墨点层（与 frostSmoke 共用）",
+   "kind": "renderBug",
+   "resolvedBy": "ast.bgArt"
+  },
+  {
+   "screen": "skilltree",
+   "what": "说明浮层（lay.detail = transient）不避让节点与连线：法典屏的说明标题压在顶部节点上，研究屏的说明框盖住两个节点。",
+   "severity": "low",
+   "proposal": "transient 说明框按节点包围盒找空位（与选中节点相邻、不压其他节点）",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12b-14（浮动详情避开节点：发光点按光晕登记、节点图在四个方向都压到时在锚点四周由近到远找空位；法典 / 研究两屏说明框与节点重叠 0，B8 量过）"
+  },
+  {
+   "screen": "research",
+   "what": "cmp.node = 建筑图标 在渲染器里画成编号圆点，vis.silhouette@node = 六边形 也不生效；原作是图标格（无参考图，形状与已研究状态的画法需截图核对）。",
+   "severity": "low",
+   "proposal": "实现 cmp.node = building（图标格）并读 vis.silhouette@node；补一张科技树截图后复核",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-29 / 09（cmp.node = building 画成图标格；R3 对照图确认）"
+  },
+  {
+   "screen": "research",
+   "what": "树的生长方向：lay.arrangement = tree 固定自上而下，Frostpunk 的科技树自下而上按层级生长。",
+   "severity": "low",
+   "proposal": "lay.arrangement = tree 加生长方向子参数（上 / 下 / 左 / 右）",
+   "kind": "missingParam"
+  },
+  {
+   "screen": "research",
+   "what": "角饰与标题 / 关闭钮不避让：研究、地图屏左上卷花压在模板标题第一个字上，右上卷花压住关闭 X。",
+   "severity": "low",
+   "proposal": "角饰占位登记进版式：标题与关闭钮按角饰尺寸内缩",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.titlePos none + M12a-08 饰件占位（右上关闭钮不再被卷花压住）"
+  },
+  {
+   "screen": "map",
+   "what": "荒原地图是去饱和的冷灰冰雪铅笔素描地形；vis.mapStyle 只有暖黄羊皮纸位图（painted / parchment）和场景烘焙图，没有冷色素描一档，这里只好留暖黄手绘。",
+   "severity": "low",
+   "proposal": "vis.mapStyle 新取值 frostSketch（冷灰铅笔素描位图，G-map-lib）",
+   "kind": "missingOption",
+   "partialBy": "vis.mapStyle = frostSketch（冷色了，但画成近黑底 + 红色排线）"
+  },
+  {
+   "screen": "map",
+   "what": "场景烘焙类地图（satellite / chalk / flatVector）只烘焙 160px，放大到面板后满屏马赛克，chalk 还是黑板底，无法作为冷色地图的替代。",
+   "severity": "low",
+   "proposal": "场景烘焙图按面板尺寸烘焙；chalk 底色读 col.surface",
+   "kind": "renderBug"
+  },
+  {
+   "screen": "map",
+   "what": "侦察队头像沿虚线路线移动、头像挂在路线上；队员头像现在只能在地图左缘排成一列。",
+   "severity": "low",
+   "proposal": "地图节点 / 路线可挂头像（cmp.node = avatar + 路线进度）",
+   "kind": "newDrawing"
+  },
+  {
+   "screen": "map",
+   "what": "地图右侧详情栏显示的是物品样本（材料说明 + 强度 / 重量条 + 使用 / 丢弃按钮），不是地点或远征说明。",
+   "severity": "low",
+   "proposal": "tpl.worldmap 的详情栏取地点样本（地点名 + 说明 + 派遣按钮），colony 包补地点文案",
+   "kind": "content",
+   "resolvedBy": "R4 对照图：详情栏是地点说明（煤矿 + 危险度 + 派人）"
+  },
+  {
+   "screen": "results",
+   "what": "结局回顾的画法：一张张炭笔 / 铅笔速写画出城市的关键时刻，色彩灰素；ast.bgArt = sceneArt 只能放彩色水彩风景，cnt.characterRender = sketch 只作用于角色，背景没有‘素描 / 炭笔’画法。",
+   "severity": "medium",
+   "proposal": "ast.bgArt 增加画法子参数（素描 / 炭笔 / 彩色），对场景插画做素描化",
+   "kind": "missingParam",
+   "resolvedBy": "ast.bgArtRender = charcoal"
+  },
+  {
+   "screen": "results",
+   "what": "结局是逐张淡入的幻灯片回顾（每张一两句叙述，最后一句追问）；mo.reveal 没有 slideshow，lay.overflow = paged 只翻页不做节奏。",
+   "severity": "low",
+   "proposal": "mo.reveal 新取值 slideshow（逐张淡入 + 字幕跟随）",
+   "kind": "motion"
+  },
+  {
+   "screen": "results",
+   "what": "继续提示（按键 + ‘继续’）用固定浅灰键帽 + 浅灰字，在浅色插画上几乎看不见，没有跟随 col.text = 炭灰。",
+   "severity": "low",
+   "proposal": "ix.continueCue 的字色 / 键帽色读 col.text，并按背景明暗做可读性检查",
+   "kind": "renderBug",
+   "partialBy": "R4 对照图：键帽变深色，字仍小而灰"
+  },
+  {
+   "screen": "map",
+   "what": "vis.mapUnexplored = fog 只在当前节点周围揭开一小块，已走过的 1、2 号节点和它们之间的路线仍埋在雾里；雾与羊皮纸同色，地图读起来大半是空白",
+   "severity": "low",
+   "proposal": "雾的揭开范围按全部已访问 / 当前节点与已走路线算（半径可调）；雾色与纸色拉开（或读 col.surface2）",
+   "kind": "renderBug",
+   "resolvedBy": "col.fog #4a535c + 揭开范围含已访问节点与路线（R4 对照图）"
+  },
+  {
+   "screen": "hud-building",
+   "what": "建筑面板顶部的头图位现在只能画‘图窗（需素材）’斜纹占位；原作是该建筑的插画（信标、工作站……）",
+   "severity": "low",
+   "proposal": "需素材：colony 包补建筑头图（或用场景烘焙图按建筑取景），cmp.panelArt = header 时取用",
+   "kind": "asset"
+  },
+  {
+   "screen": "hud / hud-building",
+   "what": "el.notify = alertIcons 固定画成竖排的圆角方块（边与符号按角色色）；Frostpunk 态势条上方的危机警报是一排并列的红圆章 + 白符号",
+   "severity": "medium",
+   "proposal": "alertIcons 读 el.notify.arrangement（row / column）与 vis.silhouette@el.notify（circle = 实心圆章，底色按 col.warn / col.bad、符号白）",
+   "kind": "missingParam"
+  },
+  {
+   "screen": "hud-building",
+   "what": "buildingPanel 写了 cmp.detailFields@el.selection 的 memberList，面板却只到约屏高 60%、下半截只剩卷须角饰，队伍列表没画出来（字段被静默省掉）",
+   "severity": "medium",
+   "proposal": "选中面板按 detailFields 排完再定高（可到屏高 80%，或读 lay.panelFit = fitContent）；角饰占位不挤掉字段，省字段时给检查提示",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 回归修复 C3 ⑤ + R4 审查修复 ②⑪⑨：按目标写了字段（cmp.detailFields@el.selection）时建筑面板长高到放下（连底角卷须伸进内框的高，最高 0.8 屏高），再按这一列上下两排元素之间的空当收回——960 × 540 时 368 高（≈ 68%），队伍列表四行都画、字段区在富余里让开底角卷须；字放大 1.3 倍时空当不够，退回 0.6 屏高、截字段（不再压时钟 / 警报栏 / 工具条）。「省字段时给检查提示」没做"
+  },
+  {
+   "screen": "dialogue",
+   "what": "正文与选项分家：正文列（类别 + 分隔线、正文、决断语、说明）画到右侧人物剪影上，el.choices 留在左中；参考整列都在左侧三分之一、选项紧跟正文",
+   "severity": "medium",
+   "proposal": "tpl.npc 的 bare 对话框 + splitLR 时正文与 el.choices 排在同一栏（lay.dataAlign / typ.align@body 只改栏内对齐，不把正文挪进主体栏）",
+   "kind": "layoutEngine",
+   "partialBy": "R4 回归修复 C1 ④：渲染器已就绪——lay.layering = separate 时正文与 el.choices 并成左栏一栏、整栏竖向居中、选项紧跟正文；要 lead 写复刻值 lay.layering = separate 才生效，现值 behind 时数据铺满整屏、正文仍在右侧人物上（画面与修复前相同）。R4 审查修复 ⑥：值没写之前记 partialBy，不算 resolvedBy"
+  },
+  {
+   "screen": "map",
+   "what": "（凭记忆）vis.mapStyle = frostSketch 揭开的地形画成近黑底 + 红色排线（像取了 col.accent2），不是冷灰铅笔素描",
+   "severity": "low",
+   "proposal": "frostSketch 的纸色 / 线色固定冷灰（或读 col.surface2 / col.text），不取危险色",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C4（纸面画风 frostSketch / pencil 的纸色与线色不跟 col.source = skin：冷灰纸 #dfe3e6 + 墨线 #3e4a55；写 vis.mapInk 时只换线色。浏览器目检待 lead）；R4 审查修复 ⑩：路线线芯换成纸面的墨色（冷灰纸上的浅色虚线原来看不见）"
+  },
+  {
+   "screen": "map",
+   "what": "（凭记忆）写了 lay.currentMarker = avatar + vis.mapRoute = dashed，虚线路线上没有头像，侦察队头像仍只在地图左缘竖排",
+   "severity": "low",
+   "proposal": "核对 currentMarker = avatar 在 tpl.worldmap 路线上的绘制（头像挂在当前路段中点）；队员列与路线头像二选一",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C2 ⑩（路线上的当前标记在节点之后画；当前节点是路线最后一个时挂在它的上沿。左缘的队员列是 el.party，二选一要改复刻值）"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 6,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "hud-building": [
+   {
+    "layout": 2,
+    "elements": 3,
+    "palette": 5,
+    "type": 3,
+    "shape": 2,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "dialogue": [
+   {
+    "layout": 1,
+    "elements": 1,
+    "palette": 4,
+    "type": 3,
+    "shape": 1,
+    "density": 2,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 4,
+    "elements": 6,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "skilltree": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 1,
+    "type": 3,
+    "shape": 2,
+    "density": 4,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 3,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 3,
+    "shape": 3,
+    "density": 5,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "research": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 4,
+    "type": 4,
+    "shape": 6,
+    "density": 4,
+    "overall": 4,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 4,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 4
+   }
+  ],
+  "results": [
+   {
+    "layout": 1,
+    "elements": 1,
+    "palette": 3,
+    "type": 2,
+    "shape": 1,
+    "density": 2,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 4,
+    "overall": 2,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "温度表画成一块很大的切角长方形面板（天气徽标 ×1.9），参考是顶部中央一枚小圆透镜 + 大号数字",
+   "底部按钮是 7 颗大号切角方块（×1.35），参考是 4 颗圆形霜玻璃按钮",
+   "希望 / 不满只有一条很粗很长的红条，压在按钮排上方且尺寸过大",
+   "右上多了 4 条队员头像框（参考右上只有 3 颗小圆钮）",
+   "左上多了成就提示卡；中央还画了热力图色斑 + 右下图例（参考是常规视图，没有热力叠层）",
+   "世界里的状态图标是紫色晶体位图（图集素材），参考是红圆白符号",
+   "整体元素偏大、偏密，参考是细线、小字、轻量的散落组件；画面整体太亮（参考是夜色城市）"
+  ],
+  "hud-building": [
+   "选中面板画成横向宽卡（×1.7）横在屏幕中间、压住底部按钮排，参考是右侧一块竖长建筑面板",
+   "面板四角是金色巴洛克位图角花（点名 ast.ornaments 触发），参考是冷银细线",
+   "态势条被避让挤到了左上角、温度表下移，顶部中央的结构散了",
+   "右上 4 条队员头像框与参考（1 个侦察队圆头像 + 两颗圆钮）不符",
+   "资源与倍速条挤在面板下面，几乎看不见",
+   "按钮、温度表都是切角大方块，字号过大"
+  ],
+  "dialogue": [
+   "没设 uip.screen，落到通用背包样本（存货列表 + 详情），完全不是事件抉择屏",
+   "金色巴洛克角花 + 全屏线框，参考没有任何边框",
+   "没有左侧文字列、没有右侧人物群像、没有三条竖排选项"
+  ],
+  "skilltree": [
+   "背景是浅蓝天空渐变（ast.bgArt = 星空在渲染器里落成天空渐变），参考是近黑墨底",
+   "左上画了青色‘存货’标题条（el.title 页眉写的是菜单名），和模板标题重复",
+   "金色巴洛克角花 + 顶部金色月桂圆章（点名角花 / 徽章底座触发位图），参考是冷银细线",
+   "ast.fx = 墨晕在左下角画了一团大黑点",
+   "节点是绿 / 青光斑，参考是青色发光花托圆章 + 银色空心环",
+   "右下多了一颗大号‘确认选择’按钮，参考没有"
+  ],
+  "research": [
+   "左上标题被 el.cost（金币 1,000）压住",
+   "右下超大的青色‘建立营地’宽按钮（el.cta），比例失衡",
+   "背景去饱和压暗后是灰色，冷蓝不足；四角金色巴洛克角花",
+   "节点是编号圆点（绿 / 青 / 灰），不像图标格"
+  ],
+  "map": [
+   "地图是暖黄羊皮纸手绘（painted），Frostpunk 荒原地图是冷白铅笔素描",
+   "右上 4 条队员头像框压在详情栏上，选中面板又压一块，和常驻详情重复",
+   "四角金色巴洛克角花",
+   "背景是浅色天空渐变透出（没给 ast.bgArt）"
+  ],
+  "results": [
+   "没设 uip.screen，落到通用背包样本（存货列表 + 详情）叠在风景插画上",
+   "金色巴洛克角花；左下墨晕黑点",
+   "没有叙述字幕、没有继续提示"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "温度表是深色半透明胶囊（太阳图标 + ‘大雪 -24°C’），参考是顶部中央一枚圆形霜玻璃透镜 + 大号细体温度数字，左右伸出翼梁",
+   "资源（3 项）和倍速钮在温度表下面各占一行、竖叠成一列；参考资源分两组挂在透镜两翼，倍速 + 工时在左翼下、日数 + 时间尺在右翼下",
+   "资源图标只有第一项是金色、其余仍是青色；计数没有变暗前导零和容量细条",
+   "底部 7 颗圆钮一字排开（图标青色），态势条是一条红色‘冻 / 暖’压在按钮排上方；参考是 2 + 2 颗圆形大按钮（白色图标）夹住上下两条 DISCONTENT / HOPE，条下挂两枚小计数",
+   "倍速钮选中项是六边形、其余是圆钮；一枚世界空间的青色菱形状态图标正压在第三颗倍速钮上",
+   "左下任务是金色小标题 + 方形勾选框，参考是两条带圆章图标的剧情条（全大写衬线标题 + 圆形勾选）",
+   "缺右上三颗圆形快捷钮与右下人口胶囊；所有小组件两端都没有铁艺卷须",
+   "面板在亮雪地上显得偏灰（不透明度 0.6），参考是深藏青 / 近黑霜玻璃 + 细银线"
+  ],
+  "hud-building": [
+   "右侧竖长面板的位置和宽度接近，银色细线框 + 矢量卷花角饰也对了，但内容是人物卡（大圆头像 + ‘猎人’ + 三条绿色属性条）；参考是建筑头图 + 运行状态行 + 侦察队列表 + 新建按钮，框外骑两只耳标",
+   "面板只占屏高约 56%、停在右下，参考几乎通高（约 80%）",
+   "全局切角让温度表变成切角方块、底部 7 颗按钮变成切角方钮；参考温度表是圆透镜、按钮是圆形霜玻璃",
+   "右上是 4 个带绿 / 红健康色环的头像，参考是 1 个侦察队头像 + 青色计时胶囊 + 两颗圆钮",
+   "左上成就提示条的位置与形态接近，但图标是青色星芒，参考是金圈放大镜，上方还有一颗‘?’圆钮",
+   "左下仍是普通任务清单，缺红圆章倒计时剧情条；缺右下人口胶囊、工人分配五段钮",
+   "同 hud：态势条单条、状态图标压在倍速钮上"
+  ],
+  "dialogue": [
+   "结构到位：左侧文字列 + 三条竖排选项，右侧人物占位，背后冻结场景压暗",
+   "右侧是青色剪影占位（带‘需素材’标），参考是提灯照亮的一家人群像；四周没有白色冰雾 / 墨烟晕边，背景是平的暗灰",
+   "标题写模板名、贴在左上角，正文左对齐铺到画面中线；参考是‘类别 + 分隔线 + 粗体标题 + 居中正文 + 青色决断语’一整列居中、垂直居中",
+   "只有第一条选项是两端切尖的六边形，后两条是切角条；没有右端圆形按键徽章、没有选中箭头；选项比参考宽、和正文左对齐而不是居中",
+   "右上多一颗关闭 X（参考只能通过选项离开）"
+  ],
+  "skilltree": [
+   "近黑底 + 白色细星点 + 细直连线 + 发光节点，基调接近",
+   "节点是绿 / 青 / 灰光斑，参考是带冰霜花托的青色圆章（上写黄色 SIGNED、下写法令名），可签署的是银色空心环",
+   "9 个节点分成两棵小树挂在顶部中央，参考是以中心盾徽（天平 + 缎带名牌）为根向外辐射的约 15 个节点",
+   "标题是黑体细字、没有副标题，也没有开口括号框 + 卷花；参考是高反差衬线细体大标题 + 小副标题",
+   "左上返回只是一个小‘‹’，参考是带字的长六边形返回钮；缺右上带红 X 的关闭钮",
+   "右下多一颗青色六边形确认钮（ix.confirm 带出），参考没有",
+   "说明浮层压在顶部节点上",
+   "四角没有白色墨点飞溅 / 冰雾晕边"
+  ],
+  "research": [
+   "银色细线框 + 卷花角饰、深藏青半透明底、顶部页签（选中页签为青色六边形）——冷银基调对了，不再有金色角花和超大宽按钮",
+   "节点仍是编号圆点（绿 / 青 / 灰），记忆中的原作是图标格、自下而上生长",
+   "左上卷花压在标题第一个字上，右上卷花压住关闭 X",
+   "说明框盖住 1 号、3 号节点",
+   "标题是黑体，不是衬线（无参考图，形状与配色仍需截图核对）"
+  ],
+  "map": [
+   "地图仍是暖黄羊皮纸手绘，记忆中的原作是冷灰冰雪铅笔素描地形",
+   "侦察队头像在地图左缘竖排一列，原作是头像沿虚线路线移动",
+   "右侧详情栏是物品样本（材料说明 + 强度 / 重量条 + 使用 / 丢弃），不是地点 / 远征说明",
+   "银色框与卷花角饰对了，但左上卷花压在标题上、右上卷花压住关闭 X；标题是黑体"
+  ],
+  "results": [
+   "风景水彩插画 + 居中大号衬线叙述句，方向对了；原作是炭笔 / 铅笔速写的城市关键时刻，色彩更灰、更素",
+   "左上写模板名（黑体），右上多一颗关闭 X",
+   "右下有模板带出的‘再抽 10 次’运营按钮（买断制叙事屏不该有）",
+   "‘E 继续’提示是浅灰键帽 + 浅灰字，在浅色背景上几乎看不见",
+   "逐张幻灯片的节奏与最后的追问在静态截图里无法体现"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "温度表仍是顶部中央的霜玻璃胶囊（雪花图标 + ‘大雪 -24°C’），参考是圆形透镜 + 大号细体温度数字、左右伸出挂资源与时间的铁艺翼梁",
+   "资源（已全部金黄）与倍速四颗圆钮仍在温度表下竖叠成一列，只有 3 项、没有变暗前导零与容量细条；参考约 8 项分挂透镜两翼",
+   "底部已是上下两条态势条（不满红 / 希望青、标签在条内）+ 4 颗圆形霜玻璃钮，但按钮排成一行在条下方；参考是 2 + 2 颗夹住两条横条，条上方堆警报、条下挂病号 / 伤员计数",
+   "底部圆钮是浅色霜面 + 青色图标，参考是深色霜玻璃 + 白色图标",
+   "左下任务仍是金色小标题 + 方形勾选框，参考是红圆章倒计时 + 全大写衬线标题 + 圆形勾选的剧情条",
+   "缺右上三颗圆形快捷钮与右下人口胶囊；所有小组件两端仍没有铁艺卷须"
+  ],
+  "hud-building": [
+   "右侧竖长面板已有银线框 + 卷花角饰 + 顶部头图位（‘图窗（需素材）’占位），但内容仍是人物卡（‘猎人’ + 三条属性条，已改青色）；参考是建筑头图 + 运行状态行 + 侦察队列表 + 新建按钮",
+   "面板仍只占屏高约 55%，参考几乎通高（约 80%）；框外没有供暖耳标与 ON / OFF 拨杆",
+   "温度表在本屏是切角霜玻璃块（全局切角），参考是圆形透镜",
+   "右上仍是 4 个带青 / 红色环的头像列，参考是 1 个侦察队头像 + 青色计时胶囊 + 两颗圆钮",
+   "左下仍是普通任务清单，缺红圆章剧情条、右下人口胶囊、工人分配五段钮；底部按钮与态势条的编排同 hud"
+  ],
+  "dialogue": [
+   "左侧文字列被套进一块通高的银线框面板（四角卷花 + 底边饰条），参考完全无框，只有四周白色冰雾 / 墨烟晕边",
+   "左上卷花角饰压在正文第一行的字上",
+   "标题去掉后文本列没有‘类别 + 分隔线 + 粗体标题’，正文字号偏大、贴在面板顶部，选项落在中段，整列不是垂直居中",
+   "三条选项已同为两端切尖的长六角、在列内居中，但没有右端圆形按键徽章与选中箭头",
+   "右侧人物仍是青色剪影占位（需素材），参考是提灯照亮的人物群像"
+  ],
+  "skilltree": [
+   "节点已有 14 个、散布在画面中部，完成态是青色光斑 + 小勾签（不再是绿）；参考是以中心盾徽为根放射的冰霜花托圆章（上写黄色 SIGNED、下写法令名），可签署的是银色空心环",
+   "背景是深藏青星空，比参考的近黑墨底偏蓝偏亮，四角没有白色墨点飞溅 / 冰雾晕边",
+   "标题仍是黑体（细字重回退成黑体），没有副标题与开口括号框 + 卷花",
+   "左上‘‹ 返回’只是文字、右上关闭是小 ×，参考是带字的长六角返回钮与带红 X 的 CLOSE 钮",
+   "右下仍有一颗青色六角确认钮（ix.confirm 带出），参考没有"
+  ],
+  "research": [
+   "（凭记忆）节点已是带建筑图标的切角格、已研究的格角带青点，不再是编号圆点；但树横向铺开，记忆中原作自下而上分层生长",
+   "说明框贴在选中节点旁，仍盖住一个节点",
+   "四角卷花是通用 S 卷，不是冷银铸铁卷须；标题已去掉、卷花不再压关闭钮"
+  ],
+  "map": [
+   "（凭记忆）未探索区被同色羊皮纸雾整片盖住，只在 3 号节点周围露出一小块暖黄手绘地形，地图大半是空白；已走过的 1、2 号节点也埋在雾里",
+   "露出的地形仍是暖黄羊皮纸，记忆中原作是冷灰冰雪铅笔素描",
+   "侦察队头像仍在地图左缘竖排，不在虚线路线上",
+   "右侧详情栏仍是物品样本（材料说明 + 强度 / 重量条 + 使用 / 丢弃），不是地点 / 远征说明"
+  ],
+  "results": [
+   "（凭记忆）左上模板名、右上 ✕、右下‘再抽 10 次’都已去掉，插画去色变灰；但仍是水彩风景，不是炭笔 / 铅笔速写的城市关键时刻",
+   "叙述句在画面上方三分之一、炭灰字压在灰色压暗层上，对比偏弱",
+   "‘E 继续’仍是浅灰键帽 + 浅灰字，几乎看不见",
+   "逐张幻灯片的节奏与最后的追问在静态截图里无法体现"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "顶部已是圆透镜大号温度 + 两翼铁梁（左：里程表资源 + 容量细条 + 倍速 + 工时；右：DAY 时间尺 + 预报标记），但透镜是浅色霜面 + 深色字，参考是深色玻璃 + 浅色细体数字，透镜下也没有热力图开关",
+   "态势条上方的警报是三枚竖叠的圆角方块（黄 / 青 / 红框），参考是一排并列的红圆章白符号",
+   "态势条很短（约 12% 屏宽），右边两颗圆钮与条之间空一大段、左右不对称；参考两条横条约 16% 屏宽、2 + 2 颗钮紧夹",
+   "翼梁上的字很小、资源只有 3 项；参考两翼各挂约 4 项资源，另有 WORK TIME / DAY 大写标签"
+  ],
+  "hud-building": [
+   "建筑面板已有头图位、运行状态、无 / −1 / 3 / +1 / 满 工人钮、左上供暖耳标、右上 ON 拨杆与右缘拆除钮；但面板只到约屏高 60%，下半截只剩大号卷须角饰，队伍列表没画出来",
+   "面板名写‘猎人’（人物样本），参考是建筑名 BEACON 居中压在头图上",
+   "右上侦察队头像下是红色计时胶囊、两颗钮很小；参考是青色计时胶囊",
+   "条上方警报竖叠成方块、态势条两侧不对称（同 hud）"
+  ],
+  "dialogue": [
+   "四周冰雾是一圈浓白雾（约占屏宽 15%–20%），把画面洗成白框；参考四周是暗色墨烟 + 少量白色冰晶飞溅，整体近黑",
+   "正文列（类别 + 分隔线、正文、青色决断语、说明）画到了右侧人物剪影上，选项留在左中；参考整列（标题、正文、决断语、选项）都在左侧三分之一",
+   "没有粗体大标题这一级（Facing starvation），类别小字之后直接是正文",
+   "选项已是两端切尖的长六角 + 右端圆形徽章 + 选中箭头，但徽章写数字 1–3（参考是按键字）；人物仍是青色剪影占位"
+  ],
+  "skilltree": [
+   "四周冰雾是一圈浓白雾，把近黑法典页框成白底黑洞；参考只有左右角落的灰白墨烟与飞溅",
+   "放射树、冰霜花托节点、黄色 SIGNED、节点名都有了，但中心是普通花托节点，参考是盾徽 + 天平纹章 + 缎带名牌",
+   "已签署节点下多一枚青色 ✓ 胶囊（参考没有）；未签署的是灰色花托，参考可签署的是银色空心环",
+   "左上返回仍是小字‘‹ 返回’，右上关闭小 × 被白雾吞掉；参考是带字的长六角 GO BACK 与带红 X 的 CLOSE"
+  ],
+  "research": [
+   "（凭记忆）冰雾把面板内外都洗成浅灰，原作是深色半透明面板、四周暗",
+   "树只画在中间一条暗带（滚动视窗）里，下半的节点与连线被裁掉，看不出自下而上分层生长",
+   "页签已带图标（取暖 / 食物 / 工具 / 医疗）；说明框仍紧贴选中节点",
+   "四角铁艺卷须很大，占掉面板四角一大块"
+  ],
+  "map": [
+   "（凭记忆）揭开的地形是近黑底 + 红色排线，不是冷灰铅笔素描",
+   "侦察队头像仍在地图左缘竖排，虚线路线上没有头像",
+   "已走过的 1、2、3 号节点与路线已揭开，未探索区是平涂冷灰；地图面板被大号角饰挤小",
+   "右栏已是地点说明（煤矿 + 危险度 + 派人），字很小"
+  ],
+  "results": [
+   "（凭记忆）插画已是炭笔速写，但整屏偏暗，叙述句的炭灰字压在深灰素描上，对比仍弱",
+   "‘E 继续’是深色键帽 + 浅灰小字，偏小",
+   "逐张幻灯片的节奏与最后的追问在静帧里看不出"
+  ]
+ },
+ "revisions": [
+  "base：去掉点名的 ast.ornaments，并设 uip.keyword = none 关掉线描花饰皮肤自带的关键词默认值（它们点名角花 → 金色巴洛克位图角花、外框 = 只有四角件 / 线稿）；改由 vis.ornament = 2 + 花叶母题派生矢量角花 / 分隔饰条，颜色跟随银色描边 col.border",
+  "base：ast.iconSet 图集素材 → 程序几何（剪影图标风格的派生取值），资源用纯色符号、状态图标不再是紫色晶体位图",
+  "base：vis.cornerSize 14 → 8（切角更小，接近 Frostpunk 面板的小缺口）；新增 vis.silhouette = 六边形，主按钮 / 页签 / 按键变成两端切尖的长六边形",
+  "art：加 color.brightness = 0.65 压暗雪地，靠近参考的夜色冷调",
+  "hud：vis.corner = 圆角 50，底部按钮排变成圆钮、温度表变胶囊；温度表 ×1.9 → 0.9、按钮 ×1.35 → 0.85、态势条 ×1.3 → 0.75；元素顺序改成 温度表 → 资源 → 倍速（顶部中央一列）与 态势条 → 按钮排（底部中央）",
+  "hud：删掉参考里没有的队员头像框、成就提示卡、热力图叠层；倍速 speedBar → playFF（渲染成 Ⅱ ▶ ▶▶ ▶▶▶ 四钮）；状态图标降为背景优先级；hier.emphasis 去掉 size（避免主元素被放大）",
+  "hud-building：选中面板 panel ×1.7 → card ×1.25（竖长卡，右中）；队员 frames → portraits ×0.7（右上圆头像列）；提示卡保留在左上（参考有‘More Scouts researched’条）；vis.opacity 0.78；保留全局切角以保住建筑面板的缺口角，删掉不渲染的页签 / 开关组件键",
+  "dialogue：设 uip.screen = tpl.npc，再改成全屏无框（cmp.modal = floating、cmp.dialogBox = bare）；cnt.focal = 角色（3D 实时模型占位）放右侧、cnt.dataShape = 叙述文本放左侧、三条选项按钮竖排在左中；背后冻结场景压暗 0.72 + 模糊；关掉模板的视觉小说控件（ix.skip = none）与关闭键（ix.dismiss = forced）；本屏强调色压暗成深青 #2f8f99（选中选项与人物占位都更接近参考的深青条）",
+  "skilltree：ast.bgArt 星空 → 纯色（近黑底）；ast.fx 墨晕 → 星尘（白色霜点）；去掉 el.title 页眉、描边与装饰（vis.stroke = none、vis.ornament = 0），只留模板标题 + 左上返回钮 + 发光节点",
+  "research：去掉压住标题的 el.cost 与超大 el.cta（改由 ix.confirm = 选中 + 确认 补一颗六边形确认钮）；背景压暗改黑色 + 模糊 + 半透明藏青面板；加右上关闭",
+  "map：保留手绘水彩底图（场景烘焙图放大后满屏马赛克，粉笔线稿是黑板底，都更不像）；节点改圆形编号；去掉选中面板，队员改成左侧圆头像列；ast.bgArt = 纯色",
+  "results：设 uip.screen = tpl.runSummary，改成无框全屏 + 风景插画背景 + 主体 = 标题字（叙述句）+ 炭灰字色；清空模板元素（奖励 / 主按钮），加按键继续提示（跳过钮与右上关闭键重叠，去掉）",
+  "gaps：更新铁艺花线、资源、态势条、事件群像（需素材）、法令节点、地图、结局各条的现状；新增逐元素主题不生效、节点完成色固定为绿、右上快捷钮 / 人口胶囊无元素、ops.actions 并集去不掉等缺口",
+  "R3 前（M12a 之后）：base 的全局 vis.silhouette = hexagon 改成 vis.silhouette@button / @tab = hexagon（M12a-09 起全局外形会作用到格子、头像、节点；只有选项条与选中页签是长六角），加 col.good / col.nodeDone 强调青（完成态不再是绿）；hud / hud-building 加 vis.silhouette@button = circle（HUD 圆钮）、el.gameSpeed playFF → speedBar（steps 3）、el.toolbar.count 4、el.overlay.attachTo = target（状态图标参与遮挡推开，不再压倍速钮）、cmp.badge@el.overlay = roundel + col.warn@el.overlay 红（红圆白符号）；dialogue 加 lay.titlePos none（✕ 由 forced 派生去掉）、lay.splitRatio 0.6（人物占右侧六成）；skilltree 加 ast.bgArt = starfield（近黑星点底）、ix.back = labeled + ix.close back → xTopRight（左上带字返回 + 右上关闭）；research / map 加 lay.titlePos none；results 加 lay.titlePos none、ops.actions []（买断制叙事屏不画再来一局）。",
+  "R3 评分（M12a 之后，未改取值）：补第 3 轮 scores 与 round3Diffs；新增缺口 2 条；按第 3 轮对照图给已画对的 7 条缺口标 resolvedBy。",
+  "R4 前（M12b 之后）：base vis.motif floral → ironScroll + col.ornament #c8d2d8（冷银铸铁卷须，#13）；hud / hud-building 顶部改成透镜两翼——el.clock.form [bigTemp]（圆透镜大号温度，#7；el.clock.scale 0.9 → 0.65，透镜约屏高 13%），el.resources 停在透镜左边（dockTo el.clock、dockSide left、dockConnector ironBeam）、form iconNumberBar + typ.numerals.family@el.resources odometer / digits 4（前导零变暗 + 容量细条，#1），el.gameSpeed 停在资源下、el.timer（smallText，工时）停在倍速右边，cnt.elements 加 el.clock#2（timelineRuler，停在透镜右边 + 铁梁，#7 / #0）；底部 el.toolbar count 2 停在 el.meter 左翼、加 el.toolbar#2（buttonRow × 2）停右翼，el.meter.satellites [counters]（病号 / 伤员计数）、cmp.gaugeCap@el.meter motif（卷须端头，#14），警报 el.notify（hud）/ el.notify#2（hud-building）[alertIcons] 停在条上方（#4）；el.objective.form [storyTracker]（#8）；加 el.population（右下人口胶囊，#9），hud 加 el.toolbar#3（右上三颗圆钮）；ast.ornamentAnchor [panelCorners, panelEdges, elementEnds]（元素两端卷须，#14）；col.icon@el.toolbar 白（参考白色图标），hud 去掉圆钮用的 vis.corner round / 50 hack 与 ice 内芯；hud-building 的 el.selection.form card → buildingPanel + cmp.detailFields@el.selection [name, statusRow, quantity, memberList] + cmp.quantity stepperMinMax（#15 / #19），el.selection.satellites [tab, toggle, button] side r（供暖签 + ON 拨杆 + 拆除钮，#17；没用一次一处的 ast.earTabAt），el.party count 1 + memberPill timer + satellites [button]（侦察队头像 + 计时胶囊 + 两颗圆钮，#18）；dialogue 去掉 lay.layering separate（数据栏不再套银线框面板），加 hier.kicker smallCapsRule / hier.callout centredLine / hier.inlineMap [keyword]（#26）、lay.dataAlign center + typ.align@body center（#25）、el.choices.keyBadge end + focusMark shift（#24）、ast.screenEdge [frostSmoke]（#22）；skilltree 加 lay.arrangement radialTree（#31）、cmp.node rosette（#30）、cmp.plate@title bracketFrame + lay.titleSubtitle italic（#33；参考标题左对齐、副题是小号常规体，没写 B4 建议的居中 / caps）、ast.screenEdge [frostSmoke]、col.surface2 #0c1014（星空底从藏青压成近黑墨底）、ix.confirm instant（去掉参考没有的右下确认钮）；research 加 lay.flowDir up（#37）+ ast.screenEdge [frostSmoke]；map 加 vis.mapStyle frostSketch（#39）、vis.mapRoute dashed + lay.currentMarker avatar（侦察队头像挂在虚线路线上，#41）、col.fog #4a535c（雾与纸色拉开，#46）；results 加 ast.bgArtRender charcoal（炭笔速写，#43）。",
+  "R4 评分（M12b 之后，未改取值）：补第 4 轮 scores 与 round4Diffs；新增缺口 5 条；按第 4 轮对照图给 15 条缺口标 resolvedBy、9 条标 partialBy。"
+ ],
+ "notes": "冷银铁艺线描 + 霜玻璃圆盘：HUD 是散落的细线组件，顶部中央一块圆形温度透镜统领全屏，两翼挂资源和时间，底部两条希望 / 不满横条被四颗圆形霜玻璃大按钮夹住；所有组件用银色维多利亚铸铁卷须收尾。面板是深藏青半透明 + 细银线切角框，强调色只有青（可交互、已签署）和红（危机、不满），资源图标单独用金黄。全屏页（法典、事件）几乎不画面板，靠墨烟 / 冰雾晕边和近黑底托住衬线字与发光节点。"
+}

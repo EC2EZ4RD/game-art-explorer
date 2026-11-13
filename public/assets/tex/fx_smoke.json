@@ -1,0 +1,13 @@
+{
+ "files": {
+  "sheet": "fx_smoke.png"
+ },
+ "grid": [
+  4,
+  2
+ ],
+ "frame": 256,
+ "frames": 8,
+ "order": "左到右、上到下",
+ "id": "fx_smoke"
+}

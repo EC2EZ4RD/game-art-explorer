@@ -1,0 +1,1229 @@
+{
+ "id": "rep.cyberpunk-2077",
+ "name": "Cyberpunk 2077",
+ "card": "steam:1091500",
+ "genre": "explore",
+ "family": "fam.scifi-cyber-duotone",
+ "pack": "shooter",
+ "art": {
+  "recipe": "neon-night",
+  "scene": "city"
+ },
+ "base": {
+  "hud.style": "scifi",
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "rel.harmony": "sameMedium",
+  "col.source": "skin",
+  "col.lightness": "dark",
+  "col.strategy": "duotone",
+  "col.surface": "#170b0e",
+  "col.surface2": "#2b1216",
+  "col.text": "#ff6a5e",
+  "col.accent": "#ff5e57",
+  "col.accent2": "#5ef6ff",
+  "col.focus": "#5ef6ff",
+  "col.border": "#b8392f",
+  "col.saturation": 1.1,
+  "col.coding": [
+   "rarity",
+   "status"
+  ],
+  "col.rarityScale": "diablo",
+  "vis.corner": "chamfer",
+  "vis.cornerSize": 10,
+  "vis.cornerMask": [
+   "br"
+  ],
+  "vis.cornerMask@listRow": [
+   "tl"
+  ],
+  "vis.opacity": 0.55,
+  "vis.blur": 2,
+  "vis.fill": "solid",
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1,
+  "vis.strokeColor": "accent",
+  "vis.strokeGlow": 0.3,
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.motif": "brackets",
+  "vis.ornament": 1,
+  "vis.iconStyle": "line",
+  "ast.core": "procedural",
+  "ast.frame": "procedural",
+  "ast.fx": [
+   "glow",
+   "scanlines"
+  ],
+  "typ.body.family": "condensed",
+  "typ.body.weight": "regular",
+  "typ.body.case": "upper",
+  "typ.body.tracking": 0.08,
+  "typ.display.family": "condensed",
+  "typ.display.weight": "regular",
+  "typ.display.case": "upper",
+  "typ.display.tracking": 0.04,
+  "typ.numerals.family": "tabular",
+  "typ.titleFx": "none",
+  "typ.legibility": "textGlow",
+  "typ.baseSize": 24,
+  "mo.enter": "glitchIn",
+  "mo.duration": 0.25,
+  "mo.easing": "easeOut",
+  "mo.textReveal": "fade",
+  "mo.valueChange": "countUp",
+  "mo.idle": "none",
+  "ix.focus": "outline",
+  "ix.press": "flash",
+  "ix.glyphs": "keycap",
+  "st.selected": "glow",
+  "st.emptySlot": "plus",
+  "st.rarityCue": [
+   "border",
+   "strip"
+  ],
+  "st.newCue": "count",
+  "col.quest": "#ffd23f"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/iig/img/cyberpunk-2077__cyberpunk-2077-bank-account.jpg",
+   "values": {
+    "uip.layout": "layout.explore",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "rel.diegesis": "screen",
+    "rel.worldRender": "perspective",
+    "cnt.density": 2,
+    "vis.opacity": 0.45,
+    "typ.legibility": "textGlow",
+    "cnt.elements": [
+     "el.minimap",
+     "el.objective",
+     "el.selection",
+     "el.subtitle",
+     "el.prompt",
+     "el.selection#2",
+     "el.ticker",
+     "el.ticker#2"
+    ],
+    "el.minimap.form": "plan",
+    "el.minimap.screenAnchor": "tr",
+    "vis.corner@minimapFrame": "chamfer",
+    "vis.strokeColor@minimapFrame": "accent2",
+    "vis.opacity@minimapFrame": 0.75,
+    "col.surface@minimapFrame": "#0d1430",
+    "el.objective.form": [
+     "text"
+    ],
+    "el.objective.screenAnchor": "tr",
+    "col.accent@el.objective": "#ffd23f",
+    "el.objective.titleColor": "text",
+    "el.objective.descColor": "objective",
+    "el.selection.form": "cardStack",
+    "el.selection.screenAnchor": "ml",
+    "el.selection.diegesis": "screen",
+    "el.selection.attachTo": "none",
+    "el.selection.count": 3,
+    "cmp.detailFields@el.selection": [
+     "type",
+     "name",
+     "fieldPair"
+    ],
+    "col.surface@el.selection": "#3a0d12",
+    "el.selection#2.form": "card",
+    "el.selection#2.screenAnchor": "tr",
+    "cmp.cardParts@el.selection#2": [
+     "kicker",
+     "fieldPair",
+     "amountBar"
+    ],
+    "el.subtitle.screenAnchor": "bc",
+    "el.subtitle.scale": 0.85,
+    "cmp.dialogBox@el.subtitle": "bare",
+    "col.text@el.subtitle": "#8ff3ff",
+    "col.accent@el.subtitle": "#ff5e57",
+    "el.prompt.form": [
+     "list"
+    ],
+    "el.prompt.screenAnchor": "br",
+    "el.prompt.scale": 0.85,
+    "el.ticker#2.form": "stocks",
+    "cnt.textLength": "short",
+    "mo.textReveal": "instant",
+    "el.subtitle.form": "speakerColor",
+    "ast.ornaments": [
+     "microText"
+    ],
+    "vis.noiseDensity": 0.7,
+    "vis.noiseEdges": true
+   }
+  },
+  {
+   "key": "character",
+   "ref": "qa/refs-cache/iig/img/cyberpunk-2077__cyberpunk-2077-cyberware.jpg",
+   "values": {
+    "uip.screen": "tpl.loadout",
+    "cnt.screen": "screen.character",
+    "cnt.subtype": "loadout",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "diagram",
+    "cnt.characterRender": "monochrome",
+    "lay.focalSide": "center",
+    "lay.composition": "three",
+    "lay.layering": "separate",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "flankColumns",
+    "lay.columns": 3,
+    "cnt.itemCount": 12,
+    "lay.grouping": "whitespace",
+    "lay.detail": "none",
+    "lay.nav": "tabsTop",
+    "lay.navDepth": 1,
+    "lay.navAlign": "center",
+    "cmp.tab": "iconText",
+    "cmp.slot": "cell",
+    "vis.corner@slot": "chamfer",
+    "vis.strokeSides@slot": "corners",
+    "vis.pattern@slot": "diagStripes",
+    "vis.patternOpacity@slot": 0.18,
+    "vis.opacity@slot": 0.35,
+    "vis.connector": "curve",
+    "cmp.leader": "curve",
+    "cmp.slotGroupTitle": "outside",
+    "st.emptySlot": "plus",
+    "st.selected": "glow",
+    "st.newCue": "count",
+    "st.locked": "dimmed",
+    "ix.focus": "outline",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "hier.emphasis": [
+     "color",
+     "glow"
+    ],
+    "hier.dimInactive": 0,
+    "cnt.elements": [
+     "el.profile",
+     "el.resources",
+     "el.prompt"
+    ],
+    "el.profile.form": "levelBar",
+    "el.profile.screenAnchor": "tc",
+    "el.profile.scale": 0.8,
+    "col.accent@el.profile": "#5ef6ff",
+    "el.resources.form": "iconNumber",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "tr",
+    "el.resources.valueLabel": "currentMax",
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "br",
+    "el.prompt.scale": 0.8,
+    "ast.fx": [
+     "glow",
+     "scanlines"
+    ],
+    "cnt.density": 3,
+    "cnt.filledCount": 2,
+    "cmp.tabIndicator": "colorOnly",
+    "lay.navKeys": "ends",
+    "lay.titlePos": "none",
+    "ix.close": "none",
+    "flow.chrome": [
+     "topRule"
+    ]
+   }
+  },
+  {
+   "key": "create",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1091500_2.jpg",
+   "values": {
+    "uip.screen": "tpl.create",
+    "cnt.screen": "screen.frontend",
+    "cnt.subtype": "create",
+    "lay.container": "drawer",
+    "lay.panelSize": 0.55,
+    "cmp.modal": "floating",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "lay.composition": "single",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "model3d",
+    "lay.focalSide": "left",
+    "lay.layering": "backdrop",
+    "lay.nav": "none",
+    "lay.preview": true,
+    "cnt.dataShape": "form",
+    "lay.arrangement": "column",
+    "lay.overflow": "scrollV",
+    "lay.grouping": "panel",
+    "cmp.listRow": [
+     "keyHint"
+    ],
+    "cmp.optionLayout": "stacked",
+    "vis.corner@listRow": "chamfer",
+    "vis.opacity@listRow": 0.45,
+    "cmp.optionEnum": "arrows",
+    "cmp.optionRange": "arrows",
+    "cmp.optionBool": "arrows",
+    "cmp.optionRows": [
+     "auto",
+     "auto",
+     "auto",
+     "swatch"
+    ],
+    "ix.mode": "select",
+    "ix.focus": "outline",
+    "ix.dismiss": "button",
+    "ix.close": "cancelBtn",
+    "cmp.button": "text",
+    "cmp.buttonBox": true,
+    "hier.cta": "equal",
+    "cnt.elements": [
+     "el.cta"
+    ],
+    "el.cta.form": "dual",
+    "el.cta.screenAnchor": "br",
+    "el.cta.scale": 0.8,
+    "cnt.density": 3,
+    "lay.titlePos": "screenTop",
+    "lay.titleSubtitle": "caps",
+    "vis.stroke@title": "solid",
+    "vis.strokeColor@title": "accent2"
+   }
+  },
+  {
+   "key": "hud-combat",
+   "ref": null,
+   "values": {
+    "uip.layout": "layout.shooter",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "cnt.density": 2,
+    "vis.opacity": 0,
+    "typ.legibility": "textGlow",
+    "cnt.elements": [
+     "el.vitals",
+     "el.minimap",
+     "el.objective",
+     "el.notify",
+     "el.abilities",
+     "el.crosshair",
+     "el.feedback",
+     "el.threat"
+    ],
+    "el.vitals.screenAnchor": "tl",
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "segmented",
+    "el.vitals.valueLabel": "current",
+    "el.vitals.valueLabelPos": "end",
+    "el.vitals.attach": [
+     "levelBadge"
+    ],
+    "el.vitals.rowForms": [
+     "segmented",
+     "pips"
+    ],
+    "col.accent@el.vitals": "#5ef6ff",
+    "el.minimap.form": "plan",
+    "el.minimap.screenAnchor": "tr",
+    "vis.corner@minimapFrame": "chamfer",
+    "vis.strokeColor@minimapFrame": "accent2",
+    "el.objective.form": [
+     "text"
+    ],
+    "el.objective.screenAnchor": "tr",
+    "col.accent@el.objective": "#ffd23f",
+    "el.objective.titleColor": "text",
+    "el.objective.descColor": "objective",
+    "el.notify.form": [
+     "pickupText"
+    ],
+    "el.notify.screenAnchor": "ml",
+    "el.notify.scale": 0.9,
+    "el.abilities.form": "ammo",
+    "el.abilities.screenAnchor": "br",
+    "el.abilities.valueLabel": "currentMax",
+    "el.abilities.scale": 1.1,
+    "el.abilities.quickSlots": 2,
+    "typ.numerals.family": "display",
+    "el.crosshair.form": [
+     "dynamic"
+    ],
+    "el.crosshair.screenAnchor": "center",
+    "el.feedback.form": [
+     "floatNumbers",
+     "hitMarker"
+    ],
+    "el.feedback.attachTo": "target",
+    "el.threat.form": [
+     "healthBar",
+     "edgeDir",
+     "detection"
+    ],
+    "el.threat.diegesis": "spatial",
+    "el.threat.attachTo": "target",
+    "el.threat.worldRender": "billboard",
+    "rel.metaFx": [
+     "hurtVignette"
+    ],
+    "mo.juice": 0.5,
+    "el.vitals.labels": "none"
+   }
+  },
+  {
+   "key": "scan",
+   "ref": null,
+   "values": {
+    "uip.layout": "layout.shooter",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "ctx.timeModel": "pausable",
+    "rel.hudVisibility": "always",
+    "rel.sceneTone": "tint",
+    "rel.dim": 0.4,
+    "rel.worldRender": "outline",
+    "rel.metaFx": [
+     "edgeGlow"
+    ],
+    "cnt.density": 3,
+    "vis.opacity": 0.5,
+    "cnt.elements": [
+     "el.vitals",
+     "el.selection",
+     "el.abilities",
+     "el.threat",
+     "el.overlay",
+     "el.crosshair",
+     "el.prompt"
+    ],
+    "el.vitals.screenAnchor": "tl",
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "segmented",
+    "col.accent@el.vitals": "#5ef6ff",
+    "el.vitals.labels": "none",
+    "el.selection.form": "tooltip",
+    "el.selection.screenAnchor": "mr",
+    "el.selection.priority": "primary",
+    "el.selection.subject": "target",
+    "el.selection.dockTo": "el.abilities",
+    "el.selection.dockSide": "below",
+    "el.abilities.form": "list",
+    "el.abilities.arrangement": "column",
+    "el.abilities.screenAnchor": "mr",
+    "el.abilities.scale": 0.8,
+    "st.cooldown": "fillUp",
+    "el.threat.form": [
+     "lockOn"
+    ],
+    "el.threat.attachTo": "target",
+    "el.overlay.form": [
+     "statusIcons"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "outline",
+    "el.crosshair.form": [
+     "ring"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bc",
+    "el.prompt.scale": 0.85,
+    "ast.fx": [
+     "glow",
+     "scanlines"
+    ],
+    "mo.enter": "boot",
+    "mo.textReveal": "scramble"
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.dataShape": "spatial",
+    "vis.mapStyle": "tactical",
+    "vis.mapUnexplored": "reveal",
+    "cmp.node": "pin",
+    "vis.silhouette@node": "diamond",
+    "col.coding": [
+     "lineId",
+     "status"
+    ],
+    "rel.semanticZoom": "iconize",
+    "lay.overflow": "pan",
+    "lay.panHint": "none",
+    "lay.detail": "persistent",
+    "lay.nav": "tabsTop",
+    "cmp.tab": "iconText",
+    "cnt.elements": [
+     "el.profile",
+     "el.resources",
+     "el.prompt"
+    ],
+    "el.profile.form": "levelBar",
+    "el.profile.screenAnchor": "tc",
+    "el.profile.scale": 0.8,
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "tr",
+    "el.resources.scale": 0.9,
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bl",
+    "el.prompt.scale": 0.8,
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "vis.mapInk": "#5ef6ff"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "*",
+   "what": "红青黄三色分工：红是骨架（标题、边框、价签、标签字），青只给可交互 / 选中与等级，青绿给「AVAILABLE ITEMS」这类次级标签与计数徽章，黄给任务与金钱；col.accent / accent2 只能给两个颜色，不能声明各自承担的角色。第二轮仍可见：局内任务追踪标题「任务」黄、目标行红，与参考（任务名淡红、目标行黄带「!」图标）相反；义体页插槽带蓝 / 紫稀有度色，参考全红",
+   "severity": "high",
+   "kind": "missingParam",
+   "proposal": "col.* 角色绑定（G-color-roles）：accent2 = 只用于可交互 / 选中；新增 col.secondaryText 与 col.quest（任务 / 金钱黄），el.objective 的目标行读 col.quest、标题读正文色",
+   "resolvedBy": "M12a-03 + M12b-28（col.quest 黄 + el.objective.titleColor / descColor：任务名淡红、目标行黄）"
+  },
+  {
+   "screen": "*",
+   "what": "满屏的功能性微文字装饰：CONNECTION 编号、条形码、版本号、坐标、厂牌 logo 小块挤在面板角落和屏幕边缘（序章 HUD 左下的青色 Arasaka 数据窗、右下行情数字、捏人页左下厂牌小字也属于这一层），是「被黑进来的系统」感的主要来源；第二轮 HUD 去掉多余元素后画面比参考空得多，缺口更明显",
+   "severity": "high",
+   "kind": "missingOption",
+   "proposal": "vis.motif = dataNoise 或 ast.ornaments = microText（编号 / 条码 / 坐标小块，贴面板角与屏幕边），带密度参数（G-data-noise）",
+   "resolvedBy": "M12b-48（ast.ornaments = [microText] + vis.noiseDensity / vis.noiseEdges：卡角条码、编号小块与屏幕边噪声）"
+  },
+  {
+   "screen": "*",
+   "what": "逐组件 / 逐元素的 vis.* / col.* 覆盖不生效：键名合法（register.ts 的 parseOverrideKey 认得），但渲染器只建一套全局皮肤 token，只有 cmp.* 按元素读覆盖。第二轮渲染确认：小地图仍红框暗红底（vis.strokeColor@minimapFrame = accent2、col.surface@minimapFrame 深蓝未生效）、字幕仍白字（col.text@el.subtitle）、义体格没有斜纹与四角括号（vis.pattern@slot、vis.strokeSides@slot）、地图标记仍是水滴不是菱形（vis.silhouette@node）——整套 HUD 因此是单色红，参考是红框数据卡 + 青色小地图 / 字幕的双色",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "theme.ts 在画某个组件 / 元素时叠加 <参数>@<组件|元素> 的 vis.* / col.* 覆盖，生成局部 token（对应 Godot Theme 的 type variation），不新增词表",
+   "resolvedBy": "M12a-01（R4 对照图：小地图青框深蓝底、字幕浅青、义体格斜纹 + 四角括号、地图菱形标记都已生效）"
+  },
+  {
+   "screen": "*",
+   "what": "故障闪烁只在切屏、受击、被黑时短暂出现，rel.metaFx = glitch / ast.fx = glitch 都是常驻层（第一轮战斗 HUD 因此满屏横贯粉青条纹，第二轮只好去掉）；现在只能二选一（常驻或不画）",
+   "severity": "medium",
+   "kind": "motion",
+   "proposal": "故障强度与触发时机：ast.fx / rel.metaFx 的触发条件（enter / hit / hack / always）+ 强度（G-postfx）"
+  },
+  {
+   "screen": "*",
+   "what": "切角位置：参考多是只切一个角（价签、金额条、卡片右下角；列表行左上角），插槽是四角括号；渲染器的 chamfer 固定切左上 + 右下一对角（paint.ts），选不了单角",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "vis.corner 逐角掩码 vis.cornerMask（tl / tr / br / bl）（G-corner-each）",
+   "resolvedBy": "M12b-38（vis.cornerMask = [br]、vis.cornerMask@listRow = [tl]：单角切角）"
+  },
+  {
+   "screen": "*",
+   "what": "参考全程用方正的窄体科技字（等宽数字、宽字距、全大写）；typ.*.family = condensed 对中文没有对应字体，回落成普通黑体，case = upper 对中文无意义，字面「科技感」只剩颜色",
+   "severity": "low",
+   "kind": "asset",
+   "proposal": "为 condensed / display 配一套方正窄体中文字体（或拉丁部分用科技字、中文用方黑体），在 fontList 里登记"
+  },
+  {
+   "screen": "hud",
+   "what": "字幕的说话人名用红橙、台词用浅青，两段颜色不同；渲染器已有 el.subtitle 的 speakerColor 画法（台词仍写死白色），但词表里没有 el.subtitle.form，第二轮字幕仍是无说话人的白字",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "开放 el.subtitle.form（plain / boxed / speakerColor），说话人色走 col.accent@el.subtitle、台词色走 col.text@el.subtitle",
+   "resolvedBy": "el.subtitle.form"
+  },
+  {
+   "screen": "hud",
+   "what": "空间里漂浮的多张数据卡：左中三张银行卡彼此错位叠放（层层压住，只露标题行），右上另有一张保镖档案大卡；el.selection 只能挂一个实例，第二轮只画出画面正中一张小提示卡",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "el.selection / el.overlay 新增「卡叠」排布（数量 + 错位偏移 + 露出高度），并允许同一元素挂两个实例（各自锚点）",
+   "resolvedBy": "M12b-04 + M12b-15（el.selection.form = cardStack × 3 @ ml + el.selection#2 = card @ tr）"
+  },
+  {
+   "screen": "hud",
+   "what": "这些数据卡是贴在人物两侧的透视平面（随墙面 / 视角倾斜），不是屏幕平面；el.selection.worldRender = perspective 只对挂在世界点上的小元素（≤12px）做近大远小缩放，大卡仍按屏幕锚点平贴",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "面板级世界挂载：给挂在目标上的面板一个世界平面（位置 + 朝向），用透视变换（canvas 四点变形或 three.js 平面贴图）画，对应 Godot 的 SubViewport + 3D 平面"
+  },
+  {
+   "screen": "hud",
+   "what": "数据卡内部的「小标签 + 大值」字段对（BANK / ACCOUNT NUMBER 小字在上，值在下）与底部一条亮红实底、右下切角的金额条；tooltip 只有标题 + 两行正文",
+   "severity": "low",
+   "kind": "newDrawing",
+   "proposal": "cmp.card / tooltip 新增字段对行（label 小字 + value）与 highlightStrip（实底强调条，读 col.accent）",
+   "resolvedBy": "M12b-69（cmp.cardParts = [kicker, fieldPair, amountBar]：字段对 + 亮红实底金额条）"
+  },
+  {
+   "screen": "hud",
+   "what": "顶部新闻跑马字条、右下股票行情条、左上公司 logo 是这个序章 HUD 的环境层装饰，没有对应元素",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "cnt.elements 新增 el.ticker（滚动新闻条 / 行情条）（G-el-broadcast-film）",
+   "resolvedBy": "M12b-30（el.ticker 顶部新闻跑马条 + el.ticker#2 = stocks 右下行情条）"
+  },
+  {
+   "screen": "character",
+   "what": "人体剖面到两侧插槽组的红色引线（弯曲导线从身体各部位伸向对应插槽组）；vis.connector 只作用于节点图",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "主体 → 插槽的引线（G-leader-dataviz）：cmp.leader = none / straight / curve，起点挂在主体的部位点、终点挂在组标题",
+   "resolvedBy": "M12b-24（cmp.leader = curve：人体到插槽组的红色弯引线）"
+  },
+  {
+   "screen": "character",
+   "what": "插槽分在人体两侧两列、各自对齐身体部位高度；第二轮 lay.arrangement = grid 只能把全部格子排成左栏 3×4 整齐网格，右三分之一空着",
+   "severity": "high",
+   "kind": "layoutEngine",
+   "proposal": "lay.arrangement = flankColumns（主体两侧列，左列右对齐、右列左对齐）+ 组内排布 lay.groupArrangement",
+   "resolvedBy": "M12b-11（lay.arrangement = flankColumns：插槽分在人体两侧两列）"
+  },
+  {
+   "screen": "character",
+   "what": "每个插槽组是一个组合件：组名（右对齐红色大写）+ 青绿「AVAILABLE ITEMS n」次级标签与小方计数徽章 + 1–3 个格子横排，组名在格子外侧；集合格子只能单独画，没有「组头 + 格组」",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "新组件 cmp.slotGroup（title + countBadge + slots[n]，标题位置 outside / above），集合按组生成",
+   "resolvedBy": "M12b-11（格组：组名在外侧 + 可用计数徽章 + 格子横排，cmp.slotGroupTitle = outside）"
+  },
+  {
+   "screen": "character",
+   "what": "义体槽几乎全空：斜纹暗格 + 细十字；网格集合（gridItems）每格都画物品符号与稀有度色条，st.emptySlot 只在快捷栏里生效",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "集合新增「已占用数」cnt.filledCount（其余格按 st.emptySlot 画，空格不画稀有度），格子读 vis.pattern@slot",
+   "resolvedBy": "cnt.filledCount, st.emptySlot"
+  },
+  {
+   "screen": "character",
+   "what": "中央是半透明的红色解剖人体（血管 / 肌肉可见、双手发黄光）；cnt.characterRender = monochrome 只画实心红剪影 +「人体示意图」药丸标签",
+   "severity": "medium",
+   "kind": "asset",
+   "proposal": "needs art：每个内容包一张透明 X 光式人体图（或用场景角色模型加菲涅尔透明材质渲染），characterRender = xray"
+  },
+  {
+   "screen": "character",
+   "what": "顶栏：左侧等级 / 街头声望两个数字 + 细刻度进度、中间带菱形图标与 [1][3] 键位的页签、右侧负重与钱，下面一条贯穿全宽的红色细线；第二轮页签固定在左上标题下方，等级条居中，选中靠青色描边底框",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "cmp.tabIndicator = colorOnly；lay.nav = tabsTopCenter（顶栏居中页签 + 两侧键位）；flow.chrome 新增 topRule（贯穿顶栏的分隔线）",
+   "partialBy": "M12b-16（lay.navAlign = center + 两端键位、cmp.tabIndicator = colorOnly、flow.chrome = [topRule]）；等级条挂在页签正中，红线横穿顶栏文字"
+  },
+  {
+   "screen": "create",
+   "what": "这一屏的样子由左侧大半屏的 3D 角色头肩特写定义；cnt.characterMedium = model3d 在探索台里只有剪影 +「3D 实时模型（需素材）」灰标",
+   "severity": "medium",
+   "kind": "asset",
+   "proposal": "needs art：模板主体为 model3d 时用场景里的角色做一个展台视口（或每个内容包一张半身渲染图）"
+  },
+  {
+   "screen": "create",
+   "what": "每个选项是独立的切角小框：上层「名称 …… 数值」，下层「◁ ▷」滑轨；当前行箭头两侧带 [A] [D] 键帽；第二轮是单层行（名称 · ◁ 值 ▷），数值项画成 −/+ 切角按钮",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "设置行新增两层排法 cmp.optionLayout = stacked（标签行 + 控件行，各行独立框）；cmp.listRow 新增 keyHint 字段（当前行两侧键帽）",
+   "resolvedBy": "M12b-31（cmp.optionLayout = stacked + cmp.listRow = [keyHint]：两层切角小框、当前行 [A][D] 键帽）"
+  },
+  {
+   "screen": "create",
+   "what": "颜色类选项行末尾的色块预览（HAIR COLOR、EYE COLOR）",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "cmp.optionEnum = swatch",
+   "resolvedBy": "M12b-31（cmp.optionRows 的 swatch：发色行色块、瞳色色块行）"
+  },
+  {
+   "screen": "create",
+   "what": "捏人页的选项来自射击内容包的设置项（鼠标灵敏度、准星样式、击中提示音），参考是发型 / 发色 / 眼睛颜色 / 眉毛等外观项；同一模板在不同包里都没有「外观」样本",
+   "severity": "medium",
+   "kind": "content",
+   "proposal": "内容包的 create 样本加一组外观选项（发型、发色、瞳色、眉形、肤色……，含颜色类）",
+   "resolvedBy": "M12b-62（捏人样本：代号 / 体型 / 发型 / 发色 / 瞳色）"
+  },
+  {
+   "screen": "create",
+   "what": "标题在屏幕顶部居中（图标 + 标题 + 青色下划线 + 一行小字副标题），面板只有右上小字栏头「CUSTOMIZE YOUR LOOK」且没有外框；模板把标题固定画在面板内左上，drawer 总带外框与四角括号",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "模板标题位置 lay.titlePos（panel / screenTop / none）与 drawer 的外框开关（或 vis.stroke@panel = none 生效）",
+   "resolvedBy": "M12a-23 + M12b-64（lay.titlePos = screenTop + cmp.modal = floating：顶部居中标题 + 青色下划线，面板无外框）"
+  },
+  {
+   "screen": "hud-combat",
+   "what": "左上生命组件：一条细长分段血条，左端嵌等级数字方框，下面一排青色小胶囊是 RAM（义体内存），没有字标签；el.vitals.count = 2 只能画两条同形的条并带「生命 / 护甲」字标签",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "cmp.gauge 按条设置（cmp.gauge@el.vitals[1] = pips）+ el.vitals 的前缀徽章（等级）+ 隐藏条标签（el.vitals.labels = none）",
+   "resolvedBy": "M12b-03（el.vitals.attach = [levelBadge] + el.vitals.rowForms = [segmented, pips]：等级方框 + 分段血条 + RAM 小胶囊）"
+  },
+  {
+   "screen": "hud-combat",
+   "what": "右下武器组件：弹药数 + 武器图标 / 名称 + 手雷与治疗针两个带数量的快捷格合在一起；el.abilities = ammo 只有大号弹药数字和弹点",
+   "severity": "low",
+   "kind": "composite",
+   "proposal": "el.abilities.form = ammo 增加附属快捷格（数量 n，复用 slot 画法）与武器图标",
+   "partialBy": "M12b-09（el.abilities.quickSlots 2：手雷 / 治疗针快捷格）；没有武器图标 / 名称"
+  },
+  {
+   "screen": "hud-combat",
+   "what": "潜行时敌人头顶的白→红三角发现度指示",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.threat.form = detect（头顶发现度），图形复用已有的 cmp.gauge = eye",
+   "resolvedBy": "M12b-19（el.threat.form 含 detection：头顶三角发现度）"
+  },
+  {
+   "screen": "scan",
+   "what": "扫描时整个世界压暗并染色（玩家进入「看穿系统」的模式）；rel.sceneTone = tint 与 rel.dim 只作用于界面模板的背景，局内 HUD 不画，第二轮扫描屏的世界和普通 HUD 一样亮，只有 edgeGlow 在左缘加了一片青光",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "局内 HUD 也读 rel.dim / rel.sceneTone（画在元素之下），或新增 rel.worldTint 给 HUD 模式",
+   "resolvedBy": "rel.dim, rel.sceneTone"
+  },
+  {
+   "screen": "scan",
+   "what": "扫描模式按物体类别描边着色（敌人红、可交互设备黄、可拾取物青），并伴随时间放慢；rel.worldRender = outline 只在挂点脚下画一圈单色椭圆",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "场景物体的类别描边（后处理描边，颜色按 col.coding = lineId 取类别色），对应 Godot 的 next_pass 描边材质"
+  },
+  {
+   "screen": "scan",
+   "what": "快速破解列表是目标旁一列文字行（图标 + 名称 + 右侧 RAM 消耗，选中行高亮，下方说明框）；el.abilities 只有图标格 / 快捷栏，第二轮画成右缘一列切角图标格",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "el.abilities.form = list（名称 + 消耗行，消耗走 el.cost 的画法），说明框复用 el.selection = tooltip",
+   "resolvedBy": "M12b-09（el.abilities.form = list：图标 + 名称 + RAM 消耗行，说明框停在下方）"
+  },
+  {
+   "screen": "scan",
+   "what": "扫描信息卡里是物品（弹药箱 · 可以补充），参考扫描敌人时是档案：名称、等级、威胁度、派系、可用漏洞",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "shooter / explore 包的 selection 样本加一组「目标档案」（名称 + 等级 + 威胁 + 派系）",
+   "resolvedBy": "M12b-62（el.selection.subject = target：叛军队长 LV.12 / 派系 · 危险 / 可用破解）"
+  },
+  {
+   "screen": "map",
+   "what": "地图本体是亮绿方块：world.ts 的 tactical / schematic / glowSilhouette 用写死的底色与墨色（tactical = 绿），不读皮肤的 col.surface / col.accent，于是地图占了六成画面却和红青界面冲突",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "地图风格的底色 / 墨色在 col.source = skin 时取 col.surface 与 col.accent2（或新增 vis.mapInk），写死色只作 auto 默认",
+   "resolvedBy": "col.source, vis.mapInk"
+  },
+  {
+   "screen": "map",
+   "what": "地图是斜俯视的立体城市模型（建筑体块 + 发光道路线 + 区域边界，可倾斜旋转）；vis.mapStyle 全是平面烘焙图",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "vis.mapStyle = volumetric3d：用场景本身从斜上方的相机渲染一张暗色体块 + 发光道路的地图（G-map-lib）"
+  },
+  {
+   "screen": "map",
+   "what": "地图页的页签是背包分类（全部 / 武器 / 道具 / 配件），右侧常驻详情是武器属性条（突击步枪 · 伤害 / 射速）；地图该是筛选类别（任务、商店、快速旅行）与地点 / 任务信息",
+   "severity": "medium",
+   "kind": "content",
+   "proposal": "tpl.worldmap 的页签与详情读内容包的地图样本（地点名、区域、危险度、任务列表），不复用物品详情",
+   "resolvedBy": "M12b-62（地图页签 任务 / 敌人 / 补给 / 情报，右栏地点与任务信息）"
+  },
+  {
+   "screen": "map",
+   "what": "按键图例画在地图本体左下角之上（与「拖动查看」提示同一行），压住地图",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "模板的按键图例避让 dataShape = spatial 的地图区域（放到地图框外的底栏）",
+   "resolvedBy": "M12b-66（按键图例排在地图框外的底栏）"
+  },
+  {
+   "screen": "map",
+   "what": "世界地图窗（lay.overflow = pan，常驻详情在右）不再铺满左侧数据区，而是收成居中约一半宽的方块，左右各空一条暗边（第 2 轮铺满左侧三分之二）",
+   "severity": "low",
+   "proposal": "可平移的地图窗按数据区填满（cover），地图图块不够宽时平铺或放大，而不是按图块比例 contain",
+   "kind": "layoutEngine"
+  },
+  {
+   "screen": "character",
+   "what": "lay.arrangement = flankColumns 把插槽组挪到人体两侧后，原来的数据区面板（四角括号边框 + 暗底）仍画在左侧三分之一，里面是空的；参考插槽直接浮在暗底上，没有这块框",
+   "severity": "medium",
+   "proposal": "flankColumns（以及数据全部排到主体两侧的构图）不画数据区面板，或把面板改成包住两侧列的外接框",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 回归修复 C2 ④（两侧列把格组分到人体两边、数据栏没有别的元素时不画数据栏那块面板）"
+  },
+  {
+   "screen": "character",
+   "what": "flow.chrome = topRule 的贯穿红线画在顶栏文字的中线高度，横穿居中页签与右上金钱 / 计数；参考是顶栏下方的一条分隔线",
+   "severity": "low",
+   "proposal": "topRule 画在 chrome 行（页签、资源、等级条）外接框的下沿之下，留 4–6px@1080p",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C2 ③（没有顶栏与页头行时 topRule 画在顶排——页签条与顶上开头的元素——的下沿 + 4）"
+  },
+  {
+   "screen": "hud",
+   "what": "右上档案大卡（el.selection#2 = card）向下长到约屏高 85%，右下按键列表（el.prompt = list）画在卡里面，两块重叠",
+   "severity": "low",
+   "proposal": "同一侧的 tr 元素与 br 元素做纵向避让：大卡按字段收高，或按键列表让到卡下 / 卡外",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 回归修复 C3 ④ + R4 审查修复 ⑬：档案大卡按卡内子件收高（166 × 108，原来固定 240 高、下半截空着），右上一摞不再与按键提示相撞（大卡下沿 343，按键提示从 398 起，小地图 / 目标原尺寸）；同一列上下两摞真相撞时的缩放 / 横挪（2a'）照旧"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 4,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "character": [
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 2,
+    "type": 3,
+    "shape": 5,
+    "density": 3,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 4,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "create": [
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 2,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 5,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 6,
+    "shape": 7,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "hud-combat": [
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 6,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "scan": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 5,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 3,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "字号整体约为参考的两倍（基准 16px × 元素放大）：字幕、选中卡、任务字都过大，把画面挤满",
+   "选中卡（突击步枪 · VX-9）带一个圆形头像占位，贴在左上角；参考是没有头像的红色半透明数据卡，浮在画面中部、挂在人物旁",
+   "画面中央多了一组青色同心椭圆（el.overlay = holo），参考里没有",
+   "左下多了一张大号立绘切入卡（el.notify = cutIn），参考左下是一块青色数据小窗",
+   "字幕被避让挤到画面 2/3 高处，且是情境显隐淡出后的灰字；参考字幕贴底、无框、说话人红橙 + 台词浅青",
+   "右下的「跳过 [C]」按键提示没有画出来（contextual 画法挂在兴趣点上）",
+   "小地图是红框暗红底；参考是青色细框 + 深蓝底，任务追踪在它正下方（这一点位置对）",
+   "缺：顶部新闻跑马条、右下行情数字、边角编号 / 条码等微型数据噪声"
+  ],
+  "character": [
+   "没有设模板背景：ast.bgArt = gradient 画成了浅蓝天空渐变，整屏变亮；参考是近黑的暗红诊断终端",
+   "数据区排成竖列，画成了「夺回控制舱 / 收集情报」的任务行列表；参考是人体两侧的义体插槽组（每组 1–3 个斜纹切角格）",
+   "临时详情浮窗压在列表上，确认按钮压在按键图例上，等级经验条压在左上的界面标题上，右上 Esc 返回压在货币上",
+   "右三分之一空着；参考右侧也有插槽组和诊所卡",
+   "字号过大（基准 17px）",
+   "人体示意图只是一个红色剪影；参考是透明的红色解剖人体 + 引线"
+  ],
+  "create": [
+   "背景是浅蓝渐变，参考是深色背景上的大幅 3D 头像",
+   "顶部多了一条实心红底的「配装」页眉标题（el.title = header），参考只有居中细字标题 + 下划线",
+   "「返回 / 进入战斗」一对按钮压在设置行上，按键图例压在最后一行上",
+   "选项列太宽（占右半屏），参考是右侧约四分之一宽的一列切角行",
+   "左侧角色只是剪影 + 灰标（3D 模型需素材），参考整屏的主体就是这个 3D 头",
+   "缺：颜色行的色块、当前行两侧的 [A] [D] 键帽、标签 + 数值在上 / ◁ ▷ 在下的两层行"
+  ],
+  "hud-combat": [
+   "满屏横贯的粉 / 青故障横条（rel.metaFx = glitch 常驻），游戏里只在被黑时闪一下",
+   "血条带「生命 / 护甲」字标签、两条同形分段条；游戏里是一条细长分段血条（左端等级框）+ 下方一排青色 RAM 小格",
+   "小地图红框；游戏里小地图框更淡、偏青",
+   "整体字号偏大"
+  ],
+  "scan": [
+   "目标信息面板带圆形头像占位且过大（覆盖右半屏上部），与锁定圈、全息同心圆叠在一起",
+   "目标头像框（targetFrame）与选中面板重复表达同一个目标",
+   "快速破解画成右下一列图标格；游戏里是目标旁的一列「名称 + RAM 消耗」文字行",
+   "世界没有压暗 / 染色（扫描模式的关键视觉），描边不分类别颜色"
+  ],
+  "map": [
+   "等级经验条压在界面标题上，右上 Esc 返回压在货币上",
+   "左侧一列图标按钮（el.toolbar）压在地图上，临时详情浮窗也压在地图上；游戏里选中标记后右侧出一列信息",
+   "地图是绿色方块的场景烘焙图，和红青界面色不搭；游戏里是暗底立体城市 + 发光道路",
+   "按键图例与「拖动查看」提示在右下角叠在一起"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "字号与大位置已对上：字幕贴底居中、小地图右上、任务在小地图下方、按键提示右下，第一轮多出的头像卡 / 同心椭圆 / 立绘切入都已去掉",
+   "只有一张平面的小提示卡（弹药箱）在画面正中；参考是左中三张错位叠放的银行卡 + 右上一张保镖档案大卡，都是透视倾斜、贴在人物两侧的空间面板，卡内有亮红实底金额条",
+   "小地图仍是红框暗红底 + 网格圆点；参考是青色细框 + 深蓝底 + 建筑线",
+   "任务追踪颜色反了：标题「任务」黄、目标行红；参考任务名淡红、目标行黄并带「!」图标",
+   "字幕是单行白字、没有说话人；参考说话人名红橙 + 两行浅青台词",
+   "右下按键提示是四行键帽列表（交互 / 换弹 / 手雷 / 计分）；参考只有一行「Skip Ahead [C]」，上方是行情数字",
+   "缺：顶部新闻跑马条、左上厂牌 logo、左下青色数据窗（条码 + 编号）、边角 CONNECTION 编号等微型数据噪声，画面比参考空得多"
+  ],
+  "character": [
+   "背景已是近黑暗红终端（第一轮的浅蓝渐变已去掉），列表 / 浮窗 / 按钮的互压也没了",
+   "整屏带外框 + 四角括号 + 左上界面标题「装备纸娃娃」；参考没有外框，顶栏是左侧等级 / 街头声望、居中页签、右侧负重 / 钱，下面一条贯穿红线",
+   "插槽是左栏 3×4 整齐网格，每格都有物品符号和蓝 / 紫稀有度色条；参考是人体两侧的分组插槽（组名 + 可用数徽章 + 1–3 个斜纹空格 + 十字），几乎全空、全红",
+   "右三分之一仍空；参考右侧有操作系统 / 骨骼 / 手 / 手臂 / 腿五组插槽和诊所卡",
+   "人体是实心红剪影 +「人体示意图」药丸标签；参考是透明解剖人体 + 伸向各插槽组的红色引线",
+   "页签左对齐在标题下、等级经验条在顶部中间；参考页签居中、等级在左上"
+  ],
+  "create": [
+   "大结构对了：暗底、右侧一列选项、底部 返回 / 确认 两键、右缘细滚动条、当前行亮红描边",
+   "左侧 3D 头像仍是剪影 + 灰标（需素材）",
+   "选项面板有完整外框 + 四角括号 + 面板内标题「创建角色」；参考面板无外框，标题居中在屏幕顶部带下划线，栏头是小字",
+   "每行单层（名称 · ◁ 值 ▷），数值项是 −/+ 切角按钮；参考每行是独立切角小框，名称 + 数值在上、◁ ▷ 在下，颜色项有色块，当前行有 [A][D] 键帽",
+   "选项内容是射击包的设置项（鼠标灵敏度、准星样式），参考是发型 / 发色 / 瞳色等外观项",
+   "缺左上 PRESETS、左下 RANDOMIZE、右下 ROTATE / SELECT / SCROLL 按键图例与厂牌微文字"
+  ],
+  "hud-combat": [
+   "常驻故障横条去掉后整体干净，伤害数字、准星、敌人小血条、右下弹药的位置合理（凭记忆）",
+   "血条是两条同形分段条并带「生命 / 护甲」字标签；游戏里是一条细长分段血条（左端等级方框）+ 下方一排青色 RAM 小胶囊",
+   "小地图仍红框；游戏里是偏青的细框",
+   "左中是射击游戏式击杀播报（你 ⚔ 叛军）；游戏里是拾取 / 经验获得的短提示",
+   "右下只有大号弹药数字 + 弹点；游戏里旁边还有武器图标与手雷 / 治疗针快捷格",
+   "任务追踪颜色反了（同 hud）"
+  ],
+  "scan": [
+   "目标信息卡不再带头像、移到右上；状态菱形图标（!、Z）挂在物体上，锁定圈在目标上，结构接近（凭记忆）",
+   "世界没有压暗 / 染色，只有左缘一片青色辉光；游戏里整屏转为暗调扫描滤镜",
+   "目标只在脚下一圈红椭圆，物体不按类别描红 / 黄 / 青",
+   "快速破解是右缘一列切角图标格；游戏里是目标旁「名称 + RAM 消耗」文字行 + 说明框",
+   "信息卡内容是物品（弹药箱），不是敌人档案（名称 / 等级 / 威胁 / 派系）"
+  ],
+  "map": [
+   "版面不再互压：顶栏、左侧地图、右侧常驻详情栏各占一块",
+   "地图本体仍是亮绿方块（tactical 写死绿墨），与红青界面冲突；游戏里是暗底体块城市 + 青黄发光道路",
+   "页签是背包分类（全部 / 武器 / 道具 / 配件），右侧详情是武器属性条；游戏里是地图筛选与地点 / 任务信息",
+   "标记点是绿 / 红水滴，没有按 vis.silhouette@node = diamond 画成菱形",
+   "按键图例压在地图左下角"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "只有一张平面的小提示卡（弹药箱）浮在左上方；参考是左中三张错位叠放的银行卡 + 右上一张保镖档案大卡，透视倾斜贴在人物两侧，卡内有亮红实底金额条",
+   "任务追踪颜色仍反：标题「任务」黄、目标行红；参考任务名淡红、目标行黄并带「!」图标",
+   "右下按键提示是四行键帽列表（交互 / 换弹 / 手雷 / 计分）；参考只有一行「Skip Ahead [C]」，上方是行情数字",
+   "缺顶部新闻跑马条、左上厂牌 logo、左下青色数据窗、边角编号等微型数据噪声，画面比参考空得多"
+  ],
+  "character": [
+   "插槽仍是左栏 3×4 整齐网格（已是几乎全空的斜纹暗格 + 四角括号、全红），右三分之一空着；参考是人体两侧按部位分组的插槽（组名 + AVAILABLE ITEMS 徽章 + 1–3 个格子）",
+   "人体是实心红剪影 + 「人体示意图」标签，没有透明解剖人体与伸向插槽组的红色引线",
+   "页签左对齐在左上（两端 Q / E 键帽）、等级条居中；参考等级 / 街头声望在左上、页签居中、右侧负重与钱，下面一条贯穿全宽的红线",
+   "左栏套着一块带括角的面板框，空格里没有细十字；参考插槽直接浮在暗底上、每个空格有「+」"
+  ],
+  "create": [
+   "左侧 3D 头像仍是剪影 + 灰标（需素材），而且剪影站到了画面正中",
+   "选项面板仍有完整外框 + 四角括号；参考面板无外框，只有小字栏头 CUSTOMIZE YOUR LOOK",
+   "每行单层（名称 · ◁ 值 ▷），数值项是 −/+ 切角按钮；参考每行是独立切角小框，上名称 + 数值、下 ◁ ▷，颜色项带色块，当前行有 [A][D] 键帽",
+   "选项内容是射击包的设置项；缺左上 PRESETS、左下 RANDOMIZE、底部 ROTATE / SELECT / SCROLL 图例与厂牌微文字"
+  ],
+  "hud-combat": [
+   "左上是两条同形青色分段条（标签已去掉）；游戏里是一条细长分段血条（左端等级方框）+ 下方一排青色 RAM 小胶囊",
+   "左中是射击游戏式击杀播报（你 ⚔ 叛军），游戏里是拾取 / 经验获得的短提示",
+   "右下只有大号弹药数字 + 弹点，没有武器图标与手雷 / 治疗针快捷格",
+   "任务追踪颜色仍反（同 hud）"
+  ],
+  "scan": [
+   "世界已压暗染色（对），但染成一层发灰的粉红雾、四角偏青，对比被冲淡；游戏里是整屏暗调扫描滤镜",
+   "目标只在脚下一圈红椭圆，物体不按类别描红 / 黄 / 青",
+   "快速破解仍是右缘一列切角图标格；游戏里是目标旁「名称 + RAM 消耗」文字行 + 说明框",
+   "信息卡内容是物品（弹药箱），不是敌人档案；左上血条仍带「生命 / 护甲」字标签"
+  ],
+  "map": [
+   "地图本体改成青色方块（不再是亮绿），与界面同色系了；但楼块是实心亮青、道路是暗缝，游戏里是暗色体块城市 + 青黄发光道路，且是斜俯视",
+   "地图窗收到中间约一半宽，左右各留一条空的暗边",
+   "页签是背包分类（全部 / 武器 / 道具 / 配件），右侧详情是武器属性条；游戏里是地图筛选与地点 / 任务信息",
+   "标记点是红 / 绿 / 青水滴，没有画成菱形"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "左中三张银行卡半透明叠放，下层卡的字透上来与上层卡的字重叠；参考下层卡只露标题行",
+   "右下按键列表画进了右上档案大卡里，两者重叠；参考右下只有一行 Skip Ahead [C]",
+   "数据卡都是屏幕平面，参考是贴在人物两侧的透视平面",
+   "缺左上厂牌 logo 与左下青色数据窗"
+  ],
+  "character": [
+   "左侧三分之一留着一块空的括角面板框",
+   "等级条挂在居中页签正中、压住「装备」「技能」，红线横穿顶栏文字；参考等级 / 街头声望在左上、红线在顶栏下方",
+   "人体仍是实心红剪影 + 「人体示意图」标签，不是透明解剖人体",
+   "插槽组只有 6 组、每组 1–2 格，原作两侧各四五组"
+  ],
+  "create": [
+   "左侧主体仍是剪影 + 「3D 实时模型（需素材）」，原作是占大半屏的头肩特写",
+   "缺右上 CUSTOMIZE YOUR LOOK 小字栏头、左上 PRESETS、左下 RANDOMIZE 与底部 ROTATE / SELECT / SCROLL 图例",
+   "选项只有 5 行，原作一屏 7 行以上"
+  ],
+  "hud-combat": [
+   "（凭记忆）右下没有武器图标 / 名称，只有弹药数与两颗快捷格",
+   "拾取提示很小、贴在准星旁",
+   "左缘的方向指示是醒目的红色大三角"
+  ],
+  "scan": [
+   "（凭记忆）快速破解列表与档案贴在屏幕右缘，原作在目标旁",
+   "世界仍是一层发灰的粉红雾、四角偏青，对比被冲淡",
+   "目标只有脚下一圈红椭圆，物体不按类别描边"
+  ],
+  "map": [
+   "（凭记忆）地图本体仍是实心亮青楼块 + 暗缝道路，原作是暗色体块 + 青黄发光道路的斜俯视城市",
+   "地图窗仍收在中间约一半宽，左右留暗边",
+   "按键图例里仍有「拖动查看」"
+  ]
+ },
+ "revisions": [
+  "base：typ.baseSize 16 → 13（版面缩放 1.15 → 0.92），全部元素与模板的字号、格子、按钮按比例缩小，修正「字太大、互相压」；各屏去掉 typ.baseSize 17 与元素 scale 1.2–1.4 的放大",
+  "hud：去掉 el.overlay = holo（同心椭圆）与 el.notify = cutIn（立绘切入），参考里都没有；rel.hudVisibility contextual → always，元素不再淡成灰色",
+  "hud：el.selection panel → tooltip（无头像的标题 + 两行字数据卡），锚点改到画面中部 center，近似挂在人物旁的漂浮数据卡；vis.opacity 0 → 0.45 让卡与小地图有半透明暗底",
+  "hud：字幕 scale 1.3 → 0.85 并取消避让冲突（左下不再有大卡），回到底部居中；按键提示 contextual → list 放右下，代表「跳过 [C]」与行情一列",
+  "character：ast.bgArt gradient → solid（暗色舞台），去掉浅蓝背景；数据区 column → grid（3 列 × 4 行切角格，cnt.itemCount 12），放在三栏构图的左栏，代替任务行列表",
+  "character：lay.detail transient → none、ix.confirm selectConfirm → instant、去掉 ix.close = keyGlyph，消除详情浮窗、确认按钮、Esc 标与列表 / 图例 / 货币的重叠；el.profile 移到顶部居中（tc，scale 0.8）避开左上界面标题；按键图例 scale 0.8",
+  "create：容器 fullscreen → drawer（右侧约三分之一宽的侧栏，lay.panelSize 0.55），主体 lay.layering = backdrop（角色垫在整屏、面板浮在前面），对应「大幅角色 + 右侧一列选项」；背景 solid",
+  "create：去掉 el.title = header（实心红页眉）与 el.prompt；el.cta 保留一对按钮（返回 / 确认）scale 0.8 放在侧栏右下，ix.close back → cancelBtn（不再画左上返回箭头）",
+  "hud-combat：rel.metaFx 去掉 glitch（常驻故障横条），只留 hurtVignette；el.objective 去掉 marker；血条、弹药、小地图的放大倍数收回",
+  "scan：el.selection panel → tooltip（去掉头像占位，primary 放大），与快速破解格（el.abilities 竖列 scale 0.8）一起放在右中；el.threat 去掉与面板重复的 targetFrame，只留锁定框；el.overlay 去掉 holo 同心圆；ast.fx 去掉常驻 glitch",
+  "map：ast.bgArt solid；lay.detail transient → persistent（右侧常驻信息栏，对应选中标记后的信息列）；去掉 el.toolbar 图标列与 ix.close = keyGlyph；el.profile 移到顶部居中，按键图例移到左下，避开「拖动查看」与详情栏按钮",
+  "gaps：新增逐组件 / 逐元素 vis.* / col.* 覆盖不生效（小地图青框、字幕浅青、任务黄都画不出）、创建角色的 3D 模型需素材、义体空槽、扫描模式世界染色在 HUD 不生效、快速破解文字行列表；更新三色分工（任务追踪颜色反了）、两侧插槽列、故障时机、发现度指示（复用 cmp.gauge = eye）",
+  "R3 前（M12a 之后）：base 加 col.quest 黄（金钱 / 任务角色色）；hud 加 el.subtitle.form = speakerColor（说话人红橙 + 浅青台词）；character 加 cnt.filledCount 2 + st.emptySlot = pit（义体槽几乎全空的斜纹暗格）、cmp.tabIndicator = colorOnly、lay.navKeys = ends（页签两端键位）、lay.titlePos / ix.close = none（参考无界面标题）；create 加 lay.titlePos = screenTop + lay.titleSubtitle = caps + vis.stroke@title 实线、vis.strokeColor@title = accent2（顶部居中标题 + 青色下划线；抽屉外框与括角仍在，缺口 #21 后半）；hud-combat 加 el.vitals.labels = none；scan 的 rel.dim 0.2 → 0.4（局内 HUD 现在吃 rel.dim / sceneTone，扫描滤镜要整屏转暗）；map 加 vis.mapInk 青（col.source = skin 已写，地图底取 col.surface、道路取青）。",
+  "R4 前（M12b 之后）：base 加 vis.cornerMask = [br] + vis.cornerMask@listRow = [tl]（单角切角：卡片 / 价签右下、列表行左上）；hud：el.selection 改 cardStack（左中三张错位叠放的银行卡，count 3，attachTo none + diegesis screen + 锚 ml——原来挂在目标上，屏幕锚点不起作用；字段 cmp.detailFields@el.selection = [type, name, fieldPair]）+ el.selection#2 = card @ tr（右上档案大卡，cmp.cardParts@el.selection#2 = [kicker, fieldPair, amountBar]：字段对 + 亮红金额条）、el.objective.titleColor = text + descColor = objective（任务名淡红、目标行黄，颜色不再反）、cnt.elements 加 el.ticker（顶部新闻跑马条）+ el.ticker#2 = stocks（右下行情条）、ast.ornaments = [microText] + vis.noiseDensity 0.7 + vis.noiseEdges（边角微文字与屏幕边噪声）；character：lay.arrangement = flankColumns + cmp.leader = curve + cmp.slotGroupTitle = outside（人体两侧按部位分组的插槽 + 红色弯引线 + 组名在外侧）、lay.navAlign = center（页签居中）、flow.chrome = [topRule]（贯穿全宽的红细线）、st.emptySlot pit → plus（空槽带 +）；create：cmp.modal = floating（去掉抽屉外框与括角）、cmp.optionLayout = stacked + cmp.listRow = [keyHint] + cmp.optionRows = [auto, auto, auto, swatch]（两层切角小框、当前行 [A][D] 键帽、发色行色块）；hud-combat：el.vitals.attach = [levelBadge] + el.vitals.rowForms = [segmented, pips]（左端等级方框 + 下排 RAM 小胶囊）、el.abilities.quickSlots 2（手雷 / 治疗针快捷格）、el.threat.form 加 detection（保留 edgeDir）、el.notify.form feed → pickupText（拾取提示，不是击杀播报）、任务两色同 hud；scan：el.selection.subject = target（敌人档案）、el.abilities.form = list + el.selection.dockTo el.abilities / below（快速破解文字行 + 说明框）、el.vitals.labels = none；map：lay.panHint = none（去掉压在地图上的拖动提示）"
+ ],
+ "notes": "红为骨架、青为交互的双色赛博控制台：全大写窄体、单角切角与四角括号插槽、边角塞满编号条码一类的微型数据噪声。局内 HUD 克制地分散在四角（右上小地图下挂任务，底部无框双色字幕），而义体页、捏人页把整屏做成深红诊断终端；扫描与剧情时，透视的红色数据卡直接漂浮在城市空间里，UI 与霓虹街景是同一种光。"
+}

@@ -1,0 +1,1180 @@
+{
+  "id": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "card": "steam:590380",
+  "genre": "strategy",
+  "family": "fam.pixel-mixed-res",
+  "pack": "tactics",
+  "art": {
+    "recipe": "pixel3d",
+    "scene": "tacticsBoard",
+    "values": {
+      "color.palette": "earthy",
+      "color.saturation": 0.8,
+      "color.brightness": 0.95
+    }
+  },
+  "base": {
+    "hud.style": "godotDefault",
+    "uip.platform": "platform.pc",
+    "uip.business": "business.premium",
+    "ctx.timeModel": "turn",
+    "ctx.input": "kbm",
+    "col.source": "skin",
+    "col.lightness": "dark",
+    "col.strategy": "mono",
+    "col.surface": "#141b28",
+    "col.surface2": "#222b3b",
+    "col.text": "#e9edf3",
+    "col.accent": "#46567a",
+    "col.accent2": "#ec7b2c",
+    "col.border": "#a3abb8",
+    "col.focus": "#f2c230",
+    "col.coding": [
+      "team",
+      "status"
+    ],
+    "col.teams": "greenRed",
+    "rel.harmony": "neutral",
+    "vis.pixelScale": "off",
+    "vis.corner": "chamfer",
+    "vis.cornerSize": 4,
+    "vis.opacity": 0.92,
+    "vis.fill": "solid",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 1.5,
+    "vis.strokeColor": "custom",
+    "vis.depth": "flat",
+    "vis.gloss": "none",
+    "vis.ornament": 0,
+    "vis.motif": "none",
+    "vis.iconStyle": "pixel",
+    "ast.iconSet": "procedural",
+    "ast.frame": "procedural",
+    "ast.core": "procedural",
+    "typ.body.family": "sans",
+    "typ.body.weight": "regular",
+    "typ.body.case": "asIs",
+    "typ.display.family": "pixel",
+    "typ.display.weight": "bold",
+    "typ.display.case": "asIs",
+    "typ.numerals.family": "pixel",
+    "typ.legibility": "none",
+    "typ.titleFx": "none",
+    "typ.baseSize": 22,
+    "hier.inline": "keyword",
+    "cmp.plate": "tab",
+    "ix.glyphs": "brackets",
+    "ix.focus": "outline",
+    "ix.press": "darken",
+    "mo.easing": "easeOut",
+    "mo.duration": 0.2,
+    "mo.juice": 0.4,
+    "mo.frameRate": "smooth",
+    "mo.valueChange": "segment",
+    "mo.textReveal": "instant",
+    "mo.enter": "slide",
+    "st.done": "strike",
+    "st.alert": "warnIcon",
+    "st.selected": "outline",
+    "vis.silhouette@avatar": "box",
+    "vis.strokeWidth@avatar": 1,
+    "typ.button.family": "display",
+    "typ.button.size": "fit",
+    "col.icon": "#e9edf3",
+    "cmp.plateEnds": "right",
+    "vis.pixelRoles": [
+      "display",
+      "numerals"
+    ],
+    "col.good": "#6ccf4a",
+    "col.bad": "#e0453a"
+  },
+  "screens": [
+    {
+      "key": "hud",
+      "ref": "qa/refs-cache/r2/strategy/img/steam_590380_3.jpg",
+      "values": {
+        "uip.layout": "layout.strategyTurn",
+        "cnt.screen": "screen.hud",
+        "lay.container": "overlay",
+        "lay.hudOrg": "scattered",
+        "lay.playfield": "boardWindow",
+        "lay.safeMargin": 1,
+        "lay.detail": "persistent",
+        "rel.behind": "live",
+        "rel.hudVisibility": "always",
+        "rel.worldRender": "decal",
+        "cnt.density": 3,
+        "cnt.elements": [
+          "el.meter",
+          "el.cta",
+          "el.party",
+          "el.abilities",
+          "el.timer",
+          "el.objective",
+          "el.selection",
+          "el.threat",
+          "el.overlay",
+          "el.turnOrder"
+        ],
+        "el.meter.form": "framedStrip",
+        "cmp.gauge@el.meter": "segmented",
+        "el.meter.screenAnchor": "tl",
+        "el.meter.valueLabel": "none",
+        "el.cta.form": "dual",
+        "el.cta.screenAnchor": "tl",
+        "el.cta.scale": 0.8,
+        "el.cta.priority": "primary",
+        "el.party.form": "portraits",
+        "el.party.arrangement": "column",
+        "el.party.screenAnchor": "ml",
+        "el.abilities.form": "unitLoadout",
+        "el.abilities.screenAnchor": "bl",
+        "el.abilities.scale": 0.8,
+        "el.timer.form": "countdownStrip",
+        "el.timer.screenAnchor": "tr",
+        "el.timer.scale": 0.75,
+        "el.objective.form": [
+          "panelTab"
+        ],
+        "el.objective.screenAnchor": "tr",
+        "el.objective.scale": 0.85,
+        "el.selection.form": "tooltip",
+        "el.selection.screenAnchor": "br",
+        "el.selection.scale": 0.85,
+        "el.threat.form": [
+          "telegraph",
+          "intent",
+          "healthBar"
+        ],
+        "el.threat.diegesis": "spatial",
+        "el.threat.attachTo": "target",
+        "el.threat.worldRender": "decal",
+        "el.overlay.form": [
+          "gridHighlight",
+          "arrows"
+        ],
+        "el.overlay.diegesis": "spatial",
+        "el.overlay.worldRender": "decal",
+        "hier.emphasis": [
+          "value",
+          "size"
+        ],
+        "ix.mode": "select",
+        "ix.confirm": "ghost",
+        "cmp.gauge@el.threat": "pips",
+        "cmp.gaugeExtra@el.threat": [
+          "statusBeside"
+        ],
+        "el.turnOrder.form": "numberBadges"
+      }
+    },
+    {
+      "key": "squad",
+      "ref": "qa/refs-cache/r2/strategy/img/steam_590380_1.jpg",
+      "values": {
+        "uip.screen": "tpl.formation",
+        "cnt.subtype": "formation",
+        "lay.container": "panels",
+        "lay.panelSize": 0.6,
+        "lay.nav": "none",
+        "rel.behind": "live",
+        "rel.dim": 0,
+        "cnt.focal": "none",
+        "cnt.dataShape": "collection",
+        "cnt.itemCount": 3,
+        "lay.arrangement": "column",
+        "cmp.slot": "cell",
+        "cmp.listRow": [
+          "leadButtons",
+          "icon",
+          "title",
+          "slots",
+          "statChips"
+        ],
+        "st.statViz": "iconCount",
+        "st.emptySlot": "pit",
+        "cnt.elements": [
+          "el.cta"
+        ],
+        "el.cta.form": "dual",
+        "el.cta.screenAnchor": "tr",
+        "el.cta.scale": 0.75,
+        "ix.mode": "select",
+        "ix.dismiss": "button",
+        "ix.close": "none",
+        "el.cta.anchorSpace": "screen",
+        "lay.panelFit": "fitContent",
+        "lay.vAlign": "bottom",
+        "lay.panelWidth": 0.36,
+        "vis.cornerMask": [
+          "tr"
+        ],
+        "cmp.listHeader": "selectorStrip"
+      }
+    },
+    {
+      "key": "map",
+      "ref": "qa/refs-cache/r2/strategy/img/steam_590380_2.jpg",
+      "values": {
+        "uip.screen": "tpl.worldmap",
+        "cnt.subtype": "worldmap",
+        "lay.container": "modal",
+        "cmp.modal": "standard",
+        "lay.panelSize": 0.6,
+        "lay.composition": "splitLR",
+        "lay.focalSide": "left",
+        "cnt.focal": "title",
+        "cnt.dataShape": "spatial",
+        "rel.behind": "live",
+        "rel.dim": 0.65,
+        "vis.mapStyle": "diorama",
+        "vis.mapUnexplored": "dark",
+        "cmp.node": "block",
+        "flow.chrome": [
+          "topStrip"
+        ],
+        "cnt.textLength": "short",
+        "cnt.elements": [
+          "el.objective",
+          "el.subtitle"
+        ],
+        "el.objective.form": [
+          "sectioned"
+        ],
+        "el.objective.screenAnchor": "bl",
+        "cmp.dialogBox@el.subtitle": "bar",
+        "el.subtitle.screenAnchor": "tc",
+        "st.alert": [
+          "framedLabel"
+        ],
+        "ix.mode": "select",
+        "ix.confirm": "instant",
+        "ix.dismiss": "tapOutside",
+        "ix.close": "none",
+        "lay.detail": "none",
+        "lay.overflow": "single",
+        "lay.titlePos": "none",
+        "col.text@title": "#e0453a",
+        "vis.cornerMask": [
+          "tr"
+        ]
+      }
+    },
+    {
+      "key": "dialogue",
+      "ref": "qa/refs-cache/r2/strategy/img/steam_590380_4.jpg",
+      "values": {
+        "uip.screen": "tpl.npc",
+        "cnt.subtype": "npc",
+        "lay.container": "modal",
+        "cmp.modal": "standard",
+        "lay.panelSize": 0.85,
+        "lay.focalSide": "center",
+        "lay.layering": "separate",
+        "cnt.focal": "scene",
+        "cnt.dataShape": "none",
+        "cnt.characterMedium": "avatar",
+        "cnt.companion": "avatar",
+        "cnt.textLength": "short",
+        "cnt.tone": "character",
+        "cmp.dialogBox": "framedBox",
+        "cmp.panelArt": "full",
+        "rel.behind": "live",
+        "rel.dim": 0.7,
+        "flow.chrome": [
+          "topStrip"
+        ],
+        "cnt.elements": [
+          "el.subtitle",
+          "el.cta"
+        ],
+        "el.subtitle.screenAnchor": "bc",
+        "el.cta.form": "edgeTab",
+        "el.cta.screenAnchor": "br",
+        "el.cta.scale": 0.85,
+        "mo.textReveal": "typewriter",
+        "ix.mode": "singleCTA",
+        "ix.dismiss": "button",
+        "ix.close": "none",
+        "ix.continueCue": "none",
+        "ix.skip": "none",
+        "lay.titleAlign": "center",
+        "cmp.plate@title": "none",
+        "col.surface@titleBar": "#0b0f17",
+        "vis.silhouette@el.cta": "edgeTab"
+      }
+    },
+    {
+      "key": "character",
+      "ref": null,
+      "values": {
+        "uip.screen": "tpl.loadout",
+        "cnt.subtype": "formation",
+        "lay.container": "modal",
+        "cmp.modal": "standard",
+        "lay.panelSize": 0.8,
+        "lay.nav": "none",
+        "rel.behind": "frozen",
+        "rel.dim": 0.75,
+        "cnt.focal": "none",
+        "cnt.dataShape": "collection",
+        "cnt.itemCount": 3,
+        "lay.arrangement": "row",
+        "lay.detail": "none",
+        "cmp.slot": "tallCard",
+        "st.emptySlot": "pit",
+        "st.selected": "outline",
+        "st.statViz": "iconCount",
+        "cnt.elements": [
+          "el.resources"
+        ],
+        "el.resources.form": "iconNumber",
+        "el.resources.screenAnchor": "tr",
+        "ix.mode": "drag",
+        "ix.dismiss": "button",
+        "ix.close": "none",
+        "lay.titleAlign": "left",
+        "cmp.cardParts": [
+          "kicker",
+          "art",
+          "powerCells"
+        ],
+        "el.resources.count": 1
+      }
+    },
+    {
+      "key": "results",
+      "ref": null,
+      "values": {
+        "uip.screen": "tpl.stats",
+        "cnt.subtype": "stats",
+        "lay.container": "modal",
+        "cmp.modal": "standard",
+        "lay.panelSize": 0.5,
+        "rel.behind": "frozen",
+        "rel.dim": 0.6,
+        "cnt.focal": "none",
+        "cnt.dataShape": "collection",
+        "cnt.itemCount": 3,
+        "lay.arrangement": "column",
+        "cnt.tone": "system",
+        "cmp.slot": "rowCard",
+        "cmp.listRow": [
+          "icon",
+          "title",
+          "status",
+          "reward"
+        ],
+        "st.done": "strike",
+        "st.statusMark": "icon",
+        "col.coding": [
+          "status"
+        ],
+        "cnt.elements": [
+          "el.rank",
+          "el.cta"
+        ],
+        "el.rank.form": [
+          "stars"
+        ],
+        "el.rank.screenAnchor": "tr",
+        "el.cta.form": "wide",
+        "el.cta.screenAnchor": "br",
+        "el.cta.scale": 0.8,
+        "mo.enter": "slide",
+        "mo.reveal": "flyIn",
+        "ix.dismiss": "button",
+        "ix.close": "none",
+        "ix.mode": "readOnly"
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "screen": "hud",
+      "what": "回合结果直接预演在棋盘格上，这是整套 UI 的核心：敌人下回合要打的格子是红色斜纹格、被推方向是红 / 白箭头、将受损的建筑闪红、将死亡的单位叠骷髅、伤害数字写在格上，悬停武器时预先画出这一击的全部后果。现在只有 gridHighlight 的橙色格 + telegraph 的一个红色椭圆，表达不了\"结果预演\"",
+      "severity": "high",
+      "proposal": "el.overlay.form 增加 outcomePreview：按棋盘格画斜纹攻击格 / 推移箭头 / 受损闪烁 / 死亡标记 / 伤害数字（需要世界侧给出格子坐标与单位位置），与 ix.confirm = ghost 联动",
+      "kind": "worldSpace"
+    },
+    {
+      "screen": "all",
+      "what": "大按钮（End Turn / Back / Start / CONTINUE）和页签标题是大号像素字，正文才是清晰无衬线；按钮文字固定用正文字族与正文字号，只随 el.cta.scale 整体缩放，第二轮的按钮做到原作大小时字只有 8px 左右，是现在离原作最远的一处",
+      "severity": "high",
+      "proposal": "typ 增加按钮角色（typ.button.family / typ.button.size，或 cmp.button 的 label = display），按钮字号按按钮高度取",
+      "kind": "missingParam",
+      "resolvedBy": "typ.button.family, typ.button.size"
+    },
+    {
+      "screen": "hud",
+      "what": "多选画法只画第一项：el.threat.form = [telegraph, intent, healthBar] 只画出红色椭圆，el.overlay.form = [gridHighlight, arrows] 只画出高亮格；原作同屏同时有预警格、敌人头顶血格、攻击图标和推移箭头",
+      "severity": "medium",
+      "proposal": "元素绘制按 form 列表逐层叠画（世界挂点类元素尤其需要），或拆成 el.<元素>.layers",
+      "kind": "renderBug",
+      "resolvedBy": "M12a-12（多画法逐层叠画：高亮格 + 推移箭头同屏；R3 对照图确认）"
+    },
+    {
+      "screen": "hud",
+      "what": "左上一个细线框条里并排：闪电图标 + \"POWER GRID\"小字 + 橙色分段格（电网血量）+ \"GRID DEFENSE 19%\"读数 + \"RESET TURN\"文字按钮；el.meter = withIcon 只画图标 + 一条分段格，没有外框、标签、读数与条内按钮",
+      "severity": "medium",
+      "proposal": "el.meter.form 增加 framedStrip（细框条内：图标 + 标签 + 分段格 + 百分比读数 + 一个文字按钮）；或 lay.edgeBarSlots 指定条内字段",
+      "kind": "composite",
+      "resolvedBy": "el.meter.form = framedStrip（细框条：图标 + POWER GRID + 分段格 + 读数 + RESET TURN）"
+    },
+    {
+      "screen": "hud",
+      "what": "左下选中单位面板 = 方形驾驶员头像 + 名字小标签（带血格与状态小图标）+ 2–3 个武器格 + 一格\"[Right Click] or [0] to Disarm\"按键说明；el.abilities = slots 只画 4 个编号技能格，没有头像、名字与按键说明；el.selection 已被右下地形说明卡占用（每个元素只能放一份）",
+      "severity": "medium",
+      "proposal": "el.abilities.form 增加 unitLoadout（头像 + 名字 / 血格标签 + 武器格 + 内嵌按键说明）；或允许 el.selection 多实例（el.selection#2）各自设锚点与画法",
+      "kind": "composite",
+      "resolvedBy": "el.abilities.form = unitLoadout"
+    },
+    {
+      "screen": "all",
+      "what": "头像一律画成圆（小队列、驾驶员卡、对话头像），原作全是带细框的方形像素头像；词表接受 vis.silhouette@avatar（vis.*@* 作用域），但 avatar() 固定画圆、不读它",
+      "severity": "medium",
+      "proposal": "avatar() 读 vis.silhouette@avatar（box / 切角 / circle），并让外圈描边跟随 vis.strokeWidth",
+      "kind": "renderBug",
+      "resolvedBy": "vis.silhouette@avatar, vis.strokeWidth@avatar"
+    },
+    {
+      "screen": "all",
+      "what": "同一个强调色同时决定主按钮底色、页签底色、列表与格子里的默认图标色和头像圈；原作按钮 / 页签是板岩蓝，图标是白 / 灰，高亮是黄。强调色压成板岩蓝 #46567a 后，第二轮结算行和布阵行的菱形图标都发暗",
+      "severity": "medium",
+      "proposal": "色板角色补 col.button（主按钮底）与 col.icon（默认图标色），或 col.strategy = mono 时图标默认取字色",
+      "kind": "missingParam",
+      "resolvedBy": "col.icon"
+    },
+    {
+      "screen": "all",
+      "what": "按元素覆盖的颜色（col.accent@el.meter、col.border@el.prompt、col.text@el.title 等）词表接受、但渲染不读：只有 cmp.* 与 vis.silhouette@icon 会按元素覆盖。原作电网条橙、血格绿 / 红、按钮板岩蓝，只能靠内容包里的固定色",
+      "severity": "medium",
+      "proposal": "元素上下文（makeCtx）按 <col.*>@<元素> 重建该元素的色板",
+      "kind": "renderBug",
+      "resolvedBy": "M12a-01（逐元素颜色：电网条橙等；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "all",
+      "what": "面板标题装在贴着面板上沿的独立页签上，页签只有右端斜切，左端与面板齐平（Customize Squad、Time Traveler、Bonus Objectives），字是大号像素字；cmp.plate = tab 画成两端都斜的小梯形",
+      "severity": "medium",
+      "proposal": "cmp.plate 的 tab 加 slantEnd = right | both，页签字号跟随 display 角色",
+      "kind": "missingOption",
+      "resolvedBy": "cmp.plateEnds = right（页签只斜右端）"
+    },
+    {
+      "screen": "squad",
+      "what": "模板里的元素只能排在容器里：原作布阵页是两块独立面板（右下 Customize Squad、左下 Time Traveler）+ 屏幕左上 Back、右上 Start 两个大按钮；现在驾驶员卡只能塞进右侧抽屉的左下，Back / Start 落在抽屉中下部",
+      "severity": "medium",
+      "proposal": "elx.frame = screen | container（元素按整屏还是按容器排锚点）；或 lay.container 增加 panels（多块独立面板，各自锚点）",
+      "kind": "layoutEngine",
+      "partialBy": "lay.container = panels（右下主面板 + 左下详情两块独立；Back / Start 仍在右上、偏小）"
+    },
+    {
+      "screen": "squad",
+      "what": "抽屉固定占满整屏高度，内容排在顶部，三行之后到底部是大片空白；原作面板高度贴合内容、靠下摆放",
+      "severity": "medium",
+      "proposal": "drawer / modal 增加按内容收高（lay.fit = content）与竖向锚点（lay.vAlign = top | center | bottom）",
+      "kind": "layoutEngine",
+      "resolvedBy": "lay.panelFit, lay.vAlign"
+    },
+    {
+      "screen": "squad",
+      "what": "机甲行 = 行首竖排两个方形编辑按钮（铅笔 / 色板）+ 机甲像 + 名字 + 行内武器小图标格 + 绿底白字的移动 / 生命数字格 + 绿色\"Ranged\"职业小字；行组上方还有一排六个驾驶员 / 机甲选择小图标；cmp.listRow 只有 icon / title / desc / value 文本字段",
+      "severity": "medium",
+      "proposal": "cmp.listRow 增加 slots（行内小图标格）、leadButtons（行首按钮列）、statChips（色块数字格，跟 st.statViz = iconCount）；列表上方可挂 selectorStrip",
+      "kind": "composite",
+      "resolvedBy": "cmp.listRow [leadButtons, icon, title, slots, statChips] + cmp.listHeader = selectorStrip"
+    },
+    {
+      "screen": "dialogue",
+      "what": "对话面板的主体是一整幅场景插画（公司总部、机库……）；内容包没有场景插画，只能画成\"场景（需素材）\"灰盒",
+      "severity": "medium",
+      "proposal": "needs art：每个内容包补 2–3 张场景插画（art.scene），cnt.focal = scene 时铺满面板",
+      "kind": "asset"
+    },
+    {
+      "screen": "dialogue",
+      "what": "文本框左侧是一张带细框的方形说话人头像（地图页参谋发言则在右侧）；配方已写 cnt.companion = avatar，渲染完全不读这个参数",
+      "severity": "medium",
+      "proposal": "渲染 cnt.companion = avatar：把头像贴在字幕框一侧（左 / 右可选）",
+      "kind": "renderBug",
+      "resolvedBy": "R3 对照图：cnt.companion = avatar 画在字幕条左侧"
+    },
+    {
+      "screen": "dialogue",
+      "what": "cmp.dialogBox = bar 画成按字宽的一条黑底短字条，浮在面板中下；原作是贴着面板底边、几乎通栏的深底细框文本框",
+      "severity": "medium",
+      "proposal": "cmp.dialogBox 增加 framedBox（通栏、细框、贴容器底边，可带 portrait 槽）",
+      "kind": "missingOption",
+      "partialBy": "cmp.dialogBox = framedBox（通栏细框 + 方头像槽；但贴到了屏幕底，见新缺口）"
+    },
+    {
+      "screen": "dialogue",
+      "what": "对话与任务面板的标题居中压在面板顶部一条暗带里（插画上沿）；模板标题固定左对齐写在左上页签里",
+      "severity": "medium",
+      "proposal": "lay.titleAlign（left / center）+ 标题样式 titleBand（压在面板顶部的暗带）",
+      "kind": "missingParam",
+      "resolvedBy": "lay.titleAlign, col.surface@titleBar"
+    },
+    {
+      "screen": "map",
+      "what": "cnt.focal = title 写任务名时字号按栏宽撑满（约 60px），原作任务名约 20px，下面紧跟简报内容",
+      "severity": "medium",
+      "proposal": "cnt.focal = title 的字号跟 typ.scale / display 层级走，并设上限",
+      "kind": "layoutEngine",
+      "resolvedBy": "R3 对照图：任务名约 20px、居中（typ.baseSize 22 下）"
+    },
+    {
+      "screen": "map",
+      "what": "任务简报面板是分节的：任务名、\"Vek Threat Detected!\"一行、细线分隔的\"BONUS OBJECTIVES\"小标题 + 带图标的目标、\"WARNING!\"分隔 + 黄框 WIND STORM 环境警告；el.objective = checklist 只有一个标题 + 勾选框",
+      "severity": "medium",
+      "proposal": "el.objective.form 增加 sectioned（细线小标题分节 + 图标行）；st.alert 增加 framedLabel（黄框警告条）",
+      "kind": "missingOption",
+      "partialBy": "el.objective.form = sectioned + st.alert = framedLabel（分节有了；警告框不是黄色、没有图标）"
+    },
+    {
+      "screen": "map",
+      "what": "岛屿地图、对话等过场的顶栏是一条居中的细线框分隔条：星级、声望、电网分段格 + GRID DEFENSE、核心数；flow.chrome = topCurrency 只能画右上的货币胶囊",
+      "severity": "medium",
+      "proposal": "flow.chrome 的 topCurrency 增加对齐（居中）、外框（细线分隔条）与字段列表（含分段格）",
+      "kind": "composite",
+      "resolvedBy": "flow.chrome = topStrip（居中细框分隔条）"
+    },
+    {
+      "screen": "map",
+      "what": "任务预览是这一关棋盘的等距小模型（橙色沙地、水格、建筑），无框、压在简报面板右缘；地图模板只能画俯视的地形底图 + 菱形节点，装在圆角框里",
+      "severity": "medium",
+      "proposal": "vis.mapStyle 增加 boardPreview：用世界侧把关卡棋盘渲成等距小图贴进面板（render-to-texture），无框、可越出容器",
+      "kind": "worldSpace"
+    },
+    {
+      "screen": "character",
+      "what": "tallCard 的竖卡固定画稀有度色：中间卡紫色粗框、三个图标蓝 / 紫 / 橙；配方 col.coding = [team, status] 不含 rarity、col.strategy = mono，仍然被画上",
+      "severity": "medium",
+      "proposal": "cardsRow 只在 col.coding 含 rarity（或 st.rarityCue 不为 none）时取稀有度色，否则边框 / 图标取色板",
+      "kind": "renderBug",
+      "resolvedBy": "R3 对照图：col.coding 不含 rarity 时竖卡不着稀有度色"
+    },
+    {
+      "screen": "all",
+      "what": "面板常只切一个角（简报面板右上、地形说明卡右下）；vis.corner 只能四角统一",
+      "severity": "low",
+      "proposal": "vis.cornerMask（逐角切角，如 tr / br / tl+br）",
+      "kind": "missingParam",
+      "resolvedBy": "vis.cornerMask [tr]（简报 / 布阵面板只切右上角）"
+    },
+    {
+      "screen": "map",
+      "what": "简报面板与右侧棋盘预览之间用细线折角连接（面板上沿延伸出去绕到预览后面）；vis.connector 没有折线",
+      "severity": "low",
+      "proposal": "vis.connector 增加 elbowLine，用于面板与面板 / 预览之间的连线",
+      "kind": "missingOption"
+    },
+    {
+      "screen": "hud",
+      "what": "右上奖励目标清单装在带页签（\"Bonus Objectives\"）的细框面板里；el.objective = checklist 裸放在世界上，只有一行黄色标题",
+      "severity": "low",
+      "proposal": "el.objective.form 增加 panelTab（带页签的清单面板）",
+      "kind": "missingOption",
+      "resolvedBy": "el.objective.form = panelTab"
+    },
+    {
+      "screen": "hud",
+      "what": "完成的目标是划线 + 绿字；配方 st.done = strike，渲染不读 st.done，只画一个勾",
+      "severity": "low",
+      "proposal": "清单 / 列表的完成态按 st.done 画（strike / grayOut / stamp / check）",
+      "kind": "renderBug",
+      "resolvedBy": "M12a-27（st.done = strike：完成项划线）"
+    },
+    {
+      "screen": "hud",
+      "what": "\"Victory in 3 turns\"是暗底细框条，回合数字放大成像素大字；el.timer = turnBanner 画成实心强调色条 + 正文字",
+      "severity": "low",
+      "proposal": "el.timer.form 增加 countdownStrip（细框暗条 + 文字 + 放大数字）",
+      "kind": "missingOption",
+      "partialBy": "el.timer.form = countdownStrip（暗底细框条有了；放大的回合数字是暗色、看不清）"
+    },
+    {
+      "screen": "hud",
+      "what": "单位血量是头顶一排带黑描边的独立小方格（机甲绿、敌人红），护盾 / 着火 / 酸液等状态是贴在格旁的小方图标；cmp.gauge 的 segmented 是连在一起的分段条",
+      "severity": "low",
+      "proposal": "cmp.gauge 增加 pips（独立小方格，带描边）+ statusIcons 的挂点位置参数",
+      "kind": "missingOption"
+    },
+    {
+      "screen": "hud",
+      "what": "攻击顺序：右上\"ATTACK ORDER\"图标按钮，悬停后每个敌人头上出现黄色圆形编号 1…N；el.turnOrder 只能在锚点处画一排头像徽章，没有挂在各目标上的编号",
+      "severity": "low",
+      "proposal": "el.turnOrder.form 增加 numberBadges（挂在每个敌方单位上）；elx.visibility 增加 onHoverOf（由另一控件悬停触发）",
+      "kind": "worldSpace"
+    },
+    {
+      "screen": "all",
+      "what": "原作没有 ✕ 关闭控件（任务弹窗点外面关闭、对话靠 CONTINUE）；ix.close 没有\"无\"，未设时按兜底画右上 ✕，只好用 Esc 键提示 / cancelBtn 代替",
+      "severity": "low",
+      "proposal": "ix.close 增加 none",
+      "kind": "missingOption",
+      "resolvedBy": "ix.close"
+    },
+    {
+      "screen": "map",
+      "what": "任务名是红色像素字（标题色与正文、强调色都不同）；模板标题只跟随字色",
+      "severity": "low",
+      "proposal": "色板补 col.title 角色（或 col.text@title 生效）",
+      "kind": "missingParam",
+      "resolvedBy": "col.text@title"
+    },
+    {
+      "screen": "dialogue",
+      "what": "CONTINUE 按钮挂在面板右下边缘外，是一块左端斜切的页签式按钮；el.cta 只能画在容器内的矩形按钮",
+      "severity": "low",
+      "proposal": "cmp.button 增加 edgeTab（贴容器边缘、单端斜切），配合 elx.frame = container 的边缘锚点",
+      "kind": "newDrawing",
+      "partialBy": "el.cta.form = edgeTab（斜切页签式；在框内右下、偏小）",
+      "resolvedBy": "R4 回归修复 C1 ③ + R4 审查修复 ⑭（el.cta = edgeTab 没有数据区时也进模板按钮行、挂到容器右下角外：右缘与容器齐平、整个挂在下沿下面，与参考的 CONTINUE 同位；斜切页签画法见 M12b-17，偏小来自复刻值 el.cta.scale 0.85）"
+    },
+    {
+      "screen": "all",
+      "what": "像素化只作用在标题、大按钮和数字上，正文清晰无衬线，面板线条是 1–2 屏幕像素的细线（家族缺口 G-pixel-roles）；现用 typ.display = pixel + body = sans + pixelScale = off 近似",
+      "severity": "low",
+      "proposal": "vis.pixelScale 按角色拆分（display / numerals / icons / frame）",
+      "kind": "missingParam",
+      "resolvedBy": "vis.pixelRoles [display, numerals]（按钮 / 标题 / 数字像素字，正文清晰）"
+    },
+    {
+      "screen": "all",
+      "what": "图标应是像素小图标（武器、星、电网、核心）；图集素材是厚涂风，只好退回程序几何图标",
+      "severity": "low",
+      "proposal": "needs art：像素风图标图集（ast.iconSet = pixelAtlas）",
+      "kind": "asset"
+    },
+    {
+      "screen": "squad",
+      "what": "布阵（formation）与整备（loadout）没有专用样本内容：布阵行落回任务列表（守住发电厂 / 60%），整备竖卡落回选卡（draft）内容；没有\"机甲名 + 职业 + 移动 / 生命 + 武器\"这类单位名册",
+      "severity": "low",
+      "proposal": "内容包补 screens.roster（单位名 / 职业 / 数值 / 武器 / 驾驶员），formation 与 loadout 读它",
+      "kind": "content",
+      "resolvedBy": "R4 对照图：布阵行与整备竖卡取机兵名册（主战机 / 重炮机 / 支援机）"
+    },
+    {
+      "screen": "all",
+      "what": "主按钮文字只有包里的 start / back / go 三个：HUD 是\"返回 / 开始作战\"，对话与结算也写\"开始作战\"；原作是 End Turn / Undo Move、CONTINUE",
+      "severity": "low",
+      "proposal": "内容包按界面角色给按钮文字（endTurn / undo / continue / confirm），模板按 cnt.subtype 取",
+      "kind": "content",
+      "partialBy": "R4 对照图：HUD 写回退移动 / 结束回合、结算写继续；对话的 CONTINUE 仍写开始作战"
+    },
+    {
+      "screen": "character",
+      "what": "凭记忆：整备页每栏 = 驾驶员头像 + 名字 / 经验 + 机甲 + 生命 / 移动 + 武器框；武器与机甲的升级靠反应堆核心：每件武器下一排可点亮的小格（灰 = 未供能、橙 = 已供能），把核心拖进格子。现在三张竖卡只有图标 + 名字 + 一句说明",
+      "severity": "low",
+      "proposal": "cmp.card 增加 loadoutColumn（头像 + 名字 + 若干槽位行 + 供能格）；ix.mode = drag 时的目标槽状态参数（可接收 / 已供能）",
+      "kind": "composite",
+      "partialBy": "cmp.cardParts [kicker, art, powerCells]（供能小格有了；头像 / 数值 / 武器框仍缺）"
+    },
+    {
+      "screen": "character",
+      "what": "tallCard 竖卡的名字居中、说明左对齐，两行对不齐",
+      "severity": "low",
+      "proposal": "cardsRow 的说明与名字统一对齐（跟 lay.titleAlign 或卡内对齐参数）",
+      "kind": "renderBug",
+      "resolvedBy": "lay.titleAlign"
+    },
+    {
+      "screen": "results",
+      "what": "列表第一行固定画强调色描边（像选中态），结算这类只读列表也有",
+      "severity": "low",
+      "proposal": "listRows 只在可交互（ix.mode 不为 none / 屏幕可选择）时给当前行画选中态，并按 st.selected 画",
+      "kind": "renderBug",
+      "resolvedBy": "ix.mode = readOnly（R4 对照图：结算第一行不再画焦点框）"
+    },
+    {
+      "screen": "results",
+      "what": "结算每个目标应有完成 / 失败标记（绿勾 / 红叉）；配方 st.statusMark = icon，渲染不读它（cmp.listRow 的 status 字段固定在第二行画一枚\"进行中\"胶囊）",
+      "severity": "low",
+      "proposal": "cmp.listRow 的 status 字段按 st.statusMark（icon / dot / tag / rowTint）与 col.coding = status 画每行状态",
+      "kind": "renderBug",
+      "resolvedBy": "cmp.listRow + status, st.statusMark"
+    },
+    {
+      "screen": "squad / results",
+      "what": "模板容器里的元素与列表、按钮行互不避让：布阵抽屉里驾驶员身份卡（el.profile）压住第三行和‘返回’按钮；结算页星级（el.rank 锚右上）落进第一行、盖住状态标记",
+      "severity": "medium",
+      "proposal": "容器内锚定的元素登记进模板的占位表，列表 / 按钮行按它让位（或元素自动换到页头槽 elx.anchorSpace = header）；放不下时给检查提示",
+      "kind": "layoutEngine",
+      "resolvedBy": "squad 改 lay.container = panels、去掉 el.profile；results 星级挪到页头（R4 对照图）"
+    },
+    {
+      "screen": "map",
+      "what": "tpl.worldmap 的 cnt.focal = title 只能写模板名‘世界地图’；原作这里写任务 / 区域名（Rust District）",
+      "severity": "low",
+      "proposal": "内容包给任务 / 区域名（screens.mission），worldmap 的主体标题优先写它",
+      "kind": "content",
+      "resolvedBy": "R4 对照图：任务名写区域名（海岸防线 · 东区）"
+    },
+    {
+      "screen": "dialogue",
+      "what": "cmp.dialogBox = framedBox 让场景主体（底图占位）铺满整屏、对话框贴屏幕底成通栏框：居中插画面板与顶部标题暗带都没了，标题落成框上沿的小页签；参考是居中插画面板里贴面板底边的细框文本框，CONTINUE 挂在面板外沿",
+      "severity": "medium",
+      "proposal": "framedBox 在 modal / 窗口容器里贴容器底边（容器保留插画、标题暗带与外沿按钮），只有叠加 / 无容器时才贴屏幕底",
+      "kind": "layoutEngine",
+      "resolvedBy": "R4 回归修复 C1 ③（framedBox 在有面板的弹窗 / 窗口里贴容器内框底边，容器、整幅插画、标题暗带与场景主体照常；edgeTab 的 CONTINUE 没有数据区也进按钮行、挂到容器右下外沿）"
+    },
+    {
+      "screen": "hud",
+      "what": "el.cta = dual 的主次顺序固定（次钮在左、主钮在右）：参考大号 End Turn 在左、窄 Undo Move 在右",
+      "severity": "low",
+      "proposal": "el.cta 加主次顺序参数（primaryFirst / primaryLast），dual / triple 都认",
+      "kind": "missingParam"
+    },
+    {
+      "screen": "all",
+      "what": "vis.pixelRoles 含 display 后，小号中文标题被低分辨率栅格化糊成一团：页签‘布阵’‘装备纸娃娃’、电网条的 DEFENSE 读数都读不出（第 3 轮还清楚）",
+      "severity": "medium",
+      "proposal": "像素化的栅格按字号取下限（小于约 12px@1080p 的字不像素化，或换点阵 CJK 字体 / 整数倍放大）",
+      "kind": "renderBug",
+      "resolvedBy": "R4 回归修复 P1（pixelRoles.ts LEGIBLE_PX 可读下限：要进低分辨率字层、但在那一层上中文不到 12 / 其余不到 10 层像素的字改画清晰层——1028 宽的对照图上「布阵」「装备纸娃娃」「指挥部」与 DEFENSE 19% 读数都走清晰层；1080p 时 ≥ 12 层像素的标题照旧像素化。roleCtx 替身逐字核对，浏览器目检待 lead）"
+    }
+  ],
+  "scores": {
+    "hud": [
+      {
+        "layout": 3,
+        "elements": 3,
+        "palette": 4,
+        "type": 5,
+        "shape": 4,
+        "density": 3,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 6,
+        "elements": 4,
+        "palette": 6,
+        "type": 4,
+        "shape": 6,
+        "density": 5,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 6,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 5,
+        "overall": 5,
+        "round": 3
+      },
+      {
+        "layout": 7,
+        "elements": 7,
+        "palette": 6,
+        "type": 6,
+        "shape": 7,
+        "density": 6,
+        "overall": 6,
+        "round": 4
+      }
+    ],
+    "squad": [
+      {
+        "layout": 3,
+        "elements": 2,
+        "palette": 3,
+        "type": 4,
+        "shape": 3,
+        "density": 2,
+        "overall": 2,
+        "round": 1
+      },
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 6,
+        "type": 4,
+        "shape": 5,
+        "density": 3,
+        "overall": 3,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 3,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 4,
+        "overall": 3,
+        "round": 3
+      },
+      {
+        "layout": 6,
+        "elements": 6,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 5,
+        "overall": 5,
+        "round": 4
+      }
+    ],
+    "map": [
+      {
+        "layout": 2,
+        "elements": 2,
+        "palette": 4,
+        "type": 4,
+        "shape": 3,
+        "density": 3,
+        "overall": 2,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 6,
+        "type": 4,
+        "shape": 5,
+        "density": 5,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 5,
+        "overall": 4,
+        "round": 3
+      },
+      {
+        "layout": 6,
+        "elements": 6,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 6,
+        "overall": 5,
+        "round": 4
+      }
+    ],
+    "dialogue": [
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 4,
+        "type": 4,
+        "shape": 4,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 6,
+        "elements": 4,
+        "palette": 6,
+        "type": 4,
+        "shape": 6,
+        "density": 6,
+        "overall": 5,
+        "round": 2
+      },
+      {
+        "layout": 7,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 6,
+        "overall": 6,
+        "round": 3
+      },
+      {
+        "layout": 4,
+        "elements": 6,
+        "palette": 5,
+        "type": 5,
+        "shape": 6,
+        "density": 5,
+        "overall": 5,
+        "round": 4
+      }
+    ],
+    "character": [
+      {
+        "layout": 3,
+        "elements": 2,
+        "palette": 5,
+        "type": 4,
+        "shape": 4,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 3,
+        "palette": 5,
+        "type": 4,
+        "shape": 5,
+        "density": 3,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 3,
+        "palette": 6,
+        "type": 4,
+        "shape": 5,
+        "density": 3,
+        "overall": 4,
+        "round": 3
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 6,
+        "type": 4,
+        "shape": 5,
+        "density": 4,
+        "overall": 4,
+        "round": 4
+      }
+    ],
+    "results": [
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 4,
+        "type": 4,
+        "shape": 4,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 6,
+        "elements": 4,
+        "palette": 6,
+        "type": 4,
+        "shape": 6,
+        "density": 5,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 5,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 5,
+        "overall": 4,
+        "round": 3
+      },
+      {
+        "layout": 6,
+        "elements": 6,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 5,
+        "overall": 5,
+        "round": 4
+      }
+    ]
+  },
+  "round1Diffs": {
+    "hud": [
+      "旧皮肤 pixel 的主按钮是米白底黑字（开始作战），原作 End Turn / Undo Move 是深蓝底、灰白细边、白色像素字",
+      "选中单位卡（el.selection = card）是 190×250 的竖卡 + 金色圆头像 + 三条属性条，被避让挤到左上，压住结束回合按钮和小队列；原作左下是一条矮的头像 + 武器格",
+      "计时写成大号 \"00:45\"，原作右上是 \"Victory in 3 turns\" 的细框条",
+      "左侧小队是带长血条的名牌行，原作是窄的一列方头像 + 小血格",
+      "右下的地形 / 物件说明卡没有画（原作右下常驻 Water Tile 说明）",
+      "el.turnOrder 按需显示画成 35% 透明，看不见；el.prompt contextual 挂在世界兴趣点上，变成画面中上方的 [E] 回收",
+      "旧皮肤的面板外圈有一道 4px 墨色描边，原作只有 1–2px 灰白细线",
+      "世界很亮（绿岛 + 青色海），原作是暗灰棋盘 + 近黑海军蓝底"
+    ],
+    "squad": [
+      "容器写成 overlay，模板退化成只画元素：画面上只有右上一个米白\"开始作战\"和左下一张身份卡",
+      "缺\"Customize Squad\"整块面板：页签标题、三行机甲行（图标 + 名字 + 武器 + 数值）、底部两个宽按钮",
+      "缺左上 Back 按钮；身份卡是黄圈头像 + 黄色胶囊，原作驾驶员面板是方头像 + 名字 + 一句技能说明 + 两个宽按钮"
+    ],
+    "map": [
+      "只设了 cnt.screen 没选模板，落到旧的通用\"行囊 / 存货\"列表 + 详情样本",
+      "标题是黄色实心条\"整 备\"，原作任务名是红色像素字压在深蓝面板上",
+      "没有任务面板 + 右侧棋盘预览的左右结构；胜利条件和场景灰盒叠在一起",
+      "顶栏是右上角的货币胶囊，原作是居中的细线框分隔条（星级、声望、电网格、核心）"
+    ],
+    "dialogue": [
+      "黄色实心标题条\"整 备\"和左上\"NPC 对话\"两处标题，原作只有面板顶部居中一行白色像素标题",
+      "场景插画灰盒被画在弹窗后面（面板压主体），面板里是空的深色底；原作插画铺满整个面板",
+      "主按钮是米白大按钮，原作 CONTINUE 是挂在面板右下的深蓝像素字按钮",
+      "字幕浮在面板中部，原作是面板底部一条带方头像的文本框"
+    ],
+    "character": [
+      "凭记忆编码：原作整备页是三台机甲并排的竖栏（驾驶员头像 + 机甲 + 武器格 + 反应堆核心槽），这里是大金圈头像 + 三行任务式列表 + 浮动详情",
+      "左上的等级经验条与标题字叠在一起（装备纸娃娃 / Lv 条重叠），字被压花",
+      "列表行有黄色焦点粗框，原作没有这种描边高亮",
+      "取消按钮是米白色"
+    ],
+    "results": [
+      "凭记忆编码：原作任务结算是一块深蓝面板列出各目标（星 / 电网 / 声望图标 + 文字）+ 右下 CONTINUE；这里是黄色大标题条 + 星级 + 巨号分数 \"24,600\"",
+      "多了\"分享\"按钮（tpl.settle 自带 ops.actions = share，空数组覆盖不掉）",
+      "主按钮米白色"
+    ]
+  },
+  "round2Diffs": {
+    "hud": [
+      "左上电网只有火焰图标 + 一排橙色分段格，没有细线外框、\"POWER GRID\"标签、\"GRID DEFENSE 19%\"读数和\"RESET TURN\"文字按钮",
+      "两枚主按钮（返回 / 开始作战）位置、大小、板岩蓝底与切角都对了，但字是 8px 左右的无衬线小字；原作 End Turn 是大号白色像素字，Undo Move 是两行小字的窄按钮",
+      "左侧小队是圆形占位头像 + 绿 / 红圈 + 细血条；原作是一列带细框的方形机甲像（旁边挂小武器图标），列底有折叠箭头",
+      "左下只有 4 个带数字的技能格；原作是方形驾驶员头像 + \"Rocket Mech\"名字 / 血格标签 + 2 个武器格 + \"[Right Click] or [0] to Disarm\"按键说明格",
+      "右上回合条是实心板岩蓝\"第 3 回合 · 我方行动\"；原作是暗底细框条\"Victory in 3 turns\"，数字放大",
+      "目标清单裸放在世界上（黄色标题 + 勾选框），没有面板与\"Bonus Objectives\"页签；完成项只打勾，原作是划线 + 绿字",
+      "棋盘上只有橙色高亮格 + 一个红色椭圆；原作是红色斜纹攻击格、黄色圆形攻击顺序编号、单位头顶绿 / 红小方血格、推移箭头；\"ATTACK ORDER\"按钮没有",
+      "右下地形说明卡的位置、深底、细框、切角都对上了，只差左侧地形小图标和像素字标题",
+      "整体配色已接近：深海军蓝面板、1–2px 灰白细线、板岩蓝按钮、暗色棋盘"
+    ],
+    "squad": [
+      "右侧抽屉占满整屏高度，三行之后到底部是大片空白；原作 Customize Squad 面板只有内容高度，位于右下",
+      "行内容是任务（守住发电厂 / 电网不能低于 3 格 / 60%），不是机甲行（机甲像 + 名字 + 武器小格 + 绿底移动 / 生命数字格 + \"Ranged\"职业）；没有顶部 6 个选择小图标和行首铅笔 / 色板按钮",
+      "返回 / 开始作战 是抽屉里的两个小按钮；原作 Back / Start 是屏幕左上 / 右上的大号像素字按钮，面板底部是 Edit Squad / Change Squad 两条通栏宽按钮",
+      "驾驶员卡挤在抽屉内左下（圆头像 + UID + 胶囊）；原作 Time Traveler 是屏幕左下的独立面板：页签标题 + 方头像 + 名字 + 技能说明 + 两条宽按钮",
+      "页签标题\"布阵\"小、两端斜切；原作页签是大号像素字、只斜右端",
+      "深底、细线、切角、板岩蓝主按钮已对上"
+    ],
+    "map": [
+      "一个大弹窗把简报和地图预览框在一起，左上多出\"世界地图\"页签与\"Esc 返回\"；原作是一块小简报面板 + 无框的等距棋盘预览压在面板右缘，两者用细线折角连起来",
+      "任务名是约 60px 的白色像素大字；原作 Rust District 约 20px、红色像素字、居中",
+      "简报只有黄色\"胜利条件\" + 3 个勾选框；原作有\"Vek Threat Detected!\"、细线分隔的 BONUS OBJECTIVES 小标题 + 图标行、WARNING! 分隔 + 黄框 WIND STORM",
+      "地图预览是俯视的岛屿地形图 + 菱形节点；原作是这一关棋盘的等距小模型",
+      "参谋发言是一条黑底短字条，没有细框文本框和右侧方头像",
+      "顶栏是右上角三枚货币胶囊；原作是居中的细框分隔条（星、声望、电网分段格、GRID DEFENSE、核心）"
+    ],
+    "dialogue": [
+      "面板大小、位置、灰白细框与切角、插画铺满面板的结构已接近原作",
+      "标题是左上小页签\"NPC 对话\"；原作标题居中压在插画顶部的暗带上（白色像素字）",
+      "插画仍是灰色斜纹占位（需素材）",
+      "字幕是面板中下一条黑底短字条，没有左侧方头像，也不是贴着面板底部的通栏细框文本框",
+      "主按钮是面板内右下的实心板岩蓝宽按钮，字很小，写的是\"开始作战\"；原作 CONTINUE 是挂在面板右下边缘外的斜切页签按钮，大号像素字",
+      "顶栏同地图页：右上货币胶囊，不是居中细框分隔条"
+    ],
+    "character": [
+      "（凭记忆）三台机甲并排的结构对了，但每张竖卡只有图标 + 名字 + 一句说明，大半是空白；原作每栏 = 驾驶员头像 + 名字 / 经验 + 机甲像 + 生命 / 移动 + 武器框 + 一排供能小格",
+      "中间卡是紫色粗框、三个图标是蓝 / 紫 / 橙（稀有度色），原作没有稀有度配色；配色因此偏离 mono",
+      "卡名居中、说明左对齐，两行不齐",
+      "右上资源是金币 / 星 / 三角三项，原作只有反应堆核心数",
+      "深底弹窗、页签标题、‹ 返回、细线切角已接近"
+    ],
+    "results": [
+      "（凭记忆）结构接近：深色弹窗 + 页签标题 + 三行目标 + 右上星级 + 右下主按钮",
+      "行没有完成 / 失败标记（绿勾 / 红叉），图标是统一的板岩蓝菱形，奖励是统一的\"×20\"格；原作每行按奖励类型配图标（星 / 电网 / 核心）",
+      "第一行带强调色描边，像选中态，只读结算页不该有",
+      "主按钮字小、写\"开始作战\"；原作 CONTINUE 是大号像素字"
+    ]
+  },
+  "round3Diffs": {
+    "hud": [
+      "主按钮已是可读的像素字（第 2 轮约 8px），小队是带细框的方形头像；但两钮是等宽的‘返回 / 开始作战’，参考是大号‘End Turn’ + 两行小字的窄‘Undo Move’",
+      "左上电网仍只有图标 + 橙色分段格，没有细框、POWER GRID 标签、GRID DEFENSE 读数与 RESET TURN",
+      "右上回合条仍是实心板岩蓝条，参考是暗底细框‘Victory in 3 turns’；目标清单没有‘Bonus Objectives’页签面板，完成项已划线但是暗灰色（参考划线 + 绿字），几乎看不见",
+      "左下仍是 4 个编号武器格，没有驾驶员头像、名字 / 血格与按键说明；右下地形卡缺左侧地形小图标",
+      "棋盘上高亮格与推移箭头已同屏（箭头是板岩蓝），但没有红色斜纹攻击格、攻击顺序编号与单位头顶小方血格"
+    ],
+    "squad": [
+      "面板已按内容收高、贴右下，按钮与页签是像素字；但驾驶员身份卡压在第三行和‘返回’按钮上",
+      "行内容仍是任务（守住发电厂 / 电网不能低于 3 格 / 60%），不是机甲行（机甲像 + 名字 + 武器小格 + 移动 / 生命数字格）",
+      "返回 / 开始作战仍在面板内右下（el.cta.anchorSpace = screen 没生效），参考 Back / Start 在画面左上 / 右上；驾驶员卡也不是左下独立的 Time Traveler 面板",
+      "页签标题‘布阵’小、两端斜切，参考是大号像素字、只斜右端"
+    ],
+    "map": [
+      "任务名已是约 20px 的红色像素字、居中，‘世界地图’页签与‘Esc 返回’都已去掉；但任务名写的是模板名‘世界地图’，与下方清单之间空着一大段",
+      "简报只有暗色‘胜利条件’ + 3 个勾选框，没有 Vek Threat / BONUS OBJECTIVES / WARNING 分节",
+      "顶栏已是通栏细条，但字段是货币 / 回合 / 计时、分在左右两端；参考是居中的细框分隔条（星、声望、电网格、GRID DEFENSE、核心）",
+      "地图预览是近黑底 + 菱形节点 + 一小块地形，参考是这一关棋盘的等距小模型",
+      "参谋发言是面板顶部一条黑底字条，没有右侧方头像"
+    ],
+    "dialogue": [
+      "标题‘指挥部’已居中在顶部暗带上，但垫着板岩蓝小页签，参考是暗带上的白色像素字",
+      "字幕条已带左侧方头像、靠近面板底部，但只是按字宽的黑底短条，参考是通栏细框文本框",
+      "按钮是面板内右下的板岩蓝像素字按钮、写‘开始作战’，参考 CONTINUE 挂在面板右下边缘外、斜切页签式",
+      "插画仍是灰色斜纹占位（需素材）",
+      "顶栏是通栏细条（货币 / 回合 / 计时），参考是居中的细框分隔条"
+    ],
+    "character": [
+      "（凭记忆）竖卡已不着稀有度色（中间卡是黄色焦点框），但每栏只有图标 + 名字 + 一句说明、大半空白；原作每栏 = 驾驶员头像 + 名字 / 经验 + 机甲像 + 生命 / 移动 + 武器框 + 供能小格",
+      "右上资源是金币 / ✦ / ▲ 三项，原作只有反应堆核心数",
+      "页签标题小、两端斜切（同其他屏）"
+    ],
+    "results": [
+      "（凭记忆）每行已带完成 / 失败 / 进行中小标记（✓ × ◐），但是灰色小号；原作是绿勾 / 红叉",
+      "星级（el.rank 锚右上）落进第一行右侧，压住这一行的状态标记",
+      "只读结算的第一行仍画黄色焦点框",
+      "奖励格统一是‘×20’白点，原作按奖励类型配图标（星 / 电网 / 核心）；主按钮写‘开始作战’，原作是 CONTINUE"
+    ]
+  },
+  "round4Diffs": {
+    "hud": [
+      "屏幕层已对上（左上 POWER GRID 细框条 + RESET TURN、右上暗底细框回合倒数 + 带页签的胜利条件、左下驾驶员头像 + 名字 / 血格 + 武器格 + [0] 解除），但棋盘上仍没有红色斜纹攻击格、黄色攻击顺序编号与单位头顶小方血格",
+      "电网分段格是板岩蓝（不是橙色），条内没有暗底，DEFENSE 读数被像素化糊掉、读不出",
+      "两钮顺序反了：参考大号 End Turn 在左、窄 Undo Move 在右；回合倒数的数字‘3’是暗色、几乎看不见",
+      "左侧小队列与驾驶员头像是灰色人形占位，参考是像素机甲 / 驾驶员小方像"
+    ],
+    "squad": [
+      "已是两块独立面板：右下布阵（选择条 + 三行机甲：编辑钮、名字、武器格、绿色数值格）与左下详情；但 Back / Start 仍是右上两颗小按钮，参考是左上 Back、右上 Start 两颗大号像素字按钮",
+      "机甲行很矮、字很小，面板下半空着；参考三行机甲带机甲像与武器像、占满面板",
+      "左侧详情是文字 + 装备 / 技能小按钮，参考 Time Traveler 是大方头像 + 名字 + 被动说明 + 两条通栏按钮",
+      "页签标题‘布阵’小且被像素化糊成一团，参考 Customize Squad 是清楚的大号像素字"
+    ],
+    "map": [
+      "顶栏已是居中细框分隔条，任务名是红色像素字写区域名，简报已分节（胜利条件 / BONUS OBJECTIVES / WARNING）；但环境警告是白细框灰字‘环境警告’，参考是黄框 + 图标 + 黄色 WIND STORM",
+      "地图预览仍是近黑框里的俯视地形 + 菱形节点，参考是无框的等距棋盘小模型",
+      "参谋发言仍是面板顶部一条黑底字条，没有右侧方头像",
+      "简报字很小，BONUS OBJECTIVES 小标题是暗蓝色、几乎看不见；缺 Vek Threat Detected! 一行"
+    ],
+    "dialogue": [
+      "居中的插画面板没了：‘底图（需素材）’斜纹占位铺满整屏，对话框成了贴屏幕底的通栏框；参考是居中约 80% 宽的插画面板、文本框贴在面板底边内侧",
+      "标题‘指挥部’是对话框上沿的小板岩蓝页签，参考是面板顶部暗带上的白色大号像素字（第 3 轮已对上）",
+      "右下已是斜切页签式按钮，但写‘开始作战’、很小、在框内；参考 CONTINUE 挂在面板右下外沿、大号像素字",
+      "正文只占框左上一行，框右半空着"
+    ],
+    "character": [
+      "（凭记忆）每栏是类别小字 + 机名 + 一大块写单字的图位（主 / 重 / 支）+ 底部几枚灰色供能小格；原作每栏有驾驶员头像 + 名字 / 经验、机甲像、生命 / 移动、武器框",
+      "供能小格很小、全是灰色，没有已供能的橙格",
+      "右上资源只剩一项，但图标与数字几乎看不清；页签标题小且糊"
+    ],
+    "results": [
+      "（凭记忆）星级已挪到页头右侧、第一行不再画焦点框、状态是绿勾 / 红叉 / 半圆，按钮写‘继续’；但奖励格仍是统一的白圆点图标",
+      "行首是暗蓝菱形，原作是目标类型小图标；行字很小",
+      "‘继续’是面板内右下的小板岩蓝钮，原作 CONTINUE 是大号像素字"
+    ]
+  },
+  "revisions": [
+    "皮肤从旧 pixel 换成非旧皮肤 godotDefault（深灰蓝基线）再全部覆盖：旧皮肤的主按钮固定米白底、面板外圈带 4px 墨色描边，覆盖不掉；新皮肤下主按钮 = 强调色底 + 面板描边",
+    "强调色改成板岩蓝 #46567a（按钮底、页签标牌底），焦点色保留黄色；col.strategy 改 mono，让图标跟字色走，语义色（绿 / 红 / 橙 / 黄）交给 col.coding 与内容包",
+    "cmp.plate = tab 从 cmp.plate@title 挪到全局：模板的界面标题只读 cmp.plate，原来按 @title 写的不生效；描边 2 → 1.5px，基准字号 13 → 12",
+    "ast.iconSet 从 asset 改 procedural：图集图标是厚涂风（盾牌、水晶、矿石），与原作的像素小图标差得更远",
+    "画面：色板 night + 饱和 0.4 + 曝光 0.85，世界从亮绿岛变成暗灰蓝，接近原作暗灰棋盘与近黑底的明暗",
+    "HUD：选中卡换成右下的 el.selection = tooltip（原作右下的地形说明）；左下改 el.abilities = slots（选中机甲的武器格）；小队改 el.party = portraits（窄列头像 + 细血条）；计时改 turnBanner 并排在目标清单之前（右上先是回合条再是清单）；主按钮 dual 缩到 0.8；去掉 el.toolbar、el.prompt、el.turnOrder（原作没有这些位置的对应物或画不出来）",
+    "HUD：el.threat 的画法把 telegraph 放第一位（多选只画第一项，红色预警区比意图图标更像原作）",
+    "布阵：容器 overlay → drawer（右侧抽屉 + 页签标题 + ‹ 返回），数据改 3 行横卡行（collection + column + rowCard），dual 按钮放抽屉底部，驾驶员身份卡 idCard 放抽屉左下；场景不压暗",
+    "地图：选 tpl.worldmap，改居中弹窗：左边 cnt.focal = title（任务名大字）+ 左下胜利条件清单，右边 spatial 地图预览（等距方块节点），顶部 bar 字幕当参谋发言；关掉模式带来的临时详情与拖动提示，ix.confirm = instant 去掉确认按钮，关闭控件用 Esc 键提示代替 ✕",
+    "对话：tpl.npc 改成大弹窗，场景插画作主体铺满面板（灰盒，记缺口 needs art），字幕框放面板底部，主按钮在右下；ix.close = cancelBtn（底部按钮就是结束控件），去掉 el.title 重复标题",
+    "整备（凭记忆）：tpl.loadout 改成弹窗里三张并排竖卡（row + tallCard），对应原作三台机甲并排；资源数（核心）放右上；去掉金圈头像、列表与浮动详情",
+    "结算（凭记忆）：tpl.settle → tpl.stats（没有自带的分享按钮）：弹窗 + 三行目标（图标 + 名字 + 奖励格）+ 右上星级 + 右下主按钮",
+    "R3 前（M12a 之后）：base 加 vis.silhouette@avatar = box + vis.strokeWidth@avatar 1（细框方形像素头像）、typ.button.family = display + typ.button.size = fit（按钮字是大号像素字、随按钮高）、col.icon 白（图标不再跟板岩蓝强调色）；五个模板屏 ix.close 改 none（原作没有 ✕）；squad 加 lay.panelFit = fitContent + lay.vAlign = bottom（面板按内容收高、靠下）、el.cta 改 anchorSpace = screen + tr（Back / Start 移到画面右上；左上分开放、Time Traveler 独立面板仍缺）；map 加 lay.titlePos none、col.text@title 红（任务名红色像素字）、flow.chrome topCurrency → statusBar（细顶栏，不带 + 购买钮）；dialogue 加 lay.titleAlign center + cmp.plate@title none + col.surface@titleBar 暗带（标题居中压在插画顶部暗带上）、flow.chrome → statusBar；character 加 lay.titleAlign left（D5 之后卡名默认又居中，显式写左让名字与说明同一条线）；results 加 ix.mode = readOnly（只读不画选中行）、cmp.listRow 加 status（每行完成 / 失败标记）。",
+    "R3 评分（M12a 之后；base 的 typ.baseSize 40 → 22 由 lead 修正双重换算后重渲重评，未改其他取值）：补第 3 轮 scores 与 round3Diffs；新增缺口 2 条（模板内元素不避让、地图主体标题写模板名）；按第 3 轮对照图给已画对的 5 条缺口标 resolvedBy；去掉‘只读列表第一行画选中态’一条的 resolvedBy（结算页第一行仍是黄色焦点框）。",
+    "R4 前（M12b 之后）：base 加 cmp.plateEnds right（页签只斜右端，#8）、vis.pixelRoles [display, numerals]（只有标题 / 大按钮字与数字像素化，#31）、col.good #6ccf4a + col.bad #e0453a（mono 色板下完成 / 失败标记与划线目标回到绿 / 红）；hud 加 el.meter.form withIcon → framedStrip（POWER GRID 细框条 + 读数 + RESET，#3）、el.timer.form turnBanner → countdownStrip（暗底细框 Victory in 3 turns，#25）、el.objective.form [checklist] → [panelTab]（Bonus Objectives 页签面板，#23）、el.abilities.form slots → unitLoadout（驾驶员头像 + 名字 / 血格 + 武器格 + 按键说明，#4）、cmp.gauge@el.threat pips + cmp.gaugeExtra@el.threat [statusBeside]（头顶独立小方血格 + 状态小方块，#26）、cnt.elements 加 el.turnOrder（numberBadges：挂在敌人头上的攻击顺序编号，#27；悬停才出现的触发没有参数）；squad 加 lay.container drawer → panels + lay.panelWidth 0.36（右下 Customize Squad 主面板 + 左下详情面板两块独立，#9），去掉 el.profile 身份卡（左侧详情面板代替 Time Traveler），vis.cornerMask [tr]（只切右上角，#21）、cmp.slot rowCard → cell + cmp.listRow [leadButtons, icon, title, slots, statChips] + cmp.listHeader selectorStrip（机甲行 + 驾驶员选择条，#11）；map 加 el.objective.form [sectioned] + st.alert [framedLabel]（BONUS OBJECTIVES / WARNING 分节 + 黄框 WIND STORM，#17）、flow.chrome statusBar → topStrip（居中细框分隔条，#18）、vis.cornerMask [tr]（#21）；没写 B9 的 lay.container windowPair + lay.windowLink elbow 与 B8 的 cmp.leader@tooltip（停靠窗只能放背包 / 列表 / 详情，现在左侧的任务名 + 分节目标会被挤出简报面板；参考没有浮动详情）；dialogue 加 cmp.dialogBox bar → framedBox（贴底通栏细框 + 方头像槽，#14）、el.cta.form wide → edgeTab + vis.silhouette@el.cta edgeTab（右下外沿斜切页签式 CONTINUE，#30）、flow.chrome → topStrip（#18 同款顶条）；character 加 cnt.subtype loadout → formation（中期审查修复后 loadout 画物品，整备屏要机兵名册）+ cmp.cardParts [kicker, art, powerCells]（每栏一排供能小格，#35）、el.resources.count 1（只有反应堆核心数）。",
+    "R4 评分（M12b 之后，未改取值）：补第 4 轮 scores 与 round4Diffs；新增缺口 3 条；按第 4 轮对照图给 12 条缺口标 resolvedBy、7 条标 partialBy。"
+  ],
+  "notes": "混合分辨率：棋盘是等距像素画，UI 却是清晰的深海军蓝面板 + 1–2px 灰白细线 + 切角与斜切页签，只有标题、大按钮和数字用像素字，正文用清晰无衬线保证规则说明可读。信息设计的重心在棋盘上：攻击格、推动箭头、攻击顺序编号、建筑受损预告都直接画在格子上，让回合结果完全可预见；屏幕层分散在四周：左上电网分段条 + 结束回合 / 撤销移动，左侧机甲小队列，右上胜利倒数与奖励目标清单（完成的划线变绿），左下选中单位卡 + 武器格 + 按键提示，右下地形说明。机甲整备与任务结算两屏按对这款游戏的了解编码。"
+}

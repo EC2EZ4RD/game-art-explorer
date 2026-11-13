@@ -1,0 +1,38 @@
+{
+ "files": {
+  "atlas": "ui_ornament_corners.png"
+ },
+ "size": [
+  1024,
+  1024
+ ],
+ "cell": 512,
+ "rects": {
+  "floral": [
+   4,
+   23,
+   504,
+   466
+  ],
+  "cloud": [
+   516,
+   17,
+   504,
+   478
+  ],
+  "wing": [
+   4,
+   527,
+   504,
+   481
+  ],
+  "rune": [
+   516,
+   531,
+   504,
+   473
+  ]
+ },
+ "found": 4,
+ "id": "ui_ornament_corners"
+}

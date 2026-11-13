@@ -1,0 +1,10637 @@
+{
+ "note": "只靠 Steam 标签、但美术标签不在前 12 位的游戏（不进候选，备查）",
+ "games": [
+  {
+   "appid": 6310,
+   "name": "The Longest Journey",
+   "tags": [
+    "Adventure",
+    "Point & Click",
+    "Story Rich",
+    "Female Protagonist",
+    "Classic",
+    "Fantasy",
+    "Sci-fi",
+    "Singleplayer",
+    "Cult Classic",
+    "Puzzle",
+    "Great Soundtrack",
+    "1990's"
+   ]
+  },
+  {
+   "appid": 8190,
+   "name": "Just Cause 2",
+   "tags": [
+    "Open World",
+    "Action",
+    "Sandbox",
+    "Third Person",
+    "Multiplayer",
+    "Adventure",
+    "Third-Person Shooter",
+    "Shooter",
+    "Singleplayer",
+    "Destruction",
+    "Exploration",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 26800,
+   "name": "Braid",
+   "tags": [
+    "Puzzle-Platformer",
+    "Puzzle",
+    "2D Platformer",
+    "Platformer",
+    "Indie",
+    "Time Manipulation",
+    "2D",
+    "Singleplayer",
+    "Great Soundtrack",
+    "Difficult",
+    "Time Travel",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 205910,
+   "name": "Tiny and Big: Grandpa's Leftovers",
+   "tags": [
+    "Indie",
+    "Physics",
+    "Platformer",
+    "Puzzle",
+    "Great Soundtrack",
+    "3D Platformer",
+    "Adventure",
+    "Third Person",
+    "Comedy",
+    "Action",
+    "Singleplayer",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 242920,
+   "name": "Banished",
+   "tags": [
+    "City Builder",
+    "Colony Sim",
+    "Strategy",
+    "Simulation",
+    "Survival",
+    "Indie",
+    "Singleplayer",
+    "Sandbox",
+    "Medieval",
+    "Resource Management",
+    "Relaxing",
+    "Economy"
+   ]
+  },
+  {
+   "appid": 269950,
+   "name": "X-Plane 11",
+   "tags": [
+    "Simulation",
+    "Flight",
+    "Realistic",
+    "Open World",
+    "Multiplayer",
+    "VR",
+    "Singleplayer",
+    "Physics",
+    "First-Person",
+    "Sandbox",
+    "Atmospheric",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 433550,
+   "name": "DARQ: Complete Edition",
+   "tags": [
+    "Horror",
+    "Dark",
+    "Adventure",
+    "Puzzle",
+    "Singleplayer",
+    "Atmospheric",
+    "Psychological Horror",
+    "Puzzle-Platformer",
+    "Side Scroller",
+    "2.5D",
+    "Stealth",
+    "Third Person"
+   ]
+  },
+  {
+   "appid": 470310,
+   "name": "TROUBLESHOOTER: Abandoned Children",
+   "tags": [
+    "CRPG",
+    "Tactical RPG",
+    "Turn-Based Tactics",
+    "Turn-Based",
+    "Strategy RPG",
+    "Turn-Based Strategy",
+    "Party-Based RPG",
+    "Female Protagonist",
+    "Wargame",
+    "JRPG",
+    "RPG",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 602320,
+   "name": "Train Valley 2",
+   "tags": [
+    "Quick-Time Events",
+    "Multiple Endings",
+    "Trains",
+    "Relaxing",
+    "Simulation",
+    "Strategy",
+    "Singleplayer",
+    "Management",
+    "Level Editor",
+    "Indie",
+    "Building",
+    "Puzzle"
+   ]
+  },
+  {
+   "appid": 624270,
+   "name": "The Painscreek Killings",
+   "tags": [
+    "Investigation",
+    "Mystery",
+    "Detective",
+    "Exploration",
+    "Story Rich",
+    "Puzzle",
+    "Atmospheric",
+    "Horror",
+    "Walking Simulator",
+    "Open World",
+    "Supernatural",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 681280,
+   "name": "Descenders",
+   "tags": [
+    "Sports",
+    "Racing",
+    "Cycling",
+    "Action",
+    "Bikes",
+    "Multiplayer",
+    "Great Soundtrack",
+    "Procedural Generation",
+    "Open World",
+    "Rogue-lite",
+    "BMX",
+    "Fast-Paced"
+   ]
+  },
+  {
+   "appid": 853550,
+   "name": "Equilinox",
+   "tags": [
+    "Simulation",
+    "Indie",
+    "Casual",
+    "Relaxing",
+    "Sandbox",
+    "Singleplayer",
+    "Nature",
+    "God Game",
+    "Great Soundtrack",
+    "Atmospheric",
+    "Family Friendly",
+    "Management"
+   ]
+  },
+  {
+   "appid": 863590,
+   "name": "Starcom: Nexus",
+   "tags": [
+    "Space",
+    "Sci-fi",
+    "RPG",
+    "Exploration",
+    "Action",
+    "Adventure",
+    "Indie",
+    "Open World",
+    "Space Sim",
+    "Top-Down",
+    "Building",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 874260,
+   "name": "The Forgotten City",
+   "tags": [
+    "Adventure",
+    "Time Travel",
+    "Mystery",
+    "Exploration",
+    "Choices Matter",
+    "Investigation",
+    "Story Rich",
+    "Indie",
+    "RPG",
+    "First-Person",
+    "Multiple Endings",
+    "Walking Simulator"
+   ]
+  },
+  {
+   "appid": 920210,
+   "name": "LEGO Star Wars: The Skywalker Saga",
+   "tags": [
+    "LEGO",
+    "Adventure",
+    "Co-op",
+    "Multiplayer",
+    "Open World",
+    "Space",
+    "Local Co-Op",
+    "Action",
+    "Sci-fi",
+    "Singleplayer",
+    "Funny",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 926990,
+   "name": "WolfQuest: Anniversary Edition",
+   "tags": [
+    "Early Access",
+    "Life Sim",
+    "Survival",
+    "Nature",
+    "Multiplayer",
+    "Open World",
+    "Co-op",
+    "Online Co-Op",
+    "PvE",
+    "RPG",
+    "Realistic",
+    "Hunting"
+   ]
+  },
+  {
+   "appid": 976730,
+   "name": "Halo: The Master Chief Collection",
+   "tags": [
+    "Great Soundtrack",
+    "FPS",
+    "Classic",
+    "Multiplayer",
+    "Story Rich",
+    "Sci-fi",
+    "Co-op",
+    "First-Person",
+    "Epic",
+    "Shooter",
+    "Action",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1069740,
+   "name": "Seen",
+   "tags": [
+    "Early Access",
+    "Indie",
+    "Dark",
+    "Adventure",
+    "Singleplayer",
+    "Puzzle",
+    "Atmospheric",
+    "Great Soundtrack",
+    "Action",
+    "Platformer",
+    "Puzzle-Platformer",
+    "2.5D"
+   ]
+  },
+  {
+   "appid": 1079260,
+   "name": "Fireworks Mania - An Explosive Simulator",
+   "tags": [
+    "Sandbox",
+    "Multiplayer",
+    "Singleplayer",
+    "Exploration",
+    "Building",
+    "Physics",
+    "3D",
+    "First-Person",
+    "Action",
+    "Funny",
+    "Casual",
+    "Simulation"
+   ]
+  },
+  {
+   "appid": 1213740,
+   "name": "She Will Punish Them",
+   "tags": [
+    "Sexual Content",
+    "Nudity",
+    "Mature",
+    "Female Protagonist",
+    "3D",
+    "Hack and Slash",
+    "Demons",
+    "Action RPG",
+    "Souls-like",
+    "Dark Fantasy",
+    "Violent",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 1283970,
+   "name": "YoloMouse - Cursor Changer",
+   "tags": [
+    "Utilities",
+    "Design & Illustration",
+    "Animation & Modeling",
+    "Software Training",
+    "Education",
+    "Software",
+    "Funny",
+    "Gaming",
+    "Memes",
+    "First-Person",
+    "Early Access",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 1316680,
+   "name": "VLADiK BRUTAL",
+   "tags": [
+    "FPS",
+    "Shooter",
+    "First-Person",
+    "Action",
+    "Dystopian ",
+    "Adventure",
+    "Realistic",
+    "Casual",
+    "Puzzle",
+    "Action-Adventure",
+    "Stealth",
+    "Experimental"
+   ]
+  },
+  {
+   "appid": 1318690,
+   "name": "shapez",
+   "tags": [
+    "Automation",
+    "Base-Building",
+    "Resource Management",
+    "Sandbox",
+    "Crafting",
+    "Strategy",
+    "Singleplayer",
+    "Management",
+    "Building",
+    "Open World",
+    "2D",
+    "Puzzle"
+   ]
+  },
+  {
+   "appid": 34330,
+   "name": "Total War: SHOGUN 2",
+   "tags": [
+    "Strategy",
+    "Historical",
+    "Turn-Based Strategy",
+    "RTS",
+    "Grand Strategy",
+    "Tactical",
+    "Singleplayer",
+    "Real Time Tactics",
+    "Multiplayer",
+    "Diplomacy",
+    "Ninja",
+    "Military"
+   ]
+  },
+  {
+   "appid": 65800,
+   "name": "Dungeon Defenders",
+   "tags": [
+    "Multiplayer",
+    "Online Co-Op",
+    "Tower Defense",
+    "Singleplayer",
+    "Strategy",
+    "Survival",
+    "Action RPG",
+    "Character Customization",
+    "Tactical",
+    "Family Friendly",
+    "Funny",
+    "Building"
+   ]
+  },
+  {
+   "appid": 201270,
+   "name": "Total War: SHOGUN 2",
+   "tags": [
+    "Strategy",
+    "Historical",
+    "Turn-Based Strategy",
+    "RTS",
+    "Grand Strategy",
+    "Tactical",
+    "Singleplayer",
+    "Multiplayer",
+    "Real Time Tactics",
+    "Military",
+    "Diplomacy",
+    "Ninja"
+   ]
+  },
+  {
+   "appid": 220440,
+   "name": "DmC: Devil May Cry",
+   "tags": [
+    "Action",
+    "Hack and Slash",
+    "Great Soundtrack",
+    "Spectacle fighter",
+    "Demons",
+    "Adventure",
+    "Third Person",
+    "Singleplayer",
+    "Character Action Game",
+    "Reboot",
+    "Controller",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 253030,
+   "name": "Race The Sun",
+   "tags": [
+    "Procedural Generation",
+    "Runner",
+    "Racing",
+    "Perma Death",
+    "Driving",
+    "Difficult",
+    "Tutorial",
+    "Survival",
+    "Arcade",
+    "3D",
+    "VR",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 253110,
+   "name": "The Cat Lady",
+   "tags": [
+    "Horror",
+    "Story Rich",
+    "Adventure",
+    "Female Protagonist",
+    "Indie",
+    "Psychological Horror",
+    "Point & Click",
+    "Dark",
+    "Atmospheric",
+    "Mature",
+    "Psychological",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 352520,
+   "name": "The Silent Age",
+   "tags": [
+    "Point & Click",
+    "Side Scroller",
+    "Adventure",
+    "Psychological Horror",
+    "Story Rich",
+    "Alternate History",
+    "Puzzle",
+    "Detective",
+    "Sci-fi",
+    "Singleplayer",
+    "Exploration",
+    "2D"
+   ]
+  },
+  {
+   "appid": 367450,
+   "name": "Poly Bridge",
+   "tags": [
+    "Building",
+    "Simulation",
+    "Physics",
+    "Puzzle",
+    "Singleplayer",
+    "Sandbox",
+    "Difficult",
+    "Indie",
+    "Funny",
+    "Family Friendly",
+    "Level Editor",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 453090,
+   "name": "Parkitect",
+   "tags": [
+    "Relaxing",
+    "Level Editor",
+    "Simulation",
+    "Management",
+    "Strategy",
+    "Building",
+    "Singleplayer",
+    "Economy",
+    "Retro",
+    "Family Friendly",
+    "Nostalgia",
+    "Time Management"
+   ]
+  },
+  {
+   "appid": 553310,
+   "name": "Lethal League Blaze",
+   "tags": [
+    "Action",
+    "Indie",
+    "2D Fighter",
+    "Great Soundtrack",
+    "Sports",
+    "Fighting",
+    "Fast-Paced",
+    "Local Multiplayer",
+    "Competitive",
+    "Multiplayer",
+    "Arcade",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 587430,
+   "name": "I Expect You To Die",
+   "tags": [
+    "VR",
+    "Puzzle",
+    "Strategy",
+    "Action",
+    "Immersive",
+    "Simulation",
+    "Funny",
+    "Comedy",
+    "Retro",
+    "Singleplayer",
+    "Adventure",
+    "Cold War"
+   ]
+  },
+  {
+   "appid": 692890,
+   "name": "Roboquest",
+   "tags": [
+    "FPS",
+    "Action Roguelike",
+    "Rogue-lite",
+    "Shooter",
+    "Online Co-Op",
+    "Co-op",
+    "Fast-Paced",
+    "Looter Shooter",
+    "Bullet Hell",
+    "Action",
+    "Post-apocalyptic",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 758370,
+   "name": "Through the Ages",
+   "tags": [
+    "Strategy",
+    "Board Game",
+    "Tabletop",
+    "Card Game",
+    "Historical",
+    "Multiplayer",
+    "Turn-Based Strategy",
+    "Singleplayer",
+    "2D",
+    "Resource Management",
+    "Turn-Based",
+    "Simulation"
+   ]
+  },
+  {
+   "appid": 801480,
+   "name": "Agent A: A puzzle in disguise",
+   "tags": [
+    "Logic",
+    "Point & Click",
+    "Puzzle",
+    "Exploration",
+    "Escape Room",
+    "Hidden Object",
+    "Mystery",
+    "Detective",
+    "Singleplayer",
+    "Controller",
+    "Funny",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1061910,
+   "name": "Metal: Hellsinger",
+   "tags": [
+    "Rhythm",
+    "FPS",
+    "Atmospheric",
+    "Singleplayer",
+    "Music",
+    "Shooter",
+    "Action",
+    "Demons",
+    "First-Person",
+    "Combat",
+    "Female Protagonist",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1062160,
+   "name": "Poly Bridge 2",
+   "tags": [
+    "Building",
+    "Simulation",
+    "Puzzle",
+    "Physics",
+    "Crafting",
+    "Difficult",
+    "Sandbox",
+    "Singleplayer",
+    "Level Editor",
+    "Indie",
+    "Education",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 1121640,
+   "name": "The Wandering Village",
+   "tags": [
+    "Early Access",
+    "Building",
+    "Sandbox",
+    "City Builder",
+    "Automation",
+    "RTS",
+    "Colony Sim",
+    "Survival",
+    "Management",
+    "Simulation",
+    "Strategy",
+    "Post-apocalyptic"
+   ]
+  },
+  {
+   "appid": 1331550,
+   "name": "Big Ambitions",
+   "tags": [
+    "Early Access",
+    "Management",
+    "Economy",
+    "Simulation",
+    "Capitalism",
+    "Life Sim",
+    "Sandbox",
+    "Singleplayer",
+    "Time Management",
+    "Immersive Sim",
+    "Inventory Management",
+    "Resource Management"
+   ]
+  },
+  {
+   "appid": 1341820,
+   "name": "As Dusk Falls",
+   "tags": [
+    "Choices Matter",
+    "Story Rich",
+    "Cinematic",
+    "Choose Your Own Adventure",
+    "Adventure",
+    "Co-op",
+    "Multiplayer",
+    "Multiple Endings",
+    "Crime",
+    "Mystery",
+    "Co-op Campaign",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1345820,
+   "name": "Ragnarock",
+   "tags": [
+    "VR",
+    "Action",
+    "Rhythm",
+    "Music",
+    "Rock Music",
+    "Casual",
+    "Multiplayer",
+    "Vikings",
+    "Old School",
+    "Funny",
+    "Controller",
+    "PvP"
+   ]
+  },
+  {
+   "appid": 1444480,
+   "name": "Turing Complete",
+   "tags": [
+    "Programming",
+    "Logic",
+    "Education",
+    "Puzzle",
+    "Simulation",
+    "Hacking",
+    "Automation",
+    "Building",
+    "Singleplayer",
+    "2D",
+    "Early Access",
+    "Sci-fi"
+   ]
+  },
+  {
+   "appid": 1494810,
+   "name": "Mortal Sin",
+   "tags": [
+    "First-Person",
+    "Action Roguelike",
+    "Dungeon Crawler",
+    "RPG",
+    "Hack and Slash",
+    "Action",
+    "Indie",
+    "Rogue-lite",
+    "Dark Fantasy",
+    "Rogue-like",
+    "Procedural Generation",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1509820,
+   "name": "Cloud Climber",
+   "tags": [
+    "Free to Play",
+    "Walking Simulator",
+    "Adventure",
+    "Casual",
+    "Atmospheric",
+    "Singleplayer",
+    "First-Person",
+    "Post-apocalyptic",
+    "Exploration",
+    "Relaxing",
+    "3D",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 1521580,
+   "name": "Perfect Heist 2",
+   "tags": [
+    "Action",
+    "Stealth",
+    "Shooter",
+    "Multiplayer",
+    "Strategy",
+    "Heist",
+    "Social Deduction",
+    "3D",
+    "Detective",
+    "Hero Shooter",
+    "FPS",
+    "Class-Based"
+   ]
+  },
+  {
+   "appid": 1525700,
+   "name": "Tavern Master",
+   "tags": [
+    "Management",
+    "Simulation",
+    "Building",
+    "Medieval",
+    "Resource Management",
+    "Strategy",
+    "Indie",
+    "Relaxing",
+    "City Builder",
+    "Top-Down",
+    "Singleplayer",
+    "Time Management"
+   ]
+  },
+  {
+   "appid": 1546540,
+   "name": "The Tenants - Free Trial",
+   "tags": [
+    "Simulation",
+    "Management",
+    "Building",
+    "Singleplayer",
+    "Funny",
+    "Indie",
+    "Sandbox",
+    "Casual",
+    "Comedy",
+    "City Builder",
+    "Design & Illustration",
+    "Top-Down"
+   ]
+  },
+  {
+   "appid": 1684930,
+   "name": "CULTIC",
+   "tags": [
+    "Boomer Shooter",
+    "FPS",
+    "Old School",
+    "Shooter",
+    "Action",
+    "First-Person",
+    "Retro",
+    "Horror",
+    "Gore",
+    "3D",
+    "Dark",
+    "Violent"
+   ]
+  },
+  {
+   "appid": 1920780,
+   "name": "Stray Gods: The Roleplaying Musical",
+   "tags": [
+    "Interactive Fiction",
+    "Story Rich",
+    "Choices Matter",
+    "Female Protagonist",
+    "Music",
+    "Singleplayer",
+    "Multiple Endings",
+    "Atmospheric",
+    "Adventure",
+    "Choose Your Own Adventure",
+    "Mythology",
+    "Romance"
+   ]
+  },
+  {
+   "appid": 2019810,
+   "name": "Boxes: Lost Fragments",
+   "tags": [
+    "Puzzle",
+    "Adventure",
+    "Mystery",
+    "Point & Click",
+    "Casual",
+    "3D",
+    "Atmospheric",
+    "Hidden Object",
+    "Indie",
+    "Story Rich",
+    "Clicker",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 2166060,
+   "name": "Amanda the Adventurer",
+   "tags": [
+    "Horror",
+    "First-Person",
+    "Puzzle",
+    "1990's",
+    "Old School",
+    "Mystery",
+    "Story Rich",
+    "Atmospheric",
+    "Adventure",
+    "Interactive Fiction",
+    "Point & Click",
+    "3D"
+   ]
+  },
+  {
+   "appid": 2236070,
+   "name": "Peaks of Yore",
+   "tags": [
+    "Difficult",
+    "Physics",
+    "Adventure",
+    "Psychological Horror",
+    "Exploration",
+    "Platformer",
+    "Atmospheric",
+    "First-Person",
+    "Singleplayer",
+    "Historical",
+    "Philosophical",
+    "Action"
+   ]
+  },
+  {
+   "appid": 2306590,
+   "name": "Apewar",
+   "tags": [
+    "Hentai",
+    "Psychological Horror",
+    "Sexual Content",
+    "Action",
+    "Casual",
+    "Shooter",
+    "Multiplayer",
+    "Action-Adventure",
+    "FPS",
+    "Third-Person Shooter",
+    "Massively Multiplayer",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 2378900,
+   "name": "The Coffin of Andy and Leyley",
+   "tags": [
+    "Psychological",
+    "Dark Comedy",
+    "Story Rich",
+    "Multiple Endings",
+    "Dark",
+    "Choices Matter",
+    "Singleplayer",
+    "Visual Novel",
+    "Horror",
+    "Demons",
+    "Drama",
+    "RPGMaker"
+   ]
+  },
+  {
+   "appid": 2551020,
+   "name": "One-armed robber",
+   "tags": [
+    "Free to Play",
+    "Multiplayer",
+    "Heist",
+    "Co-op",
+    "Action",
+    "Simulation",
+    "FPS",
+    "Funny",
+    "Strategy",
+    "First-Person",
+    "Shooter",
+    "Stealth"
+   ]
+  },
+  {
+   "appid": 2660460,
+   "name": "Aviassembly",
+   "tags": [
+    "Early Access",
+    "Flight",
+    "Building",
+    "Physics",
+    "Transportation",
+    "Sandbox",
+    "Exploration",
+    "Crafting",
+    "Open World",
+    "Simulation",
+    "Jet",
+    "Science"
+   ]
+  },
+  {
+   "appid": 2754380,
+   "name": "The Roottrees are Dead",
+   "tags": [
+    "Mystery",
+    "Puzzle",
+    "Detective",
+    "Point & Click",
+    "Atmospheric",
+    "Story Rich",
+    "Investigation",
+    "Singleplayer",
+    "1990's",
+    "Adventure",
+    "Logic",
+    "Interactive Fiction"
+   ]
+  },
+  {
+   "appid": 3359320,
+   "name": "SchoolBoy Runaway",
+   "tags": [
+    "Puzzle",
+    "Adventure",
+    "Simulation",
+    "Horror",
+    "Stealth",
+    "Life Sim",
+    "3D",
+    "First-Person",
+    "Arcade",
+    "Hidden Object",
+    "Violent",
+    "Multiple Endings"
+   ]
+  },
+  {
+   "appid": 57640,
+   "name": "Broken Sword: Director's Cut (2009)",
+   "tags": [
+    "Adventure",
+    "Point & Click",
+    "Puzzle",
+    "Story Rich",
+    "2D",
+    "1990's",
+    "Remake",
+    "Retro",
+    "Singleplayer",
+    "Mystery",
+    "Hidden Object",
+    "Comedy"
+   ]
+  },
+  {
+   "appid": 234270,
+   "name": "Ken Follett's The Pillars of the Earth",
+   "tags": [
+    "Choices Matter",
+    "Adventure",
+    "Story Rich",
+    "Visual Novel",
+    "Point & Click",
+    "Medieval",
+    "Indie",
+    "Interactive Fiction",
+    "Casual",
+    "Based On A Novel",
+    "Atmospheric",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 362680,
+   "name": "Fran Bow",
+   "tags": [
+    "Psychological Horror",
+    "Story Rich",
+    "Point & Click",
+    "Puzzle",
+    "Horror",
+    "Adventure",
+    "Indie",
+    "Dark",
+    "Singleplayer",
+    "Atmospheric",
+    "Female Protagonist",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 401680,
+   "name": "POSTAL Redux",
+   "tags": [
+    "Online Co-Op",
+    "Multiplayer",
+    "Singleplayer",
+    "Gore",
+    "Violent",
+    "Co-op Campaign",
+    "Co-op",
+    "Top-Down",
+    "Fast-Paced",
+    "Psychological Horror",
+    "Horror",
+    "Dark Humor"
+   ]
+  },
+  {
+   "appid": 440310,
+   "name": "Afterbeat (Project Arrhythmia)",
+   "tags": [
+    "Music",
+    "Rhythm",
+    "Bullet Hell",
+    "Action",
+    "Difficult",
+    "Level Editor",
+    "Indie",
+    "2D",
+    "Singleplayer",
+    "Arcade",
+    "Early Access",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 532110,
+   "name": "Rusty Lake: Roots",
+   "tags": [
+    "Puzzle",
+    "Point & Click",
+    "Indie",
+    "Adventure",
+    "Psychological Horror",
+    "Horror",
+    "Story Rich",
+    "Singleplayer",
+    "Atmospheric",
+    "Hidden Object",
+    "2D",
+    "Mystery"
+   ]
+  },
+  {
+   "appid": 597220,
+   "name": "West of Loathing",
+   "tags": [
+    "RPG",
+    "Comedy",
+    "Funny",
+    "Western",
+    "Adventure",
+    "Singleplayer",
+    "Indie",
+    "Story Rich",
+    "Turn-Based Combat",
+    "Open World",
+    "Choices Matter",
+    "Replay Value"
+   ]
+  },
+  {
+   "appid": 601840,
+   "name": "Griftlands",
+   "tags": [
+    "Card Battler",
+    "Rogue-lite",
+    "Deckbuilding",
+    "Choices Matter",
+    "RPG",
+    "Turn-Based",
+    "Story Rich",
+    "Card Game",
+    "Strategy",
+    "Dark Humor",
+    "Rogue-like",
+    "Turn-Based Combat"
+   ]
+  },
+  {
+   "appid": 744190,
+   "name": "Rusty Lake Paradise",
+   "tags": [
+    "Puzzle",
+    "Point & Click",
+    "Indie",
+    "Adventure",
+    "Psychological Horror",
+    "Horror",
+    "Atmospheric",
+    "Singleplayer",
+    "Mystery",
+    "2D",
+    "Story Rich",
+    "Escape Room"
+   ]
+  },
+  {
+   "appid": 909080,
+   "name": "Cube Escape: Paradox",
+   "tags": [
+    "Puzzle",
+    "Free to Play",
+    "Psychological Horror",
+    "Point & Click",
+    "Mystery",
+    "Singleplayer",
+    "Escape Room",
+    "Indie",
+    "Horror",
+    "Multiplayer",
+    "Adventure",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 985890,
+   "name": "Streets of Rage 4",
+   "tags": [
+    "Action",
+    "Beat 'em up",
+    "Indie",
+    "2D",
+    "Fighting",
+    "Arcade",
+    "Local Multiplayer",
+    "Online Co-Op",
+    "Side Scroller",
+    "Great Soundtrack",
+    "Local Co-Op",
+    "Retro"
+   ]
+  },
+  {
+   "appid": 1145960,
+   "name": "The White Door",
+   "tags": [
+    "Indie",
+    "Adventure",
+    "Puzzle",
+    "Point & Click",
+    "Detective",
+    "Short",
+    "Mystery",
+    "Psychological Horror",
+    "Singleplayer",
+    "Atmospheric",
+    "Story Rich",
+    "2D"
+   ]
+  },
+  {
+   "appid": 1207650,
+   "name": "Suzerain",
+   "tags": [
+    "Visual Novel",
+    "Choose Your Own Adventure",
+    "Political Sim",
+    "Interactive Fiction",
+    "Political",
+    "Choices Matter",
+    "Text-Based",
+    "Story Rich",
+    "Multiple Endings",
+    "Politics",
+    "RPG",
+    "Point & Click"
+   ]
+  },
+  {
+   "appid": 1249040,
+   "name": "American Arcadia",
+   "tags": [
+    "Singleplayer",
+    "Point & Click",
+    "Third Person",
+    "2D",
+    "Indie",
+    "Simulation",
+    "Horror",
+    "Side Scroller",
+    "Satire",
+    "Story Rich",
+    "Atmospheric",
+    "Thriller"
+   ]
+  },
+  {
+   "appid": 1292940,
+   "name": "Cube Escape Collection",
+   "tags": [
+    "Puzzle",
+    "Point & Click",
+    "Mystery",
+    "Horror",
+    "Psychological Horror",
+    "Story Rich",
+    "Indie",
+    "Singleplayer",
+    "Escape Room",
+    "Detective",
+    "Atmospheric",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1432050,
+   "name": "Nobody Saves the World",
+   "tags": [
+    "Singleplayer",
+    "Indie",
+    "Co-op",
+    "Multiplayer",
+    "Action",
+    "Hack and Slash",
+    "Adventure",
+    "Dungeon Crawler",
+    "2D",
+    "Local Co-Op",
+    "RPG",
+    "Fantasy"
+   ]
+  },
+  {
+   "appid": 1510030,
+   "name": "Knights College",
+   "tags": [
+    "LGBTQ+",
+    "Sexual Content",
+    "Visual Novel",
+    "Nudity",
+    "Choices Matter",
+    "Dragons",
+    "Story Rich",
+    "Fantasy",
+    "Drama",
+    "Choose Your Own Adventure",
+    "Text-Based",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1610440,
+   "name": "Minds Beneath Us",
+   "tags": [
+    "Cinematic",
+    "Atmospheric",
+    "Choices Matter",
+    "Story Rich",
+    "Cyberpunk",
+    "Visual Novel",
+    "Choose Your Own Adventure",
+    "RPG",
+    "2D",
+    "2.5D",
+    "Dystopian ",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1755830,
+   "name": "Astrea: Six-Sided Oracles",
+   "tags": [
+    "Dice",
+    "Roguelike Deckbuilder",
+    "Card Battler",
+    "Rogue-like",
+    "Card Game",
+    "Turn-Based",
+    "Strategy",
+    "Deckbuilding",
+    "Turn-Based Combat",
+    "Rogue-lite",
+    "Turn-Based Strategy",
+    "Procedural Generation"
+   ]
+  },
+  {
+   "appid": 1766740,
+   "name": "Choo-Choo Charles",
+   "tags": [
+    "Survival Horror",
+    "Horror",
+    "Open World",
+    "First-Person",
+    "Singleplayer",
+    "Trains",
+    "Shooter",
+    "Dark",
+    "3D",
+    "Action-Adventure",
+    "FPS",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1796220,
+   "name": "Laika: Aged Through Blood",
+   "tags": [
+    "Atmospheric",
+    "Arcade",
+    "Metroidvania",
+    "Story Rich",
+    "2D Platformer",
+    "Platformer",
+    "Soundtrack",
+    "Gore",
+    "Difficult",
+    "Violent",
+    "Side Scroller",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1942280,
+   "name": "Brotato",
+   "tags": [
+    "Rogue-like",
+    "Singleplayer",
+    "Action Roguelike",
+    "Bullet Hell",
+    "Sci-fi",
+    "Survival",
+    "Arena Shooter",
+    "Local Co-Op",
+    "Rogue-lite",
+    "Hack and Slash",
+    "Multiplayer",
+    "Replay Value"
+   ]
+  },
+  {
+   "appid": 2109460,
+   "name": "VillageRhapsody",
+   "tags": [
+    "Sexual Content",
+    "Nudity",
+    "Mature",
+    "Hentai",
+    "RPG",
+    "Farming Sim",
+    "Casual",
+    "Simulation",
+    "Dating Sim",
+    "Life Sim",
+    "2D",
+    "Exploration"
+   ]
+  },
+  {
+   "appid": 2302660,
+   "name": "Homicipher",
+   "tags": [
+    "Horror",
+    "Otome",
+    "Female Protagonist",
+    "Visual Novel",
+    "Atmospheric",
+    "Text-Based",
+    "Multiple Endings",
+    "Choose Your Own Adventure",
+    "Choices Matter",
+    "Word Game",
+    "Conversation",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 2427700,
+   "name": "Backpack Battles",
+   "tags": [
+    "Early Access",
+    "Auto Battler",
+    "Inventory Management",
+    "Strategy",
+    "PvP",
+    "Roguelike Deckbuilder",
+    "Asynchronous Multiplayer",
+    "Multiplayer",
+    "Indie",
+    "Tactical",
+    "Card Battler",
+    "Rogue-like"
+   ]
+  },
+  {
+   "appid": 3620,
+   "name": "Zuma's Revenge!",
+   "tags": [
+    "Casual",
+    "Action",
+    "Singleplayer",
+    "Puzzle",
+    "Match 3",
+    "Classic",
+    "Arcade",
+    "Difficult",
+    "Family Friendly",
+    "Addictive",
+    "2D",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 41000,
+   "name": "Serious Sam HD: The First Encounter",
+   "tags": [
+    "FPS",
+    "Action",
+    "Shooter",
+    "Co-op",
+    "Gore",
+    "Multiplayer",
+    "Comedy",
+    "Online Co-Op",
+    "Classic",
+    "First-Person",
+    "Old School",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 49600,
+   "name": "Beat Hazard",
+   "tags": [
+    "Rhythm",
+    "Music-Based Procedural Generation",
+    "Twin Stick Shooter",
+    "Bullet Hell",
+    "Shoot 'Em Up",
+    "Music",
+    "2D",
+    "Space",
+    "Indie",
+    "Action",
+    "Arcade",
+    "Shooter"
+   ]
+  },
+  {
+   "appid": 212480,
+   "name": "Sonic & All-Stars Racing Transformed Collection",
+   "tags": [
+    "Racing",
+    "Local Multiplayer",
+    "Multiplayer",
+    "Great Soundtrack",
+    "Local Co-Op",
+    "Sports",
+    "Split Screen",
+    "Arcade",
+    "Replay Value",
+    "4 Player Local",
+    "Controller",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 236450,
+   "name": "PAC-MAN Championship Edition DX+",
+   "tags": [
+    "Arcade",
+    "Retro",
+    "Classic",
+    "Action",
+    "Score Attack",
+    "Remake",
+    "2D",
+    "Great Soundtrack",
+    "Fast-Paced",
+    "Old School",
+    "Casual",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 259550,
+   "name": "Hero of the Kingdom",
+   "tags": [
+    "Casual",
+    "Adventure",
+    "Indie",
+    "Point & Click",
+    "RPG",
+    "Singleplayer",
+    "Hidden Object",
+    "Resource Management",
+    "Fantasy",
+    "Short",
+    "Isometric",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 285310,
+   "name": "RollerCoaster Tycoon: Deluxe",
+   "tags": [
+    "Simulation",
+    "Management",
+    "Classic",
+    "Sandbox",
+    "Strategy",
+    "Singleplayer",
+    "Building",
+    "Isometric",
+    "Nostalgia",
+    "Funny",
+    "Resource Management",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 326460,
+   "name": "ShellShock Live",
+   "tags": [
+    "Tanks",
+    "Multiplayer",
+    "Strategy",
+    "2D",
+    "Action",
+    "Turn-Based",
+    "Shooter",
+    "Casual",
+    "Online Co-Op",
+    "Early Access",
+    "Massively Multiplayer",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 346560,
+   "name": "Hero of the Kingdom II",
+   "tags": [
+    "Adventure",
+    "Casual",
+    "Point & Click",
+    "RPG",
+    "Indie",
+    "Isometric",
+    "Singleplayer",
+    "Hidden Object",
+    "Resource Management",
+    "Pirates",
+    "Fantasy",
+    "Medieval"
+   ]
+  },
+  {
+   "appid": 355050,
+   "name": "Sky Force Anniversary",
+   "tags": [
+    "Shoot 'Em Up",
+    "Bullet Hell",
+    "Action",
+    "Arcade",
+    "Indie",
+    "Top-Down Shooter",
+    "Retro",
+    "Local Co-Op",
+    "Shooter",
+    "Score Attack",
+    "Replay Value",
+    "Classic"
+   ]
+  },
+  {
+   "appid": 386940,
+   "name": "Ultimate Chicken Horse",
+   "tags": [
+    "Multiplayer",
+    "Party",
+    "Funny",
+    "Platformer",
+    "Local Co-Op",
+    "Party Game",
+    "PvP",
+    "Local Multiplayer",
+    "Level Editor",
+    "Precision Platformer",
+    "4 Player Local",
+    "Online Co-Op"
+   ]
+  },
+  {
+   "appid": 389140,
+   "name": "Horizon Chase Turbo",
+   "tags": [
+    "Racing",
+    "Arcade",
+    "Indie",
+    "Casual",
+    "Retro",
+    "Sports",
+    "Action",
+    "Local Multiplayer",
+    "Great Soundtrack",
+    "4 Player Local",
+    "Split Screen",
+    "Local Co-Op"
+   ]
+  },
+  {
+   "appid": 389170,
+   "name": "Songs for a Hero - Definitive Edition",
+   "tags": [
+    "2D Platformer",
+    "Adventure",
+    "Narration",
+    "Soundtrack",
+    "Funny",
+    "Indie",
+    "Dynamic Narration",
+    "Platformer",
+    "Story Rich",
+    "Puzzle-Platformer",
+    "Action",
+    "2D"
+   ]
+  },
+  {
+   "appid": 432350,
+   "name": "Epic Battle Fantasy 5",
+   "tags": [
+    "JRPG",
+    "Funny",
+    "Turn-Based",
+    "Indie",
+    "Adventure",
+    "Creature Collector",
+    "Comedy",
+    "RPG",
+    "Turn-Based Combat",
+    "Strategy",
+    "Singleplayer",
+    "2D"
+   ]
+  },
+  {
+   "appid": 448510,
+   "name": "Overcooked",
+   "tags": [
+    "Local Co-Op",
+    "Multiplayer",
+    "Local Multiplayer",
+    "Co-op",
+    "Casual",
+    "Cooking",
+    "4 Player Local",
+    "Family Friendly",
+    "Funny",
+    "Co-op Campaign",
+    "Indie",
+    "Simulation"
+   ]
+  },
+  {
+   "appid": 458710,
+   "name": "Kingdom Rush Frontiers - Tower Defense",
+   "tags": [
+    "Tower Defense",
+    "Strategy",
+    "2D",
+    "Singleplayer",
+    "Difficult",
+    "Fantasy",
+    "Choices Matter",
+    "Funny",
+    "Casual",
+    "Magic",
+    "Adventure",
+    "Building"
+   ]
+  },
+  {
+   "appid": 466630,
+   "name": "The Pedestrian",
+   "tags": [
+    "Puzzle",
+    "Puzzle-Platformer",
+    "Logic",
+    "Side Scroller",
+    "Platformer",
+    "Atmospheric",
+    "2D Platformer",
+    "Female Protagonist",
+    "2.5D",
+    "3D",
+    "Building",
+    "Mystery"
+   ]
+  },
+  {
+   "appid": 493340,
+   "name": "Planet Coaster",
+   "tags": [
+    "Simulation",
+    "Building",
+    "Management",
+    "Sandbox",
+    "Family Friendly",
+    "Relaxing",
+    "Strategy",
+    "Singleplayer",
+    "Economy",
+    "Realistic",
+    "Funny",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 569480,
+   "name": "Kingdoms and Castles",
+   "tags": [
+    "City Builder",
+    "Colony Sim",
+    "Strategy",
+    "Medieval",
+    "Building",
+    "Simulation",
+    "Sandbox",
+    "Resource Management",
+    "Base-Building",
+    "Singleplayer",
+    "Survival",
+    "Management"
+   ]
+  },
+  {
+   "appid": 571310,
+   "name": "SteamWorld Dig 2",
+   "tags": [
+    "Adventure",
+    "Metroidvania",
+    "Indie",
+    "Action",
+    "Platformer",
+    "Mining",
+    "2D",
+    "Steampunk",
+    "Female Protagonist",
+    "Singleplayer",
+    "Exploration",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 667600,
+   "name": "Sky Force Reloaded",
+   "tags": [
+    "Shoot 'Em Up",
+    "Arcade",
+    "Bullet Hell",
+    "Local Co-Op",
+    "Top-Down Shooter",
+    "Top-Down",
+    "Action",
+    "Indie",
+    "Local Multiplayer",
+    "Controller",
+    "Score Attack",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 679900,
+   "name": "Swords & Souls: Neverseen",
+   "tags": [
+    "Indie",
+    "RPG",
+    "Turn-Based Combat",
+    "Character Customization",
+    "Action RPG",
+    "Singleplayer",
+    "Turn-Based",
+    "Idler",
+    "Funny",
+    "2D",
+    "Fantasy",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 728880,
+   "name": "Overcooked! 2",
+   "tags": [
+    "Multiplayer",
+    "Online Co-Op",
+    "Local Co-Op",
+    "Co-op",
+    "Casual",
+    "Cooking",
+    "Funny",
+    "4 Player Local",
+    "Indie",
+    "Local Multiplayer",
+    "Action",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 813630,
+   "name": "Supraland",
+   "tags": [
+    "Puzzle-Platformer",
+    "Exploration",
+    "Metroidvania",
+    "First-Person",
+    "Adventure",
+    "Singleplayer",
+    "Physics",
+    "Puzzle",
+    "FPS",
+    "Open World",
+    "3D Platformer",
+    "Collectathon"
+   ]
+  },
+  {
+   "appid": 829660,
+   "name": "No Time to Relax",
+   "tags": [
+    "Multiplayer",
+    "4 Player Local",
+    "Board Game",
+    "Funny",
+    "Casual",
+    "Simulation",
+    "Strategy",
+    "Local Multiplayer",
+    "Indie",
+    "Singleplayer",
+    "Controller",
+    "2D"
+   ]
+  },
+  {
+   "appid": 858210,
+   "name": "Nova Drift",
+   "tags": [
+    "Action Roguelike",
+    "Arena Shooter",
+    "Bullet Hell",
+    "Rogue-lite",
+    "Shoot 'Em Up",
+    "Shooter",
+    "Arcade",
+    "Action RPG",
+    "2D",
+    "Rogue-like",
+    "Action",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 860890,
+   "name": "Factory Town",
+   "tags": [
+    "Automation",
+    "Base-Building",
+    "Resource Management",
+    "Sandbox",
+    "Simulation",
+    "Crafting",
+    "Management",
+    "City Builder",
+    "Colony Sim",
+    "Economy",
+    "Building",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 944220,
+   "name": "Gachi Heroes",
+   "tags": [
+    "Memes",
+    "Comedy",
+    "Funny",
+    "Relaxing",
+    "Action",
+    "Idler",
+    "Nudity",
+    "Casual",
+    "Clicker",
+    "Sexual Content",
+    "2D",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 965680,
+   "name": "Boomerang Fu",
+   "tags": [
+    "4 Player Local",
+    "Local Multiplayer",
+    "Party Game",
+    "Family Friendly",
+    "Fighting",
+    "Competitive",
+    "Local Co-Op",
+    "PvP",
+    "Team-Based",
+    "Co-op",
+    "Top-Down",
+    "Physics"
+   ]
+  },
+  {
+   "appid": 1017180,
+   "name": "The Long Drive",
+   "tags": [
+    "Driving",
+    "Open World",
+    "Multiplayer",
+    "Survival",
+    "Automobile Sim",
+    "Exploration",
+    "Post-apocalyptic",
+    "Adventure",
+    "First-Person",
+    "Racing",
+    "Simulation",
+    "Shooter"
+   ]
+  },
+  {
+   "appid": 1051200,
+   "name": "Trover Saves the Universe",
+   "tags": [
+    "Adventure",
+    "Indie",
+    "Action",
+    "VR",
+    "Comedy",
+    "Dark Humor",
+    "Funny",
+    "3D Platformer",
+    "Singleplayer",
+    "Dark Comedy",
+    "Platformer",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 1070580,
+   "name": "Drift86",
+   "tags": [
+    "Racing",
+    "Multiplayer",
+    "Automobile Sim",
+    "Casual",
+    "Indie",
+    "Arcade",
+    "Singleplayer",
+    "Third Person",
+    "Simulation",
+    "Controller",
+    "Relaxing",
+    "Retro"
+   ]
+  },
+  {
+   "appid": 1079800,
+   "name": "Pistol Whip",
+   "tags": [
+    "VR",
+    "Action",
+    "Rhythm",
+    "Shooter",
+    "Arcade",
+    "On-Rails Shooter",
+    "Level Editor",
+    "FPS",
+    "Music",
+    "Bullet Hell",
+    "Bullet Time",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 1102190,
+   "name": "Monster Train",
+   "tags": [
+    "Card Battler",
+    "Rogue-lite",
+    "Card Game",
+    "Turn-Based Tactics",
+    "Deckbuilding",
+    "Rogue-like",
+    "Turn-Based Strategy",
+    "PvP",
+    "Strategy",
+    "Difficult",
+    "Roguelike Deckbuilder",
+    "Turn-Based Combat"
+   ]
+  },
+  {
+   "appid": 1130410,
+   "name": "Cyber Hook",
+   "tags": [
+    "Indie",
+    "3D Platformer",
+    "Parkour",
+    "Fast-Paced",
+    "Action",
+    "Time Attack",
+    "First-Person",
+    "Singleplayer",
+    "Platformer",
+    "Retro",
+    "FPS",
+    "1980s"
+   ]
+  },
+  {
+   "appid": 1182110,
+   "name": "Weed Shop 3",
+   "tags": [
+    "Immersive Sim",
+    "Management",
+    "Building",
+    "FPS",
+    "Economy",
+    "Strategy",
+    "Open World",
+    "Farming Sim",
+    "Crafting",
+    "Life Sim",
+    "Action-Adventure",
+    "3D"
+   ]
+  },
+  {
+   "appid": 1189490,
+   "name": "觅长生",
+   "tags": [
+    "RPG",
+    "Open World",
+    "Martial Arts",
+    "Drama",
+    "Strategy",
+    "Turn-Based Combat",
+    "Indie",
+    "Fantasy",
+    "Story Rich",
+    "Singleplayer",
+    "Strategy RPG",
+    "Simulation"
+   ]
+  },
+  {
+   "appid": 1227650,
+   "name": "Bang-On Balls: Chronicles",
+   "tags": [
+    "Combat",
+    "Co-op",
+    "Open World",
+    "Local Co-Op",
+    "Sandbox",
+    "Singleplayer",
+    "Adventure",
+    "Online Co-Op",
+    "Split Screen",
+    "Action",
+    "Exploration",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 1237320,
+   "name": "Sonic Frontiers",
+   "tags": [
+    "Great Soundtrack",
+    "Open World",
+    "Adventure",
+    "3D Platformer",
+    "Action",
+    "Exploration",
+    "Singleplayer",
+    "Action-Adventure",
+    "Fast-Paced",
+    "3D",
+    "Third Person",
+    "Platformer"
+   ]
+  },
+  {
+   "appid": 1284190,
+   "name": "The Planet Crafter",
+   "tags": [
+    "Open World Survival Craft",
+    "Base-Building",
+    "Survival",
+    "Online Co-Op",
+    "Co-op",
+    "Building",
+    "Crafting",
+    "Open World",
+    "Exploration",
+    "Space",
+    "Automation",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 1290000,
+   "name": "PowerWash Simulator",
+   "tags": [
+    "Casual",
+    "Relaxing",
+    "Simulation",
+    "Multiplayer",
+    "First-Person",
+    "3D",
+    "Sandbox",
+    "Funny",
+    "Co-op",
+    "Immersive Sim",
+    "Online Co-Op",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 1295510,
+   "name": "DRAGON QUEST XI S: Echoes of an Elusive Age - Definitive Edition",
+   "tags": [
+    "JRPG",
+    "Turn-Based Combat",
+    "RPG",
+    "Party-Based RPG",
+    "Story Rich",
+    "Dragons",
+    "3D",
+    "Adventure",
+    "Funny",
+    "2D",
+    "Fantasy",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1329500,
+   "name": "SpiderHeck",
+   "tags": [
+    "Local Multiplayer",
+    "Physics",
+    "2D Fighter",
+    "Fighting",
+    "Funny",
+    "PvP",
+    "Swordplay",
+    "Parkour",
+    "Multiplayer",
+    "2D",
+    "Action",
+    "4 Player Local"
+   ]
+  },
+  {
+   "appid": 1342330,
+   "name": "Mad Games Tycoon 2",
+   "tags": [
+    "Management",
+    "Economy",
+    "Game Development",
+    "Simulation",
+    "Strategy",
+    "City Builder",
+    "Trading",
+    "Building",
+    "Capitalism",
+    "Programming",
+    "Base-Building",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 1347970,
+   "name": "Patch Quest",
+   "tags": [
+    "Adventure",
+    "Creature Collector",
+    "Rogue-lite",
+    "Base-Building",
+    "Bullet Hell",
+    "Shoot 'Em Up",
+    "Arena Shooter",
+    "Co-op",
+    "Twin Stick Shooter",
+    "Action Roguelike",
+    "Action",
+    "Metroidvania"
+   ]
+  },
+  {
+   "appid": 1349230,
+   "name": "5D Chess With Multiverse Time Travel",
+   "tags": [
+    "Chess",
+    "Time Travel",
+    "Time Manipulation",
+    "Board Game",
+    "Difficult",
+    "Puzzle",
+    "Multiplayer",
+    "Turn-Based Strategy",
+    "Strategy",
+    "Turn-Based Tactics",
+    "Singleplayer",
+    "PvP"
+   ]
+  },
+  {
+   "appid": 1356670,
+   "name": "Sakuna: Of Rice and Ruin",
+   "tags": [
+    "Action",
+    "Farming Sim",
+    "Female Protagonist",
+    "Story Rich",
+    "Side Scroller",
+    "Mythology",
+    "Platformer",
+    "Agriculture",
+    "Crafting",
+    "Simulation",
+    "Demons",
+    "Beat 'em up"
+   ]
+  },
+  {
+   "appid": 1364210,
+   "name": "City Bus Manager",
+   "tags": [
+    "Simulation",
+    "Management",
+    "Singleplayer",
+    "Economy",
+    "Automobile Sim",
+    "Capitalism",
+    "Casual",
+    "Logic",
+    "Strategy",
+    "Sandbox",
+    "Grand Strategy",
+    "Time Management"
+   ]
+  },
+  {
+   "appid": 1401590,
+   "name": "Disney Dreamlight Valley",
+   "tags": [
+    "Relaxing",
+    "Life Sim",
+    "Character Customization",
+    "Exploration",
+    "Adventure",
+    "Simulation",
+    "Fantasy",
+    "Sandbox",
+    "Singleplayer",
+    "Casual",
+    "Story Rich",
+    "Farming Sim"
+   ]
+  },
+  {
+   "appid": 1484720,
+   "name": "Dead Estate",
+   "tags": [
+    "Action Roguelike",
+    "Twin Stick Shooter",
+    "Horror",
+    "Shoot 'Em Up",
+    "Replay Value",
+    "Rogue-like",
+    "Difficult",
+    "Dungeon Crawler",
+    "Perma Death",
+    "Action",
+    "Shooter",
+    "Isometric"
+   ]
+  },
+  {
+   "appid": 1545560,
+   "name": "Shadow Gambit: The Cursed Crew",
+   "tags": [
+    "Strategy",
+    "RPG",
+    "Fantasy",
+    "Character Customization",
+    "RTS",
+    "Dark Fantasy",
+    "CRPG",
+    "Tactical",
+    "Story Rich",
+    "Choices Matter",
+    "Real Time Tactics",
+    "War"
+   ]
+  },
+  {
+   "appid": 1574580,
+   "name": "Strange Horticulture",
+   "tags": [
+    "Mystery",
+    "Puzzle",
+    "Investigation",
+    "Nature",
+    "Exploration",
+    "Relaxing",
+    "Detective",
+    "Choices Matter",
+    "2D",
+    "Multiple Endings",
+    "Story Rich",
+    "Lovecraftian"
+   ]
+  },
+  {
+   "appid": 1639790,
+   "name": "Northern Journey",
+   "tags": [
+    "Atmospheric",
+    "FPS",
+    "Fantasy",
+    "Retro",
+    "Action-Adventure",
+    "Exploration",
+    "Singleplayer",
+    "Adventure",
+    "Nature",
+    "First-Person",
+    "Medieval",
+    "Horror"
+   ]
+  },
+  {
+   "appid": 1796470,
+   "name": "Haste",
+   "tags": [
+    "Fast-Paced",
+    "Action",
+    "Female Protagonist",
+    "3D Platformer",
+    "Parkour",
+    "Rogue-lite",
+    "Singleplayer",
+    "Adventure",
+    "Runner",
+    "Racing",
+    "Open World",
+    "Exploration"
+   ]
+  },
+  {
+   "appid": 1922560,
+   "name": "Plants vs. Zombies Garden Warfare 2: Deluxe Edition",
+   "tags": [
+    "Zombies",
+    "Hero Shooter",
+    "PvP",
+    "Third-Person Shooter",
+    "Funny",
+    "Action",
+    "Character Customization",
+    "Multiplayer",
+    "Shooter",
+    "Team-Based",
+    "Third Person",
+    "Controller"
+   ]
+  },
+  {
+   "appid": 2067780,
+   "name": "Your Turn To Die -Death Game By Majority-",
+   "tags": [
+    "Early Access",
+    "Multiple Endings",
+    "Female Protagonist",
+    "Dark",
+    "Singleplayer",
+    "Point & Click",
+    "Choose Your Own Adventure",
+    "Mystery",
+    "Interactive Fiction",
+    "Psychological",
+    "Survival",
+    "Psychological Horror"
+   ]
+  },
+  {
+   "appid": 2072450,
+   "name": "Like a Dragon: Infinite Wealth",
+   "tags": [
+    "Action",
+    "JRPG",
+    "Adventure",
+    "Turn-Based Combat",
+    "Sexual Content",
+    "Comedy",
+    "Story Rich",
+    "Singleplayer",
+    "Emotional",
+    "Funny",
+    "Action RPG",
+    "Violent"
+   ]
+  },
+  {
+   "appid": 2186320,
+   "name": "Ages of Conflict: World War Simulator",
+   "tags": [
+    "Idler",
+    "Simulation",
+    "Sandbox",
+    "Level Editor",
+    "God Game",
+    "Alternate History",
+    "Early Access",
+    "Political Sim",
+    "Artificial Intelligence",
+    "Wargame",
+    "Political",
+    "Interactive Fiction"
+   ]
+  },
+  {
+   "appid": 2246880,
+   "name": "STANDBOX",
+   "tags": [
+    "Violent",
+    "Sandbox",
+    "Physics",
+    "Gore",
+    "Action",
+    "3D",
+    "Blood",
+    "Casual",
+    "Singleplayer",
+    "Memes",
+    "Combat",
+    "Bullet Time"
+   ]
+  },
+  {
+   "appid": 2291760,
+   "name": "Papa's Freezeria Deluxe",
+   "tags": [
+    "Cooking",
+    "Time Management",
+    "Simulation",
+    "Job Simulator",
+    "Casual",
+    "Strategy",
+    "Character Customization",
+    "Management",
+    "Singleplayer",
+    "Indie",
+    "Nostalgia",
+    "2D"
+   ]
+  },
+  {
+   "appid": 2378620,
+   "name": "Anomaly Agent",
+   "tags": [
+    "Action Roguelike",
+    "2D Platformer",
+    "Side Scroller",
+    "Hack and Slash",
+    "Souls-like",
+    "Platformer",
+    "2D Fighter",
+    "Rogue-lite",
+    "Action RPG",
+    "Action-Adventure",
+    "Rogue-like",
+    "2D"
+   ]
+  },
+  {
+   "appid": 2459550,
+   "name": "Emberward",
+   "tags": [
+    "Early Access",
+    "Tower Defense",
+    "Strategy",
+    "Rogue-lite",
+    "Base-Building",
+    "Deckbuilding",
+    "Rogue-like",
+    "RTS",
+    "Singleplayer",
+    "Tactical",
+    "3D",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 2742830,
+   "name": "Monster Train 2",
+   "tags": [
+    "Strategy",
+    "Card Game",
+    "Rogue-like",
+    "Turn-Based Strategy",
+    "Turn-Based Tactics",
+    "Demons",
+    "Fantasy",
+    "Trains",
+    "Singleplayer",
+    "PvP",
+    "Multiplayer",
+    "Deckbuilding"
+   ]
+  },
+  {
+   "appid": 3259470,
+   "name": "Papa's Pizzeria Deluxe",
+   "tags": [
+    "Cooking",
+    "Simulation",
+    "Strategy",
+    "Casual",
+    "Time Management",
+    "Character Customization",
+    "Management",
+    "Action",
+    "2D",
+    "Family Friendly",
+    "Indie",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 3290710,
+   "name": "RATSHAKER",
+   "tags": [
+    "Psychological Horror",
+    "Horror",
+    "Exploration",
+    "Dark Humor",
+    "Walking Simulator",
+    "Funny",
+    "First-Person",
+    "Clicker",
+    "Hidden Object",
+    "3D",
+    "Linear",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 3830,
+   "name": "Psychonauts",
+   "tags": [
+    "Platformer",
+    "Comedy",
+    "Adventure",
+    "Cult Classic",
+    "Singleplayer",
+    "Action",
+    "Funny",
+    "Third Person",
+    "3D Platformer",
+    "Classic",
+    "Story Rich",
+    "Psychological"
+   ]
+  },
+  {
+   "appid": 201790,
+   "name": "Orcs Must Die! 2",
+   "tags": [
+    "Tower Defense",
+    "Co-op",
+    "Action",
+    "Strategy",
+    "Online Co-Op",
+    "Indie",
+    "Multiplayer",
+    "Third Person",
+    "RPG",
+    "Third-Person Shooter",
+    "Adventure",
+    "Comedy"
+   ]
+  },
+  {
+   "appid": 207610,
+   "name": "The Walking Dead",
+   "tags": [
+    "Zombies",
+    "Story Rich",
+    "Adventure",
+    "Point & Click",
+    "Episodic",
+    "Singleplayer",
+    "Choices Matter",
+    "Drama",
+    "Horror",
+    "Emotional",
+    "Mature",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 228360,
+   "name": "Full Throttle Remastered",
+   "tags": [
+    "Adventure",
+    "Point & Click",
+    "Comedy",
+    "Classic",
+    "Singleplayer",
+    "Funny",
+    "Story Rich",
+    "Great Soundtrack",
+    "1990's",
+    "Remake",
+    "Cult Classic",
+    "Motorbike"
+   ]
+  },
+  {
+   "appid": 294100,
+   "name": "RimWorld",
+   "tags": [
+    "Colony Sim",
+    "Base-Building",
+    "Survival",
+    "Strategy",
+    "Sandbox",
+    "Management",
+    "Building",
+    "Simulation",
+    "Moddable",
+    "Singleplayer",
+    "City Builder",
+    "Open World"
+   ]
+  },
+  {
+   "appid": 322210,
+   "name": "Guns, Gore & Cannoli",
+   "tags": [
+    "Action",
+    "Side Scroller",
+    "2D",
+    "Co-op",
+    "Gore",
+    "Zombies",
+    "Shoot 'Em Up",
+    "Indie",
+    "Platformer",
+    "Local Multiplayer",
+    "Shooter",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 463530,
+   "name": "Empires of the Undergrowth",
+   "tags": [
+    "Strategy",
+    "Simulation",
+    "City Builder",
+    "Colony Sim",
+    "Base-Building",
+    "Sandbox",
+    "Building",
+    "Management",
+    "Resource Management",
+    "4X",
+    "Grand Strategy",
+    "Open World"
+   ]
+  },
+  {
+   "appid": 535930,
+   "name": "Two Point Hospital",
+   "tags": [
+    "Simulation",
+    "Management",
+    "Medical Sim",
+    "Building",
+    "Funny",
+    "Singleplayer",
+    "Strategy",
+    "Sandbox",
+    "Indie",
+    "Comedy",
+    "Casual",
+    "City Builder"
+   ]
+  },
+  {
+   "appid": 666140,
+   "name": "My Time at Portia",
+   "tags": [
+    "Life Sim",
+    "RPG",
+    "Open World",
+    "Farming Sim",
+    "Crafting",
+    "Simulation",
+    "Casual",
+    "Adventure",
+    "Singleplayer",
+    "Building",
+    "Agriculture",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 1253920,
+   "name": "Rogue Legacy 2",
+   "tags": [
+    "Arcade",
+    "Metroidvania",
+    "Platformer",
+    "Action",
+    "Indie",
+    "Adventure",
+    "RPG",
+    "Rogue-lite",
+    "Difficult",
+    "Singleplayer",
+    "2D",
+    "Side Scroller"
+   ]
+  },
+  {
+   "appid": 1275350,
+   "name": "Ninja Kiwi Archive",
+   "tags": [
+    "Casual",
+    "Arcade",
+    "Strategy",
+    "Tower Defense",
+    "Action",
+    "Singleplayer",
+    "Online Co-Op",
+    "Co-op",
+    "Multiplayer",
+    "Platformer",
+    "Top-Down Shooter",
+    "2D Platformer"
+   ]
+  },
+  {
+   "appid": 1700870,
+   "name": "Clanfolk",
+   "tags": [
+    "Strategy",
+    "Simulation",
+    "City Builder",
+    "Colony Sim",
+    "Base-Building",
+    "RTS",
+    "Open World",
+    "Management",
+    "Sandbox",
+    "Building",
+    "Resource Management",
+    "Real-Time with Pause"
+   ]
+  },
+  {
+   "appid": 2300,
+   "name": "DOOM II",
+   "tags": [
+    "Classic",
+    "FPS",
+    "Action",
+    "1990's",
+    "Retro",
+    "Shooter",
+    "Demons",
+    "Gore",
+    "Old School",
+    "Moddable",
+    "Violent",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 7760,
+   "name": "X-COM: UFO Defense",
+   "tags": [
+    "Strategy",
+    "Classic",
+    "Turn-Based Strategy",
+    "Sci-fi",
+    "Aliens",
+    "Turn-Based",
+    "Tactical",
+    "Singleplayer",
+    "Turn-Based Tactics",
+    "Difficult",
+    "Isometric",
+    "Old School"
+   ]
+  },
+  {
+   "appid": 32360,
+   "name": "The Secret of Monkey Island: Special Edition",
+   "tags": [
+    "Point & Click",
+    "Adventure",
+    "Comedy",
+    "Classic",
+    "Pirates",
+    "Funny",
+    "Remake",
+    "Singleplayer",
+    "Puzzle",
+    "1990's",
+    "2D",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 32460,
+   "name": "Monkey Island 2 Special Edition: LeChuck’s Revenge",
+   "tags": [
+    "Point & Click",
+    "Adventure",
+    "Comedy",
+    "Classic",
+    "Remake",
+    "Pirates",
+    "Puzzle",
+    "Singleplayer",
+    "1990's",
+    "Funny",
+    "2D",
+    "Retro"
+   ]
+  },
+  {
+   "appid": 94200,
+   "name": "Jamestown",
+   "tags": [
+    "Shoot 'Em Up",
+    "Bullet Hell",
+    "Local Co-Op",
+    "Indie",
+    "Arcade",
+    "Steampunk",
+    "Action",
+    "4 Player Local",
+    "Local Multiplayer",
+    "2D",
+    "Difficult",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 107310,
+   "name": "Cthulhu Saves the World",
+   "tags": [
+    "JRPG",
+    "Lovecraftian",
+    "Comedy",
+    "RPG",
+    "Indie",
+    "Retro",
+    "Turn-Based",
+    "Fantasy",
+    "Funny",
+    "Singleplayer",
+    "Adventure",
+    "Parody "
+   ]
+  },
+  {
+   "appid": 113020,
+   "name": "Monaco: What's Yours Is Mine",
+   "tags": [
+    "Co-op",
+    "Stealth",
+    "Indie",
+    "Heist",
+    "Local Co-Op",
+    "Strategy",
+    "Online Co-Op",
+    "Top-Down",
+    "Action",
+    "Multiplayer",
+    "Crime",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 212680,
+   "name": "FTL: Faster Than Light",
+   "tags": [
+    "Rogue-like",
+    "Space",
+    "Strategy",
+    "Sci-fi",
+    "Indie",
+    "Singleplayer",
+    "Perma Death",
+    "Difficult",
+    "Replay Value",
+    "Real-Time with Pause",
+    "Procedural Generation",
+    "Tactical"
+   ]
+  },
+  {
+   "appid": 225160,
+   "name": "Shadow Warrior Classic Redux",
+   "tags": [
+    "FPS",
+    "Classic",
+    "Action",
+    "Retro",
+    "Shooter",
+    "Gore",
+    "Old School",
+    "Comedy",
+    "Ninja",
+    "Singleplayer",
+    "First-Person",
+    "1990's"
+   ]
+  },
+  {
+   "appid": 233980,
+   "name": "UnEpic",
+   "tags": [
+    "RPG",
+    "Indie",
+    "Metroidvania",
+    "Platformer",
+    "Action",
+    "Comedy",
+    "2D",
+    "Exploration",
+    "Fantasy",
+    "Adventure",
+    "Co-op",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 259530,
+   "name": "Savant - Ascent",
+   "tags": [
+    "Action",
+    "Indie",
+    "Great Soundtrack",
+    "Music",
+    "Shoot 'Em Up",
+    "Fast-Paced",
+    "Score Attack",
+    "Bullet Hell",
+    "Arcade",
+    "Short",
+    "Replay Value",
+    "2D"
+   ]
+  },
+  {
+   "appid": 261180,
+   "name": "Lethal League",
+   "tags": [
+    "Fighting",
+    "Local Multiplayer",
+    "Indie",
+    "2D Fighter",
+    "Multiplayer",
+    "Great Soundtrack",
+    "Action",
+    "Sports",
+    "2D",
+    "4 Player Local",
+    "Arcade",
+    "Competitive"
+   ]
+  },
+  {
+   "appid": 280220,
+   "name": "Creeper World 3: Arc Eternal",
+   "tags": [
+    "Tower Defense",
+    "Strategy",
+    "Indie",
+    "RTS",
+    "Singleplayer",
+    "Sci-fi",
+    "Real-Time with Pause",
+    "Simulation",
+    "Base-Building",
+    "Level Editor",
+    "Top-Down",
+    "Addictive"
+   ]
+  },
+  {
+   "appid": 287390,
+   "name": "Metro: Last Light Redux",
+   "tags": [
+    "Post-apocalyptic",
+    "FPS",
+    "Atmospheric",
+    "Action",
+    "Story Rich",
+    "Horror",
+    "Singleplayer",
+    "First-Person",
+    "Shooter",
+    "Stealth",
+    "Survival",
+    "Based On A Novel"
+   ]
+  },
+  {
+   "appid": 315460,
+   "name": "Dig or Die",
+   "tags": [
+    "Survival",
+    "Open World Survival Craft",
+    "Sandbox",
+    "Crafting",
+    "2D",
+    "Open World",
+    "Strategy",
+    "Indie",
+    "Action",
+    "Multiplayer",
+    "Tower Defense",
+    "Building"
+   ]
+  },
+  {
+   "appid": 333640,
+   "name": "Caves of Qud",
+   "tags": [
+    "Procedural Generation",
+    "Turn-Based Combat",
+    "Open World",
+    "Turn-Based",
+    "Transhumanism",
+    "Sci-fi",
+    "Replay Value",
+    "Traditional Roguelike",
+    "Rogue-like",
+    "Story Rich",
+    "RPG",
+    "Character Customization"
+   ]
+  },
+  {
+   "appid": 342560,
+   "name": "Airships: Conquer the Skies",
+   "tags": [
+    "Vehicular Combat",
+    "4X",
+    "War",
+    "Moddable",
+    "Wargame",
+    "Building",
+    "Alternate History",
+    "PvP",
+    "Military",
+    "Grand Strategy",
+    "Naval Combat",
+    "Real-Time"
+   ]
+  },
+  {
+   "appid": 366090,
+   "name": "Colony Survival",
+   "tags": [
+    "Colony Sim",
+    "Survival",
+    "Base-Building",
+    "Building",
+    "Multiplayer",
+    "Strategy",
+    "Sandbox",
+    "Open World",
+    "Early Access",
+    "City Builder",
+    "Adventure",
+    "Crafting"
+   ]
+  },
+  {
+   "appid": 371970,
+   "name": "Barony",
+   "tags": [
+    "Dungeon Crawler",
+    "Action Roguelike",
+    "Online Co-Op",
+    "Fantasy",
+    "Rogue-like",
+    "First-Person",
+    "Co-op",
+    "Local Co-Op",
+    "Co-op Campaign",
+    "Immersive Sim",
+    "Split Screen",
+    "RPG"
+   ]
+  },
+  {
+   "appid": 410900,
+   "name": "Forts",
+   "tags": [
+    "Base-Building",
+    "Multiplayer",
+    "Physics",
+    "Strategy",
+    "Destruction",
+    "Building",
+    "Moddable",
+    "Sandbox",
+    "Action",
+    "2D",
+    "Military",
+    "Tactical"
+   ]
+  },
+  {
+   "appid": 420740,
+   "name": "The Deed",
+   "tags": [
+    "RPGMaker",
+    "Adventure",
+    "Crime",
+    "RPG",
+    "Visual Novel",
+    "Atmospheric",
+    "Detective",
+    "Singleplayer",
+    "Indie",
+    "Story Rich",
+    "Casual",
+    "Mystery"
+   ]
+  },
+  {
+   "appid": 422970,
+   "name": "Devil Daggers",
+   "tags": [
+    "FPS",
+    "Difficult",
+    "Indie",
+    "Fast-Paced",
+    "Action",
+    "Horror",
+    "Retro",
+    "Shooter",
+    "First-Person",
+    "Arena Shooter",
+    "Singleplayer",
+    "Bullet Hell"
+   ]
+  },
+  {
+   "appid": 666220,
+   "name": "CS2D",
+   "tags": [
+    "Free to Play",
+    "2D",
+    "Shooter",
+    "Multiplayer",
+    "Action",
+    "Top-Down Shooter",
+    "Casual",
+    "Indie",
+    "Top-Down",
+    "Zombies",
+    "FPS",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 674520,
+   "name": "Fight'N Rage",
+   "tags": [
+    "Beat 'em up",
+    "Action",
+    "2D",
+    "Local Multiplayer",
+    "Local Co-Op",
+    "Multiple Endings",
+    "Arcade",
+    "Indie",
+    "Great Soundtrack",
+    "Classic",
+    "Female Protagonist",
+    "Retro"
+   ]
+  },
+  {
+   "appid": 738060,
+   "name": "Freddy Fazbear's Pizzeria Simulator",
+   "tags": [
+    "Free to Play",
+    "Horror",
+    "Singleplayer",
+    "Robots",
+    "Survival Horror",
+    "Simulation",
+    "Difficult",
+    "Indie",
+    "First-Person",
+    "Strategy",
+    "Story Rich",
+    "Management"
+   ]
+  },
+  {
+   "appid": 758990,
+   "name": "Ancient Warfare 3",
+   "tags": [
+    "Sandbox",
+    "Simulation",
+    "Action",
+    "Strategy",
+    "Indie",
+    "War",
+    "Games Workshop",
+    "Moddable",
+    "Singleplayer",
+    "Physics",
+    "Shooter",
+    "FPS"
+   ]
+  },
+  {
+   "appid": 799600,
+   "name": "Cosmoteer: Starship Architect & Commander",
+   "tags": [
+    "Sci-fi",
+    "Singleplayer",
+    "2D",
+    "Indie",
+    "Space",
+    "Building",
+    "Strategy",
+    "Exploration",
+    "Space Sim",
+    "Difficult",
+    "Survival",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 851100,
+   "name": "Touhou Luna Nights",
+   "tags": [
+    "Metroidvania",
+    "Difficult",
+    "Side Scroller",
+    "Exploration",
+    "Bullet Hell",
+    "Platformer",
+    "Action-Adventure",
+    "RPG",
+    "Female Protagonist",
+    "2D",
+    "Time Manipulation",
+    "Controller"
+   ]
+  },
+  {
+   "appid": 913550,
+   "name": "I wanna be the Creator",
+   "tags": [
+    "Action",
+    "Level Editor",
+    "Platformer",
+    "Action-Adventure",
+    "Adventure",
+    "Puzzle",
+    "Precision Platformer",
+    "Difficult",
+    "Funny",
+    "Psychological Horror",
+    "Indie",
+    "2D Platformer"
+   ]
+  },
+  {
+   "appid": 926140,
+   "name": "CHANGE: A Homeless Survival Experience",
+   "tags": [
+    "Choose Your Own Adventure",
+    "Time Management",
+    "Rogue-lite",
+    "Life Sim",
+    "Rogue-like",
+    "Character Customization",
+    "RPG",
+    "Strategy",
+    "2D",
+    "Relaxing",
+    "Choices Matter",
+    "Dynamic Narration"
+   ]
+  },
+  {
+   "appid": 960690,
+   "name": "One Step From Eden",
+   "tags": [
+    "Action Roguelike",
+    "Difficult",
+    "Rogue-lite",
+    "Card Battler",
+    "Deckbuilding",
+    "Action",
+    "Replay Value",
+    "Action RPG",
+    "Adventure",
+    "Card Game",
+    "Strategy",
+    "Rogue-like"
+   ]
+  },
+  {
+   "appid": 975370,
+   "name": "Dwarf Fortress",
+   "tags": [
+    "Dwarf",
+    "Colony Sim",
+    "Strategy",
+    "Simulation",
+    "Base-Building",
+    "City Builder",
+    "Sandbox",
+    "Management",
+    "Building",
+    "Survival",
+    "Rogue-like",
+    "Open World"
+   ]
+  },
+  {
+   "appid": 1105670,
+   "name": "The Last Spell",
+   "tags": [
+    "Strategy",
+    "Singleplayer",
+    "Turn-Based Strategy",
+    "RPG",
+    "Turn-Based Tactics",
+    "Tactical",
+    "Turn-Based Combat",
+    "Turn-Based",
+    "Tactical RPG",
+    "Strategy RPG",
+    "2D",
+    "Dark Fantasy"
+   ]
+  },
+  {
+   "appid": 1118200,
+   "name": "People Playground",
+   "tags": [
+    "Sandbox",
+    "Gore",
+    "Physics",
+    "Blood",
+    "Moddable",
+    "Violent",
+    "2D",
+    "Singleplayer",
+    "Destruction",
+    "Simulation",
+    "Funny",
+    "Building"
+   ]
+  },
+  {
+   "appid": 1126310,
+   "name": "风信楼",
+   "tags": [
+    "Multiple Endings",
+    "Choices Matter",
+    "Drama",
+    "Interactive Fiction",
+    "Visual Novel",
+    "Word Game",
+    "Story Rich",
+    "Martial Arts",
+    "Resource Management",
+    "Romance",
+    "Alternate History",
+    "RPG"
+   ]
+  },
+  {
+   "appid": 1127400,
+   "name": "Mindustry",
+   "tags": [
+    "Base-Building",
+    "Resource Management",
+    "Tower Defense",
+    "Strategy",
+    "Automation",
+    "Multiplayer",
+    "Sandbox",
+    "Building",
+    "Co-op",
+    "2D",
+    "RTS",
+    "Online Co-Op"
+   ]
+  },
+  {
+   "appid": 1148590,
+   "name": "DOOM 64",
+   "tags": [
+    "Action",
+    "FPS",
+    "Classic",
+    "1990's",
+    "Retro",
+    "Gore",
+    "Shooter",
+    "Violent",
+    "First-Person",
+    "Cult Classic",
+    "Singleplayer",
+    "Horror"
+   ]
+  },
+  {
+   "appid": 1275890,
+   "name": "Baldi's Basics Plus",
+   "tags": [
+    "Rogue-like",
+    "Stealth",
+    "Horror",
+    "Procedural Generation",
+    "Funny",
+    "Parody ",
+    "Retro",
+    "Indie",
+    "3D",
+    "Exploration",
+    "Early Access",
+    "Perma Death"
+   ]
+  },
+  {
+   "appid": 1282200,
+   "name": "The Test: Hypothesis Rising",
+   "tags": [
+    "Simulation",
+    "Multiple Endings",
+    "Choices Matter",
+    "Horror",
+    "Visual Novel",
+    "Choose Your Own Adventure",
+    "Story Rich",
+    "Psychological Horror",
+    "Mystery",
+    "Investigation",
+    "Detective",
+    "Psychological"
+   ]
+  },
+  {
+   "appid": 1289810,
+   "name": "Siralim Ultimate",
+   "tags": [
+    "Collectathon",
+    "Creature Collector",
+    "Dungeon Crawler",
+    "Party-Based RPG",
+    "Strategy RPG",
+    "Character Customization",
+    "RPG",
+    "Strategy",
+    "2D",
+    "Isometric",
+    "Procedural Generation",
+    "Turn-Based Combat"
+   ]
+  },
+  {
+   "appid": 1337520,
+   "name": "Risk of Rain Returns",
+   "tags": [
+    "Action Roguelike",
+    "Online Co-Op",
+    "Multiplayer",
+    "2D",
+    "PvE",
+    "Local Co-Op",
+    "Looter Shooter",
+    "Sci-fi",
+    "Action",
+    "Controller",
+    "Arcade",
+    "Space"
+   ]
+  },
+  {
+   "appid": 1530140,
+   "name": "Aventura Copilului Albastru și Urât",
+   "tags": [
+    "Hentai",
+    "Sexual Content",
+    "Adventure",
+    "Nudity",
+    "LGBTQ+",
+    "Gore",
+    "2D",
+    "Violent",
+    "Psychological Horror",
+    "Comedy",
+    "Multiple Endings",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1677770,
+   "name": "The Case of the Golden Idol",
+   "tags": [
+    "Mystery",
+    "Detective",
+    "Investigation",
+    "Puzzle",
+    "Conspiracy",
+    "Story Rich",
+    "Point & Click",
+    "2D",
+    "Thriller",
+    "Interactive Fiction",
+    "Dark",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 1699480,
+   "name": "KLETKA",
+   "tags": [
+    "Early Access",
+    "Horror",
+    "Co-op",
+    "First-Person",
+    "Online Co-Op",
+    "Action",
+    "PvE",
+    "Adventure",
+    "Rogue-like",
+    "Action-Adventure",
+    "Dungeon Crawler",
+    "Action Roguelike"
+   ]
+  },
+  {
+   "appid": 1888430,
+   "name": "10 Minutes Till Dawn",
+   "tags": [
+    "Shoot 'Em Up",
+    "Action Roguelike",
+    "Lovecraftian",
+    "Action",
+    "Rogue-like",
+    "Rogue-lite",
+    "Top-Down Shooter",
+    "Looter Shooter",
+    "Horror",
+    "Shooter",
+    "2D",
+    "Dark Fantasy"
+   ]
+  },
+  {
+   "appid": 2067920,
+   "name": "Rogue: Genesia",
+   "tags": [
+    "Action Roguelike",
+    "Bullet Hell",
+    "Rogue-lite",
+    "Twin Stick Shooter",
+    "Arcade",
+    "PvE",
+    "Choices Matter",
+    "2.5D",
+    "Action",
+    "Rogue-like",
+    "2D",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 2088570,
+   "name": "Tiny Rogues",
+   "tags": [
+    "Action Roguelike",
+    "Bullet Hell",
+    "Top-Down Shooter",
+    "Replay Value",
+    "Difficult",
+    "Rogue-lite",
+    "Dungeon Crawler",
+    "Rogue-like",
+    "Top-Down",
+    "Action-Adventure",
+    "1980s",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 2167960,
+   "name": "买个可乐饼吧！ - Buy a Croquette!",
+   "tags": [
+    "RPGMaker",
+    "Mystery",
+    "Sci-fi",
+    "Puzzle",
+    "Psychological Horror",
+    "Funny",
+    "Multiple Endings",
+    "Female Protagonist",
+    "Exploration",
+    "Strategy",
+    "JRPG",
+    "Interactive Fiction"
+   ]
+  },
+  {
+   "appid": 2608270,
+   "name": "Intravenous 2",
+   "tags": [
+    "Tactical",
+    "Shooter",
+    "Stealth",
+    "Realistic",
+    "Singleplayer",
+    "Action",
+    "Gun Customization",
+    "Violent",
+    "Combat",
+    "Crime",
+    "Top-Down Shooter",
+    "2D"
+   ]
+  },
+  {
+   "appid": 2651330,
+   "name": "Intravenous 2: Mercenarism",
+   "tags": [
+    "Tactical",
+    "Realistic",
+    "Shooter",
+    "Stealth",
+    "Singleplayer",
+    "Action",
+    "2D",
+    "Gun Customization",
+    "Top-Down Shooter",
+    "Combat",
+    "Violent",
+    "Crime"
+   ]
+  },
+  {
+   "appid": 2716400,
+   "name": "The Rise of the Golden Idol",
+   "tags": [
+    "Mystery",
+    "Investigation",
+    "Detective",
+    "Conspiracy",
+    "Adventure",
+    "2D",
+    "Puzzle",
+    "Atmospheric",
+    "Choices Matter",
+    "Crime",
+    "Dark",
+    "Exploration"
+   ]
+  },
+  {
+   "appid": 2784470,
+   "name": "9 Kings",
+   "tags": [
+    "Strategy",
+    "Rogue-like",
+    "RPG",
+    "Fantasy",
+    "Roguelike Deckbuilder",
+    "Rogue-lite",
+    "Card Game",
+    "Deckbuilding",
+    "Replay Value",
+    "Difficult",
+    "2D",
+    "Turn-Based"
+   ]
+  },
+  {
+   "appid": 3195790,
+   "name": "White Knuckle",
+   "tags": [
+    "Early Access",
+    "Parkour",
+    "First-Person",
+    "3D Platformer",
+    "Horror",
+    "Platformer",
+    "Adventure",
+    "Rogue-like",
+    "Old School",
+    "FPS",
+    "Survival Horror",
+    "Precision Platformer"
+   ]
+  },
+  {
+   "appid": 2990,
+   "name": "FlatOut 2",
+   "tags": [
+    "Racing",
+    "Combat Racing",
+    "Multiplayer",
+    "Destruction",
+    "Automobile Sim",
+    "Vehicular Combat",
+    "Action",
+    "Driving",
+    "Arcade",
+    "Singleplayer",
+    "Physics",
+    "Local Multiplayer"
+   ]
+  },
+  {
+   "appid": 22230,
+   "name": "Rock of Ages",
+   "tags": [
+    "Comedy",
+    "Strategy",
+    "Indie",
+    "Tower Defense",
+    "Action",
+    "Racing",
+    "Historical",
+    "Multiplayer",
+    "Funny",
+    "Local Multiplayer",
+    "Bowling",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 57400,
+   "name": "Batman: Arkham City",
+   "tags": [
+    "Action",
+    "Adventure",
+    "Open World",
+    "Third Person",
+    "Superhero",
+    "Singleplayer",
+    "Stealth"
+   ]
+  },
+  {
+   "appid": 67370,
+   "name": "The Darkness II",
+   "tags": [
+    "FPS",
+    "Action",
+    "Gore",
+    "Dark",
+    "Shooter",
+    "Singleplayer",
+    "Horror",
+    "Co-op",
+    "First-Person",
+    "Violent",
+    "Multiplayer",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 213330,
+   "name": "LEGO Batman 2: DC Super Heroes",
+   "tags": [
+    "LEGO",
+    "Action",
+    "Adventure",
+    "Open World",
+    "Local Co-Op",
+    "Superhero",
+    "Family Friendly",
+    "Multiplayer",
+    "Co-op",
+    "Singleplayer",
+    "Split Screen",
+    "Controller"
+   ]
+  },
+  {
+   "appid": 249130,
+   "name": "LEGO Marvel Super Heroes",
+   "tags": [
+    "LEGO",
+    "Open World",
+    "Superhero",
+    "Local Co-Op",
+    "Adventure",
+    "Action",
+    "Family Friendly",
+    "Co-op",
+    "Multiplayer",
+    "Comedy",
+    "Funny",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 261030,
+   "name": "The Walking Dead: Season Two",
+   "tags": [
+    "Zombies",
+    "Adventure",
+    "Story Rich",
+    "Episodic",
+    "Point & Click",
+    "Singleplayer",
+    "Female Protagonist",
+    "Drama",
+    "Choices Matter",
+    "Atmospheric",
+    "Choose Your Own Adventure",
+    "Horror"
+   ]
+  },
+  {
+   "appid": 788770,
+   "name": "Meteor 60 Seconds!",
+   "tags": [
+    "Free to Play",
+    "Funny",
+    "Indie",
+    "Multiple Endings",
+    "Casual",
+    "Simulation",
+    "Action",
+    "Singleplayer",
+    "2D",
+    "Sexual Content",
+    "Nudity",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 829110,
+   "name": "LEGO DC Super-Villains",
+   "tags": [
+    "LEGO",
+    "Action",
+    "Adventure",
+    "Villain Protagonist",
+    "Open World",
+    "Superhero",
+    "Multiplayer",
+    "Local Co-Op",
+    "Character Customization",
+    "Co-op",
+    "Funny",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 866800,
+   "name": "The Walking Dead: The Final Season",
+   "tags": [
+    "Story Rich",
+    "Choices Matter",
+    "Zombies",
+    "Adventure",
+    "Choose Your Own Adventure",
+    "Singleplayer",
+    "Female Protagonist",
+    "Post-apocalyptic",
+    "Survival",
+    "Atmospheric",
+    "Horror",
+    "Violent"
+   ]
+  },
+  {
+   "appid": 1609230,
+   "name": "Scarlet Hollow",
+   "tags": [
+    "Early Access",
+    "Choices Matter",
+    "Visual Novel",
+    "Psychological Horror",
+    "Story Rich",
+    "Horror",
+    "Dating Sim",
+    "Multiple Endings",
+    "Well-Written",
+    "Dark Fantasy",
+    "Interactive Fiction",
+    "Mystery"
+   ]
+  },
+  {
+   "appid": 1665190,
+   "name": "Monster Prom 3: Monster Roadtrip",
+   "tags": [
+    "Visual Novel",
+    "LGBTQ+",
+    "Dating Sim",
+    "Comedy",
+    "Multiplayer",
+    "Choices Matter",
+    "Story Rich",
+    "Dark Humor",
+    "Funny",
+    "Multiple Endings",
+    "Choose Your Own Adventure",
+    "Memes"
+   ]
+  },
+  {
+   "appid": 50,
+   "name": "Half-Life: Opposing Force",
+   "tags": [
+    "FPS",
+    "Action",
+    "Classic",
+    "Sci-fi",
+    "Singleplayer",
+    "Shooter",
+    "First-Person",
+    "Aliens",
+    "1990's",
+    "Adventure",
+    "Military",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 80,
+   "name": "Counter-Strike: Condition Zero",
+   "tags": [
+    "Action",
+    "FPS",
+    "Shooter",
+    "Multiplayer",
+    "First-Person",
+    "Singleplayer",
+    "Classic",
+    "Tactical",
+    "Team-Based",
+    "Competitive",
+    "Military",
+    "Online Co-Op"
+   ]
+  },
+  {
+   "appid": 1840,
+   "name": "Source Filmmaker",
+   "tags": [
+    "Animation & Modeling",
+    "Free to Play",
+    "Video Production",
+    "Software",
+    "Movie",
+    "Difficult",
+    "Sandbox",
+    "Funny",
+    "Comedy",
+    "Singleplayer",
+    "Moddable",
+    "Character Customization"
+   ]
+  },
+  {
+   "appid": 2620,
+   "name": "Call of Duty (2003)",
+   "tags": [
+    "FPS",
+    "World War II",
+    "Action",
+    "Classic",
+    "Multiplayer",
+    "Singleplayer",
+    "Shooter",
+    "War",
+    "Military",
+    "First-Person",
+    "Historical",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 2630,
+   "name": "Call of Duty 2",
+   "tags": [
+    "World War II",
+    "Action",
+    "FPS",
+    "Multiplayer",
+    "Singleplayer",
+    "Shooter",
+    "War",
+    "Classic",
+    "First-Person",
+    "Historical",
+    "Military",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 3483,
+   "name": "Peggle Extreme",
+   "tags": [
+    "Casual",
+    "Free to Play",
+    "Puzzle",
+    "Psychological Horror",
+    "Classic",
+    "Mouse only",
+    "Arcade",
+    "2D",
+    "Singleplayer",
+    "Action",
+    "Hentai"
+   ]
+  },
+  {
+   "appid": 4570,
+   "name": "Warhammer 40,000: Dawn of War - Anniversary Edition (Classic)",
+   "tags": [
+    "Strategy",
+    "RTS",
+    "Warhammer 40K",
+    "Base-Building",
+    "Sci-fi",
+    "Multiplayer",
+    "Real-Time",
+    "Games Workshop",
+    "Tactical",
+    "Singleplayer",
+    "War",
+    "Classic"
+   ]
+  },
+  {
+   "appid": 4580,
+   "name": "Warhammer 40,000: Dawn of War - Dark Crusade",
+   "tags": [
+    "Strategy",
+    "Warhammer 40K",
+    "RTS",
+    "Base-Building",
+    "Sci-fi",
+    "Multiplayer",
+    "Singleplayer",
+    "Games Workshop",
+    "Real-Time",
+    "Classic",
+    "War",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 6020,
+   "name": "STAR WARS Jedi Knight - Jedi Academy",
+   "tags": [
+    "Action",
+    "Sci-fi",
+    "Third Person",
+    "Multiplayer",
+    "Classic",
+    "Singleplayer",
+    "Swordplay",
+    "Character Customization",
+    "Moddable",
+    "FPS",
+    "Adventure",
+    "Shooter"
+   ]
+  },
+  {
+   "appid": 9450,
+   "name": "Warhammer 40,000: Dawn of War - Soulstorm",
+   "tags": [
+    "Warhammer 40K",
+    "Strategy",
+    "RTS",
+    "Base-Building",
+    "Sci-fi",
+    "Multiplayer",
+    "Real-Time",
+    "Games Workshop",
+    "Singleplayer",
+    "Futuristic",
+    "Classic",
+    "Action"
+   ]
+  },
+  {
+   "appid": 20570,
+   "name": "Warhammer 40,000: Dawn of War II Chaos Rising",
+   "tags": [
+    "Strategy",
+    "Warhammer 40K",
+    "RTS",
+    "Sci-fi",
+    "Multiplayer",
+    "Games Workshop",
+    "Tactical",
+    "Co-op",
+    "Real-Time",
+    "RPG",
+    "Singleplayer",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 32440,
+   "name": "LEGO Star Wars - The Complete Saga",
+   "tags": [
+    "LEGO",
+    "Local Co-Op",
+    "Adventure",
+    "Co-op",
+    "Family Friendly",
+    "Multiplayer",
+    "Comedy",
+    "Singleplayer",
+    "Funny",
+    "Classic",
+    "Action",
+    "Sci-fi"
+   ]
+  },
+  {
+   "appid": 42960,
+   "name": "Victoria II",
+   "tags": [
+    "Grand Strategy",
+    "Strategy",
+    "Historical",
+    "Political Sim",
+    "Politics",
+    "Economy",
+    "Simulation",
+    "Real-Time with Pause",
+    "Military",
+    "World War I",
+    "War",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 56437,
+   "name": "Warhammer 40,000: Dawn of War II: Retribution",
+   "tags": [
+    "Warhammer 40K",
+    "Strategy",
+    "RTS",
+    "Tactical",
+    "Multiplayer",
+    "Sci-fi",
+    "Games Workshop",
+    "Online Co-Op",
+    "Co-op",
+    "Singleplayer",
+    "Real-Time",
+    "Futuristic"
+   ]
+  },
+  {
+   "appid": 71250,
+   "name": "Sonic Adventure DX",
+   "tags": [
+    "Platformer",
+    "Great Soundtrack",
+    "3D Platformer",
+    "Classic",
+    "Adventure",
+    "Singleplayer",
+    "Action",
+    "Fast-Paced",
+    "Retro",
+    "Third Person",
+    "Open World",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 233130,
+   "name": "Shadow Warrior",
+   "tags": [
+    "Action",
+    "FPS",
+    "Swordplay",
+    "Gore",
+    "Comedy",
+    "First-Person",
+    "Hack and Slash",
+    "Singleplayer",
+    "Shooter",
+    "Adventure",
+    "Old School",
+    "Ninja"
+   ]
+  },
+  {
+   "appid": 242760,
+   "name": "The Forest",
+   "tags": [
+    "Open World Survival Craft",
+    "Survival",
+    "Open World",
+    "Horror",
+    "Crafting",
+    "Adventure",
+    "Building",
+    "Survival Horror",
+    "First-Person",
+    "Action",
+    "Exploration",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 249680,
+   "name": "Marlow Briggs and the Mask of Death",
+   "tags": [
+    "Action",
+    "Spectacle fighter",
+    "Hack and Slash",
+    "Adventure",
+    "Character Action Game",
+    "Singleplayer",
+    "Third Person",
+    "Funny",
+    "Platformer",
+    "Indie",
+    "Comedy",
+    "Beat 'em up"
+   ]
+  },
+  {
+   "appid": 257510,
+   "name": "The Talos Principle",
+   "tags": [
+    "Puzzle",
+    "Philosophical",
+    "First-Person",
+    "Sci-fi",
+    "Atmospheric",
+    "Story Rich",
+    "Singleplayer",
+    "Great Soundtrack",
+    "Robots",
+    "Exploration",
+    "Adventure",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 264200,
+   "name": "One Finger Death Punch",
+   "tags": [
+    "Action",
+    "2D Fighter",
+    "Fast-Paced",
+    "Indie",
+    "Beat 'em up",
+    "Fighting",
+    "Singleplayer",
+    "Addictive",
+    "2D",
+    "Martial Arts",
+    "Casual",
+    "Difficult"
+   ]
+  },
+  {
+   "appid": 282140,
+   "name": "SOMA",
+   "tags": [
+    "Horror",
+    "Psychological Horror",
+    "Atmospheric",
+    "Dark",
+    "Story Rich",
+    "Survival Horror",
+    "Exploration",
+    "Sci-fi",
+    "Gore",
+    "First-Person",
+    "Lovecraftian",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 317360,
+   "name": "Double Action: Boogaloo",
+   "tags": [
+    "Free to Play",
+    "Action",
+    "Multiplayer",
+    "Shooter",
+    "Parkour",
+    "Third-Person Shooter",
+    "FPS",
+    "Bullet Time",
+    "First-Person",
+    "Open World",
+    "Funny",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 322110,
+   "name": "20XX",
+   "tags": [
+    "Platformer",
+    "Action Roguelike",
+    "Action",
+    "2D Platformer",
+    "Rogue-lite",
+    "2D",
+    "Online Co-Op",
+    "Indie",
+    "Female Protagonist",
+    "Local Co-Op",
+    "Side Scroller",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 330830,
+   "name": "Tales from the Borderlands",
+   "tags": [
+    "Comedy",
+    "Adventure",
+    "Story Rich",
+    "Choices Matter",
+    "Singleplayer",
+    "Episodic",
+    "Point & Click",
+    "Funny",
+    "Choose Your Own Adventure",
+    "Action",
+    "Atmospheric",
+    "Quick-Time Events"
+   ]
+  },
+  {
+   "appid": 332570,
+   "name": "Amazing Frog?",
+   "tags": [
+    "Early Access",
+    "4 Player Local",
+    "Open World",
+    "Split Screen",
+    "Physics",
+    "Action-Adventure",
+    "Sandbox",
+    "Indie",
+    "Controller",
+    "Character Customization",
+    "Singleplayer",
+    "Local Co-Op"
+   ]
+  },
+  {
+   "appid": 348250,
+   "name": "Google Earth VR",
+   "tags": [
+    "VR",
+    "Free to Play",
+    "Open World",
+    "Simulation",
+    "Casual",
+    "Adventure",
+    "Exploration",
+    "Realistic",
+    "Singleplayer",
+    "Walking Simulator",
+    "Education",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 365300,
+   "name": "Transmissions: Element 120",
+   "tags": [
+    "Free to Play",
+    "Action",
+    "Shooter",
+    "Zombies",
+    "Horror",
+    "First-Person",
+    "Singleplayer",
+    "Multiplayer",
+    "FPS",
+    "Mod",
+    "Atmospheric",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 365670,
+   "name": "Blender",
+   "tags": [
+    "Animation & Modeling",
+    "Software",
+    "Design & Illustration",
+    "Free to Play",
+    "Game Development",
+    "Video Production",
+    "3D",
+    "Difficult",
+    "GameMaker",
+    "Utilities",
+    "Physics",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 367670,
+   "name": "Controller Companion",
+   "tags": [
+    "Utilities",
+    "Controller",
+    "Software"
+   ]
+  },
+  {
+   "appid": 379720,
+   "name": "DOOM",
+   "tags": [
+    "FPS",
+    "Gore",
+    "Action",
+    "Shooter",
+    "Great Soundtrack",
+    "Demons",
+    "First-Person",
+    "Multiplayer",
+    "Fast-Paced",
+    "Singleplayer",
+    "Sci-fi",
+    "Horror"
+   ]
+  },
+  {
+   "appid": 388090,
+   "name": "Five Nights at Freddy's 4",
+   "tags": [
+    "Horror",
+    "Survival Horror",
+    "Singleplayer",
+    "First-Person",
+    "Robots",
+    "Dark",
+    "Difficult",
+    "Point & Click",
+    "Psychological Horror",
+    "Survival",
+    "Strategy",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 414700,
+   "name": "Outlast 2",
+   "tags": [
+    "Horror",
+    "Psychological Horror",
+    "Survival Horror",
+    "First-Person",
+    "Gore",
+    "Singleplayer",
+    "Dark",
+    "Atmospheric",
+    "Violent",
+    "Mature",
+    "Survival",
+    "Action"
+   ]
+  },
+  {
+   "appid": 418240,
+   "name": "Shadow Tactics: Blades of the Shogun",
+   "tags": [
+    "Stealth",
+    "Strategy",
+    "Tactical",
+    "Ninja",
+    "Real Time Tactics",
+    "Singleplayer",
+    "Indie",
+    "Isometric",
+    "Assassin",
+    "Historical",
+    "Action",
+    "RTS"
+   ]
+  },
+  {
+   "appid": 434570,
+   "name": "Blood and Bacon",
+   "tags": [
+    "Gore",
+    "Funny",
+    "Multiplayer",
+    "Shooter",
+    "Action",
+    "FPS",
+    "Horror",
+    "Co-op",
+    "Online Co-Op",
+    "Blood",
+    "Memes",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 435150,
+   "name": "Divinity: Original Sin 2 - Definitive Edition",
+   "tags": [
+    "Tactical RPG",
+    "RPG",
+    "Turn-Based Strategy",
+    "Story Rich",
+    "Fantasy",
+    "Character Customization",
+    "CRPG",
+    "Exploration",
+    "Party-Based RPG",
+    "Strategy RPG",
+    "PvP",
+    "Female Protagonist"
+   ]
+  },
+  {
+   "appid": 448280,
+   "name": "Job Simulator",
+   "tags": [
+    "VR",
+    "Simulation",
+    "Funny",
+    "First-Person",
+    "Singleplayer",
+    "Robots",
+    "Comedy",
+    "Physics",
+    "Psychological Horror",
+    "Horror",
+    "Memes",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 459220,
+   "name": "Halo Wars: Definitive Edition",
+   "tags": [
+    "Strategy",
+    "RTS",
+    "Base-Building",
+    "Multiplayer",
+    "Singleplayer",
+    "Sci-fi",
+    "War",
+    "Military",
+    "Action",
+    "Co-op",
+    "Simulation",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 460790,
+   "name": "Bayonetta",
+   "tags": [
+    "Action",
+    "Female Protagonist",
+    "Hack and Slash",
+    "Sexual Content",
+    "Nudity",
+    "Singleplayer",
+    "Spectacle fighter",
+    "Mature",
+    "Great Soundtrack",
+    "Character Action Game",
+    "Adventure",
+    "Fast-Paced"
+   ]
+  },
+  {
+   "appid": 463270,
+   "name": "Ghost 1.0",
+   "tags": [
+    "Metroidvania",
+    "Indie",
+    "Action",
+    "Roguevania",
+    "Female Protagonist",
+    "Adventure",
+    "Cyberpunk",
+    "Platformer",
+    "2D",
+    "Sci-fi",
+    "Singleplayer",
+    "Side Scroller"
+   ]
+  },
+  {
+   "appid": 469820,
+   "name": "Genital Jousting",
+   "tags": [
+    "Sexual Content",
+    "Nudity",
+    "Comedy",
+    "NSFW",
+    "Multiplayer",
+    "Action",
+    "Funny",
+    "Indie",
+    "Memes",
+    "Mature",
+    "Local Multiplayer",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 506610,
+   "name": "Five Nights at Freddy's: Sister Location",
+   "tags": [
+    "Horror",
+    "Survival Horror",
+    "Singleplayer",
+    "Robots",
+    "First-Person",
+    "Dark",
+    "Difficult",
+    "Survival",
+    "Strategy",
+    "Indie",
+    "Story Rich",
+    "Mystery"
+   ]
+  },
+  {
+   "appid": 554310,
+   "name": "Rage Wars",
+   "tags": [
+    "Gore",
+    "Memes",
+    "Psychological Horror",
+    "Violent",
+    "Indie",
+    "Casual",
+    "Adventure",
+    "Sexual Content",
+    "Cold War",
+    "Cult Classic",
+    "Hentai",
+    "Illuminati"
+   ]
+  },
+  {
+   "appid": 568220,
+   "name": "Lobotomy Corporation | Monster Management Simulation",
+   "tags": [
+    "Management",
+    "Difficult",
+    "Psychological Horror",
+    "Story Rich",
+    "Simulation",
+    "Horror",
+    "Gore",
+    "Great Soundtrack",
+    "Singleplayer",
+    "Indie",
+    "Strategy",
+    "2D"
+   ]
+  },
+  {
+   "appid": 570940,
+   "name": "DARK SOULS: REMASTERED",
+   "tags": [
+    "Souls-like",
+    "Dark Fantasy",
+    "RPG",
+    "Difficult",
+    "Action",
+    "Dark",
+    "Fantasy",
+    "Atmospheric",
+    "Great Soundtrack",
+    "Action RPG",
+    "Lore-Rich",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 578330,
+   "name": "LEGO City Undercover",
+   "tags": [
+    "LEGO",
+    "Open World",
+    "Action",
+    "Co-op",
+    "Adventure",
+    "Multiplayer",
+    "Comedy",
+    "Family Friendly",
+    "Funny",
+    "Singleplayer",
+    "Local Co-Op",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 582500,
+   "name": "We Were Here",
+   "tags": [
+    "Free to Play",
+    "Co-op",
+    "Escape Room",
+    "Puzzle",
+    "Horror",
+    "Multiplayer",
+    "Co-op Campaign",
+    "Mystery",
+    "Adventure",
+    "Psychological Horror",
+    "Online Co-Op",
+    "Exploration"
+   ]
+  },
+  {
+   "appid": 589870,
+   "name": "Learn to Fly 3",
+   "tags": [
+    "Free to Play",
+    "Casual",
+    "Physics",
+    "Simulation",
+    "Indie",
+    "Flight",
+    "Singleplayer",
+    "Management",
+    "Strategy",
+    "Sandbox",
+    "Puzzle",
+    "Character Customization"
+   ]
+  },
+  {
+   "appid": 629520,
+   "name": "Soundpad",
+   "tags": [
+    "Utilities",
+    "Audio Production",
+    "Music",
+    "Software",
+    "NSFW",
+    "Mature",
+    "Cold War",
+    "Psychological",
+    "Singleplayer",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 632360,
+   "name": "Risk of Rain 2",
+   "tags": [
+    "Third-Person Shooter",
+    "Action Roguelike",
+    "Multiplayer",
+    "Co-op",
+    "Action",
+    "Rogue-lite",
+    "Rogue-like",
+    "Looter Shooter",
+    "Loot",
+    "Online Co-Op",
+    "Shooter",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 638970,
+   "name": "Yakuza 0",
+   "tags": [
+    "Story Rich",
+    "Action",
+    "Beat 'em up",
+    "Great Soundtrack",
+    "Crime",
+    "Open World",
+    "Minigames",
+    "Funny",
+    "RPG",
+    "Singleplayer",
+    "Violent",
+    "Mature"
+   ]
+  },
+  {
+   "appid": 648100,
+   "name": "Raging Loop",
+   "tags": [
+    "Visual Novel",
+    "Adventure",
+    "Indie",
+    "Mystery",
+    "Psychological Horror",
+    "Story Rich",
+    "Psychological",
+    "Atmospheric",
+    "Gore",
+    "Singleplayer",
+    "Detective",
+    "Violent"
+   ]
+  },
+  {
+   "appid": 732690,
+   "name": "FIVE NIGHTS AT FREDDY'S: HELP WANTED",
+   "tags": [
+    "Horror",
+    "VR",
+    "Singleplayer",
+    "Robots",
+    "Survival Horror",
+    "First-Person",
+    "Action",
+    "Psychological Horror",
+    "Dark",
+    "Survival",
+    "Casual",
+    "Difficult"
+   ]
+  },
+  {
+   "appid": 760890,
+   "name": "Hello Charlotte EP3: Childhood's End",
+   "tags": [
+    "Story Rich",
+    "Psychological Horror",
+    "Gore",
+    "Indie",
+    "RPGMaker",
+    "Violent",
+    "RPG",
+    "Atmospheric",
+    "Visual Novel",
+    "Philosophical",
+    "Horror",
+    "Psychological"
+   ]
+  },
+  {
+   "appid": 761600,
+   "name": "Onimusha: Warlords",
+   "tags": [
+    "Action",
+    "Violent",
+    "Hack and Slash",
+    "Classic",
+    "Singleplayer",
+    "Ninja",
+    "Third Person",
+    "Survival Horror",
+    "Dark Fantasy",
+    "Demons",
+    "Atmospheric",
+    "Horror"
+   ]
+  },
+  {
+   "appid": 765410,
+   "name": "Bean Battles",
+   "tags": [
+    "Multiplayer",
+    "Action",
+    "Indie",
+    "Battle Royale",
+    "Shooter",
+    "Violent",
+    "Great Soundtrack",
+    "Dating Sim",
+    "Memes",
+    "NSFW",
+    "Horror",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 795100,
+   "name": "Friday the 13th: Killer Puzzle",
+   "tags": [
+    "Free to Play",
+    "Puzzle",
+    "Horror",
+    "Gore",
+    "Violent",
+    "Blood",
+    "Casual",
+    "Singleplayer",
+    "Strategy",
+    "Multiplayer",
+    "Indie",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 812810,
+   "name": "missed messages.",
+   "tags": [
+    "Free to Play",
+    "Visual Novel",
+    "LGBTQ+",
+    "Choices Matter",
+    "Romance",
+    "Emotional",
+    "Psychological Horror",
+    "Female Protagonist",
+    "Indie",
+    "Psychological",
+    "Singleplayer",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 834530,
+   "name": "Yakuza Kiwami",
+   "tags": [
+    "Action",
+    "Story Rich",
+    "Adventure",
+    "Beat 'em up",
+    "RPG",
+    "Open World",
+    "Crime",
+    "Singleplayer",
+    "Great Soundtrack",
+    "Violent",
+    "Minigames",
+    "Drama"
+   ]
+  },
+  {
+   "appid": 845070,
+   "name": "The Awesome Adventures of Captain Spirit",
+   "tags": [
+    "Free to Play",
+    "Story Rich",
+    "Adventure",
+    "Choices Matter",
+    "Atmospheric",
+    "Singleplayer",
+    "Great Soundtrack",
+    "Drama",
+    "Superhero",
+    "Short",
+    "Point & Click",
+    "Walking Simulator"
+   ]
+  },
+  {
+   "appid": 860510,
+   "name": "Little Nightmares II",
+   "tags": [
+    "Horror",
+    "Adventure",
+    "Singleplayer",
+    "Puzzle",
+    "Dark",
+    "Atmospheric",
+    "Psychological Horror",
+    "Story Rich",
+    "Multiplayer",
+    "Stealth",
+    "Action-Adventure",
+    "Puzzle-Platformer"
+   ]
+  },
+  {
+   "appid": 882790,
+   "name": "Fate Seeker",
+   "tags": [
+    "RPG",
+    "Martial Arts",
+    "Action RPG",
+    "Adventure",
+    "Action",
+    "Turn-Based",
+    "Singleplayer",
+    "Dating Sim",
+    "Sexual Content",
+    "Puzzle",
+    "Multiple Endings"
+   ]
+  },
+  {
+   "appid": 927380,
+   "name": "Yakuza Kiwami 2",
+   "tags": [
+    "Action",
+    "Story Rich",
+    "RPG",
+    "Beat 'em up",
+    "Singleplayer",
+    "Adventure",
+    "Violent",
+    "Open World",
+    "Minigames",
+    "Sexual Content",
+    "Crime",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 1007040,
+   "name": "EARTH DEFENSE FORCE 5",
+   "tags": [
+    "Action",
+    "Online Co-Op",
+    "Third-Person Shooter",
+    "Co-op",
+    "Mechs",
+    "Aliens",
+    "Shooter",
+    "Local Co-Op",
+    "Sci-fi",
+    "Multiplayer",
+    "Split Screen",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 1053680,
+   "name": "Granny Simulator",
+   "tags": [
+    "Multiplayer",
+    "Funny",
+    "Simulation",
+    "Violent",
+    "Casual",
+    "Comedy",
+    "Indie",
+    "Early Access",
+    "Horror",
+    "Co-op",
+    "Memes",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 1105500,
+   "name": "Yakuza 4 Remastered",
+   "tags": [
+    "Action",
+    "Adventure",
+    "Beat 'em up",
+    "Open World",
+    "RPG",
+    "Action RPG",
+    "Third Person",
+    "Story Rich",
+    "Crime",
+    "Drama",
+    "Comedy",
+    "Violent"
+   ]
+  },
+  {
+   "appid": 1178830,
+   "name": "Bright Memory: Infinite",
+   "tags": [
+    "Action",
+    "Female Protagonist",
+    "Sexual Content",
+    "FPS",
+    "Indie",
+    "Singleplayer",
+    "Shooter",
+    "Sci-fi",
+    "Hack and Slash",
+    "First-Person",
+    "Mature",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 1235140,
+   "name": "Yakuza: Like a Dragon",
+   "tags": [
+    "RPG",
+    "Adventure",
+    "Action",
+    "Turn-Based Combat",
+    "JRPG",
+    "Story Rich",
+    "Turn-Based",
+    "Open World",
+    "Singleplayer",
+    "Funny",
+    "Crime",
+    "Comedy"
+   ]
+  },
+  {
+   "appid": 1256670,
+   "name": "Library Of Ruina",
+   "tags": [
+    "Story Rich",
+    "Card Game",
+    "Strategy",
+    "Difficult",
+    "Deckbuilding",
+    "Turn-Based Combat",
+    "Great Soundtrack",
+    "Singleplayer",
+    "Psychological Horror",
+    "Indie",
+    "Visual Novel",
+    "Gore"
+   ]
+  },
+  {
+   "appid": 1388590,
+   "name": "Yakuza 6: The Song of Life",
+   "tags": [
+    "Action",
+    "Adventure",
+    "Open World",
+    "Beat 'em up",
+    "RPG",
+    "Action RPG",
+    "Crime",
+    "Story Rich",
+    "Third Person",
+    "Comedy",
+    "Drama",
+    "Violent"
+   ]
+  },
+  {
+   "appid": 1421250,
+   "name": "Tiny Bunny",
+   "tags": [
+    "Visual Novel",
+    "Horror",
+    "Story Rich",
+    "Atmospheric",
+    "Dark",
+    "Psychological Horror",
+    "Choices Matter",
+    "Singleplayer",
+    "Gore",
+    "2D",
+    "Violent",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1428310,
+   "name": "The Test: Final Revelation",
+   "tags": [
+    "Simulation",
+    "Choose Your Own Adventure",
+    "Choices Matter",
+    "Multiple Endings",
+    "Visual Novel",
+    "Horror",
+    "Psychological Horror",
+    "Mystery",
+    "Detective",
+    "Investigation",
+    "Immersive Sim",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1443200,
+   "name": "Class of '09",
+   "tags": [
+    "Casual",
+    "Choose Your Own Adventure",
+    "Comedy",
+    "RPG",
+    "2D",
+    "America",
+    "Female Protagonist",
+    "Satire",
+    "Third Person",
+    "Visual Novel",
+    "Multiple Endings",
+    "Sexual Content"
+   ]
+  },
+  {
+   "appid": 1527910,
+   "name": "Gladio and Glory",
+   "tags": [
+    "Early Access",
+    "PvP",
+    "Gore",
+    "Physics",
+    "Multiplayer",
+    "Rome",
+    "Beat 'em up",
+    "Simulation",
+    "Hack and Slash",
+    "Character Customization",
+    "Sandbox",
+    "Combat"
+   ]
+  },
+  {
+   "appid": 1726400,
+   "name": "The Death | Thần Trùng",
+   "tags": [
+    "Horror",
+    "Psychological Horror",
+    "Puzzle",
+    "Indie",
+    "Adventure",
+    "Casual",
+    "Realistic",
+    "First-Person",
+    "Funny",
+    "Walking Simulator",
+    "Singleplayer",
+    "Mystery"
+   ]
+  },
+  {
+   "appid": 1895300,
+   "name": "Shinobi Warfare",
+   "tags": [
+    "RPG",
+    "Turn-Based Tactics",
+    "Ninja",
+    "2D",
+    "Free to Play",
+    "2D Fighter",
+    "Character Customization",
+    "PvP",
+    "Combat",
+    "PvE",
+    "Conversation",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 2287520,
+   "name": "Five Nights at Freddy's: Help Wanted 2",
+   "tags": [
+    "VR",
+    "Horror",
+    "Singleplayer",
+    "Robots",
+    "Simulation",
+    "Puzzle",
+    "Jump Scare",
+    "Indie",
+    "Early Access",
+    "First-Person",
+    "LGBTQ+",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 2455640,
+   "name": "Romancing SaGa 2: Revenge of the Seven",
+   "tags": [
+    "JRPG",
+    "Tactical RPG",
+    "Party-Based RPG",
+    "3D",
+    "Controller",
+    "Story Rich",
+    "Lore-Rich",
+    "RPG",
+    "Fantasy",
+    "Third Person",
+    "Class-Based",
+    "Medieval"
+   ]
+  },
+  {
+   "appid": 57300,
+   "name": "Amnesia: The Dark Descent",
+   "tags": [
+    "Horror",
+    "Gore",
+    "Psychological Horror",
+    "Survival Horror",
+    "Atmospheric",
+    "Puzzle",
+    "First-Person",
+    "Nudity",
+    "Dark",
+    "Lovecraftian",
+    "Adventure",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 221260,
+   "name": "Little Inferno",
+   "tags": [
+    "Casual",
+    "Indie",
+    "Puzzle",
+    "Singleplayer",
+    "Satire",
+    "Funny",
+    "Short",
+    "Comedy",
+    "Great Soundtrack",
+    "Dark Humor",
+    "Sandbox",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 221910,
+   "name": "The Stanley Parable",
+   "tags": [
+    "Comedy",
+    "Narration",
+    "Indie",
+    "Walking Simulator",
+    "First-Person",
+    "Funny",
+    "Psychological",
+    "Satire",
+    "Dynamic Narration",
+    "Adventure",
+    "Multiple Endings",
+    "Exploration"
+   ]
+  },
+  {
+   "appid": 512790,
+   "name": "Quern - Undying Thoughts",
+   "tags": [
+    "Adventure",
+    "Puzzle",
+    "Mystery",
+    "Atmospheric",
+    "Exploration",
+    "Walking Simulator",
+    "Singleplayer",
+    "First-Person",
+    "Story Rich",
+    "Narration",
+    "3D",
+    "Investigation"
+   ]
+  },
+  {
+   "appid": 1021950,
+   "name": "When the Darkness comes",
+   "tags": [
+    "Psychological Horror",
+    "Free to Play",
+    "Walking Simulator",
+    "Indie",
+    "First-Person",
+    "Horror",
+    "Dynamic Narration",
+    "Narration",
+    "Adventure",
+    "Atmospheric",
+    "Dark",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 1129310,
+   "name": "Receiver 2",
+   "tags": [
+    "FPS",
+    "Simulation",
+    "Shooter",
+    "Atmospheric",
+    "First-Person",
+    "Indie",
+    "Action",
+    "Realistic",
+    "Psychological Horror",
+    "Difficult",
+    "Education",
+    "Horror"
+   ]
+  },
+  {
+   "appid": 1239690,
+   "name": "Retrowave",
+   "tags": [
+    "Racing",
+    "1980s",
+    "Indie",
+    "Casual",
+    "Retro",
+    "Simulation",
+    "Action",
+    "Music",
+    "Relaxing",
+    "Cyberpunk",
+    "1990's",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 1515210,
+   "name": "The Past Within",
+   "tags": [
+    "Co-op",
+    "Puzzle",
+    "Online Co-Op",
+    "Multiplayer",
+    "Escape Room",
+    "Horror",
+    "Mystery",
+    "Point & Click",
+    "Adventure",
+    "Indie",
+    "Psychological Horror",
+    "Local Co-Op"
+   ]
+  },
+  {
+   "appid": 1743850,
+   "name": "HYPER DEMON",
+   "tags": [
+    "FPS",
+    "Arena Shooter",
+    "Fast-Paced",
+    "Difficult",
+    "Spectacle fighter",
+    "Score Attack",
+    "Bullet Hell",
+    "Action",
+    "Time Attack",
+    "Lovecraftian",
+    "Arcade",
+    "Bullet Time"
+   ]
+  },
+  {
+   "appid": 2291850,
+   "name": "Underground Blossom",
+   "tags": [
+    "Escape Room",
+    "Adventure",
+    "Puzzle",
+    "Point & Click",
+    "Indie",
+    "Mystery",
+    "Singleplayer",
+    "Horror",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 2567870,
+   "name": "Chained Together",
+   "tags": [
+    "Co-op",
+    "Adventure",
+    "Casual",
+    "Platformer",
+    "Puzzle-Platformer",
+    "Simulation",
+    "Action-Adventure",
+    "3D Platformer",
+    "Third Person",
+    "Exploration",
+    "Funny",
+    "Online Co-Op"
+   ]
+  },
+  {
+   "appid": 3191050,
+   "name": "BRAZILIAN DRUG DEALER 3: I OPENED A PORTAL TO HELL IN THE FAVELA TRYING TO REVIVE MIT AIA I NEED TO CLOSE IT",
+   "tags": [
+    "Boomer Shooter",
+    "FPS",
+    "Singleplayer",
+    "PvE",
+    "Shooter",
+    "3D",
+    "First-Person",
+    "Cyberpunk",
+    "Comedy",
+    "Funny",
+    "Lore-Rich",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 732430,
+   "name": "Superflight",
+   "tags": [
+    "Flight",
+    "Indie",
+    "Relaxing",
+    "Casual",
+    "Procedural Generation",
+    "Atmospheric",
+    "Singleplayer",
+    "Action",
+    "Sports",
+    "Physics",
+    "Exploration",
+    "Open World"
+   ]
+  },
+  {
+   "appid": 915310,
+   "name": "SNKRX",
+   "tags": [
+    "Action Roguelike",
+    "Rogue-lite",
+    "Arena Shooter",
+    "Top-Down Shooter",
+    "Shoot 'Em Up",
+    "Deckbuilding",
+    "Replay Value",
+    "Arcade",
+    "Shooter",
+    "Action RPG",
+    "2D",
+    "Action"
+   ]
+  },
+  {
+   "appid": 1064460,
+   "name": "Murder House",
+   "tags": [
+    "Horror",
+    "1980s",
+    "Retro",
+    "Survival Horror",
+    "Old School",
+    "Psychological Horror",
+    "Gore",
+    "3D",
+    "Violent",
+    "Survival",
+    "Third Person",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 1175140,
+   "name": "Vecter",
+   "tags": [
+    "Free to Play",
+    "Racing",
+    "Indie",
+    "Casual",
+    "Action",
+    "Arcade",
+    "Singleplayer",
+    "Runner",
+    "Great Soundtrack",
+    "Atmospheric",
+    "Fast-Paced",
+    "Addictive"
+   ]
+  },
+  {
+   "appid": 1533390,
+   "name": "Gorilla Tag",
+   "tags": [
+    "VR",
+    "Psychological Horror",
+    "Multiplayer",
+    "First-Person",
+    "Funny",
+    "Parkour",
+    "Horror",
+    "3D",
+    "3D Platformer",
+    "PvP",
+    "Action",
+    "Nature"
+   ]
+  },
+  {
+   "appid": 1555710,
+   "name": "OMFG: One Million Fatal Guns",
+   "tags": [
+    "Arena Shooter",
+    "FPS",
+    "Arcade",
+    "Free to Play",
+    "Action",
+    "Shooter",
+    "Shoot 'Em Up",
+    "First-Person",
+    "3D",
+    "Singleplayer",
+    "Robots",
+    "Sci-fi"
+   ]
+  },
+  {
+   "appid": 2696480,
+   "name": "Nothing",
+   "tags": [
+    "Psychological Horror",
+    "Hentai",
+    "Sexual Content",
+    "Souls-like",
+    "Story Rich",
+    "Gore",
+    "Difficult",
+    "Choices Matter",
+    "Horror",
+    "Multiple Endings",
+    "Free to Play",
+    "Action"
+   ]
+  },
+  {
+   "appid": 97000,
+   "name": "Solar 2",
+   "tags": [
+    "Space",
+    "Indie",
+    "Casual",
+    "Sandbox",
+    "Relaxing",
+    "Simulation",
+    "Singleplayer",
+    "2D",
+    "Open World",
+    "Physics",
+    "Top-Down",
+    "Comedy"
+   ]
+  },
+  {
+   "appid": 335000,
+   "name": "Tormentum - Dark Sorrow",
+   "tags": [
+    "Point & Click",
+    "Dark Fantasy",
+    "Adventure",
+    "Dark",
+    "Puzzle",
+    "Atmospheric",
+    "Horror",
+    "Indie",
+    "Great Soundtrack",
+    "2D",
+    "Fantasy",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 773370,
+   "name": "Exo One",
+   "tags": [
+    "Atmospheric",
+    "Exploration",
+    "Space",
+    "Flight",
+    "Adventure",
+    "Relaxing",
+    "Physics",
+    "Walking Simulator",
+    "Space Sim",
+    "3D Platformer",
+    "Controller",
+    "Sci-fi"
+   ]
+  },
+  {
+   "appid": 1119980,
+   "name": "In Sound Mind",
+   "tags": [
+    "Horror",
+    "Psychological Horror",
+    "Story Rich",
+    "Puzzle",
+    "Action",
+    "Singleplayer",
+    "Atmospheric",
+    "First-Person",
+    "Indie",
+    "Shooter",
+    "FPS",
+    "Action-Adventure"
+   ]
+  },
+  {
+   "appid": 1376200,
+   "name": "KARMA: The Dark World",
+   "tags": [
+    "Walking Simulator",
+    "Psychological Horror",
+    "First-Person",
+    "Horror",
+    "Atmospheric",
+    "Sci-fi",
+    "Singleplayer",
+    "Adventure",
+    "Philosophical",
+    "Dystopian ",
+    "Psychological",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 41500,
+   "name": "Torchlight",
+   "tags": [
+    "RPG",
+    "Action RPG",
+    "Hack and Slash",
+    "Dungeon Crawler",
+    "Fantasy",
+    "Singleplayer",
+    "Loot",
+    "Indie",
+    "Moddable",
+    "Action",
+    "Adventure",
+    "Isometric"
+   ]
+  },
+  {
+   "appid": 200710,
+   "name": "Torchlight II",
+   "tags": [
+    "RPG",
+    "Action RPG",
+    "Hack and Slash",
+    "Loot",
+    "Dungeon Crawler",
+    "Co-op",
+    "Fantasy",
+    "Online Co-Op",
+    "Multiplayer",
+    "Action",
+    "Adventure",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 214560,
+   "name": "Mark of the Ninja",
+   "tags": [
+    "Stealth",
+    "Platformer",
+    "Ninja",
+    "Indie",
+    "2D",
+    "Action",
+    "Singleplayer",
+    "Side Scroller",
+    "Adventure",
+    "Assassin",
+    "Atmospheric",
+    "Controller"
+   ]
+  },
+  {
+   "appid": 341000,
+   "name": "Mad Games Tycoon",
+   "tags": [
+    "Management",
+    "Simulation",
+    "Strategy",
+    "Economy",
+    "Casual",
+    "Building",
+    "GameMaker",
+    "Base-Building",
+    "Sandbox",
+    "Resource Management",
+    "Crafting",
+    "Capitalism"
+   ]
+  },
+  {
+   "appid": 1012880,
+   "name": "60 Seconds! Reatomized",
+   "tags": [
+    "2D",
+    "Choose Your Own Adventure",
+    "Dark Humor",
+    "Turn-Based Tactics",
+    "Exploration",
+    "Outbreak Sim",
+    "Immersive Sim",
+    "Strategy",
+    "Point & Click",
+    "Difficult",
+    "Life Sim",
+    "Text-Based"
+   ]
+  },
+  {
+   "appid": 3590,
+   "name": "Plants vs. Zombies GOTY Edition",
+   "tags": [
+    "Tower Defense",
+    "Zombies",
+    "Strategy",
+    "Singleplayer",
+    "Casual",
+    "Classic",
+    "Great Soundtrack",
+    "2D",
+    "Comedy",
+    "Family Friendly",
+    "Funny",
+    "Puzzle"
+   ]
+  },
+  {
+   "appid": 21090,
+   "name": "F.E.A.R.",
+   "tags": [
+    "Horror",
+    "FPS",
+    "Action",
+    "Bullet Time",
+    "Classic",
+    "Singleplayer",
+    "Shooter",
+    "Atmospheric",
+    "Gore",
+    "First-Person",
+    "Psychological Horror",
+    "Dark"
+   ]
+  },
+  {
+   "appid": 247020,
+   "name": "Cook, Serve, Delicious!",
+   "tags": [
+    "Indie",
+    "Time Management",
+    "Typing",
+    "Difficult",
+    "Management",
+    "Cooking",
+    "Arcade",
+    "Strategy",
+    "2D",
+    "Funny",
+    "Controller",
+    "Simulation"
+   ]
+  },
+  {
+   "appid": 252150,
+   "name": "Grimm",
+   "tags": [
+    "Indie",
+    "Free to Play",
+    "Villain Protagonist",
+    "Funny",
+    "Casual",
+    "Fantasy",
+    "Comedy",
+    "Adventure",
+    "Episodic",
+    "Singleplayer",
+    "Third Person",
+    "Action"
+   ]
+  },
+  {
+   "appid": 265930,
+   "name": "Goat Simulator",
+   "tags": [
+    "Simulation",
+    "Funny",
+    "Comedy",
+    "Open World",
+    "Sandbox",
+    "Physics",
+    "Destruction",
+    "Casual",
+    "Indie",
+    "Action",
+    "Memes",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 418530,
+   "name": "Spelunky 2",
+   "tags": [
+    "Platformer",
+    "2D Platformer",
+    "Difficult",
+    "Online Co-Op",
+    "Perma Death",
+    "Co-op",
+    "Replay Value",
+    "Indie",
+    "Procedural Generation",
+    "4 Player Local",
+    "Local Co-Op",
+    "PvP"
+   ]
+  },
+  {
+   "appid": 654880,
+   "name": "Dream Daddy: A Dad Dating Simulator",
+   "tags": [
+    "LGBTQ+",
+    "Dating Sim",
+    "Sexual Content",
+    "Romance",
+    "Visual Novel",
+    "Simulation",
+    "Character Customization",
+    "Indie",
+    "Memes",
+    "Casual",
+    "Funny",
+    "Choices Matter"
+   ]
+  },
+  {
+   "appid": 1062520,
+   "name": "Dinkum",
+   "tags": [
+    "Open World Survival Craft",
+    "Agriculture",
+    "Farming Sim",
+    "Life Sim",
+    "Relaxing",
+    "Co-op",
+    "Farming",
+    "Crafting",
+    "Simulation",
+    "Sandbox",
+    "RPG",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 1103210,
+   "name": "We Become What We Behold [Fan-Made Port]",
+   "tags": [
+    "Free to Play",
+    "Violent",
+    "Gore",
+    "Indie",
+    "Casual",
+    "Point & Click",
+    "Short",
+    "Psychological Horror",
+    "Funny",
+    "2D",
+    "Education",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1115050,
+   "name": "Will You Snail?",
+   "tags": [
+    "Artificial Intelligence",
+    "Precision Platformer",
+    "Difficult",
+    "Unforgiving",
+    "Story Rich",
+    "Funny",
+    "Platformer",
+    "2D Platformer",
+    "Puzzle-Platformer",
+    "Fast-Paced",
+    "Comedy",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1211020,
+   "name": "Wobbly Life",
+   "tags": [
+    "Adventure",
+    "Multiplayer",
+    "Open World",
+    "Simulation",
+    "Sandbox",
+    "Casual",
+    "Action",
+    "Indie",
+    "Funny",
+    "Co-op",
+    "Physics",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 1366800,
+   "name": "Crosshair X",
+   "tags": [
+    "Action",
+    "Indie",
+    "Adventure",
+    "Utilities",
+    "Shooter",
+    "Software",
+    "FPS",
+    "Game Development",
+    "Design & Illustration",
+    "Photo Editing",
+    "Animation & Modeling",
+    "Education"
+   ]
+  },
+  {
+   "appid": 2850190,
+   "name": "灾厄黑龙与谎言公主",
+   "tags": [
+    "RPG",
+    "Visual Novel",
+    "Dating Sim",
+    "Otome",
+    "Interactive Fiction",
+    "Female Protagonist",
+    "2D",
+    "Romance",
+    "Funny",
+    "JRPG",
+    "Exploration",
+    "2D Platformer"
+   ]
+  },
+  {
+   "appid": 445220,
+   "name": "Avorion",
+   "tags": [
+    "Exploration",
+    "Sandbox",
+    "Space Sim",
+    "Building",
+    "Space",
+    "Flight",
+    "Open World",
+    "PvE",
+    "Choose Your Own Adventure",
+    "3D",
+    "Third Person",
+    "Sci-fi"
+   ]
+  },
+  {
+   "appid": 1520370,
+   "name": "Mon Bazou",
+   "tags": [
+    "Early Access",
+    "Automobile Sim",
+    "Driving",
+    "Sandbox",
+    "Racing",
+    "Life Sim",
+    "Choose Your Own Adventure",
+    "Exploration",
+    "Building",
+    "Open World",
+    "Crafting",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 1937500,
+   "name": "Let's School",
+   "tags": [
+    "Management",
+    "City Builder",
+    "Strategy",
+    "Simulation",
+    "Sandbox",
+    "Building",
+    "Education",
+    "Medical Sim",
+    "Funny",
+    "Relaxing",
+    "Nature",
+    "Family Friendly"
+   ]
+  },
+  {
+   "appid": 2120900,
+   "name": "Fears to Fathom - Carson House",
+   "tags": [
+    "Psychological Horror",
+    "Atmospheric",
+    "Horror",
+    "Episodic",
+    "Adventure",
+    "Narration",
+    "Crime",
+    "Story Rich",
+    "Exploration",
+    "Conversation",
+    "Realistic",
+    "Walking Simulator"
+   ]
+  },
+  {
+   "appid": 92800,
+   "name": "SpaceChem",
+   "tags": [
+    "Puzzle",
+    "Difficult",
+    "Programming",
+    "Indie",
+    "Logic",
+    "Singleplayer",
+    "Automation",
+    "Sci-fi",
+    "Great Soundtrack",
+    "Science",
+    "2D",
+    "Space"
+   ]
+  },
+  {
+   "appid": 241240,
+   "name": "Contraption Maker",
+   "tags": [
+    "Puzzle",
+    "2D",
+    "Level Editor",
+    "Lemmings",
+    "Sandbox",
+    "Moddable",
+    "Online Co-Op",
+    "Physics",
+    "Family Friendly",
+    "Simulation",
+    "Building",
+    "Programming"
+   ]
+  },
+  {
+   "appid": 293760,
+   "name": "Automation - The Car Company Tycoon Game",
+   "tags": [
+    "Simulation",
+    "Management",
+    "Building",
+    "Sandbox",
+    "Automobile Sim",
+    "Realistic",
+    "Strategy",
+    "Early Access",
+    "Crafting",
+    "Education",
+    "Moddable",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 300570,
+   "name": "Infinifactory",
+   "tags": [
+    "Puzzle",
+    "Building",
+    "Automation",
+    "Indie",
+    "Programming",
+    "Sandbox",
+    "Simulation",
+    "Singleplayer",
+    "Difficult",
+    "First-Person",
+    "Sci-fi",
+    "Logic"
+   ]
+  },
+  {
+   "appid": 346900,
+   "name": "AdVenture Capitalist",
+   "tags": [
+    "Clicker",
+    "Idler",
+    "Management",
+    "Capitalism",
+    "Automation",
+    "Real-Time",
+    "Point & Click",
+    "Strategy",
+    "Character Customization",
+    "Relaxing",
+    "2D",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 362620,
+   "name": "Software Inc.",
+   "tags": [
+    "Early Access",
+    "Management",
+    "Simulation",
+    "Economy",
+    "Building",
+    "Capitalism",
+    "Sandbox",
+    "Indie",
+    "Game Development",
+    "Moddable",
+    "Multiplayer",
+    "Online Co-Op"
+   ]
+  },
+  {
+   "appid": 370360,
+   "name": "TIS-100",
+   "tags": [
+    "Programming",
+    "Puzzle",
+    "Indie",
+    "Simulation",
+    "Difficult",
+    "Hacking",
+    "Logic",
+    "Singleplayer",
+    "Education",
+    "Automation",
+    "Psychological Horror",
+    "Coding"
+   ]
+  },
+  {
+   "appid": 375820,
+   "name": "Human Resource Machine",
+   "tags": [
+    "Programming",
+    "Puzzle",
+    "Indie",
+    "Casual",
+    "Education",
+    "Simulation",
+    "Singleplayer",
+    "Automation",
+    "Touch-Friendly",
+    "Logic",
+    "Comedy",
+    "Difficult"
+   ]
+  },
+  {
+   "appid": 397340,
+   "name": "SimplePlanes",
+   "tags": [
+    "Flight",
+    "Sandbox",
+    "Automation",
+    "Physics",
+    "Building",
+    "Exploration",
+    "Racing",
+    "Automobile Sim",
+    "Combat Racing",
+    "Controller",
+    "Military",
+    "3D"
+   ]
+  },
+  {
+   "appid": 504210,
+   "name": "SHENZHEN I/O",
+   "tags": [
+    "Programming",
+    "Automation",
+    "Puzzle",
+    "Logic",
+    "Simulation",
+    "Difficult",
+    "Indie",
+    "Education",
+    "Singleplayer",
+    "Sandbox",
+    "Building",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 544550,
+   "name": "Stationeers",
+   "tags": [
+    "Early Access",
+    "Space",
+    "Base-Building",
+    "Science",
+    "Automation",
+    "Survival",
+    "Colony Sim",
+    "Building",
+    "Sci-fi",
+    "Physics",
+    "Open World Survival Craft",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 558990,
+   "name": "Opus Magnum",
+   "tags": [
+    "Puzzle",
+    "Programming",
+    "Automation",
+    "Indie",
+    "Simulation",
+    "Logic",
+    "Singleplayer",
+    "Great Soundtrack",
+    "Steampunk",
+    "Building",
+    "Difficult",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 573090,
+   "name": "Stormworks: Build and Rescue",
+   "tags": [
+    "Sandbox",
+    "Base-Building",
+    "Open World",
+    "Building",
+    "Immersive Sim",
+    "Automation",
+    "Flight",
+    "Physics",
+    "PvP",
+    "Programming",
+    "Exploration",
+    "Sailing"
+   ]
+  },
+  {
+   "appid": 605230,
+   "name": "Grey Hack",
+   "tags": [
+    "Hacking",
+    "Simulation",
+    "Programming",
+    "Massively Multiplayer",
+    "Indie",
+    "Early Access",
+    "Sandbox",
+    "Strategy",
+    "Realistic",
+    "PvP",
+    "Typing",
+    "Logic"
+   ]
+  },
+  {
+   "appid": 619150,
+   "name": "while True: learn()",
+   "tags": [
+    "Programming",
+    "Simulation",
+    "Education",
+    "Puzzle",
+    "Science",
+    "Indie",
+    "Building",
+    "Sandbox",
+    "Cats",
+    "Logic",
+    "Investigation",
+    "Transhumanism"
+   ]
+  },
+  {
+   "appid": 677340,
+   "name": "The Colonists",
+   "tags": [
+    "City Builder",
+    "Colony Sim",
+    "Automation",
+    "Building",
+    "Economy",
+    "Management",
+    "Robots",
+    "Survival",
+    "Base-Building",
+    "Sandbox",
+    "PvP",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 699180,
+   "name": "Human-powered spacecraft",
+   "tags": [
+    "Idler",
+    "Clicker",
+    "Point & Click",
+    "2D",
+    "Cute",
+    "Relaxing",
+    "Funny",
+    "Story Rich",
+    "Narration",
+    "Casual",
+    "Pixel Graphics",
+    "Hand-drawn"
+   ]
+  },
+  {
+   "appid": 716490,
+   "name": "EXAPUNKS",
+   "tags": [
+    "Programming",
+    "Puzzle",
+    "Hacking",
+    "Automation",
+    "Indie",
+    "Simulation",
+    "Logic",
+    "Cyberpunk",
+    "Singleplayer",
+    "Difficult",
+    "Great Soundtrack",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 784150,
+   "name": "Workers & Resources: Soviet Republic",
+   "tags": [
+    "Strategy",
+    "Simulation",
+    "City Builder",
+    "Base-Building",
+    "Management",
+    "Building",
+    "Sandbox",
+    "Grand Strategy",
+    "Survival",
+    "Open World",
+    "Colony Sim",
+    "Resource Management"
+   ]
+  },
+  {
+   "appid": 789660,
+   "name": "Buggos",
+   "tags": [
+    "Strategy",
+    "Simulation",
+    "City Builder",
+    "Base-Building",
+    "Management",
+    "Building",
+    "Grand Strategy",
+    "Singleplayer",
+    "RTS",
+    "Wargame",
+    "2D",
+    "Pixel Graphics"
+   ]
+  },
+  {
+   "appid": 792100,
+   "name": "7 Billion Humans",
+   "tags": [
+    "Programming",
+    "Puzzle",
+    "Indie",
+    "Simulation",
+    "Education",
+    "Singleplayer",
+    "Logic",
+    "Touch-Friendly",
+    "Great Soundtrack",
+    "Funny",
+    "Satire",
+    "Automation"
+   ]
+  },
+  {
+   "appid": 870200,
+   "name": "Juno: New Origins",
+   "tags": [
+    "Building",
+    "Science",
+    "Space Sim",
+    "Programming",
+    "Flight",
+    "Jet",
+    "Education",
+    "Base-Building",
+    "Physics",
+    "Realistic",
+    "Sandbox",
+    "Space"
+   ]
+  },
+  {
+   "appid": 871930,
+   "name": "GLADIABOTS - AI Combat Arena",
+   "tags": [
+    "Strategy",
+    "Artificial Intelligence",
+    "Competitive",
+    "Multiplayer",
+    "PvE",
+    "Singleplayer",
+    "PvP",
+    "Programming",
+    "Simulation",
+    "Robots",
+    "Indie",
+    "Logic"
+   ]
+  },
+  {
+   "appid": 1091920,
+   "name": "Plantera 2: Golden Acorn",
+   "tags": [
+    "Farming Sim",
+    "Idler",
+    "Automation",
+    "Simulation",
+    "Management",
+    "Pixel Graphics",
+    "Relaxing",
+    "Farming",
+    "Clicker",
+    "Building",
+    "Cute",
+    "Collectathon"
+   ]
+  },
+  {
+   "appid": 1106840,
+   "name": "Hydroneer",
+   "tags": [
+    "Base-Building",
+    "Mining",
+    "Automation",
+    "Sandbox",
+    "Co-op",
+    "Open World",
+    "Multiplayer",
+    "Building",
+    "Funny",
+    "Resource Management",
+    "Casual",
+    "Simulation"
+   ]
+  },
+  {
+   "appid": 1124180,
+   "name": "Rail Route",
+   "tags": [
+    "Building",
+    "Management",
+    "Sandbox",
+    "Economy",
+    "Logic",
+    "Puzzle",
+    "City Builder",
+    "Time Management",
+    "Base-Building",
+    "Trains",
+    "Automation",
+    "Simulation"
+   ]
+  },
+  {
+   "appid": 1168880,
+   "name": "MOLEK-SYNTEZ",
+   "tags": [
+    "Simulation",
+    "Puzzle",
+    "Programming",
+    "Indie",
+    "Singleplayer",
+    "Science",
+    "Automation",
+    "Logic"
+   ]
+  },
+  {
+   "appid": 1269020,
+   "name": "No Plan B",
+   "tags": [
+    "Strategy",
+    "Indie",
+    "Top-Down",
+    "Simulation",
+    "Action",
+    "Tactical",
+    "Military",
+    "Singleplayer",
+    "Real Time Tactics",
+    "Turn-Based Strategy",
+    "Turn-Based Tactics",
+    "Top-Down Shooter"
+   ]
+  },
+  {
+   "appid": 1336490,
+   "name": "Against the Storm",
+   "tags": [
+    "Strategy",
+    "City Builder",
+    "Simulation",
+    "Base-Building",
+    "Colony Sim",
+    "Management",
+    "Building",
+    "Resource Management",
+    "Rogue-like",
+    "Survival",
+    "Dark Fantasy",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 1380910,
+   "name": "Stardeus",
+   "tags": [
+    "Early Access",
+    "Exploration",
+    "Colony Sim",
+    "Base-Building",
+    "Survival",
+    "Strategy",
+    "Space",
+    "Sci-fi",
+    "Resource Management",
+    "Crafting",
+    "Singleplayer",
+    "Open World"
+   ]
+  },
+  {
+   "appid": 1441550,
+   "name": "Regular Human Workshop",
+   "tags": [
+    "Sandbox",
+    "Physics",
+    "Choose Your Own Adventure",
+    "2D",
+    "Automation",
+    "Building",
+    "Horror",
+    "Dark Humor",
+    "Psychological Horror",
+    "Simulation",
+    "Nonlinear",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 1462470,
+   "name": "Vectorio - Early Access",
+   "tags": [
+    "Base-Building",
+    "Tower Defense",
+    "Survival",
+    "Strategy",
+    "Multiplayer",
+    "PvE",
+    "Co-op",
+    "Resource Management",
+    "PvP",
+    "Top-Down",
+    "Real Time Tactics",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 1577620,
+   "name": "The Signal State",
+   "tags": [
+    "Puzzle",
+    "Logic",
+    "Simulation",
+    "Automation",
+    "Programming",
+    "Indie",
+    "Sandbox",
+    "Level Editor",
+    "Moddable",
+    "Tutorial",
+    "Dystopian ",
+    "Futuristic"
+   ]
+  },
+  {
+   "appid": 1588530,
+   "name": "Dungeon Alchemist",
+   "tags": [
+    "Software",
+    "Level Editor",
+    "Tabletop",
+    "Procedural Generation",
+    "Artificial Intelligence",
+    "Fantasy",
+    "Utilities",
+    "2.5D",
+    "3D",
+    "2D",
+    "RPG",
+    "Isometric"
+   ]
+  },
+  {
+   "appid": 1594320,
+   "name": "Captain of Industry",
+   "tags": [
+    "Base-Building",
+    "Automation",
+    "Resource Management",
+    "Management",
+    "Simulation",
+    "Economy",
+    "Mining",
+    "City Builder",
+    "Survival",
+    "Colony Sim",
+    "Strategy",
+    "Realistic"
+   ]
+  },
+  {
+   "appid": 1739300,
+   "name": "Smack Studio",
+   "tags": [
+    "Character Customization",
+    "Local Multiplayer",
+    "2D Fighter",
+    "Design & Illustration",
+    "Sandbox",
+    "Pixel Graphics",
+    "Fighting",
+    "2.5D",
+    "Multiplayer",
+    "Level Editor",
+    "Software",
+    "Automation"
+   ]
+  },
+  {
+   "appid": 1817800,
+   "name": "Oddsparks: An Automation Adventure",
+   "tags": [
+    "Building",
+    "Singleplayer",
+    "Co-op",
+    "Procedural Generation",
+    "Automation",
+    "3D",
+    "Base-Building",
+    "Open World",
+    "Resource Management",
+    "Logic",
+    "Exploration",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 1960270,
+   "name": "Lootun",
+   "tags": [
+    "Loot",
+    "Auto Battler",
+    "RPG",
+    "Automation",
+    "Crafting",
+    "Inventory Management",
+    "Singleplayer",
+    "Idler",
+    "2D",
+    "Early Access"
+   ]
+  },
+  {
+   "appid": 2020710,
+   "name": "Havendock",
+   "tags": [
+    "Singleplayer",
+    "Strategy",
+    "City Builder",
+    "Colony Sim",
+    "Sandbox",
+    "Agriculture",
+    "Automation",
+    "Building",
+    "Crafting",
+    "Base-Building",
+    "Management",
+    "Farming Sim"
+   ]
+  },
+  {
+   "appid": 2050590,
+   "name": "Fhtagn Simulator",
+   "tags": [
+    "Deckbuilding",
+    "Roguelike Deckbuilder",
+    "Lovecraftian",
+    "Rogue-lite",
+    "Auto Battler",
+    "Automation",
+    "Card Game",
+    "Turn-Based",
+    "Villain Protagonist",
+    "Rogue-like",
+    "Strategy",
+    "2D"
+   ]
+  },
+  {
+   "appid": 2055050,
+   "name": "Cavalry Girls",
+   "tags": [
+    "Top-Down Shooter",
+    "Mechs",
+    "Anime",
+    "Gun Customization",
+    "Shooter",
+    "Singleplayer",
+    "Female Protagonist",
+    "RTS",
+    "Tower Defense",
+    "Automation",
+    "Real Time Tactics",
+    "Arcade"
+   ]
+  },
+  {
+   "appid": 2107090,
+   "name": "KitHack Model Club",
+   "tags": [
+    "Moddable",
+    "Open World",
+    "Vehicular Combat",
+    "Indie",
+    "Simulation",
+    "Physics",
+    "Exploration",
+    "Sandbox",
+    "Education",
+    "Building",
+    "Crafting",
+    "Level Editor"
+   ]
+  },
+  {
+   "appid": 2162800,
+   "name": "shapez 2 - Factory",
+   "tags": [
+    "Management",
+    "Strategy",
+    "Automation",
+    "Futuristic",
+    "Early Access",
+    "Building",
+    "Puzzle",
+    "Crafting",
+    "Simulation",
+    "Sandbox",
+    "Space",
+    "Trains"
+   ]
+  },
+  {
+   "appid": 2179380,
+   "name": "Sand:box",
+   "tags": [
+    "Sandbox",
+    "Pixel Graphics",
+    "Simulation",
+    "Relaxing",
+    "Physics",
+    "Electronic",
+    "Indie",
+    "Automation",
+    "Destruction",
+    "Casual",
+    "Education",
+    "Old School"
+   ]
+  },
+  {
+   "appid": 2195120,
+   "name": "Go-Go Town!",
+   "tags": [
+    "Early Access",
+    "Simulation",
+    "City Builder",
+    "Sandbox",
+    "Building",
+    "Management",
+    "Life Sim",
+    "Cute",
+    "Farming Sim",
+    "Strategy",
+    "Automation",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 2196790,
+   "name": "Jianghu Survivor",
+   "tags": [
+    "Casual",
+    "Action",
+    "RPG",
+    "Action-Adventure",
+    "Action Roguelike",
+    "Rogue-like",
+    "2D",
+    "Cute",
+    "Hand-drawn",
+    "Swordplay",
+    "Relaxing",
+    "Magic"
+   ]
+  },
+  {
+   "appid": 2207490,
+   "name": "Factory Town Idle",
+   "tags": [
+    "Casual",
+    "Idler",
+    "Minimalist",
+    "Clicker",
+    "2D",
+    "Resource Management",
+    "Fantasy",
+    "City Builder",
+    "Automation",
+    "Colony Sim",
+    "Crafting",
+    "Management"
+   ]
+  },
+  {
+   "appid": 2272400,
+   "name": "Station to Station",
+   "tags": [
+    "Simulation",
+    "Puzzle",
+    "Relaxing",
+    "Cozy",
+    "Voxel",
+    "Trains",
+    "Nature",
+    "Wholesome",
+    "Atmospheric",
+    "Management",
+    "Procedural Generation",
+    "Cute"
+   ]
+  },
+  {
+   "appid": 2286390,
+   "name": "Tunnet",
+   "tags": [
+    "Logic",
+    "Exploration",
+    "Psychological Horror",
+    "Programming",
+    "Automation",
+    "Puzzle",
+    "Underground",
+    "Adventure",
+    "Hacking",
+    "First-Person",
+    "Open World",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 2304990,
+   "name": "Crypto Miner Tycoon Simulator Starter Edition",
+   "tags": [
+    "Simulation",
+    "Free to Play",
+    "Management",
+    "Economy",
+    "Sandbox",
+    "Building",
+    "Singleplayer",
+    "Mining",
+    "Software",
+    "Automation",
+    "Realistic",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 2353250,
+   "name": "Astrometica",
+   "tags": [
+    "Space Sim",
+    "Survival",
+    "Open World",
+    "First-Person",
+    "Adventure",
+    "Crafting",
+    "Space",
+    "Automation",
+    "Sci-fi",
+    "Early Access",
+    "Base-Building",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 2423620,
+   "name": "Space industrial empire",
+   "tags": [
+    "Automation",
+    "Space",
+    "Indie",
+    "Management",
+    "Idler",
+    "Strategy",
+    "Loot",
+    "Casual",
+    "Word Game",
+    "Singleplayer",
+    "2D",
+    "Space Sim"
+   ]
+  },
+  {
+   "appid": 2570210,
+   "name": "Eden Crafters",
+   "tags": [
+    "Early Access",
+    "Open World Survival Craft",
+    "Automation",
+    "Base-Building",
+    "Crafting",
+    "Sandbox",
+    "Open World",
+    "Online Co-Op",
+    "Adventure",
+    "Survival",
+    "Building",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 2707490,
+   "name": "Tower Factory",
+   "tags": [
+    "Early Access",
+    "Automation",
+    "Tower Defense",
+    "Strategy",
+    "Base-Building",
+    "RTS",
+    "Resource Management",
+    "Rogue-lite",
+    "Crafting",
+    "Procedural Generation",
+    "Rogue-like",
+    "City Builder"
+   ]
+  },
+  {
+   "appid": 2750000,
+   "name": "Microtopia",
+   "tags": [
+    "Colony Sim",
+    "Automation",
+    "Procedural Generation",
+    "Resource Management",
+    "Sandbox",
+    "Sci-fi",
+    "Futuristic",
+    "Robots",
+    "Base-Building",
+    "City Builder",
+    "Exploration",
+    "Crafting"
+   ]
+  },
+  {
+   "appid": 2928520,
+   "name": "Recycling Center Simulator",
+   "tags": [
+    "First-Person",
+    "Simulation",
+    "Management",
+    "Time Management",
+    "Life Sim",
+    "Automation",
+    "Immersive Sim",
+    "Sandbox",
+    "Economy",
+    "Building",
+    "Physics",
+    "3D"
+   ]
+  },
+  {
+   "appid": 3164500,
+   "name": "Schedule I",
+   "tags": [
+    "Simulation",
+    "Co-op",
+    "Crime",
+    "Multiplayer",
+    "Open World",
+    "Management",
+    "First-Person",
+    "Action",
+    "Crafting",
+    "Base-Building",
+    "Automation",
+    "Building"
+   ]
+  },
+  {
+   "appid": 3228180,
+   "name": "Click Mage",
+   "tags": [
+    "Simulation",
+    "Clicker",
+    "Casual",
+    "Resource Management",
+    "Relaxing",
+    "Pixel Graphics",
+    "Crafting",
+    "Mining",
+    "Fantasy",
+    "Nature",
+    "Magic",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 3454590,
+   "name": "Cornerpond",
+   "tags": [
+    "Simulation",
+    "Idler",
+    "Fishing",
+    "Pixel Graphics",
+    "Relaxing",
+    "Creature Collector",
+    "Clicker",
+    "Casual",
+    "Cute",
+    "Nature",
+    "2D",
+    "Management"
+   ]
+  },
+  {
+   "appid": 390520,
+   "name": "PewDiePie: Legend of the Brofist",
+   "tags": [
+    "Memes",
+    "Pixel Graphics",
+    "Co-op",
+    "Platformer",
+    "2D",
+    "Casual",
+    "Adventure",
+    "Indie",
+    "Action",
+    "Funny",
+    "Comedy",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 891040,
+   "name": "Pool 2D - Poolians",
+   "tags": [
+    "Free to Play",
+    "Pool",
+    "Multiplayer",
+    "Simulation",
+    "Sports",
+    "Massively Multiplayer",
+    "Casual",
+    "Indie",
+    "Bowling",
+    "Co-op",
+    "e-sports",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 6080,
+   "name": "Thrillville: Off the Rails",
+   "tags": [
+    "Simulation",
+    "Adventure",
+    "Strategy",
+    "Action",
+    "Management",
+    "Racing",
+    "Singleplayer",
+    "Casual",
+    "Building",
+    "Great Soundtrack",
+    "Local Multiplayer",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 6220,
+   "name": "FlatOut",
+   "tags": [
+    "Combat Racing",
+    "Racing",
+    "Automobile Sim",
+    "Destruction",
+    "Action",
+    "Driving",
+    "Multiplayer",
+    "Arcade",
+    "Simulation",
+    "Singleplayer",
+    "Funny",
+    "Vehicular Combat"
+   ]
+  },
+  {
+   "appid": 7200,
+   "name": "Trackmania United Forever",
+   "tags": [
+    "Racing",
+    "Multiplayer",
+    "Level Editor",
+    "Time Attack",
+    "Singleplayer",
+    "Arcade",
+    "Competitive",
+    "Classic",
+    "Driving",
+    "Difficult",
+    "Local Multiplayer",
+    "Action"
+   ]
+  },
+  {
+   "appid": 8600,
+   "name": "RACE 07",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "Driving",
+    "Multiplayer",
+    "Sports",
+    "Singleplayer",
+    "Realistic",
+    "Physics"
+   ]
+  },
+  {
+   "appid": 11020,
+   "name": "TrackMania Nations Forever",
+   "tags": [
+    "Racing",
+    "Free to Play",
+    "Multiplayer",
+    "Automobile Sim",
+    "Singleplayer",
+    "Level Editor",
+    "Arcade",
+    "Competitive",
+    "Simulation",
+    "Controller",
+    "Massively Multiplayer",
+    "Action"
+   ]
+  },
+  {
+   "appid": 12160,
+   "name": "Midnight Club 2",
+   "tags": [
+    "Racing",
+    "Open World",
+    "Great Soundtrack",
+    "Multiplayer",
+    "Arcade",
+    "Classic",
+    "Singleplayer",
+    "Sandbox",
+    "Action",
+    "Driving",
+    "Free to Play",
+    "Old School"
+   ]
+  },
+  {
+   "appid": 12360,
+   "name": "FlatOut: Ultimate Carnage Collector's Edition",
+   "tags": [
+    "Combat Racing",
+    "Racing",
+    "Destruction",
+    "Automobile Sim",
+    "Multiplayer",
+    "Arcade",
+    "Action",
+    "Great Soundtrack",
+    "Driving",
+    "Vehicular Combat",
+    "Physics",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 21780,
+   "name": "Driver Parallel Lines",
+   "tags": [
+    "Racing",
+    "Open World",
+    "Action",
+    "Automobile Sim",
+    "Driving",
+    "Singleplayer",
+    "Classic",
+    "Third-Person Shooter",
+    "Shooter",
+    "Crime",
+    "Third Person",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 24740,
+   "name": "Burnout Paradise: The Ultimate Box",
+   "tags": [
+    "Racing",
+    "Open World",
+    "Automobile Sim",
+    "Multiplayer",
+    "Destruction",
+    "Great Soundtrack",
+    "Driving",
+    "Singleplayer",
+    "Arcade",
+    "Exploration",
+    "Sandbox",
+    "Action"
+   ]
+  },
+  {
+   "appid": 40990,
+   "name": "Mafia",
+   "tags": [
+    "Action",
+    "Story Rich",
+    "Crime",
+    "Open World",
+    "Classic",
+    "Atmospheric",
+    "Singleplayer",
+    "Great Soundtrack",
+    "Third Person",
+    "Violent",
+    "Adventure",
+    "Third-Person Shooter"
+   ]
+  },
+  {
+   "appid": 55140,
+   "name": "MX vs. ATV Reflex",
+   "tags": [
+    "Racing",
+    "Motocross",
+    "Offroad",
+    "Multiplayer",
+    "Motorbike",
+    "Open World",
+    "Singleplayer",
+    "Sports",
+    "ATV",
+    "Simulation",
+    "Action",
+    "Bikes"
+   ]
+  },
+  {
+   "appid": 71230,
+   "name": "Crazy Taxi",
+   "tags": [
+    "Racing",
+    "Arcade",
+    "Automobile Sim",
+    "Action",
+    "Classic",
+    "Driving",
+    "Singleplayer",
+    "Retro",
+    "Open World",
+    "Great Soundtrack",
+    "Fast-Paced",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 91100,
+   "name": "SkyDrift",
+   "tags": [
+    "Racing",
+    "Indie",
+    "Flight",
+    "Combat Racing",
+    "Controller",
+    "Multiplayer",
+    "Action",
+    "Arcade",
+    "Combat"
+   ]
+  },
+  {
+   "appid": 96100,
+   "name": "Defy Gravity Extended",
+   "tags": [
+    "Puzzle-Platformer",
+    "Platformer",
+    "Indie",
+    "Puzzle",
+    "Space",
+    "2D",
+    "Action",
+    "Singleplayer",
+    "Difficult",
+    "Casual",
+    "Sci-fi",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 99300,
+   "name": "Renegade Ops",
+   "tags": [
+    "Action",
+    "Twin Stick Shooter",
+    "Arcade",
+    "Top-Down",
+    "Local Co-Op",
+    "Co-op",
+    "Online Co-Op",
+    "Shoot 'Em Up",
+    "Split Screen",
+    "Local Multiplayer",
+    "Racing",
+    "Shooter"
+   ]
+  },
+  {
+   "appid": 202170,
+   "name": "Sleeping Dogs",
+   "tags": [
+    "Open World",
+    "Action",
+    "Martial Arts",
+    "Third Person",
+    "Crime",
+    "Adventure",
+    "Fighting",
+    "Singleplayer",
+    "Sandbox",
+    "Story Rich",
+    "Great Soundtrack",
+    "Driving"
+   ]
+  },
+  {
+   "appid": 204630,
+   "name": "Retro City Rampage DX",
+   "tags": [
+    "Action",
+    "Open World",
+    "Retro",
+    "Pixel Graphics",
+    "Indie",
+    "Adventure",
+    "1980s",
+    "Parody ",
+    "Comedy",
+    "Funny",
+    "Satire",
+    "2D"
+   ]
+  },
+  {
+   "appid": 207140,
+   "name": "SpeedRunners",
+   "tags": [
+    "Multiplayer",
+    "Racing",
+    "Local Multiplayer",
+    "Indie",
+    "Competitive",
+    "Fast-Paced",
+    "Platformer",
+    "Action",
+    "2D",
+    "4 Player Local",
+    "Funny",
+    "Parkour"
+   ]
+  },
+  {
+   "appid": 208500,
+   "name": "F1 2012",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "Sports",
+    "Multiplayer",
+    "Realistic",
+    "Driving",
+    "Controller",
+    "Singleplayer",
+    "Co-op",
+    "Split Screen"
+   ]
+  },
+  {
+   "appid": 213610,
+   "name": "Sonic Adventure 2",
+   "tags": [
+    "Action",
+    "Great Soundtrack",
+    "3D Platformer",
+    "Platformer",
+    "Fast-Paced",
+    "Adventure",
+    "Classic",
+    "Singleplayer",
+    "Replay Value",
+    "Third Person",
+    "Local Multiplayer",
+    "Retro"
+   ]
+  },
+  {
+   "appid": 227300,
+   "name": "Euro Truck Simulator 2",
+   "tags": [
+    "Driving",
+    "Transportation",
+    "Simulation",
+    "Open World",
+    "Automobile Sim",
+    "Realistic",
+    "Moddable",
+    "Relaxing",
+    "Exploration",
+    "Economy",
+    "Immersive Sim",
+    "Management"
+   ]
+  },
+  {
+   "appid": 228380,
+   "name": "Wreckfest",
+   "tags": [
+    "Racing",
+    "Destruction",
+    "Automobile Sim",
+    "Simulation",
+    "Multiplayer",
+    "Driving",
+    "Physics",
+    "Action",
+    "Indie",
+    "Sports",
+    "Singleplayer",
+    "Realistic"
+   ]
+  },
+  {
+   "appid": 232910,
+   "name": "TrackMania² Stadium",
+   "tags": [
+    "Racing",
+    "Multiplayer",
+    "Automobile Sim",
+    "Level Editor",
+    "Time Attack",
+    "Sports",
+    "Arcade",
+    "Singleplayer",
+    "Local Multiplayer",
+    "e-sports",
+    "Fast-Paced",
+    "Competitive"
+   ]
+  },
+  {
+   "appid": 233610,
+   "name": "Distance",
+   "tags": [
+    "Racing",
+    "Great Soundtrack",
+    "Futuristic",
+    "Multiplayer",
+    "Level Editor",
+    "Indie",
+    "Action",
+    "Atmospheric",
+    "Fast-Paced",
+    "Singleplayer",
+    "Arcade",
+    "Cyberpunk"
+   ]
+  },
+  {
+   "appid": 234140,
+   "name": "Mad Max",
+   "tags": [
+    "Open World",
+    "Vehicular Combat",
+    "Post-apocalyptic",
+    "Action",
+    "Driving",
+    "Singleplayer",
+    "Survival",
+    "Third Person",
+    "Adventure",
+    "Exploration",
+    "Automobile Sim",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 243800,
+   "name": "Gas Guzzlers Extreme",
+   "tags": [
+    "Combat Racing",
+    "Vehicular Combat",
+    "Racing",
+    "Automobile Sim",
+    "Action",
+    "Multiplayer",
+    "Shooter",
+    "Sports",
+    "Zombies",
+    "Arena Shooter",
+    "Singleplayer",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 244210,
+   "name": "Assetto Corsa",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "Driving",
+    "Multiplayer",
+    "VR",
+    "Realistic",
+    "Sports",
+    "Open World",
+    "Moddable",
+    "Controller",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 252950,
+   "name": "Rocket League",
+   "tags": [
+    "Multiplayer",
+    "Football (Soccer)",
+    "Competitive",
+    "Sports",
+    "Racing",
+    "Team-Based",
+    "Online Co-Op",
+    "Football (American)",
+    "Fast-Paced",
+    "Co-op",
+    "Action",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 257790,
+   "name": "Riptide GP2",
+   "tags": [
+    "Racing",
+    "Sports",
+    "Action",
+    "Indie",
+    "Simulation",
+    "Local Multiplayer",
+    "Split Screen",
+    "Arcade",
+    "Multiplayer",
+    "4 Player Local",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 259080,
+   "name": "Just Cause 2: Multiplayer Mod",
+   "tags": [
+    "Open World",
+    "Multiplayer",
+    "Action",
+    "Third-Person Shooter",
+    "Adventure",
+    "Mod",
+    "Sandbox",
+    "Massively Multiplayer",
+    "Shooter",
+    "Free to Play",
+    "Third Person",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 263760,
+   "name": "Turbo Dismount",
+   "tags": [
+    "Funny",
+    "Simulation",
+    "Physics",
+    "Destruction",
+    "Singleplayer",
+    "Automobile Sim",
+    "Action",
+    "Indie",
+    "Sandbox",
+    "Driving",
+    "Comedy",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 266410,
+   "name": "iRacing",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "VR",
+    "Sports",
+    "Driving",
+    "Multiplayer",
+    "Massively Multiplayer",
+    "Realistic",
+    "Singleplayer",
+    "Controller",
+    "e-sports"
+   ]
+  },
+  {
+   "appid": 271590,
+   "name": "Grand Theft Auto V Legacy",
+   "tags": [
+    "Open World",
+    "Action",
+    "Multiplayer",
+    "Crime",
+    "Automobile Sim",
+    "Third Person",
+    "First-Person",
+    "Mature",
+    "Shooter",
+    "Adventure",
+    "Singleplayer",
+    "Third-Person Shooter"
+   ]
+  },
+  {
+   "appid": 273840,
+   "name": "Stock Car Extreme",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "Sports",
+    "Multiplayer",
+    "Realistic"
+   ]
+  },
+  {
+   "appid": 281920,
+   "name": "Splatter - Zombiecalypse Now",
+   "tags": [
+    "Action",
+    "Top-Down Shooter",
+    "Zombies",
+    "Indie",
+    "Top-Down",
+    "Post-apocalyptic",
+    "Adventure",
+    "Twin Stick Shooter",
+    "Destruction",
+    "Noir",
+    "Old School",
+    "Horror"
+   ]
+  },
+  {
+   "appid": 282010,
+   "name": "Carmageddon Max Pack",
+   "tags": [
+    "Combat Racing",
+    "Racing",
+    "Gore",
+    "Action",
+    "Classic",
+    "Indie",
+    "Violent",
+    "1990's",
+    "Retro",
+    "Vehicular Combat",
+    "Multiplayer",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 282030,
+   "name": "Carmageddon 2: Carpocalypse Now",
+   "tags": [
+    "Racing",
+    "Combat Racing",
+    "Automobile Sim",
+    "Action",
+    "Gore",
+    "Vehicular Combat",
+    "Classic",
+    "Indie",
+    "Violent",
+    "1990's",
+    "Driving",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 284160,
+   "name": "BeamNG.drive",
+   "tags": [
+    "Simulation",
+    "Driving",
+    "Physics",
+    "Realistic",
+    "Destruction",
+    "Automobile Sim",
+    "Sandbox",
+    "Open World",
+    "Racing",
+    "Moddable",
+    "Multiplayer",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 285110,
+   "name": "GearCity",
+   "tags": [
+    "Management",
+    "Simulation",
+    "Strategy",
+    "Economy",
+    "Indie",
+    "Automobile Sim",
+    "Capitalism",
+    "Turn-Based",
+    "Realistic",
+    "Retro",
+    "Turn-Based Strategy",
+    "Education"
+   ]
+  },
+  {
+   "appid": 285820,
+   "name": "Action Henk",
+   "tags": [
+    "Racing",
+    "Action",
+    "Indie",
+    "Platformer",
+    "Multiplayer",
+    "Funny",
+    "Level Editor",
+    "Runner",
+    "Singleplayer",
+    "Local Multiplayer",
+    "4 Player Local",
+    "Time Attack"
+   ]
+  },
+  {
+   "appid": 287310,
+   "name": "Re-Volt",
+   "tags": [
+    "Racing",
+    "Combat Racing",
+    "Arcade",
+    "PvP",
+    "Multiplayer",
+    "Third Person",
+    "3D",
+    "Retro",
+    "Controller",
+    "Singleplayer",
+    "Classic"
+   ]
+  },
+  {
+   "appid": 294660,
+   "name": "Putt-Putt Saves The Zoo",
+   "tags": [
+    "Adventure",
+    "Family Friendly",
+    "Casual",
+    "Point & Click",
+    "Nostalgia",
+    "Singleplayer",
+    "1990's",
+    "Education",
+    "Cult Classic",
+    "Sandbox",
+    "Action RPG"
+   ]
+  },
+  {
+   "appid": 295690,
+   "name": "PARTICLE MACE",
+   "tags": [
+    "Indie",
+    "Action",
+    "Adventure",
+    "Arcade",
+    "2D",
+    "Great Soundtrack",
+    "Local Co-Op",
+    "Multiplayer",
+    "Local Multiplayer",
+    "Retro",
+    "Shoot 'Em Up",
+    "4 Player Local"
+   ]
+  },
+  {
+   "appid": 302590,
+   "name": "Of Guards And Thieves",
+   "tags": [
+    "Multiplayer",
+    "Free to Play",
+    "Stealth",
+    "Action",
+    "Indie",
+    "Shooter",
+    "Co-op",
+    "Top-Down",
+    "Early Access",
+    "Casual",
+    "Massively Multiplayer",
+    "Team-Based"
+   ]
+  },
+  {
+   "appid": 302710,
+   "name": "BlazeRush",
+   "tags": [
+    "Combat Racing",
+    "Vehicular Combat",
+    "Racing",
+    "Action",
+    "Arcade",
+    "Local Multiplayer",
+    "Arena Shooter",
+    "4 Player Local",
+    "Multiplayer",
+    "Shooter",
+    "Controller",
+    "Isometric"
+   ]
+  },
+  {
+   "appid": 307690,
+   "name": "Sleeping Dogs: Definitive Edition",
+   "tags": [
+    "Open World",
+    "Action",
+    "Martial Arts",
+    "Crime",
+    "Singleplayer",
+    "Third Person",
+    "Story Rich",
+    "Parkour",
+    "Adventure",
+    "Multiplayer",
+    "Gore",
+    "Mature"
+   ]
+  },
+  {
+   "appid": 310560,
+   "name": "DiRT Rally",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Automobile Sim",
+    "Driving",
+    "Multiplayer",
+    "Realistic",
+    "Offroad",
+    "Difficult",
+    "VR",
+    "Singleplayer",
+    "Sports",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 313340,
+   "name": "Mountain",
+   "tags": [
+    "Simulation",
+    "Indie",
+    "Casual",
+    "Relaxing",
+    "Singleplayer",
+    "Great Soundtrack",
+    "God Game",
+    "Experimental",
+    "Beautiful",
+    "Nature",
+    "Space",
+    "Procedural Generation"
+   ]
+  },
+  {
+   "appid": 320300,
+   "name": "Car Mechanic Simulator 2015",
+   "tags": [
+    "Automobile Sim",
+    "Simulation",
+    "Singleplayer",
+    "Building",
+    "Driving",
+    "Education",
+    "Racing",
+    "First-Person",
+    "Management",
+    "Puzzle",
+    "Realistic",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 320760,
+   "name": "Tokyo School Life",
+   "tags": [
+    "Anime",
+    "Visual Novel",
+    "Dating Sim",
+    "Adventure",
+    "Cute",
+    "Romance",
+    "Nudity",
+    "Story Rich",
+    "Singleplayer",
+    "Choose Your Own Adventure",
+    "Mature",
+    "Comedy"
+   ]
+  },
+  {
+   "appid": 325260,
+   "name": "PANZER BALL",
+   "tags": [
+    "Indie",
+    "Parkour",
+    "Multiplayer",
+    "Racing",
+    "Casual",
+    "Action",
+    "3D Platformer",
+    "Physics",
+    "Fast-Paced",
+    "Competitive",
+    "Difficult",
+    "Time Attack"
+   ]
+  },
+  {
+   "appid": 329460,
+   "name": "JumpJet Rex",
+   "tags": [
+    "Side Scroller",
+    "2D Platformer",
+    "Runner",
+    "Racing",
+    "Difficult",
+    "Platformer",
+    "Action-Adventure",
+    "2D",
+    "Cute",
+    "Dinosaurs",
+    "Linear",
+    "Multiple Endings"
+   ]
+  },
+  {
+   "appid": 335070,
+   "name": "VRC PRO",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Indie",
+    "Action",
+    "Casual",
+    "Automobile Sim",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 339790,
+   "name": "rFactor",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Moddable",
+    "Automobile Sim",
+    "Multiplayer",
+    "Driving",
+    "Realistic",
+    "VR"
+   ]
+  },
+  {
+   "appid": 348820,
+   "name": "FIM Speedway Grand Prix 15",
+   "tags": [
+    "Sports",
+    "Simulation",
+    "Racing",
+    "Multiplayer",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 358270,
+   "name": "Death Rally (Classic)",
+   "tags": [
+    "Racing",
+    "Retro",
+    "Top-Down",
+    "Action",
+    "Classic",
+    "Free to Play",
+    "Vehicular Combat",
+    "Arcade",
+    "2D",
+    "1990's",
+    "Driving",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 382560,
+   "name": "Hot Lava",
+   "tags": [
+    "Precision Platformer",
+    "3D Platformer",
+    "Parkour",
+    "Racing",
+    "Exploration",
+    "Time Attack",
+    "PvP",
+    "First-Person",
+    "Multiplayer",
+    "Platformer",
+    "Difficult",
+    "Female Protagonist"
+   ]
+  },
+  {
+   "appid": 387990,
+   "name": "Scrap Mechanic",
+   "tags": [
+    "Building",
+    "Sandbox",
+    "Multiplayer",
+    "Survival",
+    "Open World",
+    "Physics",
+    "Crafting",
+    "Base-Building",
+    "Co-op",
+    "First-Person",
+    "Adventure",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 391040,
+   "name": "F1 2016",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "Sports",
+    "Multiplayer",
+    "Singleplayer",
+    "Driving",
+    "Realistic",
+    "Strategy",
+    "Controller",
+    "Co-op",
+    "Action"
+   ]
+  },
+  {
+   "appid": 394690,
+   "name": "Tower Unite",
+   "tags": [
+    "Multiplayer",
+    "Casual",
+    "Mini Golf",
+    "Character Customization",
+    "Massively Multiplayer",
+    "Early Access",
+    "Open World",
+    "Sandbox",
+    "Funny",
+    "Indie",
+    "Great Soundtrack",
+    "Action"
+   ]
+  },
+  {
+   "appid": 397950,
+   "name": "Clustertruck",
+   "tags": [
+    "Parkour",
+    "Automobile Sim",
+    "Action",
+    "First-Person",
+    "3D Platformer",
+    "Singleplayer",
+    "Physics",
+    "Fast-Paced",
+    "Indie",
+    "Difficult",
+    "Destruction",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 410340,
+   "name": "Liftoff: FPV Drone Racing",
+   "tags": [
+    "Simulation",
+    "Flight",
+    "Racing",
+    "Realistic",
+    "First-Person",
+    "Sports",
+    "Multiplayer",
+    "Immersive Sim",
+    "Indie",
+    "Early Access",
+    "Crafting",
+    "Level Editor"
+   ]
+  },
+  {
+   "appid": 412220,
+   "name": "DDraceNetwork",
+   "tags": [
+    "Online Co-Op",
+    "Free to Play",
+    "Multiplayer",
+    "2D Platformer",
+    "Precision Platformer",
+    "2D",
+    "Level Editor",
+    "Puzzle-Platformer",
+    "Platformer",
+    "Team-Based",
+    "Co-op",
+    "Moddable"
+   ]
+  },
+  {
+   "appid": 415200,
+   "name": "Motorsport Manager",
+   "tags": [
+    "Management",
+    "Racing",
+    "Simulation",
+    "Strategy",
+    "Sports",
+    "Automobile Sim",
+    "Singleplayer",
+    "Difficult",
+    "Multiplayer",
+    "Action",
+    "Great Soundtrack",
+    "Economy"
+   ]
+  },
+  {
+   "appid": 415600,
+   "name": "Kart Racing Pro",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Automobile Sim",
+    "VR",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 431590,
+   "name": "Earn to Die 2",
+   "tags": [
+    "Action",
+    "Racing",
+    "Indie",
+    "2D",
+    "Zombies",
+    "Violent",
+    "Side Scroller",
+    "Gore",
+    "Singleplayer",
+    "Adventure",
+    "Driving"
+   ]
+  },
+  {
+   "appid": 431600,
+   "name": "Automobilista",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Automobile Sim",
+    "Sports",
+    "Multiplayer",
+    "Realistic",
+    "Driving",
+    "Singleplayer",
+    "Early Access",
+    "VR"
+   ]
+  },
+  {
+   "appid": 434460,
+   "name": "Rock of Ages 2: Bigger & Boulder",
+   "tags": [
+    "Strategy",
+    "Action",
+    "Comedy",
+    "Racing",
+    "Indie",
+    "Multiplayer",
+    "Tower Defense",
+    "Funny",
+    "Historical",
+    "Co-op",
+    "Split Screen",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 457210,
+   "name": "SEUM: Speedrunners from Hell",
+   "tags": [
+    "3D Platformer",
+    "Parkour",
+    "Precision Platformer",
+    "First-Person",
+    "Platformer",
+    "Racing",
+    "Difficult",
+    "FPS",
+    "Fast-Paced",
+    "Action",
+    "Level Editor",
+    "Puzzle-Platformer"
+   ]
+  },
+  {
+   "appid": 473770,
+   "name": "BallisticNG",
+   "tags": [
+    "Combat Racing",
+    "Futuristic",
+    "Flight",
+    "Fast-Paced",
+    "Indie",
+    "Racing",
+    "Retro",
+    "Arcade",
+    "Moddable",
+    "Level Editor",
+    "Vehicular Combat",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 477770,
+   "name": "Ride 2",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Motorbike",
+    "Bikes",
+    "Multiplayer",
+    "Open World",
+    "Singleplayer",
+    "Action",
+    "Split Screen",
+    "Controller"
+   ]
+  },
+  {
+   "appid": 488550,
+   "name": "Dream Car Builder",
+   "tags": [
+    "Automobile Sim",
+    "Simulation",
+    "Building",
+    "Sandbox",
+    "Racing",
+    "Indie",
+    "Destruction",
+    "Driving",
+    "Physics",
+    "Multiplayer",
+    "Early Access"
+   ]
+  },
+  {
+   "appid": 495290,
+   "name": "AccuRC 2",
+   "tags": [
+    "Simulation",
+    "Racing",
+    "Sports",
+    "Flight"
+   ]
+  },
+  {
+   "appid": 497180,
+   "name": "Street Legal Racing: Redline v2.3.1",
+   "tags": [
+    "Automobile Sim",
+    "Racing",
+    "Simulation",
+    "Driving",
+    "Building",
+    "Singleplayer",
+    "Open World",
+    "Moddable",
+    "Kickstarter",
+    "Destruction",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 509250,
+   "name": "TO THE TOP",
+   "tags": [
+    "Indie",
+    "Action",
+    "Racing",
+    "VR",
+    "Parkour",
+    "Great Soundtrack",
+    "3D Platformer"
+   ]
+  },
+  {
+   "appid": 514920,
+   "name": "Crash Wheels",
+   "tags": [
+    "Racing",
+    "Indie",
+    "Destruction",
+    "Arcade",
+    "Singleplayer",
+    "Fast-Paced",
+    "Difficult"
+   ]
+  },
+  {
+   "appid": 515220,
+   "name": "F1 2017",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Sports",
+    "Simulation",
+    "Multiplayer",
+    "Driving",
+    "Realistic",
+    "Singleplayer",
+    "Co-op",
+    "Action",
+    "Strategy",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 516750,
+   "name": "My Summer Car",
+   "tags": [
+    "Automobile Sim",
+    "Simulation",
+    "Driving",
+    "Open World",
+    "Survival",
+    "Realistic",
+    "First-Person",
+    "Building",
+    "Racing",
+    "Singleplayer",
+    "Funny",
+    "Sandbox"
+   ]
+  },
+  {
+   "appid": 520010,
+   "name": "Climbey",
+   "tags": [
+    "Simulation",
+    "VR",
+    "Parkour",
+    "Racing",
+    "Multiplayer",
+    "Indie",
+    "Co-op",
+    "Early Access"
+   ]
+  },
+  {
+   "appid": 541670,
+   "name": "Disney Infinity 3.0: Gold Edition",
+   "tags": [
+    "Adventure",
+    "Action",
+    "Sandbox",
+    "Family Friendly",
+    "Open World",
+    "Multiplayer",
+    "Racing",
+    "Building",
+    "Third Person",
+    "Fantasy"
+   ]
+  },
+  {
+   "appid": 552100,
+   "name": "Brick Rigs",
+   "tags": [
+    "Sandbox",
+    "Destruction",
+    "Building",
+    "Multiplayer",
+    "LEGO",
+    "Open World",
+    "Physics",
+    "Family Friendly",
+    "Driving",
+    "Simulation",
+    "Funny",
+    "Early Access"
+   ]
+  },
+  {
+   "appid": 560710,
+   "name": "Leap Up no jutsu",
+   "tags": [
+    "Action",
+    "Indie",
+    "Casual",
+    "Ninja",
+    "Racing"
+   ]
+  },
+  {
+   "appid": 561600,
+   "name": "MXGP3 - The Official Motocross Videogame",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Motocross",
+    "Motorbike",
+    "Multiplayer",
+    "Offroad",
+    "Bikes",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 590590,
+   "name": "Remnants of Naezith",
+   "tags": [
+    "Precision Platformer",
+    "Indie",
+    "Action",
+    "Racing",
+    "Platformer",
+    "Fast-Paced",
+    "2D",
+    "Adventure",
+    "Difficult",
+    "Casual",
+    "Time Attack",
+    "Level Editor"
+   ]
+  },
+  {
+   "appid": 632200,
+   "name": "Kuro survival",
+   "tags": [
+    "Side Scroller",
+    "Arena Shooter",
+    "Hero Shooter",
+    "Shoot 'Em Up",
+    "Twin Stick Shooter",
+    "Beat 'em up",
+    "Racing",
+    "PvE",
+    "Platformer",
+    "Shooter",
+    "2D Fighter",
+    "Action-Adventure"
+   ]
+  },
+  {
+   "appid": 635260,
+   "name": "CarX Drift Racing Online",
+   "tags": [
+    "Racing",
+    "Physics",
+    "Simulation",
+    "Massively Multiplayer",
+    "Relaxing",
+    "Sandbox",
+    "Online Co-Op",
+    "Games Workshop",
+    "Automobile Sim",
+    "Multiplayer",
+    "Open World",
+    "Controller"
+   ]
+  },
+  {
+   "appid": 645630,
+   "name": "Car Mechanic Simulator 2018",
+   "tags": [
+    "Simulation",
+    "Automobile Sim",
+    "Driving",
+    "Building",
+    "Realistic",
+    "Racing",
+    "Multiplayer",
+    "Singleplayer",
+    "First-Person",
+    "Sandbox",
+    "Education",
+    "Crafting"
+   ]
+  },
+  {
+   "appid": 655500,
+   "name": "MX Bikes",
+   "tags": [
+    "Motocross",
+    "Motorbike",
+    "Multiplayer",
+    "Simulation",
+    "Offroad",
+    "VR",
+    "Realistic",
+    "Racing",
+    "Moddable",
+    "Controller",
+    "e-sports",
+    "Automobile Sim"
+   ]
+  },
+  {
+   "appid": 657240,
+   "name": "Tracks - The Train Set Game",
+   "tags": [
+    "Simulation",
+    "Sandbox",
+    "Building",
+    "Trains",
+    "Open World",
+    "Indie",
+    "Crafting",
+    "City Builder",
+    "First-Person",
+    "Funny",
+    "Family Friendly",
+    "Racing"
+   ]
+  },
+  {
+   "appid": 675010,
+   "name": "MudRunner",
+   "tags": [
+    "Offroad",
+    "Simulation",
+    "Automobile Sim",
+    "Multiplayer",
+    "Driving",
+    "Realistic",
+    "Open World",
+    "Physics",
+    "Co-op",
+    "Online Co-Op",
+    "Mod",
+    "Moddable"
+   ]
+  },
+  {
+   "appid": 690790,
+   "name": "DiRT Rally 2.0",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "Multiplayer",
+    "VR",
+    "Driving",
+    "Sports",
+    "Offroad",
+    "Realistic",
+    "Singleplayer",
+    "Difficult",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 705210,
+   "name": "Cube Racer",
+   "tags": [
+    "Indie",
+    "Action",
+    "Casual",
+    "Racing",
+    "Free to Play",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 711540,
+   "name": "Lonely Mountains: Downhill",
+   "tags": [
+    "Bikes",
+    "Difficult",
+    "Sports",
+    "Indie",
+    "Racing",
+    "Physics",
+    "Nature",
+    "Singleplayer",
+    "Simulation",
+    "Cycling",
+    "Exploration",
+    "Open World"
+   ]
+  },
+  {
+   "appid": 737800,
+   "name": "F1 2018",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "Sports",
+    "Multiplayer",
+    "Driving",
+    "Realistic",
+    "Singleplayer",
+    "Competitive",
+    "Action",
+    "Co-op",
+    "Funny"
+   ]
+  },
+  {
+   "appid": 794860,
+   "name": "eSail Sailing Simulator",
+   "tags": [
+    "Simulation",
+    "Sports",
+    "Racing",
+    "Sailing",
+    "VR"
+   ]
+  },
+  {
+   "appid": 805550,
+   "name": "Assetto Corsa Competizione",
+   "tags": [
+    "Racing",
+    "Automobile Sim",
+    "Simulation",
+    "VR",
+    "Multiplayer",
+    "Driving",
+    "Realistic",
+    "Sports",
+    "Controller",
+    "Singleplayer",
+    "Open World",
+    "e-sports"
+   ]
+  },
+  {
+   "appid": 808080,
+   "name": "Ultimate Racing 2D",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Indie",
+    "Automobile Sim",
+    "Top-Down",
+    "2D",
+    "Action",
+    "Casual",
+    "Multiplayer",
+    "Design & Illustration",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 808910,
+   "name": "STAR WARS Episode I Racer",
+   "tags": [
+    "Racing",
+    "Action",
+    "Classic",
+    "Sci-fi",
+    "Multiplayer",
+    "Singleplayer",
+    "First-Person",
+    "Arcade",
+    "Retro",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 864060,
+   "name": "Marble It Up! Ultra",
+   "tags": [
+    "3D Platformer",
+    "Fast-Paced",
+    "Physics",
+    "Arcade",
+    "Racing",
+    "Platformer",
+    "Time Attack",
+    "Action",
+    "Casual",
+    "Colorful",
+    "Singleplayer",
+    "3D"
+   ]
+  },
+  {
+   "appid": 893030,
+   "name": "Music Racer",
+   "tags": [
+    "Music",
+    "Rhythm",
+    "Indie",
+    "Music-Based Procedural Generation",
+    "Action",
+    "Retro",
+    "Casual",
+    "Singleplayer",
+    "Colorful",
+    "Arcade",
+    "Multiplayer",
+    "Difficult"
+   ]
+  },
+  {
+   "appid": 928600,
+   "name": "F1 2019",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Automobile Sim",
+    "Multiplayer",
+    "Driving",
+    "Realistic",
+    "Singleplayer",
+    "Arcade",
+    "VR",
+    "Controller"
+   ]
+  },
+  {
+   "appid": 936720,
+   "name": "Wrench",
+   "tags": [
+    "Building",
+    "Automobile Sim",
+    "Realistic",
+    "Simulation",
+    "Immersive Sim",
+    "Racing",
+    "Relaxing",
+    "Sandbox",
+    "Education",
+    "VR",
+    "Transportation",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 984780,
+   "name": "MotoGP19",
+   "tags": [
+    "Racing",
+    "Sports",
+    "Simulation",
+    "Multiplayer",
+    "Motorbike"
+   ]
+  },
+  {
+   "appid": 1018160,
+   "name": "MXGP 2019 - The Official Motocross Videogame",
+   "tags": [
+    "Simulation",
+    "Racing",
+    "Sports",
+    "Motorbike",
+    "Motocross",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 1030840,
+   "name": "Mafia: Definitive Edition",
+   "tags": [
+    "Open World",
+    "Crime",
+    "Story Rich",
+    "Action",
+    "Singleplayer",
+    "Adventure",
+    "Sexual Content",
+    "Multiplayer",
+    "Third-Person Shooter",
+    "Remake",
+    "Violent",
+    "Third Person"
+   ]
+  },
+  {
+   "appid": 1037480,
+   "name": "Classic Racers",
+   "tags": [
+    "Racing",
+    "Indie",
+    "Simulation",
+    "Sports",
+    "Casual",
+    "Automobile Sim",
+    "Free to Play",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 1066890,
+   "name": "Automobilista 2",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "VR",
+    "Automobile Sim",
+    "Indie",
+    "Action",
+    "Driving",
+    "Multiplayer",
+    "Realistic",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1070820,
+   "name": "RealFlight 9.5S",
+   "tags": [
+    "Simulation",
+    "Indie",
+    "Racing",
+    "Flight",
+    "VR"
+   ]
+  },
+  {
+   "appid": 1071870,
+   "name": "Biped",
+   "tags": [
+    "Character Customization",
+    "Emotional",
+    "Co-op",
+    "PvE",
+    "Action",
+    "Multiplayer",
+    "Relaxing",
+    "Casual",
+    "Nature",
+    "Funny",
+    "Local Multiplayer",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 1080110,
+   "name": "F1 2020",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Sports",
+    "Multiplayer",
+    "Automobile Sim",
+    "Split Screen",
+    "Difficult",
+    "Driving",
+    "Realistic",
+    "Management",
+    "Singleplayer",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 1089830,
+   "name": "Monster Energy Supercross - The Official Videogame 3",
+   "tags": [
+    "Sports",
+    "Racing",
+    "Simulation",
+    "Motocross",
+    "Motorbike",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 1133590,
+   "name": "Stilt Fella",
+   "tags": [
+    "Physics",
+    "Difficult",
+    "Simulation",
+    "Funny",
+    "Arcade",
+    "Action",
+    "Comedy",
+    "Intentionally Awkward Controls",
+    "Casual",
+    "Platformer",
+    "2D Platformer",
+    "3D"
+   ]
+  },
+  {
+   "appid": 1134570,
+   "name": "F1 2021",
+   "tags": [
+    "Racing",
+    "Driving",
+    "Sports",
+    "Immersive Sim",
+    "Automobile Sim",
+    "PvP",
+    "Controller",
+    "Split Screen",
+    "e-sports",
+    "Simulation",
+    "3D",
+    "Realistic"
+   ]
+  },
+  {
+   "appid": 1161490,
+   "name": "MotoGP20",
+   "tags": [
+    "Racing",
+    "Sports",
+    "Simulation",
+    "Multiplayer",
+    "Motorbike",
+    "Bikes",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1166860,
+   "name": "Rival Stars Horse Racing: Desktop Edition",
+   "tags": [
+    "Horses",
+    "Racing",
+    "Immersive Sim",
+    "Sports",
+    "Management",
+    "Family Friendly",
+    "PvP",
+    "Competitive",
+    "Farming Sim",
+    "Realistic",
+    "Character Customization",
+    "3D"
+   ]
+  },
+  {
+   "appid": 1170970,
+   "name": "Marbles on Stream",
+   "tags": [
+    "Free to Play",
+    "Racing",
+    "Massively Multiplayer",
+    "Casual",
+    "Simulation",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 1178400,
+   "name": "Pro Cycling Manager 2020",
+   "tags": [
+    "Simulation",
+    "Multiplayer",
+    "Singleplayer",
+    "Sports",
+    "Management",
+    "Realistic",
+    "Strategy",
+    "Family Friendly",
+    "Racing",
+    "Competitive",
+    "Bikes",
+    "Cycling"
+   ]
+  },
+  {
+   "appid": 1190000,
+   "name": "Car Mechanic Simulator 2021",
+   "tags": [
+    "Simulation",
+    "Automobile Sim",
+    "Realistic",
+    "Sandbox",
+    "Moddable",
+    "Driving",
+    "Racing",
+    "3D",
+    "Singleplayer",
+    "Education",
+    "First-Person",
+    "Immersive Sim"
+   ]
+  },
+  {
+   "appid": 1251460,
+   "name": "Tanuki Sunset",
+   "tags": [
+    "Racing",
+    "Action",
+    "Indie",
+    "Sports",
+    "Adventure",
+    "Skateboarding",
+    "Skating",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 1262580,
+   "name": "Need for Speed Payback",
+   "tags": [
+    "Racing",
+    "Open World",
+    "Multiplayer",
+    "Combat Racing",
+    "Controller",
+    "Sports",
+    "PvP",
+    "Sandbox",
+    "Arcade",
+    "Third Person",
+    "First-Person",
+    "Strategy"
+   ]
+  },
+  {
+   "appid": 1293830,
+   "name": "Forza Horizon 4",
+   "tags": [
+    "Racing",
+    "Open World",
+    "Driving",
+    "Multiplayer",
+    "Automobile Sim",
+    "Realistic",
+    "Online Co-Op",
+    "Singleplayer",
+    "Controller",
+    "Simulation",
+    "PvP",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 1329600,
+   "name": "Karting",
+   "tags": [
+    "Racing",
+    "Casual",
+    "Multiplayer",
+    "Simulation",
+    "Indie",
+    "PvP",
+    "Singleplayer",
+    "Sports",
+    "Arcade",
+    "Third Person",
+    "Family Friendly",
+    "Action"
+   ]
+  },
+  {
+   "appid": 1369670,
+   "name": "Motor Town: Behind The Wheel",
+   "tags": [
+    "Early Access",
+    "Open World",
+    "Driving",
+    "Automobile Sim",
+    "Transportation",
+    "Simulation",
+    "Relaxing",
+    "Economy",
+    "Realistic",
+    "Immersive Sim",
+    "Exploration",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 1396890,
+   "name": "Boss of this gym",
+   "tags": [
+    "Runner",
+    "Idler",
+    "Score Attack",
+    "2D",
+    "Sports",
+    "Racing",
+    "Platformer",
+    "Action",
+    "Casual",
+    "Memes",
+    "Indie",
+    "Parkour"
+   ]
+  },
+  {
+   "appid": 1397650,
+   "name": "Jetborne Racing",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Flight",
+    "VR",
+    "Multiplayer",
+    "Futuristic",
+    "Immersive Sim",
+    "Physics",
+    "Indie",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 1432320,
+   "name": "Liftoff: Micro Drones",
+   "tags": [
+    "Action",
+    "Simulation",
+    "Racing",
+    "Sports",
+    "e-sports",
+    "First-Person",
+    "3D",
+    "Third Person",
+    "Controller",
+    "Early Access",
+    "Relaxing",
+    "Physics"
+   ]
+  },
+  {
+   "appid": 1465360,
+   "name": "SnowRunner",
+   "tags": [
+    "Simulation",
+    "Automobile Sim",
+    "Multiplayer",
+    "Adventure",
+    "Driving",
+    "Exploration",
+    "Realistic",
+    "Sandbox",
+    "Open World",
+    "First-Person",
+    "Third Person",
+    "Immersive Sim"
+   ]
+  },
+  {
+   "appid": 1491340,
+   "name": "Marble World",
+   "tags": [
+    "Sandbox",
+    "Physics",
+    "God Game",
+    "Base-Building",
+    "Simulation",
+    "Logic",
+    "Building",
+    "Casual",
+    "Racing",
+    "Relaxing",
+    "Open World",
+    "Colorful"
+   ]
+  },
+  {
+   "appid": 1578390,
+   "name": "My Garage",
+   "tags": [
+    "Early Access",
+    "Automobile Sim",
+    "Simulation",
+    "Realistic",
+    "Racing",
+    "Open World",
+    "Sandbox",
+    "First-Person",
+    "Singleplayer",
+    "Motorbike",
+    "Exploration",
+    "Multiplayer"
+   ]
+  },
+  {
+   "appid": 1682970,
+   "name": "Uncrashed : FPV Drone Simulator",
+   "tags": [
+    "Simulation",
+    "Flight",
+    "Sports",
+    "Racing",
+    "Physics",
+    "Singleplayer",
+    "Realistic",
+    "First-Person",
+    "Immersive Sim",
+    "3D",
+    "6DOF",
+    "Indie"
+   ]
+  },
+  {
+   "appid": 1782210,
+   "name": "Crab Game",
+   "tags": [
+    "Psychological Horror",
+    "Multiplayer",
+    "Free to Play",
+    "Battle Royale",
+    "PvP",
+    "Action",
+    "First-Person",
+    "Parkour",
+    "3D",
+    "FPS",
+    "Platformer",
+    "Combat"
+   ]
+  },
+  {
+   "appid": 1783780,
+   "name": "OHV",
+   "tags": [
+    "Simulation",
+    "Automobile Sim",
+    "Life Sim",
+    "Driving",
+    "3D",
+    "Open World",
+    "Singleplayer",
+    "Exploration",
+    "First-Person",
+    "Early Access",
+    "Indie",
+    "Racing"
+   ]
+  },
+  {
+   "appid": 1822450,
+   "name": "The Slaverian Trucker",
+   "tags": [
+    "Simulation",
+    "Automobile Sim",
+    "Driving",
+    "Transportation",
+    "Open World",
+    "Exploration",
+    "Immersive Sim",
+    "Post-apocalyptic",
+    "Survival",
+    "Realistic",
+    "FPS",
+    "3D"
+   ]
+  },
+  {
+   "appid": 1859470,
+   "name": "PAC-MAN WORLD Re-PAC",
+   "tags": [
+    "3D Platformer",
+    "Family Friendly",
+    "1990's",
+    "Cute",
+    "3D",
+    "Action-Adventure",
+    "Arcade",
+    "Remake",
+    "Platformer",
+    "Puzzle-Platformer",
+    "Retro",
+    "Cartoony"
+   ]
+  },
+  {
+   "appid": 1881200,
+   "name": "TRYP FPV: Drone Racer Simulator",
+   "tags": [
+    "Early Access",
+    "Flight",
+    "Immersive Sim",
+    "e-sports",
+    "Open World",
+    "Racing",
+    "Exploration",
+    "Education",
+    "Sports",
+    "Science",
+    "Physics",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 1911390,
+   "name": "Knightfall: A Daring Journey",
+   "tags": [
+    "Indie",
+    "Racing",
+    "Online Co-Op",
+    "Horses",
+    "Battle Royale",
+    "Medieval",
+    "Romance",
+    "Funny",
+    "Shooter",
+    "Action",
+    "PvP",
+    "Team-Based"
+   ]
+  },
+  {
+   "appid": 1995890,
+   "name": "Aerofly FS 4 Flight Simulator",
+   "tags": [
+    "Flight",
+    "Racing",
+    "Exploration",
+    "Simulation",
+    "VR",
+    "Immersive Sim",
+    "Action",
+    "Sports",
+    "Physics",
+    "3D",
+    "3D Vision",
+    "First-Person"
+   ]
+  },
+  {
+   "appid": 2020860,
+   "name": "Rush Rally 3",
+   "tags": [
+    "Racing",
+    "Arcade",
+    "Driving",
+    "Simulation",
+    "Automobile Sim",
+    "Multiplayer",
+    "Indie",
+    "Sports",
+    "Retro",
+    "Physics",
+    "Realistic",
+    "PvP"
+   ]
+  },
+  {
+   "appid": 2102520,
+   "name": "Apex Point",
+   "tags": [
+    "Racing",
+    "Simulation",
+    "Automobile Sim",
+    "Open World",
+    "Multiplayer",
+    "Realistic",
+    "First-Person",
+    "Driving",
+    "3D",
+    "Singleplayer",
+    "Early Access",
+    "Third Person"
+   ]
+  },
+  {
+   "appid": 2108330,
+   "name": "F1 23",
+   "tags": [
+    "VR",
+    "Racing",
+    "Driving",
+    "Multiplayer",
+    "Automobile Sim",
+    "Sports",
+    "Singleplayer",
+    "Simulation",
+    "Competitive",
+    "e-sports",
+    "Relaxing",
+    "3D"
+   ]
+  },
+  {
+   "appid": 2486740,
+   "name": "Sledders",
+   "tags": [
+    "Motocross",
+    "Simulation",
+    "Motorbike",
+    "Snow",
+    "Offroad",
+    "Racing",
+    "Sports",
+    "Moddable",
+    "Exploration",
+    "Physics",
+    "Driving",
+    "Character Customization"
+   ]
+  },
+  {
+   "appid": 2634950,
+   "name": "Tokyo Xtreme Racer",
+   "tags": [
+    "Racing",
+    "Driving",
+    "3D",
+    "Controller",
+    "Automobile Sim",
+    "Singleplayer",
+    "Early Access",
+    "Arcade",
+    "Vehicular Combat",
+    "Open World",
+    "Combat Racing",
+    "RPG"
+   ]
+  },
+  {
+   "appid": 2737300,
+   "name": "Parking Garage Rally Circuit",
+   "tags": [
+    "Racing",
+    "Arcade",
+    "Retro",
+    "Driving",
+    "1990's",
+    "3D",
+    "PvP",
+    "Controller",
+    "Action",
+    "Family Friendly",
+    "Old School",
+    "Physics"
+   ]
+  },
+  {
+   "appid": 2824660,
+   "name": "Old School Rally",
+   "tags": [
+    "Racing",
+    "Arcade",
+    "Driving",
+    "Old School",
+    "Simulation",
+    "Retro",
+    "1990's",
+    "3D",
+    "Nostalgia",
+    "Indie",
+    "Early Access",
+    "Automobile Sim"
+   ]
+  },
+  {
+   "appid": 3059520,
+   "name": "F1 25",
+   "tags": [
+    "Racing",
+    "Sports",
+    "Simulation",
+    "PvP",
+    "Co-op",
+    "Online Co-Op",
+    "Multiplayer",
+    "Driving",
+    "Singleplayer",
+    "Automobile Sim",
+    "VR"
+   ]
+  },
+  {
+   "appid": 3453600,
+   "name": "Supercar Collection Simulator",
+   "tags": [
+    "Multiplayer",
+    "Simulation",
+    "Trading Card Game",
+    "Singleplayer",
+    "Collectathon",
+    "Economy",
+    "Trading",
+    "Immersive Sim",
+    "Life Sim",
+    "Capitalism",
+    "Racing",
+    "Management"
+   ]
+  },
+  {
+   "appid": 12100,
+   "name": "Grand Theft Auto III",
+   "tags": [
+    "Open World",
+    "Action",
+    "Automobile Sim",
+    "Classic",
+    "Third Person",
+    "Crime",
+    "Singleplayer",
+    "Driving",
+    "Sandbox",
+    "Shooter",
+    "Third-Person Shooter",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 12110,
+   "name": "Grand Theft Auto: Vice City",
+   "tags": [
+    "Open World",
+    "Action",
+    "Automobile Sim",
+    "1980s",
+    "Classic",
+    "Great Soundtrack",
+    "Crime",
+    "Third Person",
+    "Singleplayer",
+    "Sandbox",
+    "Driving",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 12120,
+   "name": "Grand Theft Auto: San Andreas",
+   "tags": [
+    "Open World",
+    "Action",
+    "Crime",
+    "Classic",
+    "Third Person",
+    "Automobile Sim",
+    "Singleplayer",
+    "Multiplayer",
+    "Shooter",
+    "Driving",
+    "Story Rich",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 50130,
+   "name": "Mafia II (Classic)",
+   "tags": [
+    "Action",
+    "Open World",
+    "Crime",
+    "Story Rich",
+    "Atmospheric",
+    "Singleplayer",
+    "Third Person",
+    "Third-Person Shooter",
+    "Shooter",
+    "Automobile Sim",
+    "Great Soundtrack",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 203210,
+   "name": "Titan Attacks!",
+   "tags": [
+    "Arena Shooter",
+    "Side Scroller",
+    "Bullet Hell",
+    "Shoot 'Em Up",
+    "Top-Down Shooter",
+    "Twin Stick Shooter",
+    "Driving",
+    "Difficult",
+    "Shooter",
+    "Arcade",
+    "Building",
+    "2D"
+   ]
+  },
+  {
+   "appid": 220260,
+   "name": "Farming Simulator 2013: Titanium Edition",
+   "tags": [
+    "Simulation",
+    "Farming Sim",
+    "Multiplayer",
+    "Casual",
+    "Farming",
+    "Open World",
+    "Relaxing",
+    "Co-op",
+    "Moddable",
+    "Management",
+    "Physics",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 252530,
+   "name": "OMSI 2: Steam Edition",
+   "tags": [
+    "Automobile Sim",
+    "Simulation",
+    "Driving",
+    "Realistic",
+    "Singleplayer",
+    "Moddable",
+    "Multiplayer",
+    "Casual",
+    "First-Person",
+    "TrackIR",
+    "Open World",
+    "Relaxing"
+   ]
+  },
+  {
+   "appid": 270880,
+   "name": "American Truck Simulator",
+   "tags": [
+    "Automobile Sim",
+    "Driving",
+    "Open World",
+    "Transportation",
+    "Simulation",
+    "America",
+    "Realistic",
+    "Moddable",
+    "Relaxing",
+    "Exploration",
+    "Economy",
+    "Management"
+   ]
+  },
+  {
+   "appid": 303430,
+   "name": "Roundabout",
+   "tags": [
+    "FMV",
+    "Indie",
+    "Driving",
+    "Comedy",
+    "Female Protagonist",
+    "Casual",
+    "Silent Protagonist",
+    "Adventure",
+    "Funny",
+    "Action",
+    "Puzzle",
+    "Open World"
+   ]
+  },
+  {
+   "appid": 313160,
+   "name": "Farming Simulator 15",
+   "tags": [
+    "Farming Sim",
+    "Automobile Sim",
+    "Simulation",
+    "Multiplayer",
+    "Open World",
+    "Agriculture",
+    "Moddable",
+    "Singleplayer",
+    "Realistic",
+    "Co-op",
+    "Relaxing",
+    "Driving"
+   ]
+  },
+  {
+   "appid": 353640,
+   "name": "Train Valley",
+   "tags": [
+    "Replay Value",
+    "Resource Management",
+    "Indie",
+    "3D",
+    "Trains",
+    "Casual",
+    "Puzzle",
+    "Strategy",
+    "Simulation",
+    "Relaxing",
+    "Transportation",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 447020,
+   "name": "Farming Simulator 17",
+   "tags": [
+    "Farming Sim",
+    "Simulation",
+    "Automobile Sim",
+    "Multiplayer",
+    "Agriculture",
+    "Open World",
+    "Realistic",
+    "Economy",
+    "Driving",
+    "Moddable",
+    "Singleplayer",
+    "Management"
+   ]
+  },
+  {
+   "appid": 490110,
+   "name": "The Precinct",
+   "tags": [
+    "Detective",
+    "Crime",
+    "Sandbox",
+    "Open World",
+    "Top-Down Shooter",
+    "Singleplayer",
+    "Noir",
+    "Investigation",
+    "3D",
+    "Simulation",
+    "Procedural Generation",
+    "Arcade"
+   ]
+  },
+  {
+   "appid": 588030,
+   "name": "Derail Valley",
+   "tags": [
+    "Early Access",
+    "Trains",
+    "Simulation",
+    "Realistic",
+    "VR",
+    "Transportation",
+    "Driving",
+    "Open World",
+    "First-Person",
+    "Physics",
+    "Immersive Sim",
+    "Economy"
+   ]
+  },
+  {
+   "appid": 609320,
+   "name": "FAR: Lone Sails",
+   "tags": [
+    "Atmospheric",
+    "Adventure",
+    "Post-apocalyptic",
+    "Singleplayer",
+    "Exploration",
+    "2.5D",
+    "Puzzle",
+    "Indie",
+    "Driving",
+    "Short",
+    "Story Rich",
+    "Puzzle-Platformer"
+   ]
+  },
+  {
+   "appid": 640120,
+   "name": "Youropa",
+   "tags": [
+    "Puzzle-Platformer",
+    "3D Platformer",
+    "Metroidvania",
+    "Exploration",
+    "Level Editor",
+    "Character Customization",
+    "Parkour",
+    "Character Action Game",
+    "Platformer",
+    "Driving",
+    "Building",
+    "Third Person"
+   ]
+  },
+  {
+   "appid": 754150,
+   "name": "Rolling Line",
+   "tags": [
+    "Trains",
+    "Simulation",
+    "Sandbox",
+    "Level Editor",
+    "Moddable",
+    "Transportation",
+    "Casual",
+    "Indie",
+    "VR",
+    "Singleplayer",
+    "Building",
+    "Relaxing"
+   ]
+  },
+  {
+   "appid": 787860,
+   "name": "Farming Simulator 19",
+   "tags": [
+    "Simulation",
+    "Farming Sim",
+    "Multiplayer",
+    "Agriculture",
+    "Realistic",
+    "Driving",
+    "Open World",
+    "Singleplayer",
+    "Management",
+    "Automobile Sim",
+    "Moddable",
+    "Co-op"
+   ]
+  },
+  {
+   "appid": 824600,
+   "name": "HROT",
+   "tags": [
+    "Retro",
+    "FPS",
+    "Shooter",
+    "Boomer Shooter",
+    "Indie",
+    "First-Person",
+    "Action",
+    "Singleplayer",
+    "Old School",
+    "Gore",
+    "Violent",
+    "Dark"
+   ]
+  },
+  {
+   "appid": 842780,
+   "name": "NavalArt",
+   "tags": [
+    "Early Access",
+    "Sandbox",
+    "Naval Combat",
+    "Voxel",
+    "Building",
+    "Crafting",
+    "Wargame",
+    "Driving",
+    "Shooter",
+    "World War I",
+    "World War II",
+    "Military"
+   ]
+  },
+  {
+   "appid": 862800,
+   "name": "Storm Chasers",
+   "tags": [
+    "Early Access",
+    "Simulation",
+    "Indie",
+    "Action",
+    "Multiplayer",
+    "Singleplayer",
+    "First-Person",
+    "Driving",
+    "Open World",
+    "Physics",
+    "Destruction",
+    "Atmospheric"
+   ]
+  },
+  {
+   "appid": 998400,
+   "name": "Trans-Siberian Railway Simulator",
+   "tags": [
+    "Early Access",
+    "Trains",
+    "Singleplayer",
+    "Indie",
+    "Action",
+    "Casual",
+    "Adventure",
+    "3D",
+    "Simulation",
+    "Atmospheric",
+    "Exploration",
+    "Story Rich"
+   ]
+  },
+  {
+   "appid": 1012560,
+   "name": "Snakeybus",
+   "tags": [
+    "Casual",
+    "Indie",
+    "Action",
+    "Driving",
+    "Automobile Sim",
+    "Arcade",
+    "Multiplayer",
+    "Funny",
+    "Psychological Horror",
+    "Singleplayer",
+    "Relaxing",
+    "Great Soundtrack"
+   ]
+  },
+  {
+   "appid": 1040730,
+   "name": "ZUSI 3 - Aerosoft Edition",
+   "tags": [
+    "Simulation",
+    "Casual",
+    "Trains",
+    "Realistic",
+    "Singleplayer",
+    "Driving",
+    "Sandbox",
+    "Relaxing",
+    "Moddable",
+    "Atmospheric",
+    "First-Person",
+    "Building"
+   ]
+  },
+  {
+   "appid": 1043340,
+   "name": "No Time",
+   "tags": [
+    "Time Travel",
+    "Time Manipulation",
+    "Sandbox",
+    "Crafting",
+    "Flight",
+    "Driving",
+    "Moddable",
+    "Physics",
+    "First-Person",
+    "Open World",
+    "Story Rich",
+    "Action"
+   ]
+  },
+  {
+   "appid": 1118240,
+   "name": "Lake",
+   "tags": [
+    "Relaxing",
+    "Story Rich",
+    "Walking Simulator",
+    "Cozy",
+    "Female Protagonist",
+    "Choose Your Own Adventure",
+    "Open World",
+    "1980s",
+    "Multiple Endings",
+    "Choices Matter",
+    "Atmospheric",
+    "Driving"
+   ]
+  },
+  {
+   "appid": 1149620,
+   "name": "Gas Station Simulator",
+   "tags": [
+    "Simulation",
+    "Economy",
+    "Building",
+    "Singleplayer",
+    "Management",
+    "Casual",
+    "Base-Building",
+    "First-Person",
+    "Open World",
+    "Realistic",
+    "Relaxing",
+    "Education"
+   ]
+  },
+  {
+   "appid": 1305080,
+   "name": "GearBlocks",
+   "tags": [
+    "Building",
+    "Physics",
+    "Simulation",
+    "Sandbox",
+    "Moddable",
+    "Destruction",
+    "Automobile Sim",
+    "Driving",
+    "Immersive Sim",
+    "Singleplayer",
+    "First-Person",
+    "Third Person"
+   ]
+  },
+  {
+   "appid": 1332720,
+   "name": "Thief Simulator 2",
+   "tags": [
+    "Simulation",
+    "Stealth",
+    "Crime",
+    "Singleplayer",
+    "Action",
+    "First-Person",
+    "Adventure",
+    "Open World",
+    "Atmospheric",
+    "Heist",
+    "Indie",
+    "Driving"
+   ]
+  },
+  {
+   "appid": 1482380,
+   "name": "Maniac",
+   "tags": [
+    "Singleplayer",
+    "Simulation",
+    "Action Roguelike",
+    "Top-Down Shooter",
+    "Bullet Hell",
+    "Top-Down",
+    "Rogue-like",
+    "Action",
+    "Sandbox",
+    "Arcade",
+    "Open World",
+    "Twin Stick Shooter"
+   ]
+  },
+  {
+   "appid": 1506510,
+   "name": "The Ramp",
+   "tags": [
+    "Skateboarding",
+    "Sports",
+    "Skating",
+    "Relaxing",
+    "Minimalist",
+    "BMX",
+    "Sandbox",
+    "Snowboarding",
+    "Action",
+    "Controller",
+    "Casual",
+    "Arcade"
+   ]
+  },
+  {
+   "appid": 1532200,
+   "name": "Mars First Logistics",
+   "tags": [
+    "Early Access",
+    "Stylized",
+    "Mars",
+    "Co-op",
+    "3D",
+    "Building",
+    "Sandbox",
+    "Puzzle",
+    "Transportation",
+    "Physics",
+    "Robots",
+    "Science"
+   ]
+  },
+  {
+   "appid": 1591420,
+   "name": "Hmmsim Metro",
+   "tags": [
+    "Simulation",
+    "Trains",
+    "3D",
+    "Realistic",
+    "Transportation",
+    "Driving",
+    "Early Access",
+    "Singleplayer",
+    "Indie",
+    "Immersive Sim",
+    "Physics",
+    "Automobile Sim"
+   ]
+  },
+  {
+   "appid": 1629530,
+   "name": "Spark the Electric Jester 3",
+   "tags": [
+    "3D Platformer",
+    "3D",
+    "Action",
+    "Platformer",
+    "Hack and Slash",
+    "Third Person",
+    "Exploration",
+    "Singleplayer",
+    "Beat 'em up",
+    "Combat",
+    "Driving",
+    "Sci-fi"
+   ]
+  },
+  {
+   "appid": 1763050,
+   "name": "Fears to Fathom - Norwood Hitchhike",
+   "tags": [
+    "Psychological Horror",
+    "Horror",
+    "Atmospheric",
+    "Retro",
+    "Thriller",
+    "Story Rich",
+    "Dark",
+    "Walking Simulator",
+    "Narration",
+    "Exploration",
+    "Conversation",
+    "Adventure"
+   ]
+  },
+  {
+   "appid": 2011780,
+   "name": "Yellow Taxi Goes Vroom",
+   "tags": [
+    "Indie",
+    "Singleplayer",
+    "Colorful",
+    "3D",
+    "3D Platformer",
+    "Exploration",
+    "Platformer",
+    "Funny",
+    "Third Person",
+    "Retro",
+    "Comedy",
+    "Cartoony"
+   ]
+  },
+  {
+   "appid": 2455370,
+   "name": "Russian Village Simulator",
+   "tags": [
+    "Simulation",
+    "Life Sim",
+    "Agriculture",
+    "Fishing",
+    "Farming Sim",
+    "Crafting",
+    "Survival",
+    "Relaxing",
+    "Farming",
+    "Hunting",
+    "Exploration",
+    "Casual"
+   ]
+  },
+  {
+   "appid": 2506160,
+   "name": "Fears to Fathom - Ironbark Lookout",
+   "tags": [
+    "Horror",
+    "Atmospheric",
+    "Psychological Horror",
+    "Narrative",
+    "Exploration",
+    "Thriller",
+    "Adventure",
+    "Episodic",
+    "First-Person",
+    "Walking Simulator",
+    "Cinematic",
+    "Realistic"
+   ]
+  },
+  {
+   "appid": 2585830,
+   "name": "Promise Mascot Agency",
+   "tags": [
+    "RPG",
+    "Adventure",
+    "Open World",
+    "Simulation",
+    "Visual Novel",
+    "Anime",
+    "Crime",
+    "Creature Collector",
+    "Management",
+    "Singleplayer",
+    "Story Rich",
+    "Driving"
+   ]
+  },
+  {
+   "appid": 2670630,
+   "name": "Supermarket Simulator",
+   "tags": [
+    "Simulation",
+    "Management",
+    "Economy",
+    "Singleplayer",
+    "Multiplayer",
+    "Trading",
+    "Immersive Sim",
+    "First-Person",
+    "Life Sim",
+    "Building",
+    "Capitalism",
+    "Resource Management"
+   ]
+  },
+  {
+   "appid": 2961530,
+   "name": "Fears to Fathom - Woodbury Getaway",
+   "tags": [
+    "Psychological Horror",
+    "Adventure",
+    "Casual",
+    "First-Person",
+    "Horror",
+    "Atmospheric",
+    "Walking Simulator",
+    "1990's",
+    "Exploration",
+    "Crime",
+    "Mystery",
+    "Singleplayer"
+   ]
+  },
+  {
+   "appid": 262390,
+   "name": "Cloudbuilt",
+   "tags": [
+    "Parkour",
+    "Action",
+    "Combat",
+    "Fast-Paced",
+    "3D Platformer",
+    "Adventure",
+    "Platformer",
+    "Difficult",
+    "Precision Platformer",
+    "Stylized",
+    "Dark",
+    "3D"
+   ]
+  },
+  {
+   "appid": 1979440,
+   "name": "SAND LAND",
+   "tags": [
+    "Anime",
+    "Open World",
+    "Action RPG",
+    "Singleplayer",
+    "Action",
+    "Tanks",
+    "Vehicular Combat",
+    "Cartoony",
+    "Comedy",
+    "Mechs",
+    "Action-Adventure",
+    "Gun Customization"
+   ]
+  }
+ ]
+}

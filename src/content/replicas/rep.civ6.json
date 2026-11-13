@@ -1,0 +1,1554 @@
+{
+ "id": "rep.civ6",
+ "name": "Sid Meier's Civilization VI",
+ "card": "steam:289070",
+ "genre": "strategy",
+ "family": "fam.dark-gold-enamel",
+ "pack": "tactics",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "strategy",
+  "values": {
+   "color.palette": "summer",
+   "color.saturation": 1.2,
+   "color.temperature": 0.1,
+   "camera.projection": "persp",
+   "camera.angle": "high",
+   "camera.fov": 35
+  }
+ },
+ "base": {
+  "hud.style": "darkGold",
+  "ctx.device": "pc",
+  "ctx.input": "kbm",
+  "ctx.timeModel": "turn",
+  "col.source": "skin",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#11284a",
+  "col.surface2": "#0a1a33",
+  "col.text": "#ece6d6",
+  "col.accent": "#3fa9e0",
+  "col.accent2": "#c9a24a",
+  "col.focus": "#5fc4ff",
+  "col.border": "#b38d4c",
+  "col.coding": [
+   "lineId",
+   "player"
+  ],
+  "vis.opacity": 0.95,
+  "vis.fill": "gradient",
+  "vis.corner": "chamfer",
+  "vis.cornerSize": 3,
+  "vis.stroke": "double",
+  "vis.strokeWidth": 1.5,
+  "vis.strokeColor": "metal",
+  "vis.depth": "innerShadow",
+  "vis.gloss": "metalGrad",
+  "vis.ornament": 1,
+  "vis.motif": "none",
+  "ast.core": "procedural",
+  "ast.frame": "procedural",
+  "ast.frameMat": "gold",
+  "vis.iconStyle": "painted",
+  "ast.iconSet": "asset",
+  "vis.silhouette@avatar": "circle",
+  "typ.body.family": "sans",
+  "typ.body.weight": "regular",
+  "typ.display.family": "serif",
+  "typ.display.weight": "regular",
+  "typ.display.case": "smallCaps",
+  "typ.display.tracking": 0.04,
+  "typ.numerals.family": "body",
+  "typ.legibility": "shadow",
+  "typ.baseSize": 24,
+  "cmp.tab": "text",
+  "cmp.tabIndicator": "filled",
+  "rel.harmony": "contrast",
+  "vis.mapStyle": "parchment",
+  "vis.mapUnexplored": "blank",
+  "st.newCue": "count",
+  "ix.focus": "focusGlow",
+  "ix.press": "darken",
+  "mo.enter": "slide",
+  "mo.easing": "easeOut",
+  "mo.duration": 0.3,
+  "mo.valueChange": "smooth",
+  "col.surface@tooltip": "#f2efe6",
+  "col.text@tooltip": "#1b1b1b",
+  "vis.fill@tooltip": "solid",
+  "vis.opacity@tooltip": 1
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_289070_3.jpg",
+   "values": {
+    "uip.layout": "layout.strategyTurn",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "edgeBar",
+    "lay.safeMargin": 0.5,
+    "cnt.density": 3,
+    "rel.hudVisibility": "always",
+    "rel.semanticZoom": "none",
+    "hier.emphasis": [
+     "color",
+     "glow"
+    ],
+    "cnt.elements": [
+     "el.resources",
+     "el.toolbar",
+     "el.timer",
+     "el.party",
+     "el.minimap",
+     "el.cta",
+     "el.selection",
+     "el.overlay",
+     "el.worldLabel"
+    ],
+    "el.resources.form": "pills",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "tl",
+    "el.resources.scale": 0.7,
+    "el.resources.valueLabel": "delta",
+    "el.resources.valueLabelPos": "superscript",
+    "el.resources.priority": "secondary",
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.arrangement": "row",
+    "el.toolbar.screenAnchor": "tl",
+    "el.toolbar.scale": 0.65,
+    "el.toolbar.edgeBar": "exclude",
+    "vis.silhouette@el.toolbar": "circle",
+    "el.timer.form": "turnDate",
+    "el.timer.screenAnchor": "tr",
+    "el.timer.scale": 0.7,
+    "el.party.form": "avatarRow",
+    "el.party.arrangement": "row",
+    "el.party.screenAnchor": "tr",
+    "el.party.scale": 0.55,
+    "el.party.edgeBar": "exclude",
+    "vis.silhouette@el.party": "circle",
+    "el.minimap.form": "plan",
+    "el.minimap.screenAnchor": "bl",
+    "el.minimap.scale": 1.05,
+    "el.minimap.cornerCurl": "all",
+    "el.minimap.satellites": [
+     "button"
+    ],
+    "el.minimap.satelliteSide": "t",
+    "el.minimap.satelliteCount": 4,
+    "vis.silhouette@el.minimap": "box",
+    "ast.frame@minimapFrame": "plainNinePatch",
+    "ast.frameMat@minimapFrame": "bronze",
+    "el.cta.form": "round",
+    "el.cta.screenAnchor": "br",
+    "el.cta.scale": 0.75,
+    "el.cta.priority": "primary",
+    "cmp.button@el.cta": "icon",
+    "el.cta.satellites": [
+     "button",
+     "prompt"
+    ],
+    "el.cta.satelliteSide": "l",
+    "vis.silhouette@el.cta": "circle",
+    "ast.frameMat@el.cta": "bronze",
+    "el.selection.form": "tag",
+    "el.selection.attachTo": "target",
+    "el.worldLabel.form": [
+     "nameplate"
+    ],
+    "el.overlay.form": [
+     "statusIcons"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "billboard",
+    "typ.legibility": "shadow",
+    "lay.hudEdge": [
+     "top"
+    ],
+    "el.resources.count": 5,
+    "ast.frame@el.cta": "gear",
+    "vis.gloss@el.cta": "topShine",
+    "el.party.label": "hide",
+    "el.party.valueLabel": "none"
+   }
+  },
+  {
+   "key": "city",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_289070_2.jpg",
+   "values": {
+    "uip.layout": "layout.strategyTurn",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "edgeBar",
+    "lay.safeMargin": 0.5,
+    "cnt.density": 4,
+    "typ.baseSize": 22,
+    "rel.semanticZoom": "none",
+    "hier.emphasis": [
+     "color"
+    ],
+    "cnt.elements": [
+     "el.resources",
+     "el.selection",
+     "el.timer",
+     "el.party",
+     "el.toolbar",
+     "el.cta",
+     "el.overlay",
+     "el.selection#2"
+    ],
+    "el.resources.form": "pills",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "tl",
+    "el.resources.scale": 0.7,
+    "el.resources.valueLabel": "delta",
+    "el.resources.valueLabelPos": "superscript",
+    "el.selection.form": "sidePanel",
+    "el.selection.edge": "left",
+    "el.selection.screenAnchor": "ml",
+    "el.selection.scale": 1,
+    "el.selection.priority": "secondary",
+    "el.selection#2.form": "cityPanel",
+    "el.selection#2.screenAnchor": "br",
+    "el.timer.form": "turnDate",
+    "el.timer.screenAnchor": "tr",
+    "el.timer.scale": 0.7,
+    "el.party.form": "avatarRow",
+    "el.party.arrangement": "row",
+    "el.party.screenAnchor": "tr",
+    "el.party.scale": 0.55,
+    "el.party.edgeBar": "exclude",
+    "vis.silhouette@el.party": "circle",
+    "el.toolbar.form": "buttonRow",
+    "el.toolbar.arrangement": "row",
+    "el.toolbar.screenAnchor": "br",
+    "el.toolbar.scale": 0.55,
+    "vis.silhouette@el.toolbar": "circle",
+    "el.cta.form": "round",
+    "el.cta.screenAnchor": "br",
+    "el.cta.scale": 0.75,
+    "el.cta.priority": "primary",
+    "cmp.button@el.cta": "icon",
+    "vis.silhouette@el.cta": "circle",
+    "el.overlay.form": [
+     "statusIcons"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "billboard",
+    "col.accent2": "#2fa6a8",
+    "typ.legibility": "shadow",
+    "lay.hudEdge": [
+     "top"
+    ],
+    "el.resources.count": 5,
+    "ast.frame@el.cta": "gear",
+    "ast.frameMat@el.cta": "bronze",
+    "vis.gloss@el.cta": "topShine",
+    "el.party.label": "hide",
+    "el.party.valueLabel": "none"
+   }
+  },
+  {
+   "key": "build",
+   "ref": "qa/refs-cache/iig/img/sid-meiers-civilization-vi__sid-meiers-civilization-vi-choose-production.jpg",
+   "values": {
+    "uip.screen": "tpl.build",
+    "cnt.screen": "screen.build",
+    "cnt.layer": "overlay",
+    "lay.container": "drawer",
+    "lay.panelSize": 0.42,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "cnt.dataShape": "collection",
+    "cnt.density": 3,
+    "cnt.itemCount": 6,
+    "lay.arrangement": "column",
+    "cmp.slot": "rowCard",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "value",
+     "time"
+    ],
+    "lay.nav": "tabsTop",
+    "lay.navCount": 3,
+    "cmp.tab": "iconText",
+    "cmp.tabIndicator": "filled",
+    "vis.silhouette@tab": "box",
+    "cmp.tabMount": "cradle",
+    "ast.frameMat": "bronze",
+    "lay.grouping": "header",
+    "cmp.plate@groupHeader": "pill",
+    "col.surface@groupHeader": "#9fd0e6",
+    "col.text@groupHeader": "#0f2747",
+    "lay.overflow": "scrollV",
+    "lay.detail": "transient",
+    "cnt.elements": [
+     "el.minimap",
+     "el.objective"
+    ],
+    "st.locked": "dimmed",
+    "st.selected": "check",
+    "hier.emphasis": [
+     "color"
+    ],
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.close": "xOutside",
+    "ix.dismiss": "button",
+    "flow.entry": "tapEntry",
+    "flow.stacking": "stack",
+    "flow.chrome": [
+     "statusBar"
+    ],
+    "typ.baseSize": 22,
+    "typ.legibility": "shadow",
+    "lay.drawerFlush": true,
+    "el.minimap.form": "plan",
+    "el.minimap.screenAnchor": "bl",
+    "el.minimap.scale": 1.05,
+    "el.minimap.anchorSpace": "screen",
+    "col.surface@titleBar": "#1f6f78",
+    "lay.titleAlign": "center",
+    "el.objective.form": [
+     "trackerRows"
+    ],
+    "el.objective.anchorSpace": "screen",
+    "el.objective.screenAnchor": "tl"
+   }
+  },
+  {
+   "key": "diplomacy",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_289070_0.jpg",
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.screen": "screen.dialogue",
+    "lay.container": "fullscreen",
+    "cmp.modal": "standard",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "model3d",
+    "lay.focalSide": "right",
+    "lay.composition": "splitLR",
+    "lay.layering": "separate",
+    "col.surface": "#171513",
+    "col.surface2": "#0b0a09",
+    "ast.core": "texture",
+    "ast.coreMat": "velvet",
+    "cnt.dataShape": "collection",
+    "cnt.itemCount": 4,
+    "lay.arrangement": "column",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "value"
+    ],
+    "cmp.listRowBox": "plain",
+    "st.statViz": "table",
+    "lay.grouping": "divider",
+    "lay.nav": "tabsTop",
+    "lay.nav2": "avatarRail",
+    "lay.navCount": 5,
+    "cmp.tab": "icon",
+    "vis.silhouette@tab": "circle",
+    "cmp.plate@name": "none",
+    "lay.panelHeader": "crestTwoLine",
+    "cnt.elements": [
+     "el.choices"
+    ],
+    "el.choices.form": "buttons",
+    "el.choices.arrangement": "column",
+    "el.choices.screenAnchor": "bl",
+    "el.choices.scale": 0.65,
+    "el.choices.defaultFocus": "none",
+    "vis.corner@button": "round",
+    "cmp.button": "text",
+    "cmp.buttonBox": true,
+    "hier.cta": "equal",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "button",
+    "ix.close": "xOutside",
+    "ix.skip": "none",
+    "ix.continueCue": "none",
+    "mo.textReveal": "instant",
+    "ix.blocking": "modal",
+    "flow.entry": "tapEntry",
+    "cnt.tone": "character",
+    "typ.legibility": "shadow",
+    "lay.splitRatio": 0.7
+   }
+  },
+  {
+   "key": "greatpeople",
+   "ref": "qa/refs-cache/iig/img/sid-meiers-civilization-vi__sid-meiers-civilization-vi-great-people.jpg",
+   "values": {
+    "uip.screen": "tpl.codex",
+    "cnt.screen": "screen.codex",
+    "ast.container": "none",
+    "lay.container": "modal",
+    "lay.panelSize": 1,
+    "cmp.modal": "standard",
+    "rel.behind": "live",
+    "rel.dim": 0.3,
+    "col.surface": "#4a1c1f",
+    "col.surface2": "#2a0f12",
+    "cnt.dataShape": "collection",
+    "cnt.focal": "none",
+    "cnt.itemCount": 7,
+    "cnt.density": 3,
+    "lay.arrangement": "grid",
+    "lay.columns": 7,
+    "lay.overflow": "scrollH",
+    "lay.detail": "none",
+    "lay.grouping": "card",
+    "cmp.card": "medallion",
+    "cmp.cardParts": [
+     "kicker",
+     "medallion",
+     "iconDesc",
+     "progressTable",
+     "priceChips",
+     "button"
+    ],
+    "cmp.slot": "tallCard",
+    "cnt.characterMedium": "bust",
+    "cnt.characterRender": "relief",
+    "lay.nav": "tabsTop",
+    "lay.navCount": 2,
+    "lay.navAlign": "center",
+    "cmp.tab": "text",
+    "cmp.tabIndicator": "filled",
+    "cmp.tabMount": "arcCradle",
+    "ast.frameMat": "bronze",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "value"
+    ],
+    "cnt.elements": [],
+    "cmp.button": "text",
+    "cmp.buttonBox": true,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.close": "xOutside",
+    "ix.dismiss": "button",
+    "flow.entry": "tapEntry",
+    "flow.stacking": "stack",
+    "flow.chrome": [
+     "statusBar"
+    ],
+    "typ.legibility": "none",
+    "lay.cellAspect": 0.37,
+    "col.surface@titleBar": "#14284a",
+    "col.surface@hudBar": "#11284a",
+    "vis.fill@titleBar": "solid",
+    "lay.titleAlign": "center"
+   }
+  },
+  {
+   "key": "wonder",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_289070_4.jpg",
+   "values": {
+    "uip.screen": "tpl.cutscene",
+    "cnt.screen": "screen.loading",
+    "lay.container": "overlay",
+    "rel.behind": "live",
+    "rel.hudVisibility": "always",
+    "cnt.elements": [
+     "el.notify",
+     "el.subtitle"
+    ],
+    "el.notify.form": [
+     "banner"
+    ],
+    "el.notify.screenAnchor": "tc",
+    "el.notify.scale": 0.75,
+    "el.notify.span": "full",
+    "el.subtitle.screenAnchor": "bc",
+    "el.subtitle.scale": 0.85,
+    "el.subtitle.form": "quoteCard",
+    "el.subtitle.span": "full",
+    "cmp.dialogBox@el.subtitle": "bar",
+    "vis.opacity": 0.85,
+    "col.surface": "#0b1626",
+    "cnt.textLength": "short",
+    "cnt.tone": "narrative",
+    "flow.entry": "event",
+    "mo.enter": "fade",
+    "mo.textReveal": "fade",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "tapAnywhere",
+    "ix.continueCue": "none",
+    "ix.skip": "none",
+    "typ.legibility": "shadow"
+   }
+  },
+  {
+   "key": "skilltree",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.skilltree",
+    "cnt.screen": "screen.skilltree",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "ast.core": "texture",
+    "ast.coreMat": "parchment",
+    "ast.watermark": "faintPainting",
+    "ast.watermarkOpacity": 0.2,
+    "cnt.dataShape": "hierarchy",
+    "cnt.density": 3,
+    "lay.arrangement": "tree",
+    "lay.flowDir": "right",
+    "lay.grouping": "header",
+    "lay.overflow": "scrollH",
+    "cmp.node": "rowCard",
+    "cmp.slot": "rowCard",
+    "vis.connector": "elbow",
+    "st.locked": "dimmed",
+    "lay.detail": "transient",
+    "lay.nav": "none",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.close": "xTopRight",
+    "ix.dismiss": "button",
+    "flow.entry": "tapEntry",
+    "flow.chrome": [
+     "statusBar"
+    ],
+    "typ.legibility": "none",
+    "col.surface@titleBar": "#14284a",
+    "lay.titleAlign": "center"
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "lay.container": "fullscreen",
+    "cmp.modal": "standard",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "vis.mapStyle": "hexChart",
+    "vis.mapUnexplored": "blank",
+    "rel.semanticZoom": "iconize",
+    "cmp.node": "pin",
+    "lay.overflow": "single",
+    "cnt.elements": [
+     "el.minimap",
+     "el.cta"
+    ],
+    "el.minimap.form": "plan",
+    "el.minimap.screenAnchor": "bl",
+    "el.minimap.scale": 0.95,
+    "el.cta.form": "round",
+    "el.cta.screenAnchor": "br",
+    "el.cta.scale": 0.75,
+    "vis.silhouette@el.cta": "circle",
+    "cmp.button@el.cta": "icon",
+    "ast.frame@el.cta": "gear",
+    "ast.frameMat@el.cta": "bronze",
+    "ix.dismiss": "key",
+    "flow.entry": "hotkey",
+    "flow.chrome": [
+     "statusBar"
+    ],
+    "typ.legibility": "shadow",
+    "lay.detail": "none",
+    "ix.close": "none",
+    "lay.mapBleed": "on",
+    "lay.titlePos": "none",
+    "el.minimap.anchorSpace": "screen",
+    "el.cta.anchorSpace": "screen"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "右下“下一步”圆钮：el.cta = round 只画平涂强调色圆 + 白圈 + 文字，不读 ast.frame / ast.frameMat@el.cta，也不读 vis.gloss@el.cta，所以配了青铜框和光泽也画不出来",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "el.cta = round 读 ast.frame / ast.frameMat@el.cta 画一圈环形外框，读 vis.gloss@el.cta 画玻璃高光",
+   "resolvedBy": "ast.frame@el.cta, vis.gloss@el.cta"
+  },
+  {
+   "screen": "hud",
+   "what": "原作“下一步”是一颗玻璃球（中间只画随待办切换的图标，不写字）嵌在黄铜齿轮钟表圈里；外框结构没有环形 / 齿轮圈，圆钮也不能“只画图标”",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "外框结构新增环形 / 齿轮圈（G-frame-structure）；el.cta = round 增加“图标代字”画法（cmp.button = icon 作用到 el.cta）",
+   "resolvedBy": "M12b-17 + M12b-50（ast.frame@el.cta = gear + cmp.button@el.cta = icon：黄铜齿轮圈里的蓝色玻璃球、只画图标）"
+  },
+  {
+   "screen": "hud",
+   "what": "“下一步”球左侧骑着两颗小圆钮（宗教、产能），上方浮一条“CHOOSE RESEARCH”提示条；主钮 + 卫星小钮 + 提示条无法组成一个部件",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "el.cta 允许挂卫星小钮与提示条（G-ornament-placement：小部件骑边挂在主钮旁）",
+   "resolvedBy": "M12b-05（el.cta.satellites = [button, prompt] + satelliteSide l：左侧两颗卫星钮 + 上方提示条）"
+  },
+  {
+   "screen": "hud",
+   "what": "未探索区在局内实时世界里不是黑雾，而是一张古地图羊皮纸（手绘六角格、海怪章鱼、恒向线），3D 世界像从纸上长出来；vis.mapUnexplored / vis.mapStyle 只作用于地图页",
+   "severity": "high",
+   "kind": "worldSpace",
+   "proposal": "rel 新参数：局内迷雾画风（沿用 vis.mapStyle 词表），由世界渲染画到未探索地块上；G-map-lib"
+  },
+  {
+   "screen": "hud",
+   "what": "顶栏是贴顶全宽细深蓝条（左侧产出、右侧回合 / 纪年 / 时钟 / 帮助 / 菜单）；lay.hudOrg = edgeBar 已有取值，但画布上不画整条，任何取值下顶部元素都是散的",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "实现 lay.hudOrg = edgeBar：同一条边上的元素共用一条贴边底条",
+   "resolvedBy": "lay.hudOrg, lay.hudEdge"
+  },
+  {
+   "screen": "hud",
+   "what": "el.resources 不读 elx.valueLabel（配了 delta 也不画每回合增量），而且固定画三项（金币 / 晶体 / 木材）；原作是五项按产出类型着色的数字（科技蓝、文化紫、信仰、金币黄、旅游）",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "el.resources 读 elx.valueLabel；项数读内容包的资源表（或新参数 elx.count）",
+   "resolvedBy": "el.resources.count"
+  },
+  {
+   "screen": "hud",
+   "what": "产出的每回合增量写成上标（15⁺⁵·²）、计时写“回合 + 公元纪年”：elx.valueLabelPos 没有上标，el.timer 只有倒计时 / 回合 / 比分等形态",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "elx.valueLabelPos 新取值 superscript；el.timer.form 新取值 turnDate（回合 + 纪年 + 实时时钟）",
+   "resolvedBy": "M12b-06（el.resources.valueLabelPos = superscript、el.timer.form = turnDate：回合 · 纪年 · 时钟）"
+  },
+  {
+   "screen": "hud",
+   "what": "系统入口（科技、市政、政体、宗教、伟人）是顶栏下一排小圆钮，挂在一条带地图纹的窄带上；el.toolbar 的 microMenu / buttonRow 都画直角切角方钮，不读 vis.silhouette@el.toolbar",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "工具栏按钮读 vis.silhouette@el.toolbar（circle → 圆钮）；底带可用 ast.watermark = mapLines",
+   "resolvedBy": "M12a-09（工具栏钮读 vis.silhouette@el.toolbar：圆钮；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.party = portraitRow 每个头像下都写名字、挂血条，头像里的首字还和名字重叠；文明 6 的领袖排只有小圆头像",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.party.form 新取值 avatarRow（只画圆头像，名字进悬停）；或 portraitRow 读 elx.valueLabel = none 去掉名字和血条",
+   "resolvedBy": "M12b-18（el.party.form = avatarRow：只剩小圆头像）"
+  },
+  {
+   "screen": "hud",
+   "what": "城市横幅是世界内胶囊：左端人口数字、中间小型大写城名、首都星、阵营色底，每座城一条；el.selection = tag 只画一条普通深色名牌",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "rel.worldRender / elx.worldRender 新取值 nameplate：每个世界城市挂点一条名牌（左数字 + 名 + 阵营色底）（G-world-label）",
+   "partialBy": "M12b-19（el.worldLabel = [nameplate]：世界里挂名牌）；没有左端人口数、阵营色底与首都星"
+  },
+  {
+   "screen": "hud",
+   "what": "小地图是带卷角的青铜框浅色羊皮纸地图，框顶骑着一排蓝色圆形镜头钮（透镜 / 标记 / 搜索 / 选项）；按钮骑边出框无法表达",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "el.minimap 允许骑边按钮排（G-ornament-placement）；外框结构加卷角",
+   "resolvedBy": "M12b-05（el.minimap.cornerCurl = all + satellites [button] × 4 @ t：卷角 + 顶边圆形镜头钮）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.minimap = plan 总画深色网格底，不读 vis.mapStyle（base 已设 parchment），地图页的大地图与小地图画风不一致",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "el.minimap 按 vis.mapStyle 取底色与纹理（parchment → 浅纸色 + 彩色领土）",
+   "partialBy": "M12b-66（小地图读画风：底换成棕色纸纹）；仍偏暗、带网格、没有彩色领土，map 屏的小地图仍是灰网格"
+  },
+  {
+   "screen": "hud",
+   "what": "col.accent@el.cta 等按元素的颜色覆盖能通过校验，但元素里的 e.accent 不读覆盖（hier.emphasis 的 color → col.accent@元素 因此不生效），“下一步”钮只能跟全局强调色走",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "makeCtx 按 col.*@<元素> 生成该元素自己的色板（与 cmp.*@ 覆盖同口径）",
+   "resolvedBy": "M12a-01（元素上下文按 col.*@el.<id> 打补丁：「下一步」读 col.accent@el.cta；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "城市、单位、领袖头像环和面板主色都随玩家阵营色走（蓝白、绿金……）；没有“面板 / 名牌按阵营着色”的参数，col.coding = player 只影响少量标记",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "col 新参数 factionTint：面板 / 名牌 / 头像环取所属阵营色（G-color-roles）"
+  },
+  {
+   "screen": "city",
+   "what": "城市详情是贴左缘的全高抽屉：青绿渐变标题条 + 红圆 X、铜托槽里的图标页签、几十行“标签 … 数值”密集行；局内 HUD 没有整列侧栏，el.selection = card 只画“大圆头像 + 名字 + 三条数值条”的单位卡，只到屏高一半",
+   "severity": "high",
+   "kind": "missingOption",
+   "proposal": "el.selection.form 新取值 sidePanel（贴边全高、标题条 + 页签 + 密集数值行）；lay.container = drawer 增加方向（drawerLeft / drawerRight）",
+   "resolvedBy": "M12b-15（el.selection.form = sidePanel + edge left：贴左全高城市详情，标题条 + 红圆 ✕ + 图标页签 + 标签…数值行）"
+  },
+  {
+   "screen": "city",
+   "what": "同屏右下还有城市面板：阵营色名牌、带绿色增长环的大圆盾徽、大号数字 + 右对齐小型大写标签、“回合至增长”绿条，上方骑一排圆钮；el.selection 只能有一个实例，也没有这种“徽章 + 数字栏 + 进度条”组合",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "el.selection 允许第二实例（el.selection#2）；新部件 cityPanel = 圆徽（读 vis.silhouette + 进度环）+ 数值栏 + 底部进度条",
+   "resolvedBy": "M12b-15（el.selection#2 = cityPanel @ br：增长环大圆 + 数字栏 + 回合至增长条）"
+  },
+  {
+   "screen": "build",
+   "what": "界面模板的元素排在容器里面（drawElements 以容器外框为版面），生产抽屉打开时仍留在屏上的小地图、右下城市面板、顶栏下的圆钮排都画不出来；只有 flow.chrome 的顶栏能画到整屏",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "elx 新参数 anchorSpace = screen | container（元素锚在整屏还是容器里）",
+   "resolvedBy": "el.minimap.anchorSpace"
+  },
+  {
+   "screen": "build",
+   "what": "左上世界追踪器：棕金标题条 + 按类型着色的研究 / 市政两行（圆形进度环图标 + 解锁小图标 + 回合数）；没有对应元素",
+   "severity": "low",
+   "kind": "composite",
+   "proposal": "新元素 el.tracker（标题条 + 若干进度行，行色读 col.coding = lineId）",
+   "resolvedBy": "M12b-28（el.objective = [trackerRows]：左上世界追踪器）"
+  },
+  {
+   "screen": "build",
+   "what": "面板标题是整条全宽渐变标题带居中小型大写（生产 / 城市是青绿，伟人是藏青）；cmp.plate 只有 tab / pill / ribbon / plaque 等小标牌，模板标题只写一行字",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "cmp.plate@title 新取值 band（贴面板顶的全宽渐变标题带，标题居中，底色读 col.surface@titleBar）",
+   "resolvedBy": "col.surface@titleBar, lay.titleAlign"
+  },
+  {
+   "screen": "build",
+   "what": "生产列表按“区域与建筑 / 单位”分组，组标题是浅青蓝渐变胶囊（深蓝字）；科技树的时代列头同理；listRows 只有一串同构行，lay.grouping 没有“分组标题行”",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "lay.grouping 新取值 header（分组标题行，标牌形态读 cmp.plate@groupHeader）",
+   "resolvedBy": "M12b-13（lay.grouping = header + cmp.plate@groupHeader = pill：浅青蓝分组胶囊）"
+  },
+  {
+   "screen": "build",
+   "what": "悬停 tooltip 是白底黑字，与整体深色反差；lay.detail = transient 的浮出框只能用面板色",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "col 新增 tooltip 底色 / 字色角色（col.surface@tooltip、col.text@tooltip；G-color-roles）",
+   "resolvedBy": "col.surface@tooltip, col.text@tooltip"
+  },
+  {
+   "screen": "build",
+   "what": "悬停浮出框画在列表里，盖住被悬停行的数值；红圆 X 压在顶栏右端的货币胶囊上；抽屉四周留边距而原作贴右缘、从顶栏下通到底",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "浮出框放到行外侧（朝屏幕中心）；ix.close = xOutside 避让 flow.chrome；drawer 贴边且顶部让出 chrome 高度",
+   "resolvedBy": "M12a-26 / M12a-38（悬停框放到列表外侧、抽屉贴右缘且让出顶栏，✕ 不再压货币；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "build",
+   "what": "（build / diplomacy 共用）页签不读 cmp.tab：iconText（生产屏的带图标胶囊）和 icon + vis.silhouette@tab = circle（外交屏的圆图标页签）都画成纯文字页签，页签数固定取内容包的 4 个",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "drawNav 按 cmp.tab 画图标 / 图标 + 字，读 vis.silhouette@tab",
+   "resolvedBy": "M12b-16（build 三枚图标 + 字页签、diplomacy 圆形图标页签）"
+  },
+  {
+   "screen": "build",
+   "what": "页签数量随界面变化（生产 3 枚、伟人 2 枚、外交 5 枚），参数里没有页签数",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "lay 新参数 navCount",
+   "resolvedBy": "M12b-16（lay.navCount：生产 3 / 伟人 2 / 外交 5）"
+  },
+  {
+   "screen": "build",
+   "what": "（build / greatpeople 共用）页签嵌在铜色托槽里：生产屏是一条横托槽，伟人屏是居中的弧形托槽；页签只能浮在面板上",
+   "severity": "low",
+   "kind": "newDrawing",
+   "proposal": "G-tab-form：页签托槽（直 / 弧）",
+   "resolvedBy": "M12b-16 + M12b-50（cmp.tabMount = cradle / arcCradle + ast.frameMat = bronze：页签嵌在铜托槽里）"
+  },
+  {
+   "screen": "build",
+   "what": "（build / greatpeople / skilltree / map 共用）flow.chrome = topCurrency 画的是手游式顶栏：右对齐三枚货币胶囊、每枚带“+”购买钮；文明 6 跨界面顶栏是左侧产出数字 + 右侧回合 / 纪年 / 时钟，没有购买钮",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "flow.chrome 新取值 topYields（左对齐产出 + 右侧回合信息，不带 +）",
+   "resolvedBy": "flow.chrome"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "需素材：右侧约 2/3 是巨大的 3D 领袖（这一屏的主视觉）；战术包没有角色立绘，cnt.characterMedium = model3d 只画平涂剪影 + “3D 实时模型（需素材）”",
+   "severity": "high",
+   "kind": "asset",
+   "proposal": "needs art：一张策略品类的领袖半身 / 全身立绘（或接 3D 角色渲染）"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "左侧信息面板约占屏宽 30%、领袖约 70%；splitLR 里列表栏固定约 55%，主体只能用 ops.poster 放大",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "lay 新参数 splitRatio（主体所占比例，0.3–0.75）",
+   "resolvedBy": "lay.splitRatio"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "fullscreen + splitLR 把列表和人物都装进一块带金线的整屏面板；原作只有左栏是面板，领袖站在面板外的昏暗场景里（lay.layering = separate 没有让主体出框）",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "split 构图下 lay.layering = separate 时只给列表半边画面板，主体半边直接画在背景上",
+   "resolvedBy": "M12a-37（split + lay.layering = separate 只给列表半边画面板；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "左侧面板是带垂坠褶皱的黑色丝绒 + 金细边；ast.coreMat 没有丝绒 / 挂幕，只能用近黑渐变近似",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "ast.coreMat 新取值 drape（G-material-lib）",
+   "resolvedBy": "M12b-52（ast.coreMat = velvet：带竖向垂褶的黑丝绒）"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "最左缘是一列已结识领袖的圆头像（头像页签栏），与面板内的图标页签并存；lay.nav 只能有一种",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "lay 新参数 nav2（第二级导航）；cmp.tab = avatar 真正画头像",
+   "resolvedBy": "M12b-16（lay.nav2 = avatarRail：最左已结识领袖头像列）"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "面板顶部是圆形阵营勋章 + 两行小型大写名（领袖名 / 帝国名）的抬头；模板只写一行标题",
+   "severity": "low",
+   "kind": "composite",
+   "proposal": "面板抬头部件：徽章（读 vis.silhouette）+ 主副两行名",
+   "partialBy": "M12b-30（lay.panelHeader = crestTwoLine：圆形勋章 + 名字）；只写出一行名、浮在面板外上方"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "底部动作按钮是一列 7 条同样的深蓝圆角条，部分按钮第二行小字写代价（Grievances 数值红字）；cmp.button 没有“带副行”的画法",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "cmp.button 新取值 textWithSubline（G-control-lib）"
+  },
+  {
+   "screen": "greatpeople",
+   "what": "卡片主体是一枚圆形凹龛，里面是骨白色浮雕半身像，前面叠一件职业道具（锚、锤镐、星盾、宝石、法器）；tallCard 的卡面只画图标集里的物品图，cnt.characterRender = relief 已有但卡面构图没有",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "cmp.card 新取值 medallionCard（圆龛人像 + 前景道具），gridItems 的 tallCard 按 cmp.card 画卡面（G-card-node）",
+   "resolvedBy": "M12b-12 + M12b-69（cmp.card = medallion：圆龛人像 + 前景职业道具小图标）"
+  },
+  {
+   "screen": "greatpeople",
+   "what": "需素材：伟人浮雕胸像与职业道具图标",
+   "severity": "high",
+   "kind": "asset",
+   "proposal": "needs art：骨白浮雕胸像（可共用一张，换道具区分职业）+ 7 个职业道具"
+  },
+  {
+   "screen": "greatpeople",
+   "what": "卡片很高（约屏高 57%、宽高比约 1 : 2.7），撑满横带；tallCard 固定约 1 : 1.4 且宽度封顶，7 张卡只占横带上三分之一，下面空着",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "cmp.slot = tallCard 读新参数 lay.cardAspect（卡片宽高比），并按可用高度撑满",
+   "resolvedBy": "lay.cellAspect"
+  },
+  {
+   "screen": "greatpeople",
+   "what": "每张卡自上而下是：三行小型大写抬头（职业 / 人名 / 时代）、圆龛人像、图标 + 效果描述、带缺角细框和滚动条的“招募进度”小表（玩家行 + 0/40）、两枚价格胶囊（金币 / 信仰）、全宽米灰 Biography 按钮；卡片不能嵌套这些子部件",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "cmp.card 允许按序嵌套：抬头行、描述、listRow 小表、价格胶囊行、底部按钮条",
+   "resolvedBy": "M12b-69（cmp.cardParts = [kicker, medallion, iconDesc, progressTable, priceChips, button]）"
+  },
+  {
+   "screen": "greatpeople",
+   "what": "同屏两种珐琅底：藏青标题带 + 酒红卡面；col.surface 只有一个，整块只能用酒红渐变",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "col.surface@titleBar / @card 角色绑定（G-color-roles）",
+   "resolvedBy": "col.surface@titleBar"
+  },
+  {
+   "screen": "greatpeople",
+   "what": "示例内容是商店物品（金币、宝石、药瓶……）+ 写死的“¥ 价格”；策略包没有“人物条目”（职业 / 人名 / 时代 / 效果）样本，价格前缀也不读内容包货币",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "策略包加人物类条目样本；价格前缀读内容包货币",
+   "resolvedBy": "M12b-62（人物条目：职业 / 人名、效果描述、招募进度、价格胶囊，不再是商品 + ¥ 价格）"
+  },
+  {
+   "screen": "wonder",
+   "what": "奇观落成演出的上下两条都是全宽细深条；el.notify = banner 宽度封顶（约 1/3 屏宽、还带切角金框），el.subtitle = bar 只按字宽垫底",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "elx 新参数 span = full（横幅 / 字幕条贴满屏宽）（G-el-broadcast-film：上下字卡带）",
+   "partialBy": "M12b-30（el.notify.span = full：上条贴满屏宽）；上条留边不贴顶，下方引文字卡只占约一半宽"
+  },
+  {
+   "screen": "wonder",
+   "what": "底部字卡是“小型大写奇观名 + 圆形奇观图标 + 深色引文框（引语 + 出处）”的组合；cmp.dialogBox = bar 只能画“说话人：台词”",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "el.subtitle 新形态 quoteCard（名称 + 圆图标 + 引文框）",
+   "resolvedBy": "M12b-30（el.subtitle.form = quoteCard：名字 + 圆形图标 + 引文框 + 出处）"
+  },
+  {
+   "screen": "wonder",
+   "what": "示例文字是“进入新战区”和指挥部对白，不是“世界奇观已建成”宣告与引语出处",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "内容包加“成就 / 落成”宣告句与引语样本（cnt.tone = narrative 时取用）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "（凭记忆）科技树节点是左侧圆形图标的深蓝横长卡：名称 + 回合数 + 一行解锁小图标，尤里卡 / 灵感用半圆进度提示；cmp.node 只有圆点、头像、建筑、宝箱等",
+   "severity": "high",
+   "kind": "missingOption",
+   "proposal": "cmp.node 新取值 rowCard（圆图标 + 名称 + 回合数 + 解锁图标行，可带半圆进度）（G-card-node）",
+   "resolvedBy": "M12b-23（cmp.node = rowCard：圆图标横长卡 + 名称 + 花费 + 解锁图标 + 半圆进度）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "（凭记忆）科技树横向滚动、按时代分列（列头写时代名）；lay.arrangement = tree 固定自上而下排",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "tree 排布读方向（新参数 lay.flowDir = ltr / ttb），按层分列，列头走 lay.grouping = header",
+   "resolvedBy": "M12b-24（lay.flowDir = right + lay.grouping = header：横向按时代 I–VI 分列 + 列头）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "模板构图器不画 ast.watermark（配了 faintPainting，羊皮纸上没有淡草图）；cmp.node = building 也画成编号圆；悬停详情框盖住节点",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "模板构图器画 ast.watermark；节点按 cmp.node 画；transient 详情框避开节点",
+   "partialBy": "M12a-29（transient 详情框移到左下、不再压节点；节点按 cmp.node = rowCard 画）；羊皮纸上仍无草图水印"
+  },
+  {
+   "screen": "map",
+   "what": "（凭记忆）战略视图是整屏平面地图 + 原有 HUD，没有面板、标题和关闭控件；tpl.worldmap 的 fullscreen 总会画面板框、藏青标题带和关闭控件（ix.close 没有“无”）",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "ix.close 新取值 none；fullscreen 地图页允许无框无标题（lay.container = none 时地图铺满）",
+   "resolvedBy": "lay.mapBleed, lay.titlePos, ix.close"
+  },
+  {
+   "screen": "map",
+   "what": "（凭记忆）战略视图是六角格平面制图：羊皮纸色地形 + 符号化单位 / 城市图标 + 平涂边界色；vis.mapStyle = parchment 画的是一张奇幻手绘插画",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "vis.mapStyle 新取值 hexChart（程序化六角格制图，格色读地形，边界平涂阵营色）（G-map-lib）",
+   "resolvedBy": "M12b-25（vis.mapStyle = hexChart：六角格平涂地形 + 阵营色边界 + 城市方章）"
+  },
+  {
+   "screen": "map",
+   "what": "同一张世界一键在 3D 与 2D 制图之间切换，是一组参数同时切换，没有对应机制",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "参数模式包（G-mode-bundle）"
+  },
+  {
+   "screen": "build",
+   "what": "数据为 collection、cmp.slot = rowCard 的列表改走格子排布（M12a-28）后，行里只画 图标 + 名字，不再画 cmp.listRow 的 value / time 字段（第 2 轮右侧还有数值）；原作每行右侧是回合数 + 时钟小图标",
+   "severity": "medium",
+   "proposal": "格子排布里的 rowCard 也按 cmp.listRow 画右侧字段（value 右对齐、time 带时钟小图标），与 listRows 的行同口径",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C2 ⑦（建造行带数值 = 第一项建材的需求、时间 = 回合数「⏱ n」，cmp.listRow 的 value / time 画在行尾）"
+  },
+  {
+   "screen": "hud / city",
+   "what": "el.resources.count = 5 时 tactics 内容包只有金币 / 晶体 / 木材三种资源，第 4、5 项循环重复；原作是科技、文化、信仰、金币、旅游五种按产出着色的数字",
+   "severity": "low",
+   "proposal": "策略类内容包补 4X 产出样本（科技 / 文化 / 信仰 / 金币 / 旅游，各带颜色与每回合增量），count 超过样本时不循环而是截断",
+   "kind": "content",
+   "resolvedBy": "M12b-62（R4 对照图：顶栏五项产出各不相同，不再循环）"
+  },
+  {
+   "screen": "diplomacy",
+   "what": "lay.splitRatio = 0.7 把左栏面板收到约 30% 宽后，左下 el.choices 按钮列仍按原宽画，右端伸出面板金线外",
+   "severity": "low",
+   "proposal": "模板里锚在容器内的元素宽度不超过所在分栏（数据栏）的内宽，放不下时按栏宽缩放",
+   "kind": "layoutEngine",
+   "partialBy": "（值规避：el.choices.scale 0.65，按钮不再伸出左栏）；引擎仍不按栏宽收"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "city": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "build": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 3,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "diplomacy": [
+   {
+    "layout": 1,
+    "elements": 1,
+    "palette": 2,
+    "type": 4,
+    "shape": 2,
+    "density": 2,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 4,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "greatpeople": [
+   {
+    "layout": 3,
+    "elements": 1,
+    "palette": 4,
+    "type": 4,
+    "shape": 2,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "wonder": [
+   {
+    "layout": 0,
+    "elements": 0,
+    "palette": 0,
+    "type": 0,
+    "shape": 0,
+    "density": 1,
+    "overall": 0,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 6,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 6,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "skilltree": [
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 3,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 3,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 5,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "没有贴顶全宽的深蓝顶栏：资源只是左上三枚浮字，右上只有一个小计时，回合 / 公元纪年 / 时钟没有",
+   "系统入口是 5 个直角切角方钮（≡ ⚙ ✉ ⚑ ?），原作是顶栏下一排小圆钮",
+   "右上是 4 条横向“头像 + 血条”队伍条，原作是一排小圆形领袖头像",
+   "左上多了“作战目标”清单（参考图里世界追踪器是收起的）",
+   "右侧多了一枚红蓝盾徽通知 + 标签，参考图没有",
+   "右下“下一步”圆钮直径约屏高 30%（hier.emphasis = size 把 primary 元素拉到 ≥ 1.4 倍），而且是哑光金色；原作约屏高 12%，蓝色玻璃球",
+   "小地图顶边骑着一枚金色月桂圆章（ast.ornaments = badgeBase），原作没有",
+   "世界里没有城市名牌胶囊"
+  ],
+  "city": [
+   "左侧整列城市详情抽屉没有，换成屏幕中左一块 1.9 倍的宽“单位面板”（圆头像 + 名字 + 两条横条），压住大半个画面",
+   "右上 7 个直角方钮横排；原作这排圆钮在右下城市面板上方",
+   "队伍仍是 4 条横向条，原作是一排小圆头像",
+   "结束回合钮哑光金色、偏大",
+   "右下城市面板（阵营色名牌 + 带增长环的大圆盾徽 + 数字列 + 增长条）没有"
+  ],
+  "build": [
+   "没套模板，退回旧背包样本：右侧面板上半列表、下半常驻详情；原作只有列表 + 悬停 tooltip",
+   "面板顶边和详情顶边各骑一枚金色月桂圆章",
+   "选中页签和按钮被 vis.silhouette@icon = circle 画成椭圆金胶囊；原作选中页签是浅蓝胶囊",
+   "抽屉没有关闭钮（原作标题条右端是红圆 X）",
+   "原作仍保留顶栏、左上世界追踪器、左下小地图、右下城市面板，这里都没有",
+   "列表行是透明行 + 小图标，没有原作那样每行一块深蓝底条"
+  ],
+  "diplomacy": [
+   "没套模板，退回旧背包样本：全屏面板 + 列表 + 详情",
+   "没有领袖：原作右侧约 2/3 是巨大的 3D 领袖",
+   "面板是红色绗缝布（ast.core = texture + cloth），原作是黑色丝绒",
+   "背后是明亮的水彩风景插画（ast.bgArt = sceneArt），原作背后是昏暗的室内场景",
+   "底部一列外交动作按钮没画出来"
+  ],
+  "greatpeople": [
+   "没套模板，退回旧背包样本：居中弹窗 + 左列表右详情，不是一排 7 张竖卡",
+   "四角是金色巴洛克卷草大角花（vis.ornament = 2 + corners），原作只有细金线",
+   "弹窗只占中间约 70% 宽，原作是几乎贴满全宽的一条横带",
+   "没有右上红圆 X，也没有横向滚动条",
+   "底色深褐偏灰，原作卡面是酒红、标题带藏青"
+  ],
+  "wonder": [
+   "整屏一个 UI 都没画：rel.hudVisibility = hidden 把过场模板里的横幅和字幕也一起隐藏了",
+   "原作是顶部一条深色细横幅（大写宣告）+ 底部一条深色名称 / 引文条"
+  ],
+  "skilltree": [
+   "整屏藏青面板；原作（凭记忆）是米色羊皮纸底 + 淡草图",
+   "节点是自上而下的数字圆点树；原作横向滚动、按时代分列，节点是左侧圆图标的横长卡",
+   "顶部多了一条手游式货币条（三个带“+”的胶囊）",
+   "面板顶边骑着金色月桂圆章"
+  ],
+  "map": [
+   "没有地图页：tpl.worldmap 配了 lay.container = overlay，只画元素，看到的仍是 3D 局内画面 + 三个 HUD 元素",
+   "原作战略视图是整屏平面制图（羊皮纸色地形 + 符号图标），HUD 保留",
+   "结束回合钮是金色"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "仍没有贴顶全宽的深蓝顶栏：左上是三枚切角深色小牌（金币 / 晶体 / 木材，不带每回合增量），右上只有一个“⏱ 00:45”小计时；原作是一条细顶栏，左侧五项着色产出带上标增量，右侧回合 / 公元纪年 / 时钟 / 帮助 / 菜单",
+   "系统入口仍是 5 枚直角切角方钮（☰ ⚙ ✉ ⚑ ?），原作是顶栏下一排小圆钮",
+   "领袖改成了一排圆头像（对了），但每个头像下还写名字、挂一条血条，头像里的首字与名字重叠；原作只有小圆头像",
+   "“下一步”钮颜色和大小已接近（蓝、约屏高 15%），但仍是平涂蓝圆 + 白圈 + “结束”二字；原作是黄铜齿轮钟表圈里的玻璃球、只画图标，左侧挂两颗小圆钮、上方浮“CHOOSE RESEARCH”提示条",
+   "小地图是深棕网格底 + 细双线框，原作是浅色羊皮纸地图（彩色领土）+ 带卷角的青铜框，框顶还骑着一排蓝色圆形镜头钮",
+   "世界里只有一条“重炮机 · 待命”深色名牌；原作每座城都有一条阵营色城市横幅（人口数字 + 小型大写城名 + 首都星）",
+   "地块上的产出图标（每格的食物 / 产能小圆标）与羊皮纸迷雾都没有"
+  ],
+  "city": [
+   "左侧城市详情改成了左上的竖卡（位置对了），但它是“单位卡”：大圆头像 + 名字 + 三条数值条，只到屏高一半；原作是贴左缘的全高抽屉：青绿渐变标题条 + 红圆 X + 铜托槽里的图标页签 + 几十行“标签 … 数值”密集行",
+   "卡片底是灰蓝渐变 + 灰金线，原作抽屉是饱和的藏青底",
+   "右下的城市面板（阵营色名牌、带绿色增长环的大圆盾徽、大号数字 + 右对齐小型大写标签、“回合至增长”绿条）仍没有",
+   "系统钮挪到了右下结束回合钮上方（位置对了），但仍是 7 枚直角方钮，原作是一排圆钮",
+   "结束回合钮仍是平涂蓝圆 + 文字，没有黄铜圈和玻璃质感"
+  ],
+  "build": [
+   "模板已生效：右侧生产抽屉、页签、每行一块深蓝切角底条、红圆 X、悬停浮出框都有了，旧的常驻详情和月桂圆章去掉了",
+   "抽屉离右缘和顶栏各留了一圈边距，原作贴右缘、从顶栏下一直通到底",
+   "标题只是左上一行金字“建造”；原作是整条青绿渐变标题带（CHOOSE PRODUCTION）居中小型大写",
+   "页签是四枚纯文字页签；原作三枚带图标胶囊（生产 / 金币购买 / 信仰购买）嵌在托槽里",
+   "列表没有分组标题行（原作“区域与建筑 / 单位”浅青蓝渐变胶囊），行内没有回合数 + 时钟小图标，行首是蓝菱形而不是圆形单位图标",
+   "浮出框是深色底并盖住了被悬停行的数值；原作是白底黑字、挂在行外侧",
+   "红圆 X 压在顶栏右端的货币胶囊上",
+   "顶栏是右对齐三枚带“+”的货币胶囊，原作是左侧产出数字 + 右侧回合 / 纪年 / 时钟",
+   "左上世界追踪器、顶栏下的圆钮排、左下小地图、右下城市面板都没有"
+  ],
+  "diplomacy": [
+   "模板已生效：左列表 + 右主体 + 左下动作按钮列 + 近黑底，红色绗缝布和水彩背景都去掉了",
+   "整屏是一块带金线的大面板，列表和人物都装在里面；原作左侧面板只占约 30% 屏宽、领袖站在面板外的昏暗场景里占约 70%",
+   "领袖是平涂蓝色剪影 + “3D 实时模型（需素材）”标签",
+   "页签是四枚文字页签（cmp.tab = icon、圆形剪影都没生效）；原作是五枚小圆图标页签，最左缘还有一列已结识领袖的圆头像",
+   "列表是带金框的切角行卡（菱形 + 名称 + 百分比），像生产列表；原作是细分隔线的两栏表（左标签、右数值）",
+   "面板顶部没有圆形阵营勋章 + 两行小型大写名（领袖名 / 帝国名）",
+   "动作按钮只有 3 枚、第一枚是实心天蓝；原作是 7 条一样的深蓝圆角条，部分带第二行代价小字",
+   "面板底是暖灰渐变，原作是带垂坠褶皱的黑丝绒"
+  ],
+  "greatpeople": [
+   "模板已生效：近满宽横带、一排 7 张竖卡、横向滚动条、红圆 X、酒红渐变底，巴洛克角花去掉了",
+   "卡片只占横带上三分之一（宽高比约 1 : 1.3），下面一大片空着；原作卡片撑满横带高度（约 1 : 2.7）",
+   "卡面是商品图（金币、宝石、药瓶、钥匙、卷轴）+ “¥ 价格”；原作是圆形凹龛里的骨白浮雕半身像 + 前景职业道具，顶端三行小型大写（职业 / 人名 / 时代）",
+   "卡里没有效果描述、招募进度小表、金币 / 信仰两枚价格胶囊和全宽 Biography 按钮",
+   "标题“图鉴”在左上，没有藏青标题带；原作藏青带居中写 GREAT PEOPLE",
+   "页签是左对齐四枚文字页签；原作两枚胶囊居中嵌在铜色弧形托槽里",
+   "酒红偏灰褐、发闷，原作酒红更饱和并带竖向细框"
+  ],
+  "wonder": [
+   "上下两条字卡都画出来了（第一轮整屏空白），整体构图对了",
+   "顶部横幅是一块约 1/3 屏宽、带切角金线的小牌；原作是贴顶全宽的细深色条，居中大写“A WORLD WONDER HAS BEEN CREATED!”",
+   "底部是“指挥部：……”的对白字幕条；原作是全宽深条：小型大写奇观名 + 圆形奇观图标 + 一块深色引文框（引语 + 出处）",
+   "示例文字是进入战区 / 对白，不是“奇观落成”宣告与引语",
+   "原作右上有一颗红圆 X，这里没有"
+  ],
+  "skilltree": [
+   "底改成了羊皮纸（第一轮是藏青），关闭钮避开了顶栏；但羊皮纸只是斑驳色块，没有淡草图水印",
+   "节点仍是编号小圆点，排成自上而下的菱形树；原作（凭记忆）横向滚动、按时代分列，节点是左侧圆图标的深蓝横长卡（名称 + 回合数 + 解锁小图标行）",
+   "没有时代列头",
+   "悬停详情框盖住了 3 号节点",
+   "顶栏仍是三枚带“+”的货币胶囊"
+  ],
+  "map": [
+   "第一轮看到的是 3D 局内画面，现在是整屏羊皮纸地图页（对了大方向）",
+   "地图装在一块带藏青标题带“世界地图”的面板里，右上还有“ESC 返回”键位钮；原作战略视图没有面板、标题和关闭控件，只是整屏平面地图 + 原有 HUD",
+   "地图是奇幻手绘插画（山水、城镇），右三成淡成空白纸色；原作是六角格平面制图：羊皮纸色地形 + 符号化单位 / 城市图标 + 平涂边界色",
+   "小地图是深色网格底，叠在羊皮纸大地图上重复且不搭；原作小地图也是浅色羊皮纸",
+   "顶栏仍是三枚带“+”的货币胶囊"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "贴顶全宽深蓝顶栏 + 金线有了（对），但系统圆钮和领袖头像都收进了栏里，顶栏有原作两三倍高；原作是一条细顶栏，圆钮挂在栏下的地图纹窄带上，领袖头像在栏下右侧",
+   "五项产出是金币 / 晶体 / 木材循环（第 4、5 项重复），原作是科技蓝、文化紫、信仰、金币黄、旅游五种着色数字，增量写成上标",
+   "「下一步」是平涂蓝圆 + 青铜细圈 + 「结束」二字，看不出玻璃光泽；原作是黄铜齿轮圈里的玻璃球、只画图标，左侧两颗卫星小钮、上方「CHOOSE RESEARCH」提示条",
+   "小地图是深色网格底 + 回纹金框，原作是浅色羊皮纸地图 + 卷角青铜框，框顶骑一排圆形镜头钮",
+   "领袖圆头像下仍挂一条小血条；世界里没有城市横幅、地块产出小图标与羊皮纸迷雾"
+  ],
+  "city": [
+   "左侧仍是「单位卡」（大圆头像 + 名字 + 三条数值条），只到屏高四成多；原作是贴左缘的全高抽屉：青绿渐变标题条 + 红圆 X + 铜托槽图标页签 + 几十行「标签 … 数值」",
+   "右下没有城市面板（阵营色名牌、带增长环的大圆盾徽、数字栏、回合至增长绿条）",
+   "系统钮已是一排小圆钮（对），结束回合钮仍是平涂蓝圆 + 文字",
+   "顶栏同 hud：产出图标循环重复"
+  ],
+  "build": [
+   "列表行只剩 菱形图标 + 名称，第 2 轮还有的右侧数值也没了；原作每行是圆形单位图标 + 名称 + 回合数 + 时钟小图标",
+   "没有「区域与建筑 / 单位」分组标题胶囊",
+   "页签是带字形占位的胶囊（全 全部 / 火 火力），原作三枚带图标胶囊嵌在铜色托槽里",
+   "悬停框挪到了列表外侧（对），但是灰色半透明底，原作是白底黑字",
+   "左上世界追踪器、顶栏下圆钮排、右下城市面板都没有；左下小地图是深色网格底"
+  ],
+  "diplomacy": [
+   "领袖仍是平涂蓝剪影 + 「3D 实时模型（需素材）」标签",
+   "列表是带金框的切角行卡（菱形 + 名称 + 百分比），原作是细分隔线的两栏表",
+   "动作按钮只有 3 条、第一条天蓝实底，且比左栏面板宽、右端伸出金线外；原作是 7 条一样的深蓝圆角条，部分带代价小字",
+   "面板顶部没有圆形阵营勋章 + 两行小型大写名，标题「指挥部」浮在面板外左上；最左缘没有已结识领袖头像列",
+   "面板是近黑平涂，原作是带垂坠褶皱的黑丝绒"
+  ],
+  "greatpeople": [
+   "7 张竖卡已撑满横带（对），但卡面是商品图 + 名字 + 「¥ 价格」，下半大片空着；原作是圆龛浮雕半身像 + 三行小型大写抬头 + 效果描述 + 招募进度表 + 两枚价格胶囊 + Biography 按钮",
+   "页签是左对齐四枚文字页签；原作两枚胶囊居中嵌在铜色弧形托槽里",
+   "标题带只有左半偏藏青、右半与卡同为酒红；顶栏也跟成了酒红（原作顶栏藏青）",
+   "酒红偏灰褐发闷，原作更饱和、带竖向细框"
+  ],
+  "wonder": [
+   "顶部横幅仍是约 1/3 屏宽的深色小牌，原作是贴顶全宽细深条、居中大写宣告",
+   "底部仍是「指挥部：……」对白字幕条；原作是全宽深条：小型大写奇观名 + 圆形奇观图标 + 深色引文框（引语 + 出处）",
+   "示例文字是进入战区 / 对白，不是奇观落成宣告与引语",
+   "右上没有红圆 X"
+  ],
+  "skilltree": [
+   "节点换成了带图标的切角小方块、已学打绿勾（第 2 轮是编号圆点），但仍是自上而下的菱形树；原作（凭记忆）横向滚动、按时代分列，节点是左侧圆图标的深蓝横长卡（名称 + 回合数 + 解锁小图标）",
+   "没有时代列头",
+   "羊皮纸上没有淡草图水印",
+   "页头「技能树」是很淡的小字，原作页头是藏青标题带"
+  ],
+  "map": [
+   "无面板、无标题、无关闭控件（对），但大地图只剩中间一小块奇幻手绘插画，四周是大片空白纸面；原作（凭记忆）是铺满屏的六角格平面制图",
+   "没有符号化单位 / 城市图标与平涂边界色，只有三颗彩色图钉",
+   "小地图是深色网格底，与羊皮纸大地图不搭",
+   "结束回合钮是平涂蓝圆"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "小地图仍是深棕网格底 + 回纹框，参考是浅色羊皮纸 + 彩色领土、卷角青铜框",
+   "城市横幅只是一块深色小名牌，没有左端人口数、阵营色底与首都星",
+   "世界里没有地块产出小图标与羊皮纸迷雾（世界侧）",
+   "顶栏的字与产出图标比参考小、偏暗"
+  ],
+  "city": [
+   "左侧城市详情只有十行「标签 … 数值」、下半栏空着；原作是几十行分组密集行",
+   "右下城市面板中间是数字增长环，没有大圆盾徽与阵营色名牌",
+   "系统圆钮排挤在右下面板上方的屏幕右中，原作骑在城市面板顶边"
+  ],
+  "build": [
+   "生产行仍只有 图标 + 名称，没有右侧回合数与时钟小图标",
+   "行是高大的单块卡、一屏 6 行，原作是紧凑小行、一屏十多行",
+   "行名按线路色染成红 / 紫 / 绿，原作是白字",
+   "没有右下城市面板与顶栏下的圆钮排"
+  ],
+  "diplomacy": [
+   "领袖仍是蓝色平涂剪影 + 「3D 实时模型（需素材）」",
+   "阵营勋章与名字浮在面板外上方、只写一行名，原作在面板顶部、两行小型大写",
+   "列表行名按线路色染成红 / 紫 / 绿 / 蓝，第一行还有天蓝焦点框；原作是白字、无焦点框",
+   "动作按钮只有 3 条、没有代价副行，原作 7 条"
+  ],
+  "greatpeople": [
+   "圆龛里是通用白色头像剪影，原作是骨白浮雕胸像 + 职业道具",
+   "页头写「图鉴」，标题带不是原作的居中浅色横幅",
+   "卡内文字很小，招募进度表只有两行"
+  ],
+  "wonder": [
+   "上条留边、不贴顶，写的是引语；原作是贴顶细条写「世界奇观已建成」宣告",
+   "下方引文字卡只占约一半宽，原作是全宽深条",
+   "引文内容是指挥部对白，不是奇观引语与出处；右上没有红圆 ✕"
+  ],
+  "skilltree": [
+   "（凭记忆）横长卡是羊皮纸色，原作是深蓝卡",
+   "页头标题带与顶栏都是羊皮纸色、标题是淡金小字，原作是藏青标题带",
+   "羊皮纸上没有淡草图水印",
+   "悬停详情框压在左下底边，被裁掉一截"
+  ],
+  "map": [
+   "（凭记忆）六角制图只占画面中间约四成，四周是空白纸面；原作铺满全屏",
+   "小地图是灰网格，与六角制图不搭",
+   "单位 / 城市符号很少，只有两枚方章与几颗图钉"
+  ]
+ },
+ "revisions": [
+  "base：删掉 ast.ornaments = badgeBase（月桂圆章），vis.ornament 保持 1、无母题 → 面板只剩双金线 + 小切角",
+  "base：col.accent 改成文明 6 的天蓝 #3fa9e0、col.accent2 改金 #c9a24a：选中页签、主按钮、下一步圆钮、进度条变蓝，金色只留在描边（vis.strokeColor = metal）",
+  "base：删掉 vis.silhouette@icon = circle（它把所有主按钮 / 选中页签都画成椭圆）",
+  "base：flow.chrome = topCurrency 从 base 挪到保留顶栏的四屏（build / greatpeople / skilltree / map）；flow.chrome 是 union 参数，放在 base 里外交屏就去不掉",
+  "hud：删掉参考图里没有的目标清单和盾徽通知；队伍改 portraitRow（一排小圆头像）0.55；资源改 pills（深色胶囊，比浮字更像顶栏）；系统钮缩到 0.65；hier.emphasis 去掉 size（它把 CTA 拉到 ≥ 1.4 倍），CTA 缩到 0.75、跟强调色变蓝；加 el.selection = tag 当世界里的城市名牌；el.overlay 去掉菱形 gridHighlight，只留地块状态图标",
+  "city：宽单位面板改成 el.selection = card 锚左上 1.3 倍（竖长面板 + 圆形城徽 + 数值条，近似左侧城市详情抽屉）；系统钮挪到右下、在结束回合钮上方并缩到 0.55；队伍改小圆头像排；资源 pills；CTA 0.75",
+  "build：套 tpl.build 再改写：lay.container = drawer（panelSize 0.42，四个页签才装得下）、collection + column + rowCard 列表、cmp.listRow 带数值、lay.detail = transient（悬停 tooltip）、ix.close = xOutside（红圆 X）、ix.confirm = instant（模板的幽灵预览 ✓✕ 不画）、cnt.elements 清空（模板元素会排进抽屉里）、加顶栏 chrome、typ.baseSize 12",
+  "diplomacy：套 tpl.npc 再改写成 fullscreen + splitLR：左侧页签 + 4 行 icon / title / value 列表，右侧角色主体（3D 模型，需素材占位），el.choices 按钮列锚左下 0.8；底色改近黑渐变、ast.core 回程序填充（去掉红色绗缝布），背后 ast.bgArt = solid 黑场；ix.skip / continueCue / 打字机都关掉；ix.mode = select（不再补“取消 / 确定”）；红圆 X",
+  "greatpeople：套 tpl.codex，ast.container = none、lay.detail = none 去掉手账和常驻详情；modal panelSize 1（88% 宽横带）、grid 7 列 tallCard × 7 = 一排 7 张竖卡；酒红渐变底；去掉巴洛克角花；横向滚动条；ix.confirm = instant 去掉“确认选择”；红圆 X；加顶栏 chrome",
+  "wonder：去掉 rel.hudVisibility = hidden（过场模板是 overlay 容器，元素走 HUD 排版，hidden 会把它们一起隐藏）；顶部 banner 0.75 + 底部 bar 字幕 0.85；ix.skip = none",
+  "skilltree：面板内芯改羊皮纸（ast.core = texture + parchment，字色自动转深），背后黑场，关闭钮改 xTopRight 避开顶栏 chrome",
+  "map：tpl.worldmap 改 fullscreen 标准面板：手绘羊皮纸地图铺满（vis.mapStyle = parchment，未探索 = 留白纸色），保留小地图和蓝色结束回合钮；lay.detail = none（键鼠派生出的悬停详情这里不需要），ix.close = keyGlyph（不能不画关闭控件，取最轻的一种）",
+  "R3 前（M12a 之后）：base 加 col.surface@tooltip / col.text@tooltip（白底黑字悬停框）；hud / city 加 lay.hudOrg = edgeBar + lay.hudEdge [top]（贴顶细顶栏）、el.resources.count 5（五项产出）、el.cta 补 ast.frame = plainNinePatch + vis.gloss = topShine（青铜圈玻璃球；city 另补 frameMat bronze）、el.party.label hide + valueLabel none（领袖排只剩圆头像）；city 的 el.selection 锚点 tl → ml（顶栏收走上排元素，城市详情留在左侧、不被收进顶栏）；build / greatpeople / skilltree / map 的 flow.chrome topCurrency → statusBar（左产出、右回合，无 +）；build 加 lay.drawerFlush、左下小地图（el.minimap + anchorSpace = screen）、col.surface@titleBar 青绿标题带 + lay.titleAlign center；greatpeople 加 lay.cellAspect 0.37（竖卡撑满横带）、藏青标题带 + 居中；diplomacy 加 lay.splitRatio 0.7（领袖占七成）；map 加 lay.mapBleed on + lay.titlePos / ix.close = none（无框无标题的战略视图），小地图与结束回合钮 anchorSpace = screen。diplomacy 的 vis.silhouette@tab = circle 第二轮已写，未重复。",
+  "R4 前（M12b 之后）：base 加 vis.fill@tooltip = solid + vis.opacity@tooltip 1（白底黑字悬停框不再是灰色半透明）；hud / city：el.toolbar（hud）/ el.party 写 elx.edgeBar = exclude（系统圆钮与领袖头像不再被吸进顶栏，顶栏回到一条细栏）、el.party.form = avatarRow（只剩小圆头像）、el.timer.form = turnDate（回合 · 纪年 · 时钟）、el.resources.valueLabelPos = superscript（增量写成上标）、「下一步」ast.frame@el.cta = gear + cmp.button@el.cta = icon（齿轮圈玻璃球、只画图标，map 屏同改并补 frameMat bronze）；hud 另加 el.cta.satellites = [button, prompt] + satelliteSide l（左侧两颗卫星钮 + 上方 CHOOSE RESEARCH 提示条）、el.minimap.cornerCurl = all + satellites [button] × 4 @ t（卷角 + 顶边镜头钮；底图随 base 的 parchment 画风）、cnt.elements 加 el.worldLabel = [nameplate]（世界城市横幅）；city：el.selection.form = sidePanel + edge left（贴左全高城市详情，scale 1.3 → 1）、cnt.elements 加 el.selection#2 = cityPanel @ br（右下城市面板）；build：lay.grouping = header + cmp.plate@groupHeader = pill + col.surface / col.text@groupHeader 浅青蓝底深蓝字（区域与建筑 / 单位分组胶囊）、lay.navCount 3 + cmp.tabMount = cradle + ast.frameMat = bronze（三枚页签嵌在铜托槽里）、cnt.elements 加 el.objective = [trackerRows]（anchorSpace screen、tl：左上世界追踪器）；diplomacy：ast.core = texture + ast.coreMat = velvet（黑丝绒）、cmp.listRowBox = plain（细分隔线表，不再是金框行卡）、lay.nav2 = avatarRail + lay.navCount 5（最左已结识领袖头像列 + 5 枚图标页签）、lay.panelHeader = crestTwoLine（阵营勋章 + 两行名）、el.choices.scale 0.8 → 0.65 + el.choices.defaultFocus = none（按钮一样的深蓝条、不伸出左栏）；greatpeople：cmp.card = medallion + cmp.cardParts = [kicker, medallion, iconDesc, progressTable, priceChips, button]（伟人卡整列子件）、lay.navCount 2 + lay.navAlign center + cmp.tabMount = arcCradle + ast.frameMat = bronze（居中弧形托槽）、col.surface@hudBar 藏青（顶栏不再跟成酒红）+ vis.fill@titleBar = solid（标题带整条藏青）；wonder：el.notify.span / el.subtitle.span = full + el.subtitle.form = quoteCard（上下两条全宽字卡带：奇观名 + 圆图标 + 引文框）；skilltree：lay.flowDir = right + lay.grouping = header（横向按时代分列 + 列头）、vis.connector = elbow、cmp.node = rowCard（圆图标深蓝横长卡）、col.surface@titleBar 藏青 + lay.titleAlign center（页头标题带）；map：vis.mapStyle = hexChart（六角格平面制图）。没写 civ6#32 的 el.cta = textWithSubline（模板按钮列逐颗副行没做，单独加一颗 CTA 会和 el.choices 的按钮列分开）"
+ ],
+ "notes": "博物馆展板式的珐琅金线：藏青（城市 / 生产 / 顶栏）、酒红（伟人卡）、黑丝绒（外交）三种有色相的实底面板，统一用双金线 + 小缺角收边；交互强调色是天蓝（选中页签、组标题、下一步玻璃球），金只用在边线；标题是小型大写衬线、正文是无衬线小字；产出固定颜色编码（科技蓝、文化紫、金币黄、食物绿、产能橙），城市与单位按玩家阵营色着色。HUD 散在四角，最醒目的是右下黄铜齿轮圈里的蓝色玻璃“下一步”圆钮；未探索的地图是古地图羊皮纸，与鲜亮的 3D 棋盘世界形成“文物 vs 玩具”的反差。"
+}

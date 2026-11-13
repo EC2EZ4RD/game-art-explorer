@@ -1,0 +1,57 @@
+{
+  "name": "game-art-explorer",
+  "private": true,
+  "version": "0.1.0",
+  "description": "把美术风格拆成维度上的选项：实时调、并排比、边看边学，导出画面描述、AI 编码提示词、可复现配方和 Godot 4 迁移包。An explorer for game art styles built on three.js.",
+  "license": "MIT",
+  "author": "EC2EZ4RD",
+  "homepage": "https://ec2ez4rd.github.io/game-art-explorer/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EC2EZ4RD/game-art-explorer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EC2EZ4RD/game-art-explorer/issues"
+  },
+  "type": "module",
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run typecheck && vite build",
+    "build:single": "npm run typecheck && vite build --mode single",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc -p tsconfig.node.json",
+    "check:content": "tsx scripts/check-content.ts && tsx scripts/gen-game-scenes.ts --check",
+    "check:thumbs": "tsx scripts/bake-thumbs.ts",
+    "check:godot": "tsx scripts/godot-validate.ts",
+    "check:godot:ui": "tsx scripts/godot-validate.ts --ui",
+    "dump:registry": "tsx scripts/dump-registry.ts",
+    "test": "tsx scripts/test-readability.ts && tsx scripts/test-world.ts && tsx scripts/test-knowledge.ts && tsx scripts/test-state.ts && tsx scripts/test-scenes.ts"
+  },
+  "dependencies": {
+    "delaunator": "^5.1.0",
+    "fflate": "^0.8.3",
+    "idb-keyval": "^6.3.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "simplex-noise": "^4.0.3",
+    "three": "^0.186.1",
+    "three-mesh-bvh": "^0.9.16",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@types/delaunator": "^5.0.3",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "subset-font": "^2.9.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

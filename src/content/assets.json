@@ -1,0 +1,2155 @@
+{
+ "note": "由 scripts/assets/register.py 生成，不要手改。文件路径相对 public/assets/tex/。",
+ "assets": [
+  {
+   "id": "xuan_paper",
+   "label": "宣纸",
+   "kind": "paper",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Flat top-down scan of a sheet of raw Chinese xuan paper (rice paper), filling the entire frame edge to edge. Visible long soft plant fibers and short fiber flecks, subtle cloudy variations in pulp density, very faint mottling, warm off-white tone. Perfectly even shadowless lighting, no vignette, no folds, no creases, no sheet edges, no ink, no objects, no text, no seal. Seamless tileable texture with uniform detail density across the whole image."
+   },
+   "raw": "assets/generated/raw/xuan_paper.png",
+   "files": {
+    "gray": "xuan_paper.png"
+   },
+   "meta": {
+    "seam": 0.9794453774984544,
+    "mean": 0.6218830516835766
+   },
+   "process": "去大尺度明暗 → 灰度 → 缩到 1024 → 偏移半格方差保持混合（去缝）→ 拉满色阶",
+   "usedBy": [
+    "surface.paperTex"
+   ],
+   "limits": "只存明暗起伏（颜色来自色板纸色）",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "watercolor_cold",
+   "label": "冷压水彩纸",
+   "kind": "paper",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Flat top-down macro scan of cold-press (NOT surface) 300gsm watercolor paper, pure white, filling the entire frame. Pronounced irregular tooth: soft rounded hills and valleys of varying size, read only as gentle grey shading under perfectly even diffuse light. No paint, no pigment, no vignette, no sheet edges, no shadows cast by objects, no text. Seamless tileable texture, uniform detail density across the whole image."
+   },
+   "raw": "assets/generated/raw/watercolor_cold.png",
+   "files": {
+    "height": "watercolor_cold_h.png"
+   },
+   "meta": {
+    "seam": 1.0616963864146105
+   },
+   "process": "同宣纸；另由高度图按 Sobel 生成可平铺法线（OpenGL 约定）",
+   "usedBy": [
+    "surface.paperTex"
+   ],
+   "limits": "高度来自照片明暗，不是真实测量的起伏",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "watercolor_hot",
+   "label": "热压水彩纸",
+   "kind": "paper",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Flat top-down macro scan of hot-press watercolor paper, pure white, filling the entire frame. Smooth surface with very fine, subtle grain and faint felt-blanket marks, barely visible soft grey variation under perfectly even diffuse light. No paint, no pigment, no vignette, no sheet edges, no text. Seamless tileable texture, uniform detail density across the whole image."
+   },
+   "raw": "assets/generated/raw/watercolor_hot.png",
+   "files": {
+    "height": "watercolor_hot_h.png"
+   },
+   "meta": {
+    "seam": 1.0325446492498804
+   },
+   "process": "同冷压水彩纸",
+   "usedBy": [
+    "surface.paperTex"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "kraft_paper",
+   "label": "牛皮纸",
+   "kind": "paper",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Flat top-down scan of plain brown kraft paper filling the entire frame edge to edge. Visible short fibers, small dark speckles and lighter flecks, gentle irregular color variation, matte surface. Perfectly even shadowless lighting, no folds, no creases, no wrinkles, no sheet edges, no vignette, no text, no stamps. Seamless tileable texture with uniform detail density across the whole image."
+   },
+   "raw": "assets/generated/raw/kraft_paper.png",
+   "files": {
+    "color": "kraft_paper.png"
+   },
+   "meta": {
+    "seam": 1.0592377185821533,
+    "mean": 0.6356652975082397
+   },
+   "process": "去大尺度明暗 → 缩到 1024 → 去缝（保留颜色）",
+   "usedBy": [
+    "surface.paperTex"
+   ],
+   "limits": "彩色纸：纸色混入时用纸本身的颜色代替色板纸色",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "silk_juan",
+   "label": "绢本",
+   "kind": "paper",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Flat top-down scan of aged plain-weave silk painting ground (juan, the silk used for Chinese gongbi painting), filling the entire frame. Warm pale tan to light ochre tone, a fine regular warp-and-weft weave visible at close scale, subtle uneven toning and soft faded age stains. No painting, no ink, no figures, no text, no seals, no edges, no vignette, perfectly even lighting. Seamless tileable texture with uniform detail density across the whole image."
+   },
+   "raw": "assets/generated/raw/silk_juan.png",
+   "files": {
+    "color": "silk_juan.png"
+   },
+   "meta": {
+    "seam": 1.2660541534423828,
+    "mean": 0.6451226472854614
+   },
+   "process": "同牛皮纸",
+   "usedBy": [
+    "surface.paperTex"
+   ],
+   "limits": "原图偏橙；纸色混入低时只取明暗",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "brush_strokes_a",
+   "label": "毛笔长笔触 8 种",
+   "kind": "stroke-atlas",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Reference sheet of 8 isolated Chinese calligraphy brush strokes in black sumi ink on pure flat white paper, laid out as 2 columns by 4 rows with generous white space around each stroke so that no strokes touch or overlap. Every stroke is a single roughly horizontal stroke with a different start and finish: 1) blunt hidden-tip start with rounded end, 2) sharp exposed-tip start tapering to a point, 3) heavy press then lift to thin, 4) thin start swelling to a heavy end, 5) dry brush with flying-white streaks (feibai), 6) wet stroke with soft blooming edges, 7) slightly curved stroke with a hooked end, 8) broken dry stroke made with the side of the brush. Pure white background, no text, no labels, no numbers, no seals, no shadows, no paper texture."
+   },
+   "raw": "assets/generated/raw/brush_strokes_a.png",
+   "files": {
+    "alpha": "brush_strokes_a.png"
+   },
+   "meta": {
+    "count": 8,
+    "found": 8,
+    "grid": [
+     2,
+     4
+    ],
+    "rects": [
+     {
+      "x": 0.0078125,
+      "y": 0.0810546875,
+      "w": 0.484375,
+      "h": 0.087890625
+     },
+     {
+      "x": 0.5078125,
+      "y": 0.1025390625,
+      "w": 0.484375,
+      "h": 0.0439453125
+     },
+     {
+      "x": 0.0078125,
+      "y": 0.333984375,
+      "w": 0.484375,
+      "h": 0.0810546875
+     },
+     {
+      "x": 0.5078125,
+      "y": 0.328125,
+      "w": 0.484375,
+      "h": 0.0927734375
+     },
+     {
+      "x": 0.0078125,
+      "y": 0.5703125,
+      "w": 0.4833984375,
+      "h": 0.1083984375
+     },
+     {
+      "x": 0.5078125,
+      "y": 0.5732421875,
+      "w": 0.484375,
+      "h": 0.103515625
+     },
+     {
+      "x": 0.0078125,
+      "y": 0.8310546875,
+      "w": 0.484375,
+      "h": 0.087890625
+     },
+     {
+      "x": 0.5078125,
+      "y": 0.833984375,
+      "w": 0.484375,
+      "h": 0.0810546875
+     }
+    ]
+   },
+   "process": "1 − 亮度得墨量 → 连通域切出每一笔 → 等比放进 2×4 格（每格 512×256）",
+   "usedBy": [
+    "surface.strokes"
+   ],
+   "limits": "笔触都是横向的；按笔触方向旋转使用",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "brush_marks_b",
+   "label": "短笔点 16 种",
+   "kind": "stroke-atlas",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Reference sheet of 16 isolated Chinese ink-painting brush marks in black and grey sumi ink on pure flat white paper, laid out as a 4 by 4 grid with generous white space around each mark so that no marks touch or overlap. Include a variety of short marks: round dots, elongated horizontal dots, leaf-shaped strokes, short vertical strokes, a comma-like stroke, a dry scumbled patch, a wet grey wash blot with a darker rim, a split-brush mark, small moss dots cluster, a bamboo-leaf stroke, a short hook, a pale wet dab, a textured dry dab, a thick blunt dab, a thin flick, a tapered drop."
+   },
+   "raw": "assets/generated/raw/brush_marks_b.png",
+   "files": {
+    "alpha": "brush_marks_b.png"
+   },
+   "meta": {
+    "count": 16,
+    "found": 16,
+    "grid": [
+     4,
+     4
+    ],
+    "rects": [
+     {
+      "x": 0.0078125,
+      "y": 0.0126953125,
+      "w": 0.234375,
+      "h": 0.224609375
+     },
+     {
+      "x": 0.2578125,
+      "y": 0.087890625,
+      "w": 0.234375,
+      "h": 0.0732421875
+     },
+     {
+      "x": 0.51171875,
+      "y": 0.0078125,
+      "w": 0.2255859375,
+      "h": 0.234375
+     },
+     {
+      "x": 0.83203125,
+      "y": 0.0078125,
+      "w": 0.0849609375,
+      "h": 0.2333984375
+     },
+     {
+      "x": 0.0498046875,
+      "y": 0.2578125,
+      "w": 0.1494140625,
+      "h": 0.234375
+     },
+     {
+      "x": 0.2578125,
+      "y": 0.2919921875,
+      "w": 0.234375,
+      "h": 0.1650390625
+     },
+     {
+      "x": 0.5078125,
+      "y": 0.263671875,
+      "w": 0.234375,
+      "h": 0.22265625
+     },
+     {
+      "x": 0.7802734375,
+      "y": 0.2578125,
+      "w": 0.1884765625,
+      "h": 0.234375
+     },
+     {
+      "x": 0.009765625,
+      "y": 0.5078125,
+      "w": 0.23046875,
+      "h": 0.234375
+     },
+     {
+      "x": 0.283203125,
+      "y": 0.5078125,
+      "w": 0.18359375,
+      "h": 0.234375
+     },
+     {
+      "x": 0.5126953125,
+      "y": 0.5078125,
+      "w": 0.224609375,
+      "h": 0.2333984375
+     },
+     {
+      "x": 0.7578125,
+      "y": 0.5283203125,
+      "w": 0.234375,
+      "h": 0.193359375
+     },
+     {
+      "x": 0.0078125,
+      "y": 0.7607421875,
+      "w": 0.234375,
+      "h": 0.228515625
+     },
+     {
+      "x": 0.287109375,
+      "y": 0.7578125,
+      "w": 0.1748046875,
+      "h": 0.234375
+     },
+     {
+      "x": 0.51171875,
+      "y": 0.7578125,
+      "w": 0.2265625,
+      "h": 0.234375
+     },
+     {
+      "x": 0.8349609375,
+      "y": 0.7578125,
+      "w": 0.080078125,
+      "h": 0.234375
+     }
+    ]
+   },
+   "process": "同长笔触，4×4 格（每格 256×256）",
+   "usedBy": [
+    "surface.strokes"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "cun_pima",
+   "label": "披麻皴",
+   "kind": "cun",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Seamless tileable monochrome texture of Chinese landscape painting \"hemp-fiber\" texture strokes (pima cun): long, soft, slightly wavy, roughly parallel lines in light-to-mid grey ink with a few darker accents, flowing mostly vertically and evenly distributed over the whole frame, as used to model earthen mountain slopes in Dong Yuan and Huang Gongwang paintings. Pure white paper between strokes. No mountain outlines, no composition, no trees, no text, no seals; only the stroke texture uniformly filling the frame."
+   },
+   "raw": "assets/generated/raw/cun_pima.png",
+   "files": {
+    "gray": "cun_pima.png"
+   },
+   "meta": {
+    "seam": 0.9664457024229475,
+    "mean": 0.142842547852848
+   },
+   "process": "反相（白 = 墨）→ 去缝 → 拉满色阶",
+   "usedBy": [
+    "material.cun"
+   ],
+   "limits": "平铺纹理，皴笔不随山形走势变化",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "cun_fupi",
+   "label": "斧劈皴",
+   "kind": "cun",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Seamless tileable monochrome texture of Chinese landscape painting \"axe-cut\" texture strokes (fupi cun): short, angular, broad wedge-shaped strokes made with the side of the brush, mid-to-dark grey ink with dry broken edges, slanting diagonally, overlapping in layers and evenly distributed over the whole frame, as used for rocky cliffs in Li Tang and Ma Yuan paintings. Pure white paper between strokes. No mountain outlines, no composition, no trees, no text, no seals; only the stroke texture uniformly filling the frame."
+   },
+   "raw": "assets/generated/raw/cun_fupi.png",
+   "files": {
+    "gray": "cun_fupi.png"
+   },
+   "meta": {
+    "seam": 1.0955855941769352,
+    "mean": 0.5001048123683383
+   },
+   "process": "同披麻皴",
+   "usedBy": [
+    "material.cun"
+   ],
+   "limits": "同披麻皴",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "cun_midian",
+   "label": "米点皴",
+   "kind": "cun",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Seamless tileable monochrome texture of Chinese landscape painting \"Mi dots\" (midian cun): horizontally elongated soft ink dots laid wet-on-wet in several grey tones from pale to dark, overlapping in loose horizontal bands, evenly scattered over the whole frame, as in the misty hills of Mi Fu and Mi Youren. Pure white paper between dots. No mountain outlines, no composition, no trees, no text, no seals; only the dot texture uniformly filling the frame."
+   },
+   "raw": "assets/generated/raw/cun_midian.png",
+   "files": {
+    "gray": "cun_midian.png"
+   },
+   "meta": {
+    "seam": 1.0359152322449185,
+    "mean": 0.33140359896976557
+   },
+   "process": "同披麻皴",
+   "usedBy": [
+    "material.cun"
+   ],
+   "limits": "同披麻皴",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "clay_fingerprint",
+   "label": "黏土指纹",
+   "kind": "detail",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Grayscale height map (displacement map) of a hand-sculpted modeling clay / plasticine surface viewed straight on: fingerprint ridges and smudges, small sculpting-tool marks, shallow thumb presses and gentle irregular dents, distributed evenly. White = raised, black = recessed, mid grey = base surface. No lighting, no shading, no specular highlights, no color, no edges. Seamless tileable texture filling the entire frame with uniform detail density."
+   },
+   "raw": "assets/generated/raw/clay_fingerprint.png",
+   "files": {
+    "height": "clay_fingerprint_h.png",
+    "normal": "clay_fingerprint_n.png"
+   },
+   "meta": {
+    "seam": 1.062061044246745,
+    "normalStrength": 4.0,
+    "normalConvention": "OpenGL (+Y up)"
+   },
+   "process": "去大尺度明暗 → 去缝 → 高度图 → Sobel 法线（强度 4）",
+   "usedBy": [
+    "material.detail"
+   ],
+   "limits": "模型画成了打光的黏土照片，用明暗当高度，凹凸方向可能有少量反转",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "knit_wool",
+   "label": "针织（平针）",
+   "kind": "detail",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Grayscale height map (displacement map) of stockinette knitted chunky wool fabric viewed straight on: rows of V-shaped knit stitches in a perfectly regular grid, exactly 8 stitches across and 12 rows down, slightly fuzzy yarn fibers. White = raised yarn, black = gaps between stitches. No lighting, no shading, no color, no edges. Seamless tileable texture filling the entire frame."
+   },
+   "raw": "assets/generated/raw/knit_wool.png",
+   "files": {
+    "height": "knit_wool_h.png",
+    "normal": "knit_wool_n.png"
+   },
+   "meta": {
+    "crop": [
+     2044,
+     1803
+    ],
+    "seam": 1.725701341849234,
+    "normalStrength": 5.0,
+    "normalConvention": "OpenGL (+Y up)"
+   },
+   "process": "按自相关找出针脚周期（横 256、竖约 164 像素），裁成整数个周期再缩放，不做混合（混合会把针脚错位糊掉）",
+   "usedBy": [
+    "material.detail"
+   ],
+   "limits": "实际是 8 针 × 11 行，不是提示词要求的 12 行；裁切后纵向拉伸约 13%",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "peel_mask",
+   "label": "剥落做旧",
+   "kind": "field",
+   "batch": 1,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Pure black-and-white mask texture of weathering: peeling, flaking old paint and plaster. White = intact paint layer, black = exposed underlayer. Irregular chips, flakes, hairline cracks and worn patches clustered in some areas and sparse in others, about 35 percent black coverage overall, crisp edges, flat 2-tone only. No shading, no grey gradients, no color, no objects, no text. Seamless tileable texture filling the entire frame."
+   },
+   "raw": "assets/generated/raw/peel_mask.png",
+   "files": {
+    "field": "peel_mask.png"
+   },
+   "meta": {
+    "crop": [
+     2044,
+     2044
+    ],
+    "seam": 1.1408023169189152,
+    "coverageBlack": 0.2069263458251953,
+    "use": "剥落 = field < 做旧程度；0.5 = 原图里的剥落范围"
+   },
+   "process": "二值遮罩 → 环绕距离场（剥落区 0、完好区越远越接近 1、边界 = 0.5）+ 细噪声；做旧程度截取这个场，剥落从现有斑块向外扩",
+   "usedBy": [
+    "material.weathering"
+   ],
+   "limits": "原图剥落覆盖约 21%（提示词要求 35%）；做旧程度 0.5 对应原图",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "pixel_walk_32",
+   "label": "像素角色 A（SNES 16 色）",
+   "kind": "sprite-sheet",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Pixel art sprite sheet for a top-down RPG: a small young traveler wearing a conical straw hat, blue tunic, brown trousers and a small backpack. Exactly 4 rows by 4 columns of frames on an invisible uniform grid, every frame the same size with the character centered in it: row 1 walking toward the viewer (down), row 2 walking left, row 3 walking right, row 4 walking away (up); each row is a 4-frame walk cycle. Authentic 32x32-pixel sprites upscaled with hard square nearest-neighbour pixels, no anti-aliasing, no blur, 1-pixel dark outline, limited palette of about 16 colors, 3/4 top-down view like classic SNES RPGs. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text, no shadows, identical character design in every frame."
+   },
+   "raw": "assets/generated/raw/pixel_walk_32.png",
+   "files": {
+    "sheet": "pixel_walk_32.png"
+   },
+   "meta": {
+    "pitch": 9.75,
+    "phase": 6.5,
+    "pitchConfidence": 0.7912852764129639,
+    "frames": 16,
+    "cell": 48,
+    "grid": [
+     4,
+     4
+    ],
+    "rows": [
+     "down",
+     "left",
+     "right",
+     "up"
+    ],
+    "colors": 16,
+    "spriteSize": [
+     28,
+     40
+    ],
+    "filter": "nearest"
+   },
+   "process": "品红差值抠像 → 颜色跳变自相关测出真实像素尺寸（9.75 屏幕像素 = 1 像素）与相位 → 每个大像素取中心中位色 → 16 帧统一量化到 16 色 → 48×48 一格、脚底对齐",
+   "usedBy": [
+    "shape.carrier"
+   ],
+   "limits": "模型没按 32 像素画：实际约 28×40 像素；帧间腿部变化小",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "pixel_walk_64",
+   "label": "像素角色 B（HD-2D 细明暗）",
+   "kind": "sprite-sheet",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Pixel art sprite sheet in HD-2D style (like Octopath Traveler): a young traveler wearing a conical straw hat, blue tunic, brown trousers and a small backpack. Exactly 4 rows by 4 columns of frames on an invisible uniform grid, every frame the same size with the character centered in it: row 1 walking toward the viewer (down), row 2 walking left, row 3 walking right, row 4 walking away (up); each row is a 4-frame walk cycle. Authentic 64x64-pixel sprites upscaled with hard square nearest-neighbour pixels, no anti-aliasing, no blur, dark outline, palette of about 24 colors with soft pixel shading, 3/4 top-down view. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text, no shadows, identical character design in every frame."
+   },
+   "raw": "assets/generated/raw/pixel_walk_64.png",
+   "files": {
+    "sheet": "pixel_walk_64.png"
+   },
+   "meta": {
+    "pitch": 11.0,
+    "phase": 9.25,
+    "pitchConfidence": 0.7662302851676941,
+    "frames": 16,
+    "cell": 48,
+    "grid": [
+     4,
+     4
+    ],
+    "rows": [
+     "down",
+     "left",
+     "right",
+     "up"
+    ],
+    "colors": 24,
+    "spriteSize": [
+     25,
+     41
+    ],
+    "filter": "nearest"
+   },
+   "process": "同 A，量化到 24 色",
+   "usedBy": [
+    "shape.carrier"
+   ],
+   "limits": "提示词要 64 像素，实际约 25×41 像素（和 A 一样小），区别只在明暗层次",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "paper_puppet_parts",
+   "label": "纸片人分件（10 件）",
+   "kind": "puppet",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Character parts for 2D cut-out (paper puppet) animation, laid out separately and spaced well apart on a flat pure white background: a young traveler in side view facing right, wearing a conical straw hat, blue tunic and brown trousers. Separate pieces: head with hat, torso with tunic, two upper arms, two forearms with hands, two thighs, two shins with feet. No piece touches another. Joint ends are rounded with extra overlap for pivoting. Style: gouache painted on textured card, visible hand-cut edges with a thin white paper border around every piece. Do not show the assembled figure. No text, no labels, no shadows."
+   },
+   "raw": "assets/generated/raw/paper_puppet_parts.png",
+   "files": {
+    "head": "paper_puppet_parts_head.png",
+    "torso": "paper_puppet_parts_torso.png",
+    "thighBack": "paper_puppet_parts_thighBack.png",
+    "thighFront": "paper_puppet_parts_thighFront.png",
+    "shinBack": "paper_puppet_parts_shinBack.png",
+    "shinFront": "paper_puppet_parts_shinFront.png",
+    "upperArmBack": "paper_puppet_parts_upperArmBack.png",
+    "upperArmFront": "paper_puppet_parts_upperArmFront.png",
+    "forearmBack": "paper_puppet_parts_forearmBack.png",
+    "forearmFront": "paper_puppet_parts_forearmFront.png"
+   },
+   "meta": {
+    "parts": {
+     "head": {
+      "file": "paper_puppet_parts_head.png",
+      "src": [
+       106,
+       52,
+       729,
+       671
+      ],
+      "size": [
+       364,
+       335
+      ],
+      "top": [
+       0.4689,
+       0.0721
+      ],
+      "bottom": [
+       0.4612,
+       0.9321
+      ]
+     },
+     "torso": {
+      "file": "paper_puppet_parts_torso.png",
+      "src": [
+       807,
+       176,
+       452,
+       1018
+      ],
+      "size": [
+       226,
+       509
+      ],
+      "top": [
+       0.5037,
+       0.0614
+      ],
+      "bottom": [
+       0.4942,
+       0.9359
+      ]
+     },
+     "thighBack": {
+      "file": "paper_puppet_parts_thighBack.png",
+      "src": [
+       129,
+       1141,
+       414,
+       783
+      ],
+      "size": [
+       207,
+       391
+      ],
+      "top": [
+       0.6792,
+       0.0649
+      ],
+      "bottom": [
+       0.2638,
+       0.9336
+      ]
+     },
+     "thighFront": {
+      "file": "paper_puppet_parts_thighFront.png",
+      "src": [
+       631,
+       1164,
+       367,
+       762
+      ],
+      "size": [
+       183,
+       381
+      ],
+      "top": [
+       0.3903,
+       0.0661
+      ],
+      "bottom": [
+       0.5513,
+       0.934
+      ]
+     },
+     "shinBack": {
+      "file": "paper_puppet_parts_shinBack.png",
+      "src": [
+       1149,
+       1308,
+       391,
+       625
+      ],
+      "size": [
+       195,
+       312
+      ],
+      "top": [
+       0.2391,
+       0.0666
+      ],
+      "bottom": [
+       0.5359,
+       0.9342
+      ]
+     },
+     "shinFront": {
+      "file": "paper_puppet_parts_shinFront.png",
+      "src": [
+       1601,
+       1315,
+       381,
+       618
+      ],
+      "size": [
+       190,
+       309
+      ],
+      "top": [
+       0.2422,
+       0.0668
+      ],
+      "bottom": [
+       0.5665,
+       0.9344
+      ]
+     },
+     "upperArmBack": {
+      "file": "paper_puppet_parts_upperArmBack.png",
+      "src": [
+       1322,
+       205,
+       249,
+       529
+      ],
+      "size": [
+       124,
+       264
+      ],
+      "top": [
+       0.5771,
+       0.0683
+      ],
+      "bottom": [
+       0.4751,
+       0.9279
+      ]
+     },
+     "upperArmFront": {
+      "file": "paper_puppet_parts_upperArmFront.png",
+      "src": [
+       1714,
+       207,
+       245,
+       521
+      ],
+      "size": [
+       122,
+       260
+      ],
+      "top": [
+       0.4043,
+       0.0696
+      ],
+      "bottom": [
+       0.514,
+       0.9264
+      ]
+     },
+     "forearmBack": {
+      "file": "paper_puppet_parts_forearmBack.png",
+      "src": [
+       1387,
+       776,
+       201,
+       552
+      ],
+      "size": [
+       100,
+       276
+      ],
+      "top": [
+       0.4437,
+       0.0684
+      ],
+      "bottom": [
+       0.5388,
+       0.9302
+      ]
+     },
+     "forearmFront": {
+      "file": "paper_puppet_parts_forearmFront.png",
+      "src": [
+       1700,
+       783,
+       198,
+       544
+      ],
+      "size": [
+       99,
+       272
+      ],
+      "top": [
+       0.3825,
+       0.0678
+      ],
+      "bottom": [
+       0.6053,
+       0.9298
+      ]
+     }
+    },
+    "found": 10,
+    "facing": "right",
+    "pixelsPerMeter": "按身高缩放，见引擎 puppet.ts"
+   },
+   "process": "与图像边缘连通的近白像素为背景（纸边约 243 保留）→ 每块只留自己的连通域 → 按原图位置标注部件名 → 算出上下关节点（最上 / 最下 10% 像素的质心）",
+   "usedBy": [
+    "shape.carrier"
+   ],
+   "limits": "只有侧面（朝右），朝左时水平翻转；没有正面与背面",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "jianzhi_window",
+   "label": "窗花（团花）",
+   "kind": "mask",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "A single Chinese paper-cut window flower (chuanghua): solid flat red paper cut into a circular, radially symmetric design with a peony in the center, surrounded by auspicious clouds, plum blossoms and fine lattice cutwork, shown perfectly flat and straight-on on a pure white background, centered with margin around it. Crisp cut edges, solid uniform red, no shading, no paper texture, no shadows, no text, no other objects."
+   },
+   "raw": "assets/generated/raw/jianzhi_window.png",
+   "files": {
+    "mask": "jianzhi_window.png"
+   },
+   "meta": {
+    "coverage": 0.33260637521743774
+   },
+   "process": "红度 = R − (G+B)/2 → 遮罩（白 = 纸）",
+   "usedBy": [
+    "material.papercut"
+   ],
+   "limits": "颜色交给色板的强调色",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "jianzhi_lattice",
+   "label": "冰裂梅花剪纸（可平铺）",
+   "kind": "mask",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "Seamless tileable pattern of Chinese red paper-cut: an all-over repeating lattice of ice-crack (bingliewen) lines with small plum blossoms inside the cells, solid flat red paper with the cut-out holes showing pure white background, crisp edges, consistent line width, straight-on flat view. No shading, no paper texture, no shadows, no text. The pattern fills the entire frame edge to edge with uniform density."
+   },
+   "raw": "assets/generated/raw/jianzhi_lattice.png",
+   "files": {
+    "mask": "jianzhi_lattice.png"
+   },
+   "meta": {
+    "crop": [
+     2044,
+     2044
+    ],
+    "coverage": 0.41492098569869995,
+    "seam": 2.2418720722198486
+   },
+   "process": "红度遮罩 → 原图左右已无缝；上下找与顶边最吻合的裁切高度后缩放",
+   "usedBy": [
+    "material.papercut"
+   ],
+   "limits": "上下接缝处冰裂线有轻微错位",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "fx_smoke",
+   "label": "2D 烟雾 8 帧",
+   "kind": "flipbook",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "2D hand-drawn anime-style effect animation sprite sheet of a puff of smoke: exactly 8 frames on a 4-column by 2-row grid of equal cells, read left to right then top to bottom: small burst, expanding billows, larger billows, peak size, breaking apart, thinning wisps, faint wisps, almost gone. Cel-shaded with 3 flat tones of warm grey and white and a clean dark-grey outline, like Japanese game and Ghibli effects animation. Each frame centered in its cell and not touching its neighbours. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text."
+   },
+   "raw": "assets/generated/raw/fx_smoke.png",
+   "files": {
+    "sheet": "fx_smoke.png"
+   },
+   "meta": {
+    "grid": [
+     4,
+     2
+    ],
+    "frame": 256,
+    "frames": 8,
+    "order": "左到右、上到下"
+   },
+   "process": "品红差值抠像（min(R,B)−G，浅灰不会被误抠）+ 去溢色 → 每格按行的内容中心裁方 → 预乘缩到 256",
+   "usedBy": [
+    "motion.fx2d"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "fx_explosion",
+   "label": "2D 爆炸 8 帧",
+   "kind": "flipbook",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "2D hand-drawn anime-style effect animation sprite sheet of a fiery explosion: exactly 8 frames on a 4-column by 2-row grid of equal cells, read left to right then top to bottom: bright flash, small fireball, expanding fireball with sparks, peak fireball, fire turning into dark smoke, smoke billowing, smoke dispersing, last embers fading. Cel-shaded with flat yellow, orange, red and dark brown-grey smoke tones and a bold dark outline, like Japanese game effects animation. Each frame centered in its cell and not touching its neighbours. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text."
+   },
+   "raw": "assets/generated/raw/fx_explosion.png",
+   "files": {
+    "sheet": "fx_explosion.png"
+   },
+   "meta": {
+    "grid": [
+     4,
+     2
+    ],
+    "frame": 256,
+    "frames": 8,
+    "order": "左到右、上到下"
+   },
+   "process": "同烟雾",
+   "usedBy": [
+    "motion.fx2d"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "fx_slash",
+   "label": "2D 刀光 8 帧",
+   "kind": "flipbook",
+   "batch": 2,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-13",
+    "prompt": "2D hand-drawn anime-style effect animation sprite sheet of a sword slash: exactly 8 frames on a 4-column by 2-row grid of equal cells, read left to right then top to bottom: thin starting streak, growing crescent arc, full wide crescent swoosh with speed lines, arc at full strength, arc thinning, arc breaking into sparkles, scattered sparkles, last fading sparkles. White core with cyan-blue glow edges, flat cel-shaded tones, crisp shapes, like Japanese action game effects animation. Each frame centered in its cell and not touching its neighbours. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text, no character, no sword."
+   },
+   "raw": "assets/generated/raw/fx_slash.png",
+   "files": {
+    "sheet": "fx_slash.png"
+   },
+   "meta": {
+    "grid": [
+     4,
+     2
+    ],
+    "frame": 256,
+    "frames": 8,
+    "order": "左到右、上到下"
+   },
+   "process": "同烟雾",
+   "usedBy": [
+    "motion.fx2d"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "tam",
+   "label": "色调排线图 TAM（6 级）",
+   "kind": "tam",
+   "batch": 0,
+   "source": {
+    "service": "procedural",
+    "script": "scripts/assets/process.py",
+    "date": "2026-10-13"
+   },
+   "raw": null,
+   "files": {
+    "tones123": "tam_123.png",
+    "tones456": "tam_456.png"
+   },
+   "meta": {
+    "tones": 6,
+    "coverage": [
+     0.060027241706848145,
+     0.17204409837722778,
+     0.28407788276672363,
+     0.3960734009742737,
+     0.50806725025177,
+     0.6200284957885742
+    ],
+    "source": "程序生成"
+   },
+   "process": "Praun et al. 2001：逐级加笔画，暗一级包含亮一级的全部笔画；1–3 级横向、4–6 级加竖向交叉；6 级拆成两张 RGB",
+   "usedBy": [
+    "shading.hatchTex"
+   ],
+   "limits": "笔画是程序画的直线，没有手绘抖动",
+   "license": "程序生成（scripts/assets/process.py），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_frame_gold",
+   "label": "雕花九宫格 · 金",
+   "kind": "ui-frame",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset: an ornate carved GOLD picture-frame border for a nine-slice UI panel, seen perfectly straight-on (orthographic front view, no perspective, no tilt). The frame is a square ring that hugs the outer edge of the image; the frame band is about 11% of the image width on every side. Each of the four corners has a symmetrical baroque acanthus-scroll carving with a small cartouche; the four straight sides between the corners are a simple, uniform, repeating beaded-and-fluted molding pattern so that they can be stretched or tiled without visible change. Polished antique gold with soft even studio lighting, subtle bevel highlights, no cast shadow. The entire empty center inside the frame and everything outside the frame is flat solid pure magenta #FF00FF. No text, no glass, no picture, no background objects."
+   },
+   "raw": "assets/generated/raw/ui_frame_gold.png",
+   "files": {
+    "image": "ui_frame_gold.png",
+    "godot": "ui_frame_gold_godot.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "band": 90,
+    "slice": 182,
+    "sizeGodot": [
+     192,
+     192
+    ],
+    "sliceGodot": 34,
+    "bandGodot": 17,
+    "coverage": 0.25662803649902344
+   },
+   "process": "品红连通域抠内芯 + 斜坡 alpha + 去溢色 → 1024 → 测边带宽与角件伸入量，给九宫格切边；另出 192 的 Godot 变体（切边同比例换算）",
+   "usedBy": [
+    "ast.frame",
+    "ast.frameMat"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_frame_bronze",
+   "label": "雕花九宫格 · 青铜",
+   "kind": "ui-frame",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset: an ornate carved antique BRONZE border for a nine-slice UI panel in Chinese style, seen perfectly straight-on (orthographic front view, no perspective). Square ring hugging the outer edge of the image; the band is about 11% of the image width on every side. Each corner has a symmetrical auspicious-cloud (xiangyun) carving; the four straight sides are a uniform repeating Chinese key-fret (huiwen) meander band so they can be stretched or tiled without visible change. Aged bronze with green verdigris patina in the recesses, soft even lighting, no cast shadow. The entire empty center inside the frame and everything outside the frame is flat solid pure magenta #FF00FF. No text, no picture, no background objects."
+   },
+   "raw": "assets/generated/raw/ui_frame_bronze.png",
+   "files": {
+    "image": "ui_frame_bronze.png",
+    "godot": "ui_frame_bronze_godot.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "band": 97,
+    "slice": 242,
+    "sizeGodot": [
+     192,
+     192
+    ],
+    "sliceGodot": 45,
+    "bandGodot": 18,
+    "coverage": 0.30271053314208984
+   },
+   "process": "品红连通域抠内芯 + 斜坡 alpha + 去溢色 → 1024 → 测边带宽与角件伸入量，给九宫格切边；另出 192 的 Godot 变体（切边同比例换算）",
+   "usedBy": [
+    "ast.frame",
+    "ast.frameMat"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_frame_stone",
+   "label": "雕花九宫格 · 石",
+   "kind": "ui-frame",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset: a carved grey STONE border for a nine-slice UI panel in dark gothic style, seen perfectly straight-on (orthographic front view, no perspective). Square ring hugging the outer edge of the image; the band is about 12% of the image width on every side. Each corner has a symmetrical gothic pointed-arch tracery ornament with a small quatrefoil; the four straight sides are a uniform repeating chiselled stone molding so they can be stretched or tiled without visible change. Weathered limestone with soft even lighting and gentle relief shading, no cast shadow. The entire empty center inside the frame and everything outside the frame is flat solid pure magenta #FF00FF. No text, no moss, no background objects."
+   },
+   "raw": "assets/generated/raw/ui_frame_stone.png",
+   "files": {
+    "image": "ui_frame_stone.png",
+    "godot": "ui_frame_stone_godot.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "band": 87,
+    "slice": 166,
+    "sizeGodot": [
+     192,
+     192
+    ],
+    "sliceGodot": 31,
+    "bandGodot": 16,
+    "coverage": 0.2878236770629883
+   },
+   "process": "品红连通域抠内芯 + 斜坡 alpha + 去溢色 → 1024 → 测边带宽与角件伸入量，给九宫格切边；另出 192 的 Godot 变体（切边同比例换算）",
+   "usedBy": [
+    "ast.frame",
+    "ast.frameMat"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_frame_wood",
+   "label": "平框 · 木",
+   "kind": "ui-frame",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset: a plain sturdy WOODEN frame border for a nine-slice UI panel, cozy farming-game style, seen perfectly straight-on (orthographic front view, no perspective). Square ring hugging the outer edge of the image; the band is about 10% of the image width on every side. Four planks joined at the corners with visible mortise-and-tenon / mitre joints and small wooden pegs; the wood grain runs along each side and is uniform so the sides can be stretched or tiled. Warm honey-brown wood with a soft bevel, even lighting, no cast shadow. The entire empty center inside the frame and everything outside the frame is flat solid pure magenta #FF00FF. No text, no picture, no background objects."
+   },
+   "raw": "assets/generated/raw/ui_frame_wood.png",
+   "files": {
+    "image": "ui_frame_wood.png",
+    "godot": "ui_frame_wood_godot.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "band": 102,
+    "slice": 122,
+    "sizeGodot": [
+     192,
+     192
+    ],
+    "sliceGodot": 23,
+    "bandGodot": 19,
+    "coverage": 0.3138561248779297
+   },
+   "process": "品红连通域抠内芯 + 斜坡 alpha + 去溢色 → 1024 → 测边带宽与角件伸入量，给九宫格切边；另出 192 的 Godot 变体（切边同比例换算）",
+   "usedBy": [
+    "ast.frame",
+    "ast.frameMat"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_frame_leather",
+   "label": "平框 · 皮革",
+   "kind": "ui-frame",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset: a stitched brown LEATHER frame border for a nine-slice UI panel, seen perfectly straight-on (orthographic front view, no perspective). Square ring hugging the outer edge of the image; the band is about 10% of the image width on every side. A single continuous row of cream saddle stitching runs along the middle of the band; each corner has a small round brass rivet. The leather texture and stitching are uniform along each side so the sides can be stretched or tiled. Soft even lighting, slight edge darkening of the leather, no cast shadow. The entire empty center inside the frame and everything outside the frame is flat solid pure magenta #FF00FF. No text, no picture, no background objects."
+   },
+   "raw": "assets/generated/raw/ui_frame_leather.png",
+   "files": {
+    "image": "ui_frame_leather.png",
+    "godot": "ui_frame_leather_godot.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "band": 88,
+    "slice": 98,
+    "sizeGodot": [
+     192,
+     192
+    ],
+    "sliceGodot": 18,
+    "bandGodot": 16,
+    "coverage": 0.26866817474365234
+   },
+   "process": "品红连通域抠内芯 + 斜坡 alpha + 去溢色 → 1024 → 测边带宽与角件伸入量，给九宫格切边；另出 192 的 Godot 变体（切边同比例换算）",
+   "usedBy": [
+    "ast.frame",
+    "ast.frameMat"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_ornament_corners",
+   "label": "角花饰件 4 组",
+   "kind": "ui-ornament",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset sheet: four decorative L-shaped CORNER ornaments for UI panels, arranged on a 2 by 2 grid of equal cells with generous empty space between them so nothing touches. Each ornament is drawn as a TOP-LEFT corner piece (two arms going right and down from the corner). 1) top-left cell: gold floral acanthus scroll; 2) top-right cell: red and gold Chinese auspicious cloud; 3) bottom-left cell: white feathered angel wing; 4) bottom-right cell: glowing blue runic knotwork. Front view, crisp clean edges, soft even lighting, no cast shadows. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text, no labels."
+   },
+   "raw": "assets/generated/raw/ui_ornament_corners.png",
+   "files": {
+    "atlas": "ui_ornament_corners.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "cell": 512,
+    "rects": {
+     "floral": [
+      4,
+      23,
+      504,
+      466
+     ],
+     "cloud": [
+      516,
+      17,
+      504,
+      478
+     ],
+     "wing": [
+      4,
+      527,
+      504,
+      481
+     ],
+     "rune": [
+      516,
+      531,
+      504,
+      473
+     ]
+    },
+    "found": 4
+   },
+   "process": "局部背景色抠像 + 去溢色 → 连通域切图 → 按行排序 → 预乘缩放进图集",
+   "usedBy": [
+    "ast.ornaments"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_ornament_gems",
+   "label": "宝石与铆钉饰件 9 件",
+   "kind": "ui-ornament",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset sheet: nine small decorative UI ornament pieces arranged on a 3 by 3 grid of equal cells, each centered in its cell with generous empty space so nothing touches. Row 1: a faceted red ruby in a gold bezel setting, a faceted blue sapphire in a gold bezel, a faceted green emerald in a gold bezel. Row 2: a round domed gold rivet, a round dark iron rivet with a cross slot, a square bronze stud. Row 3: a round empty gold medallion badge base with a laurel rim, a shield-shaped silver crest base, a small gold diamond-shaped finial. Front view, polished game-art rendering, soft even lighting, no cast shadows. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text."
+   },
+   "raw": "assets/generated/raw/ui_ornament_gems.png",
+   "files": {
+    "atlas": "ui_ornament_gems.png"
+   },
+   "meta": {
+    "size": [
+     768,
+     768
+    ],
+    "cell": 256,
+    "rects": {
+     "ruby": [
+      23,
+      4,
+      209,
+      248
+     ],
+     "sapphire": [
+      280,
+      4,
+      207,
+      248
+     ],
+     "emerald": [
+      536,
+      4,
+      207,
+      247
+     ],
+     "rivetGold": [
+      4,
+      260,
+      247,
+      248
+     ],
+     "rivetIron": [
+      261,
+      260,
+      245,
+      248
+     ],
+     "studBronze": [
+      516,
+      262,
+      247,
+      244
+     ],
+     "medallion": [
+      4,
+      522,
+      248,
+      236
+     ],
+     "crestBase": [
+      283,
+      516,
+      202,
+      248
+     ],
+     "finial": [
+      571,
+      516,
+      138,
+      248
+     ]
+    },
+    "found": 9
+   },
+   "process": "局部背景色抠像 + 去溢色 → 连通域切图 → 按行排序 → 预乘缩放进图集",
+   "usedBy": [
+    "ast.ornaments"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_ribbons",
+   "label": "缎带标牌 3 条",
+   "kind": "ui-ribbon",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game UI asset sheet: three horizontal fabric RIBBON title banners stacked vertically with large empty gaps between them, each spanning about 80% of the image width: top one deep crimson red, middle one royal blue, bottom one gold. Each banner has a long flat straight middle section (uniform so it can be stretched horizontally, completely empty for text) and folded swallowtail ends on both sides with a subtle darker fold underneath. Front view, flat game-art shading with a soft highlight, no cast shadows. Flat solid pure magenta #FF00FF background everywhere, no text, no letters, no emblems on the ribbons."
+   },
+   "raw": "assets/generated/raw/ui_ribbons.png",
+   "files": {
+    "red": "ui_ribbons_red.png",
+    "blue": "ui_ribbons_blue.png",
+    "gold": "ui_ribbons_gold.png"
+   },
+   "meta": {
+    "size": {
+     "red": [
+      900,
+      138
+     ],
+     "blue": [
+      900,
+      140
+     ],
+     "gold": [
+      900,
+      140
+     ]
+    },
+    "cap": {
+     "red": [
+      58,
+      57
+     ],
+     "blue": [
+      59,
+      59
+     ],
+     "gold": [
+      59,
+      58
+     ]
+    },
+    "found": 3
+   },
+   "process": "局部背景色抠像 + 去溢色 → 连通域切图 → 按行排序 → 预乘缩放进图集",
+   "usedBy": [
+    "cmp.plate"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_icons_painted",
+   "label": "手绘图标 16 件",
+   "kind": "ui-icons",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game item icon sheet: exactly 16 inventory item icons on a 4 by 4 grid of equal cells, each icon centered in its cell with empty space around it so nothing touches. Order, left to right, top to bottom: bundle of wood logs, grey stone chunk, iron ore rock, blue crystal, green herb bundle, coiled rope, amber pine resin drop, clay pot, steel sword, round wooden shield, red potion bottle, gold coin, purple gem, brass key, folded paper map, rolled scroll. Hand-painted watercolor and gouache style with soft edges and a thin dark outline, consistent top-left lighting, slightly desaturated storybook palette. Flat solid pure magenta #FF00FF background everywhere, no grid lines, no text, no labels."
+   },
+   "raw": "assets/generated/raw/ui_icons_painted.png",
+   "files": {
+    "atlas": "ui_icons_painted.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "cell": 256,
+    "rects": {
+     "wood": [
+      4,
+      21,
+      247,
+      213
+     ],
+     "stone": [
+      260,
+      5,
+      248,
+      245
+     ],
+     "ironOre": [
+      516,
+      12,
+      248,
+      231
+     ],
+     "crystal": [
+      801,
+      4,
+      189,
+      248
+     ],
+     "herb": [
+      5,
+      260,
+      245,
+      248
+     ],
+     "rope": [
+      260,
+      275,
+      248,
+      218
+     ],
+     "resin": [
+      554,
+      260,
+      172,
+      248
+     ],
+     "pot": [
+      784,
+      260,
+      223,
+      248
+     ],
+     "sword": [
+      12,
+      516,
+      231,
+      248
+     ],
+     "shield": [
+      261,
+      516,
+      245,
+      248
+     ],
+     "potion": [
+      547,
+      516,
+      185,
+      248
+     ],
+     "coin": [
+      773,
+      516,
+      246,
+      248
+     ],
+     "gem": [
+      18,
+      772,
+      220,
+      248
+     ],
+     "key": [
+      291,
+      772,
+      186,
+      248
+     ],
+     "map": [
+      516,
+      790,
+      248,
+      212
+     ],
+     "scroll": [
+      782,
+      772,
+      228,
+      248
+     ]
+    },
+    "found": 16
+   },
+   "process": "局部背景色抠像 + 去溢色 → 连通域切图 → 按行排序 → 预乘缩放进图集",
+   "usedBy": [
+    "ast.iconSet",
+    "vis.iconStyle"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_icons_3d",
+   "label": "3D 渲染图标 16 件",
+   "kind": "ui-icons",
+   "batch": 11,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game item icon sheet: exactly 16 inventory item icons on a 4 by 4 grid of equal cells, each icon centered in its cell with empty space around it so nothing touches. Order, left to right, top to bottom: bundle of wood logs, grey stone chunk, iron ore rock, blue crystal, green herb bundle, coiled rope, amber pine resin drop, clay pot, steel sword, round wooden shield, red potion bottle, gold coin, purple gem, brass key, folded paper map, rolled scroll. Glossy stylized 3D render like a modern mobile game, soft studio lighting from the top left, gentle rim light, same three-quarter view angle for every item. Flat solid pure magenta #FF00FF background everywhere, no shadows on the background, no grid lines, no text."
+   },
+   "raw": "assets/generated/raw/ui_icons_3d.png",
+   "files": {
+    "atlas": "ui_icons_3d.png"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ],
+    "cell": 256,
+    "rects": {
+     "wood": [
+      4,
+      16,
+      248,
+      224
+     ],
+     "stone": [
+      264,
+      4,
+      240,
+      248
+     ],
+     "ironOre": [
+      516,
+      7,
+      248,
+      242
+     ],
+     "crystal": [
+      802,
+      4,
+      188,
+      248
+     ],
+     "herb": [
+      4,
+      268,
+      247,
+      231
+     ],
+     "rope": [
+      260,
+      266,
+      248,
+      236
+     ],
+     "resin": [
+      546,
+      260,
+      188,
+      248
+     ],
+     "pot": [
+      790,
+      260,
+      211,
+      247
+     ],
+     "sword": [
+      11,
+      516,
+      233,
+      248
+     ],
+     "shield": [
+      270,
+      516,
+      227,
+      247
+     ],
+     "potion": [
+      553,
+      516,
+      173,
+      248
+     ],
+     "coin": [
+      772,
+      516,
+      248,
+      248
+     ],
+     "gem": [
+      25,
+      772,
+      205,
+      248
+     ],
+     "key": [
+      269,
+      772,
+      229,
+      248
+     ],
+     "map": [
+      516,
+      786,
+      248,
+      220
+     ],
+     "scroll": [
+      780,
+      772,
+      231,
+      248
+     ]
+    },
+    "found": 16
+   },
+   "process": "局部背景色抠像 + 去溢色 → 连通域切图 → 按行排序 → 预乘缩放进图集",
+   "usedBy": [
+    "ast.iconSet",
+    "vis.iconStyle"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_char_anime",
+   "label": "全身立绘 · 二次元",
+   "kind": "ui-character",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "2:3，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Full-body character standing illustration (tachie) for a game UI: a young anime-style female adventurer with short silver hair, a warm red scarf, a light travel coat, leather boots, a small satchel and a walking staff, standing in a relaxed three-quarter pose facing slightly left, whole body visible from head to feet with a little margin. Clean lineart with crisp cel shading and soft highlights, Japanese game key-visual quality. Flat solid pure magenta #FF00FF background everywhere, no ground shadow, no text, no logo, no frame."
+   },
+   "raw": "assets/generated/raw/ui_char_anime.png",
+   "files": {
+    "image": "ui_char_anime.png"
+   },
+   "meta": {
+    "size": [
+     965,
+     1400
+    ]
+   },
+   "process": "局部背景色抠像（归一化卷积跟随渐变）+ 去溢色 → 裁边 → 高 1400",
+   "usedBy": [
+    "cnt.characterMedium"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_char_painterly",
+   "label": "全身立绘 · 厚涂",
+   "kind": "ui-character",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "2:3，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Full-body character standing illustration for a game UI: a weathered male knight in worn steel plate armor with a dark blue tabard and a long cloak, holding a longsword planted point-down in front of him, three-quarter pose facing slightly right, whole body visible from head to feet with a little margin. Semi-realistic painterly digital oil (thick paint) style like a western fantasy RPG card illustration, dramatic but even lighting on the figure. Flat solid pure magenta #FF00FF background everywhere, no ground shadow, no text, no logo, no frame."
+   },
+   "raw": "assets/generated/raw/ui_char_painterly.png",
+   "files": {
+    "image": "ui_char_painterly.png"
+   },
+   "meta": {
+    "size": [
+     959,
+     1400
+    ]
+   },
+   "process": "局部背景色抠像（归一化卷积跟随渐变）+ 去溢色 → 裁边 → 高 1400",
+   "usedBy": [
+    "cnt.characterMedium"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_char_bust_chibi",
+   "label": "半身立绘 + Q 版",
+   "kind": "ui-character",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game character sheet with exactly two separate drawings of the SAME character side by side with a clear gap between them: on the left, a bust portrait (head and shoulders to mid-chest) of a young anime-style female adventurer with short silver hair, a red scarf and a light travel coat, smiling slightly, three-quarter view; on the right, the same character as a cute chibi with a 2-head-tall body, full body, waving. Clean lineart and cel shading. Flat solid pure magenta #FF00FF background everywhere, no ground shadow, no text, no frame."
+   },
+   "raw": "assets/generated/raw/ui_char_bust_chibi.png",
+   "files": {
+    "bust": "ui_char_bust_chibi_bust.png",
+    "chibi": "ui_char_bust_chibi_chibi.png"
+   },
+   "meta": {
+    "size": {
+     "bust": [
+      942,
+      1408
+     ],
+     "chibi": [
+      797,
+      1368
+     ]
+    },
+    "found": 2
+   },
+   "process": "局部背景色抠像（归一化卷积跟随渐变）+ 去溢色 → 裁边 → 高 1400",
+   "usedBy": [
+    "cnt.characterMedium"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_keyart",
+   "label": "主视觉海报",
+   "kind": "ui-backdrop",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "16:9，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game key art illustration, wide 16:9: a lone traveler with a red scarf seen from behind standing on a snowy ridge, looking toward a distant lighthouse on a cliff above a frozen sea, a pine forest below, dramatic but soft dawn light with pink and gold sky. Painterly stylized fantasy look. Keep the top third of the image as calm open sky with no important detail, reserved for a game logo. No text, no logo, no letters, no watermark, no UI."
+   },
+   "raw": "assets/generated/raw/ui_keyart.png",
+   "files": {
+    "image": "ui_keyart.jpg"
+   },
+   "meta": {
+    "size": [
+     1920,
+     1072
+    ]
+   },
+   "process": "缩到 1920 宽 JPEG",
+   "usedBy": [
+    "ast.bgArt"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_scene_watercolor",
+   "label": "风景插画背景",
+   "kind": "ui-backdrop",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "16:9，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Wide 16:9 watercolor landscape painting used as a quiet game menu background: a pine forest, a small ferry dock on a calm river and distant soft blue mountains under a pale sky. Loose wet-on-wet washes, soft edges, low contrast and light values everywhere so that text can be placed on top, gentle desaturated palette of blue-grey, sage and warm cream, visible watercolor paper texture. No people, no text, no signature, no border."
+   },
+   "raw": "assets/generated/raw/ui_scene_watercolor.png",
+   "files": {
+    "image": "ui_scene_watercolor.jpg"
+   },
+   "meta": {
+    "size": [
+     1920,
+     1072
+    ]
+   },
+   "process": "缩到 1920 宽 JPEG",
+   "usedBy": [
+    "ast.bgArt"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_desk",
+   "label": "书桌叙事容器",
+   "kind": "ui-container",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "16:9，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Top-down orthographic view of an old wooden writing desk filling the entire 16:9 image, warm lamp light, used as a game menu backdrop. Around the edges only: a leather-bound notebook, a few sealed letters, a brass magnifying glass, an old iron key, an inkwell with a quill, a folded paper map and a candle stub. The large central area of the desk (about 60% of the width and height) is left completely empty bare wood so that a UI panel can be placed there. Realistic painterly game-art rendering, soft shadows. No text, no writing on the papers, no hands, no people."
+   },
+   "raw": "assets/generated/raw/ui_desk.png",
+   "files": {
+    "image": "ui_desk.jpg"
+   },
+   "meta": {
+    "size": [
+     1920,
+     1072
+    ]
+   },
+   "process": "缩到 1920 宽 JPEG（中间留空放界面）",
+   "usedBy": [
+    "ast.container"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_clue_wall",
+   "label": "线索墙",
+   "kind": "ui-container",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "16:9，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Front orthographic view of a detective cork board filling the entire 16:9 image, used as a game investigation screen backdrop. Around the edges only: a few blank paper notes, empty polaroid photo frames, newspaper clippings with unreadable scribbles, coloured map pins and loose red string. The large central area of the cork board (about 60% of the width and height) is left empty bare cork so that UI cards can be placed there. Warm desk-lamp lighting, painterly game-art rendering. No readable text, no faces, no people."
+   },
+   "raw": "assets/generated/raw/ui_clue_wall.png",
+   "files": {
+    "image": "ui_clue_wall.jpg"
+   },
+   "meta": {
+    "size": [
+     1920,
+     1072
+    ]
+   },
+   "process": "缩到 1920 宽 JPEG（中间留空放界面）",
+   "usedBy": [
+    "ast.container"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_counter",
+   "label": "柜台与货架",
+   "kind": "ui-container",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "16:9，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Front view of a cozy fantasy shop interior filling the entire 16:9 image, used as a game shop screen backdrop: a wooden shop counter across the bottom third of the image and wooden shelves on the back wall above it. The shelves are mostly EMPTY with only a few small jars and bottles at the far left and right ends, leaving clear empty shelf space in the middle for UI item slots. Warm lantern light, painterly stylized game-art rendering. No shopkeeper, no people, no text, no signs."
+   },
+   "raw": "assets/generated/raw/ui_counter.png",
+   "files": {
+    "image": "ui_counter.jpg"
+   },
+   "meta": {
+    "size": [
+     1920,
+     1072
+    ]
+   },
+   "process": "缩到 1920 宽 JPEG（中间留空放界面）",
+   "usedBy": [
+    "ast.container"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_badges",
+   "label": "徽章 9 枚",
+   "kind": "ui-badges",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Game achievement badge sheet: exactly nine badges on a 3 by 3 grid of equal cells, each centered in its cell with empty space around it so nothing touches. Order, left to right, top to bottom: round gold medal with a star and a ribbon, golden trophy cup, green laurel wreath, heraldic shield crest, red square seal stamp, pointed crystal star burst, military chevron rank badge, crossed swords with wings, and an empty round silver badge base. Polished stylized game-art rendering, consistent soft lighting, no cast shadows. Flat solid pure magenta #FF00FF background everywhere, no text, no letters, no numbers."
+   },
+   "raw": "assets/generated/raw/ui_badges.png",
+   "files": {
+    "atlas": "ui_badges.png"
+   },
+   "meta": {
+    "size": [
+     768,
+     768
+    ],
+    "cell": 256,
+    "rects": {
+     "medal": [
+      34,
+      4,
+      187,
+      248
+     ],
+     "trophy": [
+      260,
+      8,
+      248,
+      240
+     ],
+     "laurel": [
+      516,
+      11,
+      248,
+      234
+     ],
+     "crest": [
+      23,
+      260,
+      210,
+      248
+     ],
+     "stamp": [
+      265,
+      260,
+      238,
+      248
+     ],
+     "crystal": [
+      516,
+      264,
+      248,
+      239
+     ],
+     "chevron": [
+      32,
+      516,
+      191,
+      248
+     ],
+     "winged": [
+      260,
+      538,
+      248,
+      204
+     ],
+     "base": [
+      516,
+      516,
+      248,
+      247
+     ]
+    },
+    "found": 9
+   },
+   "process": "局部背景色抠像 + 去溢色 → 连通域切图 → 按行排序 → 预乘缩放进图集",
+   "usedBy": [
+    "cmp.badge"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_empty_states",
+   "label": "空状态插画 4 张",
+   "kind": "ui-empty",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Four small friendly 'empty state' illustrations for a game UI on a 2 by 2 grid of equal cells, each centered in its cell with plenty of empty space around it: 1) top-left an open empty backpack, 2) top-right an empty mailbox with an open lid, 3) bottom-left an empty wooden bench / empty seat, 4) bottom-right a magnifying glass over nothing with a small question mark shape. Simple clean line illustrations with a dark grey outline and soft pastel flat fills, minimal detail, consistent style. Flat solid pure magenta #FF00FF background everywhere, no text, no labels, no grid lines."
+   },
+   "raw": "assets/generated/raw/ui_empty_states.png",
+   "files": {
+    "atlas": "ui_empty_states.png"
+   },
+   "meta": {
+    "size": [
+     768,
+     768
+    ],
+    "cell": 384,
+    "rects": {
+     "bag": [
+      20,
+      4,
+      343,
+      376
+     ],
+     "mail": [
+      388,
+      4,
+      376,
+      376
+     ],
+     "seat": [
+      4,
+      434,
+      376,
+      283
+     ],
+     "search": [
+      401,
+      388,
+      350,
+      376
+     ]
+    },
+    "found": 4
+   },
+   "process": "局部背景色抠像 + 去溢色 → 连通域切图 → 按行排序 → 预乘缩放进图集",
+   "usedBy": [
+    "st.emptySlot"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_map_parchment",
+   "label": "羊皮纸手绘地图",
+   "kind": "ui-map",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Top-down hand-drawn fantasy map on aged parchment filling the entire square image edge to edge: a coastline with a bay, a mountain range drawn as little ink peaks, a pine forest drawn as small tree symbols, a winding river, a few dotted roads and tiny village and lighthouse symbols. Sepia ink linework with light watercolor washes (blue sea, green forest, ochre land), worn edges and faint stains. No text, no labels, no names, no compass rose, no legend, no border."
+   },
+   "raw": "assets/generated/raw/ui_map_parchment.png",
+   "files": {
+    "image": "ui_map_parchment.jpg"
+   },
+   "meta": {
+    "size": [
+     1024,
+     1024
+    ]
+   },
+   "process": "缩到 1024 JPEG",
+   "usedBy": [
+    "vis.mapStyle"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  },
+  {
+   "id": "ui_calligraphy_title",
+   "label": "书法标题字",
+   "kind": "ui-title",
+   "batch": 12,
+   "source": {
+    "service": "ai",
+    "tool": "gpt-image-2",
+    "params": "1:1，medium 质量，PNG",
+    "date": "2026-10-14",
+    "prompt": "Chinese calligraphy artwork: the four Chinese characters 雪线旅人 written horizontally in one line across the middle of the image in bold expressive running-script (xingshu) brush calligraphy, black sumi ink with visible dry-brush flying-white (feibai) streaks, large and filling about 80% of the width. Pure flat white background, no paper texture, no red seal, no other characters, no signature, no border."
+   },
+   "raw": "assets/generated/raw/ui_calligraphy_title.png",
+   "files": {
+    "image": "ui_calligraphy_title.png"
+   },
+   "meta": {
+    "size": [
+     1600,
+     567
+    ],
+    "note": "黑墨 + alpha；使用时可按字色着色（source-in）"
+   },
+   "process": "1 − 亮度得墨量 → 黑墨 + alpha，裁边",
+   "usedBy": [
+    "el.title",
+    "typ.titleFx"
+   ],
+   "limits": "",
+   "license": "AI 生成（gpt-image-2 等外部图像模型），随本项目以 CC0 1.0 发布"
+  }
+ ]
+}

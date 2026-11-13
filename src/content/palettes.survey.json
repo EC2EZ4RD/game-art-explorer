@@ -1,0 +1,4246 @@
+[
+  {
+    "id": "cn-qinglv-shanshui",
+    "name": "青绿山水（Blue-green landscape，参照《千里江山图》）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "鹿角棕",
+        "hex": "#e3bd8d"
+      },
+      {
+        "name": "莲子白",
+        "hex": "#e5d3aa"
+      },
+      {
+        "name": "淡赭",
+        "hex": "#be7e4a"
+      },
+      {
+        "name": "赭石",
+        "hex": "#862617"
+      },
+      {
+        "name": "铜绿",
+        "hex": "#2bae85"
+      },
+      {
+        "name": "石绿",
+        "hex": "#57c3c2"
+      },
+      {
+        "name": "群青",
+        "hex": "#1772b4"
+      },
+      {
+        "name": "花青",
+        "hex": "#2376b7"
+      },
+      {
+        "name": "苍黄",
+        "hex": "#806332"
+      },
+      {
+        "name": "鹤灰",
+        "hex": "#4a4035"
+      },
+      {
+        "name": "朱红",
+        "hex": "#ed5126"
+      },
+      {
+        "name": "暗蓝",
+        "hex": "#101f30"
+      }
+    ],
+    "roles": {
+      "paper": "#e3bd8d",
+      "sky": "#e5d3aa",
+      "ground": "#be7e4a",
+      "rock": "#862617",
+      "foliage": "#2bae85",
+      "peak": "#1772b4",
+      "water": "#2376b7",
+      "structure": "#806332",
+      "roof": "#4a4035",
+      "accent": "#ed5126",
+      "ink": "#101f30"
+    },
+    "notes": "石青/石绿为矿物色，色相取自 zhongguose 同名或近似名色；画作实际绢色因老化偏褐，paper 取鹿角棕。色名与画面元素的对应为本文主观建议。"
+  },
+  {
+    "id": "cn-shuimo",
+    "name": "水墨·墨分五色（Ink wash, five tones of ink）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "鱼肚白",
+        "hex": "#f7f4ed"
+      },
+      {
+        "name": "浅灰",
+        "hex": "#dad4cb"
+      },
+      {
+        "name": "铅灰",
+        "hex": "#bbb5ac"
+      },
+      {
+        "name": "中灰",
+        "hex": "#a49c93"
+      },
+      {
+        "name": "瓦灰",
+        "hex": "#867e76"
+      },
+      {
+        "name": "淡松烟",
+        "hex": "#4d4030"
+      },
+      {
+        "name": "长石灰",
+        "hex": "#363433"
+      },
+      {
+        "name": "莽丛绿",
+        "hex": "#141e1b"
+      },
+      {
+        "name": "高粱红",
+        "hex": "#c02c38"
+      }
+    ],
+    "roles": {
+      "paper": "#f7f4ed",
+      "sky": "#f7f4ed",
+      "ground": "#bbb5ac",
+      "foliage": "#867e76",
+      "structure": "#4d4030",
+      "roof": "#363433",
+      "accent": "#c02c38",
+      "ink": "#141e1b"
+    },
+    "notes": "浅灰→莽丛绿按明度递减近似“清、淡、重、浓、焦”；zhongguose 无“墨”色名，焦墨取近黑的莽丛绿；高粱红作印泥（朱文/白文印）点缀。"
+  },
+  {
+    "id": "cn-gugong",
+    "name": "故宫红墙金瓦（Forbidden City: red walls, golden glazed tiles）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "鹅血石红",
+        "hex": "#ab372f"
+      },
+      {
+        "name": "枣红",
+        "hex": "#7c1823"
+      },
+      {
+        "name": "朱红",
+        "hex": "#ed5126"
+      },
+      {
+        "name": "琥珀黄",
+        "hex": "#feba07"
+      },
+      {
+        "name": "土黄",
+        "hex": "#d6a01d"
+      },
+      {
+        "name": "汉白玉",
+        "hex": "#f8f4ed"
+      },
+      {
+        "name": "瓦灰",
+        "hex": "#867e76"
+      },
+      {
+        "name": "青灰",
+        "hex": "#2b333e"
+      },
+      {
+        "name": "景泰蓝",
+        "hex": "#2775b6"
+      },
+      {
+        "name": "宫殿绿",
+        "hex": "#20894d"
+      },
+      {
+        "name": "苍绿",
+        "hex": "#223e36"
+      },
+      {
+        "name": "远天蓝",
+        "hex": "#d0dfe6"
+      }
+    ],
+    "roles": {
+      "wall": "#ab372f",
+      "shadow": "#7c1823",
+      "structure": "#ed5126",
+      "roof": "#feba07",
+      "roofShadow": "#d6a01d",
+      "base": "#f8f4ed",
+      "ground": "#867e76",
+      "ink": "#2b333e",
+      "accent": "#2775b6",
+      "trim": "#20894d",
+      "foliage": "#223e36",
+      "sky": "#d0dfe6",
+      "paper": "#f8f4ed"
+    },
+    "notes": "红墙（铁红/氧化铁红）+黄琉璃瓦+汉白玉台基+青绿彩画为北方官式皇家建筑典型配色；色值为传统色库近似，非故宫实测。"
+  },
+  {
+    "id": "cn-songci",
+    "name": "宋瓷（Song ceramics：汝、官、哥、钧、定、龙泉、建）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "月白",
+        "hex": "#eef7f2"
+      },
+      {
+        "name": "玉簪绿",
+        "hex": "#a4cab6"
+      },
+      {
+        "name": "虾壳青",
+        "hex": "#869d9d"
+      },
+      {
+        "name": "粉绿",
+        "hex": "#83cbac"
+      },
+      {
+        "name": "青矾绿",
+        "hex": "#2c9678"
+      },
+      {
+        "name": "莲子白",
+        "hex": "#e5d3aa"
+      },
+      {
+        "name": "象牙白",
+        "hex": "#fffef8"
+      },
+      {
+        "name": "鹤灰",
+        "hex": "#4a4035"
+      },
+      {
+        "name": "玫瑰紫",
+        "hex": "#ba2f7b"
+      },
+      {
+        "name": "酱棕",
+        "hex": "#5a1f1b"
+      },
+      {
+        "name": "古铜褐",
+        "hex": "#5c3719"
+      }
+    ],
+    "roles": {
+      "paper": "#fffef8",
+      "sky": "#eef7f2",
+      "ground": "#e5d3aa",
+      "foliage": "#83cbac",
+      "structure": "#5c3719",
+      "roof": "#869d9d",
+      "accent": "#ba2f7b",
+      "ink": "#4a4035"
+    },
+    "notes": "对应关系（本文建议）：汝窑天青≈玉簪绿/月白，龙泉梅子青≈粉绿/青矾绿，哥窑米黄≈莲子白、金丝铁线≈鹤灰，钧窑玫瑰紫，定窑象牙白，建盏≈酱棕/古铜褐。"
+  },
+  {
+    "id": "cn-jiangnan",
+    "name": "江南水乡·粉墙黛瓦（Jiangnan water town: white walls, dark tiles）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "珍珠灰",
+        "hex": "#e4dfd7"
+      },
+      {
+        "name": "云峰白",
+        "hex": "#d8e3e7"
+      },
+      {
+        "name": "青灰",
+        "hex": "#2b333e"
+      },
+      {
+        "name": "战舰灰",
+        "hex": "#495c69"
+      },
+      {
+        "name": "星灰",
+        "hex": "#b2bbbe"
+      },
+      {
+        "name": "晚波蓝",
+        "hex": "#648e93"
+      },
+      {
+        "name": "浪花绿",
+        "hex": "#92b3a5"
+      },
+      {
+        "name": "芽绿",
+        "hex": "#96c24e"
+      },
+      {
+        "name": "苍绿",
+        "hex": "#223e36"
+      },
+      {
+        "name": "栗棕",
+        "hex": "#5c1e19"
+      },
+      {
+        "name": "大红",
+        "hex": "#f04b22"
+      },
+      {
+        "name": "鸽蓝",
+        "hex": "#1c2938"
+      }
+    ],
+    "roles": {
+      "paper": "#e4dfd7",
+      "wall": "#e4dfd7",
+      "sky": "#d8e3e7",
+      "roof": "#2b333e",
+      "roofLight": "#495c69",
+      "ground": "#b2bbbe",
+      "water": "#648e93",
+      "foliage": "#96c24e",
+      "foliageDark": "#223e36",
+      "structure": "#5c1e19",
+      "accent": "#f04b22",
+      "ink": "#1c2938"
+    },
+    "notes": "粉墙取略带暖灰的珍珠灰（纯白在实时光照下易过曝）；黛瓦取青灰/战舰灰两级。"
+  },
+  {
+    "id": "cn-dunhuang",
+    "name": "敦煌壁画（Dunhuang murals）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "荔肉白",
+        "hex": "#f2e6ce"
+      },
+      {
+        "name": "浅驼色",
+        "hex": "#e2c17c"
+      },
+      {
+        "name": "淡赭",
+        "hex": "#be7e4a"
+      },
+      {
+        "name": "赭石",
+        "hex": "#862617"
+      },
+      {
+        "name": "火泥棕",
+        "hex": "#aa6a4c"
+      },
+      {
+        "name": "石绿",
+        "hex": "#57c3c2"
+      },
+      {
+        "name": "铜绿",
+        "hex": "#2bae85"
+      },
+      {
+        "name": "群青",
+        "hex": "#1772b4"
+      },
+      {
+        "name": "朱红",
+        "hex": "#ed5126"
+      },
+      {
+        "name": "姜黄",
+        "hex": "#e2c027"
+      },
+      {
+        "name": "苍黄",
+        "hex": "#806332"
+      },
+      {
+        "name": "猪肝紫",
+        "hex": "#541e24"
+      }
+    ],
+    "roles": {
+      "paper": "#f2e6ce",
+      "ground": "#e2c17c",
+      "sky": "#1772b4",
+      "foliage": "#2bae85",
+      "structure": "#862617",
+      "roof": "#57c3c2",
+      "accent": "#ed5126",
+      "ink": "#541e24",
+      "gold": "#e2c027"
+    },
+    "notes": "壁画常用土红、石青、石绿、朱砂、白粉与金；部分铅丹/铅白颜料已氧化变黑褐，故以猪肝紫作“变色线”。色值为传统色库近似，非壁画测色。"
+  },
+  {
+    "id": "cn-nianhua",
+    "name": "木版年画（Woodblock New Year prints：杨柳青/桃花坞）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "酪黄",
+        "hex": "#f6dead"
+      },
+      {
+        "name": "大红",
+        "hex": "#f04b22"
+      },
+      {
+        "name": "品红",
+        "hex": "#ef3473"
+      },
+      {
+        "name": "桃红",
+        "hex": "#f0ada0"
+      },
+      {
+        "name": "柠檬黄",
+        "hex": "#fcd337"
+      },
+      {
+        "name": "橘橙",
+        "hex": "#f97d1c"
+      },
+      {
+        "name": "翠绿",
+        "hex": "#20a162"
+      },
+      {
+        "name": "靛青",
+        "hex": "#1661ab"
+      },
+      {
+        "name": "玫瑰紫",
+        "hex": "#ba2f7b"
+      },
+      {
+        "name": "莽丛绿",
+        "hex": "#141e1b"
+      }
+    ],
+    "roles": {
+      "paper": "#f6dead",
+      "sky": "#f6dead",
+      "ground": "#fcd337",
+      "foliage": "#20a162",
+      "structure": "#f04b22",
+      "roof": "#1661ab",
+      "accent": "#ef3473",
+      "ink": "#141e1b"
+    },
+    "notes": "高饱和套色+墨线版；适合节庆 UI、Q 版场景。实际年画各产地色谱不同，此组为风格化概括。"
+  },
+  {
+    "id": "cn-qianjiang",
+    "name": "浅绛山水（Light ochre-crimson landscape：元四家/黄公望式）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "莲子白",
+        "hex": "#e5d3aa"
+      },
+      {
+        "name": "荔肉白",
+        "hex": "#f2e6ce"
+      },
+      {
+        "name": "鹿角棕",
+        "hex": "#e3bd8d"
+      },
+      {
+        "name": "淡赭",
+        "hex": "#be7e4a"
+      },
+      {
+        "name": "赭石",
+        "hex": "#862617"
+      },
+      {
+        "name": "晴山蓝",
+        "hex": "#8fb2c9"
+      },
+      {
+        "name": "淡蓝灰",
+        "hex": "#5e7987"
+      },
+      {
+        "name": "明灰",
+        "hex": "#8a988e"
+      },
+      {
+        "name": "淡松烟",
+        "hex": "#4d4030"
+      },
+      {
+        "name": "鹤灰",
+        "hex": "#4a4035"
+      },
+      {
+        "name": "莽丛绿",
+        "hex": "#141e1b"
+      },
+      {
+        "name": "高粱红",
+        "hex": "#c02c38"
+      }
+    ],
+    "roles": {
+      "paper": "#e5d3aa",
+      "sky": "#f2e6ce",
+      "ground": "#be7e4a",
+      "rock": "#e3bd8d",
+      "foliage": "#5e7987",
+      "foliageLight": "#8a988e",
+      "structure": "#862617",
+      "roof": "#4a4035",
+      "accent": "#c02c38",
+      "ink": "#141e1b"
+    },
+    "notes": "以墨为骨、淡赭石+少量花青罩染；晴山蓝/淡蓝灰近似淡花青。"
+  },
+  {
+    "id": "cn-minnan-lingnan",
+    "name": "闽南红砖·岭南（Minnan red brick & Lingnan）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "火砖红",
+        "hex": "#cd6227"
+      },
+      {
+        "name": "绀红",
+        "hex": "#a6522c"
+      },
+      {
+        "name": "珍珠灰",
+        "hex": "#e4dfd7"
+      },
+      {
+        "name": "铅灰",
+        "hex": "#bbb5ac"
+      },
+      {
+        "name": "翠蓝",
+        "hex": "#1e9eb3"
+      },
+      {
+        "name": "蛙绿",
+        "hex": "#45b787"
+      },
+      {
+        "name": "柠檬黄",
+        "hex": "#fcd337"
+      },
+      {
+        "name": "金叶黄",
+        "hex": "#ffa60f"
+      },
+      {
+        "name": "荷叶绿",
+        "hex": "#1a6840"
+      },
+      {
+        "name": "酱棕",
+        "hex": "#5a1f1b"
+      },
+      {
+        "name": "远天蓝",
+        "hex": "#d0dfe6"
+      }
+    ],
+    "roles": {
+      "paper": "#e4dfd7",
+      "sky": "#d0dfe6",
+      "ground": "#bbb5ac",
+      "foliage": "#1a6840",
+      "structure": "#cd6227",
+      "roof": "#a6522c",
+      "accent": "#1e9eb3",
+      "accent2": "#45b787",
+      "gold": "#ffa60f",
+      "ink": "#5a1f1b"
+    },
+    "notes": "红砖墙+花岗岩白石+燕尾脊剪瓷（蓝绿黄）+潮州金漆木雕；榕树深绿。"
+  },
+  {
+    "id": "cn-huizhou",
+    "name": "徽派·烟雨（Huizhou in misty rain）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "鱼肚白",
+        "hex": "#f7f4ed"
+      },
+      {
+        "name": "银鱼白",
+        "hex": "#cdd1d3"
+      },
+      {
+        "name": "牛角灰",
+        "hex": "#2d2e36"
+      },
+      {
+        "name": "嫩灰",
+        "hex": "#74787a"
+      },
+      {
+        "name": "星灰",
+        "hex": "#b2bbbe"
+      },
+      {
+        "name": "古铜褐",
+        "hex": "#5c3719"
+      },
+      {
+        "name": "油菜花黄",
+        "hex": "#fbda41"
+      },
+      {
+        "name": "松霜绿",
+        "hex": "#83a78d"
+      },
+      {
+        "name": "苍绿",
+        "hex": "#223e36"
+      },
+      {
+        "name": "云峰白",
+        "hex": "#d8e3e7"
+      },
+      {
+        "name": "晚波蓝",
+        "hex": "#648e93"
+      }
+    ],
+    "roles": {
+      "paper": "#f7f4ed",
+      "wall": "#f7f4ed",
+      "wallShade": "#cdd1d3",
+      "stain": "#74787a",
+      "roof": "#2d2e36",
+      "ground": "#b2bbbe",
+      "structure": "#5c3719",
+      "accent": "#fbda41",
+      "foliageFar": "#83a78d",
+      "foliage": "#223e36",
+      "sky": "#d8e3e7",
+      "water": "#648e93",
+      "ink": "#2d2e36"
+    },
+    "notes": "马头墙白墙+黛瓦+木雕；油菜花黄为婺源春景点缀；墙面水渍（嫩灰）是“旧”感关键。"
+  },
+  {
+    "id": "cn-gongbi-huaniao",
+    "name": "宫廷工笔花鸟（Song court gongbi flower-and-bird）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "淡肉色",
+        "hex": "#f8e0b0"
+      },
+      {
+        "name": "象牙白",
+        "hex": "#fffef8"
+      },
+      {
+        "name": "牡丹粉红",
+        "hex": "#eea2a4"
+      },
+      {
+        "name": "芍药耕红",
+        "hex": "#eba0b3"
+      },
+      {
+        "name": "枫叶红",
+        "hex": "#c21f30"
+      },
+      {
+        "name": "藤黄",
+        "hex": "#ffd111"
+      },
+      {
+        "name": "草原远绿",
+        "hex": "#9abeaf"
+      },
+      {
+        "name": "亚丁绿",
+        "hex": "#428675"
+      },
+      {
+        "name": "花青",
+        "hex": "#2376b7"
+      },
+      {
+        "name": "鹤灰",
+        "hex": "#4a4035"
+      }
+    ],
+    "roles": {
+      "paper": "#f8e0b0",
+      "sky": "#fffef8",
+      "ground": "#f8e0b0",
+      "foliage": "#428675",
+      "foliageLight": "#9abeaf",
+      "structure": "#4a4035",
+      "roof": "#2376b7",
+      "accent": "#eea2a4",
+      "accent2": "#c21f30",
+      "ink": "#4a4035"
+    },
+    "notes": "绢底+蛤粉（象牙白）+分染花瓣；枫叶红近似胭脂（zhongguose 的“胭脂红”偏橙，未采用）。"
+  },
+  {
+    "id": "cn-shangyuan-night",
+    "name": "上元灯夜（Lantern Festival night）",
+    "group": "中国传统色",
+    "source": "中国色 zhongguose.com 公开接口 https://zhongguose.com/api/colors（原始 526 色，排除用户共创色；取 hex 字段）",
+    "swatches": [
+      {
+        "name": "暗蓝",
+        "hex": "#101f30"
+      },
+      {
+        "name": "晶石紫",
+        "hex": "#1f2040"
+      },
+      {
+        "name": "钢青",
+        "hex": "#142334"
+      },
+      {
+        "name": "鸽蓝",
+        "hex": "#1c2938"
+      },
+      {
+        "name": "海报灰",
+        "hex": "#483332"
+      },
+      {
+        "name": "栗紫",
+        "hex": "#5a191b"
+      },
+      {
+        "name": "枫叶红",
+        "hex": "#c21f30"
+      },
+      {
+        "name": "朱红",
+        "hex": "#ed5126"
+      },
+      {
+        "name": "蜜黄",
+        "hex": "#fbb957"
+      },
+      {
+        "name": "金盏黄",
+        "hex": "#fcc307"
+      },
+      {
+        "name": "乳白",
+        "hex": "#f9f4dc"
+      }
+    ],
+    "roles": {
+      "sky": "#101f30",
+      "skyHigh": "#1f2040",
+      "ground": "#142334",
+      "roof": "#1c2938",
+      "structure": "#483332",
+      "shadowWarm": "#5a191b",
+      "accentShadow": "#c21f30",
+      "accent": "#ed5126",
+      "glow": "#fbb957",
+      "light": "#fcc307",
+      "paper": "#f9f4dc",
+      "ink": "#101f30"
+    },
+    "notes": "冷暗底+暖灯笼；适合测试 Bloom 与发光材质的可读性。"
+  },
+  {
+    "id": "jp-haru-sakura",
+    "name": "春·桜（Spring sakura）",
+    "group": "日本传统色",
+    "source": "NIPPON COLORS https://nipponcolors.com/ （站点注明色值引自《日本の伝統色 The Traditional Colors of Japan》PIE BOOKS 2007；经 /php/io.php 接口逐色读取）",
+    "swatches": [
+      {
+        "name": "白練 SHIRONERI",
+        "hex": "#fcfaf2"
+      },
+      {
+        "name": "桜 SAKURA",
+        "hex": "#fedfe1"
+      },
+      {
+        "name": "撫子 NADESHIKO",
+        "hex": "#dc9fb4"
+      },
+      {
+        "name": "鴇 TOKI",
+        "hex": "#eea9a9"
+      },
+      {
+        "name": "紅梅 KOHBAI",
+        "hex": "#e16b8c"
+      },
+      {
+        "name": "鶸 HIWA",
+        "hex": "#bec23f"
+      },
+      {
+        "name": "萌黄 MOEGI",
+        "hex": "#7ba23f"
+      },
+      {
+        "name": "若竹 WAKATAKE",
+        "hex": "#5dac81"
+      },
+      {
+        "name": "空 SORA",
+        "hex": "#58b2dc"
+      },
+      {
+        "name": "墨 SUMI",
+        "hex": "#1c1c1c"
+      }
+    ],
+    "roles": {
+      "paper": "#fcfaf2",
+      "sky": "#58b2dc",
+      "ground": "#bec23f",
+      "foliage": "#7ba23f",
+      "foliageDark": "#5dac81",
+      "blossom": "#fedfe1",
+      "accent": "#e16b8c",
+      "ink": "#1c1c1c"
+    }
+  },
+  {
+    "id": "jp-ai-sumi",
+    "name": "藍と墨（Indigo & sumi, wabi）",
+    "group": "日本传统色",
+    "source": "NIPPON COLORS https://nipponcolors.com/ （站点注明色值引自《日本の伝統色 The Traditional Colors of Japan》PIE BOOKS 2007；经 /php/io.php 接口逐色读取）",
+    "swatches": [
+      {
+        "name": "鳥の子 TORINOKO",
+        "hex": "#dac9a6"
+      },
+      {
+        "name": "白鼠 SHIRONEZUMI",
+        "hex": "#bdc0ba"
+      },
+      {
+        "name": "瓶覗 KAMENOZOKI",
+        "hex": "#a5dee4"
+      },
+      {
+        "name": "白群 BYAKUGUN",
+        "hex": "#78c2c4"
+      },
+      {
+        "name": "浅葱 ASAGI",
+        "hex": "#33a6b8"
+      },
+      {
+        "name": "縹 HANADA",
+        "hex": "#006284"
+      },
+      {
+        "name": "藍 AI",
+        "hex": "#0d5661"
+      },
+      {
+        "name": "紺 KON",
+        "hex": "#0f2540"
+      },
+      {
+        "name": "利休鼠 RIKYUNEZUMI",
+        "hex": "#707c74"
+      },
+      {
+        "name": "鈍 NIBI",
+        "hex": "#656765"
+      },
+      {
+        "name": "墨 SUMI",
+        "hex": "#1c1c1c"
+      }
+    ],
+    "roles": {
+      "paper": "#dac9a6",
+      "sky": "#a5dee4",
+      "ground": "#bdc0ba",
+      "foliage": "#707c74",
+      "structure": "#656765",
+      "roof": "#0f2540",
+      "water": "#006284",
+      "accent": "#33a6b8",
+      "ink": "#1c1c1c"
+    }
+  },
+  {
+    "id": "jp-jinja",
+    "name": "社寺（Shrine & temple）",
+    "group": "日本传统色",
+    "source": "NIPPON COLORS https://nipponcolors.com/ （站点注明色值引自《日本の伝統色 The Traditional Colors of Japan》PIE BOOKS 2007；经 /php/io.php 接口逐色读取）",
+    "swatches": [
+      {
+        "name": "胡粉 GOFUN",
+        "hex": "#fffffb"
+      },
+      {
+        "name": "生壁 NAMAKABE",
+        "hex": "#7d6c46"
+      },
+      {
+        "name": "鉛丹 ENTAN",
+        "hex": "#d75455"
+      },
+      {
+        "name": "真朱 SHINSYU",
+        "hex": "#ab3b3a"
+      },
+      {
+        "name": "弁柄 BENGARA",
+        "hex": "#9a5034"
+      },
+      {
+        "name": "山吹 YAMABUKI",
+        "hex": "#ffb11b"
+      },
+      {
+        "name": "檜皮 HIWADA",
+        "hex": "#854836"
+      },
+      {
+        "name": "緑青 ROKUSYOH",
+        "hex": "#24936e"
+      },
+      {
+        "name": "千歳緑 CHITOSEMIDORI",
+        "hex": "#36563c"
+      },
+      {
+        "name": "苔 KOKE",
+        "hex": "#838a2d"
+      },
+      {
+        "name": "消炭 KESHIZUMI",
+        "hex": "#434343"
+      },
+      {
+        "name": "黒 KURO",
+        "hex": "#080808"
+      }
+    ],
+    "roles": {
+      "paper": "#fffffb",
+      "ground": "#7d6c46",
+      "structure": "#d75455",
+      "structureShadow": "#ab3b3a",
+      "roof": "#854836",
+      "roofCopper": "#24936e",
+      "foliage": "#36563c",
+      "moss": "#838a2d",
+      "accent": "#ffb11b",
+      "ink": "#080808"
+    }
+  },
+  {
+    "id": "nes",
+    "name": "NES（Nintendo Entertainment System，Lospec 55 色版）",
+    "group": "复古主机/电脑",
+    "source": "Lospec Palette List https://lospec.com/palette-list/nintendo-entertainment-system",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#fcfcfc"
+      },
+      {
+        "name": "02",
+        "hex": "#f8f8f8"
+      },
+      {
+        "name": "03",
+        "hex": "#bcbcbc"
+      },
+      {
+        "name": "04",
+        "hex": "#7c7c7c"
+      },
+      {
+        "name": "05",
+        "hex": "#a4e4fc"
+      },
+      {
+        "name": "06",
+        "hex": "#3cbcfc"
+      },
+      {
+        "name": "07",
+        "hex": "#0078f8"
+      },
+      {
+        "name": "08",
+        "hex": "#0000fc"
+      },
+      {
+        "name": "09",
+        "hex": "#b8b8f8"
+      },
+      {
+        "name": "10",
+        "hex": "#6888fc"
+      },
+      {
+        "name": "11",
+        "hex": "#0058f8"
+      },
+      {
+        "name": "12",
+        "hex": "#0000bc"
+      },
+      {
+        "name": "13",
+        "hex": "#d8b8f8"
+      },
+      {
+        "name": "14",
+        "hex": "#9878f8"
+      },
+      {
+        "name": "15",
+        "hex": "#6844fc"
+      },
+      {
+        "name": "16",
+        "hex": "#4428bc"
+      },
+      {
+        "name": "17",
+        "hex": "#f8b8f8"
+      },
+      {
+        "name": "18",
+        "hex": "#f878f8"
+      },
+      {
+        "name": "19",
+        "hex": "#d800cc"
+      },
+      {
+        "name": "20",
+        "hex": "#940084"
+      },
+      {
+        "name": "21",
+        "hex": "#f8a4c0"
+      },
+      {
+        "name": "22",
+        "hex": "#f85898"
+      },
+      {
+        "name": "23",
+        "hex": "#e40058"
+      },
+      {
+        "name": "24",
+        "hex": "#a80020"
+      },
+      {
+        "name": "25",
+        "hex": "#f0d0b0"
+      },
+      {
+        "name": "26",
+        "hex": "#f87858"
+      },
+      {
+        "name": "27",
+        "hex": "#f83800"
+      },
+      {
+        "name": "28",
+        "hex": "#a81000"
+      },
+      {
+        "name": "29",
+        "hex": "#fce0a8"
+      },
+      {
+        "name": "30",
+        "hex": "#fca044"
+      },
+      {
+        "name": "31",
+        "hex": "#e45c10"
+      },
+      {
+        "name": "32",
+        "hex": "#881400"
+      },
+      {
+        "name": "33",
+        "hex": "#f8d878"
+      },
+      {
+        "name": "34",
+        "hex": "#f8b800"
+      },
+      {
+        "name": "35",
+        "hex": "#ac7c00"
+      },
+      {
+        "name": "36",
+        "hex": "#503000"
+      },
+      {
+        "name": "37",
+        "hex": "#d8f878"
+      },
+      {
+        "name": "38",
+        "hex": "#b8f818"
+      },
+      {
+        "name": "39",
+        "hex": "#00b800"
+      },
+      {
+        "name": "40",
+        "hex": "#007800"
+      },
+      {
+        "name": "41",
+        "hex": "#b8f8b8"
+      },
+      {
+        "name": "42",
+        "hex": "#58d854"
+      },
+      {
+        "name": "43",
+        "hex": "#00a800"
+      },
+      {
+        "name": "44",
+        "hex": "#006800"
+      },
+      {
+        "name": "45",
+        "hex": "#b8f8d8"
+      },
+      {
+        "name": "46",
+        "hex": "#58f898"
+      },
+      {
+        "name": "47",
+        "hex": "#00a844"
+      },
+      {
+        "name": "48",
+        "hex": "#005800"
+      },
+      {
+        "name": "49",
+        "hex": "#00fcfc"
+      },
+      {
+        "name": "50",
+        "hex": "#00e8d8"
+      },
+      {
+        "name": "51",
+        "hex": "#008888"
+      },
+      {
+        "name": "52",
+        "hex": "#004058"
+      },
+      {
+        "name": "53",
+        "hex": "#f8d8f8"
+      },
+      {
+        "name": "54",
+        "hex": "#787878"
+      }
+    ],
+    "notes": "NES PPU 输出 NTSC 信号，没有唯一“官方 RGB”；各模拟器调色板不同（此为 Lospec 收录版本，含 #fcfcfc 与 #f8f8f8 两种近白）。"
+  },
+  {
+    "id": "c64",
+    "name": "Commodore 64",
+    "group": "复古主机/电脑",
+    "source": "Lospec Palette List https://lospec.com/palette-list/commodore64",
+    "swatches": [
+      {
+        "name": "black",
+        "hex": "#000000"
+      },
+      {
+        "name": "dark grey",
+        "hex": "#626262"
+      },
+      {
+        "name": "grey",
+        "hex": "#898989"
+      },
+      {
+        "name": "light grey",
+        "hex": "#adadad"
+      },
+      {
+        "name": "white",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "red",
+        "hex": "#9f4e44"
+      },
+      {
+        "name": "light red",
+        "hex": "#cb7e75"
+      },
+      {
+        "name": "brown",
+        "hex": "#6d5412"
+      },
+      {
+        "name": "orange",
+        "hex": "#a1683c"
+      },
+      {
+        "name": "yellow",
+        "hex": "#c9d487"
+      },
+      {
+        "name": "light green",
+        "hex": "#9ae29b"
+      },
+      {
+        "name": "green",
+        "hex": "#5cab5e"
+      },
+      {
+        "name": "cyan",
+        "hex": "#6abfc6"
+      },
+      {
+        "name": "light blue",
+        "hex": "#887ecb"
+      },
+      {
+        "name": "blue",
+        "hex": "#50459b"
+      },
+      {
+        "name": "purple",
+        "hex": "#a057a3"
+      }
+    ],
+    "notes": "C64 VIC-II 色值同样因模拟/测量方法不同而有多个版本（Pepto 等），此为 Lospec 版本。色名为本文按 C64 标准 16 色名逐一对应补注。"
+  },
+  {
+    "id": "zx-spectrum",
+    "name": "ZX Spectrum（15 色：普通+BRIGHT）",
+    "group": "复古主机/电脑",
+    "source": "Lospec Palette List https://lospec.com/palette-list/zx-spectrum",
+    "swatches": [
+      {
+        "name": "black",
+        "hex": "#000000"
+      },
+      {
+        "name": "blue",
+        "hex": "#0000d8"
+      },
+      {
+        "name": "bright blue",
+        "hex": "#0000ff"
+      },
+      {
+        "name": "red",
+        "hex": "#d80000"
+      },
+      {
+        "name": "bright red",
+        "hex": "#ff0000"
+      },
+      {
+        "name": "magenta",
+        "hex": "#d800d8"
+      },
+      {
+        "name": "bright magenta",
+        "hex": "#ff00ff"
+      },
+      {
+        "name": "green",
+        "hex": "#00d800"
+      },
+      {
+        "name": "bright green",
+        "hex": "#00ff00"
+      },
+      {
+        "name": "cyan",
+        "hex": "#00d8d8"
+      },
+      {
+        "name": "bright cyan",
+        "hex": "#00ffff"
+      },
+      {
+        "name": "yellow",
+        "hex": "#d8d800"
+      },
+      {
+        "name": "bright yellow",
+        "hex": "#ffff00"
+      },
+      {
+        "name": "white",
+        "hex": "#d8d8d8"
+      },
+      {
+        "name": "bright white",
+        "hex": "#ffffff"
+      }
+    ]
+  },
+  {
+    "id": "apple-ii",
+    "name": "Apple II（低分辨率 15 色）",
+    "group": "复古主机/电脑",
+    "source": "Lospec Palette List https://lospec.com/palette-list/apple-ii",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#515c16"
+      },
+      {
+        "name": "02",
+        "hex": "#843d52"
+      },
+      {
+        "name": "03",
+        "hex": "#ea7d27"
+      },
+      {
+        "name": "04",
+        "hex": "#514888"
+      },
+      {
+        "name": "05",
+        "hex": "#e85def"
+      },
+      {
+        "name": "06",
+        "hex": "#f5b7c9"
+      },
+      {
+        "name": "07",
+        "hex": "#006752"
+      },
+      {
+        "name": "08",
+        "hex": "#00c82c"
+      },
+      {
+        "name": "09",
+        "hex": "#919191"
+      },
+      {
+        "name": "10",
+        "hex": "#c9d199"
+      },
+      {
+        "name": "11",
+        "hex": "#00a6f0"
+      },
+      {
+        "name": "12",
+        "hex": "#98dbc9"
+      },
+      {
+        "name": "13",
+        "hex": "#c8c1f7"
+      },
+      {
+        "name": "14",
+        "hex": "#ffffff"
+      }
+    ],
+    "notes": "原机两种灰相同，故 15 色；NTSC 伪彩，色值随显示器差异很大。"
+  },
+  {
+    "id": "msx",
+    "name": "MSX（TMS9918，15 色）",
+    "group": "复古主机/电脑",
+    "source": "Lospec Palette List https://lospec.com/palette-list/msx",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#cacaca"
+      },
+      {
+        "name": "02",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "03",
+        "hex": "#b75e51"
+      },
+      {
+        "name": "04",
+        "hex": "#d96459"
+      },
+      {
+        "name": "05",
+        "hex": "#fe877c"
+      },
+      {
+        "name": "06",
+        "hex": "#cac15e"
+      },
+      {
+        "name": "07",
+        "hex": "#ddce85"
+      },
+      {
+        "name": "08",
+        "hex": "#3ca042"
+      },
+      {
+        "name": "09",
+        "hex": "#40b64a"
+      },
+      {
+        "name": "10",
+        "hex": "#73ce7c"
+      },
+      {
+        "name": "11",
+        "hex": "#5955df"
+      },
+      {
+        "name": "12",
+        "hex": "#7e75f0"
+      },
+      {
+        "name": "13",
+        "hex": "#64daee"
+      },
+      {
+        "name": "14",
+        "hex": "#b565b3"
+      }
+    ]
+  },
+  {
+    "id": "amstrad-cpc",
+    "name": "Amstrad CPC（27 色）",
+    "group": "复古主机/电脑",
+    "source": "Lospec Palette List https://lospec.com/palette-list/amstrad-cpc",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#040404"
+      },
+      {
+        "name": "01",
+        "hex": "#808080"
+      },
+      {
+        "name": "02",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "03",
+        "hex": "#800000"
+      },
+      {
+        "name": "04",
+        "hex": "#ff0000"
+      },
+      {
+        "name": "05",
+        "hex": "#ff8080"
+      },
+      {
+        "name": "06",
+        "hex": "#ff7f00"
+      },
+      {
+        "name": "07",
+        "hex": "#ffff80"
+      },
+      {
+        "name": "08",
+        "hex": "#ffff00"
+      },
+      {
+        "name": "09",
+        "hex": "#808000"
+      },
+      {
+        "name": "10",
+        "hex": "#008000"
+      },
+      {
+        "name": "11",
+        "hex": "#01ff00"
+      },
+      {
+        "name": "12",
+        "hex": "#80ff00"
+      },
+      {
+        "name": "13",
+        "hex": "#80ff80"
+      },
+      {
+        "name": "14",
+        "hex": "#01ff80"
+      },
+      {
+        "name": "15",
+        "hex": "#008080"
+      },
+      {
+        "name": "16",
+        "hex": "#01ffff"
+      },
+      {
+        "name": "17",
+        "hex": "#80ffff"
+      },
+      {
+        "name": "18",
+        "hex": "#0080ff"
+      },
+      {
+        "name": "19",
+        "hex": "#0000ff"
+      },
+      {
+        "name": "20",
+        "hex": "#00007f"
+      },
+      {
+        "name": "21",
+        "hex": "#7f00ff"
+      },
+      {
+        "name": "22",
+        "hex": "#8080ff"
+      },
+      {
+        "name": "23",
+        "hex": "#ff80ff"
+      },
+      {
+        "name": "24",
+        "hex": "#ff00ff"
+      },
+      {
+        "name": "25",
+        "hex": "#ff0080"
+      },
+      {
+        "name": "26",
+        "hex": "#800080"
+      }
+    ]
+  },
+  {
+    "id": "mac-ii",
+    "name": "Macintosh II（16 色）",
+    "group": "复古主机/电脑",
+    "source": "Lospec Palette List https://lospec.com/palette-list/macintosh-ii",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "01",
+        "hex": "#ffff00"
+      },
+      {
+        "name": "02",
+        "hex": "#ff6500"
+      },
+      {
+        "name": "03",
+        "hex": "#dc0000"
+      },
+      {
+        "name": "04",
+        "hex": "#ff0097"
+      },
+      {
+        "name": "05",
+        "hex": "#360097"
+      },
+      {
+        "name": "06",
+        "hex": "#0000ca"
+      },
+      {
+        "name": "07",
+        "hex": "#0097ff"
+      },
+      {
+        "name": "08",
+        "hex": "#00a800"
+      },
+      {
+        "name": "09",
+        "hex": "#006500"
+      },
+      {
+        "name": "10",
+        "hex": "#653600"
+      },
+      {
+        "name": "11",
+        "hex": "#976536"
+      },
+      {
+        "name": "12",
+        "hex": "#b9b9b9"
+      },
+      {
+        "name": "13",
+        "hex": "#868686"
+      },
+      {
+        "name": "14",
+        "hex": "#454545"
+      },
+      {
+        "name": "15",
+        "hex": "#000000"
+      }
+    ]
+  },
+  {
+    "id": "cga-16",
+    "name": "CGA 16 色（RGBI，含棕色修正）",
+    "group": "IBM PC",
+    "source": "Lospec Palette List https://lospec.com/palette-list/color-graphics-adapter",
+    "swatches": [
+      {
+        "name": "black",
+        "hex": "#000000"
+      },
+      {
+        "name": "dark gray",
+        "hex": "#555555"
+      },
+      {
+        "name": "light gray",
+        "hex": "#aaaaaa"
+      },
+      {
+        "name": "white",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "blue",
+        "hex": "#0000aa"
+      },
+      {
+        "name": "light blue",
+        "hex": "#5555ff"
+      },
+      {
+        "name": "green",
+        "hex": "#00aa00"
+      },
+      {
+        "name": "light green",
+        "hex": "#55ff55"
+      },
+      {
+        "name": "cyan",
+        "hex": "#00aaaa"
+      },
+      {
+        "name": "light cyan",
+        "hex": "#55ffff"
+      },
+      {
+        "name": "red",
+        "hex": "#aa0000"
+      },
+      {
+        "name": "light red",
+        "hex": "#ff5555"
+      },
+      {
+        "name": "magenta",
+        "hex": "#aa00aa"
+      },
+      {
+        "name": "light magenta",
+        "hex": "#ff55ff"
+      },
+      {
+        "name": "brown",
+        "hex": "#aa5500"
+      },
+      {
+        "name": "yellow",
+        "hex": "#ffff55"
+      }
+    ],
+    "notes": "色名为 IBM RGBI 标准名，按 hex 对应补注；棕色 #aa5500 为显示器硬件对暗黄的修正。"
+  },
+  {
+    "id": "cga-p0-low",
+    "name": "CGA 模式4 调色板0（低亮度）",
+    "group": "IBM PC",
+    "source": "Lospec Palette List https://lospec.com/palette-list/cga-palette-0-low",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#00aa00"
+      },
+      {
+        "name": "02",
+        "hex": "#aa0000"
+      },
+      {
+        "name": "03",
+        "hex": "#aa5500"
+      }
+    ],
+    "notes": "第 0 色为可设定背景色，此处按 Lospec 取黑。"
+  },
+  {
+    "id": "cga-p0-high",
+    "name": "CGA 模式4 调色板0（高亮度）",
+    "group": "IBM PC",
+    "source": "Lospec Palette List https://lospec.com/palette-list/cga-palette-0-high",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#55ff55"
+      },
+      {
+        "name": "02",
+        "hex": "#ff5555"
+      },
+      {
+        "name": "03",
+        "hex": "#ffff55"
+      }
+    ]
+  },
+  {
+    "id": "cga-p1-low",
+    "name": "CGA 模式4 调色板1（低亮度）",
+    "group": "IBM PC",
+    "source": "Lospec Palette List https://lospec.com/palette-list/cga-palette-1-low",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#aa00aa"
+      },
+      {
+        "name": "02",
+        "hex": "#00aaaa"
+      },
+      {
+        "name": "03",
+        "hex": "#aaaaaa"
+      }
+    ]
+  },
+  {
+    "id": "cga-p1-high",
+    "name": "CGA 模式4 调色板1（高亮度，经典青/品红/白）",
+    "group": "IBM PC",
+    "source": "Lospec Palette List https://lospec.com/palette-list/cga-palette-1-high",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#ff55ff"
+      },
+      {
+        "name": "02",
+        "hex": "#55ffff"
+      },
+      {
+        "name": "03",
+        "hex": "#ffffff"
+      }
+    ]
+  },
+  {
+    "id": "cga-p2-high",
+    "name": "CGA 模式5“调色板2”（高亮度，青/红/白）",
+    "group": "IBM PC",
+    "source": "Lospec Palette List https://lospec.com/palette-list/cga-palette-2-high",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#ff5555"
+      },
+      {
+        "name": "02",
+        "hex": "#55ffff"
+      },
+      {
+        "name": "03",
+        "hex": "#ffffff"
+      }
+    ]
+  },
+  {
+    "id": "ega-64",
+    "name": "EGA 64 色全集（rgbRGB 6 位）",
+    "group": "IBM PC",
+    "source": "Lospec Palette List https://lospec.com/palette-list/enhanced-graphics-adapter",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#0000aa"
+      },
+      {
+        "name": "02",
+        "hex": "#00aa00"
+      },
+      {
+        "name": "03",
+        "hex": "#00aaaa"
+      },
+      {
+        "name": "04",
+        "hex": "#aa0000"
+      },
+      {
+        "name": "05",
+        "hex": "#aa00aa"
+      },
+      {
+        "name": "06",
+        "hex": "#aaaa00"
+      },
+      {
+        "name": "07",
+        "hex": "#aaaaaa"
+      },
+      {
+        "name": "08",
+        "hex": "#000055"
+      },
+      {
+        "name": "09",
+        "hex": "#0000ff"
+      },
+      {
+        "name": "10",
+        "hex": "#00aa55"
+      },
+      {
+        "name": "11",
+        "hex": "#00aaff"
+      },
+      {
+        "name": "12",
+        "hex": "#aa0055"
+      },
+      {
+        "name": "13",
+        "hex": "#aa00ff"
+      },
+      {
+        "name": "14",
+        "hex": "#aaaa55"
+      },
+      {
+        "name": "15",
+        "hex": "#aaaaff"
+      },
+      {
+        "name": "16",
+        "hex": "#005500"
+      },
+      {
+        "name": "17",
+        "hex": "#0055aa"
+      },
+      {
+        "name": "18",
+        "hex": "#00ff00"
+      },
+      {
+        "name": "19",
+        "hex": "#00ffaa"
+      },
+      {
+        "name": "20",
+        "hex": "#aa5500"
+      },
+      {
+        "name": "21",
+        "hex": "#aa55aa"
+      },
+      {
+        "name": "22",
+        "hex": "#aaff00"
+      },
+      {
+        "name": "23",
+        "hex": "#aaffaa"
+      },
+      {
+        "name": "24",
+        "hex": "#005555"
+      },
+      {
+        "name": "25",
+        "hex": "#0055ff"
+      },
+      {
+        "name": "26",
+        "hex": "#00ff55"
+      },
+      {
+        "name": "27",
+        "hex": "#00ffff"
+      },
+      {
+        "name": "28",
+        "hex": "#aa5555"
+      },
+      {
+        "name": "29",
+        "hex": "#aa55ff"
+      },
+      {
+        "name": "30",
+        "hex": "#aaff55"
+      },
+      {
+        "name": "31",
+        "hex": "#aaffff"
+      },
+      {
+        "name": "32",
+        "hex": "#550000"
+      },
+      {
+        "name": "33",
+        "hex": "#5500aa"
+      },
+      {
+        "name": "34",
+        "hex": "#55aa00"
+      },
+      {
+        "name": "35",
+        "hex": "#55aaaa"
+      },
+      {
+        "name": "36",
+        "hex": "#ff0000"
+      },
+      {
+        "name": "37",
+        "hex": "#ff00aa"
+      },
+      {
+        "name": "38",
+        "hex": "#ffaa00"
+      },
+      {
+        "name": "39",
+        "hex": "#ffaaaa"
+      },
+      {
+        "name": "40",
+        "hex": "#550055"
+      },
+      {
+        "name": "41",
+        "hex": "#5500ff"
+      },
+      {
+        "name": "42",
+        "hex": "#55aa55"
+      },
+      {
+        "name": "43",
+        "hex": "#55aaff"
+      },
+      {
+        "name": "44",
+        "hex": "#ff0055"
+      },
+      {
+        "name": "45",
+        "hex": "#ff00ff"
+      },
+      {
+        "name": "46",
+        "hex": "#ffaa55"
+      },
+      {
+        "name": "47",
+        "hex": "#ffaaff"
+      },
+      {
+        "name": "48",
+        "hex": "#555500"
+      },
+      {
+        "name": "49",
+        "hex": "#5555aa"
+      },
+      {
+        "name": "50",
+        "hex": "#55ff00"
+      },
+      {
+        "name": "51",
+        "hex": "#55ffaa"
+      },
+      {
+        "name": "52",
+        "hex": "#ff5500"
+      },
+      {
+        "name": "53",
+        "hex": "#ff55aa"
+      },
+      {
+        "name": "54",
+        "hex": "#ffff00"
+      },
+      {
+        "name": "55",
+        "hex": "#ffffaa"
+      },
+      {
+        "name": "56",
+        "hex": "#555555"
+      },
+      {
+        "name": "57",
+        "hex": "#5555ff"
+      },
+      {
+        "name": "58",
+        "hex": "#55ff55"
+      },
+      {
+        "name": "59",
+        "hex": "#55ffff"
+      },
+      {
+        "name": "60",
+        "hex": "#ff5555"
+      },
+      {
+        "name": "61",
+        "hex": "#ff55ff"
+      },
+      {
+        "name": "62",
+        "hex": "#ffff55"
+      },
+      {
+        "name": "63",
+        "hex": "#ffffff"
+      }
+    ],
+    "notes": "索引 0–63 即 6 位 rgbRGB 值；EGA 默认 16 色 = 索引 0,1,2,3,4,5,20,7,56–63。"
+  },
+  {
+    "id": "pico-8",
+    "name": "PICO-8",
+    "group": "幻想主机",
+    "source": "Lospec Palette List https://lospec.com/palette-list/pico-8",
+    "swatches": [
+      {
+        "name": "0 black",
+        "hex": "#000000"
+      },
+      {
+        "name": "1 dark-blue",
+        "hex": "#1d2b53"
+      },
+      {
+        "name": "2 dark-purple",
+        "hex": "#7e2553"
+      },
+      {
+        "name": "3 dark-green",
+        "hex": "#008751"
+      },
+      {
+        "name": "4 brown",
+        "hex": "#ab5236"
+      },
+      {
+        "name": "5 dark-grey",
+        "hex": "#5f574f"
+      },
+      {
+        "name": "6 light-grey",
+        "hex": "#c2c3c7"
+      },
+      {
+        "name": "7 white",
+        "hex": "#fff1e8"
+      },
+      {
+        "name": "8 red",
+        "hex": "#ff004d"
+      },
+      {
+        "name": "9 orange",
+        "hex": "#ffa300"
+      },
+      {
+        "name": "10 yellow",
+        "hex": "#ffec27"
+      },
+      {
+        "name": "11 green",
+        "hex": "#00e436"
+      },
+      {
+        "name": "12 blue",
+        "hex": "#29adff"
+      },
+      {
+        "name": "13 lavender",
+        "hex": "#83769c"
+      },
+      {
+        "name": "14 pink",
+        "hex": "#ff77a8"
+      },
+      {
+        "name": "15 light-peach",
+        "hex": "#ffccaa"
+      }
+    ],
+    "notes": "色名按 PICO-8 社区 wiki 惯例（未逐一核实官方手册）。"
+  },
+  {
+    "id": "pico-8-secret",
+    "name": "PICO-8 扩展“秘密”调色板（32 色）",
+    "group": "幻想主机",
+    "source": "Lospec Palette List https://lospec.com/palette-list/pico-8-secret-palette",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#000000"
+      },
+      {
+        "name": "01",
+        "hex": "#1d2b53"
+      },
+      {
+        "name": "02",
+        "hex": "#7e2553"
+      },
+      {
+        "name": "03",
+        "hex": "#008751"
+      },
+      {
+        "name": "04",
+        "hex": "#ab5236"
+      },
+      {
+        "name": "05",
+        "hex": "#5f574f"
+      },
+      {
+        "name": "06",
+        "hex": "#c2c3c7"
+      },
+      {
+        "name": "07",
+        "hex": "#fff1e8"
+      },
+      {
+        "name": "08",
+        "hex": "#ff004d"
+      },
+      {
+        "name": "09",
+        "hex": "#ffa300"
+      },
+      {
+        "name": "10",
+        "hex": "#ffec27"
+      },
+      {
+        "name": "11",
+        "hex": "#00e436"
+      },
+      {
+        "name": "12",
+        "hex": "#29adff"
+      },
+      {
+        "name": "13",
+        "hex": "#83769c"
+      },
+      {
+        "name": "14",
+        "hex": "#ff77a8"
+      },
+      {
+        "name": "15",
+        "hex": "#ffccaa"
+      },
+      {
+        "name": "16",
+        "hex": "#291814"
+      },
+      {
+        "name": "17",
+        "hex": "#111d35"
+      },
+      {
+        "name": "18",
+        "hex": "#422136"
+      },
+      {
+        "name": "19",
+        "hex": "#125359"
+      },
+      {
+        "name": "20",
+        "hex": "#742f29"
+      },
+      {
+        "name": "21",
+        "hex": "#49333b"
+      },
+      {
+        "name": "22",
+        "hex": "#a28879"
+      },
+      {
+        "name": "23",
+        "hex": "#f3ef7d"
+      },
+      {
+        "name": "24",
+        "hex": "#be1250"
+      },
+      {
+        "name": "25",
+        "hex": "#ff6c24"
+      },
+      {
+        "name": "26",
+        "hex": "#a8e72e"
+      },
+      {
+        "name": "27",
+        "hex": "#00b543"
+      },
+      {
+        "name": "28",
+        "hex": "#065ab5"
+      },
+      {
+        "name": "29",
+        "hex": "#754665"
+      },
+      {
+        "name": "30",
+        "hex": "#ff6e59"
+      },
+      {
+        "name": "31",
+        "hex": "#ff9d81"
+      }
+    ]
+  },
+  {
+    "id": "sweetie-16",
+    "name": "Sweetie 16（GrafxKid）",
+    "group": "现代像素调色板",
+    "source": "Lospec Palette List https://lospec.com/palette-list/sweetie-16",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#1a1c2c"
+      },
+      {
+        "name": "01",
+        "hex": "#5d275d"
+      },
+      {
+        "name": "02",
+        "hex": "#b13e53"
+      },
+      {
+        "name": "03",
+        "hex": "#ef7d57"
+      },
+      {
+        "name": "04",
+        "hex": "#ffcd75"
+      },
+      {
+        "name": "05",
+        "hex": "#a7f070"
+      },
+      {
+        "name": "06",
+        "hex": "#38b764"
+      },
+      {
+        "name": "07",
+        "hex": "#257179"
+      },
+      {
+        "name": "08",
+        "hex": "#29366f"
+      },
+      {
+        "name": "09",
+        "hex": "#3b5dc9"
+      },
+      {
+        "name": "10",
+        "hex": "#41a6f6"
+      },
+      {
+        "name": "11",
+        "hex": "#73eff7"
+      },
+      {
+        "name": "12",
+        "hex": "#f4f4f4"
+      },
+      {
+        "name": "13",
+        "hex": "#94b0c2"
+      },
+      {
+        "name": "14",
+        "hex": "#566c86"
+      },
+      {
+        "name": "15",
+        "hex": "#333c57"
+      }
+    ],
+    "notes": "作者 GrafxKid（Lospec 页未填作者字段，作者信息为常识，未核实）。"
+  },
+  {
+    "id": "endesga-16",
+    "name": "Endesga 16",
+    "group": "现代像素调色板",
+    "source": "Lospec Palette List https://lospec.com/palette-list/endesga-16（作者字段：ENDESGA）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#e4a672"
+      },
+      {
+        "name": "01",
+        "hex": "#b86f50"
+      },
+      {
+        "name": "02",
+        "hex": "#743f39"
+      },
+      {
+        "name": "03",
+        "hex": "#3f2832"
+      },
+      {
+        "name": "04",
+        "hex": "#9e2835"
+      },
+      {
+        "name": "05",
+        "hex": "#e53b44"
+      },
+      {
+        "name": "06",
+        "hex": "#fb922b"
+      },
+      {
+        "name": "07",
+        "hex": "#ffe762"
+      },
+      {
+        "name": "08",
+        "hex": "#63c64d"
+      },
+      {
+        "name": "09",
+        "hex": "#327345"
+      },
+      {
+        "name": "10",
+        "hex": "#193d3f"
+      },
+      {
+        "name": "11",
+        "hex": "#4f6781"
+      },
+      {
+        "name": "12",
+        "hex": "#afbfd2"
+      },
+      {
+        "name": "13",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "14",
+        "hex": "#2ce8f4"
+      },
+      {
+        "name": "15",
+        "hex": "#0484d1"
+      }
+    ]
+  },
+  {
+    "id": "endesga-32",
+    "name": "Endesga 32",
+    "group": "现代像素调色板",
+    "source": "Lospec Palette List https://lospec.com/palette-list/endesga-32（作者字段：ENDESGA）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#be4a2f"
+      },
+      {
+        "name": "01",
+        "hex": "#d77643"
+      },
+      {
+        "name": "02",
+        "hex": "#ead4aa"
+      },
+      {
+        "name": "03",
+        "hex": "#e4a672"
+      },
+      {
+        "name": "04",
+        "hex": "#b86f50"
+      },
+      {
+        "name": "05",
+        "hex": "#733e39"
+      },
+      {
+        "name": "06",
+        "hex": "#3e2731"
+      },
+      {
+        "name": "07",
+        "hex": "#a22633"
+      },
+      {
+        "name": "08",
+        "hex": "#e43b44"
+      },
+      {
+        "name": "09",
+        "hex": "#f77622"
+      },
+      {
+        "name": "10",
+        "hex": "#feae34"
+      },
+      {
+        "name": "11",
+        "hex": "#fee761"
+      },
+      {
+        "name": "12",
+        "hex": "#63c74d"
+      },
+      {
+        "name": "13",
+        "hex": "#3e8948"
+      },
+      {
+        "name": "14",
+        "hex": "#265c42"
+      },
+      {
+        "name": "15",
+        "hex": "#193c3e"
+      },
+      {
+        "name": "16",
+        "hex": "#124e89"
+      },
+      {
+        "name": "17",
+        "hex": "#0099db"
+      },
+      {
+        "name": "18",
+        "hex": "#2ce8f5"
+      },
+      {
+        "name": "19",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "20",
+        "hex": "#c0cbdc"
+      },
+      {
+        "name": "21",
+        "hex": "#8b9bb4"
+      },
+      {
+        "name": "22",
+        "hex": "#5a6988"
+      },
+      {
+        "name": "23",
+        "hex": "#3a4466"
+      },
+      {
+        "name": "24",
+        "hex": "#262b44"
+      },
+      {
+        "name": "25",
+        "hex": "#181425"
+      },
+      {
+        "name": "26",
+        "hex": "#ff0044"
+      },
+      {
+        "name": "27",
+        "hex": "#68386c"
+      },
+      {
+        "name": "28",
+        "hex": "#b55088"
+      },
+      {
+        "name": "29",
+        "hex": "#f6757a"
+      },
+      {
+        "name": "30",
+        "hex": "#e8b796"
+      },
+      {
+        "name": "31",
+        "hex": "#c28569"
+      }
+    ]
+  },
+  {
+    "id": "endesga-64",
+    "name": "Endesga 64",
+    "group": "现代像素调色板",
+    "source": "Lospec Palette List https://lospec.com/palette-list/endesga-64（作者字段：ENDESGA）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#ff0040"
+      },
+      {
+        "name": "01",
+        "hex": "#131313"
+      },
+      {
+        "name": "02",
+        "hex": "#1b1b1b"
+      },
+      {
+        "name": "03",
+        "hex": "#272727"
+      },
+      {
+        "name": "04",
+        "hex": "#3d3d3d"
+      },
+      {
+        "name": "05",
+        "hex": "#5d5d5d"
+      },
+      {
+        "name": "06",
+        "hex": "#858585"
+      },
+      {
+        "name": "07",
+        "hex": "#b4b4b4"
+      },
+      {
+        "name": "08",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "09",
+        "hex": "#c7cfdd"
+      },
+      {
+        "name": "10",
+        "hex": "#92a1b9"
+      },
+      {
+        "name": "11",
+        "hex": "#657392"
+      },
+      {
+        "name": "12",
+        "hex": "#424c6e"
+      },
+      {
+        "name": "13",
+        "hex": "#2a2f4e"
+      },
+      {
+        "name": "14",
+        "hex": "#1a1932"
+      },
+      {
+        "name": "15",
+        "hex": "#0e071b"
+      },
+      {
+        "name": "16",
+        "hex": "#1c121c"
+      },
+      {
+        "name": "17",
+        "hex": "#391f21"
+      },
+      {
+        "name": "18",
+        "hex": "#5d2c28"
+      },
+      {
+        "name": "19",
+        "hex": "#8a4836"
+      },
+      {
+        "name": "20",
+        "hex": "#bf6f4a"
+      },
+      {
+        "name": "21",
+        "hex": "#e69c69"
+      },
+      {
+        "name": "22",
+        "hex": "#f6ca9f"
+      },
+      {
+        "name": "23",
+        "hex": "#f9e6cf"
+      },
+      {
+        "name": "24",
+        "hex": "#edab50"
+      },
+      {
+        "name": "25",
+        "hex": "#e07438"
+      },
+      {
+        "name": "26",
+        "hex": "#c64524"
+      },
+      {
+        "name": "27",
+        "hex": "#8e251d"
+      },
+      {
+        "name": "28",
+        "hex": "#ff5000"
+      },
+      {
+        "name": "29",
+        "hex": "#ed7614"
+      },
+      {
+        "name": "30",
+        "hex": "#ffa214"
+      },
+      {
+        "name": "31",
+        "hex": "#ffc825"
+      },
+      {
+        "name": "32",
+        "hex": "#ffeb57"
+      },
+      {
+        "name": "33",
+        "hex": "#d3fc7e"
+      },
+      {
+        "name": "34",
+        "hex": "#99e65f"
+      },
+      {
+        "name": "35",
+        "hex": "#5ac54f"
+      },
+      {
+        "name": "36",
+        "hex": "#33984b"
+      },
+      {
+        "name": "37",
+        "hex": "#1e6f50"
+      },
+      {
+        "name": "38",
+        "hex": "#134c4c"
+      },
+      {
+        "name": "39",
+        "hex": "#0c2e44"
+      },
+      {
+        "name": "40",
+        "hex": "#00396d"
+      },
+      {
+        "name": "41",
+        "hex": "#0069aa"
+      },
+      {
+        "name": "42",
+        "hex": "#0098dc"
+      },
+      {
+        "name": "43",
+        "hex": "#00cdf9"
+      },
+      {
+        "name": "44",
+        "hex": "#0cf1ff"
+      },
+      {
+        "name": "45",
+        "hex": "#94fdff"
+      },
+      {
+        "name": "46",
+        "hex": "#fdd2ed"
+      },
+      {
+        "name": "47",
+        "hex": "#f389f5"
+      },
+      {
+        "name": "48",
+        "hex": "#db3ffd"
+      },
+      {
+        "name": "49",
+        "hex": "#7a09fa"
+      },
+      {
+        "name": "50",
+        "hex": "#3003d9"
+      },
+      {
+        "name": "51",
+        "hex": "#0c0293"
+      },
+      {
+        "name": "52",
+        "hex": "#03193f"
+      },
+      {
+        "name": "53",
+        "hex": "#3b1443"
+      },
+      {
+        "name": "54",
+        "hex": "#622461"
+      },
+      {
+        "name": "55",
+        "hex": "#93388f"
+      },
+      {
+        "name": "56",
+        "hex": "#ca52c9"
+      },
+      {
+        "name": "57",
+        "hex": "#c85086"
+      },
+      {
+        "name": "58",
+        "hex": "#f68187"
+      },
+      {
+        "name": "59",
+        "hex": "#f5555d"
+      },
+      {
+        "name": "60",
+        "hex": "#ea323c"
+      },
+      {
+        "name": "61",
+        "hex": "#c42430"
+      },
+      {
+        "name": "62",
+        "hex": "#891e2b"
+      },
+      {
+        "name": "63",
+        "hex": "#571c27"
+      }
+    ]
+  },
+  {
+    "id": "aap-64",
+    "name": "AAP-64（Adigun A. Polack）",
+    "group": "现代像素调色板",
+    "source": "Lospec Palette List https://lospec.com/palette-list/aap-64（作者字段：Adigun A. Polack）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#060608"
+      },
+      {
+        "name": "01",
+        "hex": "#141013"
+      },
+      {
+        "name": "02",
+        "hex": "#3b1725"
+      },
+      {
+        "name": "03",
+        "hex": "#73172d"
+      },
+      {
+        "name": "04",
+        "hex": "#b4202a"
+      },
+      {
+        "name": "05",
+        "hex": "#df3e23"
+      },
+      {
+        "name": "06",
+        "hex": "#fa6a0a"
+      },
+      {
+        "name": "07",
+        "hex": "#f9a31b"
+      },
+      {
+        "name": "08",
+        "hex": "#ffd541"
+      },
+      {
+        "name": "09",
+        "hex": "#fffc40"
+      },
+      {
+        "name": "10",
+        "hex": "#d6f264"
+      },
+      {
+        "name": "11",
+        "hex": "#9cdb43"
+      },
+      {
+        "name": "12",
+        "hex": "#59c135"
+      },
+      {
+        "name": "13",
+        "hex": "#14a02e"
+      },
+      {
+        "name": "14",
+        "hex": "#1a7a3e"
+      },
+      {
+        "name": "15",
+        "hex": "#24523b"
+      },
+      {
+        "name": "16",
+        "hex": "#122020"
+      },
+      {
+        "name": "17",
+        "hex": "#143464"
+      },
+      {
+        "name": "18",
+        "hex": "#285cc4"
+      },
+      {
+        "name": "19",
+        "hex": "#249fde"
+      },
+      {
+        "name": "20",
+        "hex": "#20d6c7"
+      },
+      {
+        "name": "21",
+        "hex": "#a6fcdb"
+      },
+      {
+        "name": "22",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "23",
+        "hex": "#fef3c0"
+      },
+      {
+        "name": "24",
+        "hex": "#fad6b8"
+      },
+      {
+        "name": "25",
+        "hex": "#f5a097"
+      },
+      {
+        "name": "26",
+        "hex": "#e86a73"
+      },
+      {
+        "name": "27",
+        "hex": "#bc4a9b"
+      },
+      {
+        "name": "28",
+        "hex": "#793a80"
+      },
+      {
+        "name": "29",
+        "hex": "#403353"
+      },
+      {
+        "name": "30",
+        "hex": "#242234"
+      },
+      {
+        "name": "31",
+        "hex": "#221c1a"
+      },
+      {
+        "name": "32",
+        "hex": "#322b28"
+      },
+      {
+        "name": "33",
+        "hex": "#71413b"
+      },
+      {
+        "name": "34",
+        "hex": "#bb7547"
+      },
+      {
+        "name": "35",
+        "hex": "#dba463"
+      },
+      {
+        "name": "36",
+        "hex": "#f4d29c"
+      },
+      {
+        "name": "37",
+        "hex": "#dae0ea"
+      },
+      {
+        "name": "38",
+        "hex": "#b3b9d1"
+      },
+      {
+        "name": "39",
+        "hex": "#8b93af"
+      },
+      {
+        "name": "40",
+        "hex": "#6d758d"
+      },
+      {
+        "name": "41",
+        "hex": "#4a5462"
+      },
+      {
+        "name": "42",
+        "hex": "#333941"
+      },
+      {
+        "name": "43",
+        "hex": "#422433"
+      },
+      {
+        "name": "44",
+        "hex": "#5b3138"
+      },
+      {
+        "name": "45",
+        "hex": "#8e5252"
+      },
+      {
+        "name": "46",
+        "hex": "#ba756a"
+      },
+      {
+        "name": "47",
+        "hex": "#e9b5a3"
+      },
+      {
+        "name": "48",
+        "hex": "#e3e6ff"
+      },
+      {
+        "name": "49",
+        "hex": "#b9bffb"
+      },
+      {
+        "name": "50",
+        "hex": "#849be4"
+      },
+      {
+        "name": "51",
+        "hex": "#588dbe"
+      },
+      {
+        "name": "52",
+        "hex": "#477d85"
+      },
+      {
+        "name": "53",
+        "hex": "#23674e"
+      },
+      {
+        "name": "54",
+        "hex": "#328464"
+      },
+      {
+        "name": "55",
+        "hex": "#5daf8d"
+      },
+      {
+        "name": "56",
+        "hex": "#92dcba"
+      },
+      {
+        "name": "57",
+        "hex": "#cdf7e2"
+      },
+      {
+        "name": "58",
+        "hex": "#e4d2aa"
+      },
+      {
+        "name": "59",
+        "hex": "#c7b08b"
+      },
+      {
+        "name": "60",
+        "hex": "#a08662"
+      },
+      {
+        "name": "61",
+        "hex": "#796755"
+      },
+      {
+        "name": "62",
+        "hex": "#5a4e44"
+      },
+      {
+        "name": "63",
+        "hex": "#423934"
+      }
+    ]
+  },
+  {
+    "id": "resurrect-64",
+    "name": "Resurrect 64（Kerrie Lake）",
+    "group": "现代像素调色板",
+    "source": "Lospec Palette List https://lospec.com/palette-list/resurrect-64（作者字段：Kerrie Lake）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#2e222f"
+      },
+      {
+        "name": "01",
+        "hex": "#3e3546"
+      },
+      {
+        "name": "02",
+        "hex": "#625565"
+      },
+      {
+        "name": "03",
+        "hex": "#966c6c"
+      },
+      {
+        "name": "04",
+        "hex": "#ab947a"
+      },
+      {
+        "name": "05",
+        "hex": "#694f62"
+      },
+      {
+        "name": "06",
+        "hex": "#7f708a"
+      },
+      {
+        "name": "07",
+        "hex": "#9babb2"
+      },
+      {
+        "name": "08",
+        "hex": "#c7dcd0"
+      },
+      {
+        "name": "09",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "10",
+        "hex": "#6e2727"
+      },
+      {
+        "name": "11",
+        "hex": "#b33831"
+      },
+      {
+        "name": "12",
+        "hex": "#ea4f36"
+      },
+      {
+        "name": "13",
+        "hex": "#f57d4a"
+      },
+      {
+        "name": "14",
+        "hex": "#ae2334"
+      },
+      {
+        "name": "15",
+        "hex": "#e83b3b"
+      },
+      {
+        "name": "16",
+        "hex": "#fb6b1d"
+      },
+      {
+        "name": "17",
+        "hex": "#f79617"
+      },
+      {
+        "name": "18",
+        "hex": "#f9c22b"
+      },
+      {
+        "name": "19",
+        "hex": "#7a3045"
+      },
+      {
+        "name": "20",
+        "hex": "#9e4539"
+      },
+      {
+        "name": "21",
+        "hex": "#cd683d"
+      },
+      {
+        "name": "22",
+        "hex": "#e6904e"
+      },
+      {
+        "name": "23",
+        "hex": "#fbb954"
+      },
+      {
+        "name": "24",
+        "hex": "#4c3e24"
+      },
+      {
+        "name": "25",
+        "hex": "#676633"
+      },
+      {
+        "name": "26",
+        "hex": "#a2a947"
+      },
+      {
+        "name": "27",
+        "hex": "#d5e04b"
+      },
+      {
+        "name": "28",
+        "hex": "#fbff86"
+      },
+      {
+        "name": "29",
+        "hex": "#165a4c"
+      },
+      {
+        "name": "30",
+        "hex": "#239063"
+      },
+      {
+        "name": "31",
+        "hex": "#1ebc73"
+      },
+      {
+        "name": "32",
+        "hex": "#91db69"
+      },
+      {
+        "name": "33",
+        "hex": "#cddf6c"
+      },
+      {
+        "name": "34",
+        "hex": "#313638"
+      },
+      {
+        "name": "35",
+        "hex": "#374e4a"
+      },
+      {
+        "name": "36",
+        "hex": "#547e64"
+      },
+      {
+        "name": "37",
+        "hex": "#92a984"
+      },
+      {
+        "name": "38",
+        "hex": "#b2ba90"
+      },
+      {
+        "name": "39",
+        "hex": "#0b5e65"
+      },
+      {
+        "name": "40",
+        "hex": "#0b8a8f"
+      },
+      {
+        "name": "41",
+        "hex": "#0eaf9b"
+      },
+      {
+        "name": "42",
+        "hex": "#30e1b9"
+      },
+      {
+        "name": "43",
+        "hex": "#8ff8e2"
+      },
+      {
+        "name": "44",
+        "hex": "#323353"
+      },
+      {
+        "name": "45",
+        "hex": "#484a77"
+      },
+      {
+        "name": "46",
+        "hex": "#4d65b4"
+      },
+      {
+        "name": "47",
+        "hex": "#4d9be6"
+      },
+      {
+        "name": "48",
+        "hex": "#8fd3ff"
+      },
+      {
+        "name": "49",
+        "hex": "#45293f"
+      },
+      {
+        "name": "50",
+        "hex": "#6b3e75"
+      },
+      {
+        "name": "51",
+        "hex": "#905ea9"
+      },
+      {
+        "name": "52",
+        "hex": "#a884f3"
+      },
+      {
+        "name": "53",
+        "hex": "#eaaded"
+      },
+      {
+        "name": "54",
+        "hex": "#753c54"
+      },
+      {
+        "name": "55",
+        "hex": "#a24b6f"
+      },
+      {
+        "name": "56",
+        "hex": "#cf657f"
+      },
+      {
+        "name": "57",
+        "hex": "#ed8099"
+      },
+      {
+        "name": "58",
+        "hex": "#831c5d"
+      },
+      {
+        "name": "59",
+        "hex": "#c32454"
+      },
+      {
+        "name": "60",
+        "hex": "#f04f78"
+      },
+      {
+        "name": "61",
+        "hex": "#f68181"
+      },
+      {
+        "name": "62",
+        "hex": "#fca790"
+      },
+      {
+        "name": "63",
+        "hex": "#fdcbb0"
+      }
+    ]
+  },
+  {
+    "id": "gb-dmg-bgb",
+    "name": "Game Boy DMG（bgb 模拟器绿）",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/nintendo-gameboy-bgb",
+    "swatches": [
+      {
+        "name": "darkest",
+        "hex": "#081820"
+      },
+      {
+        "name": "dark",
+        "hex": "#346856"
+      },
+      {
+        "name": "light",
+        "hex": "#88c070"
+      },
+      {
+        "name": "lightest",
+        "hex": "#e0f8d0"
+      }
+    ]
+  },
+  {
+    "id": "gb-dmg-arne",
+    "name": "Game Boy（Arne 版）",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/nintendo-gameboy-arne",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#243137"
+      },
+      {
+        "name": "01",
+        "hex": "#3f503f"
+      },
+      {
+        "name": "02",
+        "hex": "#768448"
+      },
+      {
+        "name": "03",
+        "hex": "#acb56b"
+      }
+    ]
+  },
+  {
+    "id": "gb-super",
+    "name": "Super Game Boy 默认",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/nintendo-super-gameboy",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#331e50"
+      },
+      {
+        "name": "01",
+        "hex": "#a63725"
+      },
+      {
+        "name": "02",
+        "hex": "#d68e49"
+      },
+      {
+        "name": "03",
+        "hex": "#f7e7c6"
+      }
+    ]
+  },
+  {
+    "id": "gb-kirokaze",
+    "name": "Kirokaze Gameboy",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/kirokaze-gameboy（作者字段：Kirokaze）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#332c50"
+      },
+      {
+        "name": "01",
+        "hex": "#46878f"
+      },
+      {
+        "name": "02",
+        "hex": "#94e344"
+      },
+      {
+        "name": "03",
+        "hex": "#e2f3e4"
+      }
+    ]
+  },
+  {
+    "id": "gb-demichrome",
+    "name": "2bit Demichrome",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/2bit-demichrome（作者字段：Space Sandwich）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#211e20"
+      },
+      {
+        "name": "01",
+        "hex": "#555568"
+      },
+      {
+        "name": "02",
+        "hex": "#a0a08b"
+      },
+      {
+        "name": "03",
+        "hex": "#e9efec"
+      }
+    ]
+  },
+  {
+    "id": "gb-ice-cream",
+    "name": "Ice Cream GB（Kerrie Lake）",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/ice-cream-gb（作者字段：Kerrie Lake）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#7c3f58"
+      },
+      {
+        "name": "01",
+        "hex": "#eb6b6f"
+      },
+      {
+        "name": "02",
+        "hex": "#f9a875"
+      },
+      {
+        "name": "03",
+        "hex": "#fff6d3"
+      }
+    ]
+  },
+  {
+    "id": "gb-mist",
+    "name": "Mist GB（Kerrie Lake）",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/mist-gb（作者字段：Kerrie Lake）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#2d1b00"
+      },
+      {
+        "name": "01",
+        "hex": "#1e606e"
+      },
+      {
+        "name": "02",
+        "hex": "#5ab9a8"
+      },
+      {
+        "name": "03",
+        "hex": "#c4f0c2"
+      }
+    ]
+  },
+  {
+    "id": "gb-rustic",
+    "name": "Rustic GB（Kerrie Lake）",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/rustic-gb（作者字段：Kerrie Lake）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#2c2137"
+      },
+      {
+        "name": "01",
+        "hex": "#764462"
+      },
+      {
+        "name": "02",
+        "hex": "#edb4a1"
+      },
+      {
+        "name": "03",
+        "hex": "#a96868"
+      }
+    ]
+  },
+  {
+    "id": "gb-chocolate",
+    "name": "GB Chocolate",
+    "group": "Game Boy 4 色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/gb-chocolate",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#ffe4c2"
+      },
+      {
+        "name": "01",
+        "hex": "#dca456"
+      },
+      {
+        "name": "02",
+        "hex": "#a9604c"
+      },
+      {
+        "name": "03",
+        "hex": "#422936"
+      }
+    ]
+  },
+  {
+    "id": "1bit-monitor-glow",
+    "name": "1bit Monitor Glow（Polyducks）",
+    "group": "1-bit 双色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/1bit-monitor-glow（作者字段：Polyducks）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#222323"
+      },
+      {
+        "name": "01",
+        "hex": "#f0f6f0"
+      }
+    ]
+  },
+  {
+    "id": "1bit-bitbee",
+    "name": "Bitbee（Poltergasm）",
+    "group": "1-bit 双色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/bitbee（作者字段：Poltergasm）",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#292b30"
+      },
+      {
+        "name": "01",
+        "hex": "#cfab4a"
+      }
+    ]
+  },
+  {
+    "id": "obra-dinn-macintosh",
+    "name": "Return of the Obra Dinn · Macintosh",
+    "group": "1-bit 双色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/obra-dinn-macintosh",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#333319"
+      },
+      {
+        "name": "01",
+        "hex": "#e5ffff"
+      }
+    ],
+    "notes": "《奥伯拉丁的回归》游戏内可选“显示器”配色之一；hex 为 Lospec 社区转录，未与游戏文件核对。"
+  },
+  {
+    "id": "obra-dinn-ibm-8503",
+    "name": "Return of the Obra Dinn · IBM 8503",
+    "group": "1-bit 双色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/obra-dinn-ibm-8503",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#2e3037"
+      },
+      {
+        "name": "01",
+        "hex": "#ebe5ce"
+      }
+    ],
+    "notes": "同上，未核实。"
+  },
+  {
+    "id": "obra-dinn-commodore-1084",
+    "name": "Return of the Obra Dinn · Commodore 1084",
+    "group": "1-bit 双色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/obra-dinn-commodore-1084",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#40318e"
+      },
+      {
+        "name": "01",
+        "hex": "#88d7de"
+      }
+    ],
+    "notes": "同上，未核实。"
+  },
+  {
+    "id": "obra-dinn-ibm-5151",
+    "name": "Return of the Obra Dinn · IBM 5151",
+    "group": "1-bit 双色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/obra-dinn-ibm-5151",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#25342f"
+      },
+      {
+        "name": "01",
+        "hex": "#01eb5f"
+      }
+    ],
+    "notes": "同上，未核实。"
+  },
+  {
+    "id": "obra-dinn-zenith-zvm-1240",
+    "name": "Return of the Obra Dinn · Zenith ZVM 1240",
+    "group": "1-bit 双色",
+    "source": "Lospec Palette List https://lospec.com/palette-list/obra-dinn-zenith-zvm-1240",
+    "swatches": [
+      {
+        "name": "00",
+        "hex": "#3f291e"
+      },
+      {
+        "name": "01",
+        "hex": "#fdca55"
+      }
+    ],
+    "notes": "同上，未核实。"
+  },
+  {
+    "id": "bauhaus-braquen",
+    "name": "Bauhaus（Braquen 版）",
+    "group": "艺术运动",
+    "source": "Lospec Palette List https://lospec.com/palette-list/bauhaus（作者字段：Braquen）",
+    "swatches": [
+      {
+        "name": "ink black",
+        "hex": "#1a1616"
+      },
+      {
+        "name": "violet",
+        "hex": "#4f186b"
+      },
+      {
+        "name": "blue",
+        "hex": "#3e4db4"
+      },
+      {
+        "name": "crimson",
+        "hex": "#91144e"
+      },
+      {
+        "name": "red",
+        "hex": "#ea1f25"
+      },
+      {
+        "name": "ochre brown",
+        "hex": "#ad6d37"
+      },
+      {
+        "name": "yellow",
+        "hex": "#f1ca00"
+      },
+      {
+        "name": "paper",
+        "hex": "#ecddbe"
+      }
+    ],
+    "roles": {
+      "ink": "#1a1616",
+      "accent": "#ea1f25",
+      "sky": "#3e4db4",
+      "paper": "#ecddbe"
+    },
+    "notes": "包豪斯并无“官方色板”；此为像素画家 Braquen 的诠释版。色名为本文补注。"
+  },
+  {
+    "id": "de-stijl-approx",
+    "name": "De Stijl / 蒙德里安（近似值）",
+    "group": "艺术运动",
+    "source": "本文整理的常见近似值（无权威 hex；未核实）",
+    "swatches": [
+      {
+        "name": "red",
+        "hex": "#d40920"
+      },
+      {
+        "name": "blue",
+        "hex": "#1356a2"
+      },
+      {
+        "name": "yellow",
+        "hex": "#f7d842"
+      },
+      {
+        "name": "white",
+        "hex": "#f2f2ee"
+      },
+      {
+        "name": "light grey",
+        "hex": "#d9d9d6"
+      },
+      {
+        "name": "black",
+        "hex": "#141414"
+      }
+    ],
+    "notes": "De Stijl 理论只规定“三原色 + 非色（黑白灰）”；原作颜料已老化，hex 仅为风格近似，未核实。"
+  },
+  {
+    "id": "memphis-approx",
+    "name": "Memphis（孟菲斯，近似值）",
+    "group": "艺术运动",
+    "source": "本文整理的常见近似值（无权威 hex；未核实）",
+    "swatches": [
+      {
+        "name": "black",
+        "hex": "#111111"
+      },
+      {
+        "name": "white",
+        "hex": "#fafafa"
+      },
+      {
+        "name": "pink",
+        "hex": "#f7a1c4"
+      },
+      {
+        "name": "yellow",
+        "hex": "#ffd23f"
+      },
+      {
+        "name": "turquoise",
+        "hex": "#2ec4b6"
+      },
+      {
+        "name": "red",
+        "hex": "#ef3e36"
+      },
+      {
+        "name": "cobalt",
+        "hex": "#2a4bd7"
+      },
+      {
+        "name": "mint",
+        "hex": "#a8e6cf"
+      },
+      {
+        "name": "lilac",
+        "hex": "#b39ddb"
+      }
+    ],
+    "notes": "Memphis Group（1981–1987）以高饱和粉/黄/青/红配黑白图案（如 Bacterio 印花）为特征；具体 hex 为风格近似，未核实。"
+  },
+  {
+    "id": "riso-inks-stencil",
+    "name": "Risograph 油墨全表（stencil.wiki 汇总，78 色）",
+    "group": "印刷/Riso",
+    "source": "stencil.wiki/colors，经 mattdesl/riso-colors 转存（2019-02-25 快照）https://github.com/mattdesl/riso-colors",
+    "swatches": [
+      {
+        "name": "Black (Pantone BLACK U)",
+        "hex": "#000000"
+      },
+      {
+        "name": "Burgundy (Pantone 235 U, S-4225)",
+        "hex": "#914e72"
+      },
+      {
+        "name": "Blue (Pantone 3005 U, S-4257)",
+        "hex": "#0078bf"
+      },
+      {
+        "name": "Green (Pantone 354 U, S-4259)",
+        "hex": "#00a95c"
+      },
+      {
+        "name": "Medium Blue (Pantone 286 U, S-4261)",
+        "hex": "#3255a4"
+      },
+      {
+        "name": "Bright Red (Pantone 185 U, S-4263)",
+        "hex": "#f15060"
+      },
+      {
+        "name": "Federal Blue (Pantone 288 U, S-4265)",
+        "hex": "#3d5588"
+      },
+      {
+        "name": "Purple (Pantone 2685 U, S-4267)",
+        "hex": "#765ba7"
+      },
+      {
+        "name": "Teal (Pantone 321 U, S-4269)",
+        "hex": "#00838a"
+      },
+      {
+        "name": "Flat Gold (Pantone 1245 U, S-4271)",
+        "hex": "#bb8b41"
+      },
+      {
+        "name": "Hunter Green (Pantone 342 U, S-4273)",
+        "hex": "#407060"
+      },
+      {
+        "name": "Red (Pantone WARM RED U, S-4275)",
+        "hex": "#ff665e"
+      },
+      {
+        "name": "Brown (Pantone 7526 U, S-4277)",
+        "hex": "#925f52"
+      },
+      {
+        "name": "Yellow (Pantone YELLOW U, S-4279)",
+        "hex": "#ffe800"
+      },
+      {
+        "name": "Marine Red (Pantone 186 U, S-4281)",
+        "hex": "#d2515e"
+      },
+      {
+        "name": "Orange (Pantone ORANGE 021 U, S-4283)",
+        "hex": "#ff6c2f"
+      },
+      {
+        "name": "Fluorescent Pink (Pantone 806 U, S-4287)",
+        "hex": "#ff48b0"
+      },
+      {
+        "name": "Light Gray (Pantone 424 U, S-4291)",
+        "hex": "#88898a"
+      },
+      {
+        "name": "Metallic Gold (Pantone 872 U,  S-2772)",
+        "hex": "#ac936e"
+      },
+      {
+        "name": "Crimson (Pantone 485 U, S-4285)",
+        "hex": "#e45d50"
+      },
+      {
+        "name": "Fluorescent Orange (Pantone 805 U, S-4289)",
+        "hex": "#ff7477"
+      },
+      {
+        "name": "Cornflower (Pantone 292 U, S-4617)",
+        "hex": "#62a8e5"
+      },
+      {
+        "name": "Sky Blue (Pantone 285U, S-4618)",
+        "hex": "#4982cf"
+      },
+      {
+        "name": "Sea Blue (Pantone 307 U, S-4619)",
+        "hex": "#0074a2"
+      },
+      {
+        "name": "Lake (Pantone 293 U, S-4620)",
+        "hex": "#235ba8"
+      },
+      {
+        "name": "Indigo (Pantone 2758 U, S-4621)",
+        "hex": "#484d7a"
+      },
+      {
+        "name": "Midnight (Pantone 296 U, S-4622)",
+        "hex": "#435060"
+      },
+      {
+        "name": "Mist (Pantone 7485 U, S-4623)",
+        "hex": "#d5e4c0"
+      },
+      {
+        "name": "Granite (Pantone 7538 U, S-4624)",
+        "hex": "#a5aaa8"
+      },
+      {
+        "name": "Charcoal (Pantone 7540 U, S-4625)",
+        "hex": "#70747c"
+      },
+      {
+        "name": "Smoky Teal (Pantone 5483 U, S-4626)",
+        "hex": "#5f8289"
+      },
+      {
+        "name": "Steel (Pantone 302 U, S-4627)",
+        "hex": "#375e77"
+      },
+      {
+        "name": "Slate (Pantone 5605 U, S-4628)",
+        "hex": "#5e695e"
+      },
+      {
+        "name": "Turquoise (Pantone 3275 U, S-4629)",
+        "hex": "#00aa93"
+      },
+      {
+        "name": "Emerald (Pantone 355 U, S-4630)",
+        "hex": "#19975d"
+      },
+      {
+        "name": "Grass (Pantone 356 U, S-4631)",
+        "hex": "#397e58"
+      },
+      {
+        "name": "Forest (Pantone 357 U, S-4632)",
+        "hex": "#516e5a"
+      },
+      {
+        "name": "Spruce (Pantone 567 U, S-4633)",
+        "hex": "#4a635d"
+      },
+      {
+        "name": "Moss (Pantone 371 U, S-4634)",
+        "hex": "#68724d"
+      },
+      {
+        "name": "Sea Foam (Pantone 570 U, S-4635)",
+        "hex": "#62c2b1"
+      },
+      {
+        "name": "Kelly Green (Pantone 368 U, S-4636)",
+        "hex": "#67b346"
+      },
+      {
+        "name": "Light Teal (Pantone 320 U, S-4637)",
+        "hex": "#009da5"
+      },
+      {
+        "name": "Ivy (Pantone 347 U, S-4638)",
+        "hex": "#169b62"
+      },
+      {
+        "name": "Pine (Pantone 3295 U, S-4639)",
+        "hex": "#237e74"
+      },
+      {
+        "name": "Lagoon (Pantone 323 U, S-4640)",
+        "hex": "#2f6165"
+      },
+      {
+        "name": "Violet (Pantone 265 U, S-4641)",
+        "hex": "#9d7ad2"
+      },
+      {
+        "name": "Orchid (Pantone 2592 U, S-4642)",
+        "hex": "#aa60bf"
+      },
+      {
+        "name": "Plum (Pantone 2603 U, S-4644)",
+        "hex": "#845991"
+      },
+      {
+        "name": "Raisin (Pantone 519 U, S-4645)",
+        "hex": "#775d7a"
+      },
+      {
+        "name": "Grape (Pantone 2695 U, S-4646)",
+        "hex": "#6c5d80"
+      },
+      {
+        "name": "Scarlet (Pantone RED 032 U, S-4647)",
+        "hex": "#f65058"
+      },
+      {
+        "name": "Tomato (Pantone 186 U, S-4648)",
+        "hex": "#d2515e"
+      },
+      {
+        "name": "Cranberry (Pantone 214 U, S-4649)",
+        "hex": "#d1517a"
+      },
+      {
+        "name": "Maroon (Pantone 221 U, S-4650)",
+        "hex": "#9e4c6e"
+      },
+      {
+        "name": "Raspberry Red (Pantone 214U, S-4651)",
+        "hex": "#d1517a"
+      },
+      {
+        "name": "Brick (Pantone 1807 U, S-4652)",
+        "hex": "#a75154"
+      },
+      {
+        "name": "Light Lime (Pantone 387 U, S-4653)",
+        "hex": "#e3ed55"
+      },
+      {
+        "name": "Sunflower (Pantone 116 U, S-4654)",
+        "hex": "#ffb511"
+      },
+      {
+        "name": "Melon (Pantone 1235 U, S-4655)",
+        "hex": "#ffae3b"
+      },
+      {
+        "name": "Apricot (Pantone 143 U, S-4656)",
+        "hex": "#f6a04d"
+      },
+      {
+        "name": "Paprika (Pantone 158 U, S-4657)",
+        "hex": "#ee7f4b"
+      },
+      {
+        "name": "Pumpkin (Pantone 1655 U, S-4658)",
+        "hex": "#ff6f4c"
+      },
+      {
+        "name": "Bright Olive Green (Pantone 103 U, S-4659)",
+        "hex": "#b49f29"
+      },
+      {
+        "name": "Bright Gold (Pantone 131 U, S-4660)",
+        "hex": "#ba8032"
+      },
+      {
+        "name": "Copper (Pantone 1525 U, S-4661)",
+        "hex": "#bd6439"
+      },
+      {
+        "name": "Mahogany (Pantone 491 U, S-4662)",
+        "hex": "#8e595a"
+      },
+      {
+        "name": "Bisque (Pantone 503 U, S-4663)",
+        "hex": "#f2cdcf"
+      },
+      {
+        "name": "Bubble Gum (Pantone 231 U, S-4664)",
+        "hex": "#f984ca"
+      },
+      {
+        "name": "Light Mauve (Pantone 7430 U, S-4665)",
+        "hex": "#e6b5c9"
+      },
+      {
+        "name": "Dark Mauve (Pantone 687 U, S-4666)",
+        "hex": "#bd8ca6"
+      },
+      {
+        "name": "Wine (Pantone 235 U, S-4674)",
+        "hex": "#914e72"
+      },
+      {
+        "name": "Gray (Pantone 403 U, S-4693)",
+        "hex": "#928d88"
+      },
+      {
+        "name": "White",
+        "hex": "#ffffff"
+      },
+      {
+        "name": "Aqua (Pantone 637 U, S-4917)",
+        "hex": "#5ec8e5"
+      },
+      {
+        "name": "Mint (Pantone 324 U, S-6316)",
+        "hex": "#82d8d5"
+      },
+      {
+        "name": "Fluorescent Yellow (Pantone 803 U, S-7761)",
+        "hex": "#ffe900"
+      },
+      {
+        "name": "Fluorescent Red (Pantone 812 U, S-7762)",
+        "hex": "#ff4c65"
+      },
+      {
+        "name": "Fluorescent Green (Pantone 802 U, S-7763)",
+        "hex": "#44d62c"
+      }
+    ],
+    "notes": "RISO 官方只公布油墨名与 Pantone 近似，hex 为社区按 Pantone 换算的屏幕近似；原数据中 “RisoFederal Blue” 已更正为 Federal Blue；Tomato/Marine Red、Raspberry Red/Cranberry、Wine/Burgundy 共用同一 hex（原数据如此）。"
+  },
+  {
+    "id": "riso-zine-core",
+    "name": "Riso 常用套色（zine 三/四鼓组合）",
+    "group": "印刷/Riso",
+    "source": "stencil.wiki/colors 经 mattdesl/riso-colors（同上）",
+    "swatches": [
+      {
+        "name": "Fluorescent Pink",
+        "hex": "#ff48b0"
+      },
+      {
+        "name": "Yellow",
+        "hex": "#ffe800"
+      },
+      {
+        "name": "Medium Blue",
+        "hex": "#3255a4"
+      },
+      {
+        "name": "Federal Blue",
+        "hex": "#3d5588"
+      },
+      {
+        "name": "Teal",
+        "hex": "#00838a"
+      },
+      {
+        "name": "Bright Red",
+        "hex": "#f15060"
+      },
+      {
+        "name": "Orange",
+        "hex": "#ff6c2f"
+      },
+      {
+        "name": "Green",
+        "hex": "#00a95c"
+      },
+      {
+        "name": "Black",
+        "hex": "#000000"
+      }
+    ],
+    "roles": {
+      "paper": "#f4f1ea",
+      "ink": "#000000",
+      "accent": "#ff48b0",
+      "sky": "#3255a4",
+      "foliage": "#00838a"
+    },
+    "notes": "纸色 #f4f1ea 为本文假设的再生纸近似（非 Riso 数据）。叠印需在 shader 中用 multiply 模拟。"
+  }
+]

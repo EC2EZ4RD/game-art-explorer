@@ -1,0 +1,1853 @@
+{
+  "meta": {
+    "scope": "K1 UI 风格家族：像素位图、JRPG 窗口、拟物、扁平 / Material、瑞士几何 / 极简表格、灰盒（中性基线）",
+    "date": "2026-10-14",
+    "method": "uiRefs.json 里这 6 个家族共 61 张卡全部读过 note / params；看过约 45 款的截图或对照图（R2 strategy / arpg / life / card / mobile 批次与 IIG 手挑图）。另看了 Mini Metro、Beltmatic、Death Stranding 等跨家族卡作对照。评测只用 ui-review-stats.json 的计数，不引原文。截图只作本地学习参考。",
+    "cardCount": 61,
+    "reassigned": "Wallpaper Engine（steam:431960）从「扁平 / Material」改归「灰盒（中性基线）」的「系统原生窗口 / 表单」子家族（它就是 Windows 表单）。其余卡保留原家族，只细分到子家族。"
+  },
+  "families": [
+    {
+      "family": "像素位图",
+      "skin": "skin.pixel",
+      "noCards": false,
+      "definition": "UI 与画面共用同一套像素网格：位图字、整数倍放大、硬边不抗锯齿、限色色板，面板是 1–2 个美术像素宽的线框或像素画出来的九宫格。参考库里它更像一种「媒介约束」，而不是单一外观：同一约束下至少分出限色暗窗、工业密集栏、冒险心形列 + 气泡、霓虹街机条、几乎零 HUD 五种做法，另有「像素世界 + 清晰 UI」的混合分辨率派（Into the Breach、Dead Cells）。像素木框（Stardew 系）是它的木质兄弟家族，单列。",
+      "grammar": {
+        "shape": "直角，或只切掉最外 1–3 个像素的「缺角圆」（不是大台阶）；按钮、格子是正方或 2:1 长方，尺寸必须是美术像素的整数倍；没有斜切，也没有真正的圆。要把普通面板改成这一家：先把圆角改成 1 像素缺角，再把所有尺寸取整到美术像素。",
+        "line": "1 个美术像素宽（放大后 2–4 屏幕像素）的实线，只画一道。暗底配亮线（Crow Country 白框、Shotgun King 米黄线、Luck be a Landlord 橙框），亮底配深棕 / 墨色线（Fields of Mistria、Eastward）；空槽用像素虚线框（Shotgun King）。不抗锯齿，不出现半像素线。",
+        "surface": "纯色填充，最多两档明度（底 + 内嵌格）；不用渐变。要体积感就手工画 1 像素高光边 + 1 像素暗边。半透明只在叠在世界上的 HUD 里出现（Terraria 快捷栏），而且整块统一透明度。",
+        "color": "限色：骨架 2–4 色（深蓝 / 黑底 + 米白字 + 1 个强调），语义色另算。色板直接取自游戏画面，UI 与世界用同一个调色盘。正文强调最常见的是关键词着色（金币黄、稀有度蓝 / 金、危险红）。",
+        "type": "像素字（中文 12 / 16 点阵）；正文、标题、数字同一套位图字，只靠放大倍数和颜色分层（1x 正文、2x 标题）；英文常全大写（Loop Hero、Shotgun King）。直接压在世界上的字加 1 像素黑描边或硬投影，不用柔投影。",
+        "material": "大多没有材质（程序纯色）。金属、石、木只以「像素画出来的九宫格」出现（Loop Hero 的灰石金属框、Wall World 的炮金属边），与像素木框家族共享做法。",
+        "ornament": "装饰预算低：角上 1–2 像素铆钉点、标题两侧像素线。真正的「装饰」来自图标与头像（像素脸特写、像素物件）。",
+        "icon": "像素图标（16×16 / 32×32 图集），与世界精灵同密度、同色板；图标经常就是世界里的物件精灵（Luck be a Landlord 的符号本身就是棋子）。",
+        "motion": "无缓动或线性，整像素位移；打字机逐字；数值按格跳（分段条一格一格亮灭）；光标 / 继续三角两帧闪烁；CRT 款再叠扫描线和轻微弯曲。",
+        "layout": "两极：要么几乎零 HUD（FEZ、Noita、Party Hard 只剩角落小字），要么贴边整条密集栏（Loop Hero 右侧、Wall World 两侧、Rusted Warfare 右侧）。冒险 / 种田走「左上心形列 + 下中快捷栏 + 右上日历 / 小地图」模板。"
+      },
+      "params": {
+        "vis.pixelScale": "world",
+        "vis.corner": "step",
+        "vis.cornerSize": 2,
+        "vis.opacity": 1,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 2,
+        "vis.strokeColor": "highlightEdge",
+        "vis.depth": "flat",
+        "vis.ornament": "0",
+        "col.source": "scene",
+        "col.lightness": "dark",
+        "col.strategy": "neutralAccent",
+        "typ.body.family": "pixel",
+        "typ.display.family": "pixel",
+        "typ.numerals.family": "pixel",
+        "typ.legibility": "outline",
+        "vis.iconStyle": "pixel",
+        "ast.iconSet": "asset",
+        "cmp.gauge": "segmented",
+        "hier.inline": "keyword",
+        "rel.harmony": "sameMedium",
+        "mo.easing": "linear",
+        "mo.valueChange": "segment",
+        "ix.focus": "cursor"
+      },
+      "artPairing": [
+        { "artStyle": "7.4 SNES 16-bit", "relation": "sameMedium", "why": "UI 与世界同网格同色板，九宫格边框本身就是一张精灵（Eastward、Fields of Mistria）。" },
+        { "artStyle": "7.5 现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "Hyper Light Drifter、Katana ZERO：UI 保持像素但更细更亮，靠霓虹色与分段格融入高位像素的光效。" },
+        { "artStyle": "17.7 限色／双色调 (Limited palette/duotone)", "relation": "sameMedium", "why": "Shotgun King 整屏三色（深紫 / 米黄 / 品红），UI 不引入新颜色，靠明度与虚线区分空槽。" },
+        { "artStyle": "8.1 PS1/PSX", "relation": "sameMedium", "why": "Crow Country 的低多边形 + 黑底白框位图菜单，模仿 PS1 恐怖游戏的系统界面。" },
+        { "artStyle": "6.6 像素挤出 (Pixel extrusion)", "relation": "sameMedium", "why": "FEZ、BIT.TRIP RUNNER 把像素做成方块体积，UI 用像素数字和描边框呼应。" },
+        { "artStyle": "7.11 3D像素艺术着色器／t3ssel8r式", "relation": "sameMedium", "why": "A Short Hike 用低分辨率渲染 3D，对话气泡也按同一低分辨率绘制。" },
+        { "artStyle": "7.10 HD-2D", "relation": "contrast", "why": "Octopath 的像素角色配的是细线矢量 UI（见 JRPG 家族）；在景深、泛光很重的 HD-2D 上用纯像素窗会打架。" },
+        { "artStyle": "8.6 Quake软件渲染", "relation": "neutral", "why": "早期 3D（Half-Life）的 HUD 是屏幕分辨率的位图字形，不随世界像素化，属于「位图 HUD」而非「像素 UI」。" },
+        { "artStyle": "1.1 照片写实 (Photorealism)", "relation": "contrast", "why": "像素 UI 压在写实画面上会被读成复古梗或游戏内电脑（叙事内），需要有叙事理由。" }
+      ],
+      "genres": [
+        { "genre": "strategy", "count": 5, "why": "roguelite 战术 / 棋盘（Into the Breach、Shotgun King）、复古 RTS（Rusted Warfare）、塔防（Wall World）、潜行（Party Hard）：像素降低美术成本，UI 跟着走同一网格。" },
+        { "genre": "platformer", "count": 3, "why": "FEZ、BIT.TRIP RUNNER、Katana ZERO：平台跳跃几乎零 HUD，只有顶部一条像素分数 / 计时。" },
+        { "genre": "action", "count": 2, "why": "Hyper Light Drifter、Dead Cells：左上 / 左下小簇血格 + 技能格。" },
+        { "genre": "card", "count": 2, "why": "Loop Hero、Luck be a Landlord：卡牌 / 符号构筑需要大量说明文本，用像素字 + 关键词着色。" },
+        { "genre": "builder", "count": 2, "why": "TheoTown、WorldBox：上帝视角像素地图，截图里 UI 极少。" },
+        { "genre": "life / rpg / explore / survival / horror / shooter / sandbox / mobile", "count": 8, "why": "各 1 张：种田（Fields of Mistria）、像素 RPG（Eastward）、低清 3D 探索（A Short Hike）、Terraria、PS1 恐怖（Crow Country）、Half-Life、Noita、横屏塔防手游。像素 UI 不绑定品类，绑定的是画面媒介。" }
+      ],
+      "exemplars": [
+        { "card": "steam:1972440", "why": "限色双色调的教科书：三色、虚线空槽、全大写像素字、CRT 线，UI 与棋盘同一套像素。" },
+        { "card": "steam:1404850", "why": "暗蓝底 + 亮橙外框 + 酒红卡面；说明文本里用颜色标关键词、内嵌金币图标。" },
+        { "card": "steam:1996010", "why": "PS1 系统菜单：黑底白圆角框四宫格 + 红底说明区，证明「位图 UI + 低多边形 3D」成立。" },
+        { "card": "steam:1282730", "why": "像素密集面板的极限：灰石金属九宫格、深红内芯、极小全大写像素字、右侧整条装备栏。" },
+        { "card": "steam:2142790", "why": "浅色奶油日历章 + 下中快捷栏 + 深蓝 JRPG 式对话窗，一屏里两种像素窗语法并存。" },
+        { "card": "steam:257850", "why": "极简像素 HUD：左上一小排青色分段格，教程用无字象形图。" },
+        { "card": "steam:590380", "why": "像素世界 + 细线切角面板 + 橙色分段电网条：混合分辨率的范例。" },
+        { "card": "steam:460950", "why": "顶部霓虹计时条随时间缩短、电池式分段格，UI 与「录像回放」的叙事同调。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "像素·限色暗窗",
+          "skin": "skin.pixel",
+          "noCards": false,
+          "definition": "暗底（深蓝 / 黑 / 深紫）+ 1 美术像素亮色线框 + 像素字，色板压到 2–4 色，像老主机或 PS1 的系统菜单。卡牌、物品说明按「名字 / 图标 / 稀有度 / 说明」竖排，正文用颜色标关键词。",
+          "grammar": {
+            "shape": "长方面板，1 像素缺角；卡片是竖长方格，空槽是像素虚线框。",
+            "line": "单道 1 像素亮线（米黄 / 白 / 橙），不套第二道；选中项把线换成强调色（Shotgun King 品红框）。",
+            "surface": "纯深色底；内嵌格同色相亮一档；说明区可换第二底色（Crow Country 红底）。",
+            "color": "双色调或中性 + 1 强调；关键词着色：数值黄、稀有度蓝 / 金、危险红。",
+            "type": "全大写像素字，标题与正文同字，只靠颜色区分。",
+            "material": "无。",
+            "ornament": "无，最多一条像素分隔线。",
+            "icon": "像素物件图标就是卡面主体。",
+            "motion": "硬切；可叠 CRT 扫描线。",
+            "layout": "中间主体（棋盘 / 转盘）+ 两侧竖列卡槽（Shotgun King），或顶部一行资源 + 三选一卡（Luck be a Landlord），或四宫格菜单（Crow Country）。"
+          },
+          "params": {
+            "col.strategy": "duotone",
+            "col.lightness": "dark",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 2,
+            "vis.strokeColor": "highlightEdge",
+            "vis.corner": "step",
+            "vis.cornerSize": 1,
+            "lay.grouping": "panel",
+            "st.emptySlot": "dashed",
+            "st.selected": "outline",
+            "hier.inline": "keyword",
+            "typ.body.family": "pixel",
+            "typ.body.case": "upper",
+            "ast.fx": ["scanlines"],
+            "rel.followPost": "full"
+          },
+          "artPairing": [
+            { "artStyle": "17.7 限色／双色调 (Limited palette/duotone)", "relation": "sameMedium", "why": "UI 不新增颜色，整屏共用 3 色。" },
+            { "artStyle": "8.1 PS1/PSX", "relation": "sameMedium", "why": "Crow Country：PS1 低多边形配黑底白框菜单。" },
+            { "artStyle": "17.2 CRT扫描线", "relation": "sameMedium", "why": "Shotgun King 的扫描线同时覆盖 UI 与棋盘。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 1, "why": "Shotgun King：棋盘 roguelite。" },
+            { "genre": "card", "count": 1, "why": "Luck be a Landlord：符号构筑。" },
+            { "genre": "horror", "count": 1, "why": "Crow Country：PS1 生存恐怖。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1972440", "why": "三色 + 虚线空槽 + 品红选中框。" },
+            { "card": "steam:1404850", "why": "暗蓝底橙框，三选一卡的名字 / 图标 / 稀有度 / 说明竖排。" },
+            { "card": "steam:1996010", "why": "黑底白框四宫格 + 心电图状态 + 红底说明。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "稀有度、关键词只靠颜色区分时，色盲与低对比显示器下失效，需要符号或形状冗余。", "evidence": ["steam:1404850"] }
+          ],
+          "skinGap": "skin.pixel 的「墨 + 纸双框」与斜条纹进度条都不对；这一型要的是单道亮框、虚线空槽、双色调色板与关键词着色。",
+          "paramGaps": ["关键词着色的词表（哪些词用什么色）不在参数里，只能开 hier.inline = keyword。"]
+        },
+        {
+          "family": "像素·工业密集面板",
+          "skin": "skin.pixel",
+          "noCards": false,
+          "definition": "灰石 / 炮金属质感的像素九宫格框，深色内芯，信息密度极高，HUD 贴边成整条（右侧或两侧），小号全大写像素字，像一台像素化的控制台。",
+          "grammar": {
+            "shape": "直角大面板 + 内部规则方格。",
+            "line": "2 像素双色边（亮灰外沿 + 暗缝），像铆接金属板。",
+            "surface": "深红 / 深灰内芯，格子内凹（上左 1 像素暗边）。",
+            "color": "低饱和灰 + 一个暖色（Loop Hero 深红、Wall World 橙色按键）。",
+            "type": "极小号全大写像素字，数量写在格子右下角。",
+            "material": "像素画出的石 / 铁九宫格（平框九宫格），不是程序线。",
+            "ornament": "角上铆钉点；标题牌是嵌在边框上的金属铭牌。",
+            "icon": "像素物件按格排满。",
+            "motion": "几乎静态，数值瞬变。",
+            "layout": "右侧整条（装备 / 建造 / 属性）+ 底部一行卡牌或按钮，玩法区被框住。"
+          },
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": "4",
+            "col.lightness": "dark",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "iron",
+            "ast.core": "texture",
+            "ast.coreMat": "stone",
+            "ast.ornaments": ["rivets"],
+            "vis.depth": "bevel",
+            "typ.body.family": "pixel",
+            "typ.body.case": "upper",
+            "cmp.slot": "cell",
+            "lay.arrangement": "grid",
+            "el.toolbar.screenAnchor": "mr",
+            "lay.detail": "persistent"
+          },
+          "artPairing": [
+            { "artStyle": "7.5 现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "细节密的高位像素需要同样密的面板才不显空。" },
+            { "artStyle": "13.7 哥特暗黑幻想 (Gothic dark fantasy)", "relation": "sameMedium", "why": "Loop Hero 的灰石深红框与暗黑题材一致。" },
+            { "artStyle": "13.19 工业硬科幻 (NASA-punk)", "relation": "sameMedium", "why": "Wall World 的炮金属边与采矿机器人题材一致。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 2, "why": "Wall World、Rusted Warfare：资源 / 建造栏常驻一侧。" },
+            { "genre": "card", "count": 1, "why": "Loop Hero：卡牌 + 装备 + 属性三块信息同屏。" },
+            { "genre": "mobile", "count": 1, "why": "死亡突围：横屏塔防，底部一排单位卡。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1282730", "why": "右侧整条装备栏 + 底部卡牌行，灰石金属框。" },
+            { "card": "steam:2187290", "why": "中间竖井玩法区，左下彩色竖条资源计，右侧竖排升级钮。" },
+            { "card": "steam:647960", "why": "复古 RTS：右侧窄长建造栏，其余全是地图。" },
+            { "card": "gameui:11009", "why": "手游版：左上两条图标资源条，底部单位卡点击出兵。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "信息堆满一侧、小字全大写：提到 UI 的评测里差评比例偏高（Loop Hero 9 / 23，Wall World 14 / 34）。", "evidence": ["steam:1282730", "steam:2187290"] }
+          ],
+          "skinGap": "skin.pixel 没有材质框（ast.frame / frameMat 未设）、没有贴边整条与格子内凹。",
+          "paramGaps": ["「铆接金属板」的双色边（亮外沿 + 暗缝）只能近似为 bevel。"]
+        },
+        {
+          "family": "像素·冒险 HUD（心形列 + 快捷栏 + 气泡）",
+          "skin": "skin.pixelWood",
+          "noCards": false,
+          "definition": "冒险 / 种田 / 生存类的像素 HUD 模板：图标列血量（心、星）、下中或左上快捷栏、右上日历 / 小地图；对话是奶油色圆角气泡或深蓝 JRPG 窗，名字牌压在框上沿。浅底深线，亲和。",
+          "grammar": {
+            "shape": "圆角感强的像素圆（2–3 像素台阶），气泡带像素尾巴。",
+            "line": "深棕 / 墨色 1–2 像素描边。",
+            "surface": "奶油白 / 米色实底（Mistria 日历、Eastward 气泡），或半透明蓝格（Terraria 快捷栏）。",
+            "color": "暖浅色骨架 + 语义色（心红、魔蓝、季节色）。",
+            "type": "像素字正常大小写，名牌字更粗。",
+            "material": "无，或木（与像素木框重叠）。",
+            "ornament": "季节小图标、心形。",
+            "icon": "像素道具图标；快捷栏选中格加亮框。",
+            "motion": "打字机逐字 + 闪烁小三角继续。",
+            "layout": "左上 / 右上 / 下中三点分布，玩法区留空。"
+          },
+          "params": {
+            "col.lightness": "light",
+            "vis.corner": "step",
+            "vis.cornerSize": 3,
+            "vis.stroke": "solid",
+            "vis.strokeColor": "ink",
+            "vis.strokeWidth": 2,
+            "cmp.dialogBox": "bubble",
+            "cmp.gauge@el.vitals": "icons",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tr",
+            "ix.continueCue": "blinkArrow",
+            "mo.textReveal": "typewriter",
+            "lay.hudOrg": "scattered",
+            "rel.harmony": "sameMedium"
+          },
+          "artPairing": [
+            { "artStyle": "7.4 SNES 16-bit", "relation": "sameMedium", "why": "Eastward、Fields of Mistria：UI 与 16 位风格精灵同网格。" },
+            { "artStyle": "13.12 治愈田园 (Cozy/cottagecore)", "relation": "sameMedium", "why": "奶油底 + 季节色天然贴合种田题材。" },
+            { "artStyle": "7.11 3D像素艺术着色器／t3ssel8r式", "relation": "sameMedium", "why": "A Short Hike：低分辨率 3D 上的像素气泡。" }
+          ],
+          "genres": [
+            { "genre": "life", "count": 1, "why": "Fields of Mistria：种田日历 + 快捷栏。" },
+            { "genre": "rpg", "count": 1, "why": "Eastward：心形血格 + 像素气泡。" },
+            { "genre": "explore", "count": 1, "why": "A Short Hike：几乎无 HUD，只有气泡。" },
+            { "genre": "survival", "count": 1, "why": "Terraria：10 格快捷栏 + 心 / 星血魔 + 金框小地图。" }
+          ],
+          "exemplars": [
+            { "card": "steam:2142790", "why": "右上奶油日历章（季节 / 时间 / 日期），下中木色快捷栏，对话深蓝窗。" },
+            { "card": "steam:977880", "why": "米色像素气泡 + 名牌 + 继续小三角；左下头像 + 心形列。" },
+            { "card": "steam:1055540", "why": "白色像素气泡是唯一常驻 UI。" },
+            { "card": "steam:105600", "why": "半透明蓝格快捷栏 + 心 / 星图标列：生存沙盒的像素 HUD 模板。" }
+          ],
+          "variants": [
+            { "name": "JRPG 窗嵌入像素种田", "diff": "对话改深蓝底 + 浅细边 + 左上名牌 + 半身立绘，借 JRPG 窗语法。", "cards": ["steam:2142790"] }
+          ],
+          "failureModes": [
+            { "desc": "只有气泡、没有可读地图：A Short Hike 有 4 条地图抱怨。", "evidence": ["steam:1055540"] }
+          ],
+          "skinGap": "我们没有「浅底像素」皮肤：skin.pixel 是暗底，skin.pixelWood 是木框；奶油白 + 深棕线 + 气泡尾巴这一组合缺失。",
+          "paramGaps": ["像素气泡尾巴的台阶形状、名牌压在边框上沿（半出框）无法单独表达，cmp.plate = tab 只能近似。"]
+        },
+        {
+          "family": "像素·霓虹街机条",
+          "skin": "skin.synth",
+          "noCards": false,
+          "definition": "动作 / 节奏游戏的顶部贴边条：分段格、像素数字、发光描边框，无底，饱和霓虹色。HUD 极少但「会动」：计时条缩短、模式框闪烁。",
+          "grammar": {
+            "shape": "细长横条 + 小方格；框是圆角细线矩形（BIT.TRIP 黄框）。",
+            "line": "1–2 像素霓虹描边，可带外发光。",
+            "surface": "无底，或极淡。",
+            "color": "高饱和多色（紫、青、黄），与画面霓虹同源。",
+            "type": "像素数字，等宽对齐。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "电池式分段格、沙漏、像素道具。",
+            "motion": "计时条实时缩短，得分滚动，模式切换闪烁。",
+            "layout": "顶部一条（左分数 / 中模式 / 右进度），或左上一小簇（HLD）。"
+          },
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "el.timer.form": "gauge",
+            "el.timer.screenAnchor": "tc",
+            "cmp.gauge@el.vitals": "segmented",
+            "vis.opacity": 0,
+            "vis.stroke": "solid",
+            "vis.strokeColor": "accent",
+            "vis.strokeGlow": 0.6,
+            "col.strategy": "polychrome",
+            "col.lightness": "dark",
+            "typ.numerals.family": "pixel",
+            "typ.legibility": "textGlow",
+            "cnt.density": "1",
+            "mo.juice": 0.8,
+            "rel.hudVisibility": "always"
+          },
+          "artPairing": [
+            { "artStyle": "7.5 现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "HLD、Katana ZERO 的高位像素 + 霓虹光效。" },
+            { "artStyle": "13.1 赛博朋克霓虹 (Cyberpunk neon)", "relation": "sameMedium", "why": "Katana ZERO 夜店关卡的激光与 HUD 同色。" },
+            { "artStyle": "6.6 像素挤出 (Pixel extrusion)", "relation": "sameMedium", "why": "BIT.TRIP RUNNER 的方块世界配像素黄框。" }
+          ],
+          "genres": [
+            { "genre": "platformer", "count": 2, "why": "BIT.TRIP RUNNER、Katana ZERO：节奏 / 一击必杀，HUD 只给分数与时间。" },
+            { "genre": "action", "count": 1, "why": "Hyper Light Drifter：左上分段血格 + 能量 + 药瓶。" }
+          ],
+          "exemplars": [
+            { "card": "steam:63710", "why": "顶部一条：像素分数 + HYPER 黄框 + 进度。" },
+            { "card": "steam:460950", "why": "顶部电池分段格 + 沙漏计时条 + 右上道具。" },
+            { "card": "steam:257850", "why": "左上青色分段血格，其它信息交给世界里的发光图形。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "无底霓虹细线在同样霓虹的场景上会消失；HLD 评测里 HUD 挡视野 3 条、字太小 2 条。", "evidence": ["steam:257850"] }
+          ],
+          "skinGap": "skin.synth 有发光描边但不是像素字、不是分段格；skin.pixel 有像素字但没有发光与无底条。两者需要合成。",
+          "paramGaps": ["「计时条随剩余时间缩短」是数据绑定行为，不是视觉参数；mo.valueChange 只管变化动效。"]
+        },
+        {
+          "family": "像素世界 + 清晰 UI（混合分辨率）",
+          "skin": null,
+          "noCards": false,
+          "definition": "玩法是像素，UI 却按屏幕分辨率绘制：细线、切角面板、清晰正文，只在标题、大按钮或数字上保留像素字。把像素当「画面风格」而不是「整个界面的媒介」，换来小字可读与信息密度。",
+          "grammar": {
+            "shape": "切角面板（Into the Breach 关卡卡片切去对角）、长方按钮。",
+            "line": "1 屏幕像素灰白细线。",
+            "surface": "深海军蓝，约 0.9 不透明。",
+            "color": "中性深色 + 少量强调（红标题、橙电网格、黄警告）。",
+            "type": "正文清晰无衬线，标题 / 大按钮用像素字。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "像素头像 + 矢量小图标混用。",
+            "motion": "平滑滑入，非整像素。",
+            "layout": "分散：左上回合按钮 + 电网，右上目标，左下选中单位卡（ITB）；左下大血条 + 下中四格（Dead Cells）。"
+          },
+          "params": {
+            "vis.pixelScale": "off",
+            "vis.corner": "chamfer",
+            "vis.cornerSize": 6,
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1,
+            "vis.strokeColor": "highlightEdge",
+            "col.lightness": "dark",
+            "vis.opacity": 0.9,
+            "typ.body.family": "sans",
+            "typ.display.family": "pixel",
+            "cmp.gauge@el.meter": "segmented",
+            "el.threat.form": ["intent"],
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "tl",
+            "rel.harmony": "neutral"
+          },
+          "artPairing": [
+            { "artStyle": "7.12 等距像素 (Isometric pixel)", "relation": "neutral", "why": "Into the Breach 的等距像素棋盘上，UI 用细线不抢戏。" },
+            { "artStyle": "7.5 现代高位像素 (Hi-bit)", "relation": "neutral", "why": "Dead Cells 的高位像素 + 屏幕分辨率 HUD。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 1, "why": "Into the Breach：意图图标 + 文本说明需要小字可读。" },
+            { "genre": "action", "count": 1, "why": "Dead Cells：快节奏，HUD 要一眼读。" }
+          ],
+          "exemplars": [
+            { "card": "steam:590380", "why": "切角关卡卡片 + 像素标题 + 清晰正文 + 橙色分段电网。" },
+            { "card": "steam:588650", "why": "像素世界上的清晰 HUD：左下大血条、下中四格、右上小地图。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "我们没有「像素化只到哪一层」的皮肤；skin.pixel 把字、框、图标一刀切全像素化。",
+          "paramGaps": ["可用 typ.display.family = pixel + typ.body.family = sans 近似，但「像素化只作用于标题层 / 数字层」没有明确的分角色开关。"]
+        },
+        {
+          "family": "早期 3D 位图字形 HUD",
+          "skin": null,
+          "noCards": false,
+          "definition": "1998–2004 年 3D 射击的 HUD：不画面板，屏幕两角是半透明、加色叠加的大号位图数字与剪影图标（十字、电池、子弹），单色（Half-Life 橙）。它是位图但不是像素美术，常被现代复古 FPS 借用。",
+          "grammar": {
+            "shape": "没有面板，只有字形与图标。",
+            "line": "无。",
+            "surface": "无底，字形本身半透明。",
+            "color": "单色（橙 / 琥珀），与背景相加。",
+            "type": "大号展示数字。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "剪影图标（十字、电池、子弹）。",
+            "motion": "受伤时数字闪烁变红。",
+            "layout": "两角式：左下血 / 甲，右下弹药。"
+          },
+          "params": {
+            "vis.opacity": 0,
+            "lay.container": "overlay",
+            "cmp.gauge@el.vitals": "number",
+            "el.vitals.screenAnchor": "bl",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "typ.numerals.family": "display",
+            "typ.legibility": "textGlow",
+            "col.strategy": "mono",
+            "vis.iconStyle": "silhouette",
+            "rel.diegesis": "screen",
+            "cnt.density": "1"
+          },
+          "artPairing": [
+            { "artStyle": "8.6 Quake软件渲染", "relation": "neutral", "why": "GoldSrc 时代的低多边形世界 + 屏幕分辨率位图 HUD。" },
+            { "artStyle": "1.4 灰调军事写实 (Gritty desaturated)", "relation": "contrast", "why": "单色橙数字在灰调画面上最显眼，这一做法后来被军事射击沿用。" }
+          ],
+          "genres": [
+            { "genre": "shooter", "count": 1, "why": "Half-Life：射击 HUD 两角式的源头之一。" }
+          ],
+          "exemplars": [
+            { "card": "steam:70", "why": "左下橙色血量 / 护甲数字，右下弹药，半透明加色。" },
+            { "card": "steam:220", "why": "跨家族参考（现归 科幻 HUD）：Half-Life 2 把同一布局装进半透明圆角黑底。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "没有皮肤模拟加色位图字形；最接近的 skin.terminal 有面板与扫描线，不对。",
+          "paramGaps": ["混合模式（加色 / 滤色）不在参数里。"]
+        },
+        {
+          "family": "零 HUD 像素世界",
+          "skin": "skin.pixel",
+          "noCards": false,
+          "definition": "像素画面本身承担信息：只在角落留一行像素小字（分数、击杀），或拾取时短暂出现计数；提示靠世界内图形。建造与上帝视角类（TheoTown、WorldBox）截图里 UI 也极少。",
+          "grammar": {
+            "shape": "无面板。",
+            "line": "文字 1 像素黑描边。",
+            "surface": "无。",
+            "color": "沿用世界色。",
+            "type": "像素小字。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "极少。",
+            "motion": "情境淡入淡出。",
+            "layout": "角落一点，或完全没有。"
+          },
+          "params": {
+            "cnt.density": "0",
+            "rel.hudVisibility": "contextual",
+            "lay.container": "overlay",
+            "vis.opacity": 0,
+            "vis.pixelScale": "world",
+            "typ.body.family": "pixel",
+            "typ.legibility": "outline",
+            "el.timer.screenAnchor": "tl",
+            "el.notify.form": ["pickupText"],
+            "rel.harmony": "sameMedium",
+            "mo.enter": "fade"
+          },
+          "artPairing": [
+            { "artStyle": "6.6 像素挤出 (Pixel extrusion)", "relation": "sameMedium", "why": "FEZ：方块收集数只在拾取时出现。" },
+            { "artStyle": "7.12 等距像素 (Isometric pixel)", "relation": "sameMedium", "why": "TheoTown：SimCity 式像素等距，截图几乎全是城市。" },
+            { "artStyle": "7.13 像素＋法线光照 (Lit pixel)", "relation": "sameMedium", "why": "Noita：物理像素世界，右上一点小血条。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 2, "why": "TheoTown、WorldBox：上帝视角。" },
+            { "genre": "platformer", "count": 1, "why": "FEZ。" },
+            { "genre": "strategy", "count": 1, "why": "Party Hard：左上分数 + 击杀数。" },
+            { "genre": "sandbox", "count": 1, "why": "Noita。" }
+          ],
+          "exemplars": [
+            { "card": "steam:224760", "why": "几乎零 HUD，收集数拾取时出现。" },
+            { "card": "steam:356570", "why": "左上一行像素分数 / 击杀，左下按键提示。" },
+            { "card": "steam:881100", "why": "右上小号像素血条 + 法杖格。" },
+            { "card": "steam:1084020", "why": "像素等距城市，UI 在截图里几乎不可见。" },
+            { "card": "steam:1206560", "why": "底部一排神力图标，其余全是像素地图。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "截图里几乎看不到 UI，这几张卡的编码置信度低（证据档 D），建造类真实 UI 可能比截图多。", "evidence": ["steam:1084020", "steam:1206560"] }
+          ],
+          "skinGap": "skin.pixel 默认画实心面板（opacity 1）；零 HUD 型需要 opacity 0 + 文字描边。",
+          "paramGaps": []
+        }
+      ],
+      "variants": [
+        { "name": "像素木框（兄弟家族）", "diff": "暗底亮线换成木纹九宫格 + 米黄纸内芯 + 头像牌：col.lightness = light，ast.frameMat = wood。", "cards": ["steam:413150", "steam:638510", "steam:2084000"] },
+        { "name": "CRT 包裹的像素 UI", "diff": "整屏扫描线 + 屏幕弯曲作用到 UI（rel.followPost = full），色板压到 3–4 色。", "cards": ["steam:1972440", "steam:2379780"] },
+        { "name": "像素世界 + 高清卷轴面板", "diff": "玩法区像素、面板是高精度宣纸卷轴材质，刻意的分辨率对比（归国风家族）。", "cards": ["steam:955900"] },
+        { "name": "1-bit 抖动 + 衬线书页", "diff": "两色抖动画面配 19 世纪书页排版，UI 不像素化而像印刷品（归极简单色）。", "cards": ["steam:653530"] },
+        { "name": "像素等宽终端", "diff": "像素字换等宽字、直角细线、电路走线，靠近 CRT 终端家族。", "cards": ["steam:3107330", "steam:2060160"] },
+        { "name": "像素 + 手绘头像框", "diff": "战斗四角手绘头像框、对话黑底白框像素字，像素与手绘混排（归手绘笔记本）。", "cards": ["steam:1150690"] }
+      ],
+      "failureModes": [
+        { "desc": "像素字太小、教程只用象形图：Hyper Light Drifter 评测里字太小 2 条、地图 6 条、HUD 挡视野 3 条。", "evidence": ["steam:257850", "评测统计 ui-review-stats.json：smallText 2 / map 6 / clutter 3"] },
+        { "desc": "密集像素面板把信息压成小字：提到 UI 的评测里差评比例偏高（Loop Hero 9 / 23，Wall World 14 / 34）。", "evidence": ["steam:1282730", "steam:2187290"] },
+        { "desc": "非整数缩放 / 像素密度不一致：UI 放大倍数与世界不同，或 UI 被平滑缩放，像素边发糊、线宽不一（06 文档 B6 陷阱）。Dead Cells、Into the Breach 干脆让 UI 用清晰分辨率来规避。", "evidence": ["steam:588650", "steam:590380"] },
+        { "desc": "中文像素字在 12 像素以下笔画粘连；Eastward 的中文气泡用放大后的点阵字，说明要留足字号。", "evidence": ["steam:977880"] },
+        { "desc": "零 HUD 像素世界的引导缺失：只靠世界内图形传达状态，新手不知道该做什么（Terraria 引导抱怨 2 条；R3 统计里 Kingdom 系是引导抱怨头部）。", "evidence": ["steam:105600", "steam:368230"] }
+      ],
+      "skinGap": "现有 skin.pixel = 4px 墨色描边 + 纸色外环（NES 式双框）+ 斜条纹进度条 + 固定 x3 像素化 + 一拍二。对照参考：① 22 张卡里 15 张是「与世界同网格」（vis.pixelScale = world），不是固定 x3；② 描边多是 1 美术像素的亮线压暗底，「墨 + 纸双框」只是 Undertale / NES 一种；③ 进度条几乎都是分段格或心形列（HLD、Katana ZERO、Into the Breach 电网、Terraria、Eastward），没有斜条纹；④ 没设文字可读辅助，而压在世界上的像素字都有 1 像素黑描边；⑤ 缺浅色（奶油底 + 深棕线 + 气泡尾巴）与限色双色调两个变体；⑥ 一拍二是动画抽帧，像素 UI 的味道主要来自整像素位移与无缓动，而不是 12fps；⑦ 没有关键词着色（hier.inline = keyword）；⑧ 没有材质九宫格（金属 / 石），所以工业密集型画不出来。",
+      "paramGaps": [
+        "限色数量 / 调色板锁定（UI 只能用 N 个索引色）无法表达；col.strategy 只管骨架色数。",
+        "「缺角圆」（只切最外 1 像素）与「大台阶」无法区分：vis.corner = step 只有一种，cornerSize 用的是屏幕像素而不是美术像素。",
+        "像素字号只能取整数倍（8 / 16 / 24…）的量化约束没有参数；typ.baseSize 是连续值。",
+        "有序抖动（Bayer dither）作为面板底纹或渐变替代：vis.pattern 只有棋盘格 / 网点，近似但不等价。",
+        "1 像素硬投影（无模糊、偏移 1 美术像素）与柔投影都只能写 typ.legibility = shadow，区分不了。",
+        "分角色的像素化（标题像素、正文矢量、图标像素）只能靠字族参数拼，vis.pixelScale 没有按角色覆盖。",
+        "位图字形 HUD 的加色叠加（Half-Life 半透明橙数字与背景相加）没有混合模式参数。"
+      ]
+    },
+    {
+      "family": "JRPG 窗口",
+      "skin": "skin.jrpg",
+      "noCards": false,
+      "definition": "日式 RPG 的「窗」：一块深色（蓝渐变 / 灰蓝 / 黑）面板，浅色细边框，左上贴一个标签或说话人名，手指 / 三角光标指着条目，文字逐字出现。核心思路是「菜单 = 一叠同款窗口」：指令窗、状态窗、对话窗都是同一种窗。现代 JRPG（Octopath）把它稀释成细线铭牌 + 渐变底；沙盒衍生（DQ Builders）换成明快圆角；Flash 时代的 SRPG（Defender's Quest）则把它装进光泽按钮里。",
+      "grammar": {
+        "shape": "长方窗，圆角 6–10 px（FF IX、DQ）或直角（FF VIII）；窗口尺寸贴着内容，多个窗可以相邻、叠放。要把普通面板改成这一家：先让面板「贴内容收缩」，再加上沿标签。",
+        "line": "2–4 px 浅色边（白 / 银），外侧常有 1 px 黑线把它和画面隔开（双线，或白边 + 黑轮廓）；Octopath 退化成 1 px 金色上下细线。",
+        "surface": "竖向渐变（深蓝 → 更深蓝，或灰蓝半透明），不透明度 0.8–1；不画纹理，不加投影。",
+        "color": "窗口色固定（皮肤色），与场景无关；白字，可用 / 选中用黄，不可用用灰；HP 危险时变黄 / 红。",
+        "type": "无衬线或圆体；名字 / HP / 上限是等宽数字右对齐成列；1 px 黑投影保证在渐变上可读。",
+        "material": "无材质，纯程序窗。",
+        "ornament": "无，最多是窗口上沿的标签条（COMMAND）或名字牌。",
+        "icon": "很少图标，以文字列表为主；光标是白手套（FF）或三角（DQ）。",
+        "motion": "窗从中线展开或直接出现；文字打字机；光标在条目间跳并闪烁；继续提示是闪烁的小三角。",
+        "layout": "战斗：左下指令窗 + 右下队伍状态表（名字 / HP / ATB），顶部或右上行动顺序；对话：底部通栏或带尾气泡，左上说话人名；画面可以是 4:3 + 两侧装饰边（FF IX）。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 8,
+        "vis.fill": "gradient",
+        "vis.opacity": 0.9,
+        "vis.stroke": "double",
+        "vis.strokeWidth": 3,
+        "vis.strokeColor": "highlightEdge",
+        "vis.depth": "flat",
+        "col.lightness": "dark",
+        "col.strategy": "neutralAccent",
+        "col.source": "skin",
+        "typ.body.family": "sans",
+        "typ.numerals.family": "tabular",
+        "typ.legibility": "shadow",
+        "cmp.plate": "tab",
+        "cmp.dialogBox": "bar",
+        "el.party.form": "tag",
+        "el.party.screenAnchor": "br",
+        "el.turnOrder.form": "portraitQueue",
+        "ix.focus": "cursor",
+        "ix.continueCue": "blinkArrow",
+        "mo.textReveal": "typewriter",
+        "lay.grouping": "panel",
+        "rel.harmony": "neutral"
+      },
+      "artPairing": [
+        { "artStyle": "7.4 SNES 16-bit", "relation": "sameMedium", "why": "JRPG 窗的发源媒介；Fields of Mistria 的对话窗证明它在像素画里依然成立。" },
+        { "artStyle": "7.14 RPG Maker式", "relation": "sameMedium", "why": "RPG Maker 默认窗口皮肤就是这套语法。" },
+        { "artStyle": "15.4 预渲染背景＋3D角色", "relation": "neutral", "why": "FF VIII / IX：窗口是固定皮肤色，与预渲染背景互不干扰。" },
+        { "artStyle": "7.10 HD-2D", "relation": "sameMedium", "why": "Octopath 的细线铭牌是 HD-2D 的标配。" },
+        { "artStyle": "6.1 方块体素／Minecraft式", "relation": "neutral", "why": "DQ Builders 2：体素世界配明快圆角版本。" },
+        { "artStyle": "1.1 照片写实 (Photorealism)", "relation": "contrast", "why": "蓝窗压在写实画面上会被读成刻意复古，现代写实 JRPG 改用暗色细线。" }
+      ],
+      "genres": [
+        { "genre": "rpg", "count": 4, "why": "回合 / ATB / CTB 战斗需要指令列表与队伍状态表（FF VIII、IX、X、Octopath）。" },
+        { "genre": "survival", "count": 1, "why": "DQ Builders 2：JRPG 外衣的建造沙盒。" },
+        { "genre": "strategy", "count": 1, "why": "Defender's Quest：JRPG 角色 + 塔防。" }
+      ],
+      "exemplars": [
+        { "card": "steam:39150", "why": "最清楚的样本：灰蓝半透明方窗 + 上沿 COMMAND 标签 + 白手套光标 + 右下名字 / HP / ATB 三列。" },
+        { "card": "steam:377840", "why": "4:3 + 两侧纹理装饰边；对话是带尾灰蓝渐变圆角窗。" },
+        { "card": "steam:921570", "why": "现代稀释：右上细线铭牌（HP / SP 细条）、顶部菱形头像行动顺序、弱点格 + 大号衬线伤害数。" },
+        { "card": "steam:359870", "why": "CTB 行动顺序栏，「回合可视化」的源头之一（商店图无 UI，按已知 HUD 记）。" },
+        { "card": "steam:1072420", "why": "沙盒化：带 HP 字样的彩色血条、圆形小地图、快捷栏；捏人页是粉彩圆角页签。" },
+        { "card": "steam:218410", "why": "Flash 时代 SRPG / 塔防：光泽蓝按钮 + 羊皮纸卷选关 + 大星星难度。" },
+        { "card": "steam:2142790", "why": "跨家族参考（现归 像素位图）：像素种田里的 JRPG 对话窗，深蓝底 + 浅细边 + 名牌。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "JRPG·经典 FF 指令窗",
+          "skin": "skin.jrpg",
+          "noCards": false,
+          "definition": "最终幻想 VIII–X 的窗：灰蓝 / 深蓝竖向渐变，半透明，浅色边，上沿嵌标签；战斗时左下指令窗 + 右下队伍表 + 行动顺序。",
+          "grammar": {
+            "shape": "直角（VIII）或圆角（IX），窗贴内容。",
+            "line": "浅色 2–3 px 边 + 外侧 1 px 黑轮廓。",
+            "surface": "竖向渐变，约 0.85 不透明。",
+            "color": "灰蓝 / 深蓝 + 白字；可用白、不可用灰。",
+            "type": "无衬线，数字等宽右对齐。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "白手套光标。",
+            "motion": "打字机，光标跳动。",
+            "layout": "左下指令、右下名字 / HP / ATB 三列；4:3 两侧装饰边。"
+          },
+          "params": {
+            "vis.fill": "gradient",
+            "vis.corner": "round",
+            "vis.cornerSize": 6,
+            "vis.stroke": "double",
+            "vis.strokeColor": "highlightEdge",
+            "vis.opacity": 0.85,
+            "lay.playfield": "boxed",
+            "cmp.plate": "tab",
+            "ix.focus": "cursor",
+            "cmp.gauge@el.party": "thinBar",
+            "el.party.form": "tag",
+            "el.party.screenAnchor": "br",
+            "el.turnOrder.form": "portraitQueue",
+            "el.turnOrder.screenAnchor": "tr",
+            "typ.numerals.family": "tabular",
+            "mo.textReveal": "typewriter"
+          },
+          "artPairing": [
+            { "artStyle": "15.4 预渲染背景＋3D角色", "relation": "neutral", "why": "窗口皮肤色不受预渲染背景影响。" },
+            { "artStyle": "8.8 90年代CGI预渲染", "relation": "neutral", "why": "同上，PS1 时代 CG 背景。" }
+          ],
+          "genres": [
+            { "genre": "rpg", "count": 3, "why": "ATB / CTB 回合战斗。" }
+          ],
+          "exemplars": [
+            { "card": "steam:39150", "why": "COMMAND 标签 + 手套光标 + 三列状态表。" },
+            { "card": "steam:377840", "why": "4:3 装饰边 + 圆角渐变窗。" },
+            { "card": "steam:359870", "why": "CTB 行动顺序栏。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "层层窗口 + 纯文字列表让现代玩家觉得繁琐：FF VIII 提到 UI 的评测里差评多于好评（10 / 18）。", "evidence": ["steam:39150"] }
+          ],
+          "skinGap": "缺上沿标签、外侧黑轮廓、ATB 细条与 4:3 装饰边；skin.jrpg 的柔投影原作没有。",
+          "paramGaps": ["四角渐变窗口色（玩家可调）不可表达。"]
+        },
+        {
+          "family": "JRPG·HD-2D 细线铭牌",
+          "skin": "skin.darkHairline",
+          "noCards": false,
+          "definition": "现代 JRPG 把窗稀释成「细线 + 渐变底」：右上角色铭牌（名字、HP / SP 细条），顶部一条细线上排菱形头像表示行动顺序，敌人脚下一排弱点格；伤害是大号衬线数字。",
+          "grammar": {
+            "shape": "没有完整的窗，只有横向渐变带与菱形头像框。",
+            "line": "1 px 金 / 白细线，常只画上下或一侧。",
+            "surface": "深色向透明的横向渐隐。",
+            "color": "深蓝灰 + 金 + 白；弱点格亮白。",
+            "type": "伤害用衬线展示数字，正文小号无衬线。",
+            "material": "无。",
+            "ornament": "菱形、细线端点。",
+            "icon": "武器 / 元素小图标。",
+            "motion": "伤害数字弹出，行动顺序滑动。",
+            "layout": "右上队伍、顶部顺序、敌人下方弱点。"
+          },
+          "params": {
+            "vis.opacity": 0.6,
+            "vis.fill": "gradient",
+            "vis.corner": "sharp",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1,
+            "vis.strokeColor": "metal",
+            "vis.strokeSides": "topBottom",
+            "vis.silhouette@el.turnOrder": "diamond",
+            "el.turnOrder.form": "portraitQueue",
+            "el.turnOrder.screenAnchor": "tl",
+            "el.party.form": "tag",
+            "el.party.screenAnchor": "tr",
+            "el.threat.form": ["intent"],
+            "cmp.gauge@el.party": "thinBar",
+            "typ.numerals.family": "display",
+            "typ.display.family": "serif",
+            "rel.harmony": "unified"
+          },
+          "artPairing": [
+            { "artStyle": "7.10 HD-2D", "relation": "sameMedium", "why": "细线与金色呼应 HD-2D 的灯光与景深。" }
+          ],
+          "genres": [
+            { "genre": "rpg", "count": 1, "why": "Octopath Traveler：Break / Boost 回合战斗。" }
+          ],
+          "exemplars": [
+            { "card": "steam:921570", "why": "菱形头像行动顺序 + 弱点格 + 右上细线铭牌。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "提到 UI 的评测差评接近一半（26 / 54），细线 + 小字在电视距离下偏弱。", "evidence": ["steam:921570"] }
+          ],
+          "skinGap": "skin.jrpg 太「窗」；skin.darkHairline 的衬线正文与手绘图标又太重；两者都缺菱形头像框与顶部行动顺序线。",
+          "paramGaps": ["弱点格 + 护盾数不在 el.threat.form 选项里，只能借 intent。", "横向渐隐（一端不透明一端透明）没有方向参数。"]
+        },
+        {
+          "family": "JRPG·明快沙盒 HUD",
+          "skin": "skin.cozy",
+          "noCards": false,
+          "definition": "勇者斗恶龙 Builders 2：JRPG 的配色与名字标签，HUD 却是沙盒式——左上带 HP 字样的彩色血条与饱食图标、右上圆形小地图、下中物品栏；菜单用粉彩圆角页签。",
+          "grammar": {
+            "shape": "圆角条与圆形小地图；页签是粉彩小圆角块。",
+            "line": "白 / 黄描边，选中加粗黄框。",
+            "surface": "半透明深色带 + 彩色条。",
+            "color": "多色明快（绿血、黄饱食、粉彩页签）。",
+            "type": "圆体 / 粗无衬线 + 描边。",
+            "material": "无。",
+            "ornament": "少。",
+            "icon": "Q 版道具图标。",
+            "motion": "弹跳。",
+            "layout": "左上状态、右上小地图、下中快捷栏。"
+          },
+          "params": {
+            "lay.hudOrg": "scattered",
+            "col.lightness": "mid",
+            "vis.corner": "round",
+            "vis.cornerSize": 10,
+            "col.strategy": "polychrome",
+            "cmp.gauge@el.vitals": "bar",
+            "el.vitals.valueLabel": "current",
+            "el.vitals.screenAnchor": "tl",
+            "el.minimap.form": "radar",
+            "el.minimap.screenAnchor": "tr",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "typ.legibility": "outline",
+            "typ.body.family": "round",
+            "cmp.optionEnum": "segmented",
+            "ix.focus": "outline"
+          },
+          "artPairing": [
+            { "artStyle": "6.1 方块体素／Minecraft式", "relation": "sameMedium", "why": "方块世界 + 明快圆角 HUD。" },
+            { "artStyle": "2.6 卡通渲染／风之杖式 (Toon cartoon)", "relation": "sameMedium", "why": "鸟山明风卡通角色，描边字与之一致。" }
+          ],
+          "genres": [
+            { "genre": "survival", "count": 1, "why": "DQ Builders 2：建造生存。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1072420", "why": "左上彩色血条 + 右上圆形小地图 + 下中快捷栏；捏人页粉彩页签。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.jrpg 的深蓝窗不适合；需要明快多色圆角 + 描边字，最接近 skin.cozy。",
+          "paramGaps": []
+        },
+        {
+          "family": "JRPG·Flash 光泽战术窗",
+          "skin": null,
+          "noCards": false,
+          "definition": "Flash / 网页游戏时代的 SRPG / 塔防：光泽蓝渐变按钮、灰色渐变列表条、羊皮纸卷选关、大星星难度；JRPG 的角色与对话装进网页游戏的控件里。",
+          "grammar": {
+            "shape": "小圆角按钮与长条。",
+            "line": "1 px 深色边 + 顶部高光。",
+            "surface": "竖向渐变 + 顶部玻璃高光。",
+            "color": "蓝 / 红按钮、灰列表、羊皮纸黄。",
+            "type": "粗无衬线 + 投影。",
+            "material": "羊皮纸卷（选关）。",
+            "ornament": "星星。",
+            "icon": "像素角色头像。",
+            "motion": "基本无。",
+            "layout": "左侧波次列表、右侧角色栏、底部按钮条。"
+          },
+          "params": {
+            "vis.gloss": "topShine",
+            "vis.fill": "gradient",
+            "vis.corner": "round",
+            "vis.cornerSize": 4,
+            "col.lightness": "mid",
+            "lay.hudOrg": "edgeBar",
+            "el.toolbar.screenAnchor": "ml",
+            "ast.coreMat": "parchment",
+            "ast.container": "scroll",
+            "st.rarityCue": ["stars"],
+            "hier.cta": "color",
+            "typ.titleFx": "shadow",
+            "cmp.node": "circleNumber"
+          },
+          "artPairing": [
+            { "artStyle": "7.4 SNES 16-bit", "relation": "contrast", "why": "像素角色配光泽矢量按钮，是 Flash 时代的典型混搭。" },
+            { "artStyle": "14.9 Flash时代卡通", "relation": "sameMedium", "why": "按钮光泽与网页游戏同代。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 1, "why": "Defender's Quest：塔防 + RPG 养成。" }
+          ],
+          "exemplars": [
+            { "card": "steam:218410", "why": "光泽蓝按钮 + 羊皮纸卷 + 大星星难度。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "没有「Flash 光泽按钮」皮肤；可在 skin.jrpg 上加 vis.gloss = topShine 近似。",
+          "paramGaps": []
+        }
+      ],
+      "variants": [
+        { "name": "勇者斗恶龙式黑窗", "diff": "底改纯黑、白色双线圆角框、三角光标，对比更硬（06 文档 B10）。参考库里没有这一型的卡。", "cards": [] },
+        { "name": "窗口嵌入像素游戏", "diff": "同一语法换像素字与像素边。", "cards": ["steam:2142790", "steam:1150690"] },
+        { "name": "ATB / CTB 行动顺序条", "diff": "把回合顺序画成头像队列或时间轴。", "cards": ["steam:359870", "steam:921570"] },
+        { "name": "现代 3A JRPG 细线", "diff": "窗退化成右下名牌 + 指令列表，深色半透明（归暗色细线）。", "cards": ["steam:1462040"] }
+      ],
+      "failureModes": [
+        { "desc": "窗口色固定为蓝，叠在蓝天 / 水面上分不清（06 文档 B10 陷阱）；FF 系列允许玩家改窗口色就是对策。", "evidence": ["steam:377840"] },
+        { "desc": "窗口层层嵌套、文字列表为主，菜单被嫌繁琐：FF VIII 提到 UI 的评测差评 10 / 18，Octopath 26 / 54。", "evidence": ["steam:39150", "steam:921570"] },
+        { "desc": "PC 移植后光标菜单与手柄 / 键位不匹配：FF X/X-2 HD 有 2 条手柄 / 键位抱怨。", "evidence": ["steam:359870"] },
+        { "desc": "逐字显示不给「立即显示全部」会拖慢节奏（06 文档 B10）。", "evidence": [] }
+      ],
+      "skinGap": "skin.jrpg = 皇家蓝渐变 + 3 px 白双线 + 6 px 圆角 + 柔投影。对照参考：① FF VIII 是直角、灰蓝、半透明，FF IX 才是圆角，圆角应是变体轴而非定值；② 窗口外侧 1 px 黑轮廓（与画面隔离）缺失，柔投影在原作里不存在；③ 上沿标签（COMMAND / 说话人名）缺失，这是 JRPG 窗最可辨认的特征；④ 没有「名字 / HP / 上限」等宽数字表格（typ.numerals = tabular）与 ATB 细条；⑤ 光标只能开 ix.focus = cursor，手套 / 三角两种形状选不了；⑥ 没有和 4:3 装饰边（lay.playfield = boxed）联动；⑦ 没有 Octopath 式细线现代变体（最接近 skin.darkHairline），也没有沙盒明快变体。",
+      "paramGaps": [
+        "窗口四角渐变（FF 系列允许玩家分别设四角颜色，双线性渐变）不能表达；col.gradient 只有一维渐变。",
+        "光标形状（手套 / 三角 / 括号）只有 ix.focus = cursor 一个值，具体光标精灵不可选。",
+        "标签「嵌进」边框（边框在标签处断开）与普通「边缘小标签条」无法区分。",
+        "窗口展开动画（从中线纵向展开）没有对应的 mo.enter 取值：pop 是缩放回弹，unroll 是卷轴。",
+        "弱点格 + 护盾数（Octopath 的 Break 系统）不在 el.threat.form 选项里。"
+      ]
+    },
+    {
+      "family": "拟物",
+      "skin": "skin.skeuo",
+      "noCards": false,
+      "definition": "界面模仿真实物件的材质与构造：木板、铁箍、石刻、纸卷，按钮是能按下去的东西，标题是钉在框上的铭牌。参考库里分两种气质：卡通拟物（Kingdom Rush：木 + 铁 + 粗墨线 + 高饱和，与卡通画面同一笔触）和历史 / 写实拟物（Pharaoh：浮雕石栏 + 写实小物件图标）。另有两种「物件即容器」：整屏是书桌 + 显示器（Do Not Feed the Monkeys），或长列表是一条条木纹板（Cookie Clicker）。",
+      "grammar": {
+        "shape": "外形跟着材质走：木板是带圆角的长条，石栏是厚重直角，铭牌是两端外凸的匾；按钮常是圆钮，或干脆是物件本身（书、铁砧、奖杯摆在石台上）。",
+        "line": "不靠线而靠「材质边」：九宫格外框（木纹、铁箍、石刻）；卡通拟物再在外缘加 2–3 px 墨色描边，粗细与画面描边一致。",
+        "surface": "材质平铺内芯（木、纸、石、皮），内芯比框暗一档并内凹，内容放在凹槽里。要把普通面板改成这一家：先给内芯和外框各选一种材质，再把内芯做凹、外框做凸。",
+        "color": "取自世界色板（木棕、铁灰、羊皮黄）；强调色是材质里的「彩」：宝石、紫色按钮、红旗。",
+        "type": "卡通拟物用粗体大写 + 描边投影的标题；历史拟物用衬线 / 刻字感；正文要垫在浅色纸面上。",
+        "material": "这一家族的主变量：内芯材质 × 外框材质 × 饰件（铆钉、角花）。参考卡：木 4、石 2、铁 / 金属 3、纸 / 羊皮 3（按卡上 ast.* 参数与截图统计）。",
+        "ornament": "中等：铆钉、角饰、铭牌、石刻纹样；装饰都是「结构件」，有物理理由。",
+        "icon": "手绘彩绘或写实小物件（武器、塔、石像），带体积与投影。",
+        "motion": "物理感：按下下沉、弹簧回弹、推镜头进物件（zoomInto）、翻页、开门。",
+        "layout": "经典城建 / RTS：一侧整条控制栏；塔防：左上资源木牌 + 左下圆钮 + 右下物件菜单；放置类：三栏。"
+      },
+      "params": {
+        "ast.core": "texture",
+        "ast.coreMat": "wood",
+        "ast.frame": "plainNinePatch",
+        "ast.frameMat": "iron",
+        "ast.ornaments": ["rivets", "corners"],
+        "vis.depth": "bevel",
+        "vis.opacity": 1,
+        "col.lightness": "mid",
+        "col.source": "scene",
+        "vis.iconStyle": "painted",
+        "ast.iconSet": "asset",
+        "cmp.plate": "plaque",
+        "typ.titleFx": "outlineShadow",
+        "typ.display.case": "upper",
+        "vis.motif": "rivets",
+        "vis.ornament": "2",
+        "rel.harmony": "sameMedium",
+        "mo.easing": "spring",
+        "ix.press": "sink",
+        "mo.transition": "zoomInto",
+        "st.emptySlot": "pit",
+        "lay.grouping": "tonalInset"
+      },
+      "artPairing": [
+        { "artStyle": "14.9 Flash时代卡通", "relation": "sameMedium", "why": "Kingdom Rush 粗墨线矢量卡通，UI 木铁框用同样的描边粗细。" },
+        { "artStyle": "1.6 手绘贴图风格化 (Hand-painted texture)", "relation": "sameMedium", "why": "手绘木纹 / 金属贴图的框，与手绘贴图世界同源（WoW 式）。" },
+        { "artStyle": "8.8 90年代CGI预渲染", "relation": "sameMedium", "why": "Pharaoh：预渲染建筑 + 浮雕石刻控制栏。" },
+        { "artStyle": "13.4 蒸汽朋克 (Steampunk)", "relation": "sameMedium", "why": "黄铜、铆钉、仪表就是拟物的天然题材。" },
+        { "artStyle": "12.12 桌游棋子／木玩 (Board-game pieces)", "relation": "sameMedium", "why": "桌面实物（卡牌、棋子、天平）直接当 UI（Inscryption、Wingspan）。" },
+        { "artStyle": "13.17 高奇幻 (High fantasy)", "relation": "sameMedium", "why": "木、铁、羊皮、宝石是奇幻世界观的默认材质。" },
+        { "artStyle": "5.3 白盒极简＋强调色 (White minimal)", "relation": "contrast", "why": "厚重材质框压在极简白模世界上显得笨重、来历不明。" }
+      ],
+      "genres": [
+        { "genre": "strategy", "count": 3, "why": "Kingdom Rush 三部：塔防的木牌资源、圆钮技能、物件菜单。" },
+        { "genre": "builder", "count": 3, "why": "Pharaoh（城建石栏）、Cookie Clicker（放置木纹列表）、Do Not Feed the Monkeys（书桌模拟）。" }
+      ],
+      "exemplars": [
+        { "card": "steam:246420", "why": "卡通拟物模板：木板 + 铁角铆钉 + 金属铭牌标题 + 黄色分段属性格；菜单入口是石台上的书、铁砧、奖杯。" },
+        { "card": "steam:564530", "why": "历史拟物：右侧整条浮雕石栏（小地图 + 写实建造图标），底部刻着人像浮雕。" },
+        { "card": "steam:1367550", "why": "深色石 / 金属框 + 大立绘卡 + 紫色按钮：拟物框里放插画卡。" },
+        { "card": "steam:658850", "why": "整屏是书桌：CRT 显示器里是复古系统窗口，右侧竖条是生命指标，笔记本手写线索。" },
+        { "card": "steam:1454400", "why": "三栏放置：木纹分隔条 + 纸纹商店长列表，锁定项是黑剪影。" },
+        { "card": "steam:816340", "why": "同 Kingdom Rush，精灵森林主题换木框配色，说明材质可以按主题换皮。" },
+        { "card": "iig:hearthstone-heroes-of-warcraft", "why": "跨家族参考（现归 重装饰雕花框）：收藏是一本皮面木框卡册，拟物的高端版本。" },
+        { "card": "steam:1092790", "why": "跨家族参考（现归 极简单色）：牌桌就是界面，卡牌、天平、地图都是桌上的实物。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "拟物·卡通木铁（粗墨线）",
+          "skin": "skin.skeuo",
+          "noCards": false,
+          "definition": "Kingdom Rush 系：木板与铁箍框、角上铆钉、粗墨线描边、饱和色，标题是金属铭牌上的粗体大写描边字；技能是圆钮，属性是黄色分段格。",
+          "grammar": {
+            "shape": "圆角木板、圆形技能钮、两端外凸的铭牌。",
+            "line": "2–3 px 深墨描边，与画面角色描边同粗。",
+            "surface": "木纹内芯，内容区是更暗的内凹木槽。",
+            "color": "木棕、铁灰 + 高饱和强调（金、紫、绿）。",
+            "type": "粗体大写 + 描边 + 投影标题；正文小号无衬线。",
+            "material": "木 + 铁（铆钉）；暗黑版本换深石 / 金属。",
+            "ornament": "铆钉、铁角、铭牌。",
+            "icon": "手绘彩绘，粗描边。",
+            "motion": "弹簧、下沉。",
+            "layout": "左上资源木牌（生命 / 金币 / 波次）、左下英雄 + 技能圆钮、右下物件菜单入口。"
+          },
+          "params": {
+            "ast.core": "texture",
+            "ast.coreMat": "wood",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "wood",
+            "ast.ornaments": ["rivets"],
+            "vis.stroke": "solid",
+            "vis.strokeColor": "ink",
+            "vis.strokeWidth": 3,
+            "vis.iconStyle": "painted",
+            "typ.display.weight": "black",
+            "typ.display.case": "upper",
+            "typ.titleFx": "outlineShadow",
+            "cmp.plate": "plaque",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tl",
+            "el.abilities.form": "slots",
+            "el.abilities.screenAnchor": "bl",
+            "vis.silhouette@el.abilities": "circle",
+            "cmp.gauge": "segmented",
+            "vis.mapStyle": "painted",
+            "col.saturation": 0.8
+          },
+          "artPairing": [
+            { "artStyle": "14.9 Flash时代卡通", "relation": "sameMedium", "why": "同一描边粗细与饱和度。" },
+            { "artStyle": "13.17 高奇幻 (High fantasy)", "relation": "sameMedium", "why": "精灵森林、兽人营地等主题只换材质配色。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 3, "why": "塔防。" }
+          ],
+          "exemplars": [
+            { "card": "steam:246420", "why": "木铁框英雄室 + 金属铭牌 + 黄色分段属性。" },
+            { "card": "steam:1367550", "why": "暗黑版：深石框 + 紫色按钮 + 立绘卡。" },
+            { "card": "steam:816340", "why": "精灵主题木框。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "移动端拟物 UI 移植 PC 后键位 / 手柄映射脱节：Kingdom Rush Vengeance 有 2 条手柄抱怨。", "evidence": ["steam:1367550"] }
+          ],
+          "skinGap": "skin.skeuo 的衬线 + 小型大写正好与这一型相反；缺木铁材质、墨描边与描边标题。",
+          "paramGaps": ["「按钮 = 场景物件」（书、铁砧、奖杯摆在石台上当菜单入口）不能表达。"]
+        },
+        {
+          "family": "拟物·历史浮雕边栏",
+          "skin": "skin.skeuo",
+          "noCards": false,
+          "definition": "经典城建（Pharaoh）：屏幕右侧整条石质控制栏，雕花九宫格框、浮雕纹样、写实小物件图标；顶部是一条莎草纸色菜单条。",
+          "grammar": {
+            "shape": "厚重直角整条，按钮是小方格。",
+            "line": "石刻凹槽而非描边。",
+            "surface": "石材平铺 + 倒角。",
+            "color": "砂岩棕 + 少量彩绘（蓝、红、金）。",
+            "type": "小号衬线。",
+            "material": "石（雕花九宫格）。",
+            "ornament": "浮雕人像、埃及纹样。",
+            "icon": "写实小物件（陶罐、工具、神像）。",
+            "motion": "几乎无。",
+            "layout": "右侧整条：小地图在上、建造按钮网格居中、浮雕在下。"
+          },
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "mr",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "stone",
+            "ast.core": "texture",
+            "ast.coreMat": "stone",
+            "vis.depth": "bevel",
+            "vis.iconStyle": "realistic",
+            "typ.body.family": "serif",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "ast.watermark": "faintPainting",
+            "cnt.density": "3"
+          },
+          "artPairing": [
+            { "artStyle": "8.8 90年代CGI预渲染", "relation": "sameMedium", "why": "预渲染建筑 + 预渲染石刻栏。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 1, "why": "Pharaoh + Cleopatra。" }
+          ],
+          "exemplars": [
+            { "card": "steam:564530", "why": "右侧整条石栏 + 写实图标 + 底部浮雕。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.skeuo 设了 bevel + 衬线 + 写实图标，方向对，但没有石材与雕花九宫格，也没有贴边整条。",
+          "paramGaps": ["浮雕的题材（人像、纹样）只能用 ast.watermark 近似。"]
+        },
+        {
+          "family": "拟物·木纹条目（放置 / 网页）",
+          "skin": "skin.skeuo",
+          "noCards": false,
+          "definition": "Cookie Clicker：三栏布局，木纹分隔条把屏幕切开，右侧商店是一条条纸纹木板，数字跳动是主要反馈；锁定项是黑剪影 + 问号。",
+          "grammar": {
+            "shape": "长条行卡。",
+            "line": "木纹分隔条代替线。",
+            "surface": "纸纹 / 木纹行底，背景是整屏布纹。",
+            "color": "木棕、纸灰 + 蓝色背景。",
+            "type": "衬线 + 投影。",
+            "material": "木、纸、布。",
+            "ornament": "少。",
+            "icon": "彩绘小物件。",
+            "motion": "数字滚动。",
+            "layout": "左主物件、中展示带、右商店长列表。"
+          },
+          "params": {
+            "lay.composition": "three",
+            "ast.core": "texture",
+            "ast.coreMat": "wood",
+            "ast.bgArt": "material",
+            "ast.bgMat": "cloth",
+            "cmp.slot": "rowCard",
+            "cmp.listRow": ["icon", "title", "value"],
+            "el.cost.form": "inButton",
+            "typ.body.family": "serif",
+            "typ.legibility": "shadow",
+            "mo.valueChange": "countUp",
+            "st.locked": "silhouette",
+            "cnt.density": "4",
+            "cnt.focal": "item"
+          },
+          "artPairing": [
+            { "artStyle": "4.11 马克笔／填色书 (Coloring book)", "relation": "neutral", "why": "简单彩绘物件 + 材质条，网页游戏常见混搭。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 1, "why": "放置。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1454400", "why": "木纹分隔 + 纸纹商店行 + 黑剪影锁定。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "材质条上堆小字，提到 UI 的评测差评 7 / 17。", "evidence": ["steam:1454400"] }
+          ],
+          "skinGap": "skin.skeuo 没有任何材质，也没有材质行卡（rowCard）的条纹分隔。",
+          "paramGaps": []
+        },
+        {
+          "family": "拟物·桌面物件容器",
+          "skin": null,
+          "noCards": false,
+          "definition": "整个游戏是一张书桌：CRT 显示器、笔记本、电话、名片都是 UI；显示器里再套一层复古操作系统窗口。拟物从「面板材质」升级为「场景物件」。",
+          "grammar": {
+            "shape": "物件轮廓（显示器、笔记本、竖条仪表）。",
+            "line": "物件自身边缘。",
+            "surface": "桌面木纹、纸面横线、屏幕发光。",
+            "color": "室内暖光 + 屏幕冷色。",
+            "type": "像素字（屏幕内）+ 手写（笔记本）。",
+            "material": "木桌、纸、塑料机壳。",
+            "ornament": "物件细节本身。",
+            "icon": "屏幕内系统图标。",
+            "motion": "镜头推进到物件、笔记本翻入。",
+            "layout": "中央显示器、右侧竖条仪表、底部笔记本 / 电话。"
+          },
+          "params": {
+            "rel.diegesis": "diegetic",
+            "ast.container": "crt",
+            "ast.containerSurface": "desk",
+            "lay.container": "window",
+            "vis.depth": "bevel",
+            "vis.pixelScale": "world",
+            "el.meter.form": "stack",
+            "el.meter.screenAnchor": "br",
+            "cmp.gauge@el.meter": "vertical",
+            "typ.body.family": "pixel",
+            "mo.transition": "zoomInto",
+            "ast.bgArt": "material",
+            "rel.harmony": "sameMedium"
+          },
+          "artPairing": [
+            { "artStyle": "7.5 现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "像素画的桌面与物件。" },
+            { "artStyle": "13.6 卡带未来主义 (Cassette futurism)", "relation": "sameMedium", "why": "CRT + 复古系统窗是年代符号。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 1, "why": "监视模拟。" }
+          ],
+          "exemplars": [
+            { "card": "steam:658850", "why": "书桌 + CRT + 笔记本 + 竖条生命指标。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "这不是皮肤问题而是场景容器（ast.container = crt + desk）；skin.skeuo 无法单独表达。",
+          "paramGaps": ["容器里「再套一层系统窗口」的嵌套皮肤（外拟物、内灰盒）无法同时指定两套皮肤。"]
+        }
+      ],
+      "variants": [
+        { "name": "牌桌 / 卡册实物", "diff": "整屏是桌面上的实物（卡牌、天平、卡册），UI 完全叙事内。", "cards": ["steam:1092790", "iig:hearthstone-heroes-of-warcraft", "steam:1054490"] },
+        { "name": "复古机电控制台", "diff": "金属控制台 + 指示灯 + 计数滚轮，拟物对象换成 60 年代仪表盘（归 Y2K 镀铬）。", "cards": ["steam:3720"] },
+        { "name": "国风卷轴拟物", "diff": "木轴 + 宣纸卷 + 竖排书法签（归国风家族）。", "cards": ["steam:1468810", "steam:955900"] },
+        { "name": "手工纸艺书桌", "diff": "作业本、手工卡纸、玩具组成整屏（归手绘笔记本）。", "cards": ["steam:1839510"] },
+        { "name": "Q 版木框塔商店", "diff": "同为木框塔商店，但饱和糖果色、更大圆角（归糖果卡通）。", "cards": ["steam:306020"] }
+      ],
+      "failureModes": [
+        { "desc": "材质纹理上的小字可读性差：Cookie Clicker 长列表压在木纹 / 纸纹上，提到 UI 的评测差评 7 / 17。", "evidence": ["steam:1454400"] },
+        { "desc": "厚重材质框占屏，移植 PC 后键位映射脱节：Kingdom Rush Vengeance 2 条手柄抱怨。", "evidence": ["steam:1367550"] },
+        { "desc": "材质与世界观不符、贴图分辨率不足会显得廉价（06 文档 B5；08 文档里设计师对「材质不像该文化」的批评）。", "evidence": [] },
+        { "desc": "只做了外观、没有物理行为（按下不下沉、开合无动画），拟物会退化成「贴图换皮」。", "evidence": [] }
+      ],
+      "skinGap": "skin.skeuo 只设了 bevel + 中明度 + 衬线 + 小型大写 + 写实图标 + 弹簧，没有指定任何材质：ast.core / ast.frame / coreMat / frameMat / ornaments 全空，所以在探索台里它渲染成「一块有倒角的灰板」。参考库最常见的是卡通木铁（Kingdom Rush 3 张卡）：粗墨线、粗体大写描边标题、圆钮技能、铭牌标题、分段黄格进度，正好与现有 skin 的衬线 + 小型大写相反。建议拆成至少两个预设：「卡通木铁」（wood + iron + rivets + ink 描边 + outlineShadow 标题）和「历史石刻」（stone + carvedNinePatch + serif + realistic 图标）；书桌 / 牌桌类走场景容器，不进皮肤。",
+      "paramGaps": [
+        "「按钮 = 场景物件」（书、铁砧、奖杯摆在石台上当菜单入口）不能表达：cmp.button 只有文字 / 图标 / 图标 + 文字。",
+        "材质磨损程度（新 / 旧 / 破损）、木纹方向、铆钉密度没有参数。",
+        "「框凸、芯凹」两个方向的立体只能用 lay.grouping = tonalInset 或 vis.depth 全局一种来近似，无法分别指定。",
+        "铭牌压在外框上沿（跨越边界）的层叠关系没有参数。"
+      ]
+    },
+    {
+      "family": "扁平 / Material",
+      "skin": "skin.flat",
+      "noCards": false,
+      "definition": "纯色块、无纹理、无光泽，用明度差和少量投影区分层级。参考库里它是「现代游戏的默认语言」：模拟经营的深色半透明面板（Before We Leave、Megaquarium、Terra Nil）、网页式放置的后台仪表盘（Melvor Idle）、休闲与手游的圆钮大圆角（Polytopia、几何王国）、竞技游戏的斜体转播风（Overwatch）、3A 的无框细条 HUD（Spider-Man、Far Cry）。共同点是「程序就能画、不需要资产」。",
+      "grammar": {
+        "shape": "圆角矩形 4–8 px（模拟经营、后台），或大圆角 / 圆钮（休闲手游）；竞技款用切角与斜切；按钮、卡片、页签用同一套圆角。",
+        "line": "多数无描边，靠底色和明度分组；休闲款加 2–3 px 同色加深轮廓；选中用实心填充页签或 2 px 强调色描边。",
+        "surface": "纯色。深色款不透明度 0.8–0.9，透出场景；浅色款白 / 米白实底。层级用「内嵌明度差」，而不是投影。",
+        "color": "中性底 + 1 个高饱和强调（Megaquarium 橙、Planet Zoo 青、Terra Nil 橙）；语义色只给条形（绿健康、红警告）；主次按钮靠颜色（绿确认 / 红取消）。",
+        "type": "无衬线，正文 12–14 px；标题常是小号全大写加字距；数字等宽。竞技款标题斜体窄体。",
+        "material": "无（程序填充）。",
+        "ornament": "零。",
+        "icon": "扁平单色图标（白色剪影或线性），图标字体或程序几何。",
+        "motion": "缓出 150–300 ms；按下变暗或缩小回弹（休闲）；面板从屏幕边缘滑入。",
+        "layout": "模拟经营：左侧分类页签 + 子项抽屉、顶部资源条、右侧选中详情；后台：左导航 + 右卡片网格；休闲：右下一排大圆钮；3A：四角小件、几乎无框。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 6,
+        "vis.fill": "solid",
+        "vis.opacity": 0.9,
+        "vis.stroke": "none",
+        "vis.depth": "flat",
+        "vis.gloss": "none",
+        "vis.ornament": "0",
+        "vis.motif": "none",
+        "col.lightness": "dark",
+        "col.strategy": "neutralAccent",
+        "col.source": "uiPalette",
+        "typ.body.family": "sans",
+        "typ.display.family": "same",
+        "typ.display.case": "upper",
+        "vis.iconStyle": "flat",
+        "ast.iconSet": "font",
+        "cmp.gauge": "thinBar",
+        "cmp.tabIndicator": "filled",
+        "lay.grouping": "tonalInset",
+        "hier.cta": "color",
+        "ix.press": "darken",
+        "mo.easing": "easeOut",
+        "rel.harmony": "neutral",
+        "lay.grid": "grid8"
+      },
+      "artPairing": [
+        { "artStyle": "5.2 平滑低模／色板贴图 (Smooth low poly)", "relation": "sameMedium", "why": "Megaquarium、Before We Leave、Circuit Superstars：无纹理低模与无纹理面板说同一种语言。" },
+        { "artStyle": "5.1 刻面低模 (Faceted low poly)", "relation": "sameMedium", "why": "Polytopia、TABS：刻面世界 + 纯色圆钮 / 表单。" },
+        { "artStyle": "14.4 矢量扁平 (Vector flat)", "relation": "sameMedium", "why": "Among Us：矢量角色 + 扁平平板界面。" },
+        { "artStyle": "6.2 纯色体素／MagicaVoxel式", "relation": "sameMedium", "why": "The Perfect Tower II：纯色体素 + 纯色色块面板。" },
+        { "artStyle": "1.7 风格化PBR／英雄射击风 (Stylized PBR)", "relation": "sameMedium", "why": "Overwatch：可读性优先的画面配可读性优先的扁平 HUD。" },
+        { "artStyle": "1.5 风格化写实 (Stylized realism)", "relation": "neutral", "why": "Spider-Man、Far Cry：扁平无框 HUD 在写实画面上保持中性。" },
+        { "artStyle": "13.17 高奇幻 (High fantasy)", "relation": "contrast", "why": "放进奇幻世界会「像 App」（06 文档 B4 陷阱），除非刻意。" }
+      ],
+      "genres": [
+        { "genre": "builder", "count": 6, "why": "模拟经营 / 城建：大量列表、分类、统计条，扁平最省也最清楚。" },
+        { "genre": "explore", "count": 6, "why": "3A 开放世界（Spider-Man 三部、Far Cry 4、Stray）：无框细条 HUD；多数商店图无 UI，置信度低。" },
+        { "genre": "factory / strategy", "count": 4, "why": "Melvor Idle、Craftomation、Polytopia、Perfect Tower II：数据密集或手游移植。" },
+        { "genre": "shooter / racing", "count": 3, "why": "Overwatch、TF2、Circuit Superstars：竞技转播风。" },
+        { "genre": "survival / sandbox / card", "count": 4, "why": "Palworld、Among Us、TABS、伊甸之战。" }
+      ],
+      "exemplars": [
+        { "card": "steam:600480", "why": "深蓝半透明直角面板 + 橙色实心选中页签 + 绿色分段属性条 + 细线描边按钮。" },
+        { "card": "steam:1073910", "why": "深蓝半透明边栏 + 左侧分类图标 + 顶部资源条 + 环形进度。" },
+        { "card": "steam:1267910", "why": "Bootstrap 式后台：深石板灰卡片、左侧导航长列表、彩色实心按钮。" },
+        { "card": "steam:874390", "why": "圆钮扁平：右下一排深色圆钮 + 白线图标 + 下方小字标签；选部落页是蓝底白圈圆头像。" },
+        { "card": "steam:703080", "why": "浅色变体：白色圆角卡片抽屉 + 青绿强调 + 彩色福利横条。" },
+        { "card": "steam:1593030", "why": "深海军蓝小圆角卡 + 橙色撤销键 + 图标细条 + 左上环形进度。" },
+        { "card": "iig:overwatch", "why": "竞技转播风：斜体窄体、切角、分段血块、队伍色击杀信息流；生涯页是大数字卡片网格。" },
+        { "card": "steam:1332010", "why": "3A 克制扁平：深石板方角对话卡 + 黄 / 白标题条 + 右下按键提示。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "扁平·深色半透明模拟面板",
+          "skin": "skin.godotDefault",
+          "noCards": false,
+          "definition": "模拟经营的标准外观：深蓝 / 深青半透明小圆角面板，左侧或底部分类页签 + 子项抽屉，顶部资源条，右侧选中详情；一个高饱和强调色（多为橙），统计用行内细条。",
+          "grammar": {
+            "shape": "小圆角（0–4 px）或直角面板。",
+            "line": "无描边；按钮可用 1 px 浅色描边（Megaquarium HIRE）。",
+            "surface": "深蓝 / 深青，0.8–0.9 不透明。",
+            "color": "冷色中性 + 橙色强调；条形用绿 / 橙 / 红语义色。",
+            "type": "小号无衬线，标题全大写。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "白色扁平剪影图标。",
+            "motion": "滑入、缓出。",
+            "layout": "左侧分类竖栏、底部资源与时间、右侧详情。"
+          },
+          "params": {
+            "vis.opacity": 0.85,
+            "col.lightness": "dark",
+            "vis.corner": "round",
+            "vis.cornerSize": 4,
+            "vis.stroke": "none",
+            "lay.hudOrg": "scattered",
+            "el.toolbar.form": "categoryTabs",
+            "el.toolbar.screenAnchor": "ml",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tc",
+            "st.statViz": "inlineBar",
+            "cmp.tabIndicator": "filled",
+            "col.accent": "#f2902a",
+            "el.overlay.form": ["heatmap"],
+            "rel.semanticZoom": "heatmap",
+            "cnt.density": "3"
+          },
+          "artPairing": [
+            { "artStyle": "5.2 平滑低模／色板贴图 (Smooth low poly)", "relation": "sameMedium", "why": "无纹理低模 + 无纹理面板。" },
+            { "artStyle": "5.7 小星球 (Tiny planet)", "relation": "neutral", "why": "Before We Leave 的球面世界上，面板退到屏幕边缘。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 5, "why": "城建 / 水族馆 / 生态修复 / 主题公园。" }
+          ],
+          "exemplars": [
+            { "card": "steam:600480", "why": "橙色实心页签 + 绿色分段属性 + 细线按钮。" },
+            { "card": "steam:1073910", "why": "深蓝半透明边栏 + 顶部资源条。" },
+            { "card": "steam:1593030", "why": "深蓝小卡 + 橙色撤销 + 图标细条。" },
+            { "card": "steam:255710", "why": "信息视图把城市变白模 + 彩色热力（商店图无 UI，按 IIG 记录）。" },
+            { "card": "steam:493340", "why": "商店图无 UI；同类主题公园模拟（IIG 有完整 UI）。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "信息密度高、层级深：Planet Coaster 引导 3 条；Terra Nil 字太小 2 条。", "evidence": ["steam:493340", "steam:1593030"] }
+          ],
+          "skinGap": "skin.flat 是白卡大圆角；这一型几乎就是 skin.godotDefault 加一个橙色强调与实心页签。",
+          "paramGaps": []
+        },
+        {
+          "family": "扁平·浅色卡片抽屉",
+          "skin": "skin.flat",
+          "noCards": false,
+          "definition": "白 / 米白圆角卡片从屏幕边缘抽出，一个冷色或暖色强调，统计用彩色横条，物品是方格；最接近我们现有的 skin.flat。",
+          "grammar": {
+            "shape": "8 px 圆角卡片，方格物品。",
+            "line": "无，或 1 px 浅灰。",
+            "surface": "白 / 米白实底，轻投影。",
+            "color": "中性浅色 + 青绿（Planet Zoo）或暖色色块（Craftomation）。",
+            "type": "无衬线，标题粗。",
+            "material": "无（Craftomation 有米黄纸感，但仍是纯色）。",
+            "ornament": "无。",
+            "icon": "扁平彩色图标。",
+            "motion": "抽屉滑入。",
+            "layout": "左 / 右抽屉 + 底部分类条。"
+          },
+          "params": {
+            "col.lightness": "light",
+            "vis.opacity": 0.95,
+            "vis.corner": "round",
+            "vis.cornerSize": 8,
+            "lay.container": "drawer",
+            "vis.depth": "softDrop",
+            "st.statViz": "inlineBar",
+            "cmp.slot": "cell",
+            "col.strategy": "neutralAccent",
+            "lay.detail": "persistent",
+            "cmp.listRow": ["icon", "title", "progress"],
+            "el.toolbar.form": "categoryTabs",
+            "el.toolbar.screenAnchor": "bc"
+          },
+          "artPairing": [
+            { "artStyle": "1.5 风格化写实 (Stylized realism)", "relation": "neutral", "why": "Planet Zoo 的写实动物园上，白卡保持中性。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 1, "why": "Planet Zoo。" },
+            { "genre": "factory", "count": 1, "why": "Craftomation：编程指令列表 + 百科纸卡。" }
+          ],
+          "exemplars": [
+            { "card": "steam:703080", "why": "白卡抽屉 + 青绿强调 + 彩色福利条。" },
+            { "card": "steam:1724140", "why": "米黄面板 + 彩色指令块 + 物品方格；标题是嵌在边框上的铭牌。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "Planet Zoo：菜单难用 3、HUD 太乱 3、引导 2——浅色卡片多开时互相覆盖。", "evidence": ["steam:703080"] }
+          ],
+          "skinGap": "skin.flat 的 20 px 圆角偏大；其余基本吻合。",
+          "paramGaps": []
+        },
+        {
+          "family": "扁平·后台仪表盘 / 工具表单",
+          "skin": "skin.godotDefault",
+          "noCards": false,
+          "definition": "网页 / 工具软件的界面直接当游戏 UI：左侧导航长列表、右侧卡片网格、表单控件（步进器、滑条、输入框）、彩色实心按钮。Melvor Idle 是 Bootstrap 后台，TABS 单位编辑器是深色工具面板。",
+          "grammar": {
+            "shape": "小圆角卡片与按钮。",
+            "line": "无或 1 px 分隔。",
+            "surface": "深石板灰，卡片比底亮一档。",
+            "color": "中性深色 + 绿 / 蓝 / 红实心按钮。",
+            "type": "无衬线，标签小号全大写（TABS），数字等宽。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "彩色小图标（技能、物品）。",
+            "motion": "几乎无。",
+            "layout": "左导航 + 右卡片网格；或左表单 + 右 3D 预览。"
+          },
+          "params": {
+            "lay.composition": "splitLR",
+            "lay.nav": "tabsLeft",
+            "lay.grouping": "card",
+            "cnt.density": "4",
+            "col.lightness": "dark",
+            "vis.corner": "round",
+            "vis.cornerSize": 4,
+            "cmp.listRow": ["icon", "title", "progress"],
+            "cmp.optionRange": "stepper",
+            "cmp.quantity": "slider",
+            "cmp.input": "darkInset",
+            "col.semantic": "greenRed",
+            "typ.numerals.family": "tabular",
+            "typ.body.case": "upper"
+          },
+          "artPairing": [
+            { "artStyle": "5.1 刻面低模 (Faceted low poly)", "relation": "neutral", "why": "TABS 的刻面单位放在工具面板右侧预览。" }
+          ],
+          "genres": [
+            { "genre": "factory", "count": 1, "why": "Melvor Idle：放置 / 技能练级。" },
+            { "genre": "sandbox", "count": 1, "why": "TABS：单位编辑。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1267910", "why": "Bootstrap 式深色后台。" },
+            { "card": "steam:508440", "why": "深色属性列表 + 步进器 + 红色 EXIT。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "网页式固定像素布局在高分屏上缩放差：Melvor Idle 2 条 UI 缩放抱怨。", "evidence": ["steam:1267910"] }
+          ],
+          "skinGap": "skin.flat 默认浅色、大圆角；这一型要深色小圆角 + 表单控件，最接近 skin.godotDefault。",
+          "paramGaps": []
+        },
+        {
+          "family": "扁平·休闲圆钮（大圆角 + 粗轮廓）",
+          "skin": "skin.cozy",
+          "noCards": false,
+          "definition": "休闲 / 手游的扁平：大圆角卡片、圆形主按钮、2–3 px 同色加深轮廓、饱和多色，按下缩小回弹。再加糖果高光就进入糖果卡通家族。",
+          "grammar": {
+            "shape": "大圆角卡片、圆钮、胶囊分段页签。",
+            "line": "2–3 px 加深轮廓（几何王国深石板外框）。",
+            "surface": "纯色实底，浅底深框或深底浅格。",
+            "color": "饱和多色；稀有度用格子底色。",
+            "type": "圆体 / 粗无衬线。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "扁平彩色或白线图标。",
+            "motion": "回弹、缩小按下。",
+            "layout": "右下大圆钮一排（Polytopia）；竖屏居中弹窗 + 右上 X（几何王国）。"
+          },
+          "params": {
+            "vis.corner": "round",
+            "vis.cornerSize": 16,
+            "vis.silhouette@button": "circle",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 3,
+            "vis.strokeColor": "darker",
+            "col.lightness": "light",
+            "col.strategy": "polychrome",
+            "el.cta.form": "round",
+            "el.cta.screenAnchor": "br",
+            "typ.body.family": "round",
+            "ix.press": "squash",
+            "mo.easing": "overshoot",
+            "ix.close": "xTopRight",
+            "st.rarityCue": ["bg"],
+            "cmp.optionEnum": "segmented"
+          },
+          "artPairing": [
+            { "artStyle": "5.1 刻面低模 (Faceted low poly)", "relation": "sameMedium", "why": "Polytopia：刻面方块头像 + 圆钮。" },
+            { "artStyle": "14.4 矢量扁平 (Vector flat)", "relation": "sameMedium", "why": "Among Us：扁平角色 + 平板界面。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 1, "why": "Polytopia。" },
+            { "genre": "card / explore / survival", "count": 3, "why": "伊甸之战、几何王国（手游）、Among Us。" }
+          ],
+          "exemplars": [
+            { "card": "steam:874390", "why": "右下深色圆钮 + 白线图标；部落选择是蓝圆头像网格。" },
+            { "card": "gameui:12983", "why": "竖屏背包：深框浅格大圆角、稀有度底色、胶囊分段页签。" },
+            { "card": "gameui:3860", "why": "蓝青渐变大厅 + 橙色胶囊取消键 + 斜置大字。" },
+            { "card": "steam:945360", "why": "投票会议是绿色平板上的白色聊天气泡（叙事内容器）。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.flat 无描边、软投影；这一型要粗轮廓 + 圆钮 + 回弹，介于 skin.cozy 与 skin.candy 之间。",
+          "paramGaps": []
+        },
+        {
+          "family": "扁平·纯色色块街机",
+          "skin": "skin.neobrutal",
+          "noCards": false,
+          "definition": "饱和纯色大色块（红、蓝、绿、黄）面板，白色窄体全大写标题，直角，文字加黑描边直接压在场景上；工坊是一长列色块按钮 + 价格。",
+          "grammar": {
+            "shape": "直角长条色块。",
+            "line": "无，色块本身就是边界。",
+            "surface": "不透明纯色。",
+            "color": "骨架多色，每类功能一个色。",
+            "type": "白色窄体全大写 + 黑描边。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "小号扁平图标。",
+            "motion": "飘字密集。",
+            "layout": "顶部波次大字、右侧色块技能列、左侧资源数字。"
+          },
+          "params": {
+            "col.strategy": "polychrome",
+            "vis.corner": "sharp",
+            "vis.opacity": 1,
+            "lay.grouping": "colorBlock",
+            "typ.display.family": "condensed",
+            "typ.display.case": "upper",
+            "typ.legibility": "outline",
+            "cmp.listRow": ["title", "value", "action"],
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tc",
+            "el.feedback.form": ["floatNumbers"],
+            "ast.bgArt": "solid",
+            "cnt.density": "4"
+          },
+          "artPairing": [
+            { "artStyle": "6.2 纯色体素／MagicaVoxel式", "relation": "sameMedium", "why": "纯色体素 + 纯色色块。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 1, "why": "放置塔防。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1197260", "why": "右侧红蓝黄色块技能列 + 白色窄体大写 + 顶部 WAVE 大字。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "飘字与色块都高饱和，叠在一起后难读；提到 UI 的评测差评 10 / 19。", "evidence": ["steam:1197260"] }
+          ],
+          "skinGap": "skin.flat 太素；最接近 skin.neobrutal 去掉粗黑边与硬投影。",
+          "paramGaps": []
+        },
+        {
+          "family": "扁平·竞技转播（斜体 + 队伍色）",
+          "skin": "skin.slant",
+          "noCards": false,
+          "definition": "竞技 / 体育的扁平：斜体窄体、切角、轻微倾斜面板、队伍色编码（蓝我红敌），分段血块、击杀信息流、名次大数字；像电视转播图形。",
+          "grammar": {
+            "shape": "切角、平行四边形条。",
+            "line": "无或细描边。",
+            "surface": "半透明深色或白色玻璃卡。",
+            "color": "白 + 队伍色（青 / 红）。",
+            "type": "斜体窄体全大写，数字斜体。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "英雄头像、技能白线图标。",
+            "motion": "斜切划入、数字跳动。",
+            "layout": "左下血 + 头像、下中大招环、右下技能 / 弹药、右上击杀流、左上名次。"
+          },
+          "params": {
+            "vis.corner": "chamfer",
+            "vis.skew": -8,
+            "vis.opacity": 0.8,
+            "typ.display.family": "condensed",
+            "typ.display.style": "italic",
+            "typ.numerals.style": "italic",
+            "typ.display.case": "upper",
+            "col.coding": ["team"],
+            "col.teams": "blueRed",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "bl",
+            "el.abilities.form": "ultimate",
+            "el.rank.form": ["number"],
+            "el.rank.screenAnchor": "tl",
+            "el.notify.form": ["feed"],
+            "st.statViz": "table"
+          },
+          "artPairing": [
+            { "artStyle": "1.7 风格化PBR／英雄射击风 (Stylized PBR)", "relation": "sameMedium", "why": "Overwatch。" },
+            { "artStyle": "5.8 移轴微缩 (Tilt-shift miniature)", "relation": "neutral", "why": "Circuit Superstars 的微缩赛道上，转播式名次表保持中性。" }
+          ],
+          "genres": [
+            { "genre": "shooter", "count": 2, "why": "Overwatch、TF2。" },
+            { "genre": "racing", "count": 1, "why": "Circuit Superstars：左上名次 + 排名表。" }
+          ],
+          "exemplars": [
+            { "card": "iig:overwatch", "why": "分段血块 + 大招环 + 斜体击杀流；生涯页大数字网格。" },
+            { "card": "steam:1097130", "why": "左上大号名次 + 半透明深色排名行 + 右上圈数。" },
+            { "card": "steam:440", "why": "左下十字 + 血量数字、右下弹药，红 / 蓝队伍色（商店图无 UI，按已知记）。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.flat 没有斜体、切角与队伍色编码；最接近 skin.slant。",
+          "paramGaps": ["「队伍色侧条」（行首一条队伍色）这种组合件没有参数。"]
+        },
+        {
+          "family": "扁平·3A 情境 HUD（无框细条）",
+          "skin": "skin.mono",
+          "noCards": false,
+          "definition": "3A 开放世界的默认 HUD：几乎不画面板，四角细血条、平面小地图、白色无衬线 + 投影，按键提示用主机按键图标；需要时才出现。对话是深色方角卡 + 黄色标题条（Stray）。",
+          "grammar": {
+            "shape": "无面板；细长条、小圆地图。",
+            "line": "无。",
+            "surface": "无底，或深色小卡。",
+            "color": "白 + 一个品牌色（毒液黄、Spider 红）。",
+            "type": "白色无衬线 + 投影。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "线性 / 剪影白图标。",
+            "motion": "淡入淡出，情境显现。",
+            "layout": "左上血条、左下小地图、右下武器 / 道具轮、底部右侧按键提示。"
+          },
+          "params": {
+            "vis.opacity": 0,
+            "lay.container": "overlay",
+            "rel.hudVisibility": "contextual",
+            "cnt.density": "1",
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "tl",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "bl",
+            "typ.legibility": "shadow",
+            "vis.iconStyle": "line",
+            "el.interact.form": ["keyPrompt"],
+            "cmp.dialogBox": "bubble",
+            "ix.glyphs": "playstation",
+            "mo.enter": "fade"
+          },
+          "artPairing": [
+            { "artStyle": "1.5 风格化写实 (Stylized realism)", "relation": "neutral", "why": "无框 HUD 不和写实画面抢。" },
+            { "artStyle": "13.1 赛博朋克霓虹 (Cyberpunk neon)", "relation": "neutral", "why": "Stray 的霓虹街区上，深色方角卡 + 黄条保持中性。" }
+          ],
+          "genres": [
+            { "genre": "explore", "count": 5, "why": "Spider-Man 三部、Far Cry 4、Stray。" },
+            { "genre": "survival", "count": 1, "why": "Palworld。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1332010", "why": "深石板方角对话卡 + 黄 / 白标题条，唯一截图里能看到 UI 的一张。" },
+            { "card": "steam:1817070", "why": "左上血条 + 专注条、右下小工具轮（商店图无 UI，按已知记）。" },
+            { "card": "steam:298110", "why": "左下小地图、右下武器弹药（商店图无 UI）。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "6 张里 5 张商店图无 UI，按已知 HUD 编码；归入扁平是因为「无风格化」，不代表它们是 Material。Far Cry 4 有 2 条 UI 缩放抱怨，Palworld 有 3 条菜单难用。", "evidence": ["steam:298110", "steam:1623730", "steam:2651280", "steam:1817190"] }
+          ],
+          "skinGap": "skin.flat 总画白卡；这一型要 opacity 0 + 文字投影，最接近 skin.mono。",
+          "paramGaps": []
+        }
+      ],
+      "variants": [
+        { "name": "Godot 默认主题 ≈ 深色扁平模拟面板", "diff": "深灰蓝底、6 px 圆角、蓝焦点，几乎就是「深色半透明模拟面板」的中性版本，适合当迁移基线。", "cards": ["steam:600480", "steam:1073910"] },
+        { "name": "极简线路图扁平", "diff": "去掉面板，只剩彩色圆点与细线（归极简单色 / 瑞士）。", "cards": ["steam:287980", "steam:1127500"] },
+        { "name": "粉橙统计页", "diff": "白底 + 粉橙色块 + 折线图 + 大数字（归糖果卡通）。", "cards": ["steam:591460"] },
+        { "name": "扁平 + 卡通厚描边", "diff": "加 3 px 深色轮廓与糖果高光就进入糖果卡通家族。", "cards": ["steam:945360", "steam:922460"] }
+      ],
+      "failureModes": [
+        { "desc": "深色扁平模拟面板信息过密：Planet Zoo 菜单难用 3、HUD 太乱 3、引导 2；Planet Coaster 引导 3。", "evidence": ["steam:703080", "steam:493340"] },
+        { "desc": "小字扁平 HUD 字太小：Terra Nil 字太小 2 条。", "evidence": ["steam:1593030"] },
+        { "desc": "固定像素尺寸的网页 / 工具式 UI 在高分屏上缩放差：Melvor Idle、Far Cry 4 各 2 条 UI 缩放抱怨。", "evidence": ["steam:1267910", "steam:298110"] },
+        { "desc": "可点击暗示丢失，放进奇幻 / 写实世界「像 App」（06 文档 B4 陷阱）；Palworld 菜单难用 3 条。", "evidence": ["steam:1623730"] },
+        { "desc": "家族内 8 张 3A / IIG 卡商店图无 UI，按已知 HUD 编码，置信度低；扁平在这里常被当成「没有风格」的兜底标签。", "evidence": ["steam:1817070", "steam:2651280", "steam:255710", "steam:493340"] }
+      ],
+      "skinGap": "skin.flat = 白卡 + 20 px 大圆角 + 柔投影 + 浅色 + 波纹按下，是安卓 Material 的「App 设置页」。参考库 23 张扁平卡里看得清 UI 的约 15 张，深色占多数（Before We Leave、Megaquarium、Terra Nil、Melvor、Stray、TABS、Circuit Superstars），浅色只有 Planet Zoo、Craftomation、几何王国、伊甸之战。差距：① 默认应是深色半透明（约 0.85）而不是白卡；② 圆角 20 太大，模拟经营 / 后台是 4–8；③ 叠在 3D 场景上的面板几乎不用柔投影，靠半透明 + 明度差；④ 缺实心填充页签（Megaquarium 橙色选中页签）与小号全大写标题；⑤ 波纹按下是安卓系统语言，游戏里更常见变暗或缩小回弹；⑥ 没有圆钮型（Polytopia）、斜体竞技型（Overwatch）、无框 3A 型三个变体——它们分别靠近 skin.cozy、skin.slant、skin.mono，说明「扁平」应是一组预设而不是一个。",
+      "paramGaps": [
+        "半透明面板透出场景时的色调偏移（深蓝着色叠在暖色场景上）无法指定，只能分开调 vis.opacity 与 vis.blur。",
+        "竞技转播风的「队伍色侧条」需要 vis.skew + typ.*.style + col.coding 拼，缺一个组合件。",
+        "图标线宽 / 圆角与面板圆角同属一个 8 点网格的一致性约束无法声明。"
+      ]
+    },
+    {
+      "family": "瑞士几何 / 极简表格",
+      "skin": "skin.swiss",
+      "noCards": false,
+      "definition": "国际主义平面设计搬进游戏：网格、左对齐、无衬线、极大的字号反差、发丝分隔线、黑白灰 + 一个强调色，不画装饰，也几乎不画面板——信息靠排版本身建立层级。参考库里明确归它的只有 CONTROL（黑底白字表格 + 叠在画面上的超大无衬线标题），但 Mini Metro（线路图）、Death Stranding（窄体细字）、Overwatch 生涯页（大数字网格）都是同一语法的跨家族证据。",
+      "grammar": {
+        "shape": "直角，矩形网格单元；没有圆角、切角，也没有轮廓形状。",
+        "line": "1 px 发丝线只用来分栏 / 分行（上下两条或左侧一条），不围框。",
+        "surface": "要么不画底（字直接压画面），要么整屏纯黑 / 纯白页；不用渐变、投影、纹理。",
+        "color": "黑白灰 + 1 个强调（CONTROL 红）。Mini Metro 线路多色是语义色例外，骨架色仍是灰。",
+        "type": "唯一的主角：无衬线（Helvetica / 思源黑体），标题与正文字号比 ≥ 3，全大写 + 负字距的巨大标题，等宽数字对齐成列。要把普通面板改成这一家：先删掉边框与圆角，改用上下发丝线，再把标题放大三倍、正文缩小。",
+        "material": "无。",
+        "ornament": "零；编号（01 / 02）和细线就是装饰。",
+        "icon": "极少，线性几何图标或纯文字。",
+        "motion": "硬切或短位移；文字整块出现，不打字。",
+        "layout": "12 栏网格、非对称：标题占左 2/3，数据表右对齐；巨型标题可以压在场景上当章节卡。"
+      },
+      "params": {
+        "vis.corner": "sharp",
+        "vis.fill": "solid",
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeSides": "topBottom",
+        "vis.strokeColor": "highlightEdge",
+        "vis.depth": "flat",
+        "vis.ornament": "0",
+        "vis.motif": "none",
+        "vis.iconStyle": "line",
+        "col.lightness": "dark",
+        "col.strategy": "neutralAccent",
+        "typ.body.family": "sans",
+        "typ.display.family": "sans",
+        "typ.display.weight": "bold",
+        "typ.display.case": "upper",
+        "typ.scale": 2.4,
+        "typ.numerals.family": "tabular",
+        "lay.grid": "columns12",
+        "lay.grouping": "divider",
+        "st.statViz": "table",
+        "cmp.tabIndicator": "underline",
+        "ix.focus": "invert",
+        "mo.enter": "cut",
+        "rel.harmony": "contrast"
+      },
+      "artPairing": [
+        { "artStyle": "10.9 瑞士国际主义 (Swiss/International)", "relation": "sameMedium", "why": "同一设计运动。" },
+        { "artStyle": "10.6 粗野主义 (Brutalism)", "relation": "sameMedium", "why": "CONTROL 的混凝土建筑与网格化 UI 互相呼应。" },
+        { "artStyle": "5.3 白盒极简＋强调色 (White minimal)", "relation": "sameMedium", "why": "Mirror's Edge、Absolute Drift：白场景 + 单强调色。" },
+        { "artStyle": "13.16 极简抽象 (Minimalist/abstract)", "relation": "sameMedium", "why": "Mini Metro：地图就是信息图。" },
+        { "artStyle": "1.2 电影化写实 (Cinematic)", "relation": "contrast", "why": "CONTROL / Death Stranding 把冷静的瑞士字体压在电影化写实上，形成刻意反差。" },
+        { "artStyle": "13.12 治愈田园 (Cozy/cottagecore)", "relation": "contrast", "why": "太冷，不适合温情题材（06 文档 B15）。" }
+      ],
+      "genres": [
+        { "genre": "horror", "count": 1, "why": "CONTROL（库里标 horror）：超自然 + 官僚机构，表格化 UI 是叙事的一部分。" }
+      ],
+      "exemplars": [
+        { "card": "steam:870780", "why": "黑底白字表格 + 细线分栏 + 叠在画面上的巨型无衬线标题；左下细血条，左上细小白字目标。" },
+        { "card": "steam:287980", "why": "跨家族参考（现归 极简单色）：米白底线路图，彩色线路即语义，底部一排圆点库存，选城页是网格卡片。" },
+        { "card": "steam:1127500", "why": "跨家族参考（现归 极简单色）：同系，底部圆形道具按钮。" },
+        { "card": "steam:1850570", "why": "跨家族参考（现归 极简单色）：白色窄体全大写细字、右上计数，不画面板。" },
+        { "card": "iig:overwatch", "why": "跨家族参考（现归 扁平）：生涯页是浅色卡片网格里的超大数字 + 小号大写标签。" },
+        { "card": "steam:508440", "why": "跨家族参考（现归 扁平）：深色属性列表，小号全大写加字距，右对齐数值。" },
+        { "card": "steam:320140", "why": "跨家族参考（现归 极简单色）：白色几何场景 + 左上一行小黑字。" }
+      ],
+      "subfamilies": [],
+      "variants": [
+        { "name": "暗底企业档案", "diff": "黑底白字 + 红强调 + 表格分栏 + 巨型标题叠画面（CONTROL）。", "cards": ["steam:870780"] },
+        { "name": "浅底线路图", "diff": "米白底、彩色线路即语义、圆点按钮，几乎没有面板。", "cards": ["steam:287980", "steam:1127500"] },
+        { "name": "电影窄体细字", "diff": "白色窄体全大写细字，靠字体而不是面板。", "cards": ["steam:1850570"] },
+        { "name": "大数字统计网格", "diff": "卡片网格里只有巨大数字 + 小号大写标签。", "cards": ["iig:overwatch"] },
+        { "name": "白场赛道极简", "diff": "白色几何场景 + 角落一行小黑字。", "cards": ["steam:320140"] },
+        { "name": "蓝底网格工厂", "diff": "蓝色方格底 + 黑传送带 + 半透明蓝表格面板，网格本身是玩法。", "cards": ["steam:2674590"] }
+      ],
+      "failureModes": [
+        { "desc": "只靠排版、几乎不画 HUD，导航与目标不清：CONTROL 评测里地图 5、引导 3、HUD 挡视野 4（巨型标题与提示叠在画面上）。", "evidence": ["steam:870780"] },
+        { "desc": "太冷，不适合温情题材；没有装饰时层级全靠排版功底（06 文档 B15 陷阱）。", "evidence": [] },
+        { "desc": "巨大字号 + 负字距在中文 / 德文本地化下溢出，需要配合 chk.overflow 检查。", "evidence": [] }
+      ],
+      "skinGap": "skin.swiss = 白底 + 左侧 8 px 强调色竖条 + 900 粗标题 + 黑细进度条。① 左侧色竖条其实更像 Material 列表项，瑞士风用的是上下发丝线与网格对齐；② 默认浅色，而库内唯一样本 CONTROL 是黑底，明度应是变体轴；③ 很多瑞士式游戏 UI 根本不画面板（opacity 0），字直接压画面，现有皮肤总画白板；④ 缺等宽数字表格与编号（01 / 02）；⑤ 缺「巨型标题压在场景上」这一最有辨识度的用法，typ.scale = 2 不够，CONTROL 级别接近 4。",
+      "paramGaps": [
+        "基线网格对齐（文字基线落在 4 / 8 px 基线网格上）没有参数；lay.grid 只有 12 栏 / 8 点网格。",
+        "负字距巨型标题「出血」到屏幕边（被裁切）无法表达。",
+        "非对称留白比例（左 2/3 标题、右 1/3 数据）只能用 lay.composition 粗略表达。"
+      ]
+    },
+    {
+      "family": "灰盒（中性基线）",
+      "skin": "skin.greybox",
+      "noCards": false,
+      "definition": "我们的「中性基线」皮肤在真实游戏里有两种对应物：一是系统原生窗口——游戏直接用操作系统的窗口语法（标题栏、关闭 X、复选框、下拉、可拖动浮窗；RollerCoaster Tycoon Classic、Wallpaper Engine），外观「无风格」但信息密度高、玩家零学习成本；二是零界面——玩具式游戏（Townscaper）干脆不画 UI。两者都说明「中性」本身是一种选择，不只是占位。",
+      "grammar": {
+        "shape": "直角或 2–4 px 小圆角窗口：标题栏 + 内容区 + 底部按钮；工具图标排成一行页签。",
+        "line": "1 px 灰线；Win9x 型再加高光 / 暗边倒角（凸起按钮、凹下输入框）。",
+        "surface": "中灰 / 浅灰实底，或半透明灰褐（RCT Classic）；无纹理。",
+        "color": "单色灰阶 + 系统蓝（选中 / 主按钮）；语义色只在数据里（盈亏红绿）。",
+        "type": "系统无衬线 11–13 px，常规字重，无标题特效。",
+        "material": "无。",
+        "ornament": "零。",
+        "icon": "16 px 小号扁平工具图标，图标字体或系统图标。",
+        "motion": "无动效、硬切；窗口可拖动，可同时开多个。",
+        "layout": "多窗口并存、自由摆放（lay.container = window），顶部一行工具栏；数据用表格与表单控件。"
+      },
+      "params": {
+        "vis.corner": "sharp",
+        "vis.opacity": 1,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeColor": "darker",
+        "vis.depth": "flat",
+        "vis.ornament": "0",
+        "vis.motif": "none",
+        "col.lightness": "mid",
+        "col.strategy": "mono",
+        "col.source": "skin",
+        "typ.body.family": "sans",
+        "typ.display.family": "same",
+        "typ.baseSize": 12,
+        "vis.iconStyle": "flat",
+        "ast.core": "procedural",
+        "ast.frame": "procedural",
+        "lay.container": "window",
+        "ix.close": "xTopRight",
+        "cmp.optionBool": "checkbox",
+        "cmp.optionEnum": "dropdown",
+        "cmp.optionRange": "slider",
+        "mo.enter": "cut",
+        "ix.press": "darken",
+        "rel.harmony": "neutral"
+      },
+      "artPairing": [
+        { "artStyle": "7.12 等距像素 (Isometric pixel)", "relation": "neutral", "why": "RCT Classic：等距像素乐园上浮着系统窗口，两者互不干扰。" },
+        { "artStyle": "13.6 卡带未来主义 (Cassette futurism)", "relation": "sameMedium", "why": "复古系统窗口放进叙事里就成了年代符号（Hypnospace、Progressbar95）。" },
+        { "artStyle": "8.9 降制 (Demake)", "relation": "sameMedium", "why": "降制作品常配旧操作系统外观的菜单。" },
+        { "artStyle": "5.2 平滑低模／色板贴图 (Smooth low poly)", "relation": "neutral", "why": "Townscaper：中性基线的极限是不画 UI，只留一个淡色取色器。" }
+      ],
+      "genres": [
+        { "genre": "builder", "count": 2, "why": "RCT Classic（多窗口经营）、Townscaper（玩具建造，零 UI）。" },
+        { "genre": "sandbox", "count": 1, "why": "Wallpaper Engine：工具软件，设置就是 Windows 表单。" }
+      ],
+      "exemplars": [
+        { "card": "steam:683900", "why": "半透明灰褐浮动窗：标题栏 + 圆形关闭 X + 图标页签 + 财务表格 + 勾选框 / 下拉 / 步进器。" },
+        { "card": "steam:431960", "why": "原生 Windows 设置窗：页签、复选框、下拉、滑条、OK / Cancel。" },
+        { "card": "steam:1291340", "why": "零界面玩具：点哪长哪，只有右下一个很淡的取色器。" },
+        { "card": "steam:658850", "why": "跨家族参考（现归 拟物）：CRT 里的复古系统窗口 + 任务栏，中性外观成为叙事内容。" },
+        { "card": "steam:1304550", "why": "跨家族参考（现归 合成波）：整个游戏是一台 Win95 式电脑，任务栏、窗口、进度条就是玩法。" },
+        { "card": "steam:844590", "why": "跨家族参考（现归 Y2K 镀铬）：1999 年的虚拟操作系统，可拖动窗口 + 杂乱主页。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "灰盒·系统原生窗口 / 表单",
+          "skin": "skin.greybox",
+          "noCards": false,
+          "definition": "直接使用操作系统的窗口与控件语法：标题栏、关闭 X、图标页签、表格、勾选框、下拉、步进器；可拖动、可多开。Win9x 型带倒角，Win10 型扁平。",
+          "grammar": {
+            "shape": "直角或小圆角窗口 + 标题栏。",
+            "line": "1 px 灰线 + 倒角。",
+            "surface": "灰 / 灰褐，0.9 左右不透明。",
+            "color": "灰阶 + 系统蓝 / 绿。",
+            "type": "11–13 px 系统无衬线。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "16 px 工具图标页签。",
+            "motion": "无。",
+            "layout": "顶部工具图标排 + 多个浮窗。"
+          },
+          "params": {
+            "lay.container": "window",
+            "vis.depth": "bevel",
+            "vis.opacity": 0.9,
+            "lay.hudOrg": "edgeBar",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "tc",
+            "cmp.tab": "icon",
+            "cmp.tabIndicator": "raised",
+            "cnt.density": "4",
+            "st.statViz": "table",
+            "cmp.optionBool": "checkbox",
+            "cmp.optionEnum": "dropdown",
+            "cmp.quantity": "stepper",
+            "ix.close": "xTopRight"
+          },
+          "artPairing": [
+            { "artStyle": "7.12 等距像素 (Isometric pixel)", "relation": "neutral", "why": "RCT Classic。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 1, "why": "RCT Classic。" },
+            { "genre": "sandbox", "count": 1, "why": "Wallpaper Engine。" }
+          ],
+          "exemplars": [
+            { "card": "steam:683900", "why": "多开浮窗 + 图标页签 + 表格。" },
+            { "card": "steam:431960", "why": "Windows 设置表单。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "固定像素尺寸窗口在高分辨率下太小：RCT Classic 3 条 UI 缩放抱怨；多窗口互相遮挡玩法区。", "evidence": ["steam:683900"] }
+          ],
+          "skinGap": "skin.greybox 是扁平灰板，缺倒角、标题栏 + X、图标页签与多窗并存。",
+          "paramGaps": ["窗口标题栏（拖动条 + 标题 + 最小化 / 关闭）没有组件参数。"]
+        },
+        {
+          "family": "灰盒·零界面玩具",
+          "skin": null,
+          "noCards": false,
+          "definition": "玩具式建造：点哪长哪，界面完全退场，只保留一个极淡的取色器；中性基线的极限。",
+          "grammar": {
+            "shape": "无。",
+            "line": "无。",
+            "surface": "无。",
+            "color": "沿用世界。",
+            "type": "无。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "一个淡色取色条。",
+            "motion": "淡入。",
+            "layout": "右下角一点。"
+          },
+          "params": {
+            "lay.container": "none",
+            "rel.hudVisibility": "hidden",
+            "cnt.density": "0",
+            "vis.opacity": 0,
+            "ix.mode": "freePlace",
+            "ix.confirm": "instant",
+            "el.toolbar.form": "microMenu",
+            "el.toolbar.screenAnchor": "br",
+            "mo.enter": "fade",
+            "rel.harmony": "unified"
+          },
+          "artPairing": [
+            { "artStyle": "5.2 平滑低模／色板贴图 (Smooth low poly)", "relation": "neutral", "why": "Townscaper 的玩具小镇。" }
+          ],
+          "genres": [
+            { "genre": "builder", "count": 1, "why": "Townscaper。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1291340", "why": "完全没有 UI。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "这不是皮肤问题，而是 lay.container = none + rel.hudVisibility = hidden。",
+          "paramGaps": []
+        }
+      ],
+      "variants": [
+        { "name": "叙事内复古操作系统", "diff": "把系统窗口放进游戏世界的电脑里（任务栏、窗口按钮、闪烁 GIF），中性外观变成年代符号。", "cards": ["steam:658850", "steam:1304550", "steam:844590"] },
+        { "name": "代码编辑器窗", "diff": "深色等宽字编辑器浮在画面上（归暗色细线 / 极简单色）。", "cards": ["steam:2060160", "steam:1720850"] },
+        { "name": "Godot 4 默认主题", "diff": "深灰蓝 + 小圆角 + 蓝焦点：引擎默认外观，同样是中性基线，但偏深色扁平。", "cards": [] }
+      ],
+      "failureModes": [
+        { "desc": "固定像素尺寸的系统窗口在高分辨率下太小：RCT Classic 有 3 条 UI 缩放抱怨。", "evidence": ["steam:683900"] },
+        { "desc": "多窗口自由摆放容易互相遮挡、盖住玩法区（RCT 截图里 3–4 个窗口同时开着）。", "evidence": ["steam:683900"] },
+        { "desc": "把灰盒当最终皮肤会被读成「没做完」；中性基线要么做成系统语法（有意的工具感），要么彻底隐藏。", "evidence": [] }
+      ],
+      "skinGap": "skin.greybox = #8a8a8a 中灰、1 px 加深线、单色、硬切、按下变暗。作为「锁外观只看版式」的基线是对的，但它不对应任何真实游戏外观。若要让它同时是可用风格：① 加 Win9x 倒角（vis.depth = bevel）与标题栏 + 右上 X 的窗口结构；② 默认容器改为可拖动窗口（lay.container = window），允许多窗并存；③ 设置类控件用系统语法（勾选框、下拉、步进器）；④ skin.godotDefault 已覆盖「现代中性深色」，两者可作为一对浅 / 深中性基线。零界面（Townscaper）不是皮肤问题，而是 lay.container = none + rel.hudVisibility = hidden。",
+      "paramGaps": [
+        "窗口标题栏（拖动条 + 标题 + 最小化 / 关闭）没有组件参数；cmp.modal 只有标准面板 / 无框浮空。",
+        "多窗口并存、层叠顺序、可拖动可停靠的行为没有参数（flow.stacking 只管弹窗栈）。",
+        "凸起按钮 / 凹下输入框这一对互补倒角（Win9x 的 3D 边）只能用 vis.depth 全局设一种。"
+      ]
+    }
+  ],
+  "assignments": {
+    "steam:1972440": "像素·限色暗窗",
+    "steam:1404850": "像素·限色暗窗",
+    "steam:1996010": "像素·限色暗窗",
+    "steam:1282730": "像素·工业密集面板",
+    "steam:2187290": "像素·工业密集面板",
+    "steam:647960": "像素·工业密集面板",
+    "gameui:11009": "像素·工业密集面板",
+    "steam:2142790": "像素·冒险 HUD（心形列 + 快捷栏 + 气泡）",
+    "steam:977880": "像素·冒险 HUD（心形列 + 快捷栏 + 气泡）",
+    "steam:1055540": "像素·冒险 HUD（心形列 + 快捷栏 + 气泡）",
+    "steam:105600": "像素·冒险 HUD（心形列 + 快捷栏 + 气泡）",
+    "steam:63710": "像素·霓虹街机条",
+    "steam:460950": "像素·霓虹街机条",
+    "steam:257850": "像素·霓虹街机条",
+    "steam:590380": "像素世界 + 清晰 UI（混合分辨率）",
+    "steam:588650": "像素世界 + 清晰 UI（混合分辨率）",
+    "steam:70": "早期 3D 位图字形 HUD",
+    "steam:224760": "零 HUD 像素世界",
+    "steam:356570": "零 HUD 像素世界",
+    "steam:881100": "零 HUD 像素世界",
+    "steam:1084020": "零 HUD 像素世界",
+    "steam:1206560": "零 HUD 像素世界",
+    "steam:39150": "JRPG·经典 FF 指令窗",
+    "steam:377840": "JRPG·经典 FF 指令窗",
+    "steam:359870": "JRPG·经典 FF 指令窗",
+    "steam:921570": "JRPG·HD-2D 细线铭牌",
+    "steam:1072420": "JRPG·明快沙盒 HUD",
+    "steam:218410": "JRPG·Flash 光泽战术窗",
+    "steam:246420": "拟物·卡通木铁（粗墨线）",
+    "steam:1367550": "拟物·卡通木铁（粗墨线）",
+    "steam:816340": "拟物·卡通木铁（粗墨线）",
+    "steam:564530": "拟物·历史浮雕边栏",
+    "steam:1454400": "拟物·木纹条目（放置 / 网页）",
+    "steam:658850": "拟物·桌面物件容器",
+    "steam:1073910": "扁平·深色半透明模拟面板",
+    "steam:600480": "扁平·深色半透明模拟面板",
+    "steam:1593030": "扁平·深色半透明模拟面板",
+    "steam:255710": "扁平·深色半透明模拟面板",
+    "steam:493340": "扁平·深色半透明模拟面板",
+    "steam:703080": "扁平·浅色卡片抽屉",
+    "steam:1724140": "扁平·浅色卡片抽屉",
+    "steam:1267910": "扁平·后台仪表盘 / 工具表单",
+    "steam:508440": "扁平·后台仪表盘 / 工具表单",
+    "steam:874390": "扁平·休闲圆钮（大圆角 + 粗轮廓）",
+    "gameui:3860": "扁平·休闲圆钮（大圆角 + 粗轮廓）",
+    "gameui:12983": "扁平·休闲圆钮（大圆角 + 粗轮廓）",
+    "steam:945360": "扁平·休闲圆钮（大圆角 + 粗轮廓）",
+    "steam:1197260": "扁平·纯色色块街机",
+    "iig:overwatch": "扁平·竞技转播（斜体 + 队伍色）",
+    "steam:1097130": "扁平·竞技转播（斜体 + 队伍色）",
+    "steam:440": "扁平·竞技转播（斜体 + 队伍色）",
+    "steam:1817070": "扁平·3A 情境 HUD（无框细条）",
+    "steam:1817190": "扁平·3A 情境 HUD（无框细条）",
+    "steam:2651280": "扁平·3A 情境 HUD（无框细条）",
+    "steam:298110": "扁平·3A 情境 HUD（无框细条）",
+    "steam:1623730": "扁平·3A 情境 HUD（无框细条）",
+    "steam:1332010": "扁平·3A 情境 HUD（无框细条）",
+    "steam:870780": "瑞士几何 / 极简表格",
+    "steam:683900": "灰盒·系统原生窗口 / 表单",
+    "steam:431960": "灰盒·系统原生窗口 / 表单",
+    "steam:1291340": "灰盒·零界面玩具"
+  }
+}

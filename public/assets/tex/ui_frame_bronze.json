@@ -1,0 +1,20 @@
+{
+ "files": {
+  "image": "ui_frame_bronze.png",
+  "godot": "ui_frame_bronze_godot.png"
+ },
+ "size": [
+  1024,
+  1024
+ ],
+ "band": 97,
+ "slice": 242,
+ "sizeGodot": [
+  192,
+  192
+ ],
+ "sliceGodot": 45,
+ "bandGodot": 18,
+ "coverage": 0.30271053314208984,
+ "id": "ui_frame_bronze"
+}

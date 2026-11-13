@@ -1,0 +1,14 @@
+{
+ "files": {
+  "height": "knit_wool_h.png",
+  "normal": "knit_wool_n.png"
+ },
+ "crop": [
+  2044,
+  1803
+ ],
+ "seam": 1.725701341849234,
+ "normalStrength": 5.0,
+ "normalConvention": "OpenGL (+Y up)",
+ "id": "knit_wool"
+}

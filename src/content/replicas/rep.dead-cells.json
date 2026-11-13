@@ -1,0 +1,818 @@
+{
+ "id": "rep.dead-cells",
+ "name": "Dead Cells",
+ "card": "steam:588650",
+ "genre": "action",
+ "family": "fam.pixel-mixed-res",
+ "pack": "action",
+ "art": {
+  "recipe": "glow-pixel",
+  "scene": "sideStage-ruins",
+  "values": {
+   "color.palette": "night",
+   "color.saturation": 1.2,
+   "color.brightness": 1.0
+  }
+ },
+ "base": {
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "hud.style": "pixel",
+  "ctx.input": "hybrid",
+  "vis.pixelScale": "off",
+  "typ.baseSize": 30,
+  "typ.body.family": "pixel",
+  "typ.body.weight": "regular",
+  "typ.body.case": "asIs",
+  "typ.display.family": "pixel",
+  "typ.display.weight": "regular",
+  "typ.numerals.family": "pixel",
+  "typ.titleFx": "outline",
+  "typ.legibility": "outline",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.source": "uiPalette",
+  "col.surface": "#0f1420",
+  "col.surface2": "#1b2232",
+  "col.text": "#f2efe6",
+  "col.accent": "#f2b43a",
+  "col.accent2": "#3db8ff",
+  "col.border": "#4a5874",
+  "col.coding": [
+   "lineId",
+   "status"
+  ],
+  "vis.corner": "sharp",
+  "vis.fill": "solid",
+  "vis.opacity": 0.85,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 2,
+  "vis.strokeColor": "custom",
+  "vis.depth": "flat",
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "vis.iconStyle": "pixel",
+  "ast.iconSet": "asset",
+  "rel.harmony": "neutral",
+  "rel.metaFx": [
+   "hitFlash",
+   "hurtVignette"
+  ],
+  "mo.frameRate": "smooth",
+  "mo.easing": "easeOut",
+  "mo.duration": 0.15,
+  "mo.textReveal": "instant",
+  "mo.juice": 0.9,
+  "mo.valueChange": "trail",
+  "ix.glyphs": "keycap",
+  "ix.focus": "outline",
+  "vis.pixelRoles": [
+   "text",
+   "display",
+   "numerals"
+  ],
+  "col.lineColors": [
+   "#d8322e",
+   "#9a46d6",
+   "#4fa83d"
+  ]
+ },
+ "screens": [
+  {
+   "key": "hud-world",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_588650_3.jpg",
+   "values": {
+    "uip.layout": "layout.action",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "cnt.density": 0,
+    "vis.opacity": 0,
+    "cnt.elements": [
+     "el.threat",
+     "el.overlay"
+    ],
+    "el.threat.form": [
+     "healthBar"
+    ],
+    "el.threat.attachTo": "target",
+    "el.threat.scale": 0.35,
+    "el.threat.priority": "ambient",
+    "col.accent@el.threat": "#e2262b",
+    "el.overlay.form": [
+     "statusIcons"
+    ],
+    "el.overlay.attachTo": "target",
+    "el.overlay.scale": 0.55,
+    "el.overlay.priority": "ambient",
+    "col.track@el.threat": "#4a1414",
+    "el.threat.thickness": 2.5,
+    "el.overlay.count": 1
+   }
+  },
+  {
+   "key": "hud",
+   "ref": null,
+   "values": {
+    "uip.layout": "layout.action",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "lay.safeMargin": 2,
+    "rel.hudVisibility": "always",
+    "cnt.density": 2,
+    "vis.opacity": 0.75,
+    "cnt.elements": [
+     "el.vitals",
+     "el.abilities",
+     "el.prompt",
+     "el.resources",
+     "el.minimap",
+     "el.threat"
+    ],
+    "el.vitals.count": 1,
+    "cmp.gauge@el.vitals": "bar",
+    "el.vitals.screenAnchor": "bl",
+    "el.vitals.scale": 1.0,
+    "el.vitals.priority": "primary",
+    "el.vitals.valueLabel": "currentMax",
+    "el.vitals.valueLabelPos": "inside",
+    "col.accent@el.vitals": "#d8322e",
+    "el.abilities.form": "slots",
+    "el.abilities.arrangement": "row",
+    "el.abilities.screenAnchor": "bl",
+    "el.abilities.scale": 0.6,
+    "el.abilities.priority": "primary",
+    "st.cooldown": "radialWipe",
+    "st.selected": "bar",
+    "el.prompt.form": [
+     "hotkeyBadge"
+    ],
+    "el.prompt.screenAnchor": "bc",
+    "el.prompt.priority": "ambient",
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "tl",
+    "el.resources.arrangement": "row",
+    "el.resources.scale": 0.85,
+    "el.resources.priority": "secondary",
+    "mo.valueChange@el.resources": "countUp",
+    "el.minimap.form": "plan",
+    "el.minimap.screenAnchor": "tr",
+    "el.minimap.scale": 0.85,
+    "el.minimap.visibility": "always",
+    "vis.opacity@el.minimap": 0.55,
+    "vis.stroke@el.minimap": "none",
+    "el.threat.form": [
+     "healthBar"
+    ],
+    "el.threat.attachTo": "target",
+    "el.threat.scale": 0.5,
+    "el.threat.priority": "ambient",
+    "col.accent@el.threat": "#e2262b",
+    "el.vitals.labels": "none",
+    "el.vitals.thickness": 2.5,
+    "col.track@el.vitals": "#4a1414",
+    "col.trackStroke@el.vitals": "none",
+    "col.track@el.threat": "#4a1414",
+    "el.abilities.count": 5,
+    "el.abilities.keyHint": "below",
+    "st.selected@el.abilities": "none",
+    "el.resources.count": 2,
+    "cmp.gaugeExtra@el.vitals": [
+     "recoverable"
+    ],
+    "el.abilities.lead": "consumable",
+    "el.minimap.aspect": "wide"
+   }
+  },
+  {
+   "key": "inventory",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.loadout",
+    "cnt.screen": "screen.inventory",
+    "cnt.subtype": "loadout",
+    "cnt.layer": "overlay",
+    "lay.container": "anchoredCard",
+    "cmp.modal": "standard",
+    "lay.panelSize": 0.25,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "rel.hudVisibility": "always",
+    "cnt.dataShape": "record",
+    "cnt.focal": "none",
+    "cnt.itemCount": 1,
+    "lay.composition": "single",
+    "lay.detail": "persistent",
+    "lay.grouping": "divider",
+    "st.delta": "arrow",
+    "hier.inline": "keyword",
+    "hier.emphasis": [
+     "size",
+     "color"
+    ],
+    "cnt.textLength": "short",
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "contextual"
+    ],
+    "el.prompt.attachTo": "poi",
+    "elx.scale": 0.9,
+    "vis.opacity": 0.92,
+    "ix.mode": "readOnly",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.blocking": "none",
+    "flow.entry": "worldInteract",
+    "mo.enter": "pop",
+    "lay.titlePos": "none",
+    "ix.close": "none",
+    "cmp.detailFields": [
+     "rarityLabel",
+     "name",
+     "mainValue",
+     "affixes"
+    ],
+    "lay.panelFit": "fitContent"
+   }
+  },
+  {
+   "key": "draft",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.draft3",
+    "cnt.subtype": "draft3",
+    "cnt.stage": "entry",
+    "lay.container": "overlay",
+    "cmp.modal": "floating",
+    "rel.behind": "frozen",
+    "rel.dim": 0.6,
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "row",
+    "cnt.itemCount": 3,
+    "cmp.slot": "tallCard",
+    "col.coding": [
+     "lineId"
+    ],
+    "st.rarityCue": [
+     "border"
+    ],
+    "st.delta": "plus",
+    "cnt.textLength": "line",
+    "elx.scale": 0.85,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "forced",
+    "ix.focus": "outline",
+    "mo.enter": "pop",
+    "mo.reveal": "direct",
+    "vis.opacity": 1
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "all",
+   "what": "混合分辨率：UI 的像素字（正文、标题、数字）按比世界细 2–3 倍的像素格画，而血条、格子框、面板边是屏幕分辨率的清晰线；vis.pixelScale 只能整套 UI 一起像素化（off / x2 / x3 / world），现在只靠像素字族近似，图标与条的像素感不能单独调",
+   "severity": "medium",
+   "proposal": "按角色的像素化：vis.pixelScale@text / @icon / @panel（G-pixel-roles），或给 vis.pixelScale 加取值 textOnly / iconsOnly",
+   "kind": "missingParam",
+   "resolvedBy": "vis.pixelRoles = [text, display, numerals]（M12b B10：字与数字画进低分辨率层，条、格框、面板边保持清晰；R4 核对）"
+  },
+  {
+   "screen": "all",
+   "what": "按元素覆盖的视觉 / 色彩参数（vis.opacity@el.minimap、vis.stroke@el.minimap、col.accent@el.vitals、col.accent@el.threat）在词表里合法，但渲染器只读 cmp.*@el.*，这些覆盖不生效：第二轮小地图仍是带双层亮边的不透明方块，血条颜色仍取主题的'坏'色",
+   "severity": "medium",
+   "proposal": "makeCtx 按元素打一层主题补丁（vis.* / col.* 的 @el 覆盖），与 cmp.*@el 同口径",
+   "kind": "renderBug"
+  },
+  {
+   "screen": "all",
+   "what": "流派色（暴虐红 / 战术紫 / 生存绿）是物品的身份色：局内装备格的底色 / 边色、卷轴三选一的三个选项、拾取卡的物品名都按流派着色；现在只能按稀有度色阶上色（col.rarityScale 不含红紫绿），st.rarityCue 与 col.coding = lineId 都不能按格 / 按卡指定颜色，第二轮装备格统一深蓝灰",
+   "severity": "high",
+   "proposal": "col.lineColors（类别色表，3–5 色）；col.coding = lineId 时槽、卡、物品名读样本物品的 line 字段着色；内容包给样本物品标 line",
+   "kind": "missingParam",
+   "resolvedBy": "col.lineColors + col.coding = lineId（R4：装备格边、卷轴三卡、拾取卡名字按暴虐红 / 战术紫 / 生存绿着色）"
+  },
+  {
+   "screen": "all",
+   "what": "弹窗类模板的标题栏关不掉：modal 容器总画模板名标题，ix.close 没有'无'（ix.dismiss = key 时仍回退成右上 X），cmp.modal = floating 只去掉面板框、标题和 X 照画；拾取卡和卷轴三选一都没有标题栏与关闭键（draft 为此改用 overlay，结果整屏消失，见 draft 的渲染缺口）",
+   "severity": "medium",
+   "proposal": "ix.close 加 none；加 lay.title = none / template / item（不画标题栏，或标题位写主体物品名）",
+   "kind": "missingOption",
+   "resolvedBy": "lay.titlePos, ix.close"
+  },
+  {
+   "screen": "all",
+   "what": "像素皮肤的条：空槽是黑底 + 米白亮描边，缩到敌人头顶的小条后亮描边占一大半，读起来像'红 + 白'两截；死亡细胞的空槽是暗红、无亮边，条的空槽色与描边不能单独设",
+   "severity": "low",
+   "proposal": "cmp.gauge 的空槽色 col.track（默认取强调色压暗）+ 小尺寸时自动去描边",
+   "kind": "missingParam",
+   "resolvedBy": "col.track, col.trackStroke"
+  },
+  {
+   "screen": "hud-world",
+   "what": "el.overlay = statusIcons 把每个图标都画成写死的 crystal 菱晶徽章 + 白色字形：代码里每个图标自带的颜色（黄 '!'、蓝 Z、红心）被丢弃，也不读 vis.iconStyle = pixel 或 cmp.badge，所以出来是三枚紫色星芒徽章；参考是无框的方形像素小图标（暖黄 / 橙）",
+   "severity": "medium",
+   "proposal": "statusIcons 用各自颜色，徽章形状读 cmp.badge（并给 cmp.badge 加 none = 无框），vis.iconStyle = pixel 时走像素图标",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-31（状态图标用各自颜色、读 cmp.badge：黄 ! / 蓝 Z / 红心；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud-world",
+   "what": "状态图标按写死的偏移（左右 120–150、上下 40 单位）散在挂点四周，有一枚悬在空中；参考是挂在同一个敌人头顶、贴着血条排成一小行",
+   "severity": "medium",
+   "proposal": "statusIcons 以目标血条为锚，在条上方横排（间距 2–4 像素），可指定只挂当前目标",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12a-31（状态图标贴目标血条上方横排；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud-world",
+   "what": "敌人头顶发现玩家时的黄色 '!' 警觉标记、精英标记（橙色环徽）没有画法，el.threat.form 只有血条 / Boss 条 / 锁定框等",
+   "severity": "medium",
+   "proposal": "el.threat.form 加 alertMark（发现标记，可闪烁）/ eliteMark（精英环徽）",
+   "kind": "missingOption",
+   "partialBy": "el.overlay.count = 1（头顶一枚黄色「!」顶替警觉标记）；el.threat.form 已有 eliteMark（M12b），没写——与「!」同位置会叠成一团"
+  },
+  {
+   "screen": "hud-world",
+   "what": "状态图标带层数（燃烧、流血叠几层），图标右下有小数字角标；现在的图标没有层数",
+   "severity": "low",
+   "proposal": "statusIcons 加层数角标（像素数字 + 描边），样本给一两个大于 1 的层数",
+   "kind": "newDrawing"
+  },
+  {
+   "screen": "hud",
+   "what": "装备栏最左是血瓶格（瓶形图标 + 剩余次数），和武器 / 技能格在同一行；没有消耗品格的画法",
+   "severity": "medium",
+   "proposal": "el.abilities 加 consumable 首格（图标 + 次数点 / 数字），或 el.vitals 加 flask 子件贴在装备格行首",
+   "kind": "composite",
+   "resolvedBy": "el.abilities.lead = consumable（最左血瓶格：瓶形图标 + 剩余次数点）"
+  },
+  {
+   "screen": "hud",
+   "what": "装备格数固定 4 格（两武器 + 两技能，加上血瓶应为 5 格），el.abilities 不能指定格数",
+   "severity": "low",
+   "proposal": "el.abilities.count（3–8）",
+   "kind": "missingParam",
+   "resolvedBy": "el.abilities.count"
+  },
+  {
+   "screen": "hud",
+   "what": "血条、血瓶、装备格在左下是一个整体（血条压在格子行上方、左端对齐，格下是键帽）；现在 el.vitals 与 el.abilities 各自找锚点，只能放成左下一条 + 下中一排，两者分开",
+   "severity": "medium",
+   "proposal": "元素停靠：el.abilities.dockTo = el.vitals（below / right），或 lay.hudOrg 加 cluster，让同一角的元素按行堆叠成一组",
+   "kind": "composite",
+   "resolvedBy": "el.abilities.screenAnchor（同锚点堆叠）"
+  },
+  {
+   "screen": "hud",
+   "what": "生命条左侧总画一列文字标签（'生命'），死亡细胞的血条没有标签",
+   "severity": "medium",
+   "proposal": "elx.label = show / hide（显示 / 隐藏标签列）",
+   "kind": "missingParam",
+   "resolvedBy": "el.vitals.labels"
+  },
+  {
+   "screen": "hud",
+   "what": "el.vitals.valueLabelPos = inside 对横条行不生效：数值画在条尾，还会越出元素框压到右边元素，配方只能用 end；参考 current / max 居中压在条上、带描边",
+   "severity": "medium",
+   "proposal": "横条行支持 inside（数字居中压条、按 typ.legibility 描边）；end 时把数字宽度算进元素尺寸",
+   "kind": "renderBug",
+   "resolvedBy": "el.vitals.valueLabelPos"
+  },
+  {
+   "screen": "hud",
+   "what": "血条又粗又短（长宽比约 1:8–1:10），横条的粗细固定为与长度无关的 10 单位，只能整体缩放；第二轮的条细长（约画面宽 21%、高 2.5%）",
+   "severity": "medium",
+   "proposal": "elx.thickness（数值图形的粗细倍数），或让 el.vitals 读皮肤 bar.height",
+   "kind": "missingParam",
+   "resolvedBy": "el.vitals.thickness"
+  },
+  {
+   "screen": "hud",
+   "what": "血条受击后掉的那段先变成另一种颜色的'可回复段'，短时间内攻击敌人能补回来；mo.valueChange = trail 只是动画拖尾，静帧上看不出这段",
+   "severity": "medium",
+   "proposal": "cmp.gauge 加 recoverableSegment（第二填充色段 + 计时衰减），样本血量给一段可回复量",
+   "kind": "newDrawing",
+   "resolvedBy": "cmp.gaugeExtra@el.vitals = [recoverable]（掉血段画成浅红可回复段）"
+  },
+  {
+   "screen": "hud",
+   "what": "装备格的键位提示是格子下方的键帽图标；slot 的键位数字固定写在格子左上角（el.prompt.form = hotkeyBadge 按设计不画东西，交给格子自己画角标）",
+   "severity": "low",
+   "proposal": "elx.keyHintPos = corner / below / none（below 时在格下画 ix.glyphs 键帽）",
+   "kind": "missingParam",
+   "resolvedBy": "el.abilities.keyHint"
+  },
+  {
+   "screen": "hud",
+   "what": "装备格没有'当前选中'状态，但 st.selected 没有'无'，样本总把第一格当选中，格下多一条金色色条",
+   "severity": "low",
+   "proposal": "st.selected 加 none（或 el.abilities 无选中态时不画）",
+   "kind": "missingOption",
+   "resolvedBy": "st.selected@el.abilities"
+  },
+  {
+   "screen": "hud",
+   "what": "右上小地图是宽扁的矩形、房间是半透明像素块；el.minimap = plan 固定为正方形",
+   "severity": "low",
+   "proposal": "el.minimap.aspect（1:1 / 16:9 / 2:1）",
+   "kind": "missingParam",
+   "partialBy": "el.minimap.aspect = wide（外框宽扁半透明；框里的房间图仍是正方形一块，见新缺口）"
+  },
+  {
+   "screen": "hud",
+   "what": "货币只有两种（金币、细胞），资源元素固定画三项",
+   "severity": "low",
+   "proposal": "el.resources.count（1–4）",
+   "kind": "missingParam",
+   "resolvedBy": "el.resources.count"
+  },
+  {
+   "screen": "hud",
+   "what": "el.resources.screenAnchor = tl 时货币行离左边约画面宽 15%，不贴角（同一屏右上的小地图能贴边），像是给 layout.action 左上预留的槽位让了位",
+   "severity": "low",
+   "proposal": "锚点让位只在该角真有其他元素时发生；或加 elx.offset 微调",
+   "kind": "layoutEngine",
+   "resolvedBy": "R3 / R4 对照图核对：货币行已贴左上角（距左约画面宽 2%）"
+  },
+  {
+   "screen": "inventory",
+   "what": "拾取卡的内容：左侧物品像素图标、名字按流派着色、品质 '+N' 角标、DPS 大数字、词缀列表，并与当前装备逐项数字对比（绿升红降）；record 详情只画名字 + 说明 + 两条金色属性进度条（'→ 74'），没有图标、主数值和词缀",
+   "severity": "high",
+   "proposal": "拾取卡组件（图标 + 流派色名字 + 品质角标 + 主数值 + 词缀行 + 逐行 st.delta 箭头与色），或 record 详情读 cmp.listRow 的 icon / value 字段、属性可改数字行",
+   "kind": "composite",
+   "partialBy": "cmp.detailFields = [rarityLabel, name, mainValue, affixes] + lay.panelFit = fitContent（流派色名字、DPS 大数字、词缀逐行绿升红降）；还缺物品像素图标与品质 +N 角标"
+  },
+  {
+   "screen": "inventory",
+   "what": "拾取卡悬在掉落物上方（小卡，约画面宽 1/4），'拾取'键位提示在卡下、物品旁；弹窗只能居中，el.prompt 的情境提示挂到世界点后落在卡片中间、压住说明文字",
+   "severity": "medium",
+   "proposal": "lay.container = anchoredCard（弹窗挂在 elx.attachTo 的世界点上方）；世界挂点的提示与弹窗互相避让（提示放到卡外下沿）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.container = anchoredCard"
+  },
+  {
+   "screen": "inventory",
+   "what": "ix.mode = readOnly 时详情栏仍画内容包的'装备 / 丢弃'按钮：详情栏按钮只看剩余空间、不看 ix.mode（第二轮 panelSize 0.35 也没压掉）",
+   "severity": "medium",
+   "proposal": "详情栏按钮读 ix.mode：readOnly 不画，singleCTA 只画第一个",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-26 + 审查修复 A · D1（详情按钮跟 ix.mode：readOnly 不画；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "inventory",
+   "what": "'装备'主按钮是米白底（key 样式）+ 白字黑描边，字糊成一团：按钮文字色取 t.key.color 或正文色，没按底色算对比",
+   "severity": "medium",
+   "proposal": "按钮文字色按底色自动取深 / 浅（与 chk.contrast 同口径），亮底按钮不加描边",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-04（按钮字按底色亮度取对比色；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "draft",
+   "what": "lay.container = overlay 配 tpl.draft3 时整屏什么也不画：选了模板但容器是 overlay 会走'浮层模板'分支（只画 cnt.elements 里的 HUD 元素），三张选项卡、提示和按钮都不画，rel.dim = 0.6 也不压暗；模板构图器里本来有 overlay 不画面板 / 标题栏的处理，只是走不到",
+   "severity": "high",
+   "proposal": "浮层模板分支在模板有主体（cnt.dataShape = collection / record）时仍调用模板构图器，按 overlay 去掉面板与标题栏，并应用 rel.dim",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-25（overlay 容器的模板仍走模板构图器：三张卡画出来了；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "draft",
+   "what": "模板带出的'再抽'按钮因 ops.actions 是并集合并而无法用 [] 清掉",
+   "severity": "low",
+   "proposal": "ops.actions 加 none 取值，或用户层给 [] 时按替换合并",
+   "kind": "missingOption",
+   "resolvedBy": "M12a-07（ops.actions = [] 清空并集；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud-world",
+   "what": "el.overlay = statusIcons 固定画三枚样本图标（警觉 / 睡眠 / 心），个数与种类都不能指定；参考一个敌人头顶只挂一两枚",
+   "severity": "low",
+   "proposal": "el.overlay.count（elx.count）+ 内容包给状态图标列表（按序取），或 cnt.stateDemo 关掉时只画声明的状态",
+   "kind": "missingParam",
+   "resolvedBy": "el.overlay.count = 1"
+  },
+  {
+   "screen": "hud",
+   "what": "el.minimap.aspect = wide 只把外框拉成宽扁：框里的房间图仍是一块正方形深底，偏在框右侧，框左边约 40% 空着",
+   "severity": "low",
+   "proposal": "wide / strip 时地图按长边铺满框（上下裁掉），跟随玩家居中",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C3 ⑩：wide / strip 的方图夹在框里（长边铺满、短边跟着玩家走到地图边为止），玩家靠地图边时不再露出四成空框；快照里用假场景核对，浏览器目检待 lead"
+  },
+  {
+   "screen": "hud / inventory / draft",
+   "what": "vis.pixelRoles 的低分辨率字层放大后边缘发糊（灰色过渡），像素字不是硬边方块；疑似非整数倍放大时用了平滑插值",
+   "severity": "low",
+   "proposal": "低分辨率层按整数倍、关掉平滑（imageSmoothingEnabled = false）放大，画布不是整数倍时先对齐像素格",
+   "kind": "renderBug"
+  },
+  {
+   "screen": "hud",
+   "what": "action 包的第二种货币是紫晶，死亡细胞是蓝色细胞",
+   "severity": "low",
+   "proposal": "action 包补一种「细胞」货币（蓝色圆珠图标），或 el.resources 读内容包逐项的图标",
+   "kind": "content"
+  }
+ ],
+ "scores": {
+  "hud-world": [
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 5,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 6,
+    "shape": 5,
+    "density": 7,
+    "overall": 6,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 7,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "hud": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 6,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "inventory": [
+   {
+    "layout": 2,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "draft": [
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 1
+   },
+   {
+    "layout": 0,
+    "elements": 0,
+    "palette": 0,
+    "type": 0,
+    "shape": 0,
+    "density": 0,
+    "overall": 0,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 5,
+    "palette": 5,
+    "type": 6,
+    "shape": 5,
+    "density": 5,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud-world": [
+   "参考里敌人头顶只有一条极小的红条和一个橙色小图标；我们多了三组伤害飘字（312 / 52 / 48），死亡细胞默认不显示伤害数字",
+   "rel.hudVisibility = contextual 让整层淡到 55%，血条和图标发灰",
+   "敌人血条带白色像素描边、长约画面 4%，参考的红条更短更细、无亮边",
+   "状态图标是三枚紫色菱晶徽章，参考是方形像素小图标（燃烧、警觉）",
+   "画面整体是紫色调，参考是青绿 / 深蓝调（只影响明暗与氛围）"
+  ],
+  "hud": [
+   "整体过大：血条约占画面一半宽，装备格边长约画面高的 18%，参考的左下 HUD 只占角落一小块",
+   "血条左侧多了'生命'字样标签，数值画在条外（参考数字压在条里）",
+   "只有 4 格且没有血瓶；格子是透明底 + 白色亮边，参考是深底 + 按卷轴流派着色的格子，键位提示在格下",
+   "小地图是带白框的不透明正方形，参考是右上宽扁、无框、半透明的像素房间图",
+   "伤害飘字、状态图标挤在画面中部（属于局内世界层，HUD 屏不需要）",
+   "货币三项横排在左上偏中，参考只有金币和细胞两项",
+   "正文用无衬线粗体，参考 UI 文字整体是像素字"
+  ],
+  "inventory": [
+   "没有套模板：tooltip（炸药箱）和详情（符文锤）两块叠在一起，tooltip 的框压在详情标题上",
+   "面板太矮，说明文字和属性条溢出到面板外",
+   "多了'确定'主按钮和右上 X，参考拾取卡没有按钮，只有世界里的按键提示",
+   "白色 2px 描边过亮，参考是深蓝黑底 + 暗色细边",
+   "没有物品图标与流派着色的名字"
+  ],
+  "draft": [
+   "第三张卡上压着模板带出的'再抽 10 次'按钮",
+   "顶部有'三选一升级'标题和右上 X，参考是画面中央直接浮出几个选项",
+   "三张卡的边框是金 / 紫 / 白（焦点 + 稀有度），参考是红 / 紫 / 绿三种流派色",
+   "卡片偏大（约画面宽 1/4），卡内正文字过粗"
+  ]
+ },
+ "round2Diffs": {
+  "hud-world": [
+   "UI 层已经像参考一样稀疏、不再整体变淡，伤害飘字已去掉（第一轮问题已解决）",
+   "三枚状态图标按固定偏移散在挂点四周：左侧一枚 '!'、下方一枚 'Z'、右上空中一颗白心；参考只在同一个敌人头顶有黄色 '!' 警觉标记和一个橙色小图标",
+   "状态图标仍是紫色星芒菱晶徽章 + 白色字形，参考是无框的方形像素小图标（暖黄 / 橙）",
+   "敌人小血条的空槽是米白亮描边，缩小后像'红 + 白'两截；参考是红条 + 暗红空槽、无亮边，长度也更短（约画面宽 2%，我们约 3%）",
+   "没有精英标记，状态图标没有层数"
+  ],
+  "hud": [
+   "尺寸已缩到角落尺度，正文改像素字，世界层飘字与状态图标已移出（第一轮问题已解决）",
+   "血条左边仍有'生命'标签，数值 96/150 画在条尾外，参考数字居中压在条上",
+   "血条细长（约画面宽 21%、高 2.5%），空槽是黑底 + 米白描边；参考是粗短红条、暗红空槽",
+   "装备格只有 4 格、没有最左的血瓶格；四格统一深蓝灰底 + 蓝灰边，参考按卷轴流派着红 / 紫 / 绿",
+   "键位数字写在格子左上角，参考是格下键帽；第一格下多一条金色选中条（死亡细胞的装备格没有选中态）",
+   "装备格在下中、与左下血条分开；参考（凭记忆）血条、血瓶、装备格是左下一组",
+   "货币三项（金币、紫晶、矿石）在左上，但离左边约画面宽 15%、不贴角；参考只有金币和细胞两项",
+   "小地图仍是带双层亮边的不透明正方形，参考是右上宽扁、无框、半透明的像素房间图"
+  ],
+  "inventory": [
+   "tooltip 与详情不再重叠，说明与属性都留在框内；深蓝黑底 + 暗蓝灰细边、像素字已接近（第一轮问题已解决）",
+   "仍是居中大弹窗（约画面宽 50%），标题位写模板名'装备纸娃娃'，右上有 X；参考是悬在掉落物上方的小卡，没有标题栏和关闭键",
+   "底部仍有'装备 / 丢弃'两个按钮（readOnly 没管住详情栏按钮），'装备'主按钮米白底 + 白字黑描边，字糊成一团",
+   "情境提示'拾取'（键帽 + 字）落在卡片中间，压住说明文字；参考的提示在卡下、物品旁",
+   "没有物品图标，名字是白色（参考按流派着色），没有品质 +N、DPS 大数字和词缀列表；属性画成两条金色进度条 + '→ 74'，参考是数字对比（绿升红降）"
+  ],
+  "draft": [
+   "整屏没有任何 UI：容器改成 overlay 后走了'浮层模板'分支，只画 HUD 元素，三张选项卡、提示、按钮全部没画",
+   "rel.behind = frozen + rel.dim = 0.6 也没生效，背景没有压暗",
+   "第一轮的问题（卡片边是焦点 / 稀有度色而不是红紫绿流派色、'再抽'按钮、标题与 X）这轮因为没画出来而无法核对"
+  ]
+ },
+ "round3Diffs": {
+  "hud-world": [
+   "敌人头顶挂了三枚状态图标（黄色 '!'、蓝 Z、红心）排成一行；参考一个敌人头顶只有一枚黄色警觉 '!' 或一个橙色小图标",
+   "敌人小血条约画面宽 3%，参考约 2%，更短",
+   "没有精英标记（橙色环徽），状态图标没有层数角标"
+  ],
+  "hud": [
+   "（凭记忆）五个装备格统一深蓝灰底 + 暗边，参考按卷轴流派着红 / 紫 / 绿",
+   "最左一格是武器符号，不是血瓶格（瓶形图标 + 剩余次数）",
+   "右上小地图仍是正方形，外框已半透明但内芯是不透明深底；参考是宽扁、半透明的像素房间图",
+   "血条掉血后没有另一种颜色的「可回复段」",
+   "第二种货币是紫晶，参考是蓝色的细胞"
+  ],
+  "inventory": [
+   "（凭记忆）拾取卡没有物品像素图标和品质 +N 角标，名字是白色，参考按流派着色",
+   "没有 DPS 大数字和词缀列表；属性画成两条金色进度条 + '→ 74'，参考是逐项数字对比（绿升红降）",
+   "「E 拾取」提示顶边贴着卡片下框，几乎压线"
+  ],
+  "draft": [
+   "（凭记忆）三张卡的边框是灰 / 紫（模板稀有度）+ 金色焦点框，参考按流派着红 / 紫 / 绿",
+   "竖卡偏高：图标 + 名字 + 一行说明只占上半，下半大片空白",
+   "卡面半透明，背后场景的横线透过卡面"
+  ]
+ },
+ "round4Diffs": {
+  "hud-world": [
+   "没有精英标记（橙色环徽），头顶只有一枚「!」",
+   "「!」是暗橄榄黄的小竖牌，参考是亮黄 / 橙的像素小图标",
+   "状态图标没有层数角标"
+  ],
+  "hud": [
+   "（凭记忆）右上小地图外框已是宽扁半透明，但房间图仍是一块正方形深底、偏在框右侧，框左边约 40% 空着",
+   "第二种货币仍是紫晶，参考是蓝色细胞",
+   "低分辨率层里的像素字边缘发糊（灰色过渡），不是硬边像素块",
+   "血瓶格下没有键帽，其余四格有"
+  ],
+  "inventory": [
+   "（凭记忆）拾取卡左侧没有物品像素图标，品质是英文小字「EPIC」而不是 +N 角标",
+   "DPS 数字套在金色方框里，参考是无框大数字",
+   "卡片偏宽、右半大片空着，最后一条词缀贴着卡底边",
+   "中文像素字发糊，词缀里的小号数值难读"
+  ],
+  "draft": [
+   "（凭记忆）竖卡仍偏高：图标 + 名字 + 一行说明只占上半，下半空着",
+   "名字居中、说明左对齐，同一张卡里对齐不一致",
+   "中间卡的金色焦点框盖住了紫色流派边",
+   "卡上没有流派名 / 加成数值（+1 暴虐之类）"
+  ]
+ },
+ "revisions": [
+  "整体：typ.baseSize 18 → 16（版面缩放从约 1.31 降到 1.15），正文改像素字（typ.body.family = pixel、常规字重），标题字常规字重 + 描边，和死亡细胞的像素文字一致",
+  "整体：vis.strokeColor ink → custom + col.border = #4a5874（深色面板下 ink 会被推成亮白描边，换成暗蓝灰细边），面板底色改深蓝黑 #0f1420 / #1b2232",
+  "画面：color.palette neon → night、亮度 0.85 → 1.0，背景从紫色改成深蓝夜色 + 暖黄灯，更接近参考的冷色暗场",
+  "hud-world：去掉伤害飘字（参考没有，游戏默认关闭），显隐改 always 不再整体变淡，敌人血条 scale 0.6 → 0.5、状态图标 0.7 → 0.55",
+  "hud：血条 scale 1.6 → 1.0、数值改 current / max 并放条尾（inside 对横条不生效，数字会越出元素框压到装备格）；装备格 scale 1.2 → 0.6 并移到下中（参考卡 + 记忆：血条左下、四格在同一底线的下中）；小地图 scale 1.0 → 0.85；去掉属于世界层的飘字和状态图标；HUD 屏 vis.opacity 0 → 0.75 让格子和小地图有深色底；选中标记改成格下色条（st.selected = bar），不再给第一格描金边",
+  "inventory：套 tpl.loadout 再覆盖成居中小卡（modal、record、无主体、无详情栏），删掉与详情重叠的 el.selection tooltip，ix.mode singleCTA → readOnly 去掉'确定'按钮，去掉物品主体与 tooltip 后详情占满整卡，panelSize 保持 0.35（再大就会冒出内容包的'装备 / 丢弃'按钮）+ elx.scale 0.9，说明和属性条留在框内，按键提示改成挂在掉落物上的情境提示",
+  "draft：容器 modal → overlay（去掉模板标题和右上 X，'再抽'按钮被挤到右下角不再压卡），elx.scale 0.85 把卡片缩到约画面宽 1/5，色彩编码写 lineId（流派身份色；模板的 rarity 因并集合并仍在，见 gaps）",
+  "gaps：删掉已表达的部分，新增按元素视觉覆盖不生效、血条标签列 / 条内数值、血条粗细、键位提示位置、小地图宽扁、货币项数、ix.close 无'无'、ops.actions 无法清空等缺口",
+  "R3 前（M12a 之后）：hud 加 el.vitals.valueLabelPos inside（数字压条居中）、labels none、thickness 2.5（粗短条）、col.track@el.vitals 暗红 + col.trackStroke@el.vitals none（暗红空槽、无亮边）、el.abilities.count 5（血瓶 + 两武器 + 两技能）+ keyHint below + st.selected@el.abilities none、el.abilities 锚点 bc → bl（与血条同角堆成左下一组）、el.resources.count 2（金币 + 细胞）；hud / hud-world 加 col.track@el.threat 暗红；inventory 改 lay.container = anchoredCard（拾取卡挂在掉落物上方，提示钉在卡外下沿）、lay.panelSize 0.35 → 0.25（约画面宽 1/4）、lay.titlePos / ix.close = none。draft 不改（B6 起 overlay + 数据走模板构图器，三张卡与压暗会画出来）。",
+  "R4 前（M12b 之后）：base 加 vis.pixelRoles = [text, display, numerals]（只把字 / 数字画进低分辨率层，框与条保持清晰，#0 混合分辨率）、col.lineColors = 暴虐红 / 战术紫 / 生存绿（装备格、卷轴卡、拾取卡名字的流派色，#2）；hud-world 加 el.overlay.count = 1（头顶只留一枚黄色「!」，#27）、el.threat.scale 0.5 → 0.35 + el.threat.thickness 2.5（小红条约画面宽 2%、不变细）；hud 加 cmp.gaugeExtra@el.vitals = [recoverable]（可回复段，#15）、el.abilities.lead = consumable（最左血瓶格，#9）、el.minimap.aspect = wide（宽扁小地图，#18）；inventory 改 lay.detail none → persistent + cmp.detailFields = [rarityLabel, name, mainValue, affixes]（流派色名字 + DPS + 词缀对比；lineId 已在 base）、lay.panelFit = fitContent（卡按字段长高，#21）；draft 加 vis.opacity = 1（卡面不透底）。没写 el.threat.form 的 alertMark / eliteMark：两者画在同一个位置会叠成一团，参考一个敌人头顶只有一枚图标，由 overlay 的「!」代替。"
+ ],
+ "notes": "像素世界 + 像素字 HUD（混合分辨率）：左下粗短红血条（current / max 数字压在条上），下方同一底线一排装备格（血瓶 + 两武器 + 两技能，格底色 = 卷轴流派色，键帽在格下），右上宽扁半透明像素房间小地图，其余信息挂在敌人身上（小红条、状态图标）。拾取卡是悬在掉落物上的深蓝小卡（流派色名字 + DPS + 对比），卷轴三选一是画面中央红 / 紫 / 绿三个选项。商店截图全部关掉了屏幕 HUD，只看得到敌人头顶的标记；局内 HUD、拾取卡、卷轴三选一凭记忆编码。待核：货币（金币 / 细胞）在左上还是左下血条上方、装备格紧贴血条右侧还是下中；伤害数字是选项（默认关）。"
+}

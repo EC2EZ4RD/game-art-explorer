@@ -1,0 +1,2059 @@
+{
+  "meta": {
+    "topic": "输入方式、平台与适配（键鼠 / 手柄 / 触屏 / 电视 / 竖屏 / 超宽 / 掌机 / 同屏多人）",
+    "date": "2026-10-14",
+    "scope": "按键提示图标、焦点导航、径向轮盘、触控尺寸与拇指区、电视安全区与 10 英尺 UI、竖屏单手、超宽 / 4:3 / 长屏画幅、悬停依赖、多输入并存、同屏多人、防误触确认。手游商城 / 奖励 / 抽卡 / 签到 / 首充 / 通行证 / 红包 / 广告界面不在范围内，手游主界面两侧的活动入口列也不作为证据。",
+    "evidence": "uiRefs.json 452 张卡（其中触屏参考 88 张：mobile 批 39 张 = 竖屏 21 + 横屏 18）；看过 qa/refs-cache/r2/mobile 全部 6 张对照图与 strategy-10/13/17、arpg-01/12/15、life-11、card-03 对照图；R3 评测统计 ui-review-stats.json（336 款、74,932 条，只用计数）；外部来源为平台官方指南、无障碍指南与 HCI 论文（只转述）。",
+    "keyCounts": {
+      "触屏摇杆 ix.touchStick（mobile 批）": "无摇杆 18、点地移动 4、滑动 2、固定 2、浮动 2、十字键 1",
+      "触屏按钮簇 ix.touchCluster": "底部一排 8、大键 + 弧形 5、左右两个大键 1",
+      "握持 ix.thumbZone": "竖屏单手 21、横屏双拇指 6",
+      "按键提示 el.prompt.form（全库）": "情境按键 6、触屏按钮 4、键位列表 1、按键图例条 1",
+      "技能区锚点 el.abilities.screenAnchor（全库 44 张）": "下中 18、右下 15、左下 6、其它 5",
+      "画幅 ctx.aspect（全库）": "21:9 黑边 2、4:3 柱状黑边 1；竖屏 ctx.orientation = portrait 70",
+      "R3 输入 / 平台相关抱怨": "手柄 / 键位 20 款 30 条（≥2 条 7 款）；UI 缩放 / 分辨率 12 款 19 条（≥2 条 4 款）；字太小 38 款 58 条（≥2 条 18 款）；UI 卡顿 11 款 18 条"
+    },
+    "caveats": "R3 评测只覆盖 Steam 卡（不含 GameUI 手游），关键词粗筛不能区分「手柄抱怨」是图标错还是键位本身别扭；商店截图多数没拍到按键提示，提示类编码偏少；触屏卡全是国内手游，西方付费触屏作品只有 Monument Valley、Lara Croft GO、Polytopia 等零星几张。"
+  },
+  "principles": [
+    {
+      "id": "P-glyph-follows-device",
+      "title": "按键提示跟着「手里正在用的设备」走",
+      "problem": "同一款游戏会同时被键鼠、Xbox / PlayStation / Switch 手柄、Steam Deck 和触屏玩到。提示图标和手里的设备对不上时，玩家要先在脑子里把「按 X」翻译成自己手里的键，新手直接卡住；PC 上插着手柄时只在启动时检测一次设备，是最常见的错。设计者面临的问题是：一份 UI 要准备几套按键字形、字形放在哪里、怎么切换。",
+      "approaches": [
+        {
+          "name": "键盘键帽（键鼠默认）",
+          "params": {
+            "ctx.input": "kbm",
+            "ix.glyphs": "keycap",
+            "el.prompt.form": [
+              "hotkeyBadge"
+            ],
+            "el.abilities.form": "slots",
+            "el.abilities.screenAnchor": "bc"
+          },
+          "whenToUse": "PC 键鼠为主、技能 / 物品多、需要玩家记住热键（MMO、ARPG、生存建造的数字快捷栏）",
+          "cost": "键帽要装得下 Shift / Tab / Ctrl / Space 等长键名，宽度不固定；本地化后键名可能变长（德文键盘的 Strg）；改键后每个角标都要刷新",
+          "examples": [
+            "iig:world-of-warcraft",
+            "steam:1086940",
+            "steam:105600",
+            "steam:413150",
+            "iig:overwatch",
+            "gameui:8283",
+            "steam:356570"
+          ]
+        },
+        {
+          "name": "品牌手柄字形（按连接的手柄切 Xbox / PlayStation / Nintendo）",
+          "params": {
+            "ctx.input": "pad",
+            "ix.glyphs": "xbox",
+            "el.prompt.form": [
+              "legend"
+            ],
+            "el.prompt.screenAnchor": "br",
+            "ix.close": "keyGlyph"
+          },
+          "whenToUse": "主机 / 电视 / 掌机，或 PC 上检测到手柄；按钮少、靠肩键与面键组合",
+          "cost": "至少三套字形素材（再加 Steam Deck）；PlayStation 的 ○ / × 在日本旧机型上确认 / 取消相反，PS5 起全区统一为 × 确认；字形是固定圆钮，比键帽省排版但要按品牌换颜色与形状",
+          "examples": [
+            "steam:1245620",
+            "steam:1903340",
+            "steam:2552430",
+            "steam:15100",
+            "steam:33230",
+            "steam:1174180"
+          ]
+        },
+        {
+          "name": "混合输入：按最近一次输入整套切换",
+          "params": {
+            "ctx.input": "hybrid",
+            "ix.focus": "outline",
+            "el.prompt.form": [
+              "contextual"
+            ]
+          },
+          "whenToUse": "PC 发行同时支持手柄、Steam Deck、云游戏；玩家可能边玩边换设备",
+          "cost": "每条提示、教程、按键图都要能实时换皮；摇杆死区内的轻微漂移不能触发切换，否则图标来回闪；排版要按最宽的一套字形留位",
+          "examples": [
+            "steam:1145360",
+            "steam:2379780",
+            "steam:1245620"
+          ]
+        },
+        {
+          "name": "文字 / 方括号文字（「按 E」、[E]）",
+          "params": {
+            "ix.glyphs": "brackets",
+            "typ.body.family": "mono",
+            "el.interact.form": [
+              "keyPrompt"
+            ]
+          },
+          "whenToUse": "终端 / 复古 / 极简风格，或字形素材预算不够；叙事向游戏把提示写成一句话",
+          "cost": "不认识键位的人要先读字；手柄上写成「按 A」仍要按品牌换字；方括号只适合键盘，换手柄时必须改回图形字形",
+          "examples": [
+            "steam:1092790"
+          ]
+        },
+        {
+          "name": "触屏：按钮画「动作」而不画键名",
+          "params": {
+            "ctx.input": "touch",
+            "ix.glyphs": "touch",
+            "el.prompt.form": [
+              "touchButtons"
+            ],
+            "cmp.button": "icon"
+          },
+          "whenToUse": "手机 / 平板触屏 HUD；按钮本身就是提示",
+          "cost": "图标要一眼看出动作（剑 = 攻击、箭头 = 跳）；同一 HUD 若还要兼容手柄 / 键鼠，可以在角上加小号键位字母（天涯明月刀），但纯触屏时那些字母只是噪音",
+          "examples": [
+            "gameui:1691",
+            "steam:1677740",
+            "gameui:6750",
+            "gameui:12771"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "键鼠在用却显示手柄字形（或反过来），或者只在启动时检测一次设备；PC 移植作沿用主机提示",
+          "examples": [
+            "steam:33230",
+            "steam:960910",
+            "steam:21690",
+            "steam:359870",
+            "steam:1367550"
+          ],
+          "reviewEvidence": "R3「手柄 / 键位不好」一类共 20 款被提到（30 条），≥ 2 条的 7 款：Assassin's Creed 2 4 条、Heavy Rain 3、Resident Evil 5 2、FINAL FANTASY X/X-2 2、Ori and the Blind Forest DE 2、Forgotton Anne 2、Kingdom Rush Vengeance 2——多数是主机或手机首发、后移植 PC 的作品（关键词粗筛，分不出是图标错还是键位本身别扭）"
+        },
+        {
+          "desc": "改键之后，教程、提示、按键图里还是旧键位",
+          "examples": [],
+          "reviewEvidence": "评测统计没有专门类别；Xbox 无障碍指南 107 把「改键后所有提示同步更新」列为硬性要求"
+        },
+        {
+          "desc": "手柄字形里的字母比正文还小（圆钮够大、里面的 A / X 只有十来像素）",
+          "examples": [],
+          "reviewEvidence": "无直接计数；「字太小」抱怨 38 款 / 58 条里包括多款主机首发大作（见 P-view-distance）"
+        }
+      ],
+      "rules": [
+        "提示字形 = 当前活动设备；以最近一次有效输入切换，摇杆死区内的微动和鼠标轻微抖动不算",
+        "字形集至少备齐：键帽、Xbox、PlayStation、Nintendo、触屏；在 Steam Deck 上用其自带控件时不得出现键鼠字形",
+        "改键后，所有提示、教程、按键图、加载页小贴士同步换成新键",
+        "字形里的字母也要达到正文最小字号，字形随文字缩放一起放大（到 200%）",
+        "触屏按钮画动作符号，不写 A / X / R1",
+        "确认与返回全游戏固定：A（Xbox）/ ×（PS5 起各区）确认，B / ○ 返回；B 能返回时界面上不必再画返回按钮"
+      ],
+      "genres": [
+        "跨平台动作冒险",
+        "ARPG / MMO",
+        "射击",
+        "PC + 主机同发的独立游戏",
+        "Steam Deck / Switch 移植"
+      ],
+      "sources": [
+        {
+          "title": "Steamworks · Steam Deck Compatibility Review Process",
+          "url": "https://partner.steamgames.com/doc/steamdeck/compat",
+          "point": "屏幕上的按键字形必须与正在使用的输入一致（Deck / Steam 手柄 / Xbox），默认配置下用 Deck 控件时不得出现键鼠字形；需要输入文字时必须能调出屏幕键盘"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 107（输入）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107",
+          "point": "所有操作都应可重映射；改键后提示、教程、按键图中的标注要同步正确"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 101（文字显示）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101",
+          "point": "图标与按键字形里的文字也要达到最小字号，并随文字缩放到 200%"
+        },
+        {
+          "title": "Apple Human Interface Guidelines · Game controls",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/game-controls",
+          "point": "按实际连接的手柄品牌显示标签，优先用符号而非文字；触屏虚拟按钮用表示动作的图形，不要写手柄键名；菜单外的标准映射是 A 激活、B 取消 / 返回、肩键切分区"
+        },
+        {
+          "title": "Famitsu / Kotaku 关于 PS5 统一确认键的报道（Byteside 转述）",
+          "url": "https://www.byteside.com/2020/10/sony-playstation-5-japan-input-x-o-swap/",
+          "point": "PS5 起日本区也改为 × 确认、○ 取消，与其它地区统一（系统层面；游戏可自定）"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "pc",
+          "ctx.input": "kbm",
+          "ix.glyphs": "xbox",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.interact",
+            "el.prompt"
+          ],
+          "el.prompt.form": [
+            "contextual"
+          ],
+          "el.interact.form": [
+            "keyPrompt"
+          ],
+          "el.prompt.screenAnchor": "br"
+        },
+        "b": {
+          "ctx.device": "pc",
+          "ctx.input": "kbm",
+          "ix.glyphs": "keycap",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.interact",
+            "el.prompt"
+          ],
+          "el.prompt.form": [
+            "contextual"
+          ],
+          "el.interact.form": [
+            "keyPrompt"
+          ],
+          "el.prompt.screenAnchor": "br"
+        },
+        "lookAt": "同一个 PC 键鼠 HUD：A 手动锁成 Xbox 字形（模拟移植作没切换），交互提示和右下情境按键都画成圆钮 A / X / Y；B 换成键帽 E / Q / Shift。看提示条的宽度变化——键帽要给长键名留宽，圆钮宽度固定；再把 ctx.input 改成 hybrid 体会「按最近输入切换」。"
+      }
+    },
+    {
+      "id": "P-prompt-in-context",
+      "title": "按键提示放在「要按的地方」：情境提示优先，常驻键位表兜底",
+      "problem": "动作游戏里此刻能按什么随情境变化。全键位表常驻会占屏、没人看；把提示全删掉换来的「干净」又让新手不知道能做什么——「提示 / 引导不清」是 R3 里最大的一类抱怨。问题是：哪些提示常驻、哪些贴到世界里、菜单里的提示放哪。",
+      "approaches": [
+        {
+          "name": "世界内情境提示（字形 + 动词贴在可交互物旁）",
+          "params": {
+            "el.interact.form": [
+              "keyPrompt"
+            ],
+            "el.interact.attachTo": "poi",
+            "el.interact.visibility": "contextual",
+            "typ.legibility": "outline"
+          },
+          "whenToUse": "第三人称探索、潜行、恐怖：可交互物稀疏，需要「走近才出现」",
+          "cost": "要有世界挂点、遮挡与距离缩放；多个可交互物挤在一起时要排优先级；背景不可控，字必须描边或垫底",
+          "examples": [
+            "steam:1332010",
+            "steam:391220",
+            "steam:960990",
+            "steam:960910",
+            "steam:542050"
+          ]
+        },
+        {
+          "name": "屏幕角落情境按键表（当前可用的 2–4 个动作）",
+          "params": {
+            "el.prompt.form": [
+              "contextual"
+            ],
+            "el.prompt.screenAnchor": "br",
+            "el.prompt.visibility": "contextual",
+            "cnt.density": "1"
+          },
+          "whenToUse": "开放世界、动作冒险：动作随载具 / 姿态变化（骑马、驾船、攀爬）",
+          "cost": "角落离视线中心远，紧急动作（QTE、反击）不适合放这里；要和小地图 / 弹药抢角落",
+          "examples": [
+            "steam:1174180",
+            "steam:1996010",
+            "steam:242050",
+            "steam:33230",
+            "steam:1049710"
+          ]
+        },
+        {
+          "name": "菜单底部按键图例条（A 选择 / B 返回 / LB RB 切页）",
+          "params": {
+            "el.prompt.form": [
+              "legend"
+            ],
+            "el.prompt.screenAnchor": "bl",
+            "ix.dismiss": "key",
+            "ix.close": "keyGlyph",
+            "ctx.input": "pad"
+          },
+          "whenToUse": "所有手柄菜单、设置、背包、商店；键鼠版也可保留（Esc / Tab / M）",
+          "cost": "每屏都要列本屏真正有效的键；位置与顺序必须全游戏一致，否则玩家每屏都要重新找",
+          "examples": [
+            "gameui:8283",
+            "steam:1245620",
+            "steam:1903340",
+            "steam:292030"
+          ]
+        },
+        {
+          "name": "技能 / 物品格上的热键角标",
+          "params": {
+            "el.prompt.form": [
+              "hotkeyBadge"
+            ],
+            "el.abilities.form": "hotbar",
+            "el.abilities.arrangement": "row",
+            "el.abilities.screenAnchor": "bc"
+          },
+          "whenToUse": "键鼠 MMO / ARPG / 生存的数字快捷栏；格子与键一一对应",
+          "cost": "角标很小，最容易低于最小字号；换手柄后角标要变成 D-pad 方向或面键组合",
+          "examples": [
+            "iig:world-of-warcraft",
+            "steam:105600",
+            "steam:413150",
+            "steam:1086940",
+            "iig:overwatch"
+          ]
+        },
+        {
+          "name": "完整键位表 / 手柄示意图（放在暂停或设置里，必要时常驻）",
+          "params": {
+            "cnt.screen": "screen.settings",
+            "cnt.subtype": "rebind",
+            "cmp.bindingMap": "pad"
+          },
+          "whenToUse": "操作复杂的格斗 / 模拟 / 硬核游戏；或作为改键页",
+          "cost": "常驻在局内就是「调试面板」感，只适合把操作本身当玩法的作品",
+          "examples": [
+            "steam:2212330",
+            "steam:367520"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "为了「零 HUD」把情境提示也删光，又没有叙事内 / 声音 / 环境替代",
+          "examples": [
+            "steam:698670",
+            "steam:701160"
+          ],
+          "reviewEvidence": "R3「提示 / 引导不清」共 47 款（≥ 2 条），全类最多：Scorn 10 条、Kingdom Two Crowns 7、A Plague Tale: Requiem 6、ASTRONEER 5；Kingdom Two Crowns 同时是「夸 UI 简洁」的头部（3 条）——干净和看不懂是同一个决定的两面"
+        },
+        {
+          "desc": "菜单图例每屏换位置、换顺序，或列出本屏无效的键",
+          "examples": [],
+          "reviewEvidence": "R3「菜单 / 界面难用」24 款（≥ 2 条，Valheim 7、Starfield 4、No Man's Sky 3…）；关键词分不出是否由图例不一致引起，只作背景"
+        },
+        {
+          "desc": "常驻整张键位表压在玩法区上",
+          "examples": [
+            "steam:2212330"
+          ],
+          "reviewEvidence": "无直接计数；「HUD 太乱 / 挡视野」22 款（≥ 2 条）是相邻问题"
+        }
+      ],
+      "rules": [
+        "菜单图例条固定在同一角、同一顺序（确认在前、返回在后），只列本屏有效的键",
+        "局内只提示「此刻能做而且不常做」的动作；教会以后自动隐去，或给「提示频率」选项",
+        "贴物体的提示离物体不超过约一个角色身高，必须描边或垫半透明底",
+        "零 HUD 风格也要留首次提示通道（叙事内物件、声音、光引导）",
+        "热键角标与技能格同样遵守最小字号；换手柄时角标变成方向 / 面键而不是消失",
+        "VR 或叙事内 UI：提示挂在手、手持物或可交互物上，而不是贴在镜头前"
+      ],
+      "genres": [
+        "开放世界动作冒险",
+        "潜行 / 恐怖",
+        "互动电影 / 叙事",
+        "MMO / ARPG",
+        "格斗"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 112（UI 导航）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/112",
+          "point": "跨界面重复出现的组件（如「选择 / 返回」提示）应在相同位置、相同相对顺序出现；以 Sea of Thieves 左下角固定提示为例"
+        },
+        {
+          "title": "Crusader Kings III Console Dev Diary #3: UI/UX and Controls（Paradox）",
+          "url": "https://www.paradoxinteractive.com/games/crusader-kings-iii/news/ck3-console-dev-diary-3-uiux-and-controls",
+          "point": "主机版把操作提示放在屏幕底部，并随菜单与情境变化，帮助玩家逐步学会操作"
+        },
+        {
+          "title": "Microsoft · Gamepad and remote control interactions",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/design/input/gamepad-and-remote-interactions",
+          "point": "B 用于返回时界面上不必再画返回按钮；Menu 键打开上下文菜单、Y 作搜索加速键"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 101（文字显示）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101",
+          "point": "局内交互提示（如物品上方的「收集」）用描边保证在任意背景上可读"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.input": "pad",
+          "ctx.device": "tv",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.prompt"
+          ],
+          "el.prompt.form": [
+            "list"
+          ],
+          "el.prompt.screenAnchor": "tc",
+          "rel.hudVisibility": "always"
+        },
+        "b": {
+          "ctx.input": "pad",
+          "ctx.device": "tv",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.prompt",
+            "el.interact"
+          ],
+          "el.prompt.form": [
+            "contextual"
+          ],
+          "el.prompt.screenAnchor": "br",
+          "el.interact.form": [
+            "keyPrompt"
+          ],
+          "rel.hudVisibility": "contextual"
+        },
+        "lookAt": "A 顶部常驻整张键位表，压住画面上方；B 只在右下列出当前能做的 2–4 个动作，并把交互提示贴在可交互物旁，HUD 随情境出现。打开屏占比读数看两者差多少。"
+      }
+    },
+    {
+      "id": "P-focus-unmistakable",
+      "title": "手柄 / 键盘导航：焦点一眼可见、移动可以预测",
+      "problem": "没有指针时，「我现在停在哪」全靠焦点表现；坐在沙发上的玩家不会盯着整个电视。焦点和「已装备 / 已选中」如果用同一种记号，手柄移动时分不清；二维网格里还常有方向键走不到的格子、要穿过整条长列表才能按到的按钮。",
+      "approaches": [
+        {
+          "name": "高亮描边 / 外发光（通用、跟任何皮肤都搭）",
+          "params": {
+            "ctx.input": "pad",
+            "ix.focus": "outline",
+            "st.selected": "check"
+          },
+          "whenToUse": "格子背包、卡牌、装备页；需要焦点框和格子本身都清楚",
+          "cost": "细描边在亮背景或电视上会「丢」，要够粗或配发光；描边颜色不能和稀有度边框色撞",
+          "examples": [
+            "steam:1245620",
+            "iig:slay-the-spire",
+            "steam:2358720"
+          ]
+        },
+        {
+          "name": "光标手指 / 三角（JRPG 指令窗）",
+          "params": {
+            "ix.focus": "cursor",
+            "cmp.dialogBox": "bar",
+            "lay.arrangement": "column"
+          },
+          "whenToUse": "竖排指令菜单、对话选项、复古 / 像素风",
+          "cost": "光标要有轻微摆动动画，否则静止时不显眼；只适合一维列表",
+          "examples": [
+            "steam:39150",
+            "steam:377840",
+            "steam:2552430",
+            "steam:1462040"
+          ]
+        },
+        {
+          "name": "整行色条 / 底色反白（表格、设置页）",
+          "params": {
+            "ix.focus": "invert",
+            "cmp.optionEnum": "arrows",
+            "cmp.optionRange": "segmentedBar"
+          },
+          "whenToUse": "瑞士 / 军事 / 终端风格的数据表、设置项；行宽占满时最醒目",
+          "cost": "反白后文字颜色要翻转，图标也要准备反色版本；整行色条不适合网格",
+          "examples": [
+            "steam:870780",
+            "steam:287700"
+          ]
+        },
+        {
+          "name": "风格化焦点（毛笔笔触垫底、异形块放大、斜切）",
+          "params": {
+            "ix.focus": "brushSwash",
+            "vis.edge": "brush",
+            "typ.display.family": "calligraphy"
+          },
+          "whenToUse": "美术风格强的菜单（和风、拼贴、西部）：焦点本身就是风格的一部分",
+          "cost": "需要素材；风格化焦点的形状变化要大到远看也能分辨（放大 / 变形 ≥ 10%）",
+          "examples": [
+            "steam:1174180",
+            "steam:2215430",
+            "steam:1687950",
+            "steam:2679460"
+          ]
+        },
+        {
+          "name": "局部指针模式（只在地图 / 大画布里给摇杆光标）",
+          "params": {
+            "ctx.input": "pad",
+            "cnt.screen": "screen.map",
+            "lay.overflow": "pan",
+            "lay.detail": "transient"
+          },
+          "whenToUse": "世界地图、策略大地图、技能星图等自由画布，方向键焦点走不通的地方",
+          "cost": "光标需要吸附与「经过目标时减速」，否则摇杆点小目标很累；按确认键时拇指会让摇杆轻微偏移，要忽略这瞬间的移动",
+          "examples": [
+            "steam:1086940",
+            "steam:289070",
+            "steam:281990"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "焦点和「已装备 / 已选中」用同一种描边，手柄移动时分不清哪个是光标",
+          "examples": [],
+          "reviewEvidence": "评测统计没有专门类别；参数体系在 v2 把焦点（ix.focus）和已选（st.selected）拆成两个参数正是为此"
+        },
+        {
+          "desc": "把 PC 布局原样放上主机、用摇杆当鼠标点小控件；或二维布局里有方向键走不到的元素",
+          "examples": [
+            "steam:683900",
+            "steam:1162750"
+          ],
+          "reviewEvidence": "R3「菜单 / 界面难用」24 款（≥ 2 条），建造 / 经营 / 生存类最集中（Valheim 7、Planet Zoo 3、Dyson Sphere Program 3、Parkasaurus 3）；关键词分不出是否与焦点导航有关，只作背景"
+        },
+        {
+          "desc": "长列表之后才放「确认 / 下一页」按钮，手柄要按几十下才能到",
+          "examples": [],
+          "reviewEvidence": "无直接计数；微软手柄指南以「50 项列表需要 51 次点击」为反例"
+        }
+      ],
+      "rules": [
+        "手柄 / 键盘导航时屏幕上始终恰好一个焦点；进入界面时焦点落在最可能的第一个动作上",
+        "焦点与「已选 / 已装备」必须用不同视觉通道（如焦点 = 描边 + 放大，已装备 = 角标勾）",
+        "一维列表首尾循环，二维网格不循环；LB / RB 切页签，LT / RT 翻页，B 永远返回",
+        "从屏幕一边到另一边不超过约 6 次方向键；长列表前后的按钮挪到列表侧面或上方",
+        "鼠标模式下可以隐藏焦点框，但手柄一动必须立刻出现",
+        "只有自由画布才给虚拟光标，并做吸附与减速"
+      ],
+      "genres": [
+        "主机 RPG / JRPG",
+        "动作冒险菜单",
+        "策略 / CRPG 的主机版",
+        "电视派对游戏"
+      ],
+      "sources": [
+        {
+          "title": "Microsoft · Gamepad and remote control interactions",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/design/input/gamepad-and-remote-interactions",
+          "point": "屏幕上应始终有一个可见焦点；初始焦点放在最可能先操作的元素；XY 导航会出现走不到的元素和长列表陷阱，可用「焦点进入」或重排解决；地图类自由画布才用指针模式"
+        },
+        {
+          "title": "Microsoft · Designing for Xbox and TV",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/design/devices/designing-for-tv",
+          "point": "从电视一边导航到另一边不应超过六次点击；焦点要清楚且不会被误认"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 112（UI 导航）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/112",
+          "point": "导航顺序要符合视觉布局；单向菜单首尾循环，多向网格不必循环；整个游戏的确认 / 返回 / 切页键保持一致；UI 必须能只用数字按键走完"
+        },
+        {
+          "title": "Crusader Kings III Console Dev Diary #3（Paradox）",
+          "url": "https://www.paradoxinteractive.com/games/crusader-kings-iii/news/ck3-console-dev-diary-3-uiux-and-controls",
+          "point": "主机版放弃「摇杆当鼠标」保留 PC 界面的做法，改用在菜单、地图、弹窗之间切换焦点"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "tv",
+          "ctx.input": "pad",
+          "cnt.screen": "screen.inventory",
+          "ix.focus": "outline",
+          "st.selected": "outline"
+        },
+        "b": {
+          "ctx.device": "tv",
+          "ctx.input": "pad",
+          "cnt.screen": "screen.inventory",
+          "ix.focus": "scale",
+          "st.selected": "check"
+        },
+        "lookAt": "电视 + 手柄的背包：A 焦点和「已装备」都是描边，同屏两个框，看不出光标停在哪；B 焦点改为放大浮起、已装备改为角标勾，两种状态同屏也分得开。再试 ix.focus = cursor / invert / brushSwash 对比不同风格。"
+      }
+    },
+    {
+      "id": "P-radial-for-sticks",
+      "title": "摇杆选方向：径向轮盘与十字快捷格代替一排热键",
+      "problem": "手柄只有十几个键，PC 上一排 10–12 个数字热键无法一一映射；战斗中又要快速换武器 / 法术 / 道具 / 表情。方向是摇杆最自然的输入，所以主机游戏把「选择」变成「指向」：轮盘、十字格、菱形格。",
+      "approaches": [
+        {
+          "name": "按住呼出的武器 / 能力轮（开轮时慢放或暂停）",
+          "params": {
+            "ctx.input": "pad",
+            "cnt.dataShape": "collection",
+            "lay.arrangement": "ring",
+            "lay.composition": "single",
+            "ix.mode": "select",
+            "flow.entry": "hotkey"
+          },
+          "whenToUse": "第三人称动作 / 射击里 6–8 种武器或能力，需要战斗中切换",
+          "cost": "单层超过 8 格方向就分不清，要分层或分页；轮盘盖住画面中心；多人游戏不能暂停，开轮时人很脆弱",
+          "examples": [
+            "steam:1895880",
+            "steam:205100",
+            "steam:1817070",
+            "steam:1174180",
+            "steam:1057090"
+          ]
+        },
+        {
+          "name": "十字 / 菱形四向快捷格（D-pad 或四个面键直接对应）",
+          "params": {
+            "el.abilities.form": "hotbar",
+            "el.abilities.arrangement": "cross",
+            "el.abilities.screenAnchor": "bl"
+          },
+          "whenToUse": "魂类、动作 RPG：只有 4 个常用物品 / 法术，必须「盲按」",
+          "cost": "直达位只有 4 个，多的靠循环切换或「按住 + 面键」翻页，玩家要记；图形必须本身就是十字 / 菱形，才能免学",
+          "examples": [
+            "steam:1245620",
+            "steam:990080",
+            "steam:812140",
+            "steam:2358720"
+          ]
+        },
+        {
+          "name": "竖排指令菜单（JRPG / 动作 RPG）",
+          "params": {
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "column",
+            "el.abilities.screenAnchor": "bl",
+            "ix.focus": "cursor"
+          },
+          "whenToUse": "半即时 / 指令制战斗：攻击 / 魔法 / 道具三四项，上下键即可",
+          "cost": "层级深时要多次进出；实时战斗中翻子菜单慢，常配「快捷指令」",
+          "examples": [
+            "steam:2552430",
+            "steam:1462040",
+            "steam:39150"
+          ]
+        },
+        {
+          "name": "分层大轮盘代替 PC 热栏（主机版 CRPG / 策略）",
+          "params": {
+            "ctx.device": "tv",
+            "ctx.input": "pad",
+            "lay.arrangement": "ring",
+            "lay.nav": "tabsTop",
+            "cmp.tab": "iconText"
+          },
+          "whenToUse": "PC 上用到几乎整张键盘的复杂游戏移植主机（法术书、日志、营地都塞进轮盘）",
+          "cost": "层数超过 2 就慢；玩家整理轮盘的成本高，需要自定义与「上次位置记忆」",
+          "examples": [
+            "steam:1086940"
+          ]
+        },
+        {
+          "name": "键鼠：线性热栏 + 数字键直达",
+          "params": {
+            "ctx.input": "kbm",
+            "el.abilities.form": "hotbar",
+            "el.abilities.arrangement": "row",
+            "el.abilities.screenAnchor": "bc",
+            "el.prompt.form": [
+              "hotkeyBadge"
+            ]
+          },
+          "whenToUse": "PC 首发的 MMO、生存、种田：格子多、要拖拽整理",
+          "cost": "搬到手柄上无法一键直达，需要另做轮盘或循环；格子多时下中一整条压住画面",
+          "examples": [
+            "iig:world-of-warcraft",
+            "steam:105600",
+            "steam:413150",
+            "steam:1203620"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "单层轮盘塞进十几项、只有图标没有名字，方向分辨不出、选错率高",
+          "examples": [],
+          "reviewEvidence": "评测统计没有轮盘专项；HCI 研究（标记菜单）显示每层超过 8 项时错误率明显上升"
+        },
+        {
+          "desc": "把 PC 的一排 10 格热栏原样放上手柄，用摇杆光标去点小格；或触屏首发的点选玩法直接上手柄",
+          "examples": [
+            "steam:1367550"
+          ],
+          "reviewEvidence": "Kingdom Rush Vengeance（触屏首发塔防）手柄 / 键位抱怨 2 条；整类「手柄 / 键位不好」20 款 30 条"
+        }
+      ],
+      "rules": [
+        "单层轮盘 ≤ 8 个方向（4 或 8 最好）；超过就分层，层数 ≤ 2",
+        "每格同时给图标和名字；指向的格放大，中心显示名字、数量、冷却",
+        "动作游戏开轮慢放或暂停，并在设置里写明；多人游戏不暂停，就把轮盘做小、只盖住半屏",
+        "鼠标操作轮盘时按「移动方向」选择，而不是要求精确点中图标；键盘另给数字键直达",
+        "十字 / 菱形快捷格的形状要与 D-pad / 面键布局一致；技能区锚点跟右手面键走（全库技能区在右下 15 张、下中 18 张）",
+        "记住上次选择的格，松开即确认，避免拇指惯性把选择带进下一个菜单"
+      ],
+      "genres": [
+        "第三人称动作 / 射击",
+        "魂类 / 动作 RPG",
+        "JRPG",
+        "CRPG / 策略的主机版",
+        "派对 / 多人（表情轮、语音轮）"
+      ],
+      "sources": [
+        {
+          "title": "Callahan, Hopkins, Weiser, Shneiderman · An Empirical Comparison of Pie vs. Linear Menus（CHI '88）",
+          "url": "https://dl.acm.org/doi/10.1145/57167.57182",
+          "point": "饼形菜单比线性菜单选择更快、错误更少，原因是每个方向的目标更大、离起点同样近（Fitts 定律）"
+        },
+        {
+          "title": "Kurtenbach & Buxton · The Limits of Expert Performance Using Hierarchic Marking Menus（CHI '93）",
+          "url": "https://www.research.autodesk.com/publications/the-limits-of-expert-performance-using-hierarchic-marking-menus/",
+          "point": "层级标记菜单的宽度与深度都会抬高错误率；常被引用的结论是每层 8 项以内、8 项时最多两层"
+        },
+        {
+          "title": "PlayStation Blog · How Baldur's Gate 3 adapts its gameplay for DualSense",
+          "url": "https://blog.playstation.com/2023/09/05/how-baldurs-gate-3-adapts-its-expansive-rpg-gameplay-for-your-dualsense-controller/",
+          "point": "主机版把 PC 的常驻动作栏改成可自定义的径向菜单，地图、日志、法术书等由扳机键呼出的大轮盘进入"
+        },
+        {
+          "title": "Crusader Kings III Console Dev Diary #3（Paradox）",
+          "url": "https://www.paradoxinteractive.com/games/crusader-kings-iii/news/ck3-console-dev-diary-3-uiux-and-controls",
+          "point": "主机版用「人物轮盘」与「地图模式轮盘」做快速入口，肩键开顶层菜单、Bumper 切子菜单"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "tv",
+          "ctx.input": "pad",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap"
+          ],
+          "el.abilities.form": "hotbar",
+          "el.abilities.arrangement": "row",
+          "el.abilities.screenAnchor": "bc",
+          "el.prompt.form": [
+            "hotkeyBadge"
+          ]
+        },
+        "b": {
+          "ctx.device": "tv",
+          "ctx.input": "pad",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap"
+          ],
+          "el.abilities.form": "hotbar",
+          "el.abilities.arrangement": "cross",
+          "el.abilities.screenAnchor": "bl"
+        },
+        "lookAt": "A 把 PC 的一排热栏原样搬到手柄 + 电视，角标还是 1–0；B 改成左下十字四格，形状就是 D-pad。看下中区域被腾出来，以及字形从数字变成方向。想看轮盘本身，可把 cnt.screen 换成背包、lay.arrangement = ring。"
+      }
+    },
+    {
+      "id": "P-touch-target-size",
+      "title": "触屏：目标够大、主次分明、离拇指近，能不放按钮就不放",
+      "problem": "手指会盖住按钮、没有悬停、精度只有约一厘米；横屏双手握持时拇指只够得到两个下角。虚拟按键越多越难按，越难按越容易误触。触屏 UI 的核心取舍是：用多少虚拟按键、多大、放哪，哪些动作干脆交给自动或直接操作。",
+      "approaches": [
+        {
+          "name": "横屏：左摇杆 + 右下大攻击键 + 技能沿弧形环绕",
+          "params": {
+            "ctx.device": "phone",
+            "ctx.orientation": "landscape",
+            "ctx.input": "touch",
+            "ix.thumbZone": "twoThumbs",
+            "ix.touchStick": "floating",
+            "ix.touchCluster": "arc",
+            "ix.touchSize": 88
+          },
+          "whenToUse": "动作 / ARPG / MMO / 派对：持续移动 + 多个技能",
+          "cost": "右拇指只能同时盯一个键，技能多于 5 个就得分页；浮动摇杆不显示底盘，新手不知道能按在哪（要首次提示）",
+          "examples": [
+            "gameui:6750",
+            "gameui:6729",
+            "gameui:12771",
+            "gameui:11388",
+            "gameui:1691",
+            "steam:1677740"
+          ]
+        },
+        {
+          "name": "十字键 + 左右两个大键（横版平台）",
+          "params": {
+            "ctx.orientation": "landscape",
+            "ctx.input": "touch",
+            "ix.touchStick": "dpad",
+            "ix.touchCluster": "twoButtons"
+          },
+          "whenToUse": "横版跑跳：只要左右 + 跳 + 攻击",
+          "cost": "十字键没有触感，斜向输入不可靠；精确平台跳跃在触屏上天然吃亏",
+          "examples": [
+            "gameui:7134"
+          ]
+        },
+        {
+          "name": "无摇杆：底部一排头像 / 卡牌（自动战斗、卡牌塔防）",
+          "params": {
+            "ctx.input": "touch",
+            "ix.touchStick": "none",
+            "ix.touchCluster": "row",
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "bc"
+          },
+          "whenToUse": "移动交给自动，玩家只决定「何时放大招 / 出哪张卡」",
+          "cost": "操作感弱；头像既是状态又是按钮，要用发光等「就绪」信号区分能不能按",
+          "examples": [
+            "gameui:12746",
+            "gameui:6853",
+            "gameui:11009",
+            "gameui:6868",
+            "gameui:7101"
+          ]
+        },
+        {
+          "name": "直接操作世界（点地、拖拽、滑动，不画虚拟键）",
+          "params": {
+            "ctx.input": "touch",
+            "ix.touchStick": "tapToMove",
+            "ix.mode": "drag",
+            "cnt.density": "0"
+          },
+          "whenToUse": "解谜、规划、合成、建造、回合策略：玩法本身就是在画面上点和拖",
+          "cost": "可发现性差，要首次引导；拖拽 / 滑动对手部不便的玩家是障碍，需要「点两下」替代",
+          "examples": [
+            "steam:1927720",
+            "steam:287980",
+            "steam:1291340",
+            "steam:540840",
+            "gameui:7039",
+            "gameui:7035",
+            "gameui:13064"
+          ]
+        },
+        {
+          "name": "回合制：大圆钮 + 图标带字的大按钮",
+          "params": {
+            "ctx.timeModel": "turn",
+            "el.cta.form": "round",
+            "el.cta.screenAnchor": "br",
+            "cmp.button": "iconText",
+            "ix.confirm": "selectConfirm"
+          },
+          "whenToUse": "回合策略 / 战棋 / 塔防：不赶时间、怕误触",
+          "cost": "按钮带字占位大，竖屏放不下几个；要和「选中 + 确认」配合才真正防误触",
+          "examples": [
+            "steam:874390",
+            "gameui:7158",
+            "steam:960090"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "次要键（倍速、暂停、跳过、自动）做成小钮挤在角落，主次一样大或比主键还难按",
+          "examples": [
+            "gameui:6904",
+            "gameui:6814",
+            "gameui:6826"
+          ],
+          "reviewEvidence": "R3 不含手游评测，无计数；R4 看图：倍速 / 暂停一类次要键约 36–44pt，只有主按钮明显更大"
+        },
+        {
+          "desc": "把 PC 的小格背包、浮动窗口原样搬到触屏（或反之，把手机的固定像素界面搬到高分屏）",
+          "examples": [
+            "steam:683900",
+            "steam:1267910"
+          ],
+          "reviewEvidence": "RollerCoaster Tycoon Classic（手机版移回 PC）「UI 缩放 / 分辨率」抱怨 3 条、Melvor Idle 2 条"
+        },
+        {
+          "desc": "按钮在手指按下瞬间就触发、不能滑出取消",
+          "examples": [],
+          "reviewEvidence": "无直接计数；Xbox 无障碍指南把「抬起时触发、可滑出取消」列为触屏要求"
+        }
+      ],
+      "rules": [
+        "最小触控目标：常用 ≥ 44pt（iOS）/ 48dp（Android），次要 ≥ 28pt；手机上的主动作键按 Xbox 指南建议约 15mm，平板约 24mm",
+        "主动作键直径 ≥ 次要键的 1.5–2 倍；目标之间留出无效间隙",
+        "横屏：移动在左、动作在右；摇杆在手指落点生成，静止时淡出",
+        "手指会盖住按钮，按下反馈要外溢（外发光、放大、震动、声音）",
+        "抬起时触发，允许滑出取消；提供按钮大小 / 位置 / 透明度自定义和几套预设布局",
+        "能自动的就自动（自动拾取、自动开火、自动战斗选项），每少一个键就少一个误触点"
+      ],
+      "genres": [
+        "手游动作 / MMO",
+        "派对",
+        "卡牌 / 塔防",
+        "自动战斗 RPG",
+        "三消 / 合成",
+        "触屏解谜"
+      ],
+      "sources": [
+        {
+          "title": "Apple Human Interface Guidelines · Game controls",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/game-controls",
+          "point": "常用触控 ≥ 44×44pt、次要 ≥ 28×28pt；按钮放在拇指可达、安全区内；移动在左、镜头在右；按下状态要在手指遮挡时仍可见；按情境显隐控件、合并功能、能用手势就别放按钮"
+        },
+        {
+          "title": "Android Developers · Make apps more accessible",
+          "url": "https://developer.android.com/guide/topics/ui/accessibility/apps",
+          "point": "触屏交互元素的触控区域至少 48×48dp，越大越好；鼠标等精确输入可以更小"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 107（输入 · 移动端部分）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107",
+          "point": "手机触控目标建议约 15mm、平板约 24mm；目标间留足间隔或无效区；允许调整大小 / 间距 / 位置并提供预设布局；抬起时触发；提供简化操作（自动拾取、自动开火）"
+        },
+        {
+          "title": "Game Accessibility Guidelines · Ensure interactive elements / virtual controls are large and well spaced",
+          "url": "https://gameaccessibilityguidelines.com/ensure-interactive-elements-virtual-controls-are-large-and-well-spaced-particularly-on-small-or-touch-screens/",
+          "point": "触屏目标研究上理想约 2.4cm，手机上最少约 0.96cm；按钮靠得近时要更大"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "phone",
+          "ctx.orientation": "landscape",
+          "ctx.input": "touch",
+          "ix.touchSize": 40,
+          "ix.touchStick": "fixed",
+          "ix.touchCluster": "grid",
+          "chk.touch": true
+        },
+        "b": {
+          "ctx.device": "phone",
+          "ctx.orientation": "landscape",
+          "ctx.input": "touch",
+          "ix.touchSize": 88,
+          "ix.touchStick": "floating",
+          "ix.touchCluster": "arc",
+          "chk.touch": true
+        },
+        "lookAt": "打开触控尺寸检查：A 的 2×2 技能方格每格只有约 40px、主次一样大，检查画出一串红框；B 大攻击键 + 弧形小键，最小也 ≥ 88px（44pt@2x），左半屏任意处起摇杆。"
+      }
+    },
+    {
+      "id": "P-portrait-one-hand",
+      "title": "竖屏单手：操作在下 1/3，读数在上方",
+      "problem": "竖屏大多是单手握持，拇指只够得到中下部，上方角落要换手；但眼睛又先看上方。竖屏 UI 要把「看」和「按」上下分开：状态往上、操作往下，而且左右并排的东西都要改成上下堆。",
+      "approaches": [
+        {
+          "name": "上读下按：顶部只放状态，主按钮 + 底部页签在下 1/3",
+          "params": {
+            "ctx.device": "phone",
+            "ctx.orientation": "portrait",
+            "ctx.input": "touch",
+            "ix.thumbZone": "oneHand",
+            "lay.nav": "tabsBottom",
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "bc"
+          },
+          "whenToUse": "竖屏 RPG / 放置 / 关卡制游戏的主界面与局内",
+          "cost": "底部要同时容纳主按钮和页签，容易挤；页签超过 5 个就要折叠",
+          "examples": [
+            "gameui:6728",
+            "gameui:12543",
+            "gameui:6836",
+            "gameui:7090",
+            "gameui:9383"
+          ]
+        },
+        {
+          "name": "上场景 / 下操作托盘（上下分栏）",
+          "params": {
+            "ctx.orientation": "portrait",
+            "lay.composition": "splitTB",
+            "lay.container": "tray",
+            "lay.focalSide": "top"
+          },
+          "whenToUse": "战斗或剧情在上半屏「看」，下半屏是阵容、棋盘或指令",
+          "cost": "上半屏场景变小，角色与特效要按半屏尺寸设计",
+          "examples": [
+            "gameui:3830",
+            "gameui:6889",
+            "gameui:7155",
+            "gameui:12994"
+          ]
+        },
+        {
+          "name": "棋盘占下 2/3，对战信息压在顶部",
+          "params": {
+            "ctx.orientation": "portrait",
+            "lay.playfield": "boardWindow",
+            "el.timer.form": "scorePill",
+            "el.timer.screenAnchor": "tc",
+            "ix.touchStick": "swipe"
+          },
+          "whenToUse": "三消 / 合成 / 消除对战：整个盘面就是操作区",
+          "cost": "盘面格子数受宽度限制（列数 ≤ 7–8），格子尺寸要过触控下限",
+          "examples": [
+            "gameui:7035",
+            "gameui:7039",
+            "gameui:4456"
+          ]
+        },
+        {
+          "name": "底部浮层代替居中弹窗，关闭在底部",
+          "params": {
+            "ctx.orientation": "portrait",
+            "lay.container": "sheet",
+            "ix.dismiss": "tapOutside",
+            "ix.close": "cancelBtn"
+          },
+          "whenToUse": "竖屏的详情、选项、确认、捏脸 / 换装面板",
+          "cost": "浮层高度受限，长内容要滚动；需要下滑关闭的手势提示",
+          "examples": [
+            "gameui:8436",
+            "gameui:12326",
+            "gameui:13082"
+          ]
+        },
+        {
+          "name": "零 HUD 直接操作（只留一个低频菜单点）",
+          "params": {
+            "ctx.orientation": "portrait",
+            "ctx.input": "touch",
+            "cnt.density": "0",
+            "ix.touchStick": "none"
+          },
+          "whenToUse": "竖屏解谜、叙事小品：画面就是界面",
+          "cost": "唯一的菜单入口放在上角可以接受（低频），但必须容易被发现",
+          "examples": [
+            "steam:1927720",
+            "iig:florence"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "高频的战斗控制（自动 / 倍速 / 撤退）放在竖屏右上角，单手要换握法",
+          "examples": [
+            "gameui:6922"
+          ],
+          "reviewEvidence": "R3 不含手游评测，无计数；R4 看图：21 张竖屏卡几乎都把主操作放在下 1/3，小虾米战三国是少数把战斗控制放右上的；对照战神之决把 ×2 / ×5 放右下、暂停放左下（gameui:7312）"
+        },
+        {
+          "desc": "居中小弹窗 + 右上小 ×，单手要伸到右上角才能关",
+          "examples": [
+            "gameui:12983"
+          ],
+          "reviewEvidence": "无直接计数；贪吃怪大作战（gameui:13082）所有弹窗把关闭叉放在底部，是反例的改法"
+        },
+        {
+          "desc": "横屏的左右分栏、侧页签原样搬到竖屏",
+          "examples": [],
+          "reviewEvidence": "无直接计数；工具里的 D-orient 规则会自动改写成上下分栏与底部页签"
+        }
+      ],
+      "rules": [
+        "下 1/3 放主操作与高频控件，中间放内容，上方放只读状态与低频入口（菜单、设置）",
+        "关闭 / 取消放到底部（底部取消钮或下滑关闭），不能只靠右上 ×",
+        "危险操作（撤退、放弃、出售）不靠「够不着」防误触，用二次确认或长按",
+        "屏幕中间最快最准、四角最慢：最重要的可点内容靠中下",
+        "能同时支持横竖两种朝向时，内容重排而不是整体缩放",
+        "竖屏网格列数 ≤ 4（格子要过触控下限），页签 ≤ 5"
+      ],
+      "genres": [
+        "竖屏 RPG / 放置",
+        "三消 / 合成",
+        "卡牌",
+        "竖屏解谜",
+        "叙事小品"
+      ],
+      "sources": [
+        {
+          "title": "Steven Hoober · How Do Users Really Hold Mobile Devices?（UXmatters, 2013）",
+          "url": "https://www.uxmatters.com/mt/archives/2013/02/how-do-users-really-hold-mobile-devices.php",
+          "point": "在公共场所观察 1,333 次、780 人在触屏：单手 49%、托握 36%、双手 15%；作者后续更正强调屏幕中心比边角点得更快更准"
+        },
+        {
+          "title": "Apple Human Interface Guidelines · Game controls",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/game-controls",
+          "point": "常用控件放在拇指可达处，菜单等次要控件放到屏幕顶部"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 107（输入 · 移动端部分）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107",
+          "point": "建议同时支持横竖屏（有玩家把设备固定在轮椅或桌面上），以 Wordament 横竖屏重排为例"
+        },
+        {
+          "title": "Godot Docs · Multiple resolutions",
+          "url": "https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html",
+          "point": "竖屏游戏建议 720×1280 基准与 portrait 朝向，stretch aspect 用 expand，UI 用锚点贴边以适应 18:9 / 19:9 长屏"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "phone",
+          "ctx.orientation": "portrait",
+          "ctx.input": "touch",
+          "ix.thumbZone": "oneHand",
+          "cnt.elements": [
+            "el.vitals",
+            "el.party",
+            "el.cta",
+            "el.gameSpeed"
+          ],
+          "el.cta.screenAnchor": "tr",
+          "el.gameSpeed.form": "speedBar",
+          "el.gameSpeed.screenAnchor": "tr",
+          "chk.touch": true
+        },
+        "b": {
+          "ctx.device": "phone",
+          "ctx.orientation": "portrait",
+          "ctx.input": "touch",
+          "ix.thumbZone": "oneHand",
+          "cnt.elements": [
+            "el.vitals",
+            "el.party",
+            "el.cta",
+            "el.gameSpeed"
+          ],
+          "el.cta.screenAnchor": "bc",
+          "el.gameSpeed.form": "speedBar",
+          "el.gameSpeed.screenAnchor": "br",
+          "chk.touch": true
+        },
+        "lookAt": "竖屏单手：A 把主按钮和倍速条放在右上，「单手可达」检查会标出上 1/3 的大按钮；B 挪到下中和右下，检查通过。顺便看顶部只剩血条与队伍条后有多干净。"
+      }
+    },
+    {
+      "id": "P-view-distance",
+      "title": "按视距定字号与安全区：PC 60cm、电视 2.5m、掌机 30cm",
+      "problem": "同一张 1080p 画面，在 60cm 外的显示器、2.5m 外的电视、30cm 外的 7 寸掌机上，看起来的大小完全不同；电视还会因过扫描切掉四边。把 PC 的信息密度和字号直接搬上电视或掌机，是「字太小」的主要来源——而且主机向大作同样会被骂。",
+      "approaches": [
+        {
+          "name": "PC 键鼠（约 60cm）：高密度，正文 18px@1080p 起",
+          "params": {
+            "ctx.device": "pc",
+            "ctx.input": "kbm",
+            "typ.baseSize": 18,
+            "lay.safeMargin": 2,
+            "cnt.density": "3",
+            "lay.detail": "transient"
+          },
+          "whenToUse": "策略、模拟、MMO、卡牌：大量数字和规则文字",
+          "cost": "PC 默认 14px 只适合次要信息；把正文提到 18px 后表格行数减少，要靠分组和折叠",
+          "examples": [
+            "steam:281990",
+            "steam:1162750",
+            "steam:289070",
+            "iig:world-of-warcraft"
+          ]
+        },
+        {
+          "name": "主机 / 电视（约 2.5m）：正文 26px@1080p 起，5% 安全边，信息量向手机看齐",
+          "params": {
+            "ctx.device": "tv",
+            "ctx.input": "pad",
+            "typ.baseSize": 26,
+            "lay.safeMargin": 5,
+            "cnt.density": "1",
+            "ix.glyphs": "xbox",
+            "el.prompt.form": [
+              "legend"
+            ]
+          },
+          "whenToUse": "主机首发、客厅游戏、需要 PC 大屏模式的作品",
+          "cost": "一屏能放的条目大约减半，详情要分页或常驻侧栏；悬停提示基本不能用",
+          "examples": [
+            "steam:1903340",
+            "steam:1245620",
+            "steam:2215430",
+            "steam:1593500"
+          ]
+        },
+        {
+          "name": "掌机（Switch / Steam Deck，约 30cm 小屏）：手柄输入 + 中等字号",
+          "params": {
+            "ctx.device": "handheld",
+            "ctx.input": "pad",
+            "typ.baseSize": 18,
+            "lay.safeMargin": 3,
+            "ix.glyphs": "nintendo"
+          },
+          "whenToUse": "Switch / Deck 上的独立游戏；PC 游戏申请 Deck 认证",
+          "cost": "近看小屏，字号比电视小但比 PC 大；还会被接到电视上，所以要能跟随系统或设置放大",
+          "examples": [
+            "steam:367520",
+            "steam:1145360",
+            "steam:588650"
+          ]
+        },
+        {
+          "name": "背景出血、内容进安全区",
+          "params": {
+            "ctx.device": "tv",
+            "lay.safeMargin": 5,
+            "lay.container": "fullscreen",
+            "lay.overflow": "scrollH",
+            "chk.safeArea": true
+          },
+          "whenToUse": "电视菜单、横向滚动的卡片墙、侧边导航",
+          "cost": "要把「背景层」和「内容层」拆开排版：面板底色和滚动列表伸到边，焦点与文字留在 5% 以内",
+          "examples": [
+            "steam:2679460",
+            "steam:1687950"
+          ]
+        },
+        {
+          "name": "玩家可调：UI / 文字缩放与 HUD 分项开关",
+          "params": {
+            "a11y.uiScale": 1.5,
+            "a11y.textScale": 1.4,
+            "chk.overflow": "plus30",
+            "rel.hudVisibility": "contextual"
+          },
+          "whenToUse": "所有平台的兜底：沙发距离、视力、屏幕尺寸各不相同",
+          "cost": "版面必须能放大到 200% 而不需要横纵双向滚动；盒子宽度不能写死",
+          "examples": [
+            "steam:292030",
+            "steam:403640",
+            "steam:1174180"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "字号按 PC 近看定、没有文字缩放；主机作移植 PC 或 PC 作上电视都会撞上",
+          "examples": [
+            "steam:2322010",
+            "steam:1593500",
+            "steam:814380",
+            "steam:1551360",
+            "steam:892970"
+          ],
+          "reviewEvidence": "R3「字太小 / 看不清」38 款提到（58 条），≥ 2 条的 18 款包括 God of War Ragnarök 3、Valheim 3、God of War 2、Sekiro 2、Dishonored 2 2、The Callisto Protocol 2、Forza Horizon 5 2、Hades II 2——按我的归类，38 款里约一半是主机首发 / 跨平台 3A，说明「为电视设计」并不自动够大"
+        },
+        {
+          "desc": "关键文字、按钮、焦点框贴着屏幕边，电视过扫描或刘海切掉",
+          "examples": [],
+          "reviewEvidence": "无直接计数；工具的安全区检查（chk.safeArea）专门画出被切掉的区域"
+        },
+        {
+          "desc": "电视上依赖悬停提示与小字说明",
+          "examples": [],
+          "reviewEvidence": "无直接计数；微软 10 英尺指南明确建议电视上尽量不用 tooltip"
+        }
+      ],
+      "rules": [
+        "正文最小字号按视距：PC ≥ 18px@1080p、电视 ≥ 26px@1080p（Xbox 指南）；Steam Deck 在 1280×800 下最小 9px、建议 12px（约合 1080p 的 12 / 16px）",
+        "本工具 D-device 的 PC 默认 14px 只当次要信息字号用，正文按 18px 校",
+        "电视：交互元素与文字离边 ≥ 5%（微软 48 / 27 epx@960×540、tvOS 左右 80pt 上下 60pt、Android TV 48 / 27dp），背景与滚动列表可出血",
+        "电视一屏的信息量向手机看齐；从一边到另一边 ≤ 6 次方向键",
+        "所有字号由一个基准 × 阶梯比推出，才能一键整体缩放；提供到 200% 的文字缩放",
+        "电视上避免靠细微色差区分状态（不同电视色彩差异大），避免大面积纯白"
+      ],
+      "genres": [
+        "主机动作冒险 / RPG",
+        "客厅派对",
+        "Switch / Steam Deck 独立游戏",
+        "PC 策略 / 模拟（反向：上电视）"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 101（文字显示）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101",
+          "point": "默认最小字号：主机 26px@1080p、PC / VR 18px@1080p、移动端按 DPI 线性换算；应能放大到 200% 且不需双向滚动"
+        },
+        {
+          "title": "Microsoft · Designing for Xbox and TV",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/design/devices/designing-for-tv",
+          "point": "10 英尺体验约 3m 视距；电视信息量应接近手机而非桌面；交互与文字避开边缘 5%（960×540 epx 下上下 27、左右 48）；背景可出血；尽量不用 tooltip；电视色彩差异大"
+        },
+        {
+          "title": "Apple Human Interface Guidelines · Layout（tvOS）",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+          "point": "tvOS 主要内容上下内缩 60pt、左右 80pt，以免被过扫描切掉"
+        },
+        {
+          "title": "Android Developers · TV layouts",
+          "url": "https://developer.android.com/design/ui/tv/guides/styles/layouts",
+          "point": "960×540dp 画布上留约 5% 过扫描边（左右约 48dp、上下约 27dp），背景图不要裁到安全区内"
+        },
+        {
+          "title": "Steamworks · Steam Deck Compatibility Review Process",
+          "url": "https://partner.steamgames.com/doc/steamdeck/compat",
+          "point": "界面文字要在约 30cm 外易读：1280×800 下最小字符不低于 9px，建议 12px，并建议提供可调字号与对比度"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "tv",
+          "ctx.input": "pad",
+          "typ.baseSize": 14,
+          "lay.safeMargin": 1,
+          "cnt.density": "3",
+          "chk.safeArea": true,
+          "chk.viewDistance": "tv"
+        },
+        "b": {
+          "ctx.device": "tv",
+          "ctx.input": "pad",
+          "typ.baseSize": 26,
+          "lay.safeMargin": 5,
+          "cnt.density": "1",
+          "chk.safeArea": true,
+          "chk.viewDistance": "tv"
+        },
+        "lookAt": "打开「视距预览：电视 2.5m」与安全区检查：A 是 PC 密度直接上电视（14px、1% 边距、密集），字糊成一片且四角元素落进过扫描区；B 26px、5% 边距、稀疏，远看仍可读。"
+      }
+    },
+    {
+      "id": "P-aspect-anchor",
+      "title": "画幅适配：锚定与留白，不拉伸",
+      "problem": "16:9 之外，还有 21:9 / 32:9 超宽、4:3 老作品与平板、19.5:9 刘海长屏、竖屏。HUD 贴四角时在超宽屏上眼睛要扫到很远；整体拉伸会把圆形变椭圆；固定像素的界面在 4K 上缩成一小块。适配的核心是：哪些东西贴边、哪些收进中间、多出来的地方放什么。",
+      "approaches": [
+        {
+          "name": "关键 HUD 收进居中 16:9（超宽屏）",
+          "params": {
+            "ctx.aspect": "21x9",
+            "lay.safeMargin": 2,
+            "cnt.elements": [
+              "el.vitals",
+              "el.minimap",
+              "el.abilities"
+            ]
+          },
+          "whenToUse": "射击、竞速、动作：血量 / 弹药 / 小地图要在视线附近",
+          "cost": "两侧多出的视野只放环境；有的玩家想要贴边，所以要给「HUD 宽度」选项；样本里超宽编码很少（全库只有 2 张 21:9、都是电影黑边），Forza Horizon 5 是参数文档引用的超宽参照",
+          "examples": [
+            "steam:1551360"
+          ]
+        },
+        {
+          "name": "电影宽银幕黑边（演出、叙事、过场）",
+          "params": {
+            "ctx.aspect": "21x9",
+            "rel.hudVisibility": "hidden",
+            "cnt.density": "0"
+          },
+          "whenToUse": "叙事驱动、零 HUD、过场：用画幅本身传达「电影感」",
+          "cost": "在 16:9 屏上会损失上下画面；字幕可以压进下黑边",
+          "examples": [
+            "steam:2461850",
+            "steam:21690",
+            "steam:1774580"
+          ]
+        },
+        {
+          "name": "4:3 柱状黑边 + 装饰侧板",
+          "params": {
+            "ctx.aspect": "4x3",
+            "lay.playfield": "boxed",
+            "vis.ornament": "2",
+            "vis.motif": "geometric"
+          },
+          "whenToUse": "老作品重制、像素 / 固定画幅玩法",
+          "cost": "侧板美术要和画面同风格，否则像贴纸；侧板里不要放会被忽略的关键信息",
+          "examples": [
+            "steam:316790",
+            "steam:377840"
+          ]
+        },
+        {
+          "name": "固定玩法窗 + 两侧可伸缩的 HUD 边栏",
+          "params": {
+            "lay.playfield": "boardWindow",
+            "lay.hudOrg": "inMargin"
+          },
+          "whenToUse": "棋盘、卡牌、塔防、竖井式玩法：玩法区比例固定，画幅变化只改边栏宽",
+          "cost": "边栏在 4:3 上会被压得很窄，需要两套边栏排布",
+          "examples": [
+            "steam:1972440",
+            "steam:2738490",
+            "steam:2187290",
+            "steam:638510",
+            "steam:1397920"
+          ]
+        },
+        {
+          "name": "手机长屏：按刘海 / 圆角 / 底部横条加宽安全区",
+          "params": {
+            "ctx.device": "phone",
+            "ctx.aspect": "19.5x9",
+            "ctx.orientation": "landscape",
+            "lay.safeMargin": 4,
+            "chk.safeArea": true
+          },
+          "whenToUse": "所有横屏手游：刘海一侧与底部横条一侧都要避让",
+          "cost": "左右安全边不对称（刘海只在一侧，横屏翻转时互换），背景要画到真正的屏幕边",
+          "examples": [
+            "gameui:6750",
+            "gameui:6729",
+            "gameui:12771"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "固定像素 UI 不随分辨率缩放，或整体拉伸变形",
+          "examples": [
+            "steam:8870",
+            "steam:683900",
+            "steam:298110",
+            "steam:1267910"
+          ],
+          "reviewEvidence": "R3「UI 缩放 / 分辨率」12 款提到（19 条），≥ 2 条的 4 款：BioShock Infinite 4、RollerCoaster Tycoon Classic 3、Far Cry 4 2、Melvor Idle 2——老 PC 作与手机 / 网页移植作的固定尺寸界面"
+        },
+        {
+          "desc": "超宽屏上把小地图、血条贴到最外两角，或把为 16:9 绘制的菜单美术硬拉到 21:9",
+          "examples": [],
+          "reviewEvidence": "评测统计没有超宽专项（样本以 16:9 商店截图为主）"
+        }
+      ],
+      "rules": [
+        "元素锚定到角和边（Godot：anchors + stretch aspect = expand），尺寸跟着整体缩放走，不跟宽度拉伸",
+        "关键 HUD 默认收进居中 16:9，并提供「HUD 宽度 / 安全区」滑条让玩家放开",
+        "为 16:9 绘制的过场与菜单美术在超宽屏上加黑边，背景插画按比例放大裁切，不改变宽高比",
+        "4:3 或固定画幅的黑边用装饰或 HUD 填，不要整片纯黑浪费",
+        "按 1080p 基准设计、整体缩放到 1440p / 4K；不要用固定像素",
+        "测试至少 16:9、21:9、32:9、4:3、19.5:9 横竖五种，每种看 HUD、地图、背包、对话、过场"
+      ],
+      "genres": [
+        "PC 射击 / 竞速 / 动作（超宽常见）",
+        "模拟驾驶",
+        "老作品重制",
+        "像素 / 棋盘类",
+        "横屏手游"
+      ],
+      "sources": [
+        {
+          "title": "Godot Docs · Multiple resolutions",
+          "url": "https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html",
+          "point": "超宽与长屏都已常见，推荐 stretch mode = canvas_items + aspect = expand，Control 锚到正确的角；keep 模式会加黑边；content_scale_factor 可在运行时整体缩放 UI"
+        },
+        {
+          "title": "Coherent Gameface 指南 · Handling Aspect Ratios with Media Queries",
+          "url": "https://guide.coherent-labs.com/layout-assets-and-styling/styling--scalability/handling-aspect-ratios-with-media-queries/",
+          "point": "贴极端边缘的元素在超宽上相距过远；建议关键 HUD 放进居中、限宽的安全层，沉浸元素放全屏边缘层，再按比例微调"
+        },
+        {
+          "title": "Apple Human Interface Guidelines · Layout",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+          "point": "背景插画在加黑边或极宽窗口里不要改变宽高比，按比例放大铺满，并预期它会超出常规可见区"
+        },
+        {
+          "title": "Microsoft · Designing for Xbox and TV",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/design/devices/designing-for-tv",
+          "point": "背景和导航面板可以画到屏幕边缘以免「被框住」，交互与文字留在安全区内"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.aspect": "16x9",
+          "cnt.elements": [
+            "el.vitals",
+            "el.minimap",
+            "el.abilities",
+            "el.objective"
+          ]
+        },
+        "b": {
+          "ctx.aspect": "21x9",
+          "cnt.elements": [
+            "el.vitals",
+            "el.minimap",
+            "el.abilities",
+            "el.objective"
+          ]
+        },
+        "lookAt": "切到 21:9 后画面两侧加宽，但 HUD 仍留在居中 16:9 区域——小地图和血条到画面中心的距离不变，两侧只多出环境。再试 4:3 + lay.playfield = boxed，看黑边如何用装饰填。"
+      }
+    },
+    {
+      "id": "P-detail-without-hover",
+      "title": "详情不能只挂在悬停上",
+      "problem": "键鼠游戏用悬停提示承载大量规则文字（关键词、数值来源、成本）。触屏没有悬停，手柄要等焦点停留；移植时这些信息最先丢。问题是：同一份「详情」在三种输入下各放在哪。",
+      "approaches": [
+        {
+          "name": "悬停提示（键鼠）",
+          "params": {
+            "ctx.input": "kbm",
+            "lay.detail": "transient",
+            "el.selection.form": "tooltip"
+          },
+          "whenToUse": "PC 策略、卡牌构筑、CRPG：信息多、只在需要时看",
+          "cost": "嵌套提示（提示里的关键词再悬停）在手柄 / 触屏上无法直接搬",
+          "examples": [
+            "steam:281990",
+            "steam:289070",
+            "iig:slay-the-spire",
+            "steam:2379780",
+            "steam:1188930"
+          ]
+        },
+        {
+          "name": "焦点即详情：常驻侧栏（手柄友好）",
+          "params": {
+            "lay.composition": "splitLR",
+            "lay.detail": "persistent",
+            "ix.mode": "select",
+            "cnt.dataShape": "collection"
+          },
+          "whenToUse": "背包、装备、技能、图鉴；手柄移动焦点，右栏同步显示",
+          "cost": "占掉 1/3 屏宽，格子区变小；竖屏要改成上下",
+          "examples": [
+            "steam:1245620",
+            "steam:292030",
+            "steam:2358720",
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "steam:632470"
+          ]
+        },
+        {
+          "name": "触屏：点选 + 说明条 / 底部浮层",
+          "params": {
+            "ctx.input": "touch",
+            "lay.detail": "transient",
+            "lay.container": "sheet",
+            "ix.confirm": "selectConfirm"
+          },
+          "whenToUse": "手机背包、合成、卡牌：点一下看详情，再点一下或按确认才执行",
+          "cost": "多一步操作；浮层盖住一半盘面",
+          "examples": [
+            "gameui:7039",
+            "gameui:12983",
+            "gameui:8436"
+          ]
+        },
+        {
+          "name": "行内展开（列表行原地展开）",
+          "params": {
+            "lay.detail": "inline",
+            "lay.overflow": "scrollV",
+            "cmp.listRow": [
+              "icon",
+              "title",
+              "desc"
+            ]
+          },
+          "whenToUse": "任务列表、设置说明、日志；一维列表在三种输入下都好用",
+          "cost": "展开时列表跳动，要有动画与焦点保持",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "触屏 / 手柄版保留了只能悬停才看得到的数值或规则",
+          "examples": [],
+          "reviewEvidence": "R3「菜单 / 界面难用」24 款（≥ 2 条）以建造 / 经营 / 生存类最集中；关键词分不出是否与悬停有关，只作背景"
+        },
+        {
+          "desc": "手柄焦点一停就自动弹 tooltip，挡住下一个格子",
+          "examples": [],
+          "reviewEvidence": "无直接计数；微软 10 英尺指南建议电视上尽量不用 tooltip"
+        }
+      ],
+      "rules": [
+        "每条只在 tooltip 里的信息，在手柄 / 触屏版必须有常驻或可呼出的去处",
+        "手柄：焦点即详情（常驻侧栏），二级说明用固定键呼出（如 Y / 右摇杆按下），不靠停留计时",
+        "触屏：点一下选中看详情、再点或按确认才执行；长按查看必须有点按替代",
+        "键鼠悬停提示要能把鼠标移进去、可关闭、不自动消失",
+        "术语表 / 关键词说明做成可导航的列表，而不是只能逐层悬停"
+      ],
+      "genres": [
+        "策略",
+        "卡牌构筑",
+        "CRPG",
+        "建造经营",
+        "Roguelike"
+      ],
+      "sources": [
+        {
+          "title": "W3C · WCAG 2.2 · 1.4.13 Content on Hover or Focus",
+          "url": "https://www.w3.org/TR/WCAG22/#content-on-hover-or-focus",
+          "point": "悬停或聚焦出现的附加内容应可关闭、可把指针移入、并持续显示到用户移开或关闭"
+        },
+        {
+          "title": "Microsoft · Designing for Xbox and TV",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/design/devices/designing-for-tv",
+          "point": "手柄下 tooltip 在获得焦点后片刻自动出现又消失，过多会分散注意，电视上应尽量避免"
+        },
+        {
+          "title": "Microsoft · Gamepad and remote control interactions",
+          "url": "https://learn.microsoft.com/en-us/windows/apps/design/input/gamepad-and-remote-interactions",
+          "point": "右键的上下文菜单在手柄上用 Menu 键打开；只有文字的滚动区域需要「焦点进入」才能读完"
+        },
+        {
+          "title": "Apple Human Interface Guidelines · Game controls",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/game-controls",
+          "point": "触屏上尽量用「点选画面中的物体」代替叠加按钮；用双击 / 长按承载同一动作的变体"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "tablet",
+          "ctx.input": "touch",
+          "cnt.screen": "screen.inventory",
+          "lay.composition": "single",
+          "lay.detail": "transient"
+        },
+        "b": {
+          "ctx.device": "tablet",
+          "ctx.input": "touch",
+          "cnt.screen": "screen.inventory",
+          "lay.composition": "splitLR",
+          "lay.detail": "persistent"
+        },
+        "lookAt": "平板触屏背包：A 的详情是「临时出现」（键鼠时等于悬停窗，触屏下需要额外弹出且被手指挡住）；B 选中格的说明常驻右栏，手指操作左侧网格时不挡字。把 ctx.input 换成 pad 看两者在手柄下的差别。"
+      }
+    },
+    {
+      "id": "P-input-parity",
+      "title": "每种输入都走得完全程：一套界面，多套操作",
+      "problem": "菜单只认鼠标、游戏只认手柄、起名没有屏幕键盘、改键不全——任何一处断掉，玩家就被挡在门外。PC 同时插手柄、Steam Deck、云游戏、手机外接手柄让「当前设备」随时变化。设计问题是：做一套能自动切换的界面，还是为某种输入单独重排。",
+      "approaches": [
+        {
+          "name": "同一布局，按最近输入自动换提示与焦点",
+          "params": {
+            "ctx.input": "hybrid",
+            "ix.focus": "outline",
+            "el.prompt.form": [
+              "legend"
+            ],
+            "cmp.optionEnum": "arrows",
+            "cmp.optionRange": "slider"
+          },
+          "whenToUse": "动作 / 独立游戏，界面本来就不复杂",
+          "cost": "每个控件都要同时可点、可聚焦、可按方向调值（下拉框对手柄不友好，改左右切换）",
+          "examples": [
+            "steam:1145360",
+            "steam:2379780",
+            "steam:1245620"
+          ]
+        },
+        {
+          "name": "为手柄单独重排（命令栏 + 肩键切页 + 轮盘）",
+          "params": {
+            "ctx.device": "tv",
+            "ctx.input": "pad",
+            "lay.nav": "tabsTop",
+            "cmp.tab": "iconText",
+            "lay.arrangement": "ring"
+          },
+          "whenToUse": "PC 上用到整张键盘的 CRPG / 大战略移植主机",
+          "cost": "等于再做一套 UI；两边功能必须一一对上",
+          "examples": [
+            "steam:1086940",
+            "steam:281990"
+          ]
+        },
+        {
+          "name": "触屏按钮同时标键位（一套 HUD 兼容触屏 / 手柄 / 键鼠）",
+          "params": {
+            "ctx.input": "touch",
+            "el.prompt.form": [
+              "touchButtons",
+              "hotkeyBadge"
+            ],
+            "ix.touchCluster": "arc"
+          },
+          "whenToUse": "手游同时上 PC 或支持外接手柄",
+          "cost": "纯触屏时键位字母是噪音，最好按设备显隐",
+          "examples": [
+            "gameui:12771",
+            "gameui:1691"
+          ]
+        },
+        {
+          "name": "VR / 体感：UI 挂在手或手持物上",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "el.vitals.attachTo": "held",
+            "el.vitals.diegesis": "diegetic",
+            "cnt.density": "0"
+          },
+          "whenToUse": "VR，或手本身就是输入的体感游戏",
+          "cost": "没有屏幕边可贴；手持物上的字要按 VR 的 18px 下限放大；需要非体感的替代输入",
+          "examples": [
+            "steam:546560",
+            "steam:620980",
+            "steam:1232570"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "菜单只能用鼠标（或只能用 D-pad、不能用摇杆），和游戏本体的输入方式不一致",
+          "examples": [],
+          "reviewEvidence": "R3「手柄 / 键位不好」20 款 30 条；「菜单 / 界面难用」24 款（≥ 2 条）；两类都无法细分原因"
+        },
+        {
+          "desc": "需要输入文字（起名、存档名、聊天）却没有手柄可用的屏幕键盘",
+          "examples": [],
+          "reviewEvidence": "无直接计数；Steam Deck 认证把它列为必须项"
+        },
+        {
+          "desc": "UI 动画与输入响应慢，手柄连按时界面跟不上",
+          "examples": [
+            "steam:1252330",
+            "steam:1091500",
+            "steam:546560"
+          ],
+          "reviewEvidence": "R3「UI 卡顿 / 响应慢」11 款 18 条：DEATHLOOP 3、Prince of Persia 2、Half-Life: Alyx 2、Cyberpunk 2077 2、Enshrouded 2、Yi Xian 2"
+        }
+      ],
+      "rules": [
+        "能用某种输入玩游戏，就能用同一种输入走完所有菜单（含设置、改键、退出）",
+        "UI 只用单次、不同时按下的数字按键也能操作；滑条可以点一下进入、方向键调值",
+        "所有操作可重映射；摇杆双轴可分别反转；模拟灵敏度可调 ±50%",
+        "需要文字输入时调用平台屏幕键盘，或自带只用手柄就能完成的输入",
+        "下拉框在手柄下改成左右切换或分段按钮；拖拽一定有点选替代",
+        "设备切换不打断当前界面：焦点、滚动位置、已选项保持不变"
+      ],
+      "genres": [
+        "所有跨平台发行",
+        "PC + Steam Deck",
+        "主机移植的策略 / CRPG",
+        "外接手柄的手游",
+        "VR"
+      ],
+      "sources": [
+        {
+          "title": "Game Accessibility Guidelines · Ensure all areas of the UI can be accessed using the same input method as the gameplay",
+          "url": "https://gameaccessibilityguidelines.com/ensure-that-all-areas-of-the-user-interface-can-be-accessed-using-the-same-input-method-as-the-gameplay/",
+          "point": "能用某种输入玩游戏，就应能用它操作全部菜单；举了键盘游戏配鼠标菜单、只能 D-pad 不能摇杆等反例"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 107（输入）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107",
+          "point": "UI 要同时支持数字与模拟导航、单次非同时按键；所有控制可重映射、可反转轴、灵敏度可调；移动端也要支持手柄、键盘等非触屏输入"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 112（UI 导航）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/112",
+          "point": "UI 要能被鼠标、键盘、手柄等多种输入完整导航；缩放或分辨率改变后导航顺序随视觉布局更新"
+        },
+        {
+          "title": "Apple Human Interface Guidelines · Game controls",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/game-controls",
+          "point": "支持手柄时也要保留平台默认输入（iPhone / iPad 触屏、Mac 键鼠、Apple TV 遥控器）；自动检测配对；键盘优先单键命令并允许自定义"
+        },
+        {
+          "title": "Steamworks · Steam Deck Compatibility Review Process",
+          "url": "https://partner.steamgames.com/doc/steamdeck/compat",
+          "point": "玩家不应需要改游戏内设置才能启用手柄；需要文字输入时必须能用手柄完成"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "pc",
+          "ctx.input": "pad",
+          "cnt.screen": "screen.settings",
+          "cmp.optionEnum": "dropdown",
+          "cmp.optionRange": "slider",
+          "ix.focus": "outline"
+        },
+        "b": {
+          "ctx.device": "pc",
+          "ctx.input": "pad",
+          "cnt.screen": "screen.settings",
+          "cmp.optionEnum": "arrows",
+          "cmp.optionRange": "segmentedBar",
+          "ix.focus": "bar",
+          "el.prompt.form": [
+            "legend"
+          ]
+        },
+        "lookAt": "PC 插手柄打开设置页：A 是鼠标思维（下拉框 + 细滑条），手柄要先进入下拉再上下选；B 改成左右切换 ◁ ▷ 与分格条，整行色条焦点，底部图例写清 ◁▷ 调值 / B 返回——同一份设置在键鼠下照样能点。"
+      }
+    },
+    {
+      "id": "P-shared-screen",
+      "title": "同屏多人：每个玩家要一眼对上「我是哪个、我的手柄是哪个」",
+      "problem": "本地合作、分屏、派对游戏里，多名玩家共用一块屏幕、各拿各的设备。HUD 要回答「哪个角色 / 哪条血是我」，提示要按每个人手里的设备显示；分屏时每个视口只有半屏，按整屏尺寸做的 HUD 会挤满。",
+      "approaches": [
+        {
+          "name": "共享一屏 + 顶部按玩家色排开的头像条",
+          "params": {
+            "ctx.players": "sharedCoop",
+            "el.party.form": "frames",
+            "el.party.screenAnchor": "tc",
+            "col.coding": [
+              "player"
+            ]
+          },
+          "whenToUse": "清版动作、派对动作：2–4 人在同一镜头里",
+          "cost": "颜色要和角色服装 / 光圈一致，而且不能只靠颜色（加编号或名字）",
+          "examples": [
+            "steam:204360"
+          ]
+        },
+        {
+          "name": "分屏视口，各自 HUD 缩进自己的角落",
+          "params": {
+            "ctx.players": "split",
+            "lay.playfield": "split",
+            "cnt.density": "1",
+            "a11y.uiScale": 0.85
+          },
+          "whenToUse": "双人合作冒险、竞速、射击",
+          "cost": "每个视口的安全区与字号要按半屏重新算；横分还是竖分影响 HUD 锚点",
+          "examples": [
+            "steam:1426210"
+          ]
+        },
+        {
+          "name": "信息挂在各自的角色 / 塔 / 棋子上",
+          "params": {
+            "ctx.players": "party4",
+            "el.timer.attachTo": "player",
+            "el.party.attachTo": "player",
+            "rel.worldRender": "billboard"
+          },
+          "whenToUse": "同屏对战的派对游戏：每人一块区域，分数直接写在自己的东西上",
+          "cost": "角色重叠时挂件会互相遮挡；镜头拉远时要保最小字号",
+          "examples": [
+            "steam:437920"
+          ]
+        },
+        {
+          "name": "四角 / 侧列玩家牌（桌游 / 回合制多人）",
+          "params": {
+            "ctx.players": "board",
+            "el.party.form": "tag",
+            "ctx.timeModel": "turn"
+          },
+          "whenToUse": "桌游数字版、大富翁式、回合制多人",
+          "cost": "当前行动者要额外强调（放大或高亮），否则四角一样重",
+          "examples": [
+            "steam:282800",
+            "steam:290340"
+          ]
+        },
+        {
+          "name": "手机当手柄：个人信息在手机，大屏只放公共信息",
+          "params": {
+            "ctx.players": "party4",
+            "ctx.device": "tv",
+            "cnt.density": "1",
+            "typ.baseSize": 26
+          },
+          "whenToUse": "客厅派对、需要私密选择（答题、投票、手牌）的游戏",
+          "cost": "要做两套 UI（大屏 + 手机网页）；加入流程（房间码）必须在大屏上醒目",
+          "examples": [
+            "steam:1211630"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "分屏时 HUD 仍按整屏尺寸，半个视口被 UI 占满；或只用颜色区分玩家",
+          "examples": [],
+          "reviewEvidence": "评测统计没有同屏多人专项；色盲相关见色彩主题"
+        },
+        {
+          "desc": "多人各用不同设备时，提示只按 1P 的设备显示",
+          "examples": [],
+          "reviewEvidence": "无直接计数；Apple 指南要求为每位玩家显示其手柄对应的字形并标注玩家"
+        }
+      ],
+      "rules": [
+        "每名玩家 = 颜色 + 编号 / 名字 + 位置，三者至少两样同时出现",
+        "每名玩家的按键提示按他自己的设备显示",
+        "分屏按视口重算 HUD：字号不低于设备下限，安全区只在外缘",
+        "共享镜头时个人信息尽量挂到角色上，屏幕边只放公共信息（时间、比分）",
+        "加入 / 退出、断开手柄的提示要能被任何一位玩家处理"
+      ],
+      "genres": [
+        "本地合作动作",
+        "派对游戏",
+        "分屏竞速 / 射击",
+        "桌游数字版",
+        "客厅答题"
+      ],
+      "sources": [
+        {
+          "title": "Apple Human Interface Guidelines · Game controls",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/game-controls",
+          "point": "支持多个手柄时为每位玩家显示其所用手柄的字形，多人时为每个手柄标注玩家"
+        },
+        {
+          "title": "Game Accessibility Guidelines · Ensure no essential information is conveyed by a colour alone",
+          "url": "https://gameaccessibilityguidelines.com/ensure-no-essential-information-is-conveyed-by-a-colour-alone/",
+          "point": "关键信息不能只靠颜色传达，要配合符号、形状或文字（玩家区分同理）"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 101（文字显示）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101",
+          "point": "最小字号按设备与视距定，分屏后每个视口的文字同样要满足"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.players": "single",
+          "ctx.device": "tv",
+          "cnt.elements": [
+            "el.vitals",
+            "el.party",
+            "el.timer"
+          ],
+          "el.party.form": "frames",
+          "el.party.screenAnchor": "tl"
+        },
+        "b": {
+          "ctx.players": "sharedCoop",
+          "ctx.device": "tv",
+          "cnt.elements": [
+            "el.vitals",
+            "el.party",
+            "el.timer"
+          ],
+          "el.party.form": "frames",
+          "el.party.screenAnchor": "tc",
+          "col.coding": [
+            "player"
+          ]
+        },
+        "lookAt": "A 单人布局：队伍条在左上，看不出谁是谁；B 共享一屏的本地合作：头像条移到顶部中间、按玩家色编码，每人一格。再把 ctx.players 改成 split 看分屏时 HUD 如何按视口缩进。"
+      }
+    },
+    {
+      "id": "P-confirm-by-input",
+      "title": "防误触与确认方式按输入选：抬起触发、可取消、少用长按与连打",
+      "problem": "不同输入的误触来源不同：鼠标是点错、触屏是手指按下就触发或滑过别的按钮、手柄是连按时惯性多按一下。不可逆操作（出售、跳过剧情、放弃关卡）需要防误触，但长按和连打本身又是很多玩家的障碍。",
+      "approaches": [
+        {
+          "name": "即点即生效 + 撤销（键鼠、低风险操作）",
+          "params": {
+            "ctx.input": "kbm",
+            "ix.confirm": "instant",
+            "ix.press": "darken"
+          },
+          "whenToUse": "建造放置、整理背包、玩具式创作：操作频繁、可逆",
+          "cost": "必须有可靠的撤销 / 重做；撤销入口要一直可见",
+          "examples": [
+            "steam:2533960",
+            "steam:1291340"
+          ]
+        },
+        {
+          "name": "选中 + 确认按钮（触屏 / 回合制）",
+          "params": {
+            "ix.confirm": "selectConfirm",
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "bc"
+          },
+          "whenToUse": "触屏战棋、卡牌出牌、捏脸选项：先看清再执行",
+          "cost": "多一步；确认按钮要在拇指区并且足够大",
+          "examples": [
+            "gameui:7158",
+            "gameui:8436",
+            "iig:slay-the-spire"
+          ]
+        },
+        {
+          "name": "幽灵预览 + ✓ / ✕（放置类）",
+          "params": {
+            "ix.confirm": "ghost",
+            "el.overlay.form": [
+              "buildGrid"
+            ],
+            "ctx.input": "touch"
+          },
+          "whenToUse": "城建、拼图放置、地块摆放：在世界里预览结果再落子",
+          "cost": "预览要清楚标出合法 / 非法，✓ / ✕ 要跟着预览物移动且不挡住它",
+          "examples": [
+            "steam:1046030",
+            "steam:1455840"
+          ]
+        },
+        {
+          "name": "长按确认 / 长按跳过（不可逆、低频）",
+          "params": {
+            "ix.confirm": "hold",
+            "ix.skip": "hold",
+            "ix.skipAnchor": "br"
+          },
+          "whenToUse": "跳过过场、拆除建筑、放弃进度",
+          "cost": "长按对手部不便的玩家是障碍，必须能在设置里改成点按 + 二次确认；进度圈要明显；参考库里的跳过按钮（gameui:4796 右上跳过、gameui:3033 自动 / 跳过一组）都是点按式，没有长按样本",
+          "examples": []
+        },
+        {
+          "name": "二次确认弹窗（不可逆、低频、后果大）",
+          "params": {
+            "ix.confirm": "double",
+            "lay.container": "modal",
+            "ix.close": "cancelBtn"
+          },
+          "whenToUse": "删除存档、出售稀有物、退出联机",
+          "cost": "滥用会让玩家养成不看就点确认的习惯；默认焦点应停在「取消」上",
+          "examples": [
+            "gameui:12983"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "QTE / 连打 / 长按作为唯一的操作方式，键鼠版提示也没有适配",
+          "examples": [
+            "steam:960910",
+            "steam:960990"
+          ],
+          "reviewEvidence": "Heavy Rain「手柄 / 键位不好」抱怨 3 条（该类第二多）；同类互动电影 Beyond: Two Souls 的按键提示只在 QTE 时浮现"
+        },
+        {
+          "desc": "触屏按钮在手指按下瞬间触发，不能滑出取消；跳过按钮紧贴主操作键",
+          "examples": [],
+          "reviewEvidence": "R3 不含手游，无计数；Xbox 指南把「抬起触发、可取消」列为移动端要求"
+        }
+      ],
+      "rules": [
+        "点按 / 点击在抬起时生效，手指或指针移出目标即取消",
+        "可逆操作给撤销，不可逆操作给确认——二选一，不要两样都没有",
+        "长按只用于低频、不可逆的操作，时长短并显示进度；设置里可改成点按",
+        "QTE 和连打提供「按住代替连打」「自动完成」或跳过选项",
+        "二次确认弹窗默认焦点在取消上；手柄上 B 永远等于取消",
+        "跳过按钮离主操作键足够远，并避开手柄连按时最容易误触的确认键"
+      ],
+      "genres": [
+        "互动电影 / 叙事",
+        "建造放置",
+        "触屏战棋 / 卡牌",
+        "视觉小说（跳过 / 自动）",
+        "所有含不可逆操作的界面"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 107（输入）",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107",
+          "point": "单指针操作在抬起时触发、可在完成前移开取消，否则要提供撤销；避免长按、同时按、快速连打与 QTE，必要时提供切换 / 自动 / 跳过；移动端提供滑出取消等纠错方式"
+        },
+        {
+          "title": "Game Accessibility Guidelines · Avoid / provide alternatives to requiring buttons to be held down",
+          "url": "https://gameaccessibilityguidelines.com/avoid-provide-alternatives-to-requiring-buttons-to-be-held-down/",
+          "point": "需要持续按住的操作应提供替代（如切换式），因为长按对部分玩家是障碍"
+        },
+        {
+          "title": "Apple Human Interface Guidelines · Game controls",
+          "url": "https://developer.apple.com/design/human-interface-guidelines/game-controls",
+          "point": "触屏上按下状态要在手指遮挡时仍可见；可用双击、长按承载同一动作的变体以减少按钮数"
+        }
+      ],
+      "demo": {
+        "a": {
+          "ctx.device": "phone",
+          "ctx.orientation": "portrait",
+          "ctx.input": "touch",
+          "cnt.screen": "screen.hud",
+          "cnt.subtype": "confirm",
+          "ix.confirm": "instant",
+          "ix.close": "xTopRight"
+        },
+        "b": {
+          "ctx.device": "phone",
+          "ctx.orientation": "portrait",
+          "ctx.input": "touch",
+          "cnt.screen": "screen.hud",
+          "cnt.subtype": "confirm",
+          "ix.confirm": "double",
+          "ix.close": "cancelBtn",
+          "lay.container": "sheet"
+        },
+        "lookAt": "竖屏确认弹窗：A 即点即生效、关闭只有右上小 ×；B 改成二次确认 + 底部浮层 + 底部取消按钮，取消与确认都在拇指区，关闭不用伸手到右上。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1149 @@
+{
+ "id": "rep.balatro",
+ "name": "Balatro",
+ "card": "steam:2379780",
+ "genre": "card",
+ "family": "fam.crt-postfx",
+ "pack": "deckBuilder",
+ "art": {
+  "scene": "backdrop-cards",
+  "values": {
+   "surface.screen": "crt",
+   "color.palette": "night",
+   "color.brightness": 0.8,
+   "color.saturation": 0.9
+  }
+ },
+ "base": {
+  "hud.style": "godotDefault",
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "ctx.timeModel": "turn",
+  "ctx.input": "kbm",
+  "col.source": "skin",
+  "col.lightness": "dark",
+  "col.strategy": "polychrome",
+  "col.surface": "#26363a",
+  "col.surface2": "#1b2629",
+  "col.text": "#ffffff",
+  "col.accent": "#009dff",
+  "col.accent2": "#fe5f55",
+  "col.focus": "#fda200",
+  "col.border": "#1b2629",
+  "col.dynamic": "perMode",
+  "col.coding": [
+   "status",
+   "rarity",
+   "lineId"
+  ],
+  "col.saturation": 1.2,
+  "typ.body.family": "pixel",
+  "typ.body.weight": "regular",
+  "typ.body.case": "asIs",
+  "typ.display.family": "pixel",
+  "typ.display.weight": "bold",
+  "typ.display.case": "asIs",
+  "typ.numerals.family": "pixel",
+  "typ.legibility": "shadow",
+  "typ.titleFx": "shadow",
+  "typ.baseSize": 34,
+  "typ.scale": 1.4,
+  "hier.inline": "keyword",
+  "vis.pixelScale": "off",
+  "vis.corner": "round",
+  "vis.cornerSize": 10,
+  "vis.opacity": 1,
+  "vis.fill": "solid",
+  "vis.stroke": "none",
+  "vis.depth": "hardDrop",
+  "vis.gloss": "none",
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "vis.iconStyle": "pixel",
+  "ast.iconSet": "asset",
+  "ast.frame": "procedural",
+  "ast.fx": [
+   "scanlines"
+  ],
+  "rel.followPost": "full",
+  "rel.harmony": "sameMedium",
+  "lay.grouping": "tonalInset",
+  "cmp.button": "text",
+  "cmp.buttonBox": true,
+  "mo.easing": "spring",
+  "mo.duration": 0.3,
+  "mo.juice": 1,
+  "mo.valueChange": "countUp",
+  "mo.idle": "sway",
+  "mo.enter": "pop",
+  "mo.frameRate": "smooth",
+  "mo.textReveal": "instant",
+  "ix.focus": "scale",
+  "ix.press": "squash",
+  "st.cooldown": "desat",
+  "st.statusMark": "tag"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/card/img/steam_2379780_0.jpg",
+   "values": {
+    "uip.layout": "layout.card",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "rel.behind": "replaced",
+    "ast.bgArt": "shaderSwirl",
+    "ast.bgColors": [
+     "#4a9f6e",
+     "#235c3f"
+    ],
+    "rel.hudVisibility": "always",
+    "cnt.density": 4,
+    "cnt.elements": [
+     "el.objective",
+     "el.timer",
+     "el.meter",
+     "el.resources",
+     "el.clock",
+     "el.toolbar",
+     "el.abilities",
+     "el.abilities#2",
+     "el.consumables",
+     "el.piles"
+    ],
+    "el.objective.form": [
+     "blindPlate"
+    ],
+    "el.objective.screenAnchor": "tl",
+    "el.objective.priority": "secondary",
+    "el.objective.scale": 1.1,
+    "el.timer.form": "scorePill",
+    "el.timer.screenAnchor": "tl",
+    "el.timer.scale": 1.2,
+    "el.meter.form": "formula",
+    "el.meter.screenAnchor": "ml",
+    "el.meter.scale": 1.0,
+    "el.meter.priority": "primary",
+    "col.accent@el.meter": "#009dff",
+    "col.accent2@el.meter": "#fe5f55",
+    "el.resources.form": "statGrid",
+    "el.resources.screenAnchor": "bl",
+    "el.resources.scale": 1.2,
+    "col.accent@el.resources": "#f5b13d",
+    "col.lineColors": [
+     "#f5b13d",
+     "#009dff",
+     "#fe5f55"
+    ],
+    "el.clock.form": "dayCounter",
+    "el.clock.screenAnchor": "bl",
+    "el.clock.scale": 1.1,
+    "el.toolbar.form": "bigButtons",
+    "el.toolbar.screenAnchor": "bl",
+    "col.bad@el.toolbar": "#fe5f55",
+    "col.warn@el.toolbar": "#fda200",
+    "el.abilities.form": "cards",
+    "el.abilities.arrangement": "fan",
+    "el.abilities.screenAnchor": "bc",
+    "el.abilities.scale": 1.4,
+    "col.surface@el.abilities": "#f4f1ea",
+    "cmp.card@el.abilities": "playingCard",
+    "hier.emphasis": [
+     "size",
+     "color"
+    ],
+    "ix.mode": "select",
+    "lay.hudOrg": "edgeBar",
+    "lay.hudEdge": [
+     "left"
+    ],
+    "lay.edgeBarSlots": [
+     "el.objective",
+     "el.timer",
+     "el.meter",
+     "el.toolbar|el.resources",
+     "el.clock"
+    ],
+    "el.toolbar.count": 2,
+    "el.toolbar.arrangement": "column",
+    "el.abilities#2.form": "cards",
+    "el.abilities#2.arrangement": "row",
+    "el.abilities#2.screenAnchor": "tc",
+    "el.abilities#2.count": 4,
+    "el.abilities#2.scale": 0.8,
+    "cmp.card@el.abilities#2": "collection",
+    "el.consumables.screenAnchor": "tr",
+    "el.consumables.tray": "inset",
+    "el.consumables.count": 2,
+    "el.consumables.filled": 0,
+    "el.consumables.valueLabel": "currentMax",
+    "el.piles.screenAnchor": "br",
+    "el.piles.valueLabel": "currentMax"
+   }
+  },
+  {
+   "key": "hand",
+   "ref": "qa/refs-cache/r2/card/img/steam_2379780_5.jpg",
+   "values": {
+    "uip.layout": "layout.card",
+    "cnt.screen": "screen.hud",
+    "cnt.stage": "confirm",
+    "lay.container": "overlay",
+    "rel.behind": "replaced",
+    "ast.bgArt": "shaderSwirl",
+    "ast.bgColors": [
+     "#e8b23a",
+     "#9c6a12"
+    ],
+    "cnt.elements": [
+     "el.notify",
+     "el.abilities",
+     "el.cta"
+    ],
+    "el.notify.form": [
+     "banner"
+    ],
+    "el.notify.screenAnchor": "tc",
+    "el.notify.scale": 1.3,
+    "el.notify.priority": "primary",
+    "el.abilities.form": "cards",
+    "el.abilities.arrangement": "row",
+    "el.abilities.screenAnchor": "center",
+    "el.abilities.scale": 1.25,
+    "el.cta.form": "triple",
+    "el.cta.screenAnchor": "bc",
+    "el.cta.scale": 1.1,
+    "st.cooldown": "desat",
+    "hier.emphasis": [
+     "size"
+    ],
+    "hier.cta": "color",
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "col.surface@el.abilities": "#f4f1ea",
+    "col.surface@el.cta": "#fda200",
+    "col.semantic": "blueRedOrange",
+    "el.abilities.count": 8,
+    "vis.opacity@el.notify": 0,
+    "vis.stroke@el.notify": "none",
+    "cmp.card@el.abilities": "playingCard",
+    "lay.cardOverlap@el.abilities": 0.15,
+    "el.abilities.valueLabel": "currentMax",
+    "st.rarityCue@el.abilities": [
+     "finish"
+    ],
+    "st.selected@el.abilities": "lift"
+   }
+  },
+  {
+   "key": "draft",
+   "ref": "qa/refs-cache/r2/card/img/steam_2379780_1.jpg",
+   "values": {
+    "uip.screen": "tpl.draft3",
+    "cnt.subtype": "draft3",
+    "lay.container": "overlay",
+    "cmp.modal": "floating",
+    "rel.behind": "replaced",
+    "ast.bgArt": "shaderSwirl",
+    "ast.bgColors": [
+     "#8e58c9",
+     "#4b2a78"
+    ],
+    "ast.bgConfetti": true,
+    "rel.dim": 0,
+    "cnt.dataShape": "none",
+    "cnt.itemCount": 1,
+    "cmp.slot": "tallCard",
+    "cmp.card": "fullArt",
+    "lay.detail": "transient",
+    "cnt.textLength": "line",
+    "st.rarityCue": [],
+    "col.coding": [
+     "lineId"
+    ],
+    "st.statusMark": "tag",
+    "cmp.plate@stateTag": "pill",
+    "cnt.elements": [
+     "el.abilities",
+     "el.selection",
+     "el.reward"
+    ],
+    "el.abilities.form": "cards",
+    "el.abilities.arrangement": "fan",
+    "el.abilities.screenAnchor": "tc",
+    "el.abilities.scale": 1.2,
+    "el.selection.form": "tooltip",
+    "el.selection.screenAnchor": "center",
+    "el.reward.form": "bigCard",
+    "el.reward.screenAnchor": "bc",
+    "el.reward.scale": 0.7,
+    "ast.fx": [
+     "scanlines"
+    ],
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "ix.dismiss": "button",
+    "mo.reveal": "flyIn",
+    "mo.enter": "pop",
+    "col.surface@el.abilities": "#f4f1ea",
+    "col.surface@stateTag": "#8e58c9",
+    "el.abilities.count": 8,
+    "el.selection.innerCard": "white",
+    "el.selection.dockTo": "el.reward",
+    "el.selection.dockSide": "right",
+    "cmp.card@el.abilities": "playingCard",
+    "st.rarityCue@el.abilities": [
+     "finish"
+    ],
+    "cmp.card@el.reward": "tarot"
+   }
+  },
+  {
+   "key": "codex",
+   "ref": "qa/refs-cache/r2/card/img/steam_2379780_3.jpg",
+   "values": {
+    "uip.screen": "tpl.codex",
+    "cnt.subtype": "collection",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 1,
+    "ast.container": "none",
+    "rel.behind": "replaced",
+    "ast.bgArt": "shaderSwirl",
+    "ast.bgColors": [
+     "#d9504a",
+     "#7a2420"
+    ],
+    "rel.dim": 0,
+    "cnt.dataShape": "collection",
+    "cnt.density": 4,
+    "cnt.itemCount": 15,
+    "lay.arrangement": "grid",
+    "lay.columns": 5,
+    "cmp.slot": "collectionCard",
+    "cmp.card": "fullArt",
+    "lay.detail": "none",
+    "lay.overflow": "paged",
+    "lay.pageIndicator": "none",
+    "st.locked": "question",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "button",
+    "ix.close": "none",
+    "ix.focus": "scale",
+    "mo.enter": "pop",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 3,
+    "vis.strokeColor": "highlightEdge",
+    "lay.panelFit": "fitContent",
+    "lay.titlePos": "none"
+   }
+  },
+  {
+   "key": "blinds",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.levelPath",
+    "cnt.screen": "screen.levelselect",
+    "cnt.subtype": "stage",
+    "lay.container": "tray",
+    "cmp.modal": "floating",
+    "lay.panelSize": 1,
+    "lay.panelAlign": "end",
+    "lay.panelWidth": 0.7,
+    "rel.behind": "replaced",
+    "ast.bgArt": "shaderSwirl",
+    "ast.bgColors": [
+     "#4a9f6e",
+     "#235c3f"
+    ],
+    "rel.dim": 0.15,
+    "cnt.dataShape": "collection",
+    "cnt.itemCount": 3,
+    "lay.arrangement": "row",
+    "cmp.slot": "tallCard",
+    "cmp.cardParts": [
+     "actionTop",
+     "nameplate",
+     "art",
+     "valueTarget",
+     "actionBelow"
+    ],
+    "lay.overflow": "single",
+    "hier.dimInactive": 0.45,
+    "st.done": "tag",
+    "st.locked": "dimmed",
+    "col.coding": [
+     "lineId",
+     "status"
+    ],
+    "cnt.elements": [],
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "mo.enter": "slide",
+    "lay.titlePos": "none",
+    "lay.raisedCurrent": true
+   }
+  },
+  {
+   "key": "results",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.runSummary",
+    "cnt.subtype": "runSummary",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 0.85,
+    "rel.behind": "replaced",
+    "ast.bgArt": "shaderSwirl",
+    "ast.bgColors": [
+     "#4a9f6e",
+     "#235c3f"
+    ],
+    "rel.dim": 0.3,
+    "rel.sceneTone": "none",
+    "cnt.focal": "title",
+    "lay.composition": "splitTB",
+    "lay.focalSide": "top",
+    "cnt.dataShape": "collection",
+    "cnt.itemCount": 5,
+    "lay.arrangement": "column",
+    "cmp.listRow": [
+     "title",
+     "valueBlock"
+    ],
+    "cnt.companion": "mascot",
+    "cmp.dialogBox": "bubble",
+    "cnt.tone": "character",
+    "cnt.elements": [
+     "el.cta"
+    ],
+    "el.cta.form": "dual",
+    "el.cta.screenAnchor": "bc",
+    "ops.actions": [],
+    "hier.emphasis": [
+     "size",
+     "color"
+    ],
+    "mo.enter": "pop",
+    "mo.valueChange": "countUp",
+    "ix.dismiss": "button",
+    "ix.mode": "readOnly",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 3,
+    "vis.strokeColor": "highlightEdge",
+    "typ.baseSize": 26,
+    "col.text@title": "#fe5f55",
+    "lay.titlePos": "none",
+    "ix.close": "none"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "避让把整列挪错了排：左下列（金钱 + 第 N 夜 + 工具条）与下中手牌横向相交时，避让把整个下中列往上推，推过画面中线后又与上中元素互相挤开，结果手牌扇跑到屏幕上部、压住左上的目标文字与金钱，小丑托盘位置的元素落到中下，与参考“上小丑、下手牌”正好相反",
+   "severity": "high",
+   "proposal": "避让先横向收：上中 / 下中列放进左右两列之间的空宽里居中并按需缩放，放不下时才纵向挪；纵向挪动不越过画面中线（下排不跑进上半屏）；有 lay.hudOrg = edgeBar 时先从版面里扣掉侧栏宽度",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12a-17（占位表避让 v2：上小丑、下手牌位置已对；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "左侧竖栏：参考是一条贴左边、全高的深色底板，全部状态都装在里面。lay.hudOrg = edgeBar 只进了解析表、渲染没有实现，元素按锚点各自漂浮成一列，背后没有整条底板（所以配方里也没写它）",
+   "severity": "high",
+   "proposal": "渲染：lay.hudOrg = edgeBar 时在 tl / ml / bl（或右侧）锚点列后面画一整条全高底板（宽 = 列内最宽元素 + 边距，底色 col.surface2，描边色可按 col.dynamic 换），并从中间版面扣掉这条宽度",
+   "kind": "renderBug",
+   "resolvedBy": "lay.hudOrg, lay.hudEdge"
+  },
+  {
+   "screen": "hud",
+   "what": "计分公式：牌型名 + 等级下面并排两块圆角色块（蓝底筹码 × 红底倍率），中间夹一个 ×（参考图 steam_2379780_2）。el.meter = paired 仍画成一条红色进度条 + 两端小字（清 / 醉），没有乘式两块",
+   "severity": "high",
+   "proposal": "el.meter.form 增加 formula（A 色块 × B 色块，色取 col.accent / col.accent2，上方一行牌型名 + 等级）；超过目标时的燃烧见动效缺口",
+   "kind": "newDrawing",
+   "resolvedBy": "M12b-27（el.meter.form = formula：牌型名 + 等级下蓝筹码 × 红倍率两块；R4 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "按元素的颜色覆盖（col.surface@el.abilities 白色牌面、col.accent@el.meter 筹码蓝、col.accent@el.resources 金钱金、col.surface@el.toolbar Run Info 红、col.surface@el.cta 排序按钮橙）在词表里合法，但元素渲染只读全局色板（只有 cmp.* 的 @元素 覆盖生效）。第二轮渲染确认：牌面仍是深色、金钱数字白色、按钮仍是面板色 + 蓝，这套“颜色 = 语义、每块一色”的 UI 只能画成同一种深色块",
+   "severity": "high",
+   "proposal": "元素上下文 makeCtx 按 <参数>@<元素> 解析 col.surface / col.accent / col.accent2 / col.text / vis.stroke* / vis.depth，并据此给 panel()、button() 打补丁（与 cmp() 的覆盖口径一致）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-01 + M12b-68（R4 对照图：牌面白、钱数金、Run Info 红 / Options 橙、筹码蓝 × 倍率红都按元素着色）"
+  },
+  {
+   "screen": "all",
+   "what": "手牌元素 el.abilities = cards 不读 cmp.card@el.abilities、col.surface@el.abilities 与 el.abilities.arrangement：永远画成深色皮肤面板 + 一个蓝色像素符号 + 左上序号，固定微扇形（arrangement = row 也带旋转）。hud、hand、draft 三屏的牌都因此长成同一种深色图标牌",
+   "severity": "high",
+   "proposal": "cards 形态按 cmp.card@el.abilities 选牌面版式、按 col.surface@el.abilities 取底色；arrangement = row 时平直不旋转，fan 时按张数沿弧展开",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-12（cmp.card@el.abilities = playingCard：hud / hand / draft 都是白底扑克牌，arrangement = row 时平直）"
+  },
+  {
+   "screen": "all",
+   "what": "cmp.card 没有扑克牌版式：白底、角标点数 + 花色、中间花色点阵、人头牌像素肖像；手牌、出牌区、draft 上排都是这种牌，是这款游戏最显眼的 UI 元素",
+   "severity": "high",
+   "proposal": "cmp.card 增加 playingCard（白底、角标 + 花色点阵、红黑两色花色，人头牌用小肖像），点数与花色由样本内容给",
+   "kind": "newDrawing",
+   "resolvedBy": "M12b-12（cmp.card = playingCard：角标点数 + 花色点阵 + 人头牌小像）"
+  },
+  {
+   "screen": "all",
+   "what": "背景是整屏流动的油彩漩涡着色器（参考 hud 绿、hand 金、draft 紫 + 彩纸碎屑、codex 红），本身就是 UI 的底；探索台只能套桌游场景 + CRT，渲染出的是蓝布桌面 + 棋盘",
+   "severity": "high",
+   "proposal": "ast.bgArt 增加 shaderSwirl（程序动态背景：两到三色、流速、扭曲度，可选彩纸碎屑），可以代替 3D 场景作整屏底",
+   "kind": "newDrawing",
+   "resolvedBy": "M12b-51（rel.behind = replaced + ast.bgArt = shaderSwirl，ast.bgColors 按屏换色、draft 加 ast.bgConfetti）"
+  },
+  {
+   "screen": "hud",
+   "what": "竖栏内部是一串嵌套圆角块：盲注名牌（彩色条 + 盲注筹码图 + “至少得分”红字目标与奖励）→ 本轮得分 → 牌型名 + 等级与筹码 × 倍率 → 红 Run Info / 橙 Options 两颗竖长大按钮并排 Hands / Discards 计数格 → 金钱 → Ante / Round 计数格。现在只能拿 el.objective、el.timer、el.meter、el.resources、el.clock、el.toolbar 各自近似：顺序、左右并排和“两颗大按钮”（el.toolbar = microMenu 画成一排 5 个小图标）都表达不了",
+   "severity": "medium",
+   "proposal": "新参数 lay.edgeBarSlots 编排栏内顺序与并排（如 objective / timer / meter / [toolbar | counters] / resources / clock）；el.toolbar.form 增加 bigButtons（竖排 2 颗带字大色块按钮）；el.objective.form 增加 blindPlate（彩色名牌 + 图标 + 目标数字 + 奖励）",
+   "kind": "composite",
+   "partialBy": "M12a-16 + M12b-05 / M12b-17（lay.edgeBarSlots、el.objective = blindPlate、el.toolbar = bigButtons 都画出来了；R4 竖栏放不下，大按钮 | 计数格与第 N 夜两格被挤出底板）"
+  },
+  {
+   "screen": "hud",
+   "what": "“小标题 + 彩色大数字”的计数格（Hands 蓝 3、Discards 红 2、Ante 2/8、Round 4）没有画法：el.clock = dayCounter 只画“第 12 夜”一行字；结算页的统计行（左小标题 + 右彩色数值块）同理，cmp.listRow = [title, value] 画成“名字 + 百分比”的细框行",
+   "severity": "medium",
+   "proposal": "el.resources / el.clock 的 form 增加 labeledStatGrid（小标题在上、彩色数字在深色内嵌格里，2 × N）；cmp.listRow 增加 valueBlock 字段（数值放进按语义着色的圆角块），结算统计行复用",
+   "kind": "newDrawing",
+   "partialBy": "M12b-06（hud：el.resources.form = statGrid 小标题 + 彩色数字格）；results 的 cmp.listRow valueBlock 只是行尾一枚小胶囊"
+  },
+  {
+   "screen": "hud",
+   "what": "上中的小丑托盘（4/5）、右上的消耗品托盘（0/2）、右下的牌堆（41/52）都是“深色内嵌槽 + 下方容量计数”，中间还有出牌区（打出的牌 + 得分飘字）；小丑列只能借 el.party = unitCards 画成头像 + 血条的队伍卡，消耗品托盘、牌堆、出牌区都没有元素",
+   "severity": "medium",
+   "proposal": "新元素 el.piles（牌堆：卡背 + 剩余 / 总数）、el.consumables 与 el.playArea；元素通用子参数 elx.tray（深色托盘 + 容量 x/y）；el.party.form 增加 cardRow（整幅牌一排）",
+   "kind": "missingParam",
+   "partialBy": "M12b-29（el.consumables 右上 0/2 托盘、el.piles 右下 41/52 牌堆、el.abilities#2 小丑排）；出牌区仍没有元素"
+  },
+  {
+   "screen": "all",
+   "what": "手牌张数固定 5（4 个技能样本 + 1），参考 hand、draft 都是 8 张，彼此略叠铺满宽度，下方还有 8/8 计数",
+   "severity": "medium",
+   "proposal": "元素通用子参数 elx.count（张数 / 格数）；el.abilities = cards 按张数自动收紧间距并叠压；计数复用 elx.valueLabel = currentMax 画在牌排下方",
+   "kind": "missingParam",
+   "resolvedBy": "M12a-21 + M12b-69（el.abilities.count 8、lay.cardOverlap@el.abilities 略叠、valueLabel = currentMax 的 8/8）"
+  },
+  {
+   "screen": "all",
+   "what": "col.dynamic = perMode 只说明“会换色”，换成哪套色（普通盲注绿、Boss 蓝、卡包紫、塔罗金、收藏红）、侧栏描边与名牌色怎么跟着换都没有参数",
+   "severity": "medium",
+   "proposal": "新参数 col.modeMap：界面 / 状态 → 色板（背景两色 + 侧栏描边 + 名牌色）的映射表，给 shaderSwirl 背景与 edgeBar 描边共用",
+   "kind": "missingParam",
+   "partialBy": "M12b-51（ast.bgColors 按屏写漩涡色）；侧栏描边 / 名牌跟模式换色仍没有"
+  },
+  {
+   "screen": "all",
+   "what": "模板自带的标题栏与关闭键关不掉：codex 的“图鉴”标题 + 取消键、blinds 的“关卡路径”标题 + ×、results 的“本局总结” + ×；参考这三屏都没有标题栏",
+   "severity": "medium",
+   "proposal": "新参数 lay.header（auto / none / titleOnly），none 时不画模板标题；ix.close 增加 none（不画关闭键，靠底部按钮离开）",
+   "kind": "missingParam",
+   "resolvedBy": "lay.titlePos, ix.close"
+  },
+  {
+   "screen": "all",
+   "what": "小丑牌（整幅像素插画 + 竖排 JOKER 字样）、塔罗牌（整幅插画 + 底部名字条）和结算页的 Jimbo 立绘都是像素插画；探索台只有道具图标图集（金币、宝石、药水、钥匙……），收藏页、draft、小丑托盘只能画道具图",
+   "severity": "medium",
+   "proposal": "按 cmp.card = fullArt 准备一套像素风竖长插画牌面素材（小丑 / 塔罗 / 星球各若干）和一张吉祥物立绘，进 uiAssets 图集",
+   "kind": "asset"
+  },
+  {
+   "screen": "all",
+   "what": "牌的增强与版本（玻璃、箔、镭射、多彩）是叠在牌面上的着色器，draft 上排就有一张半透明的玻璃牌；st.rarityCue 没有版本特效",
+   "severity": "medium",
+   "proposal": "st.rarityCue 增加 editionShader（foil / holo / polychrome / glass，叠在 cmp.card 牌面上）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-52 + M12b-69（st.rarityCue@el.abilities = [finish]：镭射 / 玻璃牌叠层）"
+  },
+  {
+   "screen": "all",
+   "what": "手感是这套 UI 的一半：面板与牌持续轻摇、悬停时牌面 3D 倾斜并弹跳、大字逐字弹出、计分时被计分的牌依次跳起并弹出 +筹码 / +倍率小气泡、总分滚动，本手得分超过目标时筹码 / 倍率两块烧起火焰；mo.idle = sway、mo.juice = 1 只给总量",
+   "severity": "medium",
+   "proposal": "mo.sequence = perItemTrigger（逐个触发的计分序列）；mo.textReveal 增加 popPerLetter；ix.focus 增加 tilt3d；ast.fx 增加 fire，并可按数值阈值触发",
+   "kind": "motion"
+  },
+  {
+   "screen": "hand",
+   "what": "Boss 规则提示（Must play 5 cards）是无底的超大像素白字 + 硬阴影，横在牌排上方；el.notify = banner 一定画半透明黑底条和上下两条强调色细线（vis.opacity@el.notify 也不生效）",
+   "severity": "medium",
+   "proposal": "el.notify.form 增加 bareText（无底大字 + 投影，字号随 scale）",
+   "kind": "missingOption",
+   "resolvedBy": "vis.opacity@el.notify"
+  },
+  {
+   "screen": "hand",
+   "what": "按钮行是三颗：Play Hand（蓝，不可用时灰）、中间 Sort Hand（橙底 + 白描边，内含 Rank / Suit 两颗小按钮）、Discard（红，不可用时灰）；el.cta = dual 只画“次按钮（面板色）+ 主按钮（强调色）”",
+   "severity": "medium",
+   "proposal": "el.cta.form 增加 triple（主 / 工具组 / 副），中间工具组可嵌两颗小按钮；不可用状态整颗灰",
+   "kind": "composite",
+   "resolvedBy": "M12b-17（el.cta.form = triple：出牌 / 排序[点数 | 花色] / 弃牌）"
+  },
+  {
+   "screen": "hand",
+   "what": "按钮颜色就是动作：出牌蓝、弃牌红、排序橙、出售绿；col.semantic 没有这组取值，button() 也不按动作角色取色",
+   "severity": "medium",
+   "proposal": "col.semantic 增加 blueRedOrange，button() 按动作角色（play / discard / utility / sell）取色",
+   "kind": "missingOption",
+   "resolvedBy": "col.semantic"
+  },
+  {
+   "screen": "hand",
+   "what": "选中的牌整张向上抬起一截；st.selected 只有勾、描边、发光、条、角标",
+   "severity": "medium",
+   "proposal": "st.selected 增加 lift（选中项沿出牌方向上移 + 投影加深）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-69（st.selected@el.abilities = lift：选中牌整张抬起）"
+  },
+  {
+   "screen": "draft",
+   "what": "说明框（el.selection = tooltip，锚 center）比参考大很多，正好压在上排手牌上，盖住 2–5 号牌的下半；参考说明框很小，夹在手牌与塔罗牌之间、不压牌",
+   "severity": "medium",
+   "proposal": "tooltip 按内容收缩尺寸并参与元素避让（与上中列重叠时往下让）；或停靠在被选中那张牌的正下方",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12b-05（el.selection.dockTo = el.reward：说明框停在塔罗右侧，不再压上排牌）"
+  },
+  {
+   "screen": "codex",
+   "what": "收藏网格只画了 1 行 5 张：lay.columns = 7、cnt.itemCount = 14 都没生效，面板下半空着；参考 5 × 3 共 15 张铺满",
+   "severity": "medium",
+   "proposal": "tpl.codex 的网格按 lay.columns 与 cnt.itemCount 排行列，超过一页才分页",
+   "kind": "renderBug",
+   "resolvedBy": "lay.columns, cnt.itemCount, lay.panelFit"
+  },
+  {
+   "screen": "codex",
+   "what": "网格里唯一的竖卡 cmp.slot = tallCard 是商店卡：道具图标 + 名字 + 固定一行“¥ 价格”，网格也不读 cmp.card；参考是白底整幅插画小丑牌、无价格",
+   "severity": "medium",
+   "proposal": "cmp.slot 增加 collectionCard（整幅插画 + 名字、无价格），或让网格格子按 cmp.card 画",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-12（cmp.slot = collectionCard：白边插画卡、无价格）"
+  },
+  {
+   "screen": "codex",
+   "what": "面板只有一个尺寸系数 lay.panelSize，画出来宽而矮；参考面板窄而高、刚好包住 5 × 3 竖牌。tallCard 的高固定为宽的 1.4 倍，格高不随行数反推，牌铺不满面板",
+   "severity": "medium",
+   "proposal": "gridItems 在给定 lay.columns 与 cnt.itemCount 时按行数反推格高；新参数 lay.panelFit（fixed / fitContent），fitContent 时面板按网格收缩成窄高",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.panelFit, lay.panelSize"
+  },
+  {
+   "screen": "blinds",
+   "what": "选盲注时当前可选的那张应抬高、其余压暗下沉；hier.dimInactive = 0.45 在卡片行上不生效（只进了解析表），三张卡一样亮、一样高，选中（紫描边）与焦点（蓝描边）还落在不同的卡上",
+   "severity": "medium",
+   "proposal": "卡片行读 hier.dimInactive：非当前项压暗并下沉；lay.arrangement 增加 raisedCurrent（当前项上移），选中与焦点默认落在同一项",
+   "kind": "renderBug",
+   "resolvedBy": "hier.dimInactive, lay.raisedCurrent"
+  },
+  {
+   "screen": "blinds",
+   "what": "每张盲注卡是一组控件：顶部橙色“选择”按钮（或“即将到来 / 已跳过”状态牌）、彩色名牌（小盲注 / 大盲注 / Boss 名）、盲注筹码图、“至少得分”红字目标、奖励 $$$，卡下方挂“跳过盲注 + 奖励标签”；现在卡内只有图标 + 名字 + 一行说明",
+   "severity": "medium",
+   "proposal": "cmp.listRow 的 action 字段也作用在竖卡上（卡内顶部按钮）；竖卡读 value / reward 字段（目标数字 + 奖励符号）；卡下方可挂次级动作（跳过 + 标签）",
+   "kind": "composite",
+   "resolvedBy": "M12b-69（cmp.cardParts = [actionTop, nameplate, art, valueTarget, actionBelow]：选择钮 / 名牌 / 筹码图 / 目标分 + 奖励 / 卡下跳过）"
+  },
+  {
+   "screen": "results",
+   "what": "cnt.companion = mascot + cmp.dialogBox = bubble 在模板构图器里没有画法：参考结算页左侧站着 Jimbo，用像素对话气泡讲冷笑话",
+   "severity": "medium",
+   "proposal": "模板构图器画 cnt.companion（立绘位 + cmp.dialogBox 气泡，贴在弹窗左侧）；立绘见素材缺口",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-64 / M12a-36（陪衬立绘位 companionStrip：容器左侧扣出一条，立绘贴底、cmp.dialogBox 气泡在上；B9 · 21 核对：复刻原值已画出，模板占位 template / companion）"
+  },
+  {
+   "screen": "results",
+   "what": "一对按钮仍压在第三行统计上，ops.actions = retry 的“再抽 10 次”挂在面板右下角外沿；splitTB 构图没有给底部按钮行留高度",
+   "severity": "medium",
+   "proposal": "模板构图器先给 el.cta 与 ops.actions 留出底部按钮行，再把剩余高度分给列表（放不下就缩行高或分页）；ops 按钮并入同一按钮行",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12b-64（模板按钮行先留高度：结算统计 242–386、按钮行 405 起不再相压；B9 · 17 核对：复刻原值已解决。ops.actions 的再抽按钮属商业化，不在 M12b）"
+  },
+  {
+   "screen": "draft",
+   "what": "说明框是深色圆角框里套一张白色内卡写效果（关键词橙 / 蓝着色），下方挂彩色类别胶囊（塔罗紫、星球蓝、幻灵青）；el.selection = tooltip 只画单层深色框",
+   "severity": "low",
+   "proposal": "el.selection.form 增加 insetCard（外框 + 白色内卡 + 底部类别胶囊，胶囊色取 col.coding = lineId）",
+   "kind": "newDrawing",
+   "resolvedBy": "M12b-69（el.selection.innerCard = white：深色外框套白内卡 + 底部类别胶囊）"
+  },
+  {
+   "screen": "draft",
+   "what": "el.reward = bigCard 下方固定画 5 颗星，配方里 st.rarityCue = [] 也关不掉；参考的塔罗牌底部是名字条",
+   "severity": "low",
+   "proposal": "bigCard 的星级跟随 st.rarityCue（不含 stars 就不画），名字画进牌内底部名字条",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-07 / M12a-21（st.rarityCue = [] 清空，bigCard 不再画星级；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "blinds",
+   "what": "托盘里的三张卡被撑成近方形、左右顶满；参考是三张竖长卡并排在左侧状态竖栏的右边、从底部升起",
+   "severity": "low",
+   "proposal": "托盘行里的 tallCard 保持竖长比例（按高定宽）并居中；托盘可声明与 HUD 侧栏共存（让出 edgeBar 宽度）",
+   "kind": "layoutEngine",
+   "partialBy": "M12b-64（lay.panelAlign = end + lay.panelWidth：三张竖卡排到右侧、保持竖长）；卡仍浮在中部偏小，这一屏没有左侧竖栏"
+  },
+  {
+   "screen": "results",
+   "what": "结局大字（cnt.focal = title）只能用全局字色画成白色，参考是大号红色 GAME OVER；col.text@title 这类按部位的字色覆盖不生效",
+   "severity": "low",
+   "proposal": "焦点标题读 col.text@title（或新参数 col.focal）",
+   "kind": "renderBug",
+   "resolvedBy": "col.text@title"
+  },
+  {
+   "screen": "all",
+   "what": "整屏 CRT 后处理（桶形弯曲、扫描线、泛光、暗角）连 UI 一起作用；扫描线可用 ast.fx 表达，弯曲只能靠 rel.followPost = full 跟随画面，UI 自身没有弯曲参数",
+   "severity": "low",
+   "proposal": "rel.metaFx 增加 crtCurve，或 ast.fx 增加 barrel",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "all",
+   "what": "deckBuilder 内容包缺扑克向样本：牌型名 + 等级（Two Pair lvl.1）、筹码 / 倍率数、盲注名与目标分、Hands / Discards 次数、点数与花色；渲染里显示的是“清 / 醉”双条、“第 12 夜”、道具名 + 价格、任务百分比",
+   "severity": "low",
+   "proposal": "deckBuilder 包补一组扑克牌局样本（或新建 pokerRoguelike 包）：牌型表、盲注表、点数花色、结算统计项",
+   "kind": "content",
+   "partialBy": "（R4：牌型 FLUSH lvl.2、至少得分 / 奖励 $$$、扑克点数花色已有；第 N 夜、金币 / 卡牌 / 能量、小丑名仍是通用样本）"
+  },
+  {
+   "screen": "codex",
+   "what": "竖卡（cmp.slot = tallCard）被 lay.panelFit = fitContent 与 5 × 3 网格压成近方格后，名字与「¥ 价格」两行仍按原卡高的位置画，叠在一起读不出",
+   "severity": "medium",
+   "proposal": "格高收缩时按剩余高度重排卡内文字（放不下价格就省略价格行），或格高不低于名字 + 价格两行的高度",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-12 / M12b-67（collectionCard 不画价格行，名字不再重叠）"
+  },
+  {
+   "screen": "results",
+   "what": "cnt.companion = mascot 现在画成一条斜线占位立绘位 + 左上小气泡，但构图没有给它让出宽度：占位条压在面板左缘，「吉祥物立绘（需素材）」字样压在第二行统计上",
+   "severity": "medium",
+   "proposal": "有 cnt.companion 时构图先在弹窗一侧扣出立绘位（或让立绘站在面板外侧），气泡挂在立绘旁，列表只用剩余宽度",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12b-64（陪衬立绘位在弹窗左侧扣出一条，统计列表只用剩余宽度）"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 1,
+    "elements": 1,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 2,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 4,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "hand": [
+   {
+    "layout": 1,
+    "elements": 1,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 2,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "draft": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 4,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "codex": [
+   {
+    "layout": 4,
+    "elements": 2,
+    "palette": 4,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 4,
+    "density": 2,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 4,
+    "type": 3,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "blinds": [
+   {
+    "layout": 3,
+    "elements": 1,
+    "palette": 3,
+    "type": 3,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "results": [
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 3,
+    "type": 3,
+    "shape": 3,
+    "density": 3,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 5,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "整屏画成了旧的通用背包样本（“卡组”页签 + 左列表右详情的大弹窗）：layout.card 把 cnt.screen 设成 screen.cards，局内牌桌被当成菜单界面，左侧竖栏、小丑托盘、手牌一个都没出现",
+   "面板是深灰蓝底 + 蓝色强调色描边 + 蓝色外发光（ast.fx = glow），像科幻 HUD；参考是无描边的深灰青圆角块 + 硬投影，颜色只出现在色块本身",
+   "字号阶梯太大（typ.scale 1.6），标题“卡组”远大于参考里的像素字层级",
+   "背景是高亮的蓝布桌面 + 棋盘，比参考的中暗度油彩漩涡亮很多"
+  ],
+  "hand": [
+   "和 hud 一样落到通用背包样本：没有 Boss 规则大字、没有一排手牌、没有 Play / Sort / Discard 三颗按钮",
+   "额外的 7 格图标工具条（el.toolbar = buttonRow）不在参考里",
+   "面板蓝描边 + 外发光，参考按钮是无描边的实色圆角块"
+  ],
+  "draft": [
+   "上方是 5 张深色图标卡（扇形），参考是 8 张白底扑克牌（略成弧形）",
+   "缺少中间的说明框（Justice：深色框套白色内卡 + 紫色 Tarot 胶囊）和下面那张塔罗牌",
+   "底部多了一颗米白色宽按钮“开始牌局”，参考此刻没有按钮",
+   "背景是亮蓝布桌面，参考是紫色漩涡 + 彩纸碎屑"
+  ],
+  "codex": [
+   "格子是方形物品格（剑、盾、问号 + 数量角标），参考是 5 × 3 竖长小丑牌，整块面板被牌填满",
+   "临时详情框（lay.detail = transient）盖住了半个网格，参考没有弹出说明",
+   "面板过宽、格子只占左上角，留白多；参考面板窄而高，牌铺满",
+   "多了“图鉴”标题，参考截图里面板内没有标题"
+  ],
+  "blinds": [
+   "底部托盘里元素互相压叠（金币大数字压在“关卡”标题上，工具条与卡片行重叠），看不出三张盲注卡",
+   "没有“三张竖卡（小盲注 / 大盲注 / Boss）从底部升起、当前那张高亮”的结构",
+   "托盘带蓝色描边 + 外发光，参考的盲注卡是无描边的深色圆角卡"
+  ],
+  "results": [
+   "标题元素（el.title = header，缎带标牌 + scale 2）画成一条亮蓝色横幅且超出面板右缘，字是内容包的“卡组”",
+   "表格按“玩家记分板”画（每行头像 + 名字 + 四列数字），参考是“小标题 + 彩色数值块”的统计行",
+   "一对按钮压在表格第三行上",
+   "缺少“GAME OVER”式红色大字与 Jimbo 吉祥物 + 对话气泡（后者参数里有 cnt.companion = mascot，但没有画出来）"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "手牌扇（el.abilities，锚 bc，1.4 倍）被避让逻辑整列推到屏幕上部，压住左上的目标文字和金钱；小丑托盘位置的 el.party（锚 tc）反而落到画面中下——上下两排与参考“上小丑、下手牌”正好对调",
+   "左侧元素各自漂浮在牌桌上，没有贴边的整条深色竖栏；顺序是目标 → 金钱 → 红条 → 得分胶囊 → 第 12 夜 → 5 个小图标，参考是盲注名牌与目标分 → 本轮得分 → 牌型与筹码 × 倍率 → 两颗大按钮 + 出牌 / 弃牌计数 → 金钱 → 底注 / 轮次",
+   "筹码 × 倍率画成一条红色进度条 + 两端小字（清 / 醉），参考是蓝、红两块大数字中间夹 ×",
+   "手牌是深色面板 + 蓝色像素符号，参考是白底扑克牌；小丑托盘画成头像 + 血条的队伍卡，参考是整幅插画小丑牌放在深色托盘里",
+   "系统入口是一排 5 个小图标，参考是红 Run Info、橙 Options 两颗竖长大色块按钮；底注 / 轮次画成“第 12 夜”一行字，参考是小标题 + 彩色数字格",
+   "没有右上消耗品托盘、右下牌堆（41/52）和中间出牌区；金钱数字是白色（参考金色），所有块都是同一种深色"
+  ],
+  "hand": [
+   "Boss 规则画成带上下蓝色细线的半透明黑底横幅，参考是无底超大像素白字 + 硬阴影",
+   "一排 5 张深色图标牌，参考是 8 张白底扑克牌，彼此略叠、几乎铺满宽度，下方还有 8/8 计数",
+   "两颗按钮（返回 面板色 + 开始牌局 蓝），参考是三颗：Play Hand 灰（不可用）、Sort Hand 橙底白描边且内含 Rank / Suit 两颗小按钮、Discard 灰",
+   "arrangement = row 仍带微扇形旋转；参考牌排平直，选中牌整张抬起",
+   "整体骨架（上方大字、中间一排牌、下方按钮行）已经对上"
+  ],
+  "draft": [
+   "说明框（el.selection = tooltip）比参考大很多，正好压在上排手牌上，盖住 2–5 号牌的下半；参考说明框很小，夹在手牌与塔罗牌之间、不压牌",
+   "上排是 5 张深色图标牌，参考是 8 张白底扑克牌（其中一张是半透明的玻璃增强牌）",
+   "说明框是单层深色框，参考是深色外框套白色内卡（关键词着色）+ 紫色 Tarot 胶囊",
+   "下方奖励卡是紫宝石 + 五颗星 + 名字，参考是整幅塔罗插画 + 底部名字条，且更窄",
+   "没有紫色漩涡背景与满屏彩纸碎屑；stardust 只在奖励卡周围画了几颗星"
+  ],
+  "codex": [
+   "网格只画了 1 行 5 张（lay.columns = 7、cnt.itemCount = 14 没生效），面板下半是空的；参考是 5 × 3 共 15 张竖牌铺满面板",
+   "面板宽而矮，参考窄而高、刚好包住牌网格",
+   "卡面是道具图标 + 名字 + “¥ 价格”（商店卡），参考是白底整幅插画小丑牌、无价格",
+   "多了“图鉴”标题、右下“取消”按钮和分页点；第一格带蓝色选中框，参考没有",
+   "高光亮边的面板外框已经接近参考的浅灰外框"
+  ],
+  "blinds": [
+   "三张卡被撑成近方形、左右顶满托盘；参考是三张竖长卡在侧栏右边并排、从底部升起（凭记忆）",
+   "当前可选卡没有抬高、其余没有压暗下沉（hier.dimInactive 不生效）；选中（紫描边）与焦点（蓝描边）落在不同的两张卡上",
+   "卡内只有图标 + 名字 + 一行说明，缺顶部橙色“选择”按钮、彩色盲注名牌、盲注筹码图、红色目标分与 $ 奖励，卡下方也没有“跳过盲注 + 奖励标签”",
+   "多了模板标题“关卡路径”和关闭键；左侧状态竖栏在这一屏应仍可见，没有画"
+  ],
+  "results": [
+   "结局大字是白色“今夜到此为止”，参考是大号红色 GAME OVER（凭记忆）",
+   "面板顶部仍有模板名“本局总结”与关闭键",
+   "没有 Jimbo 吉祥物与像素对话气泡",
+   "统计行是“名字 + 百分比”的细框行，第一行带蓝色选中框；参考是左侧小标题 + 右侧彩色数值块，行数更多（最佳一手、出牌数、弃牌数、重掷数、种子、底注、轮次）",
+   "两颗按钮压在第三行统计上，“再抽 10 次”（ops.actions = retry）挂在面板右下角外沿、压着面板边"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "计分仍是两根细进度条（红「清」/ 蓝「醉」），参考是蓝、红两块大数字中间夹 ×",
+   "左侧竖栏已贴边成整条深色底板、顺序也对了，但栏内元素等距稀疏排开、没有嵌套圆角块；系统入口是两颗小方图标钮（都是红底），参考是红 Run Info、橙 Options 两颗带字竖长大按钮，旁边还有 Hands / Discards 计数格",
+   "上小丑、下手牌的位置对了、牌面也变白了，但手牌是蓝色像素符号牌而不是扑克牌，小丑仍是头像 + 血条的队伍卡",
+   "金钱数字仍是白色（参考金色 $22），底注 / 轮次是「第 12 夜」一行字而不是小标题 + 彩色数字格",
+   "没有右上消耗品托盘、右下牌堆（41/52）和中间出牌区"
+  ],
+  "hand": [
+   "8 张白底蓝色像素符号牌，参考是白底扑克牌（角标点数 + 花色点阵 + 人头牌肖像）",
+   "牌排比参考小一圈、彼此不叠；参考 8 张略叠、几乎铺满宽度，下方还有 8/8 计数",
+   "按钮是两颗（返回 红 / 开始牌局 蓝），参考是三颗：Play Hand 灰、内含 Rank / Suit 小按钮的橙色 Sort Hand、Discard 灰",
+   "选中牌没有整张抬起；背景仍是蓝布桌面而不是金色漩涡"
+  ],
+  "draft": [
+   "上排 8 张白牌扇形铺满上方（对），但是像素符号牌而不是扑克牌，也没有半透明的玻璃增强牌",
+   "说明框仍比参考大、下沿压到奖励卡上缘；是单层深色框，参考是深色外框套白色内卡（关键词着色）+ 紫色 Tarot 胶囊",
+   "下方奖励卡是大块深色卡 + 紫宝石 + 名条（星级已去掉），参考是更窄的整幅金色塔罗插画",
+   "没有紫色漩涡背景与满屏彩纸碎屑"
+  ],
+  "codex": [
+   "5 × 3 共 15 格、无页头 / 取消钮 / 分页点（对），但格子被压成近方形，名字与「¥ 价格」两行文字叠在一起",
+   "格子是道具图标 + 名字 + 价格（商店卡），参考是白底整幅插画小丑牌、无字无价",
+   "第一格仍有橙色焦点框（ix.mode = readOnly 也画），参考没有"
+  ],
+  "blinds": [
+   "三张竖卡、当前项抬高高亮、其余压暗（对，凭记忆）；但卡浮在画面中部，参考是从底部升起、排在左侧状态竖栏右边",
+   "卡内只有图标 + 名字 + 一行说明，缺顶部橙色「选择」按钮、彩色盲注名牌、盲注筹码图、红色目标分与 $ 奖励，卡下也没有「跳过盲注 + 标签」",
+   "这一屏没有左侧状态竖栏"
+  ],
+  "results": [
+   "吉祥物位只画了一条斜线占位 + 「吉祥物立绘（需素材）」字样，压在面板左缘与第二行统计上；对话气泡是左上角一个小方框（凭记忆）",
+   "统计行仍是「名字 + 百分比」细框行，第一行带橙色焦点框；参考是左小标题 + 右彩色数值块，行数更多",
+   "按钮是三颗小钮挤在右下（再来一局 / 返回 / 继续），参考是底部两颗大按钮（Main Menu / New Run）"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "左侧竖栏只装下盲注名牌、本轮得分与筹码 × 倍率：Run Info / Options 两颗大按钮、金币 / 卡牌 / 能量计数格与「第 12 夜」被挤出底板，散在竖栏右侧的牌桌上",
+   "手牌被挤到画面中右、压在中部；参考手牌在底部正中，上方还有出牌区",
+   "小丑托盘是 4 张蓝底图标小卡，参考是白底整幅插画的小丑牌",
+   "没有中间出牌区与「+10」这类得分飘字",
+   "计数格写的是金币 / 卡牌 / 能量与「第 12 夜」，不是 Hands / Discards / Ante / Round"
+  ],
+  "hand": [
+   "8 张扑克牌比参考小约三成，只占画面中间约六成宽；参考几乎铺满宽度",
+   "出牌 / 弃牌两颗钮是亮蓝 / 亮红，参考这一帧不可用、整颗灰",
+   "顶部规则大字是中文粗体，参考是带硬投影的像素字"
+  ],
+  "draft": [
+   "塔罗牌是深色卡 + 蓝色拱顶窗 + 紫宝石，参考是窄长的整幅金色塔罗插画",
+   "白内卡说明框右上又叠了一张深色浮动详情（「重击」），盖住说明框一半",
+   "类别胶囊是红色「消耗」，参考是紫色 Tarot 胶囊",
+   "右下多一颗「确认选择」按钮；漩涡上的彩纸碎屑比参考少得多"
+  ],
+  "codex": [
+   "收藏卡是彩色色块 + 白色图标 + 名字条，参考是白底整幅插画小丑牌（竖排 JOKER 字样）、无字",
+   "卡比参考略矮胖，名字条占去卡的下部"
+  ],
+  "blinds": [
+   "（凭记忆）三张盲注卡偏小、浮在画面中右部，原作卡从底部升起、占画面大半高",
+   "这一屏没有左侧状态竖栏",
+   "「选择」按钮是蓝色（原作橙色），卡内字很小、目标分不醒目"
+  ],
+  "results": [
+   "（凭记忆）Jimbo 仍是斜线占位条 + 「吉祥物立绘（需素材）」，气泡是左上角一个小方框",
+   "统计行的数值块只是行尾一枚小绿胶囊，行仍是细框长条；原作是右侧按语义着色的大数值块",
+   "底部两颗按钮（返回 / 继续）很小，原作是 Main Menu / New Run 两颗大按钮"
+  ]
+ },
+ "revisions": [
+  "hud / hand：显式写 cnt.screen = screen.hud（uip.layout 仍是 layout.card）。layout.card 自带 cnt.screen = screen.cards，没有界面模板时会被当成菜单界面画成通用背包样本；改成局内 HUD 后走元素排布",
+  "hud：按参考的左侧竖栏顺序把元素都钉在左边一列——tl：el.objective（盲注 / 目标）+ el.timer = scorePill（本轮得分）；ml：el.meter = paired（筹码 × 倍率）；bl：el.resources = bigNumber（金钱）+ el.clock = dayCounter（底注 / 轮次）+ el.toolbar = microMenu（Run Info / Options 这类系统入口）。上中 el.party = unitCards（小丑托盘，缩到 0.8），下中 el.abilities = cards 扇形手牌放大到 1.4；去掉 el.feedback（飘字挂在世界目标点上，被小丑托盘挡住）和 7 格 buttonRow",
+  "hud：el.objective 缩到 1.1 并改为次要优先级——它的宽度原来把上中的小丑托盘挤到了第二排",
+  "hand：去掉 7 格工具条；Boss 规则横幅缩到 1.3，手牌改成居中一排放大到 1.7，下方 el.cta = dual（出牌 / 弃牌）",
+  "draft：按参考改成“上方一排手牌（el.abilities 扇形）+ 中间说明框（el.selection = tooltip）+ 下方一张塔罗牌（el.reward = bigCard，0.7）”，去掉底部宽按钮；ast.fx 用 stardust 表达彩纸碎屑",
+  "codex：lay.detail 改 none（不再弹出详情盖住网格），cmp.slot 改 tallCard，7 列 × 2 行 14 张竖卡铺满面板（tallCard 的高 = 1.4 × 宽，5 列时只放得下一行），面板 0.9；大面板加 3px 高光亮边（vis.strokeColor = highlightEdge），与参考收藏面板的浅灰外框一致；分页指示写 arrows",
+  "blinds：设 uip.screen = tpl.levelPath（保留 cnt.screen = screen.levelselect），再覆盖成 cnt.dataShape = collection + lay.arrangement = row + cmp.slot = tallCard，得到三张并排竖卡；容器改 tray + cmp.modal = floating + lay.panelSize 1，三张卡从屏幕下方升起、中间一张高亮；去掉压叠的金币与工具条元素",
+  "results：去掉 el.title（缎带横幅溢出面板、写的是“卡组”），改用 cnt.focal = title + lay.composition = splitTB，让结局语以大字占上半；数据改 collection + cmp.listRow = [title, value]（小标题 + 数值行，不再画头像记分板），3 行；这一屏 typ.baseSize 14 让三行统计与底部按钮不重叠；ops.actions = retry 对应“New Run”，el.cta = dual 对应“Main Menu / New Run”；面板同样加高光亮边",
+  "base：皮肤起点由 pixel 改为 godotDefault（深灰蓝小圆角、无描边的现代皮肤）——pixel 是旧版皮肤，按键底色固定为米白、带深色环边，col.accent 不能驱动主按钮；像素字、像素图标、圆角、硬投影都已在 base 里显式写出，所以像素的部分不丢",
+  "base：col.surface #26363a / col.surface2 #1b2629（取自参考竖栏与内嵌格），vis.stroke = none（参考的内嵌格没有描边），vis.cornerSize 10，ast.fx 去掉 glow 只留 scanlines（蓝色外发光是第一轮“像科幻 HUD”的主因），typ.scale 1.6 → 1.4",
+  "art：保持桌游场景 + CRT 显示，color.palette = night、曝光 0.8、饱和 0.9，把背景压到参考的中暗度",
+  "按元素的颜色覆盖（白色牌面 col.surface@el.abilities、筹码蓝 / 倍率红 col.accent@el.meter、金钱金 col.accent@el.resources、Run Info 红 col.surface@el.toolbar、排序按钮橙 col.surface@el.cta）照写进取值作为配方意图；当前元素渲染只读全局色板，这些覆盖不生效，已记为缺口",
+  "R3 前（M12a 之后）：hud 加 lay.hudOrg = edgeBar + lay.hudEdge [left] + lay.edgeBarSlots（左侧整条竖栏，按参考排序，工具条与底注 / 轮次并排一格），el.toolbar 改 buttonRow × 2 竖排（microMenu 太宽会把竖栏整条缩小，参考是两颗竖排大按钮）；hand 加 col.semantic = blueRedOrange（出牌蓝 / 弃牌红）、el.abilities.count 8（scale 1.7 → 1.25 保持总宽）、vis.opacity@el.notify 0 + vis.stroke@el.notify none（Boss 规则无底大字）；draft 加 cnt.dataShape = none（overlay 有数据后会在屏中再画一张卡，塔罗牌仍由 el.reward = bigCard 画，B9 起有名条、不画星）、el.abilities.count 8；codex 加 lay.panelFit = fitContent、lay.panelSize 1、cnt.density 4，列数 7 → 5、张数 14 → 15（参考 5 × 3 窄高面板），lay.titlePos / ix.close = none、lay.pageIndicator = none、ix.mode = readOnly（参考无页头、无分页、无选中框）；blinds 加 lay.titlePos = none（✕ 由派生去掉）、lay.raisedCurrent；results 加 col.text@title 红（GAME OVER）、lay.titlePos / ix.close = none（tpl.runSummary 又恢复了页头行）。卡名对齐保持 D5 的居中（参考塔罗名条居中，不写 lay.titleAlign）。",
+  "R4 前（M12b 之后）：各屏 rel.behind = replaced + ast.bgArt = shaderSwirl，漩涡色按屏写 ast.bgColors（hud / blinds / results 绿、hand 金、draft 紫 + ast.bgConfetti、codex 红；不动 col.accent / accent2，筹码蓝 / 倍率红照旧），draft 的 ast.fx 去掉 stardust（彩纸由漩涡底画）；hud：el.meter.form = formula（蓝筹码 × 红倍率两块）、el.objective.form = [blindPlate]（盲注名牌 + 目标分）、el.toolbar.form = bigButtons（col.bad / col.warn@el.toolbar = 红 Run Info / 橙 Options，去掉 col.surface@el.toolbar）、el.resources.form = statGrid（小标题 + 彩色数字格，col.lineColors 金 / 蓝 / 红让第一格仍是金色钱数）、lay.edgeBarSlots 第四格改 el.toolbar|el.resources（大按钮旁并排计数格，el.clock 移到最后），cmp.card@el.abilities = playingCard；小丑托盘从 el.party = unitCards（头像 + 血条）换成 el.abilities#2（cards 一排 4 张、cmp.card@el.abilities#2 = collection 白底插画牌，上中 0.8）；加 el.consumables（右上 inset 托盘 0/2）与 el.piles（右下牌堆 41/52 式 currentMax）；hand：el.cta.form = triple（Play / Sort[Rank|Suit] / Discard）、cmp.card@el.abilities = playingCard、lay.cardOverlap@el.abilities 0.15 + el.abilities.valueLabel = currentMax（8 张略叠 + 8/8）、st.rarityCue@el.abilities = [finish]、st.selected@el.abilities = lift；draft：上排同样 playingCard + finish（玻璃牌），el.selection.innerCard = white + dockTo el.reward / dockSide right（白内卡说明框停在塔罗右边不压牌），cmp.card@el.reward = tarot（窄长塔罗：罗马数字 + 拱顶插画 + 名牌）；codex：cmp.slot = collectionCard（白底插画小丑牌、无价）；blinds：lay.panelAlign = end + lay.panelWidth 0.7（托盘让出左侧竖栏位置）、cmp.cardParts = [actionTop, nameplate, art, valueTarget, actionBelow]（选择钮 / 名牌 / 筹码图 / 目标分 + 奖励 / 卡下跳过）；results：cmp.listRow = [title, valueBlock]（小标题 + 彩色数值块）、cnt.itemCount 3 → 5、ops.actions = []（去掉第三颗「再来一局」，留底部两颗）、ix.mode = readOnly（统计行不画焦点框）"
+ ],
+ "notes": "“彩色像素块 + 整屏 CRT 后处理”：左侧一条贴边竖栏装下全部状态（盲注与目标分、本轮得分、蓝筹码 × 红倍率两块大数字、出牌 / 弃牌次数、金钱、底注与轮次、两颗彩色大按钮），中间是牌桌：上方小丑托盘、下方手牌、右下牌堆。面板是无描边的深灰青圆角块 + 硬投影，像素字带硬阴影、数字特别大以扛住后处理；颜色直接等于语义，背景是随盲注换色的流动漩涡。几乎所有东西都在轻摇、弹跳、滚数和燃烧，手感占这套 UI 的一半。第二轮：局内两屏改走元素排布并沿左边排成一列，其余界面各自套最近的模板再覆盖；选盲注、结算两屏按对这款游戏的了解编码；游戏内商店按范围约定未复刻。"
+}

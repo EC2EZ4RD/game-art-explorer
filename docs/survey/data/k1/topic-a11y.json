@@ -1,0 +1,961 @@
+{
+  "meta": {
+    "topic": "可读性与无障碍（对比、字号、色盲安全编码、字幕、UI 缩放、减少动效 / 透明、改键与操作替代、触屏目标、焦点、无障碍预设）",
+    "date": "2026-10-14",
+    "scope": "局内 HUD、菜单、对话 / 字幕、设置页、手柄 / 键鼠 / 触屏操作。手游商城 / 抽卡 / 签到 / 首充 / 通行证 / 红包 / 广告类界面不在范围内，没有从中取证据或归纳原则；手游战斗 HUD 保留（触屏目标一条）。",
+    "evidenceBase": "452 张参考卡（src/content/uiRefs.json 的 params 与 note）；qa/refs-cache/r2 对照图（看过 arpg 03 / 04 / 09、strategy 03 / 07 / 13、life 09 / 15、card 01 / 06、mobile land-01）；R3 评测统计（ui-review-stats.json、12-r3-reviews.md）；本地评测缓存的无障碍关键词粗筛（见 reviewKeywordCounts）；06 文档的可读性原则与检查清单、08 文档；本工具当前皮肤预设（uiSpec.gen.json）；Xbox Accessibility Guidelines（XAG 101 / 102 / 103 / 104 / 107 / 117）、Game Accessibility Guidelines、AbleGamers APX、WCAG 2.1、TLOU Part II 与 God of War Ragnarök 官方无障碍页。",
+    "reviewKeywordCounts": {
+      "method": "对 qa/refs-cache/reviews 下 336 款的缓存评测按原文去重（63,153 条），用中英关键词正则只数命中条数与好评 / 差评，不保存、不引用原文。关键词粗筛会误命中（「contrast」多半在说美术对比、「readable」可能在说剧情），只用来看话题出在哪些游戏，不做精确比较。",
+      "字幕（subtitle / caption / 字幕）": "83 条 / 46 款（好评 63）；最多：Assassin's Creed: Director's Cut 9、BioShock Infinite 9、Ghost of Tsushima 5、Clair Obscur 4、FFXVI 3、Half-Life 3",
+      "字幕 + 小 / 看不清 同条出现": "7 条 / 6 款（BioShock Infinite 2，其余各 1：Elden Ring、FFVII Remake、Forza Horizon 5、God of War、Cureocity）",
+      "色盲 / 色弱": "6 条 / 6 款，每款 1 条——评测里几乎没人提，不代表没问题：受影响的玩家是少数、按「有帮助」排序的前 200 条很难轮到；这一类只能靠规范与模拟检查，不能靠评测发现",
+      "无障碍 / accessibility": "51 条 / 30 款（好评 37）；TUNIC 7、Cult of the Lamb 4、Hi-Fi RUSH 3、Kena 3、Fields of Mistria 3、The Witcher 3 3、TLOU Part I 2、TLOU Part II 2——多数是夸「有这些选项」",
+      "字号 / 字体太小（精确短语）": "7 条 / 6 款（Pentiment 2）；R3 的「字太小」分类更宽：58 条 / 38 款",
+      "看不清 / 难读（readable / legible / 看不清）": "70 条 / 50 款（差评 30）；TUNIC 3、CONTROL 3、Valheim 3、Hades II 2、鬼谷八荒 2、Callisto Protocol 2、Forza Horizon 5 2、Ragnarök 2、Black Myth: Wukong 2、Hyper Light Drifter 2",
+      "改键 / 键位 / rebind": "109 条 / 72 款（差评 47）；≥ 2 条 21 款：Assassin's Creed 2 8、FFVII Remake 5、Resident Evil 5 4、Cuphead 4、RDR2 3、Ghost of Tsushima 3、Heavy Rain 3",
+      "QTE / 连打": "184 条 / 62 款（差评 70）；Heavy Rain 33、Beyond: Two Souls 21、Detroit 13、FFXVI 13、Clair Obscur 8、Resident Evil 5 8",
+      "UI 缩放（精确短语）": "3 条 / 3 款；R3 的「UI 缩放 / 分辨率」分类：19 条 / 12 款",
+      "光敏 / 癫痫、晕动": "沿用 topic-feedback 的粗筛：光敏 / 癫痫 / 频闪 38 条 / 23 款；晕 / motion sickness 202 条 / 98 款（Stray 14、Portal 2 8、Return of the Obra Dinn 8）"
+    },
+    "paramGaps": [
+      "默认字号低于规范：D-device 给 PC 的正文 14px、chk.minText 默认 12px，都低于 XAG 101 的 PC 18px@1080p；建议 PC 18、掌机 ≥ 18、电视 26–28，chk.minText 的默认值跟设备走（见 P-text-size-floor）。",
+      "字幕缺独立参数：字幕底板不透明度（0–100%）、字幕字号独立于正文、说话人名 / 方向箭头、对白 / 闲聊 / 音效三类分开开关、每行字数与行数检查。目前只能用 el.subtitle + cmp.dialogBox + typ.legibility + el.subtitle.scale 近似。",
+      "语义色只能选三种色盲预设（a11y.cvdPreset），缺「自定义」与逐项取色（敌 / 友 / 可交互 / 危险 / 准星），也缺 HUD 颜色与 HUD 底板三档（TLOU Part II 的做法）。",
+      "高对比模式只有一个开关：缺场景压暗 / 去饱和强度（XAG 102 里 Eagle Island 的背景压暗）与描边颜色两个子项。",
+      "操作替代缺参数：长按改点按 / 切换、连打改长按或自动、QTE 跳过（XAG 107）；ix.confirm = hold 时应自动出现对应的玩家选项。",
+      "检查缺两项：焦点指示对相邻颜色 ≥ 3:1（WCAG 1.4.11）不在 chk.contrast 范围内；字幕行长 / 行数检查。",
+      "Godot 导出时，平台的高对比、减少动效、字幕样式设置应作为玩家选项的默认值来源。"
+    ],
+    "overlaps": "与兄弟主题有重叠，本文件只从可读性 / 无障碍角度写：减少动效的分通道替换见 topic-feedback 的 P-reduced-motion-channels；改键页与按键提示的版式见 topic-navigation 的 P-input-rebinding、对话呈现见 P-dialogue-presentation；HUD 分档与可调见 topic-hierarchy 的 P-adaptive-layers 与 topic-diegesis 的 P-player-tunable-immersion。"
+  },
+  "principles": [
+    {
+      "id": "P-text-size-floor",
+      "title": "字号有底线：按视距定默认值，再给到 200% 的文字缩放",
+      "problem": "玩家坐在电视前 2–3 米、用掌机 / 手机小屏、或在 1440p / 4K 显示器上玩时，HUD、物品说明与字幕读不清。R3 的「字太小 / 看不清」共 58 条、分布在 38 / 336 款（≥ 2 条的 18 款），动作类最集中：21 款动作游戏占了 14 条（God of War Ragnarök 3、God of War 2、Sekiro 2、Hades II 2……），说明 3A 主机作品同样会栽在默认字号上。设计者要回答：每种设备的默认正文多大、哪些字可以小一级、哪些必须大一级、玩家能放大到多少。",
+      "approaches": [
+        {
+          "name": "按设备与视距给默认正文字号",
+          "params": { "ctx.device": "tv", "typ.baseSize": 26, "lay.safeMargin": 5 },
+          "whenToUse": "定平台后的第一步：电视 / 掌机 / 手机 / PC 各取一个基准，PC 也不要低于 18px@1080p。大字并不等于幼稚——Half-Life 2 的橙色大号血量 / 护甲数字、Balatro 的巨型像素数字、Stumble Guys 的粗描边目标条都是风格的一部分。",
+          "cost": "大字吃版面：电视上同屏能放的说明行数、列表条目都要减，长说明要拆页或折叠。",
+          "examples": ["steam:220", "steam:2379780", "steam:1677740"]
+        },
+        {
+          "name": "字号阶梯：关键数字再大一级，标签可以小一级",
+          "params": { "typ.numerals.family": "display", "typ.scale": 1.5, "el.vitals.valueLabel": "current", "el.vitals.priority": "primary" },
+          "whenToUse": "HUD 上真正要一眼读的只有少数几个数（血、弹药、分数、倍率、倒计时）；它们用展示数字放大，说明与标签降一级但仍过底线。",
+          "cost": "阶梯比太大时最小一级会掉到底线以下；数字字体与正文字体要成套设计。",
+          "examples": ["steam:220", "steam:440", "steam:2379780"]
+        },
+        {
+          "name": "玩家文字缩放 80%–200%（独立于 UI 缩放）",
+          "params": { "a11y.textScale": 1.5, "chk.overflow": "plus50" },
+          "whenToUse": "所有含正文的游戏；叙事、RPG、策略、生存的说明文字尤其需要。TLOU Part II 的视觉预设会把 HUD 调成大号，Ragnarök 的视觉预设含图标与字幕尺寸（后者据第三方整理）。",
+          "cost": "所有文本框必须能重排（换行或单向滚动），按钮、页签、格子里的字要放得下；按键图标里的字母也要跟着放大。",
+          "examples": ["steam:2531310", "steam:2322010"]
+        },
+        {
+          "name": "一键大字预设（ov.bigText），首启就能选",
+          "params": { "a11y.textScale": 1.4, "typ.baseSize": 18, "chk.minText": 16, "chk.overflow": "plus30" },
+          "whenToUse": "把放大与溢出检查打包成「视觉辅助」的一部分，在首次启动的设置页给出。",
+          "cost": "预设只是起点，仍要逐屏检查溢出与截断。",
+          "examples": ["steam:2531310", "steam:2322010"]
+        },
+        {
+          "name": "正文字重至少常规，细体只留给大标题",
+          "params": { "typ.body.weight": "regular", "typ.display.weight": "light", "typ.legibility": "shadow" },
+          "whenToUse": "极简 / 细线风格想保留气质时（本工具 skin.mono、skin.thinGeo 的默认正文都是细体 + 无底）：细体只用在 ≥ 大字的标题，正文回到常规字重。",
+          "cost": "画面会「重」一点，精致感改由标题、线条与留白承担。",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "3A 动作 / 开放世界：细字体 + 小字号 + 电视视距，HUD 小字与物品说明在沙发距离上读不清。",
+          "examples": ["steam:2322010", "steam:1593500", "steam:814380", "steam:1145350"],
+          "reviewEvidence": "R3 字太小类：Ragnarök 3 条、God of War 2 条、Sekiro 2 条、Hades II 2 条；Elden Ring、Black Myth: Wukong、FFXVI 各 1 条。Ragnarök 官方列出 70 多项无障碍功能，评测里仍有 3 条说字小——有选项不等于默认值过关。"
+        },
+        {
+          "desc": "风格化字体直接做小字号正文：像素字、1 位抖动画面里的小字、按角色区分的手抄体、羊皮纸漫画页上的小字，笔画在缩小后粘连。",
+          "examples": ["steam:257850", "steam:653530", "steam:1205520", "steam:763890"],
+          "reviewEvidence": "R3 字太小类：Hyper Light Drifter 2、Return of the Obra Dinn 2、Pentiment 2、Wildermyth 2——都是美术口碑很好的作品，评测把读字困难单独拎出来；关键词粗筛里「字号 / 字体太小」精确短语只有 7 条，其中 Pentiment 占 2 条。"
+        },
+        {
+          "desc": "信息密集的模拟 / 修仙 / 网页式界面：一屏塞满小字表格，没有放大选项。",
+          "examples": ["steam:1468810", "steam:1593030", "steam:1267910"],
+          "reviewEvidence": "鬼谷八荒 2 条字太小（另 1 条 HUD 乱）、Terra Nil 2 条字太小、Melvor Idle 2 条 UI 缩放。"
+        }
+      ],
+      "rules": [
+        "默认正文（按 XAG 的「最高升部到最低降部」实测像素高）：PC / VR ≥ 18px@1080p，主机电视 ≥ 26px@1080p，手机按 DPI 换算（100 DPI 18px，随 DPI 线性放大）；GAG 引用的 10 英尺界面经验是电视 28px 起，而且这只是下限。",
+        "本工具现状：D-device 给 PC 的 14px、chk.minText 默认 12px 都低于 XAG 下限——PC 应改 18，掌机 ≥ 18，chk.minText 默认值随设备走。",
+        "文字缩放至少到 200%：放大后不丢内容、只需单向滚动、标题仍明显大于正文；也允许玩家缩小。",
+        "按键图标里的字母 / 数字同样要过最小字号，图标随文字一起缩放。",
+        "关键数值比正文再大一级；说明文字可以小，但不能低于底线。",
+        "书法、像素、手写、哥特等装饰字只用在大标题，正文给无衬线常规体。",
+        "检查：新界面先在 chk.viewDistance = 电视 2.5m 下看一遍，再开 chk.minText。"
+      ],
+      "genres": ["动作 / 魂类", "开放世界探索", "RPG", "生存", "策略 / 模拟（密集文字）", "叙事"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 101: Text display", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101", "point": "启动时的默认最小字号：主机 26px@1080p、PC / VR 18px@1080p、移动端按 DPI 线性换算；按升部到降部的像素高测量；文字可放大到 200% 且不丢内容、只需单向滚动；图标里的字也要过线并随文字缩放。" },
+        { "title": "Game Accessibility Guidelines: Use an easily readable default font size", "url": "https://gameaccessibilityguidelines.com/use-an-easily-readable-default-font-size/", "point": "引用 10 英尺界面经验：1080p 电视 28px 是下限而不是目标；最理想是让玩家自选字号，做不到时至少默认就大。" },
+        { "title": "AbleGamers APX: Clear Text", "url": "https://accessible.games/accessible-player-experiences/access-patterns/clear-text/", "point": "让玩家改字号、对比与颜色、字体、字幕底和对话节奏；举 Hitman (2016) 五档字幕字号带实时预览为例。" },
+        { "title": "God of War Ragnarök accessibility options (PlayStation)", "url": "https://www.playstation.com/en-us/games/god-of-war-ragnarok/accessibility/", "point": "官方列出 70 多项无障碍功能并按视觉 / 听觉 / 动效 / 操作分预设——用来对照它在 R3 里仍被提到字小。" }
+      ],
+      "demo": {
+        "a": { "ctx.device": "tv", "typ.baseSize": 14, "typ.body.weight": "light", "a11y.textScale": 1, "chk.viewDistance": "tv", "chk.minText": 26 },
+        "b": { "ctx.device": "tv", "typ.baseSize": 26, "typ.body.weight": "regular", "typ.numerals.family": "display", "a11y.textScale": 1, "chk.viewDistance": "tv", "chk.minText": 26 },
+        "lookAt": "把视距预览切到电视 2.5 米：A 的正文与物品说明被最小字号检查整片标红，细体缩小后几乎成了灰线；B 的正文过线，血量与数量用展示数字再大一级。同时注意 B 同屏能放的说明行数明显变少——这是大字的真实代价，要靠分页与折叠消化，而不是再把字缩回去。"
+      }
+    },
+    {
+      "id": "P-text-over-live-scene",
+      "title": "压在实时画面上的字必须自带「底」：对比度按最不利的那一帧算",
+      "problem": "HUD 数值、提示、名牌、字幕直接叠在实时画面上，背后亮度每帧都在变：雪地、沙漠、白天天空、爆炸特效、彩色 CG。只要有一帧对比度掉下去，玩家就漏读。参考库里半透明面板很常见（建造类常用不透明度 0.4–0.8 的面板：Dyson Sphere Program、Before We Leave、ISLANDERS、Timberborn），本工具的毛玻璃、全息、极简单色、细线几何皮肤默认都是低不透明度或无底——它们在亮背景上最容易失效。",
+      "approaches": [
+        {
+          "name": "文字描边",
+          "params": { "typ.legibility": "outline" },
+          "whenToUse": "浮在世界里的字：伤害数字、按键提示、头顶名牌、像素 / 卡通风 HUD；背景亮暗都会出现时最稳。",
+          "cost": "描边太粗像贴纸，小字号下描边会糊掉字腔；写实风格里显得廉价，可改细描边 + 柔投影。",
+          "examples": ["steam:105600", "steam:49520", "steam:1677740"]
+        },
+        {
+          "name": "投影（无底文字的最低要求）",
+          "params": { "vis.opacity": 0, "typ.legibility": "shadow" },
+          "whenToUse": "以暗场景为主的极简 HUD 与无框对话（恐怖、太空、夜晚、黑底叙事）。约束 C-legibility 规定无底 + 实时画面时至少要投影。",
+          "cost": "背景是中灰或高频纹理时投影救不回来；一旦场景变亮（雪、白天）就要升级为描边或底板。",
+          "examples": ["steam:231200", "steam:367520"]
+        },
+        {
+          "name": "半透明底板（scrim）",
+          "params": { "typ.legibility": "scrim", "vis.opacity": 0.6 },
+          "whenToUse": "对话框、任务提示、字幕、HUD 数值块：背景复杂但又不想把画面挡死。Half-Life 2 的 HUD 数字垫半透明圆角黑底，BotW 对话是半透明黑底圆角框。",
+          "cost": "底板面积大了会挡视野；底板不透明度要交给玩家调（XAG：0–100%）。",
+          "examples": ["steam:220", "iig:the-legend-of-zelda-breath-of-the-wild", "steam:1145350", "gameui:1691"]
+        },
+        {
+          "name": "实底面板 + 与场景反向的面板明度",
+          "params": { "vis.opacity": 1, "col.lightness": "dark", "rel.harmony": "contrast" },
+          "whenToUse": "信息密集的战术 / 背包 / 状态页；场景很亮（雪、沙、白纸媒介）时用深色面板，很暗时用浅色（派生规则 D-lightness）。",
+          "cost": "面板感强，「融入画面」的风格目标要让步。",
+          "examples": ["steam:590380", "steam:1996010", "steam:1150690", "steam:413150"]
+        },
+        {
+          "name": "菜单叠在实时场景上时压暗 / 虚化背后",
+          "params": { "rel.behind": "live", "rel.dim": 0.6, "rel.sceneBlur": 8 },
+          "whenToUse": "暂停、背包、装备页不暂停世界时。Elden Ring 装备页是半透明黑底压在实时画面上。",
+          "cost": "压得太狠就没了「世界没停」的临场感；虚化有性能开销。",
+          "examples": ["steam:1245620", "iig:the-legend-of-zelda-breath-of-the-wild"]
+        },
+        {
+          "name": "降低透明：所有半透明皮肤都备一个实底版本",
+          "params": { "a11y.reduceTransparency": true },
+          "whenToUse": "毛玻璃、全息、科幻半透明面板；开启后不透明度拉满、模糊归零（D-reduceTransparency）。",
+          "cost": "毛玻璃 / 全息的气质会变；实底版本要单独调色，不能只是把 alpha 改成 1。",
+          "examples": ["steam:1366540", "steam:1073910", "steam:1046030", "steam:1062090"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "细白字无底直接压在亮场景或 CG 上（白色城市、雪地、白天天空、亮色立绘）。",
+          "examples": ["steam:17410", "steam:870780", "steam:313730"],
+          "reviewEvidence": "Mirror's Edge（白色城市）2 条字太小 / 看不清；CONTROL 1 条字太小、4 条 HUD 乱 / 挡视野，关键词粗筛里「看不清」3 条；Sunrider 的无框字幕在 152 条评测里没有对应抱怨——这类风险主要靠对比度检查发现，不能等评测。"
+        },
+        {
+          "desc": "低不透明度浅色毛玻璃（本工具 skin.glass 默认不透明度 0.18、模糊 12px、浅色面板；skin.holo 0.25）放在雪地 / 白天场景里承载正文。",
+          "examples": ["steam:1046030"],
+          "reviewEvidence": "R3 没有「透明 / 对比」分类；ISLANDERS（0.4 不透明度胶囊，只放图标）没有相关抱怨。证据来自规范（XAG 102、NN/g），不是评测计数。"
+        },
+        {
+          "desc": "纸纹、图案底、彩色插画上的小字：底纹本身就是高频噪声。",
+          "examples": ["steam:763890", "steam:1205520"],
+          "reviewEvidence": "Wildermyth（羊皮纸漫画页）2 条、Pentiment（手抄本页面）2 条字太小。"
+        }
+      ],
+      "rules": [
+        "对比度按背景最不利的那一块算（XAG 102）：正文 ≥ 4.5:1；大字（PC 36px / 电视 52px@1080p 以上）与关键图标 ≥ 3:1；不可用项的文字 ≥ 3:1；高对比模式 ≥ 7:1。",
+        "无底文字至少投影（C-legibility）；亮场景（雪、沙、白天、白纸媒介）一律升级为描边或底板。",
+        "不透明度低于 0.6 的面板上不放正文，只放大字与图标（经验值）。",
+        "给玩家一个「文字底板不透明度 0–100%」滑条，同时作用于 HUD 文字、提示与字幕。",
+        "毛玻璃 / 全息皮肤必须有实底版本，绑定 a11y.reduceTransparency。",
+        "检查：把场景切到最亮与最暗两档，各开一次 chk.contrast；画面特效重时同时开 chk.fxOcclusion（D-fxDensity）。"
+      ],
+      "genres": ["开放世界探索", "生存（雪地 / 沙漠 / 白天）", "竞速", "动作", "建造与经营（半透明面板）", "叙事（CG 背景）"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 102: Contrast", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/102", "point": "正文 4.5:1、大字 3:1、未激活元素文字 3:1、高对比模式 7:1；非纯色背景按对比最低处测量；提升对比的办法是可调底板、可选文字颜色、高对比模式、给文字与元素加边框。" },
+        { "title": "W3C Understanding SC 1.4.11 Non-text Contrast", "url": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html", "point": "控件边界、选中 / 焦点等状态指示、理解内容所需的图形，对相邻颜色至少 3:1。" },
+        { "title": "Nielsen Norman Group: Glassmorphism", "url": "https://www.nngroup.com/articles/glassmorphism/", "point": "背景越花模糊要越重，并提供降低透明 / 提高对比的选项（06 文档已引用）。" },
+        { "title": "The Last of Us Part II accessibility options (PlayStation)", "url": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii/accessibility/", "point": "HUD 底可选默认 / 浅 / 加深三档，HUD 颜色有白、黄、蓝、红、绿可选——把「底」做成玩家选项的现成例子。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "vis.opacity": 0.2, "vis.blur": 12, "col.lightness": "light", "typ.legibility": "none", "typ.body.weight": "light", "chk.contrast": true },
+        "b": { "cnt.screen": "screen.hud", "vis.opacity": 0.85, "vis.blur": 0, "col.lightness": "dark", "typ.legibility": "outline", "typ.body.weight": "regular", "chk.contrast": true },
+        "lookAt": "雪线旅人的雪原正好是最不利背景：A 的浅色毛玻璃 + 细体字在亮雪地上被对比度检查标红，镜头转向暗处又恢复——这就是「有些帧读不到」；B 深底 + 描边在亮暗两种背景下都过 4.5:1。比较两边面板面积相同，差别只在底和字的处理。"
+      }
+    },
+    {
+      "id": "P-color-never-alone",
+      "title": "颜色永远不单独承载信息：每个语义色都配一个形状、图标、文字或位置",
+      "problem": "红绿色觉异常约占男性 8%（GAG 与 06 文档引用 8–10%），白内障、强光下的屏幕、护眼模式也会吞掉色差。阵营、稀有度、状态、危险只靠色相区分时，这些玩家分不出敌我、档位和可不可用。评测几乎不会暴露这类问题（关键词粗筛里「色盲 / 色弱」只有 6 条），只能靠设计时的冗余与模拟检查。",
+      "approaches": [
+        {
+          "name": "形状即身份，颜色只做加强",
+          "params": { "col.coding": ["lineId"], "st.statusMark": "icon", "vis.iconStyle": "flat" },
+          "whenToUse": "大量同类对象要互相区分的极简 / 解谜 / 路网游戏：Mini Metro 的车站用圆、三角、方块等形状区分目的地，线路颜色只用来区分线路。",
+          "cost": "形状词汇有限（一般 6–8 种以内），要在设计初期就规划；新增类别时最难扩展。",
+          "examples": ["steam:287980"]
+        },
+        {
+          "name": "意图图标 + 数字 + 颜色",
+          "params": { "el.threat.form": ["intent"], "st.statusMark": "icon", "elx.valueLabel": "current" },
+          "whenToUse": "回合战术、卡牌、Roguelite：敌人下一步做什么用图标说、伤害多少用数字说、颜色只表示紧急度。Into the Breach 把攻击意图直接画在格子上（箭头 + 预警格）。",
+          "cost": "图标要先教会；单位头顶的图标与数字会互相挤。",
+          "examples": ["steam:590380", "iig:slay-the-spire", "steam:2084000", "steam:1668690", "steam:1775490"]
+        },
+        {
+          "name": "稀有度 / 档位：边框色 + 星级 / 框形 / 字母",
+          "params": { "col.coding": ["rarity"], "st.rarityCue": ["border", "stars", "frameShape"], "col.rarityScale": "diablo" },
+          "whenToUse": "装备、卡牌、收集的格子视图（约束 C-rarity-redundancy 强制至少一种非颜色线索）。The WereCleaner 与 Defender's Quest 用星级表达档位。",
+          "cost": "小格子里多一层符号要留位置；星级与框形要统一一套语言。",
+          "examples": ["steam:2795000", "steam:218410"]
+        },
+        {
+          "name": "阵营：橙蓝 + 明度拉开 + 剪影 / 位置",
+          "params": { "col.coding": ["team"], "col.teams": "orangeBlue" },
+          "whenToUse": "对抗、多人、RTS / MOBA；UI 与 3D 场景共用同一对阵营色（D-teams）。TF2 的红蓝阵营同时靠职业剪影识别；Portal 2 的蓝 / 橙两个传送门在准星上分居左右两半，位置本身就是第二线索。",
+          "cost": "红 = 敌的直觉要换成别的线索建立；橙蓝两色要拉开明度（浅蓝 vs 深橙）才在灰度下仍可分。",
+          "examples": ["steam:440", "steam:620"]
+        },
+        {
+          "name": "状态用符号，不用「变灰」",
+          "params": { "st.locked": "lock", "st.cooldown": "radialWipe", "st.done": "check" },
+          "whenToUse": "背包、技能栏、菜单里的锁定 / 冷却 / 完成 / 不可用：XAG 103 举的例子是锁定商品除了变灰还加锁图标、不可用菜单项另写「不可用」。",
+          "cost": "符号一多画面会花，统一用一套线性小图标；同屏各状态要占不同通道（C-st-channels）。",
+          "examples": []
+        },
+        {
+          "name": "单一危险色 + 明度极端拉开",
+          "params": { "col.strategy": "duotone", "col.lightness": "dark", "hier.emphasis": ["color", "value"] },
+          "whenToUse": "节奏 / 弹幕 / 动作：全屏只有「会伤你的」一种高亮色，其它压暗。Just Shapes & Beats 的危险物全是品红、玩家是青色，两者明度差很大。",
+          "cost": "色彩表现力被压缩；仍需形状与运动方向帮助识别；品红 / 青这对在三种色盲模拟下都要单独验证。",
+          "examples": ["steam:531510"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "红→绿热力图、红 / 绿表示好 / 坏或敌 / 友。",
+          "examples": ["steam:255710"],
+          "reviewEvidence": "评测里色盲话题极少（6 条 / 6 款），无法计数；06 文档 A9 已把红→绿热力图列为色盲陷阱。本工具 col.teams = greenRed 会触发 C-teams-cvd 警告。"
+        },
+        {
+          "desc": "格子 / 图标视图只用边框色或底色分档，档位文字只在详情里。",
+          "examples": ["steam:812140", "steam:2344520"],
+          "reviewEvidence": "无直接抱怨计数（评测几乎不提色盲）；Assassin's Creed Odyssey 的战利品按灰 / 蓝 / 紫 / 金上色，Diablo IV 卡上只记到边框色 + 底色两个色彩通道。"
+        },
+        {
+          "desc": "锁定、冷却、完成、不可用都用「去饱和 / 变灰」表达，同屏分不出来。",
+          "examples": [],
+          "reviewEvidence": "约束 C-st-channels 来自 R1 复测（v1 的灰度锁、去饱和冷却、灰化完成同屏分不出）；评测无对应分类。"
+        },
+        {
+          "desc": "说话人、频道、队友只靠名字颜色区分。",
+          "examples": [],
+          "reviewEvidence": "无计数；XAG 104 要求颜色之外必须有文字等第二种方式。"
+        }
+      ],
+      "rules": [
+        "每个语义色都配一个非颜色线索：形状、图标、文字、图案、位置五选一以上。",
+        "先开全色盲（chk.cvd = achroma）看一遍：灰度下分不开的就是只靠色相的；再分别看红 / 绿 / 蓝色盲。",
+        "阵营默认橙蓝并拉开明度；危险色避开与安全色构成红绿对立。",
+        "稀有度至少两种通道：边框色 + 星级 / 框形 / 字母 / 侧边色条（C-rarity-redundancy）。",
+        "锁定 / 空槽 / 完成 / 冷却 / 选中同屏时各占不同视觉通道，符号类优先（C-st-channels）。",
+        "UI 与 3D 世界共用一张语义色表，一起做色盲模拟（D-teams）；模拟只用于自查，最终要找色觉异常玩家实测（XAG 103）。"
+      ],
+      "genres": ["策略 / 战术", "卡牌 / Roguelite", "射击 / 对抗", "工厂与城建（热力图、状态灯）", "解谜（颜色配对）", "RPG（稀有度）"],
+      "sources": [
+        { "title": "Game Accessibility Guidelines: Ensure no essential information is conveyed by a colour alone", "url": "https://gameaccessibilityguidelines.com/ensure-no-essential-information-is-conveyed-by-a-colour-alone/", "point": "颜色要配合符号、图案或形状；红绿色觉异常在男性中常见（06 文档引用为 8–10%）。" },
+        { "title": "Xbox Accessibility Guideline 103: Additional channels for visual and audio cues", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/103", "point": "关键信息用颜色表达时至少再加形状、图案、图标或文字之一；颜色是主要手段时要允许玩家改色（预设或自由取色）；变灰表示不可用时要另加手段；模拟滤镜不能替代真人测试。" },
+        { "title": "AbleGamers APX: Distinguish This From That", "url": "https://accessible.games/accessible-player-experiences/access-patterns/distinguish-this-from-that/", "point": "让玩家改色、在颜色旁加符号、提高前景与背景对比；举例包括三消游戏的色盲模式在珠子上叠符号、射击游戏把小地图敌我图标改色。" },
+        { "title": "Machado, Oliveira & Fernandes 2009: CVD simulation", "url": "https://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html", "point": "本工具 chk.cvd 使用的色觉异常模拟矩阵出处（06 文档 C.4）。" },
+        { "title": "Rock Paper Shotgun: Into the Breach interface design（经 06 文档转引）", "url": "https://www.rockpapershotgun.com/2018/03/05/into-the-breach-interface-design/", "point": "开发者表示为了清晰宁可放弃酷的点子；敌人意图直接画在格子上。" }
+      ],
+      "demo": {
+        "a": { "col.coding": ["team", "rarity", "status"], "col.teams": "greenRed", "st.rarityCue": ["border"], "st.locked": "grayscale", "chk.cvd": "deutan" },
+        "b": { "col.coding": ["team", "rarity", "status"], "col.teams": "orangeBlue", "st.rarityCue": ["border", "stars", "frameShape"], "st.locked": "lock", "chk.cvd": "deutan", "chk.redundancy": true },
+        "lookAt": "打开绿色盲模拟：A 的敌我（红 / 绿）变成几乎同色的土黄，稀有度格子只剩深浅相近的框，锁定格与普通格分不开；B 的橙蓝模拟后仍明暗分明，稀有度另有星级与框形，锁定格有锁图标。再把模拟切到全色盲：B 关掉颜色仍然能玩。"
+      }
+    },
+    {
+      "id": "P-high-contrast-and-recolor",
+      "title": "高对比模式与玩家自选色：把「重要的」和「不重要的」拉开，而不是把画面调亮",
+      "problem": "默认配色照顾不了所有人：低视力玩家需要更强的分离，色觉异常玩家需要换色，部分阅读障碍玩家反而觉得强对比刺眼（XAG 102）。实时画面又在不断变化，美术调色保证不了每一帧都可读。设计者的问题是：高对比模式到底改什么、色盲模式是滤镜还是换色、这些选项怎样不毁掉美术。",
+      "approaches": [
+        {
+          "name": "高对比显示模式：背景降饱和 / 压暗，自己、敌人、可交互物各一个纯色",
+          "params": { "a11y.highContrast": true, "rel.sceneTone": "desaturate", "typ.legibility": "outline" },
+          "whenToUse": "3A 动作、射击、潜行、2D 平台；作为视觉辅助预设的一部分。TLOU Part II 的 High Contrast Display 是专门的渲染模式；据第三方整理，Ragnarök 也有高对比 HUD 与高对比过场选项。",
+          "cost": "每类对象都要有高对比着色通道；画面气质完全改变，只能作为选项。",
+          "examples": ["steam:2531310", "steam:2322010"]
+        },
+        {
+          "name": "关键对象描边高亮（把已有的「感知模式」常开）",
+          "params": { "rel.worldRender": "outline", "el.threat.worldRender": "outline" },
+          "whenToUse": "敌人、掉落、可交互物容易被写实环境吞掉时。很多作品已把描边做成能力：TLOU 的聆听模式把敌人描白、Dishonored 的透视、Horizon 的聚焦扫描、Mirror's Edge 把可攀爬路线染红——无障碍版本只是让它常开或可调颜色。",
+          "cost": "描边色要可选；常开会削弱潜行与探索的发现感。",
+          "examples": ["steam:2531310", "steam:205100", "steam:2420110", "steam:17410"]
+        },
+        {
+          "name": "HUD 颜色与 HUD 底板可选",
+          "params": { "col.text": "#FFE14D", "vis.opacity": 1, "typ.legibility": "scrim" },
+          "whenToUse": "以文字 / 细线为主的写实 HUD。TLOU Part II 给出五种 HUD 颜色与三档 HUD 底。",
+          "cost": "每套 HUD 色都要过对比检查；位图图标要准备多色版本或改为可着色的单色图标。",
+          "examples": ["steam:2531310", "steam:1888930"]
+        },
+        {
+          "name": "色盲预设 + 关键色逐项自选（替换语义色，不是全屏滤镜）",
+          "params": { "a11y.cvdPreset": "deutan", "col.teams": "orangeBlue" },
+          "whenToUse": "有阵营、稀有度、敌我标记、危险区的游戏：至少红 / 绿 / 蓝三种预设 + 自定义。Destiny 2、Overwatch 有色盲模式；据第三方整理，Ragnarök 可以按多类对象单独选色；XAG 103 记录同系列 Forza Horizon 4 的三种色盲预设与高对比模式。",
+          "cost": "语义色必须集中管理（色板角色 / 主题变量），散在贴图里的颜色改不了。",
+          "examples": ["steam:1551360", "steam:1085660", "iig:overwatch", "steam:2322010"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "色盲模式做成全屏后处理滤镜：整张画面跟着变色，UI 语义色之间反而没有拉开。",
+          "examples": [],
+          "reviewEvidence": "无评测计数；XAG 103 强调模拟滤镜只用于开发自查，正确做法是逐元素换色或让玩家自选。"
+        },
+        {
+          "desc": "「高对比」只是把 UI 调亮：背景没有退后，对象类别也没有分色。",
+          "examples": [],
+          "reviewEvidence": "无计数；XAG 102 明确高对比模式的目的在于提高重要元素的可见性、拉开不同类元素、拉开重要与不重要元素。"
+        },
+        {
+          "desc": "选项很全但藏在深层菜单、首次启动不提示，默认值本身不过线。",
+          "examples": ["steam:2322010", "steam:1551360"],
+          "reviewEvidence": "Ragnarök（官方 70+ 项无障碍）3 条、Forza Horizon 5 2 条仍提到字小；关键词粗筛「看不清」两款各 2 条——选项的可发现性与默认值同样重要。"
+        }
+      ],
+      "rules": [
+        "高对比模式下 UI 与关键对象对背景 ≥ 7:1（XAG 102），并按类别分色：自己 / 敌人 / 可交互 / 危险。",
+        "所有语义色走色板角色（col.focus、col.accent、阵营色、稀有度色阶），一处改全局生效；Godot 里对应 Theme 常量或全局 shader uniform。",
+        "色盲支持 = 三种预设 + 自定义取色，预览放在真实游戏画面里（Battlefield 2042 在暗 / 中 / 亮三种环境里预览，见 XAG 102）。",
+        "描边默认用白 + 黑双层（亮暗背景都可见），颜色可改。",
+        "读取平台的高对比设置作默认值（XAG 102）。"
+      ],
+      "genres": ["动作 / 潜行", "射击", "恐怖（暗场景）", "平台跳跃", "竞速"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 102: Contrast", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/102", "point": "高对比模式（亮 / 暗）下所有 UI 元素对背景 ≥ 7:1；高对比的本意是拉开重要与不重要元素；举 Hyperdot 的双高对比模式、Eagle Island 的背景压暗与角色 / 平台描边。" },
+        { "title": "The Last of Us Part II accessibility options (PlayStation)", "url": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii/accessibility/", "point": "High Contrast Display 渲染模式、HUD 尺寸默认 / 大、HUD 颜色五选、HUD 底三档；视觉预设一键打开高对比与大 HUD，之后每项仍可单调。" },
+        { "title": "God of War Ragnarök accessibility options (PlayStation)", "url": "https://www.playstation.com/en-us/games/god-of-war-ragnarok/accessibility/", "point": "按视觉 / 听觉 / 动效减少 / 操作分预设；高对比 HUD、高对比过场、多类对象独立选色等具体条目据第三方选项清单整理，未逐项核对官方页。" },
+        { "title": "Xbox Accessibility Guideline 103", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/103", "point": "颜色是主要信息手段时，玩家应能用预设或自由取色改掉；举 Forza Horizon 4 的三种色盲预设 + 高对比模式、Call of Duty: Black Ops Cold War 的小地图图标逐类选色。" }
+      ],
+      "demo": {
+        "a": { "a11y.highContrast": false, "a11y.cvdPreset": "off", "rel.worldRender": "billboard", "chk.cvd": "deutan" },
+        "b": { "a11y.highContrast": true, "a11y.cvdPreset": "deutan", "rel.worldRender": "outline", "rel.sceneTone": "desaturate", "chk.cvd": "deutan" },
+        "lookAt": "同样在绿色盲模拟下看：B 开启后场景退成低饱和、敌人与可交互物改成带描边的纯色，HUD 按绿色弱预设换了语义色。注意 B 并没有整体变亮——它是「重要的跳出来、不重要的退下去」。"
+      }
+    },
+    {
+      "id": "P-subtitles-captions",
+      "title": "字幕是一套独立排版：默认开、比正文大、标说话人、可加底，声音信息也要有画面版本",
+      "problem": "字幕不只给听障玩家：Ian Hamilton 在 GDC 2019 的数据是约六成玩家会开字幕（静音玩、环境嘈杂、混音听不清）。常见问题是无框细字压在亮画面上、说话人不明、一屏三四行、过场开头来不及打开字幕、环境声与方向信息只有声音。关键词粗筛里字幕被提到 83 条 / 46 款（Assassin's Creed: Director's Cut、BioShock Infinite 各 9 条），「字幕 + 小 / 看不清」同条出现 7 条。",
+      "approaches": [
+        {
+          "name": "电影式无框字幕 + 描边 / 投影",
+          "params": { "cnt.elements": ["el.subtitle"], "cmp.dialogBox": "bare", "typ.legibility": "outline", "el.subtitle.screenAnchor": "bc" },
+          "whenToUse": "过场、步行模拟、画面偏暗且讲究电影感的作品：Dear Esther 只有旁白字幕，Kentucky Route Zero 的对话是角落无框文字，幻塔、绝区零的剧情字幕无框压在底部。",
+          "cost": "亮场景必然失效，必须同时提供底板选项；描边 / 投影对部分读写障碍玩家反而更难读（80.lv 转述 Hamilton）。",
+          "examples": ["steam:520720", "steam:231200", "gameui:3522", "gameui:13081"]
+        },
+        {
+          "name": "字幕底板（不透明度 0–100% 可调）+ 更大字号",
+          "params": { "cnt.elements": ["el.subtitle"], "cmp.dialogBox": "bare", "typ.legibility": "scrim", "el.subtitle.scale": 1.3 },
+          "whenToUse": "所有有语音的游戏都该提供；户外 / 白天 / 雪地为主的作品默认就开。XAG 104 举同系列 Forza Horizon 4 的字幕设置：底板不透明度滑条 + 实时预览。",
+          "cost": "底板挡画面：默认可以低不透明度，但必须能拉满。",
+          "examples": ["steam:1551360"]
+        },
+        {
+          "name": "底部通栏对话框：名牌 + 头像 + 实底",
+          "params": { "cmp.dialogBox": "bar", "vis.opacity": 0.9, "cnt.characterMedium": "bust" },
+          "whenToUse": "RPG、视觉小说、像素叙事：说话人由名牌与立绘确定，底是实的。Hades 是左侧大立绘 + 底部框，FFVIII 对话窗左上写说话人名。",
+          "cost": "占下方约四分之一屏，与底部 HUD 冲突时要让位或暂隐 HUD。",
+          "examples": ["steam:1145360", "steam:413150", "steam:39150", "steam:1150690"]
+        },
+        {
+          "name": "挂在说话人身上的气泡（用空间位置标说话人）",
+          "params": { "cmp.dialogBox": "bubble", "el.subtitle.attachTo": "target" },
+          "whenToUse": "多人对话、边走边说、2D / 斜俯视叙事：OXENFREE 的台词与选项挂在角色头上，Night in the Woods 是黑底白字圆角气泡。",
+          "cost": "说话人离屏时要加 ← / → 方向；镜头拉远时气泡变小，需要最小尺寸。",
+          "examples": ["steam:388880", "steam:481510", "steam:972660", "steam:1055540"]
+        },
+        {
+          "name": "可回看的对话记录 + 自动 / 快进（阅读节奏自控）",
+          "params": { "cmp.dialogBox": "chatThread", "ix.skip": "vnControls", "mo.textReveal": "instant" },
+          "whenToUse": "文字量大的叙事、侦探、文字冒险：Disco Elysium 的对话是右侧整栏滚动文本，可以往回读。",
+          "cost": "需要日志界面与存储；长文还要配字号 / 行距设置。",
+          "examples": ["steam:632470", "steam:1477070"]
+        },
+        {
+          "name": "音效字幕 + 方向指示（声音信息的画面副本）",
+          "params": { "cnt.elements": ["el.subtitle", "el.threat"], "el.threat.form": ["edgeDir"], "rel.metaFx": ["hurtVignette"] },
+          "whenToUse": "靠声音传递威胁或线索的射击、恐怖、潜行、生存。Valve 在 Half-Life 2 与 Portal 2 率先做了带音效描述的隐藏字幕；God of War 用屏幕边缘箭头标出画面外的来袭；节奏动作 Hi-Fi RUSH 提供节拍可视化。",
+          "cost": "要为关键音效写一张字幕表并标方位；受击红边要能看出方向，而不是整屏泛红。",
+          "examples": ["steam:220", "steam:620", "steam:1593500", "steam:1817230"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "无框细字幕压在亮 CG / 白天画面上，且没有底板选项。",
+          "examples": ["steam:313730", "gameui:3033", "gameui:3522"],
+          "reviewEvidence": "R3 没有「字幕」分类；本地粗筛「字幕 + 小 / 看不清」7 条 / 6 款（BioShock Infinite 2），数量小；Sunrider 在 152 条评测里无相关抱怨，两款 GameUI 手游卡没有 Steam 评测——这类风险靠对比度检查发现，不能等评测。"
+        },
+        {
+          "desc": "打字机逐字出现、不能一键显示全文，或自动翻页太快。",
+          "examples": [],
+          "reviewEvidence": "无计数；GAG 认知类基础项要求文字推进由玩家掌握。"
+        },
+        {
+          "desc": "一屏三四行、全大写、说话人只靠颜色区分。",
+          "examples": [],
+          "reviewEvidence": "无计数；XAG 104：每行约 40 字符、最多两行、混合大小写、颜色之外必须有文字说明说话人。"
+        }
+      ],
+      "rules": [
+        "播放任何声音之前就能打开字幕；最好默认开（XAG 104 举 Gears 5 首启即开字幕）。",
+        "字幕比正文大：GAG 建议默认或可调到 ≥ 46px@1080p，且至少能放大到最小值的 200%。",
+        "每行 ≤ 38–40 个拉丁字符、最多两行（例外时三行）；中文按 XAG 101「CJK 行宽减半」换算约 ≤ 20 字（换算值，未单独核实）；断行放在语义处。",
+        "换说话人就标名字，离屏说话人加 ← / →；颜色只能作补充。",
+        "底板颜色与不透明度 0–100% 可调，设置页在真实画面上实时预览。",
+        "对白、背景闲聊、环境音效三类字幕分开开关；音效写在方括号里并标方向。",
+        "字幕放在下方居中，放到最大时也不能盖住关键 HUD；字幕设置随截图 / 录像保留（XAG 104）。"
+      ],
+      "genres": ["叙事 / 视觉小说", "恐怖", "开放世界探索", "RPG", "射击", "电影化动作"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 104: Subtitles and captions", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/104", "point": "所有语音都有字幕、换说话人时标名、离屏用箭头；字幕默认开或开场前可设；字号过 XAG 101 下限并可放大到 200%；每行不超过约 40 字符、最多两行、混合大小写、至少一种无衬线；底板颜色与 0–100% 不透明度可调；设置有真实画面预览；三类字幕可分开开关。" },
+        { "title": "Game Accessibility Guidelines: present subtitles / captions in a clear, easy to read way", "url": "https://gameaccessibilityguidelines.com/if-any-subtitles-captions-are-used-present-them-in-a-clear-easy-to-read-way/", "point": "字号 ≥ 46px@1080p（默认或可调）、实底或半透明底、每行约 40 字符、两行为限；与美术冲突时可读性优先，用选项兼顾两者。" },
+        { "title": "80.lv: 10 golden rules on subtitles for games（Ian Hamilton GDC 2019 演讲整理）", "url": "https://80.lv/articles/10-golden-rules-on-subtitles-for-games", "point": "约六成玩家使用字幕；字幕与音效字幕分开处理，Valve 在 Half-Life 2 与 Portal 2 率先做了音效字幕；标说话人与方向、给足阅读时间、清晰无衬线、避免全大写、可选黑底。" },
+        { "title": "AbleGamers APX: Clear Text", "url": "https://accessible.games/accessible-player-experiences/access-patterns/clear-text/", "point": "举 Assassin's Creed Origins：字幕下有深色底、说话人名写在字幕上方；Grand Kingdom 有自动播放与回看日志。" }
+      ],
+      "demo": {
+        "a": { "cnt.elements": ["el.vitals", "el.subtitle"], "cmp.dialogBox": "bare", "typ.legibility": "shadow", "typ.baseSize": 16, "mo.textReveal": "typewriter" },
+        "b": { "cnt.elements": ["el.vitals", "el.subtitle"], "cmp.dialogBox": "bare", "typ.legibility": "scrim", "typ.baseSize": 24, "el.subtitle.scale": 1.3, "mo.textReveal": "instant" },
+        "lookAt": "雪地上 A 的投影字幕几乎消失，打字机效果让读得慢的人跟不上；B 加了半透明底、字号更大、整句一次出现。比较两者占用的面积：B 多挡了一条底，换来任何背景都能读——所以底板不透明度要给玩家调。"
+      }
+    },
+    {
+      "id": "P-ui-scale-reflow",
+      "title": "UI 缩放要能重排：按画面高度等比、守住安全区、放大后不溢出",
+      "problem": "同一套 UI 要跑在 1080p 显示器、4K 电视、21:9 超宽屏、掌机和刘海手机上。R3 的「UI 缩放 / 分辨率」19 条 / 12 款，集中在老游戏与网页式界面：BioShock Infinite 4、RollerCoaster Tycoon Classic 3、Far Cry 4 2、Melvor Idle 2——固定像素的 UI 在高分辨率下整体变小，或者放大后挤出屏幕、文字被截断。",
+      "approaches": [
+        {
+          "name": "全局 UI 缩放：按画面高度等比，玩家可再乘一个系数",
+          "params": { "a11y.uiScale": 1.25 },
+          "whenToUse": "所有平台的基础，PC 必备。TLOU Part II 的 HUD 尺寸有默认 / 大两档。",
+          "cost": "布局必须是锚点 + 容器而不是绝对坐标；位图素材要有 2 倍版本或改九宫格。",
+          "examples": ["steam:2531310"]
+        },
+        {
+          "name": "只放大关键元素（血量、准星、小地图）",
+          "params": { "el.vitals.scale": 1.4, "el.crosshair.scale": 1.3, "el.minimap.scale": 1.3 },
+          "whenToUse": "低视力但仍想保持画面开阔的玩家；动作 / 射击。Ragnarök 的视觉预设包含图标与字幕尺寸。",
+          "cost": "元素之间可能重叠，需要避让规则。",
+          "examples": ["steam:2531310", "steam:2322010"]
+        },
+        {
+          "name": "安全区 + 超宽屏把 HUD 收进中间 16:9",
+          "params": { "lay.safeMargin": 5, "ctx.aspect": "21x9" },
+          "whenToUse": "电视（过扫描）、21:9 显示器、刘海手机（D-aspect、D-device）。Hellblade II 用宽银幕画幅且零 HUD。",
+          "cost": "超宽屏边缘的信息离视线更远，要给「HUD 宽度」选项。",
+          "examples": ["steam:2461850"]
+        },
+        {
+          "name": "放大 / 长语言溢出测试：重排而不是截断",
+          "params": { "a11y.textScale": 1.5, "chk.overflow": "plus50" },
+          "whenToUse": "每个新界面模板都跑一遍，尤其按钮、页签、格子里的字。",
+          "cost": "按钮要能变宽或换行，固定宽度的花框素材要改成九宫格。",
+          "examples": []
+        },
+        {
+          "name": "可拖动、可重排的窗口与 HUD",
+          "params": { "lay.container": "window", "el.minimap.screenAnchor": "tl" },
+          "whenToUse": "经营 / 模拟 / MMO 的多窗口；运动障碍玩家想把常用信息挪到顺手位置（GAG 运动类中级：可重排界面）。RollerCoaster Tycoon Classic 的窗口都可拖动——但它缺的正是缩放。",
+          "cost": "布局要存档，默认布局仍要是最好的。",
+          "examples": ["steam:683900"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "固定像素 UI：高分辨率下整体变小，且没有缩放选项。",
+          "examples": ["steam:683900", "steam:8870", "steam:298110"],
+          "reviewEvidence": "R3 UI 缩放类：BioShock Infinite 4、RollerCoaster Tycoon Classic 3、Far Cry 4 2。"
+        },
+        {
+          "desc": "网页式密排界面不支持缩放。",
+          "examples": ["steam:1267910"],
+          "reviewEvidence": "Melvor Idle 2 条 UI 缩放。"
+        },
+        {
+          "desc": "放大后要横竖两个方向滚动，或文字被截断成省略号。",
+          "examples": [],
+          "reviewEvidence": "无评测分类；XAG 101 要求放大后只需单向滚动、不丢内容。"
+        }
+      ],
+      "rules": [
+        "UI 缩放（0.75–2.0）与文字缩放（0.8–2.0）是两个独立滑条。",
+        "以画面高度为基准等比缩放，4K 下不能比 1080p 小；Godot 用 stretch mode = canvas_items 打底，玩家倍率写进 Window.content_scale_factor。",
+        "安全边：电视 5%、掌机 3%、PC 2%（D-device）；21:9 时 HUD 收进中间 16:9（D-aspect）。",
+        "放到最大时只允许单向滚动、标题仍大于正文、不丢内容。",
+        "每个界面模板跑 chk.overflow（+30% / +50%）与 chk.safeArea。"
+      ],
+      "genres": ["建造与经营", "策略", "工厂 / 放置（密集界面）", "射击（PC 移植）", "RPG", "手机"],
+      "sources": [
+        { "title": "Game Accessibility Guidelines: Allow interfaces to be resized", "url": "https://gameaccessibilityguidelines.com/allow-interfaces-to-be-resized/", "point": "先给好的默认尺寸，再让玩家放大或缩小界面：适配不同屏幕、帮助看不清小字与小图标的玩家、帮助精细操作困难的玩家；缩小则能多看画面。" },
+        { "title": "Xbox Accessibility Guideline 101: Text scaling", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101", "point": "文字可放大到 200% 而不丢内容或功能；超出屏幕的文字要有阅读办法；不要求横纵双向滚动。" },
+        { "title": "Godot Docs: Multiple resolutions", "url": "https://docs.godotengine.org/en/stable/tutorials/rendering/multiple_resolutions.html", "point": "stretch mode / aspect 与 content scale factor 的用法，是 a11y.uiScale 导出到 Godot 的落点。" }
+      ],
+      "demo": {
+        "a": { "ctx.device": "tv", "a11y.uiScale": 1, "lay.safeMargin": 0, "chk.safeArea": true },
+        "b": { "ctx.device": "tv", "a11y.uiScale": 1.3, "lay.safeMargin": 5, "chk.safeArea": true, "chk.overflow": "plus30" },
+        "lookAt": "A 的角落元素贴着屏幕边、在电视过扫描下会被裁掉（安全区检查标出）；B 整体放大 1.3 倍并收进 5% 安全边，同时打开 +30% 溢出检查——看哪些按钮和页签的字开始挤出框，这些就是需要改成可重排容器的地方。"
+      }
+    },
+    {
+      "id": "P-typography-legible-format",
+      "title": "正文排版：无衬线可选、句子不用全大写、行长与字距有上限，风格交给标题",
+      "problem": "字号够了也可能难读：全大写长句、窄体 + 宽字距、细体、手写 / 书法 / 像素字做正文、超长行、两端对齐。科幻与极简风格最爱这些手法——本工具的科幻 HUD 皮肤默认正文是窄体 + 全大写 + 0.2em 字距，军事战术是等宽 + 全大写，新粗野主义的正文也是全大写。设计者的问题是：风格感放在哪一层，正文守住哪些底线。",
+      "approaches": [
+        {
+          "name": "风格给标题，正文回到无衬线常规",
+          "params": { "typ.body.family": "sans", "typ.body.weight": "regular", "typ.display.family": "calligraphy", "typ.titleFx": "drybrush" },
+          "whenToUse": "国风、哥特、手绘、像素等强风格：Wandering Sword 把招式名做成巨型竖排书法、属性页正文仍是普通字；Metaphor 的斜排衬线大字只用在菜单标题；Ghost of Tsushima 用书法标题。",
+          "cost": "正文与标题反差大，要用颜色、底纹、装饰把两者收回同一体系。",
+          "examples": ["steam:1876890", "steam:2679460", "steam:2215430"]
+        },
+        {
+          "name": "句子用原样大小写，全大写只给 1–2 个词的标签",
+          "params": { "typ.body.case": "asIs", "typ.display.case": "upper", "typ.display.tracking": 0.08 },
+          "whenToUse": "英文 / 拉丁界面的科幻、军事、极简风格：CONTROL 的大号无衬线标题叠在画面上，说明文字保持正常大小写。",
+          "cost": "少了一点「冷峻」，可用标题的字距与字重补回。",
+          "examples": ["steam:870780"]
+        },
+        {
+          "name": "数字用等宽或展示数字",
+          "params": { "typ.numerals.family": "tabular" },
+          "whenToUse": "跳动的计数、表格、计时、资源栏：等宽数字变化时不左右抖。MGSV 的结算是黑底等宽数据表；Balatro 的分数用大号展示数字。",
+          "cost": "等宽数字略宽；展示数字只适合少数大数。",
+          "examples": ["steam:287700", "steam:2379780"]
+        },
+        {
+          "name": "风格字体 + 「易读字体」开关",
+          "params": { "typ.body.family": "sans", "typ.display.family": "same" },
+          "whenToUse": "叙事核心依赖特殊字体（手抄体、像素字、手写）时：默认可以保留风格字体，但给一个无衬线替换（XAG 101：使用风格化字体时提供非风格化选项）。",
+          "cost": "两套字体都要做排版与溢出检查；中文风格字体还要查字符集是否完整。",
+          "examples": []
+        },
+        {
+          "name": "段落上限：行宽、行距、对齐",
+          "params": { "cnt.textLength": "short", "typ.body.tracking": 0.02 },
+          "whenToUse": "说明、日志、卡牌规则、教程：Disco Elysium 把大量对话放在窄的右侧栏里，行短、可滚动。",
+          "cost": "长文要拆页或滚动；窄栏占用一侧画面。",
+          "examples": ["steam:632470"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "正文全大写 + 窄体 + 宽字距（科幻 / 军事 HUD 常见），单词失去轮廓。",
+          "examples": [],
+          "reviewEvidence": "评测无对应分类；本工具 skin.scifi（窄体 + 全大写 + 0.2em）、skin.military（等宽 + 全大写）、skin.neobrutal（正文全大写）都应在正文层改回原样大小写。"
+        },
+        {
+          "desc": "手写、书法、像素、手抄体做小字号正文。",
+          "examples": ["steam:1205520", "steam:257850", "steam:1468810"],
+          "reviewEvidence": "R3 字太小类：Pentiment 2、Hyper Light Drifter 2、鬼谷八荒 2；06 文档 B 部分也记录了中文手写字体字符集不全、像素中文 12px 笔画粘连。"
+        },
+        {
+          "desc": "细字重做正文（极简 / 细线风格的默认）。",
+          "examples": [],
+          "reviewEvidence": "无计数；skin.mono、skin.thinGeo 默认正文为细体且无底，是本工具里最容易不过最小字号与对比检查的两套皮肤。"
+        }
+      ],
+      "rules": [
+        "至少提供一种无衬线正文字体；用了风格化字体就要有非风格化替代（XAG 101）。",
+        "句子用正常大小写；全大写只用于 1–2 个词的标签（XAG 101 对标签豁免）。",
+        "段落：拉丁文每行 ≤ 80 字符、中日韩 ≤ 40 字，行距 ≥ 1.5，段距 ≥ 2 倍行距（XAG 101 不可调时的建议值）。",
+        "字距：XAG 建议字距 ≥ 0.12 倍字号、词距 ≥ 0.16 倍（针对拉丁文）；中文正文以 0–0.05em 为宜（经验值），宽字距只给标题。",
+        "按语言方向左对齐，不要两端对齐或居中长段落。",
+        "跳动的数字用等宽数字；竖排只给标题（C-vertical-latin：拉丁字母全竖排基本不可读）。"
+      ],
+      "genres": ["叙事", "RPG", "策略 / 模拟", "卡牌（规则文字）", "科幻射击"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 101: Text display", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101", "point": "至少一种无衬线字体；风格化字体需有非风格化选项；字体字符集完整；行宽、行距、段距、字距、词距建议值；句子用正常大小写；按语言方向对齐。" },
+        { "title": "80.lv: 10 golden rules on subtitles for games", "url": "https://80.lv/articles/10-golden-rules-on-subtitles-for-games", "point": "清晰的无衬线字体、避免全大写、提供字体选项（同样适用于正文）。" }
+      ],
+      "demo": {
+        "a": { "ctx.locale": "en", "typ.body.family": "condensed", "typ.body.case": "upper", "typ.body.tracking": 0.2, "typ.body.weight": "light" },
+        "b": { "ctx.locale": "en", "typ.body.family": "sans", "typ.body.case": "asIs", "typ.body.tracking": 0.02, "typ.body.weight": "regular", "typ.display.case": "upper" },
+        "lookAt": "切到英文看：A 的说明文字是一排等高的大写块，单词轮廓消失，读一行要逐字母拼；B 只有标题保留全大写，正文恢复单词形状，风格感由标题承担。中文界面下两者的差别主要在细体与宽字距。"
+      }
+    },
+    {
+      "id": "P-flash-motion-comfort",
+      "title": "光敏与晕动：闪烁有硬阈值，动效、震动、透明都要能降，降的是刺激不是信息",
+      "problem": "光敏性癫痫玩家对高频、大面积、红色闪烁敏感；前庭障碍玩家会被大位移、视差、镜头晃动引起眩晕；注意力障碍玩家被常驻动画分心；菜单动效太长还会让所有人觉得「卡」。本地粗筛：光敏 / 癫痫 / 频闪 38 条 / 23 款、晕 / motion sickness 202 条 / 98 款（topic-feedback 统计）；R3 的「UI 卡顿 / 响应慢」18 条 / 11 款（DEATHLOOP 3、Prince of Persia 2、Cyberpunk 2077 2、Enshrouded 2、Yi Xian 2）。具体的分通道替换见 topic-feedback 的 P-reduced-motion-channels，本条只写阈值与选项。",
+      "approaches": [
+        {
+          "name": "默认就克制：短时长、缓出、少待机动画",
+          "params": { "mo.duration": 0.2, "mo.easing": "easeOut", "mo.juice": 0.3, "mo.idle": "none" },
+          "whenToUse": "策略、经营、叙事、解谜，以及任何要反复进出的菜单：Mini Metro 与 CONTROL 都以安静的动效为主。",
+          "cost": "宣传视频里显得「平」；动作 / 派对类要把爽感集中在战斗反馈上。",
+          "examples": ["steam:287980", "steam:870780"]
+        },
+        {
+          "name": "减少动效总开关（读系统设置）",
+          "params": { "a11y.reduceMotion": true },
+          "whenToUse": "所有游戏。开启后位移入场改淡入、去掉震屏 / 闪白 / 速度线 / 待机动画、演出强度封顶 1（D-reduceMotion）。Ragnarök 单独有「动效减少」预设。",
+          "cost": "每种入场与反馈都要准备淡入或静态替身，不能直接删掉反馈。",
+          "examples": ["steam:2322010"]
+        },
+        {
+          "name": "屏幕效果逐项强度滑条",
+          "params": { "rel.metaFx": ["hurtVignette", "speedLines"], "mo.juice": 0.5 },
+          "whenToUse": "动作、射击、竞速：受击红边、速度线、镜头晃动、动态模糊分别可调。XAG 117 记录 Cyberpunk 2077 可调附加镜头运动、Halo Infinite 把模糊 / 震屏 / 整屏效果 / 速度线做成 0–100% 滑条。",
+          "cost": "设置项变多，要有「标准 / 低刺激」预设兜底（ov.lowStim）。",
+          "examples": ["steam:1091500"]
+        },
+        {
+          "name": "警示不靠闪：常亮色块 + 图标 + 声音",
+          "params": { "st.alert": "warnIcon" },
+          "whenToUse": "低血、倒计时、危险区：Into the Breach 的受威胁格是静态的预警格 + 箭头，不闪也足够醒目。",
+          "cost": "紧张感要靠声音与节奏补。",
+          "examples": ["steam:590380"]
+        },
+        {
+          "name": "降低透明 + 菜单背景静止",
+          "params": { "a11y.reduceTransparency": true, "mo.idle": "none", "ast.fx": [] },
+          "whenToUse": "动态背景的主菜单、毛玻璃 / 全息界面；XAG 117 举 HyperDot 可以关闭菜单背景动画。",
+          "cost": "标题界面的第一印象会变平。",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "全屏故障、扫描线、CRT 弯曲、闪烁做成常驻风格，没有开关。",
+          "examples": ["steam:2379780", "steam:1091500", "gameui:13081"],
+          "reviewEvidence": "这三款在评测统计里没有光敏相关条目；光敏抱怨集中在高强度视觉作品（topic-feedback 粗筛：Nodebuster 5、Sayonara Wild Hearts 4、Just Shapes & Beats 3、Mirror's Edge 2、CONTROL 2）。风格化故障效果的风险主要靠阈值检查而不是评测发现。"
+        },
+        {
+          "desc": "菜单入场 / 切页动画长，播放期间锁住输入。",
+          "examples": ["steam:1252330", "steam:19980", "steam:1203620", "steam:1948800"],
+          "reviewEvidence": "R3 UI 卡顿 / 响应慢：DEATHLOOP 3、Prince of Persia 2、Enshrouded 2、Yi Xian 2（这一类只说明「慢」，不全是动画导致）。"
+        },
+        {
+          "desc": "低血 / 警报用整屏红闪或每秒 3 次以上的闪烁。",
+          "examples": [],
+          "reviewEvidence": "无计数；GAG 把超过 3 次 / 秒且覆盖 ≥ 25% 屏幕的闪烁、任何变成或变出红色的闪列为要避免的触发源。"
+        },
+        {
+          "desc": "UI 动画多到盖住战斗画面。",
+          "examples": ["steam:1687950"],
+          "reviewEvidence": "Persona 5 开发中因 UI 动画遮挡画面而做了减量（Wikipedia 美术设计一节，06 文档转引）；P5R 本身在 R3 里没有相关抱怨。"
+        }
+      ],
+      "rules": [
+        "闪烁：每秒 ≤ 3 次、面积 < 25% 屏幕、避免纯红闪、整段闪烁 ≤ 5 秒；移动的高对比条纹 ≤ 5 条、静止 ≤ 8 条（GAG）。",
+        "减少动效 = 用淡入替代位移 / 缩放，去掉震屏、闪白、速度线、待机动画，但保留状态变化本身（受击、拾取仍要看得见）。",
+        "UI 过渡 0.2–0.3 秒以内（经验值）；任何动画都不锁输入，可被下一次操作打断。",
+        "全屏效果逐项给强度滑条并有「全部关闭」；不要把选项叫「癫痫安全」（GAG）。",
+        "默认值读系统的减少动效 / 降低透明设置（WCAG 2.3.3 的建议做法）。",
+        "有频闪内容的作品对默认设置做 Harding 一类的光敏测试。"
+      ],
+      "genres": ["动作 / Roguelite", "射击", "竞速", "节奏 / 弹幕", "第一人称（晕动）", "卡牌（CRT / 故障风）"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 117: Visual distractions and motion settings", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/117", "point": "闪烁、滚动、自动更新的内容要能暂停、隐藏或关闭；避免或可关震屏、头部晃动、动态模糊；FOV 与镜头自动回中可调；举 Halo Infinite 的逐项滑条、Cyberpunk 2077 的附加镜头运动、HyperDot 的背景动画开关。" },
+        { "title": "Game Accessibility Guidelines: Avoid flickering images and repetitive patterns", "url": "https://gameaccessibilityguidelines.com/avoid-flickering-images-and-repetitive-patterns/", "point": "闪烁阈值：3 次 / 秒、25% 屏幕面积、整段 5 秒；红色变化算闪；重复条纹的条数阈值；推荐 Harding 测试，不要称「癫痫安全」。" },
+        { "title": "W3C Understanding SC 2.3.3 Animation from Interactions", "url": "https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html", "point": "由交互触发的非必要动效应可关闭；前庭障碍会被视差、缩放等引起眩晕；可读取系统的减少动效偏好。" },
+        { "title": "Wikipedia: Persona 5（Art design）", "url": "https://en.wikipedia.org/wiki/Persona_5", "point": "开发中 UI 动画过多遮挡画面，后来做了减量（06 文档已引用）。" }
+      ],
+      "demo": {
+        "a": { "mo.juice": 0.9, "mo.enter": "slam", "mo.idle": "shine", "rel.metaFx": ["hitFlash", "glitch"], "st.alert": "blink", "a11y.reduceMotion": false, "chk.demo": "combatBeat" },
+        "b": { "mo.juice": 0.9, "mo.enter": "slam", "mo.idle": "shine", "rel.metaFx": ["hitFlash", "glitch"], "st.alert": "warnIcon", "a11y.reduceMotion": true, "chk.demo": "combatBeat" },
+        "lookAt": "两边配方相同，B 只多开了减少动效、警示改成图标：播放战斗节拍演示，A 砸入 + 闪白 + 故障 + 闪烁警报叠在一起；B 入场变淡入、闪白与故障消失、光效扫过停掉，但受击与低血仍然看得见。"
+      }
+    },
+    {
+      "id": "P-motor-input-alternatives",
+      "title": "操作替代：任意动作可改键，长按、连打、同时按都有替代，提示跟着改",
+      "problem": "运动障碍、单手、手抖、慢性疼痛、使用改装控制器的玩家，需要把任意动作挪到任意键，并避开长按、连打与组合键；改完以后所有提示都要跟着变。本地粗筛：改键 / 键位 109 条 / 72 款（Assassin's Creed 2 8、FFVII Remake 5、Resident Evil 5 4、Cuphead 4），QTE / 连打 184 条 / 62 款（Heavy Rain 33、Beyond: Two Souls 21、Detroit 13、FFXVI 13）；R3 手柄 / 键位类 30 条 / 20 款。改键页与按键提示的版式见 topic-navigation 的 P-input-rebinding，本条只写操作负担。",
+      "approaches": [
+        {
+          "name": "情境按键提示：贴着交互物，或按身体部位映射",
+          "params": { "el.prompt.form": ["contextual"], "el.interact.form": ["keyPrompt"] },
+          "whenToUse": "同一键在不同情境含义不同的动作冒险：Assassin's Creed 2 右上的按键图把头 / 手 / 脚对应到手柄键，RDR2 右下列出当前可用动作。",
+          "cost": "提示随情境出现消失，要守最小字号与对比；改键后必须重绘。",
+          "examples": ["steam:33230", "steam:242050", "steam:1174180", "steam:1996010"]
+        },
+        {
+          "name": "底部按键图例条",
+          "params": { "el.prompt.form": ["legend"], "ix.glyphs": "xbox", "ctx.input": "pad" },
+          "whenToUse": "手柄菜单与电视：每屏都说明 A / B / X / Y 现在做什么（崩坏：星穹铁道右下的键位图例）。",
+          "cost": "占一条边；图例必须随改键更新。",
+          "examples": ["gameui:8283"]
+        },
+        {
+          "name": "键位列表 / 手柄示意图",
+          "params": { "cnt.subtype": "rebind", "cmp.bindingMap": "pad" },
+          "whenToUse": "改键页用「动作 → 键位」列表，教学与暂停页用示意图；Your Only Move Is HUSTLE 把键位说明直接放在对局顶部。",
+          "cost": "要处理冲突与恢复默认；示意图要按设备分别出图。",
+          "examples": ["steam:2212330"]
+        },
+        {
+          "name": "图标随输入设备与改键结果自动切换",
+          "params": { "ctx.input": "hybrid", "ix.glyphs": "auto" },
+          "whenToUse": "PC 同时支持键鼠与手柄、触屏兼容手柄：天涯明月刀手游在技能键上同时标了键位字母。",
+          "cost": "图标集与改键表要实时联动；Godot 里从 InputMap 读当前事件生成提示，而不是写死图标。",
+          "examples": ["gameui:12771"]
+        },
+        {
+          "name": "长按 / 连打 / 同时按的替代方案",
+          "params": { "ix.confirm": "selectConfirm", "ix.skip": "button", "ix.mode": "select" },
+          "whenToUse": "确认、跳过、QTE、蓄力、冲刺：提供「点按切换」「自动」或「跳过此段」。XAG 107 举 The Long Dark 把所有长按改成点按、Gears 5 的连打挑战可改为按住。",
+          "cost": "长按原本用于防误触，替代方案要配二次确认或撤销。",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "QTE 连打 / 限时按键是剧情必经，没有替代或跳过。",
+          "examples": ["steam:960910", "steam:21690"],
+          "reviewEvidence": "QTE / 连打粗筛：Heavy Rain 33 条、Resident Evil 5 8 条；R3 手柄 / 键位类：Heavy Rain 3、Resident Evil 5 2。"
+        },
+        {
+          "desc": "移植作的键位与手柄支持差，提示与实际按键不一致，不能完整改键。",
+          "examples": ["steam:33230", "steam:359870", "steam:1367550"],
+          "reviewEvidence": "R3 手柄 / 键位类：Assassin's Creed 2 4、FFX/X-2 HD 2、Kingdom Rush Vengeance 2；改键粗筛 Assassin's Creed 2 8 条。"
+        },
+        {
+          "desc": "长按确认 / 长按跳过是唯一方式。",
+          "examples": [],
+          "reviewEvidence": "无计数；XAG 107 要求避免必须长按、必须同时按、必须连打，做不到就提供替代或允许跳过。"
+        }
+      ],
+      "rules": [
+        "所有动作可在游戏内改键（含菜单返回 / Esc），两根摇杆的 X / Y 轴可分别反转；改的是「动作」，不只是交换两个键。",
+        "改键后所有提示、教程、按键图例、示意图同步更新（XAG 107）。",
+        "菜单能用单键、非同时按键完整操作；鼠标 / 触屏在抬起时才触发，可移开取消。",
+        "长按、连打、组合键都要有「点按 / 切换 / 自动」替代，或允许跳过该段。",
+        "按键图标里的字也要过最小字号，图标随文字缩放（XAG 101）。",
+        "Godot：所有输入走 InputMap 动作，改键写回 InputMap 并存档；提示组件从当前绑定生成图标。"
+      ],
+      "genres": ["动作冒险", "射击", "互动叙事（QTE）", "平台跳跃", "RPG", "PC 移植作"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 107: Input", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107", "point": "游戏内可改全部控制、轴可反转、改的是动作；改键后提示同步；界面可用单键非同时按键操作；避免连打、长时间按住与同时按，或提供替代 / 跳过；举 The Long Dark 的长按改点按、Gears 5 的连打挑战替代。" },
+        { "title": "Xbox Accessibility Guideline 101: Icons and glyph sizes", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101", "point": "按键图标内的文字同样要满足最小字号，并随文字缩放到 200%。" },
+        { "title": "Godot Docs: InputMap", "url": "https://docs.godotengine.org/en/stable/classes/class_inputmap.html", "point": "运行时增删动作的输入事件，是改键与按键提示同步在 Godot 里的落点。" }
+      ],
+      "demo": {
+        "a": { "ctx.input": "pad", "el.prompt.form": ["list"], "ix.confirm": "hold", "ix.skip": "hold", "cmp.bindingMap": "list" },
+        "b": { "ctx.input": "pad", "ix.glyphs": "xbox", "el.prompt.form": ["contextual", "legend"], "ix.confirm": "selectConfirm", "ix.skip": "button", "cmp.bindingMap": "pad" },
+        "lookAt": "A 的确认与跳过都要按住，按键说明只在一张列表里；B 改为选中 + 确认、跳过按钮，交互物旁有情境按键、底部有图例条。用「对话推进」或「购买确认」演示脚本各走一遍，比较按键次数与按住时长。"
+      }
+    },
+    {
+      "id": "P-touch-targets",
+      "title": "触屏目标够大、有间距、在拇指区：次要键也不能小",
+      "problem": "手机战斗 HUD 的主键普遍很大，但倍速 / 暂停 / 跳过 / 自动这类次要但常用的键常只有约 36–44pt、挤在角落（R4 目测）。手抖、单手持机、设备固定在轮椅支架上的玩家容易误触或够不着；横竖屏不能切换的游戏还会迫使他们改变设备摆放。",
+      "approaches": [
+        {
+          "name": "横屏双拇指：大主键 + 技能沿弧形环绕",
+          "params": { "ctx.input": "touch", "ix.thumbZone": "twoThumbs", "ix.touchCluster": "arc", "ix.touchSize": 96 },
+          "whenToUse": "动作、MMO、派对：拇指不离开右下角就能按到所有技能（天涯明月刀、暖雪、三界天骄）。",
+          "cost": "弧上能放的键有限（4–5 个），更多技能要分页或轮盘。",
+          "examples": ["gameui:12771", "gameui:6750", "gameui:6729"]
+        },
+        {
+          "name": "竖屏单手：主操作压到下三分之一",
+          "params": { "ctx.orientation": "portrait", "ix.thumbZone": "oneHand", "ix.touchCluster": "row" },
+          "whenToUse": "自动战斗、回合、放置、三消：底部一排英雄头像或大按钮，上方只放要看的信息。",
+          "cost": "上三分之二只能放读的信息；单手时屏幕另一侧的角很难够到，不要放常用键。",
+          "examples": ["gameui:12746", "gameui:6814", "gameui:10348", "gameui:7101"]
+        },
+        {
+          "name": "点按代替持续按压（无摇杆 / 点地移动）",
+          "params": { "ix.touchStick": "tapToMove", "ix.mode": "select" },
+          "whenToUse": "战棋、经营、慢节奏 RPG：英杰传的战棋右下是一个「待机」大键，解忧小村落点地建造。",
+          "cost": "精确走位与即时躲避变难。",
+          "examples": ["gameui:7158", "gameui:6727"]
+        },
+        {
+          "name": "布局预设 + 自定义大小 / 位置 / 透明度",
+          "params": { "ix.touchSize": 88, "chk.touch": true },
+          "whenToUse": "所有带虚拟按键的游戏：XAG 107 举 Call of Duty: Mobile 可逐个调整按键大小与位置并存成布局、Fortnite 移动版提供三套预设布局。",
+          "cost": "需要布局编辑器、存档与重置。",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "次要键（自动、倍速、暂停、跳过）做成小图标挤在屏幕角落。",
+          "examples": ["gameui:7134", "gameui:6922", "gameui:7312"],
+          "reviewEvidence": "R4 手游卡来自 GameUI，没有 Steam 评测，无法计数；R4 目测这类键约 36–44pt，低于 XAG 107 的 15mm 建议。"
+        },
+        {
+          "desc": "关键操作只能长按、拖拽或多指手势。",
+          "examples": [],
+          "reviewEvidence": "无计数；XAG 107 移动端要求为长按、拖拽 / 滑动、快速连点、多指与陀螺仪操作提供替代。"
+        }
+      ],
+      "rules": [
+        "手机触控目标 ≥ 15mm（XAG 107：400 DPI 约 236px），平板 ≥ 24mm；Apple 的 44×44pt 是最低限而不是目标。",
+        "本工具现状：ix.touchSize 手机默认 88px@1080p（约 44pt）只到最低限，主键建议 96px 以上，次要键也不低于 88px。",
+        "目标之间留不可点击的间隔；抬起时触发，滑出可取消（XAG 107）。",
+        "提供 2–3 套布局预设 + 自定义大小 / 位置 / 透明度；支持横竖屏两种方向。",
+        "检查：chk.touch + chk.safeArea（刘海与圆角）。"
+      ],
+      "genres": ["手机动作 / MMO", "手机策略 / 战棋", "三消 / 合成", "派对"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 107: Guidelines for mobile input", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107", "point": "手机触控目标建议 15mm、平板 24mm（给出各 DPI 的像素值）；目标间留间隔与非活动区；抬起时触发、可取消或撤销；提供布局预设与自定义；支持横竖屏；为长按、拖拽、连点、多指、陀螺仪提供替代。" },
+        { "title": "Apple Human Interface Guidelines: Accessibility", "url": "https://developer.apple.com/design/human-interface-guidelines/accessibility", "point": "可点击控件至少 44×44pt（页面本次未能抓取正文，按 Apple 公开的通用规范记录，未逐字核对）。" },
+        { "title": "docs/survey/15-r4-mobile.md（本项目）", "url": "docs/survey/15-r4-mobile.md", "point": "88 张触屏参考里：竖屏单手 21 张、横屏双拇指 6 张；主按钮明显大于技能键，倍速 / 暂停等次要键偏小（约 36–44pt）。" }
+      ],
+      "demo": {
+        "a": { "ctx.device": "phone", "ctx.input": "touch", "ctx.orientation": "landscape", "ix.thumbZone": "twoThumbs", "ix.touchCluster": "grid", "ix.touchSize": 60, "chk.touch": true },
+        "b": { "ctx.device": "phone", "ctx.input": "touch", "ctx.orientation": "landscape", "ix.thumbZone": "twoThumbs", "ix.touchCluster": "arc", "ix.touchSize": 96, "chk.touch": true },
+        "lookAt": "A 的技能方格每个只有 60px、彼此紧贴，触控检查把整片标红；B 改成大主键 + 弧形环绕、96px，拇指扫过的弧线上不会碰到相邻键。再看次要键（暂停、倍速）有没有一起变大——最常被漏掉的就是它们。"
+      }
+    },
+    {
+      "id": "P-a11y-presets-discoverable",
+      "title": "无障碍选项要成套、可发现、可预览：首启给预设，每项仍可单调",
+      "problem": "选项做了玩家却找不到、不知道效果、或要一项项试，就等于没做。R3 里 Ragnarök（官方 70+ 项无障碍）与 Forza Horizon 5 仍有字小的评测；另一方面，评测里提到「无障碍」的 51 条 / 30 款中好评 37 条（TUNIC 7、Cult of the Lamb 4、Hi-Fi RUSH 3、Kena 3、TLOU Part I / II 各 2）——成套且显眼的选项本身会被玩家夸。设计者的问题是：选项怎样组织、何时出现、怎样让人一眼看懂效果。",
+      "approaches": [
+        {
+          "name": "按需求分组的一键预设（视觉 / 听觉 / 操作 / 动效）",
+          "params": { "a11y.textScale": 1.4, "a11y.uiScale": 1.2, "a11y.highContrast": true, "typ.legibility": "scrim" },
+          "whenToUse": "中大型作品：TLOU Part II 有视觉、听觉、操作三套预设，Ragnarök 有视觉、听觉、动效、操作四套并分「部分 / 全部」两档；本工具的叠加预设 ov.bigText、ov.colorSafe、ov.lowStim 就是这种组织的雏形。",
+          "cost": "预设之间会改到同一项，要定优先级；预设改过哪些项要标出来（据第三方整理，Ragnarök 用蓝色标出被预设改动的设置）。",
+          "examples": ["steam:2531310", "steam:2322010"]
+        },
+        {
+          "name": "首次启动先给字幕与无障碍设置",
+          "params": { "cnt.subtype": "settings", "flow.entry": "sequence", "lay.preview": true },
+          "whenToUse": "有开场过场或大量文字的作品：XAG 104 举 Gears 5 首启字幕默认开，开场后直接进入无障碍设置。",
+          "cost": "多一步开场流程；要允许「稍后再说」并能在主菜单随时回来。",
+          "examples": []
+        },
+        {
+          "name": "每项带说明与真实画面预览",
+          "params": { "cnt.subtype": "settings", "lay.detail": "persistent", "lay.preview": true, "cmp.optionEnum": "thumbnails" },
+          "whenToUse": "字幕、对比、色盲、HUD 尺寸这类改了才知道效果的选项：XAG 104 举 The Outer Worlds 为每档字幕写清含义、Forza Horizon 在设置页预览字幕。",
+          "cost": "预览需要在设置页渲染真实画面片段或截图。",
+          "examples": []
+        },
+        {
+          "name": "无障碍不等于更少：可加回的辅助层",
+          "params": { "el.objective.form": ["marker", "edgeArrow"], "el.objective.visibility": "always", "ix.guideForce": "soft" },
+          "whenToUse": "零 HUD / 极简作品为迷路或认知负担重的玩家准备的导航辅助（据第三方整理，Ragnarök 的视觉预设含导航辅助）；Hi-Fi RUSH 的节拍可视化也属于「加回来的信息」。",
+          "cost": "破坏「世界即 UI」的设计，只做选项；默认关时要在开场告诉玩家有这个选项。",
+          "examples": ["steam:2322010", "steam:1817230"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "选项散落在显示、音频、操作各页，没有无障碍入口，也没有说明与预览。",
+          "examples": ["steam:2322010", "steam:1551360"],
+          "reviewEvidence": "两款都有丰富的无障碍选项，但 R3 里仍分别有 3 条、2 条字小——推测与默认值和可发现性有关（计数只能说明「有人没用上」，不能确定原因）。"
+        },
+        {
+          "desc": "把无障碍做成「简单模式」：一开就降低难度、或强行关掉 HUD 与特效。",
+          "examples": [],
+          "reviewEvidence": "无计数；GAG 把难度、辅助模式与视觉 / 听觉 / 操作选项分列，XAG 各条都要求逐项可调。"
+        }
+      ],
+      "rules": [
+        "设置页有独立的「无障碍」分组，并在首次启动时就出现（至少包括字幕、字号、对比 / 色盲、减少动效）。",
+        "预设只是起点：选了预设后每一项仍可单独改，并标出预设改过的项。",
+        "每一项写清它控制什么（不承诺效果），在真实画面上预览。",
+        "设置自动保存，跨存档、跨设备一致（GAG 通用基础项）。",
+        "读取平台级设置（高对比、减少动效、字幕样式）作为默认值。",
+        "商店页 / 游戏内说明列出无障碍功能（GAG 通用基础项）。"
+      ],
+      "genres": ["所有品类", "3A 动作 / 叙事", "开放世界", "节奏"],
+      "sources": [
+        { "title": "The Last of Us Part II accessibility options (PlayStation)", "url": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii/accessibility/", "point": "视觉、听觉、操作三套预设一键配置推荐设置，之后每项仍可单独调整。" },
+        { "title": "God of War Ragnarök accessibility options (PlayStation)", "url": "https://www.playstation.com/en-us/games/god-of-war-ragnarok/accessibility/", "point": "70 多项无障碍功能分为视觉、听觉、动效减少、操作四套预设。" },
+        { "title": "Xbox Accessibility Guideline 104", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/104", "point": "Gears 5 首启字幕即开、开场后进入无障碍设置；The Outer Worlds 为每档字幕写清含义；字幕设置给真实画面预览。" },
+        { "title": "Game Accessibility Guidelines: Full list", "url": "https://gameaccessibilityguidelines.com/full-list/", "point": "通用基础项：保存所有设置、在游戏内与商店页说明无障碍功能、征求无障碍反馈；中级项：辅助模式、可跳过非核心玩法、游戏中可改难度。" }
+      ],
+      "demo": {
+        "a": { "a11y.textScale": 1, "a11y.uiScale": 1, "a11y.highContrast": false, "a11y.cvdPreset": "off", "a11y.reduceMotion": false },
+        "b": { "a11y.textScale": 1.4, "a11y.uiScale": 1.2, "a11y.highContrast": true, "a11y.cvdPreset": "deutan", "a11y.reduceMotion": true, "typ.legibility": "scrim" },
+        "lookAt": "把 B 当作「视觉辅助」一键预设：字号、HUD 尺寸、高对比、色盲语义色、减少动效同时生效。在 HUD、背包、对话三个界面之间切换，看预设是不是在每个界面都成立——任何一屏溢出、遮挡或没跟着变，就是预设漏掉的地方。"
+      }
+    },
+    {
+      "id": "P-focus-visible",
+      "title": "手柄 / 键盘焦点一眼可见：至少两种通道，对相邻颜色 ≥ 3:1",
+      "problem": "手柄、键盘、开关设备的玩家在菜单里靠焦点知道「我现在在哪」。焦点只靠微弱发光或换个颜色时，低视力与色觉异常玩家会迷路，电视视距下更明显；从 PC 鼠标界面移植来的菜单常常只有悬停态，没有焦点态。",
+      "approaches": [
+        {
+          "name": "光标指示（手指 / 三角 / 括号）",
+          "params": { "ix.focus": "cursor" },
+          "whenToUse": "JRPG、复古、列表菜单：FINAL FANTASY VIII / IX 的手指光标，Hollow Knight 的菜单项两侧装饰箭头。",
+          "cost": "每种列表都要留出光标位；光标形状要和皮肤母题一致。",
+          "examples": ["steam:39150", "steam:377840", "steam:367520"]
+        },
+        {
+          "name": "底色反白 / 整行色条",
+          "params": { "ix.focus": "invert" },
+          "whenToUse": "密集列表、设置页、电视：Persona 5 Royal 的选中项反白并放大。",
+          "cost": "反白块面积大，风格偏硬；反白后文字对比也要重新检查。",
+          "examples": ["steam:1687950"]
+        },
+        {
+          "name": "放大 + 描边，配合非焦点压暗",
+          "params": { "ix.focus": "scale", "hier.dimInactive": 0.3 },
+          "whenToUse": "格子、卡片、关卡选择：Elden Ring 的装备格选中时有高亮框。",
+          "cost": "放大会挤到邻格，要预留间距；压暗太多会让未选项读不清（未激活文字仍需 3:1）。",
+          "examples": ["steam:1245620"]
+        },
+        {
+          "name": "焦点颜色单独设为语义色（col.focus），并参与对比检查",
+          "params": { "col.focus": "#FFD54A", "ix.focus": "outline", "vis.strokeWidth": 3 },
+          "whenToUse": "任何以描边表示焦点的皮肤：焦点色与强调色、稀有度色分开，描边足够粗。",
+          "cost": "多一个必须在所有皮肤里调好的颜色。",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "焦点只有轻微外发光或换色，在深色界面或电视上看不出。",
+          "examples": [],
+          "reviewEvidence": "评测没有可计数的分类；WCAG 1.4.11 要求焦点指示对相邻颜色 ≥ 3:1。"
+        },
+        {
+          "desc": "只有鼠标悬停态，没有手柄焦点态，或进入页面时没有默认焦点。",
+          "examples": [],
+          "reviewEvidence": "R3 手柄 / 键位类 30 条 / 20 款里可能包含此类问题，但计数无法区分具体原因。"
+        }
+      ],
+      "rules": [
+        "焦点至少用两种通道（形状 / 尺寸 / 光标 + 颜色），焦点指示对相邻颜色 ≥ 3:1（WCAG 1.4.11）。",
+        "手柄输入时焦点必须始终可见、每屏有默认焦点（D-input）。",
+        "不可用项也能被聚焦并说明原因，其文字 ≥ 3:1（XAG 102 未激活元素）。",
+        "焦点移动顺序与视觉顺序一致，方向键与摇杆都能导航（XAG 107：界面支持数字输入）。"
+      ],
+      "genres": ["主机 / 电视", "RPG（菜单多）", "策略", "卡牌", "叙事"],
+      "sources": [
+        { "title": "W3C Understanding SC 1.4.11 Non-text Contrast", "url": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html", "point": "组件被聚焦时，其焦点指示对相邻颜色须 ≥ 3:1；与 2.4.7 焦点可见配合使用。" },
+        { "title": "Xbox Accessibility Guideline 107", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/107", "point": "菜单与游戏内界面都要支持数字与模拟导航，可用单键、非同时按键完成全部操作。" },
+        { "title": "Xbox Accessibility Guideline 102", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/102", "point": "未激活元素上的文字对背景至少 3:1。" }
+      ],
+      "demo": {
+        "a": { "ctx.device": "tv", "ctx.input": "pad", "ix.focus": "focusGlow", "hier.dimInactive": 0 },
+        "b": { "ctx.device": "tv", "ctx.input": "pad", "ix.focus": "cursor", "hier.dimInactive": 0.3 },
+        "lookAt": "在电视视距预览下用方向键走一遍菜单：A 的焦点只有一圈淡发光，缩小后很难看出在哪一项，开绿色盲模拟更难；B 有光标指示 + 非焦点压暗，形状与明暗两条线索同时在，灰度下也能跟住。"
+      }
+    }
+  ]
+}

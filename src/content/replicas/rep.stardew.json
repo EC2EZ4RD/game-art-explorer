@@ -1,0 +1,1134 @@
+{
+ "id": "rep.stardew",
+ "name": "Stardew Valley",
+ "card": "steam:413150",
+ "genre": "life",
+ "family": "fam.pixel-wood-grid",
+ "pack": "farming",
+ "art": {
+  "recipe": "tile-pixel",
+  "scene": "tileTown-farm",
+  "values": {
+   "color.saturation": 1.15
+  }
+ },
+ "base": {
+  "hud.style": "pixelWood",
+  "ctx.device": "pc",
+  "ctx.input": "kbm",
+  "ctx.timeModel": "realtime",
+  "rel.harmony": "sameMedium",
+  "rel.followPost": "crisp",
+  "col.source": "uiPalette",
+  "col.lightness": "light",
+  "col.surface": "#f8c77e",
+  "col.surface2": "#dc8236",
+  "col.text": "#4a2810",
+  "col.accent": "#d2382b",
+  "col.accent2": "#5aa52f",
+  "col.focus": "#d2382b",
+  "col.border": "#5c2a0e",
+  "col.strategy": "neutralAccent",
+  "col.saturation": 1.1,
+  "ast.frame": "plainNinePatch",
+  "ast.frameMat": "wood",
+  "ast.core": "texture",
+  "ast.coreMat": "paper",
+  "ast.iconSet": "asset",
+  "vis.corner": "step",
+  "vis.pixelScale": "world",
+  "vis.depth": "bevel",
+  "vis.opacity": 1,
+  "vis.fill": "solid",
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 2,
+  "vis.strokeColor": "custom",
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "vis.iconStyle": "pixel",
+  "typ.body.family": "pixel",
+  "typ.display.family": "pixel",
+  "typ.numerals.family": "pixel",
+  "typ.body.weight": "regular",
+  "typ.legibility": "shadow",
+  "typ.baseSize": 24,
+  "cmp.slot": "cell",
+  "st.emptySlot": "pit",
+  "st.selected": "outline",
+  "mo.textReveal": "typewriter",
+  "mo.enter": "cut",
+  "mo.easing": "linear",
+  "mo.valueChange": "instant",
+  "mo.juice": 0.2,
+  "ix.focus": "cursor",
+  "ix.press": "none",
+  "ix.glyphs": "keycap",
+  "st.newCue": "none",
+  "st.locked": "dimmed",
+  "st.cooldown": "fillUp",
+  "ix.cursorSet": "pixelGlove",
+  "ix.cursorContext": true
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/iig/img/stardew-valley__stardew-valley-dialogue.jpg",
+   "values": {
+    "uip.layout": "layout.life",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "rel.diegesis": "screen",
+    "cnt.density": 1,
+    "lay.safeMargin": 0.5,
+    "cnt.elements": [
+     "el.clock",
+     "el.resources",
+     "el.toolbar",
+     "el.abilities",
+     "el.vitals",
+     "el.notify",
+     "el.interact"
+    ],
+    "el.clock.form": [
+     "plaque"
+    ],
+    "el.clock.screenAnchor": "tr",
+    "el.clock.scale": 0.75,
+    "el.clock.priority": "secondary",
+    "el.resources.form": "odometer",
+    "el.resources.screenAnchor": "tr",
+    "el.resources.valueLabel": "current",
+    "el.resources.scale": 0.6,
+    "el.abilities.form": "hotbar",
+    "el.abilities.arrangement": "row",
+    "el.abilities.screenAnchor": "bc",
+    "el.abilities.scale": 0.85,
+    "el.vitals.count": 1,
+    "cmp.gauge@el.vitals": "vertical",
+    "el.vitals.screenAnchor": "br",
+    "el.vitals.valueLabel": "none",
+    "el.vitals.scale": 0.6,
+    "el.notify.form": [
+     "toast"
+    ],
+    "el.notify.screenAnchor": "bl",
+    "el.notify.scale": 0.8,
+    "el.notify.visibility": "contextual",
+    "el.interact.form": [
+     "cursor"
+    ],
+    "el.interact.attachTo": "cursor",
+    "st.selected": "outline",
+    "typ.legibility": "shadow",
+    "el.abilities.count": 12,
+    "el.abilities.avoidPlayer": true,
+    "col.accent@el.resources": "#d83a2a",
+    "el.resources.dockTo": "el.clock",
+    "el.resources.dockSide": "below",
+    "el.resources.dockAlign": "end",
+    "el.resources.frame": "panel",
+    "cmp.gaugeExtra@el.vitals": [
+     "capLabel"
+    ],
+    "cmp.gaugeColorBy@el.vitals": "gradient",
+    "el.vitals.frame": "panel",
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.count": 1,
+    "el.toolbar.dockTo": "el.clock",
+    "el.toolbar.dockSide": "below",
+    "el.abilities.frame": "tray",
+    "el.notify.frame": "panel"
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": "qa/refs-cache/iig/img/stardew-valley__stardew-valley-dialogue.jpg",
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.screen": "screen.dialogue",
+    "cnt.subtype": "npc",
+    "lay.container": "tray",
+    "lay.panelSize": 0.5,
+    "cmp.dialogBox": "splitPortrait",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "avatar",
+    "lay.composition": "splitLR",
+    "lay.focalSide": "right",
+    "lay.layering": "separate",
+    "cnt.dataShape": "text",
+    "cnt.textLength": "short",
+    "cnt.tone": "character",
+    "typ.body.tracking": 0.06,
+    "mo.textReveal": "typewriter",
+    "mo.enter": "pop",
+    "mo.duration": 0.15,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "ix.dismiss": "tapAnywhere",
+    "ix.continueCue": "blinkArrow",
+    "ix.skip": "none",
+    "ix.mode": "readOnly",
+    "cnt.elements": [
+     "el.clock",
+     "el.resources",
+     "el.vitals"
+    ],
+    "lay.titlePos": "none",
+    "ix.close": "innerBR",
+    "el.clock.form": [
+     "plaque"
+    ],
+    "el.clock.screenAnchor": "tr",
+    "el.clock.scale": 0.75,
+    "el.clock.anchorSpace": "screen",
+    "el.resources.form": "odometer",
+    "el.resources.screenAnchor": "tr",
+    "el.resources.scale": 0.6,
+    "el.resources.anchorSpace": "screen",
+    "el.vitals.count": 1,
+    "cmp.gauge@el.vitals": "vertical",
+    "el.vitals.screenAnchor": "br",
+    "el.vitals.valueLabel": "none",
+    "el.vitals.scale": 0.6,
+    "el.vitals.anchorSpace": "screen",
+    "col.accent@el.resources": "#d83a2a",
+    "el.resources.dockTo": "el.clock",
+    "el.resources.dockSide": "below",
+    "el.resources.dockAlign": "end",
+    "el.resources.frame": "panel",
+    "cmp.gaugeExtra@el.vitals": [
+     "capLabel"
+    ],
+    "cmp.gaugeColorBy@el.vitals": "gradient",
+    "el.vitals.frame": "panel"
+   }
+  },
+  {
+   "key": "create",
+   "ref": "qa/refs-cache/iig/img/stardew-valley__stardew-valley-create-character.jpg",
+   "values": {
+    "uip.screen": "tpl.create",
+    "cnt.screen": "screen.frontend",
+    "cnt.subtype": "create",
+    "lay.container": "modal",
+    "lay.panelSize": 0.4,
+    "lay.composition": "splitLR",
+    "rel.behind": "replaced",
+    "ast.bgArt": "skyClouds",
+    "rel.dim": 0,
+    "cnt.focal": "character",
+    "cnt.characterMedium": "chibi",
+    "lay.focalSide": "left",
+    "cnt.dataShape": "form",
+    "lay.nav": "none",
+    "lay.detail": "none",
+    "lay.grouping": "whitespace",
+    "cnt.density": 3,
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "cmp.input": "boxed",
+    "cmp.optionEnum": "arrows",
+    "cmp.optionRange": "slider",
+    "cmp.optionBool": "checkbox",
+    "cmp.button": "text",
+    "hier.cta": "color",
+    "col.semantic": "greenRed",
+    "cnt.elements": [
+     "el.cta"
+    ],
+    "el.cta.form": "smallSquare",
+    "el.cta.scale": 0.55,
+    "el.cta.screenAnchor": "br",
+    "ix.dismiss": "button",
+    "ix.close": "cornerSign",
+    "flow.entry": "sequence",
+    "lay.titlePos": "none",
+    "cmp.optionRows": [
+     "dice",
+     "iconToggle",
+     "arrows",
+     "hsvTriplet",
+     "arrows"
+    ],
+    "lay.sideThumbs": "right"
+   }
+  },
+  {
+   "key": "inventory",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.inventory",
+    "cnt.screen": "screen.inventory",
+    "cnt.subtype": "bag",
+    "lay.container": "modal",
+    "lay.panelSize": 0.62,
+    "lay.composition": "splitTB",
+    "lay.nav": "tabsTop",
+    "lay.navDepth": 1,
+    "cmp.tab": "icon",
+    "cmp.tabIndicator": "sunken",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "grid",
+    "lay.columns": 12,
+    "cnt.itemCount": 36,
+    "cnt.density": 3,
+    "cmp.slot": "cell",
+    "st.emptySlot": "pit",
+    "st.selected": "outline",
+    "lay.detail": "none",
+    "st.rarityCue": [
+     "none",
+     "cornerStar"
+    ],
+    "col.rarityScale": "quality",
+    "col.coding": [
+     "rarity",
+     "status"
+    ],
+    "cnt.focal": "character",
+    "rel.behind": "frozen",
+    "rel.dim": 0.45,
+    "ix.mode": "drag",
+    "ix.dismiss": "key",
+    "ix.close": "xOutside",
+    "flow.entry": "hotkey",
+    "flow.stacking": "stack",
+    "lay.titlePos": "none",
+    "lay.focalSide": "bottom",
+    "lay.focalAside": "slotsText",
+    "cmp.tabMount": "outsideTop",
+    "lay.sideButtons": "right"
+   }
+  },
+  {
+   "key": "title",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.title",
+    "cnt.screen": "screen.title",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "replaced",
+    "ast.bgArt": "skyClouds",
+    "cnt.focal": "title",
+    "lay.focalSide": "center",
+    "lay.composition": "splitTB",
+    "lay.arrangement": "row",
+    "cnt.itemCount": 4,
+    "cmp.button": "text",
+    "cmp.buttonBox": true,
+    "typ.titleFx": "outlineShadow",
+    "cnt.elements": [
+     "el.title"
+    ],
+    "el.title.form": "logo",
+    "el.title.screenAnchor": "tc",
+    "mo.idle": "float",
+    "ix.mode": "select",
+    "ast.bgForeground": "forest"
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "lay.container": "modal",
+    "lay.panelSize": 0.85,
+    "lay.overflow": "single",
+    "vis.mapStyle": "painted",
+    "vis.mapUnexplored": "reveal",
+    "cmp.node": "avatar",
+    "lay.detail": "none",
+    "lay.nav": "tabsTop",
+    "cmp.tab": "icon",
+    "cmp.tabIndicator": "sunken",
+    "rel.behind": "frozen",
+    "rel.dim": 0.45,
+    "ix.mode": "readOnly",
+    "ix.dismiss": "key",
+    "ix.close": "xOutside",
+    "lay.titlePos": "none",
+    "vis.mapLabels": "hover",
+    "cmp.plate@mapLabel": "plaque",
+    "cmp.tabMount": "outsideTop"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "右上时钟是一整块复合木挂牌：左侧日晷圆盘（指针随一天转动）+ 右侧星期日期牌、天气 / 季节 / 运气小图标、时间牌，下方再接金币计数器；el.clock.form 只能在 calendar / sunDial / clock 里选一个，现在的 calendar 画成红头条日历卡（季节年份 + 大号日期 + 星期天气），没有日晷、没有时间",
+   "severity": "high",
+   "proposal": "el.clock.form 加 plaque（日晷 + 日期天气 + 时间合成一块），或允许多选并按 elx.arrangement 叠放；el.resources 可声明 attachTo = el.clock，接在挂牌下方",
+   "kind": "composite",
+   "resolvedBy": "M12b-08 / M12b-05（el.clock.form = plaque + el.resources dockTo el.clock：日晷 + 日期天气 + 时间挂牌，下接金币计数器）"
+  },
+  {
+   "screen": "hud",
+   "what": "局内元素的小面板（日历卡、金币、拾取提示、快捷栏）都不套 ast.frame 的木框：日历卡和拾取提示是无框纸片，快捷栏是 8 个散开的纸格、没有整条托盘；Stardew 每个 HUD 小件都包同一圈木框，快捷栏是一条木托盘",
+   "severity": "medium",
+   "proposal": "elx 加 frame（none / panel / tray，auto = 跟随 ast.frame）：panel 给元素自身套外框，tray 给成组的格子（快捷栏、资源行）套一整条底框",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-05 / M12b-50（el.*.frame = panel / tray：快捷栏整条木托盘，金币、能量条、拾取卡各套木框）"
+  },
+  {
+   "screen": "hud",
+   "what": "金币是里程表式计数器：木框里每位数字各占一个内凹小格，红色像素数字，左端一个 G 字；el.resources.form = bigNumber 只能画\"金币图标 + 大号数字\"，没有底框也没有逐位格",
+   "severity": "medium",
+   "proposal": "el.resources.form 加 odometer（逐位内凹格计数器，数字读 col.accent，左端货币符号）",
+   "kind": "newDrawing",
+   "resolvedBy": "M12b-06 / M12b-07（el.resources.form = odometer：逐位内凹格红字计数器）"
+  },
+  {
+   "screen": "hud",
+   "what": "元素级配色覆盖不生效：col.text@el.resources 等 col.*@el.<元素> 写了也不影响元素绘制，金币数字始终跟随正文色",
+   "severity": "low",
+   "proposal": "元素绘制时先查 col.*@el.<元素> 覆盖，再回落到全局色",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-01（元素上下文按 col.*@el.<id> 打补丁；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "cmp.gauge@el.vitals = vertical 没生效：el.vitals 仍按\"标签 + 横向矩形\"排版，画成右下一根带\"健康\"字样的细长横条；Stardew 的能量条是贴右下角的竖条",
+   "severity": "medium",
+   "proposal": "el.vitals 在 cmp.gauge = vertical 时按竖条排版（宽约 S(18)、高约 S(120)，多条并排向左排），标签移到条顶或省略",
+   "kind": "renderBug",
+   "resolvedBy": "R3 起已竖排，R4 核对（cmp.gauge@el.vitals = vertical：贴右下角的木框竖条）"
+  },
+  {
+   "screen": "hud",
+   "what": "竖能量条顶上有一个字母 E 的帽头（下矿后旁边再出一根带 H 帽头的生命条）；cmp.gauge 没有帽头 / 端标",
+   "severity": "low",
+   "proposal": "cmp.gauge 加 capLabel 子参数（none / letter / icon），竖条画在顶端、横条画在左端",
+   "kind": "missingParam",
+   "partialBy": "M12b-03（cmp.gaugeExtra@el.vitals = [capLabel]）：竖条顶上有帽头，但画成白色小方块、看不出字母 E"
+  },
+  {
+   "screen": "hud",
+   "what": "能量条的填充色随数值从绿到黄到红；现在 vitals 填充色固定（红色）",
+   "severity": "low",
+   "proposal": "col.coding 加 value（按数值在 good → warn → bad 之间插值填充色）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-03（cmp.gaugeColorBy@el.vitals = gradient：能量条绿色填充，不再固定红）"
+  },
+  {
+   "screen": "hud",
+   "what": "快捷栏是并排 12 格（米色内凹格、左上小序号、选中格红框）；el.abilities = hotbar 固定画 8 格，格数不可调",
+   "severity": "medium",
+   "proposal": "el.abilities 加 count 子参数（默认 8，可 10 / 12），格子按 cmp.slot 画方格",
+   "kind": "missingParam",
+   "resolvedBy": "el.abilities.count"
+  },
+  {
+   "screen": "hud",
+   "what": "快捷栏样本带冷却罩（第 2、6 格上半压暗）和锁定格（第 7、8 格整格压暗）；Stardew 的快捷栏是物品栏的第一行，没有冷却和锁定",
+   "severity": "low",
+   "proposal": "farming 包的 hotbar 样本去掉 cd / locked，或 el.abilities 加 states 开关（样本是否演示冷却 / 锁定）",
+   "kind": "content",
+   "resolvedBy": "M12a-10（快捷栏样本不再演示冷却 / 锁定；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "快捷栏在角色走到屏幕下方时会自动翻到屏幕顶部，避免压住角色",
+   "severity": "low",
+   "proposal": "elx 加 avoidPlayer（锚点随角色屏幕位置上下翻转）",
+   "kind": "layoutEngine",
+   "resolvedBy": "el.abilities.avoidPlayer"
+  },
+  {
+   "screen": "hud",
+   "what": "鼠标指针本身是 UI：像素手套箭头，悬停在可交互物上换成手、礼物、对话气泡等图标；el.interact = cursor 只说明\"光标会变\"，没有光标图标集",
+   "severity": "low",
+   "proposal": "ix 加 cursorSet（像素手套 / 系统箭头 / 主题光标），el.interact = cursor 时在样本里画出来",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-59（ix.cursorSet = pixelGlove + ix.cursorContext：像素手套 + 情境小图标）"
+  },
+  {
+   "screen": "hud",
+   "what": "时钟挂牌下方有一个\"!\"任务日志小按钮；el.toolbar = microMenu 至少画一排图标且固定锚点，放不出单个挂在别的元素旁边的小钮",
+   "severity": "low",
+   "proposal": "el.toolbar.form = microMenu 允许只放 1 个图标，并可 attachTo 另一个元素（贴在挂牌下方）",
+   "kind": "missingOption",
+   "partialBy": "M12b-05（el.toolbar count 1 停在挂牌下方）：单钮位置对了，但图标是“≡”不是“!”"
+  },
+  {
+   "screen": "all",
+   "what": "木框是逐像素手绘的橙木条：外沿 1px 深棕线、木条上 1px 亮边、内侧一道暗线、两级像素台阶转角；ast.frameMat = wood 用的 ui_frame_wood 是高分辨率厚涂木纹框（带木纹与角钉），缩小后发软，不像像素木条，而且只有一种木色",
+   "severity": "medium",
+   "proposal": "补一张像素木框九宫格（ui_frame_wood_pixel，vis.pixelScale ≠ off 时选用），顺带出胡桃 / 黑漆两档，或让 col.border 给木材着色",
+   "kind": "asset"
+  },
+  {
+   "screen": "all",
+   "what": "界面模板屏（对话、创建角色、背包、地图、标题）总在左上写模板名（NPC 对话 / 创建角色 / 背包 / 世界地图 / 标题）；Stardew 的菜单与对话框都没有标题字",
+   "severity": "medium",
+   "proposal": "lay 加 header（none / text / plate）开关，或让 cnt.textLength = none 时不画模板标题",
+   "kind": "missingParam",
+   "resolvedBy": "lay.titlePos"
+  },
+  {
+   "screen": "all",
+   "what": "vis.ornament = 0（装饰预算为零）时，每块木框右上角仍画一根斜花枝（派生层给 ast.ornaments 带出 sprigs）；Stardew 的框没有饰件",
+   "severity": "low",
+   "proposal": "装饰预算为 0 时派生层不带出 ast.ornaments（只画手动点名的饰件）；下一轮配方里也可显式写 ast.ornaments = []",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-08（装饰预算为 0 时不派生饰件：花枝去掉；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "物品与快捷栏图标是厚涂位图（陶罐 / 草药 / 木材 / 石块 / 绳子）与红色符号占位（✿ ○ ♥ ⛏）混用；vis.iconStyle = pixel 没有对应的像素图标集，Stardew 的物品全是 16×16 像素图",
+   "severity": "medium",
+   "proposal": "补一套像素物品图标图集（ui_icons_pixel，与 ui_icons_painted 同名同序），vis.iconStyle = pixel 时选用",
+   "kind": "asset"
+  },
+  {
+   "screen": "dialogue",
+   "what": "对话框是两块并排的独立木框：左边文字框（约屏宽一半、居中贴底，3 行大号像素字），右边等高的头像框（像素半身像放在内嵌方画框里，下面压一条卷轴名签）；tpl.npc + cmp.dialogBox = bar 只能画一整条托盘，头像是托盘里的红圈小圆头像，没有名签",
+   "severity": "high",
+   "proposal": "cmp.dialogBox 加 splitPortrait（文本框 + 独立头像框 + 名签三件合一），头像框位置跟随 lay.focalSide，名签样式跟随 ast.frame",
+   "kind": "composite",
+   "resolvedBy": "M12b-21（cmp.dialogBox = splitPortrait：文字框 + 等高头像木框 + 名签）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "tray 容器的宽度固定全屏宽，lay.panelSize 只控制托盘高度；参考文字框 + 头像框合起来约屏宽一半、居中",
+   "severity": "medium",
+   "proposal": "tray 的宽度也读 lay.panelSize（或加 lay.panelWidth），宽度不足全屏时水平居中",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12a-38（tray 宽读 lay.panelSize 并居中；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "对话时局内 HUD（右上时钟挂牌 + 金币、右下能量条）仍留在屏幕角上；模板屏的 cnt.elements 只会排进容器里（放进去就压在对话框里），垫底的是旧的 M1 样本 HUD 而不是元素 HUD，所以这一屏只能不画 HUD",
+   "severity": "medium",
+   "proposal": "elx 加 anchorTo（container / screen），或 flow.stacking = stack 时垫底画当前 uip.layout 的元素 HUD",
+   "kind": "layoutEngine",
+   "resolvedBy": "elx.anchorSpace = screen"
+  },
+  {
+   "screen": "dialogue",
+   "what": "同一角色的头像随台词切换 4–6 种表情",
+   "severity": "low",
+   "proposal": "头像素材按表情分帧（neutral / happy / sad / angry …），chk.demo = dialogue 时轮换",
+   "kind": "asset"
+  },
+  {
+   "screen": "dialogue",
+   "what": "文本框右下角有一个小 × 关闭格；ix.close 只有右上 / 框外 / 返回 / 取消钮 / 按键提示，× 现在画在托盘右上",
+   "severity": "low",
+   "proposal": "ix.close 加 inBoxCorner（× 画进内容框右下角的小方格）",
+   "kind": "missingOption",
+   "resolvedBy": "ix.close = innerBR"
+  },
+  {
+   "screen": "create",
+   "what": "眼睛 / 头发 / 裤子颜色各是三条滑条（色相彩虹轨 + 饱和 + 明度），轨道本身画成彩虹渐变，右侧竖排三个数值；cmp.optionRange = slider 只有单色轨（红色强调色）",
+   "severity": "medium",
+   "proposal": "cmp.optionRange 加 hsvTriplet（色相彩虹轨三联滑条 + 数值列）",
+   "kind": "newDrawing",
+   "resolvedBy": "M12b-31（cmp.optionRows 的 hsvTriplet：彩虹三联滑条 + 数值列）"
+  },
+  {
+   "screen": "create",
+   "what": "同一屏混用多种控件：顶部三个带框文本输入 + 骰子随机钮、左右木箭头切换（皮肤 / 发型 / 衣服 / 配饰）、♂♀ 图标切换、右侧独立木框里的一竖列农场缩略图按钮（悬停弹出带标题的说明卡）；表单只能按 ix.mode 二选一（textInput 只画一个输入框，select 只画设置行），cmp.optionEnum 一屏只能取一种，缩略图列也不能单独成块",
+   "severity": "medium",
+   "proposal": "form 数据按行声明控件类型（输入框行 + 箭头行 + 滑条行混排），cmp.optionEnum 支持逐行覆盖；加 thumbnailColumn 子组件（容器外侧独立侧栏 + 悬停说明卡）",
+   "kind": "composite",
+   "partialBy": "M12b-31（cmp.optionRows 逐行控件 + lay.sideThumbs = right 缩略图列 + 说明卡）：只排下 4 行、行名与控件错位，说明卡压在表单首行上"
+  },
+  {
+   "screen": "create",
+   "what": "cnt.subtype = create 的表单行用的是设置样本（音乐音量 / 音效音量 / 字幕 / 镜头晃动），不是名字 / 农场名 / 皮肤 / 发型 / 颜色这类创建项，一屏只有 4 行",
+   "severity": "medium",
+   "proposal": "给 tpl.create 单独一组样本行（名字、农场名、喜欢的东西、皮肤、发型、上衣、裤子、配饰、眼睛 / 头发 / 裤子颜色、跳过开场），各包可覆盖",
+   "kind": "content",
+   "resolvedBy": "M12b-62（创建屏样本行：名字 / 农场名 / 最想要的东西 / 皮肤……）"
+  },
+  {
+   "screen": "create",
+   "what": "左栏的角色预览是一张带框的像素全身小人（站在草地蓝天前，两侧有转向箭头）；cnt.characterMedium = chibi 只能画剪影 +\"Q 新小人（需素材）\"标签（farming 包没有像素 Q 版小人）",
+   "severity": "low",
+   "proposal": "给 farming 包补一张像素 Q 版小人；cnt.characterMedium 的预览框可选 framed（方框 + 底色 + 两侧转向箭头）",
+   "kind": "asset"
+  },
+  {
+   "screen": "create",
+   "what": "创建角色与标题画面的背景是饱和的蓝天 + 一团团像素白云；ast.bgArt = gradient 只能给天空色到纸色的渐变（底部发白），sceneArt 是水彩风景，都没有像素云",
+   "severity": "low",
+   "proposal": "ast.bgArt 加 skyClouds（像素云天空素材，云的画风跟随 vis.pixelScale），标题画面另加底部山林前景层",
+   "kind": "asset",
+   "partialBy": "M12b-51（ast.bgArt = skyClouds + ast.bgForeground = forest）：像素云与前景都有了，但云只有上方几朵、山林前景是一排平涂绿柱"
+  },
+  {
+   "screen": "create",
+   "what": "确认键 OK 是面板右下角内的一个绿字小方钮，返回键 BACK 是屏幕右下角一块向右指的木箭头路牌（红色像素字），左上 / 右上角还有音乐开关与窗口化小图标；el.cta.form 只有宽按钮 / 圆钮 / 双钮 / 卷帘，ix.close 没有\"角落路牌\"",
+   "severity": "low",
+   "proposal": "el.cta.form 加 smallSquare；ix.close 加 cornerSign（任意角落的独立返回牌，锚点按屏幕算）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-17（el.cta.form = smallSquare 绿 OK 小方钮 + ix.close = cornerSign 右下返回路牌）"
+  },
+  {
+   "screen": "create",
+   "what": "el.cta 主按钮底色固定是强调色红，col.semantic = greenRed 的确认色（绿）不生效；el.cta.scale = 0.55 时按钮字跟着缩到约 5px，看不清",
+   "severity": "low",
+   "proposal": "确认类按钮读 col.semantic 的正向色；按钮文字设最小字号（不低于 typ.baseSize × 0.8），缩放只缩按钮框",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-35（确认钮读 col.semantic 正向色、按钮字有下限；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "inventory",
+   "what": "物品格看不见：有物品的格子用的是面板本身的纸芯底（同色同纹、无边），画在同一张纸芯面板里就和底融为一体；vis.depth = bevel 也没给格子画内凹边，只有空格（st.emptySlot = pit）才压暗。Stardew 背包的标志就是一排排内凹的米色方格",
+   "severity": "high",
+   "proposal": "格子在与面板同底时改用 col.surface2 或内凹画法（上左暗边 + 下右亮边，跟随 vis.depth），有物品的格子也画",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-09（格子状态层与外形：台阶角描边看得出一格格；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "inventory",
+   "what": "cmp.tab = icon 没生效：背包和地图屏的页签仍画成文字页签（全部 / 作物 / 工具 / 礼物）",
+   "severity": "low",
+   "proposal": "页签按 cmp.tab 画图标（icon / iconText），图标取当前包的分类图标",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-16（cmp.tab = icon：页签画成图标）"
+  },
+  {
+   "screen": "inventory",
+   "what": "页签是一排凸出在木框上沿外面的图标小木牌（背包 / 技能 / 社交 / 地图 / 制作 / 收集 / 选项 / 退出），选中的那张往下压、和框连成一体；lay.nav = tabsTop 画在面板里面的标题下方，cmp.tabIndicator 没有 sunken",
+   "severity": "medium",
+   "proposal": "lay.nav 加 tabsOutsideTop（页签挂在容器外沿，每张页签带同材质小框）；cmp.tabIndicator 加 sunken（选中项沉入面板）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-16（cmp.tabMount = outsideTop + cmp.tabIndicator = sunken：挂在木框上沿外的图标木牌）"
+  },
+  {
+   "screen": "inventory",
+   "what": "页签样本是物品分类（全部 / 作物 / 工具 / 礼物），地图屏也挂着同一组分类页签；Stardew 的页签是游戏菜单分区（背包 / 技能 / 社交 / 地图 …），地图本身就是其中一页",
+   "severity": "low",
+   "proposal": "lay.navDepth = 1 且 flow.entry = hotkey 时页签样本改用\"游戏菜单分区\"一组；地图屏的页签样本也用这组（当前页 = 地图）",
+   "kind": "content",
+   "partialBy": "M12b-16（cmp.tab = icon）：页签不再写物品分类字，但只有 4 个图标，看不出是游戏菜单分区"
+  },
+  {
+   "screen": "inventory",
+   "what": "物品品质是格子左下角的一颗星，颜色区分银 / 金 / 铱（紫）；st.rarityCue = stars 画成物品下方 1–4 颗小星，col.rarityScale = metal 只有灰 / 铜 / 银 / 金 / 白金，没有紫色顶档",
+   "severity": "low",
+   "proposal": "st.rarityCue 加 cornerStar（单星、颜色编码等级）；col.rarityScale 加自定义色阶（或 stardew 式 银 / 金 / 铱紫）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-01 / M12b-33（st.rarityCue = cornerStar + col.rarityScale = quality：格子左下角银 / 金 / 铱星）"
+  },
+  {
+   "screen": "inventory",
+   "what": "背包上半是 3×12 物品格，下半是装备栏（帽子 / 戒指 / 鞋 / 衣裤）+ 小人预览 + 农场名与资金文字；lay.composition = splitTB 时主体（角色）固定在上半、数据在下半，顺序正好相反，所以这一屏只画了物品格，下半留空",
+   "severity": "medium",
+   "proposal": "lay.focalSide 加 bottom（上下分栏时主体在下）；加装备纸娃娃子块（tpl.loadout 的格子 + 小人 + 文字信息合进背包下半）",
+   "kind": "composite",
+   "resolvedBy": "M12b-11（lay.focalSide = bottom + lay.focalAside = slotsText：上半物品格、下半装备格 + 小人 + 名字资金）"
+  },
+  {
+   "screen": "inventory",
+   "what": "主框右侧外挂垃圾桶与整理按钮；没有\"面板外侧附属按钮列\"",
+   "severity": "low",
+   "proposal": "lay 加 sideDock（容器外侧的附属按钮列，左 / 右，按钮样式跟随 cmp.button）",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-05（lay.sideButtons = right：主框右侧外挂按钮列）"
+  },
+  {
+   "screen": "inventory",
+   "what": "悬停物品时弹出带木框的说明卡（名称、类别、描述）；lay.detail = transient 画出的说明卡不带外框、而且压在文字层下面（格子里的数量与星级会透上来），看上去像一块脏斑，所以这一屏关掉了详情",
+   "severity": "low",
+   "proposal": "临时详情用带外框的完整面板，并画在文字层之上（或单独一层）",
+   "kind": "renderBug",
+   "resolvedBy": "lay.detail = transient（M12a-26 浮框带外框、放外侧）"
+  },
+  {
+   "screen": "title",
+   "what": "标题界面的菜单固定画成贴左的竖排列表（选中项红底长条、其余半透明条），lay.arrangement = row 不生效；Stardew 是下方正中横排的四个方按钮",
+   "severity": "medium",
+   "proposal": "标题菜单按 lay.arrangement = row 画成居中横排的方按钮，位置跟随 lay.composition = splitTB 的下半",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-27（标题菜单 lay.arrangement = row：下方正中横排方钮；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "title",
+   "what": "主菜单是四块方形木招牌按钮（New / Load / Co-op / Exit），LOGO 是带叶子的木头字（浅木色字身 + 深棕描边）；招牌按钮属于素材，cmp.buttonBox 只给程序框，LOGO 只能用文字色 + 标题特效",
+   "severity": "medium",
+   "proposal": "ast 加 buttonArt（按钮素材槽：招牌 / 木牌 / 石碑），与 ast.frame 分开；el.title.form = logo 允许 LOGO 素材",
+   "kind": "asset"
+  },
+  {
+   "screen": "title",
+   "what": "标题画面没有关闭钮；ix.close 没有 none，配方只能在 xTopRight（右上 × 圆钮）和 cancelBtn（右下\"取消\"按钮）之间挑一个",
+   "severity": "low",
+   "proposal": "ix.close 加 none（根界面不画关闭）",
+   "kind": "missingOption",
+   "resolvedBy": "ix.close（tpl.title 预设 none，删掉复刻的 xTopRight）"
+  },
+  {
+   "screen": "title",
+   "what": "标题背景的像素云横向漂移、飞鸟掠过、底部山林前景视差；mo.idle = float 只让 LOGO 上下浮动",
+   "severity": "low",
+   "proposal": "mo.idle 加 bgDrift（背景层横向漂移 + 前景视差），与 LOGO 浮动分开控制",
+   "kind": "motion"
+  },
+  {
+   "screen": "map",
+   "what": "地图是一张像素插画（整片山谷全部可见、没有迷雾，绿色为主）；vis.mapStyle 没有\"像素插画地图\"，painted 画出来是羊皮纸水彩底图",
+   "severity": "medium",
+   "proposal": "vis.mapStyle 加 pixelIllustration（像素风插画地图素材）",
+   "kind": "asset"
+  },
+  {
+   "screen": "map",
+   "what": "地名只在悬停处弹一个写地名的小木牌，玩家位置是不带圈的像素小头像；现在地名是地图左上一个红底小标签，标记是带绿 / 红描边圈的圆形头像",
+   "severity": "low",
+   "proposal": "地图标签加 plate 画法（跟随 ast.frame 的小牌，跟着悬停点）；cmp.node = avatar 时描边圈可关（vis.stroke 跟随）",
+   "kind": "newDrawing",
+   "resolvedBy": "vis.mapLabels = hover, cmp.plate@mapLabel"
+  },
+  {
+   "screen": "map",
+   "what": "cmp.plate@mapLabel = plaque 的地名牌画成透明底 + 红色细框的小方框、字很小：不读 col.surface 实底，也不套 ast.frame 的木框；Stardew 的悬停地名牌是一块实底小木牌",
+   "severity": "low",
+   "proposal": "mapLabel 标牌按 plaque 画实底（col.surface@mapLabel → col.surface），ast.frame 是九宫格材质时给标牌也套同一圈框",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-66（cmp.plate@mapLabel = plaque：悬停处实底米色地名牌）"
+  },
+  {
+   "screen": "create",
+   "what": "lay.sideThumbs 的悬停说明卡（“果树林 / 新的果树林……”）画在面板里、压在表单第一行（名字输入 + 骰子）上；参考说明卡弹在缩略图列外侧，不压表单",
+   "severity": "low",
+   "proposal": "侧栏缩略图的说明卡按占位表找空位，优先放在缩略图列外侧（远离主面板的一边）",
+   "kind": "layoutEngine"
+  }
+ ],
+ "notes": "UI 和世界是同一张像素画：橙木框的一个像素和地上的萝卜一样大，米黄纸芯、深棕像素字、几乎不加装饰。局内只有右上挂牌式时钟（日晷 + 日期 + 时间 + 计数器式金币）、底部 12 格快捷栏、右下竖能量条和左下拾取小卡；对话框拆成文字框与头像框两块并排，头像下压卷轴名签。所有菜单都套同一圈木框，靠框外的图标页签切换。参考图里只有对话截图带 HUD，所以 HUD 一屏也以它为参考（对话时快捷栏隐藏）。",
+ "scores": {
+  "hud": [
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "dialogue": [
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 2,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 4,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 5,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "create": [
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 3,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 4,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "inventory": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 3,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "title": [
+   {
+    "layout": 2,
+    "elements": 2,
+    "palette": 2,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 5,
+    "shape": 3,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 4,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 5,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "右上日历卡太大（约屏宽 20%、屏高 33%，参考挂牌约 11% × 11%），红头条 + 巨大的'14'压过一切",
+   "金币画成三种资源（金币 / 星 / 花）的图标 + 数字一排，参考只有一个带框的金币计数器",
+   "能量条画成右下一根很长的红色横条加'健康'字样，参考是右下细长竖条、顶上 E 帽头、绿黄色",
+   "快捷栏 8 格偏大（单格约屏高 10%），第 5、6 格带锁定 ×、第 2 格带红点、两格冷却罩，参考 Stardew 快捷栏是 12 格同样式",
+   "画面中部有'+3 小麦'绿色飘字与目标标记（菱形 + 距离），参考里都没有",
+   "整体字号偏大（正文约 15px@522p，Stardew 约 11–12px）"
+  ],
+  "dialogue": [
+   "对话框里没有台词正文：主数据没设，整块托盘只画了'NPC 对话'标题和正中一个小圆头像",
+   "字幕条（深色底白字）和三行对话选项画在托盘上方的世界里，参考没有选项、台词在木框里",
+   "时钟日历卡、'健康'横条被排进对话框里，与标题、头像互相重叠",
+   "托盘是全宽，参考是居中半宽的文字框 + 右侧独立头像框 + 卷轴名签"
+  ],
+  "create": [
+   "背景是水彩湖景，参考是饱和蓝天 + 像素白云",
+   "表单只排下两行音量滑条，第一行被红色描边框住，看起来像报错",
+   "主按钮是一条红色宽按钮压在面板正中，临时详情卡'小麦'又压在表单右侧",
+   "左栏是红色剪影 +'Q 版小人（需素材）'标签，参考是带框的像素小人预览",
+   "缺：三个文本输入、左右箭头选项列、彩虹三联滑条、右侧农场缩略图列与说明卡、角落 BACK 路牌"
+  ],
+  "inventory": [
+   "页签是面板里的文字页签，参考是挂在木框上沿外的图标木牌",
+   "上半是一个'Q 版小人（需素材）'剪影，物品只排了一行 10 格，参考是上半 3×12 物品格",
+   "临时详情卡压在格子下半，挡住内容",
+   "缺：下半的装备栏 + 小人预览 + 资金文字，右侧垃圾桶 / 整理按钮"
+  ],
+  "title": [
+   "整屏铺了一块米色纸面全屏面板（带'标题'表头和 ×），参考没有面板、背景是蓝天白云",
+   "菜单是贴左的竖排列表（只排下两行，第一行红底），参考是下方正中横排四块方形木招牌",
+   "LOGO 是平铺的深棕像素字，参考是带描边、带叶子的木头立体字"
+  ],
+  "map": [
+   "地图底图是羊皮纸水彩（棕灰色调），参考是绿色为主的像素插画",
+   "临时详情卡占了地图右半，参考只在悬停处弹一个写地名的小木牌",
+   "面板偏小（约屏宽 70%），参考地图几乎占满屏幕"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "右上是红头条日历卡（季节年份 + 大号\"14\" + 星期天气），尺寸已缩到约屏宽 9%，但没有木框、日晷圆盘和时间；参考是一块木挂牌：日晷 + 星期日期 + 天气 / 运气小图标 + 时间牌，下面接金币计数器",
+   "金币只剩一个金币图标 + 深棕数字\"2,460\"直接浮在草地上；参考是木框里逐位内凹小格的红色像素数字计数器（左端 G）",
+   "能量条仍是右下一根细长红色横条 + \"健康\"字样（cmp.gauge@el.vitals = vertical 没生效）；参考是贴右下角的竖条、顶上 E 帽头、绿黄填充",
+   "快捷栏是 8 个分开的台阶圆角纸格，没有整条木托盘；第 2、6 格上半盖暗罩（冷却 fillUp）、第 7、8 格整格压暗（锁定 dimmed）；参考是 12 格同样式方格木托盘（且对话时隐藏）",
+   "左下拾取提示是一枚无框米色药丸（\"成就解锁：第一次收获\"）；参考左下是带木框的物品图标 + 名称 + 数量小卡",
+   "快捷栏图标是红色符号占位（⛏ ✿ ⚒）与厚涂位图混用，不是像素物品图；没有像素手套光标、时钟下的\"!\"日志钮"
+  ],
+  "dialogue": [
+   "对话框仍是全宽托盘（约屏宽 96%）；参考是居中约半屏宽的文字框 + 右侧等高的独立头像框",
+   "左上多一行\"NPC 对话\"标题，× 在托盘右上；参考没有标题，× 是文字框右下角的小方格",
+   "头像是红圈小圆头像（只有灰棕剪影 + \"农\"字占位），远小于参考里内嵌方画框的大像素半身像，也没有卷轴名签",
+   "正文字号太小（约 10px@522p，4 行只占框高一半，右侧大片空白）；参考是 3 行大号像素字（约 18px@522p）铺满文字框",
+   "屏幕角上的 HUD（右上时钟挂牌 + 金币、右下能量条）没画",
+   "框右上角多一根斜花枝饰件；续读三角是淡粉色，参考是深色像素小箭头 / 手套指针"
+  ],
+  "create": [
+   "背景已换成蓝天渐变（方向对了），但没有像素白云，底部还渐变到米白",
+   "表单只有 4 行设置样本（音乐音量 / 音效音量 / 字幕 / 镜头晃动）；参考是名字 / 农场名 / 最爱的东西 3 个输入框 + 5 组左右木箭头 + 3 组彩虹三联滑条 + ♂♀ 图标 + 跳过开场勾选，密得多",
+   "左栏是红色剪影 + \"Q 新小人（需素材）\"红标签；参考是带框的像素小人预览（蓝天草地底）+ 两侧转向箭头",
+   "确认键是面板右下一条红色宽按钮，字缩到看不清；参考是绿字 OK 小方钮，屏幕右下另有一块 BACK 木路牌",
+   "缺右侧独立木框的农场缩略图列与悬停说明卡；左上多\"创建角色\"标题，右上多花枝饰件",
+   "当前行是深一档的底色条 + 红三角，滑条和勾选框是红色强调色；参考控件都是木色 / 彩虹轨，勾选框是米色内凹格"
+  ],
+  "inventory": [
+   "物品没有格子：格子底和面板纸芯同色同纹，看不出 Stardew 那种内凹米色方格，只有选中格画了红色台阶框",
+   "页签是面板里的文字页签（全部 / 作物 / 工具 / 礼物，选中红底）；参考是挂在木框上沿外的一排图标小木牌（背包 / 技能 / 社交 / 地图 …）",
+   "品质画成物品下方 1–4 颗小星；参考是格子左下一颗银 / 金 / 铱（紫）色星",
+   "3×12 物品格只占上半，下半约 40% 空着；参考下半是装备格 + 小人预览 + 农场名与资金，主框右侧外挂垃圾桶 / 整理钮",
+   "物品图标是厚涂位图（陶罐 / 草药 / 木材 / 石块 / 绳子）与红色符号（✿ ○ ♥）混用，不是像素物品图",
+   "关闭钮是框外红色圆形 ×；左上多\"背包\"标题，右上多花枝饰件"
+  ],
+  "title": [
+   "菜单仍是贴左的竖排列表（选中项红底长条、其余半透明灰蓝条，lay.arrangement = row 没生效）；参考是下方正中横排的四块方形木招牌",
+   "左上多\"标题\"字，右上多一枚 × 圆钮；参考标题画面没有表头也没有关闭钮",
+   "LOGO 是深棕像素字 + 白描边投影，比上一轮接近，但不是浅木色带叶子的木头立体字",
+   "背景是纯蓝天渐变，没有像素云、飞鸟和底部山林前景"
+  ],
+  "map": [
+   "底图仍是羊皮纸水彩（棕 / 灰蓝），参考是绿色为主、整片山谷可见的像素插画",
+   "面板已放大到约屏宽 85%（接近参考），但左上有\"世界地图\"标题，下面还挂一排物品分类页签（全部 / 作物 / 工具 / 礼物）",
+   "地名是地图左上一个红色小标签；参考只在悬停处弹一个写地名的小木牌",
+   "地点 / 玩家标记是带绿 / 红描边圈的圆形头像；参考是不带圈的像素小头像"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "快捷栏已是 12 格、不再带冷却 / 锁定演示；但仍是 12 个分开的台阶角纸格、没有整条木托盘，图标多是重复的红色 ✿ 占位",
+   "能量条已是贴右下角的竖条；但填充是红色、顶上是“健康”小字，参考是绿黄填充 + E 帽头",
+   "右上仍是红头条日历卡（无木框、无日晷与时间），金币是浮在草地上的图标 + 数字；参考是木挂牌 + 逐位内凹格的计数器",
+   "左下拾取提示仍是无框米色药丸；画面中部多一个箭头光标 + 小字标签"
+  ],
+  "dialogue": [
+   "布局对上了：居中约半屏宽的木框文字框贴底、头像在右、屏幕角上的日历卡 / 金币 / 竖能量条都在，“NPC 对话”标题去掉了",
+   "头像是不带框的红圈小圆头像，直接站在场景上（lay.layering = separate 只给文字栏画面板）；参考是等高的独立木框 + 内嵌方画框里的大像素半身像 + 卷轴名签",
+   "× 落在头像右下的场景上、在木框外（innerBR 按整个容器算）；参考 × 在文字框右下角内",
+   "正文 6 行小字铺满文字框；参考是 3 行大号像素字"
+  ],
+  "create": [
+   "标题字与花枝饰件去掉了，确认键成了面板右下的绿色小按钮、字看得清——接近参考的 OK",
+   "表单仍是设置样本（音乐 / 音效音量、字幕、镜头晃动、语言），参考是名字 / 农场名 / 喜好输入框 + 左右木箭头 + 彩虹三联滑条",
+   "左栏仍是红色剪影 + “Q 版小人（需素材）”；缺右侧农场缩略图列与屏幕右下的 BACK 路牌",
+   "背景蓝天渐变无像素云、底部发白；滑条与勾选框仍是红色强调色"
+  ],
+  "inventory": [
+   "（凭记忆）物品格现在有台阶角描边、看得出一格格；标题与花枝去掉了；浮动详情是带木框的小卡、放在格子右侧",
+   "详情卡占了右侧一栏，物品格从 12 列挤成 9 列 × 4 行；参考是 3 × 12",
+   "页签是框内的单字小方块（全 / 作 / 工 / 礼，选中沉入）；参考是挂在木框上沿外的一排图标小木牌（背包 / 技能 / 社交 / 地图…）",
+   "下半没有装备栏 + 小人预览 + 资金文字；物品图标多为重复占位符号，品质仍是物品下方小星"
+  ],
+  "title": [
+   "（凭记忆）表头与 × 去掉了，菜单成了下方正中横排的四个方钮——构图对上",
+   "按钮是小号米色圆角纸钮（选中红底），参考是四块大号方形木招牌",
+   "LOGO 是深棕像素字 + 白描边，参考是浅木色带叶子的木头立体字；背景纯蓝渐变无像素云"
+  ],
+  "map": [
+   "（凭记忆）标题与花枝去掉，地图占满面板；地名改成只在玩家标记上方弹一块",
+   "地名牌画成透明底 + 红色细框的小方框、字很小，不是实底木牌",
+   "底图仍是羊皮纸水彩（棕 / 灰蓝），参考是绿色为主的像素插画；标记仍是带绿 / 红圈的圆头像",
+   "上方仍挂物品分类页签（全 / 作 / 工 / 礼）"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "右上已是日晷 + 星期日期天气 + 时间的挂牌，下接逐位内凹格的红字金币计数器；但挂牌本身没有木框，计数器的木框是发软的高分辨率木纹",
+   "快捷栏已是 12 格整条木托盘、能量条已是木框竖条 + 绿色填充；但格子是八角形、图标多是重复的 ✿ 占位，能量条帽头是白色小方块、看不出 E",
+   "左下拾取卡已套木框，但写的是“成就解锁：第一次收获”，参考是物品图标 + 名称 + 数量",
+   "挂牌下的小钮是“≡”，参考是“!”日志钮；手套光标旁还带一行小字标签"
+  ],
+  "dialogue": [
+   "文字框 + 独立头像木框（内嵌方画框）已并排；但台词只有框顶一行小字、框下大半空着，参考是 3 行大号像素字铺满",
+   "名签是头像框下方的红色小梯形签，参考是压在头像框底部的米色卷轴名签",
+   "头像是棕色剪影灰盒；整对框约屏宽 65%，比参考（约一半）宽",
+   "右上挂牌 + 金币计数器、右下竖能量条都在，位置与参考一致"
+  ],
+  "create": [
+   "逐行控件、彩虹三联滑条、右侧农场缩略图列、右下返回路牌、绿色 OK 小方钮都有了；但只有 4 行，参考约 12 行、密得多",
+   "行名与控件错位：“农场名”一行是 M / F 图标切换、“皮肤”一行是三联滑条",
+   "缩略图列的悬停说明卡“果树林”压在表单第一行（名字输入）上，参考说明卡在缩略图列外侧",
+   "左栏仍是红色剪影 + “Q 版小人（需素材）”；像素云只有上方几朵，参考满天大朵白云"
+  ],
+  "inventory": [
+   "（凭记忆）上半 3 × 12 物品格、下半装备格 + 小人 + 农场名与资金、框上沿外的图标页签、右侧外挂按钮、左下角品质星都已对上",
+   "小人预览是红圈圆头像灰盒，记忆中是方框里的像素全身小人，装备格分列在它两侧",
+   "装备格是一竖列带文字标签的小格，记忆中是两列小格、无标签",
+   "物品图标多是重复的符号占位；页签只有 4 个小图标，记忆中是一排 8 个图标木牌"
+  ],
+  "title": [
+   "（凭记忆）蓝天上已有像素云、底部加了绿色前景；但前景是一排平涂的绿色像素柱，像柱状图而不是山林",
+   "菜单仍是四个小号米色圆角纸钮（选中红底），记忆中是四块大号方形木招牌",
+   "LOGO 是深棕像素字 + 白描边，记忆中是浅木色带叶子的木头立体字；LOGO 与按钮之间大片空白"
+  ],
+  "map": [
+   "（凭记忆）底图仍是羊皮纸水彩（棕 / 灰蓝），记忆中是绿色为主、整片山谷可见的像素插画",
+   "标记仍是带绿 / 红描边圈的圆头像，记忆中是不带圈的像素小头像",
+   "悬停处的实底米色地名牌、挂在框上沿外的图标页签已对上"
+  ]
+ },
+ "revisions": [
+  "base：typ.baseSize 16 → 13，整体字号与版面缩放回到 Stardew 的比例（522p 下正文约 12px）",
+  "base：ix.focus scale → cursor（手柄 / 键鼠导航时是像素手套指针，画成条目左侧的小三角，不再给第一项套红框）；st.newCue = none（Stardew 不用红点）；st.locked = dimmed、st.cooldown = fillUp（快捷栏样本里的锁定 / 冷却格不再画 × 和扇形罩）",
+  "hud：el.clock 缩到 0.75 并降为 secondary（日历卡约屏宽 9%）；el.resources 改 bigNumber（只剩一个金币计数）、0.6；el.abilities 0.85；el.vitals 0.6；去掉 el.objective（世界目标标记参考里没有）；el.notify 改 toast 放左下（Stardew 的拾取提示是左下小木框），lay.safeMargin 0.5 贴边",
+  "dialogue：补 cnt.dataShape = text（台词正文进对话框左侧）、lay.composition = splitLR + focalSide = right（头像在右）；cnt.elements 清空（去掉字幕条、选项，以及被排进框里的时钟 / 金币 / 能量条）；ix.mode = readOnly 去掉'确定'按钮；rel.behind = live",
+  "create：ast.bgArt sceneArt → gradient（蓝天渐变，代替水彩湖景）；lay.panelSize 0.3 → 0.4，表单能排下四行（滑条 / 勾选框）；lay.detail = none 去掉压在表单上的详情卡；el.cta 锚到面板右下（br、0.55），不再压在正中",
+  "inventory：cnt.focal = none + lay.composition = single，物品格占满主体，36 格按 12 列排成 3 行；lay.detail = none（临时详情卡无框且压在文字层下）；lay.panelSize 0.65 → 0.62",
+  "title：cmp.modal = floating 去掉整屏纸面面板，背景 rel.behind = replaced + ast.bgArt = gradient（蓝天）；lay.composition = splitTB 让 LOGO 在上、菜单在下且四项都排得下；typ.titleFx = outlineShadow 给 LOGO 加描边投影；ix.close = xTopRight（cancelBtn 会在右下补一个'取消'按钮）",
+  "map：lay.panelSize 0.7 → 0.85（地图接近满屏）；lay.detail = none（Stardew 地图只有悬停地名，不弹大详情卡）",
+  "gaps：保留并细化原有 15 条；新增模板标题字、模板屏保留局内 HUD、快捷栏格数 / 托盘、创建屏混合控件 / 预览素材 / 像素云背景、背包上下分栏顺序、临时详情卡层级、标题菜单横排等",
+  "R3 前（M12a 之后）：hud 加 el.abilities.count 12、el.abilities.avoidPlayer（角色走到下方时快捷栏翻到顶部）；dialogue / create / inventory / map 加 lay.titlePos none（菜单与对话框没有标题字）；dialogue 加 ix.close = innerBR（× 在文字框右下角）并把时钟挂牌、金币、竖能量条用 anchorSpace = screen 钉在屏幕角上（对话时局内 HUD 仍在；取值同 hud 屏）；create 的 ix.close cancelBtn → none；inventory 写回 lay.detail = transient、cmp.tabIndicator raised → sunken（选中页签沉入木框）；title 删掉显式的 ix.close xTopRight（tpl.title 预设已是无页头、无 ✕）；map 加 vis.mapLabels = hover + cmp.plate@mapLabel = plaque（只在悬停处弹一块地名木牌）、cmp.tabIndicator = sunken。",
+  "R4 前（M12b 之后）：base 加 ix.cursorSet = pixelGlove + ix.cursorContext = true（像素手套光标、悬停换对话 / 礼物小图标，#10）；hud / dialogue el.clock.form calendar → plaque（日晷 + 日期天气 + 时间木挂牌，#0），el.resources.form bigNumber → odometer + col.accent@el.resources 红 + dockTo el.clock / dockSide below / dockAlign end + el.resources.frame = panel（挂牌下逐位内凹格金币计数器，#2 / #0），cmp.gaugeExtra@el.vitals = [capLabel] + cmp.gaugeColorBy@el.vitals = gradient + el.vitals.frame = panel（竖能量条 E 帽头、绿黄红渐变、木框，#5 / #6）；hud 再加 el.toolbar（microMenu、count 1、停在挂牌下方：「!」日志钮，#11）、el.abilities.frame = tray（快捷栏整条木托盘，#1）、el.notify.frame = panel（拾取提示木框）——按元素写 frame，没写全局 elx.frame（挂牌自己跟 ast.frame、光标不该套框）；dialogue cmp.dialogBox bar → splitPortrait（文字框 + 等高头像框 + 卷轴名签，#16）；create el.cta.form wide → smallSquare（#26）、cmp.optionRows = [dice, iconToggle, arrows, hsvTriplet, arrows]（名字骰子、性别图标、木箭头、彩虹三联滑条，#21 / #22）、lay.sideThumbs = right（农场缩略图列 + 说明卡，#22）、ast.bgArt gradient → skyClouds（像素云天，#25）、ix.close none → cornerSign（右下 BACK 路牌，#26）；inventory cnt.focal none → character + lay.composition single → splitTB + lay.focalSide = bottom + lay.focalAside = slotsText（上半物品格、下半装备格 + 小人 + 名字资金，#33），cmp.tabMount = outsideTop（框上沿外的木牌页签，#30）、lay.sideButtons = right（#34）、st.rarityCue stars → [none, cornerStar] + col.rarityScale metal → quality（左下角银 / 金 / 铱星，#32）、lay.detail transient → none（浮动详情占一栏把 12 列挤成 9 列）；title ast.bgArt gradient → skyClouds + ast.bgForeground = forest（#25）；map 加 cmp.tabMount = outsideTop（地图是游戏菜单的一页，页签同背包）。"
+ ]
+}

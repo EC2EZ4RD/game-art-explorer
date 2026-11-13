@@ -1,0 +1,20 @@
+{
+ "files": {
+  "image": "ui_frame_leather.png",
+  "godot": "ui_frame_leather_godot.png"
+ },
+ "size": [
+  1024,
+  1024
+ ],
+ "band": 88,
+ "slice": 98,
+ "sizeGodot": [
+  192,
+  192
+ ],
+ "sliceGodot": 18,
+ "bandGodot": 16,
+ "coverage": 0.26866817474365234,
+ "id": "ui_frame_leather"
+}

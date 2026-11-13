@@ -1,0 +1,1109 @@
+{
+  "meta": {
+    "purpose": "K1 文献卷：游戏 UI / UX / HUD 设计与视觉风格的权威来源目录（书、论文、会议演讲、开发者访谈 / 博客、无障碍官方规范、UI 资料库）。用于给设计原则找出处，而不是复刻单一游戏。",
+    "built": "2026-10-14",
+    "scope": "不收录手游商业化界面（商城、抽卡、奖励、签到、首充、战令、红包、广告）相关资料；手游战斗 HUD 与触屏操作仍在范围内。",
+    "method": "每条都经 WebSearch / WebFetch 确认存在（标题、作者、年份、链接）。ideas 为中文转述，不含长引文；带 GDC Vault 链接的演讲多数需会员才能看全文，要点取自官方摘要与可公开读取的报道。Interface In Game 只记录站点本身，未抓取其内容。",
+    "caveats": [
+      "gamedeveloper.com（原 Gamasutra）页面对抓取返回 403，相关条目要点来自搜索摘要与二手引用，细节以原文为准。",
+      "games 为空数组表示该来源未公开点名具体游戏（例如自制测试关卡或摘要未列名）。",
+      "year 为首版 / 首发年份；后续版本写在 ideas 里。"
+    ]
+  },
+  "sources": [
+    {
+      "title": "Beyond the HUD: User Interfaces for Increased Player Immersion in FPS Games",
+      "author": "Erik Fagerholt, Magnus Lorentzon（Chalmers 理工大学，与 EA DICE 合作）",
+      "year": 2009,
+      "url": "https://odr.chalmers.se/handle/20.500.12380/111921",
+      "type": "thesis",
+      "topics": ["叙事性 diegesis", "沉浸感", "HUD 分类", "FPS"],
+      "ideas": [
+        "用两个问题给每一个界面元素定位：它是否属于游戏的虚构故事、它是否存在于游戏的三维空间——由此得到叙事内（diegetic）、非叙事（non-diegetic）、空间（spatial）、元（meta）四种表示。",
+        "沉浸的定义来自游戏学、认知科学、媒介研究的文献，并用对当代 FPS 的现状调研与用户测试来检验假设。",
+        "提出四条指南：了解你的设计空间、了解你的游戏（竞技焦点与虚构设定会改变 UI 对沉浸的作用）、建立玩家能动性、强化玩家与化身之间的感知联结。",
+        "四象限是逐个元素挑位置的工具箱，并不主张整款游戏一刀切地取消 HUD。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Game UI Discoveries: What Players Want",
+      "author": "Marcus Andrews（EA DICE）",
+      "year": 2010,
+      "url": "https://www.gamedeveloper.com/design/game-ui-discoveries-what-players-want",
+      "type": "article",
+      "topics": ["叙事性 diegesis", "沉浸感", "HUD 分类"],
+      "ideas": [
+        "作者受 DICE 委托评估沉浸式 UI 是否值得用于后续产品，并拆解了当时多款游戏的界面。",
+        "把 Fagerholt & Lorentzon 的叙事内 / 非叙事 / 空间 / 元四分法带进业界讨论，成为后来讨论 HUD 最常用的共同词汇。",
+        "以 Far Cry 2（手持地图、世界内物件）作为“把界面放进世界”的最直观参照，以 Dead Space 的全息界面作为叙事内 UI 的样板。",
+        "强调新颖的界面也必须同时满足玩家需求、服务玩法和目标受众，而不是单纯追求零 HUD。"
+      ],
+      "games": ["Far Cry 2", "Dead Space"]
+    },
+    {
+      "title": "User Interface Design in Video Games",
+      "author": "Anthony Stonehouse",
+      "year": 2014,
+      "url": "https://www.gamedeveloper.com/design/user-interface-design-in-video-games",
+      "type": "article",
+      "topics": ["叙事性 diegesis", "HUD 分类", "空间 UI", "元 UI"],
+      "ideas": [
+        "用通俗例子解释四象限：叙事内（角色也能感知）、非叙事（传统数值条）、空间（按钮提示、角色名、赛车路面箭头）、元（受伤时画面抖动、模糊、变色）。",
+        "案例：Dead Space 2 的生命条长在主角宇航服背后；Metro 2033 用手表计算防毒面具滤罐余量；Assassin's Creed 的鹰眼视觉让玩家与角色看到同一画面。",
+        "提醒分类取决于语境：同样的生命条在不同游戏里可能属于不同象限；手持地图一旦切成全屏 2D 就变成非叙事。"
+      ],
+      "games": ["Dead Space 2", "Metro 2033", "Assassin's Creed"]
+    },
+    {
+      "title": "Do Players Prefer Integrated User Interfaces? A Qualitative Study of Game UI Design Issues",
+      "author": "Stein C. Llanos, Kristine Jørgensen",
+      "year": 2011,
+      "url": "https://dl.digra.org/index.php/dl/article/view/514",
+      "type": "paper",
+      "topics": ["叙事性 diegesis", "叠加式 HUD", "玩家研究", "沉浸感"],
+      "ideas": [
+        "用质性玩家研究考察玩家怎么看各类 UI 元素，以及界面如何影响投入感。",
+        "整合进世界的“透明”界面并不必然带来更高投入；很多情况下玩家更偏好信息清晰的叠加式界面。",
+        "把 UI 选择看作美学与机制之间的平衡：用透明还是叠加，是在游戏语境里表示系统信息的一种方式。",
+        "同年 Gamasutra 对 Jørgensen 研究的报道：多数玩家满意传统叠加 HUD，但某个元素一旦不再服务其功能就会变得烦人、破坏投入。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Gameworld Interfaces",
+      "author": "Kristine Jørgensen",
+      "year": 2013,
+      "url": "https://www.thevideogamelibrary.org/book/gameworld-interfaces",
+      "type": "book",
+      "topics": ["叙事性 diegesis", "界面理论", "玩家研究", "跨品类"],
+      "ideas": [
+        "比较两种呈现游戏信息的方式：自然地融入虚构世界，或用叠加符号、菜单呈现；两种都能有效传递玩家需要的信息。",
+        "核心论点：游戏世界并不受虚构一致性支配，而是受游戏机制逻辑支配；游戏世界本身就是玩家访问系统信息的界面。",
+        "方法上同时访谈开发团队（Harmonix、Turbine）并对四个不同品类的游戏做玩家观察与访谈。",
+        "MIT Press 出版；最后一章提出“游戏世界界面”理论，认为界面处于虚构与系统之间的阈限位置。"
+      ],
+      "games": ["Crysis", "Command & Conquer 3: Tiberium Wars", "The Sims 2", "Diablo II"]
+    },
+    {
+      "title": "Gaming: Essays on Algorithmic Culture",
+      "author": "Alexander R. Galloway",
+      "year": 2006,
+      "url": "https://en.wikipedia.org/wiki/Gaming:_Essays_on_Algorithmic_Culture",
+      "type": "book",
+      "topics": ["叙事性 diegesis", "游戏理论", "操作者 / 机器"],
+      "ideas": [
+        "开篇“游戏行为的四个时刻”用两条轴分析游戏：操作者（玩家）↔ 机器（电脑），叙事内 ↔ 非叙事。",
+        "四象限例子：开枪是叙事内操作者行为，环境音是叙事内机器行为，暂停是非叙事操作者行为，网络延迟是非叙事机器行为。",
+        "设置、暂停、存档等界面行为在这个框架里与射击同样是“游戏行为”——为把菜单当作玩法的一部分提供了理论依据。",
+        "后来的叙事性 UI 研究（含 2026 年的系统映射）大量沿用此模型。"
+      ],
+      "games": ["Tekken", "Myst", "Warcraft III", "Dance Dance Revolution"]
+    },
+    {
+      "title": "Removing the HUD: The Impact of Non-Diegetic Game Elements and Expertise on Player Involvement",
+      "author": "Ioanna Iacovides, Anna Cox, Richard Kennedy, Paul Cairns, Charlene Jennett",
+      "year": 2015,
+      "url": "https://discovery.ucl.ac.uk/id/eprint/1470398/",
+      "type": "paper",
+      "topics": ["HUD 显隐", "沉浸感", "玩家熟练度", "实验研究"],
+      "ideas": [
+        "CHI PLAY 2015 论文：让玩家玩同一款 FPS 的有 HUD / 无 HUD 两个版本，比较沉浸与投入。",
+        "去掉非叙事元素主要影响专家玩家：其认知投入与控制感上升，新手差异不明显。",
+        "结论是界面取舍要考虑玩家熟练度——“可关闭 / 极简 HUD”更像是面向老手的选项，而非默认。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Evaluating the Effectiveness of HUDs and Diegetic Ammo Displays in First-person Shooter Games",
+      "author": "Margaree Peacocke, Robert J. Teather, Jacques Carette, I. Scott MacKenzie",
+      "year": 2015,
+      "url": "https://www.yorku.ca/mack/ieee_gem2015.html",
+      "type": "paper",
+      "topics": ["弹药显示", "叙事内 vs HUD", "信息位置", "FPS", "实验研究"],
+      "ideas": [
+        "IEEE GEM 2015：比较五种弹药显示——HUD 上的条、图标、数字，以及武器旁的叙事内数字与子弹图形。",
+        "武器旁的叙事内数字表现最好：打空后的多余射击约少三分之一、换弹约快四分之一，七成被试最喜欢，且被评为最有沉浸感。",
+        "作者把差异主要归因于位置：信息靠近视线焦点（准星 / 武器）可以减少扫视；叙事内显示在符合题材时效果好。",
+        "同组 2018 年在 Entertainment Computing 的扩展研究：弹药类信息以叙事内 / 空间显示最好，而生命值用 HUD 时玩家表现明显更好——不同信息适合不同象限。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Head-up displays in action video games: the effects of physical and semantic characteristics on player performance and experience",
+      "author": "Loïc Caroux, Maxime Delmas, Marc Cahuzac, Maylis Ader, Baldéric Gazagne, Anthony Ravassa",
+      "year": 2022,
+      "url": "https://doi.org/10.1080/0144929X.2022.2081609",
+      "type": "paper",
+      "topics": ["HUD 内容", "HUD 尺寸 / 颜色", "玩家熟练度", "实验研究"],
+      "ideas": [
+        "Behaviour & Information Technology：四个实验让不同熟练度的玩家玩商业动作游戏，分别操纵 HUD 的物理特征（大小、颜色）与语义特征（显示什么信息）。",
+        "只有当语义特征改变、且信息与主任务相关时，表现与体验才显著变化；越熟练的玩家受影响越大。",
+        "单改大小、颜色，或改与主任务无关的信息，影响不显著——HUD 优化应先决定显示什么，再决定怎么画。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Player–video game interaction: A systematic review of current concepts",
+      "author": "Loïc Caroux, Katherine Isbister, Ludovic Le Bigot, Nicolas Vibert",
+      "year": 2015,
+      "url": "https://doi.org/10.1016/j.chb.2015.01.066",
+      "type": "paper",
+      "topics": ["综述", "玩家体验", "信息输入 / 输出", "可玩性"],
+      "ideas": [
+        "Computers in Human Behavior 综述：整理 72 篇 HCI 期刊文章，界定“玩家–游戏交互”的概念体系。",
+        "玩家侧概念为投入与乐趣；游戏侧为信息输入 / 输出技术、游戏内容、多人；另有可玩性等整体概念。",
+        "把信息输入 / 输出（含屏幕信息呈现）列为独立研究维度，为后续 HUD 实验提供框架。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Diegetic interfaces and evaluating their User Experience: a systematic mapping",
+      "author": "Guilherme Lopes da Cruz, João Luiz Bernardes Júnior（USP）",
+      "year": 2026,
+      "url": "https://sol.sbc.org.br/index.php/sbgames/article/view/45403",
+      "type": "paper",
+      "topics": ["叙事性 diegesis", "综述", "UX 评估方法"],
+      "ideas": [
+        "SBGames 2026 系统映射：分析 94 篇关于叙事内界面的文章。",
+        "开发叙事内界面的研究中有一部分采用 Galloway 的模型；评估多用 Game Experience Questionnaire、Immersion Experience Questionnaire 等传统问卷。",
+        "可作为查找叙事内 UI 可用性、沉浸、乐趣评估方法的最新入口。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Heuristic Evaluation for Games: Usability Principles for Video Game Design",
+      "author": "David Pinelle, Nelson Wong, Tadeusz Stach",
+      "year": 2008,
+      "url": "https://doi.org/10.1145/1357054.1357282",
+      "type": "paper",
+      "topics": ["启发式评估", "可用性", "跨品类"],
+      "ideas": [
+        "CHI 2008：基于一个游戏网站对 108 款 PC 游戏的评测（6 大品类各 18 款）归纳出 12 类可用性问题。",
+        "据此提出 10 条游戏可用性启发式，涵盖：响应一致、可自定义设置、行为可预测、视野不被遮挡、可跳过非游玩内容、直观的输入映射、易管理的操作、提供游戏状态信息、提供教学与帮助、视觉表示易于解读。",
+        "初步评估表明这些启发式能抓到通用 UI 启发式漏掉的游戏特有问题，适用于早期原型与可运行版本。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Using Heuristics to Evaluate the Playability of Games",
+      "author": "Heather Desurvire, Martin Caplan, Jozsef A. Toth",
+      "year": 2004,
+      "url": "https://doi.org/10.1145/985921.986102",
+      "type": "paper",
+      "topics": ["启发式评估", "可玩性", "原型阶段"],
+      "ideas": [
+        "CHI 2004 扩展摘要：把生产力软件与试玩测试的启发式改造成游戏可玩性启发式 HEP（Heuristic Evaluation for Playability）。",
+        "在一款开发中的游戏上与常规用户测试对比，HEP 能发现相似也有不同的问题，最适合在原型 / 样稿阶段使用。",
+        "后续由 Desurvire 与 Wiberg 精简为 PLAY 启发式，可在更早阶段使用。"
+      ],
+      "games": []
+    },
+    {
+      "title": "GameFlow: A Model for Evaluating Player Enjoyment in Games",
+      "author": "Penelope Sweetser, Peta Wyeth",
+      "year": 2005,
+      "url": "https://doi.org/10.1145/1077246.1077253",
+      "type": "paper",
+      "topics": ["心流", "反馈", "清晰目标", "评估模型"],
+      "ideas": [
+        "ACM Computers in Entertainment：把心流理论与已有游戏启发式整合成八要素模型——专注、挑战、技能、控制、清晰目标、反馈、沉浸、社交。",
+        "用一高一低两款 RTS 做专家评审，模型能区分两者并解释成败原因。",
+        "“清晰目标”和“即时反馈”可直接翻译成 HUD / 提示层的检查项；2020 年的回顾统计该模型已有 200 多次应用。"
+      ],
+      "games": ["Warcraft III", "Lords of EverQuest"]
+    },
+    {
+      "title": "Playability Heuristics for Mobile Games",
+      "author": "Hannu Korhonen, Elina M. I. Koivisto（Nokia Research Center）",
+      "year": 2006,
+      "url": "https://doi.org/10.1145/1152215.1152218",
+      "type": "paper",
+      "topics": ["移动端", "启发式评估", "可玩性", "中断与会话"],
+      "ideas": [
+        "MobileHCI 2006：把移动游戏可玩性启发式分为三组——游戏可用性、移动性、玩法。",
+        "移动性问题是这类设备特有的：会话要能快速开始、能随时被打断再恢复、要适应外部环境。",
+        "后续 2007 年扩展到多人移动游戏；2018 年也有研究指出部分条目措辞对新手评审不够易懂。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Gran Stylissimo: The Audiovisual Elements and Styles in Computer and Video Games",
+      "author": "Aki Järvinen",
+      "year": 2002,
+      "url": "https://dl.digra.org/index.php/dl/article/view/19",
+      "type": "paper",
+      "topics": ["视觉风格分类", "美术风格", "视听风格"],
+      "ideas": [
+        "提出“视听风格”概念，把游戏分为照相写实、漫画化（caricaturism）、抽象三种风格。",
+        "定义构成游戏视听外观的四个要素：维度（2D / 3D）、感知视点、视觉面貌、声音景观。",
+        "梳理从 Pong、Space Invaders 到 Doom 年代、再到 90 年代 3D 与写实化的演变，并指出新的风格方向正在出现——可作为 UI 风格与美术风格配对的上位分类。"
+      ],
+      "games": ["Pong", "Space Invaders", "Doom"]
+    },
+    {
+      "title": "The Game FAVR: A Framework for the Analysis of Visual Representation in Video Games",
+      "author": "Dominic Arsenault, Pierre-Marc Côté, Audrey Larochelle（Université de Montréal）",
+      "year": 2015,
+      "url": "https://loading.journals.publicknowledgeproject.org/index.php/loading/article/view/155",
+      "type": "paper",
+      "topics": ["视觉表现分析", "视角 / 投影", "美术风格"],
+      "ideas": [
+        "Loading... 期刊：给游戏画面的规则驱动、可交互一面（作者称“ergodic animage”）提供统一描述框架。",
+        "梳理电影、动画、艺术史、图学投影、技术制图等视觉传统，评估它们处理 2D / 3D 与游戏史的能力。",
+        "提供模板、流程图与案例，便于用同一套词汇描述任意游戏的视点、投影与画面组织——可用于给参考卡的“镜头 / 画面”打标签。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Illustrative Rendering in Team Fortress 2",
+      "author": "Jason Mitchell, Moby Francke, Dhabih Eng（Valve）",
+      "year": 2007,
+      "url": "https://www.cs.princeton.edu/courses/archive/fall07/cos597B/papers/mitchell-team-fortress.pdf",
+      "type": "paper",
+      "topics": ["美术风格", "可读性", "剪影", "风格化渲染"],
+      "ideas": [
+        "NPAR 2007：九个职业必须一眼可分，因此以剪影、身体比例、武器为第一识别手段，配合明度对比与简洁形体。",
+        "着色用边缘高光与明度 / 色相变化快速传达形体，而不是画深色描边。",
+        "风格取自 20 世纪初商业插画：强烈独特的剪影、强调衣褶。Valve 在 GDC 2008 又以“有目的的风格化”为题做了延伸——说明风格选择首先服务于玩法可读性。"
+      ],
+      "games": ["Team Fortress 2"]
+    },
+    {
+      "title": "Game Accessibility: A Survey",
+      "author": "Bei Yuan, Eelke Folmer, Frederick C. Harris Jr.",
+      "year": 2011,
+      "url": "https://igda-gasig.org/2010/07/06/game-accessibility-a-survey/",
+      "type": "paper",
+      "topics": ["无障碍", "综述"],
+      "ideas": [
+        "Universal Access in the Information Society 期刊综述，系统梳理游戏无障碍的学术文献。",
+        "按感官、运动、认知障碍分别总结可行策略，并给出美国受各类障碍影响而无法或难以玩游戏的人数统计。",
+        "可作为无障碍选项（字号、对比、替代通道、输入简化）背后学术依据的起点。"
+      ],
+      "games": []
+    },
+    {
+      "title": "The Gamer's Brain: How Neuroscience and UX Can Impact Video Game Design",
+      "author": "Celia Hodent",
+      "year": 2017,
+      "url": "https://thevideogamelibrary.org/book/the-gamer-s-brain-how-neuroscience-and-ux-can-impact-video-game-design",
+      "type": "book",
+      "topics": ["认知心理", "注意力", "记忆", "可用性", "UX 框架"],
+      "ideas": [
+        "CRC Press 出版；作者曾任 Epic Games UX 负责人，参与 Fortnite、Paragon 等。",
+        "从感知、记忆、注意、动机、情绪、学习等认知机制出发解释玩家为何看不见 / 记不住 / 误解界面，并澄清常见“神经迷思”。",
+        "把 UX 拆成可用性（易用、清晰、反馈、形式服从功能、减负）与投入感两大支柱，给出在开发中落地的 UX 框架。",
+        "强调注意力有限：一次只能处理少量信息，HUD 的重要信息必须靠显著性和位置争夺注意。"
+      ],
+      "games": ["Fortnite", "Paragon"]
+    },
+    {
+      "title": "The Gamer's Brain: How Neuroscience and UX Can Impact Design（GDC 2015 演讲）",
+      "author": "Celia Hodent（Epic Games）",
+      "year": 2015,
+      "url": "https://gamedeveloper.com/design/video-making-better-games-through-neuroscience---and-good-ux",
+      "type": "talk",
+      "topics": ["认知心理", "可用性", "UX 指南"],
+      "ideas": [
+        "GDC 2015 设计轨：介绍与感知、注意、记忆相关的脑科学事实，以及如何把它们用于游戏设计。",
+        "主张用基础神经科学与 UX 指南在试玩之前就预判问题，让玩家体验到设计者意图中的体验。",
+        "例子主要来自 Epic Games 当时的项目；已在 GDC 官方 YouTube 免费公开。"
+      ],
+      "games": []
+    },
+    {
+      "title": "The Psychology of Video Games",
+      "author": "Celia Hodent",
+      "year": 2020,
+      "url": "https://routledge.com/product/isbn/9780367493134",
+      "type": "book",
+      "topics": ["游戏心理", "伦理", "包容性设计"],
+      "ideas": [
+        "Routledge “The Psychology of Everything” 丛书中的短书，从创作者与玩家两侧看游戏为何吸引人。",
+        "讨论游戏在教育与医疗中的潜在益处，也讨论问题性游戏等担忧，最后落到行业伦理。",
+        "主张理解心智运作能帮助开发者做出更合乎伦理、更包容的游戏——可用来给“暗黑模式”类界面划红线。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Game Usability: Advancing the Player Experience（第 2 版：Advice from the Experts for Advancing UX Strategy and Practice in Videogames）",
+      "author": "Katherine Isbister, Noah Schaffer 编（第 2 版 2022：Katherine Isbister, Celia Hodent 编）",
+      "year": 2008,
+      "url": "https://shop.elsevier.com/books/game-usability/isbister/978-0-12-374447-0",
+      "type": "book",
+      "topics": ["可用性", "玩家研究", "评估方法", "跨平台"],
+      "ideas": [
+        "把生产力软件的可用性原则迁移到游戏，并解释玩家特征如何决定可用性策略；作者来自 Microsoft、Maxis、Sega、Ubisoft、Nintendo 等。",
+        "覆盖经典评估技术、特定品类与情境、原型与生理测量等进阶方法，以及在紧张排期中插入可用性工作的做法。",
+        "2022 年第 2 版（Routledge）新增无障碍、移动端可用性、数据科学、VR/AR、电竞五章。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Games User Research",
+      "author": "Anders Drachen, Pejman Mirza-Babaei, Lennart E. Nacke 编",
+      "year": 2018,
+      "url": "https://www.thevideogamelibrary.org/book/game-user-research",
+      "type": "book",
+      "topics": ["玩家研究", "可用性测试", "研究方法"],
+      "ideas": [
+        "Oxford University Press 出版的游戏用户研究（GUR）方法手册，几十位学界与业界作者撰稿。",
+        "覆盖研究规划、以用户为中心的测试、方法选择、把发现转化为可执行的修改，以及不同平台对研究实践的影响。",
+        "对 UI 而言：给出验证“玩家是否看见 / 理解 / 能操作”的具体方法（观察、问卷、眼动、遥测等）。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Game Development Essentials: Game Interface Design",
+      "author": "Kevin Saunders, Jeannie Novak",
+      "year": 2007,
+      "url": "https://www.thevideogamelibrary.org/book/game-development-essentials-game-interface-design",
+      "type": "book",
+      "topics": ["界面设计教材", "品类惯例", "平台差异", "界面史"],
+      "ideas": [
+        "Delmar / Cengage 出版的入门教材（2007 首版、2012 第 2 版），覆盖界面设计的基础、理论与实践。",
+        "讨论平台、品类与设计目标如何改变界面惯例，并回顾游戏界面设计史。",
+        "第 2 版扩充实践部分，加入移动设备、体感设备与多人游戏的界面设计，以及大量业内访谈与截图。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Game Interface Design",
+      "author": "Brent Fox",
+      "year": 2004,
+      "url": "https://tenlong.com.tw/products/9781592005932",
+      "type": "book",
+      "topics": ["菜单流程", "按钮状态", "前端界面", "界面动效"],
+      "ideas": [
+        "Thomson Course Technology 出版（版权页 2005），讲美观且易用的前端菜单与局内界面。",
+        "前几章讲菜单流程规划与基础设计原则，后几章讲按钮状态等具体部件。",
+        "包含界面动效与当时用 Flash 制作交互界面的方法——现已绝版，但菜单流程图的思路仍可用。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Game Feel: A Game Designer's Guide to Virtual Sensation",
+      "author": "Steve Swink",
+      "year": 2008,
+      "url": "https://routledge.com/product/isbn/9780123743282",
+      "type": "book",
+      "topics": ["手感", "反馈", "辅助指示", "感知"],
+      "ideas": [
+        "Morgan Kaufmann 首版（现由 CRC Press 发行），把“手感”当作设计者在用却很少被说清的隐性语言。",
+        "整合关于手感与感官如何产生投入的理论，覆盖声音、辅助指示（ancillary indicators）、隐喻、人类感知以及手感的简史。",
+        "对 UI 的启示：命中反馈、数值跳字、屏幕抖动等都是“输入—感知”回路的一部分，属于手感而不只是装饰。"
+      ],
+      "games": []
+    },
+    {
+      "title": "The Art of Game Design: A Book of Lenses",
+      "author": "Jesse Schell",
+      "year": 2008,
+      "url": "https://routledge.com/product/isbn/9781138632059",
+      "type": "book",
+      "topics": ["设计方法", "界面", "反馈", "透镜清单"],
+      "ideas": [
+        "以 100 多组“透镜”问题从不同角度审视游戏，在构建、试玩、修改中反复自问。",
+        "专章讨论“玩家通过界面玩游戏”（第 3 版第 16 章），把界面看作玩家与游戏世界之间的映射、反馈与信息通道。",
+        "第 3 版（2020，CRC Press）补充 VR/AR、免费游戏、混合与转化型游戏的例子。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Patterns in Game Design",
+      "author": "Staffan Björk, Jussi Holopainen",
+      "year": 2005,
+      "url": "https://tenlong.com.tw/products/9781584503545",
+      "type": "book",
+      "topics": ["设计模式", "模式语言", "玩法结构"],
+      "ideas": [
+        "Charles River Media 出版，提出用于描述游戏的模板与 200 多个可复用的游戏设计模式。",
+        "把玩法看作玩家与游戏系统、与其他玩家之间的交互结构，按玩法侧面分章组织模式。",
+        "对本项目的启示：参数体系里的“预设 / 派生规则”可借鉴其模式写法（名称—问题—后果—关联模式）。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Laws of UX: Using Psychology to Design Better Products & Services",
+      "author": "Jon Yablonski",
+      "year": 2020,
+      "url": "https://lawsofux.com/",
+      "type": "book",
+      "topics": ["UX 定律", "认知负荷", "格式塔", "Fitts / Hick 定律"],
+      "ideas": [
+        "O'Reilly 出版（2020 首版、2024 第 2 版），配套网站整理 30 条常用 UX 定律与心理学原则。",
+        "与游戏界面直接相关的有：Fitts 定律（目标越大越近越好点）、Hick 定律（选项越多决策越慢）、Miller 定律与组块化（工作记忆有限）、冯·雷斯托夫效应（与众不同者更易被记住）。",
+        "格式塔类（接近、相似、共同区域、一致连接）可用来解释 HUD 分组与面板分区；第 2 版加入暗黑模式、默认值与摩擦的伦理讨论。"
+      ],
+      "games": []
+    },
+    {
+      "title": "10 Usability Heuristics for User Interface Design",
+      "author": "Jakob Nielsen（Nielsen Norman Group）",
+      "year": 1994,
+      "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+      "type": "guideline",
+      "topics": ["启发式评估", "可用性", "通用 UI"],
+      "ideas": [
+        "与 Rolf Molich 1990 年共同提出、1994 年修订，2024 年仍在更新的十条通用可用性启发式。",
+        "包括：系统状态可见、贴合真实世界、用户可控可撤销、一致与标准、防错、识别优于回忆、灵活高效、美观且极简、帮助识别和恢复错误、帮助文档。",
+        "游戏启发式（HEP、Pinelle 等）大多以它为母本改写，适合用作菜单 / 设置 / 背包等非战斗界面的基线检查。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Crafting Destruction: The Evolution of the Dead Space User Interface",
+      "author": "Dino Ignacio（Visceral Games）",
+      "year": 2013,
+      "url": "https://gdcvault.com/play/1017723/Crafting-Destruction-The-Evolution-of",
+      "type": "talk",
+      "topics": ["叙事性 diegesis", "全息 UI", "恐怖氛围", "沉浸感"],
+      "ideas": [
+        "GDC 2013 视觉艺术轨：Dead Space 系列首席 UI 设计师讲界面为何以及如何走向叙事内与沉浸。",
+        "拆解前端菜单、工作台与 RIG 宇航服：生命条、库存、武器选择、定位指引都放在主角身上或世界里。",
+        "目标是拆掉玩家与游戏之间的“安全墙”，连读盘、存档点这类惯例也包装成可信的世界内元素；恐怖题材正是叙事内 UI 最能发挥的场合。"
+      ],
+      "games": ["Dead Space", "Dead Space 2", "Dead Space 3"]
+    },
+    {
+      "title": "Tenacious Design and The Interface of 'Destiny'",
+      "author": "David Candland（Bungie）",
+      "year": 2016,
+      "url": "https://www.gdcvault.com/play/1023460/",
+      "type": "talk",
+      "topics": ["新手与老手", "光标式主机 UI", "图标管线", "本地化"],
+      "ideas": [
+        "GDC 2016 视觉艺术轨：界面要对新玩家友好易懂，同时给老玩家足够的深度与快捷访问。",
+        "涉及主机上的自由光标、按住确认这类限时交互、为本地化预留的伸缩余量、视觉方向、图标制作管线与 Director 星图界面。",
+        "展示早期更花哨的原型如何收敛为最终较克制的样式。"
+      ],
+      "games": ["Destiny"]
+    },
+    {
+      "title": "Hearthstone: How to Create an Immersive User Interface",
+      "author": "Derek Sakamoto（Blizzard Entertainment）",
+      "year": 2015,
+      "url": "https://gdcvault.com/play/1022036/Hearthstone-How-to-Create-an",
+      "type": "talk",
+      "topics": ["卡牌 UI", "实体化 / 拟物", "触感反馈", "跨平台"],
+      "ideas": [
+        "GDC 2015：介绍炉石团队如何组织工作、设定愿景并做出沉浸式界面，兼及跨平台开发。",
+        "卡牌游戏没有可走动的世界，界面就是整个游戏，所以 UI 设计师从很早期就参与并贯穿全程。",
+        "开盒、洗牌、拖牌等细节追求“实体桌游”般的触感；移植手机时调整了版面，把部分元素直接放上棋盘。"
+      ],
+      "games": ["Hearthstone"]
+    },
+    {
+      "title": "Lessons Learned Creating UI for 'The Division'",
+      "author": "Christian Savoie（Massive Entertainment / Ubisoft）",
+      "year": 2017,
+      "url": "https://gdcvault.com/play/1024026/Lessons-Learned-Creating-UI-for",
+      "type": "talk",
+      "topics": ["空间 UI", "UI 技术", "制作流程"],
+      "ideas": [
+        "GDC 2017：为 The Division 新建了 UI 技术与新的 UI 制作方式，讲系统如何工作以及为何如此取舍。",
+        "背景：制作方明确要求尽量去掉 2D 平面元素，让 HUD 以微倾角度贴在角色周围、配合腕部全息与全息地图，形成空间化界面。",
+        "每条经验都配实际开发故事，已在 GDC 官方 YouTube 免费公开。"
+      ],
+      "games": ["Tom Clancy's The Division"]
+    },
+    {
+      "title": "'God of War Ragnarok': Building the UI for a AAA Sequel",
+      "author": "Zach Bohn（Santa Monica Studio）",
+      "year": 2023,
+      "url": "https://www.gdcvault.com/play/1029143/-God-of-War-Ragnarok",
+      "type": "talk",
+      "topics": ["UI 团队", "续作迭代", "无障碍", "UI 技术"],
+      "ideas": [
+        "GDC 2023 设计轨：讲 UI 团队在大型项目中的角色与组织方式，以及设计、工程、美术三方面的挑战。",
+        "以工作室对 God of War（2018）UI 的内部复盘作为续作 UI 的基石。",
+        "最后给出 UI 技术优化技巧与制作中要避开的坑。"
+      ],
+      "games": ["God of War (2018)", "God of War Ragnarök"]
+    },
+    {
+      "title": "A Deep Dive Into God of War Ragnarök's User Interface",
+      "author": "80.lv 采访 Zach Bohn（Santa Monica Studio）",
+      "year": 2023,
+      "url": "https://80.lv/articles/a-deep-dive-into-god-of-war-ragnar-k-s-user-interface",
+      "type": "interview",
+      "topics": ["HUD 分层", "消息队列", "字体系统", "无障碍"],
+      "ideas": [
+        "HUD 分为战斗 HUD（生命、符文技能、怒气）与同伴 HUD（任务、日志、物品消息）；消息走单一队列，一次只显示一条；Boss 血条由专门管理器处理一到三个 Boss。",
+        "全作只用两种字体（标题 / 正文），由中央样式表统一管理；文字可放大到特大档，越大的档位步进越小以保持版面平衡。",
+        "上市时有 70 多项无障碍选项（完全重映射、高对比等），中期从 Naughty Dog 招了 UX / 无障碍设计师。",
+        "复杂菜单（如附魔）多次重做以平衡易用与信息量；教程尽量短，部分 UI 与系统在玩家到达前保持隐藏。"
+      ],
+      "games": ["God of War Ragnarök"]
+    },
+    {
+      "title": "User Interface in 'Cyberpunk 2077': Challenges and Optimizations",
+      "author": "Arkadiusz Antonik（CD Projekt RED）",
+      "year": 2023,
+      "url": "https://gdcvault.com/play/1034160/User-Interface-in-Cyberpunk-2077",
+      "type": "talk",
+      "topics": ["UI 技术", "世界内屏幕", "性能预算"],
+      "ideas": [
+        "GDC Showcase 2023 程序轨：Cyberpunk 2077 的 UI 技术从零自研，需要支撑夜之城里成千上万个独立 UI 实例。",
+        "同一套 UI 框架被用于超出常规的玩法场景，例如城市里的广告牌系统——世界内屏幕与 HUD 共用技术。",
+        "讲在目标平台上满足性能预算的管线与技巧；对“赛博朋克风 UI”而言，世界内屏幕密度本身就是风格的一部分。"
+      ],
+      "games": ["Cyberpunk 2077"]
+    },
+    {
+      "title": "UX Summit: Designing Immersive UI for 'Star Wars Jedi: Survivor'",
+      "author": "Daanish Syed（Bit Reactor；时任该作首席 UI 视觉设计师）",
+      "year": 2024,
+      "url": "https://gdcvault.com/play/1034481/UX-Summit-Designing-Immersive-UI",
+      "type": "talk",
+      "topics": ["叙事性 diegesis", "沉浸 UI", "自定义界面", "技能树"],
+      "ideas": [
+        "GDC 2024 UX 峰会：讲如何做出无缝的叙事内界面，以及从设计理念到实现的步骤。",
+        "例子：光剑零件定制在工作台上以实物方式切换；技能解锁通过漂浮的石碑呈现。",
+        "说明沉浸 UI 不止 HUD，也可以覆盖定制与成长类菜单。"
+      ],
+      "games": ["Star Wars Jedi: Survivor"]
+    },
+    {
+      "title": "'Mini Metro': When Less is More",
+      "author": "Jamie Churchman（Dinosaur Polo Club）",
+      "year": 2017,
+      "url": "https://gdcvault.com/play/1024250/-Mini-Metro-When-Less",
+      "type": "talk",
+      "topics": ["极简主义", "设计语言", "内在动机", "信息图风格"],
+      "ideas": [
+        "GDC 2017 设计轨：复盘 Mini Metro 视觉设计的成功与失败，讨论 UI 与视觉决策如何构成有回报的体验。",
+        "批评堆砌计时器、奖励、粒子、收集品、通知来抓注意力的做法，主张依靠内在动机。",
+        "方法：建立强健的设计语言、通过“删减”而不是“添加”得到美感；画面借鉴 Harry Beck 式抽象地铁图。"
+      ],
+      "games": ["Mini Metro"]
+    },
+    {
+      "title": "Art Direction for AAA UI",
+      "author": "Omer Younas（DICE LA）",
+      "year": 2018,
+      "url": "https://gamedeveloper.com/art/video-art-direction-advice-for-crafting-triple-a-game-ui",
+      "type": "talk",
+      "topics": ["UI 美术方向", "一致性", "视觉理论", "认知"],
+      "ideas": [
+        "GDC 2018：用视觉理论与最佳实践讲如何让 AAA 游戏的 UI 美术既一致又吸引人。",
+        "强调先理解认知过程如何影响视觉方向，再谈风格——美观与可用要同时成立。",
+        "已在 GDC 官方 YouTube 免费公开，常被拿来作为 UI 美术方向的入门课。"
+      ],
+      "games": []
+    },
+    {
+      "title": "'Into the Breach' Design Postmortem",
+      "author": "Matthew Davis（Subset Games）",
+      "year": 2019,
+      "url": "https://gdcvault.com/play/1025772/-Into-the-Breach-Design",
+      "type": "talk",
+      "topics": ["策略游戏", "信息透明", "随机性", "设计复盘"],
+      "ideas": [
+        "GDC 2019 设计轨：回顾 FTL 之后约四年的开发，从早期草案到最终平衡，以及被砍掉和反复迭代的内容。",
+        "讨论如何决定砍什么、如何借鉴其他游戏机制又保持原创、如何定难度、放多少随机性。",
+        "背景：该作把敌人下一步攻击完全预告在棋盘上，属于“近乎完全信息”的回合策略——随机性少意味着界面必须把后果画清楚。"
+      ],
+      "games": ["Into the Breach", "FTL: Faster Than Light"]
+    },
+    {
+      "title": "Road to the IGF: Subset Games' Into the Breach",
+      "author": "Joel Couture 采访 Justin Ma（Subset Games）",
+      "year": 2018,
+      "url": "https://gamedeveloper.com/game-platforms/road-to-the-igf-subset-games-i-into-the-breach-i-",
+      "type": "interview",
+      "topics": ["敌方意图预告", "可读性", "策略游戏"],
+      "ideas": [
+        "访谈主题之一是“让玩家读懂敌人的行动”：敌人提前预告攻击，每回合变成可研究的谜题。",
+        "即使知道敌人意图，闪避也可能让更重要的建筑挨打——预告信息把决策重心从“猜”转到“权衡”。",
+        "官方描述为极简回合战斗、所有敌方攻击都被预告，玩家每回合找最优应对。"
+      ],
+      "games": ["Into the Breach"]
+    },
+    {
+      "title": "GuiltyGearXrd's Art Style: The X Factor Between 2D and 3D",
+      "author": "Junya Christopher Motomura（Arc System Works）",
+      "year": 2015,
+      "url": "https://gdcvault.com/play/1022031/GuiltyGearXrd-s-Art-Style-The",
+      "type": "talk",
+      "topics": ["美术风格", "3D 做 2D", "动画渲染", "格斗游戏"],
+      "ideas": [
+        "GDC 2015 视觉艺术轨：在全 3D 框架里重做经典 2D 格斗游戏，同时保留老式 2D 的味道，逆写实化潮流。",
+        "覆盖美术与程序两方面的研发：模型、贴图、着色器、渲染，以及背后的艺术取舍。",
+        "画面严格以日式动画为基准，这也是从 2D 精灵时代继承的传统；官方另提供英文讲稿 PDF。"
+      ],
+      "games": ["Guilty Gear Xrd"]
+    },
+    {
+      "title": "Juice it or lose it",
+      "author": "Martin Jonasson, Petri Purho",
+      "year": 2012,
+      "url": "https://www.youtube.com/watch?v=Fy0aCDmgnxg",
+      "type": "talk",
+      "topics": ["反馈 / juice", "动效", "手感"],
+      "ideas": [
+        "以一个打砖块原型现场演示：加入“多汁”反馈后同样的玩法立刻显得有生命。",
+        "手段包括颜色、缓动曲线、碰撞时的挤压拉伸、层叠音效与音乐、克制使用粒子、屏幕抖动、让物件对事件产生反应。",
+        "后来的反思：过量特效也会破坏沉浸，反馈强度应与事件重要性相称。"
+      ],
+      "games": ["Breakout（演示原型）"]
+    },
+    {
+      "title": "Accessible Player Experiences: A New Approach to Data Informed Design for Accessible Games",
+      "author": "Christopher Power, Mark Barlet（AbleGamers / University of York）",
+      "year": 2019,
+      "url": "https://gdcvault.com/play/1025719/Accessible-Player-Experiences-A-New",
+      "type": "talk",
+      "topics": ["无障碍", "设计模式", "玩家调研"],
+      "ideas": [
+        "GDC 2019：基于数百名残障玩家的调查，介绍他们使用的辅助技术、跨障碍类型的共性以及常玩的游戏。",
+        "提出 22 个 APX 无障碍设计模式，可嵌入现有设计流程。",
+        "主张在开发早期考虑无障碍，比事后补做更省时省钱。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Accessibility in The Last of Us Part II: A 3-Year Development Journey",
+      "author": "Emilia Schatz, Matthew Gallant（Naughty Dog）",
+      "year": 2020,
+      "url": "https://gangles.ca/talks/",
+      "type": "talk",
+      "topics": ["无障碍", "低视力 / 盲人支持", "HUD 缩放与对比", "开发流程"],
+      "ideas": [
+        "Game Accessibility Conference 2020：讲 60 多项无障碍设置如何规划、测试、迭代与交付。",
+        "预制作期就定下目标：延续 Uncharted 4 的运动障碍支持，给 HUD 和字幕加入缩放、颜色与对比选项，并让盲人玩家能不靠明眼人帮助通关。",
+        "重点讲高对比模式、声音提示等低视力 / 盲人功能，以及如何与顾问合作并把无障碍纳入常规试玩。"
+      ],
+      "games": ["The Last of Us Part II", "Uncharted 4: A Thief's End"]
+    },
+    {
+      "title": "ペルソナシリーズにおけるUIクリエイティブの手法 ～ペルソナ5のUI事例～（CEDEC+KYUSHU 2017 讲座报道）",
+      "author": "ファミ通.com 报道；讲者 和田和久、須藤正喜（Atlus）",
+      "year": 2017,
+      "url": "https://www.famitsu.com/news/201711/13145540.html",
+      "type": "talk",
+      "topics": ["风格化菜单", "主色", "UI 制作流程", "动效"],
+      "ideas": [
+        "Persona 3 时期预算有限又要换新形象，Atlus 于是把通常不起眼的 UI 强化为作品个性的门面——UI 被当作低成本提升体验与“包装”游戏资源的手段。",
+        "流程先定主色，同时定标题 logo 与关键字体；各作主色不同（P3 蓝、P4 黄、P5 红），P5 为突出红色几乎不用辅色。",
+        "制作：Photoshop 排版 → 动作设计师摆 3D 姿势 → 按最终姿势画 2D 决胜图；约千页规格书交给 UI 专属程序员，设计师在旁逐像素调整；为适配 PS3/PS4 分辨率准备可缩放的矢量路径。",
+        "华丽之外仍注重视线引导与信息明度分级；并认为给程序员留出发挥空间能提高 UI 品质。"
+      ],
+      "games": ["Persona 3", "Persona 4", "Persona 5", "Catherine"]
+    },
+    {
+      "title": "Exuberant video game menus designed with da Vinci in mind（The New York Times，经 DT Next 转载）",
+      "author": "Rollo Romig",
+      "year": 2024,
+      "url": "https://www.dtnext.in/amp/story/edit/exuberant-video-game-menus-designed-with-da-vinci-in-mind-807823",
+      "type": "article",
+      "topics": ["风格化菜单", "菜单即玩法", "灵感来源"],
+      "ideas": [
+        "采访 Metaphor: ReFantazio 首席界面设计师 Koji Ise、Atlus 多作 UI 负责人 Masayoshi Suto、导演 Katsura Hashino 以及 NYU、多伦多大学的 UI 研究者。",
+        "回合制 RPG 玩家大量时间待在菜单里，所以 Atlus 把最大的美术力气放在菜单上；Ise 以达·芬奇的笔触为灵感为中世纪题材设计菜单。",
+        "华丽复杂的界面也能清楚引导玩家；灵感来自中世纪绘画、MV、朋克专辑封面、体育转播图形等意外来源。",
+        "Hashino 在另一次采访中承认每个菜单几乎是独立程序与独立设计，开发成本很高。"
+      ],
+      "games": ["Metaphor: ReFantazio", "Persona 5", "Persona 3"]
+    },
+    {
+      "title": "The Aims of UI（Sakurai's Famitsu Column Vol. 515，英译）",
+      "author": "桜井政博（Source Gaming 英译）",
+      "year": 2016,
+      "url": "https://sourcegaming.info/2016/11/24/the-aims-of-ui-sakurais-famitsu-column-vol-515/",
+      "type": "article",
+      "topics": ["UI 目标", "风格 vs 易用", "本地化", "受众"],
+      "ideas": [
+        "UI 是整理和展示复杂信息的“抽屉”；Persona 5 的黑白加强红、大量立绘与 3D 模型、活泼动效让它与众不同，但版面杂、要先学才找得到东西。",
+        "本地化文字通常比日文长，固定空间里塞信息更难，风格化 UI 尤其吃亏。",
+        "Pokémon GO 的朴素界面适合其广大受众，CP 值把强度压缩成一个数字——每个 UI 有各自的目标，难用不等于坏。"
+      ],
+      "games": ["Persona 5", "Persona 4", "Pokémon GO"]
+    },
+    {
+      "title": "Masahiro Sakurai on Creating Games（YouTube 频道，UI 分类各集）",
+      "author": "桜井政博",
+      "year": 2022,
+      "url": "https://www.youtube.com/@sora_sakurai_en",
+      "type": "video",
+      "topics": ["清晰与风格", "图标尺寸层级", "按键设置", "HUD", "跳过与暂停"],
+      "ideas": [
+        "2022 年起的系列短视频，UI 类从“清晰与风格”开篇：最清晰的方案不一定最好。",
+        "图标尺寸应反映其在游戏中的重要程度——越重要画得越大。",
+        "按键设置是费力但重要的功能；剧情段应尽量允许暂停与跳过；2024 年以 HUD 一集收尾 UI 分类。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Disco Elysium: Working on UI Design",
+      "author": "80.lv 报道 Robert Kurvitz（ZA/UM）",
+      "year": 2020,
+      "url": "https://80.lv/articles/disco-elysium-working-on-ui-design",
+      "type": "interview",
+      "topics": ["对话 UI", "文字排版", "叙事游戏"],
+      "ideas": [
+        "对话界面参考 Twitter 信息流：文字在右侧竖栏中向上滚动。",
+        "依据：读短帖的人往往只扫要点，因此对话按“可扫读”的节奏排版，并促使写作更短促有力。",
+        "（另据 Kurvitz 在 GameSpot 访谈中的说法转述）技能本身以说话者身份出现在对话流里，关键信息由不同技能多次重复以保持注意。"
+      ],
+      "games": ["Disco Elysium"]
+    },
+    {
+      "title": "Clarity in League",
+      "author": "Riot Games（League of Legends 开发团队）",
+      "year": 2021,
+      "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+      "type": "dev-blog",
+      "topics": ["可读性", "视觉层级", "剪影", "MOBA"],
+      "ideas": [
+        "把清晰度定义为玩家能理解场上发生了什么并作出反应：视觉与音效要让人快速认出英雄、技能与攻击。",
+        "注意力应与重要性匹配：强力、打断性、可躲避的技能要比次要效果更显眼，同时控制团战中的视听噪声总量。",
+        "英雄核心特征与朝向要能在剪影里读出，皮肤不得破坏它；皮肤技能必须至少与原皮一样清晰，且不能带来竞技优势。",
+        "早年地图更新也提出了层级：局内 UI > 技能与攻击 > 单位 > 环境，环境不应与玩法元素抢视觉。"
+      ],
+      "games": ["League of Legends"]
+    },
+    {
+      "title": "Diablo IV Quarterly Update — February 2020",
+      "author": "Luis Barriga, Angela Del Priore（首席 UI 设计师）, Candace Thomas（Blizzard）",
+      "year": 2020,
+      "url": "https://news.blizzard.com/en-us/diablo4/23308274/diablo-iv-quarterly-update-february-2020",
+      "type": "dev-blog",
+      "topics": ["ARPG", "物品图标", "技能栏位置", "手柄与键鼠", "本地合作"],
+      "ideas": [
+        "根据 BlizzCon 后的反馈，物品图标从“绘画感”转向基于 3D 模型的直接质感，降低图标底色亮度与饱和度，稀有度改由边框装饰表达。",
+        "PC 默认技能栏回到底部中央，离屏幕远的玩家可选左下角；主机保持角落布局；所有技能槽都可重绑。",
+        "首次 PC 与主机同步开发：统一的网格式布局让玩家在键鼠与手柄间无缝切换；双人同屏时两人可同时各开菜单。"
+      ],
+      "games": ["Diablo IV"]
+    },
+    {
+      "title": "Frostpunk: Console Edition – Radial-Driven Design of Gameplay and Controls",
+      "author": "Kuba Stokalski（11 bit studios 首席设计师）",
+      "year": 2019,
+      "url": "https://news.xbox.com/en-us/2019/09/20/frostpunk-console-edition-radial-driven-design-of-gameplay-and-controls/",
+      "type": "dev-blog",
+      "topics": ["环形菜单", "手柄适配", "城市建造", "形式呼应世界"],
+      "ideas": [
+        "城市以发电机为圆心一圈圈生长，所以主机版 UI 从零按“圆”重做——界面形式呼应世界结构。",
+        "指挥中枢是一个大圆，外缘的小圆通向城市信息等其他页签；每个建筑类别（医疗、煤炭、住房等）各有自己的环形子菜单。",
+        "关键选项放在拇指易达的位置，便于手柄在菜单间快速切换；50 多种建筑被分组以降低负担。"
+      ],
+      "games": ["Frostpunk"]
+    },
+    {
+      "title": "Console Dev Diary #3: UI/UX and Controls（Crusader Kings III）",
+      "author": "Paradox Interactive / Lab42",
+      "year": 2022,
+      "url": "https://www.paradoxinteractive.com/games/crusader-kings-iii/news/ck3-console-dev-diary-3-uiux-and-controls",
+      "type": "dev-blog",
+      "topics": ["大战略", "信息密度", "手柄适配", "环形菜单", "嵌套提示"],
+      "ideas": [
+        "两个环形菜单（角色轮盘、地图视图）让玩家不必翻多层菜单就能换地图模式、用角色功能。",
+        "肩键打开顶层命令栏，扳机切换子菜单，十字键用于界面导航而不是模拟鼠标；每屏底部显示操作提示。",
+        "焦点切换系统让玩家在开着多个面板时仍能操作地图，减少打断性的全屏菜单。",
+        "背景：CK3 PC 版首创的嵌套提示（概念词可再悬停展开解释）后来被 Victoria 3 与 Europa Universalis V 沿用。"
+      ],
+      "games": ["Crusader Kings III", "Victoria 3", "Europa Universalis V"]
+    },
+    {
+      "title": "Making Civilization VI both playable and beautiful",
+      "author": "Game Developer（Gamasutra）采访 Brian Busatti（Firaxis 美术总监）",
+      "year": 2016,
+      "url": "https://www.gamasutra.com/art/making-i-civilization-vi-i-both-playable-and-beautiful",
+      "type": "interview",
+      "topics": ["策略游戏", "美术与可读性", "地图风格", "战争迷雾"],
+      "ideas": [
+        "Busatti 强调形体与剪影，让镜头拉远时世界仍可读——策略游戏的美术风格必须先服务远景信息辨识。",
+        "（另据 Digital Trends、Twinfinite 对 Firaxis 的同期采访）整体风格以大航海时代古地图为母题：未探索区域画成羊皮纸素描，单位推进时手绘地图褪去露出真实地形。",
+        "美术不走卡通，而是在唤起古地图的同时保持明亮鲜艳；地图本身既是 UI 也是美术主体。"
+      ],
+      "games": ["Sid Meier's Civilization VI"]
+    },
+    {
+      "title": "Ghost of Tsushima: Your questions answered",
+      "author": "Justin Massongill（PlayStation Blog），答问 Nate Fox, Jason Connell（Sucker Punch）",
+      "year": 2020,
+      "url": "https://blog.playstation.com/2020/05/29/ghost-of-tsushima-your-questions-answered/",
+      "type": "interview",
+      "topics": ["极简 HUD", "世界内引导", "开放世界导航"],
+      "ideas": [
+        "风是早期就定下的美术目标，后来团队测试其动态能否把玩家指向目的地，结果可行。",
+        "引导之风被打磨为指向当前追踪目标，也帮助找到可选收集品；同期其他访谈中开发者表示希望玩家看世界而不是看 UI，尽量少用 UI，但血条等必要信息保留。",
+        "生命条上的圆点代表“决心”，用于治疗或强力攻击——极简 HUD 仍保留关键资源。"
+      ],
+      "games": ["Ghost of Tsushima"]
+    },
+    {
+      "title": "Ghost of Tsushima accessibility review",
+      "author": "Josh Straub（Can I Play That?）",
+      "year": 2020,
+      "url": "https://caniplaythat.com/2020/07/29/ghost-of-tsushima-accessibility-review/",
+      "type": "review",
+      "topics": ["无障碍", "世界内引导的对比度", "地图图标", "字幕"],
+      "ideas": [
+        "白色的风线在前两幕很好用，但主角北上进入雪地后与地形对比消失，正当剧情最需要时变得难以辨认——叙事内引导的可读性随场景色调变化。",
+        "地图图标虽靠形状区分，但几乎都是浅灰底上的白色，对比不足。",
+        "字幕清晰且多带说话人标签，但不能调大；可作为“极简 / 叙事内 UI 需要无障碍兜底”的反例证据。"
+      ],
+      "games": ["Ghost of Tsushima"]
+    },
+    {
+      "title": "Why The Very Hard 'Celeste' is Perfectly Fine With You Breaking Its Rules",
+      "author": "Patrick Klepek（VICE / Waypoint）",
+      "year": 2018,
+      "url": "https://www.vice.com/en/article/celeste-difficulty-assist-mode/",
+      "type": "article",
+      "topics": ["辅助模式", "难度选项", "设置界面措辞", "无障碍"],
+      "ideas": [
+        "Assist Mode 允许玩家调整游戏速度、体力、空中冲刺次数，甚至是否会死。",
+        "开发者因原名“作弊模式”带有评判意味而反复改名，最终定为 Assist Mode——设置项的命名本身就是 UX。",
+        "设计者认为默认难度才是设计本意，开启后等于“打破游戏”，但仍应让玩家自选挑战程度而不被告知玩错了。"
+      ],
+      "games": ["Celeste", "Cuphead"]
+    },
+    {
+      "title": "Apex Legends' ping system is a tiny miracle for FPS teamwork and communication",
+      "author": "PC Gamer",
+      "year": 2019,
+      "url": "https://www.pcgamer.com/apex-legends-ping-system-is-a-tiny-miracle-for-fps-teamwork-and-communication/",
+      "type": "article",
+      "topics": ["情境标记 ping", "非语音沟通", "空间 UI", "射击游戏"],
+      "ideas": [
+        "一个按键按目标不同产生不同结果：标记敌人、门、武器箱、确认指令、设路点等，并配角色语音播报。",
+        "（另据开发者访谈报道）开发期 Respawn 曾在禁用语音的条件下内部试玩约一个月，用假名随机组队模拟陌生人匹配，以此打磨 ping 系统。",
+        "图标 + 语音的组合跨语言、跨能力可用；继承自 Battlefield 的标记敌人功能，但更深、更有情境。"
+      ],
+      "games": ["Apex Legends", "Battlefield"]
+    },
+    {
+      "title": "How to design a great Metroidvania map",
+      "author": "PC Gamer（采访 Team Cherry 等开发者）",
+      "year": 2017,
+      "url": "https://www.pcgamer.com/how-to-design-a-great-metroidvania-map/",
+      "type": "interview",
+      "topics": ["地图 UI", "探索", "银河城"],
+      "ideas": [
+        "Team Cherry 的 Ari Gibson 表示房间尺度与布局都围绕“发现感”构建，地图设计更多受 Metroid 影响。",
+        "游戏内地图需向 NPC Cornifer 购买、用羽毛笔并在长椅休息时才更新——把地图本身变成要“挣来”的资源，延续探索主题。",
+        "区域先在纸上模块化草拟，再填敌人、做内部测试。"
+      ],
+      "games": ["Hollow Knight", "Metroid"]
+    },
+    {
+      "title": "Street Fighter 6 director on hip hop and graffiti influence（IGN Japan 访谈的 EventHubs 英译报道）",
+      "author": "EventHubs（Nicholas Taylor 译）；受访 Takayuki Nakayama, Shuhei Matsumoto（Capcom）",
+      "year": 2022,
+      "url": "https://www.eventhubs.com/news/2022/jul/09/sf6-influence-hip-hop-graffiti",
+      "type": "interview",
+      "topics": ["格斗游戏", "街头涂鸦风格", "UI 与系列身份"],
+      "ideas": [
+        "导演认为 Street Fighter 1 与 Third Strike 的界面和视觉早就受嘻哈与涂鸦影响，所以街头风格适合本系列。",
+        "SF6 把“街头”涂鸦美学贯穿 UI 与战斗演出；后续还加入可切换历代战斗 HUD 的选项。",
+        "说明格斗游戏 UI 风格常承担系列身份，而不只是信息容器。"
+      ],
+      "games": ["Street Fighter 6", "Street Fighter III: 3rd Strike"]
+    },
+    {
+      "title": "Horizon Zero Dawn（Territory Studio 项目页）",
+      "author": "Territory Studio",
+      "year": 2017,
+      "url": "https://territorystudio.com/project/horizon-zero-dawn/",
+      "type": "article",
+      "topics": ["全息 UI", "世界内设备", "概念设计"],
+      "ideas": [
+        "与 Guerrilla 在早期研究阶段合作，测试非传统界面如何存在于游戏世界中。",
+        "为关键的全息设备（Focus）做概念设计，并为相关过场提供全息素材与方向。",
+        "最终 HUD 概念移交 Guerrilla 团队落地——外部 FUI 工作室参与游戏 UI 的典型模式。"
+      ],
+      "games": ["Horizon Zero Dawn"]
+    },
+    {
+      "title": "'Forza Motorsport' will feature audio cues to help players with visual impairments drive",
+      "author": "Engadget",
+      "year": 2023,
+      "url": "https://www.engadget.com/forza-motorsport-will-feature-audio-cues-to-help-players-with-visual-impairments-drive-180043633.html",
+      "type": "article",
+      "topics": ["竞速", "无障碍", "替代通道（声音）"],
+      "ideas": [
+        "Blind Driving Assists 用可配置的音效提示赛道走向、弯道与障碍、车辆状态以及刹车 / 换挡建议。",
+        "转向提示把引擎与轮胎声左右声像偏移指示该打的方向，接近赛道边缘时有蜂鸣提示；每组提示可单独开关并调音高与音量。",
+        "由盲人顾问 Brandon Cole 与其他盲人 / 低视力玩家参与开发约两年，另有菜单朗读、色盲模式、字幕等。"
+      ],
+      "games": ["Forza Motorsport (2023)"]
+    },
+    {
+      "title": "Game Accessibility Guidelines",
+      "author": "Barrie Ellis, Gareth Ford-Williams, Lynsey Graham, Dimitris Grammenos, Ian Hamilton, Headstrong Games, Ed Lee, Jake Manion, Thomas Westin 等",
+      "year": 2012,
+      "url": "https://gameaccessibilityguidelines.com/full-list/",
+      "type": "guideline",
+      "topics": ["无障碍", "字号", "对比度", "色彩", "字幕", "UI 缩放"],
+      "ideas": [
+        "按基础 / 中级 / 高级三档组织，分档依据为受益人数、影响程度与实现成本；再按运动、认知、视觉、听觉、言语、通用分类。",
+        "视觉基础项：文字 / UI 与背景高对比、易读的默认字号、不只靠颜色传达关键信息、交互元素大且间距足。",
+        "视觉中级项：临时关键信息不要放在视线之外、可调准星颜色样式、可调对比、界面可缩放、可关闭背景运动；高级项：字号可调、可隐藏所有非交互元素。",
+        "认知与听觉：避免闪烁与重复图案；字幕清晰、可自定义、在任何声音出现前就能开启。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Xbox Accessibility Guidelines (XAG)",
+      "author": "Microsoft（与行业专家及玩家残障社群共同制定）",
+      "year": 2023,
+      "url": "https://learn.microsoft.com/en-us/gaming/accessibility/guidelines",
+      "type": "guideline",
+      "topics": ["无障碍", "规范", "测试清单"],
+      "ideas": [
+        "当前为 3.2 版（2023-06）：给设计者当灵感来源、给开发者当护栏、给测试团队当验证清单，但不作为合规认证。",
+        "每条 XAG 包含目标、概览、范围问题、关键区域、实施准则、示例与潜在受影响玩家。",
+        "核心条目覆盖文字显示（101）、对比度（102）、视听信息的额外通道（103）、字幕（104）等，可直接映射为 UI 参数的取值下限。"
+      ],
+      "games": []
+    },
+    {
+      "title": "XAG 101: Text display",
+      "author": "Microsoft",
+      "year": 2023,
+      "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101",
+      "type": "guideline",
+      "topics": ["字号", "字体", "多平台"],
+      "ideas": [
+        "按平台给出默认文字最小高度（从最低下伸部到最高上伸部计）：主机 1080p 为 26 像素、4K 为 52；PC/VR 1080p 为 18、4K 为 36；移动端随 DPI 线性放大。",
+        "这些是出厂默认下限：文字应能放大到最小值的 200% 而不丢内容，图标 / 按键图标内的文字也要满足最小字号并随文字缩放。",
+        "至少提供一种无衬线字体；使用风格化字体时要提供非风格化替代；字体需覆盖所有支持语言的完整字符集。",
+        "多行文本：行宽不超过 80 字符（中日韩 40 字）、行距至少 1.5 倍、段距为行距 2 倍；按语言左 / 右对齐，避免居中或两端对齐长文。"
+      ],
+      "games": []
+    },
+    {
+      "title": "XAG 102: Contrast",
+      "author": "Microsoft",
+      "year": 2023,
+      "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/102",
+      "type": "guideline",
+      "topics": ["对比度", "高对比模式", "色彩"],
+      "ideas": [
+        "对比度检查不只针对文字，也覆盖 HUD 元素（生命条、小地图元素、方向提示）、按钮、滑条、按键图标与承载关键信息的图像。",
+        "阈值：常规文字与关键视觉元素 4.5:1，大字与大元素 3:1，非激活元素文字 3:1；提供亮 / 暗高对比模式，开启后所有 UI 元素不低于 7:1；非纯色背景按对比最低处计算。",
+        "高对比模式的真正目的不只是黑白分离，而是提高重要元素的可见度、拉开不同类重要元素之间以及重要与次要元素之间的区分。",
+        "可让玩家自选前景 / 背景色、文字底板（可调不透明度）或描边；不要只靠颜色（红绿搭配常对色盲失效）；对比应可配置而非一味最大。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Accessible Player Experiences (APX)",
+      "author": "The AbleGamers Charity（与 University of York 的 Paul Cairns、Christopher Power 研究合作）",
+      "year": 2019,
+      "url": "https://accessible.games/accessible-player-experiences/",
+      "type": "guideline",
+      "topics": ["无障碍", "设计模式", "难度与挑战"],
+      "ideas": [
+        "22 个模式呈金字塔：底层“可达”12 个（分控制与呈现两类），中层“挑战”10 个，顶层是团队共享的无障碍设计语言。",
+        "呈现类模式与 UI 直接相关：第二通道、清晰文字、灵活显示、个性化界面、区分此与彼、清晰通道等。",
+        "挑战类模式（放慢、跳过、练习场、随时存档等）主张让难度可调而不是删除挑战；资源有限时先做“可达”层。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Designing for games（Apple Human Interface Guidelines）",
+      "author": "Apple",
+      "year": 2024,
+      "url": "https://developer.apple.com/design/human-interface-guidelines/designing-for-games",
+      "type": "guideline",
+      "topics": ["移动端", "触屏操作", "安全区", "字号", "无障碍"],
+      "ideas": [
+        "尽快让玩家进入游戏：首包可玩、其余后台下载；按设备与辅助功能设置给出合理默认值；用可玩的教学教机制，权限请求放到相关时机。",
+        "文字需与背景有足够对比并满足平台最小字号（如 iOS 11pt、tvOS 23pt）；触控按钮默认至少 44×44pt、iOS 上不小于 28×28pt，虚拟按键叠在内容上方。",
+        "遵守安全区与屏幕形状，菜单适配 16:10、19.5:9、4:3 等比例与横竖屏，优先相对约束而非固定布局。",
+        "不只靠颜色传达关键信息，提供字幕；允许调整字号、操作映射、运动强度与音量平衡。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Adding virtual controls to games that support game controllers in iOS",
+      "author": "Apple（Game Controller 框架文档）",
+      "year": 2021,
+      "url": "https://developer.apple.com/documentation/gamecontroller/adding-virtual-controls-to-games-that-support-game-controllers-in-ios",
+      "type": "guideline",
+      "topics": ["移动端", "虚拟摇杆", "输入切换", "安全区"],
+      "ideas": [
+        "无实体手柄时默认显示虚拟手柄，接上实体手柄后自动隐藏——触屏 HUD 应随输入方式切换。",
+        "玩家当前不能执行的动作要隐藏对应按键（例如过场时只留跳过键）。",
+        "为沉浸与性能可自绘虚拟控件，用代表实际动作的符号代替通用按钮符号；控件区域按视图尺寸计算并放在安全区内（摇杆左下、主按钮右下）。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2",
+      "author": "W3C",
+      "year": 2023,
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "type": "guideline",
+      "topics": ["对比度", "文字缩放", "焦点可见", "通用标准"],
+      "ideas": [
+        "W3C 推荐标准（2023 发布，2024-12 更新）；虽面向网页，但对比度公式与阈值是游戏 UI 对比检查的通用基准。",
+        "1.4.3 文字对比至少 4.5:1（大字 3:1）；1.4.6 增强级 7:1；1.4.11 非文字（UI 部件状态、关键图形）至少 3:1。",
+        "1.4.4 文字可放大到 200% 不丢内容；2.4.7 / 2.4.11 焦点可见且不被遮挡——对应手柄导航时的选中态设计。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Designing for Disability（Game Maker's Toolkit 系列）",
+      "author": "Mark Brown（Game Maker's Toolkit）",
+      "year": 2018,
+      "url": "https://www.youtube.com/@GMTK",
+      "type": "video",
+      "topics": ["无障碍", "色盲配色", "按键重映射", "低视力"],
+      "ideas": [
+        "四集系列分别讲听觉、视觉、运动、认知障碍，以及游戏可以提供的选项与设计决策。",
+        "视觉一集（2018）讲面向色盲与低视力玩家的做法，例如设计适合色盲的调色板、不只用颜色区分。",
+        "系列完结后作者每年做一期年度无障碍回顾；同频道另有 Celeste 辅助模式、手感与 juice 等相关分析。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Game UI Database",
+      "author": "Edd Coates",
+      "year": 2020,
+      "url": "https://www.gameuidatabase.com/",
+      "type": "collection",
+      "topics": ["UI 资料库", "截图检索", "按界面类型筛选"],
+      "ideas": [
+        "免费的游戏 UI 参考库；2.0 版（2024-08）时约有 1300 多款游戏的 5.5 万张截图与 1700 段视频。",
+        "可按界面类型、操作方式、纹理、图案、HUD 元素、颜色、品类、美术风格、布局等筛选——与本项目参数体系的维度高度对应。",
+        "截图版权属于原游戏，只能作学习参考；本项目已有的 gameui:* 参考卡即来自该库。"
+      ],
+      "games": []
+    },
+    {
+      "title": "Interface In Game",
+      "author": "志愿者团队（站点未署个人名）",
+      "year": 2021,
+      "url": "https://interfaceingame.com/",
+      "type": "collection",
+      "topics": ["UI 资料库", "视频", "UI 评析"],
+      "ideas": [
+        "收集游戏 UI 的截图与视频，可按品类浏览；2021 年报道时已覆盖 300 多款游戏。",
+        "另有对 UI 开发者的访谈与界面评析文章（如 Cyberpunk 2077 UX/UI 评析）。",
+        "按项目规则不抓取该站，只作为人工浏览的参考入口。"
+      ],
+      "games": ["Cyberpunk 2077", "Horizon Zero Dawn"]
+    },
+    {
+      "title": "HUDS+GUIS（及配套书 FUI: How to Design User Interfaces for Film and Games）",
+      "author": "Jono Yuen",
+      "year": 2012,
+      "url": "https://www.hudsandguis.com/",
+      "type": "collection",
+      "topics": ["虚构界面 FUI", "科幻 UI", "电影与游戏 UI"],
+      "ideas": [
+        "墨尔本创意总监 Jono Yuen 维护的灵感站，收录电影、游戏、概念设计与真实产品中的 HUD / GUI，关注界面的功能、外观、动效与声音。",
+        "游戏案例分析如 Dead Space 2 的叙事内界面、The Division 贴身倾斜的 HUD 与腕部全息、Cyberpunk 2077 以文字为主的低保真红色 HUD。",
+        "配套书汇集电影与游戏 FUI 从业者的经验，适合科幻 / 赛博类 UI 风格的取材。"
+      ],
+      "games": ["Dead Space 2", "Tom Clancy's The Division", "Cyberpunk 2077"]
+    }
+  ]
+}

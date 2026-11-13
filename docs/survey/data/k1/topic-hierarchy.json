@@ -1,0 +1,2026 @@
+{
+  "principles": [
+    {
+      "id": "P-priority-tiers",
+      "title": "先分级再上色：每一刻只允许 1–3 个「主」信息",
+      "problem": "局内 HUD 常有 6–10 个元素同时在场。如果它们一样大、一样亮、一样鲜艳，玩家在最紧张的时候找不到「现在该看的那一个」，设计者也说不清谁该放大、谁该退后。参数体系把这件事拆成两步：先给每个元素定信息优先级（elx.priority：主 / 次 / 背景），再给「主」选强调配方（hier.emphasis），强调只作用在「主」上。参考库里同样的「分级」可以用完全不同的手段实现：Balatro 用尺寸，Frostpunk 用压暗，CONTROL 用唯一的黄色，手游横屏 ARPG 用拇指位置。",
+      "approaches": [
+        {
+          "name": "尺寸主导：主元素放大到 1.4 倍以上",
+          "params": {
+            "hier.emphasis": [
+              "size"
+            ],
+            "el.timer.priority": "primary",
+            "el.timer.scale": 1.8,
+            "typ.numerals.family": "display",
+            "el.resources.priority": "ambient",
+            "el.resources.scale": 0.8
+          },
+          "whenToUse": "有一个数字直接决定胜负或节奏：名次、分数 × 倍率、风格评级、判定字、生命数字。",
+          "cost": "大号元素会长期占住画面；同屏只能有一个「最大」，第二个大字会让两者都失效。",
+          "examples": [
+            "steam:2379780",
+            "steam:1085510",
+            "steam:601150",
+            "steam:952040",
+            "steam:220"
+          ]
+        },
+        {
+          "name": "明暗主导：其余压暗、暗幕聚光",
+          "params": {
+            "hier.emphasis": [
+              "value"
+            ],
+            "hier.dimInactive": 0.4,
+            "rel.dim": 0.6,
+            "rel.behind": "frozen"
+          },
+          "whenToUse": "事件抉择、关键宣告、对话、暂停时的决策——玩家此刻只该处理一件事。",
+          "cost": "被压暗的周边信息暂时读不到，只适合非实时或已暂停的时刻；实时战斗里压暗等于遮挡。",
+          "examples": [
+            "steam:323190",
+            "steam:1940340",
+            "steam:1092790"
+          ]
+        },
+        {
+          "name": "唯一强调色：中性骨架，只给主信息上色",
+          "params": {
+            "col.strategy": "neutralAccent",
+            "hier.emphasis": [
+              "color"
+            ],
+            "col.saturation": 0.75
+          },
+          "whenToUse": "写实或暗调画面里，要让一个类别（目标、危险、可攀爬路线）在任何背景上跳出来。",
+          "cost": "强调色一旦被装饰、特效或稀有度色挪用就失效；色盲玩家需要形状或位置的第二通道。",
+          "examples": [
+            "steam:870780",
+            "steam:531510",
+            "steam:17410",
+            "steam:620"
+          ]
+        },
+        {
+          "name": "位置主导：越重要越靠近视线 / 拇指",
+          "params": {
+            "ctx.input": "touch",
+            "ix.touchCluster": "arc",
+            "el.cta.form": "round",
+            "el.cta.priority": "primary",
+            "el.cta.scale": 1.6,
+            "el.abilities.scale": 0.9
+          },
+          "whenToUse": "触屏与手柄：操作的重要性 = 触达频率，主攻击键最大、最靠拇指，技能沿弧排开，系统入口缩到边角。",
+          "cost": "横屏双拇指区有限，大键挤占技能位；入口一多就退化成「图标墙」。",
+          "examples": [
+            "gameui:6750",
+            "gameui:12771",
+            "gameui:6729",
+            "steam:874390"
+          ]
+        },
+        {
+          "name": "留白孤立：靠空出来的周围突出主体",
+          "params": {
+            "hier.emphasis": [
+              "isolation"
+            ],
+            "cnt.density": 1,
+            "vis.ornament": 0
+          },
+          "whenToUse": "元素本来就少、节奏慢的策略 / 解谜 / 放置：一个时钟、一排线路库存就够。",
+          "cost": "只在元素很少时成立；一旦加功能，留白最先被吃掉。",
+          "examples": [
+            "steam:287980",
+            "steam:1455840",
+            "steam:1046030"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "平级堆砌：所有元素同尺寸、同亮度、同饱和度，界面像调试面板；或者塔防 / 动作里商店、波次、技能都用同样的分量摊在四周。",
+          "examples": [
+            "steam:2212330",
+            "steam:960090",
+            "steam:1145350"
+          ],
+          "reviewEvidence": "R3（ui-review-stats.json，关键词粗筛）：Bloons TD 6 有 5 条、Hades II 有 4 条评测抱怨 HUD 太乱 / 挡视野；Your Only Move Is HUSTLE 有 3 条抱怨不知道该怎么玩。全库按密度分：密度 3–4 的 50 款里 12% 是「太乱」出处，密度 0–1 的 191 款只有约 5%。"
+        },
+        {
+          "desc": "强调通胀：两个以上的东西同时用最大号 + 发光 + 闪烁（大招特效、总伤害大字、头像就绪光），互相抵消，真正的生命 / 威胁信息反而沉底。",
+          "examples": [
+            "gameui:6853",
+            "gameui:6904",
+            "gameui:7312"
+          ],
+          "reviewEvidence": "GameUI 手游没有 Steam 评测数据；看 mobile/sheet-land-02 的截图：自动战斗中大招特效覆盖画面中心近一半，HUD 只剩边角小图标。"
+        }
+      ],
+      "rules": [
+        "每一刻的「主」信息 ≤ 3 个；工作记忆大约只能同时抓住 4 个组块，超过就要分层或分时出现。",
+        "先给每个元素填 elx.priority，再选强调配方；强调手段最多叠两种（尺寸 + 明暗，或颜色 + 孤立）。",
+        "「主」由玩法权重决定：会让你死、输、错过机会的信息才配当主，好看的不算。",
+        "次级信息用固定位置弥补不显眼（永远在同一角）；背景信息可以小到只有专门找它时才看得到。",
+        "验收：开 chk.squint，模糊后最显眼的三处应该正好是标为「主」的元素。"
+      ],
+      "genres": [
+        "动作与 Roguelite",
+        "射击",
+        "竞速",
+        "节奏",
+        "卡牌与桌面",
+        "手游横屏战斗",
+        "策略与战术"
+      ],
+      "sources": [
+        {
+          "title": "Riot Games, Clarity in League (2021)",
+          "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+          "point": "画面上吸引注意力的程度要与玩法重要性相称；特效噪声会叠加，团战里最容易失控。"
+        },
+        {
+          "title": "Nielsen Norman Group, Visual Hierarchy in UX: Definition",
+          "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/",
+          "point": "层级靠尺寸、颜色 / 对比、位置、留白等手段建立，并用眯眼 / 模糊检查是否符合本意。"
+        },
+        {
+          "title": "Cowan, The magical number 4 in short-term memory (BBS, 2001)",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11515286/",
+          "point": "短时记忆的纯容量约为 3–5 个组块，平均约 4 个；可作为同时要盯住的主信息上限。"
+        },
+        {
+          "title": "Healey, Perception in Visualization（前注意特征）",
+          "url": "https://www.csc2.ncsu.edu/faculty/healey/PP/index.html",
+          "point": "单一独特特征（色相、尺寸、方向等）能「跳出」；多个特征组合定义的目标往往无法一眼找到——强调手段要单纯。"
+        },
+        {
+          "title": "本项目 06 品类镜头与可读性 §0.5（Into the Breach 清晰优先）",
+          "url": "docs/survey/06-genre-camera-ui.md",
+          "point": "视觉权重 = 玩法权重；开发者表示会为了清晰放弃很酷的点子。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 2,
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap",
+            "el.objective",
+            "el.resources",
+            "el.threat"
+          ],
+          "el.threat.form": [
+            "bossBar"
+          ],
+          "hier.emphasis": [],
+          "hier.dimInactive": 0,
+          "el.vitals.priority": "secondary",
+          "el.threat.priority": "secondary",
+          "el.minimap.priority": "secondary",
+          "el.resources.priority": "secondary",
+          "el.vitals.scale": 1,
+          "el.threat.scale": 1,
+          "chk.squint": true
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 2,
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap",
+            "el.objective",
+            "el.resources",
+            "el.threat"
+          ],
+          "el.threat.form": [
+            "bossBar"
+          ],
+          "hier.emphasis": [
+            "size",
+            "value"
+          ],
+          "hier.dimInactive": 0.35,
+          "el.vitals.priority": "primary",
+          "el.threat.priority": "primary",
+          "el.abilities.priority": "secondary",
+          "el.objective.priority": "secondary",
+          "el.minimap.priority": "ambient",
+          "el.resources.priority": "ambient",
+          "el.vitals.scale": 1.4,
+          "el.threat.scale": 1.4,
+          "el.minimap.scale": 0.8,
+          "el.resources.scale": 0.8,
+          "chk.squint": true
+        },
+        "lookAt": "打开眯眼检查对比两边：A 的六块一样大一样亮，模糊后分不出先后；B 只有血条和 Boss 条跳出来，小地图和资源退成背景。信息一个没少，变的只是「先看哪个」。"
+      }
+    },
+    {
+      "id": "P-glance-encoding",
+      "title": "一眼可读：用形状、计数、位置传状态，别让玩家读字算数",
+      "problem": "实时战斗里玩家看 HUD 的时间按「一瞥」计：前注意加工在约 200 毫秒内完成，汽车界面规范把单次视线离开路面限制在 2 秒以内。需要读一行字、比两个数字的信息，在这种时刻等于没有。R3 里「字太小 / 看不清」有 18 款出处，3A 动作游戏也在其中。编码方式（cmp.gauge、elx.valueLabel、cnt.textLength）决定了一个状态能不能在一瞥里被读出。",
+      "approaches": [
+        {
+          "name": "纯图形条：只看长短，不标数字",
+          "params": {
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.valueLabel": "none",
+            "el.vitals.count": 3,
+            "mo.valueChange@el.vitals": "trail"
+          },
+          "whenToUse": "玩家只需要判断「多 / 少 / 快没了」，精确值不影响下一步操作（魂系血 / 蓝 / 耐力）。",
+          "cost": "无法精算；条太细时在亮场景（雪地、强光）里会被吞掉，需要深色底或描边。",
+          "examples": [
+            "steam:1245620",
+            "steam:2358720",
+            "steam:1627720",
+            "steam:870780"
+          ]
+        },
+        {
+          "name": "可数的分段 / 图标：≤ 5 格一眼数清",
+          "params": {
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.valueLabel": "none",
+            "el.vitals.scale": 1.2
+          },
+          "whenToUse": "伤害按「格」结算，玩家要回答「还能挨几下」：心形、面具、血格。",
+          "cost": "数值范围大时格子爆炸（几十颗心就失去一眼可数）；需要每 5 格分组或换成条。",
+          "examples": [
+            "steam:367520",
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "steam:257850",
+            "iig:overwatch",
+            "steam:1888930"
+          ]
+        },
+        {
+          "name": "一个大号关键数字",
+          "params": {
+            "cmp.gauge@el.vitals": "number",
+            "typ.numerals.family": "display",
+            "el.abilities.form": "ammo",
+            "el.abilities.valueLabel": "current"
+          },
+          "whenToUse": "精确值确实影响决策：弹药、名次、速度、分数 × 倍率。",
+          "cost": "数字必须被「读」，字号和对比要过线（XAG 101：主机 1080p 正文 ≥ 26 px、PC ≥ 18 px）；同屏数字一多就退化成表格。",
+          "examples": [
+            "steam:220",
+            "steam:440",
+            "steam:1440670",
+            "steam:2379780",
+            "steam:1085510"
+          ]
+        },
+        {
+          "name": "表盘 / 指针：读角度和区间，不读数",
+          "params": {
+            "cmp.gauge@el.speed": "dial",
+            "el.speed.screenAnchor": "br",
+            "st.alert": "redTint"
+          },
+          "whenToUse": "连续变化、关心趋势与危险区间的量：转速、速度、温度。",
+          "cost": "占面积大；需要精确值时仍要在表盘里附数字。",
+          "examples": [
+            "steam:2707900",
+            "steam:508980",
+            "steam:2354000",
+            "iig:need-for-speed-heat",
+            "steam:323190"
+          ]
+        },
+        {
+          "name": "整屏状态：不看 HUD 也能感到",
+          "params": {
+            "rel.metaFx": [
+              "lowHpDesat",
+              "hurtVignette",
+              "speedLines"
+            ]
+          },
+          "whenToUse": "只需要粗粒度的状态（濒死、受击、超速），而且要在玩家盯着别处时也传到。",
+          "cost": "粒度粗，和画面特效抢通道；要配「减少动效」开关，闪烁类注意光敏。",
+          "examples": [
+            "steam:391220",
+            "steam:414340",
+            "steam:517710"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "战斗中用小字或句子传递关键状态，或把正文字号按 PC 标准用在电视 / 掌机上。",
+          "examples": [
+            "steam:892970",
+            "steam:2322010",
+            "steam:814380",
+            "steam:403640",
+            "steam:1551360",
+            "steam:17410"
+          ],
+          "reviewEvidence": "R3「字太小 / 看不清」18 款出处：Valheim 3 条、God of War Ragnarök 3 条，Sekiro、Dishonored 2、Forza Horizon 5、Mirror's Edge 各 2 条；全库每千条评测 0.77 次。"
+        },
+        {
+          "desc": "什么都标「当前 / 上限」：血、蓝、经验、负重全带小号分数，玩家要读完一排数字才知道哪个要紧。",
+          "examples": [
+            "steam:2212330",
+            "steam:1397920"
+          ],
+          "reviewEvidence": "没有直接对应的评测分类；HUSTLE 有 3 条「不知道怎么玩」类评测，可作旁证。"
+        }
+      ],
+      "rules": [
+        "先写下玩家要回答的问题，再选编码：「还能挨几下」→ 分段；「还剩几发」→ 数字；「快不快 / 危不危险」→ 表盘或整屏效果。",
+        "实时战斗中关键状态不靠文字：cnt.textLength 在局内 HUD 默认 ≤ 仅标题。",
+        "分段 ≤ 5 格可一眼数清，再多就每 5 格一组或改成条。",
+        "必须读的数字用大号展示数字 / 等宽数字，最小字号按设备派生（D-device），并做视距预览（chk.viewDistance）。",
+        "做 0.5 秒遮挡测试：截图只给看 0.5 秒，能答出主问题才算通过。"
+      ],
+      "genres": [
+        "动作与 Roguelite",
+        "射击",
+        "竞速",
+        "节奏",
+        "横版平台",
+        "手游横屏战斗"
+      ],
+      "sources": [
+        {
+          "title": "Healey, Perception in Visualization（前注意加工）",
+          "url": "https://www.csc2.ncsu.edu/faculty/healey/PP/index.html",
+          "point": "能在约 200 毫秒内、不依赖逐个扫视完成的判断属于前注意加工；可一眼读出的 HUD 编码应落在这些特征上。"
+        },
+        {
+          "title": "NHTSA, Visual-Manual Driver Distraction Guidelines（2012 年提案说明，2013 年发布第一阶段）",
+          "url": "https://www.nhtsa.gov/sites/nhtsa.gov/files/strickland-distraction_guidelines_03122012.pdf",
+          "point": "车载界面任务的单次视线离开不应超过 2 秒、总计不超过 12 秒——高压实时情境下的「一瞥预算」参考。"
+        },
+        {
+          "title": "Peacocke, Teather, Carette, MacKenzie, Evaluating the Effectiveness of HUDs and Diegetic Ammo Displays in FPS Games (IEEE GEM 2015)",
+          "url": "https://www.csit.carleton.ca/~rteather/pdfs/GEM2015_HUDs.pdf",
+          "point": "五种弹药显示里，枪上的数字表现最好（换弹更快、空膛后多开的枪更少），HUD 上的子弹图标最差；大多数受试者偏好它。"
+        },
+        {
+          "title": "Microsoft, Xbox Accessibility Guideline 101: Text display",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101",
+          "point": "默认最小字号：主机 1080p 26 px、PC 1080p 18 px；HUD 计量、目标文字都在范围内，并应支持放大到 200%。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.objective"
+          ],
+          "el.vitals.count": 3,
+          "cmp.gauge@el.vitals": "bar",
+          "el.vitals.valueLabel": "currentMax",
+          "el.vitals.valueLabelPos": "end",
+          "el.abilities.form": "ammo",
+          "el.abilities.valueLabel": "currentMax",
+          "el.objective.form": [
+            "checklist"
+          ],
+          "cnt.textLength": "short",
+          "typ.baseSize": 12
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.objective"
+          ],
+          "el.vitals.count": 1,
+          "cmp.gauge@el.vitals": "segmented",
+          "el.vitals.valueLabel": "none",
+          "el.vitals.scale": 1.3,
+          "el.abilities.form": "ammo",
+          "el.abilities.valueLabel": "current",
+          "typ.numerals.family": "display",
+          "el.objective.form": [
+            "marker"
+          ],
+          "cnt.textLength": "title",
+          "typ.baseSize": 16
+        },
+        "lookAt": "把两边各看半秒再遮住：A 要读三行「当前 / 上限」小字和一列清单；B 只要数格子、看一个大数字、看一个路点。信息量差不多，读取时间差一个数量级。"
+      }
+    },
+    {
+      "id": "P-focal-periphery",
+      "title": "焦点与余光：要精读的放在视线附近，四角只负责「有变化」",
+      "problem": "玩家的视线大部分时间停在屏幕中央、角色或准星附近（FPS 眼动研究），四角元素只能靠余光；而余光分辨细节很差、对运动和大面积颜色变化很敏感。把需要精读的数字放在角落，玩家要么不看，要么把视线从战斗里拉走。参数上这是三件事：放在哪（elx.screenAnchor）、挂在谁身上（elx.attachTo + elx.diegesis）、要不要用整屏效果报信（rel.metaFx / elx.metaFx）。",
+      "approaches": [
+        {
+          "name": "四角分散，中心净空",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "el.vitals.screenAnchor": "tl",
+            "el.minimap.screenAnchor": "tr",
+            "el.abilities.screenAnchor": "br",
+            "lay.safeMargin": 3
+          },
+          "whenToUse": "低频查看的次级信息（小地图、资源、任务），以及大多数第三人称 / 俯视动作游戏的默认布局。",
+          "cost": "靠位置记忆，新手第一次找不到；超宽屏下角落离视线更远，需要收进 16:9 区域（D-aspect）。",
+          "examples": [
+            "steam:292030",
+            "steam:7940",
+            "steam:588650",
+            "steam:1145360"
+          ]
+        },
+        {
+          "name": "挂在焦点上：头顶、目标、手持物（空间内 / 叙事内）",
+          "params": {
+            "el.threat.form": [
+              "healthBar"
+            ],
+            "el.threat.attachTo": "target",
+            "el.threat.diegesis": "spatial",
+            "el.threat.worldRender": "billboard",
+            "el.abilities.attachTo": "held",
+            "el.abilities.diegesis": "diegetic"
+          },
+          "whenToUse": "信息与某个世界对象强绑定：敌人血量、弹药、可交互物、对话选项、对手分数。",
+          "cost": "跟着镜头被遮挡或出屏，需要屏外回退（边缘箭头）；目标一多，头顶条互相叠压。",
+          "examples": [
+            "steam:1693980",
+            "steam:546560",
+            "steam:1593500",
+            "steam:200260",
+            "steam:437920",
+            "steam:620980",
+            "steam:388880"
+          ]
+        },
+        {
+          "name": "边缘方向提示：屏外信息从屏幕边进入余光",
+          "params": {
+            "el.threat.form": [
+              "edgeDir"
+            ],
+            "el.objective.form": [
+              "marker",
+              "edgeArrow"
+            ]
+          },
+          "whenToUse": "威胁或目标在镜头外，但玩家需要知道「从哪边来」。",
+          "cost": "箭头多了会在屏幕四周形成一圈噪声；要按威胁等级只显示最近 / 最危险的几个。",
+          "examples": [
+            "steam:1593500",
+            "steam:2322010"
+          ]
+        },
+        {
+          "name": "整屏元 UI：用余光最敏感的通道报警",
+          "params": {
+            "rel.metaFx": [
+              "hurtVignette"
+            ],
+            "el.vitals.metaFx": "lowHpDesat"
+          },
+          "whenToUse": "必须打断注意力的少数状态：濒死、受击方向、超速、被发现。",
+          "cost": "粒度粗、容易疲劳；和特效、调色抢通道；需要减少动效与色盲选项。",
+          "examples": [
+            "steam:391220",
+            "steam:414340",
+            "steam:517710"
+          ]
+        },
+        {
+          "name": "外围通知：用运动唤起，再退回可回看的位置",
+          "params": {
+            "el.notify.form": [
+              "toast"
+            ],
+            "el.notify.screenAnchor": "tr",
+            "mo.enter": "slide",
+            "ix.dismiss": "timed"
+          },
+          "whenToUse": "需要被注意到、但不必立刻处理的事件（拾取、任务更新、奇观完成）。",
+          "cost": "战斗中很容易错过，必须同时进入可回看的日志；同时弹太多会排队拖延。",
+          "examples": [
+            "steam:2668510",
+            "steam:286000",
+            "steam:289070"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "中心区被长期占用：字幕、教学提示、交互气泡或空间内控件停留在画面中部，挡住要看的世界。",
+          "examples": [
+            "steam:2215430",
+            "steam:870780",
+            "steam:2198150"
+          ],
+          "reviewEvidence": "R3「HUD 太乱 / 挡视野」：Ghost of Tsushima 4 条（12-r3 文档判断多来自过场字幕 / 提示）、CONTROL 4 条、Tiny Glade 5 条（关键词粗筛，可能混入说场景杂乱的评测）。空间内 UI（rel.diegesis = spatial）的 12 款里 17% 是「太乱」出处，全库约 7%。"
+        },
+        {
+          "desc": "关键状态只在角落悄悄改一个数字，没有运动、颜色或整屏提示，玩家在战斗中察觉不到。",
+          "examples": [],
+          "reviewEvidence": "评测分类里没有「没注意到状态变化」这一类，本库暂无直接证据；这是从眼动与余光研究（见来源）推出的风险，建议用 chk.squint + 0.5 秒遮挡测试验证。"
+        }
+      ],
+      "rules": [
+        "按「查看频率 × 紧急度」分区：高频高急 → 挂在角色 / 准星 / 目标附近；低频 → 四角；低频但紧急 → 用整屏效果或边缘提示推进余光。",
+        "放在余光里的元素要用运动、颜色突变、尺寸跳变报信，而不是只改一个数字。",
+        "屏幕中间约三分之一默认不放常驻面板；字幕、提示、交互气泡用完立刻退场。",
+        "挂在世界里的元素必须有出屏回退（edgeArrow / edgeDir）和遮挡回退（描边或穿墙显示）。",
+        "超宽屏把四角收进 16:9；电视按 5% 安全边（D-device），别让角落元素跑出视线。"
+      ],
+      "genres": [
+        "射击",
+        "动作与 Roguelite",
+        "竞速",
+        "恐怖",
+        "VR",
+        "探索与冒险"
+      ],
+      "sources": [
+        {
+          "title": "Kenny, Koesling, Delaney, McLoone, Ward, A Preliminary Investigation into Eye Gaze Data in a First Person Shooter Game (ECMS 2005)",
+          "url": "https://mural.maynoothuniversity.ie/id/eprint/282/",
+          "point": "在自制 FPS 里记录眼动，发现玩家大部分注视都落在屏幕中央附近——四角的 HUD 只是偶尔被扫到。"
+        },
+        {
+          "title": "Rosenholtz, Capabilities and Limitations of Peripheral Vision (Annual Review of Vision Science, 2016)",
+          "url": "https://doi.org/10.1146/annurev-vision-082114-035733",
+          "point": "余光的编码丢失大量细节，能做粗分类和「大意」判断，但不擅长读细节——角落放精读信息不划算。"
+        },
+        {
+          "title": "Weiser & Brown, Designing Calm Technology (1995)",
+          "url": "https://calmtech.com/papers/designing-calm-technology",
+          "point": "好的信息设计让内容在注意力中心与外围之间移动：外围让人同时感知很多事，需要时再拉到中心处理。"
+        },
+        {
+          "title": "Fagerholt & Lorentzon, Beyond the HUD (Chalmers / EA DICE, 2009)",
+          "url": "https://odr.chalmers.se/handle/20.500.12380/111921",
+          "point": "按「是否属于虚构世界」和「是否在 3D 空间里」把界面分为叙事内、非叙事、空间内、元四类；挂在焦点上的做法多属空间内或叙事内。"
+        },
+        {
+          "title": "Peacocke 等, HUDs and Diegetic Ammo Displays (IEEE GEM 2015)",
+          "url": "https://www.csit.carleton.ca/~rteather/pdfs/GEM2015_HUDs.pdf",
+          "point": "把弹药数字放在枪上（视线焦点附近）比放在 HUD 角落更快被利用。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.threat",
+            "el.crosshair"
+          ],
+          "el.crosshair.form": [
+            "cross"
+          ],
+          "el.vitals.screenAnchor": "tl",
+          "el.abilities.form": "ammo",
+          "el.abilities.screenAnchor": "br",
+          "el.threat.form": [
+            "targetFrame"
+          ],
+          "el.threat.screenAnchor": "tc",
+          "rel.metaFx": []
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.threat",
+            "el.crosshair"
+          ],
+          "el.crosshair.form": [
+            "dot"
+          ],
+          "el.vitals.screenAnchor": "bl",
+          "el.vitals.metaFx": "lowHpDesat",
+          "el.abilities.form": "ammo",
+          "el.abilities.attachTo": "held",
+          "el.abilities.diegesis": "diegetic",
+          "el.threat.form": [
+            "healthBar",
+            "edgeDir"
+          ],
+          "el.threat.attachTo": "target",
+          "el.threat.diegesis": "spatial",
+          "el.threat.worldRender": "billboard",
+          "rel.metaFx": [
+            "hurtVignette"
+          ]
+        },
+        "lookAt": "视线固定在准星：A 要知道弹药、敌血、自己血量得分别跳到右下、上中、左上三个角；B 的弹药在枪上、敌血在敌人头顶、来袭方向和低血用屏幕边缘的颜色传进余光，眼睛不用离开中心。"
+      }
+    },
+    {
+      "id": "P-density-tempo",
+      "title": "密度跟着决策节奏走：实时要少，可暂停才能多；多了靠组织而不是删",
+      "problem": "同样 30 个数字，放在回合制里是信息丰富，放在实时战斗里是噪声。参考库 375 张标了密度的卡里，密度与品类强相关：横版平台平均 0.31、恐怖 0.38、叙事 0.53，卡牌 2.21、手游 2.54、工厂 2.75。高密度并不等于差评——Songs of Syx（密度 4）、Parkasaurus、Disco Elysium、Civilization VI 都在「夸 UI」名单里。问题出在密度与时间模型不匹配，或者密度上去了却没有组织（分组、整合、对齐）。",
+      "approaches": [
+        {
+          "name": "实时动作：极简到稀疏（0–1）",
+          "params": {
+            "cnt.density": 1,
+            "ctx.timeModel": "realtime",
+            "lay.hudOrg": "scattered",
+            "vis.ornament": 0
+          },
+          "whenToUse": "眼睛必须留在世界里的游戏：动作、射击、平台、竞速。",
+          "cost": "深度信息全部推到菜单里，菜单必须好用；否则复杂度只是换了个地方（见 P-progressive-disclosure）。",
+          "examples": [
+            "steam:1245620",
+            "steam:1593500",
+            "steam:387290",
+            "steam:1551360",
+            "steam:7940"
+          ]
+        },
+        {
+          "name": "中等密度 + 贴边整条（回合制卡牌 / Roguelite）",
+          "params": {
+            "cnt.density": 2,
+            "ctx.timeModel": "turn",
+            "lay.hudOrg": "edgeBar",
+            "lay.grouping": "panel"
+          },
+          "whenToUse": "回合制、信息量中等、需要随时对照的：血量、金币、遗物、分数 × 倍率放进一条边栏。",
+          "cost": "边栏吃掉一侧画面；边栏内部仍需层级（Balatro 把分数做成最大的数字）。",
+          "examples": [
+            "iig:slay-the-spire",
+            "steam:2379780",
+            "steam:1282730",
+            "steam:1404850"
+          ]
+        },
+        {
+          "name": "高密度 + 整合底座（RTS / CRPG / 经营）",
+          "params": {
+            "cnt.density": 3,
+            "ctx.timeModel": "pausable",
+            "lay.hudOrg": "console",
+            "lay.grouping": "panel",
+            "vis.opacity": 0.9
+          },
+          "whenToUse": "要同时监控多个单位或资源，但中央必须留给战场：底部一整条把小地图、头像、技能、物品连起来。",
+          "cost": "底座常占屏幕高度的 15–25%；底座里继续加东西就会被骂乱。",
+          "examples": [
+            "steam:594570",
+            "steam:2344520",
+            "steam:1086940",
+            "steam:262060",
+            "steam:3314060"
+          ]
+        },
+        {
+          "name": "信息墙 + 可暂停（大战略 / 殖民 / 城市模拟 / MMO）",
+          "params": {
+            "cnt.density": 4,
+            "ctx.timeModel": "pausable",
+            "lay.hudOrg": "edgeBar",
+            "lay.grouping": "divider",
+            "typ.baseSize": 12,
+            "typ.numerals.family": "tabular"
+          },
+          "whenToUse": "玩家可以随时暂停、以分析为乐；信息本身就是玩法。",
+          "cost": "学习曲线陡，必须配渐进披露与 UI 缩放；小字号在电视 / 掌机上不可用。",
+          "examples": [
+            "steam:1162750",
+            "steam:233860",
+            "steam:281990",
+            "iig:world-of-warcraft",
+            "steam:632470"
+          ]
+        },
+        {
+          "name": "多窗口自由布局",
+          "params": {
+            "lay.container": "window",
+            "cnt.density": 4,
+            "ctx.timeModel": "pausable"
+          },
+          "whenToUse": "桌面隐喻、编程解谜、怀旧经营：多个面板同时开着对照。",
+          "cost": "窗口互相遮挡，分辨率与缩放问题最集中。",
+          "examples": [
+            "steam:683900",
+            "steam:2060160",
+            "steam:844590"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "实时 + 高密度 + 四散：商店、波次、技能、资源分散在玩法区四周，且无暂停可用。",
+          "examples": [
+            "steam:960090",
+            "steam:1145350",
+            "steam:1313140"
+          ],
+          "reviewEvidence": "R3「HUD 太乱」：Bloons TD 6 5 条、Hades II 4 条、Cult of the Lamb 2 条。策略品类内部比较：密度 2–4 的 16 款每千条评测 3.3 次「太乱」，密度 0–1 的 8 款为 0。"
+        },
+        {
+          "desc": "高密度界面没有缩放：字号和面板按某一分辨率写死，高分屏 / 大屏上缩成一团。",
+          "examples": [
+            "steam:683900",
+            "steam:1267910",
+            "steam:8870"
+          ],
+          "reviewEvidence": "R3「UI 缩放 / 分辨率」4 款出处：BioShock Infinite 4 条、RollerCoaster Tycoon Classic 3 条、Melvor Idle 2 条、Far Cry 4 2 条。"
+        }
+      ],
+      "rules": [
+        "先定时间模型再定密度：纯实时的局内 HUD ≤ 2；可暂停 / 回合制才值得做到 3–4。",
+        "密度上去以后靠组织降低感知负担：同类聚合（hudOrg = console / edgeBar）、分组（lay.grouping）、对齐网格；屏幕中央约 60% 留给玩法。",
+        "密度 ≥ 3 必须同时提供 UI 缩放（a11y.uiScale）和渐进披露（悬停 / 展开 / 侧栏）。",
+        "密度只管字段数，不管装饰：高密度界面的装饰预算 ≤ 1。",
+        "同一款游戏可以分档：局内 1–2，暂停 / 管理界面 3–4（巫师 3 局内中等、背包密集）。"
+      ],
+      "genres": [
+        "策略与战术",
+        "建造与经营",
+        "工厂与自动化",
+        "角色扮演",
+        "卡牌与桌面",
+        "动作与 Roguelite"
+      ],
+      "sources": [
+        {
+          "title": "Edward Tufte, The Visual Display of Quantitative Information",
+          "url": "https://www.edwardtufte.com/book/the-visual-display-of-quantitative-information/",
+          "point": "主张提高数据墨水比、在合理范围内提高数据密度：低密度迫使人按顺序翻看而不是一眼比较——密度本身不是问题，非数据的装饰才是。"
+        },
+        {
+          "title": "本项目 10 R2① 策略 / 建造批次总结",
+          "url": "docs/survey/10-r2-strategy.md",
+          "point": "该品类「极简」16 款与「极密」10 款形成两极，信息密度是这个品类最重要的旋钮之一。"
+        },
+        {
+          "title": "本项目 12 R3 玩家评价统计",
+          "url": "docs/survey/12-r3-reviews.md",
+          "point": "HUD 太乱 22 款、缩放 4 款、菜单难用 24 款的出处与条数（关键词粗筛）。"
+        },
+        {
+          "title": "Celia Hodent, The Gamer's Brain (CRC Press, 2017)（作者访谈页）",
+          "url": "https://www.odbms.org/2018/01/author-qa-session-celia-hodent/",
+          "point": "从感知、注意、记忆等大脑局限出发讨论游戏 UX（可用性与参与度两大支柱）：界面负担要和玩家当下的认知负荷相匹配。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 4,
+          "ctx.timeModel": "realtime",
+          "lay.hudOrg": "scattered",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap",
+            "el.objective",
+            "el.party",
+            "el.resources",
+            "el.notify",
+            "el.selection",
+            "el.timer"
+          ],
+          "el.objective.form": [
+            "checklist"
+          ],
+          "el.notify.form": [
+            "feed"
+          ],
+          "el.selection.form": "panel",
+          "el.selection.screenAnchor": "mr",
+          "el.party.screenAnchor": "ml",
+          "el.resources.screenAnchor": "tc"
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 4,
+          "ctx.timeModel": "pausable",
+          "lay.hudOrg": "console",
+          "lay.grouping": "panel",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap",
+            "el.objective",
+            "el.party",
+            "el.resources",
+            "el.notify",
+            "el.selection",
+            "el.timer",
+            "el.gameSpeed"
+          ],
+          "el.objective.form": [
+            "checklist"
+          ],
+          "el.notify.form": [
+            "feed"
+          ],
+          "el.selection.form": "panel",
+          "el.selection.screenAnchor": "bl",
+          "el.party.screenAnchor": "bc",
+          "el.minimap.screenAnchor": "br",
+          "el.resources.screenAnchor": "tl",
+          "el.gameSpeed.form": "speedBar"
+        },
+        "lookAt": "两边的信息量相同（密度都是 4）。A 把面板摊在玩法区四周、又是纯实时；B 把同样的内容收进一条底座、加了暂停 / 倍速——中央重新空出来，密度从噪声变回了「可以停下来读的信息」。"
+      }
+    },
+    {
+      "id": "P-progressive-disclosure",
+      "title": "渐进披露：第一层给结论，第二层给原因，最多两层",
+      "problem": "信息多的游戏（策略、RPG、经营）不能全摊在第一层，也不能藏到玩家找不到。NN/g 的经验是：先只显示最常用的少数选项，其余按需展开；超过两层就容易迷路。游戏里的披露手段有悬停、常驻侧栏、按键呼出、语义缩放，取决于输入方式和查看频率（lay.detail、elx.visibility、rel.semanticZoom）。R3 的「菜单 / 界面难用」（24 款）多出在复杂度被推进了菜单、却没设计好怎么展开的游戏。",
+      "approaches": [
+        {
+          "name": "悬停 / 嵌套提示（键鼠）",
+          "params": {
+            "lay.detail": "transient",
+            "el.selection.form": "tooltip",
+            "ctx.input": "kbm",
+            "hier.inline": "keyword"
+          },
+          "whenToUse": "信息多，但每次只关心一个对象；术语密集时用可锁定、可再展开的嵌套提示。",
+          "cost": "触屏没有悬停（D-input 改为点击弹层或底部浮层）；手柄需要焦点导航；新手不知道哪些词能展开。",
+          "examples": [
+            "steam:281990",
+            "steam:590380",
+            "iig:slay-the-spire",
+            "steam:1188930"
+          ]
+        },
+        {
+          "name": "常驻详情侧栏",
+          "params": {
+            "lay.detail": "persistent",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "mr"
+          },
+          "whenToUse": "要边看边比较、频繁切换选中对象：塔防选塔、殖民模拟选人、战棋选单位。",
+          "cost": "固定占屏；没选中东西时侧栏要有合理的空状态。",
+          "examples": [
+            "steam:937310",
+            "steam:233860",
+            "steam:1062090",
+            "steam:599390"
+          ]
+        },
+        {
+          "name": "按键呼出整层",
+          "params": {
+            "rel.hudVisibility": "onDemand",
+            "el.minimap.visibility": "onDemand",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "ring"
+          },
+          "whenToUse": "偶尔才查、但查的时候要完整：开放世界的状态总览、能力轮、地图。",
+          "cost": "新手不知道有这个键，必须首次提示；按住呼出会占用一只手。",
+          "examples": [
+            "steam:2215430",
+            "steam:205100",
+            "steam:1245620"
+          ]
+        },
+        {
+          "name": "语义缩放 / 信息视图",
+          "params": {
+            "rel.semanticZoom": "heatmap",
+            "el.overlay.form": [
+              "heatmap",
+              "statusIcons"
+            ],
+            "el.overlay.visibility": "onDemand"
+          },
+          "whenToUse": "空间分布型数据：城市、工厂、战役地图——拉远看结论（色块），拉近看原因（单体）。",
+          "cost": "切换视图打断操作；红绿热力图对色盲不友好，要换明度渐变。",
+          "examples": [
+            "steam:255710",
+            "steam:427520",
+            "steam:1593030"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "关键操作藏在三层以下或入口不明：HUD 很干净，复杂度全推进了菜单和背包。",
+          "examples": [
+            "steam:892970",
+            "steam:1716740",
+            "steam:275850",
+            "steam:289650",
+            "steam:703080",
+            "steam:1366540"
+          ],
+          "reviewEvidence": "R3「菜单 / 界面难用」24 款：Valheim 7 条、Starfield 4 条，No Man's Sky、Assassin's Creed Unity、Planet Zoo、Dyson Sphere Program 各 3 条。Valheim 局内密度只有 0，却同时是背包抱怨最集中的一款（17 条）——把复杂度从 HUD 挪走并不会让它消失。"
+        },
+        {
+          "desc": "全部摊在第一层：数值表、属性、修正项一次性铺满，没有「先看结论」的入口。",
+          "examples": [
+            "steam:955900",
+            "steam:916440",
+            "steam:2212330"
+          ],
+          "reviewEvidence": "R3「提示 / 引导不清」：Amazing Cultivation Simulator、Anno 1800、Your Only Move Is HUSTLE 各 3 条。"
+        }
+      ],
+      "rules": [
+        "第一层回答「现在怎么样 / 该做什么」，第二层回答「为什么 / 具体多少」；需要第三层时先简化设计。",
+        "每个可展开的地方都要有可见线索：关键词着色或下划线、ⓘ、按键图标。",
+        "输入方式决定披露手段：键鼠 = 悬停；手柄 = 按住或焦点；触屏 = 点击弹层（D-input 自动改写）。",
+        "按键呼出的层第一次出现时给一次软提示（ix.guideForce = soft），之后不再打扰。",
+        "空间数据用语义缩放（D-zoom）：近处看单体，远处看图标，再远看色块。"
+      ],
+      "genres": [
+        "策略与战术",
+        "建造与经营",
+        "工厂与自动化",
+        "角色扮演",
+        "卡牌与桌面",
+        "探索与冒险"
+      ],
+      "sources": [
+        {
+          "title": "Nielsen Norman Group, Progressive Disclosure",
+          "url": "https://www.nngroup.com/articles/progressive-disclosure/",
+          "point": "先只展示少数最重要的选项，专门功能按需展开；两层以上的披露通常损害可用性；展开入口要明显并标清会看到什么。"
+        },
+        {
+          "title": "PCGamesN, Victoria 3 将沿用 Crusader Kings III 的嵌套提示系统",
+          "url": "https://www.pcgamesn.com/victoria-3/nested-tooltip-system",
+          "point": "Paradox 的大战略用「提示里还能再锁定、再展开的提示」来降低学习门槛。"
+        },
+        {
+          "title": "Bandai Namco, ELDEN RING Starter Guide",
+          "url": "https://en.bandainamcoent.eu/elden-ring/news/elden-ring-starter-guide-tips-know-playing-the-game",
+          "point": "HUD 设为自动时平时只留罗盘，需要时按一个键临时显示完整 HUD。"
+        },
+        {
+          "title": "Giant Bomb 用户评测, Into the Breach: A Gem of Constrained Design",
+          "url": "https://www.giantbomb.com/into-the-breach/3030-58234/user-reviews/2200-31048/",
+          "point": "所有敌人意图都画在地图上，悬停按钮即可看到本回合结算的先后顺序——结论在第一层，细节在悬停里。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 4,
+          "cnt.elements": [
+            "el.selection",
+            "el.overlay",
+            "el.resources",
+            "el.toolbar",
+            "el.minimap"
+          ],
+          "lay.detail": "none",
+          "el.selection.form": "panel",
+          "el.overlay.form": [
+            "heatmap",
+            "statusIcons",
+            "rangeRing"
+          ],
+          "el.overlay.visibility": "always",
+          "rel.semanticZoom": "none"
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 2,
+          "cnt.elements": [
+            "el.selection",
+            "el.overlay",
+            "el.resources",
+            "el.toolbar",
+            "el.minimap"
+          ],
+          "lay.detail": "transient",
+          "el.selection.form": "tooltip",
+          "el.overlay.form": [
+            "statusIcons"
+          ],
+          "el.overlay.visibility": "onDemand",
+          "rel.semanticZoom": "labels",
+          "hier.inline": "keyword"
+        },
+        "lookAt": "A 把热力图、范围圈、状态图标和完整信息面板同时铺满；B 平时只留出问题的状态图标，选中时才弹出提示、按键才叠加热力图——第一眼只看到「哪里出事了」，原因在第二层。"
+      }
+    },
+    {
+      "id": "P-contextual-hud",
+      "title": "情境显现：HUD 跟着状态出现和退场，而不是永远在或永远不在",
+      "problem": "常驻 HUD 在平静的大部分时间里是噪声，全隐 HUD 在危急的少数时间里缺信息。情境显现（rel.hudVisibility = contextual / fadeIdle / onDemand，及逐元素的 elx.visibility）是两者之间的折中，也是 R2② 探索 / 动作批次的主流（情境 14、全隐 9、常驻 1）。R3 里标为情境显现的 39 款，「夸 UI」的频率是全库的约 2.4 倍（每千条评测 1.7 次 vs 0.71 次），被夸最多的四款（Plan B: Terraform、Kingdom Two Crowns、Bad North、Ghost of Tsushima）全是情境显现 + 极简密度。代价是触发规则必须可靠，并且不能把导航也一起藏掉。",
+      "approaches": [
+        {
+          "name": "常驻",
+          "params": {
+            "rel.hudVisibility": "always"
+          },
+          "whenToUse": "竞技与对战、信息每秒都在变的游戏（射击、MOBA、格斗、竞速、手游 MMO）。",
+          "cost": "画面永远被占一块；沉浸型作品里显得「界面感」重。",
+          "examples": [
+            "steam:440",
+            "iig:overwatch",
+            "steam:356570",
+            "steam:1693980",
+            "gameui:12771"
+          ]
+        },
+        {
+          "name": "事件触发显现",
+          "params": {
+            "rel.hudVisibility": "contextual",
+            "el.vitals.visibility": "contextual",
+            "el.abilities.visibility": "contextual",
+            "mo.enter": "fade",
+            "mo.duration": 0.3
+          },
+          "whenToUse": "探索为主、战斗间歇长：受伤才出血条、开枪才出弹药、拾取才出计数。",
+          "cost": "触发规则要可预测（进战、受伤、拾取、瞄准），否则玩家不信任 HUD；进战一瞬间所有元素同时涌出也会吓人。",
+          "examples": [
+            "steam:489830",
+            "steam:1196590",
+            "steam:1659420",
+            "steam:224760",
+            "steam:387290",
+            "steam:108710",
+            "steam:1903340"
+          ]
+        },
+        {
+          "name": "静止渐隐",
+          "params": {
+            "rel.hudVisibility": "fadeIdle",
+            "mo.enter": "fade",
+            "mo.duration": 0.6
+          },
+          "whenToUse": "平台、步行、潜行：移动时画面干净，停下来时状态浮出。",
+          "cost": "玩家必须停下来才看得到；节奏快的段落里等于没有 HUD。",
+          "examples": [
+            "steam:19980",
+            "steam:312520"
+          ]
+        },
+        {
+          "name": "按键呼出 + 留一个常驻锚点",
+          "params": {
+            "rel.hudVisibility": "onDemand",
+            "el.minimap.visibility": "always",
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc"
+          },
+          "whenToUse": "开放世界：平时只留罗盘或一行目标，按一个键看完整状态。",
+          "cost": "需要教学和一个专用键位；手柄键位紧张时不好安排。",
+          "examples": [
+            "steam:2215430",
+            "steam:1245620",
+            "steam:489830"
+          ]
+        },
+        {
+          "name": "逐元素分别设置",
+          "params": {
+            "el.vitals.visibility": "contextual",
+            "el.objective.visibility": "always",
+            "el.resources.visibility": "onDemand",
+            "el.minimap.visibility": "onDemand"
+          },
+          "whenToUse": "大型 RPG / 开放世界：每个元素的查看频率差别很大，并且把这些开关也开放给玩家。",
+          "cost": "设置项与测试组合变多；截图、教学要覆盖多种显示状态。",
+          "examples": [
+            "steam:292030",
+            "steam:403640"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "情境化之后引导也一起消失：目标、路线、可交互物只在特定时刻出现，玩家在平静段落里不知道该干什么。",
+          "examples": [
+            "steam:1182900",
+            "steam:1057090",
+            "steam:493340",
+            "steam:312520"
+          ],
+          "reviewEvidence": "R3：A Plague Tale: Requiem 6 条、Ori and the Will of the Wisps 3 条、Planet Coaster 3 条、Rain World 2 条「提示 / 引导不清」（Rain World 另有「太乱」3 条、「菜单难用」2 条）。情境显现的 39 款里 18% 是「引导不清」出处，全库约 14%；每千条评测 2.9 次，全库 2.4 次。"
+        },
+        {
+          "desc": "只有整体开 / 关两档：想关掉罗盘的人只能连 Boss 血条一起关，想看血量的人只能全开。",
+          "examples": [
+            "steam:1245620"
+          ],
+          "reviewEvidence": "R3：ELDEN RING「挡视野」3 条、「引导不清」3 条；Steam 社区另有玩家抱怨 HUD 只能整体关闭（社区讨论，不在 R3 统计里）。"
+        }
+      ],
+      "rules": [
+        "给每个元素写清出现条件和消失条件（进战、受伤、拾取、静止 N 秒），条件要可预测、可学习。",
+        "平静时至少保留一个导航锚点（罗盘条或一行目标），不要让「情境化」变成「无引导」。",
+        "出现用淡入或滑入，约 0.2–0.3 秒；消失前延迟 2–5 秒（经验值），避免闪烁。",
+        "竞技、对战、高频决策保持常驻；情境显现属于探索、叙事和单人动作。",
+        "把档位和逐元素开关交给玩家：常驻 / 情境 / 全隐，每项可单独显隐（见 P-adaptive-layers）。"
+      ],
+      "genres": [
+        "探索与冒险",
+        "动作与 Roguelite",
+        "恐怖",
+        "横版平台",
+        "叙事",
+        "生存与制作"
+      ],
+      "sources": [
+        {
+          "title": "Bandai Namco, ELDEN RING Starter Guide",
+          "url": "https://en.bandainamcoent.eu/elden-ring/news/elden-ring-starter-guide-tips-know-playing-the-game",
+          "point": "自动 HUD：平时除罗盘外全部隐藏，按键可临时查看——「按需 + 常驻锚点」的官方做法。"
+        },
+        {
+          "title": "Weiser & Brown, Designing Calm Technology (1995)",
+          "url": "https://calmtech.com/papers/designing-calm-technology",
+          "point": "信息应当能在外围与中心之间移动：平时安静地待在外围，需要时进入中心。"
+        },
+        {
+          "title": "Llanos & Jørgensen, Do Players Prefer Integrated User Interfaces? (DiGRA 2011)",
+          "url": "https://dl.digra.org/index.php/dl/article/view/514",
+          "point": "界面「透明」并不必然带来更强的投入感；很多玩家因为信息清楚而偏好叠加式 HUD——情境显现应当可选而不是强制。"
+        },
+        {
+          "title": "AbleGamers / accessible.games, Personal Interface",
+          "url": "https://accessible.games/accessible-player-experiences/access-patterns/personal-interface/",
+          "point": "让玩家按需显示、隐藏、缩放、固定或重排界面组件。"
+        },
+        {
+          "title": "本项目 11 R2② 探索 / RPG / 动作批次总结",
+          "url": "docs/survey/11-r2-arpg.md",
+          "point": "「零 HUD / 情境显现」是 3A 探索作的主流，rel.hudVisibility 与 cnt.density 是该品类的第一旋钮。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap",
+            "el.objective",
+            "el.resources"
+          ],
+          "rel.hudVisibility": "always",
+          "el.minimap.form": "plan",
+          "el.objective.form": [
+            "text"
+          ],
+          "chk.demo": "combatBeat"
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.minimap",
+            "el.objective",
+            "el.resources"
+          ],
+          "rel.hudVisibility": "contextual",
+          "el.vitals.visibility": "contextual",
+          "el.abilities.visibility": "contextual",
+          "el.resources.visibility": "onDemand",
+          "el.minimap.form": "compassBar",
+          "el.minimap.visibility": "always",
+          "el.minimap.screenAnchor": "tc",
+          "el.objective.form": [
+            "text"
+          ],
+          "el.objective.visibility": "always",
+          "mo.enter": "fade",
+          "mo.duration": 0.3,
+          "chk.demo": "combatBeat"
+        },
+        "lookAt": "播放「战斗节拍」：A 从头到尾一样满；B 在探索段只剩罗盘条和一行目标，进战、受伤时血条和技能淡入，战斗结束后几秒内退场。注意 B 始终保留了导航锚点。"
+      }
+    },
+    {
+      "id": "P-hudless-tax",
+      "title": "无 HUD 要交「导航税」：信息搬进世界后，引路和地图必须另有着落",
+      "problem": "零 HUD 是参考库里最大的流派之一：HUD 全隐 35 张卡、叙事内 37 张、密度「极简」119 张，画面干净，也常被夸。但 R3 显示代价高度集中在「不知道去哪、该干什么、没有地图」：全隐的 34 款每千条评测有 4.7 次「引导不清」（全库 2.4，约 2 倍），叙事内的 36 款 5.4 次、25% 是出处；同品类内比较，探索类密度 0–1 的 28 款为 2.4 次 vs 密度 2–4 的 11 款 0.3 次，恐怖 4.9 vs 0，生存 5.7 vs 1.5（高密度一侧样本较少，只作方向参考）。与之相对，全隐的 34 款没有一款是「太乱」出处。去掉 HUD 换来干净，换走的是导航——必须用世界、按需层或可选辅助补回来。",
+      "approaches": [
+        {
+          "name": "世界引路：光、颜色、地标、风",
+          "params": {
+            "rel.hudVisibility": "hidden",
+            "rel.diegesis": "spatial",
+            "rel.worldRender": "outline",
+            "cnt.density": 0
+          },
+          "whenToUse": "线性或有强地标的世界；美术能保证引路元素在所有光照下都有对比。",
+          "cost": "依赖美术与关卡协同；对比会随场景失效（Ghost of Tsushima 的风在雪地里变弱）。",
+          "examples": [
+            "steam:17410",
+            "steam:2215430",
+            "steam:414340"
+          ]
+        },
+        {
+          "name": "叙事内载体：身上、手里、设备上",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "player",
+            "rel.hudVisibility": "hidden"
+          },
+          "whenToUse": "第一 / 第三人称，设定里有合理载体（宇航服、手电、纸地图、枪身屏幕）。",
+          "cost": "读取更慢、受镜头角度影响；状态读得到，但「去哪」仍然缺。",
+          "examples": [
+            "steam:1693980",
+            "steam:383870",
+            "steam:264710",
+            "steam:361420",
+            "steam:883710",
+            "steam:546560",
+            "steam:638230"
+          ]
+        },
+        {
+          "name": "扫描 / 感知模式：按需把信息叠回世界",
+          "params": {
+            "rel.hudVisibility": "contextual",
+            "el.overlay.form": [
+              "holo"
+            ],
+            "el.overlay.visibility": "onDemand",
+            "rel.worldRender": "outline"
+          },
+          "whenToUse": "想保持平时零 HUD，又需要战术或导航信息：侦探视觉、聚焦扫描、聆听模式。",
+          "cost": "玩家可能长期开着扫描模式，整个游戏变成看全息线框，削弱美术。",
+          "examples": [
+            "steam:208650",
+            "steam:2420110",
+            "steam:1850570",
+            "steam:2531310",
+            "steam:1161580"
+          ]
+        },
+        {
+          "name": "最低安全网：罗盘条、一行目标、按需地图",
+          "params": {
+            "el.minimap.form": "compassBar",
+            "el.minimap.visibility": "onDemand",
+            "el.objective.form": [
+              "text"
+            ],
+            "cnt.density": 1
+          },
+          "whenToUse": "非线性开放世界：保留最少的方向信息，其余全隐。",
+          "cost": "破坏一点「纯净」；罗盘条上的标记多了又会变成 HUD。",
+          "examples": [
+            "steam:489830",
+            "steam:1245620",
+            "steam:275850",
+            "steam:2420110"
+          ]
+        },
+        {
+          "name": "可选辅助层：在难度 / 无障碍里打开",
+          "params": {
+            "ix.guideForce": "soft",
+            "el.objective.form": [
+              "marker",
+              "edgeArrow"
+            ],
+            "el.objective.visibility": "onDemand"
+          },
+          "whenToUse": "想保留作者意图，又照顾容易迷路或低视力的玩家：导航辅助、路线高亮。",
+          "cost": "要额外实现和测试；默认关闭时，需要辅助的玩家未必知道它存在。",
+          "examples": [
+            "steam:2531310",
+            "steam:17410"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "零 HUD + 非线性世界 + 没有地图（或只有极简目标行）：玩家只能凭记忆认路。",
+          "examples": [
+            "steam:698670",
+            "steam:1903340",
+            "steam:257850",
+            "steam:1931770",
+            "steam:1307580",
+            "steam:1055540"
+          ],
+          "reviewEvidence": "R3「地图难用 / 没有地图」19 款：Clair Obscur: Expedition 33 13 条（全库单款最集中）、Hyper Light Drifter 6 条、Chants of Sennaar 5 条、Scorn / TOEM / A Short Hike 各 4 条；Scorn 另有「引导不清」10 条。密度 0–1 的游戏 8–11% 是「地图」出处，密度 2–3 的只有 0–2%。"
+        },
+        {
+          "desc": "世界即 UI，但规则从不教：资源、建造、谜题机制全靠试错发现。",
+          "examples": [
+            "steam:701160",
+            "steam:557600",
+            "steam:424840",
+            "steam:414340",
+            "steam:361420"
+          ],
+          "reviewEvidence": "R3：Kingdom Two Crowns「引导不清」7 条（同时是「夸 UI 简洁」的头部，3 条）；ASTRONEER 5 条；Gorogoa、Little Nightmares、Hellblade 各 3 条。"
+        }
+      ],
+      "rules": [
+        "去掉 HUD 之前，先列出玩家每分钟要回答的问题；每一个都必须有世界内答案或按需答案。",
+        "导航最先补，优先级：光 / 颜色 / 地标引路 > 按需罗盘 > 常驻小地图；非线性世界至少给一张按需地图。",
+        "世界引路要过对比测试：雪地、夜晚、雾、强光各看一遍（06 文档 C.4 灰度 / 眯眼检查）。",
+        "叙事内数值要在 1 秒内读出（颜色分级 > 精确数字），读不出就补一个情境显现的屏幕叠加。",
+        "提供可选辅助层（导航辅助、路线高亮、HUD 档位）；默认可以是作者的纯净档。"
+      ],
+      "genres": [
+        "探索与冒险",
+        "恐怖",
+        "解谜",
+        "叙事",
+        "生存与制作",
+        "横版平台"
+      ],
+      "sources": [
+        {
+          "title": "Fagerholt & Lorentzon, Beyond the HUD (Chalmers / EA DICE, 2009)",
+          "url": "https://odr.chalmers.se/handle/20.500.12380/111921",
+          "point": "叙事内 / 非叙事 / 空间内 / 元四分法的出处；建议根据游戏的虚构设定决定信息是否放进世界。"
+        },
+        {
+          "title": "Llanos & Jørgensen, Do Players Prefer Integrated User Interfaces? (DiGRA 2011)",
+          "url": "https://dl.digra.org/index.php/dl/article/view/514",
+          "point": "融入式界面不必然提升投入感，玩家常因信息清楚而偏好叠加式——零 HUD 是取舍，不是默认更好。"
+        },
+        {
+          "title": "Dino Ignacio, Crafting Destruction: The Evolution of the Dead Space User Interface (GDC 2013)",
+          "url": "https://gdcvault.com/play/1017723/Crafting-Destruction-The-Evolution-of",
+          "point": "死亡空间把血量、弹药、菜单做成宇航服与全息投影，目标是拆掉玩家与游戏之间的「安全墙」。"
+        },
+        {
+          "title": "EA, Follow the Red: Runner's Vision in Mirror's Edge Catalyst",
+          "url": "https://ea.com/news/runners-vision-in-mirrors-edge-catalyst",
+          "point": "零 HUD 跑酷用红色高亮可攀爬物引路，并提供关闭 / 经典 / 完整三档。"
+        },
+        {
+          "title": "GDC Vault, Exploration in Ghost of Tsushima: Letting the Island Guide You (GDC 2021)",
+          "url": "https://www.gdcvault.com/play/1027399/Exploration-in-Ghost-of-Tsushima",
+          "point": "用多种世界内手段让玩家把视线留在岛上并发现内容，代替小地图与路点。"
+        },
+        {
+          "title": "Can I Play That, Ghost of Tsushima Accessibility Review",
+          "url": "https://caniplaythat.com/2020/07/29/ghost-of-tsushima-accessibility-review/",
+          "point": "引导之风在早期很醒目，到雪地区域与地面对比下降、变得难以跟随——世界引路需要对比测试。"
+        },
+        {
+          "title": "PlayStation Blog, The Last of Us Part II accessibility features detailed (2020)",
+          "url": "https://blog.playstation.com/2020/06/09/the-last-of-us-part-ii-accessibility-features-detailed",
+          "point": "低视力预设一并打开高对比显示、大号 HUD 与导航 / 攀爬辅助——极简 HUD 作品用可选辅助层兜底。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "rel.hudVisibility": "hidden",
+          "rel.diegesis": "diegetic",
+          "cnt.density": 0,
+          "cnt.elements": []
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "rel.hudVisibility": "contextual",
+          "rel.diegesis": "diegetic",
+          "cnt.density": 0,
+          "cnt.elements": [
+            "el.objective",
+            "el.minimap",
+            "el.interact"
+          ],
+          "el.objective.form": [
+            "marker",
+            "edgeArrow"
+          ],
+          "el.objective.diegesis": "spatial",
+          "el.objective.attachTo": "poi",
+          "el.minimap.form": "compassBar",
+          "el.minimap.visibility": "onDemand",
+          "el.minimap.screenAnchor": "tc",
+          "el.interact.form": [
+            "keyPrompt"
+          ],
+          "el.interact.attachTo": "poi",
+          "ix.guideForce": "soft"
+        },
+        "lookAt": "静止截图里两边几乎一样干净；区别在于 B 在世界里多了一个路点（出屏时变成边缘箭头）、按住才出现的罗盘条和贴在物体上的交互提示——这就是零 HUD 必须交的那份「导航税」。"
+      }
+    },
+    {
+      "id": "P-squint-test",
+      "title": "眯眼检验：模糊后最显眼的必须是玩法信息，不是装饰和特效",
+      "problem": "层级最后是由像素决定的：一个金色角花、一团放射光、一张高饱和立绘，都可能比血条更抢眼。NN/g 的眯眼法和 06 文档的可读性检查 #2 给出了统一的验收方式（chk.squint）。08 调研显示，带材质贴图的局内 HUD 极少（战斗界面抽样 100 张只有 1 张），业界默认把华丽留给停下来看的界面；但手游自动战斗、华丽皮肤和重特效动作游戏仍常在 HUD 上违反这一点。",
+      "approaches": [
+        {
+          "name": "装饰预算分区：局内低、菜单高",
+          "params": {
+            "vis.ornament": 0,
+            "ast.ornaments": [],
+            "ast.fx": [],
+            "vis.motif": "none"
+          },
+          "whenToUse": "几乎所有局内 HUD；风格感交给菜单、标题、结算和画面本身（Hollow Knight 局内只有面具，护符页才用卷草纹）。",
+          "cost": "HUD 本身的风格辨识度下降，要靠字体、图标和配色补。",
+          "examples": [
+            "steam:1245620",
+            "steam:2358720",
+            "steam:367520",
+            "steam:1145360"
+          ]
+        },
+        {
+          "name": "明度分层：底板 / 描边保证主信息最亮",
+          "params": {
+            "typ.legibility": "scrim",
+            "vis.opacity": 0.85,
+            "col.lightness": "dark"
+          },
+          "whenToUse": "背后是明亮且杂乱的实时画面（植被、雪地、爆炸）。",
+          "cost": "底板压住画面，界面感更重；与「降低透明」无障碍选项联动。",
+          "examples": [
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "steam:1062090",
+            "steam:1366540"
+          ]
+        },
+        {
+          "name": "饱和度只给焦点",
+          "params": {
+            "col.strategy": "neutralAccent",
+            "col.saturation": 0.7,
+            "hier.emphasis": [
+              "color"
+            ]
+          },
+          "whenToUse": "写实、暗调或单色画面：骨架灰白，只有目标 / 危险用彩色。",
+          "cost": "整体偏冷淡；必须有形状冗余照顾色盲。",
+          "examples": [
+            "steam:870780",
+            "steam:531510",
+            "steam:17410",
+            "steam:620"
+          ]
+        },
+        {
+          "name": "特效让位：玩家自己的特效降亮度，威胁最显眼",
+          "params": {
+            "mo.juice": 0.4,
+            "chk.fxOcclusion": true,
+            "el.threat.priority": "primary",
+            "el.threat.form": [
+              "telegraph"
+            ]
+          },
+          "whenToUse": "动作、弹幕、MOBA 式技能、手游自动战斗——特效越多越需要。",
+          "cost": "爽快感下降；要在打击感与可读之间调 mo.juice。",
+          "examples": [
+            "steam:590380",
+            "steam:2322010",
+            "steam:814380"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "自动战斗手游：大招特效、伤害飘字、「总伤害」大字压过血条和头像条，HUD 退成边角小图标。",
+          "examples": [
+            "gameui:6853",
+            "gameui:6904",
+            "gameui:7312"
+          ],
+          "reviewEvidence": "这些是 GameUI 手游，没有 Steam 评测数据；依据是 mobile 批次的截图观察（15-r4-mobile.md 与 sheet-land-02）。"
+        },
+        {
+          "desc": "华丽框体、发光与高饱和图标叠在局内 HUD 上，和战斗特效同频，玩家分不清哪个是信息。",
+          "examples": [
+            "steam:1145350",
+            "steam:257850",
+            "steam:960090"
+          ],
+          "reviewEvidence": "R3：Hades II「挡视野」4 条 + 「字太小」2 条；Hyper Light Drifter「太乱」3 条 + 「字太小」2 条；Bloons TD 6「太乱」5 条（关键词粗筛）。"
+        }
+      ],
+      "rules": [
+        "每次换皮肤、加特效后都开 chk.squint：模糊半径约为视口高的 0.5–1%，最显眼的三处应是玩家、威胁、目标（或本屏的主操作）。",
+        "局内 HUD 装饰预算 ≤ 1、叠加特效层为空；华丽留给菜单、标题、结算这些停下来看的界面。",
+        "高饱和与发光是稀缺资源：同一屏只给一个类别。",
+        "玩家自己特效的亮度要低于敌方前摇（06 文档 A2）。",
+        "再用全色盲模拟（chk.cvd = 灰度）眯一次：只靠明度时层级也要成立。"
+      ],
+      "genres": [
+        "动作与 Roguelite",
+        "手游横屏战斗",
+        "射击",
+        "策略与战术",
+        "卡牌与桌面",
+        "全品类（皮肤更换时）"
+      ],
+      "sources": [
+        {
+          "title": "Nielsen Norman Group, Squint Test（视频）",
+          "url": "https://www.nngroup.com/videos/squint-test/",
+          "point": "眯眼或轻度模糊可以快速找出最抢注意力的元素，检查高优先级内容是否真的最突出。"
+        },
+        {
+          "title": "Nielsen Norman Group, Visual Hierarchy in UX: Definition",
+          "url": "https://www.nngroup.com/articles/visual-hierarchy-ux-definition/",
+          "point": "用不同模糊半径看页面：小半径看分组，大半径常暴露出某个强色块意外成为主角——内容（图片、特效）也会改变层级。"
+        },
+        {
+          "title": "Riot Games, Clarity in League (2021)",
+          "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+          "point": "特效要与玩法匹配、噪声要克制；皮肤不能比原版更难读。"
+        },
+        {
+          "title": "本项目 08 UI 美术资产调研 §2.1",
+          "url": "docs/survey/08-ui-art-assets.md",
+          "point": "带材质标签的截图集中在商城、奖励、登录、读取等界面；战斗界面抽样 100 张只有 1 张带材质。"
+        },
+        {
+          "title": "本项目 06 可读性检查清单 C.4",
+          "url": "docs/survey/06-genre-camera-ui.md",
+          "point": "眯眼 / 模糊检查：模糊后最显眼的三个区域应是玩家、威胁、目标；另有灰度、色盲、特效压力检查。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.threat",
+            "el.objective",
+            "el.feedback"
+          ],
+          "el.threat.form": [
+            "bossBar"
+          ],
+          "el.feedback.form": [
+            "floatNumbers",
+            "combo"
+          ],
+          "vis.ornament": 3,
+          "vis.motif": "floral",
+          "ast.ornaments": [
+            "corners",
+            "gems"
+          ],
+          "ast.fx": [
+            "glow",
+            "rays"
+          ],
+          "col.strategy": "polychrome",
+          "col.saturation": 1.5,
+          "hier.emphasis": [],
+          "hier.dimInactive": 0,
+          "mo.juice": 0.9,
+          "chk.squint": true
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.elements": [
+            "el.vitals",
+            "el.abilities",
+            "el.threat",
+            "el.objective",
+            "el.feedback"
+          ],
+          "el.threat.form": [
+            "bossBar"
+          ],
+          "el.feedback.form": [
+            "floatNumbers"
+          ],
+          "vis.ornament": 1,
+          "vis.motif": "none",
+          "ast.ornaments": [],
+          "ast.fx": [],
+          "col.strategy": "neutralAccent",
+          "col.saturation": 0.8,
+          "hier.emphasis": [
+            "value",
+            "color"
+          ],
+          "hier.dimInactive": 0.3,
+          "el.vitals.priority": "primary",
+          "el.threat.priority": "primary",
+          "el.objective.priority": "secondary",
+          "mo.juice": 0.4,
+          "chk.squint": true
+        },
+        "lookAt": "两边都开着眯眼检查：A 模糊后最亮的是金色角花、放射光和连击大字；B 最亮的是血条、Boss 条和目标。元素完全相同，只是装饰、特效和饱和度的预算换了地方。"
+      }
+    },
+    {
+      "id": "P-actionable-first",
+      "title": "先给能行动的信息：意图、预警、结果预览和差值，而不是原始状态",
+      "problem": "原始状态（血量、属性表）要玩家自己推演「接下来会怎样」；把推演结果直接画出来，就等于把最高优先级让给了「下一步」。R2 策略 / 卡牌批次里「敌人意图 + 数字」反复出现（6 款），是这些品类区别于动作游戏的关键元素；动作游戏里对应的是地面预警和攻击类型颜色。参数上对应 el.threat.form（intent / telegraph / hitChance）、st.delta、lay.preview、elx.valueLabel = delta。",
+      "approaches": [
+        {
+          "name": "敌人意图 + 数字",
+          "params": {
+            "el.threat.form": [
+              "intent"
+            ],
+            "el.threat.attachTo": "target",
+            "el.threat.valueLabel": "current",
+            "ctx.timeModel": "turn"
+          },
+          "whenToUse": "回合制、确定性战斗：每个敌人头顶 / 格子上画出下一步动作类型和伤害。",
+          "cost": "减少惊喜与不确定性，玩法要接受「完全信息」；敌人多时头顶图标互相遮挡。",
+          "examples": [
+            "steam:590380",
+            "iig:slay-the-spire",
+            "steam:2084000",
+            "steam:1775490",
+            "steam:1668690",
+            "steam:2674590"
+          ]
+        },
+        {
+          "name": "地面预警 / 攻击类型颜色",
+          "params": {
+            "el.threat.form": [
+              "telegraph"
+            ],
+            "el.threat.worldRender": "decal",
+            "col.coding": [
+              "status"
+            ]
+          },
+          "whenToUse": "实时动作中的可躲闪攻击：红圈不可格挡、黄圈可弹反、视锥表示警戒范围。",
+          "cost": "地面贴花一多会和技能特效混在一起；颜色需配形状冗余。",
+          "examples": [
+            "steam:2322010",
+            "steam:814380",
+            "steam:1486630",
+            "steam:590380"
+          ]
+        },
+        {
+          "name": "命中率 / 概率直给",
+          "params": {
+            "el.threat.form": [
+              "hitChance"
+            ],
+            "el.threat.valueLabel": "percent"
+          },
+          "whenToUse": "概率战术：瞄准时直接显示成功率。",
+          "cost": "显示越精确，玩家对「高概率落空」越不满，概率模型要诚实或做保护。",
+          "examples": [
+            "steam:268500"
+          ]
+        },
+        {
+          "name": "结果预览与前后差值",
+          "params": {
+            "st.delta": "arrow",
+            "lay.preview": true,
+            "el.vitals.valueLabel": "delta"
+          },
+          "whenToUse": "构筑、升级、出牌、法令：确认前就看到 a → b。",
+          "cost": "实现成本高（要预先模拟结算）；预览与实际不一致会严重伤害信任。",
+          "examples": [
+            "steam:2501600",
+            "steam:1668690",
+            "steam:2379780"
+          ]
+        },
+        {
+          "name": "倒计时 / 截止",
+          "params": {
+            "el.timer.form": "number",
+            "el.timer.priority": "primary",
+            "st.alert": "redTint"
+          },
+          "whenToUse": "有期限的经济或节奏：房租到期、敌人行动倒数、剩余时间。",
+          "cost": "制造持续压力；倒计时多了玩家会焦虑或麻木。",
+          "examples": [
+            "steam:1404850",
+            "steam:2084000",
+            "steam:460950",
+            "steam:874390"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "只给原始状态、让玩家心算后果：数值都在，但「这样做会怎样」需要自己推。",
+          "examples": [
+            "steam:2212330",
+            "steam:955900",
+            "steam:916440",
+            "steam:1062090"
+          ],
+          "reviewEvidence": "R3「提示 / 引导不清」：Your Only Move Is HUSTLE、Amazing Cultivation Simulator、Anno 1800、Timberborn 各 3 条——都是「信息很全、后果不明」的策略 / 模拟。"
+        }
+      ],
+      "rules": [
+        "先问「玩家下一步要做什么决定」，再把这个决定需要的结果画在决定发生的地方（格子上、敌人头上、按钮上）。",
+        "预览与最终结果用同一套编码（同色、同形、同位置），确认前后不跳变。",
+        "意图 = 图标表示类型 + 数字表示量，数字紧跟图标，不另起一处。",
+        "不确定就显示不确定（区间、概率），不要假装精确。",
+        "这类信息默认是 elx.priority = 主，强调它而不是原始血量。"
+      ],
+      "genres": [
+        "策略与战术",
+        "卡牌与桌面",
+        "动作与 Roguelite",
+        "建造与经营"
+      ],
+      "sources": [
+        {
+          "title": "Giant Bomb 用户评测, Into the Breach: A Gem of Constrained Design",
+          "url": "https://www.giantbomb.com/into-the-breach/3030-58234/user-reviews/2200-31048/",
+          "point": "一张截图就包含战场的全部状态：敌人意图都可见，悬停还能看结算顺序，整个战场不需要滚动。"
+        },
+        {
+          "title": "Rock Paper Shotgun 2018 Into the Breach 界面设计报道（转载，见 06 文档 [27]）",
+          "url": "https://reads.mhlakhani.com/posts/582127219_10156233399322220",
+          "point": "开发者表示界面是最大的难点之一，凡是表达不清楚的点子宁可舍弃。"
+        },
+        {
+          "title": "Riot Games, Clarity in League (2021)",
+          "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/",
+          "point": "特效的判定范围要与看到的一致，投射物要看得出方向——把「接下来会发生什么」交给画面。"
+        },
+        {
+          "title": "本项目 10 R2① 策略批次总结 §8",
+          "url": "docs/survey/10-r2-strategy.md",
+          "point": "Into the Breach、Slice & Dice、Shogun Showdown、Beltmatic 都把敌人下一步画在格子或头顶。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "ctx.timeModel": "turn",
+          "cnt.elements": [
+            "el.threat",
+            "el.vitals",
+            "el.turnOrder",
+            "el.cta",
+            "el.selection"
+          ],
+          "el.threat.form": [
+            "healthBar"
+          ],
+          "el.threat.attachTo": "target",
+          "el.selection.form": "panel",
+          "el.vitals.valueLabel": "currentMax",
+          "st.delta": "newOnly",
+          "lay.preview": false,
+          "el.turnOrder.form": "icons"
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "ctx.timeModel": "turn",
+          "cnt.elements": [
+            "el.threat",
+            "el.vitals",
+            "el.turnOrder",
+            "el.cta",
+            "el.selection",
+            "el.overlay"
+          ],
+          "el.threat.form": [
+            "healthBar",
+            "intent",
+            "telegraph"
+          ],
+          "el.threat.attachTo": "target",
+          "el.threat.valueLabel": "current",
+          "el.threat.priority": "primary",
+          "el.selection.form": "tooltip",
+          "el.vitals.valueLabel": "delta",
+          "st.delta": "arrow",
+          "lay.preview": true,
+          "el.overlay.form": [
+            "gridHighlight"
+          ],
+          "el.turnOrder.form": "portraitQueue"
+        },
+        "lookAt": "A 只告诉你「现在」：敌人剩多少血、你剩多少血；B 在敌人头顶画出下回合打谁、打多少，地面标出攻击格，选中行动时直接预览「血量 a → b」。玩家的心算被界面替代，这才是该放大的「主」信息。"
+      }
+    },
+    {
+      "id": "P-adaptive-layers",
+      "title": "分档与可调：新手档、作者档、老手档并存",
+      "problem": "不同玩家需要的层级不同：新手需要引导和标注，老手嫌它挡；有人要沉浸，有人要信息。研究显示玩家对「融入式还是叠加式」没有统一偏好（Llanos & Jørgensen 2011），也没有一种显示方式对所有信息都最好（Peacocke 等 2018 的后续研究）。R3 里 Kingdom Two Crowns 同时是「夸 UI 简洁」与「骂引导不清」的头部——同一个设计服务了两类人，却只给了一个档位。参数体系里这对应玩家选项（a11y.*）、逐元素显隐（elx.visibility）和引导强度（ix.guideForce）。",
+      "approaches": [
+        {
+          "name": "HUD 档位预设（常驻 / 自动 / 关闭）",
+          "params": {
+            "rel.hudVisibility": "contextual",
+            "el.minimap.visibility": "always"
+          },
+          "whenToUse": "中大型单机：给一个作者推荐档，另给更多 / 更少两档。",
+          "cost": "每档都要能玩通（全关时也要有导航办法）。",
+          "examples": [
+            "steam:1245620",
+            "steam:1174180",
+            "steam:403640"
+          ]
+        },
+        {
+          "name": "引导强度档：路点、路线高亮可开可关",
+          "params": {
+            "ix.guideForce": "soft",
+            "el.objective.form": [
+              "marker",
+              "edgeArrow"
+            ],
+            "el.guide.form": "ring"
+          },
+          "whenToUse": "零 HUD / 极简作品想照顾迷路玩家，或高难度档故意去掉提示。",
+          "cost": "要额外实现与测试；默认关闭时需要在开场说明有这个选项。",
+          "examples": [
+            "steam:17410",
+            "steam:2531310"
+          ]
+        },
+        {
+          "name": "UI 与文字缩放",
+          "params": {
+            "a11y.uiScale": 1.25,
+            "a11y.textScale": 1.3
+          },
+          "whenToUse": "电视、掌机、高分屏、低视力玩家；密度 ≥ 3 的界面必备。",
+          "cost": "布局必须能伸缩（Godot 容器 + 锚点），放大后不能溢出或互相压；缺了它的反例见本条反模式（RollerCoaster Tycoon Classic、Melvor Idle）。",
+          "examples": [
+            "steam:2531310"
+          ]
+        },
+        {
+          "name": "逐元素显隐、缩放、重排",
+          "params": {
+            "el.minimap.visibility": "onDemand",
+            "el.minimap.scale": 0.8,
+            "el.objective.visibility": "always",
+            "el.party.visibility": "contextual"
+          },
+          "whenToUse": "长线游戏、PC、MMO：玩家会根据自己的打法重新排 HUD。",
+          "cost": "测试矩阵和教学截图要覆盖多种布局；默认布局仍需最好。",
+          "examples": [
+            "steam:292030",
+            "steam:403640",
+            "iig:world-of-warcraft"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "只有一个档位：零 HUD 作品不提供任何可选引导，或者 HUD 只能整体开关。",
+          "examples": [
+            "steam:701160",
+            "steam:698670",
+            "steam:1245620"
+          ],
+          "reviewEvidence": "R3：Kingdom Two Crowns「引导不清」7 条、「夸 UI」3 条；Scorn「引导不清」10 条；ELDEN RING「挡视野」3 条、「引导不清」3 条。"
+        },
+        {
+          "desc": "不支持缩放：小字号和固定像素布局在大屏、高分屏上不可读。",
+          "examples": [
+            "steam:8870",
+            "steam:683900",
+            "steam:298110",
+            "steam:1267910"
+          ],
+          "reviewEvidence": "R3「UI 缩放 / 分辨率」：BioShock Infinite 4 条、RollerCoaster Tycoon Classic 3 条、Far Cry 4 2 条、Melvor Idle 2 条。"
+        }
+      ],
+      "rules": [
+        "默认档 = 作者意图；另给至少一个「更多信息」档和一个「更少信息」档。",
+        "引导类信息（路点、路线高亮、目标提示）放进难度或辅助选项里，而不是直接删掉。",
+        "每个元素可单独显隐；UI 缩放至少 0.75–1.5，文字可放大到 200%（XAG 101）。",
+        "切档时在暂停菜单里实时预览（探索台的「玩家设置预览」），玩家立刻看到差别。",
+        "无障碍预设（低视力、运动）一键打开一组相关选项（大 HUD、高对比、导航辅助），再允许逐项微调。"
+      ],
+      "genres": [
+        "探索与冒险",
+        "动作与 Roguelite",
+        "恐怖",
+        "角色扮演",
+        "建造与经营",
+        "电视 / 掌机平台"
+      ],
+      "sources": [
+        {
+          "title": "Llanos & Jørgensen, Do Players Prefer Integrated User Interfaces? (DiGRA 2011)",
+          "url": "https://dl.digra.org/index.php/dl/article/view/514",
+          "point": "玩家对界面的态度差异很大：透明界面与投入感没有必然联系，许多人因清晰而偏好叠加式 HUD。"
+        },
+        {
+          "title": "Peacocke, Teather, Carette, MacKenzie, McArthur, An empirical comparison of first-person shooter information displays (Entertainment Computing 26, 2018)",
+          "url": "https://www.yorku.ca/mack/ec2018.html",
+          "point": "HUD、叙事内、空间内显示没有哪一种始终更好，表现取决于信息类型、呈现方式和任务——要按信息逐项选择，而不是按「沉浸」潮流一刀切。"
+        },
+        {
+          "title": "AbleGamers / accessible.games, Personal Interface",
+          "url": "https://accessible.games/accessible-player-experiences/access-patterns/personal-interface/",
+          "point": "让玩家显示、隐藏、缩放、固定或重排界面组件；举了 Fortnite 移动版布局工具和 Battlefield 1 小地图尺寸 / 透明度的例子。"
+        },
+        {
+          "title": "Microsoft, Xbox Accessibility Guideline 101",
+          "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/101",
+          "point": "最小默认字号之上，玩家应能把文字放大到 200% 且不丢内容。"
+        },
+        {
+          "title": "PlayStation Blog, The Last of Us Part II accessibility features detailed (2020)",
+          "url": "https://blog.playstation.com/2020/06/09/the-last-of-us-part-ii-accessibility-features-detailed",
+          "point": "用预设一键打开大号 HUD、高对比显示、导航辅助等一组选项，之后可逐项调整。"
+        },
+        {
+          "title": "EA, Follow the Red: Runner's Vision in Mirror's Edge Catalyst",
+          "url": "https://ea.com/news/runners-vision-in-mirrors-edge-catalyst",
+          "point": "引路高亮提供关闭、经典、完整三档，由玩家决定要多少帮助。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 2,
+          "rel.hudVisibility": "always",
+          "cnt.elements": [
+            "el.vitals",
+            "el.objective",
+            "el.minimap",
+            "el.prompt",
+            "el.interact"
+          ],
+          "ix.guideForce": "soft",
+          "el.objective.form": [
+            "text",
+            "marker",
+            "edgeArrow"
+          ],
+          "el.minimap.form": "plan",
+          "el.prompt.form": [
+            "contextual"
+          ],
+          "el.interact.form": [
+            "keyPrompt"
+          ],
+          "a11y.uiScale": 1.2
+        },
+        "b": {
+          "cnt.screen": "screen.hud",
+          "lay.container": "overlay",
+          "cnt.density": 0,
+          "rel.hudVisibility": "contextual",
+          "cnt.elements": [
+            "el.vitals",
+            "el.objective",
+            "el.minimap",
+            "el.prompt",
+            "el.interact"
+          ],
+          "ix.guideForce": "none",
+          "el.objective.form": [
+            "marker"
+          ],
+          "el.objective.visibility": "onDemand",
+          "el.minimap.form": "compassBar",
+          "el.minimap.visibility": "onDemand",
+          "el.prompt.form": [],
+          "el.interact.form": [
+            "bracket"
+          ],
+          "el.vitals.visibility": "contextual",
+          "a11y.uiScale": 1
+        },
+        "lookAt": "同一个场景的两个玩家档：A 是新手档（常驻目标、路点和屏外箭头、按键提示、稍大的 UI），B 是老手档（几乎全隐，按键才出罗盘和路点）。好的设计两档都提供，而不是在两者之间替所有玩家选一个。"
+      }
+    }
+  ]
+}

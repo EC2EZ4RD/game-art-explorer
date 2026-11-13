@@ -1,0 +1,1281 @@
+{
+  "meta": {
+    "scope": "友好 / 卡通 / 治愈系 UI 风格族：糖果卡通（Q 版）、圆润友好、像素木框、孟菲斯、Frutiger Aero、手游抽卡金框（后者只记视觉语法）。商城、首充、签到、抽卡、通行证、红包、广告等运营界面不在研究范围：样本里出现时只看它的面板 / 按钮画法，不从中总结原则。",
+    "method": "uiRefs.json 中这 6 族共 72 张卡全部过一遍 note；看过 strategy 18 张、arpg 8 张、life 14 张、card 10 张、mobile 13 张卡的对照图或单张截图（共约 50 款，其余为无 UI 的商店宣传图）；对照 uiSpec.gen.json 的 skin.candy / cozy / pixelWood / memphis / aero / gacha 与 src/hud/sys/theme.ts 的实际渲染；差评计数取自 ui-review-stats.json。",
+    "reassigned": "原 family 标注与本文件 assignments 的差异：gameui:13082 贪吃怪大作战、gameui:13296 魔魔打勇士 从糖果卡通改入圆润友好；gameui:12994 小小英雄、gameui:7158 英杰传 从圆润友好改入糖果卡通的「Q 版 RPG 奶油卡」；steam:1419170 My Singing Monsters 从手游抽卡金框改入像素木框的「手绘卡通木框」；gameui:12498 末世王者 从手游抽卡金框改入糖果卡通的「粗黑描边贴纸」；gameui:13411 快来当领主 从糖果卡通改入「手绘卡通木框」。理由见各子族定义。",
+    "cardCount": 72
+  },
+  "families": [
+    {
+      "family": "糖果卡通（Q 版）",
+      "skin": "skin.candy",
+      "noCards": false,
+      "definition": "把 UI 当成可以捏的糖果 / 注塑玩具来画：饱和多色、厚实的圆角体块、同色加深的粗描边，按钮下面有一条看得见的厚度，标题是白字 + 深色描边 + 投影的圆胖粗体。它追求的不是精致而是「一眼能点、一按会弹」：每个按钮都像实体键，层级靠颜色（绿开始、红关闭）和体量，不靠细线和留白。本库友好系里最大的一族，横跨休闲三消、派对竞技、Q 版动作 / 竞速 / 塔防和 Q 版 RPG 手游，内部至少有 6 种明显不同的做法（见子族）。",
+      "convert": [
+        "面板：圆角改到短边 15–25%，加 3–5px 同色加深的描边，外框改饱和实色 + 上亮下暗竖向渐变，内芯换浅色（奶油 / 浅桃 / 淡蓝）。",
+        "按钮：改胶囊，底部加一条同色加深、无模糊、只向下的厚度（2–6px），顶部加一道椭圆高光；按下时整颗下沉吃掉厚度。",
+        "颜色：主行动改绿、关闭改红圆钮并挂到面板右上角外，其余控件各给一个饱和色。",
+        "字：标题与数字改圆体特粗，白字 + 深色 2–3px 描边 + 下投影；正文保持深色无描边。",
+        "动效：入场改弹出回弹，按下缩小回弹，数值滚动。"
+      ],
+      "grammar": {
+        "shape": "面板是厚边圆角矩形（圆角约短边 15–25%），按钮是胶囊或软方块（squircle），关闭键是悬在右上角外的红色圆 / 六边形钮；道具格是软方块；整体轮廓胖、短、没有尖角。派对竞技一支把主按钮和名次数字做成约 -8° 的平行四边形。",
+        "line": "粗描边 3–5px@1080p，颜色取填充色加深（蓝框配深蓝边）或直接墨黑（Supercell 一支）；文字也描边——白字 + 深色外描边是这一族最稳定的签名（Star Blast 标题、Bloons TD 6 的血量与金钱、Stumble Guys 的人名）。",
+        "surface": "外框饱和实色 + 竖向渐变（上亮下暗），内芯浅色并常叠放射光芒或淡圆点；按钮底部有同色加深的实心厚度（不是模糊投影）；格子是带内高光的软方块。",
+        "color": "骨架多色、高饱和：蓝（框 / 底栏）+ 橙黄（次级）+ 绿（开始 / 确认）+ 红（关闭 / 警示）几乎是固定配方；一个控件一个颜色，很少用中性灰。",
+        "type": "圆体特粗（中文站酷快乐体 / 圆体特粗类，英文 Fredoka、Lilita 类）；标题白字描边 + 投影或糖果立体字；数字用大号展示数字，竞技一支常斜体（1st、5/8）；正文偏粗但不描边。",
+        "material": "塑料、果冻、软糖：顶部椭圆高光 + 底部厚度 = 注塑玩具；图标是 3D 渲染的软体道具（锁、宝石、宝箱、礼盒）。",
+        "ornament": "少：星星闪点、放射光芒、彩带纸屑；装饰来自材质而不是花纹。标题常压在缎带或外框顶边的页眉条上。",
+        "icon": "3D 渲染或厚涂的实体小物件，自带高光与描边，尺寸常大于相邻文字；锁、问号也做成玩具。",
+        "motion": "弹出缩放（回弹）入场、按下下沉或缩小回弹、数字滚动、光效扫过、星星迸发；反馈强度高（0.7–0.9）。",
+        "layout": "居中弹窗 + 下 1/3 的大主按钮（单手拇指区），顶部资源胶囊条（图标压在胶囊左端，+ 号在右），关闭 X 挂在角外；HUD 子族则几乎不画面板，大字直接压在画面上。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 20,
+        "vis.cornerSize@button": 45,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 4,
+        "vis.strokeColor": "darker",
+        "vis.fill": "gradient",
+        "vis.depth": "bevel",
+        "vis.gloss": "candy",
+        "col.lightness": "light",
+        "col.strategy": "polychrome",
+        "col.saturation": 1.3,
+        "col.semantic": "greenRed",
+        "typ.body.family": "round",
+        "typ.display.family": "round",
+        "typ.display.weight": "black",
+        "typ.titleFx": "outlineShadow",
+        "typ.numerals.family": "display",
+        "typ.legibility": "outline",
+        "vis.iconStyle": "render3d",
+        "ix.close": "xOutside",
+        "ix.press": "sink",
+        "mo.enter": "pop",
+        "mo.easing": "overshoot",
+        "mo.juice": 0.8
+      },
+      "artPairing": [
+        { "artStyle": "任天堂玩具感 (Nintendo toy-like)", "relation": "sameMedium", "why": "画面是光滑单色塑料，UI 用同一种塑料（高光 + 厚度）就是同一媒介；Bloons TD 6、蛋仔派对、元梦之星都是这种配法。" },
+        { "artStyle": "Q版／大头 (Chibi 3D)", "relation": "sameMedium", "why": "大头短身的角色配胖圆角、短粗字最自然；Q 版 RPG / 自动战斗手游（神州风闻录、上古王冠）几乎全用这一族。" },
+        { "artStyle": "Flash时代卡通", "relation": "sameMedium", "why": "粗黑线矢量角色配粗描边彩色按钮：Castle Crashers 的标题菜单与角色共用同一线宽。" },
+        { "artStyle": "美式卡通3D (Western cartoon)", "relation": "sameMedium", "why": "Garfield Kart、Slackers 的夸张 3D 卡通配橙色描边大数字和圆形速度表。" },
+        { "artStyle": "平滑低模／色板贴图 (Smooth low poly)", "relation": "neutral", "why": "低模色块世界配扁平色块 UI（Cheeky Chooks、Parkasaurus）：同样明亮但不描边、不高光，属于本族最安静的一支。" },
+        { "artStyle": "废土荒漠 (Wasteland)", "relation": "contrast", "why": "末世题材手游（Dark War: Survival、末世王者）刻意用糖果按钮和厚底青色键降低压迫感与上手门槛；代价是题材氛围变轻。" }
+      ],
+      "genres": [
+        { "genre": "派对竞技 / 竞速", "count": 9, "why": "需要在高速画面上一眼读出名次、目标与主按钮：描边大字、斜切黄键、小标签牌（Stumble Guys、SquadBusters、Garfield Kart、蛋仔派对）。" },
+        { "genre": "Q 版 RPG / 自动战斗 / 战棋手游", "count": 7, "why": "Q 版角色与奶油卡 + 色带页眉、厚底按钮天然搭配，竖屏单手操作要求按钮大而少。" },
+        { "genre": "三消 / 消除", "count": 6, "why": "棋盘本身就是糖果 / 果冻，UI 用同材质的厚框弹窗与糖果按钮（Star Blast、小小传说）。" },
+        { "genre": "塔防 / 策略 / SLG 手游", "count": 6, "why": "单位与道具多，彩色底方格 + 3D 渲染图标比文字更快识别（Bloons TD 6 右侧塔商店）。" },
+        { "genre": "动作 / 平台 / 沙盒", "count": 4, "why": "主机卡通动作（Castle Crashers、王国之心）用饱和色条和头像环，保持和角色同样的「卡通物理」。" },
+        { "genre": "模拟经营", "count": 3, "why": "低模经营的统计和列表用扁平糖果色块，数据多时比厚框省空间。" }
+      ],
+      "exemplars": [
+        { "card": "gameui:4332", "why": "Star Blast 关卡弹窗：厚蓝框 + 橙色内缘线 + 浅桃放射光芒内芯，标题嵌在外框顶边且白字深蓝描边，橙色软方块道具格，绿色糖果大键，红圆 X 挂在角外——整套语法最完整。" },
+        { "card": "gameui:13024", "why": "SquadBusters：墨黑粗描边 + 斜切黄键 + 超大斜体 1st + 紫色缎带行，Supercell 式派对竞技的代表。" },
+        { "card": "steam:960090", "why": "Bloons TD 6：血量与金钱不画底板，白字粗描边直接压在画面上；右侧木色托盘里是按类别着色的方格 + 3D 渲染塔图标 + 描边价格。" },
+        { "card": "steam:2552430", "why": "王国之心 HD：左下饱和黄 / 红斜条指令菜单配黑描边，右下环绕头像的弧形血条——糖果色也能承担高速战斗 HUD。" },
+        { "card": "steam:204360", "why": "Castle Crashers：标题菜单是不同颜色的切角大按钮 + 双层描边，HUD 顶部四人各自配色的头像 + 血 / 魔 / 经验条，与 Flash 卡通角色同媒介。" },
+        { "card": "steam:1677740", "why": "Stumble Guys：红色小标签「Objective」压在白卡上、右上淘汰数白卡，派对 HUD 的「贴纸标签」语法。" },
+        { "card": "gameui:3055", "why": "蛋仔派对：形象平铺的天蓝底 + 白 / 浅蓝大圆角卡 + 亮黄斜切按钮，证明不靠粗描边也能卡通。" },
+        { "card": "gameui:2946", "why": "上古王冠：奶油纸卡 + 青色缎带页眉（左端压徽章）+ 拉长六边形黄键 + 金框英雄头像，Q 版 RPG 的浅色奇幻做法。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "果冻厚框（休闲三消式）",
+          "skin": "skin.candy",
+          "noCards": false,
+          "definition": "弹窗是一块厚边果冻：饱和外框 + 对比色内缘线（蓝框橙线）+ 浅色内芯，标题嵌在外框顶边，关闭键是挂在角外的红圆钮；主按钮是带底部厚度的绿色大胶囊。竖屏单手，所有操作压在下半屏。",
+          "grammar": {
+            "shape": "圆角 12–18% 的厚框（框宽约面板短边 5–8%），软方块格子，大胶囊按钮，正圆关闭钮。",
+            "line": "双色边：外框色 + 一道 3–4px 对比色内缘线；文字白色 + 深色描边。",
+            "surface": "外框竖向渐变 + 顶部高光带；内芯浅桃 / 奶油 + 放射光芒；按钮底部同色加深厚度。",
+            "color": "蓝 / 紫框，橙格，绿开始，红关闭；宝石盘与 UI 同饱和度。",
+            "type": "圆体特粗，标题白字描边投影，正文深蓝无描边。",
+            "material": "果冻、软糖、塑料。",
+            "ornament": "放射光芒、星星；无花纹。",
+            "icon": "3D 渲染锁 / 宝石 / 道具，放在橙色软方块里。",
+            "motion": "弹出回弹、按下缩小回弹、星星迸发。",
+            "layout": "居中弹窗、下方单一主按钮、顶部资源胶囊、底部页签栏中间凸起。"
+          },
+          "params": {
+            "vis.corner": "round",
+            "vis.cornerSize": 16,
+            "vis.stroke": "double",
+            "vis.strokeWidth": 5,
+            "vis.strokeColor": "accent2",
+            "vis.fill": "gradient",
+            "vis.depth": "bevel",
+            "vis.gloss": "candy",
+            "col.strategy": "polychrome",
+            "col.semantic": "greenRed",
+            "typ.display.family": "round",
+            "typ.display.weight": "black",
+            "typ.titleFx": "outlineShadow",
+            "vis.iconStyle": "render3d",
+            "ix.close": "xOutside",
+            "ix.press": "squash",
+            "mo.enter": "pop",
+            "mo.easing": "overshoot",
+            "lay.container": "modal",
+            "ctx.orientation": "portrait",
+            "ix.thumbZone": "oneHand",
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "bc"
+          },
+          "genres": [
+            { "genre": "三消 / 消除", "count": 6, "why": "棋盘就是糖果，UI 用同材质最顺。" },
+            { "genre": "自动战斗卡牌", "count": 1, "why": "疯狂宝贝底部三张厚彩框英雄卡沿用同一厚框语法。" }
+          ],
+          "exemplars": [
+            { "card": "gameui:4332", "why": "厚框 + 内缘线 + 放射内芯 + 绿糖果键 + 角外红 X，教科书式。" },
+            { "card": "gameui:4456", "why": "双方头像 + 蓝 / 红藤蔓横幅对峙，星形回合徽章，糖果立体大字提示。" },
+            { "card": "gameui:7035", "why": "顶部蓝红比分胶囊 52:40 + 青色「激活」按钮，宝石盘占下 2/3。" },
+            { "card": "gameui:9383", "why": "只看按钮画法：绿色大键配金色描边与底部厚度、橙色次键，主按钮在下 1/3。" },
+            { "card": "gameui:7101", "why": "底部三张厚彩框英雄卡 + 右侧绿色 ×2 圆钮。" }
+          ],
+          "failureModes": [
+            { "desc": "外框、按钮、宝石盘、提示大字全部同一饱和度，焦点只能靠体量；一屏里出现两个以上大字提示就互相抢。", "evidence": ["gameui:4456"] }
+          ],
+          "skinGap": "skin.candy 的 soft3d 渲染成新拟态式左上白光 + 右下暗影，不是底部实心厚度；没有双色内缘线；cornerSize 50 把厚框也变成胶囊。",
+          "paramGaps": [
+            "双色边（外框色 + 对比色内缘线）：vis.stroke = double 只能同色。",
+            "内芯放射光芒底纹（sunburst）：vis.pattern 没有放射纹。"
+          ]
+        },
+        {
+          "family": "粗黑描边贴纸（Supercell / 派对竞技式）",
+          "skin": "skin.candy",
+          "noCards": false,
+          "definition": "与果冻厚框共用圆胖体块，但所有边都换成墨黑粗线和墨黑底部厚度，主按钮、名次数字、缎带行做斜切或斜体，像贴在画面上的贴纸。黄色是主行动色（对战 / 打开），紫 / 蓝做底，白字黑描边。",
+          "grammar": {
+            "shape": "圆角块 + 平行四边形主按钮（约 -8°）+ 两端切角的缎带行；关闭钮常是斜切红块。",
+            "line": "墨黑 3–5px，按钮、缎带、数字、图标全描；底部厚度也是墨黑。",
+            "surface": "平涂或轻渐变，几乎不用高光带；靠黑边和黑厚度出立体。",
+            "color": "紫 / 深蓝底 + 亮黄主键 + 绿宝石 / 青色次级，撞色强。",
+            "type": "圆体特粗全大写，名次与倒计时用斜体大号展示数字，白字黑描边 + 黑投影。",
+            "material": "贴纸、硬塑料。",
+            "ornament": "少；角色头像、徽章本身就是装饰。",
+            "icon": "3D 渲染道具 + 黑描边。",
+            "motion": "砸入（放大落下 + 震）、按下下沉、强反馈。",
+            "layout": "大厅：右下大黄对战键、底部角色页签、左右侧入口；结算：左上巨大名次 + 中间缎带行。"
+          },
+          "params": {
+            "vis.corner": "round",
+            "vis.cornerSize": 18,
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 4,
+            "vis.strokeColor": "ink",
+            "vis.depth": "hardDrop",
+            "vis.skew@button": -8,
+            "col.strategy": "polychrome",
+            "col.saturation": 1.4,
+            "col.semantic": "accentOnly",
+            "typ.display.family": "round",
+            "typ.display.weight": "black",
+            "typ.display.case": "upper",
+            "typ.titleFx": "outlineShadow",
+            "typ.numerals.family": "display",
+            "typ.numerals.style": "italic",
+            "cmp.plate@title": "ribbon",
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "br",
+            "vis.iconStyle": "render3d",
+            "mo.enter": "slam",
+            "ix.press": "sink",
+            "mo.juice": 0.9
+          },
+          "genres": [
+            { "genre": "派对竞技", "count": 2, "why": "SquadBusters、Stumble Guys：高速多人，需要最强的轮廓对比。" },
+            { "genre": "塔防 / 放置闯关手游", "count": 3, "why": "守卫都市、保卫向日葵、末世王者：机甲 / 卡通题材配黑描边贴纸。" },
+            { "genre": "SLG / 生存经营手游", "count": 3, "why": "Dark War、War of Evolution、飞龙岛历险记：主城界面沿用 Supercell 式按钮与缎带。" }
+          ],
+          "exemplars": [
+            { "card": "gameui:13024", "why": "结算：左上斜体巨大 1st，紫色缎带行黄描边，绿宝石计数，右下斜切黄键黑描边。" },
+            { "card": "steam:1677740", "why": "目标白卡 + 红色标签、淘汰数白卡、虚拟摇杆与跳跃圆钮。" },
+            { "card": "gameui:13980", "why": "功能预览：蓝框顶上蹲着一个机甲头作饰件，列表行是浅色卡 + 左侧圆章图标 + 右侧紫色宝石格，斜切红 X 在角外。" },
+            { "card": "gameui:13909", "why": "胜利：横贯金色斜带 + 奖杯、深色半透明页签、青色厚底大按钮——末世题材的软化。" },
+            { "card": "gameui:12498", "why": "只看画法：粉紫街机机柜当容器、页眉牌两端带角饰、资源格按稀有度着色、黄色描边按钮。" }
+          ],
+          "failureModes": [
+            { "desc": "黑描边 + 高饱和 + 红点入口同屏太多时，主城变成一墙贴纸，主按钮只能靠尺寸硬撑。", "evidence": ["gameui:13064", "gameui:6849"] }
+          ],
+          "skinGap": "skin.candy 的描边是同色加深、没有斜切与斜体数字、没有缎带标题牌；需要独立的「Supercell」皮肤：墨黑描边 + 墨黑底部厚度 + 黄色主键。",
+          "paramGaps": [
+            "墨黑的底部厚度（只向下、无模糊）：hardDrop 是 (4,4) 斜向偏移。",
+            "只对名次 / 计时数字斜切：vis.skew 是全局或按组件，数字没有作用域可挂。"
+          ]
+        },
+        {
+          "family": "卡通直压 HUD（描边大字 + 小标签牌）",
+          "skin": "skin.candy",
+          "noCards": false,
+          "definition": "Q 版动作 / 竞速 / 塔防的局内 HUD 几乎不画面板：名次、分数、金钱是带粗描边或投影的大号圆体数字直接压在画面上，只有少数信息用小标签牌（彩色小 tab 压在白卡上、图标压在胶囊左端）或圆形仪表承载。糖果族的语法在这里只剩「字」和「小牌」。",
+          "grammar": {
+            "shape": "没有面板；小标签牌（圆角 tab + 白卡）、圆形速度表、环绕头像的弧形血条、圆形头像框。",
+            "line": "文字 2–3px 深色描边是唯一的线；小牌可有细描边。",
+            "surface": "透明；小牌是实色白 / 橙。",
+            "color": "数字用暖色（橙、黄、白），每个玩家一种颜色（Castle Crashers 四人条）。",
+            "type": "大号展示数字（名次 5/8、7/8）+ 小号「/总数」；圆体特粗。",
+            "material": "无，或塑料小牌。",
+            "ornament": "无。",
+            "icon": "3D 渲染或厚涂道具，压在小牌左端出框。",
+            "motion": "数字滚动、飘字、连击大数字；变化时缩放弹跳。",
+            "layout": "竞速三件套：左上名次、左侧竖条赛道进度、右下圆形速度表；动作：顶部一排头像条、底部 Boss 长条；塔防：左上血 / 钱 + 右侧整条商店。"
+          },
+          "params": {
+            "lay.container": "overlay",
+            "vis.opacity": 0,
+            "typ.legibility": "outline",
+            "typ.numerals.family": "display",
+            "typ.display.family": "round",
+            "typ.display.weight": "black",
+            "typ.titleFx": "outline",
+            "el.rank.form": ["number"],
+            "el.rank.screenAnchor": "tl",
+            "el.timer.form": "scorePill",
+            "cmp.plate@el.objective": "tab",
+            "cmp.gauge@el.speed": "dial",
+            "el.party.form": "frames",
+            "cmp.gauge@el.vitals": "arc",
+            "el.feedback.form": ["floatNumbers", "combo"],
+            "mo.valueChange": "countUp",
+            "mo.juice": 0.8,
+            "col.strategy": "polychrome",
+            "rel.hudVisibility": "always"
+          },
+          "genres": [
+            { "genre": "竞速", "count": 4, "why": "Garfield Kart ×2、Slackers、Sonic Racing：名次 / 圈数 / 速度三件套。" },
+            { "genre": "动作 / 平台 / 沙盒", "count": 4, "why": "Castle Crashers、王国之心、Rayman、Trove：主机卡通动作的头像条与指令条。" },
+            { "genre": "塔防 / 派对", "count": 2, "why": "Bloons TD 6、Tricky Towers：分数与资源直接挂在画面或塔顶。" },
+            { "genre": "自动战斗手游", "count": 2, "why": "神州风闻录、奇缘之旅：总伤害大字 + 底部一排圆头像。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1085510", "why": "左上橙色超大 5 + 小号 /8，左侧红色竖条赛道进度，右上 ROUND 小字。" },
+            { "card": "steam:2354000", "why": "左上橙色计时牌，秒表图标压在牌左端出框；右下红环白芯速度表 + 体力罐。" },
+            { "card": "steam:960090", "why": "血量 / 金钱直接压画面、白字粗描边；右下黄绿两颗方形大键。" },
+            { "card": "steam:204360", "why": "顶部四人头像 + 彩色血 / 魔 / 经验条，底部 Boss 条两端带饰。" },
+            { "card": "steam:2552430", "why": "弧形血条环绕右下头像，左下饱和色斜条指令菜单。" },
+            { "card": "steam:437920", "why": "模式选择：深蓝粗描边卡 + 淡紫内芯 + 橙色角括号选中框；分数挂在塔顶。" }
+          ],
+          "failureModes": [
+            { "desc": "UI 与特效同为高饱和，又不画底板，大量特效时 HUD 被淹没：Bloons TD 6 有 5 条评测抱怨 HUD 太乱 / 挡视野（本库该项最高）。", "evidence": ["steam:960090"] }
+          ],
+          "skinGap": "skin.candy 是面板皮肤，没有「无面板 + 描边大字」的 HUD 档；文字描边颜色 / 粗细无法单独设，暖色大数字要靠强调色凑。",
+          "paramGaps": [
+            "文字描边的颜色与粗细独立于面板描边：typ.legibility = outline 只有开关。",
+            "图标压在标签牌左端并出框的结构：el.resources.form = pills 与 cmp.plate 都没有「图标出框」。"
+          ]
+        },
+        {
+          "family": "派对撞色白卡（高调蓝黄）",
+          "skin": "skin.candy",
+          "noCards": false,
+          "definition": "撞色但不粗描边：底是品牌形象平铺的天蓝底纹，面板是白 / 极浅蓝的大圆角卡（几乎无边，靠浅投影和留白分组），主按钮是亮黄斜切块配深色斜体字。卡通感来自配色和形象，而不是线。",
+          "grammar": {
+            "shape": "大圆角卡（约 8–12%），黄色平行四边形按钮，圆角缩略图格。",
+            "line": "几乎无；选中项用 2–3px 黄描边。",
+            "surface": "白 / 浅蓝实色，轻微半透明，柔投影；背景是形象平铺 + 斜切色块。",
+            "color": "天蓝 + 亮黄双色调，白卡做中性。",
+            "type": "圆体特粗斜体用在按钮，正文常规深灰蓝。",
+            "material": "塑料、亚克力。",
+            "ornament": "无；品牌形象平铺就是装饰。",
+            "icon": "3D 渲染形象 / 表情缩略图。",
+            "motion": "弹簧缓动、轻快滑入。",
+            "layout": "左角色右面板（捏脸），底部一对斜切按钮（上一步 / 完成）。"
+          },
+          "params": {
+            "vis.corner": "round",
+            "vis.cornerSize": 12,
+            "vis.stroke": "none",
+            "vis.depth": "softDrop",
+            "vis.opacity": 0.92,
+            "col.lightness": "light",
+            "col.strategy": "duotone",
+            "col.saturation": 1.3,
+            "col.semantic": "accentOnly",
+            "vis.skew@button": -10,
+            "typ.display.family": "round",
+            "typ.display.weight": "black",
+            "typ.display.style": "italic",
+            "ast.bgArt": "pattern",
+            "lay.grouping": "card",
+            "st.selected": "outline",
+            "vis.iconStyle": "render3d",
+            "mo.easing": "spring"
+          },
+          "genres": [
+            { "genre": "派对", "count": 2, "why": "蛋仔派对、元梦之星：大量换装 / 设置页，需要干净的白卡承载缩略图。" }
+          ],
+          "exemplars": [
+            { "card": "gameui:3055", "why": "捏脸：白色大圆角面板 + 表情缩略图格 + 黄色斜切「上一步 / 完成」；画质选择是四张白卡 + 黄描边选中。" },
+            { "card": "gameui:11388", "why": "大厅：左侧半透明白任务卡，右下白色半透明圆钮簇，粉彩 3D 场景。" }
+          ],
+          "failureModes": [
+            { "desc": "大厅入口过多时，半透明白钮与粉彩场景同明度，按钮浮不起来。", "evidence": ["gameui:11388"] }
+          ],
+          "skinGap": "skin.candy 默认粗描边 + 糖果高光，与这一支的「无边白卡 + 黄斜切键」相反；需要一个高调撞色皮肤。",
+          "paramGaps": [
+            "背景用角色 / 品牌形象平铺：ast.bgArt = pattern 只能选通用图案，不能指定形象。"
+          ]
+        },
+        {
+          "family": "扁平糖果色块（无描边）",
+          "skin": "skin.flat",
+          "noCards": false,
+          "definition": "低多边形或扁平 3D 世界配的「便利贴色块」UI：白底卡片里放粉、黄、蓝、紫的纯色块作列表行或统计块，白色粗体字直接压在色块上，无描边、无高光、无厚度。",
+          "grammar": {
+            "shape": "直角或小圆角矩形色块，整齐堆叠。",
+            "line": "无。",
+            "surface": "纯色平涂。",
+            "color": "粉彩多色（天蓝、粉、杏黄、紫），每行一色，白底面板。",
+            "type": "圆体或几何无衬线粗体，白字压色块。",
+            "material": "纸片、便利贴。",
+            "ornament": "无。",
+            "icon": "扁平填充小图标。",
+            "motion": "滑入、淡入，反馈弱。",
+            "layout": "左右侧抽屉 + 中间留给世界；统计页是色块网格 + 折线图。"
+          },
+          "params": {
+            "vis.corner": "round",
+            "vis.cornerSize": 6,
+            "vis.stroke": "none",
+            "vis.depth": "flat",
+            "vis.gloss": "none",
+            "vis.fill": "solid",
+            "col.lightness": "light",
+            "col.strategy": "polychrome",
+            "lay.grouping": "colorBlock",
+            "typ.body.family": "round",
+            "typ.body.weight": "bold",
+            "st.statViz": "iconCount",
+            "cmp.slot": "rowCard",
+            "vis.iconStyle": "flat",
+            "lay.container": "drawer"
+          },
+          "genres": [
+            { "genre": "模拟经营", "count": 2, "why": "Cheeky Chooks、Parkasaurus：数据量中等，色块分组省空间。" }
+          ],
+          "exemplars": [
+            { "card": "steam:922460", "why": "左侧蛋商店：天蓝 / 粉 / 杏黄纯色块行 + 白色粗字价格；右侧粉色详情卡。" },
+            { "card": "steam:591460", "why": "统计页：白底 + 紫 / 粉色块 + 折线图 + 大数字，顶部彩色方块图标栏。" }
+          ],
+          "failureModes": [
+            { "desc": "色块是唯一的分组手段时，所有页长得一样、没有层级，菜单难找：Parkasaurus 有 3 条评测抱怨菜单难用。", "evidence": ["steam:591460"] }
+          ],
+          "skinGap": "最接近的是 skin.flat（中性 + 一个强调色），缺「每行一个糖果色」的多色色块；skin.candy 又多了描边与高光。",
+          "paramGaps": [
+            "列表行按序轮换颜色（每行一色）：col.coding 的 lineId 是语义身份色，不是装饰轮换。"
+          ]
+        },
+        {
+          "family": "Q 版 RPG 奶油卡 + 色带页眉",
+          "skin": "skin.candy",
+          "noCards": false,
+          "definition": "Q 版 RPG / 放置 / 战棋手游的浅色奇幻做法：奶油或米纸内芯 + 一条青 / 蓝缎带页眉（左端压一个徽章图标），按钮是拉长六边形或带厚度的黄 / 橙块，英雄头像用金 / 彩色描边框 + 星级。比果冻厚框安静，比抽卡金框轻，是糖果与抽卡金框之间的桥。",
+          "grammar": {
+            "shape": "规整矩形卡（小圆角）、拉长六边形按钮、方形头像格 + 星级、缎带页眉。",
+            "line": "2px 同色加深细描边；分隔用点线 + 小饰点。",
+            "surface": "奶油纸平涂，偶有淡纸纹；页眉色带饱和。",
+            "color": "中性奶油 + 青 / 蓝页眉 + 黄橙按钮，稀有度色只出现在头像框。",
+            "type": "圆体粗，数值用金色斜体（战力）。",
+            "material": "纸、布缎带、少量金属头像框。",
+            "ornament": "少：页眉徽章、点线分隔两端的星饰。",
+            "icon": "厚涂 Q 版头像与道具。",
+            "motion": "弹出、轻回弹。",
+            "layout": "竖屏：上半战场 / 立绘，下半奶油卡操作区；底部一排圆形功能入口。"
+          },
+          "params": {
+            "ast.core": "texture",
+            "ast.coreMat": "paper",
+            "vis.corner": "round",
+            "vis.cornerSize": 6,
+            "cmp.plate@title": "ribbon",
+            "vis.silhouette@button": "hexagon",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 2,
+            "vis.strokeColor": "darker",
+            "col.lightness": "light",
+            "col.strategy": "neutralAccent",
+            "typ.display.family": "round",
+            "typ.display.weight": "bold",
+            "st.rarityCue": ["border", "stars"],
+            "lay.grouping": "divider",
+            "vis.ornament": 1,
+            "vis.motif": "stars",
+            "vis.iconStyle": "painted",
+            "ctx.orientation": "portrait",
+            "lay.composition": "splitTB"
+          },
+          "genres": [
+            { "genre": "RPG / 放置手游", "count": 3, "why": "上古王冠、放置七骑士、小小英雄：信息页多，奶油卡可读性好于厚果冻框。" },
+            { "genre": "战棋手游", "count": 1, "why": "英杰传：左下深色单位面板 + 立绘出框，右下圆形「待机」大键。" }
+          ],
+          "exemplars": [
+            { "card": "gameui:2946", "why": "个人信息：奶油卡 + 青缎带页眉 + 拉长六边形黄键 + 金框星级英雄格。" },
+            { "card": "gameui:12994", "why": "下半屏奶油卷纸面板 + 墨青圆形底纹 + 四格属性卡 + 橙色消耗按钮。" },
+            { "card": "gameui:7158", "why": "Q 版战棋：格子高亮叠在地图上，左下单位面板立绘出框。" },
+            { "card": "gameui:10348", "why": "放置：顶部头像 + 关卡进度，下半阵容格 + 底部一排功能图标。" }
+          ],
+          "failureModes": [
+            { "desc": "每个养成按钮都挂红点后，奶油卡的安静被打破，四个消耗键分不出主次。", "evidence": ["gameui:12994"] }
+          ],
+          "skinGap": "没有对应皮肤：skin.candy 太厚太亮，skin.parchment 太旧太暗；需要「奶油纸 + 色带页眉 + 六边形键」的浅色奇幻皮肤。",
+          "paramGaps": [
+            "点线分隔两端的小星饰（分隔线端饰）：ast.ornaments = dividers 是整条饰条。"
+          ]
+        }
+      ],
+      "variants": [
+        { "name": "木框卡通", "diff": "外框从塑料换成卡通木（木纹 + 麻绳 + 动物头像页眉），其余语法不变；归到「像素木框 / 手绘卡通木框」。", "cards": ["steam:306020", "gameui:13411"] },
+        { "name": "机甲 / 玩具饰件框", "diff": "面板顶边蹲一个立体饰件（机甲头、怪兽角），把框变成角色的一部分。", "cards": ["gameui:13980", "gameui:12498"] },
+        { "name": "末世软化", "diff": "末世 / 生存题材保留糖果的厚底按钮与缎带，但内芯改深色半透明、配色降饱和。", "cards": ["gameui:13909", "gameui:12498"] }
+      ],
+      "failureModes": [
+        { "desc": "饱和色 UI 叠在饱和色画面 + 特效上，又不画底板，HUD 被淹没（Bloons TD 6：5 条「HUD 太乱」评测，本库最高）。", "evidence": ["steam:960090"] },
+        { "desc": "全屏都是同一体量的胖按钮，主次只能靠颜色；再叠红点 / 角标后焦点消失（这里只看视觉后果，不研究运营本身）。", "evidence": ["gameui:13064", "gameui:6849", "gameui:12994"] },
+        { "desc": "把白字描边用到浅色内芯上的正文会显脏、难读；好的样本只给标题和压画面的数字描边，正文回到深色无描边。", "evidence": ["gameui:4332", "gameui:2946"] },
+        { "desc": "用新拟态式柔影冒充糖果厚度，浅底上发灰、像新拟态而不像塑料（我们自己的 skin.candy 就是这样，见 skinGap）。", "evidence": [] }
+      ],
+      "skinGap": "skin.candy：① vis.depth = soft3d 在 theme.ts 里是「左上白光 + 右下暗影」的新拟态双向模糊阴影，而样本的立体来自按钮底部一条同色加深、无模糊、只向下的实心厚度；② cornerSize 50 让所有面板都变胶囊，样本是 15–25% 圆角的厚框、只有按钮是胶囊；③ 标题走 kw.toy 的 emboss（糖果立体字），样本最常见的是白字 + 深色描边 + 投影（outlineShadow），且数字也描边；④ 缺绿开始红关闭的按钮配色、角外红圆关闭钮、弹出入场；⑤ kw.toy 的塑料内芯 + 星星母题比样本更装饰，样本内芯多是浅色 + 放射光芒；⑥ 一个皮肤盖不住 6 种做法——至少还缺「粗黑描边贴纸（Supercell）」「派对撞色白卡」「卡通直压 HUD」三档。",
+      "paramGaps": [
+        "按钮底部厚度 / 挤出唇边（同色加深或墨黑、无模糊、只向下，按下时被吃掉）：vis.depth 没有这个取值，hardDrop 是墨色 (4,4) 斜向偏移，soft3d 是新拟态。",
+        "内芯放射光芒底纹（sunburst）：vis.pattern 没有，ast.fx 的 rays 是特效层而不是底纹。",
+        "双色边（外框色 + 对比色内缘线）：vis.stroke = double 只能同色。",
+        "资源胶囊「图标压在左端出框、+ 号在右端外」：el.resources.form = pills 表达不了图标出框。",
+        "文字描边的颜色与粗细独立于面板描边：typ.legibility = outline 只有开关。",
+        "只对名次 / 计时数字斜切：vis.skew 没有数字作用域。"
+      ]
+    },
+    {
+      "family": "圆润友好",
+      "skin": "skin.cozy",
+      "noCards": false,
+      "definition": "圆角、低对比、暖色的生活感 UI：奶油 / 米黄底、深棕而不是纯黑的字、胶囊与云朵形气泡、点线分隔、一层很淡的主题底纹（橡果、爪印、叶子）。它不制造点击冲动，而是降低压迫感：常驻信息极少、留白多，很多时候干脆把界面做成世界里的物件（手机、日记、背包、地上的纸卡）。动物森友会（浅）、Spiritfarer（深青）、Zelda 旷野之息（深色半透明胶囊）是三种明度的代表。",
+      "convert": [
+        "面板：去掉描边，底色换奶油 #FFF8EC 一类，圆角 12–20%，柔投影；叠一层透明度 0.1–0.2 的主题底纹。",
+        "字：正文换圆体常规、深棕色；标题不描边；关键词改彩色字（青 / 橙）。",
+        "人名 / 标题：放到一个略微倾斜（3–5°）的彩色胶囊名牌上，压在对话框左上角并出框。",
+        "按钮与按键提示：胶囊 + 圆形键帽图标（Y Sort / B Close）放在右下。",
+        "选中态：不用高亮描边或发光，改成黄色整行底色（马克笔感）+ 手指光标。",
+        "动效：回弹 + 轻摇，去掉震屏与闪白。"
+      ],
+      "grammar": {
+        "shape": "大圆角面板（短边 12–20%）、胶囊按钮与名牌、云朵 / 不规则团块对话框、扇贝边页签条、圆形头像框；尽量没有直角，但面板本身规整，比糖果族薄。",
+        "line": "无描边或 1–2px 暖棕细线；分隔用点线 / 虚线；手绘一支用 2–3px 墨线但线头圆润。",
+        "surface": "奶油 / 米黄实色，柔投影或无投影；内芯叠很淡的主题底纹；深色一支是半透明深色胶囊或深青实底。",
+        "color": "中性暖底 + 1–2 个低饱和强调色（橙、草绿、天蓝）；字是深棕 / 深灰蓝；选中态用黄色色条而不是发光。",
+        "type": "圆体常规到粗（Nunito、Fredoka、站酷快乐体类），标题不描边，人名放在倾斜彩色胶囊上，关键词彩色。",
+        "material": "纸、布、软木、绒面——手边日用品；不用金属和玻璃（深色一支除外）。",
+        "ornament": "少：叶子 / 爪印 / 星星小图标、页签上的小插画；手账一支有胶带与相角。",
+        "icon": "扁平填充或手绘彩绘、圆润、单色或双色；按键提示是圆形键帽 + 胶囊。",
+        "motion": "回弹 + 轻摇（sway），文字淡入或逐字，按下缩小回弹；整体慢、软，几乎不震屏。",
+        "layout": "左格右详情、底部胶囊按键图例、名牌压在对话框左上角；HUD 极少，常驻信息只有右上一个货币胶囊或干脆隐藏。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 16,
+        "vis.cornerSize@button": 50,
+        "vis.stroke": "none",
+        "vis.depth": "softDrop",
+        "vis.fill": "solid",
+        "vis.pattern": "leafTile",
+        "vis.patternOpacity": 0.12,
+        "col.lightness": "light",
+        "col.strategy": "neutralAccent",
+        "col.saturation": 0.8,
+        "typ.body.family": "round",
+        "typ.body.weight": "regular",
+        "typ.display.family": "round",
+        "typ.display.weight": "bold",
+        "typ.titleFx": "none",
+        "hier.inline": "keyword",
+        "cmp.plate@name": "pill",
+        "vis.tilt@name": 4,
+        "cmp.dialogBox": "bubble",
+        "ix.focus": "bar",
+        "ix.press": "squash",
+        "mo.easing": "overshoot",
+        "mo.idle": "sway",
+        "rel.hudVisibility": "contextual"
+      },
+      "artPairing": [
+        { "artStyle": "治愈田园 (Cozy/cottagecore)", "relation": "sameMedium", "why": "暖光、圆润、小物件密布的世界，UI 用同样的暖色和圆角就像世界里的一件家具。" },
+        { "artStyle": "Q版／大头 (Chibi 3D)", "relation": "sameMedium", "why": "动物森友会、Little Kitty：Q 版 3D 配奶油胶囊与团块气泡。" },
+        { "artStyle": "儿童绘本插画 (Storybook)", "relation": "sameMedium", "why": "Spiritfarer 的手绘 2D 世界配深青圆角面板 + 细金线 + 白色圆角气泡。" },
+        { "artStyle": "水粉 (Gouache)", "relation": "neutral", "why": "旷野之息的水粉风世界上，UI 用深色半透明胶囊 + 白字，不抢画面但不融入。" },
+        { "artStyle": "平滑体素／行进立方体 (Marching cubes)", "relation": "sameMedium", "why": "ASTRONEER 把氧气与电量画在角色背包上：UI 就是世界物件。" },
+        { "artStyle": "皮克斯式CG电影 (Pixar-like)", "relation": "neutral", "why": "Kena 一类电影化卡通基本不放 HUD，圆润 UI 只在菜单出现。" }
+      ],
+      "genres": [
+        { "genre": "经营 / 建造 / 模拟", "count": 6, "why": "长时间游玩、低压力，UI 要能常开不累：Spiritfarer、Two Point Museum、PlateUp、Everdale。" },
+        { "genre": "生活 / 养成", "count": 5, "why": "动物森友会、Little Kitty、Chinese Parents、Alba、Mineko：UI 是生活用品（手机、日记、背包）。" },
+        { "genre": "合成 / 消除 / 卡牌手游", "count": 5, "why": "Gossip Harbor、慢慢生活、萌宠解谜、小森灵、魔魔打勇士：剧情气泡与图鉴卡用奶油纸面。" },
+        { "genre": "冒险 / 探索 / 动作", "count": 5, "why": "旷野之息、Kena、超星觉醒、贪吃怪大作战、Cureocity：HUD 少，菜单圆润。" },
+        { "genre": "生存", "count": 1, "why": "ASTRONEER：零 HUD，读数在背包上。" }
+      ],
+      "exemplars": [
+        { "card": "iig:animal-crossing-new-horizons", "why": "背包：橡果底纹的奶油卡格、扇贝边页签条 + 橙色胶囊标签、点线分隔、圆形键帽按键提示；商店：团块对话框 + 倾斜橙色名牌 + 黄色团块选项泡 + 黄色马克笔选中条 + 手指光标。" },
+        { "card": "steam:1177980", "why": "Little Kitty 收藏页：黄色圆角卡 + 白色内芯、无格子直接摆放、选中项橙色圆环 + 爪印、浅青描述泡。" },
+        { "card": "steam:972660", "why": "Spiritfarer 建造：深青圆角面板 + 拱形页眉牌 + 1px 细金线，奶油色说明条；对话是白色圆角气泡。" },
+        { "card": "iig:the-legend-of-zelda-breath-of-the-wild", "why": "深色半透明圆角对话框 + 关键词青色，右侧深色胶囊选项、选中项亮描边 + ▷ 光标，右上半透明货币胶囊。" },
+        { "card": "gameui:4834", "why": "Gossip Harbor：剧情是竖排聊天流——扇贝边云朵思想泡 + 圆形头像粉框 + 粉色名牌 tab，对方用橙框带尾气泡。" },
+        { "card": "gameui:2915", "why": "Everdale：奶油面板 + 淡蓝页眉条 + 内嵌浅色缺角内芯，蓝色厚底按钮 + 两颗橙色次键。" },
+        { "card": "steam:1599600", "why": "PlateUp：三选一是立在地面上的白色纸卡，粉色页眉条 + 细粉边，玩家走过去选（空间内）。" },
+        { "card": "gameui:13296", "why": "魔魔打勇士（只看画法）：奶油纸卡 + 左上角胶带 + 内圈虚线，左侧深蓝竖导航，吉祥物从角落探头，底部页码胶囊。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "奶油纸面 + 胶囊（动森式）",
+          "skin": "skin.cozy",
+          "noCards": false,
+          "definition": "最典型的一支：奶油底 + 淡主题底纹 + 无描边圆角卡，团块 / 云朵对话框配倾斜胶囊名牌，选中用黄色色条，按键提示是胶囊。手游版本（Everdale、Gossip Harbor）再加淡色页眉条与厚底按钮。",
+          "grammar": {
+            "shape": "圆角卡、团块气泡、扇贝边页签条、胶囊名牌与按键提示。",
+            "line": "无，或点线分隔；描边版用 2–3px 墨线。",
+            "surface": "奶油实色 + 0.1–0.2 主题底纹。",
+            "color": "奶油 + 棕字 + 橙 / 青 / 黄点缀。",
+            "type": "圆体，棕色，关键词彩色。",
+            "material": "纸、布。",
+            "ornament": "页签小插画、底纹图形。",
+            "icon": "扁平填充 / 手绘彩绘。",
+            "motion": "回弹、轻摇、逐字。",
+            "layout": "左格右详情；对话底部大团块 + 右侧选项团块。"
+          },
+          "params": {
+            "col.lightness": "light",
+            "vis.corner": "round",
+            "vis.cornerSize": 18,
+            "vis.stroke": "none",
+            "vis.depth": "softDrop",
+            "vis.pattern": "leafTile",
+            "vis.patternOpacity": 0.15,
+            "col.strategy": "neutralAccent",
+            "typ.body.family": "round",
+            "typ.display.family": "round",
+            "typ.titleFx": "none",
+            "cmp.plate@name": "pill",
+            "vis.tilt@name": 4,
+            "cmp.dialogBox": "bubble",
+            "el.choices.form": "bubbles",
+            "ix.focus": "bar",
+            "lay.nav": "tabsTop",
+            "cmp.tab": "icon",
+            "cmp.tabIndicator": "filled",
+            "lay.composition": "splitLR",
+            "lay.detail": "persistent",
+            "ix.glyphs": "nintendo"
+          },
+          "genres": [
+            { "genre": "生活 / 养成", "count": 3, "why": "动物森友会、Little Kitty、Chinese Parents。" },
+            { "genre": "合成手游", "count": 3, "why": "Gossip Harbor、慢慢生活、萌宠解谜。" },
+            { "genre": "冒险", "count": 2, "why": "贪吃怪大作战、Cureocity。" },
+            { "genre": "经营", "count": 1, "why": "Everdale。" }
+          ],
+          "exemplars": [
+            { "card": "iig:animal-crossing-new-horizons", "why": "整支的原型。" },
+            { "card": "steam:1177980", "why": "黄卡白芯 + 无格摆放 + 圆环选中。" },
+            { "card": "gameui:4834", "why": "云朵思想泡 + 粉色名牌 tab 的聊天流。" },
+            { "card": "gameui:2915", "why": "手游版：奶油面板 + 淡蓝页眉 + 厚底蓝键。" },
+            { "card": "gameui:13082", "why": "米白圆角卡 + 左上 / 右下橙色三角角块 + 点线 + 星饰分隔 + 绿勾选框，关闭叉放在面板下方。" },
+            { "card": "steam:736190", "why": "Chinese Parents 日程表：浅紫 / 米色圆角卡里塞满米色小胶囊课程，绿色箭头形「安排」键靠颜色 + 形状突出。" }
+          ],
+          "variants": [
+            { "name": "粗墨线描边版", "diff": "加 2–3px 墨线与角落色块，配手绘角色；按钮是带底部厚度的橙色大块。", "cards": ["steam:2612680", "gameui:13082"] },
+            { "name": "云朵聊天版", "diff": "对话改成竖排聊天流：云朵泡 + 圆头像 + 名牌 tab，左右区分说话人。", "cards": ["gameui:4834"] },
+            { "name": "木板合成版", "diff": "玩法区是木箱格，UI 只剩左上奶油便签 + 右侧竖排绿色圆角大键。", "cards": ["gameui:6888", "gameui:7039"] }
+          ],
+          "failureModes": [
+            { "desc": "极密数据塞进奶油圆角卡后，所有小胶囊长得一样，层级扁平；只能靠一个绿色箭头键救主次。", "evidence": ["steam:736190"] }
+          ],
+          "skinGap": "skin.cozy 方向对，但 cornerSize 50 把面板也变胶囊、dots 底纹是通用圆点，缺倾斜名牌、黄色选中条、关键词着色与扇贝页签。",
+          "paramGaps": [
+            "团块 / 云朵 / 扇贝边对话框与页签条外形。",
+            "主题图形底纹（橡果、爪印、形象平铺）。"
+          ]
+        },
+        {
+          "family": "手账贴纸（胶带 / 相角 / 涂鸦）",
+          "skin": "skin.handdrawn",
+          "noCards": false,
+          "definition": "把面板做成贴在本子上的东西：米纸卡片四角用胶带或相角固定，内圈虚线，标题是粗圆体大字或斜切色带标签，背景有淡淡的铅笔涂鸦，吉祥物从角落探头；书 / 信封 / 日记作为容器。",
+          "grammar": {
+            "shape": "略歪的纸卡（1–3°）、斜切色带标签、相框 / 信封 / 翻开的书。",
+            "line": "内圈 1–2px 虚线；涂鸦是细铅笔线。",
+            "surface": "米纸 + 纸纹，胶带半透明。",
+            "color": "米白 + 一个主色（青绿 / 深蓝）+ 色带标签色。",
+            "type": "粗圆体大标题（可占半宽），正文常规。",
+            "material": "纸、胶带、照片。",
+            "ornament": "中：胶带、相角、涂鸦小动物、便签。",
+            "icon": "手绘彩绘。",
+            "motion": "翻页、轻摇、贴上。",
+            "layout": "单列卡片纵向滚动 + 底部页码；或整屏是一本书。"
+          },
+          "params": {
+            "ast.core": "texture",
+            "ast.coreMat": "paper",
+            "ast.ornaments": ["corners"],
+            "vis.ornament": 2,
+            "vis.tilt": 2,
+            "vis.stroke": "dashed",
+            "vis.strokeWidth": 1.5,
+            "vis.strokeColor": "darker",
+            "vis.corner": "round",
+            "vis.cornerSize": 8,
+            "cmp.plate@title": "slashBand",
+            "typ.display.family": "round",
+            "typ.display.weight": "black",
+            "col.lightness": "light",
+            "col.strategy": "neutralAccent",
+            "ast.container": "notebook",
+            "cnt.companion": "mascot",
+            "vis.iconStyle": "painted",
+            "lay.pageIndicator": "numbers"
+          },
+          "genres": [
+            { "genre": "合成 / 卡牌手游", "count": 2, "why": "小森灵、魔魔打勇士：图鉴与教学卡。" },
+            { "genre": "生活经营", "count": 2, "why": "Mineko's Night Market（浮世绘日记书）、猫咪公寓 2（信封开场）。" }
+          ],
+          "exemplars": [
+            { "card": "gameui:3052", "why": "「我的新发现」：米纸卡 + 左上相片角、超大青色粗圆体标题、绿色斜切色带标签、背景铅笔涂鸦动物。" },
+            { "card": "gameui:13296", "why": "胶带 + 内圈虚线的奶油卡、蓝 / 橙斜切标签、吉祥物探头。" },
+            { "card": "steam:762940", "why": "日记是翻开的浮世绘书，手持在画面下方。" },
+            { "card": "gameui:4796", "why": "开场是信封与风景插画，右上「跳过」。" }
+          ],
+          "failureModes": [
+            { "desc": "胶带、涂鸦、吉祥物、标签同屏时，卡片内容被饰件挤小。", "evidence": ["gameui:13296"] }
+          ],
+          "skinGap": "skin.handdrawn 是方格纸 + 抖线 + 楷体 + 线性图标的「笔记本」，不是手账：缺胶带 / 相角、斜切色带标签、粗圆体大标题与彩绘图标。",
+          "paramGaps": [
+            "胶带、相角、回形针等手账饰件：ast.ornaments 只有角花 / 缎带 / 花枝等。",
+            "背景淡铅笔涂鸦层（不是平铺纹样，是散布的小画）。"
+          ]
+        },
+        {
+          "family": "深色圆润（半透明胶囊 / 深青细金线）",
+          "skin": null,
+          "noCards": false,
+          "definition": "同样圆、同样友好，但面板是深色：要么半透明深灰胶囊 + 白字（旷野之息），要么深青实底 + 1px 细金线 + 拱形页眉（Spiritfarer）。用在明亮、色彩丰富的世界上，靠明度反差保证可读，又不失柔和。",
+          "grammar": {
+            "shape": "全胶囊选项、大圆角对话框、拱形页眉牌。",
+            "line": "1px 亮边或细金线；选中项亮描边。",
+            "surface": "半透明深色（0.6–0.75）或深青实底。",
+            "color": "深灰 / 深青 + 白字 + 一个青色关键词色。",
+            "type": "人文无衬线，正文可斜体（旷野之息），标题手写或衬线小型大写。",
+            "material": "烟色玻璃、深色漆面。",
+            "ornament": "极少；Spiritfarer 页眉有细线卷饰。",
+            "icon": "白色剪影或手绘彩绘。",
+            "motion": "淡入、平滑。",
+            "layout": "对话底部居中、选项右侧竖排；货币胶囊右上。"
+          },
+          "params": {
+            "col.lightness": "dark",
+            "vis.opacity": 0.7,
+            "vis.corner": "round",
+            "vis.cornerSize": 50,
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1,
+            "vis.strokeColor": "highlightEdge",
+            "vis.depth": "flat",
+            "typ.body.family": "sans",
+            "typ.body.style": "italic",
+            "hier.inline": "keyword",
+            "cmp.dialogBox": "bubble",
+            "el.choices.form": "buttons",
+            "ix.focus": "cursor",
+            "el.resources.form": "pills",
+            "el.resources.screenAnchor": "tr",
+            "rel.hudVisibility": "contextual",
+            "cnt.density": "1"
+          },
+          "genres": [
+            { "genre": "开放世界 / 探索", "count": 2, "why": "旷野之息、超星觉醒：亮色大世界上用深色胶囊。" },
+            { "genre": "经营", "count": 1, "why": "Spiritfarer。" }
+          ],
+          "exemplars": [
+            { "card": "iig:the-legend-of-zelda-breath-of-the-wild", "why": "深色半透明胶囊对话与选项、关键词青色。" },
+            { "card": "steam:972660", "why": "深青面板 + 细金线 + 拱形页眉。" },
+            { "card": "gameui:13619", "why": "手游版：深色半透明资源胶囊 + 底部白色胶囊提示「点击任意位置返回」+ 地面金色圈。" }
+          ],
+          "variants": [
+            { "name": "深青细金线", "diff": "实底而非半透明，加 1px 金线双框与拱形页眉牌，更像家具。", "cards": ["steam:972660"] }
+          ],
+          "skinGap": "没有预设：skin.cozy 只有浅色；skin.darkHairline 是直角 + 衬线 + 金线（偏魂类），缺圆角与胶囊；需要 cozy 的深色档。",
+          "paramGaps": [
+            "拱形 / 拱门页眉牌外形：cmp.plate 没有拱形。"
+          ]
+        },
+        {
+          "family": "圆润零 HUD（物件即界面）",
+          "skin": null,
+          "noCards": false,
+          "definition": "友好世界里最常见的做法其实是「不画 UI」：信息放进手机、背包、日记，或做成立在地上的纸卡，只在需要时出现。它的圆润来自世界本身，UI 只在菜单里出现。",
+          "grammar": {
+            "shape": "物件本身的形状（手机、背包、纸卡）。",
+            "line": "跟随世界。",
+            "surface": "跟随世界材质。",
+            "color": "跟随场景色板。",
+            "type": "很少文字；出现时用柔和无衬线 + 投影。",
+            "material": "世界物件。",
+            "ornament": "无。",
+            "icon": "世界物件即图标。",
+            "motion": "淡入、跟随物件动画。",
+            "layout": "情境显现：靠近才显示，或拿出物件才显示。"
+          },
+          "params": {
+            "rel.diegesis": "diegetic",
+            "rel.hudVisibility": "contextual",
+            "rel.harmony": "sameMedium",
+            "cnt.density": "0",
+            "lay.container": "overlay",
+            "ast.container": "phone",
+            "el.vitals.diegesis": "diegetic",
+            "el.choices.diegesis": "spatial",
+            "cmp.card": "statCard",
+            "vis.tilt": 3,
+            "mo.enter": "fade",
+            "typ.legibility": "shadow"
+          },
+          "genres": [
+            { "genre": "经营 / 模拟", "count": 3, "why": "Two Point Museum、SPORE、PlateUp：镜头即界面，情境显现。" },
+            { "genre": "生活 / 生存 / 动作", "count": 3, "why": "Alba（手机拍照）、ASTRONEER（背包读数）、Kena（几乎无 HUD）。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1599600", "why": "立在地上的三选一纸卡。" },
+            { "card": "steam:361420", "why": "氧气与电量画在背包上。" },
+            { "card": "steam:1337010", "why": "拍照与图鉴都在主角的手机里。" },
+            { "card": "steam:17390", "why": "SPORE 生物阶段：选中目标只用地面上的红色三角指示环（空间内），屏幕上几乎没有面板。" }
+          ],
+          "failureModes": [
+            { "desc": "零 HUD 的代价是引导不足：PlateUp、ASTRONEER 各有 5 条评测抱怨提示 / 引导不清。", "evidence": ["steam:1599600", "steam:361420"] }
+          ],
+          "skinGap": "这是放置方式而不是皮肤：探索台已有 rel.diegesis 与 rcp.noHud，只需在 cozy 皮肤下默认情境显现。",
+          "paramGaps": []
+        }
+      ],
+      "variants": [
+        { "name": "粗墨线手绘版", "diff": "奶油卡加 2–3px 墨线，配厚底橙色大键，偏绘本冒险。", "cards": ["steam:2612680"] },
+        { "name": "深色版", "diff": "整套语法搬到深色半透明 / 深青实底上，见子族「深色圆润」。", "cards": ["iig:the-legend-of-zelda-breath-of-the-wild", "steam:972660"] }
+      ],
+      "failureModes": [
+        { "desc": "奶油底 + 浅棕字很容易不到 4.5:1；好的样本正文都是深棕，浅色只给禁用态（动森背包的「Pockets / Storage」灰字就接近看不清）。", "evidence": ["iig:animal-crossing-new-horizons"] },
+        { "desc": "一切都圆、都浅，层级会扁平，主按钮必须靠饱和色 + 形状差（箭头形、厚底）拉开。", "evidence": ["steam:736190", "gameui:2915"] },
+        { "desc": "把界面都塞进世界物件里，引导会不够（PlateUp、ASTRONEER 各 5 条引导类抱怨）。", "evidence": ["steam:1599600", "steam:361420"] }
+      ],
+      "skinGap": "skin.cozy：① cornerSize 50 把所有面板变胶囊，样本是面板 12–20% 圆角、只有按钮 / 名牌 / 按键图例是胶囊（需要 @button / @name 分开）；② vis.pattern = dots 是通用圆点，默认强度 0.3 会抢字，样本是主题图形且只有 0.1–0.2；③ 缺倾斜名牌、黄色整行选中条（ix.focus = bar）、关键词着色（hier.inline = keyword）；④ 正文色没有暖棕，默认墨色偏冷硬；⑤ 只有浅色一档，旷野之息 / Spiritfarer 式深色圆润没有预设。",
+      "paramGaps": [
+        "对话框外形：云朵、不规则团块、扇贝边思想泡——cmp.dialogBox 只有 bar / bubble / bare / chatThread / fullPage。",
+        "页签条外形：扇贝边 / 云朵条（动森背包顶栏）。",
+        "主题图形底纹（橡果、爪印、角色形象平铺）：vis.pattern 只有通用纹样。",
+        "马克笔式不规则选中底：ix.focus = bar 是规整色条，brushSwash 偏水墨。",
+        "名牌压在对话框左上角并出框的位置关系。",
+        "胶带 / 相角 / 回形针等手账饰件。"
+      ]
+    },
+    {
+      "family": "像素木框",
+      "skin": "skin.pixelWood",
+      "noCards": false,
+      "definition": "用木头做 UI 外框：一圈有厚度的橙棕 / 深棕木框（像素版是 1px 高光 + 1px 暗边的台阶边），里面是米黄纸或浅木内芯，格子是凹下去的木槽。它把 UI 讲成田园里的家具与告示牌，并与世界共用同一像素网格或同一卡通线宽。非像素的卡通木框（Bear and Breakfast、Bloons TD 5）语法相同，只是边缘平滑、描边更粗、会加麻绳与藤蔓。",
+      "convert": [
+        "外框：描边换成 6–10px 的木条（像素版对齐世界像素），木条上沿 1px 亮、下沿 1px 暗。",
+        "内芯：换米黄纸或浅木平涂；格子做成内凹木槽（内阴影），空格就是空槽。",
+        "转角：像素版改像素台阶；卡通版改小圆角 + 2–4px 深棕描边。",
+        "字与图标：像素版换像素字、像素图标、与世界同网格；卡通版换粗圆体或板岩衬线 + 手绘彩绘图标。",
+        "布局：时钟 / 日期做成右上木牌，快捷栏做成下中横木托盘，对话改底部通栏 + 侧面头像牌。",
+        "动效：一拍二、打字机文字。"
+      ],
+      "grammar": {
+        "shape": "规整矩形 + 像素台阶转角（像素版）或小圆角（卡通版）；工具栏是一条横木托盘，时钟是挂在右上的木牌，格子是方形木槽。",
+        "line": "外框就是木条本身（6–10 世界像素），内外各一道深棕暗线；像素版严格 1 像素；卡通版 2–4px 深棕描边。",
+        "surface": "木纹 + 上亮下暗的 1px 倒角；内芯米黄纸 / 浅木平涂；格子内凹。",
+        "color": "暖棕 + 米黄 + 一个点缀色（绿 / 红 / 金币黄），中性暖色占八成以上；深色漆木一支（Shogun Showdown）是近黑棕 + 彩色卡底。",
+        "type": "像素字（像素版）或粗圆体 / 板岩衬线（卡通版）；深棕字在米底上，标题偶尔浅字压深色木牌。",
+        "material": "木（框）+ 纸（芯）；卡通版加麻绳、藤蔓、钉子、积雪顶。",
+        "ornament": "少到中：页眉木牌两端的动物头像、麻绳边、积雪、花枝；像素版几乎不加装饰。",
+        "icon": "像素图标或手绘彩绘，与世界物件同画法（地上和格子里的同一件东西长得一样）。",
+        "motion": "逐帧（一拍二）、打字机、无缓动或极短缓动；卡通版有回弹。",
+        "layout": "分散组件：右上时钟木牌、下中快捷栏、底部通栏对话 + 侧面头像牌；或整屏木框把玩法区框起来（dotAGE 左侧资源木栏、Bloons TD 5 底部木条）。"
+      },
+      "params": {
+        "ast.frame": "plainNinePatch",
+        "ast.frameMat": "wood",
+        "ast.core": "texture",
+        "ast.coreMat": "paper",
+        "vis.corner": "step",
+        "vis.pixelScale": "world",
+        "vis.depth": "bevel",
+        "vis.strokeColor": "darker",
+        "col.lightness": "light",
+        "col.strategy": "neutralAccent",
+        "col.source": "scene",
+        "typ.body.family": "pixel",
+        "typ.display.family": "pixel",
+        "typ.numerals.family": "pixel",
+        "vis.iconStyle": "pixel",
+        "st.emptySlot": "pit",
+        "cmp.slot": "cell",
+        "cmp.dialogBox": "bar",
+        "mo.textReveal": "typewriter",
+        "mo.frameRate": "onTwos",
+        "rel.harmony": "sameMedium",
+        "lay.hudOrg": "scattered",
+        "el.clock.form": "calendar",
+        "el.clock.screenAnchor": "tr",
+        "vis.ornament": 0
+      },
+      "artPairing": [
+        { "artStyle": "SNES 16-bit", "relation": "sameMedium", "why": "Stardew Valley：木框与世界同一像素网格，框的一个像素和地上的萝卜一样大。" },
+        { "artStyle": "现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "Shogun Showdown、dotAGE：高位像素配深色漆木 / 橙木像素框。" },
+        { "artStyle": "治愈田园 (Cozy/cottagecore)", "relation": "sameMedium", "why": "题材相同：木头 + 纸是田园生活的材料。" },
+        { "artStyle": "Flash时代卡通", "relation": "sameMedium", "why": "Bear and Breakfast、Bloons TD 5：粗线卡通角色配粗描边卡通木框。" },
+        { "artStyle": "工业硬科幻 (NASA-punk)", "relation": "contrast", "why": "River Town Factory 在火箭发射台上仍用深红棕木托盘：暖木 UI 把工业场景拉回经营游戏的松弛感。" }
+      ],
+      "genres": [
+        { "genre": "种田 / 经营 / 工厂 / 养成", "count": 7, "why": "Stardew、dotAGE、River Town Factory、Maltese、古代收租日记、Bear and Breakfast、My Singing Monsters：长时间、物件多，木框 + 纸芯把大量格子包装成家具。" },
+        { "genre": "塔防 / 策略", "count": 2, "why": "Bloons TD 5、快来当领主：卡通木框做关卡地图与远征面板。" },
+        { "genre": "回合战术", "count": 1, "why": "Shogun Showdown：深色漆木托盘装技能牌。" }
+      ],
+      "exemplars": [
+        { "card": "steam:413150", "why": "像素种田模板：右上木框时钟 + 日期 + 金币，下中 12 格快捷栏，木框对话 + 右侧头像牌（商店图无 UI，按已知画面记）。" },
+        { "card": "steam:2084000", "why": "深色漆木像素框：底部木托盘装技能牌，商店格是彩色底卡，tooltip 是深色 + 奶油双线框，按钮带像素倒角。" },
+        { "card": "steam:638510", "why": "整屏木框：左侧竖排木栏里是绿色资源格，顶部木牌装彩色统计格，底部木条行动提示。" },
+        { "card": "steam:1136370", "why": "非像素：深棕木框 + 浅木内芯，页眉深色木带配奶油标题，格子米色木槽，详情区橙褐纸，tooltip 奶油底深描边。" },
+        { "card": "steam:306020", "why": "卡通木：页眉木牌两端挂猴头饰件，底部木条带麻绳纹，关卡地图是贴纸卡 + 虚线路径，圆形红箭头键白描边。" },
+        { "card": "steam:2281410", "why": "中式像素工厂：底部深红棕木托盘物品栏 + 右上深色小木牌「Day 5 Spring」。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "像素木框（与世界同网格）",
+          "skin": "skin.pixelWood",
+          "noCards": false,
+          "definition": "木框的每一个像素和世界一样大，转角是像素台阶，字和图标都是像素；有橙木（Stardew）和深色漆木（Shogun Showdown）两档。",
+          "grammar": {
+            "shape": "像素台阶转角、方形木槽、横木托盘。",
+            "line": "1 世界像素的亮边 / 暗边。",
+            "surface": "像素木纹 + 平涂纸芯。",
+            "color": "橙棕 + 米黄，或近黑棕 + 彩色卡底。",
+            "type": "像素字。",
+            "material": "木、纸。",
+            "ornament": "几乎无。",
+            "icon": "像素。",
+            "motion": "一拍二、打字机。",
+            "layout": "分散组件或整屏木框。"
+          },
+          "params": {
+            "vis.pixelScale": "world",
+            "vis.corner": "step",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "wood",
+            "ast.coreMat": "paper",
+            "typ.body.family": "pixel",
+            "typ.numerals.family": "pixel",
+            "vis.iconStyle": "pixel",
+            "mo.frameRate": "onTwos",
+            "mo.textReveal": "typewriter",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "st.emptySlot": "pit",
+            "rel.harmony": "sameMedium"
+          },
+          "genres": [
+            { "genre": "种田 / 经营 / 工厂", "count": 5, "why": "Stardew、dotAGE、River Town Factory、Maltese、古代收租日记。" },
+            { "genre": "回合战术", "count": 1, "why": "Shogun Showdown。" }
+          ],
+          "exemplars": [
+            { "card": "steam:413150", "why": "原型。" },
+            { "card": "steam:2084000", "why": "深色漆木档。" },
+            { "card": "steam:638510", "why": "整屏木框档。" },
+            { "card": "steam:2281410", "why": "工业场景里的暖木托盘。" },
+            { "card": "gameui:6842", "why": "竖屏手游版：右侧竖排圆形木纹功能钮 + 底部木色任务条，等距像素小镇。" }
+          ],
+          "variants": [
+            { "name": "深色漆木", "diff": "木色压到近黑棕，卡牌与商品格用彩色底，tooltip 深底 + 奶油双线框。", "cards": ["steam:2084000"] },
+            { "name": "整屏木框", "diff": "木框把玩法区包住，资源竖排在左侧木栏（lay.hudOrg = inMargin）。", "cards": ["steam:638510"] }
+          ],
+          "skinGap": "skin.pixelWood 的 vis.depth = flat，样本木框有 1px 倒角、格子内凹；没有一拍二与空槽画法；kw.rustic 带的花枝饰件在样本里几乎看不到；缺深色漆木档。",
+          "paramGaps": [
+            "木色深浅（橙木 / 胡桃 / 漆黑木）是材质的子档：ast.frameMat = wood 只有一种。"
+          ]
+        },
+        {
+          "family": "手绘卡通木框（非像素）",
+          "skin": "skin.pixelWood",
+          "noCards": false,
+          "definition": "同样是木框 + 纸芯，但边缘平滑、2–4px 深棕描边、木纹是手绘的，常加麻绳、藤蔓、钉子、积雪顶或页眉两端的动物头像；按钮是带底部厚度的卡通键。",
+          "grammar": {
+            "shape": "小圆角木框、缎带标题牌、用绳子吊着的子面板。",
+            "line": "2–4px 深棕描边。",
+            "surface": "手绘木纹 + 羊皮纸 / 米纸内芯。",
+            "color": "暖棕 + 米黄 + 卡通饱和点缀（橙、蓝、红）。",
+            "type": "粗圆体或板岩衬线，白字描边标题。",
+            "material": "木、麻绳、纸、雪。",
+            "ornament": "中：藤蔓、麻绳、动物头、积雪。",
+            "icon": "手绘彩绘 / 3D 渲染。",
+            "motion": "回弹。",
+            "layout": "居中弹窗或底部木条。"
+          },
+          "params": {
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "wood",
+            "ast.coreMat": "parchment",
+            "vis.corner": "round",
+            "vis.cornerSize": 4,
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 3,
+            "vis.strokeColor": "darker",
+            "vis.pixelScale": "off",
+            "typ.display.family": "slabWestern",
+            "typ.titleFx": "outlineShadow",
+            "vis.ornament": 2,
+            "vis.motif": "floral",
+            "ast.ornaments": ["hangers"],
+            "cmp.plate@title": "ribbon",
+            "vis.iconStyle": "painted",
+            "mo.easing": "overshoot"
+          },
+          "genres": [
+            { "genre": "经营 / 养成", "count": 2, "why": "Bear and Breakfast、My Singing Monsters。" },
+            { "genre": "塔防 / 策略手游", "count": 2, "why": "Bloons TD 5、快来当领主。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1136370", "why": "深棕木框 + 浅木内芯 + 木槽格 + 深色页眉带。" },
+            { "card": "steam:306020", "why": "猴头页眉木牌 + 麻绳纹底条 + 贴纸关卡卡。" },
+            { "card": "steam:1419170", "why": "带藤蔓的雕刻木框 + 白色描边大标题 + 底部小统计胶囊（只看画法）。" },
+            { "card": "gameui:13411", "why": "只看画法：木框顶上压一层积雪、羊皮纸内芯、缎带标题牌两端切口、红色六边形关闭钮、底下用麻绳吊着一块子面板。" }
+          ],
+          "failureModes": [
+            { "desc": "木框 + 内芯 + 木槽格一层套一层，背包格子多时显得挤、难管理：Bear and Breakfast 有背包类与「太乱」类抱怨各 2 条。", "evidence": ["steam:1136370"] }
+          ],
+          "skinGap": "skin.pixelWood 强制像素字与像素台阶，卡通木框要关掉像素化、换粗圆体 / 板岩衬线、加深棕粗描边与绳 / 藤饰件。",
+          "paramGaps": [
+            "季节 / 题材顶饰（积雪、藤蔓压在框顶）：饰件只有挂件 / 花枝等，没有「压顶」位置。"
+          ]
+        }
+      ],
+      "variants": [
+        { "name": "木板合成棋盘", "diff": "玩法区本身是木箱格，UI 只是旁边的奶油便签，见圆润友好。", "cards": ["gameui:6888"] }
+      ],
+      "failureModes": [
+        { "desc": "框套框（木框 → 纸芯 → 木槽格）在格子多时吃掉大量面积，背包显得挤（Bear and Breakfast 背包 2 条、太乱 2 条）。", "evidence": ["steam:1136370"] },
+        { "desc": "像素框与高清世界混用、或非整数缩放时像素不均（06 文档 B6 陷阱）；本库样本都锁「与世界同网格」避开了。", "evidence": ["steam:413150", "steam:638510"] }
+      ],
+      "skinGap": "skin.pixelWood（+ kw.rustic）：① vis.depth = flat，样本木框有上亮下暗 1px 倒角、格子内凹；② 没有空槽画法（暗坑）与一拍二帧率；③ kw.rustic 带花枝饰件（sprigs），样本几乎不加装饰——像素版装饰预算应是 0；④ 只有橙木一种木色，缺深色漆木（Shogun Showdown）；⑤ 卡通（非像素）木框没有对应皮肤，只能拿像素皮肤关像素化凑。",
+      "paramGaps": [
+        "木色深浅 / 木种：ast.frameMat = wood 没有子档。",
+        "顶饰（积雪、藤蔓压在框顶）与吊挂子面板（麻绳吊着）的结构关系。",
+        "像素倒角是 1 世界像素宽的亮 / 暗线：vis.depth = bevel 的倒角宽度不随 vis.pixelScale 对齐。"
+      ]
+    },
+    {
+      "family": "孟菲斯",
+      "skin": "skin.memphis",
+      "noCards": false,
+      "definition": "80 年代孟菲斯 / 当代潮玩街头：撞色粉彩底 + 墨黑粗描边 + 几何碎屑（三角、波浪、闪点、方格纸），元素有意歪斜、互相叠压，像贴纸和剪纸拼在一起。游戏里多出现在派对 / 潮流休闲作品的大厅与标题，进到局内几乎都会退回直压 HUD 或别的风格。本库只有 3 张，且各是一种做法：街头贴纸（苏打世界）、方格纸漫画分格（超级幻影猫）、派对手写云卡（Jackbox 7）。",
+      "convert": [
+        "描边：所有块加 3–5px 墨黑描边，阴影改墨黑错位硬投影。",
+        "主按钮：改黑底白字平行四边形（约 -12°）。",
+        "背景：换粉彩渐变（薄荷→桃）或浅蓝方格纸，叠闪点 / 三角 / 波浪碎屑。",
+        "排布：每个元素随机转 2–6°，允许互相叠压。",
+        "字：换涂鸦 / 手写粗体全大写；正文下垫白或黑色块保证可读。"
+      ],
+      "grammar": {
+        "shape": "平行四边形主按钮、不规则云卡 / 团块、漫画分格框；元素随机旋转 2–6°；圆角小或不规则。",
+        "line": "墨黑粗线 3–5px，所有块都描；Jackbox 的云卡例外（不描边，靠漩涡背景衬）。",
+        "surface": "平涂；背景是粉彩渐变或方格纸 / 漩涡，叠闪点、星星、碎屑；主按钮可以纯黑。",
+        "color": "粉彩撞色 + 纯黑 + 白：薄荷、桃粉、天蓝、柠檬黄，同屏 4 色以上；强调靠黑底白字而不是更饱和的颜色。",
+        "type": "粗圆体 / 手写涂鸦体、全大写、略斜。",
+        "material": "纸、贴纸、平面塑料，没有光泽高光。",
+        "ornament": "中：几何碎屑、波点、闪光星、底部滚动的乱码字带（苏打世界）。",
+        "icon": "带黑描边与白边的贴纸式扁平图标，常略旋转。",
+        "motion": "贴纸啪地贴上（弹出回弹 + 轻微旋转）、抖动、滚动字带。",
+        "layout": "大厅：中间一个大斜切主按钮 + 两侧竖排入口 + 底部页签；标题：分格漫画或两张大团块卡并列二选一。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 10,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 4,
+        "vis.strokeColor": "ink",
+        "vis.depth": "hardDrop",
+        "vis.gloss": "none",
+        "vis.fill": "solid",
+        "vis.skew@button": -12,
+        "vis.tilt": 4,
+        "vis.pattern": "dots",
+        "vis.patternOpacity": 0.25,
+        "vis.motif": "geometric",
+        "vis.ornament": 2,
+        "col.lightness": "light",
+        "col.strategy": "polychrome",
+        "col.saturation": 0.9,
+        "typ.display.family": "graffiti",
+        "typ.display.weight": "black",
+        "typ.display.case": "upper",
+        "typ.body.weight": "bold",
+        "ast.bgArt": "gradient",
+        "mo.enter": "pop",
+        "mo.easing": "overshoot",
+        "vis.iconStyle": "flat"
+      },
+      "artPairing": [
+        { "artStyle": "孟菲斯 (Memphis)", "relation": "sameMedium", "why": "画面本身就是孟菲斯撞色几何时，UI 照搬即同一媒介。" },
+        { "artStyle": "街头涂鸦卡通／JSR式 (Graffiti cel)", "relation": "sameMedium", "why": "粗描边、高饱和、涂鸦贴花与黑描边斜切按钮同源（苏打世界）。" },
+        { "artStyle": "蜘蛛宇宙式3D漫画 (Spider-Verse-like)", "relation": "neutral", "why": "漫画分格与冲击线可以借孟菲斯的方格纸底和贴纸角色（超级幻影猫的开场分格）。" },
+        { "artStyle": "波普 (Pop art)", "relation": "neutral", "why": "共享黑线与原色，但波普用网点、孟菲斯用碎屑；两者混用时选一种纹样。" },
+        { "artStyle": "治愈田园 (Cozy/cottagecore)", "relation": "contrast", "why": "需要谨慎：孟菲斯的黑线与歪斜对治愈题材太吵，只适合标题 / 活动页的短时刺激（经验判断，本库无样本）。" }
+      ],
+      "genres": [
+        { "genre": "派对 / 合家欢", "count": 1, "why": "Jackbox 7：电视当舞台、手机当输入，大字与团块卡在远处也读得清。" },
+        { "genre": "潮流休闲动作手游", "count": 1, "why": "苏打世界：街头潮玩审美的大厅。" },
+        { "genre": "探索冒险手游", "count": 1, "why": "超级幻影猫：只在开场漫画与标题用，进大厅换成青色发光面板。" }
+      ],
+      "exemplars": [
+        { "card": "gameui:12543", "why": "苏打世界：薄荷→桃渐变 + 闪点，黑底白字斜切 PLAY，黑描边贴纸图标，底部滚动乱码字带。" },
+        { "card": "gameui:13467", "why": "超级幻影猫：浅蓝方格纸底 + 粗黑分格框 + 贴纸式猫咪角色。" },
+        { "card": "steam:1211630", "why": "Jackbox 7：浅紫团块卡（无黑边）+ 手写全大写 + 漩涡背景，二选一并列 + 中间小团块「or」。" },
+        { "card": "steam:437920", "why": "相邻（糖果族）：深蓝粗描边卡 + 淡紫内芯 + 橙色角括号选中框，接近孟菲斯的派对选择页。" },
+        { "card": "steam:922460", "why": "相邻（糖果族）：粉彩纯色块配色是孟菲斯的色板，但没有黑线与碎屑。" }
+      ],
+      "subfamilies": [],
+      "variants": [
+        { "name": "街头贴纸", "diff": "黑底主按钮 + 渐变闪点底 + 滚动字带，最接近当代潮玩。", "cards": ["gameui:12543"] },
+        { "name": "方格纸漫画分格", "diff": "背景是方格纸，内容装在粗黑分格里，角色是贴纸。", "cards": ["gameui:13467"] },
+        { "name": "派对手写云卡", "diff": "去掉黑线，用不规则团块卡 + 手写全大写，靠漩涡背景衬托。", "cards": ["steam:1211630"] }
+      ],
+      "failureModes": [
+        { "desc": "渐变底 + 闪点 + 滚动字带 + 贴纸图标同屏，背景纹样与文字抢对比，信息只能靠黑底色块突出（06 文档 B19 的陷阱在样本里成立）。", "evidence": ["gameui:12543"] },
+        { "desc": "很难撑满整个游戏：超级幻影猫进入大厅后换成半透明青色发光面板，孟菲斯只留在开场与标题。", "evidence": ["gameui:13467"] }
+      ],
+      "skinGap": "skin.memphis 有墨黑描边、错位硬投影、圆点纹、多色和圆体粗字，骨架是对的；缺：① 元素随机旋转（tilt）与主按钮斜切；② 显示字体是圆体，样本是涂鸦 / 手写全大写；③ 圆角 17 一刀切，样本是平行四边形 + 团块混用；④ 背景没有粉彩渐变 / 方格纸；⑤ refs 写的 Splatoon 未核实，现在有 3 张真实样本可替换。",
+      "paramGaps": [
+        "逐元素随机旋转：vis.tilt 是统一角度，不是每个元素随机。",
+        "几何碎屑散布层（三角、波浪线、闪点随机散落在背景上，不是平铺纹样）。",
+        "滚动文字带（跑马字条）：vis.pattern = repeatText 是静态平铺。",
+        "团块 / 云卡外形（不规则圆润多边形）。"
+      ]
+    },
+    {
+      "family": "Frutiger Aero",
+      "skin": "skin.aero",
+      "noCards": false,
+      "definition": "2000 年代的乐观科技：天蓝→草绿渐变、玻璃 / 水滴质感的胶囊和圆钮（上半一道白色高光）、柔和外发光、人文无衬线、气泡与光晕。本库只有模拟人生 1 一张卡（左下蓝色玻璃底座 + 圆形光泽按钮 + 头顶白色思维气泡），但它的光泽圆钮语法在今天的派对 / 三消手游里还活着（元梦之星的半透明白圆钮、Royal Match 与 Star Blast 的光泽绿键）。",
+      "convert": [
+        "面板：竖向蓝渐变 + 上半部白色玻璃高光 + 0.85–0.95 半透明，1px 白色亮边，柔和外发光。",
+        "按钮：改正圆或胶囊，高光贴合按钮上半弧。",
+        "颜色：只用天蓝 / 草绿双色调 + 白字。",
+        "字：换人文无衬线（Frutiger、Segoe、Nunito Sans 类），不描边。",
+        "布局：把头像、需求、速度、钱收进一个角上的玻璃底座；世界里用空间内的气泡。"
+      ],
+      "grammar": {
+        "shape": "圆角 12–20px 胶囊、正圆按钮、四分之一圆底座（模拟人生左下）、气泡。",
+        "line": "1px 白色高光边，不用深色描边。",
+        "surface": "竖向渐变（浅蓝→深蓝 / 浅绿→深绿）+ 上半部白色玻璃高光 + 轻微半透明；柔和外发光。",
+        "color": "天蓝、草绿、水青为主，白字；偶尔亮黄。",
+        "type": "人文无衬线，常规到半粗，不描边；时间与金钱是等宽小字。",
+        "material": "玻璃、水、塑料泡泡；图标是光泽 3D。",
+        "ornament": "少：气泡、光晕、镜头光斑，没有花纹。",
+        "icon": "光泽 3D 小图标，或白色剪影压在圆钮里。",
+        "motion": "气泡上浮、柔和缩放、悬停发光。",
+        "layout": "整合底座（一个角上的玻璃控制台）+ 世界里的空间内思维 / 对话气泡。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 30,
+        "vis.fill": "gradient",
+        "vis.gloss": "topShine",
+        "vis.opacity": 0.9,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeColor": "highlightEdge",
+        "vis.strokeGlow": 0.3,
+        "vis.depth": "softDrop",
+        "vis.silhouette@button": "circle",
+        "col.lightness": "mid",
+        "col.strategy": "duotone",
+        "typ.body.family": "sans",
+        "typ.display.family": "sans",
+        "typ.numerals.family": "tabular",
+        "vis.iconStyle": "render3d",
+        "lay.hudOrg": "console",
+        "el.toolbar.screenAnchor": "bl",
+        "mo.idle": "float",
+        "ix.focus": "focusGlow",
+        "el.interact.form": ["bubble"]
+      },
+      "artPairing": [
+        { "artStyle": "任天堂玩具感 (Nintendo toy-like)", "relation": "sameMedium", "why": "Wii 时代的光滑塑料角色与玻璃按钮同源（06 文档 B21 的代表作）。" },
+        { "artStyle": "等距布景 (Isometric diorama)", "relation": "neutral", "why": "模拟人生 1 的等距小屋上，蓝色玻璃底座独立于画面一角，不融入也不冲突。" },
+        { "artStyle": "Y2K", "relation": "sameMedium", "why": "同一时代的乐观科技，Y2K 偏银色镀铬，Aero 偏蓝天绿草；两者可以共用玻璃高光。" },
+        { "artStyle": "塑料玩具／手办 (Toy figurine)", "relation": "sameMedium", "why": "派对手游（元梦之星）的塑料角色配半透明白色玻璃圆钮，是 Aero 的当代版本。" }
+      ],
+      "genres": [
+        { "genre": "生活模拟", "count": 1, "why": "模拟人生：需求、心情、速度都要常驻，玻璃底座把它们收在一角。" }
+      ],
+      "exemplars": [
+        { "card": "steam:3314060", "why": "唯一样本：左下蓝色玻璃四分之一圆底座 + 圆形光泽按钮（需求、建造、购买）+ 速度控件 + 钱，头顶白色云朵思维气泡。" },
+        { "card": "gameui:11388", "why": "相邻（糖果族）：右下白色半透明玻璃圆钮簇 + 粉彩 3D 场景，Aero 的当代派对版。" },
+        { "card": "gameui:3055", "why": "相邻（糖果族）：极浅蓝半透明大面板 + 天蓝底，色调接近 Aero。" },
+        { "card": "gameui:9383", "why": "相邻（糖果族）：光泽绿色大键 + 金边，玻璃高光语法。" },
+        { "card": "gameui:4332", "why": "相邻（糖果族）：绿色糖果 Play 键的顶部高光带。" }
+      ],
+      "subfamilies": [],
+      "variants": [
+        { "name": "当代派对 Aero", "diff": "去掉蓝绿渐变，只保留半透明白色玻璃圆钮与柔光，配粉彩 3D。", "cards": ["gameui:11388", "gameui:3055"] }
+      ],
+      "failureModes": [
+        { "desc": "白字压在浅蓝高光上对比不足（06 文档 B21 陷阱）；模拟人生把字放进深蓝区、高光只留在圆钮上部避开了。", "evidence": ["steam:3314060"] }
+      ],
+      "skinGap": "skin.aero 已有顶部玻璃高光、渐变、白色亮边、柔投影与漂浮待机，接近样本；差在：① col.strategy = polychrome，样本是蓝 / 绿双色调；② 标题用圆体，样本是人文无衬线；③ 没有外发光（strokeGlow）与正圆按钮；④ 没有「角上玻璃底座」的布局建议；⑤ refs（Wii Sports、模拟人生 3、水果忍者）不在库里，可换成 steam:3314060。",
+      "paramGaps": [
+        "贴合圆形的弧形高光：vis.gloss = topShine 是一条平带。",
+        "四分之一圆 / 异形底座外形：lay.hudOrg = console 只决定组织方式，外形仍是矩形。",
+        "镜头光斑 / 散景作为 UI 背景层：ast.fx 有 glow、stardust，没有 lens flare / bokeh。"
+      ]
+    },
+    {
+      "family": "手游抽卡金框",
+      "skin": "skin.gacha",
+      "noCards": false,
+      "definition": "只记视觉语法（抽卡、商城、首充等运营界面不在研究范围）：深色或红漆底、多段金属渐变的九宫格金框、按稀有度分档的底色 / 框色 / 星级、强外发光，名牌与按钮两端有金色卷饰端盖，头像是金色圆环框。本库可用的只有王牌三国志的角色展示页；原标在这一族的 My Singing Monsters（雕花木框海报）与末世王者（卡通机柜）实际是别的语法，已改归。",
+      "convert": [
+        "外框：换多段金属渐变的雕花九宫格（亮金→暗金），加外发光。",
+        "底：换深色或红漆底。",
+        "按钮：红漆底 + 两端金色卷饰端盖，字金色或白色。",
+        "头像：金色圆环框；道具格按稀有度着色 + 星级。",
+        "标题：金属渐变字。"
+      ],
+      "grammar": {
+        "shape": "圆环头像框、两端带卷饰的长条名牌与按钮、九宫格雕花框。",
+        "line": "金色多段渐变边，常双线。",
+        "surface": "深色半透明或红漆实底；金属高光。",
+        "color": "金 + 深红 / 深紫 / 黑；稀有度色（蓝、紫、金）只出现在框与底色上。",
+        "type": "粗无衬线或书法，金属渐变或描边。",
+        "material": "金、漆、丝绸。",
+        "ornament": "中到华丽：卷草端盖、角花、宝石。",
+        "icon": "厚涂或 3D 渲染。",
+        "motion": "光效扫过（待机），其余演出属运营场景，不在范围内。",
+        "layout": "角色展示：全身立绘占满竖屏，底部两个圆环头像切换 + 名牌 + 确认键。"
+      },
+      "params": {
+        "ast.frame": "carvedNinePatch",
+        "ast.frameMat": "gold",
+        "vis.gloss": "metalGrad",
+        "vis.strokeColor": "metal",
+        "vis.strokeGlow": 0.5,
+        "col.lightness": "dark",
+        "col.rarityScale": "gacha",
+        "st.rarityCue": ["border", "stars", "rarityGlow"],
+        "vis.ornament": 2,
+        "ast.ornaments": ["endcaps", "corners"],
+        "typ.display.weight": "black",
+        "typ.titleFx": "metal",
+        "vis.silhouette@el.profile": "circle",
+        "cnt.characterMedium": "full",
+        "mo.idle": "shine"
+      },
+      "artPairing": [
+        { "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)", "relation": "sameMedium", "why": "精致立绘配金框是同一套「华丽」审美。" },
+        { "artStyle": "华丽光泽写实（韩式MMO）(Glamour realism)", "relation": "sameMedium", "why": "高光泽服装与金属框共享光泽语言。" },
+        { "artStyle": "Q版／大头 (Chibi 3D)", "relation": "contrast", "why": "Q 版 RPG 只借金框给英雄头像（上古王冠），面板仍是奶油纸——金框缩成稀有度信号。" }
+      ],
+      "genres": [
+        { "genre": "RPG 手游（角色展示）", "count": 1, "why": "王牌三国志：创角 / 立绘页。" }
+      ],
+      "exemplars": [
+        { "card": "gameui:3980", "why": "唯一样本：全身立绘 + 底部两个金色圆环头像框 + 深色半透明名牌两端金饰 + 红漆金端「确定」键。" },
+        { "card": "gameui:2946", "why": "相邻（糖果族）：只有英雄头像用金框 + 星级，面板是奶油纸——轻量版。" },
+        { "card": "steam:1419170", "why": "相邻（卡通木框）：雕花框 + 白色描边大标题的「华丽框海报」结构，换成了木头。" },
+        { "card": "gameui:12498", "why": "相邻（糖果族）：页眉牌两端角饰 + 按稀有度着色的资源格，卡通化的同一结构（只看画法）。" }
+      ],
+      "subfamilies": [],
+      "variants": [
+        { "name": "浅色卡通金框", "diff": "面板换奶油纸，金框只留给头像与稀有度。", "cards": ["gameui:2946"] }
+      ],
+      "failureModes": [
+        { "desc": "金色饰件与金色字同色相，名牌两端卷饰会和标题字粘在一起（06 文档 B26 的金对黄陷阱）；样本把字放进深色名牌中间、卷饰只在两端避开了。", "evidence": ["gameui:3980"] }
+      ],
+      "skinGap": "skin.gacha：① 标题效果是 outline，样本是金属渐变字；② 缺按钮 / 名牌两端金色端盖与红漆底；③ 缺金色圆环头像框；④ keywordDefaults 带的 rays + glow 是揭示演出的特效，挂在普通面板上会过亮（且属于运营场景）；⑤ col.strategy = polychrome，样本是金 + 深红的有限配色。",
+      "paramGaps": [
+        "金框的层级（多段金属渐变 + 宝石镶嵌 + 镂空卷草）只有一个 carvedNinePatch 档。"
+      ]
+    }
+  ],
+  "assignments": {
+    "gameui:4332": "果冻厚框（休闲三消式）",
+    "gameui:4456": "果冻厚框（休闲三消式）",
+    "gameui:6393": "果冻厚框（休闲三消式）",
+    "gameui:7035": "果冻厚框（休闲三消式）",
+    "gameui:9383": "果冻厚框（休闲三消式）",
+    "gameui:13193": "果冻厚框（休闲三消式）",
+    "gameui:7101": "果冻厚框（休闲三消式）",
+    "gameui:13024": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "steam:1677740": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "gameui:13980": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "gameui:12498": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "gameui:13530": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "gameui:13909": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "gameui:13064": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "gameui:6849": "粗黑描边贴纸（Supercell / 派对竞技式）",
+    "steam:960090": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:204360": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:2552430": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:1085510": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:362930": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:2354000": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:437920": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:207490": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:34190": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "steam:304050": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "gameui:6853": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "gameui:6904": "卡通直压 HUD（描边大字 + 小标签牌）",
+    "gameui:3055": "派对撞色白卡（高调蓝黄）",
+    "gameui:11388": "派对撞色白卡（高调蓝黄）",
+    "steam:922460": "扁平糖果色块（无描边）",
+    "steam:591460": "扁平糖果色块（无描边）",
+    "gameui:2946": "Q 版 RPG 奶油卡 + 色带页眉",
+    "gameui:10348": "Q 版 RPG 奶油卡 + 色带页眉",
+    "gameui:12994": "Q 版 RPG 奶油卡 + 色带页眉",
+    "gameui:7158": "Q 版 RPG 奶油卡 + 色带页眉",
+    "iig:animal-crossing-new-horizons": "奶油纸面 + 胶囊（动森式）",
+    "steam:1177980": "奶油纸面 + 胶囊（动森式）",
+    "gameui:2915": "奶油纸面 + 胶囊（动森式）",
+    "gameui:13082": "奶油纸面 + 胶囊（动森式）",
+    "steam:736190": "奶油纸面 + 胶囊（动森式）",
+    "steam:2612680": "奶油纸面 + 胶囊（动森式）",
+    "gameui:4834": "奶油纸面 + 胶囊（动森式）",
+    "gameui:6888": "奶油纸面 + 胶囊（动森式）",
+    "gameui:7039": "奶油纸面 + 胶囊（动森式）",
+    "gameui:13296": "手账贴纸（胶带 / 相角 / 涂鸦）",
+    "gameui:3052": "手账贴纸（胶带 / 相角 / 涂鸦）",
+    "gameui:4796": "手账贴纸（胶带 / 相角 / 涂鸦）",
+    "steam:762940": "手账贴纸（胶带 / 相角 / 涂鸦）",
+    "iig:the-legend-of-zelda-breath-of-the-wild": "深色圆润（半透明胶囊 / 深青细金线）",
+    "steam:972660": "深色圆润（半透明胶囊 / 深青细金线）",
+    "gameui:13619": "深色圆润（半透明胶囊 / 深青细金线）",
+    "steam:1337010": "圆润零 HUD（物件即界面）",
+    "steam:361420": "圆润零 HUD（物件即界面）",
+    "steam:1954200": "圆润零 HUD（物件即界面）",
+    "steam:17390": "圆润零 HUD（物件即界面）",
+    "steam:2185060": "圆润零 HUD（物件即界面）",
+    "steam:1599600": "圆润零 HUD（物件即界面）",
+    "steam:413150": "像素木框（与世界同网格）",
+    "steam:2084000": "像素木框（与世界同网格）",
+    "steam:638510": "像素木框（与世界同网格）",
+    "steam:2281410": "像素木框（与世界同网格）",
+    "steam:3404470": "像素木框（与世界同网格）",
+    "gameui:6842": "像素木框（与世界同网格）",
+    "steam:1136370": "手绘卡通木框（非像素）",
+    "steam:306020": "手绘卡通木框（非像素）",
+    "steam:1419170": "手绘卡通木框（非像素）",
+    "gameui:13411": "手绘卡通木框（非像素）",
+    "gameui:12543": "孟菲斯",
+    "gameui:13467": "孟菲斯",
+    "steam:1211630": "孟菲斯",
+    "steam:3314060": "Frutiger Aero",
+    "gameui:3980": "手游抽卡金框"
+  }
+}

@@ -1,0 +1,85 @@
+/*
+ * 学习库"复刻对照"的样式（ReplicaPanel.tsx 引入）。归属：B4。前缀 rp-（复刻）；商业化折叠组 mz-* 随 Monetization.tsx 一起删了（收尾 9）。
+ * 颜色一律用 src/styles.css 的变量，深浅色主题自动跟随。
+ * 类名：rp-panel 面板 · rp-tools 搜索与分组 · rp-group 分组（<details>）· rp-count 组内条数 · rp-item 列表条目 · rp-oneliner 两行要点
+ *   rp-page 复刻页 · rp-title 标题 · rp-notes / rp-toggle 要点与展开 · rp-cardrow 参考卡缩略图 · rp-explain / rp-foot 说明
+ *   rp-screen 一屏（.on = 刚套用）· rp-screen-head / rp-kind 屏名与模板 · rp-shot / rp-ref / rp-noref 参考截图
+ *   rp-scores / rp-score / rp-bar 六项评分（b.up / b.down = 比上一轮高 / 低）· rp-history / rp-arrow / rp-delta 逐轮整体分 · rp-overall 整体分（.good / .low）· rp-actions 套用按钮
+ *   rp-more 折叠小节 · rp-gaps 缺口清单（li.rp-sev-high / rp-sev-medium / rp-sev-low，rp-sev 严重度标签，rp-gkind 缺口类型，rp-proposal 建议）· rp-diffs 对照差异
+ */
+
+/* ---------- 列表 ---------- */
+.rp-panel { padding-bottom: 16px; }
+.rp-tools .seg { align-items: center; margin-top: 6px; }
+.rp-seg-label { font-size: 11px; color: var(--text-3); margin-right: 2px; }
+.rp-hits { margin-left: auto; }
+.rp-group > summary { cursor: pointer; user-select: none; }
+.rp-group > summary:hover { color: var(--text-2); }
+.rp-count { color: var(--text-3); font-weight: 400; }
+.rp-item h4 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.card p.rp-oneliner { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; margin-top: 2px; font-size: 11.5px; line-height: 1.5; }
+
+/* ---------- 复刻页 ---------- */
+.rp-title { margin: 8px 0 4px; font-size: 15px; }
+.kn-detail p.rp-notes { margin: 2px 0 0; line-height: 1.6; }
+.kn-detail p.rp-notes.clamp { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+.rp-toggle { display: inline-block; font-size: 11px; color: var(--accent); cursor: pointer; margin: 2px 0 4px; }
+.rp-toggle:hover { text-decoration: underline; }
+.rp-page .kn-kv { grid-template-columns: 60px 1fr; align-items: baseline; }
+.rp-cardrow { display: flex; align-items: center; gap: 8px; margin: 6px 0 2px; font-size: 11px; color: var(--text-3); }
+.rp-cardrow .kn-thumb { width: 96px; flex: none; }
+.kn-detail p.rp-explain { font-size: 11.5px; color: var(--text-3); margin: 0 0 4px; line-height: 1.55; }
+.kn-detail p.rp-foot { font-size: 11px; color: var(--text-3); margin-top: 12px; line-height: 1.55; }
+
+/* 一屏 */
+.rp-screen { border: 1px solid var(--line); border-radius: var(--radius); padding: 8px; margin: 8px 0; background: var(--panel); }
+.rp-screen.on { border-color: var(--ok); box-shadow: 0 0 0 1px var(--ok) inset; }
+.rp-screen-head { display: flex; align-items: baseline; gap: 6px; font-size: 13px; min-width: 0; }
+.rp-screen-head b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rp-screen-head .rp-overall { margin-left: auto; }
+.rp-kind { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+
+.rp-shot { margin: 6px 0 0; }
+.rp-shot .rp-ref { width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: var(--panel-2); }
+.rp-shot .rp-ref:hover { border-color: var(--accent); }
+.rp-shot figcaption { font-size: 10.5px; color: var(--text-3); margin-top: 2px; }
+.rp-noref { margin-top: 6px; padding: 6px 8px; border: 1px dashed var(--line-strong); border-radius: 6px; font-size: 11px; color: var(--text-3); text-align: center; }
+
+.rp-scores { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; margin-top: 6px; font-size: 11px; }
+.rp-score { display: grid; grid-template-columns: 26px 1fr 16px; align-items: center; gap: 4px; color: var(--text-3); }
+.rp-bar { height: 5px; border-radius: 3px; background: var(--muted-soft); overflow: hidden; }
+.rp-bar i { display: block; height: 100%; border-radius: 3px; background: var(--accent); }
+.rp-score b { font-weight: 500; color: var(--text-2); text-align: right; font-variant-numeric: tabular-nums; }
+.rp-score b.up { color: var(--ok); }
+.rp-score b.down { color: var(--warn); }
+/* 逐轮整体分（R1 → R2） */
+.rp-history { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; margin-top: 3px; font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+.rp-history b { font-weight: 600; color: var(--text-2); }
+.rp-arrow { margin-right: 6px; color: var(--text-3); }
+.rp-delta { font-weight: 600; }
+.rp-delta.up { color: var(--ok); }
+.rp-delta.down { color: var(--warn); }
+.rp-overall { font-weight: 600; font-size: 13px; color: var(--text-2); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.rp-overall small { font-weight: 400; font-size: 10px; color: var(--text-3); }
+.rp-overall.good { color: var(--ok); }
+.rp-overall.low { color: var(--warn); }
+
+.rp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 8px; }
+
+/* 折叠小节、缺口、差异 */
+.rp-more { margin-top: 6px; font-size: 12px; color: var(--text-2); }
+.rp-more > summary { cursor: pointer; font-size: 11.5px; color: var(--text-2); user-select: none; }
+.rp-more > summary:hover { color: var(--text); }
+.rp-more .kn-steps { font-size: 11.5px; line-height: 1.55; }
+.rp-gaps { list-style: none; padding: 0; margin: 4px 0; }
+.rp-gaps li { margin: 4px 0; padding: 3px 0 3px 8px; border-left: 3px solid var(--line-strong); font-size: 11.5px; line-height: 1.55; color: var(--text-2); }
+.rp-gaps li.rp-sev-high { border-left-color: var(--danger); }
+.rp-gaps li.rp-sev-medium { border-left-color: var(--warn); }
+.rp-sev { display: inline-block; font-size: 10px; line-height: 15px; padding: 0 5px; margin-right: 4px; border-radius: 8px; background: var(--muted-soft); color: var(--text-3); }
+.rp-sev-high .rp-sev { background: var(--warn-soft); color: var(--danger); font-weight: 600; }
+.rp-sev-medium .rp-sev { background: var(--warn-soft); color: var(--warn); }
+.rp-gkind { display: inline-block; font-size: 10px; line-height: 15px; padding: 0 5px; margin-right: 4px; border-radius: 8px; border: 1px solid var(--line); color: var(--text-3); }
+.rp-gap-screen { color: var(--text-3); }
+.rp-proposal { font-size: 11px; color: var(--text-3); margin-top: 1px; }
+.rp-diffs { margin: 4px 0; padding-left: 16px; font-size: 11.5px; line-height: 1.55; }
+

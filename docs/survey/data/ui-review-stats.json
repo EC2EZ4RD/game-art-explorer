@@ -1,0 +1,4742 @@
+{
+ "date": "2026-10-14",
+ "method": "Steam appreviews（英文 + 简中，按有帮助排序，每语言最多 200 条）；关键词归类，只存计数",
+ "complaintLabels": {
+  "smallText": "字太小 / 看不清",
+  "inventory": "背包 / 物品管理难用",
+  "menus": "菜单 / 界面难用（繁琐、不直观）",
+  "clutter": "HUD 太乱 / 挡视野",
+  "map": "地图难用 / 没有地图",
+  "guidance": "提示 / 引导不清",
+  "controller": "手柄 / 键位不好",
+  "scaling": "UI 缩放 / 分辨率",
+  "lag": "UI 卡顿 / 响应慢"
+ },
+ "apps": {
+  "70": {
+   "n": 334,
+   "artMention": 0.102,
+   "artPositive": 0.853,
+   "uiMention": 47,
+   "uiMentionPos": 39,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "map": 1,
+    "guidance": 2
+   }
+  },
+  "220": {
+   "n": 300,
+   "artMention": 0.123,
+   "artPositive": 0.946,
+   "uiMention": 36,
+   "uiMentionPos": 35,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "440": {
+   "n": 345,
+   "artMention": 0.107,
+   "artPositive": 0.919,
+   "uiMention": 24,
+   "uiMentionPos": 18,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "620": {
+   "n": 371,
+   "artMention": 0.105,
+   "artPositive": 1.0,
+   "uiMention": 48,
+   "uiMentionPos": 48,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "3720": {
+   "n": 130,
+   "artMention": 0.046,
+   "artPositive": 1.0,
+   "uiMention": 9,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "7670": {
+   "n": 139,
+   "artMention": 0.158,
+   "artPositive": 0.955,
+   "uiMention": 23,
+   "uiMentionPos": 21,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "7940": {
+   "n": 232,
+   "artMention": 0.069,
+   "artPositive": 0.938,
+   "uiMention": 28,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "8870": {
+   "n": 279,
+   "artMention": 0.244,
+   "artPositive": 0.882,
+   "uiMention": 34,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "menus": 1,
+    "scaling": 4
+   }
+  },
+  "10180": {
+   "n": 138,
+   "artMention": 0.094,
+   "artPositive": 0.923,
+   "uiMention": 15,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 2
+   }
+  },
+  "15100": {
+   "n": 210,
+   "artMention": 0.138,
+   "artPositive": 0.828,
+   "uiMention": 54,
+   "uiMentionPos": 36,
+   "uiMentionNeg": 18,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "menus": 1,
+    "map": 1
+   }
+  },
+  "17390": {
+   "n": 236,
+   "artMention": 0.042,
+   "artPositive": 0.9,
+   "uiMention": 16,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "17410": {
+   "n": 231,
+   "artMention": 0.32,
+   "artPositive": 0.946,
+   "uiMention": 55,
+   "uiMentionPos": 46,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "controller": 1
+   }
+  },
+  "19980": {
+   "n": 49,
+   "artMention": 0.367,
+   "artPositive": 0.722,
+   "uiMention": 15,
+   "uiMentionPos": 8,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "lag": 2
+   }
+  },
+  "21690": {
+   "n": 363,
+   "artMention": 0.116,
+   "artPositive": 0.833,
+   "uiMention": 92,
+   "uiMentionPos": 57,
+   "uiMentionNeg": 35,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 4,
+    "menus": 1,
+    "controller": 2
+   }
+  },
+  "33230": {
+   "n": 400,
+   "artMention": 0.117,
+   "artPositive": 0.979,
+   "uiMention": 73,
+   "uiMentionPos": 57,
+   "uiMentionNeg": 16,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "controller": 4
+   }
+  },
+  "34190": {
+   "n": 47,
+   "artMention": 0.043,
+   "artPositive": 0.0,
+   "uiMention": 5,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "39150": {
+   "n": 145,
+   "artMention": 0.145,
+   "artPositive": 0.762,
+   "uiMention": 18,
+   "uiMentionPos": 8,
+   "uiMentionNeg": 10,
+   "uiPraise": 1,
+   "complaints": {}
+  },
+  "40700": {
+   "n": 350,
+   "artMention": 0.374,
+   "artPositive": 0.969,
+   "uiMention": 39,
+   "uiMentionPos": 38,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "42700": {
+   "n": 148,
+   "artMention": 0.054,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "48000": {
+   "n": 326,
+   "artMention": 0.255,
+   "artPositive": 0.831,
+   "uiMention": 64,
+   "uiMentionPos": 46,
+   "uiMentionNeg": 18,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "clutter": 1
+   }
+  },
+  "48190": {
+   "n": 254,
+   "artMention": 0.106,
+   "artPositive": 0.889,
+   "uiMention": 36,
+   "uiMentionPos": 33,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "49520": {
+   "n": 305,
+   "artMention": 0.111,
+   "artPositive": 0.824,
+   "uiMention": 41,
+   "uiMentionPos": 26,
+   "uiMentionNeg": 15,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "63710": {
+   "n": 15,
+   "artMention": 0.133,
+   "artPositive": 0.0,
+   "uiMention": 2,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "102600": {
+   "n": 43,
+   "artMention": 0.186,
+   "artPositive": 1.0,
+   "uiMention": 12,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "105600": {
+   "n": 400,
+   "artMention": 0.068,
+   "artPositive": 1.0,
+   "uiMention": 47,
+   "uiMentionPos": 45,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 2
+   }
+  },
+  "108710": {
+   "n": 314,
+   "artMention": 0.191,
+   "artPositive": 0.867,
+   "uiMention": 51,
+   "uiMentionPos": 45,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "map": 1
+   }
+  },
+  "110800": {
+   "n": 180,
+   "artMention": 0.083,
+   "artPositive": 0.867,
+   "uiMention": 16,
+   "uiMentionPos": 11,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "200260": {
+   "n": 292,
+   "artMention": 0.205,
+   "artPositive": 0.967,
+   "uiMention": 67,
+   "uiMentionPos": 62,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "204360": {
+   "n": 327,
+   "artMention": 0.073,
+   "artPositive": 0.917,
+   "uiMention": 17,
+   "uiMentionPos": 17,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "205020": {
+   "n": 10,
+   "artMention": 0.9,
+   "artPositive": 0.778,
+   "uiMention": 3,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "205100": {
+   "n": 330,
+   "artMention": 0.158,
+   "artPositive": 0.981,
+   "uiMention": 49,
+   "uiMentionPos": 49,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "207490": {
+   "n": 81,
+   "artMention": 0.099,
+   "artPositive": 1.0,
+   "uiMention": 7,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "208650": {
+   "n": 381,
+   "artMention": 0.286,
+   "artPositive": 0.927,
+   "uiMention": 53,
+   "uiMentionPos": 50,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "218410": {
+   "n": 14,
+   "artMention": 0.143,
+   "artPositive": 1.0,
+   "uiMention": 3,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "219740": {
+   "n": 277,
+   "artMention": 0.083,
+   "artPositive": 0.913,
+   "uiMention": 23,
+   "uiMentionPos": 16,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 1
+   }
+  },
+  "220240": {
+   "n": 301,
+   "artMention": 0.143,
+   "artPositive": 0.791,
+   "uiMention": 47,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 22,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 2
+   }
+  },
+  "224760": {
+   "n": 156,
+   "artMention": 0.167,
+   "artPositive": 0.923,
+   "uiMention": 18,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "231200": {
+   "n": 75,
+   "artMention": 0.4,
+   "artPositive": 0.833,
+   "uiMention": 11,
+   "uiMentionPos": 6,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "233860": {
+   "n": 399,
+   "artMention": 0.108,
+   "artPositive": 0.93,
+   "uiMention": 81,
+   "uiMentionPos": 67,
+   "uiMentionNeg": 14,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "clutter": 1,
+    "guidance": 1
+   }
+  },
+  "237990": {
+   "n": 61,
+   "artMention": 0.246,
+   "artPositive": 0.8,
+   "uiMention": 6,
+   "uiMentionPos": 1,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "242050": {
+   "n": 266,
+   "artMention": 0.105,
+   "artPositive": 0.857,
+   "uiMention": 40,
+   "uiMentionPos": 27,
+   "uiMentionNeg": 13,
+   "uiPraise": 0,
+   "complaints": {
+    "scaling": 1
+   }
+  },
+  "246420": {
+   "n": 400,
+   "artMention": 0.107,
+   "artPositive": 1.0,
+   "uiMention": 35,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "255710": {
+   "n": 341,
+   "artMention": 0.088,
+   "artPositive": 0.967,
+   "uiMention": 67,
+   "uiMentionPos": 65,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "257850": {
+   "n": 176,
+   "artMention": 0.517,
+   "artPositive": 0.879,
+   "uiMention": 49,
+   "uiMentionPos": 40,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "clutter": 3,
+    "map": 6
+   }
+  },
+  "261570": {
+   "n": 184,
+   "artMention": 0.315,
+   "artPositive": 0.81,
+   "uiMention": 32,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 2
+   }
+  },
+  "262060": {
+   "n": 394,
+   "artMention": 0.096,
+   "artPositive": 0.895,
+   "uiMention": 40,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "264710": {
+   "n": 400,
+   "artMention": 0.14,
+   "artPositive": 1.0,
+   "uiMention": 75,
+   "uiMentionPos": 75,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 1,
+    "map": 2,
+    "guidance": 3
+   }
+  },
+  "268500": {
+   "n": 355,
+   "artMention": 0.048,
+   "artPositive": 0.882,
+   "uiMention": 39,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "guidance": 2
+   }
+  },
+  "268910": {
+   "n": 400,
+   "artMention": 0.188,
+   "artPositive": 0.92,
+   "uiMention": 41,
+   "uiMentionPos": 33,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "clutter": 1,
+    "controller": 1
+   }
+  },
+  "275850": {
+   "n": 400,
+   "artMention": 0.122,
+   "artPositive": 0.653,
+   "uiMention": 106,
+   "uiMentionPos": 57,
+   "uiMentionNeg": 49,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "inventory": 3,
+    "menus": 3,
+    "clutter": 1,
+    "guidance": 3
+   }
+  },
+  "281990": {
+   "n": 332,
+   "artMention": 0.057,
+   "artPositive": 0.632,
+   "uiMention": 54,
+   "uiMentionPos": 29,
+   "uiMentionNeg": 25,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "clutter": 1
+   }
+  },
+  "282800": {
+   "n": 240,
+   "artMention": 0.117,
+   "artPositive": 0.607,
+   "uiMention": 59,
+   "uiMentionPos": 48,
+   "uiMentionNeg": 11,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "286000": {
+   "n": 35,
+   "artMention": 0.257,
+   "artPositive": 0.444,
+   "uiMention": 7,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "287700": {
+   "n": 246,
+   "artMention": 0.126,
+   "artPositive": 0.903,
+   "uiMention": 44,
+   "uiMentionPos": 38,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "clutter": 1,
+    "controller": 1
+   }
+  },
+  "287980": {
+   "n": 166,
+   "artMention": 0.078,
+   "artPositive": 1.0,
+   "uiMention": 23,
+   "uiMentionPos": 19,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "288160": {
+   "n": 218,
+   "artMention": 0.225,
+   "artPositive": 0.959,
+   "uiMention": 33,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "289070": {
+   "n": 400,
+   "artMention": 0.068,
+   "artPositive": 0.889,
+   "uiMention": 43,
+   "uiMentionPos": 29,
+   "uiMentionNeg": 14,
+   "uiPraise": 2,
+   "complaints": {
+    "menus": 2,
+    "clutter": 1
+   }
+  },
+  "289650": {
+   "n": 316,
+   "artMention": 0.13,
+   "artPositive": 0.659,
+   "uiMention": 43,
+   "uiMentionPos": 17,
+   "uiMentionNeg": 26,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 3,
+    "clutter": 2,
+    "map": 1
+   }
+  },
+  "290340": {
+   "n": 48,
+   "artMention": 0.229,
+   "artPositive": 0.909,
+   "uiMention": 7,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "292030": {
+   "n": 400,
+   "artMention": 0.29,
+   "artPositive": 0.371,
+   "uiMention": 66,
+   "uiMentionPos": 24,
+   "uiMentionNeg": 42,
+   "uiPraise": 1,
+   "complaints": {
+    "controller": 1,
+    "scaling": 1
+   }
+  },
+  "298110": {
+   "n": 359,
+   "artMention": 0.103,
+   "artPositive": 0.946,
+   "uiMention": 46,
+   "uiMentionPos": 30,
+   "uiMentionNeg": 16,
+   "uiPraise": 0,
+   "complaints": {
+    "scaling": 2
+   }
+  },
+  "304050": {
+   "n": 228,
+   "artMention": 0.088,
+   "artPositive": 0.7,
+   "uiMention": 39,
+   "uiMentionPos": 17,
+   "uiMentionNeg": 22,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "304430": {
+   "n": 279,
+   "artMention": 0.133,
+   "artPositive": 0.919,
+   "uiMention": 27,
+   "uiMentionPos": 27,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "306020": {
+   "n": 139,
+   "artMention": 0.05,
+   "artPositive": 1.0,
+   "uiMention": 11,
+   "uiMentionPos": 11,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "312520": {
+   "n": 390,
+   "artMention": 0.192,
+   "artPositive": 0.893,
+   "uiMention": 63,
+   "uiMentionPos": 53,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 2,
+    "clutter": 3,
+    "guidance": 2
+   }
+  },
+  "313730": {
+   "n": 152,
+   "artMention": 0.204,
+   "artPositive": 1.0,
+   "uiMention": 22,
+   "uiMentionPos": 20,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "316790": {
+   "n": 130,
+   "artMention": 0.162,
+   "artPositive": 0.81,
+   "uiMention": 38,
+   "uiMentionPos": 24,
+   "uiMentionNeg": 14,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 2,
+    "menus": 2
+   }
+  },
+  "318600": {
+   "n": 28,
+   "artMention": 0.25,
+   "artPositive": 0.571,
+   "uiMention": 12,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 2
+   }
+  },
+  "320140": {
+   "n": 162,
+   "artMention": 0.228,
+   "artPositive": 0.919,
+   "uiMention": 29,
+   "uiMentionPos": 19,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "323190": {
+   "n": 387,
+   "artMention": 0.065,
+   "artPositive": 0.96,
+   "uiMention": 55,
+   "uiMentionPos": 50,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 2,
+    "guidance": 1
+   }
+  },
+  "356570": {
+   "n": 100,
+   "artMention": 0.14,
+   "artPositive": 0.857,
+   "uiMention": 11,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "358130": {
+   "n": 26,
+   "artMention": 0.115,
+   "artPositive": 1.0,
+   "uiMention": 4,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "359870": {
+   "n": 160,
+   "artMention": 0.163,
+   "artPositive": 0.846,
+   "uiMention": 18,
+   "uiMentionPos": 16,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "controller": 2
+   }
+  },
+  "361420": {
+   "n": 347,
+   "artMention": 0.101,
+   "artPositive": 0.857,
+   "uiMention": 45,
+   "uiMentionPos": 29,
+   "uiMentionNeg": 16,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "map": 2,
+    "guidance": 5
+   }
+  },
+  "362930": {
+   "n": 74,
+   "artMention": 0.081,
+   "artPositive": 0.833,
+   "uiMention": 8,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "367520": {
+   "n": 400,
+   "artMention": 0.25,
+   "artPositive": 0.98,
+   "uiMention": 75,
+   "uiMentionPos": 60,
+   "uiMentionNeg": 15,
+   "uiPraise": 1,
+   "complaints": {
+    "guidance": 2
+   }
+  },
+  "368230": {
+   "n": 131,
+   "artMention": 0.092,
+   "artPositive": 1.0,
+   "uiMention": 27,
+   "uiMentionPos": 20,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "368500": {
+   "n": 376,
+   "artMention": 0.146,
+   "artPositive": 0.6,
+   "uiMention": 55,
+   "uiMentionPos": 34,
+   "uiMentionNeg": 21,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 2
+   }
+  },
+  "377840": {
+   "n": 179,
+   "artMention": 0.274,
+   "artPositive": 0.918,
+   "uiMention": 46,
+   "uiMentionPos": 40,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "lag": 1
+   }
+  },
+  "383870": {
+   "n": 288,
+   "artMention": 0.309,
+   "artPositive": 0.854,
+   "uiMention": 50,
+   "uiMentionPos": 38,
+   "uiMentionNeg": 12,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "map": 1
+   }
+  },
+  "384190": {
+   "n": 204,
+   "artMention": 0.554,
+   "artPositive": 0.938,
+   "uiMention": 46,
+   "uiMentionPos": 43,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "guidance": 1
+   }
+  },
+  "387290": {
+   "n": 239,
+   "artMention": 0.427,
+   "artPositive": 0.902,
+   "uiMention": 34,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1,
+    "controller": 2
+   }
+  },
+  "388880": {
+   "n": 46,
+   "artMention": 0.174,
+   "artPositive": 0.875,
+   "uiMention": 5,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "controller": 1
+   }
+  },
+  "391220": {
+   "n": 400,
+   "artMention": 0.177,
+   "artPositive": 0.915,
+   "uiMention": 26,
+   "uiMentionPos": 21,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 1
+   }
+  },
+  "403640": {
+   "n": 278,
+   "artMention": 0.155,
+   "artPositive": 0.907,
+   "uiMention": 41,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "clutter": 1
+   }
+  },
+  "413150": {
+   "n": 400,
+   "artMention": 0.075,
+   "artPositive": 1.0,
+   "uiMention": 35,
+   "uiMentionPos": 35,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "414340": {
+   "n": 239,
+   "artMention": 0.381,
+   "artPositive": 0.868,
+   "uiMention": 48,
+   "uiMentionPos": 39,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 3
+   }
+  },
+  "424840": {
+   "n": 324,
+   "artMention": 0.179,
+   "artPositive": 0.931,
+   "uiMention": 35,
+   "uiMentionPos": 29,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "clutter": 1,
+    "guidance": 3
+   }
+  },
+  "427410": {
+   "n": 363,
+   "artMention": 0.179,
+   "artPositive": 0.908,
+   "uiMention": 123,
+   "uiMentionPos": 108,
+   "uiMentionNeg": 15,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 2,
+    "menus": 1,
+    "clutter": 1,
+    "map": 4,
+    "guidance": 2
+   }
+  },
+  "427520": {
+   "n": 352,
+   "artMention": 0.048,
+   "artPositive": 1.0,
+   "uiMention": 62,
+   "uiMentionPos": 59,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 1,
+    "controller": 1
+   }
+  },
+  "431960": {
+   "n": 400,
+   "artMention": 0.11,
+   "artPositive": 0.955,
+   "uiMention": 14,
+   "uiMentionPos": 14,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "scaling": 1
+   }
+  },
+  "437920": {
+   "n": 73,
+   "artMention": 0.041,
+   "artPositive": 0.667,
+   "uiMention": 6,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "460950": {
+   "n": 380,
+   "artMention": 0.234,
+   "artPositive": 0.989,
+   "uiMention": 47,
+   "uiMentionPos": 42,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "481510": {
+   "n": 187,
+   "artMention": 0.289,
+   "artPositive": 0.963,
+   "uiMention": 37,
+   "uiMentionPos": 37,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "489830": {
+   "n": 400,
+   "artMention": 0.105,
+   "artPositive": 0.81,
+   "uiMention": 44,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 12,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "inventory": 2,
+    "menus": 2
+   }
+  },
+  "493340": {
+   "n": 256,
+   "artMention": 0.066,
+   "artPositive": 0.824,
+   "uiMention": 46,
+   "uiMentionPos": 35,
+   "uiMentionNeg": 11,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "clutter": 1,
+    "guidance": 3
+   }
+  },
+  "508440": {
+   "n": 328,
+   "artMention": 0.043,
+   "artPositive": 0.929,
+   "uiMention": 11,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "508980": {
+   "n": 12,
+   "artMention": 0.083,
+   "artPositive": 1.0,
+   "uiMention": 3,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "513360": {
+   "n": 44,
+   "artMention": 0.182,
+   "artPositive": 0.25,
+   "uiMention": 18,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "517710": {
+   "n": 27,
+   "artMention": 0.185,
+   "artPositive": 0.6,
+   "uiMention": 2,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "520720": {
+   "n": 129,
+   "artMention": 0.349,
+   "artPositive": 0.778,
+   "uiMention": 10,
+   "uiMentionPos": 8,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "526870": {
+   "n": 377,
+   "artMention": 0.103,
+   "artPositive": 0.949,
+   "uiMention": 100,
+   "uiMentionPos": 92,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 2,
+    "menus": 1
+   }
+  },
+  "531510": {
+   "n": 203,
+   "artMention": 0.099,
+   "artPositive": 1.0,
+   "uiMention": 28,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "539720": {
+   "n": 43,
+   "artMention": 0.0,
+   "artPositive": null,
+   "uiMention": 1,
+   "uiMentionPos": 1,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "540840": {
+   "n": 33,
+   "artMention": 0.212,
+   "artPositive": 0.714,
+   "uiMention": 7,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "542050": {
+   "n": 29,
+   "artMention": 0.345,
+   "artPositive": 0.8,
+   "uiMention": 0,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "controller": 2
+   }
+  },
+  "546560": {
+   "n": 341,
+   "artMention": 0.167,
+   "artPositive": 0.965,
+   "uiMention": 32,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 2,
+    "lag": 2
+   }
+  },
+  "550320": {
+   "n": 143,
+   "artMention": 0.371,
+   "artPositive": 0.849,
+   "uiMention": 19,
+   "uiMentionPos": 18,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "lag": 1
+   }
+  },
+  "553420": {
+   "n": 278,
+   "artMention": 0.219,
+   "artPositive": 0.787,
+   "uiMention": 86,
+   "uiMentionPos": 59,
+   "uiMentionNeg": 27,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "guidance": 2,
+    "controller": 1
+   }
+  },
+  "557600": {
+   "n": 242,
+   "artMention": 0.409,
+   "artPositive": 0.949,
+   "uiMention": 24,
+   "uiMentionPos": 24,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 3
+   }
+  },
+  "564530": {
+   "n": 36,
+   "artMention": 0.056,
+   "artPositive": 1.0,
+   "uiMention": 7,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "581270": {
+   "n": 52,
+   "artMention": 0.577,
+   "artPositive": 0.933,
+   "uiMention": 6,
+   "uiMentionPos": 6,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "588650": {
+   "n": 400,
+   "artMention": 0.068,
+   "artPositive": 0.926,
+   "uiMention": 34,
+   "uiMentionPos": 30,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "590380": {
+   "n": 293,
+   "artMention": 0.133,
+   "artPositive": 0.897,
+   "uiMention": 36,
+   "uiMentionPos": 29,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "591460": {
+   "n": 80,
+   "artMention": 0.087,
+   "artPositive": 0.571,
+   "uiMention": 24,
+   "uiMentionPos": 16,
+   "uiMentionNeg": 8,
+   "uiPraise": 2,
+   "complaints": {
+    "inventory": 1,
+    "menus": 3
+   }
+  },
+  "592480": {
+   "n": 13,
+   "artMention": 0.385,
+   "artPositive": 0.8,
+   "uiMention": 0,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "593640": {
+   "n": 25,
+   "artMention": 0.44,
+   "artPositive": 0.909,
+   "uiMention": 2,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "594570": {
+   "n": 176,
+   "artMention": 0.04,
+   "artPositive": 0.857,
+   "uiMention": 9,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 2
+   }
+  },
+  "599390": {
+   "n": 106,
+   "artMention": 0.104,
+   "artPositive": 1.0,
+   "uiMention": 11,
+   "uiMentionPos": 11,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1
+   }
+  },
+  "600480": {
+   "n": 20,
+   "artMention": 0.1,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "601150": {
+   "n": 400,
+   "artMention": 0.09,
+   "artPositive": 0.833,
+   "uiMention": 38,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "620980": {
+   "n": 164,
+   "artMention": 0.043,
+   "artPositive": 1.0,
+   "uiMention": 11,
+   "uiMentionPos": 10,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "632470": {
+   "n": 354,
+   "artMention": 0.218,
+   "artPositive": 0.922,
+   "uiMention": 58,
+   "uiMentionPos": 53,
+   "uiMentionNeg": 5,
+   "uiPraise": 1,
+   "complaints": {
+    "map": 1
+   }
+  },
+  "638230": {
+   "n": 349,
+   "artMention": 0.355,
+   "artPositive": 0.944,
+   "uiMention": 46,
+   "uiMentionPos": 43,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "638510": {
+   "n": 42,
+   "artMention": 0.095,
+   "artPositive": 1.0,
+   "uiMention": 12,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "647960": {
+   "n": 251,
+   "artMention": 0.056,
+   "artPositive": 1.0,
+   "uiMention": 7,
+   "uiMentionPos": 6,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "653530": {
+   "n": 363,
+   "artMention": 0.306,
+   "artPositive": 0.946,
+   "uiMention": 47,
+   "uiMentionPos": 39,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "menus": 1,
+    "guidance": 2
+   }
+  },
+  "658850": {
+   "n": 246,
+   "artMention": 0.11,
+   "artPositive": 0.852,
+   "uiMention": 26,
+   "uiMentionPos": 22,
+   "uiMentionNeg": 4,
+   "uiPraise": 1,
+   "complaints": {
+    "clutter": 1,
+    "guidance": 1
+   }
+  },
+  "683320": {
+   "n": 260,
+   "artMention": 0.55,
+   "artPositive": 0.895,
+   "uiMention": 34,
+   "uiMentionPos": 31,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "683900": {
+   "n": 103,
+   "artMention": 0.107,
+   "artPositive": 1.0,
+   "uiMention": 15,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "scaling": 3
+   }
+  },
+  "688420": {
+   "n": 304,
+   "artMention": 0.204,
+   "artPositive": 0.968,
+   "uiMention": 37,
+   "uiMentionPos": 33,
+   "uiMentionNeg": 4,
+   "uiPraise": 3,
+   "complaints": {}
+  },
+  "698670": {
+   "n": 274,
+   "artMention": 0.467,
+   "artPositive": 0.695,
+   "uiMention": 54,
+   "uiMentionPos": 35,
+   "uiMentionNeg": 19,
+   "uiPraise": 1,
+   "complaints": {
+    "menus": 1,
+    "map": 4,
+    "guidance": 10
+   }
+  },
+  "701160": {
+   "n": 400,
+   "artMention": 0.195,
+   "artPositive": 0.756,
+   "uiMention": 96,
+   "uiMentionPos": 56,
+   "uiMentionNeg": 40,
+   "uiPraise": 3,
+   "complaints": {
+    "menus": 1,
+    "clutter": 1,
+    "map": 1,
+    "guidance": 7
+   }
+  },
+  "702670": {
+   "n": 268,
+   "artMention": 0.201,
+   "artPositive": 0.926,
+   "uiMention": 48,
+   "uiMentionPos": 45,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "703080": {
+   "n": 368,
+   "artMention": 0.054,
+   "artPositive": 0.85,
+   "uiMention": 66,
+   "uiMentionPos": 48,
+   "uiMentionNeg": 18,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 3,
+    "clutter": 3,
+    "guidance": 2
+   }
+  },
+  "711660": {
+   "n": 70,
+   "artMention": 0.186,
+   "artPositive": 1.0,
+   "uiMention": 6,
+   "uiMentionPos": 6,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "735290": {
+   "n": 46,
+   "artMention": 0.522,
+   "artPositive": 0.75,
+   "uiMention": 9,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 2
+   }
+  },
+  "736190": {
+   "n": 182,
+   "artMention": 0.071,
+   "artPositive": 0.923,
+   "uiMention": 5,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "762940": {
+   "n": 15,
+   "artMention": 0.333,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 2
+   }
+  },
+  "763890": {
+   "n": 164,
+   "artMention": 0.189,
+   "artPositive": 0.774,
+   "uiMention": 32,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2
+   }
+  },
+  "812140": {
+   "n": 400,
+   "artMention": 0.195,
+   "artPositive": 0.808,
+   "uiMention": 67,
+   "uiMentionPos": 50,
+   "uiMentionNeg": 17,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 1
+   }
+  },
+  "814380": {
+   "n": 400,
+   "artMention": 0.15,
+   "artPositive": 0.9,
+   "uiMention": 68,
+   "uiMentionPos": 60,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2
+   }
+  },
+  "816340": {
+   "n": 198,
+   "artMention": 0.091,
+   "artPositive": 1.0,
+   "uiMention": 15,
+   "uiMentionPos": 15,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "837470": {
+   "n": 325,
+   "artMention": 0.095,
+   "artPositive": 0.968,
+   "uiMention": 33,
+   "uiMentionPos": 31,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1
+   }
+  },
+  "844590": {
+   "n": 150,
+   "artMention": 0.2,
+   "artPositive": 0.833,
+   "uiMention": 38,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "845270": {
+   "n": 6,
+   "artMention": 0.333,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "850190": {
+   "n": 240,
+   "artMention": 0.013,
+   "artPositive": 0.333,
+   "uiMention": 8,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "867210": {
+   "n": 111,
+   "artMention": 0.252,
+   "artPositive": 0.75,
+   "uiMention": 27,
+   "uiMentionPos": 15,
+   "uiMentionNeg": 12,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "870780": {
+   "n": 390,
+   "artMention": 0.282,
+   "artPositive": 0.836,
+   "uiMention": 110,
+   "uiMentionPos": 82,
+   "uiMentionNeg": 28,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "menus": 1,
+    "clutter": 4,
+    "map": 5,
+    "guidance": 3
+   }
+  },
+  "874390": {
+   "n": 132,
+   "artMention": 0.076,
+   "artPositive": 1.0,
+   "uiMention": 13,
+   "uiMentionPos": 10,
+   "uiMentionNeg": 3,
+   "uiPraise": 1,
+   "complaints": {}
+  },
+  "881100": {
+   "n": 379,
+   "artMention": 0.04,
+   "artPositive": 0.667,
+   "uiMention": 57,
+   "uiMentionPos": 47,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "883710": {
+   "n": 400,
+   "artMention": 0.135,
+   "artPositive": 0.981,
+   "uiMention": 99,
+   "uiMentionPos": 91,
+   "uiMentionNeg": 8,
+   "uiPraise": 1,
+   "complaints": {
+    "inventory": 3,
+    "map": 1
+   }
+  },
+  "892970": {
+   "n": 400,
+   "artMention": 0.152,
+   "artPositive": 0.344,
+   "uiMention": 176,
+   "uiMentionPos": 44,
+   "uiMentionNeg": 132,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 3,
+    "inventory": 17,
+    "menus": 7,
+    "clutter": 1,
+    "map": 4,
+    "guidance": 2,
+    "scaling": 1
+   }
+  },
+  "916440": {
+   "n": 299,
+   "artMention": 0.084,
+   "artPositive": 0.76,
+   "uiMention": 38,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 15,
+   "uiPraise": 1,
+   "complaints": {
+    "menus": 2,
+    "guidance": 3
+   }
+  },
+  "921570": {
+   "n": 312,
+   "artMention": 0.333,
+   "artPositive": 0.673,
+   "uiMention": 54,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 26,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "map": 1,
+    "guidance": 1
+   }
+  },
+  "922460": {
+   "n": 117,
+   "artMention": 0.111,
+   "artPositive": 0.692,
+   "uiMention": 3,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "937310": {
+   "n": 87,
+   "artMention": 0.103,
+   "artPositive": 0.778,
+   "uiMention": 4,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 0,
+   "uiPraise": 1,
+   "complaints": {}
+  },
+  "945360": {
+   "n": 363,
+   "artMention": 0.041,
+   "artPositive": 1.0,
+   "uiMention": 21,
+   "uiMentionPos": 16,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "952040": {
+   "n": 162,
+   "artMention": 0.074,
+   "artPositive": 0.667,
+   "uiMention": 8,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "menus": 1
+   }
+  },
+  "955900": {
+   "n": 117,
+   "artMention": 0.034,
+   "artPositive": 0.75,
+   "uiMention": 15,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 3
+   }
+  },
+  "957960": {
+   "n": 29,
+   "artMention": 0.483,
+   "artPositive": 0.429,
+   "uiMention": 10,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "960090": {
+   "n": 338,
+   "artMention": 0.038,
+   "artPositive": 0.846,
+   "uiMention": 31,
+   "uiMentionPos": 30,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 5
+   }
+  },
+  "960910": {
+   "n": 361,
+   "artMention": 0.161,
+   "artPositive": 0.828,
+   "uiMention": 100,
+   "uiMentionPos": 63,
+   "uiMentionNeg": 37,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 2,
+    "controller": 3
+   }
+  },
+  "960990": {
+   "n": 303,
+   "artMention": 0.109,
+   "artPositive": 0.909,
+   "uiMention": 48,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 23,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "guidance": 2
+   }
+  },
+  "962130": {
+   "n": 361,
+   "artMention": 0.042,
+   "artPositive": 0.867,
+   "uiMention": 44,
+   "uiMentionPos": 26,
+   "uiMentionNeg": 18,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "guidance": 2
+   }
+  },
+  "972660": {
+   "n": 361,
+   "artMention": 0.343,
+   "artPositive": 0.895,
+   "uiMention": 58,
+   "uiMentionPos": 52,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "guidance": 1
+   }
+  },
+  "977880": {
+   "n": 117,
+   "artMention": 0.402,
+   "artPositive": 0.766,
+   "uiMention": 8,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "979120": {
+   "n": 24,
+   "artMention": 0.042,
+   "artPositive": 0.0,
+   "uiMention": 2,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "986130": {
+   "n": 193,
+   "artMention": 0.098,
+   "artPositive": 0.579,
+   "uiMention": 46,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 21,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "990080": {
+   "n": 400,
+   "artMention": 0.228,
+   "artPositive": 0.659,
+   "uiMention": 74,
+   "uiMentionPos": 51,
+   "uiMentionNeg": 23,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "map": 1
+   }
+  },
+  "1016920": {
+   "n": 180,
+   "artMention": 0.044,
+   "artPositive": 1.0,
+   "uiMention": 15,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1046030": {
+   "n": 40,
+   "artMention": 0.15,
+   "artPositive": 1.0,
+   "uiMention": 13,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1049710": {
+   "n": 39,
+   "artMention": 0.538,
+   "artPositive": 0.619,
+   "uiMention": 14,
+   "uiMentionPos": 6,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1054490": {
+   "n": 232,
+   "artMention": 0.19,
+   "artPositive": 0.977,
+   "uiMention": 36,
+   "uiMentionPos": 31,
+   "uiMentionNeg": 5,
+   "uiPraise": 1,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "1055540": {
+   "n": 230,
+   "artMention": 0.174,
+   "artPositive": 1.0,
+   "uiMention": 27,
+   "uiMentionPos": 27,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 4
+   }
+  },
+  "1057090": {
+   "n": 400,
+   "artMention": 0.53,
+   "artPositive": 0.948,
+   "uiMention": 85,
+   "uiMentionPos": 75,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 3
+   }
+  },
+  "1062090": {
+   "n": 318,
+   "artMention": 0.06,
+   "artPositive": 0.947,
+   "uiMention": 111,
+   "uiMentionPos": 105,
+   "uiMentionNeg": 6,
+   "uiPraise": 1,
+   "complaints": {
+    "guidance": 3
+   }
+  },
+  "1072420": {
+   "n": 117,
+   "artMention": 0.12,
+   "artPositive": 1.0,
+   "uiMention": 24,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1073910": {
+   "n": 18,
+   "artMention": 0.0,
+   "artPositive": null,
+   "uiMention": 5,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1084020": {
+   "n": 136,
+   "artMention": 0.11,
+   "artPositive": 0.867,
+   "uiMention": 24,
+   "uiMentionPos": 24,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1085510": {
+   "n": 129,
+   "artMention": 0.101,
+   "artPositive": 0.846,
+   "uiMention": 14,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1085660": {
+   "n": 315,
+   "artMention": 0.089,
+   "artPositive": 0.75,
+   "uiMention": 46,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 14,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "guidance": 4
+   }
+  },
+  "1086940": {
+   "n": 400,
+   "artMention": 0.09,
+   "artPositive": 0.972,
+   "uiMention": 73,
+   "uiMentionPos": 63,
+   "uiMentionNeg": 10,
+   "uiPraise": 1,
+   "complaints": {
+    "inventory": 1,
+    "menus": 1,
+    "clutter": 2
+   }
+  },
+  "1091500": {
+   "n": 400,
+   "artMention": 0.228,
+   "artPositive": 0.934,
+   "uiMention": 73,
+   "uiMentionPos": 67,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 1,
+    "menus": 2,
+    "lag": 2
+   }
+  },
+  "1092790": {
+   "n": 400,
+   "artMention": 0.098,
+   "artPositive": 0.821,
+   "uiMention": 46,
+   "uiMentionPos": 40,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1093290": {
+   "n": 27,
+   "artMention": 0.481,
+   "artPositive": 1.0,
+   "uiMention": 7,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1097130": {
+   "n": 20,
+   "artMention": 0.2,
+   "artPositive": 0.25,
+   "uiMention": 7,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1122680": {
+   "n": 53,
+   "artMention": 0.585,
+   "artPositive": 0.935,
+   "uiMention": 9,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1122720": {
+   "n": 82,
+   "artMention": 0.354,
+   "artPositive": 0.931,
+   "uiMention": 13,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1123450": {
+   "n": 63,
+   "artMention": 0.381,
+   "artPositive": 1.0,
+   "uiMention": 14,
+   "uiMentionPos": 14,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1127500": {
+   "n": 218,
+   "artMention": 0.11,
+   "artPositive": 0.958,
+   "uiMention": 29,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1135690": {
+   "n": 348,
+   "artMention": 0.103,
+   "artPositive": 0.861,
+   "uiMention": 21,
+   "uiMentionPos": 20,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1136370": {
+   "n": 84,
+   "artMention": 0.345,
+   "artPositive": 0.759,
+   "uiMention": 25,
+   "uiMentionPos": 18,
+   "uiMentionNeg": 7,
+   "uiPraise": 1,
+   "complaints": {
+    "inventory": 2,
+    "clutter": 2,
+    "guidance": 1
+   }
+  },
+  "1145350": {
+   "n": 365,
+   "artMention": 0.236,
+   "artPositive": 0.942,
+   "uiMention": 64,
+   "uiMentionPos": 57,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "clutter": 4,
+    "map": 1
+   }
+  },
+  "1145360": {
+   "n": 400,
+   "artMention": 0.285,
+   "artPositive": 0.956,
+   "uiMention": 64,
+   "uiMentionPos": 57,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1148760": {
+   "n": 143,
+   "artMention": 0.448,
+   "artPositive": 0.891,
+   "uiMention": 37,
+   "uiMentionPos": 34,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 2
+   }
+  },
+  "1150690": {
+   "n": 336,
+   "artMention": 0.223,
+   "artPositive": 0.88,
+   "uiMention": 40,
+   "uiMentionPos": 35,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1161580": {
+   "n": 198,
+   "artMention": 0.121,
+   "artPositive": 0.958,
+   "uiMention": 36,
+   "uiMentionPos": 32,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 2
+   }
+  },
+  "1162750": {
+   "n": 242,
+   "artMention": 0.079,
+   "artPositive": 0.737,
+   "uiMention": 79,
+   "uiMentionPos": 54,
+   "uiMentionNeg": 25,
+   "uiPraise": 2,
+   "complaints": {
+    "menus": 1,
+    "clutter": 2,
+    "guidance": 2
+   }
+  },
+  "1167630": {
+   "n": 330,
+   "artMention": 0.1,
+   "artPositive": 0.879,
+   "uiMention": 33,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1168660": {
+   "n": 34,
+   "artMention": 0.059,
+   "artPositive": 1.0,
+   "uiMention": 4,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1174180": {
+   "n": 400,
+   "artMention": 0.203,
+   "artPositive": 0.938,
+   "uiMention": 63,
+   "uiMentionPos": 54,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "controller": 1
+   }
+  },
+  "1177980": {
+   "n": 220,
+   "artMention": 0.123,
+   "artPositive": 0.889,
+   "uiMention": 33,
+   "uiMentionPos": 31,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1182900": {
+   "n": 393,
+   "artMention": 0.331,
+   "artPositive": 0.885,
+   "uiMention": 55,
+   "uiMentionPos": 43,
+   "uiMentionNeg": 12,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "guidance": 6
+   }
+  },
+  "1188930": {
+   "n": 203,
+   "artMention": 0.133,
+   "artPositive": 0.889,
+   "uiMention": 51,
+   "uiMentionPos": 47,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 2
+   }
+  },
+  "1191840": {
+   "n": 7,
+   "artMention": 0.143,
+   "artPositive": 1.0,
+   "uiMention": 3,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1196590": {
+   "n": 400,
+   "artMention": 0.13,
+   "artPositive": 0.962,
+   "uiMention": 70,
+   "uiMentionPos": 61,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 2
+   }
+  },
+  "1197260": {
+   "n": 140,
+   "artMention": 0.036,
+   "artPositive": 0.8,
+   "uiMention": 19,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "1203620": {
+   "n": 344,
+   "artMention": 0.183,
+   "artPositive": 0.825,
+   "uiMention": 151,
+   "uiMentionPos": 124,
+   "uiMentionNeg": 27,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "inventory": 1,
+    "menus": 1,
+    "map": 2,
+    "guidance": 2,
+    "lag": 2
+   }
+  },
+  "1203710": {
+   "n": 83,
+   "artMention": 0.133,
+   "artPositive": 1.0,
+   "uiMention": 6,
+   "uiMentionPos": 6,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "clutter": 1
+   }
+  },
+  "1205520": {
+   "n": 275,
+   "artMention": 0.375,
+   "artPositive": 0.932,
+   "uiMention": 58,
+   "uiMentionPos": 55,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2
+   }
+  },
+  "1206560": {
+   "n": 348,
+   "artMention": 0.052,
+   "artPositive": 1.0,
+   "uiMention": 30,
+   "uiMentionPos": 26,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "guidance": 1
+   }
+  },
+  "1210320": {
+   "n": 314,
+   "artMention": 0.172,
+   "artPositive": 0.963,
+   "uiMention": 51,
+   "uiMentionPos": 42,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 2,
+    "guidance": 1
+   }
+  },
+  "1211630": {
+   "n": 87,
+   "artMention": 0.046,
+   "artPositive": 1.0,
+   "uiMention": 8,
+   "uiMentionPos": 8,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1222140": {
+   "n": 400,
+   "artMention": 0.217,
+   "artPositive": 0.989,
+   "uiMention": 79,
+   "uiMentionPos": 75,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1223500": {
+   "n": 16,
+   "artMention": 0.312,
+   "artPositive": 1.0,
+   "uiMention": 1,
+   "uiMentionPos": 1,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1232570": {
+   "n": 15,
+   "artMention": 0.467,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1238840": {
+   "n": 400,
+   "artMention": 0.165,
+   "artPositive": 0.833,
+   "uiMention": 36,
+   "uiMentionPos": 29,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 1,
+    "lag": 1
+   }
+  },
+  "1245620": {
+   "n": 400,
+   "artMention": 0.185,
+   "artPositive": 0.919,
+   "uiMention": 99,
+   "uiMentionPos": 83,
+   "uiMentionNeg": 16,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "clutter": 3,
+    "guidance": 3
+   }
+  },
+  "1252330": {
+   "n": 178,
+   "artMention": 0.242,
+   "artPositive": 0.744,
+   "uiMention": 51,
+   "uiMentionPos": 34,
+   "uiMentionNeg": 17,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "lag": 3
+   }
+  },
+  "1267910": {
+   "n": 306,
+   "artMention": 0.062,
+   "artPositive": 0.895,
+   "uiMention": 28,
+   "uiMentionPos": 16,
+   "uiMentionNeg": 12,
+   "uiPraise": 0,
+   "complaints": {
+    "scaling": 2
+   }
+  },
+  "1278540": {
+   "n": 43,
+   "artMention": 0.07,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 1,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1282320": {
+   "n": 12,
+   "artMention": 0.5,
+   "artPositive": 0.667,
+   "uiMention": 0,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1282730": {
+   "n": 139,
+   "artMention": 0.122,
+   "artPositive": 0.941,
+   "uiMention": 23,
+   "uiMentionPos": 14,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1291340": {
+   "n": 135,
+   "artMention": 0.104,
+   "artPositive": 1.0,
+   "uiMention": 30,
+   "uiMentionPos": 29,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1304550": {
+   "n": 130,
+   "artMention": 0.077,
+   "artPositive": 0.8,
+   "uiMention": 16,
+   "uiMentionPos": 11,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1307580": {
+   "n": 356,
+   "artMention": 0.222,
+   "artPositive": 1.0,
+   "uiMention": 47,
+   "uiMentionPos": 47,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 4
+   }
+  },
+  "1310330": {
+   "n": 34,
+   "artMention": 0.353,
+   "artPositive": 0.667,
+   "uiMention": 10,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1313140": {
+   "n": 400,
+   "artMention": 0.333,
+   "artPositive": 0.887,
+   "uiMention": 75,
+   "uiMentionPos": 64,
+   "uiMentionNeg": 11,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "clutter": 2,
+    "lag": 1
+   }
+  },
+  "1332010": {
+   "n": 397,
+   "artMention": 0.297,
+   "artPositive": 0.992,
+   "uiMention": 49,
+   "uiMentionPos": 48,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "1337010": {
+   "n": 225,
+   "artMention": 0.164,
+   "artPositive": 1.0,
+   "uiMention": 28,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1350200": {
+   "n": 58,
+   "artMention": 0.293,
+   "artPositive": 0.824,
+   "uiMention": 13,
+   "uiMentionPos": 6,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1366540": {
+   "n": 349,
+   "artMention": 0.097,
+   "artPositive": 0.941,
+   "uiMention": 65,
+   "uiMentionPos": 55,
+   "uiMentionNeg": 10,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "menus": 3
+   }
+  },
+  "1367550": {
+   "n": 269,
+   "artMention": 0.156,
+   "artPositive": 0.857,
+   "uiMention": 31,
+   "uiMentionPos": 24,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "controller": 2
+   }
+  },
+  "1372320": {
+   "n": 15,
+   "artMention": 0.333,
+   "artPositive": 0.8,
+   "uiMention": 5,
+   "uiMentionPos": 4,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1397920": {
+   "n": 157,
+   "artMention": 0.07,
+   "artPositive": 1.0,
+   "uiMention": 4,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1404850": {
+   "n": 111,
+   "artMention": 0.027,
+   "artPositive": 1.0,
+   "uiMention": 15,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1409160": {
+   "n": 50,
+   "artMention": 0.06,
+   "artPositive": 1.0,
+   "uiMention": 9,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1419170": {
+   "n": 214,
+   "artMention": 0.037,
+   "artPositive": 1.0,
+   "uiMention": 11,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1,
+    "lag": 1
+   }
+  },
+  "1426210": {
+   "n": 400,
+   "artMention": 0.228,
+   "artPositive": 0.934,
+   "uiMention": 49,
+   "uiMentionPos": 46,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "1440670": {
+   "n": 35,
+   "artMention": 0.086,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 2
+   }
+  },
+  "1454400": {
+   "n": 346,
+   "artMention": 0.061,
+   "artPositive": 0.905,
+   "uiMention": 17,
+   "uiMentionPos": 10,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1455840": {
+   "n": 174,
+   "artMention": 0.19,
+   "artPositive": 0.97,
+   "uiMention": 38,
+   "uiMentionPos": 37,
+   "uiMentionNeg": 1,
+   "uiPraise": 1,
+   "complaints": {
+    "menus": 2
+   }
+  },
+  "1458100": {
+   "n": 100,
+   "artMention": 0.24,
+   "artPositive": 0.625,
+   "uiMention": 13,
+   "uiMentionPos": 10,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 3
+   }
+  },
+  "1462040": {
+   "n": 400,
+   "artMention": 0.3,
+   "artPositive": 0.717,
+   "uiMention": 86,
+   "uiMentionPos": 50,
+   "uiMentionNeg": 36,
+   "uiPraise": 1,
+   "complaints": {
+    "menus": 1,
+    "guidance": 3,
+    "controller": 1
+   }
+  },
+  "1468810": {
+   "n": 299,
+   "artMention": 0.084,
+   "artPositive": 0.84,
+   "uiMention": 17,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "clutter": 1
+   }
+  },
+  "1473350": {
+   "n": 166,
+   "artMention": 0.133,
+   "artPositive": 0.909,
+   "uiMention": 29,
+   "uiMentionPos": 21,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1
+   }
+  },
+  "1477070": {
+   "n": 118,
+   "artMention": 0.042,
+   "artPositive": 0.8,
+   "uiMention": 4,
+   "uiMentionPos": 2,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1486630": {
+   "n": 24,
+   "artMention": 0.042,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 1,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1491670": {
+   "n": 191,
+   "artMention": 0.529,
+   "artPositive": 0.97,
+   "uiMention": 33,
+   "uiMentionPos": 31,
+   "uiMentionNeg": 2,
+   "uiPraise": 1,
+   "complaints": {
+    "smallText": 1
+   }
+  },
+  "1544020": {
+   "n": 185,
+   "artMention": 0.389,
+   "artPositive": 0.708,
+   "uiMention": 47,
+   "uiMentionPos": 30,
+   "uiMentionNeg": 17,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "inventory": 3,
+    "clutter": 2,
+    "map": 2
+   }
+  },
+  "1551360": {
+   "n": 400,
+   "artMention": 0.185,
+   "artPositive": 0.905,
+   "uiMention": 46,
+   "uiMentionPos": 33,
+   "uiMentionNeg": 13,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "menus": 1,
+    "map": 1,
+    "guidance": 1
+   }
+  },
+  "1585220": {
+   "n": 134,
+   "artMention": 0.157,
+   "artPositive": 0.952,
+   "uiMention": 8,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "controller": 1
+   }
+  },
+  "1586800": {
+   "n": 159,
+   "artMention": 0.107,
+   "artPositive": 1.0,
+   "uiMention": 18,
+   "uiMentionPos": 16,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 2
+   }
+  },
+  "1593030": {
+   "n": 177,
+   "artMention": 0.153,
+   "artPositive": 0.852,
+   "uiMention": 36,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 13,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2,
+    "map": 1,
+    "guidance": 1
+   }
+  },
+  "1593500": {
+   "n": 388,
+   "artMention": 0.25,
+   "artPositive": 0.876,
+   "uiMention": 51,
+   "uiMentionPos": 37,
+   "uiMentionNeg": 14,
+   "uiPraise": 1,
+   "complaints": {
+    "smallText": 2,
+    "scaling": 1
+   }
+  },
+  "1599600": {
+   "n": 380,
+   "artMention": 0.011,
+   "artPositive": 0.75,
+   "uiMention": 36,
+   "uiMentionPos": 21,
+   "uiMentionNeg": 15,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 1,
+    "guidance": 5
+   }
+  },
+  "1622910": {
+   "n": 241,
+   "artMention": 0.241,
+   "artPositive": 0.845,
+   "uiMention": 32,
+   "uiMentionPos": 24,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "1623730": {
+   "n": 400,
+   "artMention": 0.1,
+   "artPositive": 0.95,
+   "uiMention": 88,
+   "uiMentionPos": 76,
+   "uiMentionNeg": 12,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 1,
+    "menus": 3,
+    "map": 1
+   }
+  },
+  "1627720": {
+   "n": 400,
+   "artMention": 0.307,
+   "artPositive": 0.87,
+   "uiMention": 114,
+   "uiMentionPos": 99,
+   "uiMentionNeg": 15,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "map": 1
+   }
+  },
+  "1634150": {
+   "n": 144,
+   "artMention": 0.493,
+   "artPositive": 0.859,
+   "uiMention": 20,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1659420": {
+   "n": 353,
+   "artMention": 0.184,
+   "artPositive": 0.862,
+   "uiMention": 33,
+   "uiMentionPos": 24,
+   "uiMentionNeg": 9,
+   "uiPraise": 1,
+   "complaints": {
+    "map": 1
+   }
+  },
+  "1668690": {
+   "n": 32,
+   "artMention": 0.125,
+   "artPositive": 1.0,
+   "uiMention": 10,
+   "uiMentionPos": 10,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1677740": {
+   "n": 212,
+   "artMention": 0.019,
+   "artPositive": 0.25,
+   "uiMention": 12,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1
+   }
+  },
+  "1687950": {
+   "n": 400,
+   "artMention": 0.203,
+   "artPositive": 0.938,
+   "uiMention": 79,
+   "uiMentionPos": 72,
+   "uiMentionNeg": 7,
+   "uiPraise": 1,
+   "complaints": {}
+  },
+  "1693980": {
+   "n": 345,
+   "artMention": 0.2,
+   "artPositive": 0.928,
+   "uiMention": 64,
+   "uiMentionPos": 53,
+   "uiMentionNeg": 11,
+   "uiPraise": 1,
+   "complaints": {
+    "map": 1,
+    "guidance": 1
+   }
+  },
+  "1712350": {
+   "n": 75,
+   "artMention": 0.413,
+   "artPositive": 0.903,
+   "uiMention": 19,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 6,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "1716740": {
+   "n": 349,
+   "artMention": 0.178,
+   "artPositive": 0.629,
+   "uiMention": 114,
+   "uiMentionPos": 60,
+   "uiMentionNeg": 54,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 1,
+    "menus": 4,
+    "clutter": 2,
+    "guidance": 3
+   }
+  },
+  "1720850": {
+   "n": 24,
+   "artMention": 0.083,
+   "artPositive": 1.0,
+   "uiMention": 4,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "1724140": {
+   "n": 86,
+   "artMention": 0.186,
+   "artPositive": 0.875,
+   "uiMention": 20,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1774580": {
+   "n": 393,
+   "artMention": 0.191,
+   "artPositive": 0.8,
+   "uiMention": 99,
+   "uiMentionPos": 66,
+   "uiMentionNeg": 33,
+   "uiPraise": 0,
+   "complaints": {
+    "map": 1,
+    "guidance": 3
+   }
+  },
+  "1775490": {
+   "n": 73,
+   "artMention": 0.082,
+   "artPositive": 0.667,
+   "uiMention": 9,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1796410": {
+   "n": 6,
+   "artMention": 0.5,
+   "artPositive": 1.0,
+   "uiMention": 0,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1812370": {
+   "n": 117,
+   "artMention": 0.513,
+   "artPositive": 0.967,
+   "uiMention": 30,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "controller": 1
+   }
+  },
+  "1817070": {
+   "n": 400,
+   "artMention": 0.128,
+   "artPositive": 0.941,
+   "uiMention": 55,
+   "uiMentionPos": 50,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "scaling": 1
+   }
+  },
+  "1817190": {
+   "n": 339,
+   "artMention": 0.159,
+   "artPositive": 0.87,
+   "uiMention": 46,
+   "uiMentionPos": 39,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1817230": {
+   "n": 253,
+   "artMention": 0.277,
+   "artPositive": 0.929,
+   "uiMention": 41,
+   "uiMentionPos": 34,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1839510": {
+   "n": 7,
+   "artMention": 0.143,
+   "artPositive": 0.0,
+   "uiMention": 1,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1850570": {
+   "n": 400,
+   "artMention": 0.212,
+   "artPositive": 0.906,
+   "uiMention": 83,
+   "uiMentionPos": 72,
+   "uiMentionNeg": 11,
+   "uiPraise": 1,
+   "complaints": {
+    "smallText": 1,
+    "menus": 2,
+    "map": 1,
+    "guidance": 1
+   }
+  },
+  "1874490": {
+   "n": 145,
+   "artMention": 0.241,
+   "artPositive": 0.914,
+   "uiMention": 48,
+   "uiMentionPos": 38,
+   "uiMentionNeg": 10,
+   "uiPraise": 1,
+   "complaints": {}
+  },
+  "1876890": {
+   "n": 329,
+   "artMention": 0.152,
+   "artPositive": 0.94,
+   "uiMention": 64,
+   "uiMentionPos": 58,
+   "uiMentionNeg": 6,
+   "uiPraise": 1,
+   "complaints": {
+    "smallText": 1,
+    "inventory": 1,
+    "menus": 2,
+    "clutter": 1,
+    "map": 1,
+    "guidance": 2,
+    "controller": 1
+   }
+  },
+  "1888930": {
+   "n": 400,
+   "artMention": 0.263,
+   "artPositive": 0.933,
+   "uiMention": 51,
+   "uiMentionPos": 48,
+   "uiMentionNeg": 3,
+   "uiPraise": 1,
+   "complaints": {
+    "smallText": 1,
+    "inventory": 1
+   }
+  },
+  "1894430": {
+   "n": 190,
+   "artMention": 0.142,
+   "artPositive": 0.741,
+   "uiMention": 61,
+   "uiMentionPos": 52,
+   "uiMentionNeg": 9,
+   "uiPraise": 4,
+   "complaints": {
+    "guidance": 2
+   }
+  },
+  "1895880": {
+   "n": 218,
+   "artMention": 0.321,
+   "artPositive": 0.886,
+   "uiMention": 27,
+   "uiMentionPos": 20,
+   "uiMentionNeg": 7,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 2,
+    "map": 2
+   }
+  },
+  "1903340": {
+   "n": 400,
+   "artMention": 0.517,
+   "artPositive": 0.874,
+   "uiMention": 120,
+   "uiMentionPos": 98,
+   "uiMentionNeg": 22,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "map": 13,
+    "guidance": 1
+   }
+  },
+  "1927720": {
+   "n": 310,
+   "artMention": 0.345,
+   "artPositive": 1.0,
+   "uiMention": 48,
+   "uiMentionPos": 47,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1931770": {
+   "n": 400,
+   "artMention": 0.27,
+   "artPositive": 0.991,
+   "uiMention": 79,
+   "uiMentionPos": 74,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1,
+    "map": 5,
+    "guidance": 1
+   }
+  },
+  "1940340": {
+   "n": 262,
+   "artMention": 0.279,
+   "artPositive": 0.726,
+   "uiMention": 34,
+   "uiMentionPos": 19,
+   "uiMentionNeg": 15,
+   "uiPraise": 0,
+   "complaints": {
+    "inventory": 1
+   }
+  },
+  "1948800": {
+   "n": 163,
+   "artMention": 0.123,
+   "artPositive": 0.8,
+   "uiMention": 15,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "lag": 2
+   }
+  },
+  "1954200": {
+   "n": 162,
+   "artMention": 0.593,
+   "artPositive": 0.833,
+   "uiMention": 50,
+   "uiMentionPos": 41,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 3
+   }
+  },
+  "1972440": {
+   "n": 134,
+   "artMention": 0.045,
+   "artPositive": 1.0,
+   "uiMention": 11,
+   "uiMentionPos": 9,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "1996010": {
+   "n": 133,
+   "artMention": 0.323,
+   "artPositive": 0.93,
+   "uiMention": 24,
+   "uiMentionPos": 21,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2027330": {
+   "n": 314,
+   "artMention": 0.051,
+   "artPositive": 0.875,
+   "uiMention": 11,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 4,
+   "uiPraise": 0,
+   "complaints": {
+    "clutter": 1
+   }
+  },
+  "2060130": {
+   "n": 74,
+   "artMention": 0.297,
+   "artPositive": 0.727,
+   "uiMention": 13,
+   "uiMentionPos": 8,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2060160": {
+   "n": 256,
+   "artMention": 0.043,
+   "artPositive": 0.818,
+   "uiMention": 25,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "2060790": {
+   "n": 22,
+   "artMention": 0.864,
+   "artPositive": 1.0,
+   "uiMention": 3,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2084000": {
+   "n": 224,
+   "artMention": 0.161,
+   "artPositive": 0.861,
+   "uiMention": 34,
+   "uiMentionPos": 26,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2095150": {
+   "n": 0,
+   "artMention": 0,
+   "artPositive": null,
+   "uiMention": 0,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2131640": {
+   "n": 183,
+   "artMention": 0.104,
+   "artPositive": 0.947,
+   "uiMention": 13,
+   "uiMentionPos": 10,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2142790": {
+   "n": 368,
+   "artMention": 0.334,
+   "artPositive": 0.829,
+   "uiMention": 89,
+   "uiMentionPos": 62,
+   "uiMentionNeg": 27,
+   "uiPraise": 1,
+   "complaints": {
+    "inventory": 1,
+    "menus": 1,
+    "guidance": 1
+   }
+  },
+  "2179850": {
+   "n": 119,
+   "artMention": 0.227,
+   "artPositive": 0.963,
+   "uiMention": 50,
+   "uiMentionPos": 49,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2185060": {
+   "n": 242,
+   "artMention": 0.079,
+   "artPositive": 0.842,
+   "uiMention": 30,
+   "uiMentionPos": 26,
+   "uiMentionNeg": 4,
+   "uiPraise": 1,
+   "complaints": {
+    "menus": 2,
+    "clutter": 1
+   }
+  },
+  "2187290": {
+   "n": 209,
+   "artMention": 0.148,
+   "artPositive": 0.806,
+   "uiMention": 34,
+   "uiMentionPos": 20,
+   "uiMentionNeg": 14,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2198150": {
+   "n": 227,
+   "artMention": 0.198,
+   "artPositive": 0.956,
+   "uiMention": 69,
+   "uiMentionPos": 68,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "clutter": 5
+   }
+  },
+  "2212330": {
+   "n": 236,
+   "artMention": 0.064,
+   "artPositive": 1.0,
+   "uiMention": 14,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 3
+   }
+  },
+  "2215430": {
+   "n": 333,
+   "artMention": 0.357,
+   "artPositive": 0.933,
+   "uiMention": 54,
+   "uiMentionPos": 49,
+   "uiMentionNeg": 5,
+   "uiPraise": 3,
+   "complaints": {
+    "menus": 1,
+    "clutter": 4,
+    "guidance": 1,
+    "controller": 1
+   }
+  },
+  "2239150": {
+   "n": 280,
+   "artMention": 0.093,
+   "artPositive": 0.923,
+   "uiMention": 30,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2281410": {
+   "n": 17,
+   "artMention": 0.0,
+   "artPositive": null,
+   "uiMention": 3,
+   "uiMentionPos": 1,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2322010": {
+   "n": 359,
+   "artMention": 0.189,
+   "artPositive": 0.882,
+   "uiMention": 59,
+   "uiMentionPos": 41,
+   "uiMentionNeg": 18,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 3,
+    "menus": 1,
+    "guidance": 1
+   }
+  },
+  "2344520": {
+   "n": 400,
+   "artMention": 0.11,
+   "artPositive": 0.364,
+   "uiMention": 69,
+   "uiMentionPos": 13,
+   "uiMentionNeg": 56,
+   "uiPraise": 1,
+   "complaints": {
+    "menus": 1,
+    "clutter": 2,
+    "guidance": 2
+   }
+  },
+  "2354000": {
+   "n": 58,
+   "artMention": 0.034,
+   "artPositive": 1.0,
+   "uiMention": 2,
+   "uiMentionPos": 0,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2358720": {
+   "n": 400,
+   "artMention": 0.378,
+   "artPositive": 0.914,
+   "uiMention": 91,
+   "uiMentionPos": 82,
+   "uiMentionNeg": 9,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "map": 2
+   }
+  },
+  "2379780": {
+   "n": 400,
+   "artMention": 0.048,
+   "artPositive": 1.0,
+   "uiMention": 49,
+   "uiMentionPos": 47,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2389040": {
+   "n": 10,
+   "artMention": 0.2,
+   "artPositive": 1.0,
+   "uiMention": 5,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2420110": {
+   "n": 264,
+   "artMention": 0.258,
+   "artPositive": 0.765,
+   "uiMention": 37,
+   "uiMentionPos": 19,
+   "uiMentionNeg": 18,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "2420660": {
+   "n": 318,
+   "artMention": 0.679,
+   "artPositive": 0.921,
+   "uiMention": 49,
+   "uiMentionPos": 49,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 2
+   }
+  },
+  "2428840": {
+   "n": 33,
+   "artMention": 0.606,
+   "artPositive": 1.0,
+   "uiMention": 3,
+   "uiMentionPos": 3,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2461850": {
+   "n": 219,
+   "artMention": 0.493,
+   "artPositive": 0.815,
+   "uiMention": 35,
+   "uiMentionPos": 23,
+   "uiMentionNeg": 12,
+   "uiPraise": 0,
+   "complaints": {
+    "guidance": 2
+   }
+  },
+  "2501600": {
+   "n": 63,
+   "artMention": 0.19,
+   "artPositive": 1.0,
+   "uiMention": 7,
+   "uiMentionPos": 5,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2515020": {
+   "n": 393,
+   "artMention": 0.232,
+   "artPositive": 0.615,
+   "uiMention": 85,
+   "uiMentionPos": 51,
+   "uiMentionNeg": 34,
+   "uiPraise": 0,
+   "complaints": {
+    "smallText": 1,
+    "map": 1,
+    "scaling": 1
+   }
+  },
+  "2531310": {
+   "n": 400,
+   "artMention": 0.233,
+   "artPositive": 0.796,
+   "uiMention": 52,
+   "uiMentionPos": 39,
+   "uiMentionNeg": 13,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "scaling": 1
+   }
+  },
+  "2533960": {
+   "n": 91,
+   "artMention": 0.396,
+   "artPositive": 0.972,
+   "uiMention": 30,
+   "uiMentionPos": 28,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2552430": {
+   "n": 222,
+   "artMention": 0.167,
+   "artPositive": 0.838,
+   "uiMention": 38,
+   "uiMentionPos": 35,
+   "uiMentionNeg": 3,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 1,
+    "map": 1,
+    "guidance": 5
+   }
+  },
+  "2612680": {
+   "n": 98,
+   "artMention": 0.408,
+   "artPositive": 0.975,
+   "uiMention": 10,
+   "uiMentionPos": 10,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2651280": {
+   "n": 361,
+   "artMention": 0.175,
+   "artPositive": 0.778,
+   "uiMention": 43,
+   "uiMentionPos": 38,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2668510": {
+   "n": 339,
+   "artMention": 0.127,
+   "artPositive": 0.93,
+   "uiMention": 31,
+   "uiMentionPos": 25,
+   "uiMentionNeg": 6,
+   "uiPraise": 1,
+   "complaints": {
+    "guidance": 1
+   }
+  },
+  "2674590": {
+   "n": 105,
+   "artMention": 0.038,
+   "artPositive": 0.75,
+   "uiMention": 8,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 1,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "2679460": {
+   "n": 305,
+   "artMention": 0.285,
+   "artPositive": 0.736,
+   "uiMention": 80,
+   "uiMentionPos": 55,
+   "uiMentionNeg": 25,
+   "uiPraise": 2,
+   "complaints": {
+    "menus": 1,
+    "guidance": 1
+   }
+  },
+  "2707900": {
+   "n": 162,
+   "artMention": 0.099,
+   "artPositive": 0.875,
+   "uiMention": 12,
+   "uiMentionPos": 7,
+   "uiMentionNeg": 5,
+   "uiPraise": 0,
+   "complaints": {
+    "menus": 2
+   }
+  },
+  "2738490": {
+   "n": 200,
+   "artMention": 0.47,
+   "artPositive": 0.883,
+   "uiMention": 42,
+   "uiMentionPos": 34,
+   "uiMentionNeg": 8,
+   "uiPraise": 2,
+   "complaints": {
+    "menus": 1
+   }
+  },
+  "2795000": {
+   "n": 213,
+   "artMention": 0.286,
+   "artPositive": 1.0,
+   "uiMention": 30,
+   "uiMentionPos": 30,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "3107330": {
+   "n": 154,
+   "artMention": 0.136,
+   "artPositive": 0.714,
+   "uiMention": 17,
+   "uiMentionPos": 15,
+   "uiMentionNeg": 2,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "3184110": {
+   "n": 20,
+   "artMention": 0.15,
+   "artPositive": 1.0,
+   "uiMention": 8,
+   "uiMentionPos": 8,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "3314060": {
+   "n": 80,
+   "artMention": 0.175,
+   "artPositive": 1.0,
+   "uiMention": 12,
+   "uiMentionPos": 12,
+   "uiMentionNeg": 0,
+   "uiPraise": 1,
+   "complaints": {}
+  },
+  "3361470": {
+   "n": 171,
+   "artMention": 0.094,
+   "artPositive": 0.812,
+   "uiMention": 30,
+   "uiMentionPos": 22,
+   "uiMentionNeg": 8,
+   "uiPraise": 0,
+   "complaints": {}
+  },
+  "3404470": {
+   "n": 190,
+   "artMention": 0.116,
+   "artPositive": 1.0,
+   "uiMention": 18,
+   "uiMentionPos": 18,
+   "uiMentionNeg": 0,
+   "uiPraise": 0,
+   "complaints": {}
+  }
+ },
+ "complaints": {
+  "smallText": [
+   {
+    "appid": 892970,
+    "name": "Valheim",
+    "count": 3
+   },
+   {
+    "appid": 2322010,
+    "name": "God of War Ragnarök",
+    "count": 3
+   },
+   {
+    "appid": 17410,
+    "name": "Mirror's Edge",
+    "count": 2
+   },
+   {
+    "appid": 257850,
+    "name": "Hyper Light Drifter",
+    "count": 2
+   },
+   {
+    "appid": 275850,
+    "name": "No Man's Sky",
+    "count": 2
+   },
+   {
+    "appid": 403640,
+    "name": "Dishonored 2",
+    "count": 2
+   },
+   {
+    "appid": 653530,
+    "name": "Return of the Obra Dinn",
+    "count": 2
+   },
+   {
+    "appid": 763890,
+    "name": "Wildermyth",
+    "count": 2
+   },
+   {
+    "appid": 814380,
+    "name": "Sekiro",
+    "count": 2
+   },
+   {
+    "appid": 952040,
+    "name": "MUSYNX",
+    "count": 2
+   },
+   {
+    "appid": 1145350,
+    "name": "Hades II",
+    "count": 2
+   },
+   {
+    "appid": 1205520,
+    "name": "Pentiment",
+    "count": 2
+   },
+   {
+    "appid": 1468810,
+    "name": "鬼谷八荒 Tale of Immortal",
+    "count": 2
+   },
+   {
+    "appid": 1544020,
+    "name": "The Callisto Protocol",
+    "count": 2
+   },
+   {
+    "appid": 1551360,
+    "name": "Forza Horizon 5",
+    "count": 2
+   },
+   {
+    "appid": 1593030,
+    "name": "Terra Nil",
+    "count": 2
+   },
+   {
+    "appid": 1593500,
+    "name": "God of War",
+    "count": 2
+   },
+   {
+    "appid": 2420660,
+    "name": "Neva",
+    "count": 2
+   }
+  ],
+  "inventory": [
+   {
+    "appid": 892970,
+    "name": "Valheim",
+    "count": 17
+   },
+   {
+    "appid": 21690,
+    "name": "Resident Evil 5",
+    "count": 4
+   },
+   {
+    "appid": 275850,
+    "name": "No Man's Sky",
+    "count": 3
+   },
+   {
+    "appid": 883710,
+    "name": "Resident Evil 2",
+    "count": 3
+   },
+   {
+    "appid": 1544020,
+    "name": "The Callisto Protocol",
+    "count": 3
+   },
+   {
+    "appid": 316790,
+    "name": "Grim Fandango Remastered",
+    "count": 2
+   },
+   {
+    "appid": 318600,
+    "name": "The Flame in the Flood",
+    "count": 2
+   },
+   {
+    "appid": 427410,
+    "name": "Abiotic Factor",
+    "count": 2
+   },
+   {
+    "appid": 489830,
+    "name": "The Elder Scrolls V: Skyrim Special Edition",
+    "count": 2
+   },
+   {
+    "appid": 526870,
+    "name": "Satisfactory",
+    "count": 2
+   },
+   {
+    "appid": 1136370,
+    "name": "Bear and Breakfast",
+    "count": 2
+   }
+  ],
+  "menus": [
+   {
+    "appid": 892970,
+    "name": "Valheim",
+    "count": 7
+   },
+   {
+    "appid": 1716740,
+    "name": "Starfield",
+    "count": 4
+   },
+   {
+    "appid": 275850,
+    "name": "No Man's Sky",
+    "count": 3
+   },
+   {
+    "appid": 289650,
+    "name": "Assassin's Creed Unity",
+    "count": 3
+   },
+   {
+    "appid": 591460,
+    "name": "Parkasaurus",
+    "count": 3
+   },
+   {
+    "appid": 703080,
+    "name": "Planet Zoo",
+    "count": 3
+   },
+   {
+    "appid": 1366540,
+    "name": "Dyson Sphere Program",
+    "count": 3
+   },
+   {
+    "appid": 1623730,
+    "name": "Palworld",
+    "count": 3
+   },
+   {
+    "appid": 220240,
+    "name": "Far Cry 3",
+    "count": 2
+   },
+   {
+    "appid": 289070,
+    "name": "Sid Meier’s Civilization® VI",
+    "count": 2
+   },
+   {
+    "appid": 312520,
+    "name": "Rain World",
+    "count": 2
+   },
+   {
+    "appid": 316790,
+    "name": "Grim Fandango Remastered",
+    "count": 2
+   },
+   {
+    "appid": 323190,
+    "name": "Frostpunk",
+    "count": 2
+   },
+   {
+    "appid": 368500,
+    "name": "Assassin's Creed Syndicate",
+    "count": 2
+   },
+   {
+    "appid": 489830,
+    "name": "The Elder Scrolls V: Skyrim Special Edition",
+    "count": 2
+   },
+   {
+    "appid": 916440,
+    "name": "Anno 1800",
+    "count": 2
+   },
+   {
+    "appid": 1091500,
+    "name": "Cyberpunk 2077",
+    "count": 2
+   },
+   {
+    "appid": 1188930,
+    "name": "Chrono Ark",
+    "count": 2
+   },
+   {
+    "appid": 1440670,
+    "name": "Zeepkist",
+    "count": 2
+   },
+   {
+    "appid": 1455840,
+    "name": "Dorfromantik",
+    "count": 2
+   },
+   {
+    "appid": 1850570,
+    "name": "DEATH STRANDING DIRECTOR'S CUT",
+    "count": 2
+   },
+   {
+    "appid": 1876890,
+    "name": "Wandering Sword",
+    "count": 2
+   },
+   {
+    "appid": 2185060,
+    "name": "Two Point Museum",
+    "count": 2
+   },
+   {
+    "appid": 2707900,
+    "name": "NIGHT-RUNNERS PROLOGUE",
+    "count": 2
+   }
+  ],
+  "clutter": [
+   {
+    "appid": 960090,
+    "name": "Bloons TD 6",
+    "count": 5
+   },
+   {
+    "appid": 2198150,
+    "name": "Tiny Glade",
+    "count": 5
+   },
+   {
+    "appid": 870780,
+    "name": "CONTROL",
+    "count": 4
+   },
+   {
+    "appid": 1145350,
+    "name": "Hades II",
+    "count": 4
+   },
+   {
+    "appid": 2215430,
+    "name": "Ghost of Tsushima DC",
+    "count": 4
+   },
+   {
+    "appid": 257850,
+    "name": "Hyper Light Drifter",
+    "count": 3
+   },
+   {
+    "appid": 312520,
+    "name": "Rain World",
+    "count": 3
+   },
+   {
+    "appid": 703080,
+    "name": "Planet Zoo",
+    "count": 3
+   },
+   {
+    "appid": 1245620,
+    "name": "ELDEN RING",
+    "count": 3
+   },
+   {
+    "appid": 1458100,
+    "name": "Cozy Grove",
+    "count": 3
+   },
+   {
+    "appid": 289650,
+    "name": "Assassin's Creed Unity",
+    "count": 2
+   },
+   {
+    "appid": 594570,
+    "name": "Total War: WARHAMMER II",
+    "count": 2
+   },
+   {
+    "appid": 762940,
+    "name": "Mineko's Night Market",
+    "count": 2
+   },
+   {
+    "appid": 1086940,
+    "name": "Baldur's Gate 3",
+    "count": 2
+   },
+   {
+    "appid": 1136370,
+    "name": "Bear and Breakfast",
+    "count": 2
+   },
+   {
+    "appid": 1162750,
+    "name": "Songs of Syx",
+    "count": 2
+   },
+   {
+    "appid": 1210320,
+    "name": "Potion Craft: Alchemist Simulator",
+    "count": 2
+   },
+   {
+    "appid": 1313140,
+    "name": "Cult of the Lamb",
+    "count": 2
+   },
+   {
+    "appid": 1544020,
+    "name": "The Callisto Protocol",
+    "count": 2
+   },
+   {
+    "appid": 1716740,
+    "name": "Starfield",
+    "count": 2
+   },
+   {
+    "appid": 1895880,
+    "name": "Ratchet & Clank: Rift Apart",
+    "count": 2
+   },
+   {
+    "appid": 2344520,
+    "name": "Diablo IV",
+    "count": 2
+   }
+  ],
+  "map": [
+   {
+    "appid": 1903340,
+    "name": "Clair Obscur: Expedition 33",
+    "count": 13
+   },
+   {
+    "appid": 257850,
+    "name": "Hyper Light Drifter",
+    "count": 6
+   },
+   {
+    "appid": 870780,
+    "name": "CONTROL",
+    "count": 5
+   },
+   {
+    "appid": 1931770,
+    "name": "Chants of Sennaar",
+    "count": 5
+   },
+   {
+    "appid": 427410,
+    "name": "Abiotic Factor",
+    "count": 4
+   },
+   {
+    "appid": 698670,
+    "name": "Scorn",
+    "count": 4
+   },
+   {
+    "appid": 892970,
+    "name": "Valheim",
+    "count": 4
+   },
+   {
+    "appid": 1055540,
+    "name": "A Short Hike",
+    "count": 4
+   },
+   {
+    "appid": 1307580,
+    "name": "TOEM",
+    "count": 4
+   },
+   {
+    "appid": 10180,
+    "name": "Call of Duty: Modern Warfare 2 (2009)",
+    "count": 2
+   },
+   {
+    "appid": 264710,
+    "name": "Subnautica",
+    "count": 2
+   },
+   {
+    "appid": 361420,
+    "name": "ASTRONEER",
+    "count": 2
+   },
+   {
+    "appid": 1148760,
+    "name": "I Was a Teenage Exocolonist",
+    "count": 2
+   },
+   {
+    "appid": 1196590,
+    "name": "Resident Evil Village",
+    "count": 2
+   },
+   {
+    "appid": 1203620,
+    "name": "Enshrouded",
+    "count": 2
+   },
+   {
+    "appid": 1544020,
+    "name": "The Callisto Protocol",
+    "count": 2
+   },
+   {
+    "appid": 1586800,
+    "name": "Lil Gator Game",
+    "count": 2
+   },
+   {
+    "appid": 1895880,
+    "name": "Ratchet & Clank: Rift Apart",
+    "count": 2
+   },
+   {
+    "appid": 2358720,
+    "name": "Black Myth: Wukong",
+    "count": 2
+   }
+  ],
+  "guidance": [
+   {
+    "appid": 698670,
+    "name": "Scorn",
+    "count": 10
+   },
+   {
+    "appid": 701160,
+    "name": "Kingdom Two Crowns",
+    "count": 7
+   },
+   {
+    "appid": 1182900,
+    "name": "A Plague Tale: Requiem",
+    "count": 6
+   },
+   {
+    "appid": 361420,
+    "name": "ASTRONEER",
+    "count": 5
+   },
+   {
+    "appid": 1599600,
+    "name": "PlateUp!",
+    "count": 5
+   },
+   {
+    "appid": 2552430,
+    "name": "KINGDOM HEARTS -HD 1.5+2.5 ReMIX-",
+    "count": 5
+   },
+   {
+    "appid": 1085660,
+    "name": "Destiny 2",
+    "count": 4
+   },
+   {
+    "appid": 264710,
+    "name": "Subnautica",
+    "count": 3
+   },
+   {
+    "appid": 275850,
+    "name": "No Man's Sky",
+    "count": 3
+   },
+   {
+    "appid": 414340,
+    "name": "Hellblade: Senua's Sacrifice",
+    "count": 3
+   },
+   {
+    "appid": 424840,
+    "name": "Little Nightmares",
+    "count": 3
+   },
+   {
+    "appid": 493340,
+    "name": "Planet Coaster",
+    "count": 3
+   },
+   {
+    "appid": 557600,
+    "name": "Gorogoa",
+    "count": 3
+   },
+   {
+    "appid": 870780,
+    "name": "CONTROL",
+    "count": 3
+   },
+   {
+    "appid": 916440,
+    "name": "Anno 1800",
+    "count": 3
+   },
+   {
+    "appid": 955900,
+    "name": "Amazing Cultivation Simulator",
+    "count": 3
+   },
+   {
+    "appid": 1057090,
+    "name": "Ori and the Will of the Wisps",
+    "count": 3
+   },
+   {
+    "appid": 1062090,
+    "name": "Timberborn",
+    "count": 3
+   },
+   {
+    "appid": 1245620,
+    "name": "ELDEN RING",
+    "count": 3
+   },
+   {
+    "appid": 1462040,
+    "name": "FINAL FANTASY VII REMAKE INTERGRADE",
+    "count": 3
+   },
+   {
+    "appid": 1716740,
+    "name": "Starfield",
+    "count": 3
+   },
+   {
+    "appid": 1774580,
+    "name": "STAR WARS Jedi: Survivor",
+    "count": 3
+   },
+   {
+    "appid": 1954200,
+    "name": "Kena: Bridge of Spirits",
+    "count": 3
+   },
+   {
+    "appid": 2212330,
+    "name": "Your Only Move Is HUSTLE",
+    "count": 3
+   },
+   {
+    "appid": 70,
+    "name": "Half-Life",
+    "count": 2
+   },
+   {
+    "appid": 105600,
+    "name": "Terraria",
+    "count": 2
+   },
+   {
+    "appid": 261570,
+    "name": "Ori and the Blind Forest",
+    "count": 2
+   },
+   {
+    "appid": 268500,
+    "name": "XCOM® 2",
+    "count": 2
+   },
+   {
+    "appid": 312520,
+    "name": "Rain World",
+    "count": 2
+   },
+   {
+    "appid": 367520,
+    "name": "Hollow Knight",
+    "count": 2
+   },
+   {
+    "appid": 427410,
+    "name": "Abiotic Factor",
+    "count": 2
+   },
+   {
+    "appid": 546560,
+    "name": "Half-Life: Alyx",
+    "count": 2
+   },
+   {
+    "appid": 553420,
+    "name": "TUNIC",
+    "count": 2
+   },
+   {
+    "appid": 653530,
+    "name": "Return of the Obra Dinn",
+    "count": 2
+   },
+   {
+    "appid": 703080,
+    "name": "Planet Zoo",
+    "count": 2
+   },
+   {
+    "appid": 735290,
+    "name": "Genesis Noir",
+    "count": 2
+   },
+   {
+    "appid": 892970,
+    "name": "Valheim",
+    "count": 2
+   },
+   {
+    "appid": 960910,
+    "name": "Heavy Rain",
+    "count": 2
+   },
+   {
+    "appid": 960990,
+    "name": "Beyond: Two Souls",
+    "count": 2
+   },
+   {
+    "appid": 962130,
+    "name": "Grounded",
+    "count": 2
+   },
+   {
+    "appid": 1161580,
+    "name": "Hardspace: Shipbreaker",
+    "count": 2
+   },
+   {
+    "appid": 1162750,
+    "name": "Songs of Syx",
+    "count": 2
+   },
+   {
+    "appid": 1203620,
+    "name": "Enshrouded",
+    "count": 2
+   },
+   {
+    "appid": 1876890,
+    "name": "Wandering Sword",
+    "count": 2
+   },
+   {
+    "appid": 1894430,
+    "name": "Plan B: Terraform",
+    "count": 2
+   },
+   {
+    "appid": 2344520,
+    "name": "Diablo IV",
+    "count": 2
+   },
+   {
+    "appid": 2461850,
+    "name": "Hellblade II",
+    "count": 2
+   }
+  ],
+  "controller": [
+   {
+    "appid": 33230,
+    "name": "Assassin's Creed 2",
+    "count": 4
+   },
+   {
+    "appid": 960910,
+    "name": "Heavy Rain",
+    "count": 3
+   },
+   {
+    "appid": 21690,
+    "name": "Resident Evil 5",
+    "count": 2
+   },
+   {
+    "appid": 359870,
+    "name": "FINAL FANTASY X/X-2 HD Remaster",
+    "count": 2
+   },
+   {
+    "appid": 387290,
+    "name": "Ori and the Blind Forest DE",
+    "count": 2
+   },
+   {
+    "appid": 542050,
+    "name": "Forgotton Anne",
+    "count": 2
+   },
+   {
+    "appid": 1367550,
+    "name": "Kingdom Rush Vengeance - Tower Defense",
+    "count": 2
+   }
+  ],
+  "scaling": [
+   {
+    "appid": 8870,
+    "name": "BioShock Infinite",
+    "count": 4
+   },
+   {
+    "appid": 683900,
+    "name": "RollerCoaster Tycoon Classic",
+    "count": 3
+   },
+   {
+    "appid": 298110,
+    "name": "Far Cry 4",
+    "count": 2
+   },
+   {
+    "appid": 1267910,
+    "name": "Melvor Idle",
+    "count": 2
+   }
+  ],
+  "lag": [
+   {
+    "appid": 1252330,
+    "name": "DEATHLOOP",
+    "count": 3
+   },
+   {
+    "appid": 19980,
+    "name": "Prince of Persia",
+    "count": 2
+   },
+   {
+    "appid": 546560,
+    "name": "Half-Life: Alyx",
+    "count": 2
+   },
+   {
+    "appid": 1091500,
+    "name": "Cyberpunk 2077",
+    "count": 2
+   },
+   {
+    "appid": 1203620,
+    "name": "Enshrouded",
+    "count": 2
+   },
+   {
+    "appid": 1948800,
+    "name": "Yi Xian: The Cultivation Card Game",
+    "count": 2
+   }
+  ]
+ }
+}

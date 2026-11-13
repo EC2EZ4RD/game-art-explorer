@@ -1,0 +1,1194 @@
+{
+ "id": "rep.elden-ring",
+ "name": "ELDEN RING",
+ "card": "steam:1245620",
+ "genre": "action",
+ "family": "fam.dark-hairline-souls",
+ "pack": "soulslike",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "arena",
+  "values": {
+   "color.palette": "night",
+   "color.saturation": 0.6,
+   "color.brightness": 0.6,
+   "color.temperature": -0.2
+  }
+ },
+ "base": {
+  "hud.style": "darkHairline",
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "ctx.input": "pad",
+  "ix.glyphs": "xbox",
+  "typ.baseSize": 22,
+  "typ.scale": 1.2,
+  "lay.safeMargin": 1.5,
+  "rel.harmony": "neutral",
+  "col.source": "skin",
+  "col.lightness": "dark",
+  "col.strategy": "mono",
+  "col.surface": "#0c0b09",
+  "col.surface2": "#1c1a16",
+  "col.text": "#e4ddcb",
+  "col.accent": "#cdbb8c",
+  "col.accent2": "#9a2a22",
+  "col.focus": "#efe3b8",
+  "col.border": "#7d7258",
+  "col.saturation": 0.6,
+  "typ.body.family": "serif",
+  "typ.body.weight": "regular",
+  "typ.display.family": "serif",
+  "typ.display.weight": "regular",
+  "typ.display.case": "asIs",
+  "typ.numerals.family": "body",
+  "typ.legibility": "shadow",
+  "typ.titleFx": "shadow",
+  "vis.corner": "sharp",
+  "vis.fill": "gradient",
+  "vis.opacity": 0.8,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1,
+  "vis.strokeColor": "custom",
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.ornament": 1,
+  "vis.motif": "none",
+  "vis.iconStyle": "realistic",
+  "ast.iconSet": "asset",
+  "ast.core": "procedural",
+  "ast.frame": "procedural",
+  "st.emptySlot": "silhouette",
+  "st.selected": "glow",
+  "ix.focus": "focusGlow",
+  "mo.enter": "fade",
+  "mo.easing": "easeOut",
+  "mo.duration": 0.25,
+  "mo.juice": 0.15,
+  "mo.valueChange": "trail",
+  "mo.idle": "none",
+  "col.rarityScale": "metal",
+  "st.newCue": "none",
+  "st.rarityCue": [
+   "none"
+  ],
+  "cmp.slotBadge": "none",
+  "col.bad": "#8e1b17",
+  "col.good": "#4a6b2a",
+  "ix.glyphTint": "mono"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/iig/img/elden-ring__elden-ring-boss-fight.jpg",
+   "values": {
+    "uip.layout": "layout.soulslike",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "rel.behind": "live",
+    "cnt.density": 1,
+    "vis.opacity": 0.45,
+    "typ.legibility": "shadow",
+    "col.accent2": "#3d5fa8",
+    "st.selected": "outline",
+    "cnt.elements": [
+     "el.vitals",
+     "el.minimap",
+     "el.abilities",
+     "el.threat",
+     "el.resources",
+     "el.buffs",
+     "el.feedback"
+    ],
+    "el.vitals.count": 3,
+    "cmp.gauge@el.vitals": "bar",
+    "el.vitals.screenAnchor": "tl",
+    "el.vitals.valueLabel": "none",
+    "el.vitals.priority": "primary",
+    "el.vitals.scale": 0.75,
+    "ast.ornaments@el.vitals": [
+     "endcaps"
+    ],
+    "mo.valueChange@el.vitals": "trail",
+    "el.minimap.form": "tickLine",
+    "el.minimap.screenAnchor": "tc",
+    "el.minimap.scale": 0.65,
+    "el.minimap.priority": "secondary",
+    "el.abilities.form": "slots",
+    "el.abilities.arrangement": "cross",
+    "el.abilities.screenAnchor": "bl",
+    "el.abilities.scale": 0.65,
+    "vis.stroke@el.abilities": "double",
+    "st.emptySlot@el.abilities": "pit",
+    "el.threat.form": [
+     "bossBar",
+     "healthBar",
+     "lockOn"
+    ],
+    "el.threat.screenAnchor": "bc",
+    "el.threat.scale": 1.1,
+    "cmp.gauge@el.threat": "thinBar",
+    "col.accent@el.threat": "#8e1b17",
+    "ast.ornaments@el.threat": [
+     "endcaps"
+    ],
+    "mo.valueChange@el.threat": "trail",
+    "el.resources.form": "framedCounter",
+    "el.resources.screenAnchor": "br",
+    "el.resources.scale": 0.5,
+    "el.resources.valueLabel": "current",
+    "vis.stroke@el.resources": "double",
+    "hier.emphasis": [
+     "isolation"
+    ],
+    "cmp.slot@el.abilities": "tallCard",
+    "el.abilities.keyHint": "none",
+    "st.cooldown@el.abilities": "none",
+    "st.selected@el.abilities": "none",
+    "el.threat.nameAlign": "left",
+    "el.vitals.labels": "none",
+    "el.vitals.lengthByMax": true,
+    "el.minimap.offsetY": 7,
+    "el.minimap.compassText": "north",
+    "cmp.gaugeCap@el.vitals": "pointed",
+    "cmp.gaugeFrame@el.vitals": "hairline",
+    "col.ornament@el.vitals": "#9a7a48",
+    "el.abilities.slotContent": "items",
+    "el.abilities.activeLabel": "above",
+    "el.threat.lockStyle": "dot",
+    "el.threat.bossBar.offsetY": -12,
+    "col.track@el.threat": "#2a1412",
+    "vis.silhouette@el.buffs": "octagon",
+    "el.buffs.screenAnchor": "tl",
+    "el.feedback.form": [
+     "combo"
+    ],
+    "el.feedback.dockTo": "el.threat",
+    "el.feedback.dockSide": "end",
+    "el.feedback.scale": 0.5
+   }
+  },
+  {
+   "key": "character",
+   "ref": "qa/refs-cache/iig/img/elden-ring__elden-ring-equipment.jpg",
+   "values": {
+    "uip.screen": "tpl.inventory",
+    "cnt.screen": "screen.character",
+    "cnt.subtype": "loadout",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "live",
+    "rel.dim": 0.6,
+    "rel.sceneBlur": 4,
+    "rel.sceneTone": [
+     "directional"
+    ],
+    "lay.nav": "none",
+    "lay.navDepth": 0,
+    "lay.composition": "single",
+    "lay.arrangement": "grid",
+    "lay.columns": 5,
+    "cnt.itemCount": 26,
+    "cnt.dataShape": "collection",
+    "cnt.density": 3,
+    "cnt.focal": "none",
+    "cnt.textLength": "title",
+    "cmp.slot": "cell",
+    "lay.detail": "wide",
+    "lay.grouping": "divider",
+    "elx.scale": 0.8,
+    "vis.opacity": 0.5,
+    "vis.ornament": 0,
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 1,
+    "vis.strokeColor": "custom",
+    "col.border": "#4a4337",
+    "vis.depth": "innerShadow",
+    "ast.core@slot": "texture",
+    "ast.coreMat@slot": "stone",
+    "st.emptySlot": "silhouette",
+    "st.locked": "none",
+    "st.selected": "brighten",
+    "st.newCue": "none",
+    "st.statViz": "table",
+    "st.delta": "newOnly",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "value"
+    ],
+    "typ.numerals.family": "tabular",
+    "hier.emphasis": [
+     "value"
+    ],
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bl",
+    "el.prompt.scale": 1.15,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "ix.focus": "focusGlow",
+    "flow.entry": "hotkey",
+    "flow.stacking": "stack",
+    "mo.enter": "fade",
+    "mo.duration": 0.2,
+    "lay.titlePos": "panel",
+    "cnt.fillRatio": 0.25,
+    "cmp.plate@title": "fadeBand",
+    "lay.headerIcon": "item",
+    "ast.frameMat": "bronze",
+    "vis.strokeFade": 0.4,
+    "lay.subColumns": 2,
+    "col.surface@slot": "#2b2720",
+    "rel.dimColor": "#3a3324",
+    "rel.toneDir": "leftBottom",
+    "rel.fogBand": 0.5
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.dataShape": "spatial",
+    "cnt.density": 2,
+    "vis.mapStyle": "parchment",
+    "vis.mapUnexplored": "unpainted",
+    "cmp.node": "grace",
+    "ast.fx@node": [
+     "glow"
+    ],
+    "lay.overflow": "pan",
+    "lay.detail": "none",
+    "rel.semanticZoom": "labels",
+    "vis.opacity": 0,
+    "vis.ornament": 0,
+    "typ.legibility": "shadow",
+    "cnt.elements": [
+     "el.crosshair",
+     "el.prompt"
+    ],
+    "el.crosshair.form": [
+     "ring"
+    ],
+    "el.crosshair.screenAnchor": "center",
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bl",
+    "ix.mode": "select",
+    "ix.confirm": "double",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "flow.entry": "hotkey",
+    "mo.enter": "fade",
+    "lay.titlePos": "none",
+    "vis.mapLabels": "onMap",
+    "lay.panHint": "none",
+    "col.accent@node": "#e3b955"
+   }
+  },
+  {
+   "key": "pause",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.pausePc",
+    "cnt.screen": "screen.pause",
+    "cnt.subtype": "pause",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "live",
+    "rel.dim": 0.3,
+    "rel.sceneTone": [
+     "directional"
+    ],
+    "vis.fill": "gradient",
+    "vis.opacity": 0.6,
+    "vis.ornament": 0,
+    "col.gradient": {
+     "from": "#000000",
+     "to": "#00000000",
+     "angle": 135,
+     "type": "linear"
+    },
+    "cnt.dataShape": "collection",
+    "cnt.itemCount": 10,
+    "cnt.focal": "none",
+    "cnt.textLength": "title",
+    "lay.arrangement": "grid",
+    "lay.columns": 5,
+    "lay.detail": "none",
+    "cmp.button": "icon",
+    "cmp.buttonBox": true,
+    "cmp.slot": "cell",
+    "st.locked": "none",
+    "st.selected": "brighten",
+    "ast.iconSet": "procedural",
+    "vis.iconStyle": "line",
+    "ix.focus": "focusGlow",
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bl",
+    "el.prompt.scale": 1,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "flow.entry": "hotkey",
+    "flow.stacking": "stack",
+    "mo.enter": "fade",
+    "mo.duration": 0.15,
+    "lay.titlePos": "none",
+    "lay.cellSize": 64,
+    "lay.gap": 20,
+    "lay.gridHeader": "focusCaption",
+    "rel.dimColor": "#3a3324",
+    "rel.toneDir": "leftBottom",
+    "rel.fogBand": 0.5
+   }
+  },
+  {
+   "key": "callout",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.callout",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "callout",
+    "lay.container": "banner",
+    "lay.panelSize": 0.7,
+    "rel.behind": "live",
+    "rel.dim": 0.35,
+    "rel.sceneTone": "desaturate",
+    "cnt.elements": [
+     "el.notify"
+    ],
+    "el.notify.form": [
+     "band"
+    ],
+    "el.notify.screenAnchor": "center",
+    "el.notify.scale": 1.9,
+    "el.notify.priority": "primary",
+    "vis.fill": "gradient",
+    "vis.opacity": 0.85,
+    "vis.stroke": "none",
+    "col.surface": "#000000",
+    "col.gradient": {
+     "from": "#00000000",
+     "to": "#000000",
+     "angle": 90,
+     "type": "linear"
+    },
+    "typ.display.family": "serif",
+    "typ.display.case": "upper",
+    "typ.display.weight": "regular",
+    "typ.display.tracking": 0.12,
+    "typ.titleFx": "titleGlow",
+    "col.text@el.notify": "#a8211b",
+    "cnt.textLength": "title",
+    "cnt.tone": "punitive",
+    "hier.emphasis": [
+     "size",
+     "isolation"
+    ],
+    "mo.enter": "fade",
+    "mo.duration": 1.2,
+    "mo.easing": "easeOut",
+    "mo.juice": 0,
+    "ix.mode": "readOnly",
+    "ix.dismiss": "timed",
+    "col.surface@el.notify": "#120e0c",
+    "vis.fade@el.notify": "vertical",
+    "vis.fadeLength@el.notify": 0.35,
+    "lay.safeMargin": 0
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "all",
+   "what": "按元素 / 按组件的视觉覆盖键（vis.*@el.*、col.*@el.*、ast.*@el.*、st.*@el.*、vis.*@slot、ast.core@slot、ast.fx@node、vis.iconStyle@button 等）能通过校验，但渲染器从不读取：主题只按全局值建一次，只有 cmp.*@el.* 生效。第 2 轮仍然如此：Boss 条暗红（col.accent@el.threat）、快捷格双线框（vis.stroke@el.abilities）、条端铜尖（ast.ornaments@el.vitals）、装备格石纹嵌板（ast.core@slot = texture / stone）都画不出来，只能退回全局值",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "makeCtx / slot / drawNode 按 r.at(参数, 元素或组件) 现取 vis / col / ast / st 值并在全局 token 上打补丁（与 cmp() 同口径）",
+   "resolvedBy": "M12a-01（逐元素 / 逐部件 token：Boss 条色、格子石纹 ast.core@slot 等生效；条端铜尖是画法缺口 elden-ring#16；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "vis.corner = sharp 时主题删掉面板圆角，slot() 见 radius 为空就退回 6px 圆角，所以快捷格、装备格、菜单格全是圆角；地图视口还写死 roundRect 8。本作所有格子与地图都是直角",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "slot() 的默认圆角跟 vis.corner 走（sharp → 0）；mapView 的裁剪框改用皮肤面板外形",
+   "resolvedBy": "M12a-09（slot 与地图裁剪跟 vis.corner：直角；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "col.gradient 按规范写成 {from, to, angle, type} 能通过校验，但主题只认 \"色1,色2\" 字符串，对象被当成 [object Object] 忽略，退回 底色→次级底色 的竖直渐变；暂停的左上角暗角、死亡横带的渐隐都因此画不出",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "theme.ts 解析渐变对象（from / to / angle / type），角度与径向都按值画",
+   "resolvedBy": "M12a-06（col.gradient 对象按角度 / 类型解析；横带上下羽化是 M12b-41；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "格子右下的数量字总是画（装备页、暂停菜单每格都有 1 / 5 / 3），没有参数关掉；本作装备格与菜单格都不写数量",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "加 cmp.slotBadge（none / qty / qtyOver1），或 st.qty = none",
+   "resolvedBy": "cmp.slotBadge"
+  },
+  {
+   "screen": "all",
+   "what": "st.rarityCue 没有“不表达稀有度”的取值：列表为空时退回 border，去掉 col.coding 里的 rarity 格子也照画；本作装备格与菜单格不分稀有度，只好用最轻的 strip（金 / 银侧条）",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "st.rarityCue 加 none；slot() 在 col.coding 不含 rarity 时不画稀有度",
+   "resolvedBy": "st.rarityCue"
+  },
+  {
+   "screen": "all",
+   "what": "全屏模板总会画页眉标题和右上“Esc 返回”胶囊；本作返回只出现在左下按键图例里，地图也没有页眉",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "ix.close 加 legendOnly；加 lay.header 开关（none / text / plate）",
+   "resolvedBy": "lay.titlePos, ix.close"
+  },
+  {
+   "screen": "all",
+   "what": "按键图例在固定宽度的框里居中 / 右对齐，锚在左下时整条向右漂到画面约 20%（本作贴左下）；第 4 个键（视图键）与文字之间还多出一大段空白",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "el.prompt 按锚点左 / 右对齐、宽度按内容收缩；非字母键帽的图例间距按键帽实宽算",
+   "resolvedBy": "M12a-34（按键图例按实宽排、按锚点左对齐；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "手柄键位图标是彩色 Xbox 圆键（绿 A、红 B、黄 Y）；本作是单色细线圈 + 字母",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "ix.glyphs 加 padMono（单色线框键帽，颜色跟 col.text），或加 ix.glyphTint",
+   "resolvedBy": "ix.glyphTint = mono（单色细线圈 + 字母键位）"
+  },
+  {
+   "screen": "all",
+   "what": "示例文字不跟子类型：菜单页的按键图例写局内动作（调查 / 圣瓶 / 锁定 / 装备），装备页（cnt.subtype = loadout）的页眉写“背包”",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "内容包按 cnt.screen / cnt.subtype 给图例动作（确定 / 返回 / 卸下 / 切换视图）与页眉名",
+   "partialBy": "R4 核对：菜单图例换成查看 / 排序 / 返回，地图图例是设置路线 / 选择 / 远近 / 返回；装备页页眉仍写「背包」"
+  },
+  {
+   "screen": "all",
+   "what": "选中格画成米色双线框 + 外发光；本作的聚焦格（装备页、菜单）是整格底色提亮成暖米色",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "st.selected 加 brighten（底色提亮 + 细框）",
+   "resolvedBy": "st.selected = brighten（聚焦格整格提亮成暖米色）"
+  },
+  {
+   "screen": "hud",
+   "what": "快捷栏是十字四格（上法术、左盾、右武器、下道具，竖长格）；el.abilities.arrangement = cross 在词表里，但技能元素只认 column，其余一律横排，所以仍画成一排四个方格",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "el.abilities 按 cross 画上 / 左 / 右 / 下四格，并允许 cmp.slot = tallCard 竖长格",
+   "resolvedBy": "M12a-20（el.abilities.arrangement = cross：十字四格；尺寸是写值问题；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "三根细条的长度随各自上限增长（生命条远长于专注条），条长本身就是成长读数；现有条三根等长",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "el.vitals 加子参数 lengthByMax（条长 ∝ 上限，可设最短 / 最长）",
+   "resolvedBy": "el.vitals.lengthByMax"
+  },
+  {
+   "screen": "hud",
+   "what": "生命 / 专注 / 精力三条不带任何文字标签；el.vitals 每行左侧固定写行名（生命 / 法力 / 精力），关不掉",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "elx 加 label（none / text / icon），或 el.vitals.labels 开关",
+   "resolvedBy": "el.vitals.labels"
+  },
+  {
+   "screen": "hud",
+   "what": "生命条暗红、精力暗绿：生命条与 Boss 条写死用 bad 色 #e5484d（偏亮的粉红），精力条用皮肤 good 色（亮绿），没有参数能把语义色调暗（专注条借 col.accent2 已能改成蓝）",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "加 col.danger / col.good 两个语义色参数（覆盖键生效后也可用 col.*@el.vitals、col.*@el.threat）",
+   "resolvedBy": "col.bad, col.good"
+  },
+  {
+   "screen": "hud",
+   "what": "左上八角框是大卢恩生效槽（状态槽），不是头像；el.profile 会多画头像、名字和等级，已去掉，八角框缺失",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "新元素 el.buffs（状态 / 增益槽，单格或一排，空槽画暗底）；vis.silhouette 加 octagon",
+   "resolvedBy": "el.buffs + vis.silhouette@el.buffs = octagon（左上八角卢恩槽；位置在条下方，见 round4Diffs）"
+  },
+  {
+   "screen": "hud",
+   "what": "十字快捷栏上方的战技名牌（小图标 + 招式名，左侧细竖线、右侧渐隐的暗底）表达不了",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "el.abilities 加 activeLabel（当前主动技能名牌，位置 above），名牌底用单向渐隐色带",
+   "resolvedBy": "el.abilities.activeLabel = above（快捷栏上方战技名牌）"
+  },
+  {
+   "screen": "hud",
+   "what": "条两端是细小的青铜尖头、条外有一圈细暗框；条走 gauge() 直接填色，任何饰件都不经过它，endcaps 只对面板生效",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "gauge 的 bar / thinBar 读 ast.ornaments（endcaps 加尖头 / 球头 / 方头形态与尺寸）并可选细外框",
+   "resolvedBy": "cmp.gaugeCap@el.vitals = pointed + cmp.gaugeFrame@el.vitals = hairline + col.ornament@el.vitals 青铜（条端尖头 + 细暗框）"
+  },
+  {
+   "screen": "hud",
+   "what": "上中罗盘是一条带刻度的细直线，中心小菱形、上方只写 N，离顶约 12%；compassBar 画成金边胶囊 + 中文方位字，贴顶约 5%",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "el.minimap.form 加 tickLine（细线 + 刻度 + 单字母方位）；元素锚点之外加 offset（纵向偏移）",
+   "resolvedBy": "el.minimap.form = tickLine + compassText = north（刻度细线 + 中心菱形 + 单个 N）"
+  },
+  {
+   "screen": "hud",
+   "what": "普通敌人头顶小血条 + 锁定白点挂在三维敌人身上，与底中 Boss 长条同时存在；el.threat 只有一组锚点 / 挂点，多画法无法各自定位，也没有挂到世界目标的入口",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "按画法分别设置锚点与挂点（form 级 screenAnchor / attachTo），healthBar / lockOn 可挂到场景里的敌人投影位置",
+   "resolvedBy": "el.threat.form（多画法各自挂点）"
+  },
+  {
+   "screen": "hud",
+   "what": "快捷格左上固定写 1–4 键位数字，第 3 格样本带冷却遮罩；本作快捷格既无键位数字也无冷却",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.abilities 加 keyLabel 开关；st.cooldown 加 none",
+   "resolvedBy": "el.abilities.keyHint, st.cooldown@el.abilities"
+  },
+  {
+   "screen": "hud",
+   "what": "快捷格样本是技能符号（双剑 / 心 / 星 / 十字盾，item 写死空串不查图集）；本作四格装的是装备的盾牌、长剑、法术与道具的写实物品图",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "内容包给 el.abilities 一组“装备快捷格”样本（物品名 → 图集图标），或 el.abilities 加 slotContent = items",
+   "partialBy": "el.abilities.slotContent = items（左剑、下药瓶是写实图；上、右两格仍是符号）"
+  },
+  {
+   "screen": "hud",
+   "what": "Boss 名字左对齐在条的左端上方；bossBar 的名字固定居中",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "el.threat 加 nameAlign（left / center）",
+   "resolvedBy": "el.threat.nameAlign"
+  },
+  {
+   "screen": "hud",
+   "what": "右下卢恩计数是一个细双线框的小盒（左图标、右对齐数字）；bigNumber 无框，pills 会画三种货币",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.resources.form 加 framedCounter（单一货币 + 细框盒）",
+   "resolvedBy": "el.resources.form = framedCounter（右下卢恩细框盒）"
+  },
+  {
+   "screen": "hud",
+   "what": "打 Boss 时累计伤害数字挂在 Boss 条右上端，不是飘字",
+   "severity": "low",
+   "kind": "composite",
+   "proposal": "el.feedback 加 attachTo = 另一元素（挂在 Boss 条端头），或 bossBar 子选项 damageTally",
+   "partialBy": "el.feedback = combo + 停靠 Boss 条末端（有了累计数；浮在条右端上方、带「连击」字样）"
+  },
+  {
+   "screen": "character",
+   "what": "装备页是三栏：左装备格、中武器数值（两列嵌套小表 + 右上大物品图框）、右角色状态表；模板只能画 格子 + 常驻详情（名字 / 一句说明 / 两根数值条），中栏与右栏空着，lay.composition = three 只在有主体时把主体放中间",
+   "severity": "high",
+   "kind": "composite",
+   "proposal": "lay.detail 加 persistentWide / 双详情栏（detail + record 并排），常驻详情按 st.statViz = table 画成数值表（目前 st.statViz 只有排行表模板读）",
+   "partialBy": "lay.detail = wide + lay.subColumns 2（详情 + 武器 / 护甲两列小表）；中栏仍空、表很小，没有右栏角色状态表"
+  },
+  {
+   "screen": "character",
+   "what": "中栏是嵌套两列小表（攻击力 | 防御减伤；属性补正 | 需求属性），每段带小线稿图标标题；lay.composition 只有一层分栏",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "lay 加段内子网格（lay.subColumns）与段标题图标",
+   "resolvedBy": "lay.subColumns = 2（段标题带线稿小图标的两列小表）"
+  },
+  {
+   "screen": "character",
+   "what": "页眉是方形铜框徽记图标 + 衬线标题，垫在一条从左向右渐隐的暗带上；模板页眉只有一行小字",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "cmp.plate 加 fadeBand（单向渐隐色带）+ 页眉图标槽",
+   "resolvedBy": "cmp.plate@title = fadeBand + lay.headerIcon = item + ast.frameMat = bronze（铜框徽记 + 渐隐暗带页眉）"
+  },
+  {
+   "screen": "character",
+   "what": "分栏靠两端渐隐的 1px 暖灰发丝竖线；lay.grouping = divider 在词表里但渲染器从不读取，无框浮空后没有任何分栏线（strokeSides = left 又会作用到每个格子）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "lay.grouping = divider 在分栏之间画线；vis.stroke 加 fade 线型（两端渐隐）",
+   "resolvedBy": "lay.grouping = divider + vis.strokeFade 0.4（两端渐隐的暖灰竖栏线）"
+  },
+  {
+   "screen": "character",
+   "what": "物品图是去饱和的写实金属灰；图集素材（写实 → 3D 图集）颜色鲜艳（红药瓶、紫水晶、木盾），col.saturation 不作用于位图",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "加 vis.iconTint（去饱和 / 单色染色 / 亮度），或让 col.saturation 作用到图集图标"
+  },
+  {
+   "screen": "character",
+   "what": "详情的物品名比说明文字还小（名字用的标题字号没有放大），层级颠倒；本作物品名是这一栏最大的字",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "常驻详情的名字至少取 typ.display 层级（≥ 正文 × typ.scale）",
+   "resolvedBy": "M12b-14（常驻详情的名字至少比说明字大一级：正文字号小、小字有下限时名字原来比说明还小；B8 快照核过）"
+  },
+  {
+   "screen": "character",
+   "what": "装备格大多是空槽（按类型画灰剪影），只有几格有物品；模板按样本把全部格子填满，只能用 st.locked = grayscale 把后面的格子压灰近似",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "cnt 加 fillRatio（集合中已占用格的比例），空格走 st.emptySlot（剪影按格子类型取）",
+   "resolvedBy": "cnt.fillRatio, st.locked"
+  },
+  {
+   "screen": "character",
+   "what": "常驻详情固定画两枚行动按钮（装备 / 丢弃），而且被放到右下角、与详情脱开；本作详情栏没有按钮",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "按 ix.mode / cmp.button 决定详情按钮，或加 lay.detailActions 开关；有按钮时贴在详情底部",
+   "resolvedBy": "M12a-26（详情按钮跟 ix.mode，角色屏不画；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "character",
+   "what": "背后的罩层是暖褐橄榄灰的整屏渐变：左侧与底部更暗、底部有雾带；rel.dim 只有中性黑、rel.sceneTone = vignette 只给四周对称暗角，所以成了冷蓝黑",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "rel.sceneTone 加 directional（左 / 下 / 四周）与底部雾带；暗罩颜色可设（rel.dimColor）",
+   "resolvedBy": "rel.sceneTone = [directional] + rel.dimColor 暖褐 + rel.toneDir = leftBottom + rel.fogBand（左下更暗、底部雾带）"
+  },
+  {
+   "screen": "map",
+   "what": "本作地图满屏铺开；mapView 总在内容区里内缩、上方留页眉行，fullscreen + floating 也去不掉四周约 4% 的暗边",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "tpl.worldmap 加 bleed（地图铺满画幅，页眉 / 图例浮在地图上）",
+   "resolvedBy": "R4 核对：地图铺满画幅，四周没有暗边"
+  },
+  {
+   "screen": "map",
+   "what": "没拿到地图碎片的区域是未上色、偏灰暗的地形底稿（不是云雾也不是全黑），拿到碎片后整块被绘上；dark 只能画右侧一片渐暗",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "vis.mapUnexplored 加 unpainted（未上色底稿）+ 揭示动效",
+   "resolvedBy": "vis.mapUnexplored = unpainted（灰色未上色底稿 + 已拿碎片处整块上色）"
+  },
+  {
+   "screen": "map",
+   "what": "赐福点是金色发光图标；地图节点颜色写死（已完成 = good 绿、当前 = accent），glowDot 发绿光",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "cmp.node 的状态色读 col.accent@node / col.coding；cmp.node 加 grace（发光图标）",
+   "resolvedBy": "cmp.node = grace"
+  },
+  {
+   "screen": "map",
+   "what": "地名是直接写在地图上的衬线字；地名牌写死成左上角的药丸标签",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "地图地名标注读 cmp.plate，并加 onMap（无底衬线字 + 阴影，放在地形上）",
+   "resolvedBy": "vis.mapLabels"
+  },
+  {
+   "screen": "map",
+   "what": "按键图例压在地图底部，lay.overflow = pan 自动加的“拖动查看”提示关不掉",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "图例避让地图内容区或浮在地图上加暗底；平移提示跟 el.prompt 开关走"
+  },
+  {
+   "screen": "pause",
+   "what": "菜单网格用的是背包物品样本：每格有数量、稀有度侧条，st.locked 还把第二排压灰像不可用；本作是菜单入口（装备、道具、状态、信息、地图、系统……），只有线稿图标",
+   "severity": "medium",
+   "kind": "content",
+   "proposal": "内容包给菜单网格一组“菜单入口”样本（图标 + 名称，无数量 / 稀有度 / 锁定），tpl.pausePc 的格子网格读它"
+  },
+  {
+   "screen": "pause",
+   "what": "网格上方显示当前聚焦项的名字（随聚焦变化）；模板在这里画固定标题“暂停”",
+   "severity": "low",
+   "kind": "composite",
+   "proposal": "网格加 focusCaption（聚焦项名字写在网格上方或下方），可替代页眉",
+   "resolvedBy": "lay.gridHeader = focusCaption（网格上方写聚焦项名字）"
+  },
+  {
+   "screen": "pause",
+   "what": "菜单是左上角两排小方形线稿图标（约画面高 6%）；格子边长只跟模板缩放走，只能借 elx.scale（模板构图器的元素缩放）把整屏缩到 0.55，标签字随之变得很小；两排之间几乎没有间距，选中格的外发光压到下一排",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "加 lay.cellSize（格子边长，与字号分开）与 lay.gap；行距算上选中框外扩",
+   "resolvedBy": "lay.cellSize, lay.gap"
+  },
+  {
+   "screen": "pause",
+   "what": "程序化图标集里心、菱形、方块是实心符号，与线稿图标混用；本作菜单是一套统一的细线稿图标",
+   "severity": "low",
+   "kind": "asset",
+   "proposal": "补一套菜单入口线稿图标（装备 / 道具 / 状态 / 信息 / 地图 / 系统 / 多人……），vis.iconStyle = line 时统一走它"
+  },
+  {
+   "screen": "callout",
+   "what": "横带底色取 col.accent（只好把本屏强调色设成近黑），字色写死白色，col.text@el.notify 不生效；本作是暗红字。accent 被压成近黑后 typ.titleFx = titleGlow 的光（取 accent）也看不见",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "band 底色改读 col.surface，字色读 col.text@el.notify（或 col.text），titleGlow 的光色跟字色走",
+   "resolvedBy": "col.text@el.notify, col.surface@el.notify"
+  },
+  {
+   "screen": "callout",
+   "what": "YOU DIED 横带上下边缘对称羽化；band 是硬边实心矩形",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "vis.fill 加 feather（对称羽化，可设羽化宽度）",
+   "resolvedBy": "vis.fade@el.notify = vertical + vis.fadeLength@el.notify 0.35（横带上下羽化）"
+  },
+  {
+   "screen": "callout",
+   "what": "样本文字是章节标题“第三幕 圣堂”，cnt.tone = punitive 也不换成死亡提示",
+   "severity": "medium",
+   "kind": "content",
+   "proposal": "el.notify 的 band 样本按 cnt.tone 取文字（punitive → 死亡提示，triumphant → 击败强敌）",
+   "resolvedBy": "R4 核对：band 样本按 cnt.tone = punitive 写「你死了」"
+  },
+  {
+   "screen": "callout",
+   "what": "同一横带按事件换字色：死亡暗红、击败强敌与发现赐福用金色",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.notify 加按事件类型的语义字色（col.coding = resultTone 作用到字色）"
+  },
+  {
+   "screen": "callout",
+   "what": "横带约 2–3 秒慢速淡入、字随后缓慢放大；mo.duration 上限 1.2s",
+   "severity": "low",
+   "kind": "motion",
+   "proposal": "mo.duration 上限放宽到 3s；mo.textReveal 加 slowZoom"
+  },
+  {
+   "screen": "hud",
+   "what": "el.threat = lockOn 画成大号红色准星圈（圆 + 十字刻度）；本作锁定是敌人身上一个白色小圆点",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "lockOn 加子画法 dot（小实心点，色取 col.focus），或 el.threat.lockStyle = reticle / dot",
+   "resolvedBy": "el.threat.lockStyle = dot（敌人身上一个白色小点）"
+  },
+  {
+   "screen": "map",
+   "what": "vis.mapUnexplored = dark 改成按探索范围的纯黑后，赐福点照画在未探索的黑区里",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "未探索区里的节点不画或压暗；节点样本落在已探索范围内",
+   "resolvedBy": "vis.mapUnexplored = unpainted（没有黑区了，赐福点都落在底稿上）"
+  },
+  {
+   "screen": "character",
+   "what": "ast.core@slot = texture + ast.coreMat@slot = stone 的石纹格按材质本身的浅灰画：col.surface@slot = #2b2720 压不暗石纹，装备格仍是很亮的浅灰石块",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "纹理内芯按 col.surface 着色（正片叠底 / 明度跟随底色），与 procedural 内芯同口径",
+   "resolvedBy": "R4 回归修复 P1（paint.ts paintBase + material.ts gradientMean：渐变底上 ast.core = texture 的内芯按渐变平均色着色、透明度跟底色——石纹格跟 col.surface@slot = #2b2720 压暗（快照：小图基色 #8d8d88 → #24201b，0.5）；主题的字色对比同口径）"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 2,
+    "elements": 3,
+    "palette": 4,
+    "type": 3,
+    "shape": 4,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "character": [
+   {
+    "layout": 3,
+    "elements": 4,
+    "palette": 3,
+    "type": 3,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 4,
+    "type": 4,
+    "shape": 5,
+    "density": 3,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 5,
+    "type": 4,
+    "shape": 6,
+    "density": 4,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 3,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "pause": [
+   {
+    "layout": 2,
+    "elements": 1,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 7,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 4,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 8,
+    "elements": 5,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 7,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 6,
+    "palette": 7,
+    "type": 4,
+    "shape": 5,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "callout": [
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 2,
+    "type": 5,
+    "shape": 5,
+    "density": 7,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 8,
+    "elements": 6,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 7,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 5,
+    "density": 7,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 7,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "排位全乱：基准字号 22（电视平台）+ 字号阶梯 1.3 让每个元素放大约 1.6 倍，通用避让把十字快捷栏挤到左上、Boss 条挤到上中、三根条挤到左中、罗盘挤到底部",
+   "快捷栏画成 8 格横排 hotbar（带数量、锁定 ✕、空格），本作是 4 格十字",
+   "左下多了头像 + 名字 + 等级（el.profile），本作左上只有一个空的八角状态框",
+   "右下画了三种货币（灰烬 / 残晶 / 骨片），本作只有一个卢恩计数",
+   "字号约为参考的 3 倍（Boss 名、条标签、货币数字）；条标签写着 生命 / 法力 / 精力，参考没有",
+   "专注条是暗红（col.accent2 = #9a2a22），参考是蓝；生命条与 Boss 条是亮粉红 #e5484d，参考是暗红",
+   "画面是正午雪地城堡，比参考的阴沉夜色亮得多，浅色 UI 字几乎看不清"
+  ],
+  "character": [
+   "页眉元素（el.title = header）画成一块米色大标牌，压在网格第一行上；模板自己的“背包”标题又露在后面",
+   "底部的“确认选择”主按钮与按键图例、详情按钮叠在一起",
+   "格子 72px 大、只有 3 行；参考是约 50px 小格、7 行",
+   "格子画了蓝 / 紫稀有度粗边框和锁定 ✕，参考格子没有稀有度色，空槽是灰剪影",
+   "详情的数值条带“→ 74”变化箭头，参考是纯数字表",
+   "背后画面是浅灰（亮场景 + desaturate 的灰罩），参考是近黑的暗罩",
+   "缺中栏武器数值表与右栏角色状态表"
+  ],
+  "map": [
+   "地图被装进带描边的面板里、上面还压了“120 m”目标标记和一张物品详情浮窗（lay.detail = transient 写的是物品）",
+   "节点是绿色图钉，参考的赐福点是金色发光点",
+   "底部“拖动查看”提示与按键图例重叠",
+   "页眉“世界地图”与右上“Esc 返回”是参考没有的"
+  ],
+  "pause": [
+   "菜单图标完全没画出来：容器是底部托盘（高约 20%），格子放不下被整排丢掉，只剩标题和按键图例",
+   "参考是左上角两排小方形线稿图标（装备、道具、状态、地图……），世界照常运行，只是左上偏暗"
+  ],
+  "callout": [
+   "横带是米色（band 用 col.accent 填色），参考是半透明黑带",
+   "字是白色（band 写死白字），参考是暗红衬线大写",
+   "横带上下边是硬边，参考上下羽化"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "位置大体已对：三根条在左上、Boss 条在底中约 80% 高（宽约 24%–76%，与参考一致）、快捷栏左下、计数右下、罗盘上中；字号回到参考量级",
+   "快捷栏仍是一排四个 6px 圆角方格：左上写 1–4 键位、第 3 格带冷却遮罩、第 1 格米色选中框，格里是技能符号（双剑 / 心 / 星 / 十字盾）；参考是上 / 左 / 右 / 下四张竖长直角卡，装的是盾牌、长剑的写实物品图，无键位、无选中框",
+   "三根条左侧仍写 生命 / 法力 / 精力，且三根等长；参考没有任何标签，条长随各自上限不同",
+   "生命条与 Boss 条是亮粉红（写死的 bad 色），精力条是亮绿；参考是暗红 / 暗绿。专注条已是蓝（col.accent2 生效）",
+   "左上八角大卢恩框、条两端青铜尖头与条外细暗框都没有",
+   "罗盘是金边胶囊 + 中文方位字（北 · 东北 · 东 · 东南 · 南），离顶约 5%；参考是带刻度的细直线 + 中心小菱形 + 单个 N，离顶约 12%",
+   "Boss 名居中，参考左对齐在条的左端上方",
+   "右下卢恩数无框（✧ 38,420）；参考是细双线小盒，左图标、右对齐数字",
+   "快捷栏上方的战技名牌（图标 + 招式名 + 渐隐暗底）缺"
+  ],
+  "character": [
+   "只画了左栏格子（5 列 6 行、约 55px，位置对）和右上角一小块常驻详情（名字 + 一句说明 + 攻击 / 重量两根条）；中栏武器数值表、右栏角色状态表仍缺，右侧大半屏空着，信息密度远低于参考",
+   "格子全部填满物品，每格右下有数量字、部分格有金 / 银侧条稀有度；参考大多是按类型画灰剪影的空槽，没有数量、没有稀有度",
+   "物品图是鲜艳的 3D 图集（红药瓶、紫水晶、木盾），参考是去饱和的写实金属灰",
+   "格子是 6px 圆角暗底 + 细暖灰框（vis.corner = sharp 没传到格子）；参考是直角石纹嵌板",
+   "选中格是米色双线框 + 外发光，参考是整格底色提亮成暖米色",
+   "页眉只有一行小字“背包”（装备页写成了背包），没有铜框徽记和向右渐隐的暗带",
+   "详情的物品名字号比说明还小，层级颠倒；详情的“装备 / 丢弃”按钮被放到右下角，与详情脱开",
+   "按键图例是彩色 Xbox 圆键（绿 A、红 B、黄 Y），文字是局内动作（调查 / 圣瓶 / 锁定 / 装备），整条从左下向右漂到约 22%；参考是单色线框键帽 + 确定 / 返回 / 卸下等菜单动作，贴左下",
+   "背后暗罩是冷蓝黑，参考是暖褐橄榄灰雾、左侧和底部更暗、底部一条雾带",
+   "右上多了“Esc 返回”胶囊"
+  ],
+  "map": [
+   "去掉了面板描边、目标距离标记和物品浮窗，地图成为主体",
+   "地图仍装在内缩的 8px 圆角视口里（四周约 4% 的暗边），上方有页眉“世界地图”、右上“Esc 返回”胶囊；本作是满屏地图、没有页眉",
+   "节点是 3 个绿色发光点，本作的赐福点是金色发光图标",
+   "未探索区画成右侧一片渐暗，本作是灰暗、未上色的地形底稿",
+   "地名“王城”画成左上角的药丸标签，本作地名是直接写在地图上的衬线字",
+   "按键图例压在地图底部，右下多一个“拖动查看”提示",
+   "光标是空心圆环，接近本作"
+  ],
+  "pause": [
+   "左上 2 × 5 小格的位置、大小、世界照常运行的暗罩都已接近本作",
+   "格子画成了背包物品格：右下有数量字（1 / 5 / 3）、金 / 银稀有度侧条，第二排因 st.locked = grayscale 整排变灰像不可用；本作是菜单入口，只有线稿图标",
+   "图标是实心符号（心、菱形、方块）和线稿混用，本作统一细线稿",
+   "网格上方是小字标题“暂停”，本作这里写当前聚焦项的名字",
+   "两排几乎贴在一起，选中格的外发光框压到第二排",
+   "选中格是米色双线框 + 发光、格子 6px 圆角；本作是直角细框、聚焦格提亮",
+   "左上偏暗的渐变没画出来（col.gradient 对象被忽略），只有四周对称暗角",
+   "按键图例离左边约 19%，右上多“Esc 返回”胶囊"
+  ],
+  "callout": [
+   "横带已是全宽半透明黑带、位于画面正中、高约 19%，字距已拉开、衬线字，构图接近",
+   "字是白色，本作是暗红；typ.titleFx = titleGlow 的光取 col.accent，而本屏为了让横带变黑把 accent 设成近黑，光看不见",
+   "横带上下是硬边，本作上下对称羽化",
+   "文字是样本包的章节标题“第三幕 圣堂”，cnt.tone = punitive 也不换成死亡提示；字高约画面 6%，本作约 9%"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "十字快捷栏的四张竖卡过大（整组约画面高 39%），四格之间间隔很开；参考整组约 22%、四格紧贴",
+   "Boss 条落到画面最底（约 93% 高），参考在约 80% 高",
+   "锁定标记是大号红色准星圈，头顶小血条的空槽是浅灰；参考是一个白色小点、暗底细条",
+   "罗盘仍是金边胶囊 + 中文方位字；参考是带刻度的细直线 + 中心菱形 + 单个 N",
+   "左上八角大卢恩框、条两端青铜尖头、快捷栏上方的战技名牌、右下卢恩数的细框盒都还没有"
+  ],
+  "character": [
+   "空槽已是灰剪影、没有数量和稀有度，但格子画成很亮的浅灰石纹；参考是暗色石纹嵌板",
+   "中栏武器数值表与右栏角色状态表仍缺，右侧大半屏空着",
+   "没有页眉（铜框徽记 + 标题 + 渐隐暗带），左上直接是格子",
+   "详情贴在右上角一小块，物品名仍比说明还小",
+   "按键图例仍是彩色 Xbox 圆键 + 局内动作（调查 / 圣瓶 / 锁定 / 装备）"
+  ],
+  "map": [
+   "（凭记忆）整张图几乎全黑，只有右下一小块已探索的羊皮纸地形；本作未拿到碎片处是灰暗未上色的底稿，不是黑",
+   "赐福点是白色星形 + 光晕，且多数画在黑区里；本作是金色赐福图标",
+   "地名「大教堂」是很小的一行字，本作地名是较大的衬线字",
+   "按键图例是彩色 Xbox 圆键 + 局内动作，右侧还有「拖动查看」"
+  ],
+  "pause": [
+   "（凭记忆）格里图标实心符号与线稿混用，本作统一细线稿",
+   "网格上方没有当前聚焦项的名字",
+   "选中格是米色双线框 + 外发光，本作是整格提亮成暖米色",
+   "按键图例是彩色 Xbox 圆键 + 局内动作"
+  ],
+  "callout": [
+   "（凭记忆）横带两端各缩进约 2%，不再横贯全屏",
+   "横带上下仍是硬边，本作上下对称羽化",
+   "文字是章节标题「第三幕 圣堂」，字高约画面 6%（本作约 9%）"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "八角大卢恩槽在三根条下方，参考在条的左侧",
+   "十字快捷栏四张竖卡之间仍有间隔，参考四格紧贴；上、右两格是符号而不是写实物品图",
+   "累计伤害「5 连击」浮在 Boss 条右端上方约 6% 画面高处，参考是贴在条端的纯数字",
+   "三根条偏粗，参考是更细的线",
+   "头顶小血条挂在敌人左上方，离锁定白点较远"
+  ],
+  "character": [
+   "装备格仍是很亮的浅灰石纹，col.surface@slot 的暗石色没有压下去；参考是暗色石纹嵌板",
+   "中栏仍空着，详情与两列属性表挤在右上角、字很小，没有右栏角色状态表",
+   "页眉写「背包」，应是「装备」",
+   "物品图仍是鲜艳的红药瓶、紫水晶，参考是去饱和的写实灰"
+  ],
+  "map": [
+   "（凭记忆）赐福点是白色星形 + 淡光，本作是金色赐福图标",
+   "地名「大教堂」是很小的一行浅色字，本作地名是较大的衬线字",
+   "图例末尾仍有「拖动查看」",
+   "光标是一个白色细圆圈"
+  ],
+  "pause": [
+   "（凭记忆）格里图标实心符号（◆ ✦）与线稿混用，本作统一细线稿",
+   "聚焦项名字「装备」字很小，贴在格子左上沿",
+   "菜单格偏小（约画面高 4%），本作约 6%"
+  ],
+  "callout": [
+   "（凭记忆）字是中文「你 死 了」，本作是大字距的拉丁大写衬线",
+   "暗红字偏灰、光晕弱"
+  ]
+ },
+ "revisions": [
+  "整体：平台从电视换成 PC + 手柄输入（保留 Xbox 键位图标），typ.baseSize 22 → 12、typ.scale 1.3 → 1.2、lay.safeMargin 2.5 → 1.5：电视平台的 5% 过扫描边距和 1.6 倍版面缩放是排位错乱、字过大的根源",
+  "整体：col.rarityScale = metal、st.rarityCue = strip，把稀有度从蓝紫粗边框降成格子左侧一条铜 / 银 / 金细条；st.newCue = none",
+  "画面：castle 雪地 → arena、color.palette night、亮度 0.6、色温 -0.2、饱和 0.6，得到参考那种暗蓝夜色（lighting.time 不在复刻校验器的画面参数前缀里，只好不用）",
+  "局内 HUD：去掉 el.profile；快捷栏 hotbar → slots（4 格），scale 1.1 让它横向压到 Boss 条起点，触发避让把 Boss 条抬到画面约 82% 高（参考位置）；三根条改皮肤 bar、scale 0.75；罗盘 scale 0.65；资源改 bigNumber 单一计数、scale 0.5；col.accent2 改蓝给专注条；vis.opacity 0.45 让快捷格有暗底；st.selected = outline",
+  "装备页：去掉页眉元素 el.title（它画成米色大标牌压住网格），cmp.modal = floating 不画外框，rel.dim 0.6 + rel.sceneTone vignette + 虚化 4 得到近黑暗罩；ix.confirm = instant 去掉“确认选择”按钮；st.delta = newOnly 去掉变化箭头；st.locked = grayscale 让后排格子成灰色剪影；elx.scale 0.8 把格子缩到约 55px、6 行（模板构图器读 elx.scale）；格子 vis.opacity 0.5 + innerShadow + 暗暖灰描边",
+  "地图：cmp.modal = floating + ast.bgArt = solid 去掉面板框；去掉 el.objective（浮在地图上方的 120 m 标记）；lay.detail none 去掉物品浮窗；节点改 glowDot；vis.ornament 0",
+  "暂停：托盘 → fullscreen + floating（不画面板），网格 2 × 5 放在左上；elx.scale 0.55 缩小格子；ast.iconSet = procedural + vis.iconStyle = line 让图标成单色线稿符号；rel.dim 0.3 + vignette",
+  "死亡横带：col.accent 设成近黑（band 用强调色填底），el.notify.scale 1.8 → 1.6，横带高度约画面 19%",
+  "新增 / 改写 gaps：按元素视觉覆盖键不生效、col.gradient 对象被忽略、条标签关不掉、危险色写死、cross 排布未实现、三栏装备页、页眉 / 关闭胶囊关不掉、详情按钮、地图节点色、横带底色与字色；删掉“托盘没有角落位置”（已用 fullscreen + floating + 左上网格表达）",
+  "R3 前（M12a 之后）：base 加 col.bad 暗红 / col.good 暗绿（mono 下生命、精力不再取强调色）、cmp.slotBadge none、st.rarityCue strip → [none]（装备格与菜单格不写数量、不分稀有度）；hud 加 cmp.slot@el.abilities = tallCard（十字竖长格）、el.abilities.keyHint none、st.cooldown / st.selected@el.abilities = none、el.threat.form [bossBar, healthBar, lockOn]（头顶小血条与锁定点挂敌人）、el.threat.nameAlign left、el.vitals.labels none + lengthByMax（soulslike 包的上限，条长不同）、el.minimap.offsetY 7（罗盘离顶约 12%）；character / map / pause 加 lay.titlePos / ix.close = none；character 加 cnt.fillRatio 0.25 + st.locked none（多数是空槽剪影）；map 加 cmp.node = grace（金色赐福点）、vis.mapLabels = onMap（地名直写在图上）；pause 去掉 elx.scale 0.55，改写 lay.cellSize 64 + lay.gap 20（格子与字号分开、两排拉开），st.locked none；callout 去掉压成近黑的本屏 col.accent，横带底改写 col.surface@el.notify（字色 col.text@el.notify 暗红已生效，标题光随字色）。平台写法（PC + 手柄、safeMargin 1.5）核对后保留。",
+  "R4 前（M12b 之后）：base 加 ix.glyphTint = mono（单色细线圈键位，#7）；hud 的 el.minimap.form compassBar → tickLine + compassText = north（刻度细线罗盘 + 单个 N，#17）、el.resources.form bigNumber → framedCounter（卢恩细框盒，#22）、cmp.gaugeCap@el.vitals = pointed + cmp.gaugeFrame@el.vitals = hairline + col.ornament@el.vitals 青铜（条端尖头 + 细暗框，#16）、el.abilities.slotContent = items（盾 / 剑 / 药瓶写实图，#20）、el.abilities.activeLabel = above（战技名牌，#15）、el.abilities.scale 1.1 → 0.65（十字栏整组约画面高 22%）、el.threat.lockStyle = dot（锁定白点，#47）、el.threat.bossBar.offsetY = −12（Boss 条回到约 80% 高）、col.track@el.threat 暗红（头顶小条空槽不再浅灰）、cnt.elements 加 el.buffs（vis.silhouette@el.buffs = octagon、左上八角卢恩槽，#14；没用 B3 的 vis.silhouette@slot——会把十字竖卡也变成八角）与 el.feedback（combo、停在 Boss 条末端、scale 0.5：累计伤害，#23）；character 的 lay.titlePos none → panel + cmp.plate@title = fadeBand + lay.headerIcon = item + ast.frameMat = bronze（铜框徽记 + 渐隐暗带页眉，#26）、vis.strokeFade 0.4（两端渐隐的分栏发丝线，#27）、st.selected glow → brighten（#9）、lay.detail persistent → wide + lay.subColumns 2（详情 + 两列属性表，#24 / #25）、col.surface@slot 暗石色、rel.sceneTone vignette → [directional] + rel.dimColor 暖褐 + rel.toneDir leftBottom + rel.fogBand 0.5（左下更暗、底部雾带，#32）；map 加 vis.mapUnexplored dark → unpainted（未上色底稿，#34）、lay.panHint = none（#37）、col.accent@node 金色（赐福点）；pause 加 lay.gridHeader = focusCaption（#39）、st.selected glow → brighten、rel.sceneTone vignette → [directional] 同 character；callout 加 vis.fade@el.notify = vertical + fadeLength 0.35（上下羽化，#43）、lay.safeMargin 0（band 本来就是整屏宽，两端 2% 的缩进是安全边距）、el.notify.scale 1.6 → 1.9（字放大、横带约画面高 22%）。没写 cnt.tone = triumphant：复刻的 callout 是死亡横带，没有击败 Boss 那一屏。"
+ ],
+ "notes": "魂系暗色细线的标尺：局内 HUD 全部直压画面——左上三根带青铜端头的细条（条长随上限增长）、上中细罗盘、左下竖卡十字快捷栏与战技名牌、右下卢恩计数小框、底中 Boss 长条与左对齐名字，没有任何面板；菜单不暂停游戏，是整屏暗罩上的无框三栏，用 1px 暖灰竖栏线、衬线字、骨白数值表与去饱和写实物品图分组，空格画类型剪影、选中格暖光提亮；暂停是左上角两排小线稿图标。死亡提示是全宽羽化暗带上大字距的暗红衬线大写。截图里只有 HUD 与装备页，地图、菜单、死亡横带按已知界面编码。复刻要点：PC 字号（12）与 1.5% 边距，否则电视平台的放大会让 HUD 排位全乱。"
+}

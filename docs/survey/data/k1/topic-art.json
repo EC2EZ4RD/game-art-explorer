@@ -1,0 +1,847 @@
+{
+  "topic": "UI 与画面风格的关系：从美术方向推出 UI 风格（同一媒介 / 统一调色 / 中性 / 刻意对比）",
+  "method": "证据：452 张 UI 参考卡的参数与笔记（rel.harmony、typ.display.family、ast.*、vis.motif 等取值计数），人工看过的对照图 strategy 02/04/05、arpg 02/03/07/11/14、life 01/03/07/09、card 01/05/09；R3 评测统计（ui-review-stats.json，336 款，按家族 / 标题字族 / rel.harmony 分组计算每款平均抱怨次数与 ≥2 条的款数，只用计数）；06 / 08 / 01 / 12 号调研文档；外部文献见各条 sources。评测关键词是粗筛，分组样本小（4–20 款），只当方向性信号。注：本次网页检索额度在写作中途用尽，个别想补的出处（如 GRIS、Mini Metro 的开发访谈）未能检索，相关结论只以参考卡为证。",
+  "principles": [
+    {
+      "id": "P-harmony-four-relations",
+      "title": "先定 UI 与画面的关系，再挑皮肤：同一媒介 / 统一调色 / 中性 / 刻意对比是四种不同的产品决策",
+      "problem": "不懂美术的开发者最常见的做法是直接挑一个“好看的皮肤”套上去，结果 UI 和画面像两款游戏拼在一起；反过来把 UI 整个画进画风里，又容易字小、看不清、找不到按钮。rel.harmony 的四档本质上是在“画面认同感”和“信息可读性”之间选站位，应该先回答三个问题：画面本身是不是卖点？玩家在 UI 里停留多久？画面的媒介能不能承载小字和细节？",
+      "approaches": [
+        {
+          "name": "同一媒介：UI 用画面同一种画法（纸上手稿、像素、铅笔、牌桌）",
+          "params": { "rel.harmony": "sameMedium", "col.source": "scene", "ast.core": "texture", "ast.coreMat": "parchment", "ast.frame": "procedural", "vis.stroke": "solid", "vis.strokeColor": "ink", "vis.strokeWidth": 2, "vis.jitter": 0.3, "typ.display.family": "serif", "typ.display.case": "smallCaps", "vis.iconStyle": "painted" },
+          "whenToUse": "画面就是卖点，节奏慢（解谜、叙事、卡牌、经营），玩家在 UI 里停留时间长，而且世界里本来就有纸、书、牌桌这类载体。",
+          "cost": "整套都要定制素材和字体；字小、对比低的风险最高。19 款同一媒介作品里，“字太小”平均每款 0.37 条，3 款 ≥2 条（16%）；全库是 0.17 条、5%。地图类抱怨（每款 0.63 条，全库 0.28）和引导类（0.79 条，全库 0.53）也偏高。",
+          "examples": ["steam:1210320", "steam:1205520", "steam:262060", "steam:1123450", "steam:2060790", "steam:1054490", "steam:653530", "steam:1092790"]
+        },
+        {
+          "name": "统一调色：媒介不同，色板与字共用",
+          "params": { "rel.harmony": "unified", "col.source": "scene", "ast.core": "procedural", "vis.opacity": 0.6, "vis.stroke": "solid", "vis.strokeWidth": 1, "typ.display.family": "calligraphy", "typ.body.family": "sans", "typ.legibility": "shadow" },
+          "whenToUse": "3D 写实或绘画感很强的世界，画面复杂，UI 没法画进世界，但要让人觉得是同一款游戏。适合动作和开放世界。",
+          "cost": "认同感只靠颜色和字，辨识度中等。场景色变化大时（昼夜、生物群系）色板要联动，否则强调色在某些场景里会被画面吞掉。",
+          "examples": ["steam:2358720", "steam:972660", "steam:2533960", "steam:2239150", "steam:620980", "gameui:9375"]
+        },
+        {
+          "name": "中性：通用、克制，把舞台让给画面和信息",
+          "params": { "rel.harmony": "neutral", "col.source": "skin", "col.lightness": "dark", "vis.opacity": 0.75, "vis.fill": "gradient", "vis.stroke": "solid", "vis.strokeWidth": 1, "vis.strokeColor": "metal", "typ.display.family": "serif", "typ.body.family": "sans" },
+          "whenToUse": "信息极密（经营、大战略、MMO）、画面多变（多章节、多生物群系、多时代），或者要长期更新运营的游戏。",
+          "cost": "容易“像 App、像后台”，必须留一个通道（标题字或一个强调色）撑住身份，见 P-neutral-one-voice。",
+          "examples": ["steam:1245620", "steam:292030", "steam:1162750", "steam:281990", "steam:427520", "steam:1332010"]
+        },
+        {
+          "name": "刻意对比：UI 是另一层语言（平面拼贴、瑞士网格、设备界面）",
+          "params": { "rel.harmony": "contrast", "col.source": "uiPalette", "col.strategy": "duotone", "vis.skew": -8, "vis.edge": "ornate", "typ.display.family": "ransom", "mo.enter": "slashIn" },
+          "whenToUse": "UI 本身就是作品的表达（菜单驱动的 JRPG、风格化动作），或者世界观给了“另一层界面”的理由（设备、系统、元叙事）。",
+          "cost": "设计门槛最高。动画一重就会被嫌慢（DEATHLOOP 有 3 条“UI 卡顿”）；没有叙事理由的反差会被看成贴皮，见 P-contrast-with-reason。",
+          "examples": ["steam:1687950", "steam:2679460", "steam:1252330", "steam:870780", "steam:1148760", "steam:1091500"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "没决定关系就套皮肤：在写实或水墨的世界上直接套扁平 / Material 或手游金框，看起来像两款游戏拼在一起。",
+          "examples": [],
+          "reviewEvidence": "评测关键词里没有“风格不搭”这一类，无法计数。GameUI 高赞作品的评论里反复批评“材质与世界观不符”“风格混搭没有主次”，被夸的则是角色、场景、UI 高度统一（08 文档 2.4，意译）。"
+        },
+        {
+          "desc": "为了同一媒介牺牲可读性：手写体、书法和纸纹一路压到正文和数字上。",
+          "examples": ["steam:257850", "steam:1205520", "steam:653530"],
+          "reviewEvidence": "同一媒介的 19 款里，有 3 款“字太小”≥2 条（Hyper Light Drifter、Pentiment、Obra Dinn 各 2 条），占 16%；全库 336 款里只有 5%。"
+        }
+      ],
+      "rules": [
+        "先回答三个问题。美术是不是卖点？（评测里提到美术的比例超过约 25%，就算是。）玩家每局有多少时间在 UI 里？画面的媒介能不能承载 14px 以下的字？",
+        "按答案选档：是卖点、停留长、媒介撑得住小字 → 同一媒介；是卖点但画面复杂 → 统一调色；信息极密或画面多变 → 中性；UI 自己要表达 → 刻意对比。",
+        "rel.harmony 只是全局默认，各屏可以不同档。常见组合是 HUD 统一调色、菜单同一媒介（见 P-dwell-time-budget）。",
+        "同一媒介确实能让画面被记住：19 款里评测提到美术的比例平均 0.30，全库是 0.20。但读不清的代价要用 P-type-two-tier 和 P-medium-constraints 补回来。",
+        "UI 长得越像世界，越会被看成世界的一部分（相似律），可交互的东西也越难被认出来。同一媒介的按钮要额外加“能点”的提示（焦点框、按下反馈）。",
+        "探索台里选好美术配方后，fromArt 表已经给出三档默认皮肤（sameMedium / neutral / contrast）。三档都并排看一遍再定，别只看第一档。"
+      ],
+      "genres": ["叙事与视觉小说", "解谜与侦探", "卡牌与桌面", "角色扮演", "动作与 Roguelite", "建造与经营"],
+      "sources": [
+        { "title": "Nielsen Norman Group: The Aesthetic-Usability Effect", "url": "https://www.nngroup.com/articles/aesthetic-usability-effect/", "point": "好看的界面会被认为更好用，用户也更能容忍小毛病，但掩盖不了严重的可用性问题。同一媒介换来的好感抵消不了读不清。" },
+        { "title": "Laws of UX: Law of Similarity", "url": "https://lawsofux.com/law-of-similarity/", "point": "外观相似的元素会被看成一组。UI 与画面越像，越容易被看成世界的一部分，可交互元素就需要和普通内容有明显区别。" },
+        { "title": "Wikipedia: Persona 5（Art design）", "url": "https://en.wikipedia.org/wiki/Persona_5", "point": "早期 UI 动画过多，遮住了画面上发生的事。团队削减动画、调整文字方向，在可用性和风格之间找平衡。即便是刻意对比的 UI，也要让位给信息。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "deckBuilder", "cnt.screen": "screen.cards", "rel.harmony": "sameMedium", "col.source": "scene", "ast.core": "texture", "ast.coreMat": "paper", "ast.frame": "procedural", "vis.stroke": "solid", "vis.strokeColor": "ink", "vis.strokeWidth": 2, "vis.jitter": 0.3, "typ.display.family": "handwritten", "vis.iconStyle": "painted" },
+        "b": { "cnt.pack": "deckBuilder", "cnt.screen": "screen.cards", "rel.harmony": "neutral", "col.source": "skin", "ast.core": "procedural", "col.lightness": "dark", "vis.opacity": 0.75, "vis.stroke": "solid", "vis.strokeWidth": 1, "vis.strokeColor": "metal", "typ.display.family": "sans", "vis.iconStyle": "line" },
+        "lookAt": "先配一个手绘类美术配方（watercolor 或 pencil-hatch）：A 的卡面和面板像画里的纸，B 像浮在画面上的工具窗。再换成写实柔光（soft-pbr）：A 反而突兀，B 更稳。同一档关系并不对所有画风都成立，所以先定关系，再定皮肤。"
+      }
+    },
+    {
+      "id": "P-channel-borrowing",
+      "title": "把美术方向拆成六个通道（材质、线、色、字、饰、动），逐个决定借不借——“跟随画面”不是一个开关",
+      "problem": "“UI 跟随画面”常被理解成要么全像、要么不像。参考库里做得好的作品几乎都是挑着通道借：Hollow Knight 只借了线（白色线描卷草），没借纸；Black Myth 借了字（书法）和母题（云纹），HUD 本体是中性细线；Hauntii 只借了色（全屏只有两种颜色）；Darkest Dungeon 六个通道全借。逐个通道决定，才能在认同感和可读性之间精细调节，一种画风也就能衍生出好几种 UI 风格，这正是探索风格最快的办法。",
+      "approaches": [
+        {
+          "name": "全通道：材质、线、色、字、饰、动一起借",
+          "params": { "rel.harmony": "sameMedium", "col.source": "scene", "ast.frame": "carvedNinePatch", "ast.frameMat": "stone", "vis.edge": "torn", "vis.motif": "skulls", "vis.ornament": "3", "typ.display.family": "gothic", "mo.enter": "inkSpread" },
+          "whenToUse": "回合制或慢节奏、UI 占屏大的作品（整条底座、整屏书本）。",
+          "cost": "素材量最大（九宫格框、母题、字体、动效），任何一个通道走样都会显得廉价。",
+          "examples": ["steam:262060", "steam:1210320", "steam:957960", "steam:1839510", "steam:1205520"]
+        },
+        {
+          "name": "只借线和字（线描花饰）",
+          "params": { "rel.harmony": "unified", "vis.opacity": 0, "ast.frame": "cornersOnly", "ast.frameMat": "lineArt", "vis.motif": "floral", "vis.ornament": "1", "typ.display.family": "serif", "typ.display.case": "smallCaps", "typ.legibility": "shadow" },
+          "whenToUse": "手绘墨线、新艺术、美好年代风的世界：HUD 要轻，又要有气质。",
+          "cost": "没有底板时，可读性全靠投影；细线在低分辨率和电视远看时会发虚。",
+          "examples": ["steam:367520", "steam:1903340", "steam:990080", "steam:1627720"]
+        },
+        {
+          "name": "只借色（限色、双色调、霓虹几何）",
+          "params": { "rel.harmony": "unified", "col.source": "scene", "col.strategy": "duotone", "vis.ornament": "0", "vis.motif": "none", "typ.display.family": "same", "vis.iconStyle": "line" },
+          "whenToUse": "以颜色为核心的画风：限色、双色调、低多边形加强色。",
+          "cost": "形状语言得自己设计；颜色太少时，语义色（危险、敌我）没地方放，只能靠形状补。",
+          "examples": ["steam:2060790", "steam:2239150", "steam:620980", "steam:531510", "steam:1122680"]
+        },
+        {
+          "name": "只借字和母题（文化题材鲜明的写实世界）",
+          "params": { "rel.harmony": "unified", "vis.opacity": 0, "vis.stroke": "none", "typ.display.family": "calligraphy", "typ.titleFx": "drybrush", "vis.motif": "cloud", "vis.ornament": "1", "ast.fx": ["ink"], "typ.legibility": "shadow" },
+          "whenToUse": "写实 3D，但题材文化特征鲜明（东方、西部、北欧）。",
+          "cost": "中文书法要做成图片素材（M11），只能用在标题上；正文另配易读字体，见 P-type-two-tier。",
+          "examples": ["steam:2358720", "steam:2215430", "steam:1876890", "steam:814380", "gameui:9375"]
+        },
+        {
+          "name": "只借材质，HUD 保持中性（菜单借世界的主材料）",
+          "params": { "ast.frame": "plainNinePatch", "ast.frameMat": "wood", "ast.core": "texture", "ast.coreMat": "parchment", "vis.iconStyle": "painted", "typ.titleFx": "outline" },
+          "whenToUse": "世界里有一种显眼的主材料（木、石、冰、金属）：塔防、种田、中世纪经营。",
+          "cost": "高分辨率下材质贴图要出多倍素材；纹理底上的文字要单独垫底。",
+          "examples": ["steam:246420", "steam:413150", "steam:1136370", "steam:2084000", "steam:323190"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "六个通道各借一点，彼此又不统一：木框配科幻发光字配卡通图标，像素材店拼盘。",
+          "examples": [],
+          "reviewEvidence": "评测里无法计数。GameUI 社区评论反复批评“风格混搭没有主次”，有设计师建议按比例定主次风格（例如 70 / 20 / 10）（08 文档 2.4，意译）。"
+        },
+        {
+          "desc": "“饰”这个通道借得太满，压过了信息。",
+          "examples": ["steam:1145350", "steam:1313140", "steam:594570"],
+          "reviewEvidence": "重装饰雕花框家族 7 款，“HUD 太乱”每款平均 0.86 条（全库 0.27）；Hades II 4 条，Cult of the Lamb 2 条。"
+        }
+      ],
+      "rules": [
+        "六个通道各对应一组参数。材质：ast.coreMat / ast.frameMat / ast.container。线：vis.stroke / vis.strokeWidth / vis.jitter / vis.edge。色：col.source / col.strategy / col.saturation。字：typ.display.family / typ.titleFx。饰：vis.motif / vis.ornament / ast.ornaments。动：mo.enter / mo.frameRate / mo.easing。",
+        "HUD 最多借 2–3 个通道，优先借色、字、线；菜单可以借到 5–6 个。",
+        "字和色最便宜（不用素材），材质和饰最贵（要九宫格和母题素材）。预算紧时先借前两个。",
+        "每个通道只能有一个来源。比如线已经跟着画面线宽走了（D-outline），就别再叠一套别的风格的描边。",
+        "同一个美术配方做 3–4 种借法并排比较，是探索 UI 风格最快的方式。建议在探索台里做成一个“通道开关”视图。"
+      ],
+      "genres": ["角色扮演", "动作与 Roguelite", "叙事与视觉小说", "建造与经营", "卡牌与桌面", "探索与冒险"],
+      "sources": [
+        { "title": "SEGAbits 转述 Famitsu 访谈：Persona 5 美术与 UI 负责人", "url": "https://segabits.com/?p=54918", "point": "UI 设计师说界面颜色是他最费力的部分：每一作都先看游戏主色（P3 青、P4 黄、P5 红）再定界面色，字色试过多种后定为黑白。这是只借“色”这个通道的典型。" },
+        { "title": "Lettermatic: Custom Fonts for Pentiment", "url": "https://lettermatic.com/custom/pentiment", "point": "五套字体按 16 世纪巴伐利亚的手稿和早期印刷体研究重画，很多字形用当年的书写工具手工上墨，刻意保留墨洇和笔画不均。这是“字”这个通道借到极致的例子。" },
+        { "title": "Yacht Club Games: Breaking the NES", "url": "https://www.yachtclubgames.com/blog/breaking-the-nes/", "point": "Shovel Knight 保留了 NES 的观感（色板、顶部状态栏），但去掉了闪烁等伤害体验的限制。借媒介时可以只借观感，不借毛病。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "rpg", "cnt.screen": "screen.hud", "lay.hudOrg": "console", "rel.harmony": "sameMedium", "col.source": "scene", "ast.frame": "carvedNinePatch", "ast.frameMat": "stone", "vis.edge": "torn", "vis.motif": "skulls", "vis.ornament": "3", "typ.display.family": "gothic" },
+        "b": { "cnt.pack": "rpg", "cnt.screen": "screen.hud", "lay.hudOrg": "console", "rel.harmony": "unified", "col.source": "scene", "col.strategy": "duotone", "ast.frame": "procedural", "vis.stroke": "solid", "vis.strokeWidth": 1, "vis.ornament": "0", "vis.motif": "none", "typ.display.family": "same" },
+        "lookAt": "同一个回合制 RPG 底座，A 六个通道全借（石框、撕边、骷髅母题、哥特标题），B 只借场景色。用版画木刻（woodcut）或钢笔墨稿（pen-crosshatch）配方看：A 和画面是一体的，B 干净但“谁家的游戏都行”。然后在 B 上一次只打开一个通道（先字、再线、再饰），看哪一个通道带来的认同感最多、成本最低。"
+      }
+    },
+    {
+      "id": "P-dwell-time-budget",
+      "title": "风格浓度按停留时间分配：HUD 借最少，停下来看的界面借最多",
+      "problem": "同一套风格放在 HUD 和放在菜单上，代价完全不同。HUD 叠在实时画面上、每秒都要扫一眼，装饰和材质直接变成噪声；菜单、标题、图鉴、读取页是玩家停下来看的，恰恰是风格最能被欣赏的地方。GameUI 每种界面各抽 100 张截图，战斗界面只有 1 张带材质标签，菜单有 22 张。在 Interface In Game 上浏览的 Hades、Hollow Knight、Elden Ring、Clair Obscur，局内都只有几条细条和图标，装饰全留给了菜单。",
+      "approaches": [
+        {
+          "name": "HUD 极轻：同字族、同强调色，去底板、去饰件",
+          "params": { "cnt.screen": "screen.hud", "rel.hudVisibility": "contextual", "vis.opacity": 0, "vis.ornament": "0", "cmp.gauge@el.vitals": "thinBar", "typ.legibility": "shadow", "cnt.density": "1" },
+          "whenToUse": "实时动作、探索、平台跳跃：风格留给画面和菜单。",
+          "cost": "HUD 太轻会被说看不清（Hades II 有 2 条“字太小”）；菜单要有足够分量才撑得起整套风格。",
+          "examples": ["steam:1145360", "steam:367520", "steam:1245620", "steam:1903340", "steam:2358720"]
+        },
+        {
+          "name": "同一套皮肤的菜单端：雕花外框、标牌、侧图全上",
+          "params": { "cnt.screen": "screen.character", "ast.frame": "carvedNinePatch", "ast.frameMat": "bronze", "vis.ornament": "3", "vis.motif": "skulls", "cmp.plate": "plaque", "cmp.panelArt": "side", "typ.display.family": "artNouveau" },
+          "whenToUse": "天赋、护符、收藏、图鉴这类低频、停下来细看的界面。",
+          "cost": "外框素材贵；菜单的点击路径要短，否则华丽变成负担（菜单难用是全库第二常见的抱怨）。",
+          "examples": ["steam:1145360", "steam:367520", "steam:1903340", "iig:hearthstone-heroes-of-warcraft", "iig:slay-the-spire"]
+        },
+        {
+          "name": "HUD 做成和玩法区分开的底座，可以用菜单级装饰",
+          "params": { "cnt.screen": "screen.hud", "lay.hudOrg": "console", "ast.frame": "carvedNinePatch", "ast.frameMat": "stone", "vis.ornament": "2", "lay.playfield": "full" },
+          "whenToUse": "回合制或可暂停的 RPG、战略：底座占下半屏，不压在动作画面上。",
+          "cost": "屏占比大，“太乱”的风险最高：暗金金属牌家族 6 款“HUD 太乱”每款平均 1.17 条（全库 0.27），Total War: WH2、Baldur's Gate 3、Diablo IV 各 2 条。",
+          "examples": ["steam:262060", "steam:594570", "steam:2344520", "steam:1086940", "steam:2738490"]
+        },
+        {
+          "name": "全程一致的极简：画面本身就是装饰",
+          "params": { "vis.ornament": "0", "vis.motif": "none", "ast.bgArt": "solid", "col.lightness": "light", "typ.display.family": "same", "cnt.density": "0" },
+          "whenToUse": "画面本身极简（白模、低多边形、平涂地图）。",
+          "cost": "菜单缺少记忆点，身份全靠画面本身。",
+          "examples": ["steam:287980", "steam:688420", "steam:1455840", "steam:1046030", "steam:2198150"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "HUD 用和菜单一样的雕花框、金属牌，压在实时画面上。",
+          "examples": ["steam:1145350", "steam:1313140", "steam:594570", "steam:2344520"],
+          "reviewEvidence": "重装饰雕花框和暗金金属牌两个家族共 13 款，其中 5 款“HUD 太乱”≥2 条（38%）；全库是 22 / 336（7%）。"
+        },
+        {
+          "desc": "把奖励、标题那种演出级动效用在高频菜单上，每次打开都要看一遍动画。",
+          "examples": ["steam:1252330", "steam:1091500", "steam:1948800"],
+          "reviewEvidence": "“UI 卡顿 / 响应慢”共 6 款：DEATHLOOP 3 条，Cyberpunk 2077、弈仙牌、Prince of Persia、Half-Life: Alyx、Enshrouded 各 2 条，前三款都是风格化很重的界面。Persona 5 开发期也削减过遮挡画面的动画（维基）。"
+        }
+      ],
+      "rules": [
+        "按停留时间分三档。实时 HUD（不到 1 秒的一瞥）：装饰预算 0–1，只借色、字、线。高频菜单（背包、地图，每局几十次）：预算 1–2，材质用在外框，不用在格子底。低频界面（标题、章节卡、图鉴、结算）：预算 2–3，场景容器、插画、标题字全上。",
+        "资产型 UI 的价值主要在停下来看的界面。M11 生成素材时，优先给菜单、标题和图鉴出图，HUD 不出。",
+        "例外：回合制或可暂停游戏把 HUD 做成和玩法区分开的底座时，可以用菜单级装饰，因为它不压在画面上。",
+        "同一套皮肤要给 HUD 一个“减配版”：字族、强调色、转角都一样，但底不透明度为 0、去掉饰件。",
+        "高频界面入场动效不超过 0.25 秒，并且可以跳过；华丽演出只留给低频节点。"
+      ],
+      "genres": ["动作与 Roguelite", "角色扮演", "探索与冒险", "横版平台", "策略与战术"],
+      "sources": [
+        { "title": "Riot Games: Clarity in League", "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "point": "团战时视觉噪声累积得很快。要保住层级、把噪声压到最低，一个元素得到的注意力应当与它的重要程度相当。HUD 装饰就是不重要却占注意力的噪声。" },
+        { "title": "Wikipedia: Persona 5（Art design）", "url": "https://en.wikipedia.org/wiki/Persona_5", "point": "早期版本 UI 动画过于激进、遮住了画面，后来减弱动画以平衡可用性与风格。高频界面的演出要克制。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "action", "cnt.screen": "screen.hud", "vis.opacity": 1, "vis.ornament": "3", "ast.frame": "carvedNinePatch", "ast.frameMat": "bronze", "vis.motif": "skulls", "typ.display.family": "artNouveau", "rel.hudVisibility": "always" },
+        "b": { "cnt.pack": "action", "cnt.screen": "screen.hud", "vis.opacity": 0, "vis.ornament": "0", "ast.frame": "procedural", "vis.stroke": "none", "typ.display.family": "artNouveau", "typ.legibility": "shadow", "rel.hudVisibility": "contextual", "cmp.gauge@el.vitals": "thinBar" },
+        "lookAt": "打开“眯眼检查”和“UI 屏占比读数”：A 模糊之后最显眼的是青铜框和骷髅，不是血量与技能；B 的标题字族一样，一眼还能认出是同一款游戏，但屏占比和噪声都低得多。再把 A 的参数切到 cnt.screen = screen.character，同一套装饰放在停下来看的界面里，就变成了优点。"
+      }
+    },
+    {
+      "id": "P-medium-constraints",
+      "title": "同一媒介要守媒介的硬约束：像素网格、线宽、明暗模型、帧率对齐；做不到，就用画框把两种精度隔开",
+      "problem": "UI 想像画面，却只换了颜色：画面是 3 倍像素而 UI 是平滑矢量字，画面一拍二而 UI 动画是 60 帧丝滑，画面是粗黑描边而 UI 是发丝线。这些细小的错位会让 UI 看起来是“贴上去的”。反过来，也有作品故意让 UI 比画面精度高（了不起的修仙模拟器、Little Goody Two Shoes），但它们都把高精度 UI 放在画框或边栏里，不和像素玩法区重叠。",
+      "approaches": [
+        {
+          "name": "与世界同网格（像素 / 体素 / 低清三维）",
+          "params": { "vis.pixelScale": "world", "vis.corner": "step", "typ.body.family": "pixel", "typ.display.family": "pixel", "typ.numerals.family": "pixel", "mo.frameRate": "onTwos", "vis.iconStyle": "pixel", "ast.frame": "plainNinePatch", "ast.frameMat": "wood" },
+          "whenToUse": "像素、体素、低清三维画面（D-pixel）。",
+          "cost": "中文像素字在小字号下笔画粘连，布局受整数缩放约束。对齐网格本身并不更难读：像素位图家族 21 款“字太小”每款 0.10 条，比全库 0.17 还低。",
+          "examples": ["steam:413150", "steam:257850", "steam:588650", "steam:1282730", "steam:1404850", "steam:2142790"]
+        },
+        {
+          "name": "线宽与明暗模型对齐（赛璐璐、漫画、粗描边卡通）",
+          "params": { "rel.harmony": "sameMedium", "vis.stroke": "solid", "vis.strokeWidth": 3, "vis.strokeColor": "ink", "vis.depth": "hardDrop", "vis.pattern": "halftone", "vis.patternOpacity": 0.2, "typ.display.family": "graffiti", "typ.titleFx": "outline" },
+          "whenToUse": "画面有描边、色阶硬阴影（D-outline、D-toon）。",
+          "cost": "粗边占屏，HUD 元素数量要更少；网点要避开文字底。",
+          "examples": ["steam:1817230", "steam:204360", "steam:1307580", "steam:49520", "steam:1150690"]
+        },
+        {
+          "name": "帧率与手绘抖动对齐（定格、橡皮管动画、线条沸腾）",
+          "params": { "mo.frameRate": "onThrees", "vis.jitter": 0.4, "vis.edge": "brush", "mo.easing": "linear", "mo.enter": "cut", "mo.valueChange": "segment" },
+          "whenToUse": "画面一拍二 / 一拍三，或者线条在抖（D-frame、D-boil）。",
+          "cost": "阶跃动画让数值变化不连续，血量这类关键数值的变化要额外给数字或闪烁冗余。",
+          "examples": ["steam:268910", "steam:219740", "steam:1282320", "steam:957960"]
+        },
+        {
+          "name": "精度隔离：高精度 UI 放进玩法区外的画框",
+          "params": { "lay.hudOrg": "inMargin", "lay.playfield": "boxed", "vis.pixelScale": "off", "ast.frame": "carvedNinePatch", "ast.frameMat": "wood", "vis.ornament": "2" },
+          "whenToUse": "想要像素玩法，又想要高精度的插画、书法或雕花 UI。",
+          "cost": "玩法区变小；超宽屏要设计两侧装饰区（D-aspect）。",
+          "examples": ["steam:955900", "steam:1812370", "steam:2738490", "steam:1839510", "steam:638510"]
+        },
+        {
+          "name": "屏幕滤镜（CRT / 胶片）只让大字和边框跟随",
+          "params": { "rel.followPost": "warp", "ast.fx": ["scanlines"], "typ.display.family": "pixel", "typ.legibility": "outline" },
+          "whenToUse": "CRT、VHS、老电视本身是世界观的一部分。",
+          "cost": "弯曲和扫描线会降低小字可读性。D-crt 默认屏幕叠加的 UI 保持清晰，只让标题、边框和叙事内的屏幕跟着弯。",
+          "examples": ["steam:2379780", "gameui:13081", "steam:1304550", "steam:1996010"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "混像素（mixels）：像素画面上放非整数缩放的像素 UI，或者把像素字和平滑矢量字混在同一块面板里。",
+          "examples": [],
+          "reviewEvidence": "评测关键词里没有这一类，无法计数。06 文档 B6 把“统一同屏像素密度”列为像素 UI 的首要陷阱。"
+        },
+        {
+          "desc": "为了守媒介，把伤害操作的年代限制也一起守下来（闪烁、极少颜色、超小字）。",
+          "examples": [],
+          "reviewEvidence": "无计数。Shovel Knight 开发者说明，他们保留 NES 观感，但去掉了闪烁等伤害体验的限制（Yacht Club 博客）。Obra Dinn 在 1 位色里也把可读性放在第一位。"
+        }
+      ],
+      "rules": [
+        "画面像素化大于 1 时，UI 默认与世界同网格，用像素字和阶梯转角（D-pixel）。想用高精度 UI，就用 lay.hudOrg = inMargin 把它放到玩法区外，不要和像素玩法区重叠。",
+        "UI 描边粗细约等于画面线宽（D-outline）。画面是卡通硬阴影，UI 就用错位硬投影；画面是柔和漫反射，就用柔投影（D-toon）。",
+        "画面一拍二或一拍三，UI 动画用同样的帧率（D-frame），但关键数值的变化要另给数字或闪烁冗余。",
+        "CRT、胶片、纸纹这类后处理，默认只作用于叙事内 UI 和大字；HUD 小字保持清晰（rel.followPost = crisp）。",
+        "守媒介不是做年代考据：守住“看起来对”的约束，去掉“玩起来痛”的约束。"
+      ],
+      "genres": ["横版平台", "动作与 Roguelite", "生活与养成", "卡牌与桌面", "恐怖与悬疑", "建造与经营"],
+      "sources": [
+        { "title": "Yacht Club Games: Breaking the NES", "url": "https://www.yachtclubgames.com/blog/breaking-the-nes/", "point": "保留 NES 的纵向分辨率、色板和状态栏习惯，只补了几种“作弊色”，去掉闪烁这类伤害玩法的限制，把限制当成“画面别太乱”的设计指引。" },
+        { "title": "PlayStation Blog: Lucas Pope on Return of the Obra Dinn's art style", "url": "https://blog.playstation.com/archive/2019/10/17/lucas-pope-on-return-of-the-obra-dinns-art-style", "point": "做 1 位色画面时，作者把可读性放在最高优先级：几何描边、尽量少用抖动。哪怕是最极端的媒介，可读性仍然排第一。" },
+        { "title": "GDC 2015: Guilty Gear Xrd's Art Style（Motomura）", "url": "https://gdcvault.com/play/1022031/GuiltyGearXrd-s-Art-Style-The", "point": "用 3D 冒充 2D 手绘时刻意抽帧、不插值（据 01 号文档的整理）。帧率是画风的一部分，UI 动画也应该跟着。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "farming", "cnt.screen": "screen.hud", "vis.pixelScale": "off", "vis.corner": "round", "vis.cornerSize": 20, "typ.body.family": "sans", "typ.display.family": "sans", "typ.numerals.family": "body", "mo.frameRate": "smooth", "vis.iconStyle": "flat" },
+        "b": { "cnt.pack": "farming", "cnt.screen": "screen.hud", "vis.pixelScale": "world", "vis.corner": "step", "typ.body.family": "pixel", "typ.display.family": "pixel", "typ.numerals.family": "pixel", "mo.frameRate": "onTwos", "vis.iconStyle": "pixel", "ast.frame": "plainNinePatch", "ast.frameMat": "wood" },
+        "lookAt": "配一个像素类美术配方（pixel3d 或 gameboy）。A 的圆角矢量面板和平滑字浮在像素世界上，像手机 App 盖在游戏上；B 的木框、像素字和阶梯转角落在同一网格里。再看动效：A 的血条丝滑下降，B 按一拍二跳格，和角色动画同步。"
+      }
+    },
+    {
+      "id": "P-palette-roles",
+      "title": "UI 取色取“角色”不取“颜色”：骨架色从场景色板推，强调色和世界主色拉开，语义色单独保留",
+      "problem": "直接拿画面主色当 UI 强调色，UI 会被画面吞掉（蓝窗口叠在蓝天上，橄榄色 HUD 叠在丛林里）；完全独立的控件色又让 UI 像另一款游戏。Persona 系列的做法是每一作先定世界主色，再围绕它挑界面色。P5 以红为主色，字只用黑白，除血条、魔条外整个 UI 只有红、黑、白三色。",
+      "approaches": [
+        {
+          "name": "场景色板直取（同色系、双色调）",
+          "params": { "col.source": "scene", "col.strategy": "duotone", "col.saturation": 0.8, "hier.emphasis": ["value", "size"] },
+          "whenToUse": "限色、双色调、整体调色很强的画风。",
+          "cost": "强调色和场景同色，重要信息要靠明度和形状拉开；场景一换色就要联动（见 P-follow-world-over-time）。",
+          "examples": ["steam:2060790", "steam:2239150", "steam:1585220", "steam:2533960", "steam:972660"]
+        },
+        {
+          "name": "世界标志色做面，黑白做字",
+          "params": { "col.source": "uiPalette", "col.strategy": "duotone", "col.accent": "#e60012", "col.accent2": "#ffffff", "col.lightness": "dark" },
+          "whenToUse": "世界有一个强烈的标志色（红、紫、霓虹）。",
+          "cost": "大面积高饱和容易疲劳（06 文档 B18）；标志色就是危险色时，危险提示只能改用形状和动效。",
+          "examples": ["steam:1687950", "steam:1313140", "steam:1091500", "steam:1252330"]
+        },
+        {
+          "name": "画面压低饱和，UI 独占一个强调色",
+          "params": { "col.source": "scene", "col.strategy": "mono", "col.accent": "#ff2d7a", "hier.emphasis": ["color", "value"], "col.saturation": 0.6 },
+          "whenToUse": "画面本身低饱和、单色或线稿。这个唯一的颜色只留给玩法信息（危险、可攀爬、效果）。",
+          "cost": "强调色一旦被装饰挪用就失效。强调要稀少才有效（Von Restorff）。",
+          "examples": ["steam:531510", "steam:1473350", "steam:17410", "steam:2095150", "steam:590380"]
+        },
+        {
+          "name": "场景色、控件色分两组（独立控件色板）",
+          "params": { "col.source": "uiPalette", "col.strategy": "neutralAccent", "col.semantic": "accentOnly", "col.teams": "orangeBlue" },
+          "whenToUse": "场景色变化大（多星球、多季节），或者是竞技游戏，需要稳定的语义色。",
+          "cost": "需要用一个别的通道（字、转角、母题）把 UI 拉回世界。",
+          "examples": ["steam:1148760", "steam:281990", "gameui:8283", "iig:overwatch", "steam:1366540"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "UI 强调色等于场景主色：蓝底窗口叠蓝天，橄榄色战术 HUD 叠丛林，金框叠黄沙。",
+          "examples": [],
+          "reviewEvidence": "评测关键词没有按颜色拆分，无法计数。06 文档在 JRPG 窗口、军事战术（“迷彩化”）、手游金框三种风格的陷阱里都记了这一条。"
+        },
+        {
+          "desc": "同一个红色既是装饰色（朱砂、印章、主题红），又是危险色或敌方色。",
+          "examples": [],
+          "reviewEvidence": "无计数。06 文档 B8（印章红别和敌方红混用）、B25（朱红别和伤害提示混用）。"
+        }
+      ],
+      "rules": [
+        "骨架三色从场景色板里取“角色”。底：场景暗部或亮部的去饱和版（D-lightness 决定深浅）。字：与底明度相反。强调：场景里面积最小、饱和度最高的那个颜色，而不是面积最大的主色。",
+        "语义色（危险、敌我、稀有度）不受骨架策略约束（col.coding 独立），必须在色相或明度上和世界主色拉开，并且有形状冗余。",
+        "场景色和控件色分两组写进色板，这是 GameUI 高赞作品的常见做法；控件组可以默认从场景组推导。",
+        "整套 UI 的强调色越少越好。P5 除血条、魔条外只用红黑白三色。",
+        "色盲检查要把 UI 和 3D 场景放在一起看（D-teams）。"
+      ],
+      "genres": ["动作与 Roguelite", "第一 / 第三人称射击", "角色扮演", "竞速与驾驶", "解谜与侦探"],
+      "sources": [
+        { "title": "SEGAbits 转述 Famitsu 访谈：Persona 5 美术与 UI 负责人", "url": "https://segabits.com/?p=54918", "point": "界面颜色要对照每一作的主色（青、黄、红）来定；P5 的字色试过多种之后选了黑白。" },
+        { "title": "Wikipedia: Persona 5（Art design）", "url": "https://en.wikipedia.org/wiki/Persona_5", "point": "红色是为了刺眼感，与前两作的蓝、黄区分开；黑白字在红底上最醒目；除血条、魔条外 UI 只用红黑白。" },
+        { "title": "Laws of UX: Von Restorff Effect", "url": "https://lawsofux.com/von-restorff-effect/", "point": "一组相似元素里与众不同的那个最容易被记住，但强调要克制：强调的东西太多就都不突出了，而且不能只靠颜色。" },
+        { "title": "Game Accessibility Guidelines: Ensure no essential information is conveyed by a colour alone", "url": "https://gameaccessibilityguidelines.com/ensure-no-essential-information-is-conveyed-by-a-colour-alone/", "point": "关键信息不能只靠颜色传达。场景取色把 UI 色压得接近画面时，更要用形状和文字做冗余。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "horror", "cnt.screen": "screen.hud", "col.source": "scene", "col.strategy": "mono", "hier.emphasis": ["size"], "st.alert": "redTint" },
+        "b": { "cnt.pack": "horror", "cnt.screen": "screen.hud", "col.source": "scene", "col.strategy": "neutralAccent", "col.accent": "#ff2d7a", "hier.emphasis": ["color", "value"], "st.alert": "warnIcon" },
+        "lookAt": "配一个低饱和的美术配方（noir 或 ink-landscape）。A 的低血警示用了画面同色系的红调，融进了场景；B 的骨架仍然取自场景，只把一个画面里没有的品红留给关键信息，警示还加了形状（黄三角）。再打开色盲模拟，看 B 去掉颜色之后还剩不剩信息。"
+      }
+    },
+    {
+      "id": "P-type-two-tier",
+      "title": "字分两层：标题字承载身份（书法、手写、哥特、衬线、像素……），正文和数字承载可读，再给玩家一个“朴素字”开关",
+      "problem": "字体是把美术方向带进 UI 最便宜、也最有效的通道：一套书法标题就能让中性面板变成国风。但同一种字一旦压到正文、数字和小标签上，可读性马上崩。参考库里记了标题字族的 84 张卡中，衬线 17、书法 16、手写 10，表达型字体是多数。",
+      "approaches": [
+        {
+          "name": "书法标题 + 无衬线正文（东方题材）",
+          "params": { "typ.display.family": "calligraphy", "typ.direction": "verticalTitle", "typ.body.family": "sans", "typ.numerals.family": "tabular", "cmp.plate": "sideTab" },
+          "whenToUse": "国风、武侠、仙侠、和风。",
+          "cost": "中文书法要做成图片素材，不能动态排字；竖排侧牌占宽。",
+          "examples": ["steam:2358720", "steam:1468810", "steam:1876890", "gameui:9375", "gameui:2150", "gameui:2596", "gameui:12838"]
+        },
+        {
+          "name": "衬线小型大写标题 + 衬线正文（西幻、古典、文学感）",
+          "params": { "typ.display.family": "serif", "typ.display.case": "smallCaps", "typ.display.tracking": 0.12, "typ.body.family": "serif", "typ.numerals.family": "tabular" },
+          "whenToUse": "西幻、魂系、文学向叙事。",
+          "cost": "衬线小字在低分辨率和电视远看时发虚，正文要比平台最小字号再大一档。",
+          "examples": ["steam:1245620", "steam:367520", "steam:1903340", "steam:632470", "steam:921570", "steam:653530"]
+        },
+        {
+          "name": "手写标题 + 圆体正文（手作、日记、童趣）",
+          "params": { "typ.display.family": "handwritten", "typ.body.family": "round", "vis.jitter": 0.2 },
+          "whenToUse": "铅笔、蜡笔、贴纸、练习本这类“个人手作”质感。",
+          "cost": "中文手写字体常常缺字，生僻字会回退到别的字体（06 文档 B7）。",
+          "examples": ["steam:1123450", "steam:1307580", "steam:1586800", "steam:1150690", "steam:972660"]
+        },
+        {
+          "name": "时代或亚文化展示字（勒索信、涂鸦、西部木刻、新艺术、哥特、模板字）+ 粗无衬线正文",
+          "params": { "typ.display.family": "ransom", "typ.display.weight": "black", "typ.body.family": "sans", "typ.body.weight": "bold" },
+          "whenToUse": "作品有鲜明的年代或亚文化指向：朋克、街头、西部、美好年代、哥特、军事。",
+          "cost": "本地化难（勒索信每个字母一种字体）；涂鸦和勒索信只适合极短的文本。",
+          "examples": ["steam:1687950", "steam:1252330", "steam:1817230", "steam:2668510", "steam:7670", "steam:262060", "steam:286000"]
+        },
+        {
+          "name": "像素或等宽一字到底（字本身就是媒介）",
+          "params": { "typ.display.family": "pixel", "typ.body.family": "pixel", "typ.numerals.family": "pixel", "typ.legibility": "shadow" },
+          "whenToUse": "像素画面、终端、编程谜题。",
+          "cost": "中文像素字 12px 以下会粘连。标了像素标题的 4 款评测里没有出现“字太小”（样本很小）。",
+          "examples": ["steam:2379780", "steam:1404850", "steam:1996010", "steam:63710", "steam:1720850"]
+        },
+        {
+          "name": "标题等于正文（中性，靠字号与字重拉层级）",
+          "params": { "typ.display.family": "same", "typ.scale": 2, "typ.display.weight": "black" },
+          "whenToUse": "瑞士风、极简、信息设计导向。",
+          "cost": "身份感全靠排版功底。",
+          "examples": ["steam:287980", "steam:870780", "steam:1850570"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "表达型字体下沉到正文、数字和小标签。",
+          "examples": ["steam:1468810", "steam:814380", "steam:1205520"],
+          "reviewEvidence": "标了书法标题、又有评测统计的 8 款里，“字太小”平均每款 1.0 条，3 款 ≥2 条（鬼谷八荒、Sekiro、Pentiment 各 2 条）；全库是每款 0.17 条、5%。关键词是粗筛，不一定都怪字体，但方向一致。"
+        },
+        {
+          "desc": "风格字体没有“朴素字”退路，也没覆盖全部语种字符集。",
+          "examples": [],
+          "reviewEvidence": "无计数。XAG 101 要求风格化字体提供非风格化替代，并覆盖所有支持语言的字符集。Pentiment 的做法是加一个辅助选项：所有角色统一用最易读的人文手写体。"
+        }
+      ],
+      "rules": [
+        "三个字角色分开选。标题（typ.display.*）可以全力表达；正文（typ.body.*）只在无衬线、衬线、圆体、楷体里选；HUD 上的数字（typ.numerals.family）一律用 tabular 或 display，不用书法和手写。",
+        "表达型标题字只用在标题、章节卡、Boss 名和大字提示上，不进按钮小字、列表和 tooltip。",
+        "最小字号按平台定：XAG 101 规定 1080p 下主机正文字身高至少 26px、PC 至少 18px；细字重再大一档（Apple HIG）。",
+        "做一个“朴素字”开关（a11y），把所有风格字替换成正文字族。",
+        "风格字体必须覆盖全部语言的字符集；书法和手写标题按语种分别书写，见 P-title-lettering。"
+      ],
+      "genres": ["角色扮演", "叙事与视觉小说", "卡牌与桌面", "动作与 Roguelite", "生活与养成"],
+      "sources": [
+        { "title": "Xbox Accessibility Guidelines 101: Text display", "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-101-text-display", "point": "用了风格化字体（滴血、哥特等）就要提供非风格化的替代；给出主机 26px、PC 18px（1080p 字身高）的最小默认值；字体要覆盖所有支持语言的完整字符集。" },
+        { "title": "Apple Human Interface Guidelines: Typography", "url": "https://developer.apple.com/design/human-interface-guidelines/typography", "point": "自定义字体必须易读；游戏要在每个平台分别测文字可读性；细字重要比推荐字号更大；自定义字体也要支持字号调节等辅助功能。" },
+        { "title": "Lettermatic: Custom Fonts for Pentiment", "url": "https://lettermatic.com/custom/pentiment", "point": "没有配音，字体就承担“谁在说话”；字形按需要现代化以便阅读；辅助设置可以让所有角色统一显示最易读的人文手写体。" },
+        { "title": "PCGamesN: Pentiment 的美术与字体", "url": "https://www.pcgamesn.com/pentiment/art-fonts-story", "point": "字体按主角对每个人的印象来分配，印象改变时字体也跟着变。字体就是角色的“声音”。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "visualNovel", "cnt.screen": "screen.dialogue", "typ.display.family": "calligraphy", "typ.body.family": "kai", "typ.numerals.family": "body", "typ.baseSize": 12, "typ.legibility": "none" },
+        "b": { "cnt.pack": "visualNovel", "cnt.screen": "screen.dialogue", "typ.display.family": "calligraphy", "typ.body.family": "sans", "typ.numerals.family": "tabular", "typ.baseSize": 16, "typ.legibility": "shadow" },
+        "lookAt": "两边名牌上的书法标题一样，风格身份没变。打开“最小字号检查”和“视距预览：电视 2.5m”：A 的楷体小正文在远处糊成一片，B 的正文和数字仍然清楚。正文换字体几乎不损失国风感，这说明身份主要在标题上。"
+      }
+    },
+    {
+      "id": "P-title-lettering",
+      "title": "标题字 / LOGO 是“画”出来的资产：用世界的媒介去写，按语种重写，再用同一套规则复用到章节卡、Boss 名和大字提示",
+      "problem": "设计师作品里，标题字是独立的大件（08 文档 3.3）：国风几乎都有书法标题，欧美卡通是立体卡通字，科幻是细线宽字距，恐怖是窄体粗字。但很多原型只是“选一个字体打上去”。真正把风格立住的做法是：标题用画面同一种工具写出来（毛笔、钢笔、木刻、霓虹管、像素点），再把同一套处理延伸到所有“大字时刻”。",
+      "approaches": [
+        {
+          "name": "书法 / 毛笔（墨飞白、竖排、压在画面上）",
+          "params": { "el.title.form": "artTitle", "typ.display.family": "calligraphy", "typ.titleFx": "drybrush", "typ.direction": "verticalTitle", "ast.fx": ["ink"] },
+          "whenToUse": "东方题材；招式名、地名、章节名可以压在画面上做成大字。",
+          "cost": "每个大字都要单独出图；动态文本（玩家起的名字）没法用书法。",
+          "examples": ["steam:1876890", "steam:2215430", "steam:814380", "gameui:11870", "gameui:4897", "gameui:7090"]
+        },
+        {
+          "name": "年代海报 / 片头字（1930 年代动画、19 世纪海报、西部木刻、60 年代拼贴）",
+          "params": { "el.title.form": "titleCard", "typ.display.family": "slabWestern", "typ.titleFx": "shadow", "ast.bgArt": "material", "ast.bgMat": "paper" },
+          "whenToUse": "画面是在致敬某个年代的印刷或影像媒介。",
+          "cost": "要考据年代的版式规矩（字距、装饰线、居中构图），否则像仿冒字体包。",
+          "examples": ["steam:268910", "steam:653530", "steam:2668510", "steam:1252330", "iig:dont-starve"]
+        },
+        {
+          "name": "细线宽字距（几何、科幻、空灵）",
+          "params": { "el.title.form": "logo", "typ.display.family": "sans", "typ.display.weight": "light", "typ.display.tracking": 0.3, "typ.display.case": "upper", "vis.motif": "geometric" },
+          "whenToUse": "极简、太空、梦幻、仪器感的画面。",
+          "cost": "细字在亮背景上会消失，要垫暗角或渐变。",
+          "examples": ["steam:683320", "steam:1085660", "steam:513360", "gameui:2848"]
+        },
+        {
+          "name": "立体卡通字 / 粗描边字（Q 版、派对）",
+          "params": { "el.title.form": "artTitle", "typ.display.family": "round", "typ.display.weight": "black", "typ.titleFx": "emboss" },
+          "whenToUse": "糖果色、玩具感、派对游戏。",
+          "cost": "立体字素材量大；用在每个弹窗标题上会显得吵。",
+          "examples": ["steam:204360", "steam:437920", "gameui:3055", "gameui:13467", "steam:960090"]
+        },
+        {
+          "name": "冲击大字（拟声字、评级字、事件横幅）：动作反馈也用标题字规则",
+          "params": { "el.feedback.form": ["comicSFX", "rating"], "el.notify.form": ["band"], "typ.display.family": "graffiti", "typ.titleFx": "outlineShadow", "mo.enter": "slam", "mo.duration": 0.2 },
+          "whenToUse": "动作、节奏、风格化 RPG 的高光时刻。",
+          "cost": "一屏只能有一个，频率要低，否则就变成噪声（见 P-dwell-time-budget）。",
+          "examples": ["steam:1817230", "steam:601150", "steam:814380", "steam:1940340", "steam:2679460", "gameui:13586"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "标题直接用现成字体打字，章节卡、Boss 名、结算大字又各用一套。",
+          "examples": [],
+          "reviewEvidence": "评测无法计数。08 文档 3.3：高分设计师作品几乎都把 LOGO 和标题字作为独立环节交付，GameUI 作品分类里还专门有“游戏 LOGO”一类。"
+        },
+        {
+          "desc": "书法或手绘标题只做了中文或英文一版，其它语种回退到系统字体。",
+          "examples": [],
+          "reviewEvidence": "无计数。Cuphead 本地化时，中日韩标题字分别请了书法家，按 1930 年代的海报和书籍参照重写（Xbox Wire 访谈）。"
+        }
+      ],
+      "rules": [
+        "先写出标题，再把标题字规则写成规格，三项：笔具（毛笔、钢笔、木刻、霓虹管、像素点）、笔画特征（飞白、墨洇、描边、投影）、排列（横、竖、斜、拼贴）。章节卡、Boss 名、地名、结算大字全部套用。",
+        "标题字的媒介跟着画面走，哪怕 UI 其余部分是中性的：Black Myth、Elden Ring 局内 HUD 很中性，身份全在标题字上。",
+        "动态排字的大字（Boss 名、地名）要有字体版本；只有 LOGO 和固定的章节名可以用图片。",
+        "评级字和拟声字就是动作游戏的标题字：用同一套标题字规则来做，配 mo.enter = slam、短时长。",
+        "每个语种都单独审一遍标题字，不靠自动回退。"
+      ],
+      "genres": ["动作与 Roguelite", "角色扮演", "叙事与视觉小说", "横版平台", "生活与养成"],
+      "sources": [
+        { "title": "Xbox Wire: Studio MDHR 谈 Cuphead 本地化", "url": "https://news.xbox.com/en-us/2019/04/19/studio-mdhr-interview-cuphead-localization/", "point": "日、韩、中文的手写标题由各自的书法家完成，先统一风格方向，再给书法家创作空间；参照的是 1930 年代的海报、卡片和书籍。" },
+        { "title": "New York Times（Rollo Romig，2024，DT Next 转载）：Metaphor / Persona 的菜单设计", "url": "https://www.dtnext.in/amp/story/edit/exuberant-video-game-menus-designed-with-da-vinci-in-mind-807823", "point": "Metaphor 的界面设计师从中世纪绘画、达·芬奇的笔触、日本传统绘画和歌词视频里取材；P5 菜单字取材自朋克唱片的勒索信封面和体育转播图形。标题字的灵感来自世界之外的具体媒介。" },
+        { "title": "Lettermatic: Custom Fonts for Pentiment", "url": "https://lettermatic.com/custom/pentiment", "point": "两千多个字形中，很多是用当年的书写工具手工上墨，有的故意用非惯用手写，模拟书写不熟练的人。字是“写”出来的，不是“选”出来的。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "soulslike", "cnt.screen": "screen.title", "el.title.form": "header", "typ.display.family": "same", "typ.titleFx": "none", "ast.watermark": "none" },
+        "b": { "cnt.pack": "soulslike", "cnt.screen": "screen.title", "el.title.form": "artTitle", "typ.display.family": "calligraphy", "typ.titleFx": "drybrush", "typ.direction": "verticalTitle", "ast.fx": ["ink"], "ast.watermark": "calligraphy", "ast.watermarkOpacity": 0.12 },
+        "lookAt": "配水墨山水（ink-landscape）。A 是一条普通页眉，B 的标题像用画面同一支笔写的。接着只改 B 的 typ.display.family 和 typ.titleFx：换成 slabWestern + shadow、pixel + none、sans light + 宽字距，版式不动、身份完全换掉。这说明标题字是风格探索里性价比最高的旋钮。"
+      }
+    },
+    {
+      "id": "P-motif-from-world",
+      "title": "装饰母题从世界里的“物与纹”取样：建筑、器物、织物、仪式符号，而不是通用花边",
+      "problem": "装饰是最容易做成“通用奇幻金边”的通道。参考库里有辨识度的装饰都能在世界里找到出处：BioShock 的 HUD 圆框和 Rapture 的装饰艺术建筑同源；Grim Fandango 的侧边纹样是装饰艺术加亡灵节；Frostpunk 的铆钉与冰霜来自蒸汽城市；Hollow Knight 的卷草呼应虫巢的曲线；逆水寒的竹叶、灯笼角饰来自场景里的植物和器物。",
+      "approaches": [
+        {
+          "name": "建筑与时代纹样（装饰艺术、新艺术、哥特）",
+          "params": { "vis.motif": "geometric", "vis.ornament": "2", "ast.frameMat": "gold", "vis.stroke": "double", "vis.strokeColor": "metal", "vis.corner": "chamfer", "typ.display.family": "artNouveau" },
+          "whenToUse": "世界的建筑或时代风格本身就很强。",
+          "cost": "细金线在低分辨率下发虚；宽字距全大写的中文版要另行设计（06 文档 B17）。",
+          "examples": ["steam:7670", "steam:8870", "steam:316790", "steam:1903340", "steam:1627720"]
+        },
+        {
+          "name": "植物与器物（卷草、竹、樱、灯笼）",
+          "params": { "vis.motif": "floral", "ast.ornaments": ["corners", "dividers"], "vis.ornament": "1", "ast.frame": "cornersOnly", "ast.frameMat": "lineArt" },
+          "whenToUse": "自然、园林、东方题材；装饰只占角落和分隔线。",
+          "cost": "角花素材要按九宫格切好，四个角都能复用。",
+          "examples": ["steam:367520", "gameui:9375", "steam:1948800", "steam:2281410", "steam:990080"]
+        },
+        {
+          "name": "机械与工业（铆钉、齿轮、电路）",
+          "params": { "vis.motif": "rivets", "ast.ornaments": ["rivets"], "ast.frameMat": "iron", "vis.depth": "bevel" },
+          "whenToUse": "蒸汽朋克、工业、工厂、复古科幻。电路母题适合科技树连线。",
+          "cost": "金属倒角显厚重，HUD 上要减一档。",
+          "examples": ["steam:323190", "steam:1627720", "steam:1086940", "steam:3720", "steam:3107330", "steam:937310"]
+        },
+        {
+          "name": "信仰与仪式符号（符文、骷髅、星座、塔罗）",
+          "params": { "vis.motif": "runes", "ast.watermark": "sigil", "ast.watermarkOpacity": 0.1, "ast.fx": ["magicCircle"] },
+          "whenToUse": "神话、邪教、占卜题材；符号本身就是世界观的一部分（技能树做成星座）。",
+          "cost": "符号必须来自设定，乱用宗教符号有文化风险（01 文档“文化与世界题材”的陷阱）。",
+          "examples": ["steam:1593500", "steam:638230", "steam:1313140", "steam:2738490", "steam:1145350", "steam:489830"]
+        },
+        {
+          "name": "不要母题：让画面自己当装饰",
+          "params": { "vis.motif": "none", "vis.ornament": "0" },
+          "whenToUse": "画面本身极简，或者装饰性已经很强（彩窗、新艺术、敦煌），UI 不要再和画面抢。",
+          "cost": "UI 本身的辨识度要靠字和色。",
+          "examples": ["steam:287980", "steam:1455840", "steam:688420", "steam:2198150"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "通用金框、花边：和世界无关，换到任何一款奇幻游戏都成立。",
+          "examples": [],
+          "reviewEvidence": "评测无法计数。GameUI 社区评论里有“材质与世界观不符”的批评（举的例子是装订皮革不像北欧，08 文档 2.4，意译）。"
+        },
+        {
+          "desc": "母题密度压过信息。",
+          "examples": ["steam:1145350", "steam:1313140", "steam:594570"],
+          "reviewEvidence": "重装饰雕花框和暗金金属牌两个家族 13 款里，5 款“HUD 太乱”≥2 条；全库是 7%。"
+        }
+      ],
+      "rules": [
+        "从世界的美术设定里挑 3 样“物”（建筑构件、器物、织物 / 纹身 / 符号），母题只从这 3 样里提炼。",
+        "母题按装饰预算分配：HUD 不超过 1（只有角件或分隔线），菜单 2，标题和图鉴 3。D-ornament 会按母题给出默认饰件。",
+        "母题用在边框、分隔线、水印、空状态和读取页上，绝不铺在文字底下。",
+        "同一母题在 UI 和世界里的样子要一致（同线宽、同材质色），否则看起来是两套设计。",
+        "画面本身装饰性已经很强时（新艺术、彩窗、敦煌），UI 母题降一档，免得和画面抢。"
+      ],
+      "genres": ["角色扮演", "第一 / 第三人称射击", "建造与经营", "策略与战术", "探索与冒险"],
+      "sources": [
+        { "title": "Wikipedia: BioShock（Art and design）", "url": "https://en.wikipedia.org/wiki/BioShock", "point": "大量图像取自装饰艺术，因为它的大块简单形体用很少的多边形就能还原；为了少做复杂菜单，升级和购买都放进了世界里的售货机。母题和功能入口都来自世界本身。" },
+        { "title": "New York Times（Rollo Romig，2024，DT Next 转载）", "url": "https://www.dtnext.in/amp/story/edit/exuberant-video-game-menus-designed-with-da-vinci-in-mind-807823", "point": "Metaphor 的菜单尽量做到最有表现力，但不能压过画面，过头时会被同事拉回来。华丽和清楚可以并存，但要有人把关。" },
+        { "title": "Riot Games: Clarity in League", "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "point": "不要把每个元素都调到最大，否则会损害清晰度。装饰同理，越到实时画面越要收。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "tactics", "cnt.screen": "screen.character", "vis.motif": "floral", "vis.ornament": "3", "ast.ornaments": ["corners", "dividers", "gems"], "ast.frame": "carvedNinePatch", "ast.frameMat": "gold" },
+        "b": { "cnt.pack": "tactics", "cnt.screen": "screen.character", "vis.motif": "runes", "vis.ornament": "2", "ast.ornaments": ["dividers"], "ast.frame": "plainNinePatch", "ast.frameMat": "stone", "ast.watermark": "sigil", "ast.watermarkOpacity": 0.1 },
+        "lookAt": "配版画木刻（woodcut）或剥落做旧（weathered）。A 的金色花饰加宝石放进任何奇幻游戏都一样；B 的符文、石材和淡水印能在画面里的石碑、刻痕上找到来源，装饰量少一档，辨识度反而更高。"
+      }
+    },
+    {
+      "id": "P-material-from-world",
+      "title": "面板材质先问一句“它在世界里是什么做的”：纸、木、石、金属还是屏幕？文字永远落在平静的内芯上",
+      "problem": "资产型 UI 最常见的做法是把面板做成世界里的物件。GameUI 的材质标签里，书 481、场景化 392、卷轴 210、桌面 186，加起来超过除纸张外所有面板底材的总和。材质选对了，UI 就是世界的一部分；选错了（北欧题材配皮革装订、中世纪配全息），比中性 UI 还糟。材质也决定了动效：纸会展开，墨会晕开，全息会开机。",
+      "approaches": [
+        {
+          "name": "纸与书（手稿、日志、卷轴）",
+          "params": { "ast.core": "texture", "ast.coreMat": "parchment", "ast.container": "book", "ast.frame": "plainNinePatch", "ast.frameMat": "leather", "mo.enter": "pageTurn", "vis.mapStyle": "parchment" },
+          "whenToUse": "历史、奇幻、推理、学者型主角；日志、图鉴、地图。",
+          "cost": "羊皮纸底上的棕墨对比度常常只有约 4:1（06 文档 B11），正文要实测。",
+          "examples": ["steam:1210320", "steam:916440", "steam:957960", "steam:653530", "steam:1931770", "steam:1468810"]
+        },
+        {
+          "name": "木与石（手工、中世纪、塔防）",
+          "params": { "ast.frame": "plainNinePatch", "ast.frameMat": "wood", "ast.core": "texture", "ast.coreMat": "paper", "vis.depth": "bevel", "mo.enter": "pop" },
+          "whenToUse": "世界里的建筑和道具以木、石为主。",
+          "cost": "外框厚，屏占比大；石框适合放在边栏和底座，不适合做浮层。",
+          "examples": ["steam:246420", "steam:413150", "steam:599390", "steam:262060", "steam:564530"]
+        },
+        {
+          "name": "金属与机械（工业、蒸汽朋克、复古未来）",
+          "params": { "ast.frame": "plainNinePatch", "ast.frameMat": "iron", "ast.coreMat": "iron", "vis.gloss": "metalGrad", "vis.motif": "rivets", "typ.numerals.family": "tabular", "mo.enter": "slide" },
+          "whenToUse": "工厂、殖民、复古科幻；数值多，适合仪表化。",
+          "cost": "金属渐变上叠字，对比会随渐变段变化（06 文档 B14）。",
+          "examples": ["steam:323190", "steam:3720", "steam:1397920", "steam:3184110"]
+        },
+        {
+          "name": "屏幕与投影（科幻、现代、系统界面）",
+          "params": { "ast.core": "procedural", "ast.coreMat": "hologram", "vis.opacity": 0.35, "vis.stroke": "solid", "vis.strokeWidth": 1, "vis.strokeColor": "accent", "vis.strokeGlow": 0.5, "mo.enter": "boot", "mo.textReveal": "scramble" },
+          "whenToUse": "世界里本来就有屏幕、投影、头盔面罩、操作系统。",
+          "cost": "细线加发光叠在亮背景上会消失；需要解释“是谁在投影”（Dead Space 是宇航服）。",
+          "examples": ["steam:1693980", "steam:1222140", "steam:1366540", "steam:287700", "steam:1304550", "steam:844590"]
+        },
+        {
+          "name": "无材质（线描 / 平涂）",
+          "params": { "ast.core": "procedural", "ast.frame": "cornersOnly", "ast.frameMat": "lineArt", "vis.opacity": 0 },
+          "whenToUse": "画面以线和平色为主，答不出“它在世界里是什么做的”。",
+          "cost": "没有底板时，可读性全靠投影和画面暗部。",
+          "examples": ["steam:367520", "steam:1903340", "steam:2060790"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "材质和世界观不符：北欧题材配皮革装订，中世纪配全息，科幻配羊皮纸。",
+          "examples": [],
+          "reviewEvidence": "评测无法计数。GameUI 社区评论（08 文档 2.4，意译）。"
+        },
+        {
+          "desc": "文字直接压在高对比纹理上（木纹、羊皮纸斑、石刻）。",
+          "examples": ["steam:1210320"],
+          "reviewEvidence": "羊皮纸任务书家族 8 款，“字太小”每款 0.25 条，略高于全库的 0.17；06 文档 B11 记录棕墨配米黄底的对比度常只有约 4:1，低于 WCAG 正文要求的 4.5:1。"
+        },
+        {
+          "desc": "固定分辨率的位图框在高分辨率或超宽屏下不缩放。",
+          "examples": ["steam:8870", "steam:683900"],
+          "reviewEvidence": "“UI 缩放 / 分辨率”一类只有 4 款，BioShock Infinite 4 条、RollerCoaster Tycoon Classic 3 条最多，都是早年的位图 UI。归因到位图材质是推测。"
+        }
+      ],
+      "rules": [
+        "每个界面回答一句“它在世界里是什么”：背包是行囊还是箱子，地图是纸图还是投影，日志是一本书。答不出来就用中性材质，别硬造。",
+        "外框可以重（木、石、金属），内芯必须平静（纸、纯色、半透明）。层级靠“底色 + 深一档内嵌色”的明度差来做（08 文档 3.1）。",
+        "材质决定入场动效：纸用展开或翻页（unroll / pageTurn），墨用晕开（inkSpread），全息用开机或故障（boot / glitchIn），金属用滑入（slide），塑料用回弹（pop + overshoot）。",
+        "一款游戏的材质家族最多 2 种主材加 1 种点缀（比如木 + 纸 + 铜角）。",
+        "位图材质要出 2 倍、3 倍素材，或者改用九宫格平铺，避免超宽屏和 4K 下发虚。"
+      ],
+      "genres": ["建造与经营", "角色扮演", "解谜与侦探", "恐怖与悬疑", "工厂与自动化", "策略与战术"],
+      "sources": [
+        { "title": "GDC 2013: Crafting Destruction – The Evolution of the Dead Space User Interface（Dino Ignacio）", "url": "https://gdcvault.com/play/1017723/Crafting-Destruction-The-Evolution-of", "point": "据二手报道：界面被解释为宇航服投射的全息影像，于是几乎任何界面形式都能用“全息”这个材质成立，生命值放在背部灯带上。材质要有世界里的理由。" },
+        { "title": "Nielsen Norman Group: Flat Design – Its Origins, Its Problems, and Why Flat 2.0 Is Better for Users", "url": "https://www.nngroup.com/articles/flat-design/", "point": "拟物借现实物件的隐喻提示用法；纯装饰性的真实纹理不提供隐喻；扁平化会丢掉“能点”的提示，所以推荐 Flat 2.0 这类折中。材质要服务于“它是什么、怎么用”。" },
+        { "title": "W3C WCAG 2.1: 1.4.3 Contrast (Minimum)", "url": "https://www.w3.org/TR/WCAG21/#contrast-minimum", "point": "正文对比度至少 4.5:1。纹理底要按最不利的局部测，不能按平均色测。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "puzzle", "cnt.screen": "screen.journal", "ast.core": "procedural", "ast.coreMat": "hologram", "vis.opacity": 0.35, "vis.stroke": "solid", "vis.strokeColor": "accent", "vis.strokeGlow": 0.5, "mo.enter": "boot" },
+        "b": { "cnt.pack": "puzzle", "cnt.screen": "screen.journal", "ast.core": "texture", "ast.coreMat": "parchment", "ast.container": "book", "ast.frame": "plainNinePatch", "ast.frameMat": "leather", "mo.enter": "pageTurn" },
+        "lookAt": "先配水彩绘本（watercolor）：B 的日志像画里的一本书，A 的全息面板格格不入。再换到霓虹雨夜（neon-night）：结论倒过来。材质对不对取决于世界，而不是材质本身好不好看。顺便看入场动效：翻页和开机本身就在讲材质。"
+      }
+    },
+    {
+      "id": "P-contrast-with-reason",
+      "title": "刻意对比要有理由，而且只在一两个轴上反差：UI 是“另一层语言”，但仍和世界共用一个通道",
+      "problem": "有些最受赞誉的 UI 恰恰和画面不像：Persona 5 和 Metaphor 的平面拼贴压在 3D 卡通世界上，Control 的瑞士网格压在写实的粗野主义建筑里，Exocolonist 的蓝色半透明设备界面压在水彩世界上。它们的共同点是：反差有叙事或玩法上的理由，而且只发生在一两个轴上（媒介、明度、几何），另一个通道仍然和世界相连（色、母题或概念）。没有理由的反差会被看成贴皮，有评论就认为 P5 Tactica 换成构成主义 UI 显得浮于表面。",
+      "approaches": [
+        {
+          "name": "平面设计层（拼贴、剪纸）压在 3D 世界上，靠颜色相连",
+          "params": { "rel.harmony": "contrast", "col.source": "uiPalette", "col.strategy": "duotone", "vis.skew": -8, "vis.edge": "ornate", "typ.display.family": "ransom", "mo.enter": "slashIn", "mo.duration": 0.25 },
+          "whenToUse": "菜单驱动、角色驱动，UI 本身就是作品的表达。",
+          "cost": "动画多了会被嫌慢：“UI 卡顿”的 6 款里 DEATHLOOP 有 3 条；Persona 5 开发中也削减过遮挡画面的动画。",
+          "examples": ["steam:1687950", "steam:2679460", "steam:1252330", "steam:1278540"]
+        },
+        {
+          "name": "理性网格压在有机或写实的世界上，靠概念相连",
+          "params": { "rel.harmony": "contrast", "col.lightness": "dark", "vis.corner": "sharp", "vis.stroke": "solid", "vis.strokeWidth": 1, "vis.strokeSides": "left", "typ.display.family": "sans", "typ.display.weight": "black", "typ.scale": 2, "vis.pattern": "diagStripes", "vis.patternOpacity": 0.2 },
+          "whenToUse": "世界观里有机构、档案、科学仪器这类“理性层”，UI 就是那一层。",
+          "cost": "冷。Control 有 4 条“HUD 挡视野”、5 条“地图”抱怨：反差层再干净，信息组织不好照样被骂。",
+          "examples": ["steam:870780", "steam:1850570", "steam:287700", "steam:513360"]
+        },
+        {
+          "name": "设备界面：世界里存在的另一种媒介",
+          "params": { "rel.harmony": "contrast", "ast.coreMat": "hologram", "vis.opacity": 0.6, "vis.corner": "chamfer", "col.source": "uiPalette", "typ.display.family": "sans", "mo.enter": "boot" },
+          "whenToUse": "世界观里有平板、终端、机器人翻译器、义体系统。",
+          "cost": "设备感要贯穿所有界面；菜单的“壳”就是这台设备（08 文档 3.2 的叙事内设备家族）。",
+          "examples": ["steam:1148760", "steam:1693980", "steam:1332010", "steam:945360", "steam:1091500"]
+        },
+        {
+          "name": "清晰度反差：风格化世界 + 干净的战术读数层",
+          "params": { "rel.harmony": "contrast", "el.threat.form": ["intent", "telegraph"], "el.overlay.form": ["gridHighlight"], "col.strategy": "neutralAccent", "vis.ornament": "0" },
+          "whenToUse": "战术、策略、卡牌：玩法信息必须精确，风格交给画面。",
+          "cost": "风格感主要靠画面承担。",
+          "examples": ["steam:590380", "iig:slay-the-spire", "steam:1775490", "steam:2084000"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "没有理由的反差：换一套流行风格（构成主义、Y2K、赛博）当皮肤，和世界、和故事都不相连。",
+          "examples": [],
+          "reviewEvidence": "评测无法计数。Inverse 评论 P5 Tactica 的构成主义 UI 和故事联系很浅（意译），并说明向开发方询问是否有意为之但没有得到回复。"
+        },
+        {
+          "desc": "反差层动画过重，拖慢高频操作。",
+          "examples": ["steam:1252330", "steam:1091500"],
+          "reviewEvidence": "“UI 卡顿”6 款：DEATHLOOP 3 条，Prince of Persia、Half-Life: Alyx、Cyberpunk 2077、Enshrouded、弈仙牌各 2 条。DEATHLOOP 和 Cyberpunk 2077 都是风格化很重的界面。"
+        }
+      ],
+      "rules": [
+        "用一句话写下反差的理由：设备、系统、角色视角，或者玩法清晰。写不出来就退回统一调色。",
+        "只在 1–2 个轴上做反差（媒介、明度、几何、饱和度里选一两个），至少留一个通道和世界相连（主色、母题或概念）。",
+        "反差 UI 里的强调必须稀少才有效（Von Restorff）：整屏都在“跳”，就没有焦点了。",
+        "高频界面的入场动效不超过 0.25 秒，并且可以跳过；华丽演出留给低频节点。",
+        "探索台的 fromArt 表给每个美术配方都配了一个 contrast 默认皮肤，拿它当起点，再按上面两条收窄。"
+      ],
+      "genres": ["角色扮演", "动作与 Roguelite", "第一 / 第三人称射击", "策略与战术", "卡牌与桌面"],
+      "sources": [
+        { "title": "Inverse: Persona 5 Tactica's user interface", "url": "https://inverse.com/gaming/persona-5-tactica-user-interface", "point": "作者认为构成主义让菜单更好读，但它和故事的个人主义反叛并不契合，显得浮于表面；对比 P5 的 UI 和叙事绑在一起。" },
+        { "title": "Wikipedia: Persona 5（Art design）", "url": "https://en.wikipedia.org/wiki/Persona_5", "point": "导演希望界面表达“换个视角，平凡生活也能变精彩”，反差 UI 和主题绑定；同时削减了过多的动画。" },
+        { "title": "Rock Paper Shotgun: Into the Breach 的界面设计（2018，经转载核对）", "url": "https://www.rockpapershotgun.com/2018/03/05/into-the-breach-interface-design/", "point": "设计者说，好点子和清晰冲突时，他们每次都选清晰；能清楚呈现的东西才放进游戏。清晰度本身就可以是反差的理由。" },
+        { "title": "Laws of UX: Von Restorff Effect", "url": "https://lawsofux.com/von-restorff-effect/", "point": "与众不同的元素最容易被注意，但强调过多就互相抵消。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "rpg", "cnt.screen": "screen.pause", "rel.harmony": "contrast", "col.source": "uiPalette", "col.strategy": "polychrome", "vis.skew": -8, "vis.edge": "ornate", "typ.display.family": "ransom", "mo.enter": "slashIn" },
+        "b": { "cnt.pack": "rpg", "cnt.screen": "screen.pause", "rel.harmony": "contrast", "col.source": "scene", "col.strategy": "duotone", "vis.skew": -8, "vis.edge": "ornate", "typ.display.family": "ransom", "mo.enter": "slashIn" },
+        "lookAt": "配赛璐璐动画（cel-anime）或漫画网点（manga-halftone）。两边都是拼贴，A 的多色与画面无关，像弹出了另一款游戏；B 只改了取色来源，反差留在形状和字上，颜色把它拉回世界。这就是“只在一两个轴上反差”。"
+      }
+    },
+    {
+      "id": "P-neutral-one-voice",
+      "title": "中性 UI 不等于没有风格：用一个“声部”（标题字、一个强调色或一种转角）保住身份，其余让给画面和信息",
+      "problem": "信息密集的经营、战略、MMO，或者画面写实、章节多变的作品，常选中性 UI（参考库里“极简单色”107 张、“暗色细线”47 张）。中性做不好会“像 App、像后台”（06 文档 B4 的陷阱）。做得好的作品都只留一个声部：Elden Ring 是衬线小型大写，Witcher 3 是卷草母题，Stellaris 是青绿细边，Death Stranding 是白色全大写细字。",
+      "approaches": [
+        {
+          "name": "暗色细线 + 衬线（写实奇幻）",
+          "params": { "rel.harmony": "neutral", "col.lightness": "dark", "vis.opacity": 0.75, "vis.fill": "gradient", "vis.stroke": "solid", "vis.strokeWidth": 1, "vis.strokeColor": "metal", "typ.display.family": "serif", "typ.display.case": "smallCaps", "vis.ornament": "1" },
+          "whenToUse": "写实 3D 奇幻、魂系、写实 RPG。",
+          "cost": "细线和小衬线在电视远看时发虚。",
+          "examples": ["steam:1245620", "steam:292030", "steam:1627720", "gameui:4596"]
+        },
+        {
+          "name": "深色半透明 + 一个强调色（科幻、经营）",
+          "params": { "rel.harmony": "neutral", "col.lightness": "dark", "vis.opacity": 0.8, "col.strategy": "neutralAccent", "vis.corner": "sharp", "vis.stroke": "solid", "vis.strokeSides": "left", "vis.strokeColor": "accent" },
+          "whenToUse": "太空战略、殖民、工厂：画面复杂、信息很多。",
+          "cost": "强调色要和场景里的发光物区分开。",
+          "examples": ["steam:281990", "steam:1062090", "steam:526870", "steam:1073910", "steam:600480"]
+        },
+        {
+          "name": "浅色圆角卡（休闲经营）",
+          "params": { "rel.harmony": "neutral", "col.lightness": "light", "vis.corner": "round", "vis.cornerSize": 20, "vis.depth": "softDrop", "vis.iconStyle": "flat" },
+          "whenToUse": "明亮、休闲、面向大众的经营游戏。",
+          "cost": "最容易像 App，要靠图标风格或标题字补一个声部。",
+          "examples": ["steam:703080", "steam:2185060", "steam:591460", "steam:688420"]
+        },
+        {
+          "name": "灰盒 / 工具风（信息即玩法）",
+          "params": { "rel.harmony": "neutral", "col.strategy": "mono", "vis.depth": "bevel", "typ.body.family": "mono", "cnt.density": "4" },
+          "whenToUse": "数值、表格、程序就是玩法本身。",
+          "cost": "只适合硬核受众；新手门槛高。",
+          "examples": ["steam:1162750", "steam:683900", "steam:2212330", "steam:1267910", "steam:427520"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "把中性理解成什么都不选：默认控件、系统字体、没有强调色。",
+          "examples": [],
+          "reviewEvidence": "评测里“菜单难用”集中在信息密集的建造 / 生存类（Valheim 7 条，Planet Zoo、Parkasaurus、Dyson Sphere Program 各 3 条）。中性风格本身不是病因，但中性 UI 没有了用风格弥补的余地，信息组织就是全部。"
+        },
+        {
+          "desc": "为了优雅把功能 UI 一起删掉（没有小地图、没有底板、没有图例）。",
+          "examples": ["steam:1903340"],
+          "reviewEvidence": "Clair Obscur 有 13 条“地图难用 / 没有地图”，是全库单款最多；线描花饰家族 4 款的地图抱怨平均每款 3.5 条（全库 0.28）。"
+        }
+      ],
+      "rules": [
+        "中性皮肤也要指定一个声部并写进规格：标题字族、一个强调色、一种转角或一个母题，四选一到二。",
+        "信息密度达到“密集”以上时，优先用中性加一个声部，把风格预算转给标题、读取页、图鉴这些低频界面。",
+        "中性不等于删功能：小地图、底板、图例是信息，不是装饰。",
+        "画面每章、每个生物群系换风格时，中性 UI 是唯一稳定的锚点，强调色可以跟场景走（见 P-follow-world-over-time）。"
+      ],
+      "genres": ["建造与经营", "工厂与自动化", "策略与战术", "角色扮演", "生存与制作"],
+      "sources": [
+        { "title": "Nielsen Norman Group: Flat Design", "url": "https://www.nngroup.com/articles/flat-design/", "point": "扁平化常常把潮流外观放在用户需求之前，丢掉“能点”的提示；Flat 2.0 用少量阴影和层次找回提示。中性不是去掉一切，而是留下必要的提示与一个声部。" },
+        { "title": "Riot Games: Clarity in League", "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "point": "目标是玩法清楚、层级保留、噪声最小。中性 UI 的价值就在这里，但层级要靠排版和强调来建立。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "colony", "cnt.screen": "screen.hud", "rel.harmony": "neutral", "col.strategy": "mono", "col.lightness": "mid", "typ.display.family": "same", "vis.ornament": "0", "vis.stroke": "solid", "vis.strokeColor": "darker" },
+        "b": { "cnt.pack": "colony", "cnt.screen": "screen.hud", "rel.harmony": "neutral", "col.strategy": "neutralAccent", "col.lightness": "dark", "vis.opacity": 0.8, "typ.display.family": "serif", "typ.display.case": "smallCaps", "vis.stroke": "solid", "vis.strokeSides": "left", "vis.strokeColor": "accent" },
+        "lookAt": "两边都是中性的殖民模拟 HUD。B 只多了衬线小型大写标题和左侧一条强调色线，就从“调试面板”变成了“有作者的界面”，信息密度和布局完全没动。再在 B 上把衬线换成书法或像素，体会“一个声部”能把同一个中性 UI 推向不同题材。"
+      }
+    },
+    {
+      "id": "P-follow-world-over-time",
+      "title": "UI 跟着世界“变”：按章节、昼夜、区域、状态换色换质，让 UI 成为叙事的一部分",
+      "problem": "画面会随章节、昼夜、区域和角色状态变化，而 UI 常常只有一套固定皮肤，到了雪地、夜晚或某个关键章节就显得不搭，甚至看不清。参考库里有作品让 UI 跟着世界走：GRIS 用颜色逐步回归来表达进程，Mini Metro 有浅、深两套配色，Progressbar95 每个时代换一套操作系统皮肤，SPORE 每个阶段的 HUD 都不同，Hauntii 不同区域是不同的双色调，Pentiment 的字体随主角对人物的了解而改变。",
+      "approaches": [
+        {
+          "name": "随场景或昼夜换色（骨架不变）",
+          "params": { "col.dynamic": "perScene", "col.source": "scene", "col.strategy": "duotone" },
+          "whenToUse": "画面有明显的昼夜或区域色调变化。",
+          "cost": "每个场景色板都要过一次对比度检查。",
+          "examples": ["steam:2060790", "steam:287980", "steam:1307580"]
+        },
+        {
+          "name": "每章换配色或换皮（叙事进程）",
+          "params": { "col.dynamic": "perChapter", "rel.harmony": "sameMedium", "el.title.form": "titleCard" },
+          "whenToUse": "章节结构清楚、情绪曲线明显的叙事作品；换皮本身就是剧情。",
+          "cost": "每一章都要做一套皮肤；位置和语义色必须保持不变，否则会打乱肌肉记忆。",
+          "examples": ["steam:683320", "steam:1304550", "steam:17390"]
+        },
+        {
+          "name": "随形态或机制切换（状态就是皮肤）",
+          "params": { "col.dynamic": "perMode", "el.overlay.form": ["holo"], "rel.sceneTone": "tint", "rel.metaFx": ["edgeGlow"] },
+          "whenToUse": "侦查、扫描、狂暴这类短时状态：整屏换调，UI 一起换色。",
+          "cost": "状态要有明确的进入和退出提示，持续时间要短。",
+          "examples": ["steam:208650", "steam:1161580", "steam:2420110", "steam:1222140"]
+        },
+        {
+          "name": "随角色或阵营切换（谁在说话就用谁的字与色）",
+          "params": { "col.dynamic": "perFaction", "cnt.screen": "screen.dialogue", "typ.display.family": "calligraphy" },
+          "whenToUse": "多阵营战略、无配音叙事：字和色就是角色的声音。",
+          "cost": "字体和配色的数量成倍增加；要给玩家“统一字体”的辅助开关。",
+          "examples": ["steam:1205520", "steam:289070"]
+        },
+        {
+          "name": "固定（最稳定）",
+          "params": { "col.dynamic": "fixed" },
+          "whenToUse": "竞技、信息密集、玩家要长时间建立肌肉记忆的游戏。",
+          "cost": "极端场景（雪地、强光、黑夜）里可能看不清，要靠 D-lightness 和文字可读辅助兜底。",
+          "examples": ["steam:1245620", "steam:1162750", "iig:overwatch"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "UI 只有一套固定颜色，进入雪地、夜晚或强光章节后，强调色被吞掉或对比不足。",
+          "examples": [],
+          "reviewEvidence": "评测没有按场景拆分，无法计数；D-lightness 规则就是为这个问题设的。"
+        },
+        {
+          "desc": "换皮时连位置和语义色一起改，破坏肌肉记忆。",
+          "examples": [],
+          "reviewEvidence": "无计数。建议只换骨架色与材质，不动位置、图标形状和语义色。"
+        }
+      ],
+      "rules": [
+        "可变的只有骨架色（底、强调）和材质、母题；位置、图标形状、语义色（危险、敌我、稀有度）永远不变。",
+        "每个场景色板都要跑一次对比度检查（chk.contrast），换色最容易在最亮和最暗的场景出问题。",
+        "用 UI 表达叙事进程（GRIS 式的“颜色回来了”）成本低、效果强：把 col.dynamic = perChapter 和章节标题卡一起设计。",
+        "短时状态（侦查、扫描、狂暴）可以整屏换调（rel.sceneTone）加 UI 换色，但时间要短，开关要明确。",
+        "为了这种动态，探索台的 UI 色板最好始终用“角色引用”（@accent、@surface），不要写死颜色值。"
+      ],
+      "genres": ["叙事与视觉小说", "探索与冒险", "生存与制作", "策略与战术", "解谜与侦探"],
+      "sources": [
+        { "title": "PCGamesN: Pentiment 的美术与字体", "url": "https://www.pcgamesn.com/pentiment/art-fonts-story", "point": "字体按主角对每个人的看法分配，看法改变时字体也会变，用来反映这个人真正是谁。UI 的变化本身就是叙事。" },
+        { "title": "W3C WCAG 2.1: 1.4.3 Contrast (Minimum)", "url": "https://www.w3.org/TR/WCAG21/#contrast-minimum", "point": "正文对比度至少 4.5:1。UI 跟着场景换色时，每一套色板都要单独达标。" }
+      ],
+      "demo": {
+        "a": { "cnt.pack": "survival", "cnt.screen": "screen.hud", "col.dynamic": "fixed", "col.source": "skin", "col.lightness": "light", "vis.opacity": 0.85 },
+        "b": { "cnt.pack": "survival", "cnt.screen": "screen.hud", "col.dynamic": "perScene", "col.source": "scene", "col.lightness": "auto", "vis.opacity": 0.85 },
+        "lookAt": "在美术侧切换时段和天气（白天雪地 ↔ 夜晚篝火）。A 的浅色面板在雪地里几乎消失，到了夜里又像一块发光的广告牌；B 跟着场景色板和明度规则自动换底、换强调，HUD 的位置和图标一点没动。顺手打开对比度检查，在最亮和最暗两个场景各看一次。"
+      }
+    }
+  ]
+}

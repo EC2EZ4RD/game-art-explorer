@@ -1,0 +1,1529 @@
+{
+  "meta": {
+    "task": "K1 品类需求 · 建造经营 / 生活养成 / 沙盒（builder / life / sandbox）",
+    "date": "2026-10-14",
+    "sources": [
+      "src/content/uiRefs.json 中 genre = builder 53 张、life 20 张、sandbox 16 张（共 89 张）的参数与笔记",
+      "对照图：strategy sheet-01..07、10、12、13、14、16、17；life sheet-03..06、11、12、13、17（目标品类 63 款，另放大看了 Frostpunk、Timberborn、Megaquarium、Terra Nil、Planet Zoo、Songs of Syx、dotAGE、Kenshi、Fields of Mistria、Chinese Parents、Cozy Grove、Potionomics 的单张截图）",
+      "docs/survey/10-r2-strategy.md、13-r2-life.md、06-genre-camera-ui.md（A9 / A11 / A15）、12-r3-reviews.md + data/ui-review-stats.json"
+    ],
+    "caveats": [
+      "Steam 商店截图偏宣传：Planet Coaster、Two Point Museum、Autonauts、SPORE、Teardown、Goat Simulator 3、GoreBox、The Touryst 等几乎没拍到 UI，卡上的「极简」部分是取材造成的低估，统计里已单独说明。",
+      "沙盒卡片本身稀薄（16 张里 7 张信息密度为极简），凡是需要更多证据的地方引用了邻近的 survival 品类卡（Terraria、DRAGON QUEST BUILDERS 2、Valheim、ASTRONEER、Subnautica、Satisfactory），均标为「邻近品类」。",
+      "评测证据只用计数：关键词粗筛，「HUD 太乱」可能混入说场景杂乱的评测；「提到界面的评测中差评数」多是整体差评顺带提界面，只作参考。",
+      "手游商城、奖励、抽卡、签到、首充、通行证、红包、广告不在范围内；只研究游戏内用游戏币的交易玩法（如砍价、卖作物）。"
+    ]
+  },
+  "genres": [
+    {
+      "genre": "builder",
+      "subgenres": [
+        "经典城建 / 城市模拟（Pharaoh + Cleopatra、Cities: Skylines、Anno 1800、TheoTown、Songs of Syx）",
+        "生存城建 / 社会抉择（Frostpunk、Timberborn、Before We Leave）",
+        "主题园区 / 场馆经营（Planet Zoo、Planet Coaster、RollerCoaster Tycoon Classic、Parkasaurus、Two Point Museum、Megaquarium）",
+        "殖民 / 小人模拟（Kenshi、dotAGE、Cult of the Lamb、The Sims Legacy Collection）",
+        "修仙模拟（鬼谷八荒、Amazing Cultivation Simulator）",
+        "玩具建造 / 极简城建（Townscaper、ISLANDERS、SUMMERHOUSE、Cloud Gardens、Terra Nil、Plan B: Terraform）",
+        "地图即界面的交通规划（Mini Metro、Mini Motorways）",
+        "世界即 UI 的横版 / 塔防城建（Kingdom: Classic、Kingdom Two Crowns、Thronefall）",
+        "放置 / 增量经营（Cookie Clicker、Mr.Mine、Digseum、Nodebuster、(the) Gnorp Apologue、Cheeky Chooks、My Singing Monsters）",
+        "自动化边缘（Factorio、Dyson Sphere Program、Autonauts、Beltmatic、River Town Factory）",
+        "上帝模拟（WorldBox、SPORE）",
+        "经营 + 叙事 / 店铺（Spiritfarer、Bear and Breakfast、PlateUp!、Evil Genius、Do Not Feed the Monkeys）",
+        "竖屏手游经营（Everdale、猫咪公寓 2、魔术精品店——只取到开场 / 前端，局内 UI 缺图）"
+      ],
+      "cards": 53,
+      "coreQuestions": [
+        "我有多少、每段时间进出多少？哪一项快见底或快满仓？（存量 + 收支 + 上限，三件事缺一不可）",
+        "哪里出了问题、在地图上的哪一栋 / 哪一片？（缺电、缺工人、断路、不满、火灾）——问题必须能一键定位",
+        "我能建什么、花多少、现在放得下吗？（建造栏 + 成本持有 / 需求 + 放置预览是否合法）",
+        "整体在变好还是变坏？（满意度、希望 / 不满、恢复度等「社会温度计」与趋势）",
+        "现在是什么时候、时间走多快、下一个寒潮 / 季节 / 事件还有多久？（日期、倍速、倒计时）",
+        "选中的这栋建筑 / 这个居民 / 这只动物在干什么、缺什么、效率多少？",
+        "这一局 / 这个剧本要达成什么，完成了几项？",
+        "拉远看全城时，每一片是什么功能区？（语义缩放：标签 → 图标 → 色块 / 热力图）"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "分散组件 + 底部中间建造栏（现代 3D 城建主流）：资源在上、建造在下、选中面板在右、时间倍速在右上 / 右下、问题清单在左",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "lay.container": "overlay",
+            "ctx.timeModel": "pausable",
+            "el.toolbar.form": "categoryTabs",
+            "el.toolbar.screenAnchor": "bc",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tl",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "mr",
+            "el.gameSpeed.form": "speedBar",
+            "el.gameSpeed.screenAnchor": "tr",
+            "el.notify.form": ["feed"],
+            "el.notify.screenAnchor": "ml",
+            "col.lightness": "dark",
+            "vis.opacity": 0.8
+          },
+          "share": "分散组件 13 / 53（23 张编码了 HUD 组织的卡里最多）；建造栏锚点在下中 10 / 16",
+          "examples": ["steam:1593030", "steam:1062090", "steam:323190", "steam:255710", "steam:1366540", "steam:600480", "steam:1599600"]
+        },
+        {
+          "pattern": "贴边整条控制栏（经典 2D 城建 / 殖民 / 硬核模拟）：一整条侧栏或底栏装下小地图、建造、选中信息",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "mr",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "mr",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "stone",
+            "lay.playfield": "full",
+            "cnt.density": "3"
+          },
+          "share": "6 / 53：Pharaoh 右侧石柱、Kenshi 与 Songs of Syx 底部暗色带、RollerCoaster Tycoon 顶部工具行、Before We Leave 左侧边栏、SUMMERHOUSE 左侧淡色图标列",
+          "examples": ["steam:564530", "steam:233860", "steam:1162750", "steam:683900", "steam:1073910", "steam:2533960"]
+        },
+        {
+          "pattern": "整合底座：一块控制台装下需求条、头像、倍速（家用模拟 / 复古特工基地）",
+          "params": {
+            "lay.hudOrg": "console",
+            "el.toolbar.screenAnchor": "bl",
+            "el.party.form": "frames",
+            "el.meter.form": "stack",
+            "el.gameSpeed.form": "speedBar",
+            "vis.gloss": "topShine",
+            "vis.corner": "round",
+            "col.strategy": "duotone"
+          },
+          "share": "2 / 53（The Sims 左下蓝色底座、Evil Genius 底部银灰金属仪表台）",
+          "examples": ["steam:3314060", "steam:3720"]
+        },
+        {
+          "pattern": "整屏画框：UI 画在玩法区外的边框里（像素殖民 / 放置）",
+          "params": {
+            "lay.hudOrg": "inMargin",
+            "lay.playfield": "boxed",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "wood",
+            "vis.pixelScale": "world",
+            "el.resources.screenAnchor": "ml",
+            "el.resources.arrangement": "column",
+            "el.resources.valueLabel": "delta"
+          },
+          "share": "2 / 53（dotAGE 木框、Mr.Mine 铁框），Cookie Clicker 的三栏可算同一思路",
+          "examples": ["steam:638510", "steam:1397920", "steam:1454400"]
+        },
+        {
+          "pattern": "世界即 UI（叙事内零 HUD）：金币挂在角色身上、状态由火把 / 旗帜 / 地面圆标表达",
+          "params": {
+            "cnt.density": "0",
+            "lay.container": "overlay",
+            "rel.diegesis": "diegetic",
+            "rel.hudVisibility": "contextual",
+            "rel.harmony": "sameMedium",
+            "el.resources.form": "gauge",
+            "el.resources.attachTo": "player",
+            "el.cost.diegesis": "spatial"
+          },
+          "share": "3 / 53 张卡标了叙事内（Kingdom 两作、Do Not Feed the Monkeys 的书桌），Thronefall 地面金币圆标同理",
+          "examples": ["steam:368230", "steam:701160", "steam:2239150", "steam:658850"]
+        },
+        {
+          "pattern": "玩具建造：只剩一排很淡的小工具，画面占绝对主体",
+          "params": {
+            "cnt.density": "0",
+            "lay.container": "overlay",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "vis.opacity": 0.4,
+            "vis.corner": "round",
+            "vis.ornament": "0",
+            "rel.harmony": "unified"
+          },
+          "share": "信息密度「极简」10 / 53，其中真正的玩具建造 5 张（Townscaper、ISLANDERS、SUMMERHOUSE、Cloud Gardens、Plan B）；Planet Coaster、Autonauts 的极简是商店图没拍到 UI，不计入",
+          "examples": ["steam:1291340", "steam:1046030", "steam:2533960", "steam:1372320", "steam:1894430"]
+        },
+        {
+          "pattern": "地图即界面（示意图 / 线路图）：数据本身就是画面，UI 只剩库存与时钟",
+          "params": {
+            "cnt.focal": "data",
+            "vis.mapStyle": "schematic",
+            "col.strategy": "polychrome",
+            "col.lightness": "light",
+            "vis.ornament": "0",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "el.timer.form": "gauge",
+            "el.timer.screenAnchor": "tr"
+          },
+          "share": "2 / 53（Mini Metro、Mini Motorways）",
+          "examples": ["steam:287980", "steam:1127500"]
+        },
+        {
+          "pattern": "放置三栏 / 数字墙：巨字主货币 + 长列表升级（行内价格按钮）",
+          "params": {
+            "lay.composition": "three",
+            "cnt.density": "4",
+            "el.resources.form": "bigNumber",
+            "el.resources.screenAnchor": "tc",
+            "cmp.slot": "rowCard",
+            "el.cost.form": "inButton",
+            "cmp.listRow": ["icon", "title", "value", "action"],
+            "mo.valueChange": "countUp"
+          },
+          "share": "放置 / 增量 7 / 53（Cookie Clicker、Mr.Mine、Digseum、Nodebuster、Gnorp Apologue、Cheeky Chooks、My Singing Monsters），三栏或侧栏长列表",
+          "examples": ["steam:1454400", "steam:1397920", "steam:3361470", "steam:922460"]
+        },
+        {
+          "pattern": "多窗口：可拖动、可同时开多个的浮动窗（老式 PC 经营 / 极密模拟）",
+          "params": {
+            "lay.container": "window",
+            "vis.depth": "bevel",
+            "col.lightness": "mid",
+            "cnt.density": "4",
+            "flow.stacking": "stack"
+          },
+          "share": "1 / 53 明确（RollerCoaster Tycoon Classic）；Songs of Syx 的居民小传也是浮动窗",
+          "examples": ["steam:683900", "steam:1162750"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.resources",
+          "forms": ["iconNumber", "bigNumber", "gauge", "pills"],
+          "anchors": ["tl", "tc", "bl", "ml"],
+          "why": "城建的第一问题是「够不够」。图标 + 数字横排在顶部是主流（Terra Nil、Before We Leave、Mr.Mine，左上 / 上中 4 / 5 张标了锚点的卡）；放置类把主货币做成巨字（Cookie Clicker、Cheeky Chooks）；dotAGE 竖列在左侧并带每回合 +/− 增量，负数标红；Megaquarium 放在底栏左端并附收入增量；Kingdom 干脆做成骑手身上的钱袋。资源超过 8 种要分组或可折叠（Timberborn 左上一整块资源表）。数值标注优先「当前 / 上限」或「变化量」，单纯一个存量回答不了「够不够」。"
+        },
+        {
+          "element": "el.toolbar",
+          "forms": ["buttonRow", "categoryTabs"],
+          "anchors": ["bc", "ml", "mr", "tc"],
+          "why": "建造是主动作，所以建造栏几乎都放在下中（10 / 16）。建筑种类少于 10 用一排图标（Terra Nil 带数字分类键 + 卡片、ISLANDERS 半透明胶囊、Mini Metro 彩色圆点）；种类多用分类页签 + 子项抽屉（Planet Zoo 底部文字页签、Timberborn 底部长图标条、Before We Leave）。左侧竖列（Megaquarium、SUMMERHOUSE、Before We Leave，共 3 张）在宽屏上不挡底部场景；Pharaoh 把小地图和建造按钮合在右侧整条石柱里。"
+        },
+        {
+          "element": "el.selection",
+          "forms": ["panel", "tooltip", "card"],
+          "anchors": ["mr", "bl", "br"],
+          "why": "选中建筑 / 居民 / 动物后的信息面板是城建里最大的面板：Frostpunk、Timberborn、Planet Zoo 放右侧常驻（能边看边改岗位），Kenshi 放左下底带里。面板惯用结构：头像或建筑图 + 名字 + 状态行 + 需求横条（绿 → 黄 → 红）+ 岗位分配 +/−（Frostpunk 工人 / 工程师行内加减）。"
+        },
+        {
+          "element": "el.meter",
+          "forms": ["stack", "paired", "withIcon", "single"],
+          "anchors": ["tr", "tl", "bc", "br", "ml"],
+          "why": "城建的「社会温度计」，6 张卡编码了它：多项堆叠 4（Terra Nil 右上三条恢复度、The Sims 需求条、Do Not Feed the Monkeys 右侧饥饿 / 健康 / 睡眠、dotAGE 顶部四格），两项对立 1（Frostpunk 底部希望 / 不满 + 顶部温度表盘），图标 + 仪表 1（Cult of the Lamb 左上信仰值）。对立条适合有道德两难的设计，堆叠条适合「把几项都拉满」的目标；锚点完全不集中，说明它跟着设计重点走。"
+        },
+        {
+          "element": "el.clock",
+          "forms": ["clock", "calendar", "dayCounter", "weather"],
+          "anchors": ["tr", "br", "tc"],
+          "why": "日期与季节决定节奏（寒潮将至、开园时间、年度结算）。Megaquarium 右下「时间 + 第几天」、PlateUp! 右上天数、dotAGE 右下日晷 + 天数；和倍速控件放在一起是惯例。Frostpunk 把温度（比时间更重要的威胁）放在顶部正中。"
+        },
+        {
+          "element": "el.gameSpeed",
+          "forms": ["speedBar", "playFF", "pauseMenu"],
+          "anchors": ["tr", "br", "bc"],
+          "why": "可暂停 / 变速是这个品类的时间模型（ctx.timeModel = pausable）。暂停 / 1× / 2× / 3× 一组按钮挨着时钟：Timberborn 右上、Megaquarium 与 Planet Zoo 右下、Kenshi 底带中部。按键提示要可见，因为玩家会频繁用键盘暂停。"
+        },
+        {
+          "element": "el.overlay",
+          "forms": ["heatmap", "statusIcons", "rangeRing", "buildGrid", "arrows"],
+          "anchors": [],
+          "why": "城建的信息叠层回答「哪一片 / 哪一栋」：Cities: Skylines 把城市变白模再上彩色热力（语义缩放 = 热力图）；Factorio 在机器上叠状态图标；Terra Nil 放置时显示影响范围；Megaquarium 的鱼缸卡上用黄三角标出不满足的条件。热力图要配图例、不能只靠红 → 绿。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["feed", "toast", "modalCard"],
+          "anchors": ["ml", "bl", "mr"],
+          "why": "城建的通知其实是「问题清单」：Timberborn 左侧一列红色图标 + 计数（建筑缺电、缺工人、无人居住），Frostpunk 左侧目标 / 社会事件提醒。好的做法是同类合并计数、点击跳到出事地点，而不是一条条滚动消息。Mini Metro 每周一次的二选一升级是居中卡片（modalCard），频率低所以可以打断。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["checklist", "text", "marker"],
+          "anchors": ["ml", "tl"],
+          "why": "剧本 / 关卡目标：Planet Zoo 左侧目标面板（铜 / 银 / 金三档逐条勾选）、Terra Nil 左上圆环 + 勾、Frostpunk 左侧目标行。零 HUD 的 Kingdom Two Crowns 被评测反复说不知道该干什么——目标是这个品类最不该省的信息。"
+        },
+        {
+          "element": "el.party",
+          "forms": ["frames", "portraitRow", "unitCards"],
+          "anchors": ["bc", "tc", "ml"],
+          "why": "殖民 / 小人模拟要随时看到「我的人」：Kenshi 底部小队头像行、dotAGE 左侧竖排村民 + 资源条、The Sims 底座里的头像；现有「殖民模拟」布局预设把殖民者栏放在顶部。锚点在下中的 3 张都是小队型。"
+        },
+        {
+          "element": "el.cost",
+          "forms": ["iconNumber", "haveNeed", "inButton"],
+          "anchors": [],
+          "why": "建造卡角上的成本（Terra Nil 每张卡带叶子图标 + 数字）、放置类的行内价格按钮（Cookie Clicker、Digseum）、悬停详情里的解锁价（Timberborn）。持有 / 需求红绿能省掉一次「为什么点不了」。"
+        },
+        {
+          "element": "el.timer",
+          "forms": ["gauge", "number"],
+          "anchors": ["tr", "bl"],
+          "why": "极简城建把时间 / 分数做成图形而不是数字：Mini Metro 右上时钟、ISLANDERS 左下圆环（当前分 / 下一座岛的门槛）。"
+        },
+        {
+          "element": "el.choices",
+          "forms": ["buttons", "text"],
+          "anchors": ["center"],
+          "why": "事件抉择（Frostpunk 压暗背景 + 人物群像 + 文本选项）：选项上直接写清代价（某资源减少、不满上升），让抉择是策略而不是猜谜。"
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["plan", "radar"],
+          "anchors": ["mr", "tr", "br"],
+          "why": "2D 城建的小地图常并入侧边控制栏（Pharaoh 右侧、Songs of Syx 右上）；3D 城建多用可旋转镜头 + 全屏地图 / 信息视图代替小地图（Dyson Sphere Program 右下是环形状态而非地图）。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "见 hudOrganization。共同点：可暂停的时间控件、资源 + 收支、建造入口、选中详情、问题清单五件套；密度从 0（Kingdom、Townscaper）到 4（Songs of Syx、Kenshi）都有，是这个品类最重要的旋钮。面板深色 15 vs 浅色 6，深色半透明为多。",
+          "examples": ["steam:1593030", "steam:1062090", "steam:323190", "steam:638510", "steam:368230"]
+        },
+        {
+          "screen": "screen.build",
+          "conventions": "分类页签（两级以内）+ 建筑卡（图标 / 缩略图 + 名称 + 成本）+ 悬停详情 + 幽灵预览放置。Spiritfarer 的建造模式是左侧圆角深青面板 + 所需材料；Terra Nil 卡片右下角是成本、旁边一个大撤销键；Planet Zoo 底部用文字页签；Timberborn 悬停浮出说明卡 + 解锁价。",
+          "examples": ["steam:972660", "steam:1593030", "steam:703080", "steam:1062090", "steam:1313140"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "个体详情（居民 / 游客 / 动物 / 小人）：头像 + 名字 + 需求横条列表 + 想法 / 心情。Planet Zoo 动物福利彩色横条、Timberborn 海狸需求条、Kenshi 肢体血量表、Songs of Syx 一整页小传文字、了不起的修仙模拟器卷轴人物页。密度越高越要按「出问题的排前面」排序。",
+          "examples": ["steam:703080", "steam:1062090", "steam:233860", "steam:1162750", "steam:955900"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "整体视图 / 世界地图：Terra Nil 地球 + 发光连线 + 各区百分比（进度即地图）；Kenshi 羊皮纸窗口；Spiritfarer 手绘海图 + 弹出地点卡；鬼谷八荒水墨山水；Before We Leave 球面微缩星球。地图画风跟世界画风走。",
+          "examples": ["steam:1593030", "steam:233860", "steam:972660", "steam:1468810", "steam:1073910"]
+        },
+        {
+          "screen": "screen.journal",
+          "conventions": "目标 / 剧本 / 编年史：Anno 1800 报纸版式羊皮纸 + 左侧人物肖像；Planet Zoo 左侧目标面板（分档勾选）；Frostpunk 左侧目标列。叙事型城建把「本局进度」做成报纸 / 法典这种世界内的纸质物件。",
+          "examples": ["steam:916440", "steam:703080", "steam:323190"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "城建里的对话多是「事件卡」：压暗场景 + 人物群像 / 头像 + 一段叙述 + 2–3 个写明代价的选项（Frostpunk 全屏文本）。经营 + 叙事类回到常规对话：Spiritfarer 白色圆角气泡、Bear and Breakfast 底部纸条 + 两侧半身立绘。",
+          "examples": ["steam:323190", "steam:972660", "steam:1136370"]
+        },
+        {
+          "screen": "screen.skilltree",
+          "conventions": "科技 / 升级树：Nodebuster 电路板式直角连线 + 发光方块节点、Digseum 方框节点 + 直线；放置类的升级多是长列表 + 行内价格按钮而不是树。",
+          "examples": ["steam:3107330", "steam:3361470"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "统计 / 年报 / 关卡结束（不是奖励弹窗）：Parkasaurus 白底 + 色块 + 折线图 + 大数字；Mini Metro 结束时就停在线路图本身 + 运送人数。核心是趋势与对比，不是演出。",
+          "examples": ["steam:591460", "steam:287980"]
+        },
+        {
+          "screen": "screen.levelselect",
+          "conventions": "剧本 / 城市选择：Mini Metro 横向排开的城市线路缩略；PlateUp! 把选项做成立在地面上的纸卡，玩家走过去选（空间内）。",
+          "examples": ["steam:287980", "steam:1599600"]
+        },
+        {
+          "screen": "screen.codex",
+          "conventions": "图鉴：了不起的修仙模拟器卷轴里方格排列，未获得的是黑剪影。",
+          "examples": ["steam:955900"]
+        },
+        {
+          "screen": "screen.craft",
+          "conventions": "生产 / 烹饪配方页：Bear and Breakfast 木框 + 米黄纸格子；Mr.Mine 铁框弹窗里的蓝图 + 所需材料。",
+          "examples": ["steam:1136370", "steam:1397920"]
+        }
+      ],
+      "styleTendencies": [
+        {
+          "family": "极简单色",
+          "count": 12,
+          "why": "三种流派共用：玩具建造（Townscaper、ISLANDERS、SUMMERHOUSE、Cloud Gardens）、世界即 UI（Kingdom 两作、Thronefall）、地图即界面（Mini Metro / Motorways）。共同前提是画面本身就是卖点（低多边形、移轴微缩、扁平几何），UI 让位；其中 Plan B、Autonauts 是商店图缺 UI 造成的。"
+        },
+        {
+          "family": "扁平 / Material",
+          "count": 6,
+          "why": "3D 城建与园区经营（Cities: Skylines、Planet Zoo、Terra Nil、Before We Leave、Megaquarium、Planet Coaster）：数据量大、场景细节多，中性无装饰的圆角面板 + 单一强调色最不抢画面。"
+        },
+        {
+          "family": "圆润友好",
+          "count": 6,
+          "why": "治愈 / 卡通经营（Spiritfarer、PlateUp!、Two Point Museum、SPORE，以及手游 Everdale、猫咪公寓 2）：卡通渲染配浅色圆角面板与手写标题，降低经营的「工作感」。"
+        },
+        {
+          "family": "暗色细线",
+          "count": 5,
+          "why": "硬核模拟（Factorio、Kenshi、Timberborn、Songs of Syx、Digseum）：信息密度高（3–4），深底浅字细框的表格最能装；Songs of Syx 被评测说过界面挡视野。"
+        },
+        {
+          "family": "拟物",
+          "count": 3,
+          "why": "题材化外框：Pharaoh 石质雕花 + 古埃及纹样、Cookie Clicker 木纹条、Do Not Feed the Monkeys 整个游戏是一张书桌。外框材质（ast.frameMat）就是题材的第一信号。"
+        },
+        {
+          "family": "像素木框",
+          "count": 3,
+          "why": "像素殖民 / 经营（dotAGE、Bear and Breakfast、River Town Factory）：UI 像素与世界同网格（vis.pixelScale = 与世界同网格 8 张），木框 + 米黄纸内芯是田园题材的默认。"
+        },
+        {
+          "family": "像素位图",
+          "count": 2,
+          "why": "像素上帝视角（WorldBox、TheoTown）：UI 极少，保持与世界同像素。"
+        },
+        {
+          "family": "重装饰雕花框",
+          "count": 2,
+          "why": "Frostpunk（冰霜金属 + 蒸汽朋克表盘）与 Cult of the Lamb（骷髅母题 + 红黑青绿）：装饰承担世界观，靠 HUD 很轻来平衡。"
+        },
+        {
+          "family": "国风水墨 / 墨笔",
+          "count": 2,
+          "why": "修仙模拟（鬼谷八荒、了不起的修仙模拟器）：卷轴压边 + 宣纸 / 羊皮纸内芯 + 竖排书法标签，像素玩法区配高精度卷轴面板是常见的两套分辨率并存。"
+        },
+        {
+          "family": "科幻 HUD",
+          "count": 2,
+          "why": "太空 / 数字题材（Dyson Sphere Program 深色半透明切角条、Nodebuster 电路板技能树）。"
+        },
+        {
+          "family": "糖果卡通（Q 版）",
+          "count": 2,
+          "why": "休闲经营（Parkasaurus、Cheeky Chooks）：鲜艳色块价格卡、粗大数字，接近手游观感。"
+        },
+        {
+          "family": "灰盒（中性基线）",
+          "count": 2,
+          "why": "Townscaper（几乎没有 UI，只有右下淡色取色器）与 RollerCoaster Tycoon Classic（Windows 式灰色浮动窗）——一个是没有 UI，一个是系统控件本色。"
+        },
+        {
+          "family": "Frutiger Aero",
+          "count": 1,
+          "why": "The Sims 初代的蓝色玻璃高光底座，2000 年代 PC 的时代感。"
+        },
+        {
+          "family": "Y2K 镀铬",
+          "count": 1,
+          "why": "Evil Genius 的 60 年代特工基地：银灰金属控制台 + 红黄绿灯 + 滚轮计数器，UI 是复古仪表盘。"
+        },
+        {
+          "family": "暗金金属牌",
+          "count": 1,
+          "why": "Mr.Mine 铁框侧栏 + 密集顶部资源表，放置游戏的「数字堆叠」。"
+        },
+        {
+          "family": "羊皮纸任务书",
+          "count": 1,
+          "why": "Anno 1800 编年史：报纸版式羊皮纸，19 世纪工业时代题材。"
+        },
+        {
+          "family": "手绘笔记本",
+          "count": 1,
+          "why": "魔术精品店（竖屏手游）开场插画 + 木牌招牌。"
+        },
+        {
+          "family": "手游抽卡金框",
+          "count": 1,
+          "why": "My Singing Monsters 的商店图是海报（木框 + 大标题），不代表局内 HUD；运营部分不在研究范围。"
+        }
+      ],
+      "exemplars": [
+        {"card": "steam:323190", "why": "Frostpunk：底部希望 / 不满对立条 + 顶部温度表盘把「生存压力」做成画面正中的两个读数；右侧建筑面板可直接加减工人；事件抉择全屏压暗——城建 UI 也能有叙事张力。"},
+        {"card": "steam:1593030", "why": "Terra Nil：现代城建的干净样板——下中带分类数字键的建筑卡 + 成本 + 大撤销键、右上三条恢复度、左上圆环目标、全屏地球进度视图。"},
+        {"card": "steam:1062090", "why": "Timberborn：中高密度仍可读——左上资源表、左侧问题清单带计数、右侧居民需求条、右上周期 + 倍速、底部长建造条。"},
+        {"card": "steam:287980", "why": "Mini Metro：地图即界面的极致，库存是底部一排彩色圆点，时钟在右上；还有浅 / 深两套配色。"},
+        {"card": "steam:701160", "why": "Kingdom Two Crowns：世界即 UI 的代表，同时是「夸 UI 简洁」与「骂引导不清」的双料头部——讲零 HUD 取舍时最好的正反例。"},
+        {"card": "steam:638510", "why": "dotAGE：像素殖民把整屏包进木框，左侧资源竖列带每回合增减、顶部四格态势、右下日晷——inMargin 的完整示范。"},
+        {"card": "steam:564530", "why": "Pharaoh + Cleopatra：经典 2D 城建右侧整条石质控制栏（小地图 + 建造），外框材质即题材。"},
+        {"card": "steam:703080", "why": "Planet Zoo：浅色圆角卡片抽屉 + 青绿强调，左侧分档目标、右侧访客 / 动物状态条、底部文字页签建造栏；同时是「菜单繁琐」的被抱怨者。"},
+        {"card": "steam:1162750", "why": "Songs of Syx：信息密度天花板，深色表格面板 + 像素城市；讲「多密才算太密」时用。"},
+        {"card": "steam:3314060", "why": "The Sims：整合底座的代表，需求、心情、头像、倍速全在左下一块蓝色玻璃底座里；头顶思维气泡是空间内 UI。"},
+        {"card": "steam:916440", "why": "Anno 1800：编年史做成报纸版式羊皮纸 + 人物侧图，把剧本进度变成世界内的纸质物件。"},
+        {"card": "steam:1454400", "why": "Cookie Clicker：放置三栏（巨大饼干 / 建筑展示带 / 右侧木纹商店长列表），数字跳动就是主要反馈。"}
+      ],
+      "pitfalls": [
+        {
+          "desc": "零 HUD / 世界即 UI 的代价是引导不足：新玩家不知道目标、不知道钱袋里有多少、不知道某个建筑做什么。",
+          "examples": ["steam:701160", "steam:1599600", "steam:1062090", "steam:916440"],
+          "reviewEvidence": "R3「提示 / 引导不清」：Kingdom Two Crowns 7 条（全库第 2 多，同时有 3 条夸 UI 简洁），PlateUp! 5 条，Timberborn、Anno 1800、Planet Coaster、了不起的修仙模拟器各 3 条。"
+        },
+        {
+          "desc": "菜单层级深、功能难找：建筑 / 设施种类多的园区经营最常被说繁琐。",
+          "examples": ["steam:703080", "steam:591460", "steam:1366540", "steam:323190", "steam:2185060"],
+          "reviewEvidence": "「菜单 / 界面难用」：Planet Zoo 3（另有 HUD 太乱 3）、Parkasaurus 3、Dyson Sphere Program 3、Frostpunk 2、Anno 1800 2、Two Point Museum 2。"
+        },
+        {
+          "desc": "信息过密、面板挡住城市：极密模拟把表格铺满半屏，玩家看不到自己造的东西。",
+          "examples": ["steam:1162750", "steam:1313140", "steam:1136370"],
+          "reviewEvidence": "「HUD 太乱 / 挡视野」：Songs of Syx 2、Cult of the Lamb 2、Bear and Breakfast 2（另有背包难用 2）；Songs of Syx 提到界面的 79 条评测中差评 25 条（整体差评顺带提界面，仅作参考）。"
+        },
+        {
+          "desc": "镜头拉远的 3D 城建 + 高分辨率时字太小；卷轴 / 宣纸等装饰面板上细字更难读。",
+          "examples": ["steam:1593030", "steam:1468810"],
+          "reviewEvidence": "「字太小 / 看不清」：Terra Nil 2、鬼谷八荒 2。"
+        },
+        {
+          "desc": "老式 UI 不随分辨率缩放：复刻版经典经营在 4K 下控件极小。",
+          "examples": ["steam:683900"],
+          "reviewEvidence": "「UI 缩放 / 分辨率」：RollerCoaster Tycoon Classic 3 条（全库此类第 2 多）。"
+        },
+        {
+          "desc": "热力图与状态只靠红 → 绿区分；远景没有语义缩放，屋顶同色看不出功能，叠上信息层后对比崩溃。",
+          "examples": ["steam:255710", "steam:427520"],
+          "reviewEvidence": "无评测统计；来自 06 文档 A9 / A10 陷阱清单（红绿热力对色盲不友好、远景细节变噪点、状态只靠红绿灯）。"
+        },
+        {
+          "desc": "建造失败没有就地解释：点不了建筑时不说缺哪种资源、放不下时不说为什么（地形 / 道路 / 占地）。",
+          "examples": ["steam:1062090", "steam:703080"],
+          "reviewEvidence": "无单独统计；属于「引导不清」与「菜单难用」两类的交集（见上两条）。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "信息密度两极：世界即 UI vs 贴边石质控制栏",
+          "a": {
+            "cnt.screen": "screen.hud",
+            "cnt.density": "0",
+            "lay.container": "overlay",
+            "rel.diegesis": "diegetic",
+            "rel.hudVisibility": "contextual",
+            "rel.harmony": "sameMedium",
+            "cnt.elements": ["el.resources", "el.cost"],
+            "el.resources.form": "gauge",
+            "el.resources.attachTo": "player",
+            "el.cost.diegesis": "spatial"
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "cnt.density": "4",
+            "lay.hudOrg": "edgeBar",
+            "cnt.elements": ["el.resources", "el.toolbar", "el.selection", "el.minimap", "el.clock", "el.gameSpeed", "el.notify"],
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "mr",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "mr",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "mr",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "stone",
+            "col.lightness": "dark"
+          },
+          "lookAt": "同一份经济信息：A 只靠角色身上的钱袋和地面上的金币圆标，B 用一整条石柱装下小地图、建造与选中详情。看新玩家能不能回答「我现在缺什么」，以及 UI 屏占比（A ≈ 0%，B ≈ 20%）。A 适合短局、单线目标；B 适合几十种建筑的长线城建。"
+        },
+        {
+          "title": "建造栏：一排图标 vs 分类页签 + 子项抽屉",
+          "a": {
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "el.toolbar.arrangement": "row",
+            "cmp.button": "icon",
+            "vis.corner": "round",
+            "vis.opacity": 0.4,
+            "el.cost.form": "iconNumber"
+          },
+          "b": {
+            "el.toolbar.form": "categoryTabs",
+            "el.toolbar.screenAnchor": "bc",
+            "cmp.tab": "iconText",
+            "cmp.tabIndicator": "filled",
+            "cmp.slot": "tallCard",
+            "el.cost.form": "haveNeed",
+            "lay.detail": "transient"
+          },
+          "lookAt": "建筑少于 10 种时 A 一眼看全；超过 30 种时只有 B 不爆版。数一数在两边找到「水泵」各要点几下；B 的持有 / 需求红绿会直接告诉你哪个造不起。"
+        },
+        {
+          "title": "社会温度计：多项堆叠 vs 两项对立",
+          "a": {
+            "el.meter.form": "stack",
+            "cmp.gauge@el.meter": "thinBar",
+            "el.meter.screenAnchor": "tr",
+            "el.meter.valueLabel": "percent",
+            "el.meter.arrangement": "column"
+          },
+          "b": {
+            "el.meter.form": "paired",
+            "cmp.gauge@el.meter": "bipolar",
+            "el.meter.screenAnchor": "bc",
+            "el.meter.scale": 1.4,
+            "el.meter.priority": "primary"
+          },
+          "lookAt": "A（右上三条细条 + 百分比）是「把几项都拉满」的清单式目标；B（屏幕正下方放大的对立条）是「在两难之间摆动」，每一次决策都会让指针动。看哪种更能让玩家感到压力、哪种更适合不打扰的治愈经营。"
+        },
+        {
+          "title": "选中信息：常驻侧面板 vs 跟随光标的提示卡",
+          "a": {
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "mr",
+            "lay.detail": "persistent",
+            "st.statViz": "inlineBar",
+            "cmp.listRow": ["icon", "title", "progress", "value"]
+          },
+          "b": {
+            "el.selection.form": "tooltip",
+            "el.selection.attachTo": "cursor",
+            "lay.detail": "transient",
+            "st.statViz": "iconCount",
+            "cnt.textLength": "line"
+          },
+          "lookAt": "A 适合要调参的对象（岗位、票价、配给），能边看边改；B 适合只读的巡视（这栋楼缺什么），不遮挡城市。手柄 / 触屏没有悬停，B 要改成点选后底部浮层。"
+        },
+        {
+          "title": "数据叠层：热力图 vs 状态图标",
+          "a": {
+            "el.overlay.form": ["heatmap"],
+            "rel.semanticZoom": "heatmap",
+            "rel.sceneTone": "desaturate",
+            "col.coding": ["status"]
+          },
+          "b": {
+            "el.overlay.form": ["statusIcons"],
+            "rel.semanticZoom": "iconize",
+            "el.overlay.diegesis": "spatial",
+            "el.overlay.worldRender": "billboard",
+            "st.alert": "warnIcon"
+          },
+          "lookAt": "A 回答「哪一片」（区域问题：污染、地价、噪音，城市先去饱和再上色块），B 回答「哪一栋」（单体问题：缺电、缺工人）。打开色盲模拟看 A 的红 → 绿是否还能分；B 的图标要靠形状而不是颜色区分问题类型。"
+        },
+        {
+          "title": "面板明度：深色半透明细线 vs 浅色圆角卡片",
+          "a": {
+            "col.lightness": "dark",
+            "vis.opacity": 0.8,
+            "vis.corner": "sharp",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1,
+            "col.strategy": "neutralAccent",
+            "vis.iconStyle": "line"
+          },
+          "b": {
+            "col.lightness": "light",
+            "vis.opacity": 1,
+            "vis.corner": "round",
+            "vis.depth": "softDrop",
+            "col.strategy": "neutralAccent",
+            "vis.iconStyle": "flat",
+            "lay.grouping": "card"
+          },
+          "lookAt": "参考库里深色 15 : 浅色 6。深色半透明（Timberborn、Factorio）在夜景和密集城市上不刺眼、能装大表格；浅色卡片（Planet Zoo、Parkasaurus）在明亮草地 / 沙地上像贴纸、显得友好。切换昼夜场景看哪套更稳。"
+        },
+        {
+          "title": "像素殖民：整屏木框 vs 分散组件",
+          "a": {
+            "lay.hudOrg": "inMargin",
+            "lay.playfield": "boxed",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "wood",
+            "vis.pixelScale": "world",
+            "el.resources.screenAnchor": "ml",
+            "el.resources.arrangement": "column",
+            "el.resources.valueLabel": "delta"
+          },
+          "b": {
+            "lay.hudOrg": "scattered",
+            "lay.playfield": "full",
+            "vis.pixelScale": "world",
+            "el.resources.screenAnchor": "tc",
+            "el.resources.arrangement": "row",
+            "el.resources.valueLabel": "current",
+            "vis.opacity": 0.6
+          },
+          "lookAt": "A 像一块桌游盘，资源竖列带每回合增减，玩法区缩小但 UI 永远不压画面；B 视野最大但资源条压在地图上。看 A 是否让小村庄显得更「可经营」，B 是否更适合要大面积铺开的城市。"
+        }
+      ],
+      "contentPack": {
+        "names": {
+          "themes": ["中世纪河谷小镇", "末日寒冬煤炉殖民地", "海底水族馆", "野生动物园", "火星穹顶殖民", "樱花茶园与温泉街", "蒸汽港口贸易城", "漂浮云岛玩具建造", "地下矿城（放置）", "修仙宗门"],
+          "resources": ["木材", "石料", "粮食", "清水", "煤", "电力", "金币", "研究点", "灵石", "人口（空闲 / 总数）", "住房容量", "幸福度", "声望"],
+          "buildings": ["伐木场", "采石场", "农田", "水泵站", "仓库", "集市", "诊所", "学校", "瞭望塔", "发电机", "道路", "花坛", "游客中心", "温室", "鱼缸", "过山车站台"],
+          "people": ["工人", "工程师", "孩童", "学者", "游客", "饲养员", "清洁工", "弟子", "长老", "非人居民（海狸 / 狐狸 / 机器人）"],
+          "stats": ["满意度 82%", "温度 −20°", "污染等级", "交通拥堵", "排队时长", "动物福利", "每分钟收入 +12", "库存 340 / 500", "就业率", "宗门气运"],
+          "alerts": ["3 栋建筑缺电", "仓库已满", "道路未连接", "2 名居民无家可归", "水源被污染", "游客找不到厕所", "寒潮将在 2 天后到达"],
+          "objectives": ["人口达到 200", "建成第一座发电站", "连续 5 天无人挨饿", "游客满意度达到 4 星", "寒潮前储备 500 煤", "收集 3 种稀有鱼"],
+          "events": ["工头：南边的田被霜冻了，要不要加派人手？", "商队到访：用 50 木材换 20 铁", "居民请愿：要求缩短工时", "一位学者想在城里开设图书馆"],
+          "mapFeatures": ["河流与浅滩", "森林", "矿脉", "肥沃土地", "污染区", "地形高差", "未探索迷雾", "交通干道", "海岸线"],
+          "timeAndSpeed": ["春 · 第 3 年 · 第 12 天", "09:00", "暂停 / 1× / 2× / 3×", "距下次结算 4 天"]
+        }
+      },
+      "paramGaps": [
+        "el.notify 缺「问题汇总列」形态（同类合并计数 + 点击跳到出事地点，如 Timberborn 左侧红色问题列、殖民模拟右侧警报列）：现在只能用滚动消息 feed 近似。建议加 el.notify.form = alertList。",
+        "st.statViz 缺「历史折线 / 面积趋势图」（Parkasaurus 统计页、城建财政与人口曲线）：建议加 lineChart。",
+        "放置预览的合法性没有参数：幽灵预览绿 / 红、占地格、需连道路提示、成本不足标红（ix.confirm = ghost 只描述确认方式）。建议加 st.placeValid 或在 el.overlay.form 加 footprint。",
+        "资源收支明细没有呈现方式参数：悬停资源数字看「来源 / 去向」分解表。建议 el.resources 加 detail 子参数（tooltip 表格 / 侧栏 / 无）。",
+        "缺「人 × 岗位 / 时段」可编辑矩阵（Frostpunk 工人分配、殖民模拟的工作优先级 / 日程网格）：cmp.quantity 只覆盖单个数量。建议加 cmp.assignGrid 或在 cnt.dataShape 增加可编辑表格。",
+        "缺大数字记数法（放置类的 K / M / B、科学计数 1.2e23）：建议加 typ.numberFormat。",
+        "缺批量档位切换（放置 / 经营的 ×1 / ×10 / ×100 / MAX）：cmp.quantity 只有滑条、步进器、输入框。",
+        "el.toolbar 缺「编辑操作组」（撤销 / 重做 / 拆除 / 移动 / 复制，如 SUMMERHOUSE 底部撤销重做、Terra Nil 橙色撤销键）。",
+        "缺区域刷 / 框选建造的读数（拖拽道路 / 规划区时实时显示长度、面积、总价）：ix.mode 有 drag 与 freePlace，但没有拖拽读数。"
+      ]
+    },
+    {
+      "genre": "life",
+      "subgenres": [
+        "像素种田 RPG（Stardew Valley、Fields of Mistria）",
+        "治愈岛屿 / 收集（Animal Crossing New Horizons、Cozy Grove）",
+        "店铺经营 / 炼金（Potion Craft、Potionomics）",
+        "家庭养成 / 日程表（Chinese Parents）",
+        "拍照 / 探索收集（TOEM、Alba、Umurangi Generation、Little Kitty, Big City）",
+        "玩具 / 整理 / 装饰（Tiny Glade、Unpacking）",
+        "手作 / 涂绘冒险（Chicory、Lil Gator Game）",
+        "情绪 / 节奏小品（Melatonin、Hauntii）",
+        "竖屏恋爱养成手游（光与夜之恋、以闪亮之名、恋与深空——只研究对话、捏脸与前端，不研究抽卡运营）"
+      ],
+      "cards": 20,
+      "coreQuestions": [
+        "今天是哪天、几点、什么季节和天气？离天黑 / 店铺关门 / 节日还有多久？",
+        "我的体力 / 精力还够做几件事？",
+        "手上拿的是什么工具 / 种子，还剩几个？快捷栏里还有什么？",
+        "钱有多少？（通常只有 1–2 种货币）",
+        "谁在附近、谁今天有事找我、和谁的关系到了哪一步？",
+        "这块地 / 这株作物 / 这件家具现在是什么状态（要浇水、可收获、可摆放）？",
+        "收集 / 图鉴 / 委托还差什么？（软目标，不是强制任务）",
+        "这一刻能不能什么都不看，只看画面？（治愈类的 HUD 要能退场）"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "像素种田模板：右上「季节 · 星期 · 时间 · 钱」一块 + 下中数字快捷栏 + 底部头像对话框",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "1",
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tr",
+            "el.resources.screenAnchor": "tr",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "el.vitals.screenAnchor": "tl",
+            "cmp.dialogBox": "bar",
+            "vis.pixelScale": "world",
+            "rel.harmony": "sameMedium"
+          },
+          "share": "2 / 20（Stardew Valley、Fields of Mistria），3 张编码了时钟的卡全是日历页；邻近的 DRAGON QUEST BUILDERS 2 也是下中物品栏",
+          "examples": ["steam:413150", "steam:2142790", "steam:1072420"]
+        },
+        {
+          "pattern": "侧边竖排功能列 + 角落小数字（手绘治愈 / 店铺）：功能多但每项都小，下方留给对话",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "2",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "ml",
+            "el.toolbar.arrangement": "column",
+            "cmp.button": "iconText",
+            "el.resources.screenAnchor": "bl",
+            "el.clock.screenAnchor": "br",
+            "vis.iconStyle": "painted",
+            "vis.corner": "round"
+          },
+          "share": "2 / 20（Cozy Grove 左侧工具 + 右侧日记竖列、左下金币、右下小字时间；Potionomics 左上日夜圆盘 + 左侧一整列功能清单）",
+          "examples": ["steam:1458100", "steam:1874490"]
+        },
+        {
+          "pattern": "零 HUD / 物件即界面：房间、照片、画布本身就是 UI，完成时才出现一张卡",
+          "params": {
+            "cnt.density": "0",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "hidden",
+            "rel.diegesis": "diegetic",
+            "rel.harmony": "sameMedium"
+          },
+          "share": "信息密度极简 8 / 20（Unpacking、Tiny Glade、Melatonin、Chicory、Hauntii、Umurangi Generation、Little Kitty、Alba），是这个品类最大的一组",
+          "examples": ["steam:1135690", "steam:2198150", "steam:1585220", "steam:1123450", "steam:2060790"]
+        },
+        {
+          "pattern": "整部作品是一本书：UI 是书页的一部分（同一媒介边栏 + 羊皮纸地图）",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": "3",
+            "ast.frameMat": "parchment",
+            "col.lightness": "light",
+            "typ.display.family": "serif",
+            "vis.mapStyle": "parchment",
+            "rel.harmony": "sameMedium",
+            "vis.iconStyle": "painted"
+          },
+          "share": "1 / 20 完整（Potion Craft：右侧原料竖栏、中间炼金台、地图是羊皮纸上的配方航线）；Lil Gator Game 的贴纸练习本背包同理",
+          "examples": ["steam:1210320", "steam:1586800"]
+        },
+        {
+          "pattern": "养成日程表（极密）：左上头像 + 属性列（带每回合增量）、右侧日程卡、底部系统按钮",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": "4",
+            "lay.composition": "three",
+            "el.profile.form": "avatarLevel",
+            "el.profile.screenAnchor": "tl",
+            "el.resources.screenAnchor": "tc",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "st.statViz": "table",
+            "col.lightness": "light",
+            "vis.stroke": "solid"
+          },
+          "share": "1 / 20（Chinese Parents，信息密度 4）；Potionomics（密度 3）把日程拆进左侧功能列",
+          "examples": ["steam:736190", "steam:1874490"]
+        },
+        {
+          "pattern": "叙事内设备：相机 / 手机 / 取景器就是界面",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "ast.container": "phone",
+            "cnt.subtype": "photoMode",
+            "el.cta.form": "shutter",
+            "cnt.density": "0"
+          },
+          "share": "4 / 20（Alba 主角手里的手机、Umurangi Generation 取景器、TOEM 相机 / 相册 / 社区卡、Unpacking 结束时的贴纸照片）",
+          "examples": ["steam:1337010", "steam:1223500", "steam:1307580"]
+        },
+        {
+          "pattern": "竖屏白卡细线（恋爱养成手游的对话与捏脸）：上半 3D 角色、下半白底细线卡 + 缩略图横排 + 滑条",
+          "params": {
+            "ctx.orientation": "portrait",
+            "col.lightness": "light",
+            "lay.composition": "splitTB",
+            "cnt.characterMedium": "model3d",
+            "cmp.optionEnum": "thumbnails",
+            "cmp.optionRange": "slider",
+            "vis.stroke": "solid"
+          },
+          "share": "3 / 20（全部来自 GameUI 竖屏手游，只取到前端 / 对话 / 捏脸）",
+          "examples": ["gameui:12326", "gameui:2638", "gameui:4865"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.clock",
+          "forms": ["calendar", "sunDial", "clock", "weather"],
+          "anchors": ["tr", "tl", "br"],
+          "why": "生活模拟的第一问题是「今天还剩多少时间」。像素种田的右上块同时放季节、星期、时间、天气（Stardew、Fields of Mistria），Potionomics 左上日夜圆盘 + 第几天，Cozy Grove 右下只有一行小字时间。时间精度决定压力：十分钟一跳的数字让人规划，日夜盘只给「上午 / 午后 / 夜」，压力更小。"
+        },
+        {
+          "element": "el.resources",
+          "forms": ["iconNumber", "pills", "bigNumber"],
+          "anchors": ["tr", "tl", "bl", "tc"],
+          "why": "钱通常只有 1–2 种，小号放在时钟块下面（Stardew、Fields of Mistria）或角落胶囊（Cozy Grove 左下、Lil Gator 左上、Hauntii 左上一串符号）。Potionomics 用滚轮式计数器强调「做生意」主题。5 张标了锚点的卡分散在左上 2、右上 1、上中 1、左下 1，说明它不是视觉重点。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["hotbar"],
+          "anchors": ["bc", "ml"],
+          "why": "工具 / 种子 / 物品快捷栏：下中横排 10–12 格并标数字键（Stardew、Fields of Mistria）；Cozy Grove 改成左侧竖列，把下方留给对话。选中格要明显（放大或亮框），数量角标放右下。"
+        },
+        {
+          "element": "el.vitals",
+          "forms": ["bar", "segmented"],
+          "anchors": ["tl", "br"],
+          "why": "（el.vitals 没有自己的画法参数，形态取 cmp.gauge@el.vitals。）体力 / 精力是「今天还能干几件事」：Fields of Mistria 左上一条细绿条。它不是战斗血条，不需要醒目，但快耗尽时要变色或闪动。"
+        },
+        {
+          "element": "el.toolbar",
+          "forms": ["buttonRow", "microMenu"],
+          "anchors": ["ml", "bc", "mr"],
+          "why": "生活模拟功能多（种植、装修、外出、日记、图鉴、存档）：Potionomics 左侧一整列带图标的功能清单；Cozy Grove 左侧工具 + 右侧日记竖列；Chinese Parents 底部一排系统按钮；Tiny Glade 只留底部一排很小的工具。功能入口可以多，但每个都要小。"
+        },
+        {
+          "element": "el.choices",
+          "forms": ["bubbles", "buttons", "text"],
+          "anchors": ["center", "br"],
+          "why": "对话选项：Animal Crossing 是一串小气泡挂在对话框旁；Fields of Mistria 是深蓝按钮叠在对话框上方；Potionomics 把砍价做成卡牌 + 漫画气泡。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["checklist", "marker", "note"],
+          "anchors": ["tr", "tl"],
+          "why": "生活模拟的目标是软性的：TOEM 社区卡（一张卡上列本地委托 + 盖章圆格）、Little Kitty 世界里的标记、公告板委托。避免做成常驻任务追踪器。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["pickupText", "toast", "modalCard"],
+          "anchors": ["bl", "center"],
+          "why": "拾取 / 收获 / 新配方的提示要轻：左下小字或小卡。Unpacking 整个房间完成后才弹一张贴纸边框的照片，那是全局唯一的大提示。TOEM 新图鉴是居中的拍立得卡 + OK。"
+        },
+        {
+          "element": "el.profile",
+          "forms": ["avatarLevel", "idCard"],
+          "anchors": ["tl"],
+          "why": "养成类（Chinese Parents）左上头像 + 名字 + 压力条，下面一列属性 + 每回合增量；角色就是被经营的对象，所以放在第一眼的位置。"
+        },
+        {
+          "element": "el.overlay",
+          "forms": ["statusIcons", "buildGrid", "gridHighlight"],
+          "anchors": [],
+          "why": "地块 / 作物 / 家具状态（要浇水、可收获、可摆放的格子）用世界内的小图标或格子高亮；Tiny Glade 建造时控制点直接浮在建筑上（空间内）。"
+        },
+        {
+          "element": "el.cta",
+          "forms": ["shutter", "round"],
+          "anchors": ["br", "bc"],
+          "why": "拍照类（TOEM、Alba、Umurangi Generation）主按钮就是快门；相机 UI 本身就是界面，主行动只有一个。"
+        },
+        {
+          "element": "el.interact",
+          "forms": ["bubble", "keyPrompt"],
+          "anchors": [],
+          "why": "NPC 头上的小气泡 / 感叹号表示能对话或有委托；Little Kitty 用黄色小三角标出可互动的东西。治愈类偏爱气泡而不是按键文字。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "见 hudOrganization。默认极简（密度 0–1 共 15 / 20），面板浅色 8 : 深色 1，圆角 7 张全是圆角；标题字体手写 3、衬线 1。",
+          "examples": ["steam:413150", "steam:2142790", "steam:1458100", "steam:1135690"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "两派：底部通栏 + 头像 / 半身（Stardew 木框右侧头像牌、Fields of Mistria 深蓝底 + 左上名牌 + 半身立绘、Cozy Grove 米白圆角卡 + 名牌）对带尾气泡（Animal Crossing 叶形气泡 + 气泡选项、Potionomics 漫画气泡 + 大立绘、Chicory 黑底手写气泡、Hauntii 同色调圆角气泡）。9 张有对话的卡里气泡 6、通栏 3——气泡更「边走边聊」，通栏更像 RPG。",
+          "examples": ["steam:413150", "steam:2142790", "iig:animal-crossing-new-horizons", "steam:1874490", "steam:1123450"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "Animal Crossing 米黄圆角格 + 右侧配方（持有 / 需求计数）；Lil Gator Game 贴满贴纸的练习本（撕边纸 + 胶带 + 手写字）；Stardew 木框方格。容器与画风一致比格子数量重要。",
+          "examples": ["iig:animal-crossing-new-horizons", "steam:1586800", "steam:413150"]
+        },
+        {
+          "screen": "screen.craft",
+          "conventions": "制作 / 炼金：Potion Craft 中央器具 + 右侧原料竖栏，把配方做成地图上的航线；Potionomics 锅 + 原料格 + 属性仪表；Cozy Grove 两页笔记本。制作页常常就是玩法本体，而不是菜单。",
+          "examples": ["steam:1210320", "steam:1874490", "steam:1458100"]
+        },
+        {
+          "screen": "screen.codex",
+          "conventions": "收集 / 图鉴：TOEM 社区卡 + 印章圆格；Little Kitty 黄色圆角卡上的帽子收藏格，未获得用问号剪影。收集是这个品类的长线目标，未获得要能看出「还有」。",
+          "examples": ["steam:1307580", "steam:1177980"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "属性 / 外观：Chinese Parents 米色条目的属性 + 日程大表；恋与深空竖屏捏脸——上方 3D 角色、下方横排脸型缩略图 + 滑条。",
+          "examples": ["steam:736190", "gameui:12326"]
+        },
+        {
+          "screen": "screen.frontend",
+          "conventions": "创建角色：Stardew 木框表单（名字、农场名、外观左右切换箭头）；竖屏手游的公告 / 选服是白底细线卡片。",
+          "examples": ["steam:413150", "gameui:4865"]
+        },
+        {
+          "screen": "screen.shop",
+          "conventions": "仅指游戏内用游戏币的交易玩法（非付费商城）：Potionomics 砍价是卡牌 + 漫画气泡 + 大立绘；Potion Craft 左右两人 + 中间天平；Animal Crossing 叶形对话框 + 价格气泡。交易被做成对话或小游戏，而不是商品列表。",
+          "examples": ["steam:1874490", "steam:1210320", "iig:animal-crossing-new-horizons"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "Potion Craft 的地图是羊皮纸上的配方航线（地图即玩法）；探索类（TOEM、Lil Gator）没有可用地图反而被抱怨。",
+          "examples": ["steam:1210320", "steam:1307580"]
+        },
+        {
+          "screen": "screen.build",
+          "conventions": "装饰 / 建造：Tiny Glade 只有底部一排小工具，控制点浮在建筑上直接拖；Unpacking 没有建造菜单，物品从箱子里一件件取出直接摆。",
+          "examples": ["steam:2198150", "steam:1135690"]
+        }
+      ],
+      "styleTendencies": [
+        {"family": "极简单色", "count": 5, "why": "零 HUD 的整理 / 拍照 / 双色线描作品（Unpacking、Tiny Glade、Umurangi Generation、TOEM、Hauntii）：画面就是界面；TOEM、Hauntii 甚至整个 UI 只用画面的两种颜色。"},
+        {"family": "二次元白卡细线", "count": 5, "why": "3 张来自竖屏恋爱养成手游（白底细线卡 + 名牌），加上 Melatonin（粉紫单色插画）与 Potionomics（细描边 + 多色漫画气泡）——人物立绘是主角时，面板退成白卡。"},
+        {"family": "圆润友好", "count": 4, "why": "Animal Crossing、Little Kitty、Alba、Chinese Parents：圆角浅色 + 粗描边，是「治愈田园」画风（暖光、圆润、小物件密集）的默认 UI。"},
+        {"family": "手绘笔记本", "count": 3, "why": "Chicory（手写字黑底气泡）、Cozy Grove（手绘图标 + 两页笔记本）、Lil Gator（贴纸练习本）：个人日记 / 手作感；标题手写字体是这个品类最常见的标题字。"},
+        {"family": "羊皮纸任务书", "count": 1, "why": "Potion Craft：整屏是中世纪手抄本，UI 与画面同一媒介。"},
+        {"family": "像素木框", "count": 1, "why": "Stardew Valley：像素种田模板（木框 + 米黄内芯 + 与世界同像素），已有现成皮肤 skin.pixelWood。"},
+        {"family": "像素位图", "count": 1, "why": "Fields of Mistria：同是像素种田，但改用深蓝底细边框对话框 + 半身立绘，说明像素种田不必是木框。"}
+      ],
+      "exemplars": [
+        {"card": "steam:413150", "why": "Stardew Valley：像素种田的通用模板（右上时钟块、下中快捷栏、木框头像对话、木框创角表单）。"},
+        {"card": "steam:2142790", "why": "Fields of Mistria：同一模板的现代变体——右上季节 + 时间 + 星期 + 钱一块、左上体力条、深蓝对话框 + 名牌 + 半身立绘 + 按钮选项。"},
+        {"card": "steam:1210320", "why": "Potion Craft：整屏是手抄本，地图是羊皮纸上的配方航线，交易是两人 + 天平——同一媒介的极致。"},
+        {"card": "steam:1874490", "why": "Potionomics：左上日夜圆盘 + 左侧功能清单 + 顶部倒计时牌 + 右上滚轮金币；砍价做成卡牌对话。"},
+        {"card": "steam:1458100", "why": "Cozy Grove：左右竖排手绘图标列 + 左下金币胶囊 + 右下小字时间，下方留给对话，手绘治愈的标准答案。"},
+        {"card": "steam:736190", "why": "Chinese Parents：养成日程表的极密做法（属性 + 每回合增量 + 日程卡 + 底部系统按钮），中式家庭题材。"},
+        {"card": "steam:1307580", "why": "TOEM：黑白线稿世界配白底粗黑描边的相机 / 相册 / 社区卡；同时是「没有地图」抱怨的出处。"},
+        {"card": "steam:1135690", "why": "Unpacking：零 HUD，房间就是界面，完成时一张贴纸照片——「完成感」只用一张卡。"},
+        {"card": "steam:2198150", "why": "Tiny Glade：底部一排小工具 + 空间内控制点；即使几乎没有 HUD 仍有 5 条挡视野抱怨，说明控制点 / 光标本身也是 UI。"},
+        {"card": "iig:animal-crossing-new-horizons", "why": "Animal Crossing：米黄圆角背包格 + 配方持有 / 需求、叶形对话框 + 气泡选项。"},
+        {"card": "steam:1586800", "why": "Lil Gator Game：背包是贴满贴纸的练习本（撕边、胶带、手写），容器即人设。"}
+      ],
+      "pitfalls": [
+        {
+          "desc": "粉彩 / 治愈画面所有颜色同一明度，HUD 与可交互物糊进背景；冬季雪地里白色物品与白色面板消失。",
+          "examples": ["steam:1458100", "steam:2198150"],
+          "reviewEvidence": "「HUD 太乱 / 挡视野」：Tiny Glade 5 条、Cozy Grove 3 条（关键词粗筛，可能混入说场景杂乱的评测）；明度问题本身来自 06 文档 A11 的陷阱清单。"
+        },
+        {
+          "desc": "零 HUD 的探索 / 拍照类没有地图或地图太简，玩家迷路、找不到委托对象。",
+          "examples": ["steam:1307580", "steam:1586800"],
+          "reviewEvidence": "「地图难用 / 没有地图」：TOEM 4 条、Lil Gator Game 2 条。"
+        },
+        {
+          "desc": "装饰物太多、交互物与装饰同样显眼，玩家找不到能捡 / 能对话的东西。",
+          "examples": ["steam:1458100", "steam:1210320"],
+          "reviewEvidence": "无专门统计；06 文档 A11 陷阱；Potion Craft「HUD 太乱」2 条可作旁证。"
+        },
+        {
+          "desc": "像素种田的背包 / 菜单在早期版本被零星抱怨：格子翻页、整理与比较不便。",
+          "examples": ["steam:2142790", "steam:413150"],
+          "reviewEvidence": "Fields of Mistria 背包、菜单、引导各 1 条（未达 ≥ 2 门槛），提到界面的 89 条评测中差评 27 条（整体差评顺带提界面，仅作参考）；Stardew Valley 菜单 1 条。"
+        },
+        {
+          "desc": "养成日程表信息过密：一屏十几个数字 + 每回合增量，新手看不出哪个最重要。",
+          "examples": ["steam:736190"],
+          "reviewEvidence": "评测样本小（Chinese Parents 提到界面 5 条，引导 1 条）；主要是看图观察，建议在演示里配合眯眼层级检查。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "同一媒介像素木框 vs 零 HUD 玩具",
+          "a": {
+            "cnt.density": "1",
+            "lay.hudOrg": "scattered",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "wood",
+            "ast.core": "texture",
+            "ast.coreMat": "paper",
+            "vis.pixelScale": "world",
+            "typ.body.family": "pixel",
+            "rel.harmony": "sameMedium",
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tr",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc"
+          },
+          "b": {
+            "cnt.density": "0",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "contextual",
+            "cnt.elements": ["el.toolbar"],
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "vis.opacity": 0.4,
+            "vis.corner": "round"
+          },
+          "lookAt": "A 让 UI 和世界用同一种像素与木头，时间和工具一直在；B 只在需要时浮出一排淡色工具。看 A 是否让「过日子」更有节奏感，B 是否更适合没有日程压力的装饰 / 建造玩具。"
+        },
+        {
+          "title": "时钟：日历页数字 vs 日夜圆盘",
+          "a": {
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tr",
+            "el.clock.valueLabel": "current",
+            "typ.numerals.family": "tabular"
+          },
+          "b": {
+            "el.clock.form": "sunDial",
+            "el.clock.screenAnchor": "tl",
+            "el.clock.valueLabel": "none",
+            "cmp.gauge@el.clock": "ring"
+          },
+          "lookAt": "A 精确到分钟，玩家会算「赶在商店关门前」；B 只给太阳在圆盘上的位置，时间感更松。同一套日程玩法下，哪一个让人更焦虑、哪一个更治愈。"
+        },
+        {
+          "title": "对话：底部通栏 + 半身立绘 vs 带尾气泡",
+          "a": {
+            "cnt.screen": "screen.dialogue",
+            "cmp.dialogBox": "bar",
+            "cnt.characterMedium": "bust",
+            "lay.focalSide": "left",
+            "cmp.plate": "tab",
+            "mo.textReveal": "typewriter",
+            "el.choices.form": "buttons"
+          },
+          "b": {
+            "cnt.screen": "screen.dialogue",
+            "cmp.dialogBox": "bubble",
+            "cnt.characterMedium": "model3d",
+            "vis.corner": "round",
+            "el.choices.form": "bubbles",
+            "mo.textReveal": "fade"
+          },
+          "lookAt": "A 让对话成为「停下来看人」的时刻（立绘大、名牌清楚），B 让对话发生在场景里、角色头顶（不遮挡世界）。参考库里气泡 6 : 通栏 3。看长对话时哪种更累、多人同时说话时哪种更清楚。"
+        },
+        {
+          "title": "养成：极密日程表 vs 一次只做一件事",
+          "a": {
+            "cnt.density": "4",
+            "lay.hudOrg": "edgeBar",
+            "lay.composition": "three",
+            "el.profile.form": "avatarLevel",
+            "el.profile.screenAnchor": "tl",
+            "st.statViz": "table",
+            "el.resources.screenAnchor": "tr",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "cmp.listRow": ["icon", "title", "value", "action"]
+          },
+          "b": {
+            "cnt.density": "1",
+            "lay.container": "overlay",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "ml",
+            "el.toolbar.arrangement": "column",
+            "cmp.button": "iconText",
+            "el.clock.form": "sunDial",
+            "el.clock.screenAnchor": "tl"
+          },
+          "lookAt": "A 把所有属性、增量、日程摊开（适合喜欢算数值的养成玩家）；B 只给一列「今天能做的事」，数值藏到详情里。开眯眼检查看 A 第一眼落在哪里。"
+        },
+        {
+          "title": "背包容器：方格 vs 贴纸手账本",
+          "a": {
+            "cnt.screen": "screen.inventory",
+            "cmp.slot": "cell",
+            "lay.arrangement": "grid",
+            "vis.corner": "round",
+            "col.lightness": "light",
+            "lay.detail": "persistent"
+          },
+          "b": {
+            "cnt.screen": "screen.inventory",
+            "ast.container": "notebook",
+            "ast.coreMat": "paper",
+            "vis.edge": "torn",
+            "cmp.slot": "bare",
+            "lay.arrangement": "scatter",
+            "vis.tilt": 4,
+            "typ.display.family": "handwritten",
+            "vis.iconStyle": "painted"
+          },
+          "lookAt": "A 便于整理与比较（数量多时必需），B 把背包变成角色的个人物品（适合物品少、每件都有故事的作品）。物品超过 30 件时 B 还能不能用。"
+        },
+        {
+          "title": "拍照：叙事内手机 vs 屏幕上的黑白相机",
+          "a": {
+            "cnt.subtype": "photoMode",
+            "rel.diegesis": "diegetic",
+            "ast.container": "phone",
+            "el.cta.form": "shutter",
+            "cnt.density": "0"
+          },
+          "b": {
+            "cnt.subtype": "photoMode",
+            "rel.diegesis": "screen",
+            "col.strategy": "mono",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 3,
+            "typ.display.family": "handwritten",
+            "el.cta.form": "shutter"
+          },
+          "lookAt": "A 把相机做成主角手里的手机（Alba 式，沉浸），B 是白底粗黑描边的相机面板（TOEM 式，和黑白线稿世界同一种线）。两者都只有一个快门，看哪种更容易让人记住「这是一个拍照游戏」。"
+        }
+      ],
+      "contentPack": {
+        "names": {
+          "themes": ["海边小镇种田", "森林魔法药铺", "城市小公寓整理", "山村茶园", "无人岛露营", "城市流浪猫", "黑白线稿小镇拍照", "中式家庭养成", "沙漠绿洲集市"],
+          "currency": ["金币", "贝壳币", "铜钱"],
+          "resources": ["体力 / 精力", "好感心", "种子", "木头", "石头", "鱼饵", "布料", "胶片张数", "灵感"],
+          "items": ["锄头", "水壶", "鱼竿", "斧头", "萝卜种子", "草莓", "蜂蜜罐", "手作椅子", "旧邮票", "贝壳", "薄荷叶", "退烧药水"],
+          "stats": ["春 · 周三 · 08:40", "晴 / 雨 / 雪", "作物生长阶段 1–4", "好感 0–10 颗心", "图鉴 34 / 80", "体力 120 / 270", "智力 +3 / 回合"],
+          "objectives": ["给面包店送 3 个南瓜", "拍到彩虹下的狐狸", "修好小桥", "参加春季花展", "把卧室布置成「温馨」评级", "找回邮差丢的包裹"],
+          "dialogue": ["邻居：今天的风好舒服，要不要去码头看看？", "店主：这个配方只卖给熟客哦。", "猫：喵？（把一只袜子推到你脚边）", "妈妈：作业写完了吗？"],
+          "npcRoles": ["面包师", "邮差", "图书管理员", "渔夫", "镇长", "药剂师", "旅行商人", "园艺师"],
+          "mapFeatures": ["农田地块", "小镇广场", "海边码头", "森林小径", "矿洞入口", "公告板", "邮箱", "温泉"]
+        }
+      },
+      "paramGaps": [
+        "缺「关系 / 好感」元素：心形等级 + 今天是否已对话 / 送礼的标记，是种田 RPG 与恋爱养成的核心（现在只能借 el.party 或 cmp.gauge = icons 拼）。建议新增 el.relation。",
+        "el.clock.form 是单选，但种田游戏右上块同时有季节、星期、时间、天气（还常并入钱）。建议改为多选或加 combo 形态。",
+        "作物 / 地块生长阶段没有专门表达（需浇水、第几阶段、可收获）：el.overlay = statusIcons 只是近似。建议 el.overlay.form 加 growthStage。",
+        "缺「日程表 / 课程表」数据形态（时段 × 活动，Chinese Parents、恋爱养成日程）：与建造经营的「人 × 岗位」矩阵是同一类缺口。",
+        "收集多态标记缺失：图鉴格常有「没见过 / 见过 / 拍到 / 已捐赠」多种状态，st.locked 与 st.done 两个参数只能表达两态。建议加 st.collectState。"
+      ]
+    },
+    {
+      "genre": "sandbox",
+      "subgenres": [
+        "物理破坏（Teardown、GoreBox）",
+        "搞笑模拟 / 闯祸（Goat Simulator 3、Untitled Goose Game、Totally Accurate Battle Simulator）",
+        "体素冒险 / MMO（Trove、The Touryst）",
+        "像素物理（Noita）",
+        "职业模拟 / 拆解（Hardspace: Shipbreaker）",
+        "沉浸模拟 / 侦探城市（Shadows of Doubt）",
+        "仪器 / 生成玩具（Mu Cartographer、Donut County）",
+        "艺术 / VR 生态（Paper Beast）",
+        "合作派对（Tricky Towers、Unrailed!）",
+        "工具软件（Wallpaper Engine，作为非游戏的对照）",
+        "邻近：生存建造沙盒（Terraria、DRAGON QUEST BUILDERS 2、Valheim、ASTRONEER，属 survival 卡）"
+      ],
+      "cards": 16,
+      "coreQuestions": [
+        "手上是什么工具 / 材料，还剩多少，怎么换？",
+        "我能对什么动手：能抓、能拆、能烧、能导电的东西是否看得出来？",
+        "有没有目标？有的话还差什么；没有的话，用什么暗示「可以试试这个」？",
+        "危险读数：氧气、燃料、耐久、警报倒计时还剩多少？",
+        "我造 / 拆的东西现在的结构状态与参数（重量、完整度、回收价值）？",
+        "多人时：谁领先、我在哪、我的东西是哪一个？",
+        "能不能把 UI 全关了录视频 / 拍照？（沙盒的传播依赖干净画面）"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "零 HUD 物理玩具：截图里看不到 UI，只在角落留工具或进度",
+          "params": {
+            "cnt.density": "0",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "contextual",
+            "typ.legibility": "shadow"
+          },
+          "share": "信息密度极简 7 / 16（Donut County、Teardown、Paper Beast、The Touryst、Untitled Goose Game、GoreBox、Goat Simulator 3）；其中 Teardown、GoreBox、Goat Simulator 3、The Touryst 是商店图没拍到 UI，置信度低",
+          "examples": ["steam:702670", "steam:837470", "steam:1232570", "steam:1167630"]
+        },
+        {
+          "pattern": "第一人称工具 HUD：右下工具 / 弹药 + 中心点准星，其余全部让给画面",
+          "params": {
+            "cnt.density": "1",
+            "lay.hudOrg": "scattered",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "el.crosshair.form": ["dot"],
+            "el.prompt.form": ["contextual"],
+            "vis.opacity": 0
+          },
+          "share": "1 / 16 明确（Teardown）；现有「沙盒与物理」布局预设也是这一套（下中快捷栏版本）",
+          "examples": ["steam:1167630", "steam:427410"]
+        },
+        {
+          "pattern": "面罩 / 设备叙事内：读数画在头盔边缘或背包上，扫描模式整屏线框",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "rel.followPost": "warp",
+            "cmp.gauge@el.vitals": "arc",
+            "el.vitals.diegesis": "diegetic",
+            "el.overlay.form": ["holo"],
+            "col.strategy": "duotone",
+            "vis.corner": "chamfer"
+          },
+          "share": "1 / 16（Hardspace: Shipbreaker）；邻近的 Subnautica、ASTRONEER 同理（叙事内是生存沙盒的常态）",
+          "examples": ["steam:1161580", "steam:264710", "steam:361420"]
+        },
+        {
+          "pattern": "体素 / 像素建造冒险：下中或左上快捷栏 + 右上小地图 + 生命图标列",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "2",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "cmp.gauge@el.vitals": "icons",
+            "el.vitals.screenAnchor": "tr"
+          },
+          "share": "沙盒卡里 1 / 16（Trove，快捷栏下中）；邻近 survival 卡 Terraria（左上 10 格 + 右上心形 + 小地图）、DRAGON QUEST BUILDERS 2（下中物品栏 + 右上圆形小地图）",
+          "examples": ["steam:304050", "steam:105600", "steam:1072420"]
+        },
+        {
+          "pattern": "仪器边框：一圈细线仪器（旋钮、波形、圆盘）围住中央的生成物",
+          "params": {
+            "lay.hudOrg": "inMargin",
+            "cnt.density": "3",
+            "col.lightness": "light",
+            "col.strategy": "mono",
+            "vis.stroke": "solid",
+            "vis.motif": "geometric",
+            "cmp.gauge": "dial"
+          },
+          "share": "1 / 16（Mu Cartographer）",
+          "examples": ["steam:513360"]
+        },
+        {
+          "pattern": "派对 / 合作：分数挂在每个玩家的作品上，角落只有极小的文字",
+          "params": {
+            "ctx.players": "party4",
+            "el.timer.form": "scorePill",
+            "el.timer.attachTo": "player",
+            "typ.numerals.family": "display",
+            "typ.legibility": "outline",
+            "el.resources.screenAnchor": "tl"
+          },
+          "share": "2 / 16（Tricky Towers 粗描边大数字挂在塔顶、Unrailed! 左上细小文字资源）",
+          "examples": ["steam:437920", "steam:1016920"]
+        },
+        {
+          "pattern": "编辑器 / 工具软件式面板：左侧属性列表 + 滑条，右侧预览",
+          "params": {
+            "lay.composition": "splitLR",
+            "cmp.optionRange": "slider",
+            "col.lightness": "dark",
+            "vis.corner": "sharp",
+            "cnt.density": "3"
+          },
+          "share": "2 / 16（TABS 单位编辑深色页、Wallpaper Engine 的 Windows 式设置窗）",
+          "examples": ["steam:508440", "steam:431960"]
+        },
+        {
+          "pattern": "沉浸模拟的推理板：深蓝底上证据卡 + 红线连接，对话是左侧深色选项列表",
+          "params": {
+            "cnt.subtype": "deduction",
+            "ast.container": "clueWall",
+            "vis.connector": "string",
+            "cmp.dialogBox": "chatThread",
+            "col.lightness": "dark",
+            "cnt.density": "3"
+          },
+          "share": "1 / 16（Shadows of Doubt）",
+          "examples": ["steam:986130"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.abilities",
+          "forms": ["ammo", "hotbar"],
+          "anchors": ["br", "bc", "tl"],
+          "why": "沙盒的主语是「手上的工具 / 材料」：Teardown 右下工具与弹药；Trove 下中快捷栏；邻近的 Terraria 左上 10 格、DRAGON QUEST BUILDERS 2 下中。切换时要短暂放大当前项名称，因为沙盒工具常常没有固定外观。"
+        },
+        {
+          "element": "el.crosshair",
+          "forms": ["dot"],
+          "anchors": ["center"],
+          "why": "第一人称沙盒用一个小点表示「当前要作用的方块 / 物体」，能抓 / 能拆时变形或加外圈——这是沙盒的 affordance 提示（06 文档 A15）。"
+        },
+        {
+          "element": "el.vitals",
+          "forms": ["thinBar", "icons", "arc", "ring"],
+          "anchors": ["tr", "bl"],
+          "why": "（形态取 cmp.gauge@el.vitals。）沙盒里生命不是核心：Noita 右上细小像素条 + 法杖格；Hardspace 面罩边缘弧形读数（叙事内）；邻近 Subnautica 左下四个圆环（生命 / 氧气 / 食物 / 水）。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["note", "checklist"],
+          "anchors": ["tr", "tl"],
+          "why": "开放沙盒容易「不知道玩什么」：Untitled Goose Game 用一张手写待办纸条（完成就划掉）给出搞事清单，是零 HUD 与目标感的折中；邻近 Enshrouded、Among Us 用常驻任务清单。"
+        },
+        {
+          "element": "el.timer",
+          "forms": ["scorePill", "number", "smallText"],
+          "anchors": ["tl", "tc"],
+          "why": "派对沙盒的分数挂在每个玩家的塔顶（Tricky Towers，粗描边大数字），不放角落——玩家眼睛本来就盯着自己的作品。"
+        },
+        {
+          "element": "el.overlay",
+          "forms": ["holo", "statusIcons"],
+          "anchors": [],
+          "why": "扫描 / 信息模式：Hardspace 扫描模式整屏绿线框，标出可回收与危险部件——拆解类沙盒的关键是看穿结构，用一个可切换的模式代替常驻标签。"
+        },
+        {
+          "element": "el.resources",
+          "forms": ["iconNumber", "gauge"],
+          "anchors": ["tl"],
+          "why": "Unrailed! 左上细小文字资源；Donut County 左上一个小圆形进度（洞的大小 / 升级进度）。标了锚点的 2 张都在左上，且都很小。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["legend", "contextual"],
+          "anchors": ["bc", "br"],
+          "why": "沙盒操作组合多：Shadows of Doubt 推理板底部一行按键图例；工具切换后在角落短暂显示该工具的按键，用完即隐。"
+        },
+        {
+          "element": "el.selection",
+          "forms": ["panel", "tooltip"],
+          "anchors": ["ml"],
+          "why": "编辑器式沙盒（TABS 单位编辑）左侧属性滑条列表 + 右侧模型预览；改一个数值立刻在预览里看到效果。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "见 hudOrganization。沙盒默认密度最低（7 / 16 极简），UI 多是第一人称工具 + 准星或叙事内读数；需要「关掉 HUD」开关来拍视频。",
+          "examples": ["steam:1167630", "steam:1161580", "steam:881100"]
+        },
+        {
+          "screen": "screen.journal",
+          "conventions": "目标与线索：Untitled Goose Game 是一张手写待办纸条（划掉完成项）；Shadows of Doubt 是深蓝底推理板（证据卡 + 红线 + 底部按键图例）。",
+          "examples": ["steam:837470", "steam:986130"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "单位 / 物体编辑：TABS 深色背景 + 左侧属性滑条列表（生命、大小、重量、速度、伤害）+ 右侧模型。",
+          "examples": ["steam:508440"]
+        },
+        {
+          "screen": "screen.levelselect",
+          "conventions": "模式选择：Tricky Towers 三张糖果色大卡（随机 / 杯赛等），粗描边圆体字。",
+          "examples": ["steam:437920"]
+        },
+        {
+          "screen": "screen.settings",
+          "conventions": "Wallpaper Engine 是 Windows 式表单（工具软件的对照）：沙盒玩家对画质 / 性能选项的需求接近工具软件。",
+          "examples": ["steam:431960"]
+        },
+        {
+          "screen": "screen.build",
+          "conventions": "邻近品类的建造菜单：Satisfactory 暗色半透明大面板 + 橙色强调 + 分类图标格。沙盒自由建造时，菜单要能一键收起回到画面。",
+          "examples": ["steam:526870"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "邻近品类：Terraria 背包直接展开在快捷栏下方（不换屏）；生存沙盒的背包是评测重灾区。",
+          "examples": ["steam:105600", "steam:892970"]
+        }
+      ],
+      "styleTendencies": [
+        {"family": "极简单色", "count": 8, "why": "沙盒的卖点是画面与物理本身（体素光追、低多边形、扁平插画），UI 退到最少；其中一半是商店图没拍到 UI，真实 HUD 可能略多。"},
+        {"family": "糖果卡通（Q 版）", "count": 2, "why": "体素 MMO（Trove）与派对（Tricky Towers）：鲜艳、粗描边、大数字，配合多人热闹感。"},
+        {"family": "扁平 / Material", "count": 2, "why": "编辑器 / 工具（TABS 单位编辑、Wallpaper Engine）：表单与滑条直接用系统式扁平控件。"},
+        {"family": "细线几何", "count": 1, "why": "Mu Cartographer：白底一圈细线仪器，像科学仪器面板——生成玩具的「操控台」隐喻。"},
+        {"family": "科幻 HUD", "count": 1, "why": "Hardspace: Shipbreaker：头盔面罩弧形读数 + 扫描模式绿线框，切角、双色调。"},
+        {"family": "暗色细线", "count": 1, "why": "Shadows of Doubt：深蓝底推理板 + 证据卡，沉浸模拟的信息密度。"},
+        {"family": "像素位图", "count": 1, "why": "Noita：小号像素血条与法杖格，和每个像素都参与物理的世界同网格。"}
+      ],
+      "exemplars": [
+        {"card": "steam:1161580", "why": "Hardspace: Shipbreaker：面罩边缘读数（叙事内）+ 扫描模式整屏线框，拆解沙盒「看穿结构」的标准做法。"},
+        {"card": "steam:837470", "why": "Untitled Goose Game：零 HUD + 一张手写待办纸条，给开放沙盒一个轻目标。"},
+        {"card": "steam:986130", "why": "Shadows of Doubt：推理板（深蓝底证据卡 + 红线）+ 左侧深色对话选项，沉浸模拟的信息组织。"},
+        {"card": "steam:513360", "why": "Mu Cartographer：一圈细线仪器围住中央地形，把参数调节变成操作仪器。"},
+        {"card": "steam:437920", "why": "Tricky Towers：分数挂在每个玩家的塔顶，派对沙盒的「信息跟着作品走」。"},
+        {"card": "steam:881100", "why": "Noita：右上小号像素血条 + 法杖格，物理像素世界里 UI 尽量小。"},
+        {"card": "steam:508440", "why": "TABS：单位编辑页（左侧属性滑条 + 右侧模型），沙盒编辑器的最简形态。"},
+        {"card": "steam:1167630", "why": "Teardown：第一人称破坏沙盒，右下工具与弹药 + 点准星，其余全部让给体素画面。"}
+      ],
+      "pitfalls": [
+        {
+          "desc": "开放沙盒缺目标与引导：玩家不知道能做什么、该先做什么。",
+          "examples": ["steam:1161580", "steam:986130", "steam:361420"],
+          "reviewEvidence": "Hardspace: Shipbreaker「引导不清」2 条；Shadows of Doubt 提到界面的 46 条评测中差评 21 条（占比高，但多为整体评价）；邻近生存沙盒 ASTRONEER 引导 5、Subnautica 3、No Man's Sky 3。"
+        },
+        {
+          "desc": "建造 / 生存沙盒的背包与菜单是重灾区：格子少、负重、整理不便、菜单层级深。",
+          "examples": ["steam:892970", "steam:275850", "steam:427410"],
+          "reviewEvidence": "邻近 survival 品类：Valheim 背包 17 条（全库最多）+ 菜单 7 + 地图 4 + 字小 3；No Man's Sky 背包 3、菜单 3；Abiotic Factor 地图 4、背包 2。"
+        },
+        {
+          "desc": "碎片 / 粒子停留太久，淹没玩家角色与 HUD；破坏后画面全是噪声。",
+          "examples": ["steam:1167630", "steam:2027330"],
+          "reviewEvidence": "无专门统计；06 文档 A15 陷阱；GoreBox「HUD 太乱」1 条（未达门槛）。"
+        },
+        {
+          "desc": "材质 / 工具只靠颜色区分：体素调色板单一时，木、石、金属、可燃物分不出来。",
+          "examples": ["steam:304050", "steam:1167630"],
+          "reviewEvidence": "无评测统计；06 文档 A15 陷阱（体素调色板单一、材质分不出）。"
+        },
+        {
+          "desc": "多人派对里找不到自己：零 HUD 时四个玩家的角色 / 作品长得一样。",
+          "examples": ["steam:437920", "steam:1016920"],
+          "reviewEvidence": "无评测统计；设计观察——Tricky Towers 用挂在塔顶的名字 + 分数解决。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "第一人称工具 HUD vs 面罩叙事内读数",
+          "a": {
+            "cnt.density": "0",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "el.crosshair.form": ["dot"],
+            "vis.opacity": 0,
+            "typ.legibility": "shadow"
+          },
+          "b": {
+            "rel.diegesis": "diegetic",
+            "el.vitals.diegesis": "diegetic",
+            "cmp.gauge@el.vitals": "arc",
+            "vis.corner": "chamfer",
+            "col.strategy": "duotone",
+            "rel.followPost": "warp",
+            "el.overlay.form": ["holo"]
+          },
+          "lookAt": "A 只剩右下工具和一个点（破坏沙盒，画面最干净）；B 把读数弯到面罩边缘并开扫描线框（职业 / 太空沙盒，沉浸但占屏）。打开大量碎片的场景看两者的可读性。"
+        },
+        {
+          "title": "目标：手写待办纸条 vs 常驻任务清单",
+          "a": {
+            "el.objective.form": ["note"],
+            "el.objective.visibility": "onDemand",
+            "ast.frameMat": "paper",
+            "typ.body.family": "kai",
+            "st.done": "strike"
+          },
+          "b": {
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "tr",
+            "el.objective.visibility": "always",
+            "st.done": "check"
+          },
+          "lookAt": "A 按键呼出、划掉完成项（像主角自己的清单，鼓励自由发挥）；B 常驻右上（明确但像工作）。看 A 是否足以解决「不知道玩什么」，B 是否破坏搞笑沙盒的轻松感。"
+        },
+        {
+          "title": "派对：分数挂在玩家作品上 vs 角落记分",
+          "a": {
+            "ctx.players": "party4",
+            "el.timer.form": "scorePill",
+            "el.timer.attachTo": "player",
+            "typ.numerals.family": "display",
+            "typ.legibility": "outline",
+            "vis.stroke": "solid"
+          },
+          "b": {
+            "ctx.players": "party4",
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tl",
+            "typ.numerals.family": "tabular"
+          },
+          "lookAt": "四人同屏时，A 让每个人在看自己作品的同时看到分数；B 要移开视线到角落。数一数 A 是否会和作品重叠、B 是否需要颜色区分玩家。"
+        },
+        {
+          "title": "像素物理小号 HUD vs 仪器边框",
+          "a": {
+            "vis.pixelScale": "world",
+            "el.vitals.screenAnchor": "tr",
+            "el.vitals.scale": 0.7,
+            "cmp.gauge@el.vitals": "thinBar",
+            "cnt.density": "1"
+          },
+          "b": {
+            "lay.hudOrg": "inMargin",
+            "col.lightness": "light",
+            "col.strategy": "mono",
+            "vis.stroke": "solid",
+            "vis.motif": "geometric",
+            "cmp.gauge": "dial",
+            "cnt.density": "3"
+          },
+          "lookAt": "A（Noita 式）UI 缩到最小、与像素世界同网格；B（Mu Cartographer 式）把所有参数做成一圈仪器，UI 成了玩法本身。看沙盒的「可调参数」多到什么程度时值得给它一个仪器边框。"
+        },
+        {
+          "title": "推理板：红绳图钉 vs 直线树",
+          "a": {
+            "cnt.subtype": "deduction",
+            "ast.container": "clueWall",
+            "vis.connector": "string",
+            "vis.tilt": 3,
+            "col.lightness": "dark"
+          },
+          "b": {
+            "cnt.subtype": "deduction",
+            "vis.connector": "straight",
+            "lay.arrangement": "tree",
+            "vis.tilt": 0,
+            "col.lightness": "dark",
+            "vis.corner": "sharp"
+          },
+          "lookAt": "A 是随手钉上墙的证据（有倾角、红线交叉，像玩家自己的笔记），B 是整理好的树（清楚但像软件）。看线索超过 15 条时哪种还能读。"
+        },
+        {
+          "title": "编辑器：深色滑条列表 vs 浅色缩略图选择",
+          "a": {
+            "cnt.screen": "screen.character",
+            "lay.composition": "splitLR",
+            "cmp.optionRange": "slider",
+            "col.lightness": "dark",
+            "cnt.focal": "character",
+            "cnt.characterMedium": "model3d"
+          },
+          "b": {
+            "cnt.screen": "screen.character",
+            "lay.composition": "splitLR",
+            "cmp.optionRange": "segmentedBar",
+            "cmp.optionEnum": "thumbnails",
+            "col.lightness": "light",
+            "vis.corner": "round"
+          },
+          "lookAt": "A（TABS 式）连续数值任意调，适合物理参数；B 分档 + 缩略图，适合外观与预设。看「改一下就想马上看到效果」时哪一种反馈更快。"
+        }
+      ],
+      "contentPack": {
+        "names": {
+          "themes": ["可破坏的体素小镇", "太空船拆解厂", "像素物理洞穴", "搞笑动物闯祸", "积木塔多人对战", "星球地形生成器", "雨夜侦探城市", "军团战斗模拟", "火车铺轨合作"],
+          "tools": ["大锤", "喷火器", "遥控炸药", "切割枪", "抓钩", "喷漆", "放大缩小枪", "铺轨器"],
+          "materials": ["木板", "钢梁", "玻璃", "砖", "沙", "水", "油", "熔岩", "冰"],
+          "stats": ["耐久 72%", "氧气 3:20", "燃料 40%", "回收价值 12,400", "结构完整度", "碎片数量", "重量 / 尺寸", "高度 38 米"],
+          "objectives": ["60 秒内偷走金库里的画", "把船体切成三块送进熔炉", "让园丁淋湿", "搭到云层高度", "（自由模式）没有目标"],
+          "entities": ["门卫", "园丁", "无人机", "敌方军团", "被困的工人", "路人"],
+          "notes": ["待办：偷走钥匙 / 让所有人去野餐 / 敲响钟", "警报已触发：60 秒后警察到达", "证据：一张撕掉一半的车票"],
+          "mapFeatures": ["可破坏墙体", "易燃区域", "高压管线", "重力异常区", "隐藏房间", "沙盒边界", "补给站"]
+        }
+      },
+      "paramGaps": [
+        "缺「编辑器 / 创作模式」界面类型（属性检查器 + 层级树 + 工具条 + 物理参数）：现在只能借 screen.build 或 screen.character。建议新增 screen.editor 与对应子功能。",
+        "缺材质 / 工具属性提示：当前材质是否可燃、导电、可破坏、多重——沙盒的 affordance 信息，现在没有元素或参数承载。",
+        "缺回放 / 慢动作 / 自由相机控制条（TABS 等沙盒的录像、慢放、拍照）：cnt.subtype 有 photoMode，但没有回放控制元素。建议新增 el.replay。",
+        "缺建造选区的尺寸读数（体素 / 方块框选时显示 3 × 4 × 2、方块数量、材料消耗）。",
+        "el.toolbar 缺「编辑操作组」（撤销 / 重做 / 复制 / 镜像），与建造经营同一缺口。"
+      ]
+    }
+  ]
+}

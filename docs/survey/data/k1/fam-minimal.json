@@ -1,0 +1,2535 @@
+{
+ "families": [
+  {
+   "family": "极简单色",
+   "skin": "skin.mono",
+   "noCards": false,
+   "definition": "这不是一种皮肤，而是\"少画 UI\"的一组做法：107 张卡共同点只有\"装饰预算 0、几乎没有面板\"，信息量却从 0（Dear Esther）到极密（YOMI Hustle），画法从写实 3A 角落细条到 1-bit 线描卡片都有。按\"信息交给谁 × 剩下的件怎么画\"拆成 6 类 10 个子类：零 HUD（电影全隐 / 叙事内道具 / 画面即交互）、情境渐显（写实细件 / 发光符号）、细字排印、单色线描、扁平几何（信息图 / 玩具台）、调试面板。另需注意 34 张卡的证据是不带 UI 的商店宣传图，归类按已知 HUD，置信度低。",
+   "grammar": {
+    "shape": "几乎没有容器形；剩下的件是点、细线、圆环、小图标、文字块",
+    "line": "无描边或 1 px；只有线描同媒介（粗线）和调试面板（白细线）真正画线",
+    "surface": "底不透明度 0：文字与图形直接压画面，靠投影或纯黑条托底；例外是线描卡片和调试面板的实底",
+    "color": "骨架只有白 / 黑 / 场景色，强调色至多一个；信息图类把颜色让给数据（线路色）",
+    "type": "细或常规无衬线、小字号；排印类用窄体全大写宽字距；同媒介类用手写 / 书页衬线 / 等宽",
+    "material": "无材质、无纹理、无光泽",
+    "ornament": "装饰预算 0，母题无（信息图类用几何线）",
+    "icon": "线性、剪影或扁平小图标；很多卡没有图标",
+    "motion": "慢淡入淡出、静止渐隐；状态变化交给世界（去饱和、光、声音）",
+    "layout": "分散贴角或挂在世界物体上，中央留给画面；HUD 多为情境显现或全隐"
+   },
+   "params": {
+    "vis.ornament": 0,
+    "vis.motif": "none",
+    "vis.opacity": 0,
+    "vis.depth": "flat",
+    "vis.stroke": "none",
+    "vis.gloss": "none",
+    "col.strategy": "neutralAccent",
+    "cnt.density": 0,
+    "lay.container": "overlay",
+    "rel.hudVisibility": "contextual",
+    "typ.body.family": "sans",
+    "typ.body.weight": "light",
+    "typ.legibility": "shadow",
+    "vis.iconStyle": "line",
+    "mo.enter": "fade",
+    "hier.emphasis": [
+     "isolation",
+     "value"
+    ]
+   },
+   "artPairing": [
+    {
+     "artStyle": "剪影 (Silhouette)",
+     "relation": "sameMedium",
+     "why": "剪影 / 黑白世界只容得下\"不画\"或单色细件"
+    },
+    {
+     "artStyle": "1-bit抖动3D／Obra Dinn式",
+     "relation": "sameMedium",
+     "why": "两色画面要求 UI 也只用两色、同一线宽"
+    },
+    {
+     "artStyle": "矢量扁平 (Vector flat)",
+     "relation": "sameMedium",
+     "why": "扁平地图即界面，UI 是同形的圆点圆钮"
+    },
+    {
+     "artStyle": "电影化写实 (Cinematic)",
+     "relation": "neutral",
+     "why": "写实画面上用中性白细件退后，或干脆全隐保住镜头"
+    },
+    {
+     "artStyle": "极简抽象 (Minimalist/abstract)",
+     "relation": "sameMedium",
+     "why": "抽象几何世界没有物件可挂 UI，只能直接压字或不画"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "explore",
+     "count": 13,
+     "why": "3A 与独立探索：情境显现 / 零 HUD 是主流"
+    },
+    {
+     "genre": "puzzle",
+     "count": 13,
+     "why": "解谜：谜面即界面"
+    },
+    {
+     "genre": "narrative",
+     "count": 12,
+     "why": "叙事：字幕、无框对话、叙事内道具"
+    },
+    {
+     "genre": "builder",
+     "count": 12,
+     "why": "建造小品：地图即界面、底部小圆钮"
+    },
+    {
+     "genre": "platformer",
+     "count": 10,
+     "why": "平台跳跃：零 HUD 或发光点阵"
+    },
+    {
+     "genre": "horror",
+     "count": 9,
+     "why": "恐怖：情境显现 + 叙事内仪器"
+    },
+    {
+     "genre": "sandbox",
+     "count": 8,
+     "why": "沙盒：角落工具 / 弹药"
+    },
+    {
+     "genre": "racing",
+     "count": 6,
+     "why": "风格化竞速：只剩计时 / 速度数字"
+    },
+    {
+     "genre": "shooter",
+     "count": 5,
+     "why": "射击：边界情况，多为商店图低置信"
+    },
+    {
+     "genre": "life",
+     "count": 5,
+     "why": "生活小品：相机 / 房间即界面"
+    },
+    {
+     "genre": "survival",
+     "count": 4,
+     "why": "生存：角落计量 + 快捷栏"
+    },
+    {
+     "genre": "strategy",
+     "count": 4,
+     "why": "小品策略与回合格斗：一端零 UI，一端调试面板"
+    },
+    {
+     "genre": "action",
+     "count": 3,
+     "why": "动作：角落细条（3A）或形状即语义（节奏弹幕）"
+    },
+    {
+     "genre": "card",
+     "count": 2,
+     "why": "桌面 / 路线即界面"
+    },
+    {
+     "genre": "factory",
+     "count": 1,
+     "why": "编程解谜：界面即 IDE"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:287980",
+     "why": "扁平信息图：颜色即数据"
+    },
+    {
+     "card": "steam:1850570",
+     "why": "排印 HUD：细窄体全大写直压"
+    },
+    {
+     "card": "steam:231200",
+     "why": "无框对话列表 + 黑底细线地图"
+    },
+    {
+     "card": "steam:1307580",
+     "why": "单色线描同一支笔"
+    },
+    {
+     "card": "steam:701160",
+     "why": "世界即界面（叙事内物件）"
+    },
+    {
+     "card": "steam:1046030",
+     "why": "微缩玩具台：半透明胶囊 + 圆环分数"
+    },
+    {
+     "card": "steam:1593500",
+     "why": "写实 3A 角落细件的完整模板"
+    },
+    {
+     "card": "steam:1720850",
+     "why": "\"无装饰但高密度\"的反例"
+    }
+   ],
+   "subfamilies": [
+    {
+     "family": "零 HUD · 世界即界面",
+     "skin": "skin.mono",
+     "noCards": false,
+     "definition": "信息不画在屏幕上，而是交给世界：要么什么都不画（电影全隐），要么交给世界里的物件（叙事内道具），要么画面本身就是控件（直接操纵）。三者的共同代价是引导：零 HUD 卡合计被抱怨\"不知道做什么\"38 次。改法：先决定每个信息由谁承担（镜头 / 物件 / 画面），再删掉屏幕层。",
+     "grammar": {
+      "shape": "屏幕层无形；形来自世界物件",
+      "line": "无",
+      "surface": "无",
+      "color": "场景调色即 UI 颜色",
+      "type": "只有字幕或世界里的字",
+      "material": "世界材质",
+      "ornament": "无",
+      "icon": "无，或物件即图标",
+      "motion": "后处理与物理承担反馈",
+      "layout": "屏幕全空，至多一个系统入口"
+     },
+     "params": {
+      "rel.hudVisibility": "hidden",
+      "cnt.density": 0,
+      "lay.container": "overlay",
+      "rel.diegesis": "diegetic",
+      "rel.harmony": "sameMedium",
+      "cnt.textLength": "none",
+      "rel.metaFx": [
+       "lowHpDesat"
+      ],
+      "flow.entry": "worldInteract",
+      "ast.iconSet": "runtimeRender",
+      "vis.ornament": 0,
+      "vis.opacity": 0,
+      "mo.enter": "fade"
+     },
+     "artPairing": [
+      {
+       "artStyle": "剪影 (Silhouette)",
+       "relation": "sameMedium",
+       "why": "剪影世界不能容纳额外的彩色框"
+      },
+      {
+       "artStyle": "纸艺世界 (Papercraft world)",
+       "relation": "sameMedium",
+       "why": "手工材质世界里矢量 UI 会像另一种材料"
+      },
+      {
+       "artStyle": "电影化写实 (Cinematic)",
+       "relation": "sameMedium",
+       "why": "电影感依赖画面完整"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "puzzle",
+       "count": 10,
+       "why": "解谜：谜面即界面"
+      },
+      {
+       "genre": "explore",
+       "count": 7,
+       "why": "探索 / 步行模拟"
+      },
+      {
+       "genre": "narrative",
+       "count": 7,
+       "why": "叙事小品与互动电影"
+      },
+      {
+       "genre": "platformer",
+       "count": 5,
+       "why": "解谜平台"
+      },
+      {
+       "genre": "horror",
+       "count": 4,
+       "why": "恐怖"
+      },
+      {
+       "genre": "sandbox",
+       "count": 2,
+       "why": "VR 与沙盒小品"
+      },
+      {
+       "genre": "racing",
+       "count": 2,
+       "why": "风格化竞速"
+      },
+      {
+       "genre": "builder",
+       "count": 2,
+       "why": "Kingdom 系横版经营"
+      },
+      {
+       "genre": "card",
+       "count": 2,
+       "why": "Inscryption / Lara Croft GO：桌面与路线即界面"
+      },
+      {
+       "genre": "shooter",
+       "count": 1,
+       "why": "VR 射击（Half-Life: Alyx）"
+      },
+      {
+       "genre": "life",
+       "count": 1,
+       "why": "生活小品（Unpacking）"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:414340",
+       "why": "电影全隐的极限"
+      },
+      {
+       "card": "steam:638230",
+       "why": "身体承载数值"
+      },
+      {
+       "card": "steam:701160",
+       "why": "世界物件承载，且是引导问题的头部"
+      },
+      {
+       "card": "steam:557600",
+       "why": "画面即控件"
+      },
+      {
+       "card": "steam:1927720",
+       "why": "最小系统入口"
+      }
+     ],
+     "subfamilies": [
+      {
+       "family": "零 HUD · 电影全隐",
+       "skin": "skin.mono",
+       "noCards": false,
+       "definition": "屏幕上什么都不画，最多留字幕和一闪而过的按键提示；生命、方向、进度交给镜头、光、颜色和声音。唯一\"看得见\"的 UI 是全屏效果（受伤去饱和、暗角、宽银幕黑边）。改法：把面板和图标全部删掉，元素集合只留字幕与交互提示，再把受伤、低血改成元 UI 屏幕效果。",
+       "grammar": {
+        "shape": "没有任何容器形；不出现矩形、圆环、图标底座",
+        "line": "无",
+        "surface": "无；字幕直接压画面，或压进 21:9 下黑边（steam:2461850）",
+        "color": "UI 不定义自己的颜色，靠场景调色说话：LIMBO 全黑白、GRIS 随章节恢复色彩",
+        "type": "只有字幕：小号细无衬线、居中靠下、白字投影；没有标题字",
+        "material": "无",
+        "ornament": "无",
+        "icon": "无常驻图标；按键提示是单个按键图标，贴近物体时出现",
+        "motion": "反馈全部交给后处理：去饱和、暗角、模糊、镜头晃动；字幕淡入淡出",
+        "layout": "中央与四角全空，画面构图本身承担引导（光、路径、人物视线）"
+       },
+       "params": {
+        "rel.hudVisibility": "hidden",
+        "cnt.density": 0,
+        "lay.container": "overlay",
+        "cnt.elements": [
+         "el.interact"
+        ],
+        "cnt.textLength": "line",
+        "rel.diegesis": "meta",
+        "rel.metaFx": [
+         "lowHpDesat",
+         "hurtVignette"
+        ],
+        "rel.harmony": "sameMedium",
+        "el.interact.form": [
+         "keyPrompt"
+        ],
+        "el.interact.visibility": "contextual",
+        "typ.body.weight": "light",
+        "typ.legibility": "shadow",
+        "vis.ornament": 0,
+        "vis.opacity": 0,
+        "mo.enter": "fade",
+        "mo.duration": 0.8,
+        "ix.continueCue": "none"
+       },
+       "artPairing": [
+        {
+         "artStyle": "剪影 (Silhouette)",
+         "relation": "sameMedium",
+         "why": "LIMBO / INSIDE 的黑剪影世界里任何彩色框都会刺眼，零 HUD 是唯一不破坏剪影的做法"
+        },
+        {
+         "artStyle": "水彩 (Watercolor)",
+         "relation": "sameMedium",
+         "why": "GRIS / Neva 把\"能力与进度\"画成画面颜色的恢复，UI 等于调色本身"
+        },
+        {
+         "artStyle": "电影化写实 (Cinematic)",
+         "relation": "sameMedium",
+         "why": "Hellblade I/II 用宽银幕、景深和声音做反馈，加任何 HUD 都会破坏\"摄影机感\""
+        },
+        {
+         "artStyle": "平滑低模／色板贴图 (Smooth low poly)",
+         "relation": "neutral",
+         "why": "art of rally / Barro 2020 低模赛道清楚到不需要小地图，只留起点倒计时"
+        }
+       ],
+       "genres": [
+        {
+         "genre": "explore",
+         "count": 4,
+         "why": "步行模拟与氛围探索：流程线性，迷路成本低"
+        },
+        {
+         "genre": "horror",
+         "count": 3,
+         "why": "恐怖靠\"看不见信息\"制造不安，HUD 会降低紧张感"
+        },
+        {
+         "genre": "platformer",
+         "count": 3,
+         "why": "解谜平台：关卡就是一道题，失败即重来，不需要血量"
+        },
+        {
+         "genre": "narrative",
+         "count": 2,
+         "why": "互动电影：只在 QTE 时浮现按键"
+        },
+        {
+         "genre": "racing",
+         "count": 2,
+         "why": "风格化竞速：赛道本身清楚，HUD 只剩计时"
+        },
+        {
+         "genre": "sandbox",
+         "count": 1,
+         "why": "VR：屏幕叠加在头显里不舒服，直接不画"
+        }
+       ],
+       "exemplars": [
+        {
+         "card": "steam:683320",
+         "why": "色彩恢复 = 进度；标题页是同心圆 + 大字距细衬线，是这类\"仅有的排版\"范例"
+        },
+        {
+         "card": "steam:414340",
+         "why": "零 HUD 的极限：腐化在手臂上、教程在耳边低语、谜题在环境里"
+        },
+        {
+         "card": "steam:304430",
+         "why": "黑白剪影、无字、无提示，引导全靠光和构图"
+        },
+        {
+         "card": "steam:2461850",
+         "why": "21:9 宽银幕黑边，字幕压进黑边，示范 D-letterbox"
+        },
+        {
+         "card": "steam:520720",
+         "why": "只有旁白字幕的步行模拟，字幕就是全部 UI"
+        },
+        {
+         "card": "steam:550320",
+         "why": "零 HUD 竞速：说明\"赛道可读性\"可以替代小地图"
+        }
+       ],
+       "variants": [
+        {
+         "name": "黑白剪影",
+         "diff": "世界只有黑白灰，UI 彻底消失，连字幕都很少",
+         "cards": [
+          "steam:48000",
+          "steam:304430",
+          "steam:424840"
+         ]
+        },
+        {
+         "name": "色彩即进度",
+         "diff": "用画面饱和度 / 色相的逐章恢复表达成长",
+         "cards": [
+          "steam:683320",
+          "steam:2420660"
+         ]
+        },
+        {
+         "name": "宽银幕互动电影",
+         "diff": "画幅黑边 + 只在 QTE 浮现按键",
+         "cards": [
+          "steam:2461850",
+          "steam:960990",
+          "steam:1310330",
+          "steam:1622910"
+         ]
+        },
+        {
+         "name": "低模竞速零 HUD",
+         "diff": "只剩起点倒计时与分段时间，其余靠赛道",
+         "cards": [
+          "steam:550320",
+          "steam:1168660"
+         ]
+        }
+       ],
+       "failureModes": [
+        {
+         "desc": "引导不清是这一类最集中的抱怨：评论里 14 次\"不知道去哪 / 做什么\"，Hellblade、Little Nightmares 各 3 次，Hellblade II、Beyond 各 2 次",
+         "evidence": [
+          "steam:414340",
+          "steam:424840",
+          "steam:2461850",
+          "steam:960990"
+         ]
+        },
+        {
+         "desc": "零 HUD 不等于零字：字幕、菜单的小字仍被抱怨（Neva 2 次），细体字幕压在亮场景上读不清",
+         "evidence": [
+          "steam:2420660",
+          "steam:424840"
+         ]
+        }
+       ],
+       "skinGap": "skin.mono 只描述面板皮（1px 墨线、透明底、细体），而这一类根本没有面板，选它画面上看不出差别；真正起作用的是 rel.hudVisibility = hidden、元素集合只剩字幕、rel.metaFx。skin.mono 的 refs 恰好是 Limbo / Inside / Journey 这三款\"看不见 UI\"的游戏，应换成看得见极简 UI 的作品（见其它子类的范例）。",
+       "paramGaps": [
+        "声音即 UI：耳边低语当教程、对讲机当对话框，词表没有音频通道",
+        "\"画面色彩恢复 = 进度\"（GRIS）：col.dynamic 只有每章换配色，没有\"饱和度随进度\"",
+        "字幕本身的样式（字号、位置、是否压黑边）没有逐元素画法参数，el.subtitle 只能设锚点"
+       ]
+      },
+      {
+       "family": "零 HUD · 叙事内道具与环境承载",
+       "skin": null,
+       "noCards": false,
+       "definition": "屏幕上仍几乎不画，但每个状态都有一个\"世界里的载体\"：钱袋（Kingdom）、围巾长度（Journey）、手里的纸地图与对讲机（Firewatch）、枪身（Scorn）、手套（Half-Life: Alyx）、笔记本（L.A. Noire）、牌桌（Inscryption）、墙上测试标识（Portal 2）、染红的可攀爬路线（Mirror's Edge）。设计工作是把一个数值翻译成物件的长度、亮度、数量或颜色。改法：把屏幕角落的血条 / 弹药搬到角色手持物或身上（elx.diegesis = 叙事内、attachTo = held / player），文字换成世界里的手写或印刷字。",
+       "grammar": {
+        "shape": "载体自己的轮廓：袋子、围巾、纸张、表盘、枪身面板；不再加屏幕框",
+        "line": "与世界同线条（像素、手绘、写实模型边缘）",
+        "surface": "世界材质：纸、木、布、金属、皮肤上的纹路",
+        "color": "场景色；只留一个\"可交互 / 可走\"的强调色（Mirror's Edge 的红、Portal 2 的蓝橙）",
+        "type": "世界里的字：手写便签（Untitled Goose Game）、印刷标识（Portal 2）、大写红字提示（Inscryption 顶端一行）",
+        "material": "真实物件材质，随场景光照变化",
+        "ornament": "来自物件本身，UI 层不加饰件",
+        "icon": "物件即图标；数量用物件个数表示（钱袋里的金币）",
+        "motion": "跟随物理：围巾飘、纸张翻、翻包时游戏不暂停",
+        "layout": "挂在角色、手持物或兴趣点上；屏幕四角基本空，打开道具时镜头推近"
+       },
+       "params": {
+        "rel.diegesis": "diegetic",
+        "rel.hudVisibility": "contextual",
+        "cnt.density": 0,
+        "lay.container": "overlay",
+        "el.vitals.diegesis": "diegetic",
+        "el.vitals.attachTo": "held",
+        "el.resources.attachTo": "player",
+        "el.objective.form": [
+         "note"
+        ],
+        "flow.entry": "worldInteract",
+        "mo.transition": "zoomInto",
+        "rel.followPost": "stylize",
+        "rel.harmony": "sameMedium",
+        "ast.iconSet": "runtimeRender",
+        "typ.display.family": "handwritten",
+        "rel.worldRender": "outline",
+        "vis.ornament": 0,
+        "vis.opacity": 0
+       },
+       "artPairing": [
+        {
+         "artStyle": "现代高位像素 (Hi-bit)",
+         "relation": "sameMedium",
+         "why": "Kingdom 的像素钱袋、旗帜、火把与世界同网格，信息就是像素物件"
+        },
+        {
+         "artStyle": "海报风景插画／Firewatch式",
+         "relation": "sameMedium",
+         "why": "纸地图和对讲机是平涂海报世界里的道具，保住了大色块构图"
+        },
+        {
+         "artStyle": "生物朋克／Giger式 (Biopunk)",
+         "relation": "sameMedium",
+         "why": "Scorn 把弹药和生命长在生物机械枪上，屏幕 UI 会打破肉质氛围"
+        },
+        {
+         "artStyle": "白盒极简＋强调色 (White minimal)",
+         "relation": "sameMedium",
+         "why": "Mirror's Edge 的白城里，\"可走路线染红\"就是 UI，强调色只有一个"
+        },
+        {
+         "artStyle": "照片写实 (Photorealism)",
+         "relation": "sameMedium",
+         "why": "VR 的 Half-Life: Alyx 只能把血量和弹药画在手套与枪上"
+        }
+       ],
+       "genres": [
+        {
+         "genre": "builder",
+         "count": 2,
+         "why": "Kingdom：横版经营，金币就是钱袋里的实物"
+        },
+        {
+         "genre": "explore",
+         "count": 2,
+         "why": "Journey / Firewatch：探索作把能量和地图交给身体与道具"
+        },
+        {
+         "genre": "platformer",
+         "count": 2,
+         "why": "Portal 2 / Mirror's Edge：关卡标识与路线着色代替提示"
+        },
+        {
+         "genre": "horror",
+         "count": 1,
+         "why": "Scorn：武器即状态面板"
+        },
+        {
+         "genre": "narrative",
+         "count": 1,
+         "why": "IMMORTALITY：剪辑台本身就是界面"
+        },
+        {
+         "genre": "puzzle",
+         "count": 1,
+         "why": "L.A. Noire：笔记本记录线索与审讯选项"
+        },
+        {
+         "genre": "sandbox",
+         "count": 1,
+         "why": "Untitled Goose Game：待办清单是一张手写纸条"
+        },
+        {
+         "genre": "card",
+         "count": 1,
+         "why": "Inscryption：牌桌、天平、地图都是桌上实物"
+        },
+        {
+         "genre": "shooter",
+         "count": 1,
+         "why": "Half-Life: Alyx：VR 里血量弹药在手套与枪上"
+        }
+       ],
+       "exemplars": [
+        {
+         "card": "steam:701160",
+         "why": "世界即 UI 的代表：钱袋、旗帜、篝火传达全部状态；同时是\"夸简洁\"和\"骂引导\"两头的头部"
+        },
+        {
+         "card": "steam:638230",
+         "why": "围巾长度 = 飞行能量、符文亮度 = 剩余，数值→物件长度 / 亮度的标准翻译"
+        },
+        {
+         "card": "steam:383870",
+         "why": "地图与指南针是手里的纸，对讲机替代对话框"
+        },
+        {
+         "card": "steam:1092790",
+         "why": "牌桌就是界面，只在屏幕顶端留一行大写红字"
+        },
+        {
+         "card": "steam:17410",
+         "why": "runner vision：可攀爬物染红，环境着色当路点"
+        },
+        {
+         "card": "steam:546560",
+         "why": "VR 下的必然解：手套与枪身显示血量弹药"
+        }
+       ],
+       "variants": [
+        {
+         "name": "身体承载",
+         "diff": "数值画在角色身上（围巾、手臂纹路）",
+         "cards": [
+          "steam:638230"
+         ]
+        },
+        {
+         "name": "手持道具承载",
+         "diff": "数值在手持物上：枪、手套、纸地图、笔记本",
+         "cards": [
+          "steam:383870",
+          "steam:698670",
+          "steam:546560",
+          "steam:110800",
+          "steam:837470"
+         ]
+        },
+        {
+         "name": "世界物件 / 环境着色",
+         "diff": "数值在场景物件或环境色上：钱袋、旗帜、染红路线、测试室标识",
+         "cards": [
+          "steam:368230",
+          "steam:701160",
+          "steam:17410",
+          "steam:620"
+         ]
+        },
+        {
+         "name": "整张桌子 / 设备即界面",
+         "diff": "一个设备承担全部 UI：牌桌、剪辑台",
+         "cards": [
+          "steam:1092790",
+          "steam:1350200"
+         ]
+        }
+       ],
+       "failureModes": [
+        {
+         "desc": "引导与地图缺失最重：Scorn 引导 10 次 + 地图 4 次，Kingdom Two Crowns 引导 7 次；子类合计引导 19 次、地图 6 次",
+         "evidence": [
+          "steam:698670",
+          "steam:701160"
+         ]
+        },
+        {
+         "desc": "叙事内载体太小或依赖颜色：Mirror's Edge 被抱怨字小 2 次；只靠一种红色标路线，对红绿色弱不友好（推断，需色盲检查）",
+         "evidence": [
+          "steam:17410"
+         ]
+        }
+       ],
+       "skinGap": "没有对应皮肤，也不该有：这一类的\"皮\"是世界资产。skin.mono 的 1px 墨线框套在这里是错的；探索台需要的是\"把元素挂到物件上\"的演示（elx.attachTo + elx.diegesis），而 rcp.noHud 现在指向 skin.swiss（白底实心面板 + 左色条 + 特粗标题），与 Control / Dead Space 的细线叙事内做法相反。",
+       "paramGaps": [
+        "\"数值→物件属性\"的映射（长度、亮度、个数、颜色）没有参数：attachTo 只说挂在哪，不说怎么编码",
+        "环境着色引导（Mirror's Edge 染红路线）：rel.worldRender 只有描边高亮，没有\"路线着色\"",
+        "打开道具不暂停（TLOU / Firewatch 的实时翻包）没有参数，ix.blocking 只描述阻断性"
+       ]
+      },
+      {
+       "family": "零 HUD · 画面即交互（直接操纵）",
+       "skin": "skin.thinGeo",
+       "noCards": false,
+       "definition": "解谜与小品叙事的做法：画面本身就是控件——拖动画格（Gorogoa）、转动机关（The Room、Monument Valley）、拿起物件（Unpacking、Venba）。UI 只剩一个角落的小圆点菜单或暂停钮、可点处的光标变化或微光，以及完成时的一张小卡（Unpacking 的贴纸边框照片）。改法：删掉所有按钮和标签，只留左上 / 右上一个半透明小圆钮；交互提示改成光标变化和物件微光。",
+       "grammar": {
+        "shape": "角落一个小圆或小方钮（Monument Valley 左上圆点、The Room 右上暂停）",
+        "line": "细线图标，1px 左右",
+        "surface": "无底，或半透明白圆",
+        "color": "跟画面走；系统钮用半透明白或场景暗色",
+        "type": "几乎无字：Machinarium 用画出来的思想泡泡代替台词",
+        "material": "无（画面自己是纸雕 / 手工 / 绘本材质）",
+        "ornament": "无",
+        "icon": "线性小图标；提示用手绘问号（CHUCHEL）",
+        "motion": "可交互物件的微光或轻晃；拖拽有物理回弹；完成时一张卡片弹出",
+        "layout": "中央全给谜面；屏幕边缘只留一个系统入口"
+       },
+       "params": {
+        "lay.container": "overlay",
+        "cnt.density": 0,
+        "cnt.textLength": "none",
+        "el.toolbar.form": "microMenu",
+        "el.toolbar.screenAnchor": "tl",
+        "el.interact.form": [
+         "cursor"
+        ],
+        "ix.mode": "drag",
+        "ix.confirm": "instant",
+        "mo.idle": "shine",
+        "cmp.dialogBox": "bubble",
+        "vis.iconStyle": "line",
+        "vis.silhouette": "circle",
+        "vis.opacity": 0.35,
+        "rel.diegesis": "diegetic",
+        "rel.harmony": "sameMedium",
+        "rel.hudVisibility": "hidden",
+        "vis.ornament": 0
+       },
+       "artPairing": [
+        {
+         "artStyle": "纸艺世界 (Papercraft world)",
+         "relation": "sameMedium",
+         "why": "Lumino City / Papetura 是实拍纸雕，任何矢量面板都会显得是另一种材料"
+        },
+        {
+         "artStyle": "不可能几何／埃舍尔式 (Impossible geometry)",
+         "relation": "sameMedium",
+         "why": "Monument Valley 的谜题就是视角本身，UI 只剩一个圆点"
+        },
+        {
+         "artStyle": "钢笔淡彩 (Ink & wash)",
+         "relation": "sameMedium",
+         "why": "Gorogoa 的画格既是插画也是按钮，界面与画面完全重合"
+        },
+        {
+         "artStyle": "分形／SDF 数学形体 (SDF/fractal)",
+         "relation": "neutral",
+         "why": "Mirror Drop 的抽象几何解谜没有可以挂 UI 的世界物件，直接零 HUD"
+        }
+       ],
+       "genres": [
+        {
+         "genre": "puzzle",
+         "count": 9,
+         "why": "解谜：谜面即界面，任何 HUD 都是噪音"
+        },
+        {
+         "genre": "narrative",
+         "count": 4,
+         "why": "小品叙事：做菜、画画、整理房间本身就是交互"
+        },
+        {
+         "genre": "explore",
+         "count": 1,
+         "why": "Riven：点击探索，信息在机关与刻痕里"
+        },
+        {
+         "genre": "life",
+         "count": 1,
+         "why": "Unpacking：房间就是界面"
+        },
+        {
+         "genre": "card",
+         "count": 1,
+         "why": "Lara Croft GO：路线节点就是界面"
+        }
+       ],
+       "exemplars": [
+        {
+         "card": "steam:557600",
+         "why": "四格画面本身是交互界面，零 UI 的极致"
+        },
+        {
+         "card": "steam:1927720",
+         "why": "只有左上一个小圆点菜单，是\"最小系统入口\"的标准件"
+        },
+        {
+         "card": "steam:1135690",
+         "why": "房间即界面，完成后一张贴纸边框照片作为唯一结算"
+        },
+        {
+         "card": "steam:40700",
+         "why": "零文字：思想泡泡用手绘图画代替台词"
+        },
+        {
+         "card": "steam:288160",
+         "why": "盒子与机关即界面，右上一个暂停钮"
+        },
+        {
+         "card": "steam:540840",
+         "why": "回合解谜的路线节点就是界面，没有回合计数器"
+        }
+       ],
+       "variants": [
+        {
+         "name": "手工材质世界",
+         "diff": "纸雕 / 实拍手工，UI 必须完全隐身",
+         "cards": [
+          "steam:205020",
+          "steam:593640",
+          "steam:2428840"
+         ]
+        },
+        {
+         "name": "绘本 / 手绘角色",
+         "diff": "可以有手绘思想泡泡或手绘问号作提示",
+         "cards": [
+          "steam:40700",
+          "steam:711660",
+          "steam:557600",
+          "steam:581270"
+         ]
+        },
+        {
+         "name": "日常动作即玩法",
+         "diff": "做菜、画画、整理、对账，交互动词本身是 UI",
+         "cards": [
+          "steam:1135690",
+          "steam:1491670",
+          "steam:1634150",
+          "iig:florence"
+         ]
+        },
+        {
+         "name": "机关盒 / 抽象几何",
+         "diff": "3D 机关或几何空间，角落留一个系统钮",
+         "cards": [
+          "steam:288160",
+          "steam:1712350",
+          "steam:1927720",
+          "steam:845270",
+          "steam:540840"
+         ]
+        }
+       ],
+       "failureModes": [
+        {
+         "desc": "卡关时没有提示入口：Gorogoa 被抱怨引导 3 次，Lumino City、The Room 各 1 次",
+         "evidence": [
+          "steam:557600",
+          "steam:205020",
+          "steam:288160"
+         ]
+        },
+        {
+         "desc": "这一类整体口碑最好（UI 正面提及 241 次、负面 25 次），说明\"画面即交互\"在解谜里是被认可的；风险主要在提示系统而不是视觉",
+         "evidence": [
+          "steam:1927720",
+          "steam:1135690"
+         ]
+        }
+       ],
+       "skinGap": "skin.thinGeo（圆角 50%、细高光线、宽字距）是最接近的，但它默认会给每个件画一圈细线框；这一类只需要一个半透明圆钮，其余元素不画。缺一个\"只有系统入口\"的 HUD 模板，以及光标变化 / 物件微光的演示。",
+       "paramGaps": [
+        "可交互物件的\"微光 / 高光提示\"只能借 mo.idle = 光效扫过近似，不能指定作用在世界物件上",
+        "分级提示系统（先轻提示、再给答案）没有参数，ix.guideForce 只有三档强制度"
+       ]
+      }
+     ],
+     "variants": [
+      {
+       "name": "按信息承担者分",
+       "diff": "镜头 / 后处理（电影全隐）、物件（叙事内）、画面（直接操纵）",
+       "cards": [
+        "steam:414340",
+        "steam:638230",
+        "steam:557600"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "引导不足：三个子类合计引导抱怨 38 次，集中在 Scorn、Kingdom Two Crowns、Hellblade、Little Nightmares、Gorogoa",
+       "evidence": [
+        "steam:698670",
+        "steam:701160",
+        "steam:414340",
+        "steam:424840",
+        "steam:557600"
+       ]
+      }
+     ],
+     "skinGap": "皮肤维度在这里几乎不起作用；探索台需要一个\"零 HUD\"配方，把 rel.hudVisibility、元素集合、元 UI 效果、叙事内挂点一起设好，而不是挑皮肤。",
+     "paramGaps": [
+      "音频承担 UI",
+      "数值→物件属性映射",
+      "分级提示（先轻后重）"
+     ]
+    },
+    {
+     "family": "情境渐显 · 角落小件",
+     "skin": "skin.mono",
+     "noCards": false,
+     "definition": "有 HUD，但平时不显示：受伤、瞄准、拾取、停下时从角落淡入，几秒后淡出。写实 3D 用白色细条和数字，2D 手绘用发光圆点和符号。33 张卡里 30 张是商店图无 UI 的低置信归类。改法：面板底与描边归零，显隐改情境显现，件缩小并贴角。",
+     "grammar": {
+      "shape": "细条 / 分段格 / 圆环（3D）或圆点 / 符号（2D）",
+      "line": "无或极细",
+      "surface": "透明",
+      "color": "白或场景高光色 + 一个危险色",
+      "type": "小号无衬线，或无字",
+      "material": "无，或光",
+      "ornament": "0",
+      "icon": "线性 / 剪影",
+      "motion": "情境淡入、静止渐隐、受击屏幕效果",
+      "layout": "左下 / 右下 / 底中贴角，敌人信息挂在目标上"
+     },
+     "params": {
+      "rel.hudVisibility": "contextual",
+      "cnt.density": 1,
+      "lay.hudOrg": "scattered",
+      "lay.container": "overlay",
+      "vis.opacity": 0,
+      "vis.stroke": "none",
+      "typ.legibility": "shadow",
+      "rel.metaFx": [
+       "hurtVignette"
+      ],
+      "mo.enter": "fade",
+      "mo.valueChange": "smooth",
+      "vis.ornament": 0,
+      "el.vitals.visibility": "contextual"
+     },
+     "artPairing": [
+      {
+       "artStyle": "照片写实 (Photorealism)",
+       "relation": "neutral",
+       "why": "中性白细件退后"
+      },
+      {
+       "artStyle": "2.5D横版",
+       "relation": "sameMedium",
+       "why": "发光点取世界光"
+      },
+      {
+       "artStyle": "电影化写实 (Cinematic)",
+       "relation": "neutral",
+       "why": "可整片隐藏，保住镜头"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "explore",
+       "count": 5,
+       "why": "3A 探索"
+      },
+      {
+       "genre": "horror",
+       "count": 5,
+       "why": "生存恐怖"
+      },
+      {
+       "genre": "platformer",
+       "count": 5,
+       "why": "平台跳跃"
+      },
+      {
+       "genre": "sandbox",
+       "count": 4,
+       "why": "沙盒"
+      },
+      {
+       "genre": "survival",
+       "count": 4,
+       "why": "生存"
+      },
+      {
+       "genre": "shooter",
+       "count": 4,
+       "why": "射击（边界）"
+      },
+      {
+       "genre": "action",
+       "count": 2,
+       "why": "动作"
+      },
+      {
+       "genre": "racing",
+       "count": 2,
+       "why": "竞速"
+      },
+      {
+       "genre": "narrative",
+       "count": 1,
+       "why": "手绘叙事（交互时出现小圆提示）"
+      },
+      {
+       "genre": "puzzle",
+       "count": 1,
+       "why": "点击冒险（物品栏滑出）"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1593500",
+       "why": "3D 版完整模板"
+      },
+      {
+       "card": "steam:387290",
+       "why": "2D 发光点阵版"
+      },
+      {
+       "card": "steam:312520",
+       "why": "停下才显示的符号 HUD（有可见证据）"
+      },
+      {
+       "card": "steam:1167630",
+       "why": "有可见证据的角落工具 / 弹药"
+      },
+      {
+       "card": "steam:268910",
+       "why": "物件式小件（扑克牌血量）"
+      }
+     ],
+     "subfamilies": [
+      {
+       "family": "情境渐显 · 写实 3A 角落细件",
+       "skin": "skin.mono",
+       "noCards": false,
+       "definition": "写实 3D 动作、冒险、恐怖、竞速的主流：平时屏幕几乎干净，血量、弹药、冷却只在受伤、瞄准、切换时从角落淡入，几秒后淡出；件很小（细血条、分段格、圆环、数字），白字带投影，没有面板，敌人信息挂在敌人头上。注意：这 23 张卡里 21 张的商店图看不到 UI，归类依据是该作已知 HUD，置信度低。改法：把面板底不透明度降到 0、描边去掉，血条换细条放左下、弹药放右下，HUD 显隐改情境显现，受伤加红边与去饱和。",
+       "grammar": {
+        "shape": "细横条、分段格、圆环、小数字；不画容器",
+        "line": "无描边，或血条外一圈细白边",
+        "surface": "透明；靠文字投影和轻暗角托底",
+        "color": "白 + 一个语义色（红 = 危险 / 低血）；敌人攻击用颜色圈区分（God of War Ragnarök 红 / 蓝 / 黄）",
+        "type": "常规或细无衬线，小字号，弹药用等宽数字",
+        "material": "无",
+        "ornament": "0；God of War 的符文技能框是少见例外",
+        "icon": "线性小图标或剪影",
+        "motion": "情境淡入 + 静止渐隐；数值平滑；受击红边、低血去饱和",
+        "layout": "左下生命 / 怒气、右下弹药 / 技能、上中罗盘条（Skyrim）；敌人血条挂在目标上，屏幕边缘来袭箭头"
+       },
+       "params": {
+        "rel.hudVisibility": "contextual",
+        "cnt.density": 1,
+        "lay.hudOrg": "scattered",
+        "lay.container": "overlay",
+        "vis.opacity": 0,
+        "vis.stroke": "none",
+        "cmp.gauge@el.vitals": "thinBar",
+        "el.vitals.screenAnchor": "bl",
+        "el.abilities.form": "ammo",
+        "el.abilities.screenAnchor": "br",
+        "el.threat.form": [
+         "healthBar",
+         "edgeDir"
+        ],
+        "el.threat.attachTo": "target",
+        "typ.numerals.family": "tabular",
+        "typ.body.weight": "regular",
+        "typ.legibility": "shadow",
+        "rel.metaFx": [
+         "hurtVignette",
+         "lowHpDesat"
+        ],
+        "mo.valueChange": "smooth",
+        "col.strategy": "neutralAccent",
+        "mo.enter": "fade",
+        "vis.ornament": 0
+       },
+       "artPairing": [
+        {
+         "artStyle": "照片写实 (Photorealism)",
+         "relation": "neutral",
+         "why": "TLOU / RE 的写实画面里，UI 用中性白细件\"退后\"，不与画面竞争材质"
+        },
+        {
+         "artStyle": "电影化写实 (Cinematic)",
+         "relation": "neutral",
+         "why": "God of War 一镜到底：HUD 必须能整片消失，所以只能是角落细件"
+        },
+        {
+         "artStyle": "风格化写实 (Stylized realism)",
+         "relation": "neutral",
+         "why": "Uncharted / Tomb Raider 靠主色引导视线，HUD 不抢色"
+        },
+        {
+         "artStyle": "高精微体素／Teardown式",
+         "relation": "neutral",
+         "why": "Teardown 右下工具与弹药，体素画面不影响 HUD 画法"
+        }
+       ],
+       "genres": [
+        {
+         "genre": "horror",
+         "count": 5,
+         "why": "生存恐怖：情境显现保住紧张感，弹药少量显示制造稀缺"
+        },
+        {
+         "genre": "sandbox",
+         "count": 4,
+         "why": "沙盒：右下工具栏 + 角落资源，其余交给画面"
+        },
+        {
+         "genre": "shooter",
+         "count": 4,
+         "why": "射击：准星 + 角落弹药，是这一类最不\"极简\"的边界（BF1、Far Cry 3 实际 HUD 较满）"
+        },
+        {
+         "genre": "explore",
+         "count": 3,
+         "why": "3A 探索：罗盘条与渐隐血条"
+        },
+        {
+         "genre": "action",
+         "count": 2,
+         "why": "动作：左下血条怒气、右下技能冷却"
+        },
+        {
+         "genre": "survival",
+         "count": 2,
+         "why": "生存：底部快捷栏与计量（Abiotic Factor、Grounded）"
+        },
+        {
+         "genre": "racing",
+         "count": 2,
+         "why": "竞速：右下速度表、左下 GPS"
+        },
+        {
+         "genre": "platformer",
+         "count": 1,
+         "why": "It Takes Two：分屏下每屏角落小血条"
+        }
+       ],
+       "exemplars": [
+        {
+         "card": "steam:1593500",
+         "why": "左下细血条 + 怒气、右下符文冷却、敌人头顶小血条与边缘来袭箭头，是这一类的完整模板"
+        },
+        {
+         "card": "steam:1888930",
+         "why": "右下一组小控件（分段血条 + 弹药），翻包不暂停"
+        },
+        {
+         "card": "steam:489830",
+         "why": "顶部罗盘条 + 底部三条只在变化时出现"
+        },
+        {
+         "card": "steam:108710",
+         "why": "右下手电电量圆环，只在用到时出现；章节标题像电视剧片头"
+        },
+        {
+         "card": "steam:1167630",
+         "why": "少数有可见 UI 证据的一张：右下工具与弹药"
+        },
+        {
+         "card": "steam:508980",
+         "why": "有可见证据的竞速版：右下速度表 + 中间特技加分大字"
+        }
+       ],
+       "variants": [
+        {
+         "name": "低置信：商店图无 UI，按已知 HUD 归类",
+         "diff": "看不到实际 HUD，需要从 GameUI 等补原图后复核",
+         "cards": [
+          "steam:1593500",
+          "steam:2322010",
+          "steam:489830",
+          "steam:391220",
+          "steam:1182900",
+          "steam:1196590",
+          "steam:1888930",
+          "steam:2531310",
+          "steam:883710",
+          "steam:108710",
+          "steam:1167630",
+          "steam:2027330",
+          "steam:850190",
+          "steam:962130",
+          "steam:1426210",
+          "steam:1551360",
+          "steam:1238840",
+          "steam:220240",
+          "steam:21690",
+          "steam:1659420",
+          "steam:1796410"
+         ]
+        },
+        {
+         "name": "射击 / 竞速（实际 HUD 偏满）",
+         "diff": "真实游戏里有小地图、弹药、计分、任务列，大概率不属于本家族，建议复核后改判",
+         "cards": [
+          "steam:1238840",
+          "steam:220240",
+          "steam:2027330",
+          "steam:1551360",
+          "steam:21690"
+         ]
+        },
+        {
+         "name": "恐怖：仪器式生命显示",
+         "diff": "血量不常驻，打开背包看心电图 / 手表",
+         "cards": [
+          "steam:883710",
+          "steam:1196590"
+         ]
+        }
+       ],
+       "failureModes": [
+        {
+         "desc": "小件 + 小字 = 看不清：子类合计\"字太小\"10 次（God of War Ragnarök 3、God of War 2、Forza 2），电视距离下尤其严重",
+         "evidence": [
+          "steam:2322010",
+          "steam:1593500",
+          "steam:1551360"
+         ]
+        },
+        {
+         "desc": "HUD 极简不等于系统极简：复杂度被挤进背包和菜单，背包抱怨 12 次（RE5 4、RE2 3、Skyrim 2）",
+         "evidence": [
+          "steam:21690",
+          "steam:883710",
+          "steam:489830"
+         ]
+        },
+        {
+         "desc": "证据风险：21 / 23 张卡的截图是不带 UI 的宣传图，这个子类的规模被商店图夸大了",
+         "evidence": [
+          "steam:1238840",
+          "steam:220240",
+          "steam:1551360"
+         ]
+        }
+       ],
+       "skinGap": "skin.mono 最接近（透明底、细体、投影），但它默认给面板加 1px 墨色实线框——这一类的件根本没有框，深色场景里墨线也看不见；还缺 typ.numerals = 等宽数字和\"情境显现 + 受击红边\"的默认组合。skin 只能管皮，这一类的本质（显隐策略、元 UI 效果）需要做成一个配方而不是皮肤。",
+       "paramGaps": [
+        "自动渐隐的等待时长（静止几秒后淡出）没有参数，rel.hudVisibility 只有档位",
+        "敌人攻击类型的颜色圈（不可格挡 / 可格挡）只能用 el.threat.form = 地面预警区近似",
+        "\"证据置信度\"不是参数，但参考卡需要一个字段标记\"商店图无 UI，按已知 HUD 记\""
+       ]
+      },
+      {
+       "family": "情境渐显 · 同媒介发光符号小件",
+       "skin": null,
+       "noCards": false,
+       "definition": "2D 手绘或风格化作品里的同类做法：件不是条和数字，而是一排发光小圆点（Ori）、几个符号（Rain World 的食物圆点与业力符号）、光之种子（Prince of Persia）、扑克牌形状的血量（Cuphead）、交互时出现的小圆提示（Forgotton Anne）。画法借用世界里的光和物，像是世界里的东西飘到了屏幕角落。改法：把横条换成一排圆点或符号（cmp.gauge = 图标列），去掉数字，颜色取场景高光色并加柔光。",
+       "grammar": {
+        "shape": "圆点、符号、小卡；数量用个数而不是长度",
+        "line": "无",
+        "surface": "无底；件自己发光",
+        "color": "取场景高光色（Ori 的青白光、Prince of Persia 的光之种子色）",
+        "type": "几乎无字；Cuphead 的血量牌上是复古印刷字",
+        "material": "光、粒子；或世界里的物件（扑克牌）",
+        "ornament": "0–1，来自世界母题",
+        "icon": "剪影或手绘符号",
+        "motion": "变化时出现、轻微脉动或粒子飘散，平时淡出",
+        "layout": "底中一排（Ori）、左上一组（Prince of Persia）、左下（Cuphead、Rain World 停下时出现）"
+       },
+       "params": {
+        "rel.hudVisibility": "contextual",
+        "cnt.density": 0,
+        "lay.container": "overlay",
+        "cmp.gauge@el.vitals": "icons",
+        "el.vitals.screenAnchor": "bc",
+        "el.vitals.valueLabel": "none",
+        "vis.silhouette": "circle",
+        "vis.iconStyle": "silhouette",
+        "col.source": "scene",
+        "rel.harmony": "sameMedium",
+        "ast.fx": [
+         "glow"
+        ],
+        "mo.idle": "float",
+        "typ.legibility": "textGlow",
+        "cnt.textLength": "none",
+        "vis.opacity": 0,
+        "vis.ornament": 0,
+        "mo.enter": "fade"
+       },
+       "artPairing": [
+        {
+         "artStyle": "2.5D横版",
+         "relation": "sameMedium",
+         "why": "Ori 的光点 HUD 和世界里的灵光是同一种发光粒子"
+        },
+        {
+         "artStyle": "橡皮管动画 (Rubber hose, 1930s)",
+         "relation": "sameMedium",
+         "why": "Cuphead 的扑克牌血量与 1930 年代片头字，HUD 也是\"那个年代的物件\""
+        },
+        {
+         "artStyle": "古典手绘全动画 (Classical full animation)",
+         "relation": "sameMedium",
+         "why": "Forgotton Anne 只在交互时出现小圆提示，不打断手绘动画"
+        },
+        {
+         "artStyle": "像素＋法线光照 (Lit pixel)",
+         "relation": "sameMedium",
+         "why": "Rain World 的符号 HUD 用和世界一样的低分辨率像素画法"
+        }
+       ],
+       "genres": [
+        {
+         "genre": "platformer",
+         "count": 4,
+         "why": "平台跳跃：血量 / 能量是\"几格\"，用点数最直观"
+        },
+        {
+         "genre": "explore",
+         "count": 2,
+         "why": "探索：停下时才显示（Rain World），平时零 UI"
+        },
+        {
+         "genre": "survival",
+         "count": 2,
+         "why": "手绘生存：左上小圆计量（The Flame in the Flood）"
+        },
+        {
+         "genre": "narrative",
+         "count": 1,
+         "why": "手绘叙事：交互时出现小圆提示"
+        },
+        {
+         "genre": "puzzle",
+         "count": 1,
+         "why": "点击冒险：物品栏在屏幕下沿滑出（Return to Monkey Island）"
+        }
+       ],
+       "exemplars": [
+        {
+         "card": "steam:387290",
+         "why": "底部中间一排发光小圆点，只在变化时出现"
+        },
+        {
+         "card": "steam:312520",
+         "why": "有可见证据的一张：食物圆点 + 业力符号，停下才显示"
+        },
+        {
+         "card": "steam:268910",
+         "why": "左下扑克牌形状的血量牌，HUD 也是世界里的物件"
+        },
+        {
+         "card": "steam:19980",
+         "why": "左上光之种子计数与血格，平时淡出"
+        },
+        {
+         "card": "steam:542050",
+         "why": "交互时出现小圆形提示，其余全给手绘画面"
+        }
+       ],
+       "variants": [
+        {
+         "name": "发光点阵",
+         "diff": "一排圆点 / 光点，颜色取世界光",
+         "cards": [
+          "steam:387290",
+          "steam:261570",
+          "steam:1057090",
+          "steam:19980"
+         ]
+        },
+        {
+         "name": "符号 / 物件小件",
+         "diff": "符号或世界物件（扑克牌、小圆计量）代替条",
+         "cards": [
+          "steam:312520",
+          "steam:268910",
+          "steam:318600",
+          "steam:1093290"
+         ]
+        },
+        {
+         "name": "交互时才出现",
+         "diff": "平时零 UI，交互 / 悬停时出现小圆提示或滑出物品栏",
+         "cards": [
+          "steam:542050",
+          "steam:2060130"
+         ]
+        }
+       ],
+       "failureModes": [
+        {
+         "desc": "点数 / 符号不标数字，新手看不懂：Ori 三作引导抱怨合计 6 次，Rain World 引导 2 次、挡视野 3 次",
+         "evidence": [
+          "steam:1057090",
+          "steam:261570",
+          "steam:312520"
+         ]
+        },
+        {
+         "desc": "低置信：10 张里 9 张商店图无 UI",
+         "evidence": [
+          "steam:387290",
+          "steam:268910"
+         ]
+        }
+       ],
+       "skinGap": "没有对应皮肤：skin.mono 是\"细线 + 透明\"，这一类是\"无线 + 发光点\"。最接近的组合是 skin.thinGeo 去掉描边、加 ast.fx = 外发光、cmp.gauge = 图标列；探索台缺一个\"发光点阵\"件的示范。",
+       "paramGaps": [
+        "件的颜色\"取场景高光色\"只能借 col.source = scene，不能指定取哪一个色板角色（高光 / 暗部）",
+        "\"停下时才显示\"（Rain World）与\"受伤时显示\"是不同触发，rel.hudVisibility 不区分触发条件"
+       ]
+      }
+     ],
+     "variants": [
+      {
+       "name": "低置信：商店图无 UI",
+       "diff": "按已知 HUD 归类，需补原图",
+       "cards": [
+        "steam:1593500",
+        "steam:2322010",
+        "steam:489830",
+        "steam:391220",
+        "steam:1182900",
+        "steam:1196590",
+        "steam:1888930",
+        "steam:2531310",
+        "steam:883710",
+        "steam:108710",
+        "steam:1167630",
+        "steam:2027330",
+        "steam:850190",
+        "steam:962130",
+        "steam:1426210",
+        "steam:1551360",
+        "steam:1238840",
+        "steam:220240",
+        "steam:21690",
+        "steam:1659420",
+        "steam:1796410",
+        "steam:19980",
+        "steam:542050",
+        "steam:2060130",
+        "steam:318600",
+        "steam:1093290",
+        "steam:268910",
+        "steam:387290",
+        "steam:261570",
+        "steam:1057090"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "字小与背包复杂：写实子类\"字太小\"10 次、背包 12 次",
+       "evidence": [
+        "steam:2322010",
+        "steam:21690"
+       ]
+      },
+      {
+       "desc": "点数不标数字导致看不懂：Ori 三作引导 6 次",
+       "evidence": [
+        "steam:1057090"
+       ]
+      }
+     ],
+     "skinGap": "skin.mono 的 1 px 墨线框在这里多余；需要\"无框 + 情境显现 + 受击红边\"的配方。",
+     "paramGaps": [
+      "渐隐等待时长",
+      "显示触发条件（受伤 / 停下 / 瞄准）"
+     ]
+    },
+    {
+     "family": "细字直压 · 排印叠层",
+     "skin": "skin.mono",
+     "noCards": false,
+     "definition": "剩下的 UI 主要是\"字\"：无底板、单色、小字号，层级靠排版本身（字重、大小写、字距、对齐）。Death Stranding 的细窄体全大写计时、Kentucky Route Zero 角落里的无框对话列表、Absolute Drift 白场上的一行小黑字、Zeepkist 右下的大号速度数字、Minute of Islands 底部黑条提示、Night in the Woods 的黑底白字圆角气泡。改法：删掉面板，只保留文字；正文换窄体全大写、字距加到 0.1 em 以上，数字放大当主角，对话框改成无框字幕。",
+     "grammar": {
+      "shape": "文本块；最多一条纯黑底条或黑色圆角气泡",
+      "line": "发丝细线：计时下的一条下划线（Death Stranding）",
+      "surface": "透明，或纯黑 scrim",
+      "color": "深场景白字、白场景黑字（Absolute Drift）；一个强调色只给变化量或落后时间",
+      "type": "窄体或几何无衬线、全大写、宽字距；数字放大做主角（Zeepkist）；对话保持原样大小写的短句",
+      "material": "无",
+      "ornament": "0",
+      "icon": "几乎没有，或一个小按键图标",
+      "motion": "文字淡入、逐行出现；空间内文字随角色漂浮（Heavy Rain）",
+      "layout": "贴角对齐（左上 / 右上 / 左下）、左对齐成列；对话放在画面角落而不是底部通栏（KRZ）"
+     },
+     "params": {
+      "lay.container": "overlay",
+      "vis.opacity": 0,
+      "vis.stroke": "none",
+      "cnt.density": 1,
+      "typ.body.family": "condensed",
+      "typ.body.case": "upper",
+      "typ.body.tracking": 0.12,
+      "typ.body.weight": "light",
+      "typ.numerals.family": "display",
+      "typ.legibility": "shadow",
+      "cmp.dialogBox": "bare",
+      "mo.textReveal": "lineByLine",
+      "hier.emphasis": [
+       "size",
+       "typeface"
+      ],
+      "el.timer.form": "number",
+      "el.timer.screenAnchor": "tr",
+      "col.strategy": "mono",
+      "el.choices.form": "text",
+      "vis.ornament": 0
+     },
+     "artPairing": [
+      {
+       "artStyle": "剧场布景低模／KRZ式 (Theatrical low poly)",
+       "relation": "sameMedium",
+       "why": "KRZ 的舞台布景式画面配无框文字列表，像剧本旁白"
+      },
+      {
+       "artStyle": "电影化写实 (Cinematic)",
+       "relation": "neutral",
+       "why": "Death Stranding 的写实画面上，细窄体白字像电影字幕 / 片头信息，不与画面抢材质"
+      },
+      {
+       "artStyle": "白盒极简＋强调色 (White minimal)",
+       "relation": "sameMedium",
+       "why": "Absolute Drift 白色几何场景配一行小黑字，UI 与画面同一套极简"
+      },
+      {
+       "artStyle": "矢量扁平 (Vector flat)",
+       "relation": "neutral",
+       "why": "Night in the Woods 平涂画面上的黑底白字气泡，只用黑白两色避开场景配色"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "narrative",
+       "count": 4,
+       "why": "叙事：文字本来就是主要内容，排版即界面"
+      },
+      {
+       "genre": "racing",
+       "count": 2,
+       "why": "风格化竞速：计时 / 速度数字是唯一要读的信息"
+      },
+      {
+       "genre": "explore",
+       "count": 1,
+       "why": "Death Stranding：计时与计数用细线字直压"
+      },
+      {
+       "genre": "life",
+       "count": 1,
+       "why": "Umurangi Generation：取景器 + 左下小字任务清单"
+      },
+      {
+       "genre": "sandbox",
+       "count": 1,
+       "why": "Unrailed!：左上细小文字资源"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1850570",
+       "why": "右上细线计时 / 计数、白色细字全大写、世界里浮出地形标记，\"排印 HUD\"的范本"
+      },
+      {
+       "card": "steam:231200",
+       "why": "对话是画面角落的无框文字列表，地图是黑底细线"
+      },
+      {
+       "card": "steam:320140",
+       "why": "白色几何场景 + 左上一行小黑字分数 / 圈数，浅场景版"
+      },
+      {
+       "card": "steam:1440670",
+       "why": "右下大号速度数字 + 左下小字圈数，数字当主角"
+      },
+      {
+       "card": "steam:481510",
+       "why": "零 HUD，对话是黑底白字圆角气泡挂在角色头上"
+      },
+      {
+       "card": "steam:960910",
+       "why": "选项文字在角色头边旋转浮现（空间内排印）"
+      }
+     ],
+     "variants": [
+      {
+       "name": "细窄体全大写（电影字幕感）",
+       "diff": "窄体、全大写、宽字距、发丝线分隔",
+       "cards": [
+        "steam:1850570",
+        "steam:1223500"
+       ]
+      },
+      {
+       "name": "无框对话 / 黑气泡",
+       "diff": "对话文字直接压画面角落，或黑底白字圆角气泡",
+       "cards": [
+        "steam:231200",
+        "steam:481510",
+        "steam:1049710"
+       ]
+      },
+      {
+       "name": "数字当主角",
+       "diff": "竞速 / 计分只剩数字，大小对比拉开层级",
+       "cards": [
+        "steam:1440670",
+        "steam:320140",
+        "steam:1016920"
+       ]
+      },
+      {
+       "name": "空间内文字",
+       "diff": "文字漂在角色身边，随情绪抖动",
+       "cards": [
+        "steam:960910"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "细字压在亮场景上：Death Stranding 有\"字太小\"抱怨；白字投影在雪地、天空上失效，需要 scrim 或描边兜底（D-lightness-text）",
+       "evidence": [
+        "steam:1850570"
+       ]
+      },
+      {
+       "desc": "层级只靠排版时，交互提示容易被忽略：Heavy Rain 引导 2 次、手柄 3 次",
+       "evidence": [
+        "steam:960910"
+       ]
+      }
+     ],
+     "skinGap": "skin.mono 的字体是细体同族无衬线、原样大小写、无字距设定，缺 Death Stranding 那种窄体 + 全大写 + 宽字距 + 大号展示数字；它还画 1px 墨线框，而这一类除了黑条 / 黑气泡没有任何框。skin.thinGeo 有 0.3 em 宽字距但默认圆角细线框，也不对。需要一个\"排印 HUD\"皮肤：无框、窄体大写、等宽 / 展示数字、发丝分隔线。",
+     "paramGaps": [
+      "发丝分隔线（计时下一条细线）只能借 vis.strokeSides = 只画底边，但它属于文字而不是面板",
+      "空间内文字的漂浮 / 抖动动效（Heavy Rain）没有参数",
+      "同一屏\"浅场景黑字、深场景白字\"自动反色没有参数，只有 D-lightness 面板规则"
+     ]
+    },
+    {
+     "family": "单色线描 · 同一支笔",
+     "skin": "skin.mono",
+     "noCards": false,
+     "definition": "世界本身是 1–2 色线描（1-bit 抖动、黑白线稿、双色调），UI 用\"同一支笔\"画：同样的线宽、同样的两种颜色、手写或书页衬线字。TOEM 白底粗黑边的相机 / 相册卡、Obra Dinn 的 19 世纪书页目录、Gnorp Apologue 深蓝底白细线面板、Genesis Noir 黑底发光白线、Hauntii 双色调圆角气泡。改法：面板改实底纯色（取两色之一），描边粗细对齐画面线宽、颜色取画面墨色，标题换手写或书页衬线，删掉所有第三种颜色。",
+     "grammar": {
+      "shape": "圆角矩形卡（TOEM、Hauntii）或书页 / 目录（Obra Dinn）",
+      "line": "与画面线宽一致的实线：TOEM 粗约 2–3 px，Gnorp 1 px 白线",
+      "surface": "纯色实底，取两色之一（纸白 / 墨黑 / 深蓝）",
+      "color": "只有两种；强调靠反白，不加第三色（Gnorp 只把彩色留给粒子）",
+      "type": "手写（TOEM）、书页衬线（Obra Dinn）、像素（Gnorp）",
+      "material": "线描 / 平涂",
+      "ornament": "0–1：Obra Dinn 的版画式题花、Genesis Noir 的发光线",
+      "icon": "线描图标，与世界同笔",
+      "motion": "少：翻页、硬切；Genesis Noir 的线条生长",
+      "layout": "居中卡片或书页；局内 HUD 极少，信息集中在日志 / 相册里"
+     },
+     "params": {
+      "col.strategy": "mono",
+      "col.lightness": "light",
+      "col.source": "scene",
+      "vis.opacity": 1,
+      "vis.fill": "solid",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 2.5,
+      "vis.strokeColor": "ink",
+      "vis.corner": "round",
+      "vis.cornerSize": 12,
+      "vis.depth": "flat",
+      "typ.display.family": "handwritten",
+      "vis.iconStyle": "line",
+      "rel.harmony": "sameMedium",
+      "ast.core": "procedural",
+      "mo.enter": "cut",
+      "rel.followPost": "stylize",
+      "vis.ornament": 0,
+      "cnt.density": 1
+     },
+     "artPairing": [
+      {
+       "artStyle": "1-bit抖动3D／Obra Dinn式",
+       "relation": "sameMedium",
+       "why": "Obra Dinn 的目录与日志书用同一套两色和版画线条"
+      },
+      {
+       "artStyle": "清线派 (Ligne claire)",
+       "relation": "sameMedium",
+       "why": "TOEM 黑白等宽线稿世界，UI 是白底粗黑边卡片"
+      },
+      {
+       "artStyle": "限色／双色调 (Limited palette/duotone)",
+       "relation": "sameMedium",
+       "why": "Hauntii 整体只有两种颜色，对话气泡也取同两色"
+      },
+      {
+       "artStyle": "线框矢量 (Wireframe vector)",
+       "relation": "sameMedium",
+       "why": "Genesis Noir 黑底白线，UI 就是画面里的发光线条"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "life",
+       "count": 2,
+       "why": "拍照 / 漫游小品：相机、相册、集章卡是主界面"
+      },
+      {
+       "genre": "puzzle",
+       "count": 2,
+       "why": "推理 / 叙事解谜：日志书是主界面"
+      },
+      {
+       "genre": "builder",
+       "count": 1,
+       "why": "放置：深蓝底白细线小面板"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1307580",
+       "why": "白底粗黑描边的相机 / 相册 / 社区卡，集章卡用印章圆格，同媒介 UI 的范本"
+      },
+      {
+       "card": "steam:653530",
+       "why": "两色抖动画面 + 19 世纪书页衬线目录，日志书是主要界面"
+      },
+      {
+       "card": "steam:1473350",
+       "why": "深蓝黑底 + 白细线，彩色只给粒子，面板与建筑同笔"
+      },
+      {
+       "card": "steam:735290",
+       "why": "黑白线描为主，UI 只有画面里的发光线条"
+      },
+      {
+       "card": "steam:2060790",
+       "why": "双色调线描，左上一小串符号，对话是同色调圆角气泡"
+      }
+     ],
+     "variants": [
+      {
+       "name": "浅底粗线（纸面）",
+       "diff": "白 / 米白底、黑粗线、手写字",
+       "cards": [
+        "steam:1307580",
+        "steam:653530"
+       ]
+      },
+      {
+       "name": "深底细线（夜面）",
+       "diff": "黑 / 深蓝底、白细线或发光线",
+       "cards": [
+        "steam:1473350",
+        "steam:735290"
+       ]
+      },
+      {
+       "name": "双色调",
+       "diff": "两种有彩色而不是黑白",
+       "cards": [
+        "steam:2060790"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "只有两种颜色时没有地图 / 状态的第三通道：TOEM 被抱怨没有地图 4 次；Obra Dinn 字小 2 次、引导 2 次",
+       "evidence": [
+        "steam:1307580",
+        "steam:653530"
+       ]
+      },
+      {
+       "desc": "单色里危险与收益分不开（B20 陷阱），必须用形状和位置补（推断）",
+       "evidence": [
+        "steam:1473350"
+       ]
+      }
+     ],
+     "skinGap": "skin.mono 方向对（单色、细线），但三处不对：描边固定 1 px，而这一类的线宽要跟画面线宽（TOEM 2–3 px）；底不透明度 0，而这一类是纯色实底卡片；字体是细体无衬线，而这一类用手写 / 书页衬线 / 像素。应让 skin.mono 的描边粗细和字体跟随 D-outline、rel.harmony = 同一媒介。",
+     "paramGaps": [
+      "1-bit 有序抖动（Bayer dither）作为 UI 底纹：vis.pattern 只有网点、排线，没有抖动",
+      "\"UI 线宽 = 画面线宽\"由 D-outline 推出，但\"UI 线条有画面同款笔触抖动\"只有 vis.jitter 一个数"
+     ]
+    },
+    {
+     "family": "扁平几何 · 地图即界面",
+     "skin": "skin.flat",
+     "noCards": false,
+     "definition": "俯视或等距的\"地图即界面\"：纯色或渐变底上放一张图（线路图、漂浮微缩岛），UI 是几个圆点、圆钮和圆环。分两支：颜色承载数据的信息图（Mini Metro），和颜色只做氛围的玩具台（ISLANDERS）。改法：删掉面板，件改成圆形，底换纯色 / 渐变，再决定颜色是数据还是氛围。",
+     "grammar": {
+      "shape": "圆点、圆钮、胶囊、圆环",
+      "line": "无或线路粗线",
+      "surface": "纯色 / 渐变底；件是透明或半透明",
+      "color": "信息图：多色 = 数据；玩具台：低饱和取场景色",
+      "type": "几何或圆体无衬线，以数字为主",
+      "material": "无",
+      "ornament": "0，几何母题",
+      "icon": "扁平填充",
+      "motion": "平滑、慢；世界内飘字",
+      "layout": "底部一排圆钮 + 角落计数，中间是地图"
+     },
+     "params": {
+      "lay.container": "overlay",
+      "cnt.density": 1,
+      "ast.bgArt": "solid",
+      "vis.corner": "round",
+      "vis.silhouette": "circle",
+      "el.toolbar.form": "buttonRow",
+      "el.toolbar.screenAnchor": "bc",
+      "vis.iconStyle": "flat",
+      "cnt.focal": "data",
+      "vis.ornament": 0,
+      "vis.depth": "flat",
+      "mo.valueChange": "smooth"
+     },
+     "artPairing": [
+      {
+       "artStyle": "矢量扁平 (Vector flat)",
+       "relation": "sameMedium",
+       "why": "地图与 UI 同为扁平矢量"
+      },
+      {
+       "artStyle": "刻面低模 (Faceted low poly)",
+       "relation": "unified",
+       "why": "UI 取低模岛的场景色"
+      },
+      {
+       "artStyle": "移轴微缩 (Tilt-shift miniature)",
+       "relation": "unified",
+       "why": "小而圆的件维持玩具尺度"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "builder",
+       "count": 9,
+       "why": "建造 / 交通 / 工厂"
+      },
+      {
+       "genre": "strategy",
+       "count": 2,
+       "why": "小品策略"
+      },
+      {
+       "genre": "action",
+       "count": 1,
+       "why": "节奏弹幕"
+      },
+      {
+       "genre": "life",
+       "count": 1,
+       "why": "建造小品"
+      },
+      {
+       "genre": "sandbox",
+       "count": 1,
+       "why": "沙盒小品"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:287980",
+       "why": "信息图范本"
+      },
+      {
+       "card": "steam:1046030",
+       "why": "玩具台范本"
+      },
+      {
+       "card": "steam:1455840",
+       "why": "柔和纯色底 + 牌堆计数"
+      },
+      {
+       "card": "steam:2674590",
+       "why": "蓝图格数据色"
+      },
+      {
+       "card": "steam:2198150",
+       "why": "最少工具条"
+      }
+     ],
+     "subfamilies": [
+      {
+       "family": "扁平几何 · 信息图（颜色即数据）",
+       "skin": "skin.swiss",
+       "noCards": false,
+       "definition": "地图 / 谱面本身就是界面，平面几何 + 色彩编码：线路色 = 线路身份（Mini Metro / Motorways），红方块数字 = 需求（Beltmatic），品红 = 危险、青 = 玩家（Just Shapes & Beats）。骨架是纯色底（浅 / 深两套），UI 件是圆点、圆钮、细进度条；颜色不再是装饰强调，而是数据。改法：删掉面板和标题，底换纯色，把颜色从\"品牌强调\"挪给数据类别（col.coding = 路线 / 类别身份色），库存改成底部一排彩色圆点。",
+       "grammar": {
+        "shape": "圆点、圆钮、圆角方块、粗线段",
+        "line": "粗等宽线（线路）+ 发丝细线（河流、网格）",
+        "surface": "纯色底：米白 / 深灰，或蓝图格（Beltmatic）",
+        "color": "骨架中性；数据多色（6–8 种线路色）；JSB 只用品红 / 青两色区分敌我",
+        "type": "几何无衬线，小号，数字为主",
+        "material": "无",
+        "ornament": "0；母题是几何线 / 同心圆",
+        "icon": "扁平填充小圆钮",
+        "motion": "线路生长、数值平滑；危险元素随音乐节奏脉动（JSB）",
+        "layout": "底部一排彩色圆点库存（Mini Metro）、右上时钟 / 计数；中间全是地图"
+       },
+       "params": {
+        "col.lightness": "light",
+        "ast.bgArt": "solid",
+        "col.strategy": "polychrome",
+        "col.coding": [
+         "lineId",
+         "status"
+        ],
+        "vis.mapStyle": "schematic",
+        "vis.motif": "geometric",
+        "vis.iconStyle": "flat",
+        "vis.silhouette": "circle",
+        "el.toolbar.form": "buttonRow",
+        "el.toolbar.screenAnchor": "bc",
+        "el.timer.form": "gauge",
+        "el.timer.screenAnchor": "tr",
+        "cnt.focal": "data",
+        "vis.connector": "straight",
+        "mo.valueChange": "smooth",
+        "typ.body.family": "sans",
+        "vis.ornament": 0,
+        "vis.opacity": 0,
+        "cnt.density": 1
+       },
+       "artPairing": [
+        {
+         "artStyle": "矢量扁平 (Vector flat)",
+         "relation": "sameMedium",
+         "why": "Mini Metro / Motorways：地图与 UI 都是扁平矢量，库存圆点与车站同形"
+        },
+        {
+         "artStyle": "瑞士国际主义 (Swiss/International)",
+         "relation": "sameMedium",
+         "why": "地铁线路图传统本身来自国际主义平面设计"
+        },
+        {
+         "artStyle": "蓝图／工程制图 (Blueprint)",
+         "relation": "sameMedium",
+         "why": "Beltmatic 蓝色网格底 + 黑色传送带 + 彩色方块"
+        },
+        {
+         "artStyle": "霓虹几何抽象 (Neon geometric)",
+         "relation": "sameMedium",
+         "why": "Just Shapes & Beats 的形状即敌我语义，UI 只剩顶部细进度条"
+        }
+       ],
+       "genres": [
+        {
+         "genre": "builder",
+         "count": 3,
+         "why": "交通 / 工厂建造：地图就是数据图"
+        },
+        {
+         "genre": "action",
+         "count": 1,
+         "why": "节奏弹幕：颜色 = 危险，形状 = 攻击"
+        }
+       ],
+       "exemplars": [
+        {
+         "card": "steam:287980",
+         "why": "地图即界面：底部彩色圆点 = 线路库存，右上时钟，浅 / 深两套配色"
+        },
+        {
+         "card": "steam:1127500",
+         "why": "同一系，底部一排圆形道具按钮"
+        },
+        {
+         "card": "steam:2674590",
+         "why": "蓝图网格 + 红色方块数字 = 需求量，升级面板是半透明蓝表格"
+        },
+        {
+         "card": "steam:531510",
+         "why": "两色语义（品红危险 / 青玩家），顶部一条细进度条"
+        }
+       ],
+       "variants": [
+        {
+         "name": "浅底线路图",
+         "diff": "米白底、彩色粗线、夜间模式切深底",
+         "cards": [
+          "steam:287980",
+          "steam:1127500"
+         ]
+        },
+        {
+         "name": "深底 / 蓝图格",
+         "diff": "蓝图或黑底，彩色块是数据",
+         "cards": [
+          "steam:2674590",
+          "steam:531510"
+         ]
+        }
+       ],
+       "failureModes": [
+        {
+         "desc": "颜色承担数据时最怕色盲撞色：多条线路色需要形状 / 编号冗余（推断；该子类评论里没有 UI 抱怨，正面 79、负面 9）",
+         "evidence": [
+          "steam:287980",
+          "steam:1127500"
+         ]
+        },
+        {
+         "desc": "两色语义在快节奏里依赖形状：JSB 的品红元素同时有尖角形状，单靠颜色不够（推断）",
+         "evidence": [
+          "steam:531510"
+         ]
+        }
+       ],
+       "skinGap": "rcp.miniMetroMinimal 用 skin.swiss，但 swiss 画白色实底面板 + 8 px 左色条 + 特粗标题——Mini Metro 局内没有任何面板，粗体只出现在结算页。swiss 还把色彩策略设成\"中性 + 一个强调\"，与\"多色 = 数据\"相反。局内应是：无面板、纯色底、col.strategy = 骨架多色、col.coding = 路线身份色、圆形小钮。",
+       "paramGaps": [
+        "\"颜色是数据还是强调\"没有显式开关：col.strategy 管骨架色，col.coding 管语义色，但数据色板的数量（6–8 色）和色盲安全排序没有参数",
+        "浅 / 深两套配色（夜间模式）作为玩家选项没有参数"
+       ]
+      },
+      {
+       "family": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+       "skin": "skin.flat",
+       "noCards": false,
+       "definition": "建造 / 放置小品：一个漂浮的微缩岛（或玩具场景）放在柔和纯色或渐变底上，UI 只剩底部一条半透明胶囊里的几个圆形小图标、角落一个圆环分数或剩余数量圆标，放置时世界里浮出 +分数（ISLANDERS）。圆角、淡色、几乎无字。改法：面板改成半透明胶囊（不透明度约 0.4–0.5、圆角 50%），按钮只留图标，分数改圆环，背景换柔和渐变，得分反馈改成世界内飘字。",
+       "grammar": {
+        "shape": "胶囊、圆钮、圆环；全部圆角 50%",
+        "line": "无",
+        "surface": "半透明白或深色胶囊（不透明度约 0.4–0.5）",
+        "color": "柔和低饱和，取场景色；背景是粉 / 蓝雾气渐变或纯色（Dorfromantik、Cloud Gardens）",
+        "type": "圆体或几何无衬线，只有数字",
+        "material": "无",
+        "ornament": "0",
+        "icon": "扁平或剪影建筑图标",
+        "motion": "放置时世界内飘字，按钮轻缩放；整体节奏慢",
+        "layout": "底中工具条（ISLANDERS、Tiny Glade）或左侧竖列（SUMMERHOUSE）；角落圆环分数 / 剩余数量圆标"
+       },
+       "params": {
+        "lay.container": "overlay",
+        "cnt.density": 0,
+        "el.toolbar.form": "buttonRow",
+        "el.toolbar.screenAnchor": "bc",
+        "cmp.button": "icon",
+        "vis.corner": "round",
+        "vis.cornerSize": 50,
+        "vis.opacity": 0.45,
+        "col.saturation": 0.6,
+        "col.source": "scene",
+        "cmp.gauge": "ring",
+        "el.timer.form": "gauge",
+        "el.timer.screenAnchor": "bl",
+        "vis.mapStyle": "diorama",
+        "ast.bgArt": "gradient",
+        "vis.iconStyle": "flat",
+        "el.feedback.form": [
+         "floatNumbers"
+        ],
+        "el.feedback.diegesis": "spatial",
+        "rel.harmony": "unified",
+        "typ.body.family": "round",
+        "mo.juice": 0.3,
+        "vis.ornament": 0
+       },
+       "artPairing": [
+        {
+         "artStyle": "刻面低模 (Faceted low poly)",
+         "relation": "unified",
+         "why": "ISLANDERS / Thronefall 的低模岛，UI 取场景色做半透明胶囊"
+        },
+        {
+         "artStyle": "移轴微缩 (Tilt-shift miniature)",
+         "relation": "unified",
+         "why": "Tiny Glade / Dorfromantik 的玩具感场景，UI 小而圆才不破坏\"桌上模型\"的尺度"
+        },
+        {
+         "artStyle": "等距布景 (Isometric diorama)",
+         "relation": "unified",
+         "why": "Bad North 的漂浮小岛放在纯色雾底上，选人卡片是极简白卡"
+        },
+        {
+         "artStyle": "平滑低模／色板贴图 (Smooth low poly)",
+         "relation": "neutral",
+         "why": "Donut County 平涂低模，只留左上一个小圆形进度"
+        }
+       ],
+       "genres": [
+        {
+         "genre": "builder",
+         "count": 6,
+         "why": "放置建造 / 城镇小品：工具条 + 分数就是全部 UI"
+        },
+        {
+         "genre": "strategy",
+         "count": 2,
+         "why": "小品策略（Bad North、Thronefall）：局内几乎无 UI，交互用地面圆标"
+        },
+        {
+         "genre": "life",
+         "count": 1,
+         "why": "Tiny Glade：控制点浮在建筑上（空间内）"
+        },
+        {
+         "genre": "sandbox",
+         "count": 1,
+         "why": "Donut County：左上一个小圆形进度"
+        }
+       ],
+       "exemplars": [
+        {
+         "card": "steam:1046030",
+         "why": "左下圆环分数 / 目标进度 + 底部半透明胶囊建筑图标 + 世界内 +分数"
+        },
+        {
+         "card": "steam:1455840",
+         "why": "右上分数、右下叠起来的六边形\"牌堆\" + 剩余数量圆标，柔和纯色背景"
+        },
+        {
+         "card": "steam:2198150",
+         "why": "只有底部一排很小的工具图标，控制点浮在建筑上"
+        },
+        {
+         "card": "steam:1372320",
+         "why": "粉蓝雾气渐变背景，几乎无 UI，种子以一排卡片出现在上方"
+        },
+        {
+         "card": "steam:2239150",
+         "why": "双色调低模世界，建筑交互是地面金币圆标（空间内）"
+        },
+        {
+         "card": "steam:688420",
+         "why": "局内几乎无 UI，选指挥官 / 升级是极简白卡片"
+        }
+       ],
+       "variants": [
+        {
+         "name": "底部胶囊工具条",
+         "diff": "一条半透明胶囊装圆形图标",
+         "cards": [
+          "steam:1046030",
+          "steam:2198150",
+          "steam:1455840"
+         ]
+        },
+        {
+         "name": "侧边竖列",
+         "diff": "左侧一列淡色小图标 + 底部撤销 / 重做",
+         "cards": [
+          "steam:2533960"
+         ]
+        },
+        {
+         "name": "地面圆标（空间内）",
+         "diff": "交互点直接画在地面上，屏幕几乎无 UI",
+         "cards": [
+          "steam:2239150",
+          "steam:688420",
+          "steam:702670"
+         ]
+        },
+        {
+         "name": "截图几乎无 UI（待补局内图）",
+         "diff": "商店图只有全景，局内工具条未见",
+         "cards": [
+          "steam:1894430",
+          "steam:979120",
+          "steam:1372320"
+         ]
+        }
+       ],
+       "failureModes": [
+        {
+         "desc": "小图标无文字时功能难辨：Dorfromantik 菜单抱怨 2 次、Plan B 引导 2 次",
+         "evidence": [
+          "steam:1455840",
+          "steam:1894430"
+         ]
+        },
+        {
+         "desc": "即使只有一条工具栏也会被嫌挡画面：Tiny Glade 挡视野 5 次——画面是唯一卖点时，工具栏需要可隐藏",
+         "evidence": [
+          "steam:2198150"
+         ]
+        }
+       ],
+       "skinGap": "skin.flat 最接近（圆角、无描边），但它是白色实底卡片 + 柔投影 + 波纹按下，这一类是半透明胶囊、无投影、圆角 50%、颜色取场景低饱和。还缺\"世界内飘字得分\"的默认和\"漂浮微缩岛 + 纯色 / 渐变底\"的背景示范。",
+       "paramGaps": [
+        "工具条可一键隐藏（拍照 / 欣赏模式）只有 rel.hudVisibility 的按键呼出，没有\"建造类欣赏模式\"",
+        "背景雾气渐变随时间 / 季节变化没有参数（col.dynamic 管 UI 主题色，不管背景）"
+       ]
+      }
+     ],
+     "variants": [
+      {
+       "name": "颜色 = 数据 vs 颜色 = 氛围",
+       "diff": "前者 col.strategy = 骨架多色 + 路线身份色，后者低饱和取场景色",
+       "cards": [
+        "steam:287980",
+        "steam:1046030"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "这一支口碑最好之一（玩具台 UI 正面 303 / 负面 30），风险集中在图标无字（Dorfromantik 菜单 2 次）和工具栏挡画面（Tiny Glade 5 次）",
+       "evidence": [
+        "steam:1455840",
+        "steam:2198150"
+       ]
+      }
+     ],
+     "skinGap": "rcp.miniMetroMinimal 指向 skin.swiss（实底白面板 + 左色条 + 特粗字），这一支局内恰恰没有面板；skin.flat 有白卡投影，也比实际重。",
+     "paramGaps": [
+      "数据色板的数量与色盲排序",
+      "建造类\"欣赏模式\"一键隐藏"
+     ]
+    },
+    {
+     "family": "工程表格 · 调试面板",
+     "skin": "skin.greybox",
+     "noCards": false,
+     "definition": "\"极简\"的另一面：装饰为零，但信息很多。黑白或深底、1 px 细线框、等宽 / 像素字、表格与按钮阵列，像开发者调试面板（Your Only Move Is HUSTLE）、IDE（A=B）或数据仪表（Infinitode 2）。它和其他子类只共享\"无装饰\"，信息密度在另一端，所以不该和零 HUD 混在一个家族里。改法：底换纯黑实底、描边 1 px 白线、正文换等宽字、分组用分隔线、动效全部硬切。",
+     "grammar": {
+      "shape": "直角矩形格、表格、按钮阵列",
+      "line": "1 px 实线框，黑底白线",
+      "surface": "纯黑 / 深灰实底",
+      "color": "黑白 + 功能色（Infinitode 的彩色方块 = 塔类型）",
+      "type": "等宽（A=B）或小号无衬线；数字等宽",
+      "material": "无",
+      "ornament": "0",
+      "icon": "扁平彩色小方块，或没有图标",
+      "motion": "硬切、瞬变",
+      "layout": "分栏：左题目 / 中代码 / 右测试（A=B）；顶部双方血条 + 底部一大片招式按钮（YOMI）；右侧常驻详情栏（Infinitode）"
+     },
+     "params": {
+      "col.lightness": "dark",
+      "col.strategy": "mono",
+      "vis.corner": "sharp",
+      "vis.opacity": 1,
+      "vis.fill": "solid",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeColor": "highlightEdge",
+      "vis.depth": "flat",
+      "typ.body.family": "mono",
+      "typ.numerals.family": "tabular",
+      "cnt.density": 4,
+      "lay.composition": "three",
+      "lay.grouping": "divider",
+      "lay.detail": "persistent",
+      "mo.enter": "cut",
+      "mo.valueChange": "instant",
+      "ix.focus": "outline",
+      "vis.iconStyle": "flat",
+      "vis.ornament": 0
+     },
+     "artPairing": [
+      {
+       "artStyle": "单色硬件模拟",
+       "relation": "sameMedium",
+       "why": "A=B 的黑白终端界面，UI 就是游戏本体"
+      },
+      {
+       "artStyle": "极简抽象 (Minimalist/abstract)",
+       "relation": "sameMedium",
+       "why": "YOMI Hustle 的火柴人对战在黑底上，面板与角色同样极简"
+      },
+      {
+       "artStyle": "霓虹几何抽象 (Neon geometric)",
+       "relation": "neutral",
+       "why": "Infinitode 2 暗底彩色方块，面板保持中性让颜色只表示塔类型"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "strategy",
+       "count": 2,
+       "why": "回合格斗 / 塔防：要读大量数值与预测，装饰让位给信息"
+      },
+      {
+       "genre": "factory",
+       "count": 1,
+       "why": "编程解谜：界面就是 IDE"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1720850",
+       "why": "纯黑白：白色细线框 + 等宽字，只有题目、代码区、测试用例三块"
+      },
+      {
+       "card": "steam:2212330",
+       "why": "顶部双方血条 + 键位说明，底部一大片招式按钮与预测开关，几乎是调试面板"
+      },
+      {
+       "card": "steam:937310",
+       "why": "暗底 + 彩色方块图标，左侧塔类型竖栏，右侧选中详情侧栏，研究树是电路图"
+      }
+     ],
+     "variants": [
+      {
+       "name": "纯黑白终端",
+       "diff": "只有黑白，等宽字",
+       "cards": [
+        "steam:1720850"
+       ]
+      },
+      {
+       "name": "暗底数据仪表",
+       "diff": "暗底 + 功能色方块，详情常驻一侧",
+       "cards": [
+        "steam:937310",
+        "steam:2212330"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "信息全平铺、无层级，新手不知道先看哪里：YOMI Hustle 引导抱怨 3 次，A=B 1 次",
+       "evidence": [
+        "steam:2212330",
+        "steam:1720850"
+       ]
+      }
+     ],
+     "skinGap": "skin.greybox（中灰面板、1 px 线、系统字）最接近，但它是中明度灰底、深色线；这一类是黑底白线、等宽字。skin.terminal 有等宽但带绿色磷光和扫描线，过于主题化。缺一个\"调试面板 / IDE\"中性皮肤：黑底、白 1 px 线、等宽、无动效。",
+     "paramGaps": [
+      "\"装饰预算\"和\"信息密度\"是两个轴，但探索台的家族名把它们混成\"极简\"；需要在皮肤浏览里把\"无装饰 + 高密度\"单列"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "name": "低置信：商店图无 UI，按已知 HUD 归类",
+     "diff": "34 张卡看不到实际界面；其中射击 / 竞速若补到原图，大概率要改判出本家族",
+     "cards": [
+      "steam:960990",
+      "steam:1310330",
+      "steam:110800",
+      "steam:1593500",
+      "steam:2322010",
+      "steam:489830",
+      "steam:391220",
+      "steam:1182900",
+      "steam:1196590",
+      "steam:1888930",
+      "steam:2531310",
+      "steam:883710",
+      "steam:108710",
+      "steam:1167630",
+      "steam:2027330",
+      "steam:850190",
+      "steam:962130",
+      "steam:1426210",
+      "steam:1551360",
+      "steam:1238840",
+      "steam:220240",
+      "steam:21690",
+      "steam:1659420",
+      "steam:1796410",
+      "steam:19980",
+      "steam:542050",
+      "steam:2060130",
+      "steam:318600",
+      "steam:1093290",
+      "steam:268910",
+      "steam:387290",
+      "steam:261570",
+      "steam:1057090",
+      "steam:960910"
+     ]
+    },
+    {
+     "name": "浅底版",
+     "diff": "白 / 米白场景配黑字或黑线（Mini Metro、Absolute Drift、TOEM）",
+     "cards": [
+      "steam:287980",
+      "steam:320140",
+      "steam:1307580",
+      "steam:653530"
+     ]
+    },
+    {
+     "name": "深底版",
+     "diff": "黑 / 深蓝场景配白细线（Gnorp、Genesis Noir、A=B、KRZ 地图）",
+     "cards": [
+      "steam:1473350",
+      "steam:735290",
+      "steam:1720850",
+      "steam:231200"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "引导不清是全家族最大的问题：107 张卡合计引导抱怨 72 次，占全部 UI 抱怨近四成（Scorn 10、Kingdom Two Crowns 7、Plague Tale 6）",
+     "evidence": [
+      "steam:698670",
+      "steam:701160",
+      "steam:1182900"
+     ]
+    },
+    {
+     "desc": "细体小字看不清：合计 21 次，集中在电视距离的 3A（God of War Ragnarök 3、God of War 2）和细衬线（Obra Dinn 2）",
+     "evidence": [
+      "steam:2322010",
+      "steam:1593500",
+      "steam:653530"
+     ]
+    },
+    {
+     "desc": "只有一个强调色时危险与收益分不开（B20 陷阱）；成功的例子都加了形状通道（JSB 尖角品红、Mirror's Edge 只给路线着色）",
+     "evidence": [
+      "steam:531510",
+      "steam:17410"
+     ]
+    },
+    {
+     "desc": "家族边界被宣传图撑大：34 张商店图无 UI 的卡默认被记成\"极简\"，Battlefield 1、Far Cry 3 等实际 HUD 并不少",
+     "evidence": [
+      "steam:1238840",
+      "steam:220240"
+     ]
+    }
+   ],
+   "skinGap": "skin.mono（直角、底不透明度 0、1 px 墨色实线、中性 + 一强调、细体无衬线、投影、线性图标、0.6 s 淡入）只对应\"细字直压\"和\"写实细件\"两个子类的一部分，而且那 1 px 墨线框在两类里都多余（深场景里也看不见）。它的 refs（Limbo / Inside / Journey）是三款看不见 UI 的游戏，选了皮肤看不出差别。要补的是：① 零 HUD 配方（显隐 + 元素集合 + 元 UI，不是皮肤）；② 排印 HUD 皮肤（窄体大写宽字距、展示数字、无框）；③ 线描同媒介（线宽 / 字体跟随画面）；④ 信息图（多色 = 数据，rcp.miniMetroMinimal 不该用 skin.swiss）；⑤ 调试面板（黑底白线等宽）。",
+   "paramGaps": [
+    "\"装饰预算\"与\"信息密度\"在家族名里被混成\"极简\"，皮肤浏览需要两个轴分开展示",
+    "音频承担 UI（耳语、对讲机）没有通道",
+    "数值→世界物件属性（长度、亮度、个数、颜色）的编码方式没有参数",
+    "渐隐等待时长与显示触发条件（受伤 / 停下 / 瞄准）没有参数",
+    "1-bit 有序抖动底纹没有 vis.pattern 选项",
+    "参考卡缺\"证据置信度\"字段（商店图无 UI）"
+   ]
+  }
+ ],
+ "assignments": {
+  "steam:683320": "零 HUD · 电影全隐",
+  "steam:414340": "零 HUD · 电影全隐",
+  "steam:520720": "零 HUD · 电影全隐",
+  "steam:384190": "零 HUD · 电影全隐",
+  "steam:424840": "零 HUD · 电影全隐",
+  "steam:2461850": "零 HUD · 电影全隐",
+  "steam:1622910": "零 HUD · 电影全隐",
+  "steam:960990": "零 HUD · 电影全隐",
+  "steam:1310330": "零 HUD · 电影全隐",
+  "steam:1232570": "零 HUD · 电影全隐",
+  "steam:304430": "零 HUD · 电影全隐",
+  "steam:48000": "零 HUD · 电影全隐",
+  "steam:2420660": "零 HUD · 电影全隐",
+  "steam:550320": "零 HUD · 电影全隐",
+  "steam:1168660": "零 HUD · 电影全隐",
+  "steam:368230": "零 HUD · 叙事内道具与环境承载",
+  "steam:701160": "零 HUD · 叙事内道具与环境承载",
+  "steam:638230": "零 HUD · 叙事内道具与环境承载",
+  "steam:383870": "零 HUD · 叙事内道具与环境承载",
+  "steam:698670": "零 HUD · 叙事内道具与环境承载",
+  "steam:1350200": "零 HUD · 叙事内道具与环境承载",
+  "steam:110800": "零 HUD · 叙事内道具与环境承载",
+  "steam:837470": "零 HUD · 叙事内道具与环境承载",
+  "steam:1092790": "零 HUD · 叙事内道具与环境承载",
+  "steam:620": "零 HUD · 叙事内道具与环境承载",
+  "steam:17410": "零 HUD · 叙事内道具与环境承载",
+  "steam:546560": "零 HUD · 叙事内道具与环境承载",
+  "steam:1712350": "零 HUD · 画面即交互（直接操纵）",
+  "steam:1135690": "零 HUD · 画面即交互（直接操纵）",
+  "steam:1634150": "零 HUD · 画面即交互（直接操纵）",
+  "steam:1491670": "零 HUD · 画面即交互（直接操纵）",
+  "steam:2428840": "零 HUD · 画面即交互（直接操纵）",
+  "steam:557600": "零 HUD · 画面即交互（直接操纵）",
+  "steam:40700": "零 HUD · 画面即交互（直接操纵）",
+  "steam:1927720": "零 HUD · 画面即交互（直接操纵）",
+  "steam:711660": "零 HUD · 画面即交互（直接操纵）",
+  "steam:205020": "零 HUD · 画面即交互（直接操纵）",
+  "steam:593640": "零 HUD · 画面即交互（直接操纵）",
+  "steam:845270": "零 HUD · 画面即交互（直接操纵）",
+  "steam:288160": "零 HUD · 画面即交互（直接操纵）",
+  "steam:581270": "零 HUD · 画面即交互（直接操纵）",
+  "iig:florence": "零 HUD · 画面即交互（直接操纵）",
+  "steam:540840": "零 HUD · 画面即交互（直接操纵）",
+  "steam:1593500": "情境渐显 · 写实 3A 角落细件",
+  "steam:2322010": "情境渐显 · 写实 3A 角落细件",
+  "steam:489830": "情境渐显 · 写实 3A 角落细件",
+  "steam:391220": "情境渐显 · 写实 3A 角落细件",
+  "steam:1182900": "情境渐显 · 写实 3A 角落细件",
+  "steam:1196590": "情境渐显 · 写实 3A 角落细件",
+  "steam:1888930": "情境渐显 · 写实 3A 角落细件",
+  "steam:2531310": "情境渐显 · 写实 3A 角落细件",
+  "steam:883710": "情境渐显 · 写实 3A 角落细件",
+  "steam:108710": "情境渐显 · 写实 3A 角落细件",
+  "steam:1167630": "情境渐显 · 写实 3A 角落细件",
+  "steam:2027330": "情境渐显 · 写实 3A 角落细件",
+  "steam:850190": "情境渐显 · 写实 3A 角落细件",
+  "steam:962130": "情境渐显 · 写实 3A 角落细件",
+  "steam:427410": "情境渐显 · 写实 3A 角落细件",
+  "steam:1426210": "情境渐显 · 写实 3A 角落细件",
+  "steam:1551360": "情境渐显 · 写实 3A 角落细件",
+  "steam:508980": "情境渐显 · 写实 3A 角落细件",
+  "steam:1238840": "情境渐显 · 写实 3A 角落细件",
+  "steam:220240": "情境渐显 · 写实 3A 角落细件",
+  "steam:21690": "情境渐显 · 写实 3A 角落细件",
+  "steam:1659420": "情境渐显 · 写实 3A 角落细件",
+  "steam:1796410": "情境渐显 · 写实 3A 角落细件",
+  "steam:19980": "情境渐显 · 同媒介发光符号小件",
+  "steam:312520": "情境渐显 · 同媒介发光符号小件",
+  "steam:542050": "情境渐显 · 同媒介发光符号小件",
+  "steam:2060130": "情境渐显 · 同媒介发光符号小件",
+  "steam:318600": "情境渐显 · 同媒介发光符号小件",
+  "steam:1093290": "情境渐显 · 同媒介发光符号小件",
+  "steam:268910": "情境渐显 · 同媒介发光符号小件",
+  "steam:387290": "情境渐显 · 同媒介发光符号小件",
+  "steam:261570": "情境渐显 · 同媒介发光符号小件",
+  "steam:1057090": "情境渐显 · 同媒介发光符号小件",
+  "steam:1850570": "细字直压 · 排印叠层",
+  "steam:1223500": "细字直压 · 排印叠层",
+  "steam:231200": "细字直压 · 排印叠层",
+  "steam:481510": "细字直压 · 排印叠层",
+  "steam:960910": "细字直压 · 排印叠层",
+  "steam:1049710": "细字直压 · 排印叠层",
+  "steam:1016920": "细字直压 · 排印叠层",
+  "steam:320140": "细字直压 · 排印叠层",
+  "steam:1440670": "细字直压 · 排印叠层",
+  "steam:1473350": "单色线描 · 同一支笔",
+  "steam:2060790": "单色线描 · 同一支笔",
+  "steam:1307580": "单色线描 · 同一支笔",
+  "steam:653530": "单色线描 · 同一支笔",
+  "steam:735290": "单色线描 · 同一支笔",
+  "steam:287980": "扁平几何 · 信息图（颜色即数据）",
+  "steam:1127500": "扁平几何 · 信息图（颜色即数据）",
+  "steam:2674590": "扁平几何 · 信息图（颜色即数据）",
+  "steam:531510": "扁平几何 · 信息图（颜色即数据）",
+  "steam:1455840": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:1046030": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:688420": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:1372320": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:2239150": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:2533960": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:1894430": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:979120": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:2198150": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:702670": "扁平几何 · 微缩玩具台（小圆钮 + 纯色底）",
+  "steam:2212330": "工程表格 · 调试面板",
+  "steam:937310": "工程表格 · 调试面板",
+  "steam:1720850": "工程表格 · 调试面板"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "files": {
+  "image": "ui_frame_gold.png",
+  "godot": "ui_frame_gold_godot.png"
+ },
+ "size": [
+  1024,
+  1024
+ ],
+ "band": 90,
+ "slice": 182,
+ "sizeGodot": [
+  192,
+  192
+ ],
+ "sliceGodot": 34,
+ "bandGodot": 17,
+ "coverage": 0.25662803649902344,
+ "id": "ui_frame_gold"
+}

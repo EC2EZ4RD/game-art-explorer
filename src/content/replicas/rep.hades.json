@@ -1,0 +1,1417 @@
+{
+ "id": "rep.hades",
+ "name": "Hades",
+ "card": "steam:1145360",
+ "genre": "action",
+ "family": "fam.ornate-frame-artifact",
+ "pack": "action",
+ "art": {
+  "recipe": "cel-anime",
+  "scene": "iso-dungeon",
+  "values": {
+   "color.palette": "gothic",
+   "color.saturation": 1.2,
+   "color.brightness": 0.85
+  }
+ },
+ "base": {
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "hud.style": "ornate",
+  "ctx.input": "hybrid",
+  "typ.baseSize": 26,
+  "typ.scale": 1.4,
+  "typ.body.family": "sans",
+  "typ.body.weight": "regular",
+  "typ.body.case": "asIs",
+  "typ.display.family": "serif",
+  "typ.display.weight": "bold",
+  "typ.display.case": "smallCaps",
+  "typ.display.tracking": 0.03,
+  "typ.numerals.family": "body",
+  "typ.titleFx": "none",
+  "typ.legibility": "shadow",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#0c0a0e",
+  "col.surface2": "#1d1a20",
+  "col.text": "#f1ece2",
+  "col.accent": "#c9a557",
+  "col.accent2": "#e0403a",
+  "col.focus": "#ffd66b",
+  "col.border": "#a88a4c",
+  "col.coding": [
+   "rarity",
+   "lineId",
+   "status"
+  ],
+  "col.rarityScale": "gacha",
+  "st.rarityCue": [
+   "border",
+   "strip"
+  ],
+  "hier.inline": "keyword",
+  "vis.corner": "sharp",
+  "vis.stroke": "double",
+  "vis.strokeWidth": 1.5,
+  "vis.strokeColor": "metal",
+  "vis.depth": "flat",
+  "vis.iconStyle": "painted",
+  "ast.iconSet": "asset",
+  "vis.motif": "skulls",
+  "rel.harmony": "sameMedium",
+  "rel.metaFx": [
+   "hurtVignette"
+  ],
+  "mo.easing": "easeOut",
+  "mo.duration": 0.25,
+  "mo.juice": 0.85,
+  "mo.valueChange": "trail",
+  "ix.focus": "outline"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/iig/img/hades__hades-fight.jpg",
+   "values": {
+    "uip.layout": "layout.action",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "lay.safeMargin": 1,
+    "rel.hudVisibility": "always",
+    "cnt.density": 2,
+    "vis.opacity": 1,
+    "typ.legibility": "outline",
+    "typ.body.weight": "bold",
+    "vis.ornament": 1,
+    "ast.ornaments": [
+     "endcaps"
+    ],
+    "cnt.elements": [
+     "el.vitals",
+     "el.abilities",
+     "el.resources",
+     "el.threat",
+     "el.feedback"
+    ],
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "bar",
+    "el.vitals.screenAnchor": "bl",
+    "el.vitals.arrangement": "column",
+    "el.vitals.scale": 1.15,
+    "el.vitals.priority": "primary",
+    "el.vitals.valueLabel": "currentMax",
+    "el.vitals.valueLabelPos": "end",
+    "col.accent@el.vitals": "#c3262c",
+    "vis.stroke@el.vitals": "double",
+    "vis.strokeColor@el.vitals": "metal",
+    "el.abilities.form": "slots",
+    "el.abilities.arrangement": "zigzag2",
+    "el.abilities.screenAnchor": "ml",
+    "el.abilities.scale": 0.75,
+    "el.abilities.valueLabel": "none",
+    "vis.silhouette@el.abilities": "diamond",
+    "vis.strokeColor@el.abilities": "metal",
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "br",
+    "el.resources.arrangement": "row",
+    "el.resources.scale": 1.1,
+    "vis.stroke@el.resources": "none",
+    "el.threat.form": [
+     "bossBar",
+     "healthBar"
+    ],
+    "el.threat.screenAnchor": "tc",
+    "el.threat.arrangement": "row",
+    "el.threat.scale": 1,
+    "col.accent@el.threat": "#c3262c",
+    "el.feedback.form": [
+     "floatNumbers"
+    ],
+    "el.feedback.attachTo": "target",
+    "el.feedback.priority": "ambient",
+    "el.feedback.scale": 0.8,
+    "vis.stroke@el.feedback": "none",
+    "el.abilities.keyHint": "none",
+    "el.vitals.labels": "none",
+    "el.vitals.rowForms": [
+     "bar",
+     "segmented"
+    ],
+    "el.threat.barWidth": 0.2,
+    "el.vitals.attach": [
+     "lives",
+     "charges"
+    ],
+    "el.vitals.rowLabels": [
+     "auto",
+     "none"
+    ],
+    "cmp.gaugeFrame@el.vitals": "double",
+    "cmp.gaugeFrame@el.threat": "double",
+    "cmp.gaugeCap@el.threat": "pointed",
+    "st.rarityCue@el.abilities": [
+     "cornerTab"
+    ],
+    "cmp.slotLabel@el.abilities": "levelTag",
+    "el.abilities.overflow": "plusN",
+    "el.resources.count": 1,
+    "el.abilities.count": 10,
+    "el.threat.count": 2
+   }
+  },
+  {
+   "key": "hud-lowhp",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1145360_0.jpg",
+   "values": {
+    "uip.layout": "layout.action",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "lay.safeMargin": 1,
+    "rel.hudVisibility": "always",
+    "cnt.density": 1,
+    "vis.opacity": 1,
+    "typ.legibility": "outline",
+    "typ.body.weight": "bold",
+    "vis.ornament": 1,
+    "ast.ornaments": [
+     "endcaps"
+    ],
+    "cnt.elements": [
+     "el.vitals",
+     "el.abilities",
+     "el.resources",
+     "el.threat"
+    ],
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "bar",
+    "el.vitals.screenAnchor": "bl",
+    "el.vitals.arrangement": "column",
+    "el.vitals.scale": 1.15,
+    "el.vitals.priority": "primary",
+    "el.vitals.valueLabel": "currentMax",
+    "el.vitals.valueLabelPos": "end",
+    "col.accent@el.vitals": "#e02a2a",
+    "vis.stroke@el.vitals": "double",
+    "vis.strokeColor@el.vitals": "metal",
+    "el.abilities.form": "slots",
+    "el.abilities.arrangement": "zigzag2",
+    "el.abilities.screenAnchor": "ml",
+    "el.abilities.scale": 0.75,
+    "el.abilities.valueLabel": "none",
+    "vis.silhouette@el.abilities": "diamond",
+    "vis.strokeColor@el.abilities": "metal",
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "br",
+    "el.resources.arrangement": "row",
+    "el.resources.scale": 1.1,
+    "vis.stroke@el.resources": "none",
+    "el.threat.form": [
+     "bossBar",
+     "healthBar"
+    ],
+    "el.threat.screenAnchor": "tc",
+    "el.threat.arrangement": "row",
+    "el.threat.scale": 1,
+    "col.accent@el.threat": "#c3262c",
+    "rel.metaFx": [
+     "hurtVignette"
+    ],
+    "st.alert": "redTint",
+    "el.vitals.metaFx": "hurtVignette",
+    "vis.strokeGlow@el.vitals": 0.6,
+    "el.threat.priority": "secondary",
+    "vis.stroke@el.threat": "none",
+    "el.abilities.keyHint": "none",
+    "el.vitals.labels": "none",
+    "el.vitals.rowForms": [
+     "bar",
+     "segmented"
+    ],
+    "el.threat.barWidth": 0.3,
+    "el.vitals.attach": [
+     "lives",
+     "charges"
+    ],
+    "el.vitals.rowLabels": [
+     "auto",
+     "none"
+    ],
+    "cmp.gaugeFrame@el.vitals": "double",
+    "cmp.gaugeFrame@el.threat": "double",
+    "cmp.gaugeCap@el.threat": "pointed",
+    "st.rarityCue@el.abilities": [
+     "cornerTab"
+    ],
+    "cmp.slotLabel@el.abilities": "levelTag",
+    "el.abilities.overflow": "plusN",
+    "el.resources.count": 1,
+    "cnt.sampleHp": 0.23
+   }
+  },
+  {
+   "key": "skilltree",
+   "ref": "qa/refs-cache/iig/img/hades__hades-mirror-of-night.jpg",
+   "values": {
+    "uip.screen": "tpl.skilltree",
+    "uip.keyword": "kw.ornate",
+    "cnt.subtype": "skill",
+    "cnt.screen": "screen.skilltree",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 0.8,
+    "lay.composition": "single",
+    "lay.focalSide": "center",
+    "cnt.focal": "none",
+    "cnt.dataShape": "collection",
+    "cnt.density": 3,
+    "lay.arrangement": "column",
+    "cnt.itemCount": 10,
+    "cmp.slot": "bare",
+    "cmp.listRow": [
+     "toggle",
+     "icon",
+     "title",
+     "value",
+     "upgrade"
+    ],
+    "lay.grouping": "whitespace",
+    "lay.detail": "transient",
+    "lay.overflow": "single",
+    "rel.behind": "live",
+    "rel.dim": 0.5,
+    "ast.core": "procedural",
+    "vis.fill": "solid",
+    "vis.opacity": 1,
+    "col.surface": "#050407",
+    "ast.frame": "carvedNinePatch",
+    "ast.frameMat": "bronze",
+    "vis.edge": "ornate",
+    "vis.ornament": 2,
+    "vis.motif": "skulls",
+    "ast.ornaments": [
+     "corners",
+     "gems",
+     "badgeBase",
+     "endcaps"
+    ],
+    "ast.fx": [
+     "glow"
+    ],
+    "cmp.plate@title": "none",
+    "typ.display.family": "serif",
+    "typ.display.case": "smallCaps",
+    "typ.display.weight": "regular",
+    "typ.body.weight": "bold",
+    "typ.body.case": "smallCaps",
+    "typ.legibility": "none",
+    "hier.inline": "keyword",
+    "st.delta": "plus",
+    "st.done": "tag",
+    "st.locked": "lock",
+    "cnt.elements": [
+     "el.resources",
+     "el.cost",
+     "el.cost#2"
+    ],
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "tr",
+    "el.resources.arrangement": "row",
+    "el.resources.scale": 0.8,
+    "el.resources.priority": "ambient",
+    "el.cost.form": "tag",
+    "el.cost.screenAnchor": "bc",
+    "el.cost.scale": 0.9,
+    "vis.stroke@tooltip": "double",
+    "vis.strokeColor@tooltip": "metal",
+    "vis.opacity@tooltip": 0.92,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "button",
+    "ix.close": "bottomCenter",
+    "flow.entry": "worldInteract",
+    "flow.stacking": "stack",
+    "mo.enter": "fade",
+    "mo.idle": "shine",
+    "cnt.textLength": "line",
+    "typ.baseSize": 24,
+    "cmp.listRowColors": [
+     "#e2483d",
+     "auto",
+     "#7ed348",
+     "muted"
+    ],
+    "lay.titleAlign": "center",
+    "lay.titleSubtitle": "italic",
+    "el.resources.anchorSpace": "header",
+    "el.cost.anchorSpace": "container",
+    "vis.gloss": "diagonalSheen",
+    "col.gem": "#9b5de5",
+    "lay.panelWidth": 0.6,
+    "lay.panelHeight": 0.92,
+    "ast.frameThickness": 24,
+    "ix.focus": [
+     "textColor"
+    ],
+    "el.cost#2.form": "tag",
+    "el.cost#2.screenAnchor": "br",
+    "el.cost#2.anchorSpace": "container",
+    "el.cost#2.scale": 0.8
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1145360_1.jpg",
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.subtype": "npc",
+    "cnt.screen": "screen.dialogue",
+    "lay.container": "tray",
+    "lay.panelSize": 0.5,
+    "cmp.dialogBox": "offsetBox",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "bust",
+    "cnt.characterRender": "color",
+    "lay.focalSide": "left",
+    "lay.layering": "behind",
+    "cnt.dataShape": "text",
+    "cnt.elements": [],
+    "cnt.textLength": "short",
+    "cnt.tone": "character",
+    "rel.behind": "live",
+    "rel.dim": 0.15,
+    "col.lightness": "light",
+    "col.surface": "#dedbd4",
+    "col.surface2": "#3b3a38",
+    "col.text": "#1c1a18",
+    "col.accent": "#3b3a38",
+    "col.surface@name": "#3b3a38",
+    "col.text@name": "#f4f1ea",
+    "vis.opacity": 1,
+    "ast.core": "texture",
+    "ast.coreMat": "marble",
+    "ast.frame": "procedural",
+    "vis.stroke": "double",
+    "vis.strokeWidth": 2,
+    "vis.strokeColor": "metal",
+    "vis.corner": "sharp",
+    "vis.ornament": 2,
+    "vis.motif": "wings",
+    "ast.ornaments": [
+     "none",
+     "sprigs"
+    ],
+    "cmp.plate": "tab",
+    "cmp.plate@name": "twoLine",
+    "typ.body.family": "sans",
+    "typ.display.family": "serif",
+    "typ.display.case": "smallCaps",
+    "typ.legibility": "none",
+    "mo.enter": "slide",
+    "mo.textReveal": "fade",
+    "ix.mode": "readOnly",
+    "ix.skip": "none",
+    "ix.dismiss": "tapAnywhere",
+    "ix.continueCue": "none",
+    "lay.titlePos": "straddle",
+    "vis.stroke@name": "solid",
+    "vis.strokeColor@name": "metal",
+    "lay.panelFit": "fitContent",
+    "vis.strokeWidth@dialog": 4,
+    "ast.ornamentAnchor": [
+     "panelCorners",
+     "panelEdges",
+     "plateSide"
+    ]
+   }
+  },
+  {
+   "key": "draft",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.draft3",
+    "cnt.subtype": "draft3",
+    "cnt.stage": "entry",
+    "lay.container": "modal",
+    "cmp.modal": "floating",
+    "lay.panelSize": 0.9,
+    "lay.composition": "splitLR",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "bust",
+    "lay.focalSide": "left",
+    "lay.layering": "breakout",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "column",
+    "cnt.itemCount": 3,
+    "cmp.slot": "rowCard",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "desc",
+     "value"
+    ],
+    "st.rarityCue": [
+     "none",
+     "border",
+     "label"
+    ],
+    "col.coding": [
+     "rarity",
+     "lineId"
+    ],
+    "rel.behind": "frozen",
+    "rel.dim": 0.7,
+    "vis.opacity": 0.95,
+    "ast.frame": "carvedNinePatch",
+    "ast.frameMat": "bronze",
+    "vis.ornament": 2,
+    "ast.ornaments": [
+     "corners",
+     "endcaps"
+    ],
+    "cnt.textLength": "short",
+    "cnt.tone": "character",
+    "hier.inline": "keyword",
+    "hier.emphasis": [
+     "color",
+     "glow"
+    ],
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "forced",
+    "ix.focus": "outline",
+    "mo.enter": "slide",
+    "mo.reveal": "direct",
+    "lay.titlePos": "panel",
+    "ops.actions": [
+     "reroll"
+    ],
+    "col.rarityScale": "custom",
+    "col.rarityColors": [
+     "#f1ece2",
+     "#4aa3ff",
+     "#b05cff",
+     "#e0403a",
+     "#ff9a2e",
+     "#7ed348"
+    ],
+    "cnt.companion": "avatar",
+    "lay.dataAlign": "center"
+   }
+  },
+  {
+   "key": "codex",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.codex",
+    "cnt.subtype": "collection",
+    "cnt.screen": "screen.codex",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 0.95,
+    "ast.container": "none",
+    "rel.behind": "frozen",
+    "rel.dim": 0.7,
+    "lay.nav": "tabsTop",
+    "cmp.tab": "icon",
+    "lay.navDepth": 1,
+    "lay.composition": "splitLR",
+    "lay.arrangement": "column",
+    "cmp.slot": "bare",
+    "cmp.listRow": [
+     "title",
+     "progress"
+    ],
+    "lay.detail": "persistent",
+    "cmp.panelArt": "side",
+    "cnt.dataShape": "collection",
+    "lay.overflow": "scrollV",
+    "cnt.textLength": "long",
+    "cnt.tone": "narrative",
+    "st.locked": "hiddenText",
+    "st.newCue": "glowPulse",
+    "ast.frame": "procedural",
+    "vis.opacity": 0.95,
+    "vis.ornament": 1,
+    "ast.ornaments": [
+     "-gems",
+     "-endcaps",
+     "dividers"
+    ],
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "ix.close": "keyGlyph",
+    "flow.entry": "hotkey",
+    "mo.enter": "fade",
+    "cnt.itemCount": 6,
+    "st.delta": "newOnly",
+    "cmp.detailFields": [
+     "derive"
+    ]
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "恩赐图标在左缘排成两列交错（之字形）的竖带；el.abilities 只有竖列 / 网格，第二轮仍画成一列 4 格",
+   "severity": "high",
+   "proposal": "elx.arrangement 加 zigzag2（双列交错，第二列下移半格）",
+   "kind": "missingOption",
+   "resolvedBy": "el.abilities.arrangement = zigzag2"
+  },
+  {
+   "screen": "hud",
+   "what": "逐元素的视觉覆盖（vis.silhouette@el.abilities、vis.stroke@el.*、vis.strokeColor@el.*、col.accent@el.*、vis.opacity@el.*）HUD 不画：恩赐格是圆角暗方块，没有菱形外轮廓与金色描边；血条外没有金色细双线框，也不能单独取色",
+   "severity": "high",
+   "proposal": "makeCtx 按元素解析 vis.* / col.* 覆盖（与 cmp() 同口径用 r.at()）；slot() 外轮廓跟 vis.silhouette@<元素>，gauge() 外框跟 vis.stroke@<元素>",
+   "kind": "renderBug",
+   "resolvedBy": "R4 对照图：恩赐格画成彩框菱形、血条有金色双线框（vis.silhouette@el.abilities、st.rarityCue@el.abilities、cmp.gaugeFrame@el.vitals）"
+  },
+  {
+   "screen": "hud",
+   "what": "恩赐带末尾是一个虚线菱形写“+8”，表示还有更多恩赐；el.abilities 没有溢出计数格",
+   "severity": "low",
+   "proposal": "el.abilities 加 overflowCount（末格画“+N”，外形同格子、虚线描边）",
+   "kind": "newDrawing",
+   "resolvedBy": "el.abilities.overflow = plusN（末尾虚线菱形‘+N’）"
+  },
+  {
+   "screen": "hud",
+   "what": "生命条每行前固定写“生命 / 护甲”标签（DATA.vitalNames），Hades 的血条没有任何文字标签",
+   "severity": "medium",
+   "proposal": "el.vitals 加 labels 子参数（none / text / icon），none 时标签列宽为 0",
+   "kind": "missingParam",
+   "resolvedBy": "el.vitals.labels"
+  },
+  {
+   "screen": "hud",
+   "what": "血条下面的第二条（神力槽）是 4 段火焰填充，第一条是连续红条；cmp.gauge@el.vitals 只能整组一种画法",
+   "severity": "medium",
+   "proposal": "el.vitals 按条给画法（el.vitals.forms = [bar, segmented]）",
+   "kind": "missingParam",
+   "resolvedBy": "el.vitals.rowForms"
+  },
+  {
+   "screen": "hud",
+   "what": "死亡抗拒（红宝石 +“1 / 3”）紧跟在血量数字右边，血条上方还有两个施法弹药小圆：属于“生命附属计数”，没有元素或子件承载",
+   "severity": "medium",
+   "proposal": "el.vitals 加附属计数子件（lives / charges：图标 + x/y，或一排圆点），位置跟随主条",
+   "kind": "composite",
+   "resolvedBy": "el.vitals.attach [lives, charges]（◆ 1/3 + 弹药小圆）"
+  },
+  {
+   "screen": "hud",
+   "what": "普通敌人头顶带数字的小红条没有画：el.threat 的多选画法（bossBar + healthBar）只画第一个，且只有一个锚点 / 挂点",
+   "severity": "medium",
+   "proposal": "el.threat 画全部所选画法，按画法分别取挂点（bossBar 用 screenAnchor，healthBar 用 attachTo = target）",
+   "kind": "renderBug",
+   "resolvedBy": "el.threat.form（多画法各自挂点）"
+  },
+  {
+   "screen": "hud",
+   "what": "顶部是两条 Boss 细条左右并排（忒修斯 + 牛头人），bossBar 只画一条",
+   "severity": "medium",
+   "proposal": "bossBar 按 Boss 数并排（el.threat.count），每条约 20% 屏宽，名字在条上方",
+   "kind": "layoutEngine",
+   "resolvedBy": "el.threat.count = 2（两条 Boss 条并排）"
+  },
+  {
+   "screen": "hud",
+   "what": "Boss 条是无框平条、名字是小号无衬线粗体；参考是青铜细框 + 两端尖饰的细条，名字为衬线小型大写。本屏的 ast.ornaments = endcaps 与 typ.display 在 HUD 条上都不生效",
+   "severity": "medium",
+   "proposal": "HUD 的 gauge() 读 ast.ornaments（endcaps 画在条两端）与 vis.stroke；Boss / 头目名用 typ.display",
+   "kind": "renderBug",
+   "partialBy": "cmp.gaugeFrame@el.threat = double + cmp.gaugeCap@el.threat = pointed（框与尖端有了；名字仍是无衬线、条偏粗）"
+  },
+  {
+   "screen": "hud-lowhp",
+   "what": "el.threat.scale 同时缩放条长、条粗和名字：0.75 时条约 41% 屏宽，0.5 时条长对了但名字只剩约 6px；参考是短而细的条配可读的名字",
+   "severity": "low",
+   "proposal": "el.threat 加 barWidth（条长占屏宽比例），scale 只管粗细与字号",
+   "kind": "missingParam",
+   "resolvedBy": "el.threat.barWidth"
+  },
+  {
+   "screen": "hud",
+   "what": "技能格左上角固定印着键位数字 1–4，Hades 的恩赐没有键位",
+   "severity": "low",
+   "proposal": "el.abilities 加 keyHint 开关（on / off）",
+   "kind": "missingParam",
+   "resolvedBy": "el.abilities.keyHint"
+  },
+  {
+   "screen": "hud",
+   "what": "恩赐菱形右上角一道彩色斜条标神祇（宙斯黄、波塞冬青……），下方挂小“Lv.2”牌",
+   "severity": "low",
+   "proposal": "st.rarityCue 加 cornerTab（角上斜条）；elx.valueLabelPos 加 tagBelow（小标牌）",
+   "kind": "missingOption",
+   "partialBy": "cmp.slotLabel@el.abilities = levelTag（Lv 小牌有了；st.rarityCue cornerTab 画成整圈神祇色外框，没有角上斜条）"
+  },
+  {
+   "screen": "hud-lowhp",
+   "what": "低血信号是四角（尤其左下）浓重的血红暗角并漫过底部 HUD；hurtVignette 只在模拟受击且血量低于 25% 时出现，截图钉不住，代用的常驻 edgeGlow 只是左右两缘很淡的粉红偏色",
+   "severity": "high",
+   "proposal": "rel.metaFx 加 lowHpVignette（静态：强度 + 偏向角，按阈值常驻；动效：脉动频率）",
+   "kind": "missingOption",
+   "partialBy": "cnt.sampleHp 0.23 触发低血暗角（只是边缘淡红偏色，不是四角浓重暗红）"
+  },
+  {
+   "screen": "hud-lowhp",
+   "what": "血量数字钉不到 23/100，也就看不到低血时数字转红（st.alert = redTint 不触发）",
+   "severity": "medium",
+   "proposal": "加预览用的样本血量参数（cnt.sampleHp 0–1），低于阈值时数字按 st.alert 转色",
+   "kind": "missingParam",
+   "partialBy": "cnt.sampleHp（血条钉到 23%；数字仍白色，不按 st.alert 转红）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "外框是一整件插画器物（夜之镜）：顶冠人面 + 两颗紫晶、两侧骷髅立柱各抱一根大紫水晶、底部一条带三颗宝石的横档；每条边都不一样，九宫格画不出，框厚约占面板短边 20%，整体是近方形的高框",
+   "severity": "high",
+   "proposal": "ast.frame 加 illustratedFrame（整幅外框插画 + 内窗矩形）与 ast.frameThickness；ast.container 加 mirror / altar 等世界器物",
+   "kind": "asset"
+  },
+  {
+   "screen": "skilltree",
+   "what": "列表行按列分色：名称红色粗体小型大写、数值绿色、满级灰色 MAX；没有按列取色，只能把 col.text 整体设红，标题和数值也跟着变红",
+   "severity": "medium",
+   "proposal": "cmp.listRow 每个字段可带颜色角色（title = accent2、value = good、status = muted）",
+   "kind": "missingParam",
+   "resolvedBy": "cmp.listRowColors"
+  },
+  {
+   "screen": "skilltree",
+   "what": "每行右侧是升级格：灰色加号方块 + 灰色 MAX（满级），或加号方块 + 紫色暗黑数（可升级）；cmp.listRow 没有这一列",
+   "severity": "medium",
+   "proposal": "cmp.listRow 加 upgrade（加号方块 + MAX / 花费）",
+   "kind": "missingOption",
+   "partialBy": "cmp.listRow upgrade（加号方块 + 花费；满级的灰色 MAX 没出现）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "列表行高下限 44px（触控尺寸）再加 6px 行距，不随 cnt.density 收紧：行距约屏高 9%，参考约 4%（10 行只占内窗约 60% 高）",
+   "severity": "medium",
+   "proposal": "listRows 行高按 cnt.density 收紧（约字高 × 1.4–2.2），cmp.slot = bare 时不受触控下限约束",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12a-27（行高随 cnt.density 收紧：10 行放得下；R3 对照图确认）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "action 包没有天赋表样本：技能树列表取的是 6 条任务（名称 + 百分比进度），cnt.itemCount = 10 被样本条数截到 6；参考是 10 条天赋名 + 加成值（+50%、3 颗心这类数值 + 小图标）",
+   "severity": "medium",
+   "proposal": "内容包加 talents 样本（名称、加成值、等级 / 上限、花费），cnt.subtype = skill 时取用",
+   "kind": "content",
+   "resolvedBy": "R4 对照图：技能树取天赋样本（天赋名 + 加成值 + 花费）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "关闭键是挂在外框底边中央的红色圆形徽章 X；ix.close 的“角外悬挂红圆 X”只在右上角",
+   "severity": "medium",
+   "proposal": "ix.close 加 hangingBottom（底边中央悬挂章）",
+   "kind": "missingOption",
+   "resolvedBy": "ix.close = bottomCenter"
+  },
+  {
+   "screen": "skilltree",
+   "what": "标题“Mirror of Night”居中、白色、下一行斜体引言；界面标题固定左对齐单行",
+   "severity": "low",
+   "proposal": "加 lay.titleAlign（left / center）与副标题行",
+   "kind": "missingParam",
+   "resolvedBy": "lay.titleAlign, lay.titleSubtitle"
+  },
+  {
+   "screen": "skilltree",
+   "what": "左上骷髅角饰压住标题“技能树”的起笔",
+   "severity": "low",
+   "proposal": "角饰与标题行互相避让（标题起点右移到角饰外，或角饰收到标题行之上）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.titleAlign = center（标题居中后不再压角饰）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "悬停说明浮窗挂在外框右侧外面、对齐被悬停的那一行；lay.detail = transient 固定画在列表区 45% 宽处，会压住列表中段（第二轮只好关掉）",
+   "severity": "low",
+   "proposal": "lay.detail = transient 的位置跟随焦点行并允许出框（面板外侧）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.detail = transient（M12a-26 浮框放外侧）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "近黑内芯上有一道斜向大块镜面反光（一整块斜带，不是重复条纹；第二轮用 diagStripes 5% 近似）",
+   "severity": "low",
+   "proposal": "vis.gloss 加 diagonalSheen",
+   "kind": "missingOption",
+   "resolvedBy": "vis.gloss = diagonalSheen"
+  },
+  {
+   "screen": "skilltree",
+   "what": "每行行首有切换另一形态天赋的镜像按钮，底栏右侧还有“重置”键 + 钥匙消耗（暗黑数、钥匙数已能用面板内的 el.resources / el.cost 表达）",
+   "severity": "low",
+   "proposal": "cmp.listRow 加 toggle（行首切换钮）；el.cost 允许第二实例",
+   "kind": "missingOption",
+   "partialBy": "cmp.listRow toggle（行首镜像钮）；el.cost#2 画成第二个金币数，重置钮 + 钥匙仍缺"
+  },
+  {
+   "screen": "skilltree",
+   "what": "框上紫水晶的发光色与正文红 / 绿语义色同时存在，骨架只有一个第二强调色可用",
+   "severity": "low",
+   "proposal": "col 加饰件色角色（col.ornament / gem）",
+   "kind": "missingParam",
+   "resolvedBy": "col.gem（顶部宝石章为紫水晶色）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "左侧彩色大幅半身立绘是对话屏的主角（恩赐界面左侧的神祇半身像同理）；action 包没有立绘位图，只画框后一个半透明暗灰剪影，“需素材”占位牌还从框底露出",
+   "severity": "high",
+   "proposal": "素材：action 包的说话人 / 神祇半身立绘，cnt.characterMedium = bust 时取用",
+   "kind": "asset"
+  },
+  {
+   "screen": "dialogue",
+   "what": "文本框不是通栏：约从画面 36% 宽处到 86% 宽处、高度贴着两行字，左端压在半身立绘右缘上；lay.container = tray 恒为通栏",
+   "severity": "high",
+   "proposal": "cmp.dialogBox 加 offsetBox（宽度与水平位置跟随 lay.focalSide，高度按正文行数）",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.dialogBox = offsetBox（文本框 36%–86% 屏宽、贴着正文）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "名牌是深灰底白字 + 金边，文本框是浅色底：col.surface@name / col.text@name 不生效，名牌底色只能借 col.accent（第二轮把整屏强调色设成深灰）",
+   "severity": "medium",
+   "proposal": "cmp.plate@name 的底色 / 字色独立渲染（col.surface@name、col.text@name 生效）",
+   "kind": "renderBug",
+   "resolvedBy": "col.surface@name, col.text@name, vis.stroke@name"
+  },
+  {
+   "screen": "dialogue",
+   "what": "名牌骑在文本框左上缘（一半在框外），cmp.plate = tab 画在框内左上",
+   "severity": "medium",
+   "proposal": "tab 名牌加骑缝位置（跨在面板上缘，向上外移约半个名牌高）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.titlePos = straddle"
+  },
+  {
+   "screen": "dialogue",
+   "what": "名牌写的是模板名“NPC 对话”，不是说话人名字",
+   "severity": "medium",
+   "proposal": "tpl.npc 的名牌取内容包的说话人名，模板名只在编辑器里显示",
+   "kind": "content",
+   "resolvedBy": "M12a-23（对话类模板的名牌写说话人名）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "名牌两行：上面名字、下面一行红色小字称号（如“冥界王子”）",
+   "severity": "medium",
+   "proposal": "cmp.plate 加 twoLine（名 + 称号，称号用 accent2）",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.plate@name = twoLine（名 + 红色称号）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "名牌左侧一簇红色月桂，框右上角一个金色卷轴饰；ast.ornaments 的花枝只能取饰件金色、固定画在右上角（第二轮正好压在 X 上方）",
+   "severity": "low",
+   "proposal": "花枝饰件可着色（取 col.accent2）并可挂在名牌旁（饰件挂点参数）",
+   "kind": "missingParam",
+   "partialBy": "ast.ornamentAnchor plateSide（名牌左侧红月桂）；框右上金色卷轴饰没有"
+  },
+  {
+   "screen": "dialogue",
+   "what": "vis.stroke = double（宽 2）在托盘面板上只画出一条细金线；参考是金色双线 + 深色外缘",
+   "severity": "low",
+   "proposal": "procedural 外框在 tray 容器上同样按 vis.stroke = double 画内外两线",
+   "kind": "renderBug",
+   "resolvedBy": "vis.strokeWidth@dialog 4（双线分开画出）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "材质表的 stone 是斑驳石块噪点，没有光滑浅色带细纹的大理石（第二轮退到 paper）",
+   "severity": "low",
+   "proposal": "ast.coreMat 加 marble（浅底 + 细纹）",
+   "kind": "missingOption",
+   "resolvedBy": "ast.coreMat = marble"
+  },
+  {
+   "screen": "dialogue",
+   "what": "rel.hudVisibility = hidden 在界面模板里也会把模板自己的元素（字幕、选项）全部隐藏；字幕元素本身是黑条白字，不能当浅色框里的正文",
+   "severity": "low",
+   "proposal": "模板内元素不受 HUD 显隐策略影响；el.subtitle 的 boxed 画法跟随面板底色 / 字色",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-19 / M12a-32（模板里的元素不受 rel.hudVisibility 影响，对白框跟面板底与字色；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "draft",
+   "what": "（凭记忆）每块恩赐牌很高（约屏高 18%）：菱形纹章图标 + 名称 + 稀有度 + 两行说明 + 数值行，各自带雕花框；cmp.slot = rowCard 在列表里不生效，行高只由字高决定（约屏高 9%），只有焦点行有框",
+   "severity": "high",
+   "proposal": "cmp.slot = rowCard 在 listRows 里生效：给行高（或按 cnt.textLength 加说明行数）与逐行外框",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-27（rowCard 在列表里有行高与逐行雕花框；R3 对照图确认）"
+  },
+  {
+   "screen": "draft",
+   "what": "恩赐牌的框色随稀有度；listRows 不读 st.rarityCue / col.coding，行框不着色",
+   "severity": "medium",
+   "proposal": "listRows 按 st.rarityCue 给行框 / 角标着色",
+   "kind": "renderBug",
+   "partialBy": "st.rarityCue [border, label]（内圈细线与 RARE / EPIC 字按稀有度着色；外层雕花框仍金色）"
+  },
+  {
+   "screen": "draft",
+   "what": "Hades 的稀有度色阶（白 / 蓝 / 紫 / 红 / 橙 / 绿）col.rarityScale 没有，行右侧写稀有度文字（Common / Rare / Epic / Heroic / Legendary / Duo）也没有对应画法",
+   "severity": "low",
+   "proposal": "col.rarityScale 加 custom 并允许逐档取色；st.rarityCue 加 label（稀有度文字）",
+   "kind": "missingOption",
+   "resolvedBy": "col.rarityScale custom + col.rarityColors + st.rarityCue label"
+  },
+  {
+   "screen": "draft",
+   "what": "左侧神祇半身像旁有神祇名 + 一句台词，没有界面标题；tpl.draft3 只有模板标题“三选一升级”，台词框与恩赐行是两块不同结构的面板",
+   "severity": "low",
+   "proposal": "tpl.draft3 加“说话人 + 台词”子区（cnt.companion = avatar 或 cnt.focal = character 时代替模板标题）",
+   "kind": "composite",
+   "resolvedBy": "cnt.companion = avatar（神祇名 + 台词代替模板标题）"
+  },
+  {
+   "screen": "draft",
+   "what": "半身像占位画了两遍：两个头叠在一起、两块“半身立绘（需素材）”牌上下错位",
+   "severity": "low",
+   "proposal": "cnt.focal = character 与 tpl.draft3 自带的立绘位只画一个",
+   "kind": "renderBug",
+   "resolvedBy": "R3 对照图：半身像只画一个"
+  },
+  {
+   "screen": "draft",
+   "what": "重掷是右下一个小骰子图标 + 剩余次数；ops.actions = retry 来自 tpl.draft3（并集删不掉），画成写“再抽 10 次”的大菱形按钮",
+   "severity": "low",
+   "proposal": "ops.actions 加 reroll（图标 + 次数的小按钮），与抽卡的“再抽 N 次”分开",
+   "kind": "missingOption",
+   "resolvedBy": "ops.actions = reroll（右下骰子 ×3）"
+  },
+  {
+   "screen": "codex",
+   "what": "（凭记忆）图鉴详情是角色肖像 + 长段传记正文 + 解锁进度点；常驻详情固定画背包样本（攻击 / 重量属性条 + 装备 / 丢弃 按钮）",
+   "severity": "medium",
+   "proposal": "lay.detail 加内容类型（stats / lore），lore = 肖像 + 正文 + 进度点",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.detailFields = derive（插画 + 名字 + 传记 + 进度点）"
+  },
+  {
+   "screen": "codex",
+   "what": "cmp.panelArt = side 在模板的常驻详情里不生效，详情区没有插画位",
+   "severity": "medium",
+   "proposal": "模板详情区读 cmp.panelArt（side = 详情上方 / 侧边的肖像插画位）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-36（模板详情区画出插画位）"
+  },
+  {
+   "screen": "codex",
+   "what": "分类页签是一排图标（冥神、奥林匹斯、敌人、地点……）；cmp.tab = icon 在模板导航里不生效，仍画文字页签",
+   "severity": "low",
+   "proposal": "drawNav 读 cmp.tab（icon / iconText）",
+   "kind": "renderBug",
+   "resolvedBy": "R4 对照图：cmp.tab = icon 画成图标页签"
+  },
+  {
+   "screen": "codex",
+   "what": "cmp.slot = bare 时列表行仍逐行描框（listRows 每行都调 panel()）；参考是无底的名字行",
+   "severity": "low",
+   "proposal": "listRows 按 cmp.slot 画行：bare 不画行底 / 行框，只给焦点行高亮",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-27（cmp.slot = bare 时列表行不画框）"
+  },
+  {
+   "screen": "all",
+   "what": "ix.close 没有“无”：回退值是右上 X，对话框与恩赐界面（Hades 都不能点关闭）第二轮仍留着一个 X",
+   "severity": "medium",
+   "proposal": "ix.close 加 none",
+   "kind": "missingOption",
+   "resolvedBy": "ix.close 派生 none（forced / tapAnywhere）"
+  },
+  {
+   "screen": "all",
+   "what": "图标是与插画同描边的彩绘菱形神祇纹章；第二轮的恩赐格、恩赐行、天赋行都是单色几何图标",
+   "severity": "medium",
+   "proposal": "素材：ast.iconSet = asset 的神祇纹章 / 天赋图标图集",
+   "kind": "asset"
+  },
+  {
+   "screen": "all",
+   "what": "ast.ornaments 按并集合并：皮肤关键词 kw.ornate 带来的宝石 / 端盖 / 角花会出现在每一屏，单屏去不掉，只能整屏关掉关键词（对话屏用了 uip.keyword = none）",
+   "severity": "low",
+   "proposal": "允许逐屏减项（如“-gems”）或给 ast.ornaments 一个 replace 开关",
+   "kind": "missingParam",
+   "resolvedBy": "ast.ornaments 减项 / [none, …]"
+  },
+  {
+   "screen": "skilltree",
+   "what": "页头行放了元素（el.resources.anchorSpace = header）就整行不写标题：夜之镜要居中标题 + 斜体引言与右上暗黑数并存，现在标题和引言一起消失",
+   "severity": "medium",
+   "proposal": "页头行放元素时只占用左 / 右的控件段，居中标题照写（与 lay.titleAlign = center 同时生效）；只有左对齐且放不下时才让位",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 对照图：页头放暗黑数时居中标题 + 斜体引言照写"
+  },
+  {
+   "screen": "skilltree",
+   "what": "cmp.listRowColors 第三项写 good（数值列绿色），画面上的数值 60% / 70% 仍是灰色",
+   "severity": "low",
+   "proposal": "核对列表行的数值字段：样本把进度写成数值时也按 fieldColors 的第 3 项着色",
+   "kind": "renderBug",
+   "resolvedBy": "cmp.listRowColors 第 3 项写实 #7ed348（数值列为绿）"
+  },
+  {
+   "screen": "hud / hud-lowhp",
+   "what": "数值标注只能整组开关：el.vitals.valueLabel = currentMax 让第二条神力槽也写‘45/150’，参考只有血条写数",
+   "severity": "low",
+   "proposal": "按行的数值标注（el.vitals.rowLabels，与 rowForms / rowColors 同写法，可写 auto / none）",
+   "kind": "missingParam",
+   "resolvedBy": "el.vitals.rowLabels [auto, none]（神力槽不写数）"
+  },
+  {
+   "screen": "draft",
+   "what": "（凭记忆）cnt.itemCount = 3 只画出两块恩赐牌：加了 cnt.companion = avatar（神祇名 + 台词）与 ops.actions = reroll 之后第三块被挤掉，lay.dataAlign = center 也没把牌组竖向居中（停在 26%–60% 屏高）",
+   "severity": "high",
+   "proposal": "三选一（tpl.draft3 / ix.dismiss = forced）的牌数不因说话人子区、重掷钮减少：先压牌高与说明行，放不下时给检查提示；dataAlign = center 按实际牌组高度居中",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 回归修复 C1 ②（行的放得下判断留 0.5 余量：lay.dataAlign = center 收到量出的高后三张恩赐牌都画、整组竖向居中；三选一竖列 / 行卡取三选一卡样本，不再是任务行）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "悬停说明浮框画进了内窗右上：面板改窄高 + 厚框（panelWidth 0.6、frameThickness 24）后外侧放不下，浮框退回框内；参考浮框骑在外框右缘外、可以压住外框",
+   "severity": "low",
+   "proposal": "lay.detail = transient 外侧放不下时先允许压住外框（与外框重叠），再退回内窗；外侧空位按外框外沿（含 ast.frameThickness）算",
+   "kind": "layoutEngine"
+  },
+  {
+   "screen": "skilltree",
+   "what": "el.cost#2 与 el.cost 取同一个花费样本，右下画成第二个金币‘1,200’；参考是重置钮 + 钥匙数",
+   "severity": "low",
+   "proposal": "el.cost 实例可选花费种类（el.cost#2.currency = 内容包的第二种资源 / 钥匙），或 el.cost.form 加 resetKey（重置图标 + 消耗数）；action 包补钥匙样本",
+   "kind": "content"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 4,
+    "elements": 5,
+    "palette": 6,
+    "type": 3,
+    "shape": 4,
+    "density": 3,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "hud-lowhp": [
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 3,
+    "type": 3,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 4,
+    "density": 6,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "skilltree": [
+   {
+    "layout": 2,
+    "elements": 2,
+    "palette": 5,
+    "type": 3,
+    "shape": 5,
+    "density": 2,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 3,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 3,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "dialogue": [
+   {
+    "layout": 4,
+    "elements": 2,
+    "palette": 5,
+    "type": 3,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 7,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 6,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "draft": [
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 4,
+    "shape": 6,
+    "density": 4,
+    "overall": 5,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 7,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 5,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "codex": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "整套 HUD 约大了一倍（typ.baseSize 20 让版面缩放约 1.46）：血条占半屏宽、“96/150”字高是参考的两倍；参考的 HUD 很轻，只占四边细条",
+   "技能格第 4 格压在“生命”标签上；资源栏因与血条横向重叠被避让挤到画面中部右侧，参考在右下角贴边",
+   "技能格无底（vis.opacity 0 让格子本体透明），只剩冷却遮罩的暗块；参考是不透明的金框彩绘菱形",
+   "Boss 条占画面 60% 宽且字大；参考是顶部两条约 20% 宽的细条，名字是小型大写衬线",
+   "血条前有“生命 / 护甲”文字标签，参考没有标签；第二条在参考里是分段神力槽"
+  ],
+  "hud-lowhp": [
+   "参考的主信号是四周（尤其左下）浓重的红色暗角，复刻完全没有（低血暗角只在模拟受击且血量低于 25% 时出现）",
+   "与 hud 同样的尺寸问题：元素过大、技能格压标签、Boss 条过宽",
+   "参考血量 23/100 且数字转红，复刻仍是 96/150"
+  ],
+  "skilltree": [
+   "主体画成了“装置（需素材）”灰盒 + 战绩对比表（击杀 / 倒地 / 连击 / 伤害 表头）——cnt.focal = apparatus 与 cnt.dataShape = table 的组合；参考是一张 10 行的单列天赋列表",
+   "临时详情浮窗压在面板下沿外，资源与花费数字压在标题上",
+   "标题字过大；列表行（图标 + 红色名称 + 绿色数值 + MAX）完全缺失"
+  ],
+  "dialogue": [
+   "没有对话正文：rel.hudVisibility = hidden 让模板里的元素（字幕）一个都不画",
+   "托盘里是模板名“NPC 对话”大标题 + 右上 X + 右下“确定”按钮；参考是深灰名牌 + 两行深色正文，没有按钮",
+   "大理石内芯斑驳噪点很重；四角白色羽翼、顶边红宝石、两侧金菱端盖都是参考没有的饰件（来自皮肤关键词 kw.ornate 的并集）"
+  ],
+  "draft": [
+   "（凭记忆）三行恩赐的结构对，但字号过大，行与“进行中”状态胶囊互相压叠",
+   "外面套了一整块雕花大框；记忆中 Hades 的恩赐界面没有总框，是压暗画面上的神祇半身像 + 三块各自带框的恩赐牌",
+   "“再抽 10 次”菱形大按钮过于醒目（Hades 的重掷是一个小骰子图标 + 次数）"
+  ],
+  "codex": [
+   "（凭记忆）页签 + 左列表右详情的结构对，但字号偏大",
+   "列表行带“进行中”胶囊，详情里有“攻击 / 重量 → 74”的属性对比箭头与“装备 / 丢弃”按钮——是背包样本，不是图鉴的传记正文"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "尺寸与四角位置已对：血条贴左下、货币贴右下、Boss 条在顶部中央、恩赐在左缘，第一轮的过大与压叠全部消失",
+   "恩赐仍是一列 4 个圆角暗方块（左上角印键位 1–4、单色几何图标），参考是左缘两列交错约 12 枚金框彩绘菱形 + 末尾“+8”溢出格",
+   "血条外没有金色细双线框，前面仍有“生命 / 护甲”标签；第二条是连续红条，参考是 4 段火焰神力槽；缺血量右边的死亡抗拒红宝石“1 / 3”和血条上方两个弹药小圆",
+   "Boss 条只有一条无框平条（约 41% 屏宽，名字是小号无衬线居中），参考是两条约 20% 宽、青铜细框带尖端的细条并排，名字为衬线小型大写",
+   "右下是三种货币一行（860 / 12 / 7），参考只有一个金币数 + 小图标；伤害数字是黄色衬线，参考是白灰无衬线"
+  ],
+  "hud-lowhp": [
+   "低血暗角只有左右两缘很淡的粉红偏色（edgeGlow 代用），参考是四角、尤其左下浓重的血红暗角并漫过底部 HUD",
+   "血量仍是 96/150 白字，参考是 23/100 且数字转红",
+   "Boss 条 scale 0.5 后条长约 28% 屏宽（接近参考），但名字只剩约 6px、几乎读不出",
+   "其余同 hud：方块技能格、血条带标签、条无金框、单条连续红条"
+  ],
+  "skilltree": [
+   "结构已对（单列天赋列表 + 近黑内芯 + 金色雕花框 + 红色名称），但面板是横向矩形（约 76% × 73% 屏），参考是近方形的高框（约 57% × 92%），内窗只占约 37% 屏宽",
+   "外框是通用雕花九宫格 + 骷髅角 + 顶部红宝石章 + 两侧菱形端盖，缺人面顶冠、两侧骷髅抱紫水晶立柱、底部宝石横档这一整件器物",
+   "只有 6 行（示例内容是 6 条任务），行距约屏高 9%；参考 10 行、行距约 4%，列表更紧凑",
+   "数值和名称一样是红色（参考数值绿色），没有右侧“加号方块 + MAX / 紫色暗黑数”列，也没有行首镜像切换钮；图标是单色金菱形，参考是彩绘小图标",
+   "标题“技能树”左对齐、红色、起笔被左上骷髅角饰压住；参考是居中白色衬线小型大写 + 一行斜体引言",
+   "关闭键是右上角外的红圆 X，参考挂在底边中央；焦点行画成粗金色波纹双框，参考焦点行无框；缺右侧悬停说明浮窗与右下“重置 + 钥匙”"
+  ],
+  "dialogue": [
+   "配色与组件对上了：浅色纸面框 + 深灰底白字名牌 + 深色正文，第一轮的模板大标题、“确定”按钮、羽翼 / 宝石饰件都已去掉",
+   "文本框仍是通栏（约 2%–98% 屏宽、高约 33% 屏高，下半截空着），参考约 36%–86% 宽、紧贴两行字，左端压在立绘上",
+   "立绘只剩框后一个半透明暗灰剪影，“半身立绘（需素材）”占位牌从框底露出；参考是彩色大幅半身像",
+   "名牌写的是模板名“NPC 对话”、画在框内左上；参考是说话人名 + 红色小字称号两行、骑在框上缘，左侧一簇红色月桂",
+   "框是单条细金线，参考是金色双线 + 深色外缘；右上仍有 X 关闭钮（参考没有），月桂在右上且是金色"
+  ],
+  "draft": [
+   "（凭记忆）构图已对：去掉总框后是压暗画面上的左侧半身像 + 右侧三行恩赐",
+   "三行恩赐是约 9% 屏高的薄暗条（只有焦点行有金色双框），参考是约 18% 屏高、各自带雕花框且框色随稀有度的大牌，占中右大半屏",
+   "图标是小号单色金菱形，不是彩绘神祇纹章；行右侧写百分比，参考是稀有度文字",
+   "半身像占位画了两遍（两个头、两块“需素材”牌叠在一起）；没有神祇名 + 台词框，左上是模板标题“三选一升级”",
+   "右上 X 与右下“再抽 10 次”菱形大按钮仍在（参考没有关闭键，重掷是小骰子 + 次数）"
+  ],
+  "codex": [
+   "（凭记忆）字号已合适，第一轮的“进行中”胶囊与“→ 74”对比箭头已去掉；页签 + 左列表右详情的结构对",
+   "右侧详情仍是背包样本：物品名 + 一句说明 + 攻击 / 重量属性条 + 装备 / 丢弃 按钮；参考是肖像插画 + 长段传记 + 解锁进度点",
+   "页签是文字（全部 / 武器 / 护甲 / 符文），参考是一排图标页签",
+   "列表行是逐行描框的盒子 + 进度条，参考是无底的名字行",
+   "外框沿用夜之镜那套雕花 + 骷髅角 + 红宝石章 + 两侧菱形端盖，与图鉴的书本式框不同"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "恩赐已是左缘两列交错的菱形、无键位、下挂数量，但只有 4 枚黑底菱形 + 单色图标，没有金色描边；参考约 12 枚金框彩绘菱形 + 末尾‘+8’",
+   "血条已无标签、第二条分段，但血条外仍没有金色细双线框；第二条也写‘45/150’（参考第二条不写数），缺死亡抗拒‘1 / 3’与弹药小圆",
+   "顶部只有一条 Boss 条（约 20% 屏宽、名字可读），无框无尖端、名字是无衬线粗体；参考两条并排、青铜细框、衬线小型大写",
+   "右下仍是三种货币一行（860 / 12 / 7），参考只有一个金币数"
+  ],
+  "hud-lowhp": [
+   "低血暗角仍只是左右两缘很淡的粉红偏色，参考是四角（尤其左下）浓重的血红暗角并漫过底部 HUD",
+   "血量仍是 96/150 白字，参考是 23/100 且数字转红",
+   "Boss 条约 30% 屏宽、名字已可读（barWidth 生效），但同样无框、只有一条",
+   "其余同 hud：黑底菱形无金框、第二条带数值、三种货币、无死亡抗拒"
+  ],
+  "skilltree": [
+   "页头的标题与斜体引言都不见了（第 2 轮还有左对齐红字‘技能树’）：暗黑数 el.resources 放进页头行后，页头行就不写标题；参考是居中白色衬线小型大写‘Mirror of Night’ + 一行斜体引言",
+   "列表已是 10 行、行距收紧，关闭键挂在底边中央红圆，悬停说明浮框在外框右侧；但面板仍是横向矩形（约 76% × 73%），参考是近方形的高框",
+   "数值列（60% / 70%……）是灰色，不是参考的绿色加成值；样本仍是任务名 + 百分比（循环编号‘…2’），不是天赋名 + 加成",
+   "外框仍是通用雕花九宫格 + 骷髅角 + 顶部红宝石章 + 两侧菱形端盖，缺人面顶冠、骷髅抱紫水晶立柱、底部宝石横档",
+   "焦点行仍是粗金色框（参考焦点行无框）；没有右侧加号方块 + MAX 列、行首镜像钮、右下重置 + 钥匙"
+  ],
+  "dialogue": [
+   "文本框已收成约半屏宽、贴着三行字，名牌骑在框上缘、写说话人名（深灰底白字金边），✕ 已去掉；但框约在 25%–75% 屏宽，参考约 36%–86%、左端压在立绘上",
+   "立绘仍只是框后一个半透明暗灰剪影，‘半身立绘（需素材）’占位牌露在框左下；参考是彩色大幅半身像",
+   "名牌只有名字一行，缺红色小字称号；名牌左侧没有红色月桂，框右上是一笔金色卷轴饰",
+   "框仍是单条细金线，参考是金色双线 + 深色外缘"
+  ],
+  "draft": [
+   "（凭记忆）三块恩赐牌已各自带雕花框与两端菱形端盖、彩色菱形图标 + 稀有度字母、约屏高 16%；但框色统一金色，原作框色随稀有度",
+   "稀有度是 R / SR / SSR + 蓝 / 紫 / 金（抽卡色阶），原作是 Common / Rare / Epic 文字 + 白 / 蓝 / 紫",
+   "牌组停在画面上半（约 13%–64% 屏高），原作三块牌约竖向居中",
+   "左侧半身像是金色剪影占位（需素材），没有神祇名 + 台词框；每行末尾还有一行灰色百分比（任务进度样本）"
+  ],
+  "codex": [
+   "（凭记忆）列表已是无框名字行、详情顶部有插画位（需素材），页签变成单字 + Q / E 键；但页签仍是文字首字，原作是一排图标",
+   "详情下半仍是攻击 / 重量属性条 + 装备 / 丢弃按钮（背包样本），原作是长段传记 + 解锁进度点",
+   "页头是金色缎带标牌‘图鉴’ + 右上‘ESC 返回’胶囊，外框仍是夜之镜同款雕花 + 骷髅角，与图鉴的书本式框不同"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "恩赐已是两列交错的彩框菱形 + Lv 小牌 + 末尾虚线‘+1’，但约一半是暗底‘+’空格、图标是单色金符号；参考约 12 枚全是彩绘神祇纹章、末尾‘+8’",
+   "血条与神力槽已有金色双线框，但条很粗（约屏高 5%）、框是厚方盒；参考是细长血条 + 极细青铜线，神力槽是更细的火焰条",
+   "两条 Boss 条已并排、带双线框与尖端，但条粗、框重、三角端头偏大；名字是无衬线中文，参考是细条 + 衬线小型大写小字",
+   "Lv 小牌挂在每枚菱形下，把两列间距撑开；参考两列紧密交错，Lv 只挂在少数恩赐下，神祇色是角上斜条而不是整圈外框"
+  ],
+  "hud-lowhp": [
+   "低血暗角已出现，但只是整屏边缘的淡红偏色（左缘稍浓）；参考是四角、尤其左下浓重的暗血红并漫过底部 HUD",
+   "血量已钉在 23%（35/150），但数字仍是白色；参考 23/100 数字转红",
+   "血条 / 神力槽是粗条厚框，参考是细条细框（同 hud）",
+   "菱形图标是单色符号、Boss 条名字无衬线（同 hud）"
+  ],
+  "skilltree": [
+   "标题已居中‘炉心之镜’+ 斜体副题，行已是天赋名（红）+ 绿色加成 + 加号方块；但行尾写红色‘40 炉心’花费，参考满级行是灰色 MAX",
+   "外框仍是通用雕花九宫格 + 骷髅角 + 顶部紫晶章，缺骷髅抱紫水晶立柱、人面顶冠与底部宝石横档；面板仍偏宽（约 64% × 80%）",
+   "列表只占内窗左侧约六成、右侧大片空着；悬停浮框画进了内窗右上，参考挂在外框右侧外面",
+   "右下 el.cost#2 画成第二个金币‘1,200’，参考是重置钮 + 钥匙数；行名不是衬线小型大写"
+  ],
+  "dialogue": [
+   "文本框已在 36%–86% 屏宽、两行名牌（名 + 红色称号）骑在框上缘、左侧红月桂、大理石底双线框；但立绘仍是灰色剪影占位，‘半身立绘（需素材）’牌露在左下",
+   "框左端没有压在立绘上（立绘在框左侧外），框右上缺金色卷轴饰",
+   "大理石纹是粗而重复的平铺裂纹，参考是光滑浅底上的淡细纹",
+   "正文字号约为参考一半，名牌也比参考小"
+  ],
+  "draft": [
+   "（凭记忆）cnt.itemCount = 3 却只画出两块恩赐牌，牌组停在 26%–60% 屏高，没有竖向居中",
+   "稀有度已写 RARE / EPIC 文字、内圈细线随稀有度着色，但外层雕花框仍统一金色",
+   "每块牌第三行仍是灰色百分比（任务样本），不是数值说明",
+   "神祇名 + 台词在左上角、离半身像较远；半身像仍是金色剪影占位"
+  ],
+  "codex": [
+   "（凭记忆）页签已是一排图标 + Q / E，详情是插画位 + 名字 + 传记 + 解锁进度点；但传记只有一行",
+   "列表名字按类别彩色（红 / 紫 / 绿 / 蓝 / 金），记忆中原作是统一米白、未解锁的发灰",
+   "页头仍是金色缎带‘图鉴’+ 右上‘ESC 返回’胶囊，外框是夜之镜同款骷髅角，不是图鉴的书本式框"
+  ]
+ },
+ "revisions": [
+  "base：typ.baseSize 20 → 14、typ.scale 1.3 → 1.4。版面缩放跟基准字号走（14 → 1.0），整套 UI 的字与盒子回到参考比例——这是第一轮“元素过大、互相压叠”的根因",
+  "hud / hud-lowhp：lay.safeMargin 2.5 → 1；逐元素缩放 vitals 1.15、abilities 0.75（约等于参考菱形 36px）、resources 1.1、threat 0.75（低血屏 0.5）、feedback 0.8；资源栏改 row。血条回到左下贴边、货币回到右下角、Boss 细条回到顶部中央，不再避让挤位",
+  "hud / hud-lowhp：vis.opacity 0 → 1。HUD 里只有技能格用面板底，这样恩赐格成为不透明的暗底块（血条、数字仍无底）",
+  "hud-lowhp：rel.metaFx 加 edgeGlow（取 col.accent2 红），用常驻边缘红光近似低血暗角（hurtVignette 只在模拟受击且血量低于 25% 时出现，截图钉不住）",
+  "skilltree：去掉 cnt.focal = apparatus 与 cnt.dataShape = table（它们画出灰盒和战绩表），改为 collection + column 的单列列表，cmp.listRow = icon / title / value；col.text 设红近似“红色天赋名”；lay.panelSize 0.8 + 本屏 typ.baseSize 13 让 6 行全部放下；lay.detail transient → none（浮窗会压住列表中段）；vis.ornament 3 → 2（角上骷髅压住标题）；暗黑数 el.resources 锚到面板右上，钥匙数 el.cost = tag 锚到面板底边中央",
+  "dialogue：删掉 rel.hudVisibility = hidden；正文改由 cnt.dataShape = text（短段深色字）给，cnt.elements = []（字幕元素是黑底白字条）；cmp.plate = tab + col.accent 深灰 → 模板标题变成深灰底白字名牌；ix.mode = readOnly、ix.continueCue = none 去掉“确定”按钮与闪烁箭头；uip.keyword = none + ast.ornaments = [sprigs] 去掉关键词带来的宝石 / 端盖 / 羽翼角花，只留右上一簇月桂；ast.coreMat stone → paper（石纹噪点太重，纸面更接近光滑浅色大理石）",
+  "draft：cmp.modal standard → floating（无总框，只剩压暗画面上的半身像与恩赐行），lay.panelSize 0.9、rel.dim 0.7；cmp.listRow 去掉 status（“进行中”胶囊）；ops.actions = retry 保留（tpl.draft3 自带、并集合并删不掉，当作重掷入口）",
+  "codex：lay.panelSize 0.95、rel.dim 0.7；cmp.listRow = title / progress（去掉状态胶囊）；cnt.itemCount 6；st.delta = newOnly（去掉“→ 74”对比箭头）",
+  "R3 前（M12a 之后）：base 与 draft 删掉 vis.silhouette@icon（审查修复 B：icon 部件没接上，原来误把键帽 / 主按钮画成菱形；恩赐菱形由 hud 的 @el.abilities 画）；hud / hud-lowhp 加 el.abilities.arrangement = zigzag2（两列交错）+ keyHint none、el.vitals.labels none + rowForms [bar, segmented]（第二条神力槽分段）、el.threat.form [bossBar, healthBar]（普通敌人头顶小条挂目标）、el.threat.scale 1 + barWidth（hud 0.2、lowhp 0.3：条短、名字可读）；技能格下的数量（valueLabel current + below）核对后保留，近似恩赐下的 Lv 小牌；skilltree 去掉本屏的红色 col.text（回到米白），改写 cmp.listRowColors [红, auto, good, muted]（名称红、数值绿、MAX 灰），ix.close xOutside → bottomCenter、lay.titleAlign center + lay.titleSubtitle italic、lay.detail 写回 transient，el.resources.anchorSpace = header、el.cost.anchorSpace = container（D15 之后不压第一行）；dialogue 去掉 uip.keyword = none，改用 ast.ornaments [none, sprigs]（只清饰件，不丢关键词的其余取值），lay.titlePos = straddle + vis.stroke / strokeColor@name（名牌骑在框上缘、金边），lay.panelSize 0.55 → 0.5 + lay.panelFit = fitContent（文本框半屏宽、贴着两行字）；draft 加 lay.titlePos none，删掉显式的 ops.actions [retry]（原作重掷是小骰子，不是大按钮）；codex 加 ast.ornaments [-gems, -endcaps, dividers]（去掉夜之镜那套宝石章与端盖）。",
+  "R3 评分（M12a 之后，未改取值）：补第 3 轮 scores 与 round3Diffs；新增缺口 3 条；按第 3 轮对照图给已画对的 6 条缺口标 resolvedBy。",
+  "R4 前（M12b 之后）：hud / hud-lowhp 加 el.vitals.attach [lives, charges]（死亡抗拒 1/3 + 弹药小圆，#5）、el.vitals.rowLabels [auto, none]（神力槽不写数，#51）、cmp.gaugeFrame@el.vitals / @el.threat = double + cmp.gaugeCap@el.threat = pointed（血条与 Boss 条的青铜双线细框、两端尖饰，#8）、st.rarityCue@el.abilities [cornerTab] + cmp.slotLabel@el.abilities levelTag（神祇斜条 + Lv 小牌，#11；原来近似 Lv 的 valueLabel current / below 改 none）、el.abilities.overflow plusN（末尾 +N，#2）、el.resources.count 1（参考右下只有一个金币数）；hud 再加 el.abilities.count 10（参考约 10 枚恩赐）、el.threat.count 2（两条 Boss 条并排，#7）；hud-lowhp 加 cnt.sampleHp 0.23（钉到 23% 血、数字转红 + 低血暗角，#13 / #12），rel.metaFx 去掉代用的 edgeGlow；skilltree 用 vis.gloss diagonalSheen 换掉 diagStripes 近似（#23）、col.gem #9b5de5（紫水晶，#25）、cmp.listRow [toggle, icon, title, value, upgrade]（行首镜像钮 + 行尾加号 / MAX，#16 / #24）、cnt.elements 加 el.cost#2（tag、br、container、0.8：右下重置 + 钥匙消耗，#24）、cmp.listRowColors 第 3 项写实绿 #7ed348（good 角色是灰，#50）、lay.panelWidth 0.6 / panelHeight 0.92（近方形高框）、ast.frameThickness 24（厚框）、ix.focus [textColor]（参考焦点行无框）；dialogue 加 cmp.dialogBox offsetBox（#27）、cmp.plate@name twoLine（名 + 红色称号，#31）、ast.coreMat paper → marble（#34）、vis.strokeWidth@dialog 4（双线分开，#33）、ast.ornamentAnchor [panelCorners, panelEdges, plateSide]（名牌左侧红月桂，#32）；draft 加 ops.actions [reroll]（右下骰子 + 次数，#41）、st.rarityCue [none, border, label] + col.rarityScale custom + col.rarityColors 白 / 蓝 / 紫 / 红 / 橙 / 绿（Common…Duo，#38）、cnt.companion avatar + lay.titlePos panel（神祇名 + 台词代替模板标题，#39）、lay.dataAlign center（三块牌竖向居中）；codex 加 cmp.detailFields [derive]（肖像 + 长文 + 进度点，#42）。",
+  "R4 评分（M12b 之后，未改取值）：补第 4 轮 scores 与 round4Diffs；新增缺口 3 条；按第 4 轮对照图给 20 条缺口标 resolvedBy、8 条标 partialBy。",
+  "技术补全收尾（2026-10-23）：art.scene arena → iso-dungeon（等距·地牢：石室、火盆、法阵地面，更像原作的冥界房间；锁定镜头的环境自带等距机位，删掉 art.values 里的 camera.projection / camera.angle），重拍六屏、重拼对照图。"
+ ],
+ "notes": "局内 HUD 很轻：无底、粗体描边字，左缘两列交错的金框菱形恩赐，左下金色细双线框里的红色血条 + '当前 / 上限' + 第二条分段神力槽，右下货币竖列，顶部 Boss 细条。重装饰只留给'停下来看'的器物菜单：夜之镜是一整件青铜骷髅镜框嵌紫水晶，内芯近黑、单列表、按列分色（红名 / 绿值 / 灰 MAX），底部悬挂红 X。对话框反而是浅色大理石底 + 深色名牌 + 红色月桂。三选一恩赐、图鉴两屏凭记忆编码，无参考图。 第二轮：整套字号回到 14（第一轮 20 让版面放大约 1.5 倍），夜之镜改成单列列表，对话框改成深灰名牌 + 浅色正文框，恩赐界面去掉总框。"
+}

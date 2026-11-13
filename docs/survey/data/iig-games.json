@@ -1,0 +1,4633 @@
+{
+ "summary": {
+  "source": "https://interfaceingame.com/games-sitemap.xml（只用名单与链接；该站条款禁止爬取）",
+  "total": 403,
+  "matchedR1": 111,
+  "matchedPoolOnly": 14,
+  "steamOnly": 174,
+  "unmatched": 104
+ },
+ "games": [
+  {
+   "slug": "captain-toad-treasure-tracker",
+   "url": "https://interfaceingame.com/games/captain-toad-treasure-tracker/",
+   "name": "Captain Toad Treasure Tracker",
+   "lastmod": "2020-11-17T23:14:47+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "cities-skylines",
+   "url": "https://interfaceingame.com/games/cities-skylines/",
+   "name": "Cities Skylines",
+   "lastmod": "2020-11-17T23:14:49+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 255710,
+    "name": "Cities: Skylines"
+   }
+  },
+  {
+   "slug": "child-of-light",
+   "url": "https://interfaceingame.com/games/child-of-light/",
+   "name": "Child Of Light",
+   "lastmod": "2020-11-17T23:14:49+00:00",
+   "r1": {
+    "key": "app:256290",
+    "name": "Child of Light",
+    "appid": 256290,
+    "tier": "C",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "chivalry-medieval-warfare",
+   "url": "https://interfaceingame.com/games/chivalry-medieval-warfare/",
+   "name": "Chivalry Medieval Warfare",
+   "lastmod": "2020-11-17T23:14:49+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 219640,
+    "name": "Chivalry: Medieval Warfare"
+   }
+  },
+  {
+   "slug": "clustertruck",
+   "url": "https://interfaceingame.com/games/clustertruck/",
+   "name": "Clustertruck",
+   "lastmod": "2020-11-17T23:14:50+00:00",
+   "r1": {
+    "key": "app:397950",
+    "name": "Clustertruck",
+    "appid": 397950,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "abzu",
+   "url": "https://interfaceingame.com/games/abzu/",
+   "name": "Abzu",
+   "lastmod": "2020-11-17T23:19:31+00:00",
+   "r1": {
+    "key": "app:384190",
+    "name": "ABZU",
+    "appid": 384190,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "a-short-hike",
+   "url": "https://interfaceingame.com/games/a-short-hike/",
+   "name": "A Short Hike",
+   "lastmod": "2020-11-17T23:19:31+00:00",
+   "r1": {
+    "key": "app:1055540",
+    "name": "A Short Hike",
+    "appid": 1055540,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "911-operator",
+   "url": "https://interfaceingame.com/games/911-operator/",
+   "name": "911 Operator",
+   "lastmod": "2020-11-17T23:19:31+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 503560,
+    "name": "911 Operator"
+   }
+  },
+  {
+   "slug": "animal-crossing-new-horizons",
+   "url": "https://interfaceingame.com/games/animal-crossing-new-horizons/",
+   "name": "Animal Crossing New Horizons",
+   "lastmod": "2020-11-17T23:19:32+00:00",
+   "r1": {
+    "key": "name:animal crossing new horizons",
+    "name": "Animal Crossing: New Horizons",
+    "appid": null,
+    "tier": "C",
+    "primary": "life",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "alan-wake",
+   "url": "https://interfaceingame.com/games/alan-wake/",
+   "name": "Alan Wake",
+   "lastmod": "2020-11-17T23:19:32+00:00",
+   "r1": {
+    "key": "app:108710",
+    "name": "Alan Wake",
+    "appid": 108710,
+    "tier": "B",
+    "primary": "horror",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "albion-online",
+   "url": "https://interfaceingame.com/games/albion-online/",
+   "name": "Albion Online",
+   "lastmod": "2020-11-17T23:19:32+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 761890,
+    "name": "Albion Online"
+   }
+  },
+  {
+   "slug": "anno-1800",
+   "url": "https://interfaceingame.com/games/anno-1800/",
+   "name": "Anno 1800",
+   "lastmod": "2020-11-17T23:19:33+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 916440,
+    "name": "Anno 1800"
+   }
+  },
+  {
+   "slug": "ape-out",
+   "url": "https://interfaceingame.com/games/ape-out/",
+   "name": "Ape Out",
+   "lastmod": "2020-11-17T23:19:34+00:00",
+   "r1": {
+    "key": "app:447150",
+    "name": "APE OUT",
+    "appid": 447150,
+    "tier": "C",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "ark-survival-evolved",
+   "url": "https://interfaceingame.com/games/ark-survival-evolved/",
+   "name": "Ark Survival Evolved",
+   "lastmod": "2020-11-17T23:19:35+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 346110,
+    "name": "ARK: Survival Evolved"
+   }
+  },
+  {
+   "slug": "armello",
+   "url": "https://interfaceingame.com/games/armello/",
+   "name": "Armello",
+   "lastmod": "2020-11-17T23:19:47+00:00",
+   "r1": {
+    "key": "app:290340",
+    "name": "Armello",
+    "appid": 290340,
+    "tier": "B",
+    "primary": "card",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "assassins-creed-odyssey",
+   "url": "https://interfaceingame.com/games/assassins-creed-odyssey/",
+   "name": "Assassins Creed Odyssey",
+   "lastmod": "2020-11-17T23:19:48+00:00",
+   "r1": {
+    "key": "app:812140",
+    "name": "Assassin's Creed Odyssey",
+    "appid": 812140,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "assassins-creed-origins",
+   "url": "https://interfaceingame.com/games/assassins-creed-origins/",
+   "name": "Assassins Creed Origins",
+   "lastmod": "2020-11-17T23:19:49+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 582160,
+    "name": "Assassin's Creed® Origins"
+   }
+  },
+  {
+   "slug": "bad-north",
+   "url": "https://interfaceingame.com/games/bad-north/",
+   "name": "Bad North",
+   "lastmod": "2020-11-17T23:19:50+00:00",
+   "r1": {
+    "key": "app:688420",
+    "name": "Bad North",
+    "appid": 688420,
+    "tier": "C",
+    "primary": "strategy",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "assassins-creed-unity",
+   "url": "https://interfaceingame.com/games/assassins-creed-unity/",
+   "name": "Assassins Creed Unity",
+   "lastmod": "2020-11-17T23:19:50+00:00",
+   "r1": {
+    "key": "app:289650",
+    "name": "Assassin's Creed Unity",
+    "appid": 289650,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "batman-arkham-asylum",
+   "url": "https://interfaceingame.com/games/batman-arkham-asylum/",
+   "name": "Batman Arkham Asylum",
+   "lastmod": "2020-11-17T23:19:51+00:00",
+   "r1": {
+    "key": "app:35140",
+    "name": "Batman: Arkham Asylum Game of the Year Edition",
+    "appid": 35140,
+    "tier": "D",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "batman-arkham-city",
+   "url": "https://interfaceingame.com/games/batman-arkham-city/",
+   "name": "Batman Arkham City",
+   "lastmod": "2020-11-17T23:19:52+00:00",
+   "r1": {
+    "key": "app:200260",
+    "name": "Batman: Arkham City - Game of the Year Edition",
+    "appid": 200260,
+    "tier": "B",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "batman-arkham-knight",
+   "url": "https://interfaceingame.com/games/batman-arkham-knight/",
+   "name": "Batman Arkham Knight",
+   "lastmod": "2020-11-17T23:19:52+00:00",
+   "r1": {
+    "key": "app:208650",
+    "name": "Batman: Arkham Knight",
+    "appid": 208650,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "battleblock-theater",
+   "url": "https://interfaceingame.com/games/battleblock-theater/",
+   "name": "Battleblock Theater",
+   "lastmod": "2020-11-17T23:19:53+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 238460,
+    "name": "BattleBlock Theater®"
+   }
+  },
+  {
+   "slug": "blasphemous",
+   "url": "https://interfaceingame.com/games/blasphemous/",
+   "name": "Blasphemous",
+   "lastmod": "2020-11-17T23:21:59+00:00",
+   "r1": {
+    "key": "app:774361",
+    "name": "Blasphemous",
+    "appid": 774361,
+    "tier": "C",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "black-desert-online",
+   "url": "https://interfaceingame.com/games/black-desert-online/",
+   "name": "Black Desert Online",
+   "lastmod": "2020-11-17T23:21:59+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "blazblue-cross-tag-battle",
+   "url": "https://interfaceingame.com/games/blazblue-cross-tag-battle/",
+   "name": "Blazblue Cross Tag Battle",
+   "lastmod": "2020-11-17T23:22:00+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 702890,
+    "name": "BlazBlue: Cross Tag Battle"
+   }
+  },
+  {
+   "slug": "bloodborne",
+   "url": "https://interfaceingame.com/games/bloodborne/",
+   "name": "Bloodborne",
+   "lastmod": "2020-11-17T23:22:01+00:00",
+   "r1": {
+    "key": "name:bloodborne",
+    "name": "Bloodborne",
+    "appid": null,
+    "tier": "B",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "blood-bowl-2",
+   "url": "https://interfaceingame.com/games/blood-bowl-2/",
+   "name": "Blood Bowl 2",
+   "lastmod": "2020-11-17T23:22:01+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "borderlands-2",
+   "url": "https://interfaceingame.com/games/borderlands-2/",
+   "name": "Borderlands 2",
+   "lastmod": "2020-11-17T23:22:02+00:00",
+   "r1": {
+    "key": "app:49520",
+    "name": "Borderlands 2",
+    "appid": 49520,
+    "tier": "B",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "cadence-of-hyrule-crypt-of-the-necrodancer-featuring-the-legend-of-zelda",
+   "url": "https://interfaceingame.com/games/cadence-of-hyrule-crypt-of-the-necrodancer-featuring-the-legend-of-zelda/",
+   "name": "Cadence Of Hyrule Crypt Of The Necrodancer Featuring The Legend Of Zelda",
+   "lastmod": "2020-11-17T23:22:03+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "business-tour",
+   "url": "https://interfaceingame.com/games/business-tour/",
+   "name": "Business Tour",
+   "lastmod": "2020-11-17T23:22:03+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "call-of-duty-black-ops-4",
+   "url": "https://interfaceingame.com/games/call-of-duty-black-ops-4/",
+   "name": "Call Of Duty Black Ops 4",
+   "lastmod": "2020-11-17T23:22:03+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "call-of-duty-mobile",
+   "url": "https://interfaceingame.com/games/call-of-duty-mobile/",
+   "name": "Call Of Duty Mobile",
+   "lastmod": "2020-11-17T23:22:04+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "company-of-heroes-2",
+   "url": "https://interfaceingame.com/games/company-of-heroes-2/",
+   "name": "Company Of Heroes 2",
+   "lastmod": "2020-11-18T00:05:11+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 231430,
+    "name": "Company of Heroes 2"
+   }
+  },
+  {
+   "slug": "conan-exiles",
+   "url": "https://interfaceingame.com/games/conan-exiles/",
+   "name": "Conan Exiles",
+   "lastmod": "2020-11-18T00:05:12+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "control",
+   "url": "https://interfaceingame.com/games/control/",
+   "name": "Control",
+   "lastmod": "2020-11-18T00:05:13+00:00",
+   "r1": {
+    "key": "app:870780",
+    "name": "CONTROL",
+    "appid": 870780,
+    "tier": "A",
+    "primary": "horror",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "conquerors-blade",
+   "url": "https://interfaceingame.com/games/conquerors-blade/",
+   "name": "Conquerors Blade",
+   "lastmod": "2020-11-18T00:05:13+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 835570,
+    "name": "Conqueror's Blade"
+   }
+  },
+  {
+   "slug": "darksiders-warmastered-edition",
+   "url": "https://interfaceingame.com/games/darksiders-warmastered-edition/",
+   "name": "Darksiders Warmastered Edition",
+   "lastmod": "2020-11-18T00:05:15+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 462780,
+    "name": "Darksiders Warmastered Edition"
+   }
+  },
+  {
+   "slug": "celeste",
+   "url": "https://interfaceingame.com/games/celeste/",
+   "name": "Celeste",
+   "lastmod": "2020-11-18T10:46:23+00:00",
+   "r1": {
+    "key": "app:504230",
+    "name": "Celeste",
+    "appid": 504230,
+    "tier": "C",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "dayz",
+   "url": "https://interfaceingame.com/games/dayz/",
+   "name": "Dayz",
+   "lastmod": "2020-11-18T13:19:10+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 221100,
+    "name": "DayZ"
+   }
+  },
+  {
+   "slug": "deep-rock-galactic",
+   "url": "https://interfaceingame.com/games/deep-rock-galactic/",
+   "name": "Deep Rock Galactic",
+   "lastmod": "2020-11-19T09:21:01+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 548430,
+    "name": "Deep Rock Galactic"
+   }
+  },
+  {
+   "slug": "deathgarden-bloodharvest",
+   "url": "https://interfaceingame.com/games/deathgarden-bloodharvest/",
+   "name": "Deathgarden Bloodharvest",
+   "lastmod": "2020-11-19T09:21:01+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "detroit-become-human",
+   "url": "https://interfaceingame.com/games/detroit-become-human/",
+   "name": "Detroit Become Human",
+   "lastmod": "2020-11-19T09:21:03+00:00",
+   "r1": {
+    "key": "app:1222140",
+    "name": "Detroit: Become Human",
+    "appid": 1222140,
+    "tier": "B",
+    "primary": "narrative",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "dirt-3",
+   "url": "https://interfaceingame.com/games/dirt-3/",
+   "name": "Dirt 3",
+   "lastmod": "2020-11-19T09:21:06+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "disc-jam",
+   "url": "https://interfaceingame.com/games/disc-jam/",
+   "name": "Disc Jam",
+   "lastmod": "2020-11-19T09:21:07+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 415880,
+    "name": "Disc Jam"
+   }
+  },
+  {
+   "slug": "dishonored-2",
+   "url": "https://interfaceingame.com/games/dishonored-2/",
+   "name": "Dishonored 2",
+   "lastmod": "2020-11-19T16:59:41+00:00",
+   "r1": {
+    "key": "app:403640",
+    "name": "Dishonored 2",
+    "appid": 403640,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "dont-starve",
+   "url": "https://interfaceingame.com/games/dont-starve/",
+   "name": "Dont Starve",
+   "lastmod": "2020-11-19T16:59:42+00:00",
+   "r1": {
+    "key": "app:219740",
+    "name": "Don't Starve",
+    "appid": 219740,
+    "tier": "C",
+    "primary": "survival",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "doom",
+   "url": "https://interfaceingame.com/games/doom/",
+   "name": "Doom",
+   "lastmod": "2020-11-19T16:59:43+00:00",
+   "r1": {
+    "key": "app:379720",
+    "name": "DOOM",
+    "appid": 379720,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "donkey-kong-country",
+   "url": "https://interfaceingame.com/games/donkey-kong-country/",
+   "name": "Donkey Kong Country",
+   "lastmod": "2020-11-19T16:59:43+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "dragon-ball-fighterz",
+   "url": "https://interfaceingame.com/games/dragon-ball-fighterz/",
+   "name": "Dragon Ball Fighterz",
+   "lastmod": "2020-11-19T16:59:55+00:00",
+   "r1": {
+    "key": "app:678950",
+    "name": "DRAGON BALL FighterZ",
+    "appid": 678950,
+    "tier": "C",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "dragon-quest-builders-2",
+   "url": "https://interfaceingame.com/games/dragon-quest-builders-2/",
+   "name": "Dragon Quest Builders 2",
+   "lastmod": "2020-11-19T16:59:56+00:00",
+   "r1": {
+    "key": "app:1072420",
+    "name": "DRAGON QUEST BUILDERS 2",
+    "appid": 1072420,
+    "tier": "C",
+    "primary": "survival",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "dragon-quest-xi-echoes-of-an-elusive-age",
+   "url": "https://interfaceingame.com/games/dragon-quest-xi-echoes-of-an-elusive-age/",
+   "name": "Dragon Quest XI Echoes Of An Elusive Age",
+   "lastmod": "2020-11-19T16:59:57+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "dungeon-of-the-endless",
+   "url": "https://interfaceingame.com/games/dungeon-of-the-endless/",
+   "name": "Dungeon Of The Endless",
+   "lastmod": "2020-11-19T16:59:57+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 249050,
+    "name": "Dungeon of the ENDLESS™"
+   }
+  },
+  {
+   "slug": "duskers",
+   "url": "https://interfaceingame.com/games/duskers/",
+   "name": "Duskers",
+   "lastmod": "2020-11-19T16:59:57+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 254320,
+    "name": "Duskers"
+   }
+  },
+  {
+   "slug": "endless-space-2",
+   "url": "https://interfaceingame.com/games/endless-space-2/",
+   "name": "Endless Space 2",
+   "lastmod": "2020-11-19T16:59:58+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 392110,
+    "name": "ENDLESS Space™ 2"
+   }
+  },
+  {
+   "slug": "everything",
+   "url": "https://interfaceingame.com/games/everything/",
+   "name": "Everything",
+   "lastmod": "2020-11-19T16:59:58+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 582270,
+    "name": "Everything"
+   }
+  },
+  {
+   "slug": "extraordinary-ones",
+   "url": "https://interfaceingame.com/games/extraordinary-ones/",
+   "name": "Extraordinary Ones",
+   "lastmod": "2020-11-19T16:59:59+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "f1-2019",
+   "url": "https://interfaceingame.com/games/f1-2019/",
+   "name": "F1 2019",
+   "lastmod": "2020-11-19T17:00:00+00:00",
+   "r1": {
+    "key": "app:928600",
+    "name": "F1 2019",
+    "appid": 928600,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "f-zero",
+   "url": "https://interfaceingame.com/games/f-zero/",
+   "name": "F Zero",
+   "lastmod": "2020-11-19T17:00:00+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "faeria",
+   "url": "https://interfaceingame.com/games/faeria/",
+   "name": "Faeria",
+   "lastmod": "2020-11-19T17:00:01+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 397060,
+    "name": "Faeria"
+   }
+  },
+  {
+   "slug": "far-cry-4",
+   "url": "https://interfaceingame.com/games/far-cry-4/",
+   "name": "Far Cry 4",
+   "lastmod": "2020-11-19T21:47:59+00:00",
+   "r1": {
+    "key": "app:298110",
+    "name": "Far Cry 4",
+    "appid": 298110,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "flinthook",
+   "url": "https://interfaceingame.com/games/flinthook/",
+   "name": "Flinthook",
+   "lastmod": "2020-11-19T21:48:00+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 401710,
+    "name": "Flinthook"
+   }
+  },
+  {
+   "slug": "forager",
+   "url": "https://interfaceingame.com/games/forager/",
+   "name": "Forager",
+   "lastmod": "2020-11-19T21:48:03+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 751780,
+    "name": "Forager"
+   }
+  },
+  {
+   "slug": "gears-5",
+   "url": "https://interfaceingame.com/games/gears-5/",
+   "name": "Gears 5",
+   "lastmod": "2020-11-19T21:48:05+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1097840,
+    "name": "Gears 5"
+   }
+  },
+  {
+   "slug": "ftl-faster-than-light",
+   "url": "https://interfaceingame.com/games/ftl-faster-than-light/",
+   "name": "Ftl Faster Than Light",
+   "lastmod": "2020-11-19T21:48:05+00:00",
+   "r1": {
+    "key": "app:212680",
+    "name": "FTL: Faster Than Light",
+    "appid": 212680,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "god-of-war",
+   "url": "https://interfaceingame.com/games/god-of-war/",
+   "name": "God Of War",
+   "lastmod": "2020-11-19T21:48:06+00:00",
+   "r1": {
+    "key": "app:1593500",
+    "name": "God of War",
+    "appid": 1593500,
+    "tier": "A",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "grim-dawn",
+   "url": "https://interfaceingame.com/games/grim-dawn/",
+   "name": "Grim Dawn",
+   "lastmod": "2020-11-19T21:48:07+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 219990,
+    "name": "Grim Dawn"
+   }
+  },
+  {
+   "slug": "grip-combat-racing",
+   "url": "https://interfaceingame.com/games/grip-combat-racing/",
+   "name": "Grip Combat Racing",
+   "lastmod": "2020-11-19T21:48:08+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 396900,
+    "name": "GRIP: Combat Racing"
+   }
+  },
+  {
+   "slug": "gris",
+   "url": "https://interfaceingame.com/games/gris/",
+   "name": "Gris",
+   "lastmod": "2020-11-19T21:48:08+00:00",
+   "r1": {
+    "key": "app:683320",
+    "name": "GRIS",
+    "appid": 683320,
+    "tier": "A",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "guacamelee-super-turbo-championship-edition",
+   "url": "https://interfaceingame.com/games/guacamelee-super-turbo-championship-edition/",
+   "name": "Guacamelee Super Turbo Championship Edition",
+   "lastmod": "2020-11-19T21:48:09+00:00",
+   "r1": {
+    "key": "app:275390",
+    "name": "Guacamelee! Super Turbo Championship Edition",
+    "appid": 275390,
+    "tier": "D",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "h1z1-battle-royale",
+   "url": "https://interfaceingame.com/games/h1z1-battle-royale/",
+   "name": "H1z1 Battle Royale",
+   "lastmod": "2020-11-19T21:48:10+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "generation-zero",
+   "url": "https://interfaceingame.com/games/generation-zero/",
+   "name": "Generation Zero",
+   "lastmod": "2020-11-19T21:55:15+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 704270,
+    "name": "Generation Zero®"
+   }
+  },
+  {
+   "slug": "hearthstone-heroes-of-warcraft",
+   "url": "https://interfaceingame.com/games/hearthstone-heroes-of-warcraft/",
+   "name": "Hearthstone Heroes Of Warcraft",
+   "lastmod": "2020-11-20T10:02:15+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "hellblade-senuas-sacrifice",
+   "url": "https://interfaceingame.com/games/hellblade-senuas-sacrifice/",
+   "name": "Hellblade Senuas Sacrifice",
+   "lastmod": "2020-11-20T10:02:17+00:00",
+   "r1": {
+    "key": "app:414340",
+    "name": "Hellblade: Senua's Sacrifice",
+    "appid": 414340,
+    "tier": "A",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "heave-ho",
+   "url": "https://interfaceingame.com/games/heave-ho/",
+   "name": "Heave Ho",
+   "lastmod": "2020-11-20T10:02:17+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 905340,
+    "name": "Heave Ho"
+   }
+  },
+  {
+   "slug": "helldivers",
+   "url": "https://interfaceingame.com/games/helldivers/",
+   "name": "Helldivers",
+   "lastmod": "2020-11-20T10:02:17+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "hello-neighbor",
+   "url": "https://interfaceingame.com/games/hello-neighbor/",
+   "name": "Hello Neighbor",
+   "lastmod": "2020-11-20T10:02:18+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 521890,
+    "name": "Hello Neighbor"
+   }
+  },
+  {
+   "slug": "hidden-folks",
+   "url": "https://interfaceingame.com/games/hidden-folks/",
+   "name": "Hidden Folks",
+   "lastmod": "2020-11-20T10:02:19+00:00",
+   "r1": {
+    "key": "app:435400",
+    "name": "Hidden Folks",
+    "appid": 435400,
+    "tier": "C",
+    "primary": "puzzle",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "hitman-2",
+   "url": "https://interfaceingame.com/games/hitman-2/",
+   "name": "Hitman 2",
+   "lastmod": "2020-11-20T10:02:20+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "horizon-zero-dawn",
+   "url": "https://interfaceingame.com/games/horizon-zero-dawn/",
+   "name": "Horizon Zero Dawn",
+   "lastmod": "2020-11-20T10:02:22+00:00",
+   "r1": {
+    "key": "app:2561580",
+    "name": "Horizon Zero Dawn Remastered",
+    "appid": 2561580,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "human-fall-flat",
+   "url": "https://interfaceingame.com/games/human-fall-flat/",
+   "name": "Human Fall Flat",
+   "lastmod": "2020-11-20T10:02:23+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 477160,
+    "name": "Human Fall Flat"
+   }
+  },
+  {
+   "slug": "into-the-breach",
+   "url": "https://interfaceingame.com/games/into-the-breach/",
+   "name": "Into The Breach",
+   "lastmod": "2020-11-20T10:02:26+00:00",
+   "r1": {
+    "key": "app:590380",
+    "name": "Into the Breach",
+    "appid": 590380,
+    "tier": "D",
+    "primary": "strategy",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "katamari-damacy-reroll",
+   "url": "https://interfaceingame.com/games/katamari-damacy-reroll/",
+   "name": "Katamari Damacy Reroll",
+   "lastmod": "2020-11-20T10:02:27+00:00",
+   "r1": {
+    "key": "app:848350",
+    "name": "Katamari Damacy REROLL",
+    "appid": 848350,
+    "tier": "D",
+    "primary": "life",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "fez",
+   "url": "https://interfaceingame.com/games/fez/",
+   "name": "Fez",
+   "lastmod": "2020-11-20T10:21:40+00:00",
+   "r1": {
+    "key": "app:224760",
+    "name": "FEZ",
+    "appid": 224760,
+    "tier": "A",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "fortnite",
+   "url": "https://interfaceingame.com/games/fortnite/",
+   "name": "Fortnite",
+   "lastmod": "2020-11-20T10:46:56+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "last-year",
+   "url": "https://interfaceingame.com/games/last-year/",
+   "name": "Last Year",
+   "lastmod": "2020-11-20T10:57:56+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1195460,
+    "name": "Last Year"
+   }
+  },
+  {
+   "slug": "league-of-legends",
+   "url": "https://interfaceingame.com/games/league-of-legends/",
+   "name": "League Of Legends",
+   "lastmod": "2020-11-20T10:57:56+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "left-4-dead",
+   "url": "https://interfaceingame.com/games/left-4-dead/",
+   "name": "Left 4 Dead",
+   "lastmod": "2020-11-20T10:57:57+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 500,
+    "name": "Left 4 Dead"
+   }
+  },
+  {
+   "slug": "left-4-dead-2",
+   "url": "https://interfaceingame.com/games/left-4-dead-2/",
+   "name": "Left 4 Dead 2",
+   "lastmod": "2020-11-20T10:57:58+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 550,
+    "name": "Left 4 Dead 2"
+   }
+  },
+  {
+   "slug": "life-is-strange-before-the-storm",
+   "url": "https://interfaceingame.com/games/life-is-strange-before-the-storm/",
+   "name": "Life Is Strange Before The Storm",
+   "lastmod": "2020-11-20T10:57:58+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 554620,
+    "name": "Life is Strange: Before the Storm"
+   }
+  },
+  {
+   "slug": "lovers-in-a-dangerous-spacetime",
+   "url": "https://interfaceingame.com/games/lovers-in-a-dangerous-spacetime/",
+   "name": "Lovers In A Dangerous Spacetime",
+   "lastmod": "2020-11-20T10:57:59+00:00",
+   "r1": {
+    "key": "app:252110",
+    "name": "Lovers in a Dangerous Spacetime",
+    "appid": 252110,
+    "tier": "D",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "mega-man-11",
+   "url": "https://interfaceingame.com/games/mega-man-11/",
+   "name": "Mega Man 11",
+   "lastmod": "2020-11-20T10:58:00+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 742300,
+    "name": "Mega Man 11"
+   }
+  },
+  {
+   "slug": "meteorfall-krumits-tale",
+   "url": "https://interfaceingame.com/games/meteorfall-krumits-tale/",
+   "name": "Meteorfall Krumits Tale",
+   "lastmod": "2020-11-20T10:58:00+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1073320,
+    "name": "Meteorfall: Krumit's Tale"
+   }
+  },
+  {
+   "slug": "metro-2033-redux",
+   "url": "https://interfaceingame.com/games/metro-2033-redux/",
+   "name": "Metro 2033 Redux",
+   "lastmod": "2020-11-20T10:58:01+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 286690,
+    "name": "Metro 2033 Redux"
+   }
+  },
+  {
+   "slug": "miscreated",
+   "url": "https://interfaceingame.com/games/miscreated/",
+   "name": "Miscreated",
+   "lastmod": "2020-11-20T10:58:03+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 299740,
+    "name": "Miscreated"
+   }
+  },
+  {
+   "slug": "graveyard-keeper",
+   "url": "https://interfaceingame.com/games/graveyard-keeper/",
+   "name": "Graveyard Keeper",
+   "lastmod": "2020-11-20T23:12:18+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 599140,
+    "name": "Graveyard Keeper"
+   }
+  },
+  {
+   "slug": "guilty-gear-xrd-revelator",
+   "url": "https://interfaceingame.com/games/guilty-gear-xrd-revelator/",
+   "name": "Guilty Gear Xrd Revelator",
+   "lastmod": "2020-11-20T23:19:39+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "heroes-of-the-storm",
+   "url": "https://interfaceingame.com/games/heroes-of-the-storm/",
+   "name": "Heroes Of The Storm",
+   "lastmod": "2020-11-21T17:28:56+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "mothergunship",
+   "url": "https://interfaceingame.com/games/mothergunship/",
+   "name": "Mothergunship",
+   "lastmod": "2020-11-22T15:28:21+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 574090,
+    "name": "MOTHERGUNSHIP"
+   }
+  },
+  {
+   "slug": "mutant-year-zero-road-to-eden",
+   "url": "https://interfaceingame.com/games/mutant-year-zero-road-to-eden/",
+   "name": "Mutant Year Zero Road To Eden",
+   "lastmod": "2020-11-22T15:28:22+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 760060,
+    "name": "Mutant Year Zero: Road to Eden"
+   }
+  },
+  {
+   "slug": "my-friend-pedro",
+   "url": "https://interfaceingame.com/games/my-friend-pedro/",
+   "name": "My Friend Pedro",
+   "lastmod": "2020-11-22T15:28:23+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 557340,
+    "name": "My Friend Pedro"
+   }
+  },
+  {
+   "slug": "need-for-speed-no-limits",
+   "url": "https://interfaceingame.com/games/need-for-speed-no-limits/",
+   "name": "Need For Speed No Limits",
+   "lastmod": "2020-11-22T15:28:24+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "ninjala",
+   "url": "https://interfaceingame.com/games/ninjala/",
+   "name": "Ninjala",
+   "lastmod": "2020-11-22T15:28:25+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "night-call",
+   "url": "https://interfaceingame.com/games/night-call/",
+   "name": "Night Call",
+   "lastmod": "2020-11-22T15:28:25+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 680380,
+    "name": "Night Call"
+   }
+  },
+  {
+   "slug": "northgard",
+   "url": "https://interfaceingame.com/games/northgard/",
+   "name": "Northgard",
+   "lastmod": "2020-11-22T15:28:30+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 466560,
+    "name": "Northgard: Definitive Edition"
+   }
+  },
+  {
+   "slug": "nuclear-throne",
+   "url": "https://interfaceingame.com/games/nuclear-throne/",
+   "name": "Nuclear Throne",
+   "lastmod": "2020-11-22T15:28:31+00:00",
+   "r1": {
+    "key": "app:242680",
+    "name": "Nuclear Throne",
+    "appid": 242680,
+    "tier": "D",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "overcooked",
+   "url": "https://interfaceingame.com/games/overcooked/",
+   "name": "Overcooked",
+   "lastmod": "2020-11-22T15:28:32+00:00",
+   "r1": {
+    "key": "app:448510",
+    "name": "Overcooked",
+    "appid": 448510,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "overcooked-2",
+   "url": "https://interfaceingame.com/games/overcooked-2/",
+   "name": "Overcooked 2",
+   "lastmod": "2020-11-22T15:28:32+00:00",
+   "r1": {
+    "key": "app:728880",
+    "name": "Overcooked! 2",
+    "appid": 728880,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "party-hard",
+   "url": "https://interfaceingame.com/games/party-hard/",
+   "name": "Party Hard",
+   "lastmod": "2020-11-22T15:28:35+00:00",
+   "r1": {
+    "key": "app:356570",
+    "name": "Party Hard",
+    "appid": 356570,
+    "tier": "D",
+    "primary": "strategy",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "party-hard-2",
+   "url": "https://interfaceingame.com/games/party-hard-2/",
+   "name": "Party Hard 2",
+   "lastmod": "2020-11-22T15:28:36+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 572430,
+    "name": "Party Hard 2"
+   }
+  },
+  {
+   "slug": "path-of-exile",
+   "url": "https://interfaceingame.com/games/path-of-exile/",
+   "name": "Path Of Exile",
+   "lastmod": "2020-11-22T15:28:36+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 238960,
+    "name": "Path of Exile"
+   }
+  },
+  {
+   "slug": "pikuniku",
+   "url": "https://interfaceingame.com/games/pikuniku/",
+   "name": "Pikuniku",
+   "lastmod": "2020-11-22T15:28:37+00:00",
+   "r1": {
+    "key": "app:572890",
+    "name": "Pikuniku",
+    "appid": 572890,
+    "tier": "C",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "planet-coaster",
+   "url": "https://interfaceingame.com/games/planet-coaster/",
+   "name": "Planet Coaster",
+   "lastmod": "2020-11-22T15:28:37+00:00",
+   "r1": {
+    "key": "app:493340",
+    "name": "Planet Coaster",
+    "appid": 493340,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "pokemon-mystery-dungeon-rescue-team-dx",
+   "url": "https://interfaceingame.com/games/pokemon-mystery-dungeon-rescue-team-dx/",
+   "name": "Pokemon Mystery Dungeon Rescue Team Dx",
+   "lastmod": "2020-11-22T17:07:25+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "pokken-tournament-dx",
+   "url": "https://interfaceingame.com/games/pokken-tournament-dx/",
+   "name": "Pokken Tournament Dx",
+   "lastmod": "2020-11-22T17:07:27+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "portal-2",
+   "url": "https://interfaceingame.com/games/portal-2/",
+   "name": "Portal 2",
+   "lastmod": "2020-11-22T17:07:27+00:00",
+   "r1": {
+    "key": "app:620",
+    "name": "Portal 2",
+    "appid": 620,
+    "tier": "B",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "portal-knights",
+   "url": "https://interfaceingame.com/games/portal-knights/",
+   "name": "Portal Knights",
+   "lastmod": "2020-11-22T17:07:28+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 374040,
+    "name": "Portal Knights"
+   }
+  },
+  {
+   "slug": "prison-architect",
+   "url": "https://interfaceingame.com/games/prison-architect/",
+   "name": "Prison Architect",
+   "lastmod": "2020-11-22T17:07:29+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 233450,
+    "name": "Prison Architect"
+   }
+  },
+  {
+   "slug": "rayman-legends",
+   "url": "https://interfaceingame.com/games/rayman-legends/",
+   "name": "Rayman Legends",
+   "lastmod": "2020-11-22T17:07:30+00:00",
+   "r1": {
+    "key": "app:242550",
+    "name": "Rayman Legends",
+    "appid": 242550,
+    "tier": "B",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "rage-2",
+   "url": "https://interfaceingame.com/games/rage-2/",
+   "name": "Rage 2",
+   "lastmod": "2020-11-22T17:07:30+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 548570,
+    "name": "RAGE 2"
+   }
+  },
+  {
+   "slug": "rebel-racing",
+   "url": "https://interfaceingame.com/games/rebel-racing/",
+   "name": "Rebel Racing",
+   "lastmod": "2020-11-22T17:07:31+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "red-faction-guerrilla-re-mars-tered",
+   "url": "https://interfaceingame.com/games/red-faction-guerrilla-re-mars-tered/",
+   "name": "Red Faction Guerrilla Re Mars Tered",
+   "lastmod": "2020-11-22T17:07:32+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 667720,
+    "name": "Red Faction Guerrilla Re-Mars-tered"
+   }
+  },
+  {
+   "slug": "ring-of-elysium",
+   "url": "https://interfaceingame.com/games/ring-of-elysium/",
+   "name": "Ring Of Elysium",
+   "lastmod": "2020-11-22T17:07:34+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "risk-of-rain-2",
+   "url": "https://interfaceingame.com/games/risk-of-rain-2/",
+   "name": "Risk Of Rain 2",
+   "lastmod": "2020-11-22T17:07:34+00:00",
+   "r1": {
+    "key": "app:632360",
+    "name": "Risk of Rain 2",
+    "appid": 632360,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "rocket-league",
+   "url": "https://interfaceingame.com/games/rocket-league/",
+   "name": "Rocket League",
+   "lastmod": "2020-11-22T17:07:35+00:00",
+   "r1": {
+    "key": "app:252950",
+    "name": "Rocket League",
+    "appid": 252950,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "rogue-legacy",
+   "url": "https://interfaceingame.com/games/rogue-legacy/",
+   "name": "Rogue Legacy",
+   "lastmod": "2020-11-22T17:07:36+00:00",
+   "r1": {
+    "key": "app:241600",
+    "name": "Rogue Legacy",
+    "appid": 241600,
+    "tier": "D",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "ruiner",
+   "url": "https://interfaceingame.com/games/ruiner/",
+   "name": "Ruiner",
+   "lastmod": "2020-11-22T17:07:37+00:00",
+   "r1": {
+    "key": "app:464060",
+    "name": "RUINER",
+    "appid": 464060,
+    "tier": "C",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "russian-fishing-4",
+   "url": "https://interfaceingame.com/games/russian-fishing-4/",
+   "name": "Russian Fishing 4",
+   "lastmod": "2020-11-22T17:07:37+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 766570,
+    "name": "Russian Fishing 4"
+   }
+  },
+  {
+   "slug": "shadow-of-the-tomb-raider",
+   "url": "https://interfaceingame.com/games/shadow-of-the-tomb-raider/",
+   "name": "Shadow Of The Tomb Raider",
+   "lastmod": "2020-11-22T18:39:23+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 750920,
+    "name": "Shadow of the Tomb Raider: Definitive Edition"
+   }
+  },
+  {
+   "slug": "sid-meiers-civilization-vi",
+   "url": "https://interfaceingame.com/games/sid-meiers-civilization-vi/",
+   "name": "Sid Meiers Civilization VI",
+   "lastmod": "2020-11-22T18:39:24+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 289070,
+    "name": "Sid Meier’s Civilization® VI"
+   }
+  },
+  {
+   "slug": "smite",
+   "url": "https://interfaceingame.com/games/smite/",
+   "name": "Smite",
+   "lastmod": "2020-11-22T18:39:25+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 386360,
+    "name": "SMITE®"
+   }
+  },
+  {
+   "slug": "snipperclips-cut-it-out-together",
+   "url": "https://interfaceingame.com/games/snipperclips-cut-it-out-together/",
+   "name": "Snipperclips Cut It Out Together",
+   "lastmod": "2020-11-22T18:39:26+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "sonic-mania",
+   "url": "https://interfaceingame.com/games/sonic-mania/",
+   "name": "Sonic Mania",
+   "lastmod": "2020-11-22T18:39:27+00:00",
+   "r1": {
+    "key": "app:584400",
+    "name": "Sonic Mania",
+    "appid": 584400,
+    "tier": "D",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "speedrunners",
+   "url": "https://interfaceingame.com/games/speedrunners/",
+   "name": "Speedrunners",
+   "lastmod": "2020-11-22T18:39:28+00:00",
+   "r1": {
+    "key": "app:207140",
+    "name": "SpeedRunners",
+    "appid": 207140,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "splatoon-2",
+   "url": "https://interfaceingame.com/games/splatoon-2/",
+   "name": "Splatoon 2",
+   "lastmod": "2020-11-22T18:39:29+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "star-wars-battlefront-ii",
+   "url": "https://interfaceingame.com/games/star-wars-battlefront-ii/",
+   "name": "Star Wars Battlefront II",
+   "lastmod": "2020-11-22T18:39:29+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1237950,
+    "name": "STAR WARS™ Battlefront™ II"
+   }
+  },
+  {
+   "slug": "stardew-valley",
+   "url": "https://interfaceingame.com/games/stardew-valley/",
+   "name": "Stardew Valley",
+   "lastmod": "2020-11-22T18:39:31+00:00",
+   "r1": {
+    "key": "app:413150",
+    "name": "Stardew Valley",
+    "appid": 413150,
+    "tier": "C",
+    "primary": "life",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "steep",
+   "url": "https://interfaceingame.com/games/steep/",
+   "name": "Steep",
+   "lastmod": "2020-11-22T18:39:32+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 460920,
+    "name": "Steep™"
+   }
+  },
+  {
+   "slug": "stick-fight-the-game",
+   "url": "https://interfaceingame.com/games/stick-fight-the-game/",
+   "name": "Stick Fight The Game",
+   "lastmod": "2020-11-22T18:39:33+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 674940,
+    "name": "Stick Fight: The Game"
+   }
+  },
+  {
+   "slug": "stellaris",
+   "url": "https://interfaceingame.com/games/stellaris/",
+   "name": "Stellaris",
+   "lastmod": "2020-11-22T18:39:33+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 281990,
+    "name": "Stellaris"
+   }
+  },
+  {
+   "slug": "streets-of-rogue",
+   "url": "https://interfaceingame.com/games/streets-of-rogue/",
+   "name": "Streets Of Rogue",
+   "lastmod": "2020-11-22T18:39:34+00:00",
+   "r1": {
+    "key": "app:512900",
+    "name": "Streets of Rogue",
+    "appid": 512900,
+    "tier": "D",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "super-animal-royale",
+   "url": "https://interfaceingame.com/games/super-animal-royale/",
+   "name": "Super Animal Royale",
+   "lastmod": "2020-11-22T18:39:35+00:00",
+   "r1": {
+    "key": "app:843380",
+    "name": "Super Animal Royale",
+    "appid": 843380,
+    "tier": "D",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "super-bomberman-r",
+   "url": "https://interfaceingame.com/games/super-bomberman-r/",
+   "name": "Super Bomberman R",
+   "lastmod": "2020-11-22T19:55:35+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 702700,
+    "name": "Super Bomberman R"
+   }
+  },
+  {
+   "slug": "super-kirby-clash",
+   "url": "https://interfaceingame.com/games/super-kirby-clash/",
+   "name": "Super Kirby Clash",
+   "lastmod": "2020-11-22T19:55:36+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "super-mario-kart",
+   "url": "https://interfaceingame.com/games/super-mario-kart/",
+   "name": "Super Mario Kart",
+   "lastmod": "2020-11-22T19:55:43+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "superhot",
+   "url": "https://interfaceingame.com/games/superhot/",
+   "name": "Superhot",
+   "lastmod": "2020-11-22T19:55:46+00:00",
+   "r1": {
+    "key": "app:322500",
+    "name": "SUPERHOT",
+    "appid": 322500,
+    "tier": "C",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "taiko-no-tatsujin-drum-n-fun",
+   "url": "https://interfaceingame.com/games/taiko-no-tatsujin-drum-n-fun/",
+   "name": "Taiko No Tatsujin Drum N Fun",
+   "lastmod": "2020-11-22T19:55:47+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-adventure-pals",
+   "url": "https://interfaceingame.com/games/the-adventure-pals/",
+   "name": "The Adventure Pals",
+   "lastmod": "2020-11-22T19:55:47+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 396710,
+    "name": "The Adventure Pals"
+   }
+  },
+  {
+   "slug": "the-binding-of-isaac-afterbirth",
+   "url": "https://interfaceingame.com/games/the-binding-of-isaac-afterbirth/",
+   "name": "The Binding Of Isaac Afterbirth",
+   "lastmod": "2020-11-22T19:55:48+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 401920,
+    "name": "The Binding of Isaac: Afterbirth"
+   }
+  },
+  {
+   "slug": "the-final-station",
+   "url": "https://interfaceingame.com/games/the-final-station/",
+   "name": "The Final Station",
+   "lastmod": "2020-11-22T19:55:50+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 435530,
+    "name": "The Final Station"
+   }
+  },
+  {
+   "slug": "the-end-is-nigh",
+   "url": "https://interfaceingame.com/games/the-end-is-nigh/",
+   "name": "The End Is Nigh",
+   "lastmod": "2020-11-22T19:55:50+00:00",
+   "r1": {
+    "key": "app:583470",
+    "name": "The End Is Nigh",
+    "appid": 583470,
+    "tier": "D",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "the-sims-4",
+   "url": "https://interfaceingame.com/games/the-sims-4/",
+   "name": "The Sims 4",
+   "lastmod": "2020-11-22T19:55:51+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1222670,
+    "name": "The Sims™ 4"
+   }
+  },
+  {
+   "slug": "the-swords-of-ditto-mormos-curse",
+   "url": "https://interfaceingame.com/games/the-swords-of-ditto-mormos-curse/",
+   "name": "The Swords Of Ditto Mormos Curse",
+   "lastmod": "2020-11-22T19:55:52+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 619780,
+    "name": "The Swords of Ditto: Mormo's Curse"
+   }
+  },
+  {
+   "slug": "tom-clancys-rainbow-six-siege",
+   "url": "https://interfaceingame.com/games/tom-clancys-rainbow-six-siege/",
+   "name": "Tom Clancys Rainbow Six Siege",
+   "lastmod": "2020-11-22T21:59:32+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 359550,
+    "name": "Tom Clancy's Rainbow Six Siege"
+   }
+  },
+  {
+   "slug": "total-war-warhammer-ii",
+   "url": "https://interfaceingame.com/games/total-war-warhammer-ii/",
+   "name": "Total War Warhammer II",
+   "lastmod": "2020-11-22T21:59:36+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 594570,
+    "name": "Total War: WARHAMMER II"
+   }
+  },
+  {
+   "slug": "torchlight-ii",
+   "url": "https://interfaceingame.com/games/torchlight-ii/",
+   "name": "Torchlight II",
+   "lastmod": "2020-11-22T21:59:36+00:00",
+   "r1": {
+    "key": "app:200710",
+    "name": "Torchlight II",
+    "appid": 200710,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "totally-accurate-battle-simulator",
+   "url": "https://interfaceingame.com/games/totally-accurate-battle-simulator/",
+   "name": "Totally Accurate Battle Simulator",
+   "lastmod": "2020-11-22T21:59:37+00:00",
+   "r1": {
+    "key": "app:508440",
+    "name": "Totally Accurate Battle Simulator",
+    "appid": 508440,
+    "tier": "D",
+    "primary": "sandbox",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "towerfall-ascension",
+   "url": "https://interfaceingame.com/games/towerfall-ascension/",
+   "name": "Towerfall Ascension",
+   "lastmod": "2020-11-22T21:59:37+00:00",
+   "r1": {
+    "key": "app:251470",
+    "name": "TowerFall Ascension",
+    "appid": 251470,
+    "tier": "D",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "ultra-street-fighter-iv",
+   "url": "https://interfaceingame.com/games/ultra-street-fighter-iv/",
+   "name": "Ultra Street Fighter IV",
+   "lastmod": "2020-11-22T21:59:39+00:00",
+   "r1": {
+    "key": "app:45760",
+    "name": "Ultra Street Fighter IV",
+    "appid": 45760,
+    "tier": "D",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "ultimate-chicken-horse",
+   "url": "https://interfaceingame.com/games/ultimate-chicken-horse/",
+   "name": "Ultimate Chicken Horse",
+   "lastmod": "2020-11-22T21:59:39+00:00",
+   "r1": {
+    "key": "app:386940",
+    "name": "Ultimate Chicken Horse",
+    "appid": 386940,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "tricky-towers",
+   "url": "https://interfaceingame.com/games/tricky-towers/",
+   "name": "Tricky Towers",
+   "lastmod": "2020-11-22T21:59:39+00:00",
+   "r1": {
+    "key": "app:437920",
+    "name": "Tricky Towers",
+    "appid": 437920,
+    "tier": "D",
+    "primary": "sandbox",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "unrailed",
+   "url": "https://interfaceingame.com/games/unrailed/",
+   "name": "Unrailed",
+   "lastmod": "2020-11-22T21:59:40+00:00",
+   "r1": {
+    "key": "app:1016920",
+    "name": "Unrailed!",
+    "appid": 1016920,
+    "tier": "D",
+    "primary": "sandbox",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "wandersong",
+   "url": "https://interfaceingame.com/games/wandersong/",
+   "name": "Wandersong",
+   "lastmod": "2020-11-22T21:59:41+00:00",
+   "r1": {
+    "key": "app:530320",
+    "name": "Wandersong",
+    "appid": 530320,
+    "tier": "B",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "warframe",
+   "url": "https://interfaceingame.com/games/warframe/",
+   "name": "Warframe",
+   "lastmod": "2020-11-22T21:59:42+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 230410,
+    "name": "Warframe"
+   }
+  },
+  {
+   "slug": "warhammer-40000-mechanicus",
+   "url": "https://interfaceingame.com/games/warhammer-40000-mechanicus/",
+   "name": "Warhammer 40000 Mechanicus",
+   "lastmod": "2020-11-22T23:02:39+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "warhammer-vermintide-2",
+   "url": "https://interfaceingame.com/games/warhammer-vermintide-2/",
+   "name": "Warhammer Vermintide 2",
+   "lastmod": "2020-11-22T23:02:39+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 552500,
+    "name": "Warhammer: Vermintide 2"
+   }
+  },
+  {
+   "slug": "watch-dogs",
+   "url": "https://interfaceingame.com/games/watch-dogs/",
+   "name": "Watch Dogs",
+   "lastmod": "2020-11-22T23:02:40+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 243470,
+    "name": "Watch_Dogs™"
+   }
+  },
+  {
+   "slug": "wolfenstein-youngblood",
+   "url": "https://interfaceingame.com/games/wolfenstein-youngblood/",
+   "name": "Wolfenstein Youngblood",
+   "lastmod": "2020-11-22T23:02:41+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1056960,
+    "name": "Wolfenstein: Youngblood"
+   }
+  },
+  {
+   "slug": "world-of-goo",
+   "url": "https://interfaceingame.com/games/world-of-goo/",
+   "name": "World Of Goo",
+   "lastmod": "2020-11-22T23:02:41+00:00",
+   "r1": {
+    "key": "app:22000",
+    "name": "World of Goo",
+    "appid": 22000,
+    "tier": "D",
+    "primary": "sandbox",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "world-of-tanks-blitz",
+   "url": "https://interfaceingame.com/games/world-of-tanks-blitz/",
+   "name": "World Of Tanks Blitz",
+   "lastmod": "2020-11-22T23:02:42+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 444200,
+    "name": "World of Tanks Blitz"
+   }
+  },
+  {
+   "slug": "world-war-z",
+   "url": "https://interfaceingame.com/games/world-war-z/",
+   "name": "World War Z",
+   "lastmod": "2020-11-22T23:02:43+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 699130,
+    "name": "World War Z"
+   }
+  },
+  {
+   "slug": "worms-w-m-d",
+   "url": "https://interfaceingame.com/games/worms-w-m-d/",
+   "name": "Worms W M D",
+   "lastmod": "2020-11-22T23:02:44+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 327030,
+    "name": "Worms W.M.D"
+   }
+  },
+  {
+   "slug": "yokus-island-express",
+   "url": "https://interfaceingame.com/games/yokus-island-express/",
+   "name": "Yokus Island Express",
+   "lastmod": "2020-11-22T23:02:46+00:00",
+   "r1": {
+    "key": "app:334940",
+    "name": "Yoku's Island Express",
+    "appid": 334940,
+    "tier": "D",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "yoshis-crafted-world",
+   "url": "https://interfaceingame.com/games/yoshis-crafted-world/",
+   "name": "Yoshis Crafted World",
+   "lastmod": "2020-11-22T23:02:47+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "just-cause-4",
+   "url": "https://interfaceingame.com/games/just-cause-4/",
+   "name": "Just Cause 4",
+   "lastmod": "2020-11-30T11:03:44+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "super-punch-out",
+   "url": "https://interfaceingame.com/games/super-punch-out/",
+   "name": "Super Punch Out",
+   "lastmod": "2020-12-01T10:05:39+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "hades",
+   "url": "https://interfaceingame.com/games/hades/",
+   "name": "Hades",
+   "lastmod": "2020-12-07T18:58:32+00:00",
+   "r1": {
+    "key": "app:1145360",
+    "name": "Hades",
+    "appid": 1145360,
+    "tier": "A",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "fall-guys-ultimate-knockout",
+   "url": "https://interfaceingame.com/games/fall-guys-ultimate-knockout/",
+   "name": "Fall Guys Ultimate Knockout",
+   "lastmod": "2020-12-07T21:19:14+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "call-of-duty-modern-warfare",
+   "url": "https://interfaceingame.com/games/call-of-duty-modern-warfare/",
+   "name": "Call Of Duty Modern Warfare",
+   "lastmod": "2020-12-07T23:18:07+00:00",
+   "r1": {
+    "key": "app:2000950",
+    "name": "Call of Duty: Modern Warfare",
+    "appid": 2000950,
+    "tier": "B",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "carcassonne-tiles-tactics",
+   "url": "https://interfaceingame.com/games/carcassonne-tiles-tactics/",
+   "name": "Carcassonne Tiles Tactics",
+   "lastmod": "2020-12-08T01:25:17+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 598810,
+    "name": "Carcassonne - Tiles & Tactics"
+   }
+  },
+  {
+   "slug": "castle-crashers",
+   "url": "https://interfaceingame.com/games/castle-crashers/",
+   "name": "Castle Crashers",
+   "lastmod": "2020-12-08T21:20:21+00:00",
+   "r1": {
+    "key": "app:204360",
+    "name": "Castle Crashers",
+    "appid": 204360,
+    "tier": "A",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "call-of-duty-wwii",
+   "url": "https://interfaceingame.com/games/call-of-duty-wwii/",
+   "name": "Call Of Duty Wwii",
+   "lastmod": "2020-12-08T21:24:53+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 476600,
+    "name": "Call of Duty®: WWII"
+   }
+  },
+  {
+   "slug": "counter-strike-global-offensive",
+   "url": "https://interfaceingame.com/games/counter-strike-global-offensive/",
+   "name": "Counter Strike Global Offensive",
+   "lastmod": "2020-12-08T21:34:53+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "crash-bandicoot-n-sane-trilogy",
+   "url": "https://interfaceingame.com/games/crash-bandicoot-n-sane-trilogy/",
+   "name": "Crash Bandicoot N Sane Trilogy",
+   "lastmod": "2020-12-08T21:38:08+00:00",
+   "r1": {
+    "key": "app:731490",
+    "name": "Crash Bandicoot N. Sane Trilogy",
+    "appid": 731490,
+    "tier": "D",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "daemon-x-machina",
+   "url": "https://interfaceingame.com/games/daemon-x-machina/",
+   "name": "Daemon X Machina",
+   "lastmod": "2020-12-08T21:45:47+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1167450,
+    "name": "DAEMON X MACHINA"
+   }
+  },
+  {
+   "slug": "dauntless",
+   "url": "https://interfaceingame.com/games/dauntless/",
+   "name": "Dauntless",
+   "lastmod": "2020-12-08T21:51:22+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "dead-by-daylight",
+   "url": "https://interfaceingame.com/games/dead-by-daylight/",
+   "name": "Dead By Daylight",
+   "lastmod": "2020-12-08T21:54:18+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 381210,
+    "name": "Dead by Daylight"
+   }
+  },
+  {
+   "slug": "destiny-2",
+   "url": "https://interfaceingame.com/games/destiny-2/",
+   "name": "Destiny 2",
+   "lastmod": "2020-12-08T21:56:17+00:00",
+   "r1": {
+    "key": "app:1085660",
+    "name": "Destiny 2",
+    "appid": 1085660,
+    "tier": "B",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "deus-ex-mankind-divided",
+   "url": "https://interfaceingame.com/games/deus-ex-mankind-divided/",
+   "name": "Deus Ex Mankind Divided",
+   "lastmod": "2020-12-08T21:58:05+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 337000,
+    "name": "Deus Ex: Mankind Divided"
+   }
+  },
+  {
+   "slug": "devil-may-cry-5",
+   "url": "https://interfaceingame.com/games/devil-may-cry-5/",
+   "name": "Devil May Cry 5",
+   "lastmod": "2020-12-08T21:59:19+00:00",
+   "r1": {
+    "key": "app:601150",
+    "name": "Devil May Cry 5",
+    "appid": 601150,
+    "tier": "A",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "diablo-iii",
+   "url": "https://interfaceingame.com/games/diablo-iii/",
+   "name": "Diablo Iii",
+   "lastmod": "2020-12-08T22:00:36+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "dota-2",
+   "url": "https://interfaceingame.com/games/dota-2/",
+   "name": "Dota 2",
+   "lastmod": "2020-12-08T22:04:19+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 570,
+    "name": "Dota 2"
+   }
+  },
+  {
+   "slug": "dota-underlords",
+   "url": "https://interfaceingame.com/games/dota-underlords/",
+   "name": "Dota Underlords",
+   "lastmod": "2020-12-08T22:06:37+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1046930,
+    "name": "Dota Underlords"
+   }
+  },
+  {
+   "slug": "for-honor",
+   "url": "https://interfaceingame.com/games/for-honor/",
+   "name": "For Honor",
+   "lastmod": "2020-12-08T22:09:30+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 304390,
+    "name": "FOR HONOR™"
+   }
+  },
+  {
+   "slug": "gwent-the-witcher-card-game",
+   "url": "https://interfaceingame.com/games/gwent-the-witcher-card-game/",
+   "name": "Gwent The Witcher Card Game",
+   "lastmod": "2020-12-08T22:12:27+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1284410,
+    "name": "GWENT: The Witcher Card Game"
+   }
+  },
+  {
+   "slug": "headsnatchers",
+   "url": "https://interfaceingame.com/games/headsnatchers/",
+   "name": "Headsnatchers",
+   "lastmod": "2020-12-08T22:14:53+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 797410,
+    "name": "Headsnatchers"
+   }
+  },
+  {
+   "slug": "hollow-knight",
+   "url": "https://interfaceingame.com/games/hollow-knight/",
+   "name": "Hollow Knight",
+   "lastmod": "2020-12-08T22:28:36+00:00",
+   "r1": {
+    "key": "app:367520",
+    "name": "Hollow Knight",
+    "appid": 367520,
+    "tier": "B",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "hunt-showdown",
+   "url": "https://interfaceingame.com/games/hunt-showdown/",
+   "name": "Hunt Showdown",
+   "lastmod": "2020-12-08T22:42:53+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "imperator-rome",
+   "url": "https://interfaceingame.com/games/imperator-rome/",
+   "name": "Imperator Rome",
+   "lastmod": "2020-12-08T22:57:15+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 859580,
+    "name": "Imperator: Rome"
+   }
+  },
+  {
+   "slug": "insurgency-sandstorm",
+   "url": "https://interfaceingame.com/games/insurgency-sandstorm/",
+   "name": "Insurgency Sandstorm",
+   "lastmod": "2020-12-08T23:06:14+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 581320,
+    "name": "Insurgency: Sandstorm"
+   }
+  },
+  {
+   "slug": "killing-floor-2",
+   "url": "https://interfaceingame.com/games/killing-floor-2/",
+   "name": "Killing Floor 2",
+   "lastmod": "2020-12-08T23:12:23+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 232090,
+    "name": "Killing Floor 2"
+   }
+  },
+  {
+   "slug": "holy-potatoes-a-weapon-shop",
+   "url": "https://interfaceingame.com/games/holy-potatoes-a-weapon-shop/",
+   "name": "Holy Potatoes A Weapon Shop",
+   "lastmod": "2020-12-09T01:12:08+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 363600,
+    "name": "Holy Potatoes! A Weapon Shop?!"
+   }
+  },
+  {
+   "slug": "moonlighter",
+   "url": "https://interfaceingame.com/games/moonlighter/",
+   "name": "Moonlighter",
+   "lastmod": "2020-12-09T01:39:50+00:00",
+   "r1": {
+    "key": "app:606150",
+    "name": "Moonlighter",
+    "appid": 606150,
+    "tier": "C",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "world-of-warcraft",
+   "url": "https://interfaceingame.com/games/world-of-warcraft/",
+   "name": "World Of Warcraft",
+   "lastmod": "2020-12-09T21:35:13+00:00",
+   "r1": {
+    "key": "name:world of warcraft",
+    "name": "World of Warcraft",
+    "appid": null,
+    "tier": "A",
+    "primary": "rpg",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "this-war-of-mine",
+   "url": "https://interfaceingame.com/games/this-war-of-mine/",
+   "name": "This War Of Mine",
+   "lastmod": "2020-12-09T21:48:17+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 282070,
+    "name": "This War of Mine"
+   }
+  },
+  {
+   "slug": "street-fighter-v",
+   "url": "https://interfaceingame.com/games/street-fighter-v/",
+   "name": "Street Fighter V",
+   "lastmod": "2020-12-09T22:05:46+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 310950,
+    "name": "Street Fighter V"
+   }
+  },
+  {
+   "slug": "xcom-2",
+   "url": "https://interfaceingame.com/games/xcom-2/",
+   "name": "Xcom 2",
+   "lastmod": "2020-12-09T23:00:56+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 268500,
+    "name": "XCOM® 2"
+   }
+  },
+  {
+   "slug": "super-smash-bros-ultimate",
+   "url": "https://interfaceingame.com/games/super-smash-bros-ultimate/",
+   "name": "Super Smash Bros Ultimate",
+   "lastmod": "2020-12-09T23:33:32+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "kirby-star-allies",
+   "url": "https://interfaceingame.com/games/kirby-star-allies/",
+   "name": "Kirby Star Allies",
+   "lastmod": "2020-12-10T11:45:02+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "metro-exodus",
+   "url": "https://interfaceingame.com/games/metro-exodus/",
+   "name": "Metro Exodus",
+   "lastmod": "2020-12-10T11:57:03+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 412020,
+    "name": "Metro Exodus"
+   }
+  },
+  {
+   "slug": "tony-hawks-pro-skater-1-2",
+   "url": "https://interfaceingame.com/games/tony-hawks-pro-skater-1-2/",
+   "name": "Tony Hawks Pro Skater 1 2",
+   "lastmod": "2020-12-10T13:42:54+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2395210,
+    "name": "Tony Hawk's™ Pro Skater™ 1 + 2"
+   }
+  },
+  {
+   "slug": "yooka-laylee-and-the-impossible-lair",
+   "url": "https://interfaceingame.com/games/yooka-laylee-and-the-impossible-lair/",
+   "name": "Yooka Laylee And The Impossible Lair",
+   "lastmod": "2020-12-10T13:44:01+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 846870,
+    "name": "Yooka-Laylee and the Impossible Lair"
+   }
+  },
+  {
+   "slug": "the-legend-of-zelda-breath-of-the-wild",
+   "url": "https://interfaceingame.com/games/the-legend-of-zelda-breath-of-the-wild/",
+   "name": "The Legend Of Zelda Breath Of The Wild",
+   "lastmod": "2020-12-11T14:20:37+00:00",
+   "r1": {
+    "key": "name:legend of zelda breath of wild",
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "appid": null,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "koihime-enbu",
+   "url": "https://interfaceingame.com/games/koihime-enbu/",
+   "name": "Koihime Enbu",
+   "lastmod": "2020-12-11T14:32:04+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 452420,
+    "name": "Koihime Enbu"
+   }
+  },
+  {
+   "slug": "mario-tennis-aces",
+   "url": "https://interfaceingame.com/games/mario-tennis-aces/",
+   "name": "Mario Tennis Aces",
+   "lastmod": "2020-12-11T15:14:33+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "mario-sonic-at-the-olympic-games-tokyo-2020",
+   "url": "https://interfaceingame.com/games/mario-sonic-at-the-olympic-games-tokyo-2020/",
+   "name": "Mario Sonic At The Olympic Games Tokyo 2020",
+   "lastmod": "2020-12-11T15:20:07+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "minion-masters",
+   "url": "https://interfaceingame.com/games/minion-masters/",
+   "name": "Minion Masters",
+   "lastmod": "2020-12-11T15:29:31+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 489520,
+    "name": "Minion Masters"
+   }
+  },
+  {
+   "slug": "octahedron",
+   "url": "https://interfaceingame.com/games/octahedron/",
+   "name": "Octahedron",
+   "lastmod": "2020-12-11T15:41:24+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "oninaki",
+   "url": "https://interfaceingame.com/games/oninaki/",
+   "name": "Oninaki",
+   "lastmod": "2020-12-11T15:45:22+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 987720,
+    "name": "ONINAKI"
+   }
+  },
+  {
+   "slug": "overwatch",
+   "url": "https://interfaceingame.com/games/overwatch/",
+   "name": "Overwatch",
+   "lastmod": "2020-12-11T15:47:50+00:00",
+   "r1": {
+    "key": "app:2357570",
+    "name": "Overwatch",
+    "appid": 2357570,
+    "tier": "B",
+    "primary": null,
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "paladins-champions-of-the-realm",
+   "url": "https://interfaceingame.com/games/paladins-champions-of-the-realm/",
+   "name": "Paladins Champions Of The Realm",
+   "lastmod": "2020-12-11T15:53:15+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "pokemon-lets-go-pikachu",
+   "url": "https://interfaceingame.com/games/pokemon-lets-go-pikachu/",
+   "name": "Pokemon Lets Go Pikachu",
+   "lastmod": "2020-12-11T15:58:31+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "punch-club",
+   "url": "https://interfaceingame.com/games/punch-club/",
+   "name": "Punch Club",
+   "lastmod": "2020-12-11T16:02:15+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 394310,
+    "name": "Punch Club"
+   }
+  },
+  {
+   "slug": "realm-royale",
+   "url": "https://interfaceingame.com/games/realm-royale/",
+   "name": "Realm Royale",
+   "lastmod": "2020-12-11T16:05:13+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "resident-evil-2",
+   "url": "https://interfaceingame.com/games/resident-evil-2/",
+   "name": "Resident Evil 2",
+   "lastmod": "2020-12-11T16:11:28+00:00",
+   "r1": {
+    "key": "app:883710",
+    "name": "Resident Evil 2",
+    "appid": 883710,
+    "tier": "B",
+    "primary": "horror",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "road-redemption",
+   "url": "https://interfaceingame.com/games/road-redemption/",
+   "name": "Road Redemption",
+   "lastmod": "2020-12-11T16:16:08+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 300380,
+    "name": "Road Redemption"
+   }
+  },
+  {
+   "slug": "sekiro-shadows-die-twice",
+   "url": "https://interfaceingame.com/games/sekiro-shadows-die-twice/",
+   "name": "Sekiro Shadows Die Twice",
+   "lastmod": "2020-12-11T16:20:48+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 814380,
+    "name": "Sekiro™: Shadows Die Twice - GOTY Edition"
+   }
+  },
+  {
+   "slug": "slay-the-spire",
+   "url": "https://interfaceingame.com/games/slay-the-spire/",
+   "name": "Slay The Spire",
+   "lastmod": "2020-12-11T16:26:13+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 646570,
+    "name": "Slay the Spire"
+   }
+  },
+  {
+   "slug": "starcraft-ii-legacy-of-the-void",
+   "url": "https://interfaceingame.com/games/starcraft-ii-legacy-of-the-void/",
+   "name": "Starcraft II Legacy Of The Void",
+   "lastmod": "2020-12-11T16:32:22+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "star-wars-jedi-fallen-order",
+   "url": "https://interfaceingame.com/games/star-wars-jedi-fallen-order/",
+   "name": "Star Wars Jedi Fallen Order",
+   "lastmod": "2020-12-11T16:35:08+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1172380,
+    "name": "STAR WARS Jedi: Fallen Order™"
+   }
+  },
+  {
+   "slug": "super-mario-odyssey",
+   "url": "https://interfaceingame.com/games/super-mario-odyssey/",
+   "name": "Super Mario Odyssey",
+   "lastmod": "2020-12-11T16:37:10+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "super-mario-party",
+   "url": "https://interfaceingame.com/games/super-mario-party/",
+   "name": "Super Mario Party",
+   "lastmod": "2020-12-11T16:40:08+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "surviving-mars",
+   "url": "https://interfaceingame.com/games/surviving-mars/",
+   "name": "Surviving Mars",
+   "lastmod": "2020-12-11T17:12:23+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-witcher-3-wild-hunt",
+   "url": "https://interfaceingame.com/games/the-witcher-3-wild-hunt/",
+   "name": "The Witcher 3 Wild Hunt",
+   "lastmod": "2020-12-11T17:17:41+00:00",
+   "r1": {
+    "key": "app:292030",
+    "name": "The Witcher 3: Wild Hunt — Remastered",
+    "appid": 292030,
+    "tier": "A",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "the-crew-2",
+   "url": "https://interfaceingame.com/games/the-crew-2/",
+   "name": "The Crew 2",
+   "lastmod": "2020-12-11T17:20:36+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 646910,
+    "name": "The Crew™ 2"
+   }
+  },
+  {
+   "slug": "tom-clancys-the-division-2",
+   "url": "https://interfaceingame.com/games/tom-clancys-the-division-2/",
+   "name": "Tom Clancys The Division 2",
+   "lastmod": "2020-12-11T17:24:02+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2221490,
+    "name": "Tom Clancy’s The Division® 2"
+   }
+  },
+  {
+   "slug": "trackmania-turbo",
+   "url": "https://interfaceingame.com/games/trackmania-turbo/",
+   "name": "Trackmania Turbo",
+   "lastmod": "2020-12-11T17:26:34+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 375900,
+    "name": "Trackmania® Turbo"
+   }
+  },
+  {
+   "slug": "under-night-in-birth-exelatest",
+   "url": "https://interfaceingame.com/games/under-night-in-birth-exelatest/",
+   "name": "Under Night In Birth Exelatest",
+   "lastmod": "2020-12-11T17:29:21+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "valorant",
+   "url": "https://interfaceingame.com/games/valorant/",
+   "name": "Valorant",
+   "lastmod": "2020-12-11T17:32:24+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "wargroove",
+   "url": "https://interfaceingame.com/games/wargroove/",
+   "name": "Wargroove",
+   "lastmod": "2020-12-11T17:34:15+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 607050,
+    "name": "Wargroove"
+   }
+  },
+  {
+   "slug": "world-of-warships",
+   "url": "https://interfaceingame.com/games/world-of-warships/",
+   "name": "World Of Warships",
+   "lastmod": "2020-12-11T17:36:16+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 552990,
+    "name": "World of Warships"
+   }
+  },
+  {
+   "slug": "soulcalibur-vi",
+   "url": "https://interfaceingame.com/games/soulcalibur-vi/",
+   "name": "Soulcalibur VI",
+   "lastmod": "2020-12-11T17:41:25+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 544750,
+    "name": "SOULCALIBUR VI"
+   }
+  },
+  {
+   "slug": "monster-hunter-world",
+   "url": "https://interfaceingame.com/games/monster-hunter-world/",
+   "name": "Monster Hunter World",
+   "lastmod": "2020-12-11T17:47:24+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 582010,
+    "name": "Monster Hunter: World"
+   }
+  },
+  {
+   "slug": "tom-clancys-ghost-recon-wildlands",
+   "url": "https://interfaceingame.com/games/tom-clancys-ghost-recon-wildlands/",
+   "name": "Tom Clancys Ghost Recon Wildlands",
+   "lastmod": "2020-12-11T18:05:35+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 460930,
+    "name": "Tom Clancy's Ghost Recon® Wildlands"
+   }
+  },
+  {
+   "slug": "tom-clancys-ghost-recon-breakpoint",
+   "url": "https://interfaceingame.com/games/tom-clancys-ghost-recon-breakpoint/",
+   "name": "Tom Clancys Ghost Recon Breakpoint",
+   "lastmod": "2020-12-11T18:20:30+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2231380,
+    "name": "Tom Clancy's Ghost Recon® Breakpoint"
+   }
+  },
+  {
+   "slug": "super-mario-3d-world",
+   "url": "https://interfaceingame.com/games/super-mario-3d-world/",
+   "name": "Super Mario 3d World",
+   "lastmod": "2020-12-11T18:56:31+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "assassins-creed-valhalla",
+   "url": "https://interfaceingame.com/games/assassins-creed-valhalla/",
+   "name": "Assassins Creed Valhalla",
+   "lastmod": "2020-12-12T17:04:50+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2208920,
+    "name": "Assassin's Creed Valhalla"
+   }
+  },
+  {
+   "slug": "yo-kai-watch-4",
+   "url": "https://interfaceingame.com/games/yo-kai-watch-4/",
+   "name": "Yo Kai Watch 4",
+   "lastmod": "2020-12-15T13:15:41+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "league-of-legends-wild-rift",
+   "url": "https://interfaceingame.com/games/league-of-legends-wild-rift/",
+   "name": "League Of Legends Wild Rift",
+   "lastmod": "2020-12-16T13:21:18+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-elder-scrolls-online",
+   "url": "https://interfaceingame.com/games/the-elder-scrolls-online/",
+   "name": "The Elder Scrolls Online",
+   "lastmod": "2020-12-17T11:44:34+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 306130,
+    "name": "The Elder Scrolls® Online"
+   }
+  },
+  {
+   "slug": "teamfight-tactics-mobile",
+   "url": "https://interfaceingame.com/games/teamfight-tactics-mobile/",
+   "name": "Teamfight Tactics Mobile",
+   "lastmod": "2020-12-17T13:56:21+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "dota-underlords-mobile",
+   "url": "https://interfaceingame.com/games/dota-underlords-mobile/",
+   "name": "Dota Underlords Mobile",
+   "lastmod": "2020-12-18T14:36:39+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "doraemon-story-of-seasons",
+   "url": "https://interfaceingame.com/games/doraemon-story-of-seasons/",
+   "name": "Doraemon Story Of Seasons",
+   "lastmod": "2020-12-18T15:28:14+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 965230,
+    "name": "DORAEMON  STORY OF SEASONS"
+   }
+  },
+  {
+   "slug": "honkai-impact-3rd",
+   "url": "https://interfaceingame.com/games/honkai-impact-3rd/",
+   "name": "Honkai Impact 3rd",
+   "lastmod": "2020-12-21T18:08:28+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1671200,
+    "name": "Honkai Impact 3rd"
+   }
+  },
+  {
+   "slug": "clash-royale",
+   "url": "https://interfaceingame.com/games/clash-royale/",
+   "name": "Clash Royale",
+   "lastmod": "2020-12-22T13:30:03+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "clash-of-clans",
+   "url": "https://interfaceingame.com/games/clash-of-clans/",
+   "name": "Clash Of Clans",
+   "lastmod": "2020-12-30T16:19:30+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "genshin-impact-mobile",
+   "url": "https://interfaceingame.com/games/genshin-impact-mobile/",
+   "name": "Genshin Impact Mobile",
+   "lastmod": "2020-12-31T10:55:13+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "legends-of-runeterra-mobile",
+   "url": "https://interfaceingame.com/games/legends-of-runeterra-mobile/",
+   "name": "Legends Of Runeterra Mobile",
+   "lastmod": "2020-12-31T15:13:01+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-seven-deadly-sins-grand-cross",
+   "url": "https://interfaceingame.com/games/the-seven-deadly-sins-grand-cross/",
+   "name": "The Seven Deadly Sins Grand Cross",
+   "lastmod": "2021-01-01T10:56:16+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "kartrider-rush",
+   "url": "https://interfaceingame.com/games/kartrider-rush/",
+   "name": "Kartrider Rush",
+   "lastmod": "2021-01-01T13:12:10+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "brawl-stars",
+   "url": "https://interfaceingame.com/games/brawl-stars/",
+   "name": "Brawl Stars",
+   "lastmod": "2021-01-01T14:39:57+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "minit",
+   "url": "https://interfaceingame.com/games/minit/",
+   "name": "Minit",
+   "lastmod": "2021-01-05T17:38:17+00:00",
+   "r1": {
+    "key": "app:609490",
+    "name": "Minit",
+    "appid": 609490,
+    "tier": "C",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "doom-eternal",
+   "url": "https://interfaceingame.com/games/doom-eternal/",
+   "name": "Doom Eternal",
+   "lastmod": "2021-01-05T18:17:41+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 782330,
+    "name": "DOOM Eternal"
+   }
+  },
+  {
+   "slug": "elite-dangerous",
+   "url": "https://interfaceingame.com/games/elite-dangerous/",
+   "name": "Elite Dangerous",
+   "lastmod": "2021-01-12T11:37:01+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 359320,
+    "name": "Elite Dangerous"
+   }
+  },
+  {
+   "slug": "frostpunk",
+   "url": "https://interfaceingame.com/games/frostpunk/",
+   "name": "Frostpunk",
+   "lastmod": "2021-01-16T18:16:12+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 323190,
+    "name": "Frostpunk"
+   }
+  },
+  {
+   "slug": "cyberpunk-2077",
+   "url": "https://interfaceingame.com/games/cyberpunk-2077/",
+   "name": "Cyberpunk 2077",
+   "lastmod": "2021-01-21T23:19:45+00:00",
+   "r1": {
+    "key": "app:1091500",
+    "name": "Cyberpunk 2077",
+    "appid": 1091500,
+    "tier": "A",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "death-stranding",
+   "url": "https://interfaceingame.com/games/death-stranding/",
+   "name": "Death Stranding",
+   "lastmod": "2021-01-22T15:47:42+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "immortals-fenyx-rising",
+   "url": "https://interfaceingame.com/games/immortals-fenyx-rising/",
+   "name": "Immortals Fenyx Rising",
+   "lastmod": "2021-01-26T02:50:43+00:00",
+   "r1": {
+    "key": "app:2221920",
+    "name": "Immortals Fenyx Rising",
+    "appid": 2221920,
+    "tier": "C",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "watch-dogs-2",
+   "url": "https://interfaceingame.com/games/watch-dogs-2/",
+   "name": "Watch Dogs 2",
+   "lastmod": "2021-01-26T09:47:52+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 447040,
+    "name": "Watch_Dogs® 2"
+   }
+  },
+  {
+   "slug": "far-cry-new-dawn",
+   "url": "https://interfaceingame.com/games/far-cry-new-dawn/",
+   "name": "Far Cry New Dawn",
+   "lastmod": "2021-01-27T15:19:39+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 939960,
+    "name": "Far Cry® New Dawn"
+   }
+  },
+  {
+   "slug": "watch-dogs-legion",
+   "url": "https://interfaceingame.com/games/watch-dogs-legion/",
+   "name": "Watch Dogs Legion",
+   "lastmod": "2021-01-27T15:32:41+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2239550,
+    "name": "Watch Dogs®: Legion"
+   }
+  },
+  {
+   "slug": "desperados-iii",
+   "url": "https://interfaceingame.com/games/desperados-iii/",
+   "name": "Desperados Iii",
+   "lastmod": "2021-01-28T15:52:48+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 610370,
+    "name": "Desperados III"
+   }
+  },
+  {
+   "slug": "arms",
+   "url": "https://interfaceingame.com/games/arms/",
+   "name": "Arms",
+   "lastmod": "2021-01-31T14:43:09+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "borderlands-3",
+   "url": "https://interfaceingame.com/games/borderlands-3/",
+   "name": "Borderlands 3",
+   "lastmod": "2021-02-01T12:08:35+00:00",
+   "r1": {
+    "key": "app:397540",
+    "name": "Borderlands 3",
+    "appid": 397540,
+    "tier": "C",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "astros-playroom",
+   "url": "https://interfaceingame.com/games/astros-playroom/",
+   "name": "Astros Playroom",
+   "lastmod": "2021-02-01T19:09:13+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "gears-tactics",
+   "url": "https://interfaceingame.com/games/gears-tactics/",
+   "name": "Gears Tactics",
+   "lastmod": "2021-02-04T18:10:17+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1184050,
+    "name": "Gears Tactics"
+   }
+  },
+  {
+   "slug": "metal-gear-solid-v-the-phantom-pain",
+   "url": "https://interfaceingame.com/games/metal-gear-solid-v-the-phantom-pain/",
+   "name": "Metal Gear Solid V The Phantom Pain",
+   "lastmod": "2021-02-07T16:41:59+00:00",
+   "r1": {
+    "key": "app:287700",
+    "name": "METAL GEAR SOLID V: THE PHANTOM PAIN",
+    "appid": 287700,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "the-outer-worlds",
+   "url": "https://interfaceingame.com/games/the-outer-worlds/",
+   "name": "The Outer Worlds",
+   "lastmod": "2021-02-08T15:08:42+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "destruction-allstars",
+   "url": "https://interfaceingame.com/games/destruction-allstars/",
+   "name": "Destruction Allstars",
+   "lastmod": "2021-02-09T11:59:33+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "va-11-hall-a-cyberpunk-bartender-action",
+   "url": "https://interfaceingame.com/games/va-11-hall-a-cyberpunk-bartender-action/",
+   "name": "Va 11 Hall A Cyberpunk Bartender Action",
+   "lastmod": "2021-02-10T15:46:30+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 447530,
+    "name": "VA-11 Hall-A: Cyberpunk Bartender Action"
+   }
+  },
+  {
+   "slug": "mini-metro",
+   "url": "https://interfaceingame.com/games/mini-metro/",
+   "name": "Mini Metro",
+   "lastmod": "2021-02-10T18:29:55+00:00",
+   "r1": {
+    "key": "app:287980",
+    "name": "Mini Metro",
+    "appid": 287980,
+    "tier": "B",
+    "primary": "builder",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "no-mans-sky",
+   "url": "https://interfaceingame.com/games/no-mans-sky/",
+   "name": "No Mans Sky",
+   "lastmod": "2021-02-11T10:14:09+00:00",
+   "r1": {
+    "key": "app:275850",
+    "name": "No Man's Sky",
+    "appid": 275850,
+    "tier": "C",
+    "primary": "survival",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "trine-2",
+   "url": "https://interfaceingame.com/games/trine-2/",
+   "name": "Trine 2",
+   "lastmod": "2021-02-14T08:52:02+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "titanfall-2",
+   "url": "https://interfaceingame.com/games/titanfall-2/",
+   "name": "Titanfall 2",
+   "lastmod": "2021-02-15T18:29:45+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1237970,
+    "name": "Titanfall® 2"
+   }
+  },
+  {
+   "slug": "monument-valley",
+   "url": "https://interfaceingame.com/games/monument-valley/",
+   "name": "Monument Valley",
+   "lastmod": "2021-02-15T22:16:11+00:00",
+   "r1": {
+    "key": "app:1927720",
+    "name": "Monument Valley",
+    "appid": 1927720,
+    "tier": "A",
+    "primary": "puzzle",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "team-fortress-2",
+   "url": "https://interfaceingame.com/games/team-fortress-2/",
+   "name": "Team Fortress 2",
+   "lastmod": "2021-02-17T10:20:21+00:00",
+   "r1": {
+    "key": "app:440",
+    "name": "Team Fortress 2",
+    "appid": 440,
+    "tier": "B",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "florence",
+   "url": "https://interfaceingame.com/games/florence/",
+   "name": "Florence",
+   "lastmod": "2021-02-23T04:24:23+00:00",
+   "r1": {
+    "key": "app:1102130",
+    "name": "Florence",
+    "appid": 1102130,
+    "tier": "C",
+    "primary": "narrative",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "red-dead-redemption-2",
+   "url": "https://interfaceingame.com/games/red-dead-redemption-2/",
+   "name": "Red Dead Redemption 2",
+   "lastmod": "2021-02-23T15:42:13+00:00",
+   "r1": {
+    "key": "app:1174180",
+    "name": "Red Dead Redemption 2",
+    "appid": 1174180,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "battlefield-bad-company-2",
+   "url": "https://interfaceingame.com/games/battlefield-bad-company-2/",
+   "name": "Battlefield Bad Company 2",
+   "lastmod": "2021-02-27T18:12:54+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "tennisclash",
+   "url": "https://interfaceingame.com/games/tennisclash/",
+   "name": "Tennisclash",
+   "lastmod": "2021-03-01T14:19:38+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "toca-life-world",
+   "url": "https://interfaceingame.com/games/toca-life-world/",
+   "name": "Toca Life World",
+   "lastmod": "2021-03-09T04:50:17+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "bloons-td-6",
+   "url": "https://interfaceingame.com/games/bloons-td-6/",
+   "name": "Bloons Td 6",
+   "lastmod": "2021-03-14T18:25:23+00:00",
+   "r1": {
+    "key": "app:960090",
+    "name": "Bloons TD 6",
+    "appid": 960090,
+    "tier": "D",
+    "primary": "strategy",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "dr-mario-world",
+   "url": "https://interfaceingame.com/games/dr-mario-world/",
+   "name": "Dr Mario World",
+   "lastmod": "2021-03-21T23:27:18+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-last-of-us-part-ii",
+   "url": "https://interfaceingame.com/games/the-last-of-us-part-ii/",
+   "name": "The Last Of Us Part II",
+   "lastmod": "2021-03-23T02:55:26+00:00",
+   "r1": {
+    "key": "app:2531310",
+    "name": "The Last of Us Part II Remastered",
+    "appid": 2531310,
+    "tier": "A",
+    "primary": "horror",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "thumper",
+   "url": "https://interfaceingame.com/games/thumper/",
+   "name": "Thumper",
+   "lastmod": "2021-04-09T16:15:50+00:00",
+   "r1": {
+    "key": "app:356400",
+    "name": "Thumper",
+    "appid": 356400,
+    "tier": "C",
+    "primary": "horror",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "diablo-ii-resurrected-technical-alpha",
+   "url": "https://interfaceingame.com/games/diablo-ii-resurrected-technical-alpha/",
+   "name": "Diablo II Resurrected Technical Alpha",
+   "lastmod": "2021-04-11T15:03:48+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "quake-champions",
+   "url": "https://interfaceingame.com/games/quake-champions/",
+   "name": "Quake Champions",
+   "lastmod": "2021-04-16T12:40:02+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 611500,
+    "name": "Quake Champions"
+   }
+  },
+  {
+   "slug": "im-ping-pong-king",
+   "url": "https://interfaceingame.com/games/im-ping-pong-king/",
+   "name": "Im Ping Pong King",
+   "lastmod": "2021-04-28T14:20:02+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "star-wars-squadrons",
+   "url": "https://interfaceingame.com/games/star-wars-squadrons/",
+   "name": "Star Wars Squadrons",
+   "lastmod": "2021-04-28T15:01:05+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1222730,
+    "name": "STAR WARS™: Squadrons"
+   }
+  },
+  {
+   "slug": "it-takes-two",
+   "url": "https://interfaceingame.com/games/it-takes-two/",
+   "name": "It Takes Two",
+   "lastmod": "2021-05-19T02:34:01+00:00",
+   "r1": {
+    "key": "app:1426210",
+    "name": "It Takes Two",
+    "appid": 1426210,
+    "tier": "B",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "days-gone",
+   "url": "https://interfaceingame.com/games/days-gone/",
+   "name": "Days Gone",
+   "lastmod": "2021-05-20T08:13:55+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1259420,
+    "name": "Days Gone"
+   }
+  },
+  {
+   "slug": "mario-kart-tour",
+   "url": "https://interfaceingame.com/games/mario-kart-tour/",
+   "name": "Mario Kart Tour",
+   "lastmod": "2021-05-31T20:25:38+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "felix-the-reaper",
+   "url": "https://interfaceingame.com/games/felix-the-reaper/",
+   "name": "Felix The Reaper",
+   "lastmod": "2021-06-07T11:56:12+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 919410,
+    "name": "Felix The Reaper"
+   }
+  },
+  {
+   "slug": "djmax-respect-v",
+   "url": "https://interfaceingame.com/games/djmax-respect-v/",
+   "name": "Djmax Respect V",
+   "lastmod": "2021-06-14T15:18:29+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 960170,
+    "name": "DJMAX RESPECT V"
+   }
+  },
+  {
+   "slug": "dead-or-alive-6",
+   "url": "https://interfaceingame.com/games/dead-or-alive-6/",
+   "name": "Dead Or Alive 6",
+   "lastmod": "2021-06-15T19:45:39+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "planet-zoo",
+   "url": "https://interfaceingame.com/games/planet-zoo/",
+   "name": "Planet Zoo",
+   "lastmod": "2021-06-29T09:01:41+00:00",
+   "r1": {
+    "key": "app:703080",
+    "name": "Planet Zoo",
+    "appid": 703080,
+    "tier": "D",
+    "primary": "builder",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "battlelands-royale",
+   "url": "https://interfaceingame.com/games/battlelands-royale/",
+   "name": "Battlelands Royale",
+   "lastmod": "2021-07-10T21:19:59+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "knighthood",
+   "url": "https://interfaceingame.com/games/knighthood/",
+   "name": "Knighthood",
+   "lastmod": "2021-07-11T15:53:20+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "clubhouse-games-51-worldwide-classics",
+   "url": "https://interfaceingame.com/games/clubhouse-games-51-worldwide-classics/",
+   "name": "Clubhouse Games 51 Worldwide Classics",
+   "lastmod": "2021-07-16T02:51:49+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "splinter-cell-blacklist",
+   "url": "https://interfaceingame.com/games/splinter-cell-blacklist/",
+   "name": "Splinter Cell Blacklist",
+   "lastmod": "2021-07-29T16:47:04+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-elder-scrolls-blades",
+   "url": "https://interfaceingame.com/games/the-elder-scrolls-blades/",
+   "name": "The Elder Scrolls Blades",
+   "lastmod": "2021-07-29T20:13:12+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-ascent",
+   "url": "https://interfaceingame.com/games/the-ascent/",
+   "name": "The Ascent",
+   "lastmod": "2021-07-30T15:49:10+00:00",
+   "r1": {
+    "key": "app:979690",
+    "name": "The Ascent",
+    "appid": 979690,
+    "tier": "C",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "apex-legends",
+   "url": "https://interfaceingame.com/games/apex-legends/",
+   "name": "Apex Legends",
+   "lastmod": "2021-07-31T12:20:43+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1172470,
+    "name": "Apex Legends™"
+   }
+  },
+  {
+   "slug": "need-for-speed-heat",
+   "url": "https://interfaceingame.com/games/need-for-speed-heat/",
+   "name": "Need For Speed Heat",
+   "lastmod": "2021-08-09T14:21:23+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1222680,
+    "name": "Need for Speed™ Heat"
+   }
+  },
+  {
+   "slug": "psychonauts-2",
+   "url": "https://interfaceingame.com/games/psychonauts-2/",
+   "name": "Psychonauts 2",
+   "lastmod": "2021-09-13T08:02:18+00:00",
+   "r1": {
+    "key": "app:607080",
+    "name": "Psychonauts 2",
+    "appid": 607080,
+    "tier": "B",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "the-artful-escape",
+   "url": "https://interfaceingame.com/games/the-artful-escape/",
+   "name": "The Artful Escape",
+   "lastmod": "2021-09-15T06:20:29+00:00",
+   "r1": {
+    "key": "app:1122680",
+    "name": "The Artful Escape",
+    "appid": 1122680,
+    "tier": "A",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "far-cry-6",
+   "url": "https://interfaceingame.com/games/far-cry-6/",
+   "name": "Far Cry 6",
+   "lastmod": "2021-10-11T11:57:47+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2369390,
+    "name": "Far Cry® 6"
+   }
+  },
+  {
+   "slug": "kena-bridge-of-spirits",
+   "url": "https://interfaceingame.com/games/kena-bridge-of-spirits/",
+   "name": "Kena Bridge Of Spirits",
+   "lastmod": "2021-10-11T11:58:47+00:00",
+   "r1": {
+    "key": "app:1954200",
+    "name": "Kena: Bridge of Spirits",
+    "appid": 1954200,
+    "tier": "B",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "deathloop",
+   "url": "https://interfaceingame.com/games/deathloop/",
+   "name": "Deathloop",
+   "lastmod": "2021-12-27T08:24:31+00:00",
+   "r1": {
+    "key": "app:1252330",
+    "name": "DEATHLOOP",
+    "appid": 1252330,
+    "tier": "A",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "halo-infinite",
+   "url": "https://interfaceingame.com/games/halo-infinite/",
+   "name": "Halo Infinite",
+   "lastmod": "2022-01-02T19:36:05+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1240440,
+    "name": "Halo Infinite"
+   }
+  },
+  {
+   "slug": "rainbow-six-siege-extraction",
+   "url": "https://interfaceingame.com/games/rainbow-six-siege-extraction/",
+   "name": "Rainbow Six Siege Extraction",
+   "lastmod": "2022-01-23T10:47:10+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "remnant-from-the-ashes",
+   "url": "https://interfaceingame.com/games/remnant-from-the-ashes/",
+   "name": "Remnant From The Ashes",
+   "lastmod": "2022-01-25T11:16:04+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 617290,
+    "name": "Remnant: From the Ashes"
+   }
+  },
+  {
+   "slug": "sifu",
+   "url": "https://interfaceingame.com/games/sifu/",
+   "name": "Sifu",
+   "lastmod": "2022-02-15T18:08:39+00:00",
+   "r1": {
+    "key": "app:2138710",
+    "name": "Sifu",
+    "appid": 2138710,
+    "tier": "C",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "asphalt-9-legends",
+   "url": "https://interfaceingame.com/games/asphalt-9-legends/",
+   "name": "Asphalt 9 Legends",
+   "lastmod": "2022-03-02T19:49:55+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "elden-ring",
+   "url": "https://interfaceingame.com/games/elden-ring/",
+   "name": "Elden Ring",
+   "lastmod": "2022-04-10T16:12:11+00:00",
+   "r1": {
+    "key": "app:1245620",
+    "name": "ELDEN RING",
+    "appid": 1245620,
+    "tier": "A",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "roller-champions",
+   "url": "https://interfaceingame.com/games/roller-champions/",
+   "name": "Roller Champions",
+   "lastmod": "2022-05-26T12:21:02+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2211280,
+    "name": "Roller Champions™"
+   }
+  },
+  {
+   "slug": "nierautomata",
+   "url": "https://interfaceingame.com/games/nierautomata/",
+   "name": "Nierautomata",
+   "lastmod": "2022-07-15T23:26:36+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "raji-an-ancient-epic",
+   "url": "https://interfaceingame.com/games/raji-an-ancient-epic/",
+   "name": "Raji An Ancient Epic",
+   "lastmod": "2022-07-30T14:03:58+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 730390,
+    "name": "Raji: An Ancient Epic"
+   }
+  },
+  {
+   "slug": "stray",
+   "url": "https://interfaceingame.com/games/stray/",
+   "name": "Stray",
+   "lastmod": "2022-07-30T15:45:15+00:00",
+   "r1": {
+    "key": "app:1332010",
+    "name": "Stray",
+    "appid": 1332010,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "nostalgia-op-2",
+   "url": "https://interfaceingame.com/games/nostalgia-op-2/",
+   "name": "Nostalgia Op 2",
+   "lastmod": "2022-08-02T12:23:40+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "dying-light-2",
+   "url": "https://interfaceingame.com/games/dying-light-2/",
+   "name": "Dying Light 2",
+   "lastmod": "2022-09-10T11:27:40+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "gotham-knights",
+   "url": "https://interfaceingame.com/games/gotham-knights/",
+   "name": "Gotham Knights",
+   "lastmod": "2022-11-03T13:28:42+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1496790,
+    "name": "Gotham Knights"
+   }
+  },
+  {
+   "slug": "overwatch-2",
+   "url": "https://interfaceingame.com/games/overwatch-2/",
+   "name": "Overwatch 2",
+   "lastmod": "2022-11-23T09:07:35+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "uncharted-4",
+   "url": "https://interfaceingame.com/games/uncharted-4/",
+   "name": "Uncharted 4",
+   "lastmod": "2023-02-07T05:37:43+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "returnal",
+   "url": "https://interfaceingame.com/games/returnal/",
+   "name": "Returnal",
+   "lastmod": "2023-02-20T11:33:11+00:00",
+   "r1": {
+    "key": "app:1649240",
+    "name": "Returnal",
+    "appid": 1649240,
+    "tier": "B",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "armored-head",
+   "url": "https://interfaceingame.com/games/armored-head/",
+   "name": "Armored Head",
+   "lastmod": "2023-03-20T09:09:45+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 805590,
+    "name": "ARMORED HEAD"
+   }
+  },
+  {
+   "slug": "diablo-iv-beta",
+   "url": "https://interfaceingame.com/games/diablo-iv-beta/",
+   "name": "Diablo IV Beta",
+   "lastmod": "2023-03-24T22:01:32+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "the-last-of-us",
+   "url": "https://interfaceingame.com/games/the-last-of-us/",
+   "name": "The Last Of Us",
+   "lastmod": "2023-04-04T14:04:25+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "rumbleverse",
+   "url": "https://interfaceingame.com/games/rumbleverse/",
+   "name": "Rumbleverse",
+   "lastmod": "2023-05-02T20:24:27+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "honkai-star-rail",
+   "url": "https://interfaceingame.com/games/honkai-star-rail/",
+   "name": "Honkai Star Rail",
+   "lastmod": "2023-05-10T12:27:02+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "inside",
+   "url": "https://interfaceingame.com/games/inside/",
+   "name": "Inside",
+   "lastmod": "2023-05-31T13:41:27+00:00",
+   "r1": {
+    "key": "app:304430",
+    "name": "INSIDE",
+    "appid": 304430,
+    "tier": "A",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "limbo",
+   "url": "https://interfaceingame.com/games/limbo/",
+   "name": "Limbo",
+   "lastmod": "2023-05-31T13:41:52+00:00",
+   "r1": {
+    "key": "app:48000",
+    "name": "LIMBO",
+    "appid": 48000,
+    "tier": "A",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "hi-fi-rush",
+   "url": "https://interfaceingame.com/games/hi-fi-rush/",
+   "name": "Hi Fi Rush",
+   "lastmod": "2023-06-09T13:27:47+00:00",
+   "r1": {
+    "key": "app:1817230",
+    "name": "Hi-Fi RUSH",
+    "appid": 1817230,
+    "tier": "B",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "xdefiant-beta",
+   "url": "https://interfaceingame.com/games/xdefiant-beta/",
+   "name": "Xdefiant Beta",
+   "lastmod": "2023-06-23T12:39:18+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "rollerdrome",
+   "url": "https://interfaceingame.com/games/rollerdrome/",
+   "name": "Rollerdrome",
+   "lastmod": "2023-07-31T15:52:32+00:00",
+   "r1": {
+    "key": "app:1294420",
+    "name": "Rollerdrome",
+    "appid": 1294420,
+    "tier": "C",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "remnant-ii",
+   "url": "https://interfaceingame.com/games/remnant-ii/",
+   "name": "Remnant II",
+   "lastmod": "2023-08-01T13:25:05+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1282100,
+    "name": "REMNANT II®"
+   }
+  },
+  {
+   "slug": "ratchet-clank-rift-apart",
+   "url": "https://interfaceingame.com/games/ratchet-clank-rift-apart/",
+   "name": "Ratchet Clank Rift Apart",
+   "lastmod": "2023-08-01T13:31:40+00:00",
+   "r1": {
+    "key": "app:1895880",
+    "name": "Ratchet & Clank: Rift Apart",
+    "appid": 1895880,
+    "tier": "A",
+    "primary": "platformer",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "mirrors-edge-catalyst",
+   "url": "https://interfaceingame.com/games/mirrors-edge-catalyst/",
+   "name": "Mirrors Edge Catalyst",
+   "lastmod": "2023-08-09T17:01:45+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1233570,
+    "name": "Mirror's Edge™ Catalyst"
+   }
+  },
+  {
+   "slug": "starfield",
+   "url": "https://interfaceingame.com/games/starfield/",
+   "name": "Starfield",
+   "lastmod": "2023-09-04T08:54:03+00:00",
+   "r1": {
+    "key": "app:1716740",
+    "name": "Starfield",
+    "appid": 1716740,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "the-crew-motorfest",
+   "url": "https://interfaceingame.com/games/the-crew-motorfest/",
+   "name": "The Crew Motorfest",
+   "lastmod": "2023-10-02T08:39:11+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2698940,
+    "name": "The Crew Motorfest"
+   }
+  },
+  {
+   "slug": "blazblue-centralfiction",
+   "url": "https://interfaceingame.com/games/blazblue-centralfiction/",
+   "name": "Blazblue Centralfiction",
+   "lastmod": "2023-10-03T16:12:51+00:00",
+   "r1": {
+    "key": "app:586140",
+    "name": "BlazBlue Centralfiction",
+    "appid": 586140,
+    "tier": "D",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "assassins-creed-mirage",
+   "url": "https://interfaceingame.com/games/assassins-creed-mirage/",
+   "name": "Assassins Creed Mirage",
+   "lastmod": "2023-10-10T19:32:40+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3035570,
+    "name": "Assassin's Creed Mirage"
+   }
+  },
+  {
+   "slug": "crysis-3",
+   "url": "https://interfaceingame.com/games/crysis-3/",
+   "name": "Crysis 3",
+   "lastmod": "2023-11-06T10:10:22+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2096610,
+    "name": "Crysis 3 Remastered"
+   }
+  },
+  {
+   "slug": "alan-wake-ii",
+   "url": "https://interfaceingame.com/games/alan-wake-ii/",
+   "name": "Alan Wake II",
+   "lastmod": "2023-12-01T15:54:13+00:00",
+   "r1": {
+    "key": "name:alan wake 2",
+    "name": "Alan Wake 2",
+    "appid": null,
+    "tier": "A",
+    "primary": "horror",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "avatar-frontiers-of-pandora",
+   "url": "https://interfaceingame.com/games/avatar-frontiers-of-pandora/",
+   "name": "Avatar Frontiers Of Pandora",
+   "lastmod": "2023-12-11T11:12:40+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2840770,
+    "name": "Avatar: Frontiers of Pandora™"
+   }
+  },
+  {
+   "slug": "the-finals",
+   "url": "https://interfaceingame.com/games/the-finals/",
+   "name": "The Finals",
+   "lastmod": "2023-12-14T15:39:46+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2073850,
+    "name": "THE FINALS"
+   }
+  },
+  {
+   "slug": "shadow-gambit-the-cursed-crew",
+   "url": "https://interfaceingame.com/games/shadow-gambit-the-cursed-crew/",
+   "name": "Shadow Gambit The Cursed Crew",
+   "lastmod": "2023-12-20T15:17:15+00:00",
+   "r1": {
+    "key": "app:1545560",
+    "name": "Shadow Gambit: The Cursed Crew",
+    "appid": 1545560,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "prince-of-persia-the-lost-crown",
+   "url": "https://interfaceingame.com/games/prince-of-persia-the-lost-crown/",
+   "name": "Prince Of Persia The Lost Crown",
+   "lastmod": "2024-01-15T09:51:59+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2751000,
+    "name": "Prince of Persia The Lost Crown"
+   }
+  },
+  {
+   "slug": "lies-of-p",
+   "url": "https://interfaceingame.com/games/lies-of-p/",
+   "name": "Lies Of P",
+   "lastmod": "2024-02-15T08:55:36+00:00",
+   "r1": {
+    "key": "app:1627720",
+    "name": "Lies of P",
+    "appid": 1627720,
+    "tier": "A",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "skull-and-bones",
+   "url": "https://interfaceingame.com/games/skull-and-bones/",
+   "name": "Skull And Bones",
+   "lastmod": "2024-02-15T13:37:56+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2853730,
+    "name": "Skull and Bones"
+   }
+  },
+  {
+   "slug": "banishers-ghosts-of-new-eden",
+   "url": "https://interfaceingame.com/games/banishers-ghosts-of-new-eden/",
+   "name": "Banishers Ghosts Of New Eden",
+   "lastmod": "2024-02-21T12:02:32+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1493640,
+    "name": "Banishers: Ghosts of New Eden"
+   }
+  },
+  {
+   "slug": "horizon-forbidden-west",
+   "url": "https://interfaceingame.com/games/horizon-forbidden-west/",
+   "name": "Horizon Forbidden West",
+   "lastmod": "2024-03-27T09:52:46+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "ghost-of-tsushima",
+   "url": "https://interfaceingame.com/games/ghost-of-tsushima/",
+   "name": "Ghost Of Tsushima",
+   "lastmod": "2024-05-21T13:29:16+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "hogwards-legacy",
+   "url": "https://interfaceingame.com/games/hogwards-legacy/",
+   "name": "Hogwards Legacy",
+   "lastmod": "2024-06-29T19:13:42+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "star-wars-outlaws",
+   "url": "https://interfaceingame.com/games/star-wars-outlaws/",
+   "name": "Star Wars Outlaws",
+   "lastmod": "2024-08-29T10:59:45+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2842040,
+    "name": "Star Wars Outlaws"
+   }
+  },
+  {
+   "slug": "star-wars-jedi-survivor",
+   "url": "https://interfaceingame.com/games/star-wars-jedi-survivor/",
+   "name": "Star Wars Jedi Survivor",
+   "lastmod": "2024-09-17T15:15:31+00:00",
+   "r1": {
+    "key": "app:1774580",
+    "name": "STAR WARS Jedi: Survivor",
+    "appid": 1774580,
+    "tier": "B",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "god-of-war-ragnarok",
+   "url": "https://interfaceingame.com/games/god-of-war-ragnarok/",
+   "name": "God Of War Ragnarok",
+   "lastmod": "2024-09-24T12:46:38+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "dragon-age-the-veilguard",
+   "url": "https://interfaceingame.com/games/dragon-age-the-veilguard/",
+   "name": "Dragon Age The Veilguard",
+   "lastmod": "2024-11-04T12:25:06+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1845910,
+    "name": "Dragon Age™: The Veilguard"
+   }
+  },
+  {
+   "slug": "stalker2-heart-of-chornobyl",
+   "url": "https://interfaceingame.com/games/stalker2-heart-of-chornobyl/",
+   "name": "Stalker2 Heart Of Chornobyl",
+   "lastmod": "2024-12-08T19:26:52+00:00",
+   "r1": null,
+   "steam": null
+  },
+  {
+   "slug": "marvels-spider-man",
+   "url": "https://interfaceingame.com/games/marvels-spider-man/",
+   "name": "Marvels Spider Man",
+   "lastmod": "2024-12-09T09:04:42+00:00",
+   "r1": {
+    "key": "app:1817070",
+    "name": "Marvel’s Spider-Man Remastered",
+    "appid": 1817070,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "marvels-guardians-of-the-galaxy",
+   "url": "https://interfaceingame.com/games/marvels-guardians-of-the-galaxy/",
+   "name": "Marvels Guardians Of The Galaxy",
+   "lastmod": "2024-12-09T09:05:20+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1088850,
+    "name": "Marvel's Guardians of the Galaxy"
+   }
+  },
+  {
+   "slug": "marvel-rivals",
+   "url": "https://interfaceingame.com/games/marvel-rivals/",
+   "name": "Marvel Rivals",
+   "lastmod": "2024-12-09T12:32:25+00:00",
+   "r1": {
+    "key": "app:2767030",
+    "name": "Marvel Rivals",
+    "appid": 2767030,
+    "tier": "C",
+    "primary": "shooter",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "indiana-jones-and-the-great-circle",
+   "url": "https://interfaceingame.com/games/indiana-jones-and-the-great-circle/",
+   "name": "Indiana Jones And The Great Circle",
+   "lastmod": "2024-12-16T09:43:57+00:00",
+   "r1": {
+    "key": "app:2677660",
+    "name": "Indiana Jones and the Great Circle",
+    "appid": 2677660,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "marvels-spider-man-2",
+   "url": "https://interfaceingame.com/games/marvels-spider-man-2/",
+   "name": "Marvels Spider Man 2",
+   "lastmod": "2025-02-04T18:57:04+00:00",
+   "r1": {
+    "key": "app:2651280",
+    "name": "Marvel's Spider-Man 2",
+    "appid": 2651280,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "assassins-creed-shadows",
+   "url": "https://interfaceingame.com/games/assassins-creed-shadows/",
+   "name": "Assassins Creed Shadows",
+   "lastmod": "2025-03-25T11:36:05+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3159330,
+    "name": "Assassin’s Creed Shadows"
+   }
+  },
+  {
+   "slug": "the-alters",
+   "url": "https://interfaceingame.com/games/the-alters/",
+   "name": "The Alters",
+   "lastmod": "2025-06-17T06:29:41+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1601570,
+    "name": "The Alters"
+   }
+  },
+  {
+   "slug": "cronos-the-new-dawn",
+   "url": "https://interfaceingame.com/games/cronos-the-new-dawn/",
+   "name": "Cronos The New Dawn",
+   "lastmod": "2025-09-12T09:20:28+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2101960,
+    "name": "Cronos: The New Dawn"
+   }
+  },
+  {
+   "slug": "dying-light-the-beast",
+   "url": "https://interfaceingame.com/games/dying-light-the-beast/",
+   "name": "Dying Light The Beast",
+   "lastmod": "2025-09-29T13:26:34+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3008130,
+    "name": "Dying Light: The Beast"
+   }
+  },
+  {
+   "slug": "the-legend-of-zelda-tears-of-the-kingdom",
+   "url": "https://interfaceingame.com/games/the-legend-of-zelda-tears-of-the-kingdom/",
+   "name": "The Legend Of Zelda Tears Of The Kingdom",
+   "lastmod": "2025-11-11T23:20:25+00:00",
+   "r1": {
+    "key": "name:legend of zelda tears of kingdom",
+    "name": "The Legend of Zelda: Tears of the Kingdom",
+    "appid": null,
+    "tier": "B",
+    "primary": "explore",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "clair-obscur-expedition-33",
+   "url": "https://interfaceingame.com/games/clair-obscur-expedition-33/",
+   "name": "Clair Obscur Expedition 33",
+   "lastmod": "2025-11-21T09:23:21+00:00",
+   "r1": {
+    "key": "app:1903340",
+    "name": "Clair Obscur: Expedition 33",
+    "appid": 1903340,
+    "tier": "A",
+    "primary": "rpg",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "witchfire",
+   "url": "https://interfaceingame.com/games/witchfire/",
+   "name": "Witchfire",
+   "lastmod": "2025-11-21T09:24:43+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3156770,
+    "name": "Witchfire"
+   }
+  },
+  {
+   "slug": "against-the-storm",
+   "url": "https://interfaceingame.com/games/against-the-storm/",
+   "name": "Against The Storm",
+   "lastmod": "2025-11-21T09:27:32+00:00",
+   "r1": {
+    "key": "app:1336490",
+    "name": "Against the Storm",
+    "appid": 1336490,
+    "tier": "-",
+    "primary": null,
+    "inList": false
+   },
+   "steam": null
+  },
+  {
+   "slug": "the-bazaar",
+   "url": "https://interfaceingame.com/games/the-bazaar/",
+   "name": "The Bazaar",
+   "lastmod": "2025-11-21T09:29:02+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1617400,
+    "name": "The Bazaar"
+   }
+  },
+  {
+   "slug": "blue-prince",
+   "url": "https://interfaceingame.com/games/blue-prince/",
+   "name": "Blue Prince",
+   "lastmod": "2025-11-21T09:30:02+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1569580,
+    "name": "Blue Prince"
+   }
+  },
+  {
+   "slug": "hell-is-us",
+   "url": "https://interfaceingame.com/games/hell-is-us/",
+   "name": "Hell Is Us",
+   "lastmod": "2025-12-11T12:46:27+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1620730,
+    "name": "Hell is Us"
+   }
+  },
+  {
+   "slug": "reanimal",
+   "url": "https://interfaceingame.com/games/reanimal/",
+   "name": "Reanimal",
+   "lastmod": "2026-03-10T23:12:56+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2129530,
+    "name": "REANIMAL"
+   }
+  },
+  {
+   "slug": "slay-the-spire-2",
+   "url": "https://interfaceingame.com/games/slay-the-spire-2/",
+   "name": "Slay The Spire 2",
+   "lastmod": "2026-03-17T22:34:34+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2868840,
+    "name": "Slay the Spire 2"
+   }
+  },
+  {
+   "slug": "doom-the-dark-ages",
+   "url": "https://interfaceingame.com/games/doom-the-dark-ages/",
+   "name": "Doom The Dark Ages",
+   "lastmod": "2026-03-23T23:23:04+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3017860,
+    "name": "DOOM: The Dark Ages"
+   }
+  },
+  {
+   "slug": "black-myth-wukong",
+   "url": "https://interfaceingame.com/games/black-myth-wukong/",
+   "name": "Black Myth Wukong",
+   "lastmod": "2026-04-09T12:05:31+00:00",
+   "r1": {
+    "key": "app:2358720",
+    "name": "Black Myth: Wukong",
+    "appid": 2358720,
+    "tier": "A",
+    "primary": "action",
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "mafia-the-old-country",
+   "url": "https://interfaceingame.com/games/mafia-the-old-country/",
+   "name": "Mafia The Old Country",
+   "lastmod": "2026-04-17T12:01:23+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1941540,
+    "name": "Mafia: The Old Country"
+   }
+  },
+  {
+   "slug": "borderlands-4",
+   "url": "https://interfaceingame.com/games/borderlands-4/",
+   "name": "Borderlands 4",
+   "lastmod": "2026-05-16T21:56:10+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 1285190,
+    "name": "Borderlands 4"
+   }
+  },
+  {
+   "slug": "dispatch",
+   "url": "https://interfaceingame.com/games/dispatch/",
+   "name": "Dispatch",
+   "lastmod": "2026-05-25T22:17:52+00:00",
+   "r1": {
+    "key": "app:2592160",
+    "name": "Dispatch",
+    "appid": 2592160,
+    "tier": "B",
+    "primary": null,
+    "inList": true
+   },
+   "steam": null
+  },
+  {
+   "slug": "pragmata",
+   "url": "https://interfaceingame.com/games/pragmata/",
+   "name": "Pragmata",
+   "lastmod": "2026-06-10T09:17:50+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3357650,
+    "name": "PRAGMATA"
+   }
+  },
+  {
+   "slug": "007-first-light",
+   "url": "https://interfaceingame.com/games/007-first-light/",
+   "name": "007 First Light",
+   "lastmod": "2026-06-18T22:03:13+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3768760,
+    "name": "007 First Light"
+   }
+  },
+  {
+   "slug": "ball-x-pit",
+   "url": "https://interfaceingame.com/games/ball-x-pit/",
+   "name": "Ball X Pit",
+   "lastmod": "2026-08-03T07:06:37+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2062430,
+    "name": "BALL x PIT"
+   }
+  },
+  {
+   "slug": "beast-of-reincarnation",
+   "url": "https://interfaceingame.com/games/beast-of-reincarnation/",
+   "name": "Beast Of Reincarnation",
+   "lastmod": "2026-08-18T10:34:35+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2001760,
+    "name": "Beast of Reincarnation"
+   }
+  },
+  {
+   "slug": "the-sinking-city-2",
+   "url": "https://interfaceingame.com/games/the-sinking-city-2/",
+   "name": "The Sinking City 2",
+   "lastmod": "2026-08-21T09:00:53+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2825860,
+    "name": "The Sinking City 2"
+   }
+  },
+  {
+   "slug": "mortal-shell-ii",
+   "url": "https://interfaceingame.com/games/mortal-shell-ii/",
+   "name": "Mortal Shell II",
+   "lastmod": "2026-08-27T13:30:49+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2584270,
+    "name": "Mortal Shell II"
+   }
+  },
+  {
+   "slug": "star-wars-zero-company",
+   "url": "https://interfaceingame.com/games/star-wars-zero-company/",
+   "name": "Star Wars Zero Company",
+   "lastmod": "2026-09-02T13:35:17+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2075800,
+    "name": "STAR WARS Zero Company™"
+   }
+  },
+  {
+   "slug": "the-blood-of-dawnwalker",
+   "url": "https://interfaceingame.com/games/the-blood-of-dawnwalker/",
+   "name": "The Blood Of Dawnwalker",
+   "lastmod": "2026-09-15T11:16:14+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3751260,
+    "name": "The Blood of Dawnwalker"
+   }
+  },
+  {
+   "slug": "onimusha-way-of-the-sword",
+   "url": "https://interfaceingame.com/games/onimusha-way-of-the-sword/",
+   "name": "Onimusha Way Of The Sword",
+   "lastmod": "2026-09-24T13:41:05+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 2638890,
+    "name": "Onimusha: Way of the Sword"
+   }
+  },
+  {
+   "slug": "control-resonant",
+   "url": "https://interfaceingame.com/games/control-resonant/",
+   "name": "Control Resonant",
+   "lastmod": "2026-09-29T11:39:58+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3669870,
+    "name": "CONTROL Resonant"
+   }
+  },
+  {
+   "slug": "gears-of-war-e-day",
+   "url": "https://interfaceingame.com/games/gears-of-war-e-day/",
+   "name": "Gears Of War E Day",
+   "lastmod": "2026-10-13T11:21:06+00:00",
+   "r1": null,
+   "steam": {
+    "appid": 3010850,
+    "name": "Gears of War: E-Day"
+   }
+  }
+ ]
+}

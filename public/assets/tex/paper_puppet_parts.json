@@ -1,0 +1,230 @@
+{
+ "files": {
+  "head": "paper_puppet_parts_head.png",
+  "torso": "paper_puppet_parts_torso.png",
+  "thighBack": "paper_puppet_parts_thighBack.png",
+  "thighFront": "paper_puppet_parts_thighFront.png",
+  "shinBack": "paper_puppet_parts_shinBack.png",
+  "shinFront": "paper_puppet_parts_shinFront.png",
+  "upperArmBack": "paper_puppet_parts_upperArmBack.png",
+  "upperArmFront": "paper_puppet_parts_upperArmFront.png",
+  "forearmBack": "paper_puppet_parts_forearmBack.png",
+  "forearmFront": "paper_puppet_parts_forearmFront.png"
+ },
+ "parts": {
+  "head": {
+   "file": "paper_puppet_parts_head.png",
+   "src": [
+    106,
+    52,
+    729,
+    671
+   ],
+   "size": [
+    364,
+    335
+   ],
+   "top": [
+    0.4689,
+    0.0721
+   ],
+   "bottom": [
+    0.4612,
+    0.9321
+   ]
+  },
+  "torso": {
+   "file": "paper_puppet_parts_torso.png",
+   "src": [
+    807,
+    176,
+    452,
+    1018
+   ],
+   "size": [
+    226,
+    509
+   ],
+   "top": [
+    0.5037,
+    0.0614
+   ],
+   "bottom": [
+    0.4942,
+    0.9359
+   ]
+  },
+  "thighBack": {
+   "file": "paper_puppet_parts_thighBack.png",
+   "src": [
+    129,
+    1141,
+    414,
+    783
+   ],
+   "size": [
+    207,
+    391
+   ],
+   "top": [
+    0.6792,
+    0.0649
+   ],
+   "bottom": [
+    0.2638,
+    0.9336
+   ]
+  },
+  "thighFront": {
+   "file": "paper_puppet_parts_thighFront.png",
+   "src": [
+    631,
+    1164,
+    367,
+    762
+   ],
+   "size": [
+    183,
+    381
+   ],
+   "top": [
+    0.3903,
+    0.0661
+   ],
+   "bottom": [
+    0.5513,
+    0.934
+   ]
+  },
+  "shinBack": {
+   "file": "paper_puppet_parts_shinBack.png",
+   "src": [
+    1149,
+    1308,
+    391,
+    625
+   ],
+   "size": [
+    195,
+    312
+   ],
+   "top": [
+    0.2391,
+    0.0666
+   ],
+   "bottom": [
+    0.5359,
+    0.9342
+   ]
+  },
+  "shinFront": {
+   "file": "paper_puppet_parts_shinFront.png",
+   "src": [
+    1601,
+    1315,
+    381,
+    618
+   ],
+   "size": [
+    190,
+    309
+   ],
+   "top": [
+    0.2422,
+    0.0668
+   ],
+   "bottom": [
+    0.5665,
+    0.9344
+   ]
+  },
+  "upperArmBack": {
+   "file": "paper_puppet_parts_upperArmBack.png",
+   "src": [
+    1322,
+    205,
+    249,
+    529
+   ],
+   "size": [
+    124,
+    264
+   ],
+   "top": [
+    0.5771,
+    0.0683
+   ],
+   "bottom": [
+    0.4751,
+    0.9279
+   ]
+  },
+  "upperArmFront": {
+   "file": "paper_puppet_parts_upperArmFront.png",
+   "src": [
+    1714,
+    207,
+    245,
+    521
+   ],
+   "size": [
+    122,
+    260
+   ],
+   "top": [
+    0.4043,
+    0.0696
+   ],
+   "bottom": [
+    0.514,
+    0.9264
+   ]
+  },
+  "forearmBack": {
+   "file": "paper_puppet_parts_forearmBack.png",
+   "src": [
+    1387,
+    776,
+    201,
+    552
+   ],
+   "size": [
+    100,
+    276
+   ],
+   "top": [
+    0.4437,
+    0.0684
+   ],
+   "bottom": [
+    0.5388,
+    0.9302
+   ]
+  },
+  "forearmFront": {
+   "file": "paper_puppet_parts_forearmFront.png",
+   "src": [
+    1700,
+    783,
+    198,
+    544
+   ],
+   "size": [
+    99,
+    272
+   ],
+   "top": [
+    0.3825,
+    0.0678
+   ],
+   "bottom": [
+    0.6053,
+    0.9298
+   ]
+  }
+ },
+ "found": 10,
+ "facing": "right",
+ "pixelsPerMeter": "按身高缩放，见引擎 puppet.ts",
+ "id": "paper_puppet_parts"
+}

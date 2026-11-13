@@ -1,0 +1,2702 @@
+{
+ "meta": {
+  "task": "K1 · UI 风格族：国风水墨 / 和风 / 二次元白卡细线 / Persona 拼贴 / 倾斜动感 / 漫画对话框",
+  "date": "2026-10-14",
+  "method": "在 uiRefs.json 找到 6 族共 54 张卡，逐张读 notes.txt 行并看联系表；其中 40 余款逐张放大看单图。另看了 9 张跨族卡作补充证据。截图只在本地学习，不复制；评测只用 ui-review-stats.json 的计数。",
+  "scope": "手游运营界面（首充、限时特卖、活动图标墙、商城）不研究、不推原则；遇到的只记为「不在范围」。",
+  "evidenceGaps": [
+   "对马岛之魂、DEATHLOOP、Devil May Cry 5、Borderlands 2、只狼、Cuphead 的商店截图里没有 UI，相关描述依据卡片笔记与 06 文档，需要按功能补图。",
+   "和风族只有 1 张卡，语法证据最弱。"
+  ],
+  "reassigned": 9
+ },
+ "families": [
+  {
+   "family": "国风水墨 / 墨笔",
+   "skin": "skin.ink",
+   "noCards": false,
+   "definition": "以墨—纸两极为骨架、书法竖排标题、朱砂印章作唯一暖色强调的东方界面语言。面板不是「框」而是「纸」：边缘由毛笔笔触、卷轴木轴或留白决定，水墨晕染可以溢出面板。按明暗与载体分为文房卷轴、墨染暗场、竖排典籍、清雅淡彩、宫廷屏风、Q 版墨趣六支，从修仙经营、武侠战棋到竖屏卡牌都在用。",
+   "grammar": {
+    "shape": "矩形打底，但轮廓被三种东方形打断：竖长碑牌（竖排侧牌、挂牌、竖幡，宽高比约 1:3–1:5）、圆（月洞门、墨圈头像、印章圆钮）、菱形（旋转 45° 的小钮与头像框）。按钮多是「签条」——竖长纸条或米色横签，而不是圆角胶囊。改造一块面板：把标题从面板内顶部移到左侧竖排侧牌，主按钮换成横签 + 朱点，底边改为一笔两端收尖的墨刷。",
+    "line": "墨线有粗细与飞白：分隔线是一笔横刷；卷轴式的上下两条粗墨线（天地头）比四边框更典型；亮场的细框是 1px + 内缩的第二道淡线；暗场是灰白细双线或金色回纹折角。",
+    "surface": "宣纸 / 米黄纸内芯（亮）或墨染灰（暗场：灰白底四周被墨晕吃掉）；墨晕、墨烟在面板背后甚至越出面板；淡古画、山水、书法作 10–15% 水印。不用渐变高光与玻璃质感。",
+    "color": "黑白两极 + 唯一的朱砂红（约 #b83a2e：印章、头像外圈、新提示点、选中签）；可加一个低饱和第二色：石青 / 石绿（清雅支）或泥金（卷轴与宫廷支）。骨架饱和度压到 0.4–0.7，高饱和只留给稀有度与技能特效。",
+    "type": "标题书法（行楷 / 行草）竖排，压画面时可以很大；正文宋体或楷体横排；数字一律用常规体，不用书法写数字；中英混排时英文退为小号衬线。",
+    "material": "宣纸、绢、竹简、木轴、黄纸朱字符箓、青铜鼎炉、玉佩丝绦；建筑木作（屋檐、月洞门、藏经阁）可直接当容器。",
+    "ornament": "低到中（1–2）：水墨飞白、祥云 / 回纹、斜插出框的梅竹枝与灯笼、印章；角饰是回纹折角而不是花叶卷草。",
+    "icon": "墨画剪影或白描单色图标，放在圆章或菱形底座里；页签图标是一笔写意小画。",
+    "motion": "墨晕扩散、卷轴展开、毛笔从左向右擦出标题；选中态是一笔笔触垫底；待机是墨烟云雾漂移；招式名巨字砸入后墨点飞溅。",
+    "layout": "左侧竖排侧牌作页面标题 + 左列竖排页签；主体居中、外绕圆形墨环或月洞门；大面积留白；世界里的地名用竖幡 / 挂牌立在场景中；确认框常是横贯全屏的窄带。"
+   },
+   "params": {
+    "vis.corner": "sharp",
+    "vis.edge": "brush",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 2,
+    "vis.strokeColor": "ink",
+    "vis.strokeSides": "topBottom",
+    "vis.depth": "flat",
+    "vis.motif": "inkSplash",
+    "vis.ornament": 1,
+    "vis.iconStyle": "silhouette",
+    "col.lightness": "light",
+    "col.strategy": "neutralAccent",
+    "col.accent": "#b83a2e",
+    "col.saturation": 0.6,
+    "typ.display.family": "calligraphy",
+    "typ.body.family": "serif",
+    "typ.titleFx": "drybrush",
+    "typ.direction": "verticalTitle",
+    "cmp.plate": "sideTab",
+    "ast.core": "texture",
+    "ast.coreMat": "xuan",
+    "ast.fx": [
+     "ink"
+    ],
+    "ast.watermark": "faintPainting",
+    "mo.enter": "inkSpread",
+    "ix.focus": "brushSwash"
+   },
+   "artPairing": [
+    {
+     "artStyle": "水墨（泼墨/破墨）(Ink wash)",
+     "relation": "sameMedium",
+     "why": "同一套墨阶与宣纸纹：墨晕可以从场景流进面板（Wandering Sword、酱游记）。"
+    },
+    {
+     "artStyle": "写意 (Freehand)",
+     "relation": "sameMedium",
+     "why": "鬼谷八荒的写意立绘与卷轴 UI 同源（01 文档 9.2）。"
+    },
+    {
+     "artStyle": "宋画（院体/文人）(Song painting)",
+     "relation": "sameMedium",
+     "why": "清雅淡彩支：半透明纸 + 留白，与宋画式暖灰平远同调（逆水寒）。"
+    },
+    {
+     "artStyle": "青绿山水 (Blue-green landscape)",
+     "relation": "sameMedium",
+     "why": "UI 第二色取石青石绿（铸仙之境），属于统一调色。"
+    },
+    {
+     "artStyle": "国风二次元",
+     "relation": "contrast",
+     "why": "人物是二次元厚涂、界面是宣纸墨笔（弈仙牌、行侠仗义）：人物现代、界面古典的反差最常见。"
+    },
+    {
+     "artStyle": "现代高位像素 (Hi-bit)",
+     "relation": "contrast",
+     "why": "像素 / HD-2D 玩法区配高精度水墨面板（修仙模拟器、Wandering Sword）：UI 比画面精细一档。"
+    },
+    {
+     "artStyle": "照片写实 (Photorealism)",
+     "relation": "contrast",
+     "why": "黑神话（跨族参考）写实 3D 配极简墨韵 UI：只留飞白刷块、书法水印、淡古画。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "mobile",
+     "count": 5,
+     "why": "竖屏回合战斗、消除、经营（铸仙之境、小虾米、酱游记、梦山海、解忧小村落）：竖屏天然适合竖排与竖幡。"
+    },
+    {
+     "genre": "card",
+     "count": 4,
+     "why": "国风卡牌手游的剧情 / 登录 / 开场（忘川、花亦山、我自为道、炼仙传说）：立绘 + 叙事为主，用屏风与竖排典籍。"
+    },
+    {
+     "genre": "strategy",
+     "count": 3,
+     "why": "武侠战棋与卡牌构筑（Wandering Sword、弈仙牌、行侠仗义）：养成页多，宣纸与墨染各占一半。"
+    },
+    {
+     "genre": "builder",
+     "count": 2,
+     "why": "修仙经营（鬼谷八荒、了不起的修仙模拟器）：面板最多，卷轴 / 竹简 / 建筑立面作容器。"
+    },
+    {
+     "genre": "rpg",
+     "count": 1,
+     "why": "MMO（逆水寒）：系统弹窗是国风资产化最明显的地方（宣纸 + 红印）。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:1948800",
+     "why": "文房语法最完整：灰宣底、竖排白牌标题、朱红笔圈头像、梅枝墨线出框、卷轴横条承载页签。"
+    },
+    {
+     "card": "steam:1876890",
+     "why": "墨染暗场：菱形导航与头像、灰白双线面板、经脉图墨环、竖牌地名、战斗时竖排巨字招式名。"
+    },
+    {
+     "card": "steam:955900",
+     "why": "月洞门木作当创角容器、竹简签条当选项、带木轴的挂轴图鉴、未获得黑剪影。"
+    },
+    {
+     "card": "steam:1468810",
+     "why": "暗色手卷：两根木轴压边、石板灰竖牌、藏经阁屋檐当面板顶、黄纸朱字符箓作道具卡。"
+    },
+    {
+     "card": "gameui:9375",
+     "why": "清雅淡彩：半透明宣纸卡 + 枫枝灯笼出框 + 菱形钮横贯带 + 朱点签条。"
+    },
+    {
+     "card": "gameui:11870",
+     "why": "竖排典籍：整页竖排，选项就是两个发光书法巨字。"
+    },
+    {
+     "card": "gameui:7082",
+     "why": "竖屏淡青绿山水战场：墨刷横幅目标 + 圆钮竖列 + 菱形「阵容」钮。"
+    }
+   ],
+   "subfamilies": [
+    {
+     "family": "国风水墨 · 卷轴宣纸（文房）",
+     "skin": "skin.ink",
+     "noCards": false,
+     "definition": "把整屏当作摊开的手卷或挂轴：宣纸 / 米黄纸内芯、两端木轴压边、竖排书法侧牌、竹简签条，信息写在「纸」上而不是装进「窗口」。亮场为主（弈仙牌、了不起的修仙模拟器）；鬼谷八荒是它的暗色版本：深木框 + 石板灰内页 + 金色回纹折角。",
+     "grammar": {
+      "shape": "横向手卷（左右两根木轴压住纸边）或纵向挂轴；纸内是竖长碑牌（宽高比约 1:3–1:5）、一排竹简、月洞门圆；角上的小功能钮是菱形。",
+      "line": "卷轴天地头的两条横线 + 木轴端盖；纸内用细双线分区；暗色版用金色回纹折角代替四边框。",
+      "surface": "宣纸 / 米黄纸平铺内芯，淡古画、竹梅墨枝作低透明水印；暗色版内页为石板灰。",
+      "color": "米黄或灰白 + 墨 + 朱砂（头像外圈、选中签、红字关键词）；暗色版把朱换成泥金。",
+      "type": "书法竖排标题写在白底或墨底的竖牌上（弈仙牌「角色图鉴」），正文宋体横排；签条上的选项文字竖排。",
+      "material": "宣纸、木轴、竹简、黄纸朱字符箓（鬼谷八荒的道具卡）、建筑木作（藏经阁屋檐、月洞门）。",
+      "ornament": "中（2）：木轴端盖、回纹角、从面板角斜插出来的梅竹墨枝。",
+      "icon": "彩绘小图标放进圆章或菱形底座；图鉴里未获得的条目是纯黑剪影。",
+      "motion": "卷轴横向展开入场；选中签条上移或换朱底；墨晕从选中项背后晕开。",
+      "layout": "左侧竖排侧牌 + 左列竖排页签；中部是网格（图鉴）或一整排竹简（选项）；整页可以直接是建筑立面（屋檐压顶、两柱夹页）。"
+     },
+     "params": {
+      "vis.corner": "sharp",
+      "vis.edge": "clean",
+      "col.lightness": "light",
+      "col.strategy": "neutralAccent",
+      "col.accent": "#b83a2e",
+      "ast.container": "scroll",
+      "ast.core": "texture",
+      "ast.coreMat": "xuan",
+      "ast.frame": "plainNinePatch",
+      "ast.frameMat": "wood",
+      "ast.ornaments": [
+       "endcaps",
+       "corners"
+      ],
+      "cmp.plate": "sideTab",
+      "typ.display.family": "calligraphy",
+      "typ.direction": "verticalTitle",
+      "typ.body.family": "serif",
+      "vis.motif": "cloud",
+      "vis.ornament": 2,
+      "cmp.slot": "tallCard",
+      "mo.enter": "unroll",
+      "st.locked": "silhouette",
+      "ast.watermark": "faintPainting",
+      "vis.iconStyle": "painted"
+     },
+     "artPairing": [
+      {
+       "artStyle": "写意 (Freehand)",
+       "relation": "sameMedium",
+       "why": "01 文档 9.2 直接点名鬼谷八荒的立绘与 UI 同为写意：大笔触立绘与卷轴面板共用墨色与留白。"
+      },
+      {
+       "artStyle": "现代高位像素 (Hi-bit)",
+       "relation": "contrast",
+       "why": "了不起的修仙模拟器的玩法区是像素俯视，养成 / 图鉴却是高精度卷轴面板：UI 比画面精细一档，用来提示「进入了文书层」。"
+      },
+      {
+       "artStyle": "国风二次元",
+       "relation": "contrast",
+       "why": "弈仙牌的头像与卡面是二次元厚涂、金黄插画窗，外面包宣纸竖牌：人物现代、界面古典。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "builder",
+       "count": 2,
+       "why": "修仙经营 / 模拟（鬼谷八荒、了不起的修仙模拟器）：系统多、面板多，卷轴与竹简把几十个面板收进同一间「书房」。"
+      },
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "卡牌构筑（弈仙牌）：图鉴、选仙命三选一都是纸上排版。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1948800",
+       "why": "文房语法最完整：灰宣底、白底竖排「角色图鉴」牌、朱红笔圈头像、梅枝墨线斜插出框、卷轴横条承载页签。"
+      },
+      {
+       "card": "steam:955900",
+       "why": "月洞门 + 木作牌楼当创角容器，一排竖排竹简当「经历」选项；图鉴是带木轴的挂轴，未获得为黑剪影。"
+      },
+      {
+       "card": "steam:1468810",
+       "why": "暗色卷轴：两根粗木轴压住整屏，石板灰竖牌写书法标题；藏经阁屋檐直接当面板顶；符箓（黄纸朱字）作道具卡。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "暗色卷轴",
+       "diff": "col.lightness = dark；内页石板灰、木框深褐，朱红换成泥金回纹角；对比度更难做。",
+       "cards": [
+        "steam:1468810"
+       ]
+      },
+      {
+       "name": "建筑即容器",
+       "diff": "屋檐 / 柱子 / 月洞门代替卷轴外框（ast.container 里没有建筑项，见参数缺口）。",
+       "cards": [
+        "steam:1468810",
+        "steam:955900"
+       ]
+      },
+      {
+       "name": "竹简签条选项",
+       "diff": "多选一不是按钮行，而是一排竖长签条，文字竖排，选中签抬高或换朱底。",
+       "cards": [
+        "steam:955900"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "石板灰 / 米黄底 + 细小宋体或金色小字，信息密度一高就看不清：鬼谷八荒评测里「字太小」2 条；截图里属性小字对比明显不足。",
+       "evidence": [
+        "steam:1468810"
+       ]
+      },
+      {
+       "desc": "卷轴里套卷轴、页签多层：了不起的修仙模拟器「引导不清」3 条，是本族引导类抱怨最多的。",
+       "evidence": [
+        "steam:955900"
+       ]
+      },
+      {
+       "desc": "墨晕特效铺在说明文字背后（鬼谷八荒炼丹页），装饰和信息抢同一块明度。",
+       "evidence": [
+        "steam:1468810"
+       ]
+      }
+     ],
+     "skinGap": "skin.ink 不带卷轴容器（scroll 只在场景容器预设里），没有木轴端盖、竖牌标题和竹简格子；暗色卷轴要同时改明度、描边色和强调色，而 skin.ink 是 legacy token 皮肤，不吃皮肤层自己的明度值，只能靠后续层覆盖。",
+     "paramGaps": [
+      "竹简签条（竖长、文字竖排的选项条）",
+      "建筑立面 / 月洞门作容器",
+      "黄纸朱字符箓作底材",
+      "卷轴横条作页签栏（页签挂在一根横轴上）"
+     ]
+    },
+    {
+     "family": "国风水墨 · 墨染暗场（武侠）",
+     "skin": "skin.ink",
+     "noCards": false,
+     "definition": "把水墨从「纸」改成「夜」：整屏是被墨染过的灰白到墨黑的底，面板是炭色半透明块加灰白细双线，标题是白色飞白书法；战斗时把招式名写成巨型竖排书法直接压在画面上。适合武侠、动作与写实 3D。",
+     "grammar": {
+      "shape": "炭色矩形面板 + 旋转 45° 的菱形（右上导航钮、左侧头像框）；主体外绕一圈墨环（经脉图的圆形墨晕）。",
+      "line": "面板是灰白 1px 双线框；标题牌是深色横条两端飞白收尖；地图标签是竖长深色挂牌 + 向下小箭头。",
+      "surface": "整屏底是灰白宣纸被四周墨晕吃掉的效果；面板 85–90% 不透明；大面积留黑。",
+      "color": "墨、灰、白近乎单色；朱只用于极少的强调；稀有度彩色只留在道具图标上，因此显得特别跳。",
+      "type": "白色飞白书法标题；招式名是占屏高 1/3 的竖排巨字，带墨点飞溅；正文无衬线或宋体。",
+      "material": "几乎没有实物材质，只有「墨」与「纸」。",
+      "ornament": "少（1）：墨晕、飞白、墨点。",
+      "icon": "白色剪影图标放进菱形底座（导航）；人物头像也裁成菱形。",
+      "motion": "墨晕扩散入场；招式名巨字砸入后墨点溅开；选中页签是一笔白色笔触垫底。",
+      "layout": "左侧竖列菱形头像 + 右上一排菱形导航；中部主体 + 右侧属性表；世界地图用竖牌挂在地名上。"
+     },
+     "params": {
+      "vis.corner": "sharp",
+      "vis.edge": "brush",
+      "col.lightness": "dark",
+      "col.strategy": "mono",
+      "col.saturation": 0.4,
+      "vis.opacity": 0.9,
+      "vis.stroke": "double",
+      "vis.strokeWidth": 1,
+      "vis.strokeColor": "highlightEdge",
+      "vis.silhouette": "diamond",
+      "ast.bgArt": "material",
+      "ast.bgMat": "xuan",
+      "ast.fx": [
+       "ink"
+      ],
+      "vis.motif": "inkSplash",
+      "typ.display.family": "calligraphy",
+      "typ.titleFx": "drybrush",
+      "typ.direction": "verticalTitle",
+      "el.notify.form": [
+       "band"
+      ],
+      "ix.focus": "brushSwash",
+      "ast.watermark": "calligraphy",
+      "ast.watermarkOpacity": 0.12,
+      "hier.emphasis": [
+       "typeface",
+       "size"
+      ],
+      "mo.enter": "inkSpread"
+     },
+     "artPairing": [
+      {
+       "artStyle": "水墨（泼墨/破墨）(Ink wash)",
+       "relation": "sameMedium",
+       "why": "养成页的墨染底与战斗过场的泼墨字是同一套墨阶，UI 是画面的延伸。"
+      },
+      {
+       "artStyle": "现代高位像素 (Hi-bit)",
+       "relation": "contrast",
+       "why": "Wandering Sword 是 HD-2D 式像素玩法区：暗场墨笔面板把「江湖」气质补在 UI 上。"
+      },
+      {
+       "artStyle": "照片写实 (Photorealism)",
+       "relation": "contrast",
+       "why": "黑神话（跨族参考）写实 3D 配极简墨韵：只留白色飞白刷块、书法水印与淡古画，UI 退到最少。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "武侠战棋 RPG（Wandering Sword）：队伍、经脉、背包全是暗场墨染页。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1876890",
+       "why": "暗场武侠的样板：墨染灰底、菱形导航与头像、灰白双线面板、经脉图墨环、地图竖牌地名、战斗时「太极剑法」竖排巨字。"
+      },
+      {
+       "card": "steam:2358720",
+       "why": "跨族参考（现归暗色细线）：选中页签是白色飞白刷块，左侧超大低透明书法水印，背景淡古画，Boss 条两端是祥云卷草端头。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "写实 3D 极简墨韵",
+       "diff": "去掉墨晕和双线，只保留飞白刷块选中、书法水印、淡古画底、细线 + 祥云端头的长条，其余是暗色细线。",
+       "cards": [
+        "steam:2358720"
+       ]
+      },
+      {
+       "name": "竖排巨字压画面",
+       "diff": "招式 / 技能宣告用竖排书法巨字压在画面一侧，替代横贯带大字。",
+       "cards": [
+        "steam:1876890"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "巨型招式字压在画面右侧 1/3，演出期间挡住敌人位置；需要短时淡出。",
+       "evidence": [
+        "steam:1876890"
+       ]
+      },
+      {
+       "desc": "页面多、层级深：Wandering Sword 评测里「菜单难用」与「引导不清」各 2 条。",
+       "evidence": [
+        "steam:1876890"
+       ]
+      },
+      {
+       "desc": "近乎单色的墨底让道具稀有度彩色格外刺眼，图标区与界面骨架不在一个色调里。",
+       "evidence": [
+        "steam:1876890"
+       ]
+      }
+     ],
+     "skinGap": "skin.ink 只有浅色宣纸一种明度，没有暗场墨染底、灰白双线与菱形导航；选中态（笔触垫底）不在皮肤里；legacy token 的血条是平涂深色条，暗场里应是细条 + 祥云端头或两端飞白的墨刷条。",
+     "paramGaps": [
+      "竖排巨字的招式宣告（el.notify.form 只有横贯带）",
+      "菱形头像框随网格旋转 45° 排布",
+      "祥云卷草端头的细长条（Boss 条）"
+     ]
+    },
+    {
+     "family": "国风水墨 · 竖排典籍（字即界面）",
+     "skin": "skin.ink",
+     "noCards": false,
+     "definition": "几乎不画面板：整屏是一页竖排的书，文字本身就是界面。旁白、章节名、甚至二选一的选项都用大号竖排书法或宋体直接写在插画或暗金渐变上，靠字号、字重和发光分层级。多见于手游开场与剧情、国风卡牌的章节卡。",
+     "grammar": {
+      "shape": "没有框；唯一的「形」是文字列本身（竖向长条）与偶尔的圆章、莲花等单个符号。",
+      "line": "只有金色细线描的祥云 / 卷草作背景纹，没有边框线。",
+      "surface": "整屏插画或暗金 / 墨黑渐变，文字直接压上去，靠发光或投影保读。",
+      "color": "暗底 + 金 / 白字；选项用冷暖两色发光区分（我自为道的「不信」暖金、「相信」冷青）。",
+      "type": "竖排书法大字（每字一行）作主句，旁边小一号竖排宋体作说明；正文也竖排，从右往左读。",
+      "material": "无实物材质；纸感来自字体与留白。",
+      "ornament": "少（1）：金线祥云、星点。",
+      "icon": "几乎无图标；右上角只留一个菱形音乐 / 跳过钮。",
+      "motion": "逐行淡入；点击任意处继续；选项字发光呼吸。",
+      "layout": "大量留白，主句偏一侧或居中；选项左右并置两个巨字，每个巨字下挂一列说明。"
+     },
+     "params": {
+      "lay.container": "overlay",
+      "cmp.dialogBox": "fullPage",
+      "typ.direction": "verticalAll",
+      "typ.display.family": "calligraphy",
+      "typ.body.family": "serif",
+      "vis.opacity": 0,
+      "typ.legibility": "textGlow",
+      "col.lightness": "dark",
+      "ast.bgArt": "sceneArt",
+      "el.choices.form": "text",
+      "ix.dismiss": "tapAnywhere",
+      "ix.continueCue": "tapText",
+      "mo.textReveal": "lineByLine",
+      "hier.emphasis": [
+       "size",
+       "typeface",
+       "isolation"
+      ],
+      "cnt.focal": "title",
+      "vis.motif": "cloud",
+      "ast.fx": [
+       "stardust"
+      ]
+     },
+     "artPairing": [
+      {
+       "artStyle": "水墨（泼墨/破墨）(Ink wash)",
+       "relation": "sameMedium",
+       "why": "我自为道的墨云、烟雾背景与竖排书法同属一张水墨画。"
+      },
+      {
+       "artStyle": "工笔重彩 (Gongbi)",
+       "relation": "neutral",
+       "why": "王牌三国志（跨族参考）在旧舆图上写竖排书法：背景是重彩舆图，文字只当题跋。"
+      },
+      {
+       "artStyle": "霓虹几何抽象 (Neon geometric)",
+       "relation": "contrast",
+       "why": "炼仙传说把竖排宋体标题压在黑底霓虹碎片上：典籍排版 + 现代特效的反差。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "card",
+       "count": 2,
+       "why": "国风卡牌手游的开场与剧情（我自为道、炼仙传说）：竖屏 + 叙事，正适合竖排整页。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:11870",
+       "why": "全竖排：主句书法大字、副句宋体小字，选项就是两个发光巨字「不信 / 相信」加竖排说明。"
+      },
+      {
+       "card": "gameui:4897",
+       "why": "暗底 + 右上竖排宋体标题，字是唯一的界面元素。"
+      },
+      {
+       "card": "gameui:3980",
+       "why": "跨族参考（现归手游抽卡金框）：旧舆图上竖排书法题跋式标题。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "书法即选项",
+       "diff": "二选一不画按钮，用两个巨字 + 冷暖发光区分；点字即选。",
+       "cards": [
+        "gameui:11870"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "竖排小字说明（每列 4–6 字）在手机上阅读慢，信息一多就必须退回横排。",
+       "evidence": [
+        "gameui:11870"
+       ]
+      },
+      {
+       "desc": "只适合开场 / 剧情 / 章节卡；放进 HUD 或列表会因竖排与数字混排而失效（06 文档 B8 陷阱）。",
+       "evidence": []
+      }
+     ],
+     "skinGap": "skin.ink 总是画面板；这一支要的是「不画面板 + 全竖排 + 文字发光」，需要 lay.container = overlay、typ.direction = verticalAll 和 cmp.dialogBox = fullPage 配合，皮肤里都没有。",
+     "paramGaps": [
+      "竖排文本中英文 / 数字的直排或横置规则（text-combine-upright）",
+      "「字即选项」：选项是一个大字而不是按钮行"
+     ]
+    },
+    {
+     "family": "国风水墨 · 清雅淡彩（宋画留白）",
+     "skin": "skin.ink",
+     "noCards": false,
+     "definition": "淡、透、留白：半透明宣纸 / 绢卡透出背后的山水，1px 细内框，石青石绿作第二色，面板角上斜插一枝竹叶或挂一盏灯笼、一枚玉佩；按钮是菱形或带朱点的米色横签。墨只出现在书法标题和一笔从左向右渐隐的墨刷横幅上。多用于 MMO 系统界面与竖屏山水主城。",
+     "grammar": {
+      "shape": "直角半透明卡；确认框是横贯全屏的窄带，左右两端各一个菱形按钮；功能钮是圆形。",
+      "line": "1px 深灰细框 + 内缩一道更淡的线；横贯带上下沿是细回纹线。",
+      "surface": "70–85% 不透明的宣纸 / 绢面，轻度背景模糊；底是淡彩山水或竹林夜景。",
+      "color": "米白 + 墨 + 朱点 + 石青 / 石绿（菱形钮、横贯带底色）；整体低饱和、偏冷。",
+      "type": "书法标题（偏行楷）+ 竖排小标题；正文宋体；日期写成「1/7月」式斜分数。",
+      "material": "宣纸、绢、玉佩、丝绦、灯笼、竹叶。",
+      "ornament": "少（1）：枝叶灯笼出框角饰、丝绦挂件、淡朱印与书法水印。",
+      "icon": "细线白描图标或小圆章。",
+      "motion": "淡入为主；横贯带从中线向上下展开；目标条墨刷从左向右擦出。",
+      "layout": "左侧竖列页签（暗色半透明条，选中项变亮）+ 右侧大卡；角饰占据一个角，其余三角留空。"
+     },
+     "params": {
+      "vis.corner": "sharp",
+      "col.lightness": "light",
+      "vis.opacity": 0.8,
+      "vis.blur": 6,
+      "ast.core": "texture",
+      "ast.coreMat": "silk",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeColor": "darker",
+      "vis.silhouette": "diamond",
+      "ast.ornaments": [
+       "sprigs",
+       "hangers"
+      ],
+      "vis.motif": "cloud",
+      "vis.ornament": 1,
+      "typ.display.family": "calligraphy",
+      "typ.body.family": "serif",
+      "col.strategy": "neutralAccent",
+      "col.accent2": "#5b8a8c",
+      "lay.nav": "tabsLeft",
+      "rel.harmony": "unified",
+      "ast.watermark": "calligraphy",
+      "mo.enter": "fade"
+     },
+     "artPairing": [
+      {
+       "artStyle": "宋画（院体/文人）(Song painting)",
+       "relation": "sameMedium",
+       "why": "01 文档 9.13 以逆水寒为宋画题材代表：淡雅暖灰、大量留白，UI 也只用半透明纸与细线。"
+      },
+      {
+       "artStyle": "青绿山水 (Blue-green landscape)",
+       "relation": "sameMedium",
+       "why": "铸仙之境战场是淡青绿山水，UI 的第二色直接取石青石绿（统一调色）。"
+      },
+      {
+       "artStyle": "国风仙侠写实 (Xianxia realism)",
+       "relation": "neutral",
+       "why": "梦山海、逆水寒的 3D 场景浓郁，UI 退为透明纸片不和场景抢。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "rpg",
+       "count": 1,
+       "why": "MMO（逆水寒）：登录、公告、选服等系统弹窗。"
+      },
+      {
+       "genre": "mobile",
+       "count": 2,
+       "why": "竖屏回合战斗与山水主城（铸仙之境、梦山海）。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:9375",
+       "why": "半透明宣纸公告卡 + 枫枝灯笼出框角饰 + 左列竖排页签；选服是带朱点的米色横签；确认框是蓝灰横贯带 + 两枚菱形钮。"
+      },
+      {
+       "card": "gameui:7082",
+       "why": "竖屏淡青绿山水战场：顶部目标是一条墨刷横幅（左浓右淡），右侧圆钮竖列（加速 / 暂停 / 跳过），菱形「阵容」钮。"
+      },
+      {
+       "card": "gameui:7090",
+       "why": "山水长卷式主城，建筑名是白色竖幡挂在场景里，底部页签是墨画剪影图标。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "墨刷横幅目标条",
+       "diff": "目标 / 战报用一条从左向右渐隐的墨刷条承载白字，不画框。",
+       "cards": [
+        "gameui:7082"
+       ]
+      },
+      {
+       "name": "竖幡世界标签",
+       "diff": "地名 / 功能入口是立在场景里的竖幡或挂牌（空间内标签）。",
+       "cards": [
+        "gameui:7090"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "半透明纸卡压在亮雾、天空上，浅灰正文对比不足；需要提高不透明度或加背后虚化。",
+       "evidence": [
+        "gameui:9375"
+       ]
+      },
+      {
+       "desc": "竖屏主城的留白被一列列入口图标吃掉（梦山海左右两侧），「宋画留白」的前提不成立——这里只记录版面后果，不从运营入口本身推原则。",
+       "evidence": [
+        "gameui:7090"
+       ]
+      }
+     ],
+     "skinGap": "skin.ink 是不透明米色纸 + 粗上下墨线，做不出「半透明绢 + 1px 细线 + 石青第二色」；角饰、挂件、菱形钮也不在皮肤里。这一支更接近 skin.ink 的参数 + 毛玻璃的不透明度 / 模糊。",
+     "paramGaps": [
+      "出框角饰（枝叶、灯笼斜插越过面板边）的位置与越界量",
+      "墨刷横幅（左浓右淡的笔触条作底板）",
+      "分数式日期「1/7月」的排版"
+     ]
+    },
+    {
+     "family": "国风水墨 · 宫廷屏风（国潮向）",
+     "skin": "skin.ink",
+     "noCards": false,
+     "definition": "背景是金色宫殿屏风、漆木大殿，界面是暗金半透明对话条或白底卷轴头弹窗，金色双线加少量祥云。比水墨「富」、比 kw.guochao（红漆 + 金）「素」，介于墨笔与国潮之间；主要用于剧情、登录与创角。",
+     "grammar": {
+      "shape": "顶部或底部通栏对话条；居中白底弹窗，标题写在两端卷起的卷轴头上；圆形关闭钮。",
+      "line": "金色细双线内框；弹窗主按钮是金色胶囊加细双线。",
+      "surface": "暗金半透明渐变条（两端淡出）或白底实卡；背景是满屏屏风画。",
+      "color": "金、暗棕、米白 + 红（关闭钮）；比墨笔多一层金。",
+      "type": "书法或粗宋标题；正文宋体；名字小号书法。",
+      "material": "屏风、漆木、金箔、绢。",
+      "ornament": "中（2）：祥云、卷轴头、金色角线。",
+      "icon": "圆形小钮（回顾 / 自动）。",
+      "motion": "淡入；弹窗轻微放大。",
+      "layout": "人物立绘站在屏风前，对话条在顶部，控制钮在右下角。"
+     },
+     "params": {
+      "ast.container": "foldingScreen",
+      "cmp.dialogBox": "bar",
+      "vis.opacity": 0.75,
+      "col.lightness": "dark",
+      "col.strategy": "neutralAccent",
+      "col.accent": "#c9a45c",
+      "vis.stroke": "double",
+      "vis.strokeColor": "metal",
+      "cmp.plate": "scrollHead",
+      "typ.display.family": "calligraphy",
+      "typ.body.family": "serif",
+      "vis.motif": "cloud",
+      "vis.ornament": 2,
+      "ast.frameMat": "gold",
+      "cnt.characterMedium": "full"
+     },
+     "artPairing": [
+      {
+       "artStyle": "金碧山水",
+       "relation": "sameMedium",
+       "why": "屏风画本身是金碧 / 重彩，UI 用金线同源。"
+      },
+      {
+       "artStyle": "国风二次元",
+       "relation": "neutral",
+       "why": "立绘是国风二次元，UI 只做金线框与半透明条，不抢立绘。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "card",
+       "count": 2,
+       "why": "国风卡牌手游的剧情与登录（忘川风华录、花亦山心之月）。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:2150",
+       "why": "对话条放在顶部：暗金半透明渐变 + 小号书法名字，背景是金色宫殿屏风；右下两个圆钮回顾 / 自动。"
+      },
+      {
+       "card": "gameui:2596",
+       "why": "屏风大殿前的白底弹窗：卷轴头标题、金色胶囊确认钮、红色圆形关闭。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "白底卷轴头弹窗",
+       "diff": "系统弹窗用白底实卡 + 卷轴头标题，与暗金对话条并存。",
+       "cards": [
+        "gameui:2596"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "屏风背景细节极多，任何半透明元素都会被花纹干扰；弹窗必须实底。",
+       "evidence": [
+        "gameui:2596"
+       ]
+      }
+     ],
+     "skinGap": "skin.ink 没有金色与漆木；这一支应由 skin.ink + kw.guochao 的一半（金线、祥云、卷轴头）组合，而不是红漆。",
+     "paramGaps": [
+      "对话条位置在顶部（cmp.dialogBox = bar 默认底部，需配元素锚点）"
+     ]
+    },
+    {
+     "family": "国风水墨 · Q 版墨趣",
+     "skin": "skin.ink",
+     "noCards": false,
+     "definition": "Q 版角色 + 一笔墨刷：字幕垫一条粗墨刷、连消数 / 伤害用书法大字加飞白尾，倍速 / 自动 / 撤退是印章式圆钮，场景里挂木牌竖排地名。亮、圆、可爱，但「强调」全部用墨完成。",
+     "grammar": {
+      "shape": "圆形印章钮、圆角卡；字幕底是一块不规则墨刷；地名是木牌竖幡。",
+      "line": "墨刷的粗细笔触代替描边；按钮有一圈金或棕色细边。",
+      "surface": "亮色插画场景（淡水墨山水或国风田园）+ 米白纸卡。",
+      "color": "中高饱和插画 + 墨黑刷块 + 朱红（印章钮、伤害字）。",
+      "type": "书法数字与书法短句（「2 连消数」「总伤害」）；正文黑体或圆体。",
+      "material": "纸、木牌、印泥。",
+      "ornament": "少到中：祥云地纹、竹枝。",
+      "icon": "彩绘 Q 版图标；页签图标是小人或建筑剪影。",
+      "motion": "书法数字砸入 + 飞白尾拖出；墨刷字幕从左擦出。",
+      "layout": "竖屏：上半战斗 / 场景，下半操作；右侧或右上竖列圆钮。"
+     },
+     "params": {
+      "cnt.characterMedium": "chibi",
+      "vis.corner": "round",
+      "vis.silhouette": "circle",
+      "cmp.plate": "seal",
+      "typ.display.family": "calligraphy",
+      "typ.numerals.family": "display",
+      "el.feedback.form": [
+       "combo"
+      ],
+      "ast.fx": [
+       "ink"
+      ],
+      "ix.focus": "brushSwash",
+      "vis.edge": "brush",
+      "col.lightness": "light",
+      "col.saturation": 1,
+      "ast.coreMat": "paper",
+      "vis.motif": "cloud",
+      "el.clock.form": "calendar",
+      "rel.worldRender": "billboard",
+      "el.gameSpeed.form": "autoBattle"
+     },
+     "artPairing": [
+      {
+       "artStyle": "Q版／大头 (Chibi 3D)",
+       "relation": "neutral",
+       "why": "Q 版角色本身不带水墨；墨刷与书法字把国风气质补在 UI 上。"
+      },
+      {
+       "artStyle": "水墨（泼墨/破墨）(Ink wash)",
+       "relation": "sameMedium",
+       "why": "酱游记的背景是淡水墨山水，UI 的书法连消数与之同源。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "mobile",
+       "count": 3,
+       "why": "竖屏回合战斗 / 消除 / 村落经营（小虾米战三国、酱游记、解忧小村落）。"
+      },
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "放置武侠（行侠仗义五千年）的开场漫画与创角。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:11959",
+       "why": "水墨漫画开场：每句旁白垫一块粗墨刷，白字压在刷块上；创角名字是墨刷条（运营弹窗不在本研究范围）。"
+      },
+      {
+       "card": "gameui:6922",
+       "why": "右上「自动 / ×2 / 撤退」是棕金圆形印章钮，左上菱形小签，伤害合计压在红色刷块上。"
+      },
+      {
+       "card": "gameui:6889",
+       "why": "「2 连消数」书法红数字 + 飞白尾；右上「系统」是挂在卷轴杆上的竖签。"
+      },
+      {
+       "card": "gameui:6727",
+       "why": "左上竖排日历（秋 / 七月初三）纸签，建筑名用木牌竖排立在场景里。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "印章圆钮",
+       "diff": "倍速 / 自动 / 撤退做成圆形印章（书法字 + 金边），竖排。",
+       "cards": [
+        "gameui:6922"
+       ]
+      },
+      {
+       "name": "墨刷字幕",
+       "diff": "旁白不画框，白字垫粗墨刷。",
+       "cards": [
+        "gameui:11959"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "红色印章钮与红色血条、红色伤害数字同屏，「红」同时表示操作、生命和伤害。",
+       "evidence": [
+        "gameui:6922"
+       ]
+      },
+      {
+       "desc": "同一套墨刷 / 卷轴语法被直接搬进首充、限时特卖弹窗——这类运营界面不在研究范围，只提示：风格皮肤不等于版式规范。",
+       "evidence": [
+        "gameui:11959"
+       ]
+      }
+     ],
+     "skinGap": "skin.ink 的面板是直角宣纸 + 粗上下线，Q 版需要圆角、圆形印章钮和墨刷字幕底；书法数字（连击 / 伤害）也不在皮肤里。",
+     "paramGaps": [
+      "墨刷字幕底（一块不规则墨刷作文本底板）",
+      "书法数字 + 飞白尾的飘字样式"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "name": "亮场宣纸 ↔ 暗场墨染",
+     "diff": "同一套语法的两极：col.lightness light ↔ dark，宣纸内芯 ↔ 墨染底，朱红 ↔ 泥金 / 白飞白。",
+     "cards": [
+      "steam:1948800",
+      "steam:1876890",
+      "steam:1468810"
+     ]
+    },
+    {
+     "name": "书法压画面（HUD 内）",
+     "diff": "战斗中的招式名、连消数、伤害合计用书法大字直接压在画面上，代替普通飘字。",
+     "cards": [
+      "steam:1876890",
+      "gameui:6889",
+      "gameui:6922"
+     ]
+    },
+    {
+     "name": "空间内竖牌标签",
+     "diff": "地名、建筑名做成竖幡 / 挂牌立在世界里，而不是屏幕上的文字标签。",
+     "cards": [
+      "steam:1876890",
+      "gameui:7090",
+      "gameui:6727"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "书法或细宋体被用在小字与数字上、金色小字压在深灰底上：鬼谷八荒「字太小」抱怨 2 条。规则：书法只给标题与短句。",
+     "evidence": [
+      "steam:1468810"
+     ]
+    },
+    {
+     "desc": "墨晕、山水、古画背景与说明文字抢明度（鬼谷八荒炼丹页、清雅支的亮雾）。",
+     "evidence": [
+      "steam:1468810",
+      "gameui:9375"
+     ]
+    },
+    {
+     "desc": "朱砂红同时承担印章装饰、操作按钮、生命条与伤害数字，语义撞车（06 文档 B8 也列为陷阱）。",
+     "evidence": [
+      "gameui:6922",
+      "steam:1948800"
+     ]
+    },
+    {
+     "desc": "系统多、卷轴套卷轴：了不起的修仙模拟器「引导不清」3 条，Wandering Sword「菜单难用」「引导不清」各 2 条。",
+     "evidence": [
+      "steam:955900",
+      "steam:1876890"
+     ]
+    },
+    {
+     "desc": "「题材国风」≠「界面国风」：GameUI 标为国风的 3 款手游界面其实是通用金属铭牌或 Q 版图标墙，没有任何墨笔语法，已改归别族。",
+     "evidence": [
+      "gameui:6836",
+      "gameui:6728",
+      "gameui:7445"
+     ]
+    }
+   ],
+   "skinGap": "skin.ink 是 legacy token 皮肤：面板 = 米色实底 + 上下两条 3px 墨线 + 朱红标题，按键 = 朱红圆角块，血条 = 平涂深色条；预设值只写了直角、墨描边、楷书正文、墨晕入场，笔触边、宣纸内芯、书法竖排标题、印章都放在 kw.ink 关键词里——只选皮肤得到的是「米色纸盒」。缺：①暗场墨染版本（Wandering Sword、黑神话这类很常见）；②竖排侧牌标题与左列竖排页签；③签条 / 印章式按钮；④溢出面板的墨晕；⑤墨刷条形血条（两端飞白）或细条 + 祥云端头；⑥正文应为宋体而不是楷书（截图里正文几乎都是宋 / 黑，楷书只在短句）；⑦选中态笔触垫底；⑧出框角饰（梅竹枝、灯笼）。",
+   "paramGaps": [
+    "水墨晕染溢出面板边界（墨晕是面板轮廓的一部分，而不是叠加特效）",
+    "竖排巨字压画面的招式 / 技能宣告（el.notify.form 只有横贯带）",
+    "签条 / 竹简式按钮与选项条（竖长纸条、文字竖排）",
+    "出框角饰：梅竹枝、灯笼、玉佩斜插越过面板边（ast.ornaments 不含越界位置）",
+    "建筑立面作容器（屋檐 + 柱子 + 月洞门；ast.container 无建筑 / 门洞）",
+    "墨刷条形进度条（两端飞白收尖）与祥云卷草端头",
+    "黄纸朱字符箓作底材（ast.coreMat 无符纸）",
+    "竖幡 / 挂牌式世界标签（rel.worldRender 只有公告板 / 贴面 / 贴花 / 描边）"
+   ]
+  },
+  {
+   "family": "和风",
+   "skin": "skin.wa",
+   "noCards": false,
+   "definition": "日本传统视觉的界面化：和纸、毛笔笔触、朱与藍（靛蓝）两色、家纹圆章、青海波 / 麻叶等规则纹样、明朝体与书法竖排，讲究「間」（不对称留白）。与国风水墨相比更几何、更克制：纹样是规则平铺而不是泼墨，第二色是靛蓝而不是石青。代表作倾向把 HUD 藏起来，让世界本身引路。本族只有 1 张参考卡且商店图里没有 UI，语法主要来自卡片笔记、06 文档 B25 与两张跨族参考卡。",
+   "grammar": {
+    "shape": "直角细框；圆形家纹章作徽记 / 按钮底座；竖长短册签；版面不对称——标题偏一角，对角空着。",
+    "line": "1px 细墨线，或一笔毛笔扫出的面板边；不画回纹与双线。",
+    "surface": "和纸（带纤维的米白）或纯黑；青海波、麻叶、市松以低透明平铺作底；高级版用金箔（琳派）。",
+    "color": "墨 + 和纸白 + 朱（约 #d7402b）+ 藍（约 #264d73），可选金箔；比国风更冷。",
+    "type": "明朝体（细横粗竖）作正文，书法作标题，竖排；单个汉字可以直接当图标或警示（只狼的「危」）。",
+    "material": "和纸、漆、木、金箔、暖帘布。",
+    "ornament": "低（1）：家纹、樱 / 枫、浪纹；用纹样代替角花。",
+    "icon": "家纹式几何剪影（圆内对称图形）。",
+    "motion": "笔刷擦出、花瓣 / 枫叶飘落；黑白电影模式是整屏后处理而不是 UI。",
+    "layout": "HUD 默认隐藏、按需呼出；菜单在大留白中偏置；竖排标题贴右上。"
+   },
+   "params": {
+    "vis.corner": "sharp",
+    "vis.edge": "brush",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 1,
+    "vis.strokeColor": "ink",
+    "col.lightness": "light",
+    "col.strategy": "neutralAccent",
+    "col.accent": "#d7402b",
+    "col.accent2": "#264d73",
+    "ast.core": "texture",
+    "ast.coreMat": "paper",
+    "vis.motif": "sakura",
+    "vis.pattern": "geometricTile",
+    "vis.patternOpacity": 0.12,
+    "typ.display.family": "calligraphy",
+    "typ.body.family": "serif",
+    "typ.direction": "verticalTitle",
+    "cmp.plate": "seal",
+    "rel.hudVisibility": "contextual",
+    "rel.diegesis": "diegetic",
+    "cnt.density": 0,
+    "vis.ornament": 1,
+    "st.alert": "warnIcon",
+    "mo.enter": "inkSpread"
+   },
+   "artPairing": [
+    {
+     "artStyle": "浮世绘 (Ukiyo-e)",
+     "relation": "sameMedium",
+     "why": "平涂、图案化浪纹与普鲁士蓝：UI 的靛蓝与青海波直接来自同一套版画语汇（大神）。"
+    },
+    {
+     "artStyle": "墨绘／大神式 (Sumi-e, Ōkami)",
+     "relation": "sameMedium",
+     "why": "粗细变化的墨线 + 纸纹：UI 面板边用同一种笔触。"
+    },
+    {
+     "artStyle": "风格化写实 (Stylized realism)",
+     "relation": "neutral",
+     "why": "对马岛之魂（01 文档 1.5）写实画面里 UI 几乎全隐，只留书法标题与笔触面板，靠风向引路。"
+    },
+    {
+     "artStyle": "和风二次元",
+     "relation": "neutral",
+     "why": "阴阳师一类（01 文档 9.26）：二次元立绘 + 和风纹样框，UI 是容器不是主角。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "explore",
+     "count": 1,
+     "why": "开放世界动作冒险（对马岛之魂）：零 HUD 探索，用环境引导。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:2215430",
+     "why": "唯一的和风卡：引导之风代替任务箭头（叙事内）、HUD 平时全隐、书法标题与毛笔笔触面板（截图无 UI，依据卡片笔记）。"
+    },
+    {
+     "card": "steam:814380",
+     "why": "跨族参考（现归暗色细线）：单个红色汉字「危」作为危险攻击预警——字符即警示，是和风最有辨识度的 HUD 手法。"
+    },
+    {
+     "card": "steam:762940",
+     "why": "跨族参考（现归圆润友好）：日记是一本翻开的浮世绘书（截图无 UI，依据卡片笔记）。"
+    }
+   ],
+   "subfamilies": [],
+   "variants": [
+    {
+     "name": "零 HUD + 环境引导",
+     "diff": "风、鸟、光代替路点；HUD 按需呼出；菜单才出现和纸与书法。",
+     "cards": [
+      "steam:2215430"
+     ]
+    },
+    {
+     "name": "单字汉字警示",
+     "diff": "一个书法 / 明朝体汉字放在敌人头顶表示危险，不用三角图标。",
+     "cards": [
+      "steam:814380"
+     ]
+    },
+    {
+     "name": "浮世绘手账",
+     "diff": "菜单做成浮世绘风的书页（ast.container = book + 版画插图）。",
+     "cards": [
+      "steam:762940"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "证据不足：唯一的和风卡（对马岛之魂）商店截图里没有 UI；需要按功能补截图后再复核语法。",
+     "evidence": [
+      "steam:2215430"
+     ]
+    },
+    {
+     "desc": "零 HUD 的代价：对马岛之魂评测「HUD 挡视野」4 条（多来自字幕与提示），环境引导必须由世界美术本身支撑。",
+     "evidence": [
+      "steam:2215430"
+     ]
+    },
+    {
+     "desc": "只狼评测「字太小」2 条：极简和风 HUD 的细明朝体在电视距离上偏小。",
+     "evidence": [
+      "steam:814380"
+     ]
+    },
+    {
+     "desc": "日文字体缺简中字形、朱红与伤害提示混用（06 文档 B25 陷阱）。",
+     "evidence": []
+    }
+   ],
+   "skinGap": "skin.wa 没有手调 token（hud.style = wa 标为 partial，完全由参数生成），预设值几乎是 skin.ink 的复制：直角、墨描边、浅色、中性 + 强调、墨晕入场，只把字族换成衬线。缺：①靛蓝第二色（col.accent2）；②纹样底（青海波 / 麻叶）；③家纹圆章；④「HUD 默认隐藏」的显隐策略（对马岛的核心）；⑤书法标题 / 明朝正文的分工。结果是在探索台里和风与国风水墨几乎分不开。",
+   "paramGaps": [
+    "和风传统纹样（青海波、麻叶、市松、矢絣）——vis.pattern 只有通用几何平铺",
+    "家纹圆章作徽记 / 按钮底（vis.motif = sakura 把樱花与家纹合在一项）",
+    "单字汉字作警示图标（只狼「危」）——st.alert 没有「字符警示」",
+    "金箔 / 琳派底材（ast.coreMat 有金，但不是斑驳箔片）",
+    "环境引导（风、鸟、光）代替路点——el.objective.form 没有「环境引导」"
+   ]
+  },
+  {
+   "family": "二次元白卡细线",
+   "skin": "skin.animeCard",
+   "noCards": false,
+   "definition": "二次元手游与动漫向游戏最常见的「无材质」界面：浅色（或炭黑）底上的白卡、1px 强调色细线、切角或小圆角、斜条纹 / 编号 / 条码等「科技小字」作肌理，立绘或 3D 角色占半屏并压在卡片之上。它不模仿任何实物材料，靠留白、细线和一个高饱和强调色建立秩序。按气质分浅色科技、乙女轻奢、暗场战术、暖白绘本四支。",
+   "grammar": {
+    "shape": "矩形卡 + 单角切角（约 8–12% 短边）或 4–8px 小圆角；平行四边形小标签贴在卡角；菱形 / 小方块作端点与项目符号；卡片可错位叠放或轻微倾斜（-4°~-8°）。改造一块面板：去掉纹理与粗描边，换成白底 + 1px 强调色线，右下切一角，左上贴一个斜切小标签写英文类别，把立绘移到面板后方并让头部出框。",
+    "line": "1px 细线是主角，且常不闭合：只画一角、一边或上下两条，端点带小方块 / 菱形；虚线、刻度、编号串作装饰；HUD 圆环也是细线。",
+    "surface": "纯白或 85–95% 白（轻毛玻璃）；整屏底是浅蓝—淡紫或灰白大渐变；局部斜条纹、网格、条码、数字串作肌理，透明度 10–20%。",
+    "color": "白 + 冷灰 + 一个高饱和强调色（青 / 橙 / 粉 / 蓝）；乙女支是白 + 香槟金，暗场支是炭黑 + 单一亮色，绘本支是米白 + 草绿。",
+    "type": "无衬线细 / 常规体，大标题用细体加宽字距或特粗窄体；英文全大写小字作装饰标签；中英并置名牌；数字用窄体展示数字。",
+    "material": "没有实物材质：屏幕、亚克力、纸卡；乙女支带珍珠 / 香槟金的轻奢感。",
+    "ornament": "少（1）：几何线、角括号、条码、星芒点；不用花叶卷草。",
+    "icon": "1.5px 线性单色图标，放在细线圆内或裸放。",
+    "motion": "滑入 + 淡入、斜向遮罩擦除、光点扫过；选中态是强调色实底反白或左侧色条；数值滚动。",
+    "layout": "立绘 / 3D 角色占 1/2–2/3 屏并出框压在卡片上；信息卡靠另一侧；左列竖排页签（选中项实底）；底部或右下胶囊主按钮；大量留白。"
+   },
+   "params": {
+    "vis.corner": "chamfer",
+    "vis.cornerSize": 8,
+    "vis.fill": "solid",
+    "vis.opacity": 0.9,
+    "vis.blur": 4,
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 1,
+    "vis.strokeColor": "accent",
+    "vis.depth": "flat",
+    "vis.pattern": "diagStripes",
+    "vis.patternOpacity": 0.12,
+    "vis.motif": "geometric",
+    "vis.ornament": 1,
+    "vis.iconStyle": "line",
+    "col.lightness": "light",
+    "col.strategy": "neutralAccent",
+    "typ.display.family": "sans",
+    "typ.display.weight": "light",
+    "typ.display.tracking": 0.15,
+    "typ.display.case": "upper",
+    "typ.numerals.family": "display",
+    "cmp.plate": "tab",
+    "lay.layering": "breakout",
+    "cnt.characterMedium": "full",
+    "mo.enter": "slide"
+   },
+   "artPairing": [
+    {
+     "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)",
+     "relation": "neutral",
+     "why": "UI 是中性容器，色板跟立绘走；角色是主体，界面只给秩序（原神、战斗恋爱）。"
+    },
+    {
+     "artStyle": "半写实二次元 (Semi-real anime)",
+     "relation": "neutral",
+     "why": "3D 写实材质的角色（恋与深空）配发丝线白卡，避免界面和皮肤质感打架。"
+    },
+    {
+     "artStyle": "Live2D立绘",
+     "relation": "neutral",
+     "why": "会动的立绘占半屏，白卡留出呼吸空间。"
+    },
+    {
+     "artStyle": "视觉小说 (Visual novel)",
+     "relation": "sameMedium",
+     "why": "立绘 + 文本框本身就是 VN 媒介（Sunrider）。"
+    },
+    {
+     "artStyle": "儿童绘本插画 (Storybook)",
+     "relation": "sameMedium",
+     "why": "暖白绘本支：米白纸卡与绘本立绘同源（剑与远征：启程）。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "life",
+     "count": 3,
+     "why": "恋爱养成 / 换装：乙女轻奢支。"
+    },
+    {
+     "genre": "rpg",
+     "count": 3,
+     "why": "开放世界与竖屏 RPG（原神、剑与远征：启程 ×2）。"
+    },
+    {
+     "genre": "strategy",
+     "count": 3,
+     "why": "塔防 / 战术 / VN 策略（明日方舟、少女前线：云图计划、Sunrider）。"
+    },
+    {
+     "genre": "card",
+     "count": 2,
+     "why": "卡牌（神觉者、剑与远征结算）。"
+    },
+    {
+     "genre": "shooter",
+     "count": 1,
+     "why": "射击（NIKKE）：暗场战术支。"
+    },
+    {
+     "genre": "mobile",
+     "count": 1,
+     "why": "竖屏动作（战斗恋爱）。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "gameui:11234",
+     "why": "最典型的浅色科技白卡：切角半透明白卡、倾斜入口卡阵、左列实底页签、胜利页斜切经验条。"
+    },
+    {
+     "card": "gameui:2638",
+     "why": "乙女轻奢：渐隐白卡 + 金色菱星 + 中英并置名牌 + 线性圆钮。"
+    },
+    {
+     "card": "gameui:12326",
+     "why": "右列文字页签 + 「• 标题 •」菱点 + 色块网格 + 奶油胶囊。"
+    },
+    {
+     "card": "gameui:2848",
+     "why": "工业 VI 极简：灰白 + 炭黑实心按钮 + 编号牌。"
+    },
+    {
+     "card": "gameui:3033",
+     "why": "暗场战术：深灰底两张白卡对比 + 橙色选中描边。"
+    },
+    {
+     "card": "gameui:1691",
+     "why": "局内 HUD 的轻量写法：细线圆形小地图、半透明圆钮、任务横幅细金角。"
+    },
+    {
+     "card": "gameui:8436",
+     "why": "暖白绘本：米白卡 + 首字着色 + 波浪缎带 + 草绿主钮。"
+    },
+    {
+     "card": "gameui:5879",
+     "why": "竖向旋转英文水印 + 发丝线横贯带 + 窄体大写。"
+    }
+   ],
+   "subfamilies": [
+    {
+     "family": "二次元白卡细线 · 浅色科技白卡",
+     "skin": "skin.animeCard",
+     "noCards": false,
+     "definition": "浅蓝—淡紫或灰白大渐变底，半透明白卡切一角，1px 细线 + 斜切小标签 + 斜条纹，立绘出框压在卡片上；选中项是强调色实底。它是二次元手游的「默认模板」，也有工业 VI（明日方舟）与潮流科技（神觉者）两种更有性格的写法。",
+     "grammar": {
+      "shape": "切角矩形卡、平行四边形标签、倾斜 -4°~-8° 的入口大卡；菱形小标。",
+      "line": "1px 白或强调色细线，常只画上沿或一角；斜线条纹装饰带。",
+      "surface": "85–95% 白卡 + 轻模糊；底是大面积浅色渐变与几何光斑。",
+      "color": "白 + 浅蓝紫 + 一个暖色强调（橙 / 粉）；工业版为灰白 + 炭黑 + 黄。",
+      "type": "无衬线：中文粗、英文细大写；胜利等大字可换书法或特粗斜体。",
+      "material": "无实物材质。",
+      "ornament": "少（1）：斜条纹、编号、条码、星芒。",
+      "icon": "线性图标。",
+      "motion": "斜向擦除 / 滑入；选中项实底反白。",
+      "layout": "左侧竖列页签 + 右侧大立绘或信息卡；主界面是错落的倾斜入口卡阵。"
+     },
+     "params": {
+      "vis.corner": "chamfer",
+      "vis.cornerSize": 8,
+      "vis.skew": -6,
+      "vis.opacity": 0.9,
+      "vis.blur": 4,
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeColor": "accent",
+      "vis.pattern": "diagStripes",
+      "vis.patternOpacity": 0.15,
+      "col.lightness": "light",
+      "col.strategy": "neutralAccent",
+      "ast.bgArt": "gradient",
+      "typ.display.family": "sans",
+      "typ.display.case": "upper",
+      "cmp.tabIndicator": "filled",
+      "lay.nav": "tabsLeft",
+      "lay.layering": "breakout",
+      "cnt.characterMedium": "full",
+      "vis.iconStyle": "line",
+      "mo.enter": "slide"
+     },
+     "artPairing": [
+      {
+       "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)",
+       "relation": "neutral",
+       "why": "UI 是中性容器，色板跟立绘走，让角色当主体（原神、战斗恋爱）。"
+      },
+      {
+       "artStyle": "视觉小说 (Visual novel)",
+       "relation": "sameMedium",
+       "why": "Sunrider：立绘 + 无框字幕 + 白底表格，UI 与 VN 媒介本身一致。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "strategy",
+       "count": 2,
+       "why": "塔防 / 战术（明日方舟）与舰队 VN 策略（Sunrider）。"
+      },
+      {
+       "genre": "rpg",
+       "count": 1,
+       "why": "开放世界（原神）：HUD 极轻的细线圆钮与圆形小地图。"
+      },
+      {
+       "genre": "card",
+       "count": 1,
+       "why": "回合卡牌（神觉者）：潮流科技版。"
+      },
+      {
+       "genre": "mobile",
+       "count": 1,
+       "why": "竖屏动作（战斗恋爱）：典型浅色白卡。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:11234",
+       "why": "典型模板：浅蓝白渐变、切角半透明白卡、倾斜入口卡阵、左列页签选中橙底、胜利页书法大字 + 斜切经验条。"
+      },
+      {
+       "card": "gameui:1691",
+       "why": "局内 HUD 的轻量写法：细线圆形小地图、半透明圆形技能钮、任务横幅两端细金线角饰。"
+      },
+      {
+       "card": "gameui:3767",
+       "why": "潮流科技：青—淡紫渐变、斜条纹标题头、条码与数字串、黑胶唱片母题的图鉴格。"
+      },
+      {
+       "card": "gameui:2848",
+       "why": "工业 VI 极简：灰白底、炭黑实心矩形按钮、黄色菱形小标、编号牌与等宽版本号。"
+      },
+      {
+       "card": "steam:313730",
+       "why": "VN 写法：三人立绘 + 底部无框字幕；研发页是白底细表格。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "工业 VI 极简",
+       "diff": "几乎不用细线与半透明：灰白底 + 炭黑实心矩形按钮 + 编号牌 + 小字等宽版本号，像企业视觉识别手册。",
+       "cards": [
+        "gameui:2848"
+       ]
+      },
+      {
+       "name": "潮流 Y2K 科技",
+       "diff": "青紫渐变 + 斜条纹 + 条码 + 数字串 + 光盘 / 黑胶母题，偏 Y2K。",
+       "cards": [
+        "gameui:3767"
+       ]
+      },
+      {
+       "name": "VN 无框字幕",
+       "diff": "对话不画框，只在底部压暗一条，字幕直接写在立绘下方。",
+       "cards": [
+        "steam:313730"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "同质化：浅蓝白切角卡 + 立绘是最泛的二次元模板，换游戏几乎认不出。",
+       "evidence": [
+        "gameui:11234",
+        "gameui:3767"
+       ]
+      },
+      {
+       "desc": "细线与白字压在亮 3D 场景上会消失，原神 HUD 靠文字投影与半透明暗底补救。",
+       "evidence": [
+        "gameui:1691"
+       ]
+      }
+     ],
+     "skinGap": "skin.animeCard 的参数接近这一支，但没有倾斜入口卡、斜条纹肌理、左列实底页签与立绘出框；「工业 VI」变体需要实心炭黑按钮，与「白卡细线」相反。",
+     "paramGaps": [
+      "条码 / 数字串 / 编号牌作装饰肌理",
+      "倾斜入口卡阵（每张卡倾角与大小不同）"
+     ]
+    },
+    {
+     "family": "二次元白卡细线 · 乙女轻奢（白金细线）",
+     "skin": "skin.animeCard",
+     "noCards": false,
+     "definition": "恋爱养成与换装游戏的写法：3D 或高精立绘占满屏，UI 是半透明白卡 + 香槟金细线 + 小菱形点缀，名牌中英并置，图标是极细线性，主按钮是奶油色胶囊。克制、轻、带一点珠宝感。",
+     "grammar": {
+      "shape": "直角或极小圆角白卡；名牌前一颗金色菱形星；胶囊按钮。",
+      "line": "香槟金 / 浅灰 1px 发丝线，常是单条分隔线；标题两侧小菱点「• 标题 •」。",
+      "surface": "80–90% 白或浅灰半透明，柔和渐隐的边；底是 3D 角色本身。",
+      "color": "白 + 香槟金 + 浅灰；强调用淡金或玫瑰色，不用高饱和。",
+      "type": "衬线 / 细黑体标题，英文斜体小字并置（「工作人员 / Others」）。",
+      "material": "珍珠、缎面、香槟金（来自角色服装）。",
+      "ornament": "少（1）：菱形星芒、细金线、珍珠点。",
+      "icon": "极细线性图标，放在细线圆里。",
+      "motion": "淡入、柔和放大；光点闪烁。",
+      "layout": "角色占满屏；对话卡在下 1/3；右侧竖列文字页签（选中项有渐隐白底）。"
+     },
+     "params": {
+      "col.lightness": "light",
+      "vis.opacity": 0.85,
+      "vis.blur": 8,
+      "vis.corner": "sharp",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeColor": "metal",
+      "vis.strokeSides": "topBottom",
+      "vis.motif": "stars",
+      "vis.ornament": 1,
+      "typ.display.family": "serif",
+      "typ.body.family": "sans",
+      "ctx.locale": "bilingual",
+      "vis.iconStyle": "line",
+      "cnt.characterMedium": "model3d",
+      "cmp.dialogBox": "bar",
+      "ast.fx": [
+       "stardust"
+      ],
+      "col.accent": "#c8a46a",
+      "st.statusMark": "dot",
+      "mo.enter": "fade"
+     },
+     "artPairing": [
+      {
+       "artStyle": "半写实二次元 (Semi-real anime)",
+       "relation": "neutral",
+       "why": "恋与深空 / 以闪亮之名的 3D 角色是写实材质，UI 退成发丝线与半透明纸。"
+      },
+      {
+       "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)",
+       "relation": "neutral",
+       "why": "光与夜之恋的 2D 立绘：白卡只承载文字。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "life",
+       "count": 3,
+       "why": "恋爱养成 / 换装（光与夜之恋、以闪亮之名、恋与深空）。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:2638",
+       "why": "对话卡：半透明白底渐隐边、金色菱星 + 中英并置名牌、发丝金线分隔、底部线性圆钮回顾 / 自动。"
+      },
+      {
+       "card": "gameui:12326",
+       "why": "捏脸：右侧竖列文字页签（选中项白色渐隐底）、「• 调整肤色 •」菱点标题、色块网格、奶油胶囊「下一步」。"
+      },
+      {
+       "card": "gameui:4865",
+       "why": "选服：浅灰半透明大卡 + 左列浅色页签 + 每行一颗彩色菱形状态点 + 底部图例。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "发丝线 + 浅金字在浅色服装 / 皮肤上对比很低；白卡必须有渐隐暗底或背后虚化。",
+       "evidence": [
+        "gameui:2638",
+        "gameui:4865"
+       ]
+      }
+     ],
+     "skinGap": "skin.animeCard 的切角与强调色描边偏「科技」；乙女轻奢要直角或极小圆角、金属色发丝线、衬线标题与中英并置，皮肤里都没有。",
+     "paramGaps": [
+      "标题两侧菱点装饰「• 标题 •」",
+      "渐隐边的半透明卡（边缘透明度渐变）"
+     ]
+    },
+    {
+     "family": "二次元白卡细线 · 暗场战术",
+     "skin": "skin.animeCard",
+     "noCards": false,
+     "definition": "二次元射击 / 战术题材的暗色写法：炭黑底，卡片是暗灰或纯白，只有一个高饱和强调色（橙或电蓝），名字前一道竖色条，背景压一行竖向旋转 90° 的超大描边英文。比科幻 HUD 少发光，比白卡多压迫感。",
+     "grammar": {
+      "shape": "直角矩形卡，标题带一条横向页眉色带；虚线横贯带分割「LEVEL UP」。",
+      "line": "强调色 1px 线、左侧竖色条、虚线带。",
+      "surface": "炭黑或深灰，几乎不透明；白卡用于对比选择。",
+      "color": "炭黑 + 白 + 单一亮色（橙 / 电蓝）。",
+      "type": "窄体无衬线全大写英文 + 中文黑体；超大竖向英文水印。",
+      "material": "无。",
+      "ornament": "少：编号、虚线、方块。",
+      "icon": "线性 / 实心小图标。",
+      "motion": "滑入、闪光；数字滚动。",
+      "layout": "立绘被压暗作背景，信息居中或下 1/3；右上一组自动 / 跳过文字钮。"
+     },
+     "params": {
+      "col.lightness": "dark",
+      "col.strategy": "neutralAccent",
+      "col.accent": "#3d8bff",
+      "vis.corner": "sharp",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeSides": "left",
+      "vis.strokeColor": "accent",
+      "typ.display.family": "condensed",
+      "typ.display.case": "upper",
+      "typ.body.family": "sans",
+      "ast.watermark": "bigText",
+      "ast.watermarkOpacity": 0.2,
+      "cmp.dialogBox": "bare",
+      "ix.skip": "vnControls",
+      "st.selected": "outline",
+      "vis.iconStyle": "line",
+      "vis.opacity": 0.9
+     },
+     "artPairing": [
+      {
+       "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)",
+       "relation": "contrast",
+       "why": "角色明亮、界面压暗：靠暗场把立绘「打亮」。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "战术 RPG（少女前线：云图计划）。"
+      },
+      {
+       "genre": "shooter",
+       "count": 1,
+       "why": "射击（NIKKE）。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:3033",
+       "why": "深灰底上两张白卡对比选择，选中卡橙色描边 + 橙色小标签；对话是立绘 + 底部无框字幕 + 右上自动 / 跳过。"
+      },
+      {
+       "card": "gameui:5879",
+       "why": "竖向旋转 90° 的超大描边英文水印、蓝色发丝线横贯带「LEVEL UP」、窄体大写「0-3 BOSS」；对话日志是暗卡 + 蓝色竖条名字。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "装饰英文（OPERATION、DIALOGUE）与可读信息同色同级，竖向水印抢视线。",
+       "evidence": [
+        "gameui:5879"
+       ]
+      }
+     ],
+     "skinGap": "skin.animeCard 只有浅色；暗场战术需要炭黑底、单侧竖色条、窄体全大写与竖向英文水印。",
+     "paramGaps": [
+      "竖向旋转 90° 的超大英文水印（ast.watermark = bigText 不含方向）"
+     ]
+    },
+    {
+     "family": "二次元白卡细线 · 暖白绘本卡",
+     "skin": "skin.animeCard",
+     "noCards": false,
+     "definition": "把白卡换成米白纸卡：单角大圆角、柔和投影、标题首字换成草绿、插画与面板之间用一条带星点的橙色波浪缎带分隔，按钮是草绿实底。仍是「白卡」骨架，但气质从科技转成绘本。",
+     "grammar": {
+      "shape": "米白卡片，一个角是大圆角、其余小圆角；底部宽按钮；返回钮是带笔触箭头的方块。",
+      "line": "几乎无描边，靠柔和投影与纸色差分层。",
+      "surface": "米白纸、报纸版式的淡底纹。",
+      "color": "米白 + 墨棕 + 草绿（主操作）+ 橙（缎带）。",
+      "type": "标题首字草绿、其余墨棕；胜负字是带花饰的装饰衬线。",
+      "material": "纸、缎带。",
+      "ornament": "少到中：星点、波浪缎带、贴纸白边。",
+      "icon": "彩绘小图标。",
+      "motion": "淡入、轻微上浮。",
+      "layout": "竖屏上半插画 / 立绘（贴纸白边）、下半面板；底部全宽确认钮。"
+     },
+     "params": {
+      "col.lightness": "light",
+      "ast.core": "texture",
+      "ast.coreMat": "paper",
+      "vis.corner": "round",
+      "vis.cornerSize": 12,
+      "vis.depth": "softDrop",
+      "vis.stroke": "none",
+      "vis.motif": "stars",
+      "ast.ornaments": [
+       "ribbons",
+       "dividers"
+      ],
+      "typ.display.family": "serif",
+      "cmp.panelArt": "header",
+      "lay.composition": "splitTB",
+      "col.semantic": "accentOnly",
+      "col.accent": "#5a9a5a",
+      "vis.iconStyle": "painted",
+      "el.cta.form": "wide"
+     },
+     "artPairing": [
+      {
+       "artStyle": "儿童绘本插画 (Storybook)",
+       "relation": "sameMedium",
+       "why": "剑与远征：启程的立绘与地图是绘本风，纸卡与缎带同源。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "rpg",
+       "count": 2,
+       "why": "竖屏 RPG 的创角、设置、公告（剑与远征：启程）。"
+      },
+      {
+       "genre": "card",
+       "count": 1,
+       "why": "同作的结算页。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:8436",
+       "why": "捏脸：上半立绘（贴纸白边）+ 橙色星点波浪缎带 + 下半米白卡，标题首字草绿，底部草绿全宽「确定」。"
+      },
+      {
+       "card": "gameui:12838",
+       "why": "设置：米白大卡铺满下半屏，单角大圆角，输入框带羽毛笔图标，性别分段钮选中草绿。"
+      },
+      {
+       "card": "gameui:5744",
+       "why": "结算：VICTORY / DEFEAT 装饰衬线字压在橙 / 蓝色带上，每行三根彩色细条统计。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "装饰衬线的 VICTORY / DEFEAT 与半透明灰底叠在一起，胜负第一眼靠颜色带而不是字形。",
+       "evidence": [
+        "gameui:5744"
+       ]
+      }
+     ],
+     "skinGap": "skin.animeCard 的切角、强调色细线、细体宽字距都与绘本卡相反；这一支其实应由「圆润友好」的形 + 纸内芯 + 白卡版式组合。",
+     "paramGaps": [
+      "单角大圆角（vis.corner 四角一致）",
+      "首字着色（hier.inline 没有这一项）",
+      "波浪缎带分隔（ast.ornaments = ribbons 不含波浪形）"
+     ]
+    }
+   ],
+   "variants": [],
+   "failureModes": [
+    {
+     "desc": "同质化：浅蓝白切角卡 + 立绘是最泛的二次元模板，换游戏几乎认不出；能被记住的都在模板上加了一个强母题（工业 VI、黑胶、绘本缎带）。",
+     "evidence": [
+      "gameui:11234",
+      "gameui:3767",
+      "gameui:2848"
+     ]
+    },
+    {
+     "desc": "细线和白字压在亮 3D 场景或浅色服装上会消失（原神 HUD 靠投影补救）。",
+     "evidence": [
+      "gameui:1691",
+      "gameui:2638"
+     ]
+    },
+    {
+     "desc": "英文装饰小字与可读信息同色同级，变成噪声。",
+     "evidence": [
+      "gameui:3767",
+      "gameui:5879"
+     ]
+    },
+    {
+     "desc": "误归：只因画风是动漫或 GameUI 标签为「二次元」就归到白卡细线，界面其实是单色场景化、圆润深紫、毛玻璃或糖果 Q 版，已改归别族。",
+     "evidence": [
+      "steam:1585220",
+      "steam:1874490",
+      "steam:1148760",
+      "steam:282800"
+     ]
+    }
+   ],
+   "skinGap": "skin.animeCard 没有手调 token（partial，完全由参数生成）。参数方向对（切角、细线、浅色、细体宽字距、滑入），但：①缺斜条纹 / 编号 / 条码的科技肌理（只有 motif = geometric）；②描边四边闭合，缺「只画一角 + 端点小方块」；③立绘出框与左列实底页签不在皮肤里，单看皮肤只是一张白卡；④没有暗场与乙女两种常见变体；⑤ast.fx = glow 在白底上几乎看不出。",
+   "paramGaps": [
+    "不闭合细线 + 端点小方块（vis.strokeSides 只能整边取舍）",
+    "条码 / 数字串 / 编号牌作装饰肌理（vis.pattern 没有）",
+    "单角切角 / 单角大圆角（vis.corner 四角一致）",
+    "首字着色（hier.inline 没有）",
+    "竖向旋转 90° 的超大英文水印（ast.watermark = bigText 不含方向）",
+    "渐隐边的半透明卡（边缘透明度渐变）"
+   ]
+  },
+  {
+   "family": "Persona 拼贴",
+   "skin": "skin.persona",
+   "noCards": false,
+   "definition": "用海报 / 剪报的方式做界面：每个块都是不规则多边形、各自旋转，黑块压红块错位叠放，标题用勒索信式混排字或超大出血衬线，立绘切入是界面的一部分。色彩极少（红黑白，或一个主色 + 黑白），动效是硬切与斜切擦除，界面转场本身就是演出。",
+   "grammar": {
+    "shape": "锯齿 / 梯形 / 星芒多边形，几乎没有正矩形；每块旋转 -8°~+8° 且彼此不同；对话框是倾斜的黑色多边形 + 尖三角尾，名牌另贴一块白色斜签。改造一块面板：把矩形四个角各自随机偏移、整体转 -5°，背后垫一块错位 6px 的红块，标题字逐字换字体。",
+    "line": "不用细线：粗白描边包黑块（贴纸边）或双层白线；尾巴是尖三角。",
+    "surface": "平涂纯色 + 网点 / 颗粒；Metaphor 用颜料刷痕与墨渍；不用渐变与玻璃。",
+    "color": "三色（红约 #e60012 / 黑 / 白），或双色调（Metaphor：青绿 + 粉红 + 黑白）；HP / SP 只在条上出现第二种颜色。",
+    "type": "勒索信混排（每个字母不同字体 / 底色 / 角度）或超大衬线全大写、被屏幕边裁切；字号反差极端（标题 / 正文 ≥ 6:1）；文字随块旋转。",
+    "material": "剪报、海报、贴纸；没有金属木石。",
+    "ornament": "主题化剪贴符号：星芒、骷髅、玫瑰、手绘箭头。",
+    "icon": "黑白剪影头像（P5 战斗队伍）、手绘小符号；按键提示保留标准键帽。",
+    "motion": "斜切划入 + 回弹、硬切、抖动；选中项放大换色；切页用整屏图形转场。",
+    "layout": "对角线构图、元素出画；日期牌斜放角落；列表行斜排、逐行错位；立绘与面板互相压。"
+   },
+   "params": {
+    "vis.corner": "sharp",
+    "vis.edge": "ornate",
+    "vis.skew": -8,
+    "vis.tilt": 6,
+    "vis.jitter": 0.2,
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 3,
+    "vis.strokeColor": "accent2",
+    "vis.depth": "hardDrop",
+    "vis.pattern": "halftone",
+    "vis.patternOpacity": 0.2,
+    "col.lightness": "dark",
+    "col.strategy": "duotone",
+    "col.accent": "#e60012",
+    "col.accent2": "#ffffff",
+    "typ.display.family": "ransom",
+    "typ.display.weight": "black",
+    "typ.titleFx": "outline",
+    "cmp.plate": "slashBand",
+    "cmp.dialogBox": "bubble",
+    "el.notify.form": [
+     "cutIn"
+    ],
+    "mo.enter": "slashIn",
+    "mo.juice": 0.9,
+    "mo.transition": "useEnter",
+    "lay.layering": "breakout"
+   },
+   "artPairing": [
+    {
+     "artStyle": "Persona式朋克拼贴UI",
+     "relation": "sameMedium",
+     "why": "01 文档 10.21 本身就是以 UI 为主导的风格条目：界面即风格。"
+    },
+    {
+     "artStyle": "构成主义 (Constructivism)",
+     "relation": "sameMedium",
+     "why": "红黑白、斜向动势、照片拼贴（01 文档 10.5 以 P5 Tactica 为例）。"
+    },
+    {
+     "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)",
+     "relation": "neutral",
+     "why": "P5R 的 3D 场景是常规赛璐珞，个性几乎全部由 UI 承担。"
+    },
+    {
+     "artStyle": "油画／厚涂 (Oil/impasto)",
+     "relation": "sameMedium",
+     "why": "Metaphor 的绘本风地图与颜料刷痕选中态同属绘画媒介。"
+    },
+    {
+     "artStyle": "波普 (Pop art)",
+     "relation": "sameMedium",
+     "why": "DEATHLOOP 的 60 年代海报风（依据卡片笔记）。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "rpg",
+     "count": 2,
+     "why": "日式 RPG（Persona 5 Royal、Metaphor: ReFantazio）：日历、对话、菜单、战斗指令全部拼贴化。"
+    },
+    {
+     "genre": "shooter",
+     "count": 1,
+     "why": "第一人称射击（DEATHLOOP）：海报拼贴 HUD（截图无 UI）。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:1687950",
+     "why": "剪报朋克：左上手绘数字日历牌 + 天气星芒、倾斜黑色多边形对话框 + 白双线 + 尖尾指向切入立绘、勒索信名签、战斗队伍是黑白剪影头像 + 彩色 HP / SP 数字。"
+    },
+    {
+     "card": "steam:2679460",
+     "why": "绘画剪影：超大描边衬线「PARTY」被屏幕边裁切、斜排列表行、红色颜料刷痕选中、墨渍飞溅、右上斜放大号日期。"
+    },
+    {
+     "card": "steam:1252330",
+     "why": "60 年代海报拼贴：彩色斜切块 + 拼贴大字（商店图无 UI，依据卡片笔记）。"
+    }
+   ],
+   "subfamilies": [],
+   "variants": [
+    {
+     "name": "剪报朋克",
+     "diff": "红黑白三色、勒索信字、锯齿多边形、黑剪影头像。",
+     "cards": [
+      "steam:1687950"
+     ]
+    },
+    {
+     "name": "绘画剪影",
+     "diff": "衬线超大英文出血 + 颜料刷痕选中 + 墨渍，青绿 / 粉红双色；块更规整（平行四边形列表行）。",
+     "cards": [
+      "steam:2679460"
+     ]
+    },
+    {
+     "name": "复古海报",
+     "diff": "色板多于三色，块是彩色斜切，字是海报拼贴；更像 60 年代平面设计。",
+     "cards": [
+      "steam:1252330"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "界面动画多到遮挡画面（06 文档 B18 记载 Persona 5 早期的教训），后来减少动画并调整文字方向。",
+     "evidence": [
+      "steam:1687950"
+     ]
+    },
+    {
+     "desc": "口碑两极：Metaphor 提到 UI 的评测里差评 25 / 80，是本组最高；同时它也在「夸 UI 简洁」名单里。强风格界面要接受一部分玩家的反感。",
+     "evidence": [
+      "steam:2679460"
+     ]
+    },
+    {
+     "desc": "转场与动效重的界面容易被感知为卡顿：DEATHLOOP「UI 卡顿」3 条，是 R3 全库最多。",
+     "evidence": [
+      "steam:1252330"
+     ]
+    },
+    {
+     "desc": "旋转 + 混排字体在中文本地化里很难做；整屏高饱和红易疲劳（06 文档 B18）。",
+     "evidence": []
+    }
+   ],
+   "skinGap": "skin.persona 没有手调 token（partial）。参数有倾斜 -8°、抖动 0.2、红黑白双色、勒索信字、斜切入场与整屏转场，但：①倾斜是全体同角度的 skew，缺每块不同角度的随机旋转（vis.tilt 未设）；②vis.depth = flat，丢了 P5 最强的识别点——黑块压红块的错位底；③stroke = none，没有白色贴纸描边；④对话框未指定带尖尾的异形气泡；⑤没有立绘切入与标题出血裁切。",
+   "paramGaps": [
+    "每个块独立的随机多边形（四角各自抖动），vis.edge = ornate 是统一异形",
+    "勒索信字逐字随机（字体 / 底色 / 角度逐字变化），typ.display.family = ransom 只是一个字族",
+    "标题出血裁切（超大字被屏幕边切掉）",
+    "拼贴日历牌（手绘数字 + 星期 + 天气星芒），el.clock.form 没有"
+   ]
+  },
+  {
+   "family": "倾斜动感",
+   "skin": "skin.slant",
+   "noCards": false,
+   "definition": "一切沿一条斜线组织：平行四边形面板与按钮、特粗斜体窄字、斜切分屏、速度线与 chevron 箭头，数字大而斜。它表达速度与对抗，常见于动作评价、电竞 / 体育转播式对阵与街头潮流标题。与 Persona 拼贴的区别：倾斜角统一（-10°~-20°）、块是规整的平行四边形，不做剪报与随机旋转。",
+   "grammar": {
+    "shape": "平行四边形（skew -12°~-20°）、两端斜切的按钮、chevron 箭头端头、六边形头像框。改造一块面板：整体 skew -12°，左侧加 6px 强调色竖条，标题改特粗斜体全大写，右端切成箭头。",
+    "line": "基本不描边；用单侧粗色条、斜线条纹、速度线、双斜线分隔。",
+    "surface": "深色纯色 / 对角渐变 + 霓虹强调；斜条纹底；电竞版有金属渐变 VS 字。",
+    "color": "对抗双色（红 / 蓝）+ 金，或深底 + 单一霓虹；街头版高饱和撞色（粉黄青）。",
+    "type": "特粗窄体斜体全大写；数字大号斜体（倒计时、比分、评价字母）；VS 用金属渐变 + 描边。",
+    "material": "没有实物材质，是转播屏幕图形。",
+    "ornament": "少：chevron、速度线、闪电、星芒。",
+    "icon": "扁平填充、硬边。",
+    "motion": "斜切划入、砸入 + 震、数字滚动；评价字母逐级放大变华丽。",
+    "layout": "斜切分屏（我方左下 / 敌方右上）；顶部左右镜像血条 + 中央倒计时；斜排页签竖列。"
+   },
+   "params": {
+    "vis.corner": "sharp",
+    "vis.skew": -12,
+    "vis.opacity": 0.9,
+    "vis.stroke": "none",
+    "vis.depth": "flat",
+    "vis.pattern": "diagStripes",
+    "vis.patternOpacity": 0.15,
+    "col.lightness": "dark",
+    "col.strategy": "duotone",
+    "col.teams": "blueRed",
+    "typ.display.family": "condensed",
+    "typ.display.weight": "black",
+    "typ.display.style": "italic",
+    "typ.display.case": "upper",
+    "typ.numerals.family": "display",
+    "typ.numerals.style": "italic",
+    "typ.titleFx": "metal",
+    "cmp.plate": "slashBand",
+    "lay.composition": "diagonalSplit",
+    "ast.fx": [
+     "speedlines"
+    ],
+    "mo.enter": "slashIn",
+    "mo.easing": "overshoot",
+    "mo.juice": 0.8,
+    "mo.valueChange": "countUp",
+    "el.rank.form": [
+     "letter"
+    ]
+   },
+   "artPairing": [
+    {
+     "artStyle": "街头涂鸦卡通／JSR式 (Graffiti cel)",
+     "relation": "sameMedium",
+     "why": "超时空跑跑的涂鸦标题与贴纸感，01 文档 3.14 也指出这类画风的 UI 偏 Y2K / 街头。"
+    },
+    {
+     "artStyle": "风格化PBR／英雄射击风 (Stylized PBR)",
+     "relation": "neutral",
+     "why": "皮肤预设参考的 Overwatch 一路：干净 3D + 斜切面板，UI 给速度感。"
+    },
+    {
+     "artStyle": "照片写实 (Photorealism)",
+     "relation": "contrast",
+     "why": "DMC5 写实画面 + 华丽评价字母：UI 是唯一的「漫画化」层。"
+    },
+    {
+     "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)",
+     "relation": "neutral",
+     "why": "寻光之旅：二次元角色 + 斜切血条与霓虹。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "mobile",
+     "count": 2,
+     "why": "横屏卡牌对战与体育（寻光之旅、足球天才）。"
+    },
+    {
+     "genre": "card",
+     "count": 1,
+     "why": "电竞经理（Esports Godfather）：转播式对阵。"
+    },
+    {
+     "genre": "action",
+     "count": 1,
+     "why": "动作（Devil May Cry 5）：风格评价字母。"
+    },
+    {
+     "genre": "explore",
+     "count": 1,
+     "why": "跑酷（超时空跑跑）：街头涂鸦标题。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:1278540",
+     "why": "赛事转播样板：红蓝对半斜切、金属 VS 大字、斜切竖列页签（选中黄底）、六边形头像格、斜体字母评级、斜切「END ROUND」钮。"
+    },
+    {
+     "card": "gameui:6868",
+     "why": "横屏对战：顶部左右斜切血条 + 箭头 chevron + 中央斜体倒计时，霓虹青紫。"
+    },
+    {
+     "card": "steam:601150",
+     "why": "动作评价：右侧风格字母 D→SSS 越打越大越华丽，左上分段血条（商店图无 UI，依据卡片笔记）。"
+    },
+    {
+     "card": "gameui:13641",
+     "why": "街头涂鸦：超大彩色涂鸦字「大事件」「降临!!」、滑板贴纸标题。"
+    },
+    {
+     "card": "gameui:6969",
+     "why": "体育：红色斜切大面板 + 球星立绘，右侧斜切卡片。"
+    },
+    {
+     "card": "gameui:3860",
+     "why": "跨族参考（现归扁平 / Material）：红上蓝下的斜切分屏对阵，中间一条白色斜带，名牌也斜切。"
+    }
+   ],
+   "subfamilies": [],
+   "variants": [
+    {
+     "name": "赛事转播（对阵斜切）",
+     "diff": "双色对抗 + 斜切分屏 + 金属 VS + 比分平行四边形。",
+     "cards": [
+      "steam:1278540",
+      "gameui:6969",
+      "gameui:3860"
+     ]
+    },
+    {
+     "name": "动作评价（斜体战斗 HUD）",
+     "diff": "斜切血条、斜体倒计时、评价字母逐级升级。",
+     "cards": [
+      "steam:601150",
+      "gameui:6868"
+     ]
+    },
+    {
+     "name": "街头涂鸦贴纸",
+     "diff": "涂鸦字、贴纸白边、霓虹撞色，倾斜来自手写而非 skew。",
+     "cards": [
+      "gameui:13641"
+     ]
+    },
+    {
+     "name": "漫画斜卡（交叉）",
+     "diff": "漫画对话框族的 Hi-Fi Rush 商店：斜切卡块 + 粗墨边 + 红色错位底，是倾斜与漫画的交集。",
+     "cards": [
+      "iig:hi-fi-rush"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "特粗斜体窄字在密集小字里糊成一片（电竞经理信息密度极高，小字也斜）。规则：只让标题与数字斜，正文回正。",
+     "evidence": [
+      "steam:1278540"
+     ]
+    },
+    {
+     "desc": "红蓝阵营只靠颜色区分，需要形状冗余（左右位置、头像框形）。",
+     "evidence": [
+      "steam:1278540",
+      "gameui:3860"
+     ]
+    },
+    {
+     "desc": "证据缺口：DMC5 的商店截图没有 UI，评价字母的描述来自卡片笔记。",
+     "evidence": [
+      "steam:601150"
+     ]
+    },
+    {
+     "desc": "足球天才的大厅混着运营卡片，只取它的斜切面板语法，不从入口布局推原则。",
+     "evidence": [
+      "gameui:6969"
+     ]
+    }
+   ],
+   "skinGap": "skin.slant 没有手调 token（partial）。参数基本到位（skew -12、斜体粗字、展示数字、斜切入场、高反馈），但：①col.strategy = neutralAccent，缺对抗双色与斜切分屏；②速度线只在 suggests 里，不会自动出现；③无描边、无单侧色条，平行四边形压在深色场景上会丢边界；④缺 VS 金属字与评价字母这类标志性组件；⑤皮肤里 browse 归在「科幻」，但样本更多来自体育 / 电竞 / 街头。",
+   "paramGaps": [
+    "chevron / 箭头端头（按钮一端是箭头尖）",
+    "评价字母逐级升级的视觉（D→SSS 越来越华丽），el.rank.form = letter 不含升级",
+    "斜切分屏的分割带（中间白色斜带 + 两侧色块）",
+    "单侧强调色条随 skew 倾斜"
+   ]
+  },
+  {
+   "family": "漫画对话框",
+   "skin": "skin.comic",
+   "noCards": false,
+   "definition": "把界面做成漫画页：粗黑描边、对白气泡（椭圆 / 圆角矩形 + 尖尾）、旁白方框、分格（白色缝隙）、网点、速度线与拟声字。可以是美漫波普（Hi-Fi Rush）、条漫分镜（竖滑剧情）、挂在角色头上的世界内气泡（OXENFREE），也可以是 1930 年代橡皮管卡通的书页。核心是阅读顺序：信息按分格和气泡位置被读出来。",
+   "grammar": {
+    "shape": "气泡（椭圆对白、云形思考、星爆喊叫）+ 尖尾指向说话者；方形旁白框贴在格角；分格是矩形或斜切格，之间留 6–12px 白缝。改造一块面板：把对话面板改成白底椭圆气泡 + 3px 黑边 + 指向头像的三角尾，名字放进左上旁白方框，强调句换成星爆。",
+    "line": "3–5px 墨黑描边，略带手绘粗细变化；分格线等宽；速度线 / 集中线放射。",
+    "surface": "白 / 新闻纸黄 + 平涂色 + Ben-Day 网点；铅笔排线；胶片颗粒。",
+    "color": "白黑 + CMYK 原色（波普），或单色铅笔，或褪色暖黄（1930s）。",
+    "type": "漫画手写字全大写、居中排在气泡里；拟声字超大、倾斜、描边 + 立体投影、颜色与画面撞色；中文用粗圆 / 手写体。",
+    "material": "印刷纸、新闻纸、书页。",
+    "ornament": "网点、速度线、汗滴 / 问号 / 怒气符号、星爆。",
+    "icon": "漫画符号（!?、!!）、白手套指针。",
+    "motion": "砸入 + 震屏、分格逐格出现、拟声字弹出放大后淡出、一拍二抽帧。",
+    "layout": "Z 字阅读顺序的分格网格；角色出框；气泡位置 = 说话者位置；选项也可以是分格。"
+   },
+   "params": {
+    "vis.corner": "round",
+    "vis.cornerSize": 30,
+    "vis.edge": "clean",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 3,
+    "vis.strokeColor": "ink",
+    "vis.depth": "hardDrop",
+    "vis.pattern": "halftone",
+    "vis.patternOpacity": 0.25,
+    "vis.tilt": 2,
+    "col.lightness": "light",
+    "col.strategy": "polychrome",
+    "typ.display.family": "handwritten",
+    "typ.display.case": "upper",
+    "typ.titleFx": "outlineShadow",
+    "typ.body.weight": "bold",
+    "cmp.dialogBox": "bubble",
+    "el.feedback.form": [
+     "comicSFX"
+    ],
+    "el.choices.form": "bubbles",
+    "ast.bgArt": "comicPanels",
+    "ast.fx": [
+     "speedlines"
+    ],
+    "mo.enter": "slam",
+    "mo.frameRate": "onTwos",
+    "mo.juice": 0.8,
+    "lay.layering": "breakout"
+   },
+   "artPairing": [
+    {
+     "artStyle": "蜘蛛宇宙式3D漫画 (Spider-Verse-like)",
+     "relation": "sameMedium",
+     "why": "Hi-Fi Rush：抽帧 + 网点 + 2D 拟声字，UI 和画面一个媒介。"
+    },
+    {
+     "artStyle": "美漫概念插画／Borderlands式",
+     "relation": "sameMedium",
+     "why": "Borderlands 2：粗描边画面 + 粗描边 HUD（依据卡片笔记）。"
+    },
+    {
+     "artStyle": "波普 (Pop art)",
+     "relation": "sameMedium",
+     "why": "网点与粗黑线。"
+    },
+    {
+     "artStyle": "韩漫／条漫 (Webtoon/manhwa)",
+     "relation": "sameMedium",
+     "why": "竖滑剧情（曙光重临）。"
+    },
+    {
+     "artStyle": "铅笔素描 (Graphite)",
+     "relation": "sameMedium",
+     "why": "Stilstand 整部作品是铅笔漫画格。"
+    },
+    {
+     "artStyle": "橡皮管动画 (Rubber hose, 1930s)",
+     "relation": "sameMedium",
+     "why": "发条总动员的书页漫画与白手套。"
+    },
+    {
+     "artStyle": "海报风景插画／Firewatch式",
+     "relation": "neutral",
+     "why": "OXENFREE：暗调插画场景里只挂低饱和气泡。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "action",
+     "count": 2,
+     "why": "节奏动作（Hi-Fi Rush 局内 + 商店）：拟声字是打击反馈。"
+    },
+    {
+     "genre": "shooter",
+     "count": 2,
+     "why": "射击（Borderlands 2、发条总动员）。"
+    },
+    {
+     "genre": "explore",
+     "count": 2,
+     "why": "竖屏动作冒险的剧情与选角（曙光重临、恐龙哪里跑）。"
+    },
+    {
+     "genre": "strategy",
+     "count": 1,
+     "why": "对战开场分镜（野蛮人大作战 2）。"
+    },
+    {
+     "genre": "horror",
+     "count": 1,
+     "why": "叙事悬疑（OXENFREE）：世界内气泡对话。"
+    },
+    {
+     "genre": "narrative",
+     "count": 1,
+     "why": "漫画叙事（Stilstand）。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:1817230",
+     "why": "美漫波普：吉他形血条、评级字母、整屏拟声字、漫画格通讯画面。"
+    },
+    {
+     "card": "iig:hi-fi-rush",
+     "why": "斜切卡块 + 刷尖角墨边 + 红色错位底 + 尖角说明框，是漫画与倾斜的交集。"
+    },
+    {
+     "card": "steam:388880",
+     "why": "选项是头顶三个彩色气泡，边走边说。"
+    },
+    {
+     "card": "steam:1282320",
+     "why": "铅笔漫画格 + 手绘椭圆气泡，作品即界面。"
+    },
+    {
+     "card": "gameui:12857",
+     "why": "斜切分格选角 + 角色出框 + 斜白气泡。"
+    },
+    {
+     "card": "gameui:13586",
+     "why": "竖滑条漫 + 星爆「BOOM!!」。"
+    },
+    {
+     "card": "gameui:13717",
+     "why": "旧书里的 1930 年代漫画格 + 大白箭头继续。"
+    },
+    {
+     "card": "steam:763890",
+     "why": "跨族参考（现归手绘笔记本）：羊皮纸上的漫画格，选项也是漫画格。"
+    }
+   ],
+   "subfamilies": [
+    {
+     "family": "漫画对话框 · 美漫波普（拟声 + 网点）",
+     "skin": "skin.comic",
+     "noCards": false,
+     "definition": "美漫 / 波普的界面化：粗墨边、Ben-Day 网点、星爆气泡、整屏拟声字、斜切卡块与红色错位底；战斗反馈与评价字母本身就是漫画格。",
+     "grammar": {
+      "shape": "斜切卡块（skew 约 -15°）、星爆 / 尖刺多边形、带尖角的白色文本框。",
+      "line": "3–4px 墨黑边，角上有毛刷尖刺；红色第二层错位在黑块后。",
+      "surface": "平涂 + 网点；插画窗里有网点阴影。",
+      "color": "黑白 + 红黄青高饱和原色。",
+      "type": "手绘漫画标题（白字 + 红描边 + 黑投影）、斜体粗标签、拟声字超大撞色。",
+      "material": "印刷纸。",
+      "ornament": "中：星爆、速度线、闪电。",
+      "icon": "扁平硬边，带感叹号六边形角标。",
+      "motion": "砸入 + 震屏、拟声字弹出、一拍二节奏。",
+      "layout": "左上主题化血条（吉他形）、右上评级字母、中间战斗；菜单是一排斜卡。"
+     },
+     "params": {
+      "vis.pattern": "halftone",
+      "vis.patternOpacity": 0.35,
+      "vis.edge": "ornate",
+      "vis.skew": -15,
+      "vis.depth": "hardDrop",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 4,
+      "vis.strokeColor": "ink",
+      "col.strategy": "polychrome",
+      "col.saturation": 1.4,
+      "typ.display.family": "graffiti",
+      "typ.titleFx": "outlineShadow",
+      "el.feedback.form": [
+       "comicSFX",
+       "rating"
+      ],
+      "el.rank.form": [
+       "letter"
+      ],
+      "mo.enter": "slam",
+      "mo.juice": 1,
+      "ast.fx": [
+       "speedlines"
+      ]
+     },
+     "artPairing": [
+      {
+       "artStyle": "蜘蛛宇宙式3D漫画 (Spider-Verse-like)",
+       "relation": "sameMedium",
+       "why": "01 文档 3.8 以 Hi-Fi Rush 为代表：抽帧、网点、2D 拟声字，UI 与画面同一媒介。"
+      },
+      {
+       "artStyle": "美漫概念插画／Borderlands式",
+       "relation": "sameMedium",
+       "why": "粗描边手绘线条画面配粗描边漫画 HUD（Borderlands 2，依据卡片笔记）。"
+      },
+      {
+       "artStyle": "波普 (Pop art)",
+       "relation": "sameMedium",
+       "why": "网点与粗黑线是共同语汇（01 文档 10.8）。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "action",
+       "count": 2,
+       "why": "节奏动作（Hi-Fi Rush 局内 + 商店）。"
+      },
+      {
+       "genre": "shooter",
+       "count": 1,
+       "why": "射击（Borderlands 2）。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1817230",
+       "why": "左上吉他形血条、右上圆形评级字母、击打时整屏拟声字「PHCOM」；通讯画面是一排漫画格肖像。"
+      },
+      {
+       "card": "iig:hi-fi-rush",
+       "why": "商店：四张斜切卡块（粗墨边 + 刷尖角 + 红色错位底）、黑色斜签标签、尖角白色说明框、手绘「STORE」标题。"
+      },
+      {
+       "card": "steam:49520",
+       "why": "粗描边漫画 HUD + 彩色伤害飘字（商店图无 UI，依据卡片笔记）。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "拟声字和特效叠满时层级混乱，血条与评级被挤到角落；需要 chk.fxOcclusion 一类检查。",
+       "evidence": [
+        "steam:1817230"
+       ]
+      },
+      {
+       "desc": "Borderlands 2 提到 UI 的评测差评 15 / 41；且截图无 UI，归入本支只依据卡片笔记。",
+       "evidence": [
+        "steam:49520"
+       ]
+      }
+     ],
+     "skinGap": "skin.comic 有网点与黑边，但面板是 14px 圆角气泡；美漫波普要斜切卡块、红色错位底、尖刺角与拟声字组件。",
+     "paramGaps": [
+      "墨边角上的毛刷尖刺（vis.edge 只有统一异形）",
+      "拟声字的字形与位置规则"
+     ]
+    },
+    {
+     "family": "漫画对话框 · 分镜叙事（条漫 / 斜格）",
+     "skin": "skin.comic",
+     "noCards": false,
+     "definition": "用分格讲故事：开场、选角、剧情都是一页页漫画格，格间白缝、斜切格、角色出框、气泡挂在格角；竖屏用条漫式纵向滚动。选项也可以是分格（Wildermyth 跨族参考）。",
+     "grammar": {
+      "shape": "矩形或斜切分格，6–12px 白缝；格可整列倾斜；气泡贴在格边。",
+      "line": "等宽黑格线 2–3px；手写拟声字有自己的描边。",
+      "surface": "平涂或网点插画；格背景各用一种颜色 + 斜线。",
+      "color": "每格一个主色；整体高饱和（Q 版）或黑白线稿（野蛮人 2）。",
+      "type": "手写字作职业名 / 拟声；旁白在格下或白色方框。",
+      "material": "纸页。",
+      "ornament": "中：速度线、星爆、汗滴。",
+      "icon": "少；跳过按钮是半透明胶囊。",
+      "motion": "逐格滑入、镜头推进、出框角色弹出。",
+      "layout": "竖向 Z 字阅读；选角是一列斜格，每格一个职业。"
+     },
+     "params": {
+      "ast.bgArt": "comicPanels",
+      "lay.overflow": "scrollV",
+      "vis.corner": "sharp",
+      "vis.skew": -6,
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 3,
+      "vis.strokeColor": "ink",
+      "lay.layering": "breakout",
+      "cmp.dialogBox": "bubble",
+      "typ.display.family": "handwritten",
+      "el.feedback.form": [
+       "comicSFX"
+      ],
+      "mo.enter": "slide",
+      "ix.skip": "button",
+      "ix.continueCue": "blinkArrow",
+      "col.strategy": "polychrome"
+     },
+     "artPairing": [
+      {
+       "artStyle": "韩漫／条漫 (Webtoon/manhwa)",
+       "relation": "sameMedium",
+       "why": "曙光重临的竖滑剧情就是条漫版式。"
+      },
+      {
+       "artStyle": "矢量扁平 (Vector flat)",
+       "relation": "neutral",
+       "why": "超级幻影猫（跨族参考）的粗描边平涂分格。"
+      },
+      {
+       "artStyle": "日漫网点 (Manga screentone)",
+       "relation": "sameMedium",
+       "why": "野蛮人大作战 2 的黑白线稿分镜 + 字幕。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "explore",
+       "count": 2,
+       "why": "竖屏动作冒险的剧情与选角（曙光重临、恐龙哪里跑）。"
+      },
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "对战（野蛮人大作战 2）开场分镜。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:13586",
+       "why": "竖滑条漫：斜切白缝分格、星爆气泡「BOOM!!」、问号气泡、运动模糊冲击格。"
+      },
+      {
+       "card": "gameui:12857",
+       "why": "选角是一列斜切分格（每格一种底色 + 斜线 + 白色手写职业名），角色出框；Boss 用斜白气泡「HA!HA!!!」。"
+      },
+      {
+       "card": "gameui:12688",
+       "why": "黑白线稿分镜 + 底部字幕（只拿到开场）。"
+      },
+      {
+       "card": "steam:763890",
+       "why": "跨族参考（现归手绘笔记本）：事件是羊皮纸上的漫画格 + 旁白方框，选项也是三格漫画。"
+      },
+      {
+       "card": "gameui:13467",
+       "why": "跨族参考（现归孟菲斯）：浅蓝格子底 + 粗描边斜切分格。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "分格即选项",
+       "diff": "每个选项是一格漫画（含角色表情与一句话），点格即选。",
+       "cards": [
+        "steam:763890"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "条漫竖滑在截图 / 横屏里留下大片空白（曙光重临截图下半屏全白）。",
+       "evidence": [
+        "gameui:13586"
+       ]
+      },
+      {
+       "desc": "Wildermyth 评测「字太小」2 条：格内旁白字号受格子大小限制。",
+       "evidence": [
+        "steam:763890"
+       ]
+      }
+     ],
+     "skinGap": "skin.comic 只有气泡，没有分格（直角 + 白缝）与旁白方框，也没有纵向长卷与逐格入场。",
+     "paramGaps": [
+      "分格缝隙（gutter）宽度与斜格角度",
+      "旁白方框（caption box）作为独立组件",
+      "分格即选项"
+     ]
+    },
+    {
+     "family": "漫画对话框 · 气泡即对话（世界内气泡）",
+     "skin": "skin.comic",
+     "noCards": false,
+     "definition": "不开对话框：台词和选项都是挂在角色头顶的小气泡，跟着角色走，玩家边走边说。气泡可以是半透明彩色圆角块（OXENFREE），也可以是铅笔漫画格里的白色椭圆（Stilstand）。",
+     "grammar": {
+      "shape": "圆角矩形或椭圆气泡 + 小尾巴指向说话者；三个选项气泡呈扇形排在头顶。",
+      "line": "OXENFREE 无描边；Stilstand 是 1px 黑线手绘椭圆。",
+      "surface": "半透明低饱和色块（每个选项不同色）或纸白。",
+      "color": "跟随场景的低饱和色；铅笔版纯黑白。",
+      "type": "手写全大写，小字号。",
+      "material": "无 / 纸。",
+      "ornament": "无。",
+      "icon": "无。",
+      "motion": "气泡淡入淡出、轻微弹出；不暂停游戏。",
+      "layout": "气泡挂在世界里（空间内），HUD 几乎为零。"
+     },
+     "params": {
+      "rel.diegesis": "spatial",
+      "el.choices.form": "bubbles",
+      "cmp.dialogBox": "bubble",
+      "rel.worldRender": "billboard",
+      "vis.corner": "round",
+      "vis.cornerSize": 30,
+      "vis.opacity": 0.85,
+      "vis.stroke": "none",
+      "typ.display.family": "handwritten",
+      "typ.display.case": "upper",
+      "rel.hudVisibility": "contextual",
+      "cnt.density": 0,
+      "rel.harmony": "sameMedium",
+      "col.coding": [
+       "player"
+      ]
+     },
+     "artPairing": [
+      {
+       "artStyle": "海报风景插画／Firewatch式",
+       "relation": "neutral",
+       "why": "OXENFREE 的场景是暗调平涂插画，气泡用场景里的低饱和色，不跳出画面。"
+      },
+      {
+       "artStyle": "铅笔素描 (Graphite)",
+       "relation": "sameMedium",
+       "why": "Stilstand 整部作品是铅笔漫画，气泡与画面同一支笔。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "horror",
+       "count": 1,
+       "why": "叙事悬疑（OXENFREE）：边走边说的对话系统。"
+      },
+      {
+       "genre": "narrative",
+       "count": 1,
+       "why": "漫画叙事（Stilstand）。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:388880",
+       "why": "三个彩色半透明圆角气泡浮在角色头顶作为选项，台词气泡也挂在角色上；对话不暂停。"
+      },
+      {
+       "card": "steam:1282320",
+       "why": "铅笔排线漫画格 + 白底黑线手写椭圆气泡，整部作品就是界面。"
+      },
+      {
+       "card": "steam:1211630",
+       "why": "跨族参考（现归孟菲斯）：派对游戏的大号漫画对白框，玩家名字压在框下。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "气泡小、远、随镜头移动，读起来累；OXENFREE 有「挡视野」「手柄」各 1 条抱怨（样本小，仅作提示）。",
+       "evidence": [
+        "steam:388880"
+       ]
+      }
+     ],
+     "skinGap": "skin.comic 的气泡是屏幕上的面板；这一支需要气泡挂在世界里（rel.diegesis = spatial）、按说话者着色、无描边半透明，皮肤给的是 3px 黑边网点气泡。",
+     "paramGaps": [
+      "选项气泡的扇形排布与计时消失",
+      "气泡尾巴跟随说话者的世界坐标"
+     ]
+    },
+    {
+     "family": "漫画对话框 · 复古橡皮管",
+     "skin": "skin.comic",
+     "noCards": false,
+     "definition": "1930 年代橡皮管动画的书页：漫画格嵌在摊开的旧书里，书放在桌面上，胶片颗粒与暗角压整屏；按钮是黑线手绘胶囊，继续是一只大白箭头，光标是白手套。",
+     "grammar": {
+      "shape": "书页矩形 + 内嵌漫画格；黑线胶囊按钮；大号手绘箭头。",
+      "line": "3px 黑墨线，略带抖动。",
+      "surface": "泛黄纸页、胶片颗粒、暗角。",
+      "color": "褪色暖黄 + 墨黑 + 一两个复古原色（红、蓝）。",
+      "type": "粗黑体中文正文排在格下；标题用 1930s 片头字。",
+      "material": "书、纸、木桌。",
+      "ornament": "少：星点、汗滴。",
+      "icon": "白手套手势、手绘箭头。",
+      "motion": "一拍二抽帧、翻页。",
+      "layout": "书居中、桌面杂物环绕；格在上、文字在下；跳过在右上。"
+     },
+     "params": {
+      "ast.container": "book",
+      "ast.containerSurface": "desk",
+      "ast.coreMat": "paper",
+      "vis.stroke": "solid",
+      "vis.strokeColor": "ink",
+      "vis.strokeWidth": 3,
+      "rel.followPost": "stylize",
+      "mo.frameRate": "onTwos",
+      "ast.bgArt": "comicPanels",
+      "col.saturation": 0.8,
+      "ix.continueCue": "blinkArrow",
+      "vis.iconStyle": "painted",
+      "vis.jitter": 0.3
+     },
+     "artPairing": [
+      {
+       "artStyle": "橡皮管动画 (Rubber hose, 1930s)",
+       "relation": "sameMedium",
+       "why": "01 文档 14.1：手绘赛璐珞 + 胶片颗粒，UI 用同一种墨线与纸。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "shooter",
+       "count": 1,
+       "why": "竖屏弹幕射击（发条总动员）的剧情与教学。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "gameui:13717",
+       "why": "桌上摊开的旧书里嵌一格漫画，下方粗黑体旁白、右下大白箭头继续、右上黑线胶囊「跳过」；教学页是白手套手势示意。"
+      },
+      {
+       "card": "steam:268910",
+       "why": "跨族参考（现归极简单色）：扑克牌形血量牌 + 1930 年代片头字体（商店图无 UI，依据卡片笔记）。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "胶片颗粒与暗角作用到 UI 上时会压低小字对比（rel.followPost = stylize 的代价）。",
+       "evidence": [
+        "gameui:13717"
+       ]
+      }
+     ],
+     "skinGap": "skin.comic 是现代美漫气泡；这一支要旧纸、书本容器、抽帧与胶片颗粒。",
+     "paramGaps": [
+      "胶片颗粒 / 暗角作为 UI 后处理的强度单独可调",
+      "白手套光标"
+     ]
+    }
+   ],
+   "variants": [],
+   "failureModes": [
+    {
+     "desc": "网点、速度线铺在文字背后会抢对比；拟声字一多，信息层级就乱（06 文档 B12 陷阱）。",
+     "evidence": [
+      "steam:1817230"
+     ]
+    },
+    {
+     "desc": "条漫竖滑与横屏截图不兼容，留下大片空白。",
+     "evidence": [
+      "gameui:13586"
+     ]
+    },
+    {
+     "desc": "世界内气泡小、远、随镜头移动，阅读负担大。",
+     "evidence": [
+      "steam:388880"
+     ]
+    },
+    {
+     "desc": "证据缺口：Borderlands 2 商店截图无 UI，其画风是 01 文档 3.6 美漫概念插画，HUD 是否属于漫画族需要补图。",
+     "evidence": [
+      "steam:49520"
+     ]
+    },
+    {
+     "desc": "误归：WereCleaner 的主体语法是软木板 + 便签 + 手写报告纸，漫画只体现在对话字体上，已改归手绘笔记本。",
+     "evidence": [
+      "steam:2795000"
+     ]
+    }
+   ],
+   "skinGap": "skin.comic 是 legacy token：网点底 + 3px 黑边 + 14px 圆角 + 带尾对话框 + 黄色圆形按键，作为「气泡」是对的；但①所有面板都是气泡，缺分格（直角 + 白缝）与旁白方框；②缺拟声字 / 星爆这类「喊出来」的组件（el.feedback = comicSFX 不在皮肤里）；③缺斜格、出框与红色错位底；④网点铺满整个面板底，字压网点降对比，应只放在面板边缘或阴影区；⑤没有抽帧，也没有铅笔单色与 1930s 两种媒介变体。",
+   "paramGaps": [
+    "气泡形状细分（椭圆对白 / 云形思考 / 星爆喊叫 / 旁白方框），cmp.dialogBox = bubble 只有一种",
+    "分格缝隙（gutter）宽度与斜格角度",
+    "拟声字字形（立体投影 + 撞色描边）与摆放规则",
+    "集中线 / 速度线方向（ast.fx = speedlines 只有面板速度线）",
+    "网点只铺在阴影区 / 边缘（vis.pattern 是整面平铺）"
+   ]
+  }
+ ],
+ "assignments": {
+  "steam:955900": "国风水墨 · 卷轴宣纸（文房）",
+  "steam:1468810": "国风水墨 · 卷轴宣纸（文房）",
+  "steam:1948800": "国风水墨 · 卷轴宣纸（文房）",
+  "steam:1876890": "国风水墨 · 墨染暗场（武侠）",
+  "gameui:11870": "国风水墨 · 竖排典籍（字即界面）",
+  "gameui:4897": "国风水墨 · 竖排典籍（字即界面）",
+  "gameui:9375": "国风水墨 · 清雅淡彩（宋画留白）",
+  "gameui:7082": "国风水墨 · 清雅淡彩（宋画留白）",
+  "gameui:7090": "国风水墨 · 清雅淡彩（宋画留白）",
+  "gameui:2150": "国风水墨 · 宫廷屏风（国潮向）",
+  "gameui:2596": "国风水墨 · 宫廷屏风（国潮向）",
+  "gameui:11959": "国风水墨 · Q 版墨趣",
+  "gameui:6922": "国风水墨 · Q 版墨趣",
+  "gameui:6889": "国风水墨 · Q 版墨趣",
+  "gameui:6727": "国风水墨 · Q 版墨趣",
+  "gameui:6836": "暗金金属牌",
+  "gameui:6728": "暗金金属牌",
+  "gameui:7445": "糖果卡通（Q 版）",
+  "steam:2215430": "和风",
+  "gameui:11234": "二次元白卡细线 · 浅色科技白卡",
+  "gameui:1691": "二次元白卡细线 · 浅色科技白卡",
+  "gameui:3767": "二次元白卡细线 · 浅色科技白卡",
+  "gameui:2848": "二次元白卡细线 · 浅色科技白卡",
+  "steam:313730": "二次元白卡细线 · 浅色科技白卡",
+  "gameui:2638": "二次元白卡细线 · 乙女轻奢（白金细线）",
+  "gameui:4865": "二次元白卡细线 · 乙女轻奢（白金细线）",
+  "gameui:12326": "二次元白卡细线 · 乙女轻奢（白金细线）",
+  "gameui:3033": "二次元白卡细线 · 暗场战术",
+  "gameui:5879": "二次元白卡细线 · 暗场战术",
+  "gameui:8436": "二次元白卡细线 · 暖白绘本卡",
+  "gameui:12838": "二次元白卡细线 · 暖白绘本卡",
+  "gameui:5744": "二次元白卡细线 · 暖白绘本卡",
+  "steam:1585220": "极简单色",
+  "steam:1874490": "圆润友好",
+  "steam:1148760": "毛玻璃",
+  "steam:282800": "糖果卡通（Q 版）",
+  "steam:1687950": "Persona 拼贴",
+  "steam:2679460": "Persona 拼贴",
+  "steam:1252330": "Persona 拼贴",
+  "steam:1278540": "倾斜动感",
+  "gameui:6969": "倾斜动感",
+  "steam:601150": "倾斜动感",
+  "gameui:6868": "倾斜动感",
+  "gameui:13641": "倾斜动感",
+  "steam:1817230": "漫画对话框 · 美漫波普（拟声 + 网点）",
+  "iig:hi-fi-rush": "漫画对话框 · 美漫波普（拟声 + 网点）",
+  "steam:49520": "漫画对话框 · 美漫波普（拟声 + 网点）",
+  "gameui:13586": "漫画对话框 · 分镜叙事（条漫 / 斜格）",
+  "gameui:12857": "漫画对话框 · 分镜叙事（条漫 / 斜格）",
+  "gameui:12688": "漫画对话框 · 分镜叙事（条漫 / 斜格）",
+  "steam:388880": "漫画对话框 · 气泡即对话（世界内气泡）",
+  "steam:1282320": "漫画对话框 · 气泡即对话（世界内气泡）",
+  "gameui:13717": "漫画对话框 · 复古橡皮管",
+  "steam:2795000": "手绘笔记本"
+ },
+ "crossFamilyRefs": [
+  {
+   "card": "steam:2358720",
+   "currentFamily": "暗色细线",
+   "alsoShows": "国风水墨 · 墨染暗场（武侠）",
+   "why": "飞白刷块选中页签、超大书法水印、淡古画底、祥云端头 Boss 条。"
+  },
+  {
+   "card": "steam:814380",
+   "currentFamily": "暗色细线",
+   "alsoShows": "和风",
+   "why": "单字汉字「危」作危险预警。"
+  },
+  {
+   "card": "steam:762940",
+   "currentFamily": "圆润友好",
+   "alsoShows": "和风",
+   "why": "日记是浮世绘书（依据卡片笔记）。"
+  },
+  {
+   "card": "gameui:3980",
+   "currentFamily": "手游抽卡金框",
+   "alsoShows": "国风水墨 · 竖排典籍（字即界面）",
+   "why": "旧舆图上竖排书法题跋式标题。"
+  },
+  {
+   "card": "steam:763890",
+   "currentFamily": "手绘笔记本",
+   "alsoShows": "漫画对话框 · 分镜叙事（条漫 / 斜格）",
+   "why": "事件与选项都是漫画格。"
+  },
+  {
+   "card": "gameui:13467",
+   "currentFamily": "孟菲斯",
+   "alsoShows": "漫画对话框 · 分镜叙事（条漫 / 斜格）",
+   "why": "粗描边斜切分格。"
+  },
+  {
+   "card": "steam:1211630",
+   "currentFamily": "孟菲斯",
+   "alsoShows": "漫画对话框 · 气泡即对话（世界内气泡）",
+   "why": "大号漫画对白框。"
+  },
+  {
+   "card": "steam:268910",
+   "currentFamily": "极简单色",
+   "alsoShows": "漫画对话框 · 复古橡皮管",
+   "why": "1930 年代片头字体与扑克牌血量牌（依据卡片笔记）。"
+  },
+  {
+   "card": "gameui:3860",
+   "currentFamily": "扁平 / Material",
+   "alsoShows": "倾斜动感",
+   "why": "红上蓝下斜切分屏对阵。"
+  }
+ ]
+}

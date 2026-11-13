@@ -1,0 +1,1588 @@
+{
+  "families": [
+    {
+      "family": "科幻 HUD",
+      "skin": "skin.scifi",
+      "noCards": false,
+      "definition": "把界面画成「机器读数」：深色半透明底、1px 亮色细线、切角或角括号、全大写窄体 / 等宽字，标签小、数值大，编号和单位随处可见，HUD 与菜单像同一台设备的不同屏。决定它的不是青色，而是「仪表感」：同一套语法在库里有琥珀（Hardspace）、橙（Half-Life 2、Satisfactory）、红青双色（Cyberpunk）、白色中性（No Man's Sky、星穹铁道）多种配色。按「界面放在哪」分出叙事内（面罩 / 背脊 / 座舱）、屏幕叠加控制台、二次元科幻、射击两角式与元 UI 五条支线。",
+      "grammar": {
+        "shape": "矩形为主，切角只切一角或对角（Cyberpunk 价签、NMS 物品格），不是四角统一；小组件用六边形 / 菱形；生命与护盾多用分段格（NMS 顶部五格、Ratchet 分段血条）；面板常一侧开口或只画上下两条线。",
+        "line": "1px 实线 + 端点小刻度；角括号只画四角（Cyberpunk 义体插槽、Detroit 锁定框）；分隔是细横线配短竖标记；连线是直角折线（Plasma 节点、Cyberpunk 人体到插槽的引线）。",
+        "surface": "深色 40–65% 不透明 + 轻模糊；内部可有极淡的网格 / 点阵；没有纹理材质，建造控制台分支是暗色磨砂塑料感。",
+        "color": "单色主调 + 一个警示红是默认；主调本身是变体轴：青（Dead Space 脊柱灯、Subnautica）、琥珀 / 黄（Hardspace 面罩读数）、橙（HL2 大号数字、Satisfactory 强调）、红青双色（Cyberpunk）、白（NMS、星穹铁道、刺客信条）。",
+        "type": "窄体或几何无衬线、全大写、字距 0.1–0.2em；数字等宽；层级靠「小标签 + 大数值」跳两到三级（HL2 的 HEALTH 100、Hardspace 的 HLTH / SUIT / FUEL / O2）；中文版改用常规无衬线，英文微字只作装饰（星穹铁道）。",
+        "material": "自发光而不是反光：外发光、扫描线、色差；叙事内分支的「材质」就是世界里的灯带、面罩玻璃和座舱屏。",
+        "ornament": "微型文字（编号、坐标、连接号、条形码，Cyberpunk 左下数据块）、刻度尺、角标编号、斜线条纹小块；装饰预算低但密度高。",
+        "icon": "线性单色图标，方格内居中；建造类改用 3D 渲染零件图标（DSP、Plasma、Satisfactory）。",
+        "motion": "开机扫描 / 逐行出现、乱码解码文字、数字滚动；故障闪烁只在受击或切屏时出现。",
+        "layout": "分散组件贴四角：左上目标或同步率、左下生命、右下弹药 / 能量、右上小地图；菜单是左列表右详情（NMS 交易、Satisfactory 定制器）或「主体居中 + 四周插槽连线」（Cyberpunk 义体页）。"
+      },
+      "params": {
+        "vis.corner": "chamfer",
+        "vis.cornerSize": 12,
+        "vis.opacity": 0.5,
+        "vis.blur": 4,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeColor": "accent",
+        "vis.strokeGlow": 0.35,
+        "vis.depth": "flat",
+        "vis.motif": "brackets",
+        "vis.ornament": 1,
+        "vis.iconStyle": "line",
+        "col.lightness": "dark",
+        "col.strategy": "mono",
+        "typ.body.family": "condensed",
+        "typ.body.case": "upper",
+        "typ.body.tracking": 0.1,
+        "typ.numerals.family": "tabular",
+        "typ.legibility": "textGlow",
+        "cmp.gauge": "segmented",
+        "lay.hudOrg": "scattered",
+        "mo.enter": "boot",
+        "mo.textReveal": "scramble",
+        "mo.valueChange": "countUp",
+        "ast.fx": ["scanlines", "glow"]
+      },
+      "artPairing": [
+        { "artStyle": "工业硬科幻 (NASA-punk)", "relation": "sameMedium", "why": "Hardspace 的琥珀细线读数与船体上的警示橙标识同源，UI 像面罩玻璃上的工业贴标。" },
+        { "artStyle": "赛博朋克霓虹 (Cyberpunk neon)", "relation": "sameMedium", "why": "Cyberpunk 2077 的红青双色直接取自城市霓虹，菜单与街景是同一套光。" },
+        { "artStyle": "全息投影 (Hologram)", "relation": "sameMedium", "why": "Dead Space 的菜单投影在角色面前、弹药数投影在枪上，UI 就是世界里的全息物件。" },
+        { "artStyle": "照片写实 (Photorealism)", "relation": "sameMedium", "why": "写实恐怖（Dead Space、Callisto）把血量做成背脊 / 后颈灯带，UI 以世界部件的身份融入写实画面。" },
+        { "artStyle": "70年代科幻封面 (Pulp sci-fi)", "relation": "neutral", "why": "No Man's Sky 天色每个星球都不同，UI 用白色中性 + 分段格 + 投影，保证任何异色天空上都读得到。" },
+        { "artStyle": "风格化PBR／英雄射击风 (Stylized PBR)", "relation": "neutral", "why": "Satisfactory / Dyson Sphere 的卡通化 PBR 工厂配暗色半透明控制台 + 3D 渲染图标，UI 不抢画面。" },
+        { "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)", "relation": "contrast", "why": "星穹铁道、幻塔用冷静的深色毛玻璃 + 白胶囊科技面板衬托高饱和的赛璐珞角色。" }
+      ],
+      "genres": [
+        { "genre": "survival", "count": 4, "why": "生存 / 太空探索需要常驻的氧气、护盾、资源读数，最适合「仪表」语法（Subnautica、NMS×2、Satisfactory）。" },
+        { "genre": "action", "count": 3, "why": "动作游戏只借用两角式和细条，科幻感主要来自世界（Jedi、幻塔、刺客信条的 Animus 元 UI）。" },
+        { "genre": "horror", "count": 2, "why": "恐怖把 HUD 收进角色身体（Dead Space 脊柱、Callisto 后颈），叙事内读数增加压迫感。" },
+        { "genre": "explore", "count": 2, "why": "开放世界 RPG（Cyberpunk、Starfield）菜单最厚，是科幻控制台语法最完整的地方。" },
+        { "genre": "builder", "count": 1, "why": "Dyson Sphere：底部建造栏 + 右下环形能量，控制台式。" },
+        { "genre": "factory", "count": 1, "why": "Plasma：蓝图网格上的节点编辑器，标题条按类型着色。" },
+        { "genre": "rpg", "count": 1, "why": "星穹铁道：深色毛玻璃 + 白胶囊按钮的二次元科幻。" },
+        { "genre": "sandbox", "count": 1, "why": "Hardspace：面罩边缘的琥珀细线读数。" },
+        { "genre": "platformer", "count": 1, "why": "Ratchet & Clank：分段血条 + 武器轮。" },
+        { "genre": "racing", "count": 1, "why": "Redout：反重力竞速，用整屏速度线代替速度表。" },
+        { "genre": "shooter", "count": 1, "why": "Half-Life 2：左下 HEALTH / SUIT 大号橙色数字，射击两角式的源头之一。" }
+      ],
+      "exemplars": [
+        { "card": "steam:1091500", "why": "最完整的科幻控制台语法：红青双色、单角切角、角括号插槽、人体剖面居中 + 引线到四周插槽、微型数据块与条形码装饰。" },
+        { "card": "steam:1161580", "why": "琥珀细线面罩 HUD：极小全大写标签 + 细条（HLTH / SUIT / FUEL / O2），中央切割读数，证明科幻 HUD 不必是青色。" },
+        { "card": "steam:1693980", "why": "叙事内的教科书：血量是背脊灯带、弹药投影在枪上、菜单是全息投影。" },
+        { "card": "iig:no-mans-sky", "why": "白色分段格 + 顶部弧形罗盘 + 斜置半透明提示卡，在任何异色天空上都可读；交易页是红色标题牌 + 半透明行。" },
+        { "card": "steam:1409160", "why": "蓝图网格背景 + 按类型着色标题条的节点卡（青 / 绿 / 红），工程软件式科幻面板。" },
+        { "card": "steam:1366540", "why": "深色半透明信息卡 + 环形能量 + 3D 渲染零件图标，建造类科幻控制台。" },
+        { "card": "gameui:8283", "why": "二次元科幻：深色模糊底、细金线、菱形页签图标、白色胶囊主按钮、右下按键图例条。" },
+        { "card": "steam:220", "why": "射击两角式：左下 HEALTH / SUIT、右下 AMMO 的橙色大号数字 + 半透明圆角底，极少装饰。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "科幻 HUD · 叙事内（面罩 / 背脊 / 座舱）",
+          "skin": "skin.scifi",
+          "noCards": false,
+          "definition": "读数长在世界里：角色背上的灯带、后颈环灯、面罩边缘的弧形读数、手持工具上的小屏、座舱仪表。屏幕上几乎没有面板，HUD 跟着身体和镜头一起动。",
+          "grammar": {
+            "shape": "跟随载体：竖条灯带、圆环灯、面罩弧线、仪表屏矩形。",
+            "line": "灯带分段；面罩读数是 1px 细线 + 极小标签（Hardspace）。",
+            "surface": "没有面板底（opacity 0），载体本身是底。",
+            "color": "单色自发光：青（Dead Space、Subnautica）、琥珀（Hardspace）、绿 / 红作状态。",
+            "type": "极小全大写标签，只在面罩 / 座舱屏上出现文字。",
+            "material": "灯带、玻璃、屏幕自发光；面罩分支有边缘暗角和弧形畸变。",
+            "ornament": "几乎没有；座舱有按键与刻度。",
+            "icon": "极少，状态靠颜色与灯的数量。",
+            "motion": "灯带随血量熄灭、警报闪烁、面罩起雾。",
+            "layout": "挂在玩家身上 / 手持物上 / 面罩边缘，屏幕锚点退居次要。"
+          },
+          "params": {
+            "rel.diegesis": "diegetic",
+            "cnt.density": 1,
+            "lay.container": "overlay",
+            "vis.opacity": 0,
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "player",
+            "cmp.gauge@el.vitals": "vertical",
+            "el.abilities.attachTo": "held",
+            "rel.followPost": "warp",
+            "rel.worldRender": "perspective",
+            "col.strategy": "mono",
+            "typ.legibility": "textGlow",
+            "rel.hudVisibility": "always"
+          },
+          "artPairing": [
+            { "artStyle": "照片写实 (Photorealism)", "relation": "sameMedium", "why": "UI 作为发光部件进入写实世界，不破坏电影感。" },
+            { "artStyle": "工业硬科幻 (NASA-punk)", "relation": "sameMedium", "why": "面罩读数像宇航服仪表。" }
+          ],
+          "genres": [
+            { "genre": "horror", "count": 2, "why": "Dead Space、Callisto：身体即血条，压迫感。" },
+            { "genre": "survival", "count": 1, "why": "Subnautica：左下四个圆形计量 + 工具上的屏幕 + 潜艇座舱。" },
+            { "genre": "sandbox", "count": 1, "why": "Hardspace：面罩边缘琥珀读数。" },
+            { "genre": "explore", "count": 1, "why": "Starfield：商店图里唯一的 UI 是座舱仪表屏。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1693980", "why": "背脊灯带血条 + 枪上弹药 + 全息菜单。" },
+            { "card": "steam:1544020", "why": "后颈环形灯血量，学 Dead Space。" },
+            { "card": "steam:1161580", "why": "面罩边缘的弧形细线读数，扫描模式整屏绿线框。" },
+            { "card": "steam:264710", "why": "面罩暗角框 + 手持工具小屏 + 驾驶舱。" },
+            { "card": "steam:1716740", "why": "座舱仪表屏是唯一的界面。" }
+          ],
+          "variants": [
+            { "name": "身体灯带", "diff": "血量在角色身上（脊柱 / 后颈），屏幕上零面板。", "cards": ["steam:1693980", "steam:1544020"] },
+            { "name": "面罩读数", "diff": "读数贴面罩边缘，整屏带暗角与轻微弧形畸变。", "cards": ["steam:1161580", "steam:264710"] },
+            { "name": "座舱 / 载具仪表", "diff": "界面是座舱里的屏幕与刻度。", "cards": ["steam:1716740", "steam:42700"] }
+          ],
+          "failureModes": [
+            { "desc": "叙事内读数让地图与引导缺位：Subnautica 评测里引导类 3 条、地图类 2 条；Callisto 地图 2、背包 3、字小 2；Dead Space 地图 1。", "evidence": ["steam:264710", "steam:1544020", "steam:1693980"] }
+          ],
+          "skinGap": "skin.scifi 只会画屏幕上的切角面板；叙事内分支要的是「不画面板 + 挂到角色 / 手持物 + 跟随面罩畸变」，现在只能靠逐元素 elx.diegesis 一项项改，皮肤里没有这套默认。",
+          "paramGaps": ["头盔面罩作为场景容器（ast.container 有座舱、腕表，没有面罩 / 头盔）", "灯带式数值图形（按段熄灭的发光条，cmp.gauge 的 vertical / segmented 都是屏幕控件）"]
+        },
+        {
+          "family": "科幻 HUD · 赛博双色故障",
+          "skin": "skin.scifi",
+          "noCards": false,
+          "definition": "红青双色的赛博控制台：红色是骨架（标题、边框、价签），青色只给可交互与选中；单角切角、角括号插槽、微型数据装饰和故障闪烁一起构成「被黑进来的系统」感。",
+          "grammar": {
+            "shape": "单角切角的价签 / 卡片，插槽是四角括号方格；页签是菱形图标 + 文字。",
+            "line": "1px 红线，选中改青色发光框；人体到插槽的细引线。",
+            "surface": "近黑的深红半透明，带极淡点阵 / 网格。",
+            "color": "红 #ff3b3b 骨架 + 青 #3ff0ff 交互；金额与警示用亮红实底块。",
+            "type": "窄体全大写、字距宽；数字大号等宽。",
+            "material": "辉光 + 色差故障 + 扫描线。",
+            "ornament": "条形码、连接号、版本号、坐标的微型文字块。",
+            "icon": "线性单色，装在切角方格里。",
+            "motion": "故障闪现进入、乱码解码、选中框闪烁。",
+            "layout": "主体居中（人体剖面）+ 两侧插槽列 + 引线；对话为悬浮细线卡片。"
+          },
+          "params": {
+            "col.strategy": "duotone",
+            "col.accent": "#ff3b3b",
+            "col.accent2": "#3ff0ff",
+            "vis.corner": "chamfer",
+            "vis.motif": "circuit",
+            "ast.fx": ["glitch", "scanlines", "glow"],
+            "rel.metaFx": ["glitch"],
+            "typ.display.family": "condensed",
+            "typ.titleFx": "glitch",
+            "mo.enter": "glitchIn",
+            "cnt.characterMedium": "diagram",
+            "lay.focalSide": "center",
+            "cmp.slot": "cell",
+            "st.emptySlot": "plus",
+            "st.selected": "glow"
+          },
+          "artPairing": [
+            { "artStyle": "赛博朋克霓虹 (Cyberpunk neon)", "relation": "sameMedium", "why": "UI 的红青就是城市霓虹的两种光。" },
+            { "artStyle": "故障艺术 (Glitch)", "relation": "sameMedium", "why": "故障从画面后处理延伸到 UI 进入动效。" }
+          ],
+          "genres": [ { "genre": "explore", "count": 1, "why": "Cyberpunk 2077：义体页、交易页、扫描面板都用同一套双色。" } ],
+          "exemplars": [ { "card": "steam:1091500", "why": "义体页的人体剖面 + 插槽引线、扫描时悬浮在空间里的红色数据面板。" } ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "动效与故障闪烁太多，切菜单有卡顿感：评测里 UI 卡顿类 2 条、菜单类 2 条。", "evidence": ["steam:1091500"] }
+          ],
+          "skinGap": "skin.scifi 是单色青；这一支需要「红骨架 + 青交互」的双色分工、微型数据装饰与常驻故障层，皮肤里都没有。",
+          "paramGaps": ["双色的角色分工（col.accent / accent2 只给颜色，不能声明「accent2 只用于可交互」）", "主体到插槽的引线（vis.connector 只作用于节点图）"]
+        },
+        {
+          "family": "科幻 HUD · 太空建造控制台",
+          "skin": "skin.scifi",
+          "noCards": false,
+          "definition": "建造 / 生存 / 工厂类的科幻面板：暗色半透明大面板、左页签右详情、3D 渲染零件图标格、橙或青单一强调色；比赛博分支克制得多，更像工程软件。",
+          "grammar": {
+            "shape": "小圆角或小切角的大面板；物品是方格；节点编辑器是带彩色标题条的卡片。",
+            "line": "1px 灰线分区，选中格用强调色描边。",
+            "surface": "深灰 / 深蓝 70–80% 半透明，蓝图分支有网格底。",
+            "color": "暗灰 + 橙（Satisfactory）或暗蓝 + 青（DSP、Plasma）；节点标题条按类型着色。",
+            "type": "常规无衬线，标题全大写，正文原样大小写。",
+            "material": "磨砂塑料感，几乎不发光。",
+            "ornament": "很少：分类图标、数量角标。",
+            "icon": "3D 渲染零件图标。",
+            "motion": "淡入、滑入；几乎不用故障。",
+            "layout": "左侧分类页签 + 中部图标格 + 右侧常驻详情；底部建造栏。"
+          },
+          "params": {
+            "col.lightness": "dark",
+            "vis.opacity": 0.78,
+            "vis.blur": 6,
+            "vis.corner": "chamfer",
+            "vis.cornerSize": 6,
+            "col.strategy": "neutralAccent",
+            "col.accent": "#f39c32",
+            "vis.iconStyle": "render3d",
+            "cmp.slot": "cell",
+            "lay.nav": "tabsLeft",
+            "lay.detail": "persistent",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "cnt.density": 3,
+            "typ.body.family": "sans",
+            "typ.body.case": "asIs",
+            "vis.strokeGlow": 0
+          },
+          "artPairing": [
+            { "artStyle": "风格化PBR／英雄射击风 (Stylized PBR)", "relation": "neutral", "why": "卡通化 PBR 工厂里，UI 退成中性工程面板。" },
+            { "artStyle": "70年代科幻封面 (Pulp sci-fi)", "relation": "neutral", "why": "NMS 的异色星球上，UI 用白色 + 红标题牌保持中性。" }
+          ],
+          "genres": [
+            { "genre": "survival", "count": 3, "why": "NMS×2、Satisfactory：大量物品与配方要管理。" },
+            { "genre": "builder", "count": 1, "why": "Dyson Sphere：建造栏 + 能量环。" },
+            { "genre": "factory", "count": 1, "why": "Plasma：节点编辑器。" }
+          ],
+          "exemplars": [
+            { "card": "steam:526870", "why": "暗灰半透明大面板 + 橙色选中 + 左侧分类页签 + 右侧详情。" },
+            { "card": "iig:no-mans-sky", "why": "交易页：红色标题牌 + 半透明物品行 + 蓝色悬浮详情卡。" },
+            { "card": "steam:1409160", "why": "蓝图网格上的节点卡，标题条按类型着色。" },
+            { "card": "steam:1366540", "why": "深色半透明信息卡 + 环形能量。" },
+            { "card": "steam:275850", "why": "顶部罗盘条 + 左上状态 + 半透明格子交易页。" }
+          ],
+          "variants": [
+            { "name": "橙强调暗灰", "diff": "强调色是工业橙，面板几乎不发光。", "cards": ["steam:526870"] },
+            { "name": "蓝图 / 节点编辑器", "diff": "背景是蓝图网格，内容是彩色标题条的节点卡 + 连线。", "cards": ["steam:1409160"] },
+            { "name": "白色中性 + 红标题牌", "diff": "UI 用白字与红色标题条，适配多变天色。", "cards": ["steam:275850", "iig:no-mans-sky"] }
+          ],
+          "failureModes": [
+            { "desc": "菜单层级深、物品管理繁琐：No Man's Sky 评测里 UI 差评 49 条（菜单 3、背包 3、字小 2），Dyson Sphere 菜单类 3 条，Satisfactory 背包 2 条。", "evidence": ["steam:275850", "steam:1366540", "steam:526870"] }
+          ],
+          "skinGap": "skin.scifi 的青色发光 + 全大写窄体用在大面板列表上太吵；这一支要的是不发光、原样大小写、橙或青单强调、3D 图标格，更接近扁平暗色面板。",
+          "paramGaps": ["节点卡的「彩色标题条」（cmp.plate 有边缘标签条，但不能按节点类型自动着色）"]
+        },
+        {
+          "family": "科幻 HUD · 二次元科幻",
+          "skin": "skin.glass",
+          "noCards": false,
+          "definition": "国产二次元手游的科幻面板：深色毛玻璃大底、细金 / 白线、菱形或几何页签图标、白色胶囊主按钮、右下按键图例条；剧情字幕无框压在底部。科技感来自几何线与留白，而不是发光。",
+          "grammar": {
+            "shape": "大面积模糊底、轻切角；主按钮是白色胶囊；页签是菱形图标。",
+            "line": "细金线 / 白线分隔，选中项左侧亮条。",
+            "surface": "深色毛玻璃（强模糊）。",
+            "color": "近黑 + 米金 + 白，强调色很少。",
+            "type": "中文常规无衬线、原样；英文微字作装饰。",
+            "material": "毛玻璃、轻微光晕。",
+            "ornament": "几何线、小编号、UID 角标。",
+            "icon": "线性几何图标。",
+            "motion": "淡入、滑入；读取页是细进度线。",
+            "layout": "左上小地图、右下按键图例、左列表右详情；对话无框字幕。"
+          },
+          "params": {
+            "vis.blur": 16,
+            "vis.opacity": 0.55,
+            "col.lightness": "dark",
+            "vis.corner": "chamfer",
+            "vis.cornerSize": 4,
+            "vis.strokeColor": "metal",
+            "vis.corner@button": "round",
+            "vis.cornerSize@button": 50,
+            "col.semantic": "accentOnly",
+            "typ.body.family": "sans",
+            "typ.body.case": "asIs",
+            "vis.iconStyle": "line",
+            "el.prompt.form": ["legend"],
+            "el.prompt.screenAnchor": "br",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tl",
+            "cmp.dialogBox": "bare"
+          },
+          "artPairing": [
+            { "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)", "relation": "contrast", "why": "冷静的深色几何面板衬托高饱和角色。" }
+          ],
+          "genres": [
+            { "genre": "rpg", "count": 1, "why": "星穹铁道：任务页、HUD、对话。" },
+            { "genre": "action", "count": 1, "why": "幻塔：无框字幕、深蓝渐变加载 + 细进度线。" }
+          ],
+          "exemplars": [
+            { "card": "gameui:8283", "why": "深色毛玻璃任务页 + 白胶囊按钮 + 右下按键图例。" },
+            { "card": "gameui:3522", "why": "无框字幕 + 深蓝渐变加载页细进度线。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.scifi 的全大写窄体 + 青色发光不适合中文长文本；这一支更接近 skin.glass 的模糊底 + 金属细线 + 白胶囊按钮，两套皮肤之间缺一个中间预设。",
+          "paramGaps": []
+        },
+        {
+          "family": "科幻 HUD · 射击 / 动作两角式",
+          "skin": "skin.scifi",
+          "noCards": false,
+          "definition": "左下生命、右下弹药的经典两角布局，科幻感只靠大号数字字形与半透明小底；装饰几乎为零，是科幻 HUD 里最克制、最通用的一支。",
+          "grammar": {
+            "shape": "半透明圆角小底牌；分段血条。",
+            "line": "几乎不用线。",
+            "surface": "黑色 30–40% 半透明。",
+            "color": "单一暖色数字（HL2 橙）或白。",
+            "type": "小标签 + 大号展示数字。",
+            "material": "无。",
+            "ornament": "无。",
+            "icon": "武器剪影。",
+            "motion": "数字跳变、受击红边。",
+            "layout": "左下 / 右下两角，其余全部留给画面。"
+          },
+          "params": {
+            "lay.hudOrg": "scattered",
+            "el.vitals.screenAnchor": "bl",
+            "cmp.gauge@el.vitals": "number",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "typ.numerals.family": "display",
+            "vis.corner": "round",
+            "vis.cornerSize": 15,
+            "vis.opacity": 0.35,
+            "col.accent": "#ffb000",
+            "cnt.density": 1,
+            "typ.legibility": "shadow",
+            "el.crosshair.form": ["cross"]
+          },
+          "artPairing": [
+            { "artStyle": "照片写实 (Photorealism)", "relation": "neutral", "why": "两角式几乎不碰画面中部，适配任何写实场景。" }
+          ],
+          "genres": [
+            { "genre": "shooter", "count": 1, "why": "Half-Life 2。" },
+            { "genre": "platformer", "count": 1, "why": "Ratchet & Clank：分段血条 + 武器轮。" },
+            { "genre": "action", "count": 1, "why": "Jedi: Survivor：左下血条 + 原力条（商店图无 UI）。" }
+          ],
+          "exemplars": [
+            { "card": "steam:220", "why": "HEALTH / SUIT / AMMO 橙色大号数字 + 半透明圆角黑底。" },
+            { "card": "steam:1895880", "why": "左上分段血条、右上武器轮 + 弹药。" },
+            { "card": "steam:1774580", "why": "左下血条 + 原力条，敌人头顶血条。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "商店图没有 UI，判断只来自笔记：Ratchet、Jedi、Redout 的卡都标注商店图无 UI，这一支的视觉证据最弱。", "evidence": ["steam:1895880", "steam:1774580", "steam:517710"] }
+          ],
+          "skinGap": "skin.scifi 默认切角细线框 + 发光，这一支只要半透明圆角底 + 展示数字，皮肤会把它画得过重。",
+          "paramGaps": []
+        },
+        {
+          "family": "科幻 HUD · 元 UI 机器框架",
+          "skin": "skin.scifi",
+          "noCards": false,
+          "definition": "整个 HUD 设定成某台机器（刺客信条的 Animus）的界面：白色半透明细条、数字化的同步率、画面边缘的数据故障，玩家知道自己在「看一台机器的输出」。",
+          "grammar": {
+            "shape": "细长条、圆形罗盘。",
+            "line": "白色细线。",
+            "surface": "白 / 灰半透明。",
+            "color": "白色单色，世界轻微去饱和。",
+            "type": "细无衬线。",
+            "material": "数据碎片、故障。",
+            "ornament": "DNA / 数据纹的同步条。",
+            "icon": "手柄按键图示（头 / 手 / 脚）。",
+            "motion": "数据故障进出。",
+            "layout": "左上同步率 + 计时、右上按键图、右下罗盘。"
+          },
+          "params": {
+            "rel.diegesis": "meta",
+            "col.strategy": "mono",
+            "col.lightness": "light",
+            "vis.opacity": 0.3,
+            "ast.fx": ["glitch"],
+            "rel.metaFx": ["glitch"],
+            "el.vitals.screenAnchor": "tl",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.screenAnchor": "tr",
+            "el.minimap.form": "radar",
+            "el.minimap.screenAnchor": "br",
+            "mo.enter": "glitchIn"
+          },
+          "artPairing": [
+            { "artStyle": "风格化写实 (Stylized realism)", "relation": "contrast", "why": "写实历史城市 vs 白色数字层，提醒玩家这是模拟。" }
+          ],
+          "genres": [ { "genre": "action", "count": 1, "why": "刺客信条初代。" } ],
+          "exemplars": [ { "card": "steam:15100", "why": "白色同步条 + 计时 + 右上手柄按键图，整个 HUD 设定为 Animus 输出。" } ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "UI 提及 54 条里差评 18 条（字小、菜单、地图各 1）：白色细条在明亮的沙色城市上对比不足。", "evidence": ["steam:15100"] }
+          ],
+          "skinGap": "skin.scifi 是深底青线；元 UI 机器框架要的是浅色 / 白色半透明 + 常驻数据故障。",
+          "paramGaps": ["常驻轻微故障 vs 仅受击故障（ast.fx glitch 不区分强度与触发时机）"]
+        }
+      ],
+      "variants": [
+        { "name": "青蓝单色（经典）", "diff": "col.accent 青；Dead Space 脊柱、Subnautica、Dyson Sphere。", "cards": ["steam:1693980", "steam:264710", "steam:1366540"] },
+        { "name": "琥珀 / 橙单色（工业）", "diff": "col.accent 琥珀或橙，发光弱，标签—数值成对出现。", "cards": ["steam:1161580", "steam:220", "steam:526870"] },
+        { "name": "红青双色（赛博）", "diff": "col.strategy duotone，红骨架青交互，常驻故障。", "cards": ["steam:1091500"] },
+        { "name": "白色中性", "diff": "白字 + 投影 + 半透明深底，适配多变场景；不发光。", "cards": ["steam:275850", "iig:no-mans-sky", "gameui:8283", "steam:15100"] }
+      ],
+      "failureModes": [
+        { "desc": "菜单繁琐、层级深：Starfield 的 UI 提及 114 条里差评 54 条（菜单类 4、引导 3、挡视野 2），No Man's Sky 差评 49 条（菜单 3、背包 3）。科幻控制台容易做成「窗口里套窗口」。", "evidence": ["steam:1716740", "steam:275850", "steam:1366540"] },
+        { "desc": "细线与白字在高亮画面上消失：NMS 粉色天空上的白色分段条、Dyson Sphere 爆炸光效里的说明窗都靠半透明深底救回来；纯描边无底的皮肤会失败。", "evidence": ["iig:no-mans-sky", "steam:1366540"] },
+        { "desc": "叙事内 / 零 HUD 的代价是引导与地图：Subnautica 引导 3、地图 2；Callisto 地图 2、背包 3、字小 2。", "evidence": ["steam:264710", "steam:1544020"] },
+        { "desc": "开机扫描、乱码解码每次都播会显得卡：Cyberpunk 评测 UI 卡顿类 2 条。动效应只在首次进入或切模式时播放。", "evidence": ["steam:1091500"] },
+        { "desc": "样本偏差：25 张原卡里有 8 张商店图根本没有 UI（Jedi、Ratchet、Redout、Batman、Horizon、Starfield、Callisto 等），「科幻 HUD」标签很多是按题材而不是按界面打的；本次已把纯题材误标的卡重新归类。", "evidence": ["steam:1774580", "steam:1895880", "steam:517710", "steam:208650", "steam:1716740"] }
+      ],
+      "skinGap": "skin.scifi（青色 mono、切角 15、不透明 0.45、窄体全大写字距 0.2、开机 + 乱码）只抓住了「青色细线框」这一个变体：① 颜色写死成青，而库里琥珀 / 橙 / 红青 / 白各占一支，应把主色当变体轴；② 没有「小标签 + 大数值」的层级（数字仍是正文字号），也没有分段格默认；③ 四角统一切角，样本多是单角 / 对角切；④ 没有微型文字、刻度尺这类高密度小装饰；⑤ 正文字距 0.2 + 全大写在中文里排不下，二次元科幻样本都改回常规无衬线；⑥ 每个控件都发光，降低可读性；⑦ 一半样本是叙事内，皮肤没有「不画面板」的分支。",
+      "paramGaps": [
+        "只切单角 / 对角切角（vis.corner = chamfer 是四角统一）",
+        "微型装饰文字层（编号、坐标、条形码、版本号）——vis.motif 没有「数据噪声 / 微文字」",
+        "刻度尺 / 刻度条装饰（ruler ticks）",
+        "面板一侧开口、只画左右竖线加端点的括号式边框（vis.strokeSides 没有「左右两条」与「端点刻度」）",
+        "UI 沿头盔面罩曲面弯曲（rel.followPost = warp 指后处理，不是面罩几何）",
+        "主体居中 + 引线连到四周插槽（vis.connector 只作用于节点图）",
+        "屏幕空间里带三维透视角的面板（vis.skew 只是平面斜切）"
+      ]
+    },
+    {
+      "family": "军事战术",
+      "skin": "skin.military",
+      "noCards": false,
+      "definition": "把界面当作作战装备的读数：低饱和战场上只留少量白 / 琥珀 / 荧光绿信息，强调坐标、编号、等宽数字、雷达和警报。装饰极少，靠细线、方括号和斜线条纹页眉区分区块。库里分三支：写实军事射击（几乎隐形的两角式）、潜行谍报（Codec 单色屏 + 雷达 / 警报牌）、战术指挥（XCOM 式倾斜面板 + 斜纹页眉 + 命中率百分比）。",
+      "grammar": {
+        "shape": "小矩形牌、半透明圆角黑底（CoD 弹药 / 姿态）、梯形或斜切页签（UnMetal 背包、XCOM 页眉）；雷达是圆形或方形小地图。",
+        "line": "1px 细线 + 方括号角标；页眉用斜线条纹；数据表用细分隔线（MGSV 结算）。",
+        "surface": "写实射击几乎无底；谍报与指挥是深色 70–85% 实底；Codec 是黑底单色屏。",
+        "color": "中性灰黑 + 一个功能色：琥珀、荧光绿（Codec）或青（XCOM、iDroid）；红只给警报（MGS2 右上 ALERT 牌）。",
+        "type": "等宽或窄体无衬线、全大写；数字等宽；标题模板字（stencil）在样本里其实很少，XCOM 用窄体科技字，CoD 用常规无衬线。",
+        "material": "基本不发光；Codec 有轻微 CRT 辉光；XCOM 有斜纹贴膜。",
+        "ornament": "军衔 V 形章、兵种 / 阵营徽、坐标与时间码、斜线条纹小块。",
+        "icon": "单色剪影：武器、姿态（站 / 蹲 / 趴）、军衔。",
+        "motion": "硬切、数字跳变、雷达扫描、警报闪烁。",
+        "layout": "射击：左上雷达、左下姿态、右下弹药；指挥：底部技能条 + 中下命中面板 + 敌人头顶分段血条；谍报：双头像对话 + 侧边竖栏状态。"
+      },
+      "params": {
+        "vis.corner": "sharp",
+        "vis.opacity": 0.8,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeSides": "corners",
+        "vis.depth": "flat",
+        "vis.pattern": "diagStripes",
+        "vis.patternOpacity": 0.3,
+        "vis.motif": "brackets",
+        "vis.ornament": 1,
+        "col.lightness": "dark",
+        "col.strategy": "neutralAccent",
+        "col.accent": "#ffc14d",
+        "col.saturation": 0.6,
+        "typ.body.family": "mono",
+        "typ.body.case": "upper",
+        "typ.numerals.family": "tabular",
+        "typ.display.family": "condensed",
+        "el.minimap.form": "radar",
+        "cmp.badge": "chevron",
+        "st.alert": "blink",
+        "mo.enter": "cut",
+        "mo.valueChange": "segment"
+      },
+      "artPairing": [
+        { "artStyle": "灰调军事写实 (Gritty desaturated)", "relation": "neutral", "why": "CoD 系列把 UI 压成白字 + 半透明黑底，避免与褐绿战场同色（迷彩化）。" },
+        { "artStyle": "PS2时代", "relation": "sameMedium", "why": "MGS2 雾气与低饱和蓝绿里，细条生命 + 红色警报牌与画面同一时代感。" },
+        { "artStyle": "现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "UnMetal 用像素绿屏 Codec 与像素背包，复刻 MGS 的界面语汇。" },
+        { "artStyle": "卡带未来主义 (Cassette futurism)", "relation": "sameMedium", "why": "MGSV 的 iDroid 是单色全息设备屏，Codec 是对讲机屏，都是「军用模拟设备」。" },
+        { "artStyle": "风格化写实 (Stylized realism)", "relation": "neutral", "why": "XCOM 2 的写实士兵配深色斜纹面板，UI 不抢角色。" }
+      ],
+      "genres": [
+        { "genre": "shooter", "count": 3, "why": "CoD4 / MW2 / Black Ops：几乎隐形的两角式，座舱关卡转为叙事内。" },
+        { "genre": "strategy", "count": 3, "why": "XCOM 2（战术指挥）、UnMetal 与 MGS2（实为潜行动作，原卡品类误标）。" },
+        { "genre": "explore", "count": 1, "why": "MGSV：iDroid 全息终端 + 黑白结算数据表。" }
+      ],
+      "exemplars": [
+        { "card": "steam:268500", "why": "战术指挥的完整语法：倾斜面板、斜纹页眉、切角、命中率与伤害大字、军衔 V 形章、敌人分段血条。" },
+        { "card": "steam:1203710", "why": "Codec 绿屏双头像对话、斜切页签的像素背包、黄色角括号选中框、右侧竖栏 HP / 道具。" },
+        { "card": "steam:287700", "why": "iDroid 青色单色全息菜单（横线行、反白选中条、点阵底）与黑白斑马纹结算表 + 大字母评级。" },
+        { "card": "steam:7940", "why": "左上方形小地图、左下姿态图标、右下弹药与手雷，半透明黑底极小。" },
+        { "card": "steam:2131640", "why": "左上 LIFE 细条 + 右上红色 ALERT 警报牌，雷达在警报时被替换。" },
+        { "card": "steam:42700", "why": "直升机座舱仪表即界面，军事题材的叙事内分支。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "军事战术 · 写实军事射击",
+          "skin": "skin.military",
+          "noCards": false,
+          "definition": "几乎看不见的军事 HUD：方形小地图、姿态剪影、弹药数，都缩在角落的半透明黑底上，白色常规无衬线；战场本身是信息主体。",
+          "grammar": {
+            "shape": "圆角半透明小底。", "line": "几乎无。", "surface": "黑色 30% 左右。", "color": "白 + 一点绿（友军）红（敌军）。",
+            "type": "常规无衬线，非全大写。", "material": "无。", "ornament": "无。", "icon": "姿态、武器、手雷剪影。",
+            "motion": "受击红边、准星扩散。", "layout": "左上地图、左下姿态、右下弹药。"
+          },
+          "params": {
+            "cnt.density": 1,
+            "vis.opacity": 0.3,
+            "vis.corner": "round",
+            "vis.cornerSize": 20,
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tl",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "typ.body.family": "sans",
+            "typ.body.case": "asIs",
+            "col.strategy": "mono",
+            "typ.legibility": "shadow",
+            "rel.metaFx": ["hurtVignette"],
+            "el.crosshair.form": ["dynamic"]
+          },
+          "artPairing": [ { "artStyle": "灰调军事写实 (Gritty desaturated)", "relation": "neutral", "why": "中性白 + 半透明黑，不与环境同色。" } ],
+          "genres": [ { "genre": "shooter", "count": 3, "why": "CoD4 / MW2 / Black Ops。" } ],
+          "exemplars": [
+            { "card": "steam:7940", "why": "最清楚的一张局内截图。" },
+            { "card": "steam:10180", "why": "左下小地图 + 右下弹药（商店图无 UI，按笔记）。" },
+            { "card": "steam:42700", "why": "座舱关卡转叙事内。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "小字白色在灰天 / 烟尘里对比不足，只能靠半透明底；MW2 地图类抱怨 2 条。", "evidence": ["steam:7940", "steam:10180"] }
+          ],
+          "skinGap": "skin.military 的 0.85 不透明 + 模板字 + 只画四角对这一支太重；写实射击要 0.3 左右的圆角黑底与常规无衬线。",
+          "paramGaps": []
+        },
+        {
+          "family": "军事战术 · 潜行谍报（Codec 单色屏）",
+          "skin": "skin.terminal",
+          "noCards": false,
+          "definition": "谍报设备的单色屏：Codec 对讲机的双头像 + 绿字对话框、iDroid 的青色全息列表、红色警报牌。单色 + 反白选中 + 角括号，是军事族里最接近 CRT 终端的一支。",
+          "grammar": {
+            "shape": "切角细框、梯形页签。", "line": "1px 单色线，页眉带斜纹块。", "surface": "黑底或深青半透明。",
+            "color": "荧光绿（UnMetal）或青（iDroid）单色 + 红警报。", "type": "像素或等宽全大写。",
+            "material": "轻微辉光、点阵底。", "ornament": "频率数字、版本号（iDROID VER）。", "icon": "像素道具图标。",
+            "motion": "打字机、警报闪烁。", "layout": "双头像对话；列表 + 详情；竖栏状态。"
+          },
+          "params": {
+            "col.strategy": "mono",
+            "col.accent": "#4dff7a",
+            "typ.body.family": "mono",
+            "typ.body.case": "upper",
+            "vis.corner": "chamfer",
+            "vis.cornerSize": 8,
+            "lay.focalSide": "both",
+            "cmp.dialogBox": "bar",
+            "cnt.characterMedium": "bust",
+            "el.minimap.form": "radar",
+            "el.minimap.screenAnchor": "tr",
+            "st.alert": "redTint",
+            "typ.legibility": "textGlow",
+            "ast.container": "handheldDevice",
+            "ix.focus": "invert",
+            "lay.hudOrg": "edgeBar"
+          },
+          "artPairing": [
+            { "artStyle": "现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "UnMetal 像素绿屏。" },
+            { "artStyle": "卡带未来主义 (Cassette futurism)", "relation": "sameMedium", "why": "iDroid / Codec 是模拟军用设备。" }
+          ],
+          "genres": [
+            { "genre": "strategy", "count": 2, "why": "UnMetal、MGS2（原卡品类误标，实为潜行动作）。" },
+            { "genre": "explore", "count": 1, "why": "MGSV。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1203710", "why": "Codec 双头像 + 绿字 + 斜纹页眉；背包斜切页签。" },
+            { "card": "steam:287700", "why": "iDroid 青色全息列表，反白选中条。" },
+            { "card": "steam:2131640", "why": "LIFE 细条 + 红色 ALERT 牌。" }
+          ],
+          "variants": [
+            { "name": "黑白数据表结算", "diff": "MGSV 结算是黑白斑马纹表 + 超大字母评级，单色但不发光。", "cards": ["steam:287700"] }
+          ],
+          "failureModes": [
+            { "desc": "单色屏里状态只能靠反白与括号区分；MGSV 评测有字小、挡视野、手柄各 1 条。", "evidence": ["steam:287700"] }
+          ],
+          "skinGap": "skin.military 没有单色荧光屏与双头像 Codec 版式；这一支实际是 skin.terminal 的配色 + 军事版式。",
+          "paramGaps": ["Codec 式「双头像 + 中间频率 / 设备图」对话版式（cmp.dialogBox 没有对讲机分屏）"]
+        },
+        {
+          "family": "军事战术 · 战术指挥（倾斜面板 + 斜纹）",
+          "skin": "skin.military",
+          "noCards": false,
+          "definition": "回合制战术的指挥屏：面板带三维透视角，页眉是斜纹条，切角深色底，大号命中率与伤害数字，军衔 V 形章与技能方格，敌人头顶分段血条；战略层地图是红色警报全息。",
+          "grammar": {
+            "shape": "带透视角的切角面板；技能方格编号。", "line": "细线 + 斜纹页眉 + 双箭头 >> 标题。", "surface": "深色 75% 半透明。",
+            "color": "青灰 + 白，命中率红、伤害绿、警报红。", "type": "窄体科技字，数字特大。",
+            "material": "斜纹贴膜、轻微辉光。", "ornament": "军衔章、阵营旗、斜纹。", "icon": "线性技能图标 + 数字键位。",
+            "motion": "硬切、命中率滚动。", "layout": "底部技能条、中下命中面板、左下单位卡、右上回合倒计时圆章。"
+          },
+          "params": {
+            "vis.pattern": "diagStripes",
+            "vis.corner": "chamfer",
+            "vis.cornerSize": 6,
+            "el.threat.form": ["hitChance", "healthBar"],
+            "cmp.gauge@el.threat": "segmented",
+            "el.selection.form": "card",
+            "el.selection.screenAnchor": "bl",
+            "el.abilities.form": "slots",
+            "el.abilities.screenAnchor": "bc",
+            "cmp.badge": "chevron",
+            "vis.mapStyle": "tactical",
+            "col.accent": "#5fe3ff",
+            "st.statViz": "table",
+            "typ.display.family": "condensed",
+            "ctx.timeModel": "turn"
+          },
+          "artPairing": [ { "artStyle": "风格化写实 (Stylized realism)", "relation": "neutral", "why": "写实士兵 + 深色斜纹面板。" } ],
+          "genres": [ { "genre": "strategy", "count": 1, "why": "XCOM 2。" } ],
+          "exemplars": [ { "card": "steam:268500", "why": "能力页、开火面板、战略层警报地图。" } ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "引导类抱怨 2 条：命中率之外的规则（掩体、侧翼）靠多层面板说明，新手难找。", "evidence": ["steam:268500"] }
+          ],
+          "skinGap": "skin.military 没有斜纹页眉、透视面板和大号百分比数字；只画四角的括号对 XCOM 式实底面板不够。",
+          "paramGaps": ["面板的三维透视倾角（屏幕空间面板绕 Y 轴转一点，XCOM 2 两侧面板）", "标题两侧的 >> << 箭头括号（vis.motif brackets 只指角括号）"]
+        }
+      ],
+      "variants": [
+        { "name": "琥珀 / 白（写实射击）", "diff": "白字 + 半透明黑底，琥珀只给警示。", "cards": ["steam:7940", "steam:10180"] },
+        { "name": "荧光绿 / 青（谍报单色屏）", "diff": "整屏单色，反白选中。", "cards": ["steam:1203710", "steam:287700"] },
+        { "name": "青灰斜纹（战术指挥）", "diff": "斜纹页眉 + 透视面板 + 大号百分比。", "cards": ["steam:268500"] }
+      ],
+      "failureModes": [
+        { "desc": "迷彩化：橄榄 / 沙色 UI 与写实战场同色就会消失；样本里成功的做法都是白字 + 半透明黑底，没有一张真用橄榄色面板。", "evidence": ["steam:7940", "steam:10180"] },
+        { "desc": "全大写等宽长文本读得慢；MGSV 评测字小、挡视野、手柄各 1 条，结算数据表信息密度高。", "evidence": ["steam:287700"] },
+        { "desc": "敌我只靠红蓝会对色觉障碍失效；XCOM 用命中率数字 + 图标 + 分段血条做了冗余，是正面例子。", "evidence": ["steam:268500"] }
+      ],
+      "skinGap": "skin.military（直角、0.85 不透明、只画四角、等宽全大写、模板字标题、硬切、角括号）把三支混成了一个：① 样本里模板字几乎没出现，标题多是窄体科技字或常规无衬线，stencil 应是可选变体；② 缺斜纹页眉（XCOM、UnMetal 都有）；③ 缺雷达默认、分段血条、命中率百分比这些军事版式；④ 0.85 不透明对 FPS 太重（CoD 约 0.3）；⑤ 没有单色荧光的谍报分支；⑥ 强调色没在皮肤里定死，跟随色板时容易变成非军事配色。",
+      "paramGaps": [
+        "北约兵种符号（APP-6）一类的军事图标集（ast.iconSet / vis.iconStyle 都没有）",
+        "坐标 / 时间码这类功能性装饰文字",
+        "雷达扫描线动画（el.minimap.form = radar 只有形状）",
+        "面板三维透视倾角"
+      ]
+    },
+    {
+      "family": "全息空间",
+      "skin": "skin.holo",
+      "noCards": false,
+      "definition": "UI 不贴在屏幕上，而是作为半透明发光线框和标签「投影」在三维世界里：标在物体上、跟着透视倾斜、随视线出现。它几乎总是一种「模式」——按键进入扫描 / 侦查视觉后，世界被压暗或重新着色，只有线索、部件、弱点亮起来，退出后回到干净画面。",
+      "grammar": {
+        "shape": "贴物体轮廓的线框、包围盒、透视倾斜的矩形卡片；标签是细框矩形 + 引线。",
+        "line": "1px 发光线 + 网格 / 等高线；虚线引线连接物体与标签；角括号锁定（Detroit 黄色括号）。",
+        "surface": "几乎透明（0–25%）；只有标题条用白色实底做锚（Detroit 的 FIND DEVIANT 白条）。",
+        "color": "世界压成单色（蓝白、青）+ 线索 / 进度用对比色（黄、橙）。",
+        "type": "细或常规无衬线，标题全大写偏大，说明小；散落的坐标数字（081.7 等）作装饰。",
+        "material": "全息网格、扫描线、色差、菲涅尔辉光。",
+        "ornament": "坐标数字、测量线、网格平面、包围盒。",
+        "icon": "线性几何符号（三角、方块锁、菱形）。",
+        "motion": "扫描波从玩家扩散、标签逐个弹出、故障闪现。",
+        "layout": "没有固定锚点：信息挂在兴趣点 / 目标上；屏幕上只留进度（3 / 5 线索）与退出按键。"
+      },
+      "params": {
+        "rel.diegesis": "spatial",
+        "rel.worldRender": "perspective",
+        "rel.hudVisibility": "onDemand",
+        "rel.sceneTone": "duotone",
+        "rel.dim": 0.4,
+        "el.overlay.form": ["holo"],
+        "el.objective.attachTo": "poi",
+        "el.threat.form": ["lockOn"],
+        "vis.opacity": 0.15,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeColor": "accent",
+        "vis.strokeGlow": 0.6,
+        "vis.corner": "sharp",
+        "vis.motif": "brackets",
+        "col.strategy": "duotone",
+        "ast.core": "texture",
+        "ast.coreMat": "hologram",
+        "ast.fx": ["scanlines", "glitch"],
+        "typ.body.family": "sans",
+        "typ.body.weight": "light",
+        "typ.display.case": "upper",
+        "mo.enter": "glitchIn",
+        "flow.entry": "hotkey",
+        "cnt.density": 1
+      },
+      "artPairing": [
+        { "artStyle": "照片写实 (Photorealism)", "relation": "contrast", "why": "Detroit 的写实室内被压成冷蓝单色，发光线框才能跳出来。" },
+        { "artStyle": "电影化写实 (Cinematic)", "relation": "contrast", "why": "Batman 侦探模式把电影化的夜城变成全息蓝线，平时干净画面、按键才出现。" },
+        { "artStyle": "绿色末日 (Overgrown apocalypse)", "relation": "contrast", "why": "Horizon 的植被世界上，聚焦扫描用紫青全息高亮机器部件。" },
+        { "artStyle": "全息投影 (Hologram)", "relation": "sameMedium", "why": "扫描面板本身就是全息物件。" }
+      ],
+      "genres": [
+        { "genre": "explore", "count": 2, "why": "Horizon、Batman：扫描 / 侦探模式是探索与战斗准备的工具。" },
+        { "genre": "narrative", "count": 1, "why": "Detroit：调查重建，线索卡挂在物体上。" }
+      ],
+      "exemplars": [
+        { "card": "steam:1222140", "why": "最完整：世界压成蓝白、透视倾斜的证据卡、白色实底目标条、[...] 锁定的后续目标、橙色 3 / 5 线索进度。" },
+        { "card": "steam:208650", "why": "侦探模式把世界变成全息蓝线（空间内 UI）。" },
+        { "card": "steam:2420110", "why": "聚焦扫描时机器部件全息高亮，顶部罗盘条常驻。" },
+        { "card": "steam:1091500", "why": "（主归属科幻 HUD）扫描时红色数据面板以透视角悬浮在人物周围。" },
+        { "card": "steam:287700", "why": "（主归属军事战术）iDroid 是从设备投影出的青色全息屏，点阵 + 横线 + 水印图形。" },
+        { "card": "steam:1693980", "why": "（主归属科幻 HUD）菜单是投影在角色面前的全息面板。" },
+        { "card": "steam:1850570", "why": "（主归属极简单色）扫描后世界里浮出地形标记，白色细字全大写。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "全息空间 · 扫描视觉（世界被重新着色）",
+          "skin": "skin.holo",
+          "noCards": false,
+          "definition": "一个按键切换的视觉模式：世界整体变色或压暗，敌人 / 部件 / 可互动物描边高亮；平时零 UI。",
+          "grammar": {
+            "shape": "物体描边、包围盒。", "line": "发光描边 + 等高线。", "surface": "无面板。",
+            "color": "世界单色（蓝 / 青）+ 弱点对比色。", "type": "极少文字。", "material": "全息网格。",
+            "ornament": "扫描波。", "icon": "弱点 / 部件符号。", "motion": "从玩家扩散的扫描波。", "layout": "全部挂在物体上，屏幕上只留罗盘条。"
+          },
+          "params": {
+            "rel.sceneTone": "tint",
+            "rel.worldRender": "outline",
+            "el.overlay.form": ["holo"],
+            "el.threat.form": ["lockOn"],
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "rel.hudVisibility": "onDemand",
+            "flow.entry": "hotkey",
+            "mo.enter": "boot",
+            "col.accent": "#7fe7ff"
+          },
+          "artPairing": [ { "artStyle": "电影化写实 (Cinematic)", "relation": "contrast", "why": "平时保留电影画面，模式里才出现 UI。" } ],
+          "genres": [ { "genre": "explore", "count": 2, "why": "Horizon、Batman。" } ],
+          "exemplars": [
+            { "card": "steam:2420110", "why": "聚焦扫描部件高亮。" },
+            { "card": "steam:208650", "why": "侦探模式全息蓝线。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "扫描是「另一个界面」，玩家不知道何时该开：Horizon 的 UI 提及 37 条里差评 18 条；Death Stranding（扫描标记同类做法）引导 1、地图 1。", "evidence": ["steam:2420110", "steam:1850570"] }
+          ],
+          "skinGap": "skin.holo 只画面板，没有「世界重新着色 + 物体描边」这层，而这正是这一支的主体。",
+          "paramGaps": ["从玩家向外扩散的扫描波（mo.enter 只作用于面板）"]
+        },
+        {
+          "family": "全息空间 · 悬浮证据卡（透视面板）",
+          "skin": "skin.holo",
+          "noCards": false,
+          "definition": "带透视角的半透明卡片悬浮在物体旁，标题大、说明小，一条白色实底目标条做阅读锚点；未解锁的后续步骤用 [...] 占位。",
+          "grammar": {
+            "shape": "透视倾斜矩形卡、白色实底条。", "line": "细框 + 引线 + 黄色角括号。", "surface": "卡片 10–20% 透明，目标条 100% 白。",
+            "color": "蓝白 + 橙进度 + 黄锁定。", "type": "大号常规全大写标题 + 小号说明。", "material": "全息网格、色差。",
+            "ornament": "散落坐标数字。", "icon": "锁、三角。", "motion": "卡片弹出、故障闪现。", "layout": "卡片挂物体，屏幕下中进度条。"
+          },
+          "params": {
+            "rel.worldRender": "perspective",
+            "el.objective.form": ["checklist"],
+            "el.objective.attachTo": "poi",
+            "el.objective.valueLabel": "currentMax",
+            "st.locked": "hiddenText",
+            "cmp.panelArt": "window",
+            "cmp.gauge": "thinBar",
+            "col.accent": "#ff6a2b",
+            "typ.display.weight": "bold",
+            "rel.sceneTone": "duotone"
+          },
+          "artPairing": [ { "artStyle": "照片写实 (Photorealism)", "relation": "contrast", "why": "写实场景冷色压暗，卡片才可读。" } ],
+          "genres": [ { "genre": "narrative", "count": 1, "why": "Detroit。" } ],
+          "exemplars": [ { "card": "steam:1222140", "why": "HIT MARKS 证据卡、FIND DEVIANT 目标条、3 / 5 线索进度。" } ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "透视倾斜的卡片在斜角下文字变形；Detroit 用超大标题与白色实底目标条对冲。", "evidence": ["steam:1222140"] }
+          ],
+          "skinGap": "skin.holo 的面板是屏幕平面上的；透视角、白色实底锚条、[...] 锁定占位都没有。",
+          "paramGaps": ["引线把卡片连到物体上的锚点（elx.attachTo 只决定挂点，不画引线）"]
+        }
+      ],
+      "variants": [
+        { "name": "蓝白单色 + 橙进度", "diff": "Detroit：世界压蓝白，进度与计数用橙。", "cards": ["steam:1222140"] },
+        { "name": "世界变全息线框", "diff": "Batman：整个城市变成蓝色线框，敌人高亮。", "cards": ["steam:208650"] },
+        { "name": "红色悬浮数据面板", "diff": "Cyberpunk 扫描：红色透视面板簇围着人物，和赛博双色共用配色。", "cards": ["steam:1091500"] }
+      ],
+      "failureModes": [
+        { "desc": "模式切换带来的引导问题：玩家不知道该开扫描，开了以后其他信息又全被压暗；Horizon UI 差评 18 / 37。", "evidence": ["steam:2420110", "steam:208650"] },
+        { "desc": "透视倾斜的文字在远距离和斜角下难读（06 文档 B9 陷阱）；成功样本都配了一个平面的实底锚点。", "evidence": ["steam:1222140"] },
+        { "desc": "样本稀少：原卡只有 Horizon 一张，且商店图没有 UI；本族证据主要来自 Detroit 与其它族的扫描屏。", "evidence": ["steam:2420110"] }
+      ],
+      "skinGap": "skin.holo（直角、0.25、发光 0.6、mono、全大写、故障进入）把全息空间当成「更透明的科幻面板」：① 缺「世界重新着色」这一半（rel.sceneTone / rel.dim 不在皮肤里），而它是样本的主体；② 缺全息网格材质（ast.coreMat = hologram 只在 kw.cyber 里）；③ 缺平面实底锚条，全透明卡片在亮背景上读不出来；④ 正文全大写不适合说明文字；⑤ 故障应只在进入时播放，皮肤没有区分；⑥ suggests 里的透视贴面只是建议，没进 values。",
+      "paramGaps": [
+        "引线（物体 → 标签）",
+        "扫描波扩散动效",
+        "散落坐标数字装饰",
+        "「模式」本身：按键进入 / 退出时一组参数（sceneTone、dim、overlay）同时切换，现在只能逐个改"
+      ]
+    },
+    {
+      "family": "CRT 终端",
+      "skin": "skin.terminal",
+      "noCards": false,
+      "definition": "把界面画成「一块显示器上的字」：等宽 / 像素字、单色或极少色、方括号按键、整行反白表示选中；视觉标志是屏幕本身——黑场、荧光辉光、扫描线、桶形弯曲、暗角。库里分三种用法：内容就是终端（字符界面、代码、对讲机屏）、只把 CRT 当整屏后处理（UI 本身可以是彩色像素块，如 Balatro），以及把老电视 / 胶片作为叙事内的框（绝区零）。",
+      "grammar": {
+        "shape": "直角细框或无框；窗口是带标题条的矩形；按钮是 [ 文字 ] 括号；选中 = 整行反白。后处理分支例外，可以是圆角像素块（Balatro）。",
+        "line": "1px 单色线或字符画框线；后处理分支是多色细描边（Nodebuster 每个节点不同色）。",
+        "surface": "纯黑或深墨绿 85–100% 实底；不模糊。",
+        "color": "单色荧光（绿、琥珀、白）是终端分支；后处理分支可以多色，但统一被泛光和暗角压住。",
+        "type": "等宽 / 像素字，字号偏大（16px 以上才扛得住扫描线），数字与文字同一字体；Balatro 的分数用超大像素数字。",
+        "material": "荧光辉光、扫描线、轻微色散、屏幕弯曲、暗角。",
+        "ornament": "闪烁光标块、提示符 >、ASCII 分隔线、时间码；胶片分支是齿孔边。",
+        "icon": "字符或像素图标；很少用矢量图标。",
+        "motion": "打字机逐字、光标闪烁、开机闪白 / 卷动、换屏信号噪声；后处理分支的数字燃烧抖动。",
+        "layout": "窗口式（标题条 + 内容）、单列文本流、左右两栏（代码 / 测试用例）；后处理分支是左侧整条竖栏 + 中央牌桌。"
+      },
+      "params": {
+        "vis.corner": "sharp",
+        "vis.opacity": 0.92,
+        "vis.blur": 0,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeColor": "accent",
+        "vis.depth": "flat",
+        "col.lightness": "dark",
+        "col.strategy": "mono",
+        "col.accent": "#33ff66",
+        "typ.body.family": "mono",
+        "typ.display.family": "same",
+        "typ.numerals.family": "body",
+        "typ.legibility": "textGlow",
+        "typ.baseSize": 16,
+        "ix.focus": "invert",
+        "ix.glyphs": "brackets",
+        "hier.cta": "fillOutline",
+        "cmp.input": "darkInset",
+        "mo.textReveal": "typewriter",
+        "mo.enter": "boot",
+        "ast.fx": ["scanlines"],
+        "rel.followPost": "warp"
+      },
+      "artPairing": [
+        { "artStyle": "CRT扫描线", "relation": "sameMedium", "why": "UI 与画面共用同一块「显示器」的扫描线和弯曲。" },
+        { "artStyle": "现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "Balatro、Nodebuster 的像素 UI 放进 CRT 后处理里。" },
+        { "artStyle": "ASCII／字符画", "relation": "sameMedium", "why": "字符终端的 UI 与字符画面是同一媒介。" },
+        { "artStyle": "卡带未来主义 (Cassette futurism)", "relation": "sameMedium", "why": "单色 CRT 界面 + 实体按键是卡带未来主义的核心道具。" },
+        { "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)", "relation": "contrast", "why": "绝区零用老电视与胶片齿孔框装赛璐珞角色，复古媒介 vs 现代角色。" }
+      ],
+      "genres": [
+        { "genre": "card", "count": 1, "why": "Balatro：整屏 CRT 弯曲 + 漩涡背景，左侧竖栏大号像素数字。" },
+        { "genre": "builder", "count": 1, "why": "Nodebuster：黑底多色像素节点树 + 屏幕圆角暗角。" },
+        { "genre": "action", "count": 1, "why": "绝区零：剧情用老电视 + 胶片齿孔框。" }
+      ],
+      "exemplars": [
+        { "card": "steam:2379780", "why": "CRT 当后处理：彩色像素面板（红蓝倍率块、深色凹槽）+ 整屏弯曲泛光 + 每个盲注换背景色。" },
+        { "card": "steam:3107330", "why": "黑底 + 多色细描边像素节点 + 电路式直角连线 + 屏幕圆角暗角，霓虹矢量终端。" },
+        { "card": "gameui:13081", "why": "叙事内老电视播新闻 + 上下胶片齿孔边框 + 底部无框字幕。" },
+        { "card": "steam:1720850", "why": "（主归属极简单色）纯黑白细框 + 等宽字的编程谜题：题目、代码区、测试用例三块，最纯粹的字符终端。" },
+        { "card": "steam:2060160", "why": "（主归属暗色细线）画面上浮着深色代码编辑器窗口。" },
+        { "card": "steam:1304550", "why": "（主归属合成波 / 蒸汽波）ProgressDOS 窗口：黑底白色等宽目录 + [HEX] 括号按键。" },
+        { "card": "steam:1203710", "why": "（主归属军事战术）Codec 绿屏对话。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "CRT 终端 · 字符终端（内容即终端）",
+          "skin": "skin.terminal",
+          "noCards": true,
+          "definition": "界面内容就是命令行 / 代码 / 对讲机屏：单色等宽字、窗口框、提示符与光标。本次分到的卡里没有这一支，示例全部来自其它族。",
+          "grammar": {
+            "shape": "直角窗口。", "line": "1px 单色框或字符框线。", "surface": "纯黑。", "color": "单色（绿 / 琥珀 / 白）。",
+            "type": "等宽。", "material": "辉光。", "ornament": "光标、提示符。", "icon": "字符。", "motion": "打字机。", "layout": "左右两栏或单列文本。"
+          },
+          "params": {
+            "col.strategy": "mono",
+            "typ.body.family": "mono",
+            "lay.container": "window",
+            "lay.composition": "splitLR",
+            "cmp.input": "darkInset",
+            "mo.textReveal": "typewriter",
+            "ix.glyphs": "brackets",
+            "cnt.textLength": "long",
+            "vis.ornament": 0,
+            "ast.container": "crt"
+          },
+          "artPairing": [ { "artStyle": "ASCII／字符画", "relation": "sameMedium", "why": "同一媒介。" } ],
+          "genres": [],
+          "exemplars": [
+            { "card": "steam:1720850", "why": "（极简单色族）纯终端编程谜题。" },
+            { "card": "steam:2060160", "why": "（暗色细线族）代码编辑器窗口。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "单色无法用颜色区分状态，只能靠反白、括号和符号；A=B 用框线分区。", "evidence": ["steam:1720850"] }
+          ],
+          "skinGap": "skin.terminal 基本覆盖，缺琥珀 / 白色变体与窗口标题条。",
+          "paramGaps": ["字符画框线（┌─┐）作为描边线型（vis.stroke 只有实线 / 双线 / 虚线）"]
+        },
+        {
+          "family": "CRT 终端 · CRT 后处理街机屏",
+          "skin": "skin.pixel",
+          "noCards": false,
+          "definition": "UI 本身是彩色像素面板，CRT 只作为整屏后处理（弯曲、泛光、暗角、轻扫描线），让整个游戏像在老显示器 / 街机里运行；数字特大以对冲后处理的模糊。",
+          "grammar": {
+            "shape": "圆角像素块（Balatro）或直角细框节点（Nodebuster）。", "line": "多色细描边。", "surface": "深色凹槽 + 彩色实块。",
+            "color": "骨架多色；背景随阶段换色。", "type": "像素字，分数超大。", "material": "泛光、暗角、弯曲。",
+            "ornament": "漩涡背景、电路连线。", "icon": "像素图标。", "motion": "数字燃烧抖动、计数滚动。", "layout": "左侧整条竖栏 + 中央牌桌；或全屏节点树。"
+          },
+          "params": {
+            "rel.followPost": "full",
+            "ast.fx": ["scanlines", "glow"],
+            "vis.pixelScale": "x2",
+            "typ.body.family": "pixel",
+            "typ.numerals.family": "pixel",
+            "col.strategy": "polychrome",
+            "vis.corner": "round",
+            "vis.depth": "hardDrop",
+            "col.dynamic": "perMode",
+            "lay.hudOrg": "edgeBar",
+            "mo.valueChange": "countUp",
+            "mo.juice": 0.8,
+            "vis.connector": "circuit"
+          },
+          "artPairing": [ { "artStyle": "现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "像素 UI + 后处理统一成一块屏。" } ],
+          "genres": [
+            { "genre": "card", "count": 1, "why": "Balatro。" },
+            { "genre": "builder", "count": 1, "why": "Nodebuster（放置 / 增量）。" }
+          ],
+          "exemplars": [
+            { "card": "steam:2379780", "why": "左侧竖栏 + 筹码 × 倍率大字 + CRT 弯曲。" },
+            { "card": "steam:3107330", "why": "多色描边节点树 + 屏幕暗角。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "后处理模糊小字：Balatro 把所有关键数字做到很大，Nodebuster 的小号说明在暗角处变暗。", "evidence": ["steam:2379780", "steam:3107330"] }
+          ],
+          "skinGap": "skin.terminal 是单色绿字，画不出 Balatro 这种彩色像素 UI；这一支其实是 skin.pixel + 整屏 CRT 后处理，皮肤层面缺「后处理」开关。",
+          "paramGaps": ["整屏 CRT 弯曲 / 暗角作为 UI 层可开关的效果（rel.followPost 只决定 UI 跟不跟后处理，不负责打开后处理）"]
+        },
+        {
+          "family": "CRT 终端 · 老电视与胶片框",
+          "skin": "skin.terminal",
+          "noCards": false,
+          "definition": "复古显示媒介作为叙事内的框：剧情在场景里的老电视上播、整屏加胶片齿孔边，字幕无框压在下黑边。",
+          "grammar": {
+            "shape": "老电视圆角屏、胶片齿孔条。", "line": "无。", "surface": "黑边。", "color": "跟随画面。",
+            "type": "无框字幕。", "material": "胶片颗粒、电视弧面。", "ornament": "齿孔、台标、BREAKING NEWS 条。", "icon": "无。",
+            "motion": "镜头推进到电视。", "layout": "上下黑边内字幕。"
+          },
+          "params": {
+            "lay.playfield": "boxed",
+            "lay.hudOrg": "inMargin",
+            "ast.container": "crt",
+            "rel.diegesis": "diegetic",
+            "cmp.dialogBox": "bare",
+            "rel.metaFx": ["glitch"],
+            "mo.transition": "zoomInto",
+            "rel.sceneTone": "vignette"
+          },
+          "artPairing": [ { "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)", "relation": "contrast", "why": "复古媒介框 vs 现代角色。" } ],
+          "genres": [ { "genre": "action", "count": 1, "why": "绝区零。" } ],
+          "exemplars": [
+            { "card": "gameui:13081", "why": "老电视 + 胶片齿孔边 + 无框字幕。" },
+            { "card": "steam:460950", "why": "（主归属像素位图）关卡是录像回放的元叙事，顶部霓虹计时条。" }
+          ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.terminal 只画面板；这一支是画幅与容器层的事（黑边 + 齿孔 + 电视），皮肤无关。",
+          "paramGaps": ["胶片齿孔边作为画幅装饰（lay.playfield 只有黑边，没有齿孔）"]
+        }
+      ],
+      "variants": [
+        { "name": "荧光绿 / 琥珀 / 白单色", "diff": "经典终端，单色 + 反白。", "cards": ["steam:1720850", "steam:1203710"] },
+        { "name": "彩色像素 + CRT 后处理", "diff": "UI 多色，后处理统一。", "cards": ["steam:2379780"] },
+        { "name": "霓虹描边终端", "diff": "黑底 + 每类节点不同颜色的细描边。", "cards": ["steam:3107330"] },
+        { "name": "胶片 / 老电视框", "diff": "复古媒介作为叙事内容器。", "cards": ["gameui:13081"] }
+      ],
+      "failureModes": [
+        { "desc": "扫描线与辉光降低小字可读性（06 文档 B13 陷阱）；成功样本都把关键数字做得很大（Balatro）或干脆不用扫描线（A=B）。", "evidence": ["steam:2379780", "steam:1720850"] },
+        { "desc": "单色界面无法靠颜色区分状态；Nodebuster 改用多色描边区分节点类型。", "evidence": ["steam:3107330"] },
+        { "desc": "闪烁、开机闪白有光敏风险，必须跟随 a11y.reduceMotion。", "evidence": [] }
+      ],
+      "skinGap": "skin.terminal（黑底绿字、VT323、textGlow、打字机、反白焦点）对「字符终端」够用，但：① 没有屏幕本身（弯曲、暗角、圆角屏），这恰恰是库里样本的识别标志——ast.fx scanlines 与 rel.followPost 只在 suggests 里；② 只有绿色，缺琥珀 / 白；③ 基准字号没提高，扫描线下小字发糊；④ Balatro / Nodebuster 这种「CRT 后处理 + 彩色像素 UI」不能用这个皮肤表达；⑤ 没有窗口标题条。",
+      "paramGaps": [
+        "屏幕几何（桶形弯曲、圆角屏、暗角）作为 UI 外框的一部分",
+        "字符画框线描边",
+        "闪烁光标作为待机动效（mo.idle 没有 blink）",
+        "胶片齿孔画幅装饰"
+      ]
+    },
+    {
+      "family": "合成波 / 蒸汽波",
+      "skin": "skin.synth",
+      "noCards": false,
+      "definition": "80 年代霓虹复古未来（合成波）与 90 年代网络 / 旧操作系统拼贴（蒸汽波）。共同点是「情绪先于信息」：洋红 / 青 / 紫的霓虹在深紫黑底上发光，配透视网格、日落条纹、LED 点阵字、斜体粗字；局内 UI 往往极少，把舞台留给霓虹世界，只在关头给大字评级。库里样本以音乐 / 竞速 / 节奏为主，分成霓虹矢量网格、霓虹像素太空、霓虹 MV、霓虹街头竞速、蒸汽波复古桌面五支。",
+      "grammar": {
+        "shape": "斜切平行四边形（速度框、名牌、页签）、细线框矩形；LED 点阵 / 七段数码字形；卡牌带彩色页眉。",
+        "line": "2px 霓虹线 + 多层外发光；透视网格线；Tron 式描边物体（Razortron 的车）。",
+        "surface": "深紫黑 / 深海军蓝渐变底；面板半透明或纯线框；网点渐变（Dislyte）。",
+        "color": "洋红 + 青（+ 紫、橙日落）；每关换主色（Razortron 绿 / 粉 / 青 / 橙，Beat Saber 每张谱换色）。",
+        "type": "斜体特粗无衬线、LED / 七段数码字（MUSYNX 的 EXACT、COMBO）、描边像素标题；正文仍需普通无衬线。",
+        "material": "霓虹管发光、扫描线、VHS 抖动；蒸汽波分支是 Win95 灰色斜面。",
+        "ornament": "日落条纹、透视网格、均衡器柱、星空、网点；蒸汽波分支是旧桌面图标、光盘壁纸。",
+        "icon": "霓虹描边图标或像素图标。",
+        "motion": "网格滚动、节拍脉冲、评级大字砸入 + 闪光、VHS 抖动。",
+        "layout": "局内几乎无 HUD（评级 / 连击居中，或只在关末结算），菜单是大标题 + 居中轮播（选车、选曲）；卡牌类是底部卡牌行 + 左侧头像竖列。"
+      },
+      "params": {
+        "col.lightness": "dark",
+        "col.strategy": "duotone",
+        "col.accent": "#ff3cac",
+        "col.accent2": "#2bd2ff",
+        "col.dynamic": "perChapter",
+        "col.saturation": 1.4,
+        "vis.corner": "sharp",
+        "vis.skew": -10,
+        "vis.opacity": 0.4,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 2,
+        "vis.strokeColor": "accent",
+        "vis.strokeGlow": 0.8,
+        "vis.pattern": "grid",
+        "ast.fx": ["glow", "scanlines"],
+        "typ.display.family": "sans",
+        "typ.display.weight": "black",
+        "typ.display.style": "italic",
+        "typ.titleFx": "titleGlow",
+        "typ.numerals.style": "italic",
+        "el.feedback.form": ["rating", "combo"],
+        "el.feedback.screenAnchor": "center",
+        "rel.hudVisibility": "contextual",
+        "cnt.density": 1,
+        "mo.enter": "slam"
+      },
+      "artPairing": [
+        { "artStyle": "合成波 (Synthwave/Outrun)", "relation": "sameMedium", "why": "UI 的霓虹线与透视网格直接来自画面。" },
+        { "artStyle": "线框矢量 (Wireframe vector)", "relation": "sameMedium", "why": "Razortron 的赛道、车、UI 全是霓虹线框，界面和世界无法区分。" },
+        { "artStyle": "霓虹几何抽象 (Neon geometric)", "relation": "sameMedium", "why": "Beat Saber 的方块、光剑、灯光与分数共用红蓝两色。" },
+        { "artStyle": "现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "Cobalt Core 用紫红霓虹像素做整套卡牌 UI。" },
+        { "artStyle": "蒸汽波 (Vaporwave)", "relation": "sameMedium", "why": "Progressbar95 整个游戏就是旧操作系统桌面。" },
+        { "artStyle": "二次元赛璐珞（大世界手游）(Anime cel-shaded)", "relation": "contrast", "why": "Dislyte 的赛璐珞角色站在网点渐变 + 均衡器的霓虹舞台前。" }
+      ],
+      "genres": [
+        { "genre": "racing", "count": 4, "why": "竞速与节奏（原卡把音游 MUSYNX 归在 racing）：Razortron、MUSYNX、NFS Heat、Night-Runners，速度感与霓虹天然搭配。" },
+        { "genre": "action", "count": 2, "why": "Sayonara Wild Hearts、Beat Saber：音乐驱动的动作，几乎零 HUD。" },
+        { "genre": "strategy", "count": 2, "why": "Cobalt Core（太空卡牌）、Progressbar95（旧桌面）。" },
+        { "genre": "explore", "count": 1, "why": "The Artful Escape：霓虹舞台 + 堆叠对话气泡。" },
+        { "genre": "card", "count": 1, "why": "Dislyte（手游，只取剧情对话屏，不涉及运营界面）。" }
+      ],
+      "exemplars": [
+        { "card": "steam:539720", "why": "纯霓虹线框：选车页是网格底 + 描边像素大字 + 细线属性条；每关换主色；左下斜框速度数字。" },
+        { "card": "steam:2179850", "why": "紫红霓虹像素：切角面板、按角色着色的卡牌页眉、左侧头像竖列、右下 END TURN 描边按钮。" },
+        { "card": "steam:952040", "why": "LED 点阵评级字 EXACT + 七段数码 COMBO，蓝色隧道透视。" },
+        { "card": "steam:620980", "why": "空间内分数与连击，红蓝双色贯穿方块、光剑与灯光，方块上的箭头提供形状冗余。" },
+        { "card": "gameui:4373", "why": "网点渐变 + 均衡器柱舞台、斜切网点名牌、白色圆角气泡。" },
+        { "card": "iig:need-for-speed-heat", "why": "车库页紫粉霓虹 + 斜体窄体全大写页签 + 白色实底选中；局内是圆形 GPS + 右下表盘。" },
+        { "card": "steam:1304550", "why": "蒸汽波分支：Win95 / XP / DOS 换皮的桌面、窗口、任务栏与分段进度条就是玩法。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "合成波 / 蒸汽波 · 霓虹矢量网格",
+          "skin": "skin.synth",
+          "noCards": false,
+          "definition": "Tron 式的霓虹线框世界：UI 与赛道 / 方块同为发光线，评级用 LED 点阵或描边像素大字；每关一个主色。",
+          "grammar": {
+            "shape": "线框矩形、斜框。", "line": "霓虹线 + 网格。", "surface": "黑底无面板。", "color": "每关一个霓虹主色。",
+            "type": "LED / 描边像素字。", "material": "霓虹发光。", "ornament": "透视网格。", "icon": "线框图标。",
+            "motion": "网格滚动、评级闪现。", "layout": "评级居中，速度左下。"
+          },
+          "params": {
+            "vis.opacity": 0,
+            "vis.pattern": "grid",
+            "vis.patternOpacity": 0.6,
+            "typ.display.family": "pixel",
+            "typ.numerals.family": "pixel",
+            "col.dynamic": "perChapter",
+            "el.feedback.form": ["rating", "combo"],
+            "vis.skew": -12,
+            "cmp.gauge@el.speed": "number",
+            "el.speed.screenAnchor": "bl",
+            "col.strategy": "mono"
+          },
+          "artPairing": [ { "artStyle": "线框矢量 (Wireframe vector)", "relation": "sameMedium", "why": "同一媒介。" } ],
+          "genres": [
+            { "genre": "racing", "count": 2, "why": "Razortron、MUSYNX（音游）。" },
+            { "genre": "action", "count": 1, "why": "Beat Saber（VR）。" }
+          ],
+          "exemplars": [
+            { "card": "steam:539720", "why": "选车页与局内速度框。" },
+            { "card": "steam:952040", "why": "LED 点阵评级字。" },
+            { "card": "steam:620980", "why": "空间内分数 + 每张谱换色。" }
+          ],
+          "variants": [
+            { "name": "LED 点阵字", "diff": "评级与连击用点阵 / 七段字形。", "cards": ["steam:952040"] },
+            { "name": "每关换主色", "diff": "col.dynamic = perChapter。", "cards": ["steam:539720", "steam:620980"] }
+          ],
+          "failureModes": [
+            { "desc": "MUSYNX 字小 2 条、菜单 1 条：选曲页插画卡片斜放叠压，小字压在插画上。", "evidence": ["steam:952040"] }
+          ],
+          "skinGap": "skin.synth 默认无衬线特粗斜体；这一支要 LED / 像素字、纯线框（不透明 0）、每关换色。",
+          "paramGaps": ["LED 点阵 / 七段数码字族（typ.numerals.family 只有 pixel）"]
+        },
+        {
+          "family": "合成波 / 蒸汽波 · 霓虹像素太空",
+          "skin": "skin.synth",
+          "noCards": false,
+          "definition": "紫红霓虹配色的像素太空卡牌 UI：切角面板、按角色着色的卡牌页眉、深海军蓝电路纹底、描边主按钮。",
+          "grammar": {
+            "shape": "切角面板、竖卡。", "line": "1–2px 青 / 粉描边。", "surface": "深海军蓝 + 电路纹。", "color": "紫、粉、青 + 角色色。",
+            "type": "像素字。", "material": "像素。", "ornament": "电路纹、星空。", "icon": "像素图标。",
+            "motion": "卡牌飞入。", "layout": "左头像竖列、底卡牌行、右下结束回合。"
+          },
+          "params": {
+            "vis.pixelScale": "x2",
+            "vis.corner": "chamfer",
+            "vis.cornerSize": 8,
+            "cmp.card": "statCard",
+            "el.abilities.form": "cards",
+            "el.abilities.screenAnchor": "bc",
+            "el.party.form": "portraits",
+            "el.party.screenAnchor": "ml",
+            "col.coding": ["lineId"],
+            "el.cta.screenAnchor": "br",
+            "hier.cta": "fillOutline",
+            "vis.motif": "circuit",
+            "typ.body.family": "pixel"
+          },
+          "artPairing": [ { "artStyle": "现代高位像素 (Hi-bit)", "relation": "sameMedium", "why": "像素 UI 与像素飞船同网格。" } ],
+          "genres": [ { "genre": "strategy", "count": 1, "why": "Cobalt Core。" } ],
+          "exemplars": [ { "card": "steam:2179850", "why": "战斗与选卡界面。" } ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.synth 是直角 + 无像素；这一支要像素化、切角、角色色页眉。",
+          "paramGaps": ["卡牌页眉按所属角色自动着色（col.coding lineId 有，但没有「页眉条」这个落点）"]
+        },
+        {
+          "family": "合成波 / 蒸汽波 · 霓虹 MV（UI 让位给舞台）",
+          "skin": "skin.synth",
+          "noCards": false,
+          "definition": "画面本身是霓虹 MV / 演唱会，UI 只剩对话气泡与关末评级；气泡是黑或白的大圆角，名牌用斜切网点条。",
+          "grammar": {
+            "shape": "大圆角气泡、斜切名牌。", "line": "无。", "surface": "黑 / 白实底气泡。", "color": "舞台粉紫，UI 黑白。",
+            "type": "斜体粗名字 + 常规正文。", "material": "网点。", "ornament": "均衡器、网点渐变。", "icon": "极少。",
+            "motion": "节拍脉冲。", "layout": "气泡堆在一侧或底部。"
+          },
+          "params": {
+            "cnt.density": 0,
+            "rel.hudVisibility": "hidden",
+            "cmp.dialogBox": "bubble",
+            "vis.corner": "round",
+            "vis.cornerSize": 40,
+            "cmp.plate": "slashBand",
+            "vis.pattern": "halftone",
+            "typ.display.style": "italic",
+            "ast.bgArt": "gradient",
+            "el.feedback.form": ["rating"]
+          },
+          "artPairing": [ { "artStyle": "合成波 (Synthwave/Outrun)", "relation": "sameMedium", "why": "舞台就是风格。" } ],
+          "genres": [
+            { "genre": "action", "count": 1, "why": "Sayonara Wild Hearts。" },
+            { "genre": "explore", "count": 1, "why": "The Artful Escape。" },
+            { "genre": "card", "count": 1, "why": "Dislyte。" }
+          ],
+          "exemplars": [
+            { "card": "steam:1122720", "why": "几乎无 HUD，关末评级。" },
+            { "card": "steam:1122680", "why": "右侧堆叠黑色圆角气泡；造型页是珊瑚色圆角面板 + 色块网格。" },
+            { "card": "gameui:4373", "why": "斜切网点名牌 + 白色气泡。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "噱头大于功能：零 HUD 作品只能在关末反馈，过程信息缺失；Artful Escape UI 提及 9 条里差评 2。", "evidence": ["steam:1122680", "steam:1122720"] }
+          ],
+          "skinGap": "skin.synth 默认给每个控件霓虹描边；这一支 UI 本身是黑白实底气泡，霓虹只在舞台上。",
+          "paramGaps": []
+        },
+        {
+          "family": "合成波 / 蒸汽波 · 霓虹街头竞速",
+          "skin": "skin.synth",
+          "noCards": false,
+          "definition": "街头赛车的霓虹：斜体窄体全大写、紫粉半透明渐变页签、白色实底选中、表盘速度计；夜间隧道里的霓虹表盘（Night-Runners）。",
+          "grammar": {
+            "shape": "斜切页签、圆形表盘、圆形 GPS。", "line": "细线属性条。", "surface": "紫色半透明渐变。", "color": "紫粉霓虹 + 白。",
+            "type": "斜体窄体全大写。", "material": "霓虹表盘发光。", "ornament": "涂鸦墙。", "icon": "手柄按键。",
+            "motion": "表盘指针。", "layout": "左下 GPS、右下表盘、右上目标。"
+          },
+          "params": {
+            "cmp.gauge@el.speed": "dial",
+            "el.speed.screenAnchor": "br",
+            "el.minimap.form": "radar",
+            "el.minimap.screenAnchor": "bl",
+            "typ.display.style": "italic",
+            "typ.display.family": "condensed",
+            "typ.body.case": "upper",
+            "vis.skew": -8,
+            "lay.nav": "tabsTop",
+            "cmp.tabIndicator": "filled",
+            "col.accent": "#ff2bd6",
+            "vis.opacity": 0.5
+          },
+          "artPairing": [ { "artStyle": "PS2时代", "relation": "sameMedium", "why": "Night-Runners 的低保真夜间隧道配霓虹表盘。" } ],
+          "genres": [ { "genre": "racing", "count": 2, "why": "NFS Heat、Night-Runners。" } ],
+          "exemplars": [
+            { "card": "iig:need-for-speed-heat", "why": "车库页与局内表盘。" },
+            { "card": "steam:2707900", "why": "左上白色计时 + 名次，右下粉 / 绿霓虹表盘群。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "Night-Runners 菜单类 2 条：改装页是车库里的细线小字信息。", "evidence": ["steam:2707900"] }
+          ],
+          "skinGap": "skin.synth 不倾斜、无表盘默认、标题无窄体。",
+          "paramGaps": []
+        },
+        {
+          "family": "合成波 / 蒸汽波 · 蒸汽波复古桌面",
+          "skin": null,
+          "noCards": false,
+          "definition": "旧操作系统本身就是界面：灰色斜面窗口、任务栏、开始按钮、分段进度条、桌面图标与光盘壁纸；按版本换皮（95 / XP / DOS）。",
+          "grammar": {
+            "shape": "直角窗口 + 标题条 + 关闭钮。", "line": "1–2px 立体斜面边。", "surface": "Win95 灰实底。", "color": "灰 + 蓝标题条；桌面壁纸多色。",
+            "type": "系统像素字。", "material": "斜面浮雕。", "ornament": "桌面图标、壁纸。", "icon": "旧系统图标。",
+            "motion": "窗口弹出、进度分段。", "layout": "可拖动窗口 + 底部任务栏。"
+          },
+          "params": {
+            "lay.container": "window",
+            "cmp.modal": "standard",
+            "vis.depth": "bevel",
+            "vis.corner": "sharp",
+            "col.lightness": "mid",
+            "vis.gloss": "none",
+            "typ.body.family": "pixel",
+            "ast.container": "crt",
+            "rel.diegesis": "diegetic",
+            "cmp.gauge": "segmented",
+            "ast.bgArt": "sceneArt"
+          },
+          "artPairing": [ { "artStyle": "蒸汽波 (Vaporwave)", "relation": "sameMedium", "why": "旧 OS 界面是蒸汽波的核心母题。" } ],
+          "genres": [ { "genre": "strategy", "count": 1, "why": "Progressbar95。" } ],
+          "exemplars": [
+            { "card": "steam:1304550", "why": "Win95 桌面 + ProgressDOS 窗口 + 分段进度条。" },
+            { "card": "steam:844590", "why": "（主归属 Y2K 镀铬）1999 年的虚拟操作系统与个人主页。" }
+          ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "UI 提及 16 条里差评 5：刻意复刻的旧系统操作繁琐。", "evidence": ["steam:1304550"] }
+          ],
+          "skinGap": "没有对应皮肤：skin.synth 是霓虹，skin.y2k 是镀铬，Win95 灰斜面窗口两边都画不出。",
+          "paramGaps": ["Win95 式双色斜面（亮左上 / 暗右下）描边（vis.depth bevel 是柔和倒角）", "窗口标题条 + 最小化 / 关闭钮的组件"]
+        }
+      ],
+      "variants": [
+        { "name": "每关换主色", "diff": "col.dynamic = perChapter；Razortron 绿 / 粉 / 青 / 橙，Beat Saber 红蓝 / 黄 / 紫。", "cards": ["steam:539720", "steam:620980"] },
+        { "name": "LED 点阵 / 七段数码", "diff": "评级与连击用点阵字。", "cards": ["steam:952040"] },
+        { "name": "网点渐变 + 均衡器", "diff": "舞台背景是网点与均衡器柱，UI 白色气泡。", "cards": ["gameui:4373"] },
+        { "name": "Win95 灰斜面（蒸汽波）", "diff": "完全不同的语法：中明度灰、立体斜面、系统字。", "cards": ["steam:1304550"] }
+      ],
+      "failureModes": [
+        { "desc": "粉配青对色觉障碍不友好，多层霓虹发光字耗性能且长时间游玩疲劳（06 文档 B22）；Beat Saber 在方块上加箭头做形状冗余，是正面例子。", "evidence": ["steam:620980"] },
+        { "desc": "选曲 / 选车页插画与霓虹叠压，小字看不清：MUSYNX 字小 2 条。", "evidence": ["steam:952040"] },
+        { "desc": "零 HUD 让过程信息缺位，只能关末评级。", "evidence": ["steam:1122720", "steam:1122680"] }
+      ],
+      "skinGap": "skin.synth（直角、0.6、2px 粉描边发光 0.8、深色双色、粉青、特粗斜体标题）只画了「合成波面板」：① 没有倾斜，而平行四边形是竞速 / 节奏样本的共同语汇；② 没有 LED / 七段数码字；③ 主色写死，样本里每关换色很常见（col.dynamic）；④ 正文也跟着发光，读长文吃力；⑤ 网点、均衡器这类舞台装饰缺失；⑥ 蒸汽波（Win95 灰斜面）与合成波是两套完全不同的语法，挤在一个预设里只覆盖了一半。",
+      "paramGaps": [
+        "LED 点阵 / 七段数码字族",
+        "透视网格地平线作为 UI 背景（vis.pattern grid 是平面方格）",
+        "日落条纹 / 均衡器柱装饰母题（vis.motif 没有）",
+        "Win95 双色斜面描边与窗口标题条组件",
+        "按节拍脉冲的待机动效（mo.idle 没有 beat）"
+      ]
+    },
+    {
+      "family": "Y2K 镀铬",
+      "skin": "skin.y2k",
+      "noCards": false,
+      "definition": "千禧年前后的「乐观科技」：银色金属渐变、彩色半透明塑料、胶囊和气泡造型、顶部玻璃高光、粗圆体字。库里没有纯正的 Wipeout / Jet Set Radio 式样本，现有两张卡代表它的两个邻居：Evil Genius 的复古电器控制台（拉丝金属底座 + 红黄绿指示灯 + 机械计数滚轮，偏 60 年代间谍片）与 Hypnospace Outlaw 的 1999 桌面 / 个人主页（渐变标题栏、闪图、施工中警示条）。",
+      "grammar": {
+        "shape": "胶囊、大圆角、气泡；控制台分支是带倒角的整条底座 + 圆形按钮 + 方形仪表窗。",
+        "line": "1px 高光亮边 + 底部暗边（倒角）；网页分支是 1–2px 立体边。",
+        "surface": "镀铬多段渐变（亮—暗—亮）、半透明彩色塑料、拉丝金属。",
+        "color": "冰蓝银 + 一两种糖果色（青柠、橙、亮粉）；控制台是银灰 + 红黄绿灯；网页分支骨架多色（薰衣草紫标题栏）。",
+        "type": "粗圆体 / 宽体无衬线；数字用 LCD 七段或机械滚轮（Evil Genius 现金计数）；网页分支是像素字 + 艺术字标题。",
+        "material": "镀铬、塑料、玻璃高光、指示灯、LCD。",
+        "ornament": "指示灯、螺钉、仪表窗；网页分支是闪烁 GIF、星空平铺、黄黑「施工中」条。",
+        "icon": "3D 渲染小图标 / 糖果光泽图标。",
+        "motion": "高光扫过、果冻弹跳、指示灯闪烁、计数滚轮。",
+        "layout": "整合底座（底部通栏控制台）或可拖动窗口桌面。"
+      },
+      "params": {
+        "vis.corner": "round",
+        "vis.cornerSize": 40,
+        "vis.fill": "gradient",
+        "vis.gloss": "chrome",
+        "vis.depth": "bevel",
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.strokeColor": "highlightEdge",
+        "col.lightness": "light",
+        "col.strategy": "neutralAccent",
+        "col.saturation": 1.2,
+        "typ.display.family": "round",
+        "typ.display.weight": "black",
+        "typ.body.family": "sans",
+        "typ.numerals.family": "display",
+        "vis.iconStyle": "render3d",
+        "ast.coreMat": "plastic",
+        "ast.frameMat": "iron",
+        "mo.idle": "shine",
+        "mo.easing": "overshoot",
+        "ix.press": "squash"
+      },
+      "artPairing": [
+        { "artStyle": "Y2K", "relation": "sameMedium", "why": "银色金属与半透明塑料是同一时代的材质语言。" },
+        { "artStyle": "Dreamcast／Y2K主机", "relation": "sameMedium", "why": "高光泽、亮色、乐观的千禧主机画面与镀铬 UI 同源。" },
+        { "artStyle": "原子朋克 (Atompunk)", "relation": "sameMedium", "why": "Evil Genius 的 60 年代间谍基地：镀铬控制台 + 指示灯是原子时代的乐观科技。" },
+        { "artStyle": "美式卡通3D (Western cartoon)", "relation": "neutral", "why": "Evil Genius 的卡通角色在俯视场景里，UI 只占底部一条。" }
+      ],
+      "genres": [
+        { "genre": "builder", "count": 1, "why": "Evil Genius：底部整条控制台。" },
+        { "genre": "puzzle", "count": 1, "why": "Hypnospace Outlaw：整个游戏是 1999 年的虚拟操作系统。" }
+      ],
+      "exemplars": [
+        { "card": "steam:3720", "why": "银灰金属控制台 + 红黄绿灯 + 机械计数滚轮 + 橙色任务简报窗 + 斜面滚动按钮。" },
+        { "card": "steam:844590", "why": "薰衣草紫渐变标题栏、像素字、星空平铺底、艺术字标题、黄黑施工中条、可拖动窗口与下载管理器。" },
+        { "card": "steam:3314060", "why": "（主归属 Frutiger Aero）模拟人生左下蓝色光泽底座，千禧塑料感的近亲。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "Y2K 镀铬 · 复古电器控制台",
+          "skin": "skin.y2k",
+          "noCards": false,
+          "definition": "把 HUD 做成一台实体电器：底部整条拉丝金属底座、圆形按钮、指示灯、LCD / 机械计数窗、斜面滚动箭头。",
+          "grammar": {
+            "shape": "整条底座 + 圆钮 + 方窗。", "line": "倒角亮边。", "surface": "拉丝金属渐变。", "color": "银灰 + 红黄绿灯 + 橙简报窗。",
+            "type": "等宽 + 机械计数字。", "material": "金属、LCD。", "ornament": "指示灯、螺钉。", "icon": "实物化小图标。",
+            "motion": "计数滚轮、灯闪。", "layout": "底部通栏 + 右侧浮窗。"
+          },
+          "params": {
+            "lay.hudOrg": "console",
+            "el.toolbar.screenAnchor": "bc",
+            "vis.gloss": "metalGrad",
+            "ast.frame": "plainNinePatch",
+            "ast.frameMat": "iron",
+            "ast.ornaments": ["rivets"],
+            "col.strategy": "polychrome",
+            "typ.numerals.family": "tabular",
+            "typ.body.family": "mono",
+            "vis.depth": "bevel",
+            "st.statusMark": "dot",
+            "mo.valueChange": "countUp",
+            "vis.corner": "round",
+            "vis.cornerSize": 15
+          },
+          "artPairing": [ { "artStyle": "原子朋克 (Atompunk)", "relation": "sameMedium", "why": "60 年代乐观科技。" } ],
+          "genres": [ { "genre": "builder", "count": 1, "why": "Evil Genius。" } ],
+          "exemplars": [ { "card": "steam:3720", "why": "整条控制台。" } ],
+          "variants": [],
+          "failureModes": [],
+          "skinGap": "skin.y2k 是浅色圆胶囊面板，没有整合底座、指示灯与机械计数窗。",
+          "paramGaps": ["指示灯组（红黄绿状态灯）作为状态标识（st.statusMark dot 只是彩色圆点，无发光与灯罩）", "机械计数滚轮字形"]
+        },
+        {
+          "family": "Y2K 镀铬 · 千禧桌面 / 个人主页",
+          "skin": "skin.y2k",
+          "noCards": false,
+          "definition": "1999 年的桌面与个人主页：渐变标题栏窗口、闪图、艺术字、星空平铺、施工中警示条，信息密度刻意过载。",
+          "grammar": {
+            "shape": "可拖动窗口。", "line": "立体边。", "surface": "渐变标题栏 + 平铺背景。", "color": "骨架多色。",
+            "type": "像素字 + 艺术字。", "material": "顶部光泽。", "ornament": "GIF、警示条、星空。", "icon": "像素图标。",
+            "motion": "闪烁、光泽扫过。", "layout": "多窗口重叠 + 滚动页面。"
+          },
+          "params": {
+            "lay.container": "window",
+            "lay.overflow": "scrollV",
+            "vis.gloss": "topShine",
+            "vis.depth": "bevel",
+            "cnt.density": 4,
+            "col.strategy": "polychrome",
+            "typ.body.family": "pixel",
+            "typ.titleFx": "metal",
+            "vis.pattern": "hazard",
+            "ast.bgArt": "pattern",
+            "rel.diegesis": "diegetic",
+            "ast.container": "crt"
+          },
+          "artPairing": [ { "artStyle": "Y2K", "relation": "sameMedium", "why": "1999 年网页本身。" } ],
+          "genres": [ { "genre": "puzzle", "count": 1, "why": "Hypnospace Outlaw。" } ],
+          "exemplars": [ { "card": "steam:844590", "why": "虚拟操作系统。" } ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "刻意过载的信息密度（4 级）只适合叙事内的网页；UI 提及 38 条里差评 10。", "evidence": ["steam:844590"] }
+          ],
+          "skinGap": "skin.y2k 没有窗口标题栏、平铺背景与艺术字。",
+          "paramGaps": ["艺术字（WordArt）式彩色渐变立体标题（typ.titleFx metal / emboss 接近但不等同）"]
+        }
+      ],
+      "variants": [
+        { "name": "拉丝金属 + 指示灯", "diff": "控制台式，深色计数窗。", "cards": ["steam:3720"] },
+        { "name": "渐变标题栏 + 闪图", "diff": "千禧网页。", "cards": ["steam:844590"] },
+        { "name": "纯正镀铬气泡（Wipeout / JSR / Bomb Rush Cyberfunk 式）", "diff": "镀铬胶囊、冰蓝银、粗圆体；库里没有对应参考卡，是本族最大的空白。", "cards": [] }
+      ],
+      "failureModes": [
+        { "desc": "镀铬渐变上叠字，对比随渐变段变化（06 文档 B14）；Evil Genius 把数字都放进深色仪表窗里规避了这个问题。", "evidence": ["steam:3720"] },
+        { "desc": "样本不足：只有 2 张卡，且都不是标准的千禧镀铬；结论主要依赖 06 文档 B14 与相邻族。", "evidence": ["steam:3720", "steam:844590"] }
+      ],
+      "skinGap": "skin.y2k（大圆角、镀铬渐变、倒角、高光亮边、浅色、圆体粗标题、光泽扫过）对「镀铬胶囊菜单」是对的，但库里两张卡一个是底座控制台、一个是千禧网页：① 缺整合底座版式（lay.hudOrg console）；② 缺深色 LCD / 计数仪表窗，导致镀铬上的数字对比不稳；③ 缺彩色半透明塑料（只有镀铬与不透明塑料）；④ 缺指示灯；⑤ 网页分支的窗口标题栏、平铺背景完全没有。",
+      "paramGaps": [
+        "彩色半透明塑料材质（ast.coreMat plastic 是不透明糖果塑料）",
+        "LCD 七段数字与机械计数滚轮",
+        "指示灯组",
+        "千禧网页组件：窗口标题栏、闪图、访客计数器"
+      ]
+    },
+    {
+      "family": "细线几何",
+      "skin": "skin.thinGeo",
+      "noCards": false,
+      "definition": "几乎不画面板，信息由 1px 细线几何仪器承载：同心圆、轨道、刻度环、圆点、细线图标，配宽字距的细体大写字。界面像科学仪器或天文图，冷静、精确，带一点神秘感。库里两支：白底仪器面板（Mu Cartographer 的旋钮、波形、圆盘围住中央地形）与深空神秘学（Destiny 2 星图上的行星节点、同心圆纹章、字距极宽的标题）。",
+      "grammar": {
+        "shape": "圆、同心圆、圆环、菱形、小圆角方块；几乎没有矩形面板。",
+        "line": "0.5–1px 细线；虚线 / 点线轨道；刻度环；线端用小圆点。",
+        "surface": "透明或白底纸面；不模糊、不投影。",
+        "color": "单色线（黑或白）+ 一个柔和强调色（Mu 的珊瑚、Destiny 的金）；深空分支是紫金星空底。",
+        "type": "细体或常规无衬线、全大写、字距 0.3em 以上（Destiny 的 THE FARM / EARTH / CRUCIBLE）；Mu 用等宽小字作注释。",
+        "material": "无材质，纯线；深空分支有轻微辉光。",
+        "ornament": "几何纹章（同心圆 + 星芒）、轨道、星座连线、刻度。",
+        "icon": "线性几何图标（三角、圆、菱形组合）。",
+        "motion": "慢速旋转、轨道上的点移动、淡入；没有弹跳。",
+        "layout": "四周环绕中央主体（仪器围着地形、节点围着行星），或星图散点；控件在角落成簇。"
+      },
+      "params": {
+        "vis.opacity": 0,
+        "vis.stroke": "solid",
+        "vis.strokeWidth": 1,
+        "vis.depth": "flat",
+        "vis.blur": 0,
+        "vis.motif": "geometric",
+        "vis.ornament": 1,
+        "vis.silhouette": "circle",
+        "vis.iconStyle": "line",
+        "vis.connector": "dashed",
+        "col.strategy": "mono",
+        "typ.body.weight": "light",
+        "typ.display.family": "sans",
+        "typ.display.weight": "light",
+        "typ.display.case": "upper",
+        "typ.display.tracking": 0.35,
+        "cmp.gauge": "ring",
+        "lay.arrangement": "ring",
+        "lay.focalSide": "center",
+        "hier.emphasis": ["isolation"],
+        "mo.enter": "fade",
+        "mo.easing": "easeOut"
+      },
+      "artPairing": [
+        { "artStyle": "白盒极简＋强调色 (White minimal)", "relation": "sameMedium", "why": "Mu Cartographer 白底黑线 + 珊瑚强调，UI 与白色空间同一语言。" },
+        { "artStyle": "极简抽象 (Minimalist/abstract)", "relation": "sameMedium", "why": "GRIS、Journey 一类的零 HUD 作品在标题与菜单上用同心圆 + 宽字距细字。" },
+        { "artStyle": "风格化写实 (Stylized realism)", "relation": "contrast", "why": "Destiny 2 写实行星渲染 vs 纯线条纹章与轨道。" },
+        { "artStyle": "线框矢量 (Wireframe vector)", "relation": "sameMedium", "why": "只画边、不填充的几何。" }
+      ],
+      "genres": [
+        { "genre": "sandbox", "count": 1, "why": "Mu Cartographer：仪器本身就是玩法（调地形）。" },
+        { "genre": "shooter", "count": 1, "why": "Destiny 2：导航页与任务横幅。" }
+      ],
+      "exemplars": [
+        { "card": "steam:513360", "why": "白底上一圈细线仪器（旋钮、波形、圆盘、单选点、滑条）围住中央地形，等宽注释小字。" },
+        { "card": "steam:1085660", "why": "星图导航：行星节点 + 同心圆纹章 + 字距极宽的细字；顶部页签细线框；任务开始是红色弧形横幅 NEW MISSION。" },
+        { "card": "steam:1850570", "why": "（主归属极简单色）右上细线计时 / 计数，白色细字全大写叠在写实画面上。" },
+        { "card": "steam:683320", "why": "（主归属极简单色）标题是水彩渐变上的同心圆 + 字距很大的细字。" }
+      ],
+      "subfamilies": [
+        {
+          "family": "细线几何 · 白底仪器面板",
+          "skin": "skin.thinGeo",
+          "noCards": false,
+          "definition": "白底科学仪器：黑色细线旋钮、波形窗、圆盘、单选点，一个珊瑚色强调；控件围在画面四角，中央是被操作的对象。",
+          "grammar": {
+            "shape": "圆角小方块、圆盘、胶囊滑条。", "line": "黑色 1px。", "surface": "纯白。", "color": "黑 + 珊瑚 + 灰。",
+            "type": "等宽小字。", "material": "无。", "ornament": "刻度、点阵圆。", "icon": "几何。",
+            "motion": "旋钮转动。", "layout": "四角控件簇围住中央。"
+          },
+          "params": {
+            "col.lightness": "light",
+            "lay.hudOrg": "inMargin",
+            "vis.strokeColor": "ink",
+            "col.accent": "#f08a7a",
+            "cmp.gauge": "dial",
+            "typ.body.family": "mono",
+            "cnt.density": 3,
+            "cmp.optionRange": "slider",
+            "ix.mode": "slider",
+            "vis.corner": "round",
+            "vis.cornerSize": 30
+          },
+          "artPairing": [ { "artStyle": "白盒极简＋强调色 (White minimal)", "relation": "sameMedium", "why": "白底单强调色。" } ],
+          "genres": [ { "genre": "sandbox", "count": 1, "why": "Mu Cartographer。" } ],
+          "exemplars": [ { "card": "steam:513360", "why": "仪器面板。" } ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "仪器本身就是谜题，控件功能不直观：UI 提及 18 条里差评 6；评测样本只有 44 条，提到美术的里好评仅 25%。", "evidence": ["steam:513360"] }
+          ],
+          "skinGap": "skin.thinGeo 默认高光亮边 + 投影，适合深色背景；白底黑线的仪器分支需要 ink 描边与浅色底。",
+          "paramGaps": ["示波器 / 波形窗控件", "旋钮控件（cmp.optionRange 没有 knob）"]
+        },
+        {
+          "family": "细线几何 · 深空神秘学细线",
+          "skin": "skin.thinGeo",
+          "noCards": false,
+          "definition": "深空背景上的细线纹章与轨道：行星是节点，节点外套同心圆与星芒；标题字距极宽，页签是细线框。",
+          "grammar": {
+            "shape": "圆形纹章、同心圆。", "line": "白 / 金细线。", "surface": "星空。", "color": "紫金 + 白。",
+            "type": "宽字距细体大写。", "material": "轻辉光。", "ornament": "星芒、几何花。", "icon": "阵营纹章。",
+            "motion": "慢速漂移。", "layout": "星图散点 + 顶部页签。"
+          },
+          "params": {
+            "ast.bgArt": "starfield",
+            "vis.motif": "stars",
+            "lay.arrangement": "constellation",
+            "cmp.badge": "crest",
+            "col.lightness": "dark",
+            "vis.strokeColor": "highlightEdge",
+            "col.accent": "#d8b867",
+            "typ.display.tracking": 0.45,
+            "lay.nav": "tabsTop",
+            "cmp.tabIndicator": "underline",
+            "el.notify.form": ["band"],
+            "vis.strokeGlow": 0.2
+          },
+          "artPairing": [ { "artStyle": "风格化写实 (Stylized realism)", "relation": "contrast", "why": "写实行星 vs 纯线纹章。" } ],
+          "genres": [ { "genre": "shooter", "count": 1, "why": "Destiny 2。" } ],
+          "exemplars": [ { "card": "steam:1085660", "why": "星图导航与任务横幅。" } ],
+          "variants": [],
+          "failureModes": [
+            { "desc": "装饰性的星图导航说不清去哪：Destiny 2 引导类 4 条，是本次所有卡里最多的。", "evidence": ["steam:1085660"] }
+          ],
+          "skinGap": "skin.thinGeo 没有星空背景、纹章节点与宽横幅。",
+          "paramGaps": []
+        }
+      ],
+      "variants": [
+        { "name": "白底黑线 + 珊瑚强调", "diff": "浅色底、ink 描边。", "cards": ["steam:513360"] },
+        { "name": "深空金白线", "diff": "星空底、高光亮边、金色强调。", "cards": ["steam:1085660"] },
+        { "name": "白色细字叠写实画面", "diff": "无面板，只有宽字距细字与细线计数（Death Stranding）。", "cards": ["steam:1850570"] }
+      ],
+      "failureModes": [
+        { "desc": "细线 + 细字只在纯色或很暗的背景上成立；叠在复杂画面上要么加投影、要么改白底。", "evidence": ["steam:513360", "steam:1085660"] },
+        { "desc": "好看但不指路：Destiny 2 引导 4 条；Mu Cartographer 控件含义不明。", "evidence": ["steam:1085660", "steam:513360"] },
+        { "desc": "0.3em 以上的字距只适合拉丁大写，中文不能照搬。", "evidence": [] }
+      ],
+      "skinGap": "skin.thinGeo（大圆角、透明、1px 高光亮边、中性 + 强调、细体、字距 0.3、投影、线性图标、淡入）语言是对的，但：① 默认组件仍是矩形面板与横条，没有把数值图形默认成圆环 / 表盘、把排布默认成环绕中心；② 只适合深色背景，缺白底黑线的仪器变体；③ 没有轨道 / 点线连接器；④ 没有慢速旋转的待机动效；⑤ 字距对中文过宽。",
+      "paramGaps": [
+        "轨道（绕中心的虚线圆）作为连接器或装饰（vis.connector 只是直连）",
+        "慢速旋转待机动效（mo.idle 没有 rotate）",
+        "示波器、旋钮等仪器控件",
+        "按语言自动收窄字距（中文不用 0.3em）"
+      ]
+    }
+  ],
+  "assignments": {
+    "steam:1366540": "科幻 HUD · 太空建造控制台",
+    "steam:3107330": "CRT 终端 · CRT 后处理街机屏",
+    "steam:1409160": "科幻 HUD · 太空建造控制台",
+    "steam:1091500": "科幻 HUD · 赛博双色故障",
+    "steam:208650": "全息空间 · 扫描视觉（世界被重新着色）",
+    "steam:1716740": "科幻 HUD · 叙事内（面罩 / 背脊 / 座舱）",
+    "steam:1774580": "科幻 HUD · 射击 / 动作两角式",
+    "steam:15100": "科幻 HUD · 元 UI 机器框架",
+    "gameui:8283": "科幻 HUD · 二次元科幻",
+    "gameui:3522": "科幻 HUD · 二次元科幻",
+    "steam:1693980": "科幻 HUD · 叙事内（面罩 / 背脊 / 座舱）",
+    "steam:1544020": "科幻 HUD · 叙事内（面罩 / 背脊 / 座舱）",
+    "steam:1222140": "全息空间 · 悬浮证据卡（透视面板）",
+    "steam:1161580": "科幻 HUD · 叙事内（面罩 / 背脊 / 座舱）",
+    "steam:264710": "科幻 HUD · 叙事内（面罩 / 背脊 / 座舱）",
+    "steam:275850": "科幻 HUD · 太空建造控制台",
+    "steam:526870": "科幻 HUD · 太空建造控制台",
+    "iig:no-mans-sky": "科幻 HUD · 太空建造控制台",
+    "steam:1895880": "科幻 HUD · 射击 / 动作两角式",
+    "steam:2707900": "合成波 / 蒸汽波 · 霓虹街头竞速",
+    "steam:517710": "科幻 HUD",
+    "steam:220": "科幻 HUD · 射击 / 动作两角式",
+    "steam:1085660": "细线几何 · 深空神秘学细线",
+    "iig:need-for-speed-heat": "合成波 / 蒸汽波 · 霓虹街头竞速",
+    "gameui:6997": "糖果卡通（Q 版）",
+    "steam:2131640": "军事战术 · 潜行谍报（Codec 单色屏）",
+    "steam:1203710": "军事战术 · 潜行谍报（Codec 单色屏）",
+    "steam:268500": "军事战术 · 战术指挥（倾斜面板 + 斜纹）",
+    "steam:287700": "军事战术 · 潜行谍报（Codec 单色屏）",
+    "steam:10180": "军事战术 · 写实军事射击",
+    "steam:42700": "军事战术 · 写实军事射击",
+    "steam:7940": "军事战术 · 写实军事射击",
+    "steam:2420110": "全息空间 · 扫描视觉（世界被重新着色）",
+    "gameui:13081": "CRT 终端 · 老电视与胶片框",
+    "steam:2379780": "CRT 终端 · CRT 后处理街机屏",
+    "steam:2179850": "合成波 / 蒸汽波 · 霓虹像素太空",
+    "steam:1304550": "合成波 / 蒸汽波 · 蒸汽波复古桌面",
+    "steam:1122720": "合成波 / 蒸汽波 · 霓虹 MV（UI 让位给舞台）",
+    "steam:1122680": "合成波 / 蒸汽波 · 霓虹 MV（UI 让位给舞台）",
+    "steam:620980": "合成波 / 蒸汽波 · 霓虹矢量网格",
+    "steam:952040": "合成波 / 蒸汽波 · 霓虹矢量网格",
+    "steam:539720": "合成波 / 蒸汽波 · 霓虹矢量网格",
+    "gameui:4373": "合成波 / 蒸汽波 · 霓虹 MV（UI 让位给舞台）",
+    "steam:3720": "Y2K 镀铬 · 复古电器控制台",
+    "steam:844590": "Y2K 镀铬 · 千禧桌面 / 个人主页",
+    "steam:513360": "细线几何 · 白底仪器面板"
+  }
+}

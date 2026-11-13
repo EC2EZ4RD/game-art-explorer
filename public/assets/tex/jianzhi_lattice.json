@@ -1,0 +1,12 @@
+{
+ "crop": [
+  2044,
+  2044
+ ],
+ "files": {
+  "mask": "jianzhi_lattice.png"
+ },
+ "coverage": 0.41492098569869995,
+ "seam": 2.2418720722198486,
+ "id": "jianzhi_lattice"
+}

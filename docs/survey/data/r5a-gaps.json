@@ -1,0 +1,3930 @@
+[
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "hud",
+  "what": "计分公式：牌型名 + 等级下面并排两块圆角色块（蓝底筹码 × 红底倍率），中间夹一个 ×；出牌时数字逐张累加、抖动，本手得分超过盲注目标时两块数字烧起火焰（参考图 steam_2379780_2）。el.meter = paired 只画成“一条红色进度条 + 两端小字”，没有乘式两块，也没有“超过阈值就燃烧”的特效",
+  "severity": "high",
+  "proposal": "el.meter.form = formula（A 色块 × B 色块，色取 col.accent / col.accent2）；ast.fx 增加 fire，并可按数值阈值触发"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "hud",
+  "what": "左侧竖栏是一整列嵌套圆角面板（盲注名牌 → 目标分 → 本轮得分 → 牌型与筹码 × 倍率 → Run Info / Options 两颗大按钮与 Hands / Discards 计数格 → 金钱 → Ante / Round 计数格）。lay.hudOrg = edgeBar 在渲染里完全没有实现：元素只是按锚点各自漂浮成一列，没有贴边的整条底板；“小标题 + 彩色大数字”的计数格也没有画法",
+  "severity": "high",
+  "proposal": "渲染：lay.hudOrg = edgeBar 时在 tl / ml / bl（或右侧）锚点列后面画一整条全高底板（宽 = 列内最宽元素 + 边距，底色 col.surface2，描边色可按 col.dynamic 换）；新参数 lay.edgeBarSlots 编排栏内顺序；el.resources.form = labeledStatGrid（小标题 + 彩色数字格，2 × N）"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "all",
+  "what": "按元素的颜色覆盖（col.surface@el.abilities 白色牌面、col.accent@el.meter 筹码蓝、col.accent@el.resources 金钱金、col.surface@el.toolbar Run Info 红、col.surface@el.cta 排序按钮橙）在词表里合法，但元素渲染只读全局色板（只有 cmp.* 的 @元素 覆盖生效），这套“颜色 = 语义、每块一色”的 UI 因此只能画成同一种深色块",
+  "severity": "high",
+  "proposal": "元素上下文 makeCtx 按 <参数>@<元素> 解析 col.surface / col.accent / col.accent2 / col.text / vis.stroke* / vis.depth，并据此给 panel()、button() 打补丁（与 cmp() 的覆盖口径一致）"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "all",
+  "what": "背景是整屏流动的油彩漩涡着色器，颜色随盲注 / 卡包 / 界面切换（普通盲注绿、Boss 蓝、卡包紫、塔罗金、收藏红），侧栏描边与名牌色跟着换。col.dynamic = perMode 只说明“会换”，换成哪套色、背景本身是程序动画都没有参数",
+  "severity": "high",
+  "proposal": "ast.bgArt = shaderSwirl（程序动态背景，带速度与两色）；col.dynamic 增加状态 → 色板映射表"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "hud",
+  "what": "牌面：手牌是标准扑克牌（角标点数 + 花色点阵 / 像素人头牌），小丑牌是整幅插画并竖排 JOKER 字样；增强与版本（玻璃、箔、镭射、多彩）是叠在卡面上的着色器。el.abilities = cards 完全不读 cmp.card，永远画成皮肤面板 + 一个符号；cmp.card 也没有扑克牌版式，st.rarityCue 没有版本特效",
+  "severity": "high",
+  "proposal": "el.abilities = cards 读 cmp.card@el.abilities；cmp.card 增加 playingCard（角标 + 花色点阵，白底）；st.rarityCue 增加 editionShader（foil / holo / polychrome / glass）"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "hud",
+  "what": "上中的小丑托盘（4/5）、右上的消耗品托盘（0/2）、右下的牌堆（41/52）都是“深色内嵌槽 + 下方容量计数”；小丑列借 el.party = unitCards（头像 + 血条）近似，消耗品托盘和牌堆没有元素",
+  "severity": "medium",
+  "proposal": "新元素 el.piles（牌堆：卡背 + 剩余 / 总数）与 el.consumables；元素通用子参数 tray（深色托盘 + 容量 x/y）"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "codex",
+  "what": "收藏页是 5 × 3 竖长小丑牌铺满一块窄高面板。网格里唯一的竖卡 cmp.slot = tallCard 是商店卡（固定多画一行“¥ 价格”），高固定为宽的 1.4 倍、行数由宽度推出，5 列时只放得下一行，只能改成 7 × 2；网格也不读 cmp.card",
+  "severity": "medium",
+  "proposal": "cmp.slot 增加 collectionCard（整幅插画 + 名字、无价格），或让网格格子按 cmp.card 画；gridItems 在给定 lay.columns 与 cnt.itemCount 时按行数反推格高，把面板铺满"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "hand",
+  "what": "选中的牌整张向上抬起、悬停时牌面 3D 倾斜并带投影，被计分的牌依次跳起；st.selected 没有“抬起”，ix.focus 没有 3D 倾斜",
+  "severity": "medium",
+  "proposal": "st.selected = lift；ix.focus = tilt3d"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "hand",
+  "what": "按钮的颜色就是动作：出牌蓝、弃牌红、排序（Rank / Suit）橙、不可用时整颗变灰；el.cta = dual 只能画“次按钮（面板色）+ 主按钮（强调色）”，col.semantic 不被渲染，也没有“蓝主 + 红副 + 橙工具”的组合",
+  "severity": "medium",
+  "proposal": "col.semantic 增加 blueRedOrange 并在 button() 里按动作角色（play / discard / utility / sell）取色；el.cta.form 增加 triple"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "all",
+  "what": "手感是这套 UI 的一半：面板与牌持续轻摇，悬停弹跳，大字逐字弹出，计分时每张牌依次弹出 +筹码 / +倍率小气泡并抖动、总分滚动。mo.idle = sway、mo.juice = 1 只给总量，缺“逐个触发的计分序列”和“逐字弹出”",
+  "severity": "medium",
+  "proposal": "mo.sequence = perItemTrigger；mo.textReveal = popPerLetter"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "blinds",
+  "what": "选盲注界面：三张竖卡从底部升起（小盲注、大盲注、Boss），当前可选的那张抬高、其余压暗下沉，每张卡顶部一颗橙色“选择”按钮，卡上有盲注筹码图、目标分（红字）与奖励（$$$），下方是“跳过盲注 + 奖励标签”。现在借 tray + 三张并排竖卡（cardsRow）近似：hier.dimInactive 在卡片行上不生效、没有抬高，也没有卡内按钮；托盘还自带模板名标题与关闭键",
+  "severity": "medium",
+  "proposal": "lay.arrangement 增加 raisedCurrent（配合 hier.dimInactive 的位移与压暗）；cmp.listRow 的 action 字段也作用在竖卡上（卡内按钮）；lay.header = none 可关掉模板标题"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "results",
+  "what": "结算：大号红色“GAME OVER”，旁边站着小丑吉祥物 Jimbo 用像素对话气泡讲冷笑话，统计行是左侧小标题 + 右侧彩色数值块（最佳一手、出牌数、重掷数、种子、底注、轮次）。cnt.companion = mascot 在模板构图器里没有画法；模板名标题（本局总结）总会画在结局大字之上；结局大字的颜色不能单独设成红色",
+  "severity": "low",
+  "proposal": "模板构图器画 cnt.companion（吉祥物立绘 + cmp.dialogBox 气泡，贴在弹窗左侧；需要 Jimbo 像素立绘素材）；lay.header = none；col.text@title 覆盖生效"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "all",
+  "what": "整屏 CRT 后处理（桶形弯曲、扫描线、泛光、暗角）连 UI 一起作用；扫描线可用 ast.fx 表达，弯曲只能靠 rel.followPost = full 跟随画面，UI 自身没有弯曲参数",
+  "severity": "low",
+  "proposal": "rel.metaFx 增加 crtCurve，或 ast.fx 增加 barrel"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "draft",
+  "what": "说明框是深色圆角框里套一张白色内卡写效果（关键词橙 / 蓝着色），下方挂彩色类别胶囊（塔罗紫、星球蓝、幻灵青）；el.selection = tooltip 只画单层深色框，“框中套白卡 + 类别胶囊”的双层提示框没有取值；el.reward = bigCard 下方固定画 5 颗星，不是塔罗牌的名字条",
+  "severity": "low",
+  "proposal": "el.selection.form 增加 insetCard（外框 + 白色内卡 + 底部类别胶囊）；el.reward.form = bigCard 的星级随 st.rarityCue 可关"
+ },
+ {
+  "replica": "rep.balatro",
+  "name": "Balatro",
+  "screen": "hand",
+  "what": "Boss 规则提示（Must play 5 cards）是无底的超大像素白字 + 硬阴影，横在牌区上方；el.notify = banner 一定画半透明黑底条和上下两条强调色细线（vis.opacity@el.notify 也不生效）",
+  "severity": "low",
+  "proposal": "el.notify.form 增加 bareText（无底大字 + 投影）"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "Boss 条两端是白色祥云墨刷端头，左端还有一个小圆徽，条本身是很细的灰白长条；ast.ornaments = endcaps 只装饰面板，画在数值条上的端头没有参数",
+  "severity": "high",
+  "proposal": "给 cmp.gauge 加端头槽位：端头形状随 vis.motif（祥云、卷草、飞白），左端可挂小徽记"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "Boss 条颜色固定为“危险红”（e.bad），参考是灰白条；col.accent@el.threat 是合法键但渲染不读，元素级颜色覆盖整体不生效",
+  "severity": "high",
+  "proposal": "el.threat / el.vitals 的填充色读 col.accent@el.<元素>（或新增 col.danger 全局色），默认仍是红"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "棍势：右下墨环里画当前棍法姿态的白色人物剪影，右侧沿弧线排 4 颗发光金色棍势点；el.resources 的 gauge 画法写死成“物品名 + 横条 + x / y”，cmp.gauge@el.resources = lightUp 与 ring 排布都不生效",
+  "severity": "high",
+  "proposal": "el.resources 的 gauge 画法读 cmp.gauge@el.resources；cmp.gauge 新取值“弧形点阵”，再加一个中心徽记插画槽"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "三条细条各有颜色（白血、蓝法力、金体力）且长度不同、没有文字标签；el.vitals 的三条颜色写死为红 / 第二强调色 / 绿，标签无法去掉",
+  "severity": "medium",
+  "proposal": "el.vitals 支持逐条颜色与长度（col.accent@el.vitals 接受数组），并加“不写标签”开关"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "法术格是六角形，下方各挂一个数字键帽（1 / 2 / 3），未装备的第 4 格只画细线六角 + 一道斜杠；格子外形跟面板走，vis.silhouette@el.abilities 不生效，键位字固定在格子左上",
+  "severity": "medium",
+  "proposal": "slot 外形读 vis.silhouette（含 hexagon）；热键角标位置参数（格下 / 格角）；st.emptySlot 新取值“细线框 + 斜杠”"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "葫芦（回血次数）和精魄、变身小图标挂在血条旁；el.abilities 已用于右下法术格，放不下第二组快捷槽",
+  "severity": "medium",
+  "proposal": "允许元素多实例（el.abilities#2），或新增“消耗品 / 回复次数”元素"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "Boss 条在画面约 85% 高、名字左对齐在条左端上方；bc 锚点只能贴底（或被避让抬到两侧元素之上），bossBar 名字固定居中",
+  "severity": "low",
+  "proposal": "元素纵向偏移参数（elx.offsetY，按屏高百分比）；bossBar 名字对齐（左 / 中）"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "hud",
+  "what": "参考截图里左下玩家三细条是隐藏的（只剩 Boss 条与右下法术 / 棍势），复刻按已知 HUD 补上；HUD 什么时候出现（入战、受伤）没有参数，逐元素的 contextual 也不影响渲染",
+  "severity": "low",
+  "proposal": "rel.hudVisibility / elx.visibility = 情境显现 增加触发条件与渐隐时长，并在截图里画成淡出态"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "背景是两层：右侧压暗的宋画式古画（亭台、人物），左侧巨幅书法水印；ast.watermark 只能选一种，而且模板构图器（tpl.*）根本不画 ast.watermark；替换背景也只有 solid 是暗的（material / spotlightStage 在模板里都退回浅色渐变）",
+  "severity": "medium",
+  "proposal": "screen.ts 的 backdrop 画 ast.watermark 与 ast.bgMat；ast.watermark 改多选（faintPainting + calligraphy）"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "选中页签是一条白色飞白纸条，压在上面的字变成深色；选中态（t.key）永远是强调色底 + 白字，vis.edge@tab = brush 也不生效",
+  "severity": "medium",
+  "proposal": "选中态文字色按底色自动取对比色（或新增 col.onAccent），并让页签读 vis.edge@tab"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "本作菜单没有界面标题：顶部一排居中页签（竖线分隔、两端挂 A / D 键帽）就是页眉；模板总在左上写界面名，页签左对齐排在标题下面",
+  "severity": "medium",
+  "proposal": "界面标题开关（例如 cmp.plate@title 新取值 none）；lay.navAlign（左 / 居中 / 撑满）+ 页签分隔符与两端按键提示"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "一级页签是文字（A / D 切换），二级页签是一排小图标（Z / C 切换），lay.navDepth = 2 没有画第二行；cmp.tab 全局只能取一种内容",
+  "severity": "low",
+  "proposal": "lay.navDepth = 2 时画第二行页签；cmp.tab 按导航层级分别取值"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "稀有度是格子底边的一条色条（橙、金、紫、蓝、灰绿），数量写在格子左上角，每行格子下方有一条细横档像搁架；strip 只能画在左侧，数量固定在右下",
+  "severity": "low",
+  "proposal": "st.rarityCue = strip 加位置（左 / 底）；格子数量角标位置；行分隔样式"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "背包里没有锁定态，但已有物品和空格交错；st.locked 没有“无”取值（兜底是 lock，第 6 格起都打 ✕），只好用 dimmed 压暗",
+  "severity": "low",
+  "proposal": "st.locked 增加 none；集合样本支持“空格穿插”（例如 cnt.fillRatio）"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "详情栏是 稀有度字（Epic，紫）/ 物品名 + 细下划线 / 类别 / 持有数 1/999 / 两行描述，没有数值条和按钮；模板详情固定画数值条 + 装备 / 丢弃按钮",
+  "severity": "low",
+  "proposal": "详情字段参数（cmp.detailFields 多选：rarityLabel、type、held、desc、stats、buttons）"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "inventory",
+  "what": "右侧物品展示是不带框的 3D 实物渲染 + 柔和顶光；cnt.focal = item 画成带框的格子 + 稀有度光晕",
+  "severity": "low",
+  "proposal": "cnt.focal = item 时可选“无框大图 + 聚光”（与 ast.bgArt = spotlightStage 共用聚光画法）"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "character",
+  "what": "凭记忆：中间是可旋转的天命人 3D 模型，是整屏主视觉（需素材：当前包没有角色模型渲染图，画成剪影 + “3D 实时模型（需素材）”）",
+  "severity": "medium",
+  "proposal": "needs art：每个内容包一张角色展台渲染图（透明底），cnt.characterMedium = model3d 时画它"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "character",
+  "what": "凭记忆：右栏是完整属性表（气力、法力、体力、攻击、防御、暴击……逐行数字），模板的常驻详情只画选中物品的两条数值条",
+  "severity": "low",
+  "proposal": "集合界面旁可挂一个记录型属性表（lay.detail 新取值 statsPanel，按 st.statViz = table 画）"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "skilltree",
+  "what": "凭记忆：节点四周有表示已点等级的小圆点，已学节点是金 / 白色亮环；等级点没有参数，节点颜色写死（已学 = 色板绿）",
+  "severity": "low",
+  "proposal": "cmp.node 加“等级点环”；节点三态颜色读 col.accent / col.focus"
+ },
+ {
+  "replica": "rep.black-myth",
+  "name": "Black Myth: Wukong",
+  "screen": "codex",
+  "what": "影神图：每个妖怪一幅水墨淡彩画像 + 一首诗 + 长篇小传，画像是整页唯一的主视觉（需素材）；cnt.characterRender = 单色只能近似水墨淡彩，详情栏画的是数值条而不是诗与小传",
+  "severity": "medium",
+  "proposal": "needs art：水墨淡彩画像；cnt.characterRender 新增“水墨”取值；cnt.textLength = long 时详情画成诗 + 长文"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "infoview",
+  "what": "信息视图把整座城市重绘成无贴图的白色黏土模型，数据色（线路、覆盖范围、热力、方向箭头）只画在这层白模上；UI 参数里没有'重绘世界'的手段，这一屏仍临时借画面参数（color.saturation / color.brightness / material.preset = clay）模拟",
+  "severity": "high",
+  "proposal": "el.overlay.form 新增 worldRecolor（叠层期间世界改成白模 / 灰模），或 rel.sceneTone 新增 clay（局内 HUD 也生效，而不是只给模板界面的背后压色）"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "infoview",
+  "what": "参考图的主体是沿道路画的彩色线路样条（每条公交 / 地铁线一个身份色，多线共走一段时并排，站点是小圆点），整张图几乎都是它；el.overlay 只有热力圆斑、居中四根箭头、虚线椭圆范围圈，画不出贴路的线路网",
+  "severity": "high",
+  "proposal": "el.overlay.form 新增 routeLines：沿世界道路画 N 条 col.coding = lineId 色的样条 + 站点圆点，重叠段并排偏移"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "infoview",
+  "what": "el.overlay.form 是多选，但渲染器只画第一个取值；参考同时有热力区（车站旁一块红）、线路网和绿色方向光柱，现在只能三选一（选了 heatmap）",
+  "severity": "medium",
+  "proposal": "渲染器按顺序叠画 el.overlay.form 里的全部取值（每种取值各自的图例合并成一块）"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "infoview",
+  "what": "游戏里的信息视图图例在左上角（标题 + 渐变色条 + 低 / 高两端 + 几行统计）；heatmap 的图例是写死在右下角的三档色块小面板",
+  "severity": "low",
+  "proposal": "el.overlay 增加图例子参数：图例锚点（读 el.overlay.screenAnchor）+ 图例样式（渐变条 / 分类色块 / 统计行）"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "hud",
+  "what": "所有常用控件收在贴底的一整条深色工具带里（左：里程碑 / 人口 / 资金 / RCI，中：分类页签，右：日期 / 倍速 / 推土机）；lay.hudOrg = edgeBar 在渲染器里没有效果，元素各自浮在角落，没有那条连贯的底带",
+  "severity": "medium",
+  "proposal": "lay.hudOrg = edgeBar 时，在锚点落在同一边的元素后面画一条整宽面板带（高度取该边元素的最大高 + 边距），元素在带内横排"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "hud",
+  "what": "底部工具栏是两层：下层是一排彩色小插画式分类图标按钮，上层抽屉是小号文字子页签 + 一排游戏实时渲染的缩略卡（悬停出价格与维护费）；el.toolbar = categoryTabs 只画'强调色梯形大页签 + 一行单色图标'，页签颜色、大小和缩略卡都不能单独指定，也没有下层图标排",
+  "severity": "medium",
+  "proposal": "el.toolbar 子参数：页签样式（cmp.tab@el.toolbar：小文字页签 / 梯形牌）、抽屉卡片形态（cmp.slot@el.toolbar = thumbCard）、缩略图来源（ast.iconSet@el.toolbar = runtimeRender）、是否带下层分类图标排"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "hud",
+  "what": "Chirper：顶部中间一只小鸟吉祥物按钮，点开往下展开推文气泡（头像 + 名字 + 一句话，白底）；现在用 el.notify = toast 放在上中近似成一张深色圆角提示卡，没有小鸟入口、头像和白底气泡",
+  "severity": "medium",
+  "proposal": "el.notify.form 新增 socialFeed（头像气泡流，可选浅色底），入口可配 cnt.companion = mascot 画在气泡流上方"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "hud",
+  "what": "RCI 需求：三根并排的小竖条（住宅绿 / 商业蓝 / 工业黄）+ R / C / I 字母；el.meter = stack 只能画三行横条（cmp.gauge@el.meter = vertical 也只是在横行里从下往上填，看起来是三根细横线）",
+  "severity": "low",
+  "proposal": "el.meter.form 新增 demandBars（固定身份色的并排竖条 + 底部字母），或让 stack 在 cmp.gauge = vertical 时改成并排竖条"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "hud",
+  "what": "修路 / 放建筑时贴着光标的造价、长度、角度浮动读数与吸附辅助线；el.cost.attachTo = cursor 在渲染器里不生效（造价框照锚点排，round 1 落到了左上角），所以这一轮把 el.cost 去掉了",
+  "severity": "low",
+  "proposal": "渲染器让 attachTo = cursor 的元素画在光标挂点旁；el.overlay.form 新增 guides（吸附线 + 角度 / 长度读数）"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "hud",
+  "what": "建筑头上的问题图标（红底白符号的圆章：断电、缺水、垃圾、着火）；el.overlay = statusIcons 画成紫色水晶小徽章，读不出是警示",
+  "severity": "low",
+  "proposal": "statusIcons 的徽章形状 / 底色读 st.alert 与 vis.silhouette@el.overlay（圆章 + 红底白符号）"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "economy",
+  "what": "没有'经营管理面板'界面类型（预算 / 税率 / 贷款 / 政策），只能借设置模板；预算页是两栏、每个服务一行'图标 + 名称 + 白天 / 夜间两根滑条 + 百分比 + 维护费'，而 form 只按内容包的设置行画（滑条 / 开关 / 下拉混排），cmp.listRow 对它不起作用",
+  "severity": "medium",
+  "proposal": "cnt.screen 新增 screen.manage（经营 / 预算 / 政策），其表单行读 cmp.listRow（新增 slider 字段）+ lay.columns"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "title",
+  "what": "全屏容器的模板总会画窗口页眉（模板名'标题' + 右上关闭 X）；标题界面没有页眉也没有关闭键，ix.close 没有'无'这个取值（兜底是 xTopRight）",
+  "severity": "medium",
+  "proposal": "ix.close 新增 none；或 cnt.screen = screen.title / cmp.modal = floating 时不画页眉"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "title",
+  "what": "主菜单是左侧一列：LOGO 在上、按钮竖排在下；右侧是新闻 / DLC 推荐面板。tpl.title 只能'LOGO 一栏 + 菜单一栏'左右分开（focalSide = left 时菜单跑到画面中间），focalSide = top 时 LOGO 横向居中且菜单被挤到底部、少一项；ops.entries = bannerStack 在标题模板里不画",
+  "severity": "low",
+  "proposal": "lay.composition 新增 stackLeft（主体叠在数据上方、同一栏贴左）；标题模板读 ops.entries 在另一侧画横幅竖向堆叠"
+ },
+ {
+  "replica": "rep.cities-skylines",
+  "name": "Cities: Skylines",
+  "screen": "global",
+  "what": "分类页签图标是多色小插画，而系统按钮、状态图标是单色扁平；vis.iconStyle 只有一个全局值",
+  "severity": "low",
+  "proposal": "让渲染器读取 vis.iconStyle@tab / vis.iconStyle@el.toolbar 的作用域覆盖"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "hud",
+  "what": "右下“下一步”圆钮：现在跟随强调色画成蓝色实心圆，但原作是一颗玻璃球（图标随待办切换，不写字）嵌在黄铜齿轮钟表圈里，左侧挂两颗小圆钮（宗教、产能），上方浮一条“CHOOSE RESEARCH”提示条；el.cta = round 只画实心圆 + 字，不读 ast.frameMat@el.cta / vis.gloss。",
+  "severity": "high",
+  "proposal": "el.cta = round 读 ast.frame / frameMat@el.cta 画一圈环形外框，读 vis.gloss@el.cta 画玻璃高光；外框结构新增环形 / 齿轮圈（G-frame-structure）；小部件骑边挂在主钮旁（G-ornament-placement）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "hud",
+  "what": "未探索区不是黑雾，而是一张古地图羊皮纸：手绘六角格、海怪章鱼、恒向线，3D 世界像从纸上长出来；vis.mapUnexplored = 留白 + mapStyle = 羊皮纸只作用于地图页，局内实时世界的迷雾画风没有参数。",
+  "severity": "high",
+  "proposal": "rel 新参数：局内迷雾画风（沿用 vis.mapStyle 词表）；G-map-lib"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "hud",
+  "what": "顶栏 = 贴顶全宽细深蓝条：左侧每项产出（科技蓝、文化紫、信仰、金币黄 + 上标每回合增量 +5.2、旅游），右侧回合数 / 公元纪年 / 实时时钟 / 帮助 / 菜单。现在用 el.resources = pills（三枚深色胶囊）+ el.timer = smallText 近似；lay.hudOrg = edgeBar 在画布上根本没有实现（任何取值都不画整条），增量写成上标也无法指定，el.timer 只有倒计时 / 回合，没有“回合 + 纪年”。",
+  "severity": "medium",
+  "proposal": "实现 lay.hudOrg = edgeBar：同一条边上的元素共用一条贴边底条；elx.valueLabelPos 新取值 superscript；el.timer.form 新取值 turnDate（回合 + 纪年）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "hud",
+  "what": "系统入口（科技、市政、政体、宗教、伟人）是顶栏下一排小圆钮，挂在一条带地图纹的窄带上；el.toolbar = microMenu / buttonRow 画的是方形切角钮，不读 vis.silhouette@el.toolbar。",
+  "severity": "medium",
+  "proposal": "工具栏按钮读 vis.silhouette@el.toolbar（circle → 圆钮）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "hud",
+  "what": "城市横幅是世界内胶囊：左端人口数字、中间小型大写城名、首都星、阵营色底（蓝白 / 绿金），每座城都有一条；现在用 el.selection = tag 画了一条普通深色胶囊（只有一个、没有人口数字和阵营色）。",
+  "severity": "medium",
+  "proposal": "rel.worldRender 新取值 nameplate：每个世界挂点一条名牌（左数字 + 名 + 阵营色底）（G-world-label）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "hud",
+  "what": "小地图是带卷角的青铜框方形羊皮纸地图，框顶上骑着一排蓝色圆形镜头按钮（透镜 / 标记 / 搜索 / 选项）；按钮骑边出框无法表达。",
+  "severity": "medium",
+  "proposal": "G-ornament-placement"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "hud",
+  "what": "col.accent@el.cta 等按元素的颜色覆盖能通过校验，但主题只有一套色板，元素里的 e.accent 不读覆盖（D-emphasis 的 color → col.accent@元素 也因此不生效），所以“下一步”钮只能跟全局强调色走。",
+  "severity": "low",
+  "proposal": "makeCtx 按 col.*@<元素> 生成该元素自己的色板（与 cmp.*@ 覆盖同口径）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "city",
+  "what": "城市详情是左侧整列抽屉（顶部青绿渐变标题条 + 红圆 X，页签图标嵌在铜色托槽里，下面是密集的数值行）；lay.container = drawer 固定在右侧，局内 HUD 又没有“整列侧栏”元素，这里用 el.selection = card 锚左上近似（太短太宽）。同时右下还有城市面板（阵营色名牌、带绿色增长环的大圆盾徽、大号数字 + 右对齐小型大写标签、“回合至增长”绿条）——同屏两个选中面板，el.selection 只能有一个。",
+  "severity": "medium",
+  "proposal": "lay.container = drawer 增加方向（drawerLeft / drawerRight）；el.selection 允许两个实例（el.selection#2）；面板主色随玩家阵营（G-color-roles）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "build",
+  "what": "界面模板的元素排在容器里面（drawElements 用容器外框当版面），所以生产抽屉打开时仍留在屏幕上的小地图、左上世界追踪器（棕金标题条 + 按类型着色的研究 / 市政两行 + 进度环）、右下城市面板、顶栏下的圆钮排都画不出来；只有 flow.chrome 的顶栏能画到整屏。",
+  "severity": "medium",
+  "proposal": "elx 新参数 anchorSpace = screen | container（元素锚在整屏还是容器里）；列表行按类别自动着色（G-color-roles）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "build",
+  "what": "生产列表按“区域与建筑 / 单位”分组，组标题是浅青蓝渐变胶囊（深蓝字）；listRows 只有一串同构行，没有组标题行。",
+  "severity": "medium",
+  "proposal": "lay.grouping = header（分组标题行，标牌形态读 cmp.plate@groupHeader）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "build",
+  "what": "悬停 tooltip 是白底黑字，与整体深色反差；lay.detail = transient 的浮出框只能用面板色。",
+  "severity": "medium",
+  "proposal": "col 角色新增 tooltip 底色 / 字色（G-color-roles）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "build",
+  "what": "顶部页签是三枚带图标的胶囊（Production / Purchase 金币 / Purchase 信仰），嵌在页签托槽里；drawNav 只画文字页签（cmp.tab = iconText 不生效），固定取内容包的 4 个。",
+  "severity": "low",
+  "proposal": "G-tab-form：页签托槽；页签读 cmp.tab 画图标；页签数读 lay.navCount"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "build",
+  "what": "（build / greatpeople / skilltree / map 共用）flow.chrome = topCurrency 画的是手游式顶栏：右对齐三枚货币胶囊、每枚带“+”购买钮；文明 6 的跨界面顶栏是左侧产出数字 + 右侧回合 / 纪年 / 时钟，没有购买钮。",
+  "severity": "low",
+  "proposal": "flow.chrome 新取值 topYields（左对齐产出 + 右侧回合信息，不带 +）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "greatpeople",
+  "what": "卡片主体是一枚圆形凹龛，里面是骨白色浮雕半身像，前面叠一件职业道具（锚、锤镐、星盾、宝石、法器）；现在 tallCard 的卡面是图标集里的商品图（金币、宝石、药瓶），底下还写“¥ 价格”。cnt.characterRender = 浮雕已有，但卡面构图没有。需素材：没有伟人浮雕胸像。",
+  "severity": "high",
+  "proposal": "cmp.card 新取值 medallionCard（圆龛人像 + 前景道具），gridItems 的 tallCard 按 cmp.card 画卡面；价格前缀读内容包货币而不是写死“¥”（G-card-node）；needs art：浮雕胸像"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "greatpeople",
+  "what": "卡片很高（约屏高 57%、宽高比约 1 : 2.7）、顶端写职业 / 人名 / 时代三行小型大写；tallCard 固定 1 : 1.4 且宽度封顶，7 张卡只占横带上半截，下面空着。",
+  "severity": "medium",
+  "proposal": "cmp.slot = tallCard 读新参数 lay.cardAspect（卡片宽高比）并按可用高度撑满"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "greatpeople",
+  "what": "每张卡里嵌着一个带缺角细框和滚动条的“招募进度”小表（玩家行 + 0/40），下方两枚货币胶囊（金币 / 信仰）和一条全宽米灰 Biography 按钮；页签是两枚胶囊，居中嵌在铜色弧形托槽里。",
+  "severity": "medium",
+  "proposal": "cmp.card 允许嵌套 listRow 表与底部按钮条；G-tab-form（居中页签托槽）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "greatpeople",
+  "what": "同屏两种珐琅底：藏青标题带 + 酒红卡面；col.surface 只有一个，这里整块用酒红渐变，标题带的藏青没法指定。",
+  "severity": "medium",
+  "proposal": "col.surface@titleBar / @card 角色绑定（G-color-roles）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "diplomacy",
+  "what": "需素材：右侧 2/3 是巨大的 3D 领袖（本身就是这一屏的主视觉）；战术包没有角色立绘，cnt.characterMedium = model3d 只能画剪影 + “3D 实时模型（需素材）”。",
+  "severity": "high",
+  "proposal": "needs art：一张策略品类的领袖半身 / 全身立绘（或接 3D 角色渲染）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "diplomacy",
+  "what": "左侧信息面板约占屏宽 30%、领袖约 70%；split 里主体固定占 42%（只有 ops.poster 能放大，但那是运营参数），列表栏太宽。",
+  "severity": "medium",
+  "proposal": "lay 新参数 splitRatio（主体所占比例，0.3–0.75）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "diplomacy",
+  "what": "左侧面板是黑色丝绒挂幕（有垂坠褶皱）+ 金细边，顶部圆形阵营勋章 + 两行小型大写名，最左侧竖条是已结识领袖的圆头像列（一条头像页签栏，与面板内的图标页签并存）；底部动作按钮是一列深蓝圆角条，按钮内第二行小字写代价（Grievances 数值红字）。现在只能用近黑渐变 + metalGrad 光泽近似丝绒，lay.nav 只能有一种。",
+  "severity": "medium",
+  "proposal": "ast.coreMat 新取值 drape（G-material-lib）；lay.nav2 / 头像页签栏（cmp.tab = avatar 真正画头像）；cmp.button 新取值 textWithSubline（G-control-lib）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "wonder",
+  "what": "奇观落成演出：顶部一条全宽细深条写“A WORLD WONDER HAS BEEN CREATED!”，底部一条全宽深条 = 小型大写奇观名 + 圆形奇观图标 + 一块深色引文框（引语 + 出处）；el.notify = banner 宽度封顶 460px / 屏宽 60%，el.subtitle = bar 只按字宽垫底，两条都不是全宽。",
+  "severity": "low",
+  "proposal": "G-el-broadcast-film：上下字卡带；banner / bar 读 elx.scale 之外的“全宽”开关（elx.span = full）"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "skilltree",
+  "what": "科技树凭记忆编码：横向滚动，按时代分列（列头时代名），节点是左侧圆形图标的横向长卡（名称 + 回合数 + 解锁小图标行），科技蓝 / 市政紫两套色，尤里卡 / 灵感用半圆进度提示；tree 排布固定自上而下、节点固定画圆，cmp.node = building 也画成编号圆；ast.watermark 在模板构图器里不画。",
+  "severity": "medium",
+  "proposal": "cmp.node 新取值 rowCard（G-card-node）；lay.arrangement = tree 读方向（lay.flowDir = ltr / ttb）；时代列头 = lay.grouping = header；模板构图器画 ast.watermark"
+ },
+ {
+  "replica": "rep.civ6",
+  "name": "Sid Meier's Civilization VI",
+  "screen": "map",
+  "what": "战略视图凭记忆编码：同一张世界一键切成平面制图（羊皮纸色地形 + 符号化单位 / 城市图标 + 平涂边界色），HUD 保留；现在用 fullscreen 地图页 + 小地图 / 结束回合钮近似，但模板总会画标题和关闭控件（ix.close 没有“无”），而且“同一世界在 3D 与 2D 制图之间切换”是一组参数同时切换，没有对应机制。",
+  "severity": "low",
+  "proposal": "ix.close 新取值 none；参数模式包（G-mode-bundle）"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "chapter",
+  "what": "巨型全大写无衬线标题直接压在实时画面上，字高约屏高四分之一，有时出血到屏幕外被裁切；现在只能把这一屏 typ.baseSize 提到 26、el.title.scale 拉到上限 2.5，标题约屏高 23%，但序号行（正文小字档）跟着一起放大成第二行巨字，也没有出血裁切",
+  "severity": "medium",
+  "proposal": "el.title 加绝对字号（占屏高百分比，标题与序号分开设）+ “出血裁切”开关"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "codex",
+  "what": "凭记忆：局里文件的被涂黑词（实心条盖住单词）是这款 UI 最有辨识度的文本处理，参数里没有",
+  "severity": "high",
+  "proposal": "hier.inline 新增“涂黑 / 删密”取值：正文里随机几处词换成实心条"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "codex",
+  "what": "凭记忆：文件页是“左侧分类 / 标题列表 + 右侧文件正文”；lay.detail = persistent 的详情栏永远画物品卡（名字、两根数值条、装入 / 丢弃按钮），右栏没法写长正文，只好用左页签当分类列 + 整块正文近似，丢了文件标题列表",
+  "severity": "medium",
+  "proposal": "lay.detail 的详情内容跟 cnt.dataShape / cnt.textLength 走：text + long 时详情栏画标题 + 长正文、不画数值条与按钮"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "左上是面包屑导航（← 返回键 + “装配 / 武器改造”，上级灰、当前白），lay.nav 没有面包屑；模板标题只能写一个词",
+  "severity": "medium",
+  "proposal": "lay.nav 新增 breadcrumb（返回键 + 上级灰字 / 当前白字）"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "网格分两段：上面一排已装配（一张宽的武器形态卡 + 3 个改造槽），下面是 6 列库存；lay.pinned = pinTop 不进画法，宽卡画不出来",
+  "severity": "medium",
+  "proposal": "网格支持跨列格子；lay.pinned = pinTop 画成单独一行并可设格子尺寸"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "格子图标是白色线性图标，而详情标题（GRIP）与警示字（Exclusive to Shatter）是红色：模板里格子 / 资源 / 列表图标都取 col.accent，标题取正文色，没法“图标白、标题红”；这一屏只好把强调色改成近白，红色标题因此画不出",
+  "severity": "medium",
+  "proposal": "新增 col.icon（图标色角色，slot() / icon() 默认用它；col.strategy = mono 时等于文字色）与 typ.display.color（标题色：text / accent / custom）"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "6×4 网格里只有 4 格装着改造，其余是空的排线格；模板按 cnt.itemCount 把每格都画满物品，没有“N 格里装了 M 件”，只能用 st.locked = dimmed 把第 6 格起的图标压暗冒充空格",
+  "severity": "medium",
+  "proposal": "加 lay.slotCount（格子总数）或 cnt.fillRatio，超出物品数的格子按 st.emptySlot 画空格"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "每个格子都画右下角数量（改造没有数量）；格子转角在 vis.corner = sharp 时仍是 6px 小圆角；稀有度是格子右上角的细罗马数字竖线（I / II）加详情里的文字“Common”，已装配改造卡用虚线框（vis.stroke@card 不进画法）",
+  "severity": "low",
+  "proposal": "slot 的数量角标加开关（st.qty 或跟 cnt.dataShape）；格子转角跟 vis.corner；st.rarityCue 新增“罗马数字档位”；st.selected 新增“虚线框”并让 vis.stroke@card 生效"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "排序选项“ORDER (Y) New Rarity Type”是一行纯文字，选中项只靠变白变粗；页签总是画黑色底块（cmp.tabIndicator 不进画法）",
+  "severity": "low",
+  "proposal": "cmp.tabIndicator 生效并新增“仅字重 / 明度”；页签行前可挂一个按键图标"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "详情是一整列：红色窄体标题 + 灰色等级 + 说明 + 若干虚线框改造卡（属性名左、青色数值右）+ 锁定行（锁图标 + Unlock by upgrading）；transient 详情只是一张写名字和两行说明的小卡，persistent 又会画数值条和按钮并贴到最右",
+  "severity": "low",
+  "proposal": "详情加“属性行”画法（st.statViz = table 时左名右值、不画条）与锁定行（st.locked = lock 在详情里画锁 + 文字）；persistent 详情可设起始位置（紧跟网格）"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "all",
+  "what": "按键提示图标：ix.glyphs = xbox 一律画彩色圆钮（A 绿 B 红 X 蓝 Y 黄），本作是单色白圈黑字 / 白描边圈",
+  "severity": "low",
+  "proposal": "ix.glyphs 旁加 ix.glyphTint（品牌色 / 单色 / 跟随文字色）"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "hud",
+  "what": "血条是一条看不出底槽的青色实心短条，前面挂一个十字图标；模板的生命条填充色写死为危险红（e.bad），col.accent@el.vitals 不生效，条前固定写“体力”文字标签、关不掉，条高跟条长一起按 scale 缩，做不出“短而粗”；能量条、武器形态与弹药只在战斗时出现（参考是探索态）",
+  "severity": "medium",
+  "proposal": "el.vitals 加 labelStyle（文字 / 图标 / 无）、条高与条长分开的尺寸、“无底槽”开关；生命条颜色读 col.accent@el.vitals 或新的 col.good / col.bad 角色"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "hud",
+  "what": "目标是两行：黄色窄体全大写标题 + 白色粗体说明，标题前有“描边菱形套实心小菱形”图标；el.objective 的 text 画法不画前缀图标，标题色写死 #e3b341（接近但不是本作的亮黄），vis.silhouette@el.objective / col.accent@el.objective 都不进画法",
+  "severity": "low",
+  "proposal": "el.objective 的 text 画法加前缀标记（读 vis.silhouette@el.objective），标题色读 col.accent@el.objective"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "all",
+  "what": "按元素 / 组件的视觉覆盖键（col.accent@el.*、vis.silhouette@node、vis.opacity@slot、vis.stroke@card）能通过校验但渲染器不读，只能整屏改全局值（所以背包整屏强调色改白、地图整屏改黄）",
+  "severity": "medium",
+  "proposal": "makeCtx 的 accent 与 slot / drawNode / panel 的样式按 <参数>@<元素或组件> 先查覆盖再回全局（resolve.at 已有，接到 theme / slot / drawNode 上）"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "map",
+  "what": "凭记忆：地图是黑底白线的楼层平面示意图，多层楼叠在同一张图上，看不出高差（评测里地图难读的主因）；楼层切换没有参数。vis.mapStyle = schematic 烘出来是蓝图蓝底，只能借 chalk（深灰底 + 白墙块）近似",
+  "severity": "medium",
+  "proposal": "地图加“楼层 / 层级切换”参数；schematic 的底色与线色跟 col.surface / col.text 走（或加单色示意图取值）"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "map",
+  "what": "凭记忆：扇区名是左上白色窄体大写字，任务目标是黄色菱形；地图左上的地名总是画成强调色实底胶囊（黄底白字几乎看不清），已访问节点固定画绿色（pal.good），cmp.node 没有菱形",
+  "severity": "low",
+  "proposal": "地名牌读 cmp.plate（none = 直写文字）；cmp.node 新增 diamond，已访问节点色读 col.accent2 / col.focus"
+ },
+ {
+  "replica": "rep.control",
+  "name": "CONTROL",
+  "screen": "inventory",
+  "what": "正向数值（-6% 弹药消耗、+2 弹丸）是青色，模板的增量 / 好状态色写死为绿色 pal.good",
+  "severity": "low",
+  "proposal": "新增 col.good / col.bad 颜色角色（与 col.coding = status 联动）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "hud",
+  "what": "邪教母题库：五芒星 / 倒五芒星、全视之眼、红色王冠、倒十字、蜡烛与骨头，用在框角、分隔条、空状态与水印上。vis.motif = runes 只是泛符文法阵，而且矢量符文画成「圆圈 + 斜杠」，放大到面板角上像禁止标志（第 1 轮各菜单屏四角都是它，第 2 轮已把角花去掉，只留分隔条）。",
+  "severity": "high",
+  "proposal": "vis.motif 增加 cultSigil（五芒星 + 眼 + 王冠），ast.watermark 增加同名取值；角花图集补这一类"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "cards",
+  "what": "塔罗卡：两张竖长卡，整幅同画风插画 + 底部名牌条，卡下方另起一段说明；先背面朝上再翻开，稀有卡带金边与闪光。三选一的卡排（cardsRow）写死 3 张、不读 cnt.itemCount，卡面是图标 + 名 + 说明，cmp.card 也没有 tarot 版式（顶部罗马数字、底部标题条、无数值）。",
+  "severity": "high",
+  "proposal": "cardsRow 读 cnt.itemCount（2–5 张）并按 cmp.card 画卡面；cmp.card 增加 tarot（与 fam.occult-tarot 的 G-card-node 合并）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "cards",
+  "what": "tpl.draft3 自带 ops.actions = retry（「再抽 10 次」按钮）。ops.actions 是并集合并，复刻里写空数组去不掉，买断制的祝福三选一也挂着一个运营按钮压在第三张卡上。",
+  "severity": "medium",
+  "proposal": "ops.actions 增加 none 取值（或让显式的空数组覆盖并集）；cnt.subtype = draft3 时按 uip.business = premium 自动清空"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "hud",
+  "what": "血量是一排卡通心形，有红心、蓝色魂心、黑心三种并可半颗；心形下面是武器、诅咒两个黑底白边圆形图标，诅咒旁是一条蓝绿色的「狂热值」细条。cmp.gauge = icons 只有一种颜色的心，第二行退化成带文字标签的普通横条；el.abilities = slots 写死 4 格并带 1–4 键位数字，格子外形跟面板转角走，vis.silhouette@el.abilities = circle 不生效；生命条每行前面都写名称标签（健康 / 保暖），原作没有。",
+  "severity": "medium",
+  "proposal": "cmp.gauge = icons 支持多段心型（按类型着色 + 半格）；el.abilities 增加条数（elx.count）并让格子读 vis.silhouette@el.abilities；另加 elx.nameLabel（显示 / 隐藏行名）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "hud",
+  "what": "右上小地图只画本层房间：白色描边的小方块 + 连线，当前房间高亮、特殊房间有图标，没有底也没有框。el.minimap = plan 是连续地形的平面图，外框还带强调色外发光。",
+  "severity": "medium",
+  "proposal": "el.minimap 增加 roomGraph（房间方块 + 连线的节点式小地图，无底）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "dialogue",
+  "what": "对信徒互动是一圈圆形图标按钮环绕信徒（下达指令、祝福、送礼、恐吓……），选中项放大并在环心或环顶显示名字，部分项点开是第二层轮盘。第 2 轮改用集合 + 环形排布（ringItems）表达出了「一圈图标围着角色」，但环心固定画一个「中心物件」灰盒占位、格子是方格（vis.silhouette@slot 不生效）、没有选中项名称，也没有二级轮盘；el.choices 的 arrangement = ring 完全没实现（仍是竖排三行）。",
+  "severity": "medium",
+  "proposal": "ringItems：cnt.focal = none 时环心留空（让世界里的角色露出来）、格子读 vis.silhouette@slot、增加 ringLabel（环心 / 环顶显示当前项名称）；el.choices 实现 arrangement = ring；增加 nestedRing（二级轮盘）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "dialogue",
+  "what": "对话文字逐字出现，并且单个词会抖动、波浪起伏、变红强调（关键词着色 + 字形动效）。mo.textReveal 只有出现方式，hier.inline = keyword 只着色不动。",
+  "severity": "medium",
+  "proposal": "新增 mo.textFx（wave / shake / pulse，按关键词作用）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "hud",
+  "what": "整套 UI 都有果冻式小弹动：面板弹出时压扁拉伸、图标待机轻微上下浮动、数值变化时图标一跳。mo.idle = sway 与 mo.easing = overshoot 只给出大意，没有压扁拉伸（squash & stretch）的入场。",
+  "severity": "medium",
+  "proposal": "mo.enter 增加 squashPop（压扁拉伸弹出），mo.idle 增加 bob（图标逐个错相上下浮动）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "hud-base",
+  "what": "左上信仰值大条的颜色随数值分档（低红、中黄、高绿），下面饥饿、疾病两条细条，各带圆形图标；信徒头顶是带需求图标的思想气泡（饿、病、想要什么）。el.meter = stack 三条的颜色由内容包写死（橙 / 黄 / 紫），cmp.gauge 也不能按数值分档换色。",
+  "severity": "medium",
+  "proposal": "cmp.gauge 增加 colorByValue（阈值分档色），el.meter 每行颜色可用 col.accent@el.meter 覆盖；el.overlay 的 statusIcons 增加 thoughtBubble 画法"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "map",
+  "what": "远征路线图：自下而上的分叉节点，节点是黑底白边圆章里放图标（战斗、资源、信徒、塔罗、商人、Boss），已走路径涂红、当前位置是小羊头。tpl.routeMap 的节点固定画「圆 + 内容包的单字」，不读 cmp.node；连线只有一种样式，不能按已走 / 未走换色。",
+  "severity": "medium",
+  "proposal": "routeMap 节点读 cmp.node，cmp.node 增加 iconBadge（圆章 + 类型图标）；vis.connector 增加已走段着色（col.accent）与未走段虚线的组合"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "hud-boss",
+  "what": "Boss 出场先打一张大字名牌（名字 + 称号），之后屏幕底部一条带端饰的长红条 + 白色大写名字；Boss 被打掉一段时条会分段闪白。bossBar 的颜色写死为「坏」色（偏粉红），不读 col.accent@el.threat，也不画 ast.ornaments@bar 的端饰。",
+  "severity": "low",
+  "proposal": "bossBar 读 col.accent@el.threat 与 ast.ornaments@bar（endcaps）；el.threat 的 bossBar 与 tpl.bossIntro 连成一个流程（chk.demo 增加 bossIntro）"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "build",
+  "what": "建造是两段式：先在分类页签 + 建筑格子里选，再回到世界里用半透明幽灵摆放，地面格子按可放 / 不可放显示绿 / 红。一屏只能选一个阶段：这里编码选择阶段，但 cnt.subtype = home 不分阶段总是画幽灵摆放的 ✓✕（弹窗容器时 ✕ 从面板顶边上方露出来，第 2 轮改全屏容器把它挤出画面）；页签固定画文字，cmp.tab = icon 不生效；建筑格的稀有度边框无法关闭。",
+  "severity": "low",
+  "proposal": "ghostPlace 只在 cnt.stage = browse / confirm 时画；复刻支持一屏多阶段（screens[].stages）；tabsTop 读 cmp.tab（图标页签）；st.rarityCue 增加 none"
+ },
+ {
+  "replica": "rep.cult-of-the-lamb",
+  "name": "Cult of the Lamb",
+  "screen": "hud",
+  "what": "标题与 LOGO 用的是自定义的尖楔衬线（带钩刺的衬线脚），不是哥特黑体也不是普通衬线。",
+  "severity": "low",
+  "proposal": "typ.display.family 增加 occultSerif（尖楔钩刺衬线）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "*",
+  "what": "红青黄三色分工：红是骨架（标题、边框、价签、标签字），青只给可交互 / 选中与等级，青绿给「AVAILABLE ITEMS」这类次级标签与计数徽章，黄给任务与金钱；col.accent / accent2 只能给两个颜色，不能声明各自承担的角色。局内任务追踪也因此反了：参考里任务名是淡红、目标行是黄色带图标，我们的 el.objective 把标题写死成黄色、目标行用正文色",
+  "severity": "high",
+  "proposal": "col.* 角色绑定（G-color-roles）：accent2 = 只用于可交互 / 选中；新增 col.secondaryText 与 col.quest（任务 / 金钱黄），el.objective 的目标行读 col.quest、标题读正文色"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "*",
+  "what": "满屏的功能性微文字装饰：CONNECTION 编号、条形码、版本号、坐标、厂牌 logo 小块挤在面板角落和屏幕边缘（序章 HUD 左下的青色 Arasaka 数据窗、右下的行情数字也属于这一层），是「被黑进来的系统」感的主要来源",
+  "severity": "high",
+  "proposal": "vis.motif = dataNoise 或 ast.ornaments = microText，带密度参数（G-data-noise）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "*",
+  "what": "切角只切一个角（价签、卡片、列表行的右下角或左上角），插槽四角是括号；vis.corner = chamfer 会把四个角都切掉",
+  "severity": "medium",
+  "proposal": "vis.corner 逐角掩码 vis.cornerMask（tl/tr/br/bl）（G-corner-each）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "*",
+  "what": "故障闪烁只在切屏、受击、被黑时短暂出现，rel.metaFx = glitch / ast.fx = glitch 都是常驻层（第一轮的战斗 HUD 因此满屏横贯粉青条纹，这一轮只好去掉）；现在只能二选一（常驻或不画）",
+  "severity": "medium",
+  "proposal": "故障强度与触发时机：ast.fx / rel.metaFx 的触发条件（enter / hit / hack / always）+ 强度（G-postfx）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "*",
+  "what": "逐组件 / 逐元素的色彩与描边覆盖不生效：vis.strokeColor@minimapFrame = accent2、col.surface@minimapFrame = 深蓝、col.text@el.subtitle = 浅青、col.accent@el.objective = 黄都是合法取值，但渲染器只建一套全局皮肤 token，只有 cmp.* 按元素读覆盖，所以小地图仍是红框暗红底（参考是青色细框 + 深蓝底），字幕仍是白字",
+  "severity": "medium",
+  "proposal": "theme.ts 在画某个组件 / 元素时叠加 <参数>@<组件|元素> 的 vis.* / col.* 覆盖，生成局部 token（对应 Godot Theme 的 type variation），不新增词表"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "hud",
+  "what": "字幕的说话人名用红橙、台词用浅青，两段颜色不同；渲染器已有 el.subtitle 的 speakerColor 画法（台词仍写死白色），但词表里没有 el.subtitle.form",
+  "severity": "medium",
+  "proposal": "开放 el.subtitle.form（plain / boxed / speakerColor），说话人色走 col.accent@el.subtitle、台词色走 col.text@el.subtitle"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "hud",
+  "what": "空间里漂浮的多张红色半透明数据卡彼此错位叠放（银行账户三张卡层层压住），每张卡有亮红实底的金额条，另一侧还有一张保镖档案大卡；el.selection 只能挂一张卡（这一轮用 tooltip 画法放在画面中部近似）",
+  "severity": "medium",
+  "proposal": "el.selection / el.overlay 新增「卡叠」排布（数量 + 错位偏移）与卡内实底强调条；允许同一元素挂两个实例"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "hud",
+  "what": "顶部新闻跑马字条、右下股票行情条、左上公司 logo 是这个序章 HUD 的环境层装饰，没有对应元素",
+  "severity": "low",
+  "proposal": "新信息元素 el.ticker（滚动新闻条 / 行情条）（G-el-broadcast-film）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "character",
+  "what": "人体剖面到两侧插槽组的红色引线（弯曲导线从身体各部位伸向对应插槽组）；vis.connector 只作用于节点图",
+  "severity": "high",
+  "proposal": "主体 → 插槽的引线（G-leader-dataviz）：cmp.leader = none / straight / curve，起点挂在主体的部位点"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "character",
+  "what": "插槽分在人体两侧两列：每组 = 右对齐红色组名 + 青绿「可用数」小方徽章 + 1–3 个斜纹切角格；lay.composition = three 只把左三分之一给数据（右三分之一空着），lay.arrangement 只能给整屏一种排布，不能表达「主体两侧各一列、每行一组、组内横排、组名在格子外侧」",
+  "severity": "medium",
+  "proposal": "lay.arrangement = flankColumns（主体两侧列）+ 组内排布 lay.groupArrangement + 组标题位置"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "character",
+  "what": "义体槽大多是空的：斜纹暗格 + 细十字，只有少数装了物品；网格集合（gridItems）每格都画物品符号，st.emptySlot 只在快捷栏里生效，vis.pattern@slot 也不生效（见逐组件覆盖缺口）",
+  "severity": "low",
+  "proposal": "集合新增「已占用数」cnt.filledCount（其余格按 st.emptySlot 画），格子读 vis.pattern@slot"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "character",
+  "what": "顶栏：左侧等级 / 街头声望两个数字 + 细刻度进度、中间带菱形图标与 [1][3] 键位的页签、右侧负重与钱，下面一条贯穿全宽的红色细线；我们的页签固定在标题下方左对齐，选中只靠变青 + 发光，cmp.tabIndicator 没有「只换色」",
+  "severity": "low",
+  "proposal": "cmp.tabIndicator = colorOnly；lay.nav = tabsTopCenter（顶栏居中页签 + 两侧键位）；flow.chrome 新增 topRule（贯穿顶栏的分隔线）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "create",
+  "what": "这一屏的样子由左侧大半屏的 3D 角色头肩特写定义；cnt.characterMedium = model3d 在探索台里只有剪影 +「3D 实时模型（需素材）」灰标",
+  "severity": "medium",
+  "proposal": "needs art：模板主体为 model3d 时用场景里的角色做一个展台视口（或每个内容包一张半身渲染图）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "create",
+  "what": "颜色类选项行末尾的色块预览、当前行左右箭头两侧的 [A] [D] 键帽、每行「名称 + 数值」在上、「◁ ▷」在下的两层结构，以及右缘红色细滚动条",
+  "severity": "low",
+  "proposal": "cmp.optionEnum = swatch；cmp.listRow 新增 keyHint 字段；设置行新增上下两层排法（标签行 + 控件行）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "hud-combat",
+  "what": "血条左端嵌一个等级数字方框，血条下面一排青色小胶囊是 RAM（义体内存）；el.vitals.count = 2 只能画两条同形的条（还带「生命 / 护甲」字标签），不能让第二条变成小格胶囊、也不能挂等级方框",
+  "severity": "medium",
+  "proposal": "cmp.gauge 按条设置（cmp.gauge@el.vitals[1]）+ el.vitals 的前缀徽章（等级）+ 隐藏条标签"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "hud-combat",
+  "what": "潜行时敌人头顶的白→红三角发现度指示",
+  "severity": "low",
+  "proposal": "el.threat.form = detect（头顶发现度），图形复用已有的 cmp.gauge = eye"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "scan",
+  "what": "扫描模式按物体类别描边着色（敌人红、可交互设备黄、可拾取物青），并伴随时间放慢；rel.worldRender = outline 只有一种描边色",
+  "severity": "medium",
+  "proposal": "el.overlay 的描边按类别着色（col.coding = lineId 作用到世界描边）"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "scan",
+  "what": "扫描时整个世界压暗并染色（玩家进入「看穿系统」的模式）；rel.sceneTone = tint 与 rel.dim 只作用于界面模板的背景，局内 HUD 不画，所以扫描屏和普通 HUD 的世界看起来一样",
+  "severity": "medium",
+  "proposal": "局内 HUD 也读 rel.dim / rel.sceneTone（画在元素之下），或新增 rel.worldTint 给 HUD 模式"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "scan",
+  "what": "快速破解列表是目标旁一列文字行（图标 + 名称 + 右侧 RAM 消耗，选中行高亮，下方说明框）；el.abilities 只有图标格 / 快捷栏，没有「名称 + 消耗」的行",
+  "severity": "medium",
+  "proposal": "el.abilities.form = list（名称 + 消耗行，消耗走 el.cost 的画法），说明框复用 el.selection = tooltip"
+ },
+ {
+  "replica": "rep.cyberpunk-2077",
+  "name": "Cyberpunk 2077",
+  "screen": "map",
+  "what": "地图是斜俯视的立体城市模型（建筑体块 + 发光道路线 + 区域边界），vis.mapStyle = tactical 只是平面线框（且只有羊皮纸 / 水彩有底图，其余用场景烘焙图）",
+  "severity": "medium",
+  "proposal": "vis.mapStyle = volumetric3d（体块化三维地图，可倾斜旋转）（G-map-lib）"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "all",
+  "what": "混合分辨率：UI 的像素字（正文、标题、伤害数字）按比世界细 2–3 倍的像素格画，而血条、格子框、面板边是屏幕分辨率的清晰线；vis.pixelScale 只能整套 UI 一起像素化（off / x2 / x3 / world），只能靠像素字族近似",
+  "severity": "medium",
+  "proposal": "按角色的像素化：vis.pixelScale@text / @icon / @panel（G-pixel-roles），或加取值 textOnly"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "all",
+  "what": "按元素覆盖的视觉 / 色彩参数（vis.opacity@el.minimap、vis.stroke@el.minimap、col.accent@el.vitals、col.accent@el.threat）在词表里合法，但渲染器只读 cmp.*@el.*，这些覆盖不生效：小地图仍有描边和整体底色，血条颜色固定取'坏'色",
+  "severity": "medium",
+  "proposal": "makeCtx 按元素打一层主题补丁（vis.* / col.* 的 @el 覆盖），与 cmp.*@el 同口径"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "四个装备格（两武器 + 两技能）每格的底色 / 边色取自该物品的卷轴流派（暴虐红、战术紫、生存绿），是逐格的类别色而不是稀有度；st.rarityCue 与 col.coding = lineId 都不能按格指定",
+  "severity": "high",
+  "proposal": "el.abilities 每格带类别色（slot.categoryColor），色表由 col.coding = lineId 给（红 / 紫 / 绿三色可在 col.lineColors 里定义）"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "装备栏最左是血瓶（瓶形图标 + 剩余次数），共 5 格（血瓶 + 2 武器 + 2 技能）；el.abilities.form = slots 固定画 4 格，格数和'消耗品格'都不能指定",
+  "severity": "medium",
+  "proposal": "el.abilities.count（格数）+ el.abilities 加 consumable 首格（图标 + 次数点）"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "生命条总在左侧画一列文字标签（'生命'），死亡细胞的血条没有标签；el.vitals.valueLabelPos = inside 对横条行不生效（数值画在条尾、还会越出元素框压到右边的装备格），所以这里先用 end",
+  "severity": "medium",
+  "proposal": "elx.label（显示 / 隐藏标签列）；横条行支持 valueLabelPos = inside（数字居中压在条上，描边）"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "血条受击后掉的那段先变成另一种颜色的'可回复段'，短时间内攻击敌人能补回来；mo.valueChange = trail 只是动画拖尾，表达不了这段可回复量",
+  "severity": "medium",
+  "proposal": "cmp.gauge 加 recoverableSegment（第二填充色 + 计时衰减）"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "血条又粗又短（长宽比约 1:10），横条的粗细固定为长度无关的 10 单位，只能整体缩放，粗细与长度不能分开调",
+  "severity": "low",
+  "proposal": "elx.thickness（数值图形的粗细倍数），或让 el.vitals 读皮肤 bar.height"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "装备格的键位提示是格子下方的键帽图标；slot 的键位数字固定写在格子左上角，el.prompt.form = hotkeyBadge 不画任何东西",
+  "severity": "low",
+  "proposal": "elx.keyHintPos = inside / below（below 时在格下画 ix.glyphs 键帽）"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "右上小地图是宽扁的矩形、无框、房间是半透明像素块；el.minimap = plan 固定为正方形并沿用面板描边",
+  "severity": "low",
+  "proposal": "el.minimap.aspect（1:1 / 16:9 / 2:1）+ 让 vis.stroke@el.minimap = none 生效"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud",
+  "what": "货币只有两种（金币、细胞），资源元素固定画三项",
+  "severity": "low",
+  "proposal": "el.resources.count（1–4）"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "hud-world",
+  "what": "敌人头顶除了小红条，还有发现玩家时的黄色 '!'、精英标记（橙色环徽）、带层数的状态图标（燃烧、流血），状态图标是方形像素小图标；el.threat 只给血条，el.overlay = statusIcons 画的是三枚分散的菱晶徽章",
+  "severity": "low",
+  "proposal": "el.threat.form 加 alertMark / eliteMark；el.overlay 状态图标用图集小方图标并支持层数角标、可只挂在一个目标上"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "inventory",
+  "what": "拾取卡：左侧物品像素图标 + 名字按流派着色、品质 '+N' 角标、DPS 大数字、词缀列表，并与当前装备逐项对比（绿升红降），卡片悬在掉落物上方、没有关闭键；record 详情不画物品图标，弹窗只能居中，标题位写的是模板名，ix.close 没有'无'可选（ix.dismiss = key 时回退成右上 X）",
+  "severity": "medium",
+  "proposal": "lay.container = anchoredCard（弹窗挂在 elx.attachTo 的世界点上）；record 详情加 cmp.listRow 的 icon 字段；ix.close 加 none；st.delta 支持逐行箭头 + 色"
+ },
+ {
+  "replica": "rep.dead-cells",
+  "name": "Dead Cells",
+  "screen": "draft",
+  "what": "卷轴三选一的三个选项本身就是三种流派色（红 / 紫 / 绿），颜色是身份而不是稀有度；卡片颜色只能按稀有度色阶（col.rarityScale 三档都不含红紫绿）；模板带出的'再抽'按钮因 ops.actions 是并集合并而无法用 [] 清掉",
+  "severity": "low",
+  "proposal": "cmp.slot = tallCard 时按 col.coding = lineId 给每张卡底色 / 边色；ops.actions 加 none 取值，或用户层给 [] 时按替换合并"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "hud",
+  "what": "血条是 Isaac 背上沿脊柱竖排的一串分段灯带，随血量逐段熄灭并整体变色（青 → 黄 → 红，低血闪烁）。现在用 el.vitals 叙事内挂玩家 + cmp.gauge = segmented 近似，画出来是头顶一块横向、带文字标签的条板；挂在哪根骨头、沿脊柱竖排、按剩余量整体变色都没有参数，而且生命行颜色写死为 bad 红，满血也是红的",
+  "severity": "high",
+  "proposal": "elx.attachBone（spine / shoulder / neck / wrist / helmet）+ cmp.gauge = lightStrip（无标签、竖向、逐段熄灭）+ 阈值变色规则 st.gaugeThresholds（满 = accent、中 = 黄、低 = 红闪）（G-gauge-lib）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "hud",
+  "what": "静止能量是右肩胛上的半圆灯，和脊柱血条装在同一套 RIG 上。现在借 el.vitals.count = 2 的第二行放进同一块板子，但第二行只能和第一行同形（分段横条），画不出肩胛上的半圆弧；「多个读数挂在同一载体的不同部位」无法声明",
+  "severity": "medium",
+  "proposal": "叙事内载体 carrier（可复用对象：RIG / 腕表 / 头盔），元素用 elx.carrier + elx.attachBone 挂到载体的不同部位；或 el.vitals 每一行单独选 cmp.gauge（cmp.gauge@el.vitals.row2 = arc）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "hud",
+  "what": "定位器（按键呼出）是投在地面上的一条发光路径线，一路指向目标；el.objective 只有标记 / 边缘箭头，没有地面路径线（参考截图里没按，所以本屏不放目标元素）",
+  "severity": "medium",
+  "proposal": "el.objective.form = pathLine（地面贴花路径，按键呼出后逐段画出）（G-diegetic-encoding）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "hud",
+  "what": "弹药数是枪身侧面弹出的一小块全息数字，只在举枪瞄准时出现、随枪转动。el.abilities = ammo + 空间内 + attachTo = held 在画布上不会跟到枪上，只能用屏幕锚点 center 摆在准星旁；「瞄准时才显示」的触发条件也没有",
+  "severity": "medium",
+  "proposal": "attachTo = held 走世界挂点（投影到武器 / 手持物骨骼，和 player 一样）+ elx.visibility 的触发条件（aim / damage / stop）（G-visibility）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "hud",
+  "what": "等离子切割枪的三线瞄准激光是青蓝色；el.crosshair = laser 在画布上写死为 bad 红色，col.accent@el.crosshair（以及 col.accent@el.vitals）是合法写法但画布不读元素级颜色覆盖",
+  "severity": "low",
+  "proposal": "元素上下文读取元素级 col.* 覆盖（col.accent@<元素> → 该元素的 accent），激光线与生命行默认用 accent 而不是 bad"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "hud",
+  "what": "真空区的氧气倒计时同样挂在角色身上（只在真空区出现）；低血时的心跳与喘息由音频承担提示",
+  "severity": "low",
+  "proposal": "el.timer 叙事内挂点 + 区域条件显隐；音频通道作为 UI 编码（G-diegetic-encoding）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "*",
+  "what": "所有菜单都是从 RIG 投射到角色面前 / 身侧的全息平面：带透视角度与轻微弯曲，有投射光束，角色和场景在背后照常运行（不暂停）。现在用 rel.diegesis = spatial + rel.behind = live + 容器 drawer / modal / window 近似：面板是正对屏幕的平面，没有投影面的形状、倾角、弯曲度和相对角色的位置",
+  "severity": "high",
+  "proposal": "新参数 rel.projection：投影面（平面 / 弧面 / 圆柱）、倾角与弯曲度、相对角色的位置（前方 / 肩侧 / 手腕）、投射源光束开关"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "*",
+  "what": "全息的「投射展开」入场与持续的轻微闪烁、偶发信号故障；mo.enter = boot 近似；ast.fx = glitch 是常驻的整屏洋红横线，比原作重得多，本轮已去掉",
+  "severity": "medium",
+  "proposal": "mo.enter = projectorUnfold（自投射点展开）+ ast.fx = glitch 的强度与触发时机（偶发 / 受击 / 低血）（G-motion-transition、G-postfx）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "craft",
+  "what": "工作台的主视觉是当前武器的实时 3D 全息模型（悬在台面上方 / 面板里，参考截图里就是这件暖色投影）；cnt.focal = item 只能画成带稀有度光晕的物品格（上一轮的大橙框），本轮只好去掉主体，让节点树占满中栏",
+  "severity": "medium",
+  "proposal": "cnt.focal = item 时可选「实时 3D 模型展台」（把 cnt.characterMedium = model3d 推广到物品，或 ast.iconSet = runtimeRender 作用于主体）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "craft",
+  "what": "升级节点三态：已装节点画成 good 绿、当前青、未装灰，Dead Space 是同一青色系靠亮度区分；节点上还带序号；vis.silhouette@node = hexagon 也没有被节点画法读取",
+  "severity": "low",
+  "proposal": "节点画法读 vis.silhouette@node；col.strategy = mono 时完成态用 accent 高亮而不是 good；cmp.node 加 plainDot（无序号实心点）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "inventory",
+  "what": "Dead Space 的物品没有稀有度、也没有锁定格，但 st.rarityCue / st.locked 没有「无」：网格样本总会有几格稀有度色条和锁叉",
+  "severity": "low",
+  "proposal": "st.rarityCue = none、st.locked = none（或 col.coding 不含 rarity 时不画稀有度）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "map",
+  "what": "地图是可旋转的三维全息体块图：房间按楼层挤出成半透明体块、当前目标房间橙色高亮、玩家是一个箭头、可以切换楼层；vis.mapStyle = glowSilhouette 只是暗底上的平面青色轮廓，目标高亮与玩家箭头都画不出",
+  "severity": "medium",
+  "proposal": "vis.mapStyle = volumetric3d（体块化三维地图 + 楼层切换 + 目标房间高亮色）；cmp.node = playerArrow（G-map-lib）"
+ },
+ {
+  "replica": "rep.dead-space",
+  "name": "Dead Space",
+  "screen": "dialogue",
+  "what": "通讯与视频日志是投在角色面前的半透明视频窗（说话人的视频画面、扫描线、偶发信号中断），对话时玩家仍可移动，字幕在屏幕底部。现在用 tpl.npc + window 容器 + cnt.characterMedium = liveAction 近似：说话人位置是灰盒剪影「真人影像（需素材）」——需素材（说话人视频帧）；也没有「视频窗」这种介质，字幕只能写在窗内",
+  "severity": "medium",
+  "proposal": "cnt.characterMedium = videoFeed（带扫描线与信号噪声的视频窗，接说话人素材）；窗内画面 + 屏幕底部字幕分开放置（el.subtitle 在模板里也按整屏锚点排）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "all",
+  "what": "每块面板两侧都是一根灰色金属导轨，上面有尺子式刻度、细竖排小字编号（像胶片边或档案柜滑轨），面板上下沿还有带编号的金属横条；这是整套 UI 的骨架，参数里只有线、没有'带刻度与编号的导轨'",
+  "severity": "high",
+  "proposal": "ast.ornaments 加 rulerRail（刻度导轨 + 小字编号），或 vis.strokeSides 加 leftRight 并给描边加 ticks 图案"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "all",
+  "what": "页头是一张白纸标签：近白底、黑色粗窄体全大写（CHARACTER SHEET / INVENTORY / THOUGHT CABINET），标签伸出面板、一直出血到屏幕左 / 右边缘，带轻微印刷磨损；菜单屏的模板标题只画白字（cmp.plate@title 不进模板页头），cmp.plate 的底色又固定是强调色，写不出'白底黑字'，也不能出血到屏幕边",
+  "severity": "high",
+  "proposal": "cmp.plate 加 bleedLabel（出血到屏幕边的纸标签，底 / 字取 col.surface@plate / col.text@plate）；模板页头读 cmp.plate@title；材质加 printWorn（印刷磨损）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "character",
+  "what": "技能是 4 行 × 6 张油画肖像竖卡：多数是灰调画，少数被属性色（黄 / 紫 / 品红 / 青）整张染色；卡底有白色窄体名字、右下角一个白方块黑数字的数值角标，名字上方一排菱形点（已学 / 潜力）；现在用 cell 方格网格近似（方形、物品图标、角标是数量），cmp.card = fullArt 也没有角标数值与菱形点阵；肖像本身需要素材",
+  "severity": "high",
+  "proposal": "cmp.slot 加 portraitCard（竖卡 + 底部名字 + 角标数值方块）；cmp.gauge 加 diamondPips（菱形点阵，实心 / 空心区分已学与上限）；肖像图集需素材"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "character",
+  "what": "每行最左是属性块：彩色水墨团（青 / 紫 / 品红 / 黄）上压一个超大白色数字、下面菱形点和属性名；同色在左栏属性小方块（INT / PSY / FYS / MOT 下面的色条）和对话里的技能名上反复出现；没有'数字垫墨团'的画法",
+  "severity": "medium",
+  "proposal": "ast.fx 的 ink 允许逐元素作为数字底衬（ast.fx@el.* = ink），并按 col.coding = lineId 取色"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "dialogue",
+  "what": "对话是一栏小说式日志：每段以说话人开头（白色粗体全大写 + 破折号），技能发言时技能名按所属属性着色、后面跟灰色方括号的难度与结果（[Easy: Success]），选项是红橙色编号行'1. -'；hier.inline = keyword 只有一种强调色，无法按类别分色，也没有灰色方括号注记",
+  "severity": "high",
+  "proposal": "hier.inline 加 categoryColor（按 col.coding 的类别色给关键词着色），并加 bracketNote（方括号灰色注记）样式"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "dialogue",
+  "what": "当前说话者（NPC 或某个技能）的油画小肖像浮在对话栏左外侧、和当前段落同高，随说话人切换；cnt.focal = character + avatar 只能画成屏幕中央的大圆头像（试过，撤掉了），lay.focalSide 没有'贴着面板外侧'的位置；悬停选项时只把字色从红橙提亮为白，没有色条、描边或光标",
+  "severity": "medium",
+  "proposal": "lay.focalSide 加 followLine（立绘贴在面板外侧、跟随当前文本行）；ix.focus 加 textColor（只换字色）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "inventory",
+  "what": "背后冻结的场景被盖上一层大网点（橙 / 青双色半调网点），角色站在中央；rel.sceneTone = duotone 只有双色调色，没有半调网点",
+  "severity": "medium",
+  "proposal": "rel.sceneTone 加 halftone（双色网点），或加 rel.scenePattern 与 vis.pattern 共用图案表"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "inventory",
+  "what": "纸娃娃装备槽是角色两侧的两竖列小格，每格左边一个极小的白色槽名标签（HAT / JACKET / SHIRT…），用细引线连到身体部位；右侧物品格里已装备的格子整格填橙色",
+  "severity": "medium",
+  "proposal": "lay.arrangement 加 flankColumns（主体两侧对称两列）；vis.connector 允许连到主体部位（leaderLine）；st.selected 加 fill（整格填强调色）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "hud",
+  "what": "生命与士气是两种色相的分段条（生命橙、士气青），各带一个十字 / 脑形小图标，图标里写当前数值，坐在第一张头像卡的上沿；同一元素的多根条只能共用一套强调色（用了 col.accent / col.accent2 近似）",
+  "severity": "medium",
+  "proposal": "el.vitals 加逐条颜色（el.vitals.colors = [..]）与 iconValue（数值写在图标里）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "hud",
+  "what": "队伍头像是两张油画肖像竖卡（主角 + 金），金的头像后有一个白色圆形光环；el.party 的样本永远是 4 名队员、卡里是圆形剪影 + 绿 / 红圈；右下工具栏是 4 个细线图标（角色 / 背包 / 日志 / 思想柜），打开某个菜单时最右端出现大号细体三字母代码（CHR / INV / THC）；时间是大号细体数字 + 小字 Day N，与工具栏同一行（我们只能上下叠）",
+  "severity": "low",
+  "proposal": "el.party 加 count 子参数与 portraitCard 画法（方形肖像、无圈）；el.toolbar 加 screenCode（当前屏代码标签）；typ.numerals 加 weight 子参数（细体大数字）；同锚点元素允许横排（elx.stack = row）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "skilltree",
+  "what": "思想柜是 12 个菱形槽三列错位排在角色身后（角色身上连出电线），每个菱形下压一块标签：已内化 = 橙底、研究中 = 米白底；空槽是模糊的灰菱形；hexGrid + vis.silhouette@slot = diamond 只得到错位方格，没有格下标牌；中区四角有印刷套准用的 + 号",
+  "severity": "medium",
+  "proposal": "cmp.slot 加 labelPlate（格下标牌，按状态换底色）；格子轮廓真正读 vis.silhouette@slot；vis.motif 加 registration（套准十字）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "check",
+  "what": "技能检定结果：画面中下方两枚白色骰子（显示点数）+ 绿色胶囊'CHECK SUCCESS'（失败为红色），检定前悬停选项会出现百分比与加减项的说明卡；红色检定（不可重试）和白色检定（可重试）的选项颜色不同；没有骰子元素，el.notify = toast 只能放进日志栏，胶囊底色也不随结果变",
+  "severity": "medium",
+  "proposal": "el.feedback.form 加 dice（骰子点数，挂在场景里）；el.notify 胶囊按 col.coding = resultTone 自动换色"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "check",
+  "what": "Visual Calculus 推演是世界内的全息重建：青色线框勾出建筑、红色半透明幽灵车辆、白色速度线；el.overlay = holo 只是平面全息覆盖层",
+  "severity": "low",
+  "proposal": "el.overlay 加 reconstruction（场景内线框 + 幽灵物体），用 rel.worldRender = perspective 渲染"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "character",
+  "what": "按钮各有色：ACCEPT 是砖红实底 + ▼，LEVEL UP 是青到橙的横向渐变，REVERT 是青色实底 + ×；同屏三种按钮配色无法由 col.semantic 一个取值给出",
+  "severity": "low",
+  "proposal": "col.semantic 加 perAction（逐按钮配色）或允许 col.gradient@button"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "journal",
+  "what": "日志一屏凭记忆编码：任务清单（已完成划掉、限时任务带时钟）与马丁内斯地图在同一套黑栏框里；地图的具体画风（素描 / 淡彩）与分栏比例未核对",
+  "severity": "low",
+  "proposal": "补一张日志 / 地图参考截图后再细化"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "dialogue / check / character / skilltree",
+  "what": "界面模板里的信息元素只能排在容器里：日志栏是侧抽屉时，队伍肖像、生命 / 士气、时钟、工具栏全被挤进抽屉（第一轮叠成一团，这轮只好删掉）；原作这些 HUD 在打开日志 / 菜单时仍留在屏幕角上，检定骰子也画在栏外的场景里；全屏菜单的工具栏原作在面板之外的右下，我们只能放进面板、避开详情栏按钮",
+  "severity": "high",
+  "proposal": "elx.anchorFrame（container | screen）：元素按整屏而不是容器排锚点；或 flow.chrome 加 hud（菜单 / 对话屏下面保留局内 HUD 的指定元素）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "inventory / skilltree",
+  "what": "原作背包与思想柜都是三块：左栏属性（属性数字、HEALTH / MORALE、加成列表）、中间角色 + 装备槽 / 菱形槽、右栏（详情 + 物品格 / 思想列表）；一屏只能有一个主体 + 一个主数据区 + 常驻详情，思想柜的'菱形格阵 + 思想列表 + 详情'三种数据放不下，背包只能把物品格挪到下方",
+  "severity": "medium",
+  "proposal": "lay.composition = three 时允许第三区（lay.sideRegion = list | elements | detail），或加 cnt.dataShape2（第二数据区，如列表）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "dialogue / check",
+  "what": "侧抽屉容器总会画页头（模板名 + 关闭 X）；原作的日志栏没有标题和关闭钮，最上面直接是滚动的文本，ix.close 也没有'无'可选",
+  "severity": "low",
+  "proposal": "ix.close 加 none；lay.header 开关（容器不画页头）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "all",
+  "what": "st.locked 没有'无'：样本把第 5 个以后的条目一律画成锁定（默认 ✕ 锁图标），原作的技能表、背包都没有锁定项，只好选 grayscale 当最不违和的锁法",
+  "severity": "low",
+  "proposal": "st.locked 加 none（本屏没有锁定 / 未获得的条目）"
+ },
+ {
+  "replica": "rep.disco-elysium",
+  "name": "Disco Elysium",
+  "screen": "all",
+  "what": "逐元素颜色覆盖（col.accent@el.vitals 橙 / 青、col.text@el.choices 红橙、col.accent@el.notify 绿、col.accent@el.overlay 青）能写进配方，但画布上不生效：生命条仍是红色、选项仍是第一条强调色其余白字、检定胶囊仍是皮肤面板色",
+  "severity": "medium",
+  "proposal": "makeCtx 按 <col.*>@el.<id> 生成逐元素色板（与 cmp.* 的逐元素覆盖同口径）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "all",
+  "what": "按组件 / 按元素的视觉覆盖（col.surface@slot、ast.coreMat@button、col.text@tooltip、vis.edge@button……）能过校验，但渲染器不读：buildTheme 每屏只生成一套面板样式，slot() / button() / 详情浮窗都用它。饥荒要的是「同一屏里多种底」：选角屏红木板 + 黑底说明框 + 撕边旧纸按钮，局内是深色木条里的米色纸格。现在只能整屏换一种底色。",
+  "severity": "high",
+  "proposal": "buildTheme 按组件生成 token：slot / button / tooltip / key 各自先读 <参数>@<组件>（col.surface、col.text、ast.core、ast.coreMat、vis.edge、vis.stroke），没有再回到全局；slot()、button()、drawDetail(floating) 改用对应 token"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "三个圆形计量（胃 / 心 / 脑）各自独立成徽章，品字形倒三角排在日夜钟下方；每个徽章内是液面从下往上的颜色填充（饥饿黄、生命红、理智橙），中央压一个手绘器官图标。cmp.gauge = orb 只画一颗球、不吃 el.vitals.count，也没有球心图标；本轮只能放一颗红球（生命）。",
+  "severity": "high",
+  "proposal": "orb / ring 支持 count > 1 时按 elx.arrangement（row / pyramid / column）复制成多颗，每颗读 vitalNames 对应的颜色；新增 cmp.gaugeIcon（球心图标）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "日夜钟：圆盘按白天 / 黄昏 / 夜晚分成黄、红、蓝三色扇区，带一根指针，外圈是金色锯齿（瓶盖 / 太阳光芒）边，正中「Day N」描边大字。el.clock = sunDial 只是一个 35% 黑的半圆穹顶 + 太阳点，在暗色世界上几乎看不见，本轮改用 clock（米色牌 + 时间 + 天数）顶替。",
+  "severity": "high",
+  "proposal": "el.clock 新增 phaseDial：整圆、分段比例（白天 / 黄昏 / 夜）+ 指针 + 外圈造型（锯齿 / 光芒 / 素环）+ 中心天数；sunDial 的底色改读面板色而不是固定半透明黑"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "左侧通高的制作页签列：贴左边、上下几乎通高的木框里一列彩绘图标格（绿 / 米两种底）。el.toolbar 三种画法都只会横排（categoryTabs 是一条文字页签 + 横向图标条，buttonRow 是一行方钮），不吃 elx.arrangement = column；本轮用 buttonRow 横排放在左中顶替。",
+  "severity": "high",
+  "proposal": "el.toolbar 的 size / draw 读 elx.arrangement：column 时竖排图标格（categoryTabs 竖排时页签成列、子项抽屉向右展开），并可选「通高」拉伸"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "底部物品栏是一条细长木框：15 个米色纸格 + 间隔后 3 个装备格（手 / 身 / 头），格内左上数量、格底耐久百分比。hotbar 固定画 8 格，不能定格数，也没有分组间隔和整条底框。",
+  "severity": "high",
+  "proposal": "el.abilities 增加 slotCount 与 slotGroups（如 [15, 3]），组间加分隔、整条加底框（ast.frame 作用在整条上）；数量与百分比两个标注位置分开设"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "字体（全部界面）：整套 UI 用一种细窄、墨笔手写感的衬线体（像钢笔写的窄衬线），标题、数字、正文都是它。现有字族只有 handwritten / serif / condensed，没有「手写窄衬线」。",
+  "severity": "high",
+  "proposal": "typ.*.family 增加 inkedSerifNarrow（手写墨线窄衬线），并允许数字也用它"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "character",
+  "what": "饰件是维多利亚铁艺：黑色带刺卷须、蝙蝠翼似的尖顶，包在椭圆头像框、说明框四角与上下中点上。vis.motif 没有铁艺；点名 corners 时角花位图只有金色巴洛克（floral）一种，skulls 只有矢量小骷髅。本轮选角屏不放饰件，结算屏用不点名的矢量 floral 卷须近似。",
+  "severity": "high",
+  "proposal": "vis.motif 增加 wroughtIron（带刺铁艺卷须，黑色）并补一张角件位图；ast.ornaments 增加 finials（顶尖饰）用于框的上下中点"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "character",
+  "what": "左侧主角全身彩绘立绘 + 头顶写着名字的米色缎带，是这一屏的主视觉；survival 内容包没有立绘，只能画「全身立绘（需素材）」灰盒剪影。",
+  "severity": "medium",
+  "proposal": "needs art：survival 包补一张全身立绘（art.character）；缎带名牌可复用 cmp.plate = ribbon，但要能压在立绘上方（plate 跟随 focal，而不是只给页眉）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "character",
+  "what": "角色头像框是竖椭圆（不是圆），选中的底色变成金黄、其余灰色，未解锁是黑剪影。vis.silhouette 没有 oval；st.selected 没有「整格底色变亮」；集合里第 5 个以后才按 st.locked 画，3 个头像里出不来锁定的那个。",
+  "severity": "medium",
+  "proposal": "vis.silhouette 增加 oval；st.selected 增加 fill（整格换底色）；锁定从第几个开始改成可调（cnt.lockedFrom）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "character",
+  "what": "说明框（称号 + 引言 + 特性）在头像排的正下方，三个按钮再在说明框下方，三者竖着叠在右半屏中间。lay.detail = persistent 只会把详情放到集合的右边，且集合总是贴顶排。",
+  "severity": "medium",
+  "proposal": "lay.detail 增加 below（详情在集合下方），或让 lay.composition = splitTB 作用在集合 / 详情这一层；集合与详情整体在数据区内可垂直居中"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "character",
+  "what": "整屏背景是橙红色手绘木板 + 四周很重的黑色做旧暗角（grunge 边）。界面模板的背景（screen.ts backdrop）不认 ast.bgArt = material（落回天空→纸色渐变），本轮用「全屏面板 = 木纹内芯 + 红色底 + 笔触边 + 纯黑背景」顶替；暗角只能作用在实时 / 冻结的场景上。",
+  "severity": "medium",
+  "proposal": "模板 backdrop() 支持 ast.bgArt = material（与菜单样本 drawBackdrop 同口径，读 ast.bgMat，底色读 col.surface2）；rel.sceneTone = vignette 对替换背景也生效，并加暗角强度 / 做旧边"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "character",
+  "what": "头像排两侧是白色花饰左右箭头；lay.pageIndicator = arrows 实际画的是底部四个圆点（drawOverflow 的 paged 不看 pageIndicator）。",
+  "severity": "low",
+  "proposal": "drawOverflow 按 lay.pageIndicator 画：arrows = 集合两侧左右箭头（可吃 vis.motif），numbers = 页码"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "craft",
+  "what": "制作弹出层从左侧页签列旁边向右展开：一列配方格 + 旁边的配方卡。lay.container = drawer 只能从右侧滑出；lay.nav = tabsLeft 只画文字页签（cmp.tab = icon 不生效）。",
+  "severity": "medium",
+  "proposal": "新增 lay.drawerSide（left / right）；tabsLeft / tabsRight 读 cmp.tab 画图标页签"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "craft",
+  "what": "配方卡：大号物品名、一句说明、原料格（持有 / 需求，缺的标红）、「制作」按钮；需要科学机器时按钮变成「原型」并有灯泡提示。原型（未解锁但可解锁）状态没有专门取值；lay.detail = transient 的浮卡固定在列表 45% 处，会压住列表右半。",
+  "severity": "low",
+  "proposal": "st.locked 增加 prototype（可在附近工作台解锁：灯泡 / 齿轮角标）；transient 详情贴在选中条目外侧，而不是压在列表中间"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "results",
+  "what": "并集合并的多选参数（ops.actions、ast.fx、ast.ornaments）后面的层删不掉：tpl.runSummary 自带的 ops.actions = retry（画成「再抽 10 次」）、tpl.forge 自带的法阵光效、base 里点名的 corners 都无法在单屏取消，写空数组也不生效。",
+  "severity": "low",
+  "proposal": "multi 参数允许 none（或空数组）在这一层清空并集；或支持减项写法（如 -retry）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "results",
+  "what": "死亡结算是单人的：头像 + 「存活 N 天 / 死于 X」两三行键值 + 经验条（解锁下一个角色的剪影）+ 按钮。cnt.dataShape = table 画的是多人战绩表（4 行队员），record 画的是物品详情，都不是「单人本局键值」。",
+  "severity": "low",
+  "proposal": "st.statViz 增加 keyValue（单列「标签：数值」行，可带图标）；经验条旁可挂下一解锁的剪影（el.reward = portrait + st.locked = silhouette）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "格子底色按状态着色：易腐物品的格底从绿渐变到黄、红（新鲜度），选中格整格变金黄；制作页签也有绿 / 米两种底色（推测：有可制作项时转绿）。col.coding = status 只给文字 / 标记着色，不给格底。",
+  "severity": "medium",
+  "proposal": "st.statusMark 增加 slotTint（格底按状态色渐变），并可选连续映射（新鲜度 0–1）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "世界内容器：打开箱子时 3×3 木框格子挂在箱子旁边（跟着世界坐标），背包装备后右侧出现 2×4 格竖条。没有「容器格子」这个信息元素。",
+  "severity": "medium",
+  "proposal": "新增元素 el.container（格子网格，可 attachTo = poi 或锚在 mr），列数 / 格数可调"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "低理智时画面去饱和、扭曲并出现影子生物；受冻时冰霜从屏幕边缘长进来、过热时边缘发红。rel.metaFx 只有通用的低血去饱和与受击红边。",
+  "severity": "medium",
+  "proposal": "rel.metaFx 增加 frostEdge、heatEdge、sanityWarp（去饱和 + 波动 + 暗影），并允许绑定到任一计量而不只是生命"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "计量徽章里会出现上下小箭头表示当前数值正在升 / 降（速率指示）；数值只在悬停时出现在徽章中心。",
+  "severity": "low",
+  "proposal": "elx.valueLabel 增加 trendArrow；elx.visibility 对标注单独设 onHover"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "右下角是一卷手绘地图卷轴 + 罗盘（开地图）、两只花饰金色转镜头箭头和一个圆形暂停钮。el.gameSpeed = pauseMenu 只有一个方形按钮。",
+  "severity": "low",
+  "proposal": "el.toolbar 的 microMenu 允许按钮用彩绘物件图标（地图卷轴、罗盘），并支持左右对称的转镜头箭头对；pauseMenu 按钮外形读 vis.silhouette@button（圆）"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "hud",
+  "what": "悬停提示是无底白字描边，两行：物品名 + 「鼠标图标: 动作」，鼠标按键是画出来的小鼠标图形。el.interact = cursor 已能画光标 + 一行描边白字，但只有动作一行、没有物品名行，ix.glyphs 也没有鼠标按键图标。",
+  "severity": "low",
+  "proposal": "el.interact 的 cursor 画法加物品名行；ix.glyphs 增加 mouse（左 / 右键图形），keycap 集合里可混用"
+ },
+ {
+  "replica": "rep.dont-starve",
+  "name": "Don't Starve",
+  "screen": "map",
+  "what": "地图是把探索过的地块按地皮类型画成手绘贴片，未探索处是纯黑、边缘是撕裂的墨边；地图图标与世界里的物件同一画法。本轮 vis.mapStyle = flatVector（场景烘焙的色块地图）已接近，但未探索区只是右侧 45% 的线性压暗，图标是方格 ▣。",
+  "severity": "low",
+  "proposal": "vis.mapUnexplored = dark 改为按探索范围的不规则黑边（可加 torn 边）；vis.mapStyle 增加 inkTiles（地皮贴片 + 墨线）；cmp.node 增加 worldIcon（用图集里的物件图标）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "all",
+  "what": "按元素 / 按组件的视觉覆盖键（vis.*@el.*、col.*@el.*、ast.*@el.*、vis.*@slot、ast.fx@node、vis.iconStyle@button 等）能通过校验，但渲染器从不读取：主题只按全局值建一次，只有 cmp.*@el.* 生效。所以 Boss 条暗红（col.accent@el.threat）、快捷格双线框（vis.stroke@el.abilities）、条端铜尖（ast.ornaments@el.vitals）都画不出来，只能退回全局值",
+  "severity": "high",
+  "proposal": "makeCtx / slot / drawNode 按 r.at(参数, 元素或组件) 现取 vis / col / ast 值并在全局 token 上打补丁（与 cmp() 同口径）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "all",
+  "what": "col.gradient 按规范写成 {from, to, angle, type} 能通过校验，但主题只认 \"色1,色2\" 字符串，对象被当成 [object Object] 忽略，退回 底色→次级底色 的竖直渐变；暂停的左上角暗角、死亡横带的渐隐都因此画不出",
+  "severity": "medium",
+  "proposal": "theme.ts 解析渐变对象（from / to / angle / type），角度与径向都按值画"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "三根细条的长度随各自上限增长（生命条远长于专注条），条长本身就是成长读数；现有条三根等长",
+  "severity": "medium",
+  "proposal": "el.vitals 加子参数 lengthByMax（条长 ∝ 上限，可设最短 / 最长）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "生命 / 专注 / 精力三条不带任何文字标签；el.vitals 每行左侧固定写行名（生命 / 法力 / 精力），关不掉",
+  "severity": "medium",
+  "proposal": "elx 加 label（none / text / icon），或 el.vitals.labels 开关"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "生命条暗红、专注蓝、精力暗绿：生命条与 Boss 条都写死用 bad 色 #e5484d（偏亮的粉红），专注条借 col.accent2，精力条用皮肤 good 色，没有参数能把危险色调暗",
+  "severity": "medium",
+  "proposal": "加 col.danger / col.good 两个语义色参数（或让 col.*@el.vitals、col.*@el.threat 生效）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "左上八角框是大卢恩生效槽（状态槽），不是头像；el.profile 会多画头像、名字和等级，本轮已去掉，八角框缺失",
+  "severity": "medium",
+  "proposal": "新元素 el.buffs（状态 / 增益槽，单格或一排，空槽画暗底）；vis.silhouette 加 octagon"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "快捷栏是十字四格（上法术、左盾、右武器、下道具，竖长格）；el.abilities.arrangement = cross 在词表里，但技能元素只认 column，其余一律横排，所以画成一排四个方格",
+  "severity": "medium",
+  "proposal": "el.abilities 按 cross 画上 / 左 / 右 / 下四格并允许 cmp.slot = tallCard 竖长格"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "快捷格左上固定写 1–4 键位数字，第 3 格样本带冷却遮罩；本作快捷格既无键位数字也无冷却",
+  "severity": "low",
+  "proposal": "el.abilities 加 keyLabel 开关；st.cooldown 加 none"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "十字快捷栏上方的战技名牌（小图标 + 战技名，左侧细竖线、右侧渐隐的暗底）表达不了",
+  "severity": "medium",
+  "proposal": "el.abilities 加 activeLabel（当前主动技能名牌）与位置 above"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "条两端是细小的青铜尖头、条外有一圈细暗框；条走 gauge() 直接填色，任何饰件都不经过它，endcaps 只对面板生效",
+  "severity": "low",
+  "proposal": "gauge 的 bar / thinBar 读 ast.ornaments（endcaps 加尖头 / 球头 / 方头形态与尺寸）并可选细外框"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "Boss 名字左对齐在条的左端上方；bossBar 的名字固定居中",
+  "severity": "low",
+  "proposal": "el.threat 加 nameAlign（left / center）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "上中罗盘是一条带刻度的细直线，中心小菱形、上方只写 N，离顶约 12%；compassBar 画成带中文方位字的胶囊，贴顶",
+  "severity": "low",
+  "proposal": "el.minimap.form 加 tickLine（细线 + 刻度 + 单字母方位），screenAnchor 之外加 offset"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "右下卢恩计数是一个细双线框的小盒（左图标、右对齐数字）；bigNumber 无框，pills 会画三种货币",
+  "severity": "low",
+  "proposal": "el.resources 加 framedCounter 画法（单一货币 + 细框盒）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "普通敌人头顶小血条 + 锁定白点与底中 Boss 长条同时存在，但 el.threat 只有一组锚点 / 挂点，多画法无法各自定位",
+  "severity": "medium",
+  "proposal": "允许按画法分别设置锚点与挂点（form 级 screenAnchor / attachTo）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "hud",
+  "what": "打 Boss 时累计伤害数字挂在 Boss 条右上端，不是飘字",
+  "severity": "low",
+  "proposal": "el.feedback 加 attachTo = 另一元素（挂在 Boss 条端头），或 bossBar 子选项 damageTally"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "装备页是三栏：左装备格、中武器数值（两列嵌套小表 + 右上大物品图框）、右角色状态表；模板只能画 格子 + 常驻详情（名字 / 一句说明 / 两根数值条），中栏空着，lay.composition = three 只在有主体时把主体放中间",
+  "severity": "high",
+  "proposal": "lay.detail 加 persistentWide / 双详情栏（detail + record 并排），并让常驻详情按 st.statViz = table 画成数值表"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "中栏是嵌套两列小表（攻击力 | 防御减伤；属性补正 | 需求属性），每段带小线稿图标标题；lay.composition 只有一层分栏",
+  "severity": "medium",
+  "proposal": "lay 加段内子网格（lay.subColumns）与段标题图标"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "页眉是方形铜框徽记图标 + 衬线标题，垫在一条从左向右渐隐的暗带上；模板页眉只有纯文字",
+  "severity": "medium",
+  "proposal": "cmp.plate 加 fadeBand（单向渐隐色带）+ 页眉图标槽"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "分栏靠两端渐隐的 1px 暖灰发丝竖线（属性区、详情区左侧）；无框浮空后没有任何分栏线，strokeSides = left 又会作用到每个格子",
+  "severity": "medium",
+  "proposal": "lay.grouping = divider 在分栏之间画线，vis.stroke 加 fade 线型（两端渐隐）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "装备格大多是空槽（按类型画灰剪影），只有几格有物品；模板按样本把全部格子填满物品，只能用 st.locked = grayscale 把后面的格子压灰近似",
+  "severity": "low",
+  "proposal": "cnt 加 fillRatio（集合中已占用格的比例），空格走 st.emptySlot"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "常驻详情底部固定画两枚行动按钮（装备 / 丢弃），本作详情栏没有按钮",
+  "severity": "low",
+  "proposal": "按 ix.mode / cmp.button 决定详情按钮，或加 lay.detailActions 开关"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "物品图是去饱和的写实金属灰；图集素材（写实 → 3D 图集）颜色鲜艳，col.saturation 不作用于位图",
+  "severity": "low",
+  "proposal": "加 vis.iconTint / 让 col.saturation 作用到图集图标"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "背后的罩层是整屏渐变：左侧与底部更暗、底部有雾带；rel.sceneTone = vignette 只给四周对称暗角",
+  "severity": "low",
+  "proposal": "rel.dim 加方向 / 暗角形状（左、下、四周）与底部雾带"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "character",
+  "what": "选中格是整格底色提亮成暖米色（格子像被点亮），不是外发光",
+  "severity": "low",
+  "proposal": "st.selected 加 brighten（底色提亮）"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "all",
+  "what": "全屏模板总会画页眉标题和关闭控件；本作 B 返回只出现在左下按键图例里，没有右上角的“Esc 返回”胶囊，地图也没有页眉",
+  "severity": "low",
+  "proposal": "ix.close 加 legendOnly；加 lay.header 开关"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "all",
+  "what": "按键图例在固定宽度的框里右对齐，锚在左下时整条向右漂（本作图例贴左下）",
+  "severity": "low",
+  "proposal": "el.prompt 按锚点左 / 右对齐"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "map",
+  "what": "没拿到地图碎片的区域是未上色、偏灰暗的地形底稿（不是云雾也不是全黑），拿到碎片后整块被绘上；dark 只能画右侧一片渐暗",
+  "severity": "medium",
+  "proposal": "vis.mapUnexplored 加 unpainted（未上色底稿）+ 揭示动效"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "map",
+  "what": "赐福点是金色发光图标；地图节点颜色写死（已完成 = good 绿、当前 = accent），glowDot 发绿光",
+  "severity": "low",
+  "proposal": "cmp.node 的状态色读 col.accent@node / col.coding"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "pause",
+  "what": "菜单是左上角两排小方形线稿图标（约画面高 6%），聚焦项名字写在上方；格子边长只跟模板缩放走，只能借 elx.scale（模板构图器的元素缩放）把整屏缩到 0.55，标签字随之变得很小",
+  "severity": "low",
+  "proposal": "加 lay.cellSize（格子边长，与字号分开），或界面级 UI 缩放"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "callout",
+  "what": "YOU DIED 横带上下边缘对称羽化、字距很大、约 2–3 秒慢速淡入；band 是实心矩形，mo.duration 上限 1.2s",
+  "severity": "medium",
+  "proposal": "vis.fill 加 feather（对称羽化）；mo.duration 上限放宽到 3s"
+ },
+ {
+  "replica": "rep.elden-ring",
+  "name": "ELDEN RING",
+  "screen": "callout",
+  "what": "横带底色取 col.accent（只好把本屏强调色设成近黑），字色写死白色；本作是暗红字，且同一横带按事件换字色：死亡暗红、击败强敌与发现赐福用金色",
+  "severity": "medium",
+  "proposal": "band 底色改读 col.surface，字色读 col.text@el.notify；el.notify 加按事件类型的语义字色（col.coding = resultTone 作用到字色）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "hud",
+  "what": "6 张商店图全部关掉了 GUI，只剩世界：信息靠世界物件本身承担——传送带按等级着色（黄 / 红 / 蓝）、带上的物品流、电线杆之间的铜色电线、熔炉的火光、箱子与机械臂的朝向。el.overlay（状态图标 / 方向箭头）只能近似，“世界物件本身的颜色就是语义编码”没有参数；HUD 部分（快捷栏、小地图、研究进度、实体信息）按游戏常识（2.0 版式）编码，与参考图对比时版式分另看。",
+  "severity": "medium",
+  "proposal": "叙事内编码新参数（数值 / 等级 → 物件颜色、亮度）（G-diegetic-encoding）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "all",
+  "what": "窗口语法是三层嵌套：浅灰倒角外框 → 深灰内芯 → 更深的凹槽（放格子和列表），标题栏 = 粗体米橙标题 + 一条横纹拖拽把手填满剩余宽度 + 右端方形灰色 X；vis.depth = bevel 只给一层倒角（现在用深色描边 + 倒角近似外框），“框凸、芯平、槽凹”三层与拖拽把手条都没有。",
+  "severity": "high",
+  "proposal": "vis.depth 分别指定框 / 芯 / 槽（G-depth-bevel）；标题栏拖拽把手（cmp.plate 新取值 dragHandle 或 G-window-system）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "all",
+  "what": "按钮是浅灰倒角块 + 黑字，悬停整块变橙黄；确认按钮绿色带右箭头、返回按钮红色带左箭头，成对放在窗口底部两角。col.semantic = greenRed 只是记录，渲染里主按钮一律用强调色（橙底白字）；col.accent@el.cta 之类的按元素配色被校验接受但渲染不读，所以“开始研究”无法单独变绿；箭头形与“底部两角”放置也没有参数。",
+  "severity": "high",
+  "proposal": "cmp.button 新取值 confirmBack（箭头形 + 角落放置）；按钮底色按 col.semantic 取（G-control-lib）；渲染支持 col.*@el.* 覆盖"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "all",
+  "what": "标题字色是米橙（#ffe6c0），正文与数量是白色，次要说明灰色；col 只有一个 col.text，标题色无法单独指定。",
+  "severity": "medium",
+  "proposal": "col 角色新增 heading 文字色（G-color-roles）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "all",
+  "what": "格子与按钮是同一种浅灰凸起方块（物品图标压在浅灰底上），放在更深的凹槽里，悬停时整格变橙；渲染里 slot() 直接用面板样式，格子永远与面板同色（深灰），也没有“悬停整格填强调色”的焦点画法（invert 是反色混合，会把物品图标反色，所以本轮去掉了 ix.focus）。数量角标右下白字已由 cmp.slot = cell 表达。",
+  "severity": "medium",
+  "proposal": "新色板角色 col.control（按钮 / 格子面色）或让 vis.fill@slot、col.surface@slot 生效；ix.focus 新取值 fill（整格填强调色）（G-card-node）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "hud",
+  "what": "快捷栏是 2 行 × 10 格（可翻页），左侧拼着武器 / 弹药 / 护甲格，右侧拼着快捷工具条（蓝图、复制粘贴、拆除规划、开关），三段连成一条底部长条；el.abilities 的 hotbar 固定 1 行 8 格，元素之间不能左右拼接（同锚点只会纵向堆叠），只能把工具条放到右下角。",
+  "severity": "medium",
+  "proposal": "el.abilities 新增 count / rows / pages 子参数；elx 新增“贴在另一元素左 / 右侧”的相对锚点"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "all",
+  "what": "样本状态压不掉：快捷栏样本自带冷却扇形、✕ 锁定、红点，网格样本从第 6 格起一律按 st.locked 画成锁定；Factorio 的快捷栏没有冷却，缺货格只是图标变灰，背包里也没有“锁定”的格子。st.cooldown、st.locked 都没有“无”，本轮用 st.cooldown = desat（整格变灰，读作缺货）、st.locked = grayscale（背包屏 dimmed）、st.newCue = none 近似。",
+  "severity": "low",
+  "proposal": "st.cooldown / st.locked 新取值 none；样本状态随 st.* 可关"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "hud",
+  "what": "研究进度是“科技图标 + 名称 + 细进度条”（2.0 在小地图下方，1.x 在左上）；el.objective.form = text 只画小标题 + 一行字，cmp.gauge@el.objective 校验通过但渲染不画进度条。小地图 → 研究进度 → 实体信息的纵向堆叠已能用“同一锚点 + cnt.elements 顺序”表达。",
+  "severity": "medium",
+  "proposal": "el.objective 新画法 progress（图标 + 名称 + 细条），或让 cmp.gauge@el.objective 生效"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "hud",
+  "what": "悬停实体时的信息框（小地图下方）：标题行 + 实体小渲染图 + 状态行（绿点 Working）+ 配方 + 血量 / 耗电；el.selection 的 panel 画法强制带圆形头像，tooltip 画法只有标题 + 两行字。本轮改用 tooltip，缺实体渲染图与状态点。",
+  "severity": "medium",
+  "proposal": "el.selection 新增 portrait 子参数（none / avatar / render）或新画法 entityInfo（G-card-node）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "hud",
+  "what": "悬停选中框是黄色四角括号框住实体（el.interact = bracket 已表达），但括号下多画了一行“[E] 动作名”；Factorio 只有括号，动作写在右侧信息框。",
+  "severity": "low",
+  "proposal": "el.interact 的 bracket 读 elx.valueLabel = none 时不写动作字"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "hud",
+  "what": "警报：机器上的状态图标（缺电红闪电、缺燃料黄火焰、输出已满）在世界里闪烁，同时屏幕右下出现同款警报小图标一列；el.notify 没有“纯图标警报列”画法（emblem 是纹章盾牌，本轮删掉了），st.alert 只能选一种；alt 模式下机器上叠配方图标、箱子上叠内容图标，按住 Alt 整体切换，没有参数。",
+  "severity": "medium",
+  "proposal": "el.notify 新画法 alertIcons；st.alert 改多选；el.overlay 增加 alt 模式（按键整体切换）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "hud",
+  "what": "镜头拉远到一定程度切进地图视图（2.0 无缝缩放）：世界变成按类别着色的 chart 色块图；rel.semanticZoom = iconize 只能近似。",
+  "severity": "low",
+  "proposal": "rel.semanticZoom 新取值 chart（G-map-lib）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "inventory",
+  "what": "角色窗口是一个窗口里并排两块网格：左边背包 10 列，右边制作区（上方 4 枚大图标分类页签：物流 / 生产 / 中间产品 / 战斗，下面按子组分行的配方格，能合成灰底、缺材料整格红底）；lay.columns 上限 8，网格画法还按 40px 最小格宽减列；没有“第二块网格”，本轮用常驻详情栏占住右半边，cmp.tab = icon 在页签渲染里也不生效（画成文字页签）；悬停 tooltip 停在窗口右外侧。",
+  "severity": "medium",
+  "proposal": "lay.columns 上限放到 12；lay.composition 新取值 dualGrid（两块网格并排）；页签按 cmp.tab 画大图标；lay.detail = transient 增加位置（窗口外侧）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "inventory",
+  "what": "物品品质（2.0 太空时代）是格子左下角的一枚小品质图标（普通 / 罕见绿 / 稀有蓝 / 史诗紫 / 传说橙），1.x 没有品质；渲染的样本格子总会带稀有度，st.rarityCue 没有“角落小图标”，本轮用 strip（侧边细色条）+ col.rarityScale = diablo（同色阶）近似。",
+  "severity": "low",
+  "proposal": "st.rarityCue 新取值 cornerIcon（左下角小徽标）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "craft",
+  "what": "机器窗口：左上是机器的实时小镜头（游戏内实时渲染）+ 状态行（绿点 + Working），右侧是一行“原料格 → 橙色进度条 → 产物格”，下面插件槽；玩家背包窗口贴在左侧，两个窗口并排拼成一组。本轮用 cnt.focal = apparatus 的灰盒（需素材）占实时镜头的位置，el.cost = slots 只画原料格（放在右下），详情的两条橙条近似进度条；cmp.panelArt 校验通过但渲染不画。",
+  "severity": "medium",
+  "proposal": "cmp.panelArt 新取值 liveView（ast.iconSet = runtimeRender 的面板版，needs art）；el.cost 新画法 recipeRow（原料 → 进度条 → 产物）；多窗口拼接（G-window-system）"
+ },
+ {
+  "replica": "rep.factorio",
+  "name": "Factorio",
+  "screen": "skilltree",
+  "what": "科技树（2.0）凭记忆编码：可拖动的图，节点是方形科技卡（大图标 + 名称 + 底部一排科技包图标 × 数量），卡底色按状态（已研究绿、可研究黄、不可研究红）；cmp.node 没有“带成本行的方形科技卡”，选的 building 在渲染里没有画法、退回编号圆点（状态色绿 / 橙 / 灰倒是对得上）；右侧详情应是成本（科技包 × 数量、时间）+ 解锁配方图标 + 绿色“开始研究”，详情栏只能画名称 / 说明 / 两条属性条。",
+  "severity": "medium",
+  "proposal": "cmp.node 新取值 techCard 并实现 building 画法（G-card-node）；详情栏按 cnt.dataShape 换成成本行 + 解锁图标行"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "hud",
+  "what": "速度表是复合仪表：外圈细刻度 + 转速数字 + 红区 + 指针、中心大号挡位、下方数字车速与单位；cmp.gauge = dial 只有一条粗弧（线宽固定为半径的 22%）+ 一根指针 + 一个数，画不出刻度、挡位和红区",
+  "severity": "high",
+  "proposal": "cmp.gauge 加 tachometer（细刻度环 + 红区 + 中心挡位 + 下方数字速度），或给 dial 加子件开关 el.speed.parts = ticks / redline / gear"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "hud",
+  "what": "el.speed 不论 dial / number / bar 都会在仪表左上角再写一遍名次（2/8），与左上角 el.rank 重复；竞速 HUD 的名次只在左上",
+  "severity": "medium",
+  "proposal": "el.speed 只在元素集合里没有 el.rank 时才画名次，或加子参数 el.speed.showPlace（默认跟随：有 el.rank 时关）"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "hud",
+  "what": "按元素的配色 / 形覆盖（col.accent@el.speed、vis.opacity@el.minimap、vis.stroke@el.minimap 等）在局内 HUD 渲染里不生效——只有 cmp.*@el 被读；FH5 的仪表与小地图是白色、菜单焦点才是品红，只能整屏把 col.accent 改白来近似",
+  "severity": "medium",
+  "proposal": "makeCtx 按元素解析 col.* / vis.* 的 @el 覆盖，生成该元素自己的色板与面板 token（对应 Godot Theme 的 type variation）"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "hud",
+  "what": "驾驶辅助线是贴在路面上的 3D 箭头带，按刹车需求从蓝到黄到红渐变；el.overlay = arrows 只能在屏幕上画 4 个单色（强调色）箭头，不沿赛道走",
+  "severity": "medium",
+  "proposal": "el.overlay 加 racingLine：沿世界路线投影的贴地箭头带，颜色按状态（加速 / 减速 / 刹车）沿线渐变"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "hud",
+  "what": "技能链：一串技能名（漂移、擦肩、腾空……）逐条往上叠 + 总分 + 倍率，停顿后整串存入；el.feedback 只画第一个画法（combo 大数字），不能列出技能名清单",
+  "severity": "medium",
+  "proposal": "el.feedback 加 chainStack（技能名列表 + 总分 + 倍率 + 存入动效）"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "hud",
+  "what": "名次是大号序数（1ST）配小号总数（/12）的混排；el.rank = number 是同字号的 P2/8 加一个旁注",
+  "severity": "low",
+  "proposal": "el.rank number 加序数后缀与大小两级数字（主数字大、/总数小）"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "hud",
+  "what": "圆形小地图随车头旋转，GPS 路线是一条亮色带并标出下一检查点；radar 画法以玩家为中心放大，但不旋转、没有路线带",
+  "severity": "low",
+  "proposal": "el.minimap 加 rotate（车头朝上）与 routeRibbon（导航路线亮带 + 下一检查点）"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "pause",
+  "what": "菜单是 Metro 式马赛克瓷砖墙：一块大照片瓷砖 + 若干小瓷砖拼成横向长带，每个页签一组；lay.arrangement = grid 只能等大格，且格子边长封顶 S(86)，铺不出占半屏的大瓷砖",
+  "severity": "high",
+  "proposal": "lay.arrangement 加 mosaic / bento（条目可跨行跨列）+ 格子尺寸参数 lay.cellSize"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "pause",
+  "what": "瓷砖是整幅照片 / 插画 + 底部一条暗渐变标签带（大写粗体名 + 一行小字）；cmp.card = fullArt 与 cmp.panelArt = full 在集合网格里都不渲染，格子只能是图标 + 角标数量（需素材：活动 / 车辆宣传图）",
+  "severity": "medium",
+  "proposal": "集合网格按 cmp.card 画：fullArt = 整幅图（素材槽，未生成前灰盒）+ captionBand 标签带；cmp.panelArt 在格子级生效"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "pause",
+  "what": "聚焦瓷砖同时放大、亮色描边，并播放动态预览（视频或轮播图）；ix.focus = scale 实际只画外扩描边 + 投影，格子本身不变大，也只能选一种",
+  "severity": "medium",
+  "proposal": "ix.focus 改为多选（outline + scale 真正放大格子）；cmp.card 加 livePreview"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "pause",
+  "what": "集合网格里第 6 个起的条目一律画成锁定（st.locked 没有'无'可选），10 个瓷砖就有一半打 ✕；为避开只能把条目数降到 5 个、单排",
+  "severity": "medium",
+  "proposal": "st.locked 加 none，或锁定由内容包逐条声明而不是按序号"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "pause",
+  "what": "FH5 的暂停 / 地图顶部只有页签条（页签名就是标题）、返回写在底部按键图例里；全屏模板总是画大号页面标题（暂停 / 世界地图）+ 右上 Esc 返回胶囊，改成'直接叠加'容器又会整个跳过模板",
+  "severity": "low",
+  "proposal": "加参数 lay.header（title / tabs / none）：tabs = 页签条兼作标题；ix.close 加 none（只靠 el.prompt 图例）"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "map",
+  "what": "地图图标是按活动类型着色的圆徽 + 白色字形，完成后加星级；cmp.node = circleNumber 只有按状态着色的编号圆",
+  "severity": "low",
+  "proposal": "cmp.node 加 badge（类型色圆徽 + 字形 + 状态星），颜色走 col.coding = lineId"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "map",
+  "what": "选中活动弹出带头图、车级限制与奖励的信息卡，位置跟随图标；lay.detail = transient 的卡片固定在地图 45% 处、高度固定，会压住当前节点，也没有头图",
+  "severity": "low",
+  "proposal": "transient 详情锚到焦点节点旁（左右自动避让）；卡片顶部开 cmp.panelArt = header 插画槽（需素材）"
+ },
+ {
+  "replica": "rep.forza-horizon-5",
+  "name": "Forza Horizon 5",
+  "screen": "map",
+  "what": "卫星写实地图（vis.mapStyle = satellite）没有位图，退回场景烘焙俯视图（需素材）",
+  "severity": "low",
+  "proposal": "补 ui_map_satellite 位图（暗调实景俯视），mapAsset 按画风取"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "顶部中央的温度表：圆形霜玻璃透镜里一个大号细体数字（-40°C），下面挂温度计热力图开关，左右各伸出一条铁艺翼梁承载资源、工时、日历——这是一个‘中央圆盘 + 双翼’的复合组件；el.clock 只能选一种画法（这里用天气徽标 = 胶囊 + 天气字 + 温度近似），也无法把资源、倍速、日历挂到圆盘两翼，同锚点元素只能上下叠成一列。",
+  "severity": "high",
+  "proposal": "新 HUD 组件：中央仪表 + 左右翼梁（lay.hudOrg = console 的对称变体，元素可声明挂在哪一翼）；el.clock.form 新取值 bigTemp（圆盘 + 大号数字）；G-el-hud"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "资源分成两组夹住温度表（左：煤 / 木 / 钢 / 蒸汽核心，右：生食 / 口粮 / 其他），每项 = 黄色图标 + 带变暗前导零的计数（00561）+ 下方一根极细容量条；el.resources 只能一组一个锚点，iconNumber 没有容量细条，也没有‘前导零变暗’的里程表字形；资源图标统一金黄靠 col.accent@el.resources 表达，但 HUD 渲染器只用一套全局主题，逐元素颜色不生效（只有第一项是金色）。",
+  "severity": "high",
+  "proposal": "elx 新增分组锚点（同一元素拆两组对称放）；el.resources.form 新取值 iconNumberBar；typ.numerals 新取值 odometer（G-typeface-lib）；HUD 按元素建主题（见 per-element 主题缺口）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "all",
+  "what": "铁艺花线：组件两端、面板角和底部按钮两侧伸出的冷银维多利亚铸铁卷须（细线 + 涡旋端头，线宽有起伏）；现在用 vis.motif = 花叶卷草 + 派生的矢量角花 / 分隔饰条（银色细线 + 小菱形）近似——线描花饰皮肤自带的关键词默认值会点名角花、换成金色巴洛克位图角花，所以 base 里用 uip.keyword = none 关掉它；程序线等宽、没有涡旋收尾，也挂不到 HUD 小组件两端。",
+  "severity": "high",
+  "proposal": "vis.motif 新取值 ironScroll + 线宽调制 / 涡旋端点（G-motif-lib、G-stroke-type）；位图角花按 ast.frameMat 换色（铁 / 银）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "希望 / 不满是上下两条独立横条，标签全大写写在条正中（DISCONTENT 红条、HOPE 红底上青色填充），两侧各被两个圆形霜玻璃大按钮夹住（科研 / 建造 | 法典 / 经济），条下再挂病号 / 伤员两枚小圆图标 + 数字；el.meter = paired 只画一条红条 + 两端小字，同锚点元素只能上下叠（态势条压在 7 颗按钮上面），‘按钮 2 + 2 夹住中间仪表’的对称编排无法表达，按钮也固定是 7 颗。",
+  "severity": "medium",
+  "proposal": "el.meter.form = paired 画两条（标签在条内）；elx 新参数：相对另一元素的位置（flank / above / below）；el.toolbar 加条目数；el.meter 子项可挂小计数徽章"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "日期与工时：左翼下方是暂停 / 1x / 2x / 3x 小方钮 + ‘WORK TIME 16:02’，右翼下方是‘DAY 16’ + 一条带天数刻度（17 18 19 20）的时间尺（用来标寒潮预报）；el.clock 已被温度占用，也没有‘时间线刻度尺 + 预报标记’画法。倍速钮用 el.gameSpeed = playFF（渲染成 Ⅱ ▶ ▶▶ ▶▶▶ 四钮，正是 Frostpunk 的样子）；词表里语义更贴的 speedBar 在渲染器里画成‘速度’+ 分段条，与定义不符。",
+  "severity": "medium",
+  "proposal": "el.clock.form 新取值 timelineRuler；同一元素允许多个子件；speedBar 按定义画成暂停 / 1x / 2x 按钮条"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "左下剧情条：红色圆章里写倒计时数字（30）+ 全大写衬线标题（THE LONDONERS）+ 右端‘倾向’小徽章，下面一行空心圆勾选目标；el.objective = checklist 只有金色小标题 + 方形勾选框，没有红色倒计时圆章头，也不能和 el.timer 合成一条。",
+  "severity": "medium",
+  "proposal": "el.objective.form 新取值 storyTracker（圆章计数头 + 标题 + 子目标，勾选框可选圆形）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "右下人口胶囊（放大镜按钮 + 25/142 已分配 / 总人口）与右上三颗圆形快捷钮（供暖、侦察队、地图）都没有对应元素：人口不是资源也不是队伍；el.toolbar 已经用在底部按钮排，一屏只能有一个实例。",
+  "severity": "low",
+  "proposal": "el.resources 允许单项单独锚定，或新元素 el.population；元素允许多个实例（el.toolbar#2 = microMenu 放右上）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "危机图标（红圆里的刀叉、感叹号）挂在希望 / 不满条上方，世界里的建筑头顶也是红圆白符号；el.overlay = statusIcons 画成强调色菱形晶体，st.alert = 红色调只能整体染色，‘警报图标堆在主仪表头顶’没有位置参数。",
+  "severity": "low",
+  "proposal": "el.notify.form = emblem 允许锚到另一元素上方；statusIcons 的底座形状读 vis.silhouette@el.overlay、颜色读 st.alert"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud",
+  "what": "Frostpunk 同时用圆形 HUD 按钮和切角 / 缺口矩形面板；vis.corner 是全局的——hud 屏用 round 50 让按钮变圆、天气条变胶囊，hud-building 屏为了保住建筑面板的切角只好让底部按钮也变成切角方块。词表里有 vis.silhouette@el.toolbar / vis.corner@el.*，但 HUD 渲染器只建一套全局主题，逐元素的 vis / col / ast 覆盖都不生效。",
+  "severity": "medium",
+  "proposal": "HUD 按元素构建主题（makeCtx 读 vis.*@el.<id>、col.*@el.<id>、ast.*@el.<id> 后重算 token）；面板外形也读 vis.silhouette（现在只给按键）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud-building",
+  "what": "建筑面板：深藏青半透明面板 + 细银线切角框，框外伸出两只带图标的‘耳朵’小标签（左：供暖温度计，右：ON / OFF 拨杆），头图是带霜雾的建筑渲染，下面是状态条（Functioning）与侦察队列表；el.selection = card 只有圆头像 + 名字 + 三条属性条，cmp.panelArt = header 在渲染器里没有实现，骑在框外的耳标做不到，属性条颜色固定是‘好’绿色。",
+  "severity": "medium",
+  "proposal": "el.selection.form 新取值 buildingPanel（头图 + 状态行 + 列表）并实现 cmp.panelArt；饰件 / 小部件骑边出框（G-ornament-placement）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "hud-building",
+  "what": "工人分配行是 NONE / −1 / 数字 / +1 / MAX 五段方钮，右侧灰字‘27 available’；cmp.quantity = stepper 没有两端的 NONE / MAX 键（选中面板里也画不出数量控件）。",
+  "severity": "low",
+  "proposal": "cmp.quantity 新取值 stepperMinMax"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "dialogue",
+  "what": "背景是一张实时渲染的人物群像舞台（一家人 + 工人 + 提灯光）占右侧六成，四周被白色冰雾 / 墨烟吃掉、中间留暗；这块是事件屏的主视觉、没有素材——现在用 cnt.focal = 角色 + 3D 实时模型的剪影占位（带‘需素材’标），背后用冻结的场景压暗。ast.fx 没有‘白雾晕边’，cnt.characterMedium 也没有‘多人群像’。",
+  "severity": "high",
+  "proposal": "需素材：事件群像插画 / 3D 展台渲染；ast.fx 新取值 frostSmoke（颜色与方向可调的晕边遮罩）；cnt.companion 新取值 crowd（G-bg-watermark）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "dialogue",
+  "what": "选项按钮 = 半透明深青长条 + 两端切尖 + 细青描边，选中项整条提亮并在左侧出现小箭头，每个选项右端骑一枚圆形按键徽章（Q）；现在只有主按钮（第一项）吃到 vis.silhouette = 六边形，其余选项按面板画成切角条；徽章骑边、选中箭头都没有参数。",
+  "severity": "medium",
+  "proposal": "非主按钮也读 vis.silhouette@button；G-ornament-placement（徽章骑在按钮端头）、G-focus-cursor（选中箭头）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "dialogue",
+  "what": "文本层级与位置：小号类别（Protest）+ 细分隔线 → 粗体大标题 → 正文（关键词青色）→ 居中全大写的青色‘决断语’一行 → 更小的青色说明，整列居中排在画面左侧三分之一、垂直居中；模板的标题固定写在全屏容器左上角（模板名），正文按 splitLR 固定比例铺满左侧 58%，hier.inline = keyword 只能给关键词着色，‘引语行 / 决断行’这一层级没有。",
+  "severity": "low",
+  "proposal": "G-inline-rules：正文内新增 callout 行样式；lay.composition 分栏比例参数（splitRatio）与文本列垂直对齐；标题可选写在数据栏顶部"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "skilltree",
+  "what": "法令节点 = 圆形图标 + 四周对称的冰霜卷叶花托；已签署时整朵青色发光、头顶写黄色小字 SIGNED、下面写法令名，可签署的是银色空心圆环 + 顶部花饰，锁定的几乎透明；cmp.node = 发光点只有光斑，已完成节点固定用‘好’绿色发光（不是强调青），节点下没有名字，st.done = tag 也不能放在节点上方。",
+  "severity": "high",
+  "proposal": "cmp.node 新取值 rosette（圆章 + 花托，按状态换色，带名字）；节点状态色读 col.accent / st.done（G-card-node、G-ornament-lib）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "skilltree",
+  "what": "中心是盾徽 + 天平纹章 + 缎带名牌（ADAPTATION），法令沿直线向外辐射成‘轮辐 + 分支’；constellation 是固定 9 点的散点（cnt.itemCount 不生效），不是以中心徽章为根的放射树；ring 只对集合有效、中心是灰盒。",
+  "severity": "medium",
+  "proposal": "lay.arrangement 新取值 radialTree（中心徽章 + 轮辐，节点数读 cnt.itemCount）（G-arrangement）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "skilltree",
+  "what": "背景是带墨点和白色霜点的近黑底，四角被白色水墨飞溅 / 冰雾侵入；现在 ast.bgArt = 纯色 + ast.fx = 星尘只给出近黑底与上下边带的少量白点（星空 / 氛围展台在渲染器里落成浅色天空渐变，不能用），ast.fx = 墨晕是面板左下角一团黑点，‘四角飞溅晕边’无法叠加到背景上。",
+  "severity": "medium",
+  "proposal": "ast.fx / ast.bgArt 增加边缘晕染层（G-edge、G-bg-watermark）；starfield / spotlightStage 补画法"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "skilltree",
+  "what": "标题区 = 大号高反差衬线‘Adaptation’ + 小副标题，被一条开口的细银括号线框住，线端收成卷花；左上 GO BACK、右上 CLOSE（红 X）都是两端切尖的细线长六边形按钮——cmp.plate 缺‘开口括号框 + 卷花’，标题没有副标题行，ix.close 只能选一个（这里选左上返回，画成小方钮而不是带字的长六边形）。",
+  "severity": "medium",
+  "proposal": "cmp.plate 新取值 bracketFrame（G-plate-lib）；ix.close 改多选；返回 / 关闭钮读 cmp.button = 文字、vis.silhouette"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "skilltree",
+  "what": "节点的完成 / 进行 / 锁定配色：Frostpunk 已签署用强调青发光、可签署银白、锁定透明；树、地图、法典三处的节点‘完成’态都固定画成‘好’绿色（pal.good），只能通过无障碍色盲预设改，没有设计参数。",
+  "severity": "medium",
+  "proposal": "col.good（语义好色）进色板角色，或 st.done 增加‘强调色点亮’取值"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "research",
+  "what": "工坊科技树凭记忆编码：顶部分类页签、六边形图标格按层级连线、点选后弹出说明 + 研究按钮；cmp.node = 建筑图标在渲染器里画成编号圆点（vis.silhouette@node 也不生效），树固定自上而下而 Frostpunk 自下而上生长，节点的确切形状与已研究状态的画法需要截图核对。",
+  "severity": "low",
+  "proposal": "实现 cmp.node = building（图标格）并读 vis.silhouette@node = 六边形；lay.arrangement = tree 加生长方向；补一张科技树截图后复核"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "map",
+  "what": "荒原地图凭记忆编码：去饱和的冰雪地形铅笔手绘图 + 圆形地点图标 + 侦察队头像沿虚线路线移动；vis.mapStyle 只能在暖黄羊皮纸位图（painted / parchment，平滑但色温反了）和场景烘焙图（satellite / chalk / flatVector，160px 烘焙放大后满屏马赛克，chalk 还是黑板底）之间选，这里取手绘水彩；没有‘冷灰冰雪铅笔素描地形’这一档；侦察队头像只能在左侧排成一列，不能挂在路线上。",
+  "severity": "low",
+  "proposal": "vis.mapStyle 新取值 frostSketch（冷灰铅笔素描位图，G-map-lib）；场景烘焙图按面板尺寸烘焙；地图节点可挂头像（cmp.node = avatar + 路线进度）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "results",
+  "what": "结局回顾：一张张铅笔 / 炭笔速写画出城市的关键时刻，下面一两句叙述，最后是‘城市活下来了，但值得吗’的追问；现在用 tpl.runSummary + 风景插画背景 + 主体 = 标题字近似，速写画法（cnt.characterRender = sketch 只作用于角色）与‘逐张幻灯片回顾’没有专门参数；模板固定在左上写模板名；ops.actions 是并集合并，模板带的‘再来一局’按钮在复刻里去不掉。",
+  "severity": "low",
+  "proposal": "ast.bgArt = sceneArt 增加画法子参数（素描 / 炭笔）；mo.reveal 新取值 slideshow；ops.actions 允许本屏清空（replace 语义或 none 取值）"
+ },
+ {
+  "replica": "rep.frostpunk",
+  "name": "Frostpunk",
+  "screen": "all",
+  "what": "关闭控件不能‘不画’：ix.close 没有 none 取值，兜底是右上 X——事件抉择屏（ix.dismiss = forced，只能选选项离开）和结局回顾（点任意处继续）都多出一颗右上 X；全屏模板也总在左上写模板名当标题，Frostpunk 的事件 / 结局屏没有这两样。",
+  "severity": "low",
+  "proposal": "ix.close 增加 none（ix.dismiss = forced / tapAnywhere 时默认 none）；模板标题可关（cmp.plate = none 之外再加‘不写标题’或 lay.header = none）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "hud",
+  "what": "引导之风：没有任务箭头和路点，方向由风吹草浪、落叶飘向、触摸板上滑召唤的一阵风给出，另有金鸟、狐狸、远处烟柱作为环境路标；el.objective.form 只有屏幕图形（文字 / 清单 / 标记 / 边缘箭头 / 便签），无法表达“用世界本身指路”，本屏只好整屏不画 UI（rel.hudVisibility = hidden）",
+  "severity": "high",
+  "proposal": "el.objective.form 新增 environmental（风 / 生物 / 烟柱引导），带强度与触发方式（常驻 / 手势召唤）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "global",
+  "what": "毛笔笔触本身就是面板与高亮：菜单选中项是一笔干笔刷扫出的白色色带（两端飞白）、字变深色，提示卡与标题背后也是笔刷块；vis.edge = brush 只让矩形边缘抖动（选中行画成一圈抖动的强调色描边框），“笔触即面板形状”无法表达",
+  "severity": "high",
+  "proposal": "vis.silhouette 或 cmp.plate 新增 brushStroke（干笔刷形面板，飞白强度、笔向参数）；列表选中行改读 st.selected / ix.focus，不再固定画强调色描边"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "character",
+  "what": "ix.focus = brushSwash 用 multiply 混合画强调色笔刷，在黑底菜单上完全看不见；本作是黑底上一笔白色笔刷 + 选中项文字反成深色",
+  "severity": "medium",
+  "proposal": "brushSwash 在 col.lightness = dark 时改用 normal 混合（白笔刷），并把焦点项文字换成 col.surface 色"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "combat",
+  "what": "生命条颜色写死为危险红 #e5484d（只有色盲预设能换），本作生命条是白色细条；第二条用 col.accent2（这里设成决心金）",
+  "severity": "medium",
+  "proposal": "el.vitals 每条的填充色可设（让 col.accent@el.vitals 真正生效，或新增 col.health 角色色）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "combat",
+  "what": "生命条前固定写“生命 / 护盾”文字标签，关不掉；本作两条都没有标签",
+  "severity": "medium",
+  "proposal": "el.vitals 新增 labels 开关（或 elx.valueLabel = none 时连标签一起隐藏）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "combat",
+  "what": "决心是生命条下方一排金色笔刷短段，与白色连续细血条画法不同；cmp.gauge@el.vitals 对整组条只能取一种画法，这里两条都是 thinBar",
+  "severity": "medium",
+  "proposal": "按条序号覆盖数值图形（如 cmp.gauge@el.vitals#2 = segmented）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "combat",
+  "what": "右下暗器快选是十字排布（苦无 / 粘雷 / 烟雾弹 / 黑火药），el.abilities.arrangement = cross 没有实现，画成一排 4 格，每格还固定标 1–4 热键数字；按住肩键时另出现四种架势的十字切换，两个十字簇并存，el.abilities 只有一份",
+  "severity": "medium",
+  "proposal": "技能格实现 cross 排布（上下左右四格 + 方向键位）；热键数字只在 el.prompt 含 hotkeyBadge 时画；允许元素多实例（el.abilities#2）或新增 el.stance"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "combat",
+  "what": "敌人出招前武器上闪红光（不可格挡）/ 蓝光（可闪避或可格挡）的闪光预警，以及潜行时敌人头顶的白色菱形发现度（填满后变黄、变红）；el.threat 的 telegraph 是地面预警区（已去掉），没有“武器闪光”与“头顶发现度”",
+  "severity": "medium",
+  "proposal": "el.threat.form 新增 glint（世界内闪光，颜色带语义）与 detection（头顶发现度，cmp.gauge = eye）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "global",
+  "what": "标题是双文字系统：竖排书法汉字（大）与宽字距全大写衬线英文（小）并置，用在标题画面、故事开篇卡、地图区名；typ.display.family 只能选一种字族",
+  "severity": "medium",
+  "proposal": "typ.display.secondary（副标题字族）；typ.direction = verticalTitle 只作用于汉字行"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "character",
+  "what": "装备页的主体是可旋转的 3D 实时角色（换装即时预览）；cnt.characterMedium = model3d 只有“3D 实时模型（需素材）”灰盒，这里退成程序剪影",
+  "severity": "medium",
+  "proposal": "needs art：model3d 槽用游戏内实时渲染的角色（或一张预渲染全身像）填"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "character",
+  "what": "lay.nav = tabsTop 的选中页签固定画成实心强调色块，cmp.tabIndicator = underline 不生效；本作页签是宽字距大写文字 + 选中项下方一笔笔触",
+  "severity": "medium",
+  "proposal": "drawNav 读 cmp.tabIndicator（underline / fill / raised），underline 在 vis.edge = brush 时画成笔触短线"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "map",
+  "what": "地图本体总被装进容器内的圆角矩形（四周留约 3% 黑边 + 一行页眉），本作地图整屏出血，区名与图例直接压在地图上",
+  "severity": "medium",
+  "proposal": "cnt.dataShape = spatial 且 cmp.modal = floating 时地图铺满整屏，页眉与元素叠在地图上"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "global",
+  "what": "ctx.device = tv 推出 typ.baseSize = 26（px@1080p），但 HUD 按画布 CSS 像素直接画、不按 1080p 换算：928×522 的复刻画布上字与元素放大约一倍（第 1 轮字过大的原因之一），这里手动压到 13",
+  "severity": "medium",
+  "proposal": "HUD 绘制按画幅高度 / 1080 统一缩放（typ.baseSize、ix.touchSize、元素尺寸都按 px@1080p 解释）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "map",
+  "what": "地图图标是一套和风白色剪影（神社、温泉、竹桩、狐狸窝、俳句点），完成后压暗；cmp.node = pin 画成水滴图钉，颜色按状态写死（完成 = 绿、当前 = 强调色），st.done = grayOut 对地图节点不生效",
+  "severity": "low",
+  "proposal": "ast.iconSet 素材库加入和风剪影图标集（needs art）；地图节点读 st.done / st.locked 决定压暗与去色"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "map",
+  "what": "lay.overflow = pan 固定在右下画“✥ 拖动查看”小字，本作没有；关闭控件没有“不画”这一项（不设时退回右上 ×），本作的返回只写在底部图例里（○ 返回），这里用 keyGlyph 在右上画了“Esc 返回”胶囊（装备页同）",
+  "severity": "low",
+  "proposal": "拖动提示受 lay.pageIndicator = none 控制；ix.close 新增 legend（并入 el.prompt 图例，不单独画）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "character",
+  "what": "常驻详情栏底部固定画“使用 / 丢弃”两个按钮，本作只有底部按键图例",
+  "severity": "low",
+  "proposal": "详情按钮跟 ix.mode / ix.confirm 走（手柄 + select 时不画，交给图例）"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "global",
+  "what": "黑泽明模式（黑白 + 胶片颗粒 + 风噪）是可选的整屏电影模式，UI 是否跟着变黑白由 rel.followPost 决定；无法把“整屏画面模式”声明为玩家选项",
+  "severity": "low",
+  "proposal": "玩家选项组增加画面模式开关，联动 rel.followPost"
+ },
+ {
+  "replica": "rep.ghost-of-tsushima",
+  "name": "Ghost of Tsushima",
+  "screen": "hud",
+  "what": "HUD 和引导之风靠触摸板上滑手势呼出；ix 里没有手势型输入与对应提示图标",
+  "severity": "low",
+  "proposal": "flow.entry 新增 gesture，ix.glyphs 增加触摸板手势图标"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud",
+  "what": "恩赐图标是金框菱形，在左缘排成两列交错（之字形）的竖带，末尾一个虚线菱形写 '+N' 表示还有更多；el.abilities 只有竖列 / 网格，也没有溢出计数格",
+  "severity": "high",
+  "proposal": "elx.arrangement 加 zigzag2（双列交错）；el.abilities 加溢出计数格（overflowCount）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud",
+  "what": "逐元素的视觉覆盖（vis.opacity@el.*、vis.stroke@el.*、vis.strokeColor@el.*、col.accent@el.*、vis.silhouette@el.abilities）只是词表，HUD 渲染只认 cmp.*@el.* 与 vis.silhouette@icon：技能格画成面板形状的圆角方块，没有菱形外轮廓和金色描边，血条也不能单独取色",
+  "severity": "medium",
+  "proposal": "makeCtx 按元素解析 vis.* / col.* 覆盖（与 cmp() 同口径用 r.at()）；slot() 的外轮廓跟 vis.silhouette@<元素>"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud",
+  "what": "生命条每行前固定写“生命 / 护甲”标签（DATA.vitalNames），Hades 的血条没有任何文字标签",
+  "severity": "medium",
+  "proposal": "el.vitals 加 labels 子参数（none / text / icon），none 时标签列宽为 0"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud",
+  "what": "生命条下面的第二条（神力槽）是 4 段火焰填充，第一条是连续红条；cmp.gauge@el.vitals 只能整组一种画法",
+  "severity": "medium",
+  "proposal": "el.vitals 按条给画法（el.vitals.forms = [bar, segmented]）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud",
+  "what": "死亡抗拒（红宝石 + '1 / 3'）紧跟在血量数字右边，血条上方还有两个施法弹药小圆（血石）：属于“生命附属计数”，没有元素或子件承载",
+  "severity": "medium",
+  "proposal": "el.vitals 加附属计数子件（lives / charges：图标 + x/y，或一排圆点），位置跟随主条"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud",
+  "what": "顶部同时有两条 Boss 细条（忒修斯 + 牛头人，左右并排），普通敌人头顶还有带数字的小红条；el.threat 的多选画法只画第一个，而且只有一个锚点 / 挂点",
+  "severity": "medium",
+  "proposal": "el.threat 画全部所选画法并按画法分别给锚点（bossBar 用 screenAnchor 且可并排两条，healthBar 用 attachTo = target）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud",
+  "what": "恩赐菱形右上角一道彩色斜条标神祇（宙斯黄、波塞冬青……），下方挂小 'Lv.2' 牌；技能格左上角固定印着键位数字 1–4，Hades 的恩赐没有键位",
+  "severity": "low",
+  "proposal": "st.rarityCue 加 cornerTab（角上斜条）；elx.valueLabelPos 加 tagBelow（小标牌）；el.abilities 加 keyHint 开关"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "hud-lowhp",
+  "what": "低血状态是模拟状态不是参数：受伤暗角只在模拟里受击且血量低于 25% 时出现，复刻截图钉不住（这次用常驻 edgeGlow 近似）；血量数字也钉不到 23/100 并转红",
+  "severity": "medium",
+  "proposal": "rel.metaFx 加 lowHpPulse（阈值 + 脉动频率，静态截图按阈值常驻）；加一个预览用的样本血量参数（如 cnt.sampleHp）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "外框是一整件插画器物（夜之镜）：顶冠人面 + 两颗紫晶、两侧骷髅立柱各抱一根大紫水晶、底部一条带三个宝石的横档；每条边都不一样，九宫格画不出，框厚约占面板短边 20%",
+  "severity": "high",
+  "proposal": "ast.frame 加 illustratedFrame（整幅外框插画 + 内窗矩形）与 ast.frameThickness；ast.container 加 mirror / altar 等世界器物"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "列表行按列分色：名称红色粗体小型大写、数值绿色、满级灰色 MAX、未满级是一个加号方块 + 紫色暗黑数；没有按列取色，这次只能把 col.text 整体设红（标题和数值也跟着变红）",
+  "severity": "medium",
+  "proposal": "cmp.listRow 每个字段可带颜色角色（title = accent2、value = good、status = muted）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "列表行固定画一块行底面板、行高至少 44px：10 行天赋只放得下 6 行；参考是无底的紧凑文字行（行距约 1.9 倍字高）",
+  "severity": "medium",
+  "proposal": "listRows 遵守 cmp.slot = bare（不画行底），行高按 cnt.density 收紧"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "关闭键是挂在外框底边中央的红色圆形徽章 X；ix.close 的“角外悬挂红圆 X”只在右上角",
+  "severity": "medium",
+  "proposal": "ix.close 加 hangingBottom（底边中央悬挂章）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "标题“Mirror of Night”居中、下一行斜体引言；界面标题固定左对齐单行，左上角的骷髅角饰还会压住标题起笔",
+  "severity": "low",
+  "proposal": "加 lay.titleAlign（left / center）与副标题行；角饰避让标题行"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "悬停说明浮窗挂在外框右侧外面、对齐被悬停的那一行；lay.detail = transient 固定画在列表区 45% 宽处，会压住列表中段（这次只好关掉）",
+  "severity": "low",
+  "proposal": "lay.detail = transient 的位置跟随焦点行并允许出框（面板外侧）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "近黑内芯上有一道斜向大块镜面反光（一整块斜带，不是重复条纹）",
+  "severity": "low",
+  "proposal": "vis.gloss 加 diagonalSheen"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "每行行首有切换另一形态天赋的镜像按钮，底栏右侧还有“重置”键 + 钥匙消耗（暗黑数、钥匙数已能用面板内的 el.resources / el.cost 表达）",
+  "severity": "low",
+  "proposal": "cmp.listRow 加 toggle（行首切换钮）；el.cost 允许第二实例"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "skilltree",
+  "what": "框上紫水晶的发光色与正文红 / 绿语义色同时存在，骨架只有一个第二强调色可用",
+  "severity": "low",
+  "proposal": "col 加饰件色角色（col.ornament / gem）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "dialogue",
+  "what": "左侧扎格列欧斯的彩色半身立绘是这一屏的主角；action 包没有立绘位图，只能画剪影（需素材）",
+  "severity": "medium",
+  "proposal": "素材：action 包的半身立绘，cnt.characterMedium = bust 时取用"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "dialogue",
+  "what": "文本框是浅灰大理石底 + 金色细双线框，名牌却是深灰底白字 + 金边、骑在框左上缘：col.surface@name / col.text@name 不生效，名牌底色只能借 col.accent（这次把整屏强调色设成深灰），名牌也画在框内而不是骑在上缘",
+  "severity": "medium",
+  "proposal": "cmp.plate@name 的底色 / 字色独立渲染（col.surface@name、col.text@name 生效），tab 名牌骑在面板上缘"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "dialogue",
+  "what": "名牌两行：上面名字、下面一行红色小字称号（如“冥界王子”）；名牌左侧一簇红色月桂叶，框右上角一个金色卷饰（花枝只能取饰件色，固定画在右上角）",
+  "severity": "medium",
+  "proposal": "cmp.plate 加 twoLine（名 + 称号，称号用 accent2）；ast.ornaments 的花枝可着色、可挂在名牌旁"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "dialogue",
+  "what": "文本框不是通栏：约从画面 36% 宽处到 86% 宽处，压在左侧半身立绘的右缘上；lay.container = tray 恒为通栏",
+  "severity": "medium",
+  "proposal": "cmp.dialogBox 加 offsetBox（宽度与水平位置跟随 lay.focalSide）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "dialogue",
+  "what": "材质表的 stone 是斑驳石块噪点，没有光滑浅色带细纹的大理石（这次退到 paper）",
+  "severity": "low",
+  "proposal": "ast.coreMat 加 marble（浅底 + 细纹）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "dialogue",
+  "what": "rel.hudVisibility = hidden 在界面模板里也会把模板自己的元素（字幕、选项）全部隐藏；字幕元素本身是黑条白字，不能当浅色框里的正文",
+  "severity": "low",
+  "proposal": "模板内元素不受 HUD 显隐策略影响；el.subtitle 的 boxed 画法跟随面板底色 / 字色"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "draft",
+  "what": "恩赐行右侧写稀有度文字（Common / Rare / Epic / Heroic / Legendary / Duo），框色随稀有度；列表行不读 st.rarityCue / col.coding，这套色阶（白 / 蓝 / 紫 / 红 / 橙 / 绿）col.rarityScale 也没有",
+  "severity": "medium",
+  "proposal": "listRows 按 st.rarityCue 给行框着色；col.rarityScale 加 custom 并允许逐档取色；st.rarityCue 加 label（稀有度文字）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "draft",
+  "what": "（凭记忆）每块恩赐牌很高（约屏高 18%）：菱形纹章图标 + 名称 + 右上稀有度 + 两行说明 + 数值行，各自带雕花框；列表行高只由字高决定（约 50px）",
+  "severity": "medium",
+  "proposal": "cmp.slot = rowCard 在列表里生效：给行高（或按 cnt.textLength 加说明行数）与逐行外框"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "draft",
+  "what": "左侧神祇半身像（需素材，action 包只有剪影）+ 一句台词；台词框与恩赐行是两块不同结构的面板",
+  "severity": "low",
+  "proposal": "素材：神祇半身像；tpl.draft3 加“说话人 + 台词”子区（cnt.companion = avatar 时给台词框）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "draft",
+  "what": "重掷是右下一个小骰子图标 + 剩余次数；ops.actions = retry 来自 tpl.draft3（并集删不掉），画成写“再抽 10 次”的大菱形按钮",
+  "severity": "low",
+  "proposal": "ops.actions 加 reroll（图标 + 次数的小按钮），与抽卡的“再抽 N 次”分开"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "codex",
+  "what": "（凭记忆）图鉴详情是角色肖像 + 长段传记正文 + 解锁进度点；常驻详情固定画背包样本（属性条 攻击 / 重量 + 装备 / 丢弃 按钮），cmp.panelArt = side 在模板里不生效",
+  "severity": "medium",
+  "proposal": "lay.detail 加内容类型（stats / lore），lore = 肖像 + 正文 + 进度点；模板读 cmp.panelArt"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "codex",
+  "what": "分类页签是一排图标（冥神、奥林匹斯、敌人、地点……）；cmp.tab = icon 在模板导航里不生效，仍画文字页签",
+  "severity": "low",
+  "proposal": "drawNav 读 cmp.tab（icon / iconText）"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "all",
+  "what": "ix.close 没有“无”：回退值是右上 X，对话框与恩赐界面（Hades 都不能点关闭）只能留一个 X 或换成别的关闭控件",
+  "severity": "low",
+  "proposal": "ix.close 加 none"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "all",
+  "what": "ast.ornaments 按并集合并：皮肤关键词 kw.ornate 带来的宝石 / 端盖 / 角花会出现在每一屏，单屏去不掉，只能整屏关掉关键词（对话屏用了 uip.keyword = none）",
+  "severity": "low",
+  "proposal": "允许逐屏减项（如 '-gems'）或给 ast.ornaments 一个 replace 开关"
+ },
+ {
+  "replica": "rep.hades",
+  "name": "Hades",
+  "screen": "all",
+  "what": "图标是与插画同描边的彩绘菱形神祇纹章（素材），HUD 里大号数字是粗体人文无衬线 + 黑描边",
+  "severity": "low",
+  "proposal": "素材：ast.iconSet = asset 的神祇纹章图集"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "血条是主角吉他的剪影：左端圆形琴头徽（闪电），斜切的琴颈里是斜向分段的绿色血量，下面贴一条黄色混响槽，外面一圈粗黑墨边。现在只能画两条平直的描边横条（cmp.gauge=bar），分段格（segmented）又没有墨边；vis.skew 也不作用到数值条",
+  "severity": "high",
+  "proposal": "cmp.gauge 新取值\"主题剪影遮罩\"（条形状由素材轮廓决定，需素材），两条计量共用一个外形；程序侧先让 vis.skew 与描边作用到 bar / segmented"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "el.vitals 每条前面固定画文字标签列（生命 / 爆发），血量填充色固定为红色（e.bad），col.accent@el.vitals 等按元素的 col.* / vis.* 覆盖校验能过但渲染不读，所以绿色血条、无标签都画不出来",
+  "severity": "medium",
+  "proposal": "elx 加 labelMode（不标 / 文字 / 图标）；让渲染读 col.accent@el.<元素>（或给 el.vitals 加 fillColor 子参数）"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "整个 HUD 跟着音乐 BPM 一拍一跳：血条、评级字母、连击字都在拍点上缩放，这是这款 UI 的灵魂",
+  "severity": "high",
+  "proposal": "mo.idle 新取值\"节拍脉冲\"，再加 BPM / 相位参数，让所有元素在拍点上弹一下"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "el.feedback.form 是多选，但渲染只画第一个画法：拟声字、PERFECT! 评价、\"4 HITS!\"连击三者同屏时只能留一个（现在留拟声字）；拟声字的位置也写死在\"目标挂点 + 右上偏移\"，el.feedback.attachTo / screenAnchor 都不影响它，换到目标投影偏上的场景（工厂）就被顶出画面",
+  "severity": "high",
+  "proposal": "el.feedback 按选中的画法逐个画，并允许按子画法分别设锚点（comicSFX 挂目标、combo / rating 挂屏幕右上评级下方）；comicSFX 读 attachTo"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "评级字母是手绘橙黄大字压在黑色齿轮圆盘上，外圈是评级进度环、环上绕一行弧形小字；el.rank=letter 只画固定黄色斜体字母，没有圆盘和环（vis.silhouette@el.rank / cmp.gauge@el.rank 已写但不渲染）",
+  "severity": "medium",
+  "proposal": "el.rank 新画法\"字母 + 圆盘 + 进度环\"（读 vis.silhouette@el.rank 与 cmp.gauge@el.rank），字母颜色读 col.accent"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "分数是\"SCORE\"小标签 + 斜体白色大数字（无底），el.timer 只有\"数字\"（写的是计时）和\"比分胶囊\"（带胶囊底），没有带小标签的分数",
+  "severity": "low",
+  "proposal": "el.timer.form 新取值\"标签 + 大号分数\"（小字标签在上、斜体数字在下、无底）"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "拟声字是渐变 + 网点填充的超大字，背后有撞色星爆底和从击中点放射的黑色速度线；comicSFX 只给黄色星爆 + 红字，rel.metaFx=speedLines 是白色、只在屏幕四周、以屏幕中心为心",
+  "severity": "medium",
+  "proposal": "el.feedback=comicSFX 加字内填充（渐变 / 网点）与星爆配色两个子参数；速度线加颜色（墨色）与圆心跟随命中点的选项"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "伙伴援护头像是倾斜的小方卡（荧光绿框、带冷却），挂在血条下方；这张参考图里没出现，所以这一屏没放 el.abilities",
+  "severity": "low",
+  "proposal": "el.abilities=slots 加\"倾斜头像卡\"样式（读 vis.tilt@el.abilities 与 col.border@el.abilities）"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "dialogue",
+  "what": "闲聊台词是深色手写体小字 + 白色外描边，没有气泡底，漂在说话角色身边；el.subtitle 的无框字幕写死白字黑描边、只按屏幕锚点放（attachTo 不生效），typ.legibility=outline 不能指定描边颜色，正文字族没有\"漫画手写\"（kai 楷体子集也缺这些字，渲染回退成黑体）",
+  "severity": "medium",
+  "proposal": "el.subtitle 读 col.text 与 typ.legibility 的描边色（或给 typ.legibility 加描边颜色）；无框字幕支持 attachTo=player；typ.body.family 新增\"漫画手写体\"（需字体）"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "cutscene",
+  "what": "剧情里的视频会议墙：5 块竖屏，每块是半身立绘填满 + 底部暗色人名条 + 摄像 / 麦克风 / 挂断三枚小图标，中间一块更大、带荧光绿括角；el.party=unitCards 固定 4 张卡、卡里是圆头像 + 名字 + 血条，没有立绘填满、图标行和中间放大；改成叙事内（diegetic）时板子被顶出画面上沿、被场景柱子挡住，所以这一屏用屏幕叠加",
+  "severity": "medium",
+  "proposal": "ast.container 新增\"视频通话网格\"（需立绘素材，需美术）；el.party 卡内图标行子参数、cnt.itemCount 作用到 el.party、按焦点放大当前一块；叙事内板子的挂点 / 高度参数"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "results",
+  "what": "凭记忆：每场战斗结束从右侧滑入评分卡，逐项（用时、节拍、受伤、连击）给字母评级，最后一个大字总评；对比表（table）只画按队员分行、带头像的记分板，没有\"类别 + 字母评级\"的行",
+  "severity": "low",
+  "proposal": "cmp.listRow 新增\"评级字母\"字段，或 cnt.dataShape=table 加\"按类别分行\"的变体（不画头像）"
+ },
+ {
+  "replica": "rep.hi-fi-rush",
+  "name": "Hi-Fi RUSH",
+  "screen": "hud",
+  "what": "装饰母题是闪电、音符与星爆，vis.motif 没有闪电 / 音符，暂用 stars 近似",
+  "severity": "low",
+  "proposal": "vis.motif 新增\"闪电\"\"音符\""
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "hud",
+  "what": "左上是一个锁扣：大圆灵魂容器在最左、面具横排在它右侧、吉欧数在面具下方，三者由一道白色牛角飞白花线连成一体；同锚点（tl）的元素只能竖着堆，现在只能排成『面具 / 吉欧 / 灵魂环』三行，灵魂容器掉到了吉欧下面",
+  "severity": "high",
+  "proposal": "元素组合锁扣：elx.dockTo（挂在另一元素的右侧 / 下方 + 偏移），可选连接饰线（ast.ornaments 加 connector）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "hud",
+  "what": "灵魂容器借 el.abilities = 大招充能表达：这个画法固定画成进度圆环，环心总写『66%』并带一个 ✦ 符号，cmp.gauge@el.abilities = orb 与 valueLabel = none 都不起作用；原作是不写字的液面圆球（白色灵魂液面高度 = 灵魂量）",
+  "severity": "medium",
+  "proposal": "el.abilities.form = ultimate 时读 cmp.gauge@el.abilities（orb / ring）与 elx.valueLabel；或新增 el.mana（第二资源球）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "hud",
+  "what": "面具列：el.vitals 的图标列在左边固定写一个生命名标签（『灯火』），图标永远是红色心形（颜色写死 #e5484d，col.accent@el.vitals 不生效）；原作是 5 个白色面具、没有标签，掉血时碎裂",
+  "severity": "medium",
+  "proposal": "el.vitals 的填充色读 col.accent@el.vitals；elx.valueLabel 之外再加 elx.label（显示 / 隐藏名称）；图标列的图元做成素材槽（面具）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "hud",
+  "what": "吉欧数：el.resources = 大号数字时货币图标固定画成金色 ◆（#e3b341）；原作是灰白色的吉欧石图标 + 衬线数字",
+  "severity": "low",
+  "proposal": "货币图标颜色读 col.accent@el.resources，或从图标集取单色图元"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "hud",
+  "what": "拾取吉欧时总数右边先显示 '+N' 暂存数，停顿后滚进总数",
+  "severity": "low",
+  "proposal": "mo.valueChange 加 pendingDelta"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "白色巴洛克大角花要靠绕路才画得出：皮肤关键词默认点名了 corners，点名的角花一律用金色位图图集（不管 frameMat = lineArt、饰色是白）；ast.ornaments 是并集合并，手动给空列表也清不掉关键词层的值，只能 uip.keyword = none + 空饰件列表，让装饰预算 3 画矢量角花。矢量角花只是 L 形两条等宽粗线 + 一个小卷曲，原作是大幅书法卷草、互不相连",
+  "severity": "high",
+  "proposal": "角花图集按饰色着色（frameMat = lineArt 时用白 / 饰色描线版），ast.ornaments 的手动值改为替换而非并集；矢量角花加 baroque 画法（S 形卷草 + 涡旋收尾）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "线条有书法式粗细调制和涡旋收尾；中部长分隔线两端渐隐；程序画的饰线是等宽粗线",
+  "severity": "high",
+  "proposal": "vis.stroke 加 calligraphic（粗细调制）与 vis.strokeFadeEnds"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "页标题 'Charms' 居中坐在一条左右对称的大花线正中（标题花托）；模板的页标题固定画在面板左上角，装饰预算 3 只在顶边正中补一个小母题符号，两者是分开的",
+  "severity": "high",
+  "proposal": "lay.titleAlign（left / center）+ cmp.plate 加 flourish（标题两侧对称花线 / 花托）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "护符格是圆形暗坑（空槽凹槽 ◎），大部分是空槽、只有一两个护符；模板网格把每格都画成方形、每格都是物品，还带数量角标；vis.silhouette@slot = circle 不被格子使用；空槽表现（st.emptySlot = pit）只在格子是空的时候画，而网格从不出空格",
+  "severity": "high",
+  "proposal": "格子外形读 vis.silhouette@slot；cnt.fillRatio（集合里多少格已占用，其余按 st.emptySlot 画）；cmp.slot 加 noQty（不画数量角标）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "稀有度提示关不掉：网格固定给三分之一的物品稀有度，st.rarityCue 每个取值都会画出彩色记号（现在用 strip + 铜银金色阶，左侧仍有金 / 银竖条）；原作没有稀有度",
+  "severity": "medium",
+  "proposal": "st.rarityCue 加 none（或 col.rarityScale 加 mono）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "选中光标是四个小角花包住目标 + 背后淡蓝光晕；ix.focus 只有描边 / 发光方框 / 三角光标等，光晕颜色也不读 col.focus",
+  "severity": "medium",
+  "proposal": "ix.focus 加 cornerFlourish，光晕色取 col.focus"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "页面导航是轮播：左上 'LT Inventory'、右上 'Map RT'（相邻页名 + 肩键图标），两侧中部白色菱形翻页箭头；lay.nav 只有页签 / 宫格 / 热区，现在只能不画导航，右上角留了一个 ix.close = keyGlyph 的『Esc 返回』胶囊",
+  "severity": "medium",
+  "proposal": "lay.nav 加 carousel（只显示前后页名 + 按键图标 + 两侧菱形箭头）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "护符网格 4 行 × 10 列（hexGrid 已能错开半格，但 lay.columns 上限 8）；网格在左下半区，上方另有 'Equipped' 已装备一行与 'Notches' 凹槽计数，中间一条横贯的渐隐分隔线；右栏只有名字、Cost 凹槽、大图标与两段描述，没有数值条和按钮（模板详情栏固定画两条属性条 + 『使用 / 查看』按钮）",
+  "severity": "medium",
+  "proposal": "lay.columns 上限放宽到 12；面板内允许多个带标题的小分区（lay.sections）；详情栏字段可选（cmp.detail = name / cost / art / desc / stats / buttons 多选）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "character",
+  "what": "'Cost' 后面是 N 个凹槽小圆图标（用重复图标数表示消耗）",
+  "severity": "low",
+  "proposal": "el.cost.form 加 pips（重复图标计数）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "all",
+  "what": "按键 / 胶囊 / 选中页签 / 主按钮的底色 = 强调色、字色固定白色：本作强调色近白，『Esc 返回』胶囊和详情栏『使用』按钮成了白底白字",
+  "severity": "low",
+  "proposal": "按键字色按强调色明度自动取黑 / 白（或新增 col.onAccent）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "map",
+  "what": "快捷地图应是暗底上淡蓝白粉笔线勾的房间轮廓 + 深色内填、未走过的出口画虚线；vis.mapStyle 除羊皮纸 / 水彩外（chalk、glowSilhouette、tactical……）都只画场景烘焙的灰绿色块，看不出画风",
+  "severity": "high",
+  "proposal": "vis.mapStyle = chalk：按烘焙图描边画房间轮廓（线色 col.accent、内填 col.surface）；vis.mapUnexplored 加 dashedExits"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "map",
+  "what": "快捷地图打开时局内 HUD（面具 / 灵魂 / 吉欧）仍留在左上并被压暗；模板界面里的元素只能排进容器框内（居中的地图框），也没法叠在局内 HUD 之上，所以这一屏没有 HUD",
+  "severity": "medium",
+  "proposal": "界面模板加 flow.stacking = overHud：先画当前品类布局的局内元素（按 rel.dim 压暗），再画模板"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "map",
+  "what": "区域名 'Forgotten Crossroads' 是居中压在地图上方的衬线小字，没有面板；模板标题固定在面板左上角",
+  "severity": "low",
+  "proposal": "lay.titleAlign = center（与护符页标题同一个参数）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "map",
+  "what": "地图标记是圆形徽章内画图标，按类别着色（长椅青色、鹿角站橙色、骑士头像白色），地名衬线小字直接压在地图上；现在是绿色 / 淡蓝色水滴图钉 + 左上一枚地名胶囊",
+  "severity": "low",
+  "proposal": "cmp.node 加 badge（圆徽章 + 内图标），按类别着色（col.coding = lineId 作用到节点）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "dialogue",
+  "what": "对话框在屏幕上方居中、约半屏宽、两三行居中文字：近黑羽化底 + 上下两条对称白色花线，底部中央一个小花饰作继续提示，没有名牌与立绘；现在只能借字幕元素画一行带『说话人：』前缀的暗底字条",
+  "severity": "medium",
+  "proposal": "cmp.dialogBox 加 topBox（上方居中、宽度读 lay.panelSize、多行居中、无名牌），饰件 dividers 作用到对话框上下边；ix.continueCue 加 ornament"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "chapter",
+  "what": "区域标题卡：上方一行小字（'The' / 副标题）、中间大号全大写衬线区域名、下方一条对称花线；现在借 el.title = logo：居中大字 + 下方一行字距拉开的小字，没有花线，小字位置在下",
+  "severity": "medium",
+  "proposal": "el.title.form 加 areaCard（上小字 + 主标题 + 花托），按首次 / 再访切大小（再访只在角落小字闪现）"
+ },
+ {
+  "replica": "rep.hollow-knight",
+  "name": "Hollow Knight",
+  "screen": "all",
+  "what": "图标是单色手绘蚀刻（护符、面具、吉欧、地图标记）；手绘图集是全彩厚涂，只好改用程序几何符号（白色单色，但只是 ✦ ♥ ■ ● ▲ 这类通用符号）",
+  "severity": "low",
+  "proposal": "素材：ast.iconSet = asset 加一套单色蚀刻图集（vis.iconStyle = etched，或按 col.strategy = mono 去色）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "hud",
+  "what": "回合结果直接预演在棋盘上，这是整套 UI 的核心：敌人下回合要打的格子是红色斜纹格、被推方向是红 / 白箭头、将受损的建筑闪红、将死亡的单位叠骷髅、伤害数字写在格上，悬停武器时把这一击的全部后果预先画出来。el.threat = telegraph 只画一个红色椭圆，el.overlay = arrows 是四根通用箭头，表达不了\"结果预演\"",
+  "severity": "high",
+  "proposal": "el.overlay.form 增加 outcomePreview（按格画：斜纹攻击格 / 推移箭头 / 受损闪烁 / 死亡标记 / 伤害数字），与 ix.confirm = ghost 联动"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "hud",
+  "what": "多选画法只画第一项：el.threat.form = [telegraph, intent, healthBar]、el.overlay.form = [gridHighlight, arrows] 都只画出第一个；原作同屏同时有红色预警格、敌人头顶血格、攻击图标",
+  "severity": "medium",
+  "proposal": "元素绘制按 form 列表逐层叠画（世界挂点类元素尤其需要），或拆成 el.threat.layers"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "hud",
+  "what": "左上一个细线框里并排三样：闪电图标 + \"POWER GRID\"小字 + 橙色分段格（电网血量），\"GRID DEFENSE 17%\"读数，以及\"RESET TURN\"文字按钮；el.meter = withIcon 只画图标 + 一条分段格，没有外框、标签与读数",
+  "severity": "medium",
+  "proposal": "el.meter.form 增加 framedStrip（细框条内：图标 + 标签 + 分段格 + 百分比读数 + 一个文字按钮）；或 lay.edgeBarSlots 指定条内字段"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "hud",
+  "what": "左下选中单位面板 = 方头像 + 名字小标签（带血格）+ 2–3 个武器格 + 一格\"[Right Click] or [0] to Disarm\"按键说明；el.abilities = slots 只有武器格，没有头像与名字，el.selection 已被右下的地形说明卡占用（每个元素只能放一份）",
+  "severity": "medium",
+  "proposal": "el.abilities.form 增加 unitLoadout（头像 + 名字 + 武器格 + 内嵌按键说明）；或允许 el.selection 多实例（el.selection#2）各自设锚点"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "all",
+  "what": "同一个强调色同时决定主按钮底色、标题页签底色、默认图标颜色与头像圈；原作按钮 / 页签是板岩蓝，图标是白 / 灰，高亮是黄。只好把强调色压成板岩蓝 #46567a，于是格子与列表里的图标发暗",
+  "severity": "medium",
+  "proposal": "色板角色补 col.button（主按钮底）与 col.icon（默认图标色），或 col.strategy = mono 时图标默认取字色"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "all",
+  "what": "按元素覆盖的颜色（col.accent@el.meter、col.border@el.prompt、col.text@el.title 等）词表接受、但渲染不读：只有 cmp.* 与 vis.silhouette@icon 会按元素覆盖。原作电网条橙、血格绿 / 红、按钮板岩蓝，只能靠内容包里的固定色",
+  "severity": "medium",
+  "proposal": "元素上下文（makeCtx）按 <col.*>@<元素> 重建该元素的色板"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "all",
+  "what": "面板标题装在贴着面板上沿的独立页签上，页签只有一端斜切（Bonus Objectives、Customize Squad、Time Traveler）；面板常只切一个角；任务简报面板与右侧地图预览之间用细线折角连接。cmp.plate = tab 画成两端都斜的梯形，vis.corner 只能四角统一，没有\"面板之间的连线\"；HUD 的奖励目标清单也没有面板与页签",
+  "severity": "medium",
+  "proposal": "vis.cornerMask（逐角切角）；cmp.plate 的 tab 加 slantEnd = right；vis.connector 增加 elbowLine 用于面板间连线；el.objective.form 增加 panelTab（带页签的清单面板）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "all",
+  "what": "大按钮（End Turn / Back / Start / CONTINUE）是大号像素字，正文才是清晰无衬线；按钮文字固定用正文字族与正文字号，只能随 el.cta.scale 整体缩放，按钮做到原作大小时字只有 10px 左右",
+  "severity": "medium",
+  "proposal": "typ 增加按钮角色（typ.button.family / size，或 cmp.button 的 label = display）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "squad",
+  "what": "模板里的元素只能排在容器里：原作布阵页是两块独立面板（右侧 Customize Squad、左下 Time Traveler）+ 屏幕左上 Back、右上 Start 两个大按钮；现在驾驶员卡只能塞进右侧抽屉的左下，Back 只剩标题旁的 ‹，Start 落在抽屉底部",
+  "severity": "medium",
+  "proposal": "elx.frame = screen | container（元素按整屏还是按容器排锚点）；或 lay.container 增加 panels（多块独立面板）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "dialogue",
+  "what": "对话面板的主体是一整幅场景插画（公司总部、机库……），标题压在插画上沿居中；内容包没有这类场景插画，只能画成\"场景（需素材）\"灰盒",
+  "severity": "medium",
+  "proposal": "needs art：每个内容包补 2–3 张场景插画（art.scene），cnt.focal = scene 时铺满面板"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "dialogue",
+  "what": "底部文本框左侧是一张方形说话人头像（带细框），文字在右；el.subtitle 没有头像，cnt.companion = avatar 词表有、渲染不画",
+  "severity": "medium",
+  "proposal": "cmp.dialogBox 增加 portraitBox（方头像 + 文本框）；或渲染 cnt.companion = avatar 时把头像贴在字幕框左侧"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "all",
+  "what": "原作没有 ✕ 关闭控件（任务弹窗点外面关闭、对话靠 CONTINUE）；ix.close 没有\"无\"，未设时按兜底画右上 ✕，只好用 Esc 键提示 / cancelBtn 代替",
+  "severity": "low",
+  "proposal": "ix.close 增加 none"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "all",
+  "what": "标题位置与颜色：对话与任务面板的标题居中压在面板顶部一条暗带里，任务名是红色像素字；模板标题固定左对齐写在页签里、跟随标题色；地图模板用 cnt.focal = title 写任务名时字号固定按栏宽撑满（约 60px），原作约 20px",
+  "severity": "low",
+  "proposal": "lay.titleAlign（left / center）+ col.title 角色；cnt.focal = title 的字号跟 typ.scale 走"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "map",
+  "what": "任务简报面板里是分节的：红色任务名、\"Vek Threat Detected!\"一行、细线分隔的\"BONUS OBJECTIVES\"小标题 + 带图标的目标、\"WARNING!\"分隔 + 黄框 WIND STORM 环境警告；el.objective = checklist 只有一个标题 + 勾选框",
+  "severity": "low",
+  "proposal": "el.objective.form 增加 sectioned（分隔线小标题 + 图标行）；st.alert 增加 framedLabel（黄框警告条）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "map",
+  "what": "岛屿地图与过场的顶栏是一条居中的细线框分隔条：星级、声望、电网分段格 + GRID DEFENSE、核心数；flow.chrome = topCurrency 只表示\"有顶栏货币\"，画在右上且是货币胶囊",
+  "severity": "low",
+  "proposal": "flow.chrome 的 topCurrency 增加对齐（居中）与字段列表（含分段格）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "hud",
+  "what": "单位血量是头顶一排带黑描边的小方格（机甲绿、敌人红），护盾 / 着火 / 酸液等状态是贴在格旁的小方图标；小队头像是方形像素头像。avatar 一律画成圆，血量画成细条",
+  "severity": "low",
+  "proposal": "cmp.gauge = pips（独立小方格）+ statusIcons 位置参数；vis.silhouette@avatar（方 / 切角）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "hud",
+  "what": "攻击顺序：右上\"ATTACK ORDER\"图标按钮，悬停后每个敌人头上出现黄色圆形编号 1…N；el.turnOrder = icons 只能在锚点处画一排头像徽章（已去掉），没有挂在各目标上的编号",
+  "severity": "low",
+  "proposal": "el.turnOrder.form 增加 numberBadges（挂在每个敌方单位上）；elx.visibility 增加 onHoverOf（由另一控件悬停触发）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "all",
+  "what": "像素化只作用在标题、大按钮和数字上，正文是清晰无衬线，面板线条是 1–2 屏幕像素的细线（家族缺口 G-pixel-roles）；现用 typ.display = pixel + body = sans + pixelScale = off 近似。图标也应是像素小图标，图集素材是厚涂风，只好退回程序几何图标",
+  "severity": "low",
+  "proposal": "vis.pixelScale 按角色拆分（display / numerals / icons / frame）；needs art：像素风图标图集"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "squad",
+  "what": "机甲行里移动 / 生命是两个小色块数字格（绿底白字），武器以小图标内嵌在行中，职业是绿色小字标签\"Ranged\"；行左侧竖排两个方形编辑按钮（铅笔 / 色板）；行顶还有一排六个小图标（驾驶员 / 机甲选择）",
+  "severity": "low",
+  "proposal": "cmp.listRow 的 value 字段支持\"色块数字格\"，增加 slots（行内小图标格）与 leadButtons（行首按钮列）"
+ },
+ {
+  "replica": "rep.into-the-breach",
+  "name": "Into the Breach",
+  "screen": "character",
+  "what": "凭记忆：整备页是三台机甲并排的竖栏，每栏 = 驾驶员头像 + 名字 / 经验 + 机甲 + 生命 / 移动 + 武器框；武器与机甲的升级靠反应堆核心：每件武器下一排可点亮的小格（灰 = 未供能、橙 = 已供能），把核心拖进格子。现用三张竖卡（图标 + 名字 + 一句说明）近似，栏内结构与供能格都没有",
+  "severity": "low",
+  "proposal": "cmp.card 增加 loadoutColumn（头像 + 名字 + 若干槽位行）；ix.mode = drag 时的目标槽状态参数（可接收 / 已供能）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "global",
+  "what": "1-bit 有序抖动（Bayer）是画面与界面共用的“灰”：书页环衬、插画阴影、书页毛边都靠抖动点阵；vis.pattern 没有 dither（halftone 是印刷网点、diagStripes 是实线条纹）",
+  "severity": "high",
+  "proposal": "vis.pattern 加 dither（bayer4 / bayer8），与画面 color.dither 共用同一网格"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "global",
+  "what": "ast.container = book 的封皮、纸色、墨色写死成棕色皮革 + 米色纸 + 棕墨（menu.ts），不读 col.surface / col.surface2 / col.text，所以“正对屏幕平铺在深底上的两色书”画出来是棕皮羊皮纸册，调色板整个错掉；书脊中缝阴影与圆角也是写死的",
+  "severity": "high",
+  "proposal": "book 容器的书页取 col.surface、封皮取 col.surface2、内容墨色取 col.text（或加 ast.containerMat 选纸 / 皮 / 布）；加 flat 开关去掉书脊阴影与圆角"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "global",
+  "what": "调色板锁定为两色，并能在选项里整套切换（Macintosh、IBM、Commodore、Zenith、LCD 等）；col.dynamic 没有“玩家选择调色板”",
+  "severity": "high",
+  "proposal": "col 加 paletteLock（2 / 4 色）；col.dynamic 加 playerChoice"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "global",
+  "what": "模板构图器每屏都在左上写模板名（标题 / 图鉴 / 推理板 / 过场）当表头，右上必画关闭控件（ix.close 兜底 xTopRight，没有“无”）；这款所有书页、扉页、黑场都没有任何 chrome",
+  "severity": "medium",
+  "proposal": "ix.close 加 none；加 lay.header（none / label / plate）或在 cnt.focal = title 时不画表头"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "global",
+  "what": "界面按画面的低分辨率渲染：衬线字是被栅格化的衬线，不是像素字体；vis.pixelScale = world 会推出像素字",
+  "severity": "medium",
+  "proposal": "typ 加 rasterize（任意字族按世界网格栅格化），与 D-pixel 的“像素字”解耦"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "global",
+  "what": "rel.behind = replaced + ast.bgArt = solid 的底色是场景墨色再压暗六成（近黑），原作书外的深底就是调色板的暗色（橄榄墨 #333319）",
+  "severity": "low",
+  "proposal": "bgArt = solid 时取 col.surface2（或加 col.backdrop）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "global",
+  "what": "旧式数字（1796、1803 高低错落）",
+  "severity": "low",
+  "proposal": "typ.numerals.family 加 oldstyle"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "title",
+  "what": "19 世纪报纸告示排版：斜体大标题、宽字距小型大写引语、居中铜版船图、带引号的大写船名、粗细双线（牛津线）、两头尖的膨胀线、多行居中正文；分隔饰条只有一种画法（两段线 + 菱形，只画在面板底），标题块只能一级，正文只有左对齐段落或单行",
+  "severity": "high",
+  "proposal": "ast.ornaments dividers 加线型（oxfordRule 粗细双线 / swelledRule 膨胀线）并可插在标题块之间；el.title 加 notice 版式（多级混排标题块，各级可设斜体与大小写）；textBlock 加居中多行（typ.align = center）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "title",
+  "what": "页面是满高的近方形纸页居中，两侧深色柱状留边；lay.panelSize 同时缩放宽和高，弹窗永远是约 1.9:1 的横幅，做不出满高窄页",
+  "severity": "medium",
+  "proposal": "lay.container 加 column（满高居中竖栏），或 lay.panelSize 拆成宽、高两项（lay.panelAspect）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "title",
+  "what": "标题与船名之间的铜版船图是版面的中心：cmp.panelArt = window 只是语义，模板构图器不画插画窗（需素材）",
+  "severity": "medium",
+  "proposal": "模板构图器实现 cmp.panelArt（window = 主体与数据之间的插画位，没素材时灰盒“插画（需素材）”），并配一张铜版小插画素材"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "hud",
+  "what": "唯一的“HUD”是左下手里的怀表：骷髅表盘，靠近尸体时表盖与指针有反应；el.interact 的 attachTo = held 只表达“挂在手持物上”，画不出手持物本身，而且交互提示总画在兴趣点上（attachTo 与 screenAnchor 都不影响位置），屏上只剩一个不属于原作的小箭头",
+  "severity": "medium",
+  "proposal": "attachTo = held 时以手持物本身为载体（diegetic prop，按 screenAnchor 放在画面一角），加 reactive 状态（靠近目标时开盖、指针动）；或加元素 el.tool（手持工具：怀表 / 相机 / 罗盘）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "journal",
+  "what": "书的左页是斜纹抖动环衬（整页只有底纹），右页是带内框线的扉页（书名三行、铜版船图、副题、年份居中）：同一屏两页底纹不同、内容不对称；模板只能“主体一栏 + 数据一栏”，左页只好放一行字；书正对屏幕平铺，页角有卷起的翻页角而不是页码点",
+  "severity": "medium",
+  "proposal": "ast.container = book 加左右页底纹分设（endpaper）与内框线；lay.pageIndicator 加 pageCurl（翻页角），并让 none 真的不画页码点（现在 paged 总画四个点）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "codex",
+  "what": "整页就是一幅群像铜版画（需素材，现为灰盒“场景”），插画本身就是导航：点人脸跳到此人的命运页；lay.nav = hotspots 会占掉整个内容区，不能叠在主体插画上，只好去掉",
+  "severity": "high",
+  "proposal": "hotspots 叠在 cnt.focal 的插画区域上（热区不占版面，只在悬停时显出）；配群像铜版画素材"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "codex",
+  "what": "放大镜光标在原图上局部放大；几张场景小图互相叠压成拼贴，配斜体引号标题（“Formosan Royalty”“Justice at Sea”）",
+  "severity": "medium",
+  "proposal": "加光标形态 magnifier（局部放大镜）；cmp.panelArt 加 collage（多图叠压 + 图注）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "codex",
+  "what": "cnt.characterRender（铜版 / 版画处理）只在主体是角色时生效，群像插画是“场景”主体时画法处理无处可写",
+  "severity": "low",
+  "proposal": "characterRender 的 activeWhen 扩到 cnt.focal = scene 与 cmp.panelArt，或加 cnt.illustrationRender"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "deduction",
+  "what": "命运句是填空：“____ 被 ____ 用 ____ 杀死”，空位是下划线，点空位弹出分类词表（死因 / 凶手 / 凶器，名字按船员职位分组）；cmp.input = underline 只给一个独立输入框，文本只能是整段",
+  "severity": "high",
+  "proposal": "cnt.dataShape = form 加 inlineBlanks（句内多空位）+ el.choices 分类词表（按组分栏）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "deduction",
+  "what": "左页是这段记忆的现场素描（编号人脸，需素材，现为灰盒“场景”），点人脸选中要填命运的人",
+  "severity": "medium",
+  "proposal": "cnt.focal = scene 的插画区支持编号热点（同 codex 的 hotspots 叠图）；配素描插画素材"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "deduction",
+  "what": "每猜对 3 人才统一确认（批量校验），确认后的条目变成不可改",
+  "severity": "low",
+  "proposal": "ix.confirm 加 batch（累计 N 项后自动校验）"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "dialogue",
+  "what": "死前录音是黑场 + 居中台词：过场模板只有“直接叠加”容器才不画表头，但叠加容器不会替换背景（rel.behind = replaced 被忽略，字幕压在实时场景上）；改成浮空弹窗才有黑场，代价是多出表头与关闭键",
+  "severity": "medium",
+  "proposal": "叠加类模板也按 rel.behind = replaced 先画 ast.bgArt；或 tpl.cutscene 加黑场变体"
+ },
+ {
+  "replica": "rep.obra-dinn",
+  "name": "Return of the Obra Dinn",
+  "screen": "dialogue",
+  "what": "外语台词按原文显示，语言本身就是线索；字幕字色写死白色",
+  "severity": "low",
+  "proposal": "el.subtitle 加 untranslated（内容层开关）；字幕字色读 col.text"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "battle",
+  "what": "右上名牌是一条左右两端渐隐为透明的宝蓝横带；现在只能画成竖向渐变（宝蓝 → 深藏青）的实框，横向渐隐、两端透明都表达不了",
+  "severity": "high",
+  "proposal": "col.gradient 加方向（横 / 竖 / 径向）+ vis.opacity 渐隐端（0–1，G-gradient-fade）"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "battle",
+  "what": "名牌的内容是「名字 + BP 宝石行 + HP / SP 两行（小标签 + 大当前值 / 小上限 + 细条）」、没有头像；现在借 el.selection.form = panel（多了圆头像与门派行，两条条子没有数值）。el.vitals 有数值但没有底带与名字，el.party.frames 只有一条条子",
+  "severity": "high",
+  "proposal": "el.party.form = statusStrip（名字行 + N 行 label / 当前 / 上限 / 细条，可选点亮格行，不画头像），配合 el.party.valueLabel"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "battle",
+  "what": "行动顺序是贯穿顶部的一条细双线，线上串着菱形头像框（框里是角色像素小像）：当前行动者的大菱形单独在最左，本回合其余人小菱形依次排开，「>>> NEXT TURN」之后是下一回合的顺序；el.turnOrder.form = icons 只能画一排纯色菱形 + 首字（首位已放大），portraitQueue 的头像不认 vis.silhouette（永远是圆）",
+  "severity": "high",
+  "proposal": "el.turnOrder 子参数：轨道线（无 / 单线 / 双线）、分段标签（本回合 / 下回合）；avatar() 读 vis.silhouette@<元素> 把头像裁成菱形"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "battle",
+  "what": "弱点格：每个敌人脚下一行「VULNERABLE」小字 + 蓝色盾牌护盾数 + 一排问号方格（命中后翻成武器 / 元素图标）；现在只有 intent 的盾形徽章 + 红数字，而且画在敌人头顶",
+  "severity": "high",
+  "proposal": "el.threat.form = weaknessGrid（护盾数 + 弱点格，未揭示 = st.locked 问号，位置在目标脚下）（G-el-hud）"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "battle",
+  "what": "伤害数字只有一个超大衬线数字（浅粉白填充 + 深红描边 + 投影），WEAK / BREAK 是叠在上面的评价字；floatNumbers 固定画三个数字、首个写死金色，el.feedback.form 列多个画法时只画第一个（floatNumbers + rating 不能同屏）",
+  "severity": "medium",
+  "proposal": "el.feedback 按列表画全部画法；飘字数量（1–3）与暴击色读 col.accent@el.feedback；数字填充 / 描边色做成 typ.titleFx 子参数（G-title-fx）"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "battle-command",
+  "what": "BP（加成点）是名牌里名字下方的一排 1–5 颗橙色小宝石，按住加成时逐颗点亮；名牌里放不进点亮格，el.resources 的 gauge 画法是一条带字的横条，已删掉",
+  "severity": "medium",
+  "proposal": "statusStrip 的可选点亮格行（cmp.gauge = lightUp，颜色读 col.accent2@el.party）"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "battle-command",
+  "what": "战斗指令窗挂在当前行动角色名牌的左侧，每条指令是一条向左渐隐的深色横带，选中项更亮并带光标；现在借 el.choices（buttons）放在右中、排在名牌列下方",
+  "severity": "medium",
+  "proposal": "新信息元素 el.command（指令列表，attachTo = 当前行动者名牌，向左展开）或 el.choices.attachTo = party 槽"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "*",
+  "what": "逐元素的颜色 / 形状覆盖（col.accent@el.feedback、col.surface@el.interact、vis.corner@el.notify……）参数体系允许，但渲染器的元素上下文只读全局皮肤，覆盖不生效：白色「…」气泡、深红伤害字都因此画不出来",
+  "severity": "medium",
+  "proposal": "makeCtx 按 <参数>@<元素> 重建该元素的 token（面板底色、描边、圆角、强调色）"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "dialogue",
+  "what": "对话框没有关闭钮：模板框（tray）永远在右上画 X（ix.close 没有「无」这个取值，兜底是 xTopRight）；底部通栏只能占满整宽，原作的框窄于画面、名字是框左上的一行小字而不是界面标题",
+  "severity": "low",
+  "proposal": "ix.close 加 none；lay.panelSize 对 tray 同时控制宽度；cmp.plate@name 作用到模板标题位（说话人名）"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "field",
+  "what": "可交谈 / 可用路径技能的 NPC 头顶是只有「…」的白色小圆气泡，没有文字也没有按键；el.interact = bubble 会写按键 + 动作名",
+  "severity": "low",
+  "proposal": "el.interact.form = iconBubble（只有图标的世界内小气泡）"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "field",
+  "what": "参考图是宣传截图（隐藏了 HUD）；右下小地图与遇敌危险度圆点（蓝 → 黄 → 红）按记忆编码，危险度指示没有对应元素",
+  "severity": "low",
+  "proposal": "el.meter.form = dangerDot，可挂在小地图角上"
+ },
+ {
+  "replica": "rep.octopath",
+  "name": "OCTOPATH TRAVELER",
+  "screen": "*",
+  "what": "分隔饰条已能画成「细线 + 中间菱点 + 细线」（vis.motif = none 时的默认菱形），但原作标题两侧是「菱点端头的细线」夹住标题字，这种夹标题的花线没有",
+  "severity": "low",
+  "proposal": "cmp.plate = flankLines（标题两侧细线 + 菱点端头）（G-plate-lib）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "all",
+  "what": "每块面板都是不规则多边形：四个角各自随机偏移、整块再转一个小角度，黑底外包一圈白描边、白边外再垫一圈黑（黑-白-黑三层贴纸边），背后错位垫一块红或白；词表里 vis.skew / vis.tilt 写得出\"斜、转\"，但探索台只在旧四控件样本里套变换——信息元素的 panel() 强制 rotate = 0、界面模板容器与标牌也不读 skew / tilt，渲染出来全是正放的矩形；vis.edge 没有\"逐角随机偏移的四边形\"，vis.stroke 没有三层贴纸边，vis.depth = hardDrop 的错位块只能是墨黑",
+  "severity": "high",
+  "proposal": "panel() / plate() / 模板容器按 vis.skew + vis.tilt 套变换（tilt 按种子逐块取 ±tilt 内的随机角）；vis.silhouette 加 randomQuad（逐角随机偏移 + 种子）；vis.stroke 加 sticker（黑-白-黑贴纸边）；hardDrop 的错位块颜色读 col.surface2"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "dialogue",
+  "what": "对话框是倾斜的黑色多边形（约占屏宽一半、2–3 行），尾巴是一道锯齿闪电形尖尾指向左下立绘；名签是贴在框左上角的白色斜签，名字用勒索信混排。现在只能用 cmp.dialogBox = bar 让 el.subtitle 画成一条半透明黑底单行字幕（\"名字：台词\"），选 bubble 反而连底都没有；没有名签、没有多行、没有尾巴",
+  "severity": "high",
+  "proposal": "el.subtitle 加 form（plain / boxed / dialogBox：多行文本框 + 名签，名签画法读 cmp.plate@nameplate）；cmp.dialogBox 加 tailShape（smooth / zigzag / spike）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "dialogue",
+  "what": "左下说话人半身立绘（贴着对话框尾巴）没画：对话做成 lay.container = overlay（元素按整屏锚点排，日历才能在屏幕左上、按键在右下）后，模板不画主体；换成 tray 又会把日历、按键、字幕全挤进底部整宽托盘（第 1 轮叠成一团的原因）。rpg 内容包也没有立绘素材",
+  "severity": "medium",
+  "proposal": "overlay 模板也按 cnt.focal / lay.focalSide 画主体（半身贴底）；tray 的宽度读 lay.panelSize、元素可选\"按屏幕锚点\"（elx.anchorSpace = screen / container）。立绘本身 needs art"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "dialogue",
+  "what": "左上日历牌是一组手绘拼贴：超大描边数字月 / 日各自旋转，星期是黑字压白条、时段（Morning / After School）单独一块斜白条，天气图标放在白色星芒里，没有底板；el.clock = calendar 是一块规整日历页（红顶条 + 大数字 + 时辰），不能逐字旋转、拼贴",
+  "severity": "high",
+  "proposal": "el.clock 加 collage 画法（日期各部件独立旋转、错位叠放，天气垫星芒，无底板）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "battle",
+  "what": "队伍条是四个黑白剪影头像（面具角色的剪纸头像）站在黑色尖碎片上，右下横排、当前角色最大；每人头像下是斜放的青色 HP 数字和粉色 SP 数字，各配一根同色细条。el.party = unitCards 只给竖直矩形卡 + 圆头像 + 一根绿 / 红血条，不画数值标注；col.accent@el.party 这类逐元素颜色覆盖渲染器不读（只有 cmp.*@el.* 生效），HP / SP 两色画不出",
+  "severity": "medium",
+  "proposal": "el.party 加 vitalsPair（每人 HP + SP 两条 + 数字，颜色槽 col.accent@el.party / col.accent2@el.party）；渲染器读 col.* / vis.*@el.* 覆盖；cnt.characterRender 加 cutoutSilhouette 作为头像画法；当前角色放大（elx.priority 作用到队伍内单项）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "battle",
+  "what": "指令菜单（凭记忆，这张参考里没有）：手柄每个键对应一条指令，按键图标 + 斜排文字围在当前角色身边成一簇，选中项放大变红；技能名横幅是红描边黑斜条（左上），现在 el.notify = banner 是正放的半透明黑条 + 上下两道红线",
+  "severity": "medium",
+  "proposal": "el.abilities 加 buttonCluster（按手柄键位排布的指令簇，attachTo = player）；el.notify = banner 读 vis.skew / 描边，做成斜条"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "allout",
+  "what": "总攻击收尾是整屏专属插画卡：角色漫画立绘出血、网点、主题花边框（这张是玫瑰与菱形格），一句哥特黑体口号写在左上斜白带上；每个角色有自己的配色与花边主题。现在只能拼成\"整屏红底网点面板 + 左上白斜带标题 + 居中立绘剪影（需素材）\"，没有主题边框、角色插画，口号字是模板名",
+  "severity": "high",
+  "proposal": "el.notify 加 finisherCard（整屏插画 + 主题边框 + 口号带），边框主题由 vis.motif 给；插画与玫瑰边框 needs art（ast.bgArt = comicPanels 槽位）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "all",
+  "what": "动效是这套 UI 的一半：每次切屏都是整屏图形转场（红黑条带扫过、碎片），菜单项待机时持续抖动摇摆，选中项猛地放大换色；mo.transition = useEnter 与 mo.idle = sway 只能近似",
+  "severity": "medium",
+  "proposal": "mo.transition 加 graphicWipe（整屏图形擦除，可选条带 / 碎片），mo.idle 加 jitter（逐项抖动）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "pause",
+  "what": "主菜单（凭记忆）：主角黑白造型摆姿势占左侧，菜单词（技能 / 物品 / 装备 / 人格面具 / 状态…）沿对角线错落排开、每个词转不同角度、字号不一，选中词垫红色多边形并放大；lay.arrangement = column 只能做成整齐竖列（每行还垫一块浅灰底），选中项是红色整行；主角立绘 needs art",
+  "severity": "medium",
+  "proposal": "lay.arrangement 加 cascade（对角线错落、逐项不同角度与字号）；cmp.buttonBox = false 时菜单行不垫底"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "results",
+  "what": "战斗结算一屏凭记忆编码：用 tpl.settle 近似成\"左大字 + 右对比表 + 右下获得物\"；实际版式（经验 / 金钱 / 获得物的斜白条列表、队员头像经验条与 LEVEL UP 章、立绘位置）未核对",
+  "severity": "low",
+  "proposal": "补一张结算参考截图后再细化"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "calendar",
+  "what": "日期过渡（凭记忆）：一条横向日期带滚动到下一天，当天格放大、天气图标落下。现在用 cnt.dataShape = sequence + 7 列网格近似成一周七格（前几格打勾）+ 居中日历牌，但格子是签到式\"第 N 天 + 奖励图标\"，不是日期 / 星期 / 天气，当天格也不放大",
+  "severity": "medium",
+  "proposal": "el.clock 加 dateStrip（横向日期带：日期数字 + 星期 + 天气，当天格放大，已过的日子划掉）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "all",
+  "what": "勒索信字只用在标题；实际上菜单词、名签、日历都是逐字换字体 / 反白方块的混排，正文却是干净粗无衬线；字族参数没有'哪些角色用混排'的作用域，而且 ransom 现在只是一套粗黑体，没有逐字混排",
+  "severity": "medium",
+  "proposal": "typ.display.family = ransom 加作用范围子参数（标题 / 名签 / 菜单项）并真正逐字换字体、首字反白方块"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "all",
+  "what": "ctx.device = tv 推出 typ.baseSize = 26（px@1080p），但 HUD 按画布 CSS 像素直接画、不按 1080p 换算：928×522 的复刻画布上字和元素都放大了约一倍（第 1 轮字过大、元素互相压住的主因）；这里只好把 typ.baseSize 手动压到 15",
+  "severity": "medium",
+  "proposal": "HUD 绘制按画幅高度 / 1080 统一缩放（typ.baseSize、ix.touchSize、元素尺寸都按 px@1080p 解释）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "allout",
+  "what": "ix.close 没有\"无关闭控件\"：自动消失的演出屏（总攻击收尾、日期过渡）也必须画一个右上 X / Esc 提示 / 返回箭头，这里只能退而用最小的 keyGlyph 药丸",
+  "severity": "low",
+  "proposal": "ix.close 加 none（ix.dismiss = timed / tapAnywhere 时默认 none）"
+ },
+ {
+  "replica": "rep.persona5",
+  "name": "Persona 5 Royal",
+  "screen": "results",
+  "what": "模板带进来的多选值清不掉：tpl.settle 的 ops.actions = [share] 在本屏写 ops.actions = [] 后仍画出\"分享\"按钮（Persona 没有分享键），tpl.stats 的 col.coding = [team] 写成别的值后表格行仍按阵营染蓝 / 橙——多选参数按并集合并，没有\"显式清空\"",
+  "severity": "low",
+  "proposal": "多选参数支持显式空集（[] 或 none）覆盖预设层，或给 ops.actions / col.coding 加 none 选项"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "顶栏是一条横贯全屏的半透明深色渐变条，按固定顺序混排异质字段：角色名 + 职业小字、红心 + 红色血量、金币袋 + 金色数字、3 个药水槽、层数、右侧地图 / 牌组（带张数）/ 设置图标。局内 HUD 的元素排版里 lay.hudOrg = edgeBar 没有任何画法（不画底条、不把锚在上边的元素收进条里），只能让生命条 / 层数 / 系统入口各自散在左上、上中、右上；同一个 el.vitals 也不能既在顶栏（数字）又在角色脚下（血条）",
+  "severity": "high",
+  "proposal": "edgeBar 画出贴边底条并把锚在那条边上的元素排进条里；新参数 lay.edgeBarSlots（条内元素与顺序、分隔方式）；允许元素多实例（el.vitals#2 = 顶栏数字读数）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "顶栏下方常驻一行遗物图标（彩绘小物件，部分带计数角标，过多时左右翻页），是被动道具陈列，没有对应的信息元素",
+  "severity": "high",
+  "proposal": "新元素 el.passives（遗物 / 被动道具列），form = iconRow / iconGrid，带计数角标"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "手牌是整套 UI 的视觉重心：按角色换整卡底色（铁甲红 / 静默绿 / 机器蓝 / 观者紫），按类型换插画窗形状（攻击尖底、技能方框、能力圆拱），按稀有度换名条色（灰 / 蓝 / 金），左上圆形费用角标，可打出的牌外圈青色发光、能量不够时费用变红。el.abilities = cards 只画成通用小面板 + 符号 + 序号，不读 cmp.card = tcg；红色卡框只能借本屏 col.surface（连带右上系统入口的按钮底也变红）",
+  "severity": "high",
+  "proposal": "el.abilities = cards 与三选一卡行（cmp.slot = tallCard）都按 cmp.card 画（费用角标 / 插画窗 / 类型条 / 文本框）；cmp.card 子参数 frameColorBy（角色 / 阵营）、artWindowShapeBy（类型）、bannerColorBy（稀有度）、playableGlow、costBadge 形状"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "all",
+  "what": "按元素 / 按组件的颜色、外形、材质覆盖（col.surface@card、col.accent@el.cta、vis.corner@el.cta、ast.core@el.cta、ast.coreMat@el.cta、col.surface@el.party……）能通过校验，但渲染器只按元素解析 cmp.*：返回缎带红、出发缎带青、结束回合石青、卡框红没法各自上色，只能整屏换强调色 / 底色（本轮把强调色整体改成青石色、卡红用本屏底色）",
+  "severity": "high",
+  "proposal": "makeCtx 按元素 / 组件解析 col.* / vis.* / ast.* 覆盖键，生成该元素的局部主题（panel / key / bar token）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "能量是左下一颗橙色发光圆球 + 球心“3/4”；el.resources.form = gauge 不论 cmp.gauge@el.resources 选 orb 还是 ring，都画成带标签的横条",
+  "severity": "medium",
+  "proposal": "el.resources 的 gauge 画法按 cmp.gauge@el.resources 取形（orb / ring / arc，默认约 96px，数值写在球心）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "左下抽牌堆、右下弃牌堆和其上方的消耗堆：牌背图标 + 圆形红 / 紫计数角标，点开查看；没有“牌堆”元素",
+  "severity": "medium",
+  "proposal": "新元素 el.piles（抽牌堆 / 弃牌堆 / 消耗堆），form = deckIcon + countBadge，锚点左下 / 右下"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "药水槽（顶栏里 3 个可点的消耗品格，空槽是虚线瓶形）没有独立表达；el.abilities 已被手牌占用",
+  "severity": "medium",
+  "proposal": "el.consumables 元素，或允许 el.abilities 第二实例 form = hotbar 放进顶栏"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "玩家血条挂在角色脚下（圆头细条、数字压在条里），左端压一枚蓝色格挡盾徽 + 数字，有格挡时整条变蓝，条下一行增益 / 减益小图标带层数；elx.attachTo = player 对条形元素不生效（仍按屏幕锚点排），cmp.gauge 也没有端头徽章与状态染色",
+  "severity": "medium",
+  "proposal": "条形元素挂世界挂点时按挂点定位；cmp.gauge 加 endBadge 子项与 tintWhen；el.vitals.statusRow = icons"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "左上一行纯文字“名字 + 职业小字”；el.profile 的四种画法都带头像圈 / 缎带 / 名片 / 经验条，放上去比不放更不像，本轮删掉了",
+  "severity": "low",
+  "proposal": "el.profile.form = nameText（名字 + 小字副标题，无底无头像）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "出牌指向箭头是一串红色 V 形分段沿贝塞尔排列、末端大箭头，目标四角出现黄色锁定括号；el.crosshair = aimArrow 只画一条短白线 + 强调色小箭头，col.accent@el.crosshair 也不生效",
+  "severity": "low",
+  "proposal": "vis.connector@el.crosshair 增加 chevronChain（分段 V 形链），箭头起点挂手牌、终点挂目标"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "hud",
+  "what": "结束回合是两端尖的长六边形石青色铭牌（亮边倒角、可结束时光扫过、敌方回合变灰）：形状已用本屏 vis.silhouette = hexagon 表达（本屏主按钮都变成长六边形），石质纹理与“非本方回合”状态没有表达",
+  "severity": "low",
+  "proposal": "按元素读 ast.core / ast.coreMat 覆盖（ast.coreMat@el.cta = stone）；st.cooldown@el.cta 支持“非本方回合”"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "frontend",
+  "what": "选角界面整屏是该角色的主视觉插画（角色半身 + 红色漩涡），复刻包没有这张图（主视觉需素材）；而且 lay.container = overlay 的模板形态不画 ast.bgArt，背后透出的是实时场景",
+  "severity": "medium",
+  "proposal": "needs art：每个可选角色一张主视觉；overlay 形态的模板在 rel.behind = replaced 时也画 ast.bgArt"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "frontend",
+  "what": "“返回 / 出发”是从屏幕左、右边缘伸出来的半截缎带（返回红、出发青，末端燕尾），分别贴左下和右下；el.cta 只能放一个锚点（本轮只画了右下青色“出发”缎带），vis.silhouette = ribbon 也不会出血到屏幕边",
+  "severity": "medium",
+  "proposal": "el.cta.form = splitCorners（主次按钮分居两角，次按钮用 col.semantic 的取消色）；cmp.plate 加 edgeBleed（贴边出血）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "frontend",
+  "what": "角色说明（大号金色角色名下面一行 HP / 金币、两行介绍、初始遗物行）直接写在插画上、没有底框；只能借 el.title = logo（游戏名 + 英文副标题）+ el.selection = tooltip（带底框的说明卡）拼出来，角色名也不是金色",
+  "severity": "low",
+  "proposal": "el.selection.form = bareText（无底说明块：标题 + 数值行 + 段落），或让 vis.opacity@el.selection = 0 生效；el.title 颜色读 col.text@title"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "frontend",
+  "what": "选角按钮是浅青灰方形瓷砖（倒角浮雕、线描角色徽记），选中金色外发光，未解锁显示挂锁，悬停在旁边弹出深色说明框；el.party = unitCards 画成深色小卡 + 圆头像 + 名字 + 血条",
+  "severity": "low",
+  "proposal": "el.party.form = emblemTiles（方砖 + 线描徽记 + 锁），或 ast.coreMat 增加 porcelainTile 并按元素生效"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "map",
+  "what": "地图是一张自下而上、可纵向滚动的竖幅羊皮纸长卷（约 15 层），节点是无底的墨色剪影图标（怪物、精英、休息、商店、问号、宝箱），点线连接；走过的节点被手绘墨圈圈住，可去的节点轻轻缩放，Boss 用彩绘大头像钉在顶端，右侧单独一张羊皮纸图例卡。复刻用羊皮纸材质的居中弹窗：横幅比例、固定 6 层对称树、节点是带字的圆，没有墨圈与图例",
+  "severity": "medium",
+  "proposal": "cmp.node = inkIcon；st.done = inkCircle；el.overlay.form = legendCard；容器宽高比参数（lay.panelAspect = portrait）；lay.arrangement = tree 支持层数 / 自下而上"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "dialogue",
+  "what": "事件页左侧是一幅带雕花画框的事件插画（需素材），复刻只能画“场景（需素材）”灰盒",
+  "severity": "medium",
+  "proposal": "needs art：事件插画；cmp.panelArt = side 的画框走 ast.frame（雕花九宫格）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "all",
+  "what": "字体是 Kreon 一类的板衬线（slab serif），标题、正文、数字同一家族，全部带深色粗描边；typ 只有衬线 / 无衬线，没有板衬线",
+  "severity": "medium",
+  "proposal": "typ.body.family / typ.display.family 增加 slab"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "all",
+  "what": "正文用多种颜色区分含义：金色 = 关键词与遗物名，绿色 = 被加成后的数值，红色 = 伤害 / 代价，蓝色 = 升级后的数值；hier.inline = keyword 只有一种强调色",
+  "severity": "medium",
+  "proposal": "hier.inline 支持多色语义映射（keyword / buff / debuff / upgraded 各取一色）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "all",
+  "what": "地图、选卡、事件三屏顶栏常驻（与战斗顶栏同一条：HP、金币、药水、层数、图标）；flow.chrome = topCurrency 画成手游式货币胶囊（每个带“+”充值键），买断制没有",
+  "severity": "low",
+  "proposal": "flow.chrome 增加 topBar（买断制顶栏，无充值“+”，复用 lay.edgeBarSlots 的字段）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "draft",
+  "what": "卡牌稀有度色阶是灰 / 蓝 / 金，col.rarityScale 的三档（白绿蓝紫橙、蓝紫金、铜银金）都不对，暂用 metal 近似",
+  "severity": "low",
+  "proposal": "col.rarityScale 增加 greyBlueGold"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "draft",
+  "what": "选卡页只有三张卡和下方“跳过”；tpl.draft3 带的 ops.actions = retry（“再抽 10 次”）在 union 合并下清不掉，本屏写空列表也无效",
+  "severity": "low",
+  "proposal": "多选参数允许显式清空（写 [] 或 none 时替换而不是并集）"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "all",
+  "what": "StS 的选卡、事件页没有任何关闭控件；ix.close 没有“无”，ix.dismiss = forced / button 时兜底都画右上 ×，只能退而用 keyGlyph（“Esc 返回”小胶囊）",
+  "severity": "low",
+  "proposal": "ix.close 增加 none，或 ix.dismiss = forced 时推出不画关闭控件"
+ },
+ {
+  "replica": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "screen": "dialogue",
+  "what": "事件选项按钮写成“[选项名] 效果”、左对齐：方括号里的选项名金色，效果里收益绿、代价红，不满足条件的选项整行变灰并写明原因；el.choices = buttons 是居中文字、第一项实心高亮",
+  "severity": "low",
+  "proposal": "el.choices 加 labelStyle = bracketTag 与 align = left，并接入 hier.inline 的多色映射"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "hud",
+  "what": "右上时钟是一整块复合木挂牌：左侧日晷圆盘（指针随一天转动）+ 右侧星期日期牌、天气 / 季节 / 运气小图标、时间牌，下方再接金币计数器；el.clock.form 只能在 calendar / sunDial / clock 里选一个。现在用 calendar：画成红头条日历卡（季节年份 + 大号日期 + 星期天气），没有日晷、没有时间，而且小控件面板不带木框",
+  "severity": "high",
+  "proposal": "el.clock.form 改多选或加 composite（日晷 + 日期 + 时间合一），元素内部按 elx.arrangement 叠放；元素面板跟随 ast.frame 画外框（加 elx.frame 开关）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "hud",
+  "what": "金币是里程表式计数器：木框里每位数字各占一个内凹小格，红色像素数字，左端一个 G 字；el.resources.form = bigNumber 只能画'金币图标 + 大号数字'，没有底框也没有逐位格，数字颜色跟随正文（col.text@el.resources 不生效）",
+  "severity": "medium",
+  "proposal": "el.resources.form 加 odometer（逐位格计数器，读 col.accent 作数字色）；col.*@el.<元素> 覆盖在元素绘制里生效"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "hud",
+  "what": "能量条竖放在右下，顶上带一个字母 E 的帽头（下矿后旁边再出一根 H），填充色随数值从绿到黄到红；cmp.gauge@el.vitals = vertical 语义对，但 el.vitals 仍按'标签 + 横向矩形'排版，画出来是一根带'健康'字样的扁横条，颜色也固定是红色",
+  "severity": "medium",
+  "proposal": "el.vitals 在 cmp.gauge = vertical 时按竖条排版（宽约 S(18)、高约 S(120)，多条并排）；cmp.gauge 加 capLabel 子参数；col 加 valueRamp（按数值插值填充色）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "hud",
+  "what": "快捷栏是一条木框托盘里并排 12 格（米色内凹格、左上小序号、选中格红框）；el.abilities = hotbar 固定画 8 个散格、没有托盘底框，样本里还带冷却罩和锁定格（Stardew 快捷栏没有）",
+  "severity": "medium",
+  "proposal": "el.abilities 加 count 子参数（默认 8，可 10 / 12）与 elx.frame（整条托盘底框，跟随 ast.frame）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "hud",
+  "what": "快捷栏在角色走到屏幕下方时会自动翻到屏幕顶部，避免压住角色",
+  "severity": "low",
+  "proposal": "elx 加 avoidPlayer（锚点随角色位置上下翻转）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "hud",
+  "what": "鼠标指针本身是 UI：像素手套箭头，悬停在可交互物上换成手、礼物、对话气泡等图标；el.interact = cursor 只说明'光标会变'，没有光标图标集；时钟下方的'!'任务日志小按钮也没有对应元素",
+  "severity": "low",
+  "proposal": "ix 加 cursorSet（像素手套 / 系统箭头 / 主题光标）；el.toolbar 的 microMenu 允许只放 1 个图标并可锚在任意角"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "all",
+  "what": "木框是逐像素手绘的橙木条：外沿 1px 深棕线、木条上 1px 亮边、内侧一道暗线、两级像素台阶转角；ast.frameMat = wood 只有一种木色，分不出 Stardew 的橙木与胡桃木 / 黑漆木",
+  "severity": "medium",
+  "proposal": "ast.frameMat 加木色子档（橙木 / 胡桃 / 黑漆），或让 col.border 给木材着色"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "all",
+  "what": "界面模板屏（对话、创建角色、背包、地图、标题）总在左上写模板名（NPC 对话 / 创建角色 / 背包 / 世界地图 / 标题）；Stardew 的菜单与对话框都没有标题字",
+  "severity": "medium",
+  "proposal": "lay 加 header（none / text / plate）开关，或让 cnt.textLength = none 时不画模板标题"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "dialogue",
+  "what": "对话框是两块并排的独立木框：左边文字框（约屏宽一半、居中贴底），右边等高的头像框（像素头像放在内嵌方画框里，下面压一条卷轴名签）；tpl.npc + lay.container = tray 只能画一整条全宽托盘，头像是圆形头像，没有名签。lay.panelSize 只控制托盘高度，控制不了宽度",
+  "severity": "high",
+  "proposal": "cmp.dialogBox 加 splitPortrait（文本框 + 独立头像框 + 名签），头像框位置跟随 lay.focalSide；tray 容器的宽度也读 lay.panelSize（或加 lay.panelWidth）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "dialogue",
+  "what": "对话时局内 HUD（右上时钟挂牌、金币、右下能量条）仍留在屏幕角上；模板屏的 cnt.elements 只会排进容器里（放进去就压在对话框里），弹出叠层时垫底的是旧的 M1 样本 HUD 而不是元素 HUD，所以这一屏只能不画 HUD",
+  "severity": "medium",
+  "proposal": "elx 加 anchorTo（container / screen），或 flow.stacking = stack 时垫底画当前 uip.layout 的元素 HUD"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "dialogue",
+  "what": "同一角色的头像随台词切换 4–6 种表情；文本框右下角有一个小 × 关闭格（现在 × 在托盘右上）",
+  "severity": "low",
+  "proposal": "chk.demo = dialogue 时轮换表情帧；ix.close 加 inBoxCorner"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "create",
+  "what": "眼睛 / 头发 / 裤子颜色各是三条滑条（色相彩虹轨 + 饱和 + 明度），轨道本身画成彩虹渐变，右侧竖排三个数值；cmp.optionRange = slider 只有单色轨",
+  "severity": "medium",
+  "proposal": "cmp.optionRange 加 hsvTriplet（色相彩虹轨三联滑条 + 数值列）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "create",
+  "what": "同一屏混用多种控件：顶部三个带框文本输入（名字 / 农场名 / 最爱的东西）+ 骰子随机钮、左右木箭头切换（皮肤 / 发型 / 衣服 / 配饰）、♂♀ 图标切换、右侧独立木框里的一竖列农场缩略图按钮（悬停弹出带标题的说明卡）；表单只能按 ix.mode 二选一（textInput 只画一个输入框，select 只画设置行），cmp.optionEnum 一屏只能取一种，缩略图列也不能单独成块",
+  "severity": "medium",
+  "proposal": "form 数据按行声明控件类型（输入框行 + 选项行混排），cmp.optionEnum 支持逐行覆盖；加 thumbnailColumn 子组件（独立侧栏 + 悬停说明卡）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "create",
+  "what": "左栏的角色预览是一张带框的像素全身小人（站在草地蓝天前，两侧有转向箭头）；cnt.characterMedium = chibi 只能画剪影 +'Q 版小人（需素材）'标签（needs art：农场包没有 Q 版小人立绘）",
+  "severity": "low",
+  "proposal": "needs art：给 farming 包补一张像素 Q 版小人；cnt.characterMedium 的预览框可选 framed（方框 + 底色）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "create",
+  "what": "背景是饱和的蓝天 + 一团团像素白云（标题画面同一张）；ast.bgArt = gradient 只能给天空色到纸色的渐变，sceneArt 是水彩风景，都没有像素云",
+  "severity": "low",
+  "proposal": "ast.bgArt 加 skyClouds（像素云天空，云的画风跟随 vis.pixelScale），needs art"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "create",
+  "what": "确认键 OK 是面板右下角内的一个绿字小方钮，返回键 BACK 是屏幕右下角一块向右指的木箭头路牌（红色像素字），左上 / 右上角还有音乐开关与窗口化小图标；el.cta 只有宽按钮 / 圆钮 / 双钮，主按钮底色固定是强调色（col.semantic = greenRed 不改它），ix.close 没有'角落路牌'",
+  "severity": "low",
+  "proposal": "el.cta.form 加 smallSquare；按钮读 col.semantic 的确认色；ix.close 加 cornerSign（任意角落的独立返回牌，锚点按屏幕算）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "inventory",
+  "what": "页签是一排凸出在木框上沿外面的图标小木牌（背包 / 技能 / 社交 / 地图 / 制作 / 收集 / 选项 / 退出），选中的那张往下压、和框连成一体；lay.nav = tabsTop 画在面板里面的标题下方，cmp.tab = icon 也仍画成文字页签，cmp.tabIndicator 没有 sunken",
+  "severity": "low",
+  "proposal": "lay.nav 加 tabsOutsideTop（页签挂在容器外沿）；页签按 cmp.tab 画图标；cmp.tabIndicator 加 sunken（选中项沉入面板）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "inventory",
+  "what": "背包上半是 3×12 物品格，下半是装备栏（帽子 / 戒指 / 鞋 / 衣裤）+ 小人预览 + 农场名与资金文字，主框右侧外挂垃圾桶与整理按钮；lay.composition = splitTB 时主体（角色）固定在上半、数据在下半，顺序正好相反，所以这一屏只画了物品格，下半留空。物品品质用格子左下角的银 / 金 / 铱星（铱星是紫色），col.rarityScale = metal 只有铜银金",
+  "severity": "medium",
+  "proposal": "lay.focalSide 加 bottom（上下分栏时主体在下）；加装备纸娃娃子块（tpl.loadout 的格子可并入背包）；lay 加 sideDock（面板外侧附属按钮列）；col.rarityScale 加自定义色阶"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "inventory",
+  "what": "悬停物品时弹出带木框的说明卡（名称、类别、描述）；lay.detail = transient 画出的说明卡不带外框、而且压在文字层下面（格子里的数量与星级会透上来），看上去像一块脏斑，所以这一屏关掉了详情",
+  "severity": "low",
+  "proposal": "临时详情用带外框的完整面板，并画在文字层之上（或单独一层）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "title",
+  "what": "主菜单是四块方形木招牌按钮（New / Load / Co-op / Exit）横排在下方正中，LOGO 是带叶子的木头字（浅木色字身 + 深棕描边）；标题界面的菜单固定画成贴左的竖排列表（lay.arrangement = row 不生效），招牌按钮属于素材，cmp.buttonBox 只给程序框；LOGO 只能用文字色 + 标题特效",
+  "severity": "medium",
+  "proposal": "菜单列表按 lay.arrangement = row 画成居中横排的方按钮；ast 加 buttonArt（按钮素材槽：招牌 / 木牌 / 石碑），与 ast.frame 分开；el.title.form = logo 允许 LOGO 素材（needs art）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "title",
+  "what": "背景是飘动的像素云、飞鸟与底部山林视差；现在只有 ast.bgArt = gradient 的蓝天渐变",
+  "severity": "low",
+  "proposal": "同 create：ast.bgArt 加 skyClouds，并支持底部前景层（mo.idle = float 时云层横向漂移）"
+ },
+ {
+  "replica": "rep.stardew",
+  "name": "Stardew Valley",
+  "screen": "map",
+  "what": "地图是一张像素插画（整片山谷全部可见、没有迷雾），玩家位置是小头像，悬停只弹一个写地名的小木牌；vis.mapStyle 没有'像素插画地图'，painted 画出来是羊皮纸水彩底图",
+  "severity": "medium",
+  "proposal": "vis.mapStyle 加 pixelIllustration（needs art：像素风插画地图素材）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "开火面板（命中计算）：正中是技能名铭牌，两侧接斜纹带；左右对称两张加成明细表（左 HIT：瞄准 / 距离，右 CRIT：侧击 / 武器暴击），两端各一个大号百分比，正中是绿色伤害区间大字，技能图标行嵌在面板底边。现在用 el.selection = panel 近似：贴底、宽扁的位置对了，但面板里画的是圆头像 + 名字 + 两条状态条，镜像明细表、两端大数字、中间伤害区间都表达不了",
+  "severity": "high",
+  "proposal": "新元素 el.odds（命中 / 暴击 / 伤害三个数 + 左右镜像的加成明细 + 底边技能行），或 el.selection.form 新增 shotCalc"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "斜纹只出现在标题铭牌两侧的页眉带、右上任务名下方的细条里，面板本体是纯色；vis.pattern 是铺满整块面板的图案（本轮把强度降到 0.08 只留一点意思），vis.pattern@titleBar 渲染器不读",
+  "severity": "medium",
+  "proposal": "cmp.plate 新增 stripedFlank（铭牌 + 两侧斜纹带），或 vis.pattern 增加作用范围（整面板 / 页眉带 / 边条）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "敌人信息有三处：世界里的红色分段血条与红字命中率、开火面板正上方的敌人头像行（当前目标黄色高亮、小字命中率）。el.threat 的多选画法只画第一个（本轮只画出 healthBar，hitChance 被丢掉），healthBar 固定画连续条、不读 cmp.gauge@el.threat = segmented，各画法也只能共用一个挂点",
+  "severity": "medium",
+  "proposal": "el.threat 画出全部选中的画法、healthBar 读 cmp.gauge@el.threat；按画法分别给锚点（el.threat.<画法>.screenAnchor），或拆出 el.targets（目标切换行）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "瞄准时目标身上套一个大的细线圈 + 贯穿的长十字细线；el.crosshair 永远画在屏幕正中（不读 attachTo = target），ring 是白芯黑边的粗圈，半径随 scale 一起放大线宽（scale 2.5 时约 32px 但线很粗，参考约 70px 的 1px 细圈），也没有长十字线",
+  "severity": "medium",
+  "proposal": "el.crosshair 读 attachTo；新画法 reticle（细圈 + 长十字线，半径与线宽分开可调）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "右下是当前武器的线稿剪影 + 一排横向白色弹匣格；没有'武器 + 弹药'元素，只能借 el.resources = gauge（且 gauge 画法固定画连续绿条、不读 cmp.gauge@el.resources），而 el.abilities.form = ammo 又与技能格互斥",
+  "severity": "medium",
+  "proposal": "新元素 el.weapon（武器剪影 + 弹药分段），或允许元素多实例；el.resources 的 gauge 画法读 cmp.gauge"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "回合计数是双同心细圆环 + 中心大数字，左侧配任务名与斜纹副标题，没有'00:45'式时钟；el.timer = badge 是实心圆章 + 一串计时数字，任务名只能叠在它上方（同一锚点竖排）",
+  "severity": "medium",
+  "proposal": "cmp.gauge 新增 ringCounter（同心圆环计数），el.timer 增加侧标签、可关掉计时数字"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "左下士兵名前是军衔 V 形章；el.profile = avatarLevel 画圆头像 + 晶体等级角标，cmp.badge = chevron 只替换'通用奖章 / 纹章'且换成光泽位图（上一轮把回合圆章画成了金绿 V 章），所以本轮去掉了 cmp.badge",
+  "severity": "low",
+  "proposal": "el.profile 的等级角标读 cmp.badge@el.profile；cmp.badge 的 chevron 增加程序化扁平线稿画法"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "hud",
+  "what": "移动模式（截图外）：地面上的掩体盾牌图标（满盾 / 半盾）、移动范围的双层边界（蓝 = 一次行动、黄 = 冲刺）、路径线与落点；el.overlay 的 gridHighlight / rangeRing 只能近似，没有'掩体等级'这种语义图标",
+  "severity": "medium",
+  "proposal": "el.overlay.form 新增 coverIcons 与 moveRange（双层可达边界）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "map",
+  "what": "战略层的外星警报版：屏幕上下两条红色外星文字饰带、四周红色六角网格暗角；没有'整屏边缘饰带 / 网格暗角'的槽位（本轮只用 rel.sceneTone = tint 把整屏染红）",
+  "severity": "high",
+  "proposal": "ast.watermark 新增 glyphBand（异星 / 符文文字带）与 hexVignette，或 ast.frame 增加整屏边框作用域"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "map",
+  "what": "地球仪本身就是 3D 世界，任务卡与按钮直接浮在上面：tpl.worldmap 的 cnt.dataShape = spatial 只会在面板里画一张 2D 地图（上一轮画成左侧绿色网格），本轮只能写 dataShape = none + textLength = title + 浮空全屏，让实时场景当地图；全屏页又总会画模板名页眉（'世界地图'），参考里没有",
+  "severity": "medium",
+  "proposal": "vis.mapStyle 新增 liveScene（地图 = 实时场景，不画地图面板）；全屏页加页眉开关（lay.header：显示 / 隐藏）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "map",
+  "what": "同一套界面有两套阵营色（XCOM 青、ADVENT / 外星红），col.dynamic = perFaction 只声明'会换'，不能在一份配方里写出第二套色板，这里只能逐屏覆盖",
+  "severity": "medium",
+  "proposal": "col.palettes[]：多套色板 + 切换条件（阵营 / 警报级别）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "map",
+  "what": "左侧任务卡：标题 + 优先级小字、横向情报图窗口（带横向撕裂与绿色夜视调色的监控画面，需素材）、行动代号、目标、说明段落；el.selection = card 顶部是圆形头像、下面是三条属性条，cmp.panelArt = window 渲染器不读，插画窗内部的调色处理也无法指定",
+  "severity": "medium",
+  "proposal": "el.selection.form 新增 dossier（横向图窗 + 标题 + 段落），cmp.panelArt 生效并增加处理方式：夜视 / 扫描线 / 撕裂（图窗需素材）"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "map",
+  "what": "任务地点标记是白 / 红色的六角形图钉；el.objective = marker 固定画黄色菱形 + 距离字，vis.silhouette@node = hexagon 只作用于地图面板里的节点",
+  "severity": "low",
+  "proposal": "el.objective 的 marker 读 vis.silhouette@el.objective 与强调色"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "global",
+  "what": "标题前的单箭头 '>' 与双箭头 '>>'（如 '> 行动代号'）是排版签名；vis.motif = brackets 只有角括号",
+  "severity": "low",
+  "proposal": "vis.motif 新增 chevrons，或 typ 增加标题前缀符号参数"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "base",
+  "what": "复仇者号'蚂蚁农场'：整艘飞船的 3D 侧剖面就是菜单，每个舱室是一个可选格子（3 列 × 4 层，未挖掘的格子堆满碎石），舱室上方浮着房间名牌，镜头推进到舱室进入子界面；lay.arrangement = grid 只能画成平面格子，'格子长在 3D 剖面里'无法表达，只能用 overlay 让实时场景当剖面",
+  "severity": "high",
+  "proposal": "lay.arrangement 新增 cutaway（剖面房间格 + 房间名牌），与 rel.diegesis = spatial 的空间内菜单配合"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "character",
+  "what": "武器库 / 兵营：士兵 3D 模型站在中间是这屏的主体（needs art：现在只能画剪影 + '3D 实时模型（需素材）'标签）；侧面板带三维透视倾角（屏幕面板绕竖轴转一点，像贴在 3D 空间里的全息板），左右切换士兵的箭头跟着倾斜（lay.pageIndicator = arrows 渲染器不读，paged 只画圆点）",
+  "severity": "medium",
+  "proposal": "needs art：士兵 3D 模型；vis.perspective：面板绕 Y 轴倾角（G-perspective）；lay.overflow = paged 时按 lay.pageIndicator 画两侧箭头"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "character",
+  "what": "左上的士兵铭牌（军衔章 + 名字 + 绰号 + 兵种 + 一行属性）放不进去：模板里的元素与页眉、数据区共用整块外框，el.profile = idCard 放 tl 会压在页眉和详情上（上一轮的重叠），本轮只能去掉，靠右侧 record 详情表达属性",
+  "severity": "medium",
+  "proposal": "元素增加所在区域 el.<元素>.region（页眉 / 主体 / 数据区 / 外框），页眉区可放 idCard"
+ },
+ {
+  "replica": "rep.xcom2",
+  "name": "XCOM 2",
+  "screen": "results",
+  "what": "任务总结：整支小队的 3D 模型站成一排（needs art），每人脚下一张对应的数据卡（军衔章、击杀、晋升 / 负伤标签）；cnt.focal = character 只能画一个剪影，el.party = unitCards 只能等距排一行，无法与各角色站位绑定",
+  "severity": "medium",
+  "proposal": "needs art：小队 3D 模型；cnt.characterMedium 新增 lineup（N 人一排），el.party.attachTo 支持多挂点（每张卡挂一个角色）"
+ }
+]

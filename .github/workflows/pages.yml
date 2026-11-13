@@ -1,0 +1,52 @@
+# 把 main 分支构建成静态网页，发布到 GitHub Pages。
+# 第一次使用：在 Settings → Pages → Source 选 "GitHub Actions"，再到 Actions 页手动运行一次本工作流。
+# 之后每次推送 main 都会自动发布。还没开 Pages 时（包括免费账户的私有仓库），推送触发的运行直接跳过，不报错。
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.repository.has_pages }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

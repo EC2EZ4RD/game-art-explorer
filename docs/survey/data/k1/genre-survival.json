@@ -1,0 +1,1437 @@
+{
+  "meta": {
+    "task": "K1 品类需求 · 生存 / 恐怖 / 解谜",
+    "date": "2026-10-14",
+    "sources": "src/content/uiRefs.json（genre = survival 18 / horror 16 / puzzle 26，共 60 张卡）；对照图 qa/refs-cache/r2/life/sheet-01、02、03、09、10、11、14、15、16、17、18、19（60 款全部看过，另放大看了 24 张单图）；docs/survey/13-r2-life.md、06-genre-camera-ui.md（A6 / A7 / A8）、12-r3-reviews.md + data/ui-review-stats.json、01-style-taxonomy.md、08-ui-art-assets.md、data/iig-browse-notes.json（本地笔记）",
+    "scope": "手游运营页（签到 / 转盘 / 首充）不纳入原则：gameui:3630、gameui:13193、gameui:2752 三张卡只计数、不取做法。",
+    "confidence": "生存 11 / 18 张是 C 档、恐怖 6 张与生存 5 张是「商店图无 UI，按已知 HUD 记」——这些卡的 HUD 结论置信度低，结论尽量用 A / B 档与 IIG 原图卡支撑。评测证据只用计数，不引原文。"
+  },
+  "genres": [
+    {
+      "genre": "survival",
+      "subgenres": [
+        "开放世界生存建造（第三人称 / 合作）：Valheim、Enshrouded、Grounded、Palworld",
+        "第一人称生存探索（太空 / 海底 / 实验室）：Subnautica、ASTRONEER、No Man's Sky、Abiotic Factor",
+        "2D 横版沙盒生存：Terraria",
+        "斜俯视手绘生存 / 漂流：Don't Starve、The Flame in the Flood、The Wild at Heart",
+        "生存 + 建造 RPG：DRAGON QUEST BUILDERS 2",
+        "生存过渡到工厂自动化：Satisfactory",
+        "库内归入生存、实际是别类：Among Us（社交推理）、Mineko's Night Market（生活模拟）——只取它们的团队进度条、叙事内平板与书本日志做法"
+      ],
+      "cards": 18,
+      "coreQuestions": [
+        "哪一条生存计量最先见底、正在涨还是在掉（生命 / 饱食 / 口渴 / 氧气 / 体温 / 理智）？——要的是「比较与趋势」，不是精确数值",
+        "离天黑（或下一个危险周期：暴风雪、氧气耗尽、血月）还有多久？今天是第几天？",
+        "手里拿的是什么、耐久还剩多少、快捷栏里下一件工具 / 武器在哪一格？",
+        "想做的东西还差什么材料（持有 / 需求）？背包还剩几格、还能背多重？",
+        "营地、刚才的资源点、当前目标在哪个方向、多远？",
+        "刚捡到了什么？有没有因为背包满而掉在地上？",
+        "身上有哪些增益 / 减益（已休息、潮湿、寒冷、中毒），还剩多久，怎样触发或解除？",
+        "附近有没有敌对生物、我是否已被发现（夜行怪、巡逻无人机、巢穴）？"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "四角分散 + 常驻快捷栏：生存计量占一角，地图 / 时钟占另一角，快捷栏在底中（3D）或左上（2D 横版，避开脚下的挖掘区）。适用：采集—制作—建造循环频繁、需要随时切工具的作品",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": 2,
+            "cnt.elements": ["el.vitals", "el.abilities", "el.minimap", "el.clock", "el.notify", "el.interact"],
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "el.vitals.screenAnchor": "bl",
+            "el.minimap.screenAnchor": "tr",
+            "el.clock.screenAnchor": "tr"
+          },
+          "share": "7 / 18（Terraria、Valheim、DQB2、Enshrouded、Abiotic Factor、Don't Starve ×2；Terraria 与 Valheim 的快捷栏在左上，DQB2 / Enshrouded / Abiotic / Don't Starve 在底中）",
+          "examples": ["steam:105600", "steam:892970", "steam:1072420", "steam:1203620", "steam:427410", "steam:219740", "iig:dont-starve"]
+        },
+        {
+          "pattern": "头盔式科幻：顶部罗盘条（只给方向和兴趣点）+ 左上分段生命 / 护盾 + 右上环境防护与工具读数 + 右下倾斜色块任务提示。适用：宇航服 / 潜水服题材，玻璃面罩给了屏幕叠加的叙事理由",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": 1,
+            "cnt.elements": ["el.vitals", "el.minimap", "el.meter", "el.abilities", "el.objective", "el.threat"],
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "tl",
+            "el.meter.form": "withIcon",
+            "cmp.gauge@el.meter": "segmented",
+            "el.meter.screenAnchor": "tr",
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "br",
+            "vis.corner": "chamfer",
+            "col.lightness": "dark"
+          },
+          "share": "3 / 18（No Man's Sky ×2；Enshrouded 也用顶部罗盘条 + 左上双条）",
+          "examples": ["iig:no-mans-sky", "steam:275850", "steam:1203620"]
+        },
+        {
+          "pattern": "装备即仪表（叙事内）：氧气 / 电量 / 电池画在背包、手持工具、载具仪表上，屏幕几乎空。适用：信息维度少（≤ 2 项）、角色本来就穿戴设备、想让玩家「看自己」而不是「看角落」",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "cnt.density": 0,
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "player",
+            "el.abilities.diegesis": "diegetic",
+            "el.abilities.attachTo": "held"
+          },
+          "share": "2 / 18 做到底（ASTRONEER 氧气 / 电量在背包上；Subnautica 工具电量在工具屏上，但生命 / 氧气 / 食物 / 水仍是左下四环）——生存类更常见的是「屏幕计量 + 装备读数」混用",
+          "examples": ["steam:361420", "steam:264710"]
+        },
+        {
+          "pattern": "手绘同媒介：右上计量徽章 + 日夜表盘，左侧竖排制作分类页签，底部物品栏，边框用画面同款抖动手绘线与木纹。适用：画面本身是强风格化 2D（手绘、剪纸、版画）",
+          "params": {
+            "rel.harmony": "sameMedium",
+            "lay.hudOrg": "scattered",
+            "cnt.density": 2,
+            "vis.iconStyle": "painted",
+            "vis.edge": "brush",
+            "ast.frameMat": "wood",
+            "el.vitals.screenAnchor": "tr",
+            "el.clock.form": "sunDial",
+            "el.clock.screenAnchor": "tr",
+            "el.toolbar.form": "categoryTabs",
+            "el.toolbar.screenAnchor": "ml",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc"
+          },
+          "share": "3 / 18（Don't Starve ×2、The Flame in the Flood 左上小圆计量）",
+          "examples": ["iig:dont-starve", "steam:219740", "steam:318600"]
+        },
+        {
+          "pattern": "低 HUD / 情境显现：截图里几乎看不到 HUD，状态只在变化时出现。注意多数是宣传图把 HUD 关掉，不等于局内真的没有",
+          "params": {
+            "cnt.density": 0,
+            "rel.hudVisibility": "contextual"
+          },
+          "share": "5 / 18（The Wild at Heart、Grounded、Mineko's Night Market、ASTRONEER、The Flame in the Flood；前四张中 3 张注明「商店图无 UI」，置信度低）",
+          "examples": ["steam:1093290", "steam:962130", "steam:762940", "steam:361420", "steam:318600"]
+        },
+        {
+          "pattern": "团队目标进度条 + 情境大按钮：左上整队任务进度条 + 可折叠任务页签，右下「使用 / 报告」类大按钮平时灰、靠近目标才亮。适用：多人合作 / 对抗、目标是全队共享的",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": 1,
+            "el.meter.form": "single",
+            "el.meter.screenAnchor": "tl",
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "tl",
+            "el.prompt.form": ["touchButtons"],
+            "el.prompt.screenAnchor": "br"
+          },
+          "share": "1 / 18（Among Us）",
+          "examples": ["steam:945360"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.vitals",
+          "forms": ["cmp.gauge@el.vitals=ring", "cmp.gauge@el.vitals=icons", "cmp.gauge@el.vitals=bar", "cmp.gauge@el.vitals=vertical", "cmp.gauge@el.vitals=segmented", "cmp.gauge@el.vitals=orb", "el.vitals.count=3–4"],
+          "anchors": ["bl", "tr", "tl"],
+          "examples": ["steam:264710", "steam:105600", "steam:1072420", "steam:892970", "iig:dont-starve", "iig:no-mans-sky"],
+          "why": "生存的「血」是 3–5 条同时衰减的资源，玩家要判断「哪条先见底」——所以用同形状、同大小并排的小计量 + 图标区分（Subnautica 左下四环、Don't Starve 右上三枚徽章），比一条大血条更适合比较。数值标注一般只给主计量（Terraria 心形旁写 当前 / 上限），其余只看比例。Valheim 把已吃的食物图标叠在竖条生命旁，直接说明「生命上限从哪来」；体力条只在消耗时出现在角色脚下（情境显现）。位置不统一（左下 / 右上 / 左上都有），关键是与环境计量、时钟成一簇，视线一次扫完。"
+        },
+        {
+          "element": "el.meter",
+          "forms": ["el.meter.form=withIcon", "el.meter.form=stack", "cmp.gauge@el.meter=thermometer", "cmp.gauge@el.meter=segmented"],
+          "anchors": ["tr", "tl", "bl"],
+          "examples": ["iig:no-mans-sky", "steam:427410", "steam:1203620"],
+          "why": "环境压力（温度、辐射、危险防护、休息度）是生存的第二层计量：不直接扣血，但决定资源消耗速度。No Man's Sky 右上用分段菱形表示环境防护，Abiotic Factor 左下人体剪影旁放辐射符号与饥渴疲劳小图标，Enshrouded 左上「已休息」增益带剩余时间与条件清单（坐着 / 温暖 / 舒适）。原则：环境计量贴着生命计量放，玩家能看出因果。"
+        },
+        {
+          "element": "el.clock",
+          "forms": ["el.clock.form=sunDial", "el.clock.form=dayCounter"],
+          "anchors": ["tr"],
+          "examples": ["iig:dont-starve", "steam:1072420"],
+          "why": "夜晚是危险周期，玩家按「离天黑还有多久」安排采集与回营。Don't Starve 右上表盘把一天切成白天 / 黄昏 / 夜三色扇区，中间写天数——扇区比例比数字时钟读得更快，天数同时是「存活成绩」。DQB2 把太阳图标贴在圆形小地图上方，时钟与地图成一组。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["el.abilities.form=hotbar"],
+          "anchors": ["bc", "tl"],
+          "examples": ["steam:105600", "steam:892970", "steam:1203620", "steam:1072420", "steam:427410", "iig:dont-starve"],
+          "why": "生存循环是「切工具 → 采集 → 切武器 → 进食」，快捷栏必须常驻，格内要有堆叠数（DQB2）与耐久（Don't Starve 格里直接写百分比），选中格上方写物品名（Terraria）。3D 第三人称放底中（视线与拇指的自然落点）；2D 横版放左上，把屏幕下半留给脚下地形与挖掘。快捷栏应是背包的第一行——Terraria 打开背包时从快捷栏原位向下展开，位置不跳。"
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["el.minimap.form=plan", "el.minimap.form=radar", "el.minimap.form=compassBar"],
+          "anchors": ["tr", "tc"],
+          "examples": ["steam:105600", "steam:892970", "steam:1072420", "steam:275850", "steam:1203620"],
+          "why": "开放生存靠「回家」与「找资源点」：平面 / 圆形小地图（Terraria 金框、Valheim 方块 + 生物群系名、DQB2 圆形）服务建造与回营；顶部罗盘条（No Man's Sky、Enshrouded）只给方向不给地形，保留探索感。选罗盘就要把大地图做好——Valheim / Abiotic Factor 的地图抱怨各 4 条。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["el.notify.form=pickupText", "el.notify.form=feed", "el.notify.form=banner"],
+          "anchors": ["ml", "br"],
+          "examples": ["steam:1203620", "iig:no-mans-sky"],
+          "why": "采集频率极高，拾取提示必须是不打断的小字流（Enshrouded 左侧图标 + 物品名），同类合并计数；剧情 / 系统事件才用横幅（No Man's Sky 右下倾斜蓝色任务框）。拾取流放在快捷栏 / 背包所在的一侧，视线不来回跳。"
+        },
+        {
+          "element": "el.interact",
+          "forms": ["el.interact.form=keyPrompt", "el.interact.form=cursor"],
+          "anchors": ["center", "attachTo=poi", "attachTo=cursor"],
+          "examples": ["steam:1203620", "iig:dont-starve"],
+          "why": "生存动作多是「长按持续」（烤肉、拆除、采集），提示要带进度（Enshrouded 中下「按住 / 松开完成」）；斜俯视鼠标操作则把物品名 + 动作写在光标旁（Don't Starve 悬停容器格子时显示名字与「吃」）。"
+        },
+        {
+          "element": "el.overlay",
+          "forms": ["el.overlay.form=holo", "el.overlay.form=buildGrid", "el.overlay.form=statusIcons"],
+          "anchors": ["attachTo=poi"],
+          "examples": ["iig:no-mans-sky", "steam:526870"],
+          "why": "扫描 / 建造是生存的「第二视图」：按键后世界被临时标注（No Man's Sky 扫描后岩体覆上全息网格、资源点出现菱形标），平时不污染画面。建造模式同理切到网格与幽灵预览。"
+        },
+        {
+          "element": "el.threat",
+          "forms": ["el.threat.form=healthBar", "cmp.gauge@el.threat=eye"],
+          "anchors": ["attachTo=target", "center"],
+          "examples": ["steam:892970", "iig:no-mans-sky"],
+          "why": "敌对生物只在交战距离显示：Valheim 敌人头顶细血条 + 名字 + 星级；No Man's Sky 用屏幕中部的「发现度」圆环 + 感叹号表示被哨兵盯上——生存里「被发现」比「对方还剩多少血」更关键。"
+        },
+        {
+          "element": "el.toolbar",
+          "forms": ["el.toolbar.form=categoryTabs"],
+          "anchors": ["ml"],
+          "examples": ["iig:dont-starve", "steam:526870"],
+          "why": "配方就是生存的科技树：Don't Starve 左侧竖排分类图标（工具 / 火 / 生存 / 农业 / 科学 / 战斗……）常驻，点开抽屉出子项；Satisfactory 建造菜单的左列图标页签同理。让「我能做什么」永远一键可达。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["el.objective.form=checklist", "el.objective.form=text"],
+          "anchors": ["tr", "tl"],
+          "examples": ["steam:1203620", "steam:945360", "steam:526870"],
+          "why": "生存的目标多是自定的（「盖张床」「找到干净水源」），清单 + 材料计数把它钉在屏上：Enshrouded 右上任务 + 日志键；Satisfactory 屏幕右侧钉着「待办」材料清单（某材料 0 / 5）；Among Us 左上整队进度条。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["el.prompt.form=list", "el.prompt.form=legend"],
+          "anchors": ["br"],
+          "examples": ["steam:892970", "steam:1072420"],
+          "why": "操作随手持物变化（武器 / 锤子 / 锄头），右下按键列表跟着当前工具刷新（Valheim 鼠标键位列表、DQB2 按键图例）；左下工具位上写「切换」提示。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.inventory",
+          "conventions": "规则方格 + 堆叠数 + 耐久（百分比或格底细条）；快捷栏是背包第一行，打开时原位展开（Terraria）；容器（箱子）打开时格子直接浮在容器上方或与背包并排两列（Don't Starve 箱子格子挂在箱子上、背包在右侧竖列）；负重 / 格数上限要一直可见。交易页沿用同一套格子 + 右侧详情（No Man's Sky 半透明深色列表 + 彩色元素方块图标）。背包是这一类评测里抱怨最多的界面，「整理 / 一键存入 / 合并堆叠」按钮不能省。",
+          "examples": ["iig:dont-starve", "steam:105600", "iig:no-mans-sky", "steam:275850", "steam:892970"]
+        },
+        {
+          "screen": "screen.craft",
+          "conventions": "左分类、中配方格、右详情 + 材料「持有 / 需求」（够的绿、不够的红）；缺料的配方压暗但保持可见，让玩家知道下一步该去找什么；配方可以「钉到 HUD」变成待办（Satisfactory 右侧材料清单）。快捷制作入口常驻在 HUD 一侧（Don't Starve 左侧竖排页签）。",
+          "examples": ["steam:526870", "iig:dont-starve"]
+        },
+        {
+          "screen": "screen.build",
+          "conventions": "暗色半透明大面板 + 一个强调色（Satisfactory 橙色选中格），左列图标页签 + 顶部搜索 + 圆形图标格（带名字）+ 右侧大图详情与材料；选好后回到世界里放置预览（合法 / 非法上色）并用按键提示确认 / 取消。面板盖住世界时世界仍在动（rel.behind = 实时）。",
+          "examples": ["steam:526870"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "生存地图是「走过才揭开」（云雾或留白）+ 玩家自放标记与文字；不给小地图时，大地图必须支持标记、缩放与当前朝向，否则评测里会集中出现地图抱怨（Valheim、Abiotic Factor 各 4 条）。",
+          "examples": ["steam:892970", "steam:427410"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "选人 / 捏人页延续世界材质：Don't Starve 红色木纹底 + 粗衬线手写角色名 + 撕边黑面板说明 + 未解锁角色为黑剪影；DQB2 是系列血统的金色圆角选项卡 + 居中 3D 模型。",
+          "examples": ["iig:dont-starve", "steam:1072420"]
+        },
+        {
+          "screen": "screen.journal",
+          "conventions": "日志 / 任务做成世界里的书（Mineko's Night Market 翻开的浮世绘册子，叙事内）或 HUD 右上任务 + 一个日志键（Enshrouded）。",
+          "examples": ["steam:762940", "steam:1203620"]
+        },
+        {
+          "screen": "screen.social",
+          "conventions": "多人会议 / 投票做成叙事内的平板：聊天流（每条带头像与玩家色）+ 右侧头像投票按钮 + 倒计时（Among Us）。",
+          "examples": ["steam:945360"]
+        }
+      ],
+      "styleTendencies": [
+        {
+          "family": "科幻 HUD",
+          "count": 4,
+          "why": "Subnautica、No Man's Sky ×2、Satisfactory：太空 / 海底 / 外星工业题材，头盔面罩给了屏幕叠加 UI 的叙事理由；切角、暗色半透明、单一强调色（Satisfactory 橙、No Man's Sky 复古暖色 + 蓝色提示框）。对应皮肤 skin.scifi；No Man's Sky 偏「复古科幻 + 倾斜」，比通用科幻 HUD 更暖、更旧。"
+        },
+        {
+          "family": "极简单色",
+          "count": 4,
+          "why": "The Flame in the Flood、The Wild at Heart、Grounded、Abiotic Factor：多为「商店图无 UI」，家族判定反映的是「看不到 UI」而不是一种风格；有图可见的 Abiotic Factor 是底部小快捷栏 + 左下人体剪影的仿 90 年代 FPS。置信度低。"
+        },
+        {
+          "family": "手绘笔记本",
+          "count": 2,
+          "why": "Don't Starve ×2：画面是 Burton 式暗黑童话手绘（01 文档 2.8），UI 用同款抖动线、木纹、手写粗衬线——同一媒介（rel.harmony = sameMedium）的教科书。"
+        },
+        {
+          "family": "暗色细线",
+          "count": 2,
+          "why": "Valheim、Enshrouded：写实 / 体积光奇幻，UI 用深色半透明 + 细线 + 小图标，让位给植被与光影（skin.darkHairline）。"
+        },
+        {
+          "family": "圆润友好",
+          "count": 2,
+          "why": "ASTRONEER、Mineko's Night Market：低多边形 / 明亮卡通画面，配圆角与大图标（skin.cozy）。"
+        },
+        {
+          "family": "扁平 / Material",
+          "count": 2,
+          "why": "Palworld、Among Us：大众化、多人，读性优先于个性（skin.flat）。"
+        },
+        {
+          "family": "像素位图",
+          "count": 1,
+          "why": "Terraria：画面像素化 → UI 与世界同网格、像素字（派生规则 D-pixel），小地图用金色像素框。"
+        },
+        {
+          "family": "JRPG 窗口",
+          "count": 1,
+          "why": "DRAGON QUEST BUILDERS 2：UI 跟系列血统（勇者斗恶龙）走，不跟品类走——说明「品牌 / IP」可以压过品类惯例。"
+        }
+      ],
+      "exemplars": [
+        {
+          "card": "iig:dont-starve",
+          "why": "一屏看全生存 HUD 的所有零件：右上日夜表盘（天数）+ 三枚计量徽章（胃 / 心 / 脑），左侧竖排制作分类，底部物品栏格内写耐久百分比，右侧背包竖列，箱子的格子直接浮在箱子上方，光标旁写物品名与动作——全部用画面同款手绘线。"
+        },
+        {
+          "card": "steam:264710",
+          "why": "Subnautica：左下四个同形圆环（生命 / 氧气 / 食物 / 水）便于比较；手持工具上的小屏显示电量、载具驾驶舱也是叙事内，面罩边缘压暗当作取景框——「屏幕计量 + 装备读数」混用的范例。"
+        },
+        {
+          "card": "steam:1203620",
+          "why": "Enshrouded：增益「已休息」带倒计时与条件清单（坐着 / 温暖 / 舒适），把「为什么有这个 buff」写在 HUD 上；顶部罗盘条、右上任务 + 日志键、左侧拾取小字、中下长按进度提示，分工清楚。"
+        },
+        {
+          "card": "iig:no-mans-sky",
+          "why": "No Man's Sky：扫描后全息网格覆在岩体上 + 资源菱形标（按键叠层），屏幕中部的发现度圆环，右上环境防护分段 + 工具百分比，顶部弧形罗盘——科幻生存的完整词汇。"
+        },
+        {
+          "card": "steam:105600",
+          "why": "Terraria：高密度但有序——左上 10 格快捷栏 + 选中物名 + 下方增益图标，右上心形 + 文字读数 + 竖排魔力星，金框小地图；2D 横版把快捷栏放上方的理由很清楚。"
+        },
+        {
+          "card": "steam:526870",
+          "why": "Satisfactory：建造 / 自定义面板（左图标页签 + 搜索 + 圆形图标格 + 右详情）与钉在屏幕右侧的材料待办清单，是「制作目标上墙」的最好例子。"
+        }
+      ],
+      "pitfalls": [
+        {
+          "desc": "背包 / 负重管理难用：格子太少、堆叠上限低、整理与箱子间搬运要点很多次——生存类第一大 UI 抱怨",
+          "examples": ["steam:892970", "steam:275850", "steam:526870", "steam:427410", "steam:318600"],
+          "reviewEvidence": "R3 背包类：Valheim 17 条（全库单款最多），No Man's Sky 3、Satisfactory 2、Abiotic Factor 2、The Flame in the Flood 2"
+        },
+        {
+          "desc": "制作 / 建造菜单层级深、操作不直观",
+          "examples": ["steam:892970", "steam:275850", "steam:1623730"],
+          "reviewEvidence": "R3 菜单类：Valheim 7、No Man's Sky 3、Palworld 3；Valheim 提到 UI 的 176 条评测里 132 条出自差评"
+        },
+        {
+          "desc": "叙事内 / 低 HUD 的代价：开放世界里玩家不知道下一步做什么、去哪",
+          "examples": ["steam:361420", "steam:264710", "steam:275850", "steam:962130"],
+          "reviewEvidence": "R3 引导类：ASTRONEER 5（零 HUD 的代表）、Subnautica 3、No Man's Sky 3、Grounded 2"
+        },
+        {
+          "desc": "不给小地图时大地图难用 / 不能标记",
+          "examples": ["steam:892970", "steam:427410", "steam:264710", "steam:361420", "steam:1203620"],
+          "reviewEvidence": "R3 地图类：Valheim 4、Abiotic Factor 4、Subnautica 2、ASTRONEER 2、Enshrouded 2"
+        },
+        {
+          "desc": "字太小、夜间 HUD 与资源图标不可读（夜晚过暗、铜 / 铁 / 锡图标同为灰褐）",
+          "examples": ["steam:892970", "steam:275850"],
+          "reviewEvidence": "R3 字太小：Valheim 3、No Man's Sky 2；夜晚过暗与资源同色系是 06 文档 A8 的美术陷阱（无评测计数）"
+        },
+        {
+          "desc": "UI 响应慢（大面板打开卡顿）",
+          "examples": ["steam:1203620"],
+          "reviewEvidence": "R3 卡顿类：Enshrouded 2"
+        }
+      ],
+      "demos": [
+        {
+          "title": "生存计量：屏幕四环 vs 画在装备上",
+          "a": {
+            "cnt.elements": ["el.vitals", "el.abilities"],
+            "el.vitals.count": 4,
+            "cmp.gauge@el.vitals": "ring",
+            "el.vitals.diegesis": "screen",
+            "el.vitals.screenAnchor": "bl",
+            "el.vitals.valueLabel": "none",
+            "cnt.density": 1
+          },
+          "b": {
+            "cnt.elements": ["el.vitals", "el.abilities"],
+            "el.vitals.count": 4,
+            "rel.diegesis": "diegetic",
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "player",
+            "el.abilities.diegesis": "diegetic",
+            "el.abilities.attachTo": "held",
+            "cnt.density": 0
+          },
+          "lookAt": "信息量相同：a 一眼比较四条谁最低；b 屏幕干净但要看角色背包 / 手持物才知道——再对照 ASTRONEER 引导抱怨 5 条，体会「沉浸 vs 一眼可读」的取舍"
+        },
+        {
+          "title": "同一套生存 HUD：手绘同媒介 vs 暗色细线中性",
+          "a": {
+            "rel.harmony": "sameMedium",
+            "vis.iconStyle": "painted",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "wood",
+            "vis.edge": "brush",
+            "typ.display.family": "slabWestern",
+            "el.clock.form": "sunDial",
+            "cmp.gauge@el.vitals": "orb",
+            "el.toolbar.form": "categoryTabs",
+            "el.toolbar.screenAnchor": "ml"
+          },
+          "b": {
+            "rel.harmony": "neutral",
+            "vis.iconStyle": "line",
+            "ast.frame": "procedural",
+            "vis.stroke": "solid",
+            "col.lightness": "dark",
+            "typ.display.family": "serif",
+            "el.clock.form": "dayCounter",
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.toolbar.form": "categoryTabs",
+            "el.toolbar.screenAnchor": "ml"
+          },
+          "lookAt": "元素与位置不变，只换材质与笔触：a 像 Don't Starve 是「世界的一部分」，b 像 Valheim / Enshrouded 退到背景——看哪种更适合当前画面的媒介"
+        },
+        {
+          "title": "导航：平面小地图 vs 顶部罗盘条",
+          "a": {
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "el.clock.form": "sunDial",
+            "el.clock.screenAnchor": "tr"
+          },
+          "b": {
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "el.objective.form": ["marker"],
+            "el.clock.form": "sunDial",
+            "el.clock.screenAnchor": "tr"
+          },
+          "lookAt": "a 告诉你地形（适合回营 / 建造），b 只告诉方向与兴趣点（保留探索感、把地形留给世界）；选 b 时大地图要能标记"
+        },
+        {
+          "title": "扫描模式：常态 vs 按键叠层",
+          "a": {
+            "cnt.elements": ["el.vitals", "el.abilities", "el.minimap"],
+            "rel.hudVisibility": "always"
+          },
+          "b": {
+            "cnt.elements": ["el.vitals", "el.abilities", "el.minimap", "el.overlay"],
+            "el.overlay.form": ["holo", "statusIcons"],
+            "el.overlay.visibility": "onDemand",
+            "el.overlay.attachTo": "poi",
+            "rel.hudVisibility": "always"
+          },
+          "lookAt": "资源点平时藏在世界里，按一下扫描才被网格与菱形标点亮——比常驻图标更干净，也让「找资源」成为一个动作"
+        }
+      ],
+      "contentPack": {
+        "names": "一套可信的生存 UI 需要：3–5 条同时衰减的计量、昼夜与天数、10 格快捷栏的工具与耐久、配方的持有 / 需求、营地建筑、环境增减益、拾取流水、几个自定目标和夜间威胁。下列名称全部是通用词，不取自具体游戏。",
+        "resources": ["木材", "石块", "植物纤维", "燧石", "树脂", "铜矿石", "铁锭", "兽皮", "骨片", "浆果", "生兽肉 / 烤肉", "淡水（瓶）", "电池芯", "氧气罐"],
+        "items": ["石斧 72%", "骨镐 31%", "火把（燃烧 2:40）", "简易鱼竿", "绷带 ×3", "皮水袋 2/5", "手持扫描仪", "睡袋", "皮甲背心"],
+        "stats": ["生命 84 / 100", "饱食 46%", "口渴 30%", "体温 -3°C（偏冷）", "体力", "精神", "氧气 45 秒", "辐射 12", "负重 38.5 / 60 kg", "背包 22 / 30 格"],
+        "buffs": ["已休息 4:59（条件：坐着 · 温暖 · 有遮蔽）", "潮湿", "寒冷", "饱腹", "中毒 ×2", "靠近火源"],
+        "structures": ["篝火", "工作台", "熔炉", "晒肉架", "雨水收集器", "木墙", "储物箱（12 格）", "床铺", "信号天线"],
+        "objectives": ["入夜前在营地生起篝火", "收集树脂 1 / 3", "修好山顶的信号天线", "找到干净水源", "盖一间能挡雨的屋子"],
+        "notifications": ["+3 植物纤维", "背包已满，物品掉在地上", "石斧即将损坏（8%）", "夜晚将在 2 分钟后降临", "发现新地点：废弃气象站"],
+        "time": ["第 12 天 · 黄昏", "秋 · 第 3 天", "暴风雪将至"],
+        "threats": ["夜行狼群", "毒蛛巢", "沼泽潜伏者", "巡逻无人机（发现度 60%）"],
+        "mapFeatures": ["营地（玩家标记）", "洞穴入口", "坠毁残骸", "水源", "铁矿露头", "信号塔", "未探索区（云雾）"]
+      },
+      "paramGaps": [
+        {
+          "gap": "状态效果列（增益 / 减益图标 + 倒计时 + 触发条件清单）没有独立元素：Enshrouded「已休息」的剩余时间与三条条件只能硬塞进 el.meter",
+          "examples": ["steam:1203620", "steam:427410"],
+          "suggest": "新增 el.buffs（图标列 / 带倒计时 / 带条件清单），或 el.meter.form 加 statusList"
+        },
+        {
+          "gap": "格内耐久 / 燃料读数（百分比或格底细条）无法编码",
+          "examples": ["iig:dont-starve"],
+          "suggest": "cmp.slot 增加子参数 slotMeter：无 / 百分比文字 / 底部细条 / 边框变色"
+        },
+        {
+          "gap": "背包容量与负重（x / y 格、kg）没有落点",
+          "examples": ["steam:892970"],
+          "suggest": "st 组增加 capacity 读数（格数 / 重量 / 两者），背包与容器页默认显示"
+        },
+        {
+          "gap": "界面挂在世界物体上：容器格子浮在箱子上方——elx.attachTo 只作用于 HUD 元素，不作用于整屏",
+          "examples": ["iig:dont-starve"],
+          "suggest": "flow.entry = worldInteract 时允许 lay.container 锚到物体（screen 级 attachTo = poi）"
+        },
+        {
+          "gap": "配方钉到 HUD（材料待办 0 / 5）只能近似为 el.objective = checklist，缺与「持有 / 需求」的联动",
+          "examples": ["steam:526870"],
+          "suggest": "el.objective.form 增加 recipePin（行内显示 el.cost.form = haveNeed）"
+        },
+        {
+          "gap": "第一人称面罩 / 头盔边框作为 HUD 载体：ast.container 只有座舱，rel.metaFx 没有面罩框",
+          "examples": ["steam:264710", "iig:no-mans-sky"],
+          "suggest": "ast.container 增加 helmet（面罩边缘压暗 + 玻璃反光），HUD 元素可吸附在面罩弧线上"
+        },
+        {
+          "gap": "部位伤害人形图（左下人体剪影各部位着色）：cnt.characterMedium 有人体示意图，但不能作为生命计量形态",
+          "examples": ["steam:427410"],
+          "suggest": "cmp.gauge 增加 bodyMap"
+        },
+        {
+          "gap": "计量趋势（正在涨 / 掉的箭头、加速衰减时脉动）：elx.valueLabel = delta 只能写数字",
+          "examples": [],
+          "suggest": "elx 增加 trendCue：无 / 箭头 / 脉动 / 预测虚线段"
+        }
+      ]
+    },
+    {
+      "genre": "horror",
+      "subgenres": [
+        "生存恐怖（越肩 / 固定机位，资源稀缺）：Resident Evil Village、Resident Evil 2、Dead Space、The Callisto Protocol、Crow Country（PS1 复古）",
+        "动作恐怖 / 悬疑动作：The Last of Us Part I / II、Alan Wake、CONTROL",
+        "步行 / 电影化恐怖：Still Wakes the Deep、Hellblade II、Scorn",
+        "横版氛围恐怖：Little Nightmares",
+        "超自然叙事冒险：OXENFREE",
+        "心理恐怖 RPG / 童话外壳：OMORI、Little Goody Two Shoes"
+      ],
+      "cards": 16,
+      "coreQuestions": [
+        "我还能挨几下？——恐怖常把生命做成粗粒度状态（良好 / 注意 / 危险）而不是精确数值",
+        "弹匣里还有几发、备弹多少、光源（手电电量 / 打火机油）还能撑多久？",
+        "威胁在哪、它发现我了吗？（多数作品故意只给声音和画面线索）",
+        "这个东西能不能检查 / 拾取 / 互动？——要在不放常驻图标的前提下看得出",
+        "这里安全吗：安全屋 / 存档点，还是随时会被袭击的区域？",
+        "我在哪、哪些门锁着、哪个房间还有没拿的东西？",
+        "背包还放得下吗？要丢什么、存进箱子什么？"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "全隐（电影模式）：常驻 HUD 为零，交互提示只在贴近物体时出现，状态改由画面、角色动作或背包里的读数传达。适用：线性、空间尺度小、强调电影感",
+          "params": {
+            "rel.hudVisibility": "hidden",
+            "cnt.density": 0,
+            "cnt.elements": ["el.interact", "el.subtitle"],
+            "el.interact.visibility": "contextual",
+            "el.interact.attachTo": "poi"
+          },
+          "share": "5 / 16（Resident Evil 2、Little Nightmares、Scorn、Hellblade II、Still Wakes the Deep；Hellblade II 另用 21:9 宽银幕黑边）",
+          "examples": ["steam:883710", "steam:424840", "steam:698670", "steam:2461850", "steam:1622910"]
+        },
+        {
+          "pattern": "情境显现的右下小组：生命（分段 / 图标 / 圆环）与弹药数挤在右下一角，只在受伤、掏枪、换弹时淡入。适用：有战斗、有资源压力，但仍要电影感",
+          "params": {
+            "rel.hudVisibility": "contextual",
+            "cnt.density": 0,
+            "lay.hudOrg": "scattered",
+            "cnt.elements": ["el.vitals", "el.abilities", "el.interact"],
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "br",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br"
+          },
+          "share": "4 / 16（Resident Evil Village、The Last of Us Part I / II、Alan Wake 的手电电量圆环；全部注明商店图无 UI，按已知 HUD 记）",
+          "examples": ["steam:1196590", "steam:1888930", "steam:2531310", "steam:108710"]
+        },
+        {
+          "pattern": "身体 / 武器即 HUD（叙事内）：生命是背脊或后颈的灯带 / 环形灯，弹药投影在枪上，菜单是角色面前的全息投影。适用：科幻题材、越肩视角（角色背部一直在画面中央）",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "rel.hudVisibility": "always",
+            "cnt.density": 0,
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "player",
+            "cmp.gauge@el.vitals": "vertical",
+            "el.abilities.diegesis": "diegetic",
+            "el.abilities.attachTo": "held"
+          },
+          "share": "3 / 16（Dead Space 脊柱灯带、The Callisto Protocol 后颈环灯、Scorn 生物机械枪；Resident Evil 2 把心电图放进背包，属于半叙事内）",
+          "examples": ["steam:1693980", "steam:1544020", "steam:698670", "steam:883710"]
+        },
+        {
+          "pattern": "屏幕叠加细线极简：左上一行目标（彩色小菱形 + 黄色标题 + 白色说明），左下一条细血条 + 能量，其余全空；系统页是瑞士式表格叠在实时场景上。适用：悬疑 / 超自然动作，世界观本身偏现代主义",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": 1,
+            "cnt.elements": ["el.vitals", "el.objective"],
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "bl",
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "tl",
+            "vis.corner": "sharp",
+            "typ.display.family": "sans",
+            "col.lightness": "dark"
+          },
+          "share": "1 / 16（CONTROL）；Crow Country 的右下按键 + 弹药读数也属此类",
+          "examples": ["steam:870780", "steam:1996010"]
+        },
+        {
+          "pattern": "风格化框内 / 贴边：2D 心理恐怖把 UI 做得「可爱」——四角手绘头像框（OMORI）、玩法区外套彩色雕花木框 + 两侧立绘（Little Goody Two Shoes）——可爱外壳与恐怖内容形成反差",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": 2,
+            "cnt.elements": ["el.party", "el.vitals", "el.notify"],
+            "el.party.form": "frames",
+            "cmp.gauge@el.vitals": "icons",
+            "vis.iconStyle": "painted"
+          },
+          "share": "2 / 16（OMORI edgeBar、Little Goody Two Shoes inMargin）",
+          "examples": ["steam:1150690", "steam:1812370"]
+        },
+        {
+          "pattern": "空间内对话：台词与选项气泡挂在角色头顶，边走边说、不暂停，选项各用一种颜色对应方向键",
+          "params": {
+            "rel.diegesis": "spatial",
+            "rel.hudVisibility": "contextual",
+            "cmp.dialogBox": "bubble",
+            "el.choices.form": "bubbles",
+            "el.choices.attachTo": "player"
+          },
+          "share": "1 / 16（OXENFREE）",
+          "examples": ["steam:388880"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.vitals",
+          "forms": ["cmp.gauge@el.vitals=segmented", "cmp.gauge@el.vitals=icons", "cmp.gauge@el.vitals=dial（心电图）", "cmp.gauge@el.vitals=vertical", "cmp.gauge@el.vitals=ring", "cmp.gauge@el.vitals=thinBar"],
+          "anchors": ["br", "bl", "tl", "attachTo=player"],
+          "examples": ["steam:1196590", "steam:1888930", "steam:883710", "steam:1996010", "steam:1693980", "steam:1544020", "steam:870780", "steam:1812370"],
+          "why": "恐怖要保留不确定感：粗粒度的分段条、心电图 + 「良好 / 注意 / 危险」文字（Resident Evil 2、Crow Country 背包页）比精确数字更让人紧张；常驻的话就画在角色身上（Dead Space、Callisto），否则只在受伤时出现在右下，与弹药成组，一眼答完「还能打吗」。2D 心理恐怖反而用心形图标列（Little Goody Two Shoes 左上心形 + 面包），可爱外观制造反差。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["el.abilities.form=ammo"],
+          "anchors": ["br", "attachTo=held"],
+          "examples": ["steam:1888930", "steam:2531310", "steam:1996010", "steam:1693980"],
+          "why": "弹药稀缺是生存恐怖的资源压力来源：「弹匣 / 备弹」两个数字 + 当前武器名放右下（The Last of Us、Crow Country），或直接投影在枪上（Dead Space）。手电电量是第二种「弹药」（Alan Wake 右下圆环）。"
+        },
+        {
+          "element": "el.interact",
+          "forms": ["el.interact.form=keyPrompt", "elx.worldRender=outline"],
+          "anchors": ["attachTo=poi"],
+          "examples": ["steam:1622910", "steam:1996010", "steam:2531310"],
+          "why": "06 文档 A7：可交互物用微弱高光或描边，不用常驻图标；按键提示只在贴近时出现（Still Wakes the Deep）。复古作品把动作直接写在物品说明下方（Crow Country「按键 + 装填」）。"
+        },
+        {
+          "element": "el.threat",
+          "forms": ["elx.worldRender=outline（能力触发时描白敌人）", "el.threat.form=edgeDir"],
+          "anchors": ["attachTo=target"],
+          "examples": ["steam:2531310"],
+          "why": "恐怖不给敌人血条——未知就是恐惧。只有玩家主动用能力（The Last of Us Part II 聆听模式把敌人描白）时短暂标出位置，用完即隐。"
+        },
+        {
+          "element": "el.subtitle",
+          "forms": ["cmp.dialogBox=bare（说话人名 + 白字，无底板）", "压进宽银幕下黑边（D-letterbox）"],
+          "anchors": ["bc"],
+          "examples": ["steam:1996010", "steam:2461850", "steam:1622910"],
+          "why": "恐怖大量靠声音叙事，字幕必不可少，但一块不透明底板会破坏黑暗画面：用无框白字 + 文字投影（Crow Country 底部说话人名 + 台词），电影画幅作品把字幕放进黑边（Hellblade II）。"
+        },
+        {
+          "element": "el.choices",
+          "forms": ["el.choices.form=bubbles", "el.choices.form=text"],
+          "anchors": ["attachTo=player", "center"],
+          "examples": ["steam:388880", "steam:1150690"],
+          "why": "OXENFREE 让三个选项气泡围在角色头顶、边走边说不暂停——对话不打断紧张感，可以被打断、也可以不选；OMORI 战斗中的指令是手绘云朵形气泡，延续童画风格。"
+        },
+        {
+          "element": "el.party",
+          "forms": ["el.party.form=frames"],
+          "anchors": ["tl", "tr", "bl", "br"],
+          "examples": ["steam:1150690"],
+          "why": "OMORI 战斗把四个手绘头像框放在四角、敌人居中，每个框顶写情绪状态（平静 / 悲伤 / 生气…），下面心形与果汁两条——情绪是战斗属性，所以状态文字直接写在头像框上。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["el.objective.form=text"],
+          "anchors": ["tl"],
+          "examples": ["steam:870780"],
+          "why": "多数恐怖把目标放进地图 / 文件里按需查看；CONTROL 左上一行彩色菱形 + 大写标题 + 一句说明，是「有目标但不抢画面」的最小形态。"
+        },
+        {
+          "element": "el.title",
+          "forms": ["el.title.form=titleCard"],
+          "anchors": ["center"],
+          "examples": ["steam:108710"],
+          "why": "章节标题卡（Alan Wake 像电视剧片头）给叙事节奏和喘息点；恐怖标题常用窄体粗字（08 文档 GameUI 作品统计、预设 ui.oppressive）。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["el.prompt.form=contextual"],
+          "anchors": ["br"],
+          "examples": ["steam:1996010"],
+          "why": "只显示当前能做的动作（Crow Country 右下两个按键图标 + 弹药数 + 武器名），不放整张键位图。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.inventory",
+          "conventions": "三种做法：①格子本身是稀缺资源——Resident Evil 2 方格可扩容，Resident Evil Village 是公文箱拼图格（物品占多格、要摆放）；②实时不暂停——The Last of Us 角色蹲下翻包，背包打开时仍可能被袭击（rel.behind = 实时）；③复古四联头部——Crow Country 顶部四格（头像 / 心电图状态 / 已装备武器 / 地图键），物品散放在黑底上带数量，选中物的详情是红底面板 + 说明 + 可用动作。共同点：生命状态在背包里看（叙事内读数）。",
+          "examples": ["steam:883710", "steam:1196590", "steam:1888930", "steam:1996010"]
+        },
+        {
+          "screen": "screen.craft",
+          "conventions": "制作嵌在背包里、同样实时不暂停（The Last of Us）：材料不够的配方灰显，做的过程有读条，期间可被打断。",
+          "examples": ["steam:1888930"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "示意图式：灰色房间块 + 走廊线 + 房间名（Crow Country），房间状态（已清空 / 还有东西 / 门上锁）是这类地图的核心；地图难读或缺失是恐怖类第二大抱怨。",
+          "examples": ["steam:1996010", "steam:870780", "steam:698670"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "四种：头顶气泡不暂停（OXENFREE）；黑底白框 + 像素字通栏（OMORI）；卷边羊皮纸条 + 大立绘（Little Goody Two Shoes）；说话人名 + 无框字幕（Crow Country）。恐怖对话框普遍「小、暗、不挡画面」。",
+          "examples": ["steam:388880", "steam:1150690", "steam:1812370", "steam:1996010"]
+        },
+        {
+          "screen": "screen.title",
+          "conventions": "反差最常见：OMORI 白底铅笔线稿角色 + 小按钮，Little Goody Two Shoes 明亮童话插画——标题页故意不恐怖，把落差留给游戏。",
+          "examples": ["steam:1150690", "steam:1812370"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "装备 / 改造页（CONTROL 武器改造）：左上面包屑 + 返回键，右上资源数，左侧方格（空格用斜线纹），右侧红色小标题 + 等级 + 属性行（增减量用绿色），锁定行写「升级解锁」+ 锁图标，右下按键动作带消耗；整页是黑底白字瑞士式表格叠在压暗的实时场景上。",
+          "examples": ["steam:870780"]
+        },
+        {
+          "screen": "screen.settings",
+          "conventions": "亮度 / 伽马校准页是恐怖的必需品（暗部换显示器就会压死）：示例图 + 「刚好看不见 / 刚好看得见」两档标记。参考卡里没有截到，来自 06 文档 A7 的建议。",
+          "examples": []
+        }
+      ],
+      "styleTendencies": [
+        {
+          "family": "极简单色",
+          "count": 9,
+          "why": "Resident Evil Village / 2、The Last of Us Part I / II、Little Nightmares、Alan Wake、Scorn、Hellblade II、Still Wakes the Deep：电影化恐怖把 UI 视为破坏沉浸的东西，情境显现或全隐，剩下的用细无衬线白字与小图标——本质是「UI 退场」而不是一种可见风格（skin.mono）。其中 6 张是商店图无 UI。"
+        },
+        {
+          "family": "科幻 HUD",
+          "count": 2,
+          "why": "Dead Space、The Callisto Protocol：太空工业 / 未来监狱题材给了全息投影与植入物灯带的理由（01 文档 17.6 全息投影），UI 与角色装备一体。"
+        },
+        {
+          "family": "瑞士几何 / 极简表格",
+          "count": 1,
+          "why": "CONTROL：游戏的粗野主义建筑与官僚机构题材 → UI 用瑞士网格、无衬线大写、细线表格、红色小标签，和世界观同源（skin.swiss）。"
+        },
+        {
+          "family": "漫画对话框",
+          "count": 1,
+          "why": "OXENFREE：手绘 2.5D 横版 + 对话即玩法，圆角气泡挂在角色身上。"
+        },
+        {
+          "family": "手绘笔记本",
+          "count": 1,
+          "why": "OMORI：铅笔线稿 / 儿童画（梦境世界），手写标题 + 手绘头像框，与恐怖内容反差。"
+        },
+        {
+          "family": "像素位图",
+          "count": 1,
+          "why": "Crow Country：PS1 低多边形（01 文档 8.1）→ 像素字 + 黑底白框菜单，复刻 90 年代生存恐怖的界面规矩。"
+        },
+        {
+          "family": "重装饰雕花框",
+          "count": 1,
+          "why": "Little Goody Two Shoes：欧式童话外壳包裹恐怖，玩法区外一圈彩色雕花框 + 两侧立绘（lay.hudOrg = inMargin），金色花叶母题。"
+        }
+      ],
+      "exemplars": [
+        {
+          "card": "steam:1693980",
+          "why": "Dead Space：叙事内 HUD 的教科书——生命是背脊灯带、弹药投影在枪上、菜单是角色面前的全息面板；越肩视角让角色背部常在画面中央，这是它能成立的前提。"
+        },
+        {
+          "card": "steam:870780",
+          "why": "CONTROL：屏幕叠加也能克制——左上一行目标 + 左下细血条；系统页是瑞士式表格叠在实时场景上。同时是反例：HUD 挡视野 4 条、地图 5 条抱怨。"
+        },
+        {
+          "card": "steam:1996010",
+          "why": "Crow Country：复古生存恐怖的完整菜单词汇（头像 / 心电图状态 / 已装备 / 地图键四联头 + 散放物品 + 红底详情 + 情境按键），示意图地图，说话人名字幕。"
+        },
+        {
+          "card": "steam:388880",
+          "why": "OXENFREE：对话选项挂在角色头顶、三色气泡对应方向键、边走边说不暂停——「对话不打断节奏」的最好示范。"
+        },
+        {
+          "card": "steam:1150690",
+          "why": "OMORI：可爱手绘外壳 + 四角头像框写情绪状态 + 黑底白框像素字对话，演示「风格反差」作为恐怖手段。"
+        },
+        {
+          "card": "steam:883710",
+          "why": "Resident Evil 2：零常驻 HUD，生命在背包里看心电图（绿 / 黄 / 红），背包格子可扩容——状态读数从 HUD 移进菜单。"
+        },
+        {
+          "card": "steam:1888930",
+          "why": "The Last of Us Part I：右下一小组（分段生命 + 弹药）情境显现；背包与制作实时不暂停，把菜单操作也变成紧张的一部分。"
+        }
+      ],
+      "pitfalls": [
+        {
+          "desc": "零 HUD 又不给提示：玩家迷路、不知道能和什么互动",
+          "examples": ["steam:698670", "steam:424840", "steam:2461850"],
+          "reviewEvidence": "R3 引导类：Scorn 10（全库单款最多）、Little Nightmares 3、Hellblade II 2；Scorn 另有地图抱怨 4"
+        },
+        {
+          "desc": "地图缺失或难读，房间状态看不出来",
+          "examples": ["steam:870780", "steam:698670", "steam:1196590", "steam:1544020"],
+          "reviewEvidence": "R3 地图类：CONTROL 5、Scorn 4、Resident Evil Village 2、The Callisto Protocol 2"
+        },
+        {
+          "desc": "背包格子稀缺做成了折磨（来回丢东西、存箱）",
+          "examples": ["steam:883710", "steam:1544020"],
+          "reviewEvidence": "R3 背包类：Resident Evil 2 3、The Callisto Protocol 3（全库另有生化危机 5 的 4 条）"
+        },
+        {
+          "desc": "屏幕叠加的大字 / 提示挡画面，或字太小看不清",
+          "examples": ["steam:870780", "steam:1544020"],
+          "reviewEvidence": "R3 HUD 挡视野：CONTROL 4、The Callisto Protocol 2；字太小：The Callisto Protocol 2"
+        },
+        {
+          "desc": "黑位压死：换显示器或伽马后暗部全黑，UI 与线索一起消失；噪点 / 颗粒 / 色差叠太多打碎剪影",
+          "examples": [],
+          "reviewEvidence": "无评测计数；06 文档 A7 的美术陷阱，建议提供亮度校准页并做伽马 ±0.2 测试"
+        }
+      ],
+      "demos": [
+        {
+          "title": "生命：右下情境小组 vs 背脊灯带",
+          "a": {
+            "rel.hudVisibility": "contextual",
+            "el.vitals.diegesis": "screen",
+            "el.vitals.screenAnchor": "br",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br"
+          },
+          "b": {
+            "rel.hudVisibility": "always",
+            "rel.diegesis": "diegetic",
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "player",
+            "cmp.gauge@el.vitals": "vertical",
+            "el.abilities.diegesis": "diegetic",
+            "el.abilities.attachTo": "held"
+          },
+          "lookAt": "a 平时屏幕全空、受伤才出现；b 一直「在」但长在角色身上——看哪一种更适合当前镜头（越肩才撑得起 b）"
+        },
+        {
+          "title": "低血提示：数字读数 vs 画面效果",
+          "a": {
+            "cmp.gauge@el.vitals": "bar",
+            "el.vitals.valueLabel": "currentMax",
+            "el.vitals.visibility": "always",
+            "rel.metaFx": []
+          },
+          "b": {
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.valueLabel": "none",
+            "el.vitals.visibility": "contextual",
+            "rel.metaFx": ["lowHpDesat", "hurtVignette"]
+          },
+          "lookAt": "a 精确但冷静；b 不告诉你还剩多少，只让画面变灰、变红——恐怖要的是 b 的不确定"
+        },
+        {
+          "title": "背包：暂停全屏拼图格 vs 实时翻包",
+          "a": {
+            "cnt.screen": "screen.inventory",
+            "cnt.subtype": "packGrid",
+            "lay.container": "fullscreen",
+            "rel.behind": "frozen",
+            "rel.dim": 0.7,
+            "ix.blocking": "modal"
+          },
+          "b": {
+            "cnt.screen": "screen.inventory",
+            "cnt.subtype": "bag",
+            "lay.container": "tray",
+            "rel.behind": "live",
+            "rel.dim": 0.2,
+            "ix.blocking": "none"
+          },
+          "lookAt": "a 是安静的整理时间（Resident Evil 公文箱），b 把整理变成风险（The Last of Us 蹲下翻包）——同一份物品，两种节奏"
+        },
+        {
+          "title": "零 HUD 的补偿：完全不提示 vs 贴近才描边",
+          "a": {
+            "rel.hudVisibility": "hidden",
+            "cnt.elements": ["el.subtitle"]
+          },
+          "b": {
+            "rel.hudVisibility": "hidden",
+            "cnt.elements": ["el.subtitle", "el.interact"],
+            "el.interact.visibility": "contextual",
+            "el.interact.attachTo": "poi",
+            "el.interact.worldRender": "outline",
+            "el.interact.form": ["keyPrompt"]
+          },
+          "lookAt": "屏幕上几乎一样空；b 只在走近可交互物时给一圈描边和一个按键——对照 Scorn 引导抱怨 10 条"
+        },
+        {
+          "title": "对话：底部通栏暂停 vs 头顶气泡不暂停",
+          "a": {
+            "cnt.screen": "screen.dialogue",
+            "cmp.dialogBox": "bar",
+            "el.choices.form": "text",
+            "el.choices.screenAnchor": "bc",
+            "rel.behind": "frozen",
+            "ix.blocking": "modal"
+          },
+          "b": {
+            "cnt.screen": "screen.dialogue",
+            "cmp.dialogBox": "bubble",
+            "rel.diegesis": "spatial",
+            "el.choices.form": "bubbles",
+            "el.choices.attachTo": "player",
+            "rel.behind": "live",
+            "ix.blocking": "none"
+          },
+          "lookAt": "b 的选项跟着角色走、世界不停——紧张感不被对话框打断（OXENFREE）"
+        }
+      ],
+      "contentPack": {
+        "names": "可信的恐怖 UI 要「少而具体」：几种稀缺弹药与回复品、写明用途的钥匙类道具、文件 / 录音、粗粒度状态、房间名、短到让人不安的提示文案。全部通用，不取自具体作品。",
+        "items": ["手枪弹 ×12", "霰弹 ×4", "急救喷剂", "绷带", "草药（可混合）", "保险丝", "手电电池", "打火机油", "生锈的钥匙（锅炉房）", "沾血的门禁卡", "录音带 03", "撬棍"],
+        "stats": ["状态：良好 / 注意 / 危险", "弹匣 6 · 备弹 18", "手电电量 23%", "背包 6 / 8 格"],
+        "locations": ["锅炉房", "西侧走廊", "二楼病房", "储藏室", "安全屋（可存档）", "地下水道", "停电的电梯井"],
+        "objectives": ["恢复地下室的供电", "找到离开宅邸的路", "保险丝 1 / 3"],
+        "documents": ["值班日志（第 4 页）", "撕碎的日记", "病历：编号 117", "便签：别相信广播"],
+        "prompts": ["[E] 检查", "[按住 F] 撬开", "门从另一侧锁住了", "这里很安静……太安静了"],
+        "dialogue": ["你也听见了吗？", "别回头，继续走。", "广播又响了。"],
+        "mapStates": ["已探索", "未探索", "上锁的门", "还有未拿的物品", "已清空", "存档点"],
+        "threats": ["无名之物", "潜伏者", "墙里的低语"]
+      },
+      "paramGaps": [
+        {
+          "gap": "粗粒度状态读数（心电图波形 + 良好 / 注意 / 危险 文字）：cmp.gauge 只有表盘可近似",
+          "examples": ["steam:883710", "steam:1996010"],
+          "suggest": "cmp.gauge 增加 ecg（波形 + 分级文字），elx.valueLabel 增加 tier（分级词）"
+        },
+        {
+          "gap": "地图房间状态（已清空 / 有物品 / 上锁门）无法编码，vis.mapUnexplored 只管未探索区",
+          "examples": ["steam:1996010"],
+          "suggest": "vis.mapRoomState（multi：颜色 / 图标 / 门锁符号）"
+        },
+        {
+          "gap": "亮度 / 伽马校准页没有对应的子功能",
+          "examples": [],
+          "suggest": "cnt.subtype 增加 calibration（parent = screen.settings）"
+        },
+        {
+          "gap": "字幕没有形态参数：说话人名、无框 / 底板、声源方向、压进黑边",
+          "examples": ["steam:1996010", "steam:2461850"],
+          "suggest": "el.subtitle.form（bare / scrim / speakerName / directional / inLetterbox）"
+        },
+        {
+          "gap": "情绪 / 精神状态标签写在头像框上（OMORI）：el.party 没有状态文字位",
+          "examples": ["steam:1150690"],
+          "suggest": "el.party 增加 statusLabel，或 st.statusMark 允许作用于 el.party"
+        },
+        {
+          "gap": "能力触发的短暂世界标注（聆听模式描白敌人）：只能写 elx.worldRender = outline，缺「按键触发、几秒后渐隐」",
+          "examples": ["steam:2531310"],
+          "suggest": "elx.visibility 增加 pulse（按键脉冲后渐隐）"
+        }
+      ]
+    },
+    {
+      "genre": "puzzle",
+      "subgenres": [
+        "点击冒险：Machinarium、CHUCHEL、Return to Monkey Island、Grim Fandango Remastered",
+        "机关 / 盒子解谜：The Room",
+        "空间 / 视错觉 / 画格拼接：Monument Valley、Gorogoa、Mirror Drop、Old Man's Journey",
+        "推理 / 侦探：Return of the Obra Dinn、L.A. Noire",
+        "语言 / 符号破译：Chants of Sennaar",
+        "元界面叙事（整部游戏是一个假操作系统）：Hypnospace Outlaw",
+        "氛围艺术解谜：Genesis Noir、Lumino City、Papetura",
+        "手游消除 / 消除对战（竖屏）：Call of Antia、小小传说 Little Legends、Star Blast、球球快跑、小森灵；合成剧情：Gossip Harbor、Puzzle&Palace",
+        "另有 3 张 GameUI 卡是签到 / 转盘 / 首充运营页，按范围不纳入原则（见 meta.scope）"
+      ],
+      "cards": 26,
+      "coreQuestions": [
+        "哪些东西可以碰 / 检查（热点在哪）？——不应逼玩家逐像素扫屏",
+        "这一屏 / 这一关的目标是什么，离完成还差什么（手游消除：目标数 + 剩余步数）？",
+        "我已经知道了什么：线索、已确认的推断、已破译的符号？",
+        "手上有什么物品，能和什么组合？",
+        "卡住时怎样拿到「刚好够」的提示而不被剧透？",
+        "刚才的操作对不对：机关到位了吗、推断成立吗？",
+        "（对战消除）现在轮到谁，对手几回合后出手？"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "零 UI：画面即界面。没有任何常驻元素，提示、反馈、进度全部由画面本身承担（机关动、光变、画格拼合）。适用：单屏 / 单场景、交互对象少且大",
+          "params": {
+            "rel.hudVisibility": "hidden",
+            "cnt.density": 0,
+            "lay.container": "none",
+            "rel.harmony": "sameMedium"
+          },
+          "share": "7 / 26（Gorogoa、CHUCHEL、Lumino City、Papetura、Mirror Drop、Old Man's Journey、Genesis Noir）；Steam 解谜 16 张里 14 张信息密度 = 极简",
+          "examples": ["steam:557600", "steam:711660", "steam:205020", "steam:593640", "steam:845270", "steam:581270", "steam:735290"]
+        },
+        {
+          "pattern": "一个角落入口 + 边缘滑出物品栏：常驻的只有一个细线小图标（菜单 / 暂停），物品栏只在需要「用物品」时从屏幕边缘滑出。适用：点击冒险、机关解谜",
+          "params": {
+            "cnt.density": 0,
+            "rel.hudVisibility": "contextual",
+            "cnt.elements": ["el.toolbar", "el.abilities"],
+            "el.toolbar.form": "microMenu",
+            "el.toolbar.screenAnchor": "tl",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "ml",
+            "el.abilities.visibility": "contextual",
+            "vis.iconStyle": "line"
+          },
+          "share": "4 / 26（Monument Valley 左上细线圆点；The Room 右上暂停 + 左侧竖列空格；Machinarium 物品栏从上沿下拉；Return to Monkey Island 从下沿滑出）",
+          "examples": ["steam:1927720", "steam:288160", "steam:40700", "steam:2060130"]
+        },
+        {
+          "pattern": "书 / 笔记本是主界面：玩家的推理结果写进一本书（名册、死因、词义、审讯问题），书本有页签与分页，画面是「去找线索的地方」。适用：推理、破译、侦探",
+          "params": {
+            "cnt.screen": "screen.journal",
+            "ast.container": "book",
+            "rel.harmony": "sameMedium",
+            "ast.coreMat": "paper",
+            "lay.composition": "splitLR",
+            "mo.enter": "pageTurn"
+          },
+          "share": "3 / 26（Return of the Obra Dinn、Chants of Sennaar、L.A. Noire 笔记本）",
+          "examples": ["steam:653530", "steam:1931770", "steam:110800"]
+        },
+        {
+          "pattern": "叙事内整机界面：整部游戏是一台 1999 年的电脑——浏览器窗口、地址栏面包屑、标题栏日期时间、左侧贴纸工具栏、右侧标签列表、任务栏；可拖动窗口、闪烁 GIF",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "lay.container": "window",
+            "cnt.density": 4,
+            "col.strategy": "polychrome",
+            "vis.gloss": "topShine",
+            "ast.container": "crt"
+          },
+          "share": "1 / 26（Hypnospace Outlaw）",
+          "examples": ["steam:844590"]
+        },
+        {
+          "pattern": "玩法区外装饰边：4:3 画面两侧用题材纹样填满（装饰艺术 / 亡灵节），字幕直接写在画面下方",
+          "params": {
+            "ctx.aspect": "4x3",
+            "lay.playfield": "boxed",
+            "vis.ornament": 2,
+            "vis.motif": "geometric",
+            "cmp.dialogBox": "bare"
+          },
+          "share": "1 / 26（Grim Fandango Remastered）",
+          "examples": ["steam:316790"]
+        },
+        {
+          "pattern": "竖屏上下分区：上半是角色 / 敌人或目标与步数，下半是棋盘，底部一排英雄头像或道具。适用：手游消除、消除对战",
+          "params": {
+            "ctx.orientation": "portrait",
+            "lay.composition": "splitTB",
+            "lay.playfield": "boardWindow",
+            "cnt.density": 2,
+            "cnt.elements": ["el.objective", "el.timer", "el.feedback", "el.guide"],
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tr",
+            "el.objective.screenAnchor": "tl"
+          },
+          "share": "4 / 26（Call of Antia、小小传说 Little Legends、Star Blast、球球快跑）",
+          "examples": ["gameui:3830", "gameui:4456", "gameui:4332", "gameui:6393"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.interact",
+          "forms": ["el.interact.form=cursor", "画面内手绘提示物（问号）"],
+          "anchors": ["attachTo=cursor", "attachTo=poi"],
+          "examples": ["steam:653530", "steam:711660"],
+          "why": "解谜最怕「像素猎杀」。可交互的视觉语言要统一：Obra Dinn 的放大镜光标、CHUCHEL 画在场景里的手绘问号——提示长成世界的一部分，而不是浮动图标（06 文档 A6：所有可检查物同色微光，或靠近时才提示）。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["el.abilities.form=hotbar"],
+          "anchors": ["tc", "bc", "ml"],
+          "examples": ["steam:40700", "steam:2060130", "steam:288160"],
+          "why": "点击冒险的物品栏只在「要用物品」时出现，从屏幕边缘滑出（Machinarium 上沿、Return to Monkey Island 下沿、The Room 左侧竖列）；平时不占画面。"
+        },
+        {
+          "element": "el.toolbar",
+          "forms": ["el.toolbar.form=microMenu", "画面母题入口（纸角折起）"],
+          "anchors": ["tl", "tr"],
+          "examples": ["steam:1927720", "steam:288160", "steam:557600"],
+          "why": "解谜唯一常驻的往往是「出口」：Monument Valley 左上一个细线圆圈，The Room 右上暂停圆钮，Gorogoa 右上角纸张折起——入口做到最小，或借用作品的材质母题。"
+        },
+        {
+          "element": "el.subtitle",
+          "forms": ["cmp.dialogBox=bubble（图画代替台词）", "cmp.dialogBox=bare（彩色字幕）", "cmp.dialogBox=chatThread"],
+          "anchors": ["attachTo=player", "bc"],
+          "examples": ["steam:40700", "steam:316790", "gameui:4834"],
+          "why": "Machinarium 的思想气泡里是手绘小图而不是文字（零本地化、零阅读负担）；Grim Fandango 用彩色无框字幕；合成手游剧情用聊天气泡（Gossip Harbor）。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["el.objective.form=marker", "el.objective.form=text"],
+          "anchors": ["tl"],
+          "examples": ["gameui:4332"],
+          "why": "Steam 解谜几乎不写目标（发现目标本身就是谜题）；手游消除则把目标图标 + 剩余数量放左上（Star Blast：气球图标 + 40），与右上步数对称，中间放吉祥物头像。"
+        },
+        {
+          "element": "el.timer",
+          "forms": ["el.timer.form=number", "el.timer.form=badge"],
+          "anchors": ["tr", "tc"],
+          "examples": ["gameui:4332", "gameui:4456"],
+          "why": "步数是消除的「预算」，大号数字放右上（Star Blast）；对战消除用星形回合章（第 2 / 3 回合）放上中，下方一条「我的回合」横条。"
+        },
+        {
+          "element": "el.feedback",
+          "forms": ["el.feedback.form=rating"],
+          "anchors": ["center"],
+          "examples": ["gameui:4456", "gameui:4332"],
+          "why": "消除的连锁用立体描边评价大字（小小传说的「完美」字样压在棋盘中央）；Steam 解谜的反馈交给机关动作与声音，不出字。"
+        },
+        {
+          "element": "el.guide",
+          "forms": ["el.guide.form=box", "el.guide.form=npcBubble"],
+          "anchors": ["center"],
+          "examples": ["gameui:4332", "gameui:3830", "gameui:3052"],
+          "why": "手游教学是一次性的：横贯棋盘的圆角提示条 + 高亮目标棋子（Star Blast），或高亮一整行 + 上方说明条（Call of Antia）；不常驻。"
+        },
+        {
+          "element": "el.threat",
+          "forms": ["el.threat.form=healthBar", "el.threat.form=intent"],
+          "anchors": ["attachTo=target"],
+          "examples": ["gameui:3830", "gameui:4456"],
+          "why": "消除对战：敌人脚下细血条 + 回合数字（几回合后出手），把「对手意图」压缩成一个数字；双方头像 + 血量数字放顶部两侧（小小传说）。"
+        },
+        {
+          "element": "el.party",
+          "forms": ["el.party.form=portraitRow"],
+          "anchors": ["bc"],
+          "examples": ["gameui:3830"],
+          "why": "底部一排英雄半身头像，每个下方一条元素色充能条，颜色与棋盘宝石一一对应——颜色把「消哪种宝石 → 谁充能」直接连起来。"
+        },
+        {
+          "element": "el.title",
+          "forms": ["el.title.form=artTitle", "el.title.form=logo"],
+          "anchors": ["center"],
+          "examples": ["steam:653530"],
+          "why": "Obra Dinn 的标题页是 19 世纪海报 / 书页衬线排版，1 位色——标题页就在交代「这是一份档案」。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.journal",
+          "conventions": "书本即主界面：左图右文（Chants of Sennaar 左页人物插画、右侧环形 / 六角排布的符号牌由玩家拖进图下空位），书签页签标章节；Obra Dinn 是整本档案册（名册、甲板图、事件页）；L.A. Noire 笔记本记线索与审讯问题。输入（名字、词义）写进书里，确认要克制——推理类不轻易告诉你对错。",
+          "examples": ["steam:1931770", "steam:653530", "steam:110800"]
+        },
+        {
+          "screen": "screen.pause",
+          "conventions": "无框浮空确认：场景轻微压暗，一行宽字距大写问句 + 两个细线圆圈图标按钮（取消 / 退出），没有面板（Monument Valley）。",
+          "examples": ["steam:1927720"]
+        },
+        {
+          "screen": "screen.levelselect",
+          "conventions": "章节以竖向场景画呈现，文字只有细线图标与宽字距大写，延续局内的无面板做法（Monument Valley）。",
+          "examples": ["steam:1927720"]
+        },
+        {
+          "screen": "screen.title",
+          "conventions": "标题页交代媒介：Obra Dinn 的标题与目录是 19 世纪海报 / 书封式衬线排版、1 位色——第一屏就告诉玩家「这是一份档案」。",
+          "examples": ["steam:653530"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "三种：图画气泡（Machinarium，无文字）；彩色无框字幕（Grim Fandango）；聊天气泡流 + 头像（Gossip Harbor）。",
+          "examples": ["steam:40700", "steam:316790", "gameui:4834"]
+        },
+        {
+          "screen": "screen.tutorial",
+          "conventions": "手游消除：一次性提示条 + 高亮（Star Blast）；发现类内容用米白卡 + 绿色标题条的图鉴卡（小森灵「我的新发现」）。",
+          "examples": ["gameui:4332", "gameui:3052"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "关卡结算：大号立体评价字 + 星 + 底部「点任意处继续」小字（Star Blast）；本文只取结构，不涉及奖励 / 运营演出。",
+          "examples": ["gameui:4332"]
+        },
+        {
+          "screen": "screen.codex",
+          "conventions": "图鉴 / 发现：米白卡片 + 彩色标题条 + 物件插图 + 一句说明（小森灵）。",
+          "examples": ["gameui:3052"]
+        }
+      ],
+      "styleTendencies": [
+        {
+          "family": "极简单色",
+          "count": 13,
+          "why": "不是一种风格而是「缺席」：画面即界面。真有 UI 时取作品母题——Monument Valley 细线圆圈 + 宽字距大写（更接近 skin.thinGeo），Gorogoa 纸角折起，Obra Dinn 1 位色衬线（01 文档 8.10）。高分作品（Machinarium、Monument Valley、CHUCHEL）评测里 UI 抱怨为 0。"
+        },
+        {
+          "family": "糖果卡通（Q 版）",
+          "count": 4,
+          "why": "手游消除的类型惯例：棋子本身是糖果塑料质感，UI 用粗描边圆角卡、立体评价字、回弹（skin.candy）。4 张里 1 张是运营页（美食街消消乐），不计入原则。"
+        },
+        {
+          "family": "暗金金属牌",
+          "count": 2,
+          "why": "Call of Antia 奇幻英雄消除：深色底 + 金边，配写实奇幻立绘（另一张 ZIO 是运营页，不计入）。"
+        },
+        {
+          "family": "圆润友好",
+          "count": 2,
+          "why": "小森灵、Gossip Harbor：休闲 / 治愈题材，米白卡、圆角、聊天气泡。"
+        },
+        {
+          "family": "手绘笔记本",
+          "count": 1,
+          "why": "Chants of Sennaar：主界面是一本手绘笔记，UI 与画面同为扁平色块 + 线描（rel.harmony = sameMedium）。"
+        },
+        {
+          "family": "装饰艺术",
+          "count": 1,
+          "why": "Grim Fandango：题材是亡灵节 + 30 年代黑色电影（01 文档 16.2），4:3 两侧装饰艺术纹样填充。"
+        },
+        {
+          "family": "Y2K 镀铬",
+          "count": 1,
+          "why": "Hypnospace Outlaw：题材就是 1999 年的操作系统，UI 风格 = 题材本身（skin.y2k）。"
+        },
+        {
+          "family": "重装饰雕花框",
+          "count": 1,
+          "why": "Puzzle&Palace：宫廷装修题材，立绘装在金色椭圆雕花相框里。"
+        },
+        {
+          "family": "羊皮纸任务书",
+          "count": 1,
+          "why": "俄罗斯方块环游记：只出现在运营弹窗（藏宝图），不计入原则。"
+        }
+      ],
+      "exemplars": [
+        {
+          "card": "steam:557600",
+          "why": "Gorogoa：2×2 画格就是玩法区与界面，米白纸底边缘画着淡铅笔草图，右上纸角折起当菜单——零 UI 也能有完整的「媒介感」。"
+        },
+        {
+          "card": "steam:1931770",
+          "why": "Chants of Sennaar：书本主界面 + 玩家自己填词义，符号牌在右侧环形排布，图下有空位——「玩家的知识」变成可见的 UI。代价：没有地图（地图抱怨 5 条）。"
+        },
+        {
+          "card": "steam:653530",
+          "why": "Return of the Obra Dinn：1 位色画面 + 19 世纪衬线书页，档案册是主要界面，放大镜光标；也提醒滤镜会吃小字（字太小 2 条）。"
+        },
+        {
+          "card": "steam:844590",
+          "why": "Hypnospace Outlaw：整部游戏是假操作系统，极密信息（密度 4）也成立，因为密度本身就是题材的一部分。"
+        },
+        {
+          "card": "steam:288160",
+          "why": "The Room：屏幕上只有右上一个暂停圆钮与左侧一列物品空格，盒子与机关就是界面——机关解谜的最小 HUD。"
+        },
+        {
+          "card": "steam:40700",
+          "why": "Machinarium：思想泡泡里画图不写字，物品栏从上沿下拉——无文字叙事的范例，UI 抱怨 0。"
+        },
+        {
+          "card": "steam:1927720",
+          "why": "Monument Valley：常驻只有左上一个细线圆点；退出确认是无框浮空的宽字距大写 + 细线图标按钮。"
+        },
+        {
+          "card": "gameui:4332",
+          "why": "Star Blast：顶部「目标 | 吉祥物 | 步数」三联、横贯棋盘的教学提示条、结算大字 + 星级——手游消除 HUD 的标准结构（只看玩法与结算，不看运营）。"
+        }
+      ],
+      "pitfalls": [
+        {
+          "desc": "零引导导致卡关：没有任何提示阶梯",
+          "examples": ["steam:557600", "steam:735290", "steam:653530", "steam:205020"],
+          "reviewEvidence": "R3 引导类：Gorogoa 3、Genesis Noir 2、Return of the Obra Dinn 2、Lumino City 1（样本仅 10 条）"
+        },
+        {
+          "desc": "需要来回走动的解谜却没有地图",
+          "examples": ["steam:1931770"],
+          "reviewEvidence": "R3 地图类：Chants of Sennaar 5"
+        },
+        {
+          "desc": "抖动 / 纸纹 / 描线滤镜把小字和小符号吃掉",
+          "examples": ["steam:653530"],
+          "reviewEvidence": "R3 字太小：Return of the Obra Dinn 2；06 文档 A6 同一陷阱"
+        },
+        {
+          "desc": "老式物品栏 / 菜单：翻找物品、组合操作繁琐",
+          "examples": ["steam:316790"],
+          "reviewEvidence": "R3：Grim Fandango Remastered 背包 2、菜单 2"
+        },
+        {
+          "desc": "像素猎杀：关键线索太小或与背景同明度",
+          "examples": [],
+          "reviewEvidence": "无评测计数；06 文档 A6 的美术陷阱（同屏真线索 3–5 个为宜）"
+        }
+      ],
+      "demos": [
+        {
+          "title": "线索日志：通用列表页 vs 书本容器",
+          "a": {
+            "cnt.screen": "screen.journal",
+            "lay.container": "fullscreen",
+            "ast.container": "none",
+            "lay.composition": "splitLR",
+            "lay.detail": "persistent",
+            "rel.harmony": "neutral",
+            "col.lightness": "dark",
+            "typ.display.family": "sans"
+          },
+          "b": {
+            "cnt.screen": "screen.journal",
+            "ast.container": "book",
+            "lay.composition": "splitLR",
+            "rel.harmony": "sameMedium",
+            "ast.coreMat": "paper",
+            "mo.enter": "pageTurn",
+            "cmp.input": "underline",
+            "typ.display.family": "serif"
+          },
+          "lookAt": "同样左右分栏、同样的信息；b 把「记录」变成世界里的一件东西，下划线输入让玩家像在本子上写字"
+        },
+        {
+          "title": "物品栏：常驻底栏 vs 边缘滑出",
+          "a": {
+            "cnt.elements": ["el.abilities"],
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "el.abilities.visibility": "always",
+            "rel.hudVisibility": "always",
+            "cnt.density": 1
+          },
+          "b": {
+            "cnt.elements": ["el.abilities", "el.toolbar"],
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "tc",
+            "el.abilities.visibility": "contextual",
+            "el.toolbar.form": "microMenu",
+            "el.toolbar.screenAnchor": "tr",
+            "rel.hudVisibility": "contextual",
+            "cnt.density": 0
+          },
+          "lookAt": "b 平时只剩右上一个小图标，鼠标靠近上沿物品栏才下拉（Machinarium）——场景画面完整"
+        },
+        {
+          "title": "退出确认：标准面板 vs 无框浮空",
+          "a": {
+            "cnt.screen": "screen.pause",
+            "lay.container": "modal",
+            "cmp.modal": "standard",
+            "rel.dim": 0.6,
+            "rel.behind": "frozen"
+          },
+          "b": {
+            "cnt.screen": "screen.pause",
+            "lay.container": "modal",
+            "cmp.modal": "floating",
+            "vis.iconStyle": "line",
+            "typ.display.case": "upper",
+            "rel.dim": 0.25,
+            "rel.behind": "live"
+          },
+          "lookAt": "b 只有一行问句和两个细线图标，场景几乎不变暗（Monument Valley）——解谜的系统界面也要轻"
+        },
+        {
+          "title": "卡关时：不给提示 vs 软提示光圈",
+          "a": {
+            "ix.guideForce": "none",
+            "rel.hudVisibility": "hidden",
+            "cnt.elements": []
+          },
+          "b": {
+            "ix.guideForce": "soft",
+            "rel.hudVisibility": "hidden",
+            "cnt.elements": ["el.guide", "el.interact"],
+            "el.guide.form": "ring",
+            "el.interact.form": ["cursor"]
+          },
+          "lookAt": "b 只在停留一段时间后，给下一个可交互物一圈淡光圈——对照 Gorogoa / Genesis Noir 的引导抱怨"
+        },
+        {
+          "title": "竖屏消除：目标 / 步数 vs 对战血量与意图",
+          "a": {
+            "ctx.orientation": "portrait",
+            "lay.composition": "splitTB",
+            "lay.playfield": "boardWindow",
+            "cnt.elements": ["el.objective", "el.timer", "el.feedback"],
+            "el.objective.form": ["marker"],
+            "el.objective.screenAnchor": "tl",
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tr",
+            "el.feedback.form": ["rating"]
+          },
+          "b": {
+            "ctx.orientation": "portrait",
+            "ctx.players": "versus",
+            "lay.composition": "splitTB",
+            "lay.playfield": "boardWindow",
+            "cnt.elements": ["el.vitals", "el.timer", "el.threat", "el.party", "el.feedback"],
+            "el.timer.form": "badge",
+            "el.timer.screenAnchor": "tc",
+            "el.threat.form": ["healthBar", "intent"],
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "bc",
+            "el.feedback.form": ["rating"]
+          },
+          "lookAt": "同一块棋盘：a 的压力来自「步数预算」，b 来自「对手几回合后出手」——顶部信息完全不同，下半屏不变"
+        }
+      ],
+      "contentPack": {
+        "names": "解谜 UI 的内容是「线索与物件」而不是数值：可检查的物件、物品栏里的怪东西、一本会被逐步填满的笔记、未知符号、机关状态、分级提示；手游消除另需目标 / 步数 / 对手意图。全部通用，不取自具体作品。",
+        "items": ["黄铜齿轮", "半张船票", "刻着数字 7 的钥匙", "放大镜", "空玻璃瓶", "一截麻绳", "褪色的照片", "音乐盒发条"],
+        "clues": ["怀表停在 4:12", "墙上的三道划痕", "只剩后半句的焦信", "地板下的空心回声"],
+        "journal": ["名册：12 人，已确认 3", "未知符号 14 个，已推断 5 个", "第 2 章 · 钟楼", "推断：甲是乙的兄弟（待确认）"],
+        "mechanisms": ["机关 3 / 5 已到位", "转盘对准：月 · 星 · 日", "压力板：未触发"],
+        "hints": ["提示 1：看看钟楼的影子", "提示 2：影子指向的砖块可以按", "答案：按第三排左数第二块砖"],
+        "mobileMatch": ["目标：收集 40 个气球", "剩余步数 23", "对手 2 回合后攻击", "连消 ×3", "第 37 关 · 两星"],
+        "dialogue": ["（图画气泡：钥匙 + 问号）", "你见过这个符号吗？"],
+        "mapFeatures": ["钟楼", "上锁的温室", "枯井", "画廊（4 幅画缺 1 幅）"]
+      },
+      "paramGaps": [
+        {
+          "gap": "分级提示（方向 → 具体 → 答案）没有参数；ix.guideForce 只管强制度",
+          "examples": ["steam:557600", "steam:735290"],
+          "suggest": "ix.hintLadder：无 / 2 级 / 3 级 / 停留一定时间自动"
+        },
+        {
+          "gap": "玩家在书里填写（从词库拖词入空、写名字 + 死因）：cmp.input 只描述输入框外观",
+          "examples": ["steam:1931770", "steam:653530"],
+          "suggest": "ix.mode 增加 fillSlots（拖词 / 选词入空位）"
+        },
+        {
+          "gap": "分批确认推断（攒够若干条正确才告知）",
+          "examples": ["steam:653530"],
+          "suggest": "ix.confirm 增加 batch"
+        },
+        {
+          "gap": "画格玩法区（2×2 画框本身是界面）：lay.playfield 只有分屏 / 画中画",
+          "examples": ["steam:557600"],
+          "suggest": "lay.playfield 增加 panels（画格网格）"
+        },
+        {
+          "gap": "图画气泡（无文字对话）：cmp.dialogBox = bubble + cnt.textLength = none 只能近似",
+          "examples": ["steam:40700"],
+          "suggest": "cmp.dialogBox 增加 pictogram"
+        },
+        {
+          "gap": "用画面母题当菜单入口（纸角折起、盒子上的按钮）：el.toolbar.form = microMenu 只能表达一个小图标",
+          "examples": ["steam:557600", "steam:288160"],
+          "suggest": "el.toolbar.form 增加 motifEntry（取 ast.container / vis.motif 的物件）"
+        },
+        {
+          "gap": "热点全显（按住一个键高亮所有可交互物）",
+          "examples": [],
+          "suggest": "el.interact.form 增加 hotspotReveal，或 el.overlay.form 的 statusIcons 允许按键触发"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2240 @@
+{
+  "meta": {
+    "task": "K1 设计专题 · 导航、菜单与界面流程（暂停、背包、地图、对话、技能树、设置、存档）",
+    "date": "2026-10-14",
+    "scope": "从 452 张 UI 参考卡里筛出带非 HUD 界面（背包 / 角色 / 技能树 / 设置 / 暂停 / 日志 / 图鉴 / 地图 / 对话 / 关卡选择）或 note 提到菜单、页签、地图、对话、存档的 201 张，跨 17 个品类取证；商城、奖励、抽卡、签到、首充、通行证、红包、广告一律不看、不推原则。",
+    "sheetsViewed": [
+      "qa/refs-cache/r2/arpg/sheet-01.jpg",
+      "qa/refs-cache/r2/arpg/sheet-03.jpg",
+      "qa/refs-cache/r2/arpg/sheet-06.jpg",
+      "qa/refs-cache/r2/arpg/sheet-08.jpg",
+      "qa/refs-cache/r2/arpg/sheet-13.jpg",
+      "qa/refs-cache/r2/life/sheet-01.jpg",
+      "qa/refs-cache/r2/life/sheet-02.jpg",
+      "qa/refs-cache/r2/life/sheet-03.jpg",
+      "qa/refs-cache/r2/life/sheet-06.jpg",
+      "qa/refs-cache/r2/life/sheet-07.jpg",
+      "qa/refs-cache/r2/life/sheet-17.jpg",
+      "qa/refs-cache/r2/strategy/sheet-08.jpg",
+      "qa/refs-cache/r2/strategy/sheet-11.jpg",
+      "qa/refs-cache/r2/strategy/sheet-17.jpg"
+    ],
+    "otherSources": "docs/survey/09 总览与 ui-param-system.json（含 tpl.pausePc / tpl.inventory / tpl.packGrid / tpl.loadout / tpl.worldmap / tpl.npc / tpl.dialogueWheel / tpl.settings / tpl.rebind / tpl.saveSlot / tpl.skilltree / tpl.quest / tpl.codex 等界面模板）、06（B 节风格适用性与陷阱）、10 / 11 / 13 / 14 / 15 批次总结、12-r3-reviews.md + ui-review-stats.json、uiSpec.gen.json 的 38 个皮肤预设；文献见各原则 sources。",
+    "reviewNote": "评测只用计数：某类抱怨在一款游戏里 ≥ 2 条评测才算这款的出处（R3 规则）；关键词归类是粗筛，只说明'常被提起、出在哪些游戏'，不做因果。数字来自 ui-review-stats.json 的 336 款、74,932 条评测。",
+    "method": "每条原则 = 玩家 / 设计者的一个问题 + 2–6 种做法构成的谱系（每种都给参数向量、适用、代价、参考卡）+ 反例（附评测计数）+ 经验规则 + 文献；demo 是同一屏只改关键参数的 A/B，可直接在探索台渲染。"
+  },
+  "principles": [
+    {
+      "id": "P-menu-architecture",
+      "title": "菜单骨架：页签环、左侧导航、图标宫格、场景热区——按入口数与输入方式选",
+      "problem": "系统一多（背包、装备、技能、地图、日志、设置……），玩家要在最少步数里到达，并随时知道自己在哪一层、怎么回去。骨架选错，每次切换都多绕一层；R3 里'菜单 / 界面难用'有 24 款 ≥ 2 条，集中在系统多的开放世界与建造经营。",
+      "approaches": [
+        {
+          "name": "顶部页签环（肩键左右循环）",
+          "params": {
+            "cnt.subtype": "menu",
+            "lay.container": "fullscreen",
+            "lay.nav": "tabsTop",
+            "lay.navDepth": 1,
+            "flow.navPersistent": true,
+            "cmp.tab": "iconText",
+            "cmp.tabIndicator": "underline",
+            "flow.stacking": "replace",
+            "ix.glyphs": "xbox"
+          },
+          "whenToUse": "5–7 个平级子系统、手柄优先的动作 RPG / 开放世界 / 冒险；每个子系统一屏放得下。",
+          "cost": "页签超过 7 个就要缩成纯图标或溢出，靠后的页签很少被点开；跨页签对比做不到。",
+          "examples": [
+            "steam:2358720",
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "steam:292030",
+            "steam:1150690"
+          ]
+        },
+        {
+          "name": "左侧竖向导航 + 右侧内容（工具化）",
+          "params": {
+            "lay.container": "fullscreen",
+            "lay.nav": "tabsLeft",
+            "lay.composition": "splitLR",
+            "lay.navDepth": 2,
+            "flow.navPersistent": true,
+            "cmp.tab": "iconText",
+            "cmp.tabIndicator": "filled",
+            "lay.grouping": "divider"
+          },
+          "whenToUse": "子系统 10 个以上、键鼠为主的放置 / 经营 / 大战略，玩家会在几个面板间高频来回。",
+          "cost": "左栏常驻吃掉 15–25% 宽度；手柄上纵向导航与内容焦点抢方向键，需要额外的'切换焦点区'键。",
+          "examples": [
+            "steam:1267910",
+            "steam:1874490",
+            "steam:281990",
+            "steam:1162750"
+          ]
+        },
+        {
+          "name": "图标宫格枢纽（hub & spoke）",
+          "params": {
+            "lay.container": "fullscreen",
+            "lay.nav": "hub",
+            "lay.arrangement": "grid",
+            "lay.columns": 3,
+            "lay.navDepth": 2,
+            "cmp.button": "iconText",
+            "flow.stacking": "replace",
+            "ix.dismiss": "key",
+            "ix.close": "keyGlyph"
+          },
+          "whenToUse": "入口 ≤ 9 个、彼此独立，希望第一屏就看见全部功能（手机 / 设备隐喻，如 NookPhone、Elden Ring 的图标菜单、Cyberpunk 的磁贴枢纽）。",
+          "cost": "每换一个系统都要先回枢纽，往返步数翻倍；必须再给肩键直跳或专用热键兜底。",
+          "examples": [
+            "iig:animal-crossing-new-horizons",
+            "steam:1245620",
+            "steam:1091500"
+          ]
+        },
+        {
+          "name": "场景热区 / 叙事内设备（菜单是一个地方）",
+          "params": {
+            "lay.nav": "hotspots",
+            "ast.container": "desk",
+            "ast.containerSurface": "desk",
+            "rel.diegesis": "diegetic",
+            "flow.entry": "worldInteract",
+            "mo.transition": "zoomInto",
+            "rel.harmony": "sameMedium"
+          },
+          "whenToUse": "叙事 / 模拟类、系统 ≤ 5 个且有强隐喻（书桌、电脑桌面、软木板、手抄本）。",
+          "cost": "可发现性差：热区不像按钮，要加悬停高亮与文字标签；系统一多场景就挤，后期加功能很难。",
+          "examples": [
+            "steam:658850",
+            "steam:2795000",
+            "steam:1839510",
+            "steam:1304550",
+            "steam:844590",
+            "steam:1210320"
+          ]
+        },
+        {
+          "name": "可拖动多窗口（桌面式）",
+          "params": {
+            "lay.container": "window",
+            "lay.nav": "none",
+            "flow.stacking": "stack",
+            "flow.depth": 3,
+            "lay.detail": "persistent"
+          },
+          "whenToUse": "MMO / 经典模拟，玩家需要同时开几张表对照（任务 + 背包 + 角色）。",
+          "cost": "窗口互相遮挡、需要整理；固定像素尺寸在高分辨率下变小（RCT Classic 缩放类抱怨 3 条）。",
+          "examples": [
+            "steam:683900",
+            "iig:world-of-warcraft"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "常用功能要钻 3 层以上，且不同层用不同的返回方式；建造 / 生存类把几十个配方塞进同一层滚动列表。",
+          "examples": [
+            "steam:892970",
+            "steam:1716740",
+            "steam:275850",
+            "steam:289650",
+            "steam:591460",
+            "steam:703080",
+            "steam:1366540",
+            "steam:1623730"
+          ],
+          "reviewEvidence": "R3'菜单 / 界面难用'：76 款至少 1 条、24 款 ≥ 2 条、共 113 条；最多的是 Valheim 7 条、Starfield 4 条，其后无人深空、刺客信条 大革命、Parkasaurus、Planet Zoo、Dyson Sphere Program、Palworld 各 3 条。24 款里探索 7、建造 6、生存 3、策略 3——都是子系统多的品类。"
+        },
+        {
+          "desc": "页签两行堆叠、或把页签与跳转链接混在一行，选中态只靠一种变化（只变色）。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列；NN/g 的页签研究指出多行页签会让选中指示与面板的对应关系变模糊。"
+        }
+      ],
+      "rules": [
+        "先数入口：≤ 6 个 + 手柄 → 顶部页签环；10 个以上 + 键鼠 → 左侧导航；≤ 9 个且彼此独立 → 宫格枢纽（再加肩键直跳）；≤ 5 个且有强隐喻 → 场景热区。",
+        "背包、地图、日志这三个最高频入口必须各有一键直达（热键 / 手柄 View 键），枢纽只是兜底。",
+        "任何功能离入口 ≤ 2 层（lay.navDepth ≤ 2），只有设置这类表单可到 3 层。",
+        "页签单行、在内容上方、≤ 7 个；肩键循环首尾相接，并记住上次停留的页签。",
+        "每一层都要能回答'我在哪'：标题 + 页签高亮或面包屑；返回键全局一致（Esc / B / 右键）。",
+        "选中态至少两种手段（下划线 + 加粗 / 底色 + 放大），焦点永远可见。"
+      ],
+      "genres": [
+        "开放世界 RPG",
+        "动作冒险",
+        "生存制作",
+        "建造经营",
+        "大战略 / 4X",
+        "叙事模拟"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 112: UI navigation",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-112-ui-navigation",
+          "point": "导航顺序全游戏一致；确认 / 返回 / 页签 / 翻页的按键处处相同；每个子菜单都要有固定的路回到主菜单；跨多屏的复杂内容给不止一种找法（筛选页签 + 搜索）。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 114: UI context",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-114-ui-context",
+          "point": "玩家应随时能看出自己在菜单层级的哪一层（例如 主菜单 > 设置 > 音频）；复用的组件外观与行为保持一致。"
+        },
+        {
+          "title": "Nielsen Norman Group: Tabs, Used Right",
+          "url": "https://www.nngroup.com/articles/tabs-used-right/",
+          "point": "页签只用于分组清晰的内容；数量要少，放在面板上方、单行；选中态至少两种视觉提示；需要跨页签对比时不该用页签。"
+        },
+        {
+          "title": "Nielsen Norman Group: 10 Usability Heuristics",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "point": "'用户控制与自由'要求随时有清楚的退出口；'识别而非回忆'要求把选项摆在眼前而不是让人记路径。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "menu",
+          "lay.container": "fullscreen",
+          "rel.behind": "frozen",
+          "rel.dim": 0.7,
+          "lay.nav": "tabsTop",
+          "lay.navDepth": 1,
+          "flow.navPersistent": true,
+          "cmp.tab": "iconText",
+          "cmp.tabIndicator": "underline",
+          "cnt.itemCount": 6,
+          "cnt.elements": [
+            "el.prompt"
+          ],
+          "el.prompt.form": [
+            "legend"
+          ],
+          "ix.glyphs": "xbox",
+          "ix.focus": "outline"
+        },
+        "b": {
+          "cnt.subtype": "menu",
+          "lay.container": "fullscreen",
+          "rel.behind": "frozen",
+          "rel.dim": 0.7,
+          "lay.nav": "hub",
+          "lay.arrangement": "grid",
+          "lay.columns": 3,
+          "lay.navDepth": 2,
+          "flow.navPersistent": false,
+          "cmp.button": "iconText",
+          "cnt.itemCount": 6,
+          "cnt.elements": [
+            "el.prompt"
+          ],
+          "el.prompt.form": [
+            "legend"
+          ],
+          "ix.glyphs": "xbox",
+          "ix.focus": "scale"
+        },
+        "lookAt": "同样 6 个子系统。A 页签常驻顶部，肩键横跳，'我在哪'靠下划线一眼可知；B 是 3×2 图标宫格，第一屏看全所有入口，但从背包到地图要先退回宫格再进（步数 ×2）。把入口加到 12 个再看：A 的页签行开始溢出，B 变 4×3 仍可读——这就是'入口数决定骨架'。"
+      }
+    },
+    {
+      "id": "P-pause-world-state",
+      "title": "暂停与叠层：打开菜单时世界停不停，要让背后的画面自己说出来",
+      "problem": "菜单会盖住玩法。玩家需要一眼知道'现在安全吗'；不同游戏要的张力不同——策略和 RPG 要冻结后从容思考，恐怖和魂类要'翻包也有风险'。背后画面怎么处理、叠层怎么堆，就是这个信息的载体。",
+      "approaches": [
+        {
+          "name": "冻结 + 重压暗 / 虚化（经典暂停）",
+          "params": {
+            "lay.container": "fullscreen",
+            "rel.behind": "frozen",
+            "rel.dim": 0.75,
+            "rel.sceneBlur": 8,
+            "rel.sceneTone": "desaturate",
+            "ix.dismiss": "key",
+            "ix.close": "keyGlyph",
+            "flow.stacking": "replace"
+          },
+          "whenToUse": "单机 RPG / 冒险 / 回合制的暂停、背包、技能页；希望玩家慢慢想。",
+          "cost": "完全脱离世界；频繁开关（吃药、换装）时节奏被切碎，BotW 式'暂停吃 20 个苹果'会削弱战斗张力。",
+          "examples": [
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "steam:292030",
+            "steam:1150690",
+            "steam:2679460"
+          ]
+        },
+        {
+          "name": "实时不暂停的空间内菜单（翻包即风险）",
+          "params": {
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "rel.dim": 0.1,
+            "rel.sceneBlur": 0,
+            "rel.diegesis": "spatial",
+            "ast.frameMat": "hologram",
+            "vis.opacity": 0.35,
+            "flow.entry": "hotkey",
+            "ix.dismiss": "key"
+          },
+          "whenToUse": "恐怖 / 生存 / 魂类（含联机），希望管理物品本身就是压力与沉浸的一部分。",
+          "cost": "新手会以为已经暂停而受伤；必须首次提示'世界未暂停'，并给无障碍用的'菜单时暂停 / 慢速'开关。",
+          "examples": [
+            "steam:1693980",
+            "steam:1888930",
+            "steam:1245620"
+          ]
+        },
+        {
+          "name": "实时 + 侧抽屉（经营 / 建造，世界继续跑但可单独暂停）",
+          "params": {
+            "lay.container": "drawer",
+            "rel.behind": "live",
+            "rel.dim": 0,
+            "ctx.timeModel": "pausable",
+            "cnt.elements": [
+              "el.gameSpeed"
+            ],
+            "el.gameSpeed.form": "speedBar",
+            "lay.detail": "persistent"
+          },
+          "whenToUse": "建造 / 动物园 / 城市模拟：玩家要一边看场景一边改，抽屉不能盖住被编辑的对象。",
+          "cost": "抽屉宽度有限，复杂对比放不下；倍速控件必须常驻，不然玩家开着菜单错过事件。",
+          "examples": [
+            "steam:703080",
+            "steam:972660",
+            "steam:600480",
+            "steam:526870"
+          ]
+        },
+        {
+          "name": "下层缩小后退（栈式叠层，保留'我从哪来'）",
+          "params": {
+            "lay.container": "modal",
+            "flow.stacking": "pushBack",
+            "flow.depth": 2,
+            "rel.behind": "frozen",
+            "rel.dim": 0.5,
+            "mo.transition": "zoomInto",
+            "mo.duration": 0.25
+          },
+          "whenToUse": "子菜单、确认框从暂停菜单弹出，想让玩家知道自己仍在暂停菜单里；风格化 JRPG 常用（Persona / Metaphor 的菜单叠在定格画面上）。",
+          "cost": "栈深 > 2 时后退的层已看不清，等于没用；转场动画会拖慢高频操作。",
+          "examples": [
+            "steam:1687950",
+            "steam:2679460"
+          ]
+        },
+        {
+          "name": "叙事内设备（菜单 = 角色手里 / 身上的东西）",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "ast.container": "handheldDevice",
+            "rel.behind": "live",
+            "rel.dim": 0.2,
+            "mo.enter": "boot",
+            "flow.entry": "hotkey"
+          },
+          "whenToUse": "科幻 / 写实叙事，菜单就是 iDroid、平板、对讲机。",
+          "cost": "设备屏幕小、字小；仍要保证任何时候能退回标准的可读模式。",
+          "examples": [
+            "steam:287700",
+            "steam:945360",
+            "steam:1337010"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "开关菜单的转场过长、不能被下一次输入打断，高频操作（开背包、切页签）累积成拖沓；或菜单本身掉帧。",
+          "examples": [
+            "steam:1252330",
+            "steam:19980",
+            "steam:1091500",
+            "steam:1203620",
+            "steam:1948800"
+          ],
+          "reviewEvidence": "R3'UI 卡顿 / 响应慢'：11 款至少 1 条、6 款 ≥ 2 条、共 18 条；DEATHLOOP 3 条，波斯王子、Half-Life: Alyx、赛博朋克 2077、Enshrouded、弈仙牌各 2 条。"
+        },
+        {
+          "desc": "实时菜单却看起来和暂停菜单一样（同样重压暗 + 虚化），玩家无从判断世界是否还在跑。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列此类；属设计推论——Dead Space 用'全息投影在角色身前 + 角色低头操作'的画面本身来提示世界未停。"
+        }
+      ],
+      "rules": [
+        "先定'菜单 = 安全区'还是'菜单 = 风险'，再让背后画面说出来：冻结用压暗 0.5–0.8 + 虚化 4–8px + 去饱和；实时只轻压暗 ≤ 0.2、不虚化、保留动态。",
+        "实时菜单：同一个键开关，首次打开提示世界未暂停，并提供'菜单时暂停'的无障碍开关。",
+        "高频菜单（背包、地图、快速切换）开关动效 ≤ 0.25s，可被下一次输入打断，不做整屏转场。",
+        "弹窗栈深 ≤ 2（flow.depth）；更深就改用替换（flow.stacking = replace），并保证返回键逐层退回。",
+        "弹出对话框时焦点进入框内第一个可交互控件，框外不可聚焦；关闭后焦点回到打开它的那一项。"
+      ],
+      "genres": [
+        "恐怖",
+        "生存",
+        "魂类 / 动作",
+        "建造经营（实时可暂停）",
+        "回合制 / JRPG"
+      ],
+      "sources": [
+        {
+          "title": "GDC 2013 · Dino Ignacio: Crafting Destruction: The Evolution of the Dead Space User Interface",
+          "url": "https://gdcvault.com/play/1017723/Crafting-Destruction-The-Evolution-of",
+          "point": "Dead Space 的界面从早期方案一步步走向叙事内与沉浸，背包、地图都作为角色面前的全息投影呈现，打开时游戏不停。"
+        },
+        {
+          "title": "Llanos & Jørgensen (2011) Do Players Prefer Integrated User Interfaces? DiGRA",
+          "url": "https://dl.digra.org/index.php/dl/article/view/514",
+          "point": "玩家并不天然偏好融入世界的界面；很多情况下更喜欢叠加层，因为它读得清——沉浸与清晰要按情境取舍。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 113: UI focus handling",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-113-ui-focus-handling",
+          "point": "对话框出现时焦点移到其中第一个可交互控件，打开期间焦点不能跑到框外；焦点指示永远可见。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 116: Time limits",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-116-time-limits",
+          "point": "时间限制只在不可避免时使用，并让玩家能延长或关闭；实时菜单等于给操作加了时间压力，应当配可选的缓解手段。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "bag",
+          "lay.container": "fullscreen",
+          "lay.arrangement": "grid",
+          "cmp.slot": "cell",
+          "rel.behind": "frozen",
+          "rel.dim": 0.75,
+          "rel.sceneBlur": 8,
+          "rel.sceneTone": "desaturate",
+          "vis.opacity": 0.9,
+          "ix.dismiss": "key",
+          "mo.enter": "fade",
+          "mo.duration": 0.2
+        },
+        "b": {
+          "cnt.subtype": "bag",
+          "lay.container": "overlay",
+          "lay.arrangement": "grid",
+          "cmp.slot": "cell",
+          "rel.behind": "live",
+          "rel.dim": 0.1,
+          "rel.sceneBlur": 0,
+          "rel.sceneTone": "none",
+          "rel.diegesis": "spatial",
+          "ast.frameMat": "hologram",
+          "vis.opacity": 0.35,
+          "ix.dismiss": "key",
+          "mo.enter": "boot",
+          "mo.duration": 0.2
+        },
+        "lookAt": "同一个背包。A 背后冻结、压暗、去色——画面在说'你安全了'；B 背后照常运动、只轻压暗、面板半透明——画面在说'怪还在走'。注意 B 里格子的可读性代价：半透明底 + 实时背景，需要描边或更高不透明度兜底。"
+      }
+    },
+    {
+      "id": "P-inventory-capacity-model",
+      "title": "背包容量模型：方格、列表、拼图格、负重、收藏本——先选'约束是什么'",
+      "problem": "背包的本质是'容量约束 + 检索'。约束选错，收集就变成反复整理的苦差（生存 / 恐怖类是 R3 背包抱怨的重灾区）；约束太松，背包又失去取舍意义。表现形式（格子 / 行 / 拼图 / 本子）是风格，约束本身是设计。",
+      "approaches": [
+        {
+          "name": "等大方格网格 + 堆叠",
+          "params": {
+            "cnt.subtype": "bag",
+            "lay.arrangement": "grid",
+            "lay.columns": 6,
+            "cmp.slot": "cell",
+            "st.emptySlot": "pit",
+            "lay.detail": "persistent",
+            "lay.nav": "tabsTop",
+            "st.newCue": "newTag"
+          },
+          "whenToUse": "物品图标可辨、种类中等（< 200）、有清晰分类；空格数就是剩余容量，最直观。",
+          "cost": "图标不够辨识时要逐个悬停读名字；扩容只能加格，后期一屏放不下要分页。",
+          "examples": [
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "steam:2358720",
+            "steam:1245620",
+            "steam:1136370",
+            "steam:105600",
+            "gameui:12983"
+          ]
+        },
+        {
+          "name": "文字列表 + 数值列 + 侧详情",
+          "params": {
+            "cnt.subtype": "bag",
+            "lay.arrangement": "column",
+            "cmp.slot": "rowCard",
+            "cmp.listRow": [
+              "icon",
+              "title",
+              "value",
+              "status"
+            ],
+            "lay.composition": "splitLR",
+            "lay.detail": "persistent",
+            "lay.overflow": "scrollV",
+            "lay.nav": "tabsLeft"
+          },
+          "whenToUse": "物品极多且主要靠数值区分（交易、材料、装备比价），需要按列排序。",
+          "cost": "失去空间记忆（'药在左下角'）；图标变小，扫视靠读字。",
+          "examples": [
+            "steam:489830",
+            "iig:no-mans-sky",
+            "steam:1162750"
+          ]
+        },
+        {
+          "name": "拼图格（物品占多格，摆放即取舍）",
+          "params": {
+            "cnt.subtype": "packGrid",
+            "lay.arrangement": "grid",
+            "lay.columns": 8,
+            "cmp.slot": "cell",
+            "ix.mode": "drag",
+            "st.emptySlot": "pit",
+            "lay.detail": "transient"
+          },
+          "whenToUse": "恐怖 / 生存 / 撤离类，'带什么出门'本身就是策略（RE4 公文箱式）。",
+          "cost": "旋转、拖拽操作量大，手柄更累；物品一多就成负担——RE 系列在背包抱怨里反复出现。",
+          "examples": [
+            "steam:1196590",
+            "steam:883710",
+            "steam:21690"
+          ]
+        },
+        {
+          "name": "负重 / 体积制（数值上限，不限格数）",
+          "params": {
+            "cnt.subtype": "bag",
+            "lay.arrangement": "column",
+            "cmp.slot": "rowCard",
+            "cmp.listRow": [
+              "icon",
+              "title",
+              "value"
+            ],
+            "cmp.gauge@progress": "fraction",
+            "st.alert": "redTint",
+            "lay.detail": "persistent"
+          },
+          "whenToUse": "开放世界 RPG：物品种类极多、不想做空间谜题，只想让'捡多少'有代价。",
+          "cost": "超重时要逐件比较'重量 / 价值'再丢，最容易变成管理苦差；格子 + 负重双重约束（Valheim）抱怨最集中。",
+          "examples": [
+            "steam:489830",
+            "steam:292030",
+            "steam:892970"
+          ]
+        },
+        {
+          "name": "收藏本 / 叙事内容器（无容量，背包是展示）",
+          "params": {
+            "cnt.subtype": "bag",
+            "ast.container": "notebook",
+            "cmp.slot": "bare",
+            "lay.arrangement": "scatter",
+            "rel.harmony": "sameMedium",
+            "st.emptySlot": "silhouette",
+            "vis.tilt": 4
+          },
+          "whenToUse": "轻松 / 收集向，物品少且每件都有故事；背包是成就展示而不是仓储。",
+          "cost": "不适合大量消耗品与数值比较；散放排布在手柄上焦点移动不规则。",
+          "examples": [
+            "steam:1586800",
+            "steam:2501600",
+            "steam:1307580"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "容量紧 + 没有快速整理（一键堆叠、一键存仓、排序），玩家频繁往返仓库、逐件拖拽；或冒险游戏只能一件件轮换翻物品。",
+          "examples": [
+            "steam:892970",
+            "steam:21690",
+            "steam:275850",
+            "steam:883710",
+            "steam:1544020",
+            "steam:316790",
+            "steam:318600",
+            "steam:427410"
+          ],
+          "reviewEvidence": "R3'背包 / 物品管理难用'：24 款至少 1 条、11 款 ≥ 2 条、共 55 条；Valheim 一款 17 条，是全部 9 类抱怨里单款最集中的之一，其后生化危机 5 4 条、无人深空 3、生化危机 2 3、Callisto Protocol 3，Grim Fandango、Flame in the Flood、Abiotic Factor、天际、Satisfactory、Bear and Breakfast 各 2。11 款里生存 5 + 恐怖 2。"
+        },
+        {
+          "desc": "容量只在'捡不起来'时才告诉玩家（无常显 x / y、无临近上限预警）。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列；属'系统状态可见'的通用可用性原则。"
+        }
+      ],
+      "rules": [
+        "一个游戏只用一种主约束（空间 / 数值 / 无），另一种只作提示；格子 + 负重双约束要非常谨慎。",
+        "容量常显（空格可见或 x / y），到 80% 时提前提示，而不是满了才报错。",
+        "物品 > 30 种就要排序 + 分类页签；> 100 种加搜索或'新获得'过滤。",
+        "堆叠、一键整理、一键存仓、批量出售 / 丢弃是背包的基础设施，比皮肤更影响口碑。",
+        "拼图格必须支持手柄旋转与自动摆放；实时拼图格只用在格数少、物品少的恐怖类。",
+        "空格表现（st.emptySlot）要与'锁定格'分得开：空 = 凹槽 / 虚线，锁 = 锁图标，不要都用灰。"
+      ],
+      "genres": [
+        "生存制作",
+        "恐怖",
+        "开放世界 RPG",
+        "ARPG / 刷宝",
+        "种田生活",
+        "撤离射击"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 112: UI navigation",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-112-ui-navigation",
+          "point": "跨多屏的大量内容至少要给两种查找方式，例如带筛选的页签加搜索。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 114: UI context",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-114-ui-context",
+          "point": "长列表应提供更快的输入方式（如输入即检索）；复用组件的图标、标签与受限状态的表现保持一致。"
+        },
+        {
+          "title": "Nielsen Norman Group: 10 Usability Heuristics",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "point": "系统状态应始终可见；让用户识别而非回忆——容量、已装备、新获得都应摆在眼前。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "bag",
+          "lay.container": "fullscreen",
+          "lay.nav": "tabsTop",
+          "lay.arrangement": "grid",
+          "lay.columns": 6,
+          "cmp.slot": "cell",
+          "st.emptySlot": "pit",
+          "lay.detail": "persistent",
+          "cnt.itemCount": 24,
+          "st.newCue": "newTag"
+        },
+        "b": {
+          "cnt.subtype": "bag",
+          "lay.container": "fullscreen",
+          "lay.nav": "tabsLeft",
+          "lay.composition": "splitLR",
+          "lay.arrangement": "column",
+          "cmp.slot": "rowCard",
+          "cmp.listRow": [
+            "icon",
+            "title",
+            "value",
+            "status"
+          ],
+          "lay.overflow": "scrollV",
+          "lay.detail": "persistent",
+          "cnt.itemCount": 24,
+          "st.newCue": "newTag",
+          "cmp.gauge@progress": "fraction"
+        },
+        "lookAt": "同样 24 件物品。A 的剩余容量就是'还有几个空坑'，找东西靠图标与位置记忆；B 的容量是顶部 x / y 数字，找东西靠读名字、按数值列排序。眯眼看：A 扫视更快，B 比较更准——品类决定哪个更重要。"
+      }
+    },
+    {
+      "id": "P-item-decision",
+      "title": "装备与道具决策：背包要当场回答'这件比我身上的好吗'",
+      "problem": "背包 / 装备页里真正的决策是'换不换、用不用、留不留'。信息若分散在悬停提示、另一个页签或另一个人物页，玩家只能靠记忆比较——这正是'识别而非回忆'要消除的负担；同屏状态（新、已装备、不可用、锁定）一多又容易撞车。",
+      "approaches": [
+        {
+          "name": "纸娃娃居中 + 四周槽位 + 悬停对比",
+          "params": {
+            "cnt.subtype": "loadout",
+            "cnt.focal": "character",
+            "cnt.characterMedium": "model3d",
+            "lay.focalSide": "center",
+            "lay.arrangement": "ring",
+            "cmp.slot": "cell",
+            "st.emptySlot": "silhouette",
+            "st.delta": "sideBySide",
+            "lay.detail": "transient",
+            "st.selected": "badge"
+          },
+          "whenToUse": "装备槽多、外观重要的 ARPG / 开放世界 RPG / 赛博改造。",
+          "cost": "人物占中间，物品格被挤小；悬停对比弹窗容易盖住被比的那件。",
+          "examples": [
+            "steam:292030",
+            "steam:1091500",
+            "steam:632470",
+            "steam:2344520"
+          ]
+        },
+        {
+          "name": "列表 + 常驻属性表（a → b 即时差值）",
+          "params": {
+            "lay.composition": "splitLR",
+            "lay.detail": "persistent",
+            "st.delta": "arrow",
+            "st.statViz": "table",
+            "cmp.listRow": [
+              "icon",
+              "title",
+              "value"
+            ],
+            "hier.inline": "keyword"
+          },
+          "whenToUse": "数值驱动、玩家会细算的魂类 / CRPG；属性多到一张悬停卡放不下。",
+          "cost": "文字密，小字号风险高；需要清楚区分'当前值'与'换上后'的列。",
+          "examples": [
+            "steam:1245620",
+            "steam:2358720"
+          ]
+        },
+        {
+          "name": "即时预览（换上就看见）",
+          "params": {
+            "lay.preview": true,
+            "cnt.characterMedium": "model3d",
+            "st.delta": "plus",
+            "lay.detail": "persistent",
+            "lay.focalSide": "right"
+          },
+          "whenToUse": "外观装备、卡牌升级、改装：玩家要看'效果'而不只是数字。",
+          "cost": "实时模型渲染成本；预览与已装备状态要分得开，不然玩家以为已经换上了。",
+          "examples": [
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "steam:2501600",
+            "steam:1091500"
+          ]
+        },
+        {
+          "name": "状态标记体系（新 / 已装备 / 不可用 / 锁定 / 稀有度）",
+          "params": {
+            "st.newCue": "newTag",
+            "st.selected": "check",
+            "st.locked": "lock",
+            "st.cooldown": "dimNumber",
+            "st.rarityCue": [
+              "border",
+              "strip"
+            ],
+            "col.coding": [
+              "rarity"
+            ]
+          },
+          "whenToUse": "物品量大、需要快速扫视的刷宝 / 生存 / 开放世界。",
+          "cost": "标记太多就变噪音；每种状态必须占用不同的视觉通道，否则同屏分不出。",
+          "examples": [
+            "steam:2344520",
+            "steam:812140",
+            "steam:1245620"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "比较只在悬停 tooltip 里，且 tooltip 盖住了被比较的物品或已装备栏；手柄 / 触屏没有悬停，干脆看不到对比。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列；工具的派生规则 D-input 已规定触屏没有悬停、临时详情改底部浮层。"
+        },
+        {
+          "desc": "稀有度、可用 / 不可用只靠颜色（灰 = 不可用、紫 = 稀有），且'锁定''冷却''已完成'都用灰度。",
+          "examples": [
+            "steam:2344520",
+            "steam:812140"
+          ],
+          "reviewEvidence": "R3 未单列；工具 R1 复测时就发现灰度锁、去饱和冷却、灰化完成同屏分不出（09 总览'数据与状态编码'组）。"
+        }
+      ],
+      "rules": [
+        "对比放在决策点：选中一件时，身上那件的数值和差值同时出现（a → b 或 +/−），不要求切页签。",
+        "差值同时用符号（▲▼ / + −）与颜色表达，颜色只是加强。",
+        "键鼠可用临时悬停详情；手柄与触屏一律常驻详情或底部浮层（lay.detail = persistent）。",
+        "新、已装备、不可用、锁定四态各占一个视觉通道（角标 / 描边 / 压暗 + 数字 / 锁图标），同屏不撞车。",
+        "稀有度至少两种手段：颜色 + 边框形状 / 侧色条 / 字母。",
+        "预览中的装备要有'预览中'标记，与'已装备'区分。"
+      ],
+      "genres": [
+        "ARPG / 刷宝",
+        "开放世界 RPG",
+        "魂类",
+        "CRPG",
+        "卡牌构筑（升级页）"
+      ],
+      "sources": [
+        {
+          "title": "Nielsen Norman Group: 10 Usability Heuristics",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "point": "让对象、动作、选项可见，不要求用户把上一步的信息记到下一步——对比数据应与候选物同屏。"
+        },
+        {
+          "title": "Game Accessibility Guidelines: Ensure no essential information is conveyed by a fixed colour alone",
+          "url": "https://gameaccessibilityguidelines.com/ensure-no-essential-information-is-conveyed-by-a-colour-alone/",
+          "point": "关键信息除颜色外再配文字、符号、图案或形状；做不到时允许玩家自定义相关颜色。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 113: UI focus handling",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-113-ui-focus-handling",
+          "point": "焦点指示要高可见，可叠用描边、放大 / 加粗、对比底色，形成冗余。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "loadout",
+          "lay.container": "fullscreen",
+          "cnt.focal": "character",
+          "cnt.characterMedium": "silhouette",
+          "lay.focalSide": "center",
+          "lay.arrangement": "ring",
+          "cmp.slot": "cell",
+          "lay.detail": "transient",
+          "st.delta": "newOnly",
+          "st.selected": "outline",
+          "lay.preview": false
+        },
+        "b": {
+          "cnt.subtype": "loadout",
+          "lay.container": "fullscreen",
+          "cnt.focal": "character",
+          "cnt.characterMedium": "model3d",
+          "lay.focalSide": "center",
+          "lay.arrangement": "ring",
+          "cmp.slot": "cell",
+          "lay.detail": "persistent",
+          "st.delta": "arrow",
+          "st.selected": "badge",
+          "lay.preview": true
+        },
+        "lookAt": "同一个装备页。A 只在悬停时冒出新装备的数值，身上那件要自己记；B 右侧常驻 a → b 对比、已装备有角标、人物即时换装。看'决定换不换'需要几次眼动——A 要来回比，B 一眼。"
+      }
+    },
+    {
+      "id": "P-map-conventions",
+      "title": "地图：先回答'我在哪、朝哪、下一步去哪'，画风再千变万化",
+      "problem": "地图是导航与回顾工具。画风可以是羊皮纸、全息线框、楼层示意图、手里的纸地图，甚至没有地图；但定位、朝向、标注、迷雾三态必须读得出。R3'地图难用 / 没有地图'有 19 款 ≥ 2 条，Clair Obscur 一款 13 条——去掉地图的代价是真实存在的。",
+      "approaches": [
+        {
+          "name": "手绘 / 羊皮纸世界图 + 云雾",
+          "params": {
+            "cnt.subtype": "worldmap",
+            "cnt.dataShape": "spatial",
+            "vis.mapStyle": "parchment",
+            "vis.mapUnexplored": "fog",
+            "cmp.node": "pin",
+            "lay.overflow": "pan",
+            "lay.detail": "transient"
+          },
+          "whenToUse": "奇幻 / 历史题材、探索是核心；地图本身是世界观的一部分。",
+          "cost": "纸纹与水彩降低图标对比，图标必须加描边或底牌；纸面'留白'容易与'未探索'混淆。",
+          "examples": [
+            "steam:292030",
+            "steam:367520",
+            "steam:594570",
+            "steam:233860",
+            "steam:2084000",
+            "steam:1468810"
+          ]
+        },
+        {
+          "name": "楼层示意图 / 房间格（标出'搜过没有'）",
+          "params": {
+            "cnt.subtype": "worldmap",
+            "vis.mapStyle": "schematic",
+            "vis.mapUnexplored": "outlineOnly",
+            "cmp.node": "glowDot",
+            "col.coding": [
+              "status"
+            ],
+            "st.done": "strike"
+          },
+          "whenToUse": "室内恐怖、银河城、解谜：关键是'哪里还有东西没拿'（RE2 式房间红 / 蓝）。",
+          "cost": "缺少地标感与氛围；与世界画风反差大时要用同一媒介的线条与配色拉回来。",
+          "examples": [
+            "steam:1996010",
+            "steam:883710",
+            "steam:287980"
+          ]
+        },
+        {
+          "name": "战术线框 / 全息星图（多尺度）",
+          "params": {
+            "cnt.subtype": "worldmap",
+            "vis.mapStyle": "tactical",
+            "vis.mapUnexplored": "dark",
+            "rel.semanticZoom": "iconize",
+            "cmp.node": "glowDot",
+            "vis.connector": "beam"
+          },
+          "whenToUse": "科幻 / 军事 / 大战略，要在星系—行星—地区几级尺度间缩放。",
+          "cost": "冷、信息密；拉远时必须语义缩放（标签 → 图标 → 色块），否则全是重叠的字。",
+          "examples": [
+            "steam:268500",
+            "steam:1085660",
+            "steam:281990"
+          ]
+        },
+        {
+          "name": "叙事内手持地图（不画或模糊画'你在这里'）",
+          "params": {
+            "cnt.subtype": "worldmap",
+            "rel.diegesis": "diegetic",
+            "ast.container": "handMap",
+            "vis.mapStyle": "painted",
+            "vis.mapUnexplored": "blank",
+            "rel.behind": "live",
+            "flow.entry": "hotkey"
+          },
+          "whenToUse": "步行模拟 / 叙事冒险，读地图本身就是体验（Firewatch 的纸地图与指南针）。",
+          "cost": "定位慢；必须让地标在世界里与纸上一一对应，或至少给大致位置圈。",
+          "examples": [
+            "steam:383870",
+            "steam:2668510",
+            "steam:1205520",
+            "steam:1839510"
+          ]
+        },
+        {
+          "name": "无地图 / 世界即导航（风、光、地标、指向物）",
+          "params": {
+            "rel.hudVisibility": "contextual",
+            "cnt.elements": [
+              "el.objective"
+            ],
+            "el.objective.form": [
+              "marker"
+            ],
+            "el.objective.diegesis": "diegetic",
+            "cnt.density": 0
+          },
+          "whenToUse": "体量小、地标强的世界（Journey），或以'世界内指引'替代箭头的开放世界（Ghost of Tsushima 的引导之风，仍保留可呼出的大地图）。",
+          "cost": "世界一复杂就进入'地图难用'抱怨头部；必须至少保留一种回溯 / 定位手段。",
+          "examples": [
+            "steam:2215430",
+            "steam:638230",
+            "steam:1931770",
+            "steam:1307580",
+            "steam:1903340"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "取消小地图 / 地图，却没给替代的定位与回溯手段（罗盘、地标、可呼出大地图、已探索记录）。",
+          "examples": [
+            "steam:1903340",
+            "steam:257850",
+            "steam:870780",
+            "steam:1931770",
+            "steam:698670",
+            "steam:1055540",
+            "steam:1307580",
+            "steam:2358720"
+          ],
+          "reviewEvidence": "R3'地图难用 / 没有地图'：45 款至少 1 条、19 款 ≥ 2 条、共 95 条；Clair Obscur 13 条（缺小地图）居首，Hyper Light Drifter 6、CONTROL 5、Chants of Sennaar 5、Scorn 4、Valheim 4、A Short Hike 4、TOEM 4，黑神话：悟空 2。19 款里生存 5、恐怖 4。"
+        },
+        {
+          "desc": "纸面 / 水彩底上的标记只靠颜色与小图标区分，'未探索'与'空白区域'用同一种留白。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列；10-r2-strategy 记录羊皮纸 / 手绘地图是策略类最常见画风（各 6 款），对比度问题随之而来。"
+        }
+      ],
+      "rules": [
+        "任何画风都要有：玩家位置 + 朝向、稳定的地标、可开关的图例、至少一种自定义标记。",
+        "未探索 / 已探索 / 已清空三态分开表达：云雾或轮廓 / 正常 / 划掉或压暗。",
+        "纸面底上的图标加深色描边或底牌，图标与底的对比 ≥ 3:1。",
+        "取消小地图时至少保留一种定位手段：罗盘条、世界内指引、可呼出的大地图。",
+        "大地图拉远时语义缩放（rel.semanticZoom），文字标签不重叠。",
+        "地图画风跟世界同媒介（D-paper：水彩 → painted，线稿 → chalk），但标记层保持屏幕叠加的清晰度。"
+      ],
+      "genres": [
+        "开放世界",
+        "银河城 / 平台",
+        "恐怖",
+        "生存",
+        "大战略 / 4X",
+        "步行模拟"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 109: Objective clarity",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-109-objective-clarity",
+          "point": "提供可选的路点 / 路径标记与方向提示，玩家久无进展时出现；给出收集与区域完成度的数字进度。"
+        },
+        {
+          "title": "GDC 2021 · Parker Hamilton: Exploration in Ghost of Tsushima: Letting the Island Guide You",
+          "url": "https://www.gdcvault.com/play/1027399/Exploration-in-Ghost-of-Tsushima",
+          "point": "Sucker Punch 用多种世界内手段（引导之风、烟柱、鸟、狐狸）让玩家看着世界而不是界面去发现内容。"
+        },
+        {
+          "title": "Llanos & Jørgensen (2011) Do Players Prefer Integrated User Interfaces? DiGRA",
+          "url": "https://dl.digra.org/index.php/dl/article/view/514",
+          "point": "融入世界不等于更投入；玩家常因清晰而偏好叠加式信息——叙事内地图要在清晰上让步或给叠加备选。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "worldmap",
+          "lay.container": "overlay",
+          "rel.behind": "live",
+          "rel.diegesis": "diegetic",
+          "ast.container": "handMap",
+          "vis.mapStyle": "painted",
+          "vis.mapUnexplored": "blank",
+          "cnt.dataShape": "spatial"
+        },
+        "b": {
+          "cnt.subtype": "worldmap",
+          "lay.container": "fullscreen",
+          "rel.diegesis": "screen",
+          "vis.mapStyle": "parchment",
+          "vis.mapUnexplored": "fog",
+          "cnt.dataShape": "spatial",
+          "cmp.node": "pin",
+          "lay.overflow": "pan",
+          "lay.detail": "transient"
+        },
+        "lookAt": "同一片区域。A 是角色手里的纸地图：好看、沉浸，但'我在哪'要靠认地标；B 是屏幕地图：玩家箭头、自定义针、云雾 / 已探索三态一目了然。计时找自己的位置——差出来的几秒，就是 E33 / Chants 类抱怨的来源。"
+      }
+    },
+    {
+      "id": "P-dialogue-presentation",
+      "title": "对话呈现：文字放在哪、谁在说、能不能回看",
+      "problem": "对话界面要同时交代'谁在说''说了什么''场景与表情'，文字量从一句话到小说。放错位置要么挡住演出，要么读得累；文本重的作品在 R3'字太小'抱怨里占了好几席。",
+      "approaches": [
+        {
+          "name": "底部通栏 + 立绘 / 头像 + 名牌",
+          "params": {
+            "cnt.subtype": "npc",
+            "lay.container": "tray",
+            "cmp.dialogBox": "bar",
+            "cnt.characterMedium": "bust",
+            "lay.focalSide": "left",
+            "lay.layering": "behind",
+            "cmp.plate@name": "tab",
+            "mo.textReveal": "typewriter",
+            "ix.continueCue": "blinkArrow",
+            "ix.skip": "vnControls"
+          },
+          "whenToUse": "角色驱动、有立绘资源的 RPG / 种田 / 动作叙事；每句 1–3 行。",
+          "cost": "占下 1/4–1/3 屏；长段落要翻多页，回看困难。",
+          "examples": [
+            "steam:1145360",
+            "steam:413150",
+            "steam:2142790",
+            "steam:39150",
+            "steam:1812370",
+            "steam:1136370"
+          ]
+        },
+        {
+          "name": "挂在角色身上的气泡（世界里说话）",
+          "params": {
+            "cmp.dialogBox": "bubble",
+            "el.subtitle.diegesis": "spatial",
+            "el.subtitle.attachTo": "target",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "mo.textReveal": "typewriter"
+          },
+          "whenToUse": "多人对话、边走边说、镜头较远的俯视 / 横版；漫画化风格（Persona 的锯齿气泡、Pentiment 的分角色字体）。",
+          "cost": "气泡随镜头移动、长句难排；多个气泡同时出现时阅读顺序不清。",
+          "examples": [
+            "steam:388880",
+            "steam:481510",
+            "steam:1055540",
+            "steam:977880",
+            "steam:1687950",
+            "steam:1205520"
+          ]
+        },
+        {
+          "name": "侧栏滚动长文（小说式对话流）",
+          "params": {
+            "cmp.dialogBox": "chatThread",
+            "lay.composition": "splitLR",
+            "lay.focalSide": "right",
+            "cnt.textLength": "long",
+            "lay.overflow": "scrollV",
+            "el.choices.form": "text",
+            "el.choices.arrangement": "column"
+          },
+          "whenToUse": "文本量大、需要随时回看的 CRPG / 文字冒险（Disco Elysium 的右侧整栏）。",
+          "cost": "占 1/3 宽，场景演出弱；需要可调字号与深色底保证长时间阅读。",
+          "examples": [
+            "steam:632470",
+            "steam:1477070",
+            "steam:986130",
+            "steam:358130"
+          ]
+        },
+        {
+          "name": "无框字幕 / 角落文字",
+          "params": {
+            "cmp.dialogBox": "bare",
+            "lay.container": "overlay",
+            "typ.legibility": "scrim",
+            "el.subtitle.screenAnchor": "bc",
+            "rel.behind": "live"
+          },
+          "whenToUse": "电影化、极简或文学化的作品；对话是画面的一部分而不是窗口。",
+          "cost": "背景复杂时可读性差，必须有描边 / 半透明底选项；说话人需另行标注。",
+          "examples": [
+            "steam:231200",
+            "steam:1996010",
+            "steam:383870"
+          ]
+        },
+        {
+          "name": "通讯设备 / 聊天软件式",
+          "params": {
+            "cmp.dialogBox": "chatThread",
+            "ast.container": "phone",
+            "lay.container": "drawer",
+            "cnt.companion": "avatar",
+            "mo.textReveal": "fade"
+          },
+          "whenToUse": "现代 / 科幻 / 远程通讯叙事（对讲机、终端、手机群聊）。",
+          "cost": "不适合面对面的戏；消息流过快时要能暂停与回看。",
+          "examples": [
+            "steam:1203710",
+            "steam:945360",
+            "steam:1122680",
+            "gameui:4834"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "长文本用小字号、无文字缩放，或把大段对白塞进底部通栏翻 5 页。",
+          "examples": [
+            "steam:1205520",
+            "steam:653530",
+            "steam:763890",
+            "steam:1468810",
+            "steam:1145350"
+          ],
+          "reviewEvidence": "R3'字太小 / 看不清'：38 款至少 1 条、18 款 ≥ 2 条、共 58 条；Pentiment、Return of the Obra Dinn、Wildermyth、鬼谷八荒、Hades II 各 2 条——都是读字很多的作品。"
+        },
+        {
+          "desc": "逐字显示不能一键补全、没有自动 / 快进 / 历史日志。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列；06 文档 B10（JRPG 窗口）把'逐字显示要提供立即显示全部'列为陷阱。"
+        }
+      ],
+      "rules": [
+        "说话人永远可辨：名牌、头像、气泡尾巴至少一种；多人同屏时颜色 + 名字双通道。",
+        "对话正文跟随文字缩放；每行 ≤ 40 字符（英文）/ 约 20 个汉字、一次 ≤ 2–3 行是字幕的上限，超出就换侧栏或全屏。",
+        "逐字显示：按一下补全、再按继续；提供自动、快进、历史日志（ix.skip = vnControls）。",
+        "文本框别盖住说话者的脸：立绘与文本框分左右或上下，lay.layering = behind 时检查遮挡。",
+        "无框字幕至少要有投影或半透明底板（typ.legibility ≠ none），并允许玩家调底板不透明度。"
+      ],
+      "genres": [
+        "叙事 / 视觉小说",
+        "CRPG",
+        "JRPG",
+        "种田生活",
+        "动作叙事",
+        "恐怖"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 104: Subtitles and captions",
+          "url": "https://devdocs.xbox.com/gaming/accessibility/xbox-accessibility-guidelines/104",
+          "point": "新说话人出现时标名字；用颜色区分说话人时必须同时有名字；每行 ≤ 40 字符、最多 2 行（特殊时 3 行）；提供实底并可调不透明度；字号可放大到最小值的 200%；设置要有实时预览。"
+        },
+        {
+          "title": "80.lv: Disco Elysium — Working on UI Design（Robert Kurvitz 访谈）",
+          "url": "https://80.lv/articles/disco-elysium-working-on-ui-design",
+          "point": "对话栏借鉴社交媒体信息流：文字向上滚动、排成一栏，方便快速扫读抓大意。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 116: Time limits",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-116-time-limits",
+          "point": "对白、教程这类屏幕文字的停留时长应可调（至少到默认的 10 倍）或可关闭自动消失、改为按键推进。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "npc",
+          "lay.container": "tray",
+          "cmp.dialogBox": "bar",
+          "cnt.focal": "character",
+          "cnt.characterMedium": "bust",
+          "lay.focalSide": "left",
+          "lay.layering": "behind",
+          "cmp.plate@name": "tab",
+          "cnt.textLength": "short",
+          "mo.textReveal": "typewriter",
+          "ix.continueCue": "blinkArrow",
+          "ix.skip": "vnControls",
+          "cnt.elements": [
+            "el.subtitle"
+          ]
+        },
+        "b": {
+          "cnt.subtype": "npc",
+          "lay.container": "drawer",
+          "cmp.dialogBox": "chatThread",
+          "lay.composition": "splitLR",
+          "lay.focalSide": "right",
+          "cnt.characterMedium": "avatar",
+          "cnt.textLength": "long",
+          "lay.overflow": "scrollV",
+          "mo.textReveal": "lineByLine",
+          "ix.skip": "vnControls",
+          "cnt.elements": [
+            "el.subtitle",
+            "el.choices"
+          ],
+          "el.choices.form": "text",
+          "el.choices.arrangement": "column"
+        },
+        "lookAt": "把同一段 6 句对白分别放进去。A 底部通栏 + 半身立绘，演出好但要翻 3 页、看不到上一句；B 右侧滚动栏，上文一直在、选项接在正文下面，代价是场景只剩左边 2/3。文字量越大，B 越划算。"
+      }
+    },
+    {
+      "id": "P-choice-framing",
+      "title": "对话 / 事件选项：让玩家知道自己在选什么",
+      "problem": "选项文字是玩家的'嘴'。改写过短（意图不明）、后果藏起来、限时压力太大，都会让选择失真；而选项怎么排（列表、按钮、轮盘、头顶气泡、卡牌）本身又是很强的风格信号。",
+      "approaches": [
+        {
+          "name": "编号文字列表（全句 + 检定标签）",
+          "params": {
+            "el.choices.form": "text",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "bc",
+            "typ.numbering": "arabic",
+            "ix.focus": "bar",
+            "hier.inline": "chip"
+          },
+          "whenToUse": "CRPG / 文字冒险：选项长、需要标出技能检定或阵营倾向（BG3 的编号选项 + 骰子、Disco Elysium 用技能色与方括号标检定项）。",
+          "cost": "阅读量大，动作向玩家会跳读；一屏 > 5 条时要滚动。",
+          "examples": [
+            "steam:1086940",
+            "steam:632470",
+            "steam:358130",
+            "steam:1477070"
+          ]
+        },
+        {
+          "name": "按钮 / 横幅（事件抉择，附后果提示）",
+          "params": {
+            "el.choices.form": "buttons",
+            "el.choices.arrangement": "column",
+            "lay.container": "modal",
+            "rel.dim": 0.5,
+            "cnt.textLength": "short",
+            "hier.cta": "equal",
+            "ix.confirm": "selectConfirm"
+          },
+          "whenToUse": "策略 / 经营 / Roguelite 的随机事件：选项少（2–4），每项有资源后果。",
+          "cost": "按钮化容易被当成'确定'误点；后果预告太细会变成算术题。",
+          "examples": [
+            "steam:323190",
+            "steam:763890"
+          ]
+        },
+        {
+          "name": "径向 / 环绕排布（位置 = 语气或按键）",
+          "params": {
+            "cnt.subtype": "dialogueWheel",
+            "el.choices.form": "text",
+            "el.choices.arrangement": "ring",
+            "el.choices.screenAnchor": "br",
+            "cmp.dialogBox@el.subtitle": "bare",
+            "ix.glyphs": "playstation"
+          },
+          "whenToUse": "手柄上的电影化对话：选项短、语气位置固定，玩家能凭肌肉记忆选（Heavy Rain 的选项绕在角色头边，对应手柄按键）。",
+          "cost": "只能放短语，改写容易与实际台词语气不符；超过 6 项就挤。",
+          "examples": [
+            "steam:960910"
+          ]
+        },
+        {
+          "name": "世界内气泡 + 限时（不暂停）",
+          "params": {
+            "el.choices.form": "bubbles",
+            "el.choices.diegesis": "spatial",
+            "el.choices.attachTo": "player",
+            "ctx.turnTimer": true,
+            "ix.continueCue": "countdown",
+            "rel.behind": "live"
+          },
+          "whenToUse": "实时叙事：想让打断、沉默、错过也算选择（OXENFREE 的头顶三气泡、边走边说）。",
+          "cost": "阅读慢的玩家吃亏；必须提供关闭或放慢限时的选项。",
+          "examples": [
+            "steam:388880",
+            "steam:960910"
+          ]
+        },
+        {
+          "name": "卡牌化选项（选择要花资源）",
+          "params": {
+            "el.choices.form": "banners",
+            "cmp.card": "statCard",
+            "lay.arrangement": "row",
+            "ix.mode": "select",
+            "cnt.focal": "card"
+          },
+          "whenToUse": "选择本身就是资源投入：对话检定、砍价、挑战（Exocolonist 的卡牌对决、Potionomics 的砍价牌）。",
+          "cost": "规则学习成本高；不适合纯叙事分支。",
+          "examples": [
+            "steam:1148760",
+            "steam:1874490"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "改写过短，一个词的选项与角色实际说出的话语气不符；玩家只能按位置 / 颜色选而不读内容。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列（参考库无 Mass Effect 卡）；业界讨论见来源——BioWare 因全程配音改用短改写，也因此被批评语气预期不准。"
+        },
+        {
+          "desc": "限时选项与 QTE 无法关闭或放慢，且按键映射在移植版上不对。",
+          "examples": [
+            "steam:960910"
+          ],
+          "reviewEvidence": "Heavy Rain 在 R3'手柄 / 键位'类有 3 条（PC 版选项与 QTE 操作）。"
+        }
+      ],
+      "rules": [
+        "选项写成'意图 + 方式'（[威胁] 让他交出钥匙），或直接写全句；不要只写一个词。",
+        "有门槛的选项标出属性与成功率，有后果的标图标（离开、开战、不可逆）。",
+        "一屏 ≤ 4–5 个选项；更多时分组或滚动，不要缩字号。",
+        "默认焦点放在中性 / 继续项；不可逆选项用长按或二次确认（ix.confirm = hold / double）。",
+        "限时选项给可见倒计时，并提供关闭或放慢限时的设置（XAG 116）。",
+        "已选过的选项变暗或打标，让回访 NPC 时知道哪些问过了。"
+      ],
+      "genres": [
+        "CRPG",
+        "叙事冒险",
+        "策略 / 经营事件",
+        "Roguelite 事件",
+        "互动电影"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 116: Time limits",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-116-time-limits",
+          "point": "时间限制只在必要时使用，提前用不止一种方式预警，允许延长（至少到 10 倍）或关闭。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 114: UI context",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-114-ui-context",
+          "point": "标签要说明控件的用途与操作方式；理解玩法所需的界面文字应浅白易懂，游戏内术语要有解释。"
+        },
+        {
+          "title": "GameBanshee 转载 · Drew Karpyshyn 访谈（Mass Effect 对话轮盘）",
+          "url": "https://www.gamebanshee.com/k44c8",
+          "point": "据访谈转述：主角全程配音后，若选项写出全句，玩家会先读一遍再听一遍，所以改成简短改写；这一取舍后来也被批评语气预期不准。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.screen": "screen.dialogue",
+          "lay.container": "modal",
+          "rel.behind": "frozen",
+          "rel.dim": 0.5,
+          "cnt.elements": [
+            "el.choices"
+          ],
+          "el.choices.form": "buttons",
+          "el.choices.arrangement": "column",
+          "hier.cta": "equal",
+          "cnt.textLength": "short"
+        },
+        "b": {
+          "cnt.screen": "screen.dialogue",
+          "lay.container": "overlay",
+          "rel.behind": "live",
+          "rel.dim": 0,
+          "cnt.elements": [
+            "el.choices",
+            "el.subtitle"
+          ],
+          "el.choices.form": "bubbles",
+          "el.choices.diegesis": "spatial",
+          "el.choices.attachTo": "player",
+          "ctx.turnTimer": true,
+          "ix.continueCue": "countdown",
+          "cmp.dialogBox@el.subtitle": "bubble"
+        },
+        "lookAt": "同样 3 个选项。A 冻结压暗、居中按钮——安全、可以慢慢读；B 选项是挂在角色头顶的气泡，世界在动、倒计时在走——紧张、真实，但读得慢的人会错过。看 B 时打开'关闭限时'开关，体会它该是可选项而不是缺省。"
+      }
+    },
+    {
+      "id": "P-settings-page",
+      "title": "设置页：分类清楚、每项有说明与预览、改坏了能恢复",
+      "problem": "设置是所有玩家都会进、而且常在第一次开机就进的页面。选项越来越多（TLOU Part II 有 60 多项无障碍设置），找不到、不知道效果、改坏回不去都是常见痛点；R3 的'缩放''字太小'抱怨，本质上是设置里缺了这两项。",
+      "approaches": [
+        {
+          "name": "左侧分类 + 右侧选项 + 说明 / 预览区",
+          "params": {
+            "cnt.subtype": "settings",
+            "lay.nav": "tabsLeft",
+            "lay.composition": "splitLR",
+            "cnt.dataShape": "form",
+            "cmp.listRow": [
+              "title",
+              "desc",
+              "action"
+            ],
+            "lay.detail": "persistent",
+            "lay.preview": true,
+            "cmp.optionBool": "switch",
+            "cmp.optionEnum": "arrows",
+            "cmp.optionRange": "slider"
+          },
+          "whenToUse": "选项 30 个以上的 PC / 主机游戏；画面与无障碍选项需要看效果。",
+          "cost": "手柄上左右键既改值又可能跳分类——分类切换要交给肩键。",
+          "examples": [
+            "steam:1091500",
+            "steam:431960"
+          ]
+        },
+        {
+          "name": "顶部分类页签 + 左右切换值（电视 / 手柄式）",
+          "params": {
+            "cnt.subtype": "settings",
+            "lay.nav": "tabsTop",
+            "cmp.optionBool": "arrows",
+            "cmp.optionEnum": "arrows",
+            "cmp.optionRange": "segmentedBar",
+            "ix.focus": "bar",
+            "ctx.device": "tv",
+            "ctx.input": "pad"
+          },
+          "whenToUse": "主机 / 掌机，远距离观看；每项一行、整行高亮，左右即改。",
+          "cost": "分格条精度低，音量、灵敏度这类连续值要给数字；分类 > 6 时页签溢出。",
+          "examples": [
+            "iig:the-legend-of-zelda-breath-of-the-wild"
+          ]
+        },
+        {
+          "name": "手机卡片式（大开关 + 少量项）",
+          "params": {
+            "cnt.subtype": "settings",
+            "lay.container": "modal",
+            "lay.panelSize": 0.9,
+            "cmp.optionBool": "switch",
+            "cmp.optionRange": "slider",
+            "ix.close": "xTopRight",
+            "ix.touchSize": 88,
+            "ctx.input": "touch"
+          },
+          "whenToUse": "触屏、选项 < 15 个的休闲 / 手游。",
+          "cost": "选项多时滚动很长，分组弱；关闭按钮位置在不同弹窗间容易不一致。",
+          "examples": [
+            "gameui:12838",
+            "gameui:13082",
+            "gameui:3055",
+            "gameui:13024"
+          ]
+        },
+        {
+          "name": "首启预设 + 无障碍分组（先问再玩）",
+          "params": {
+            "cnt.subtype": "difficulty",
+            "flow.entry": "sequence",
+            "cmp.optionEnum": "thumbnails",
+            "cmp.listRow": [
+              "title",
+              "desc",
+              "action"
+            ],
+            "lay.preview": true,
+            "lay.detail": "persistent",
+            "a11y.textScale": 1.25
+          },
+          "whenToUse": "选项多且相互关联的 3A / 叙事作：先给'视觉 / 听觉 / 运动'预设，再允许逐项改（TLOU Part II 的做法）。",
+          "cost": "首次流程变长；预设应用后要清楚列出改了哪些项。",
+          "examples": [
+            "steam:2531310",
+            "steam:1888930"
+          ]
+        },
+        {
+          "name": "叙事内设置（终端 / 设备里的选项）",
+          "params": {
+            "cnt.subtype": "settings",
+            "ast.container": "crt",
+            "rel.diegesis": "diegetic",
+            "typ.body.family": "mono",
+            "col.strategy": "mono"
+          },
+          "whenToUse": "风格极强的作品（iDroid、虚拟操作系统），设置也是世界的一部分。",
+          "cost": "必须保证任何时候能切回标准、可读、可缩放的设置页（无障碍底线）。",
+          "examples": [
+            "steam:287700",
+            "steam:844590"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "没有 UI 缩放 / 文字缩放，界面按固定像素画，高分辨率或大屏远看时变得很小。",
+          "examples": [
+            "steam:8870",
+            "steam:683900",
+            "steam:298110",
+            "steam:1267910"
+          ],
+          "reviewEvidence": "R3'UI 缩放 / 分辨率'：12 款至少 1 条、4 款 ≥ 2 条、共 19 条（BioShock Infinite 4、RollerCoaster Tycoon Classic 3、Far Cry 4 2、Melvor Idle 2）；'字太小'另有 18 款 ≥ 2 条。"
+        },
+        {
+          "desc": "改了设置看不到效果、需要重启却不提示、没有'恢复默认'，离开时不提醒未保存。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列；XAG 114 把'设置的可视化预览'列为实施要点。"
+        }
+      ],
+      "rules": [
+        "分类 ≤ 7：画面 / 音频 / 操作 / 界面 / 无障碍 / 语言 / 账户；无障碍单列一类，首启即可到达。",
+        "每项一句说明，能预览的就预览（字幕、色盲、UI 缩放必须预览）；需重启的项明确标出。",
+        "每类有'恢复默认'；离开时有未保存提示，焦点默认落在'保存'。",
+        "文字缩放与 UI 缩放分开给；掌机下最小字高 ≥ 9px@800p，建议 12px（Steam Deck 认证）。",
+        "手柄：肩键切分类、上下换项、左右改值；触屏：开关与滑条命中区 ≥ 44pt。",
+        "开关、多选一、数值三类控件全游戏统一（cmp.optionBool / Enum / Range 各选一种）。"
+      ],
+      "genres": [
+        "所有品类",
+        "PC / 主机移植",
+        "掌机",
+        "3A 叙事",
+        "手游（非商业化页）"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 114: UI context",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-114-ui-context",
+          "point": "对设置给出视觉化的效果模拟，最好放在真实游戏场景里；玩家应能看出自己在设置层级的哪里。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 112: UI navigation",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-112-ui-navigation",
+          "point": "无障碍设置必须从启动起就能到达：首屏引导配置、默认开启合规选项，或读取平台偏好。"
+        },
+        {
+          "title": "PlayStation Blog: The Last of Us Part II Accessibility Features Detailed",
+          "url": "https://blog.playstation.com/2020/06/09/the-last-of-us-part-ii-accessibility-features-detailed/",
+          "point": "60 多项无障碍设置彼此配合，因此提供视觉、听觉、运动三套预设一次配好，玩家之后仍可逐项调整。"
+        },
+        {
+          "title": "Steamworks: Steam Deck Compatibility Review Process",
+          "url": "https://partner.steamgames.com/doc/steamdeck/compat",
+          "point": "界面文字要在约 30cm 视距可读：1280×800 下最小字形高 9px，建议 12px；鼓励提供字号调节。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "settings",
+          "lay.container": "modal",
+          "lay.panelSize": 0.9,
+          "lay.nav": "none",
+          "cnt.dataShape": "form",
+          "cmp.optionBool": "switch",
+          "cmp.optionRange": "slider",
+          "cmp.listRow": [
+            "title",
+            "action"
+          ],
+          "lay.overflow": "scrollV",
+          "lay.preview": false,
+          "ix.close": "xTopRight"
+        },
+        "b": {
+          "cnt.subtype": "settings",
+          "lay.container": "fullscreen",
+          "lay.nav": "tabsLeft",
+          "lay.composition": "splitLR",
+          "cnt.dataShape": "form",
+          "cmp.optionBool": "switch",
+          "cmp.optionEnum": "arrows",
+          "cmp.optionRange": "slider",
+          "cmp.listRow": [
+            "title",
+            "desc",
+            "action"
+          ],
+          "lay.detail": "persistent",
+          "lay.preview": true,
+          "ix.close": "back"
+        },
+        "lookAt": "同样 20 个选项。A 一条长滚动列表、只有标题和控件，'字幕底板不透明度'是什么效果只能猜；B 左侧分类、每项一句说明、右侧实时预览。数一数找到'UI 缩放'要滚几屏 vs 点几下。"
+      }
+    },
+    {
+      "id": "P-input-rebinding",
+      "title": "改键与按键提示：可改、看得见、跟着输入设备走",
+      "problem": "键位是玩家与所有菜单的接口。不能改键、提示图标与手上设备不符、手柄上显示键盘提示，都会直接卡住流程；R3'手柄 / 键位'类 7 款 ≥ 2 条，多是主机 ↔ PC 移植作。",
+      "approaches": [
+        {
+          "name": "动作 → 键位列表（按情境分组）",
+          "params": {
+            "cnt.subtype": "rebind",
+            "cnt.dataShape": "form",
+            "cmp.bindingMap": "list",
+            "cmp.listRow": [
+              "title",
+              "action"
+            ],
+            "lay.nav": "tabsTop",
+            "ctx.input": "kbm",
+            "ix.glyphs": "keycap"
+          },
+          "whenToUse": "PC 键鼠，动作多（30+）；按移动 / 战斗 / 菜单 / 载具分组。",
+          "cost": "看不出键在键盘上的位置关系，冲突要靠文字提示。",
+          "examples": [
+            "steam:2212330",
+            "steam:1174180"
+          ]
+        },
+        {
+          "name": "手柄示意图 + 引线",
+          "params": {
+            "cnt.subtype": "rebind",
+            "lay.composition": "splitLR",
+            "cmp.bindingMap": "pad",
+            "ctx.input": "pad",
+            "ix.glyphs": "xbox"
+          },
+          "whenToUse": "主机 / 掌机，按键少（≤ 16），位置关系就是信息（'头 / 手 / 脚'对应四个面键的 AC2 式映射）。",
+          "cost": "长按、组合键、情境键难画；多套布局要逐一出图。",
+          "examples": [
+            "steam:33230"
+          ]
+        },
+        {
+          "name": "底部按键图例条（菜单内）",
+          "params": {
+            "cnt.elements": [
+              "el.prompt"
+            ],
+            "el.prompt.form": [
+              "legend"
+            ],
+            "el.prompt.screenAnchor": "bc",
+            "ix.glyphs": "xbox",
+            "ctx.input": "hybrid"
+          },
+          "whenToUse": "所有手柄可操作的菜单：确认 / 返回 / 排序 / 收藏等常驻在底边（BotW、动森、Elden Ring 的装备页底栏）。",
+          "cost": "项多时挤成一排小字；必须随输入设备切换图标。",
+          "examples": [
+            "iig:the-legend-of-zelda-breath-of-the-wild",
+            "iig:animal-crossing-new-horizons",
+            "steam:1245620",
+            "gameui:8283"
+          ]
+        },
+        {
+          "name": "情境按键（只显示此刻能做的）",
+          "params": {
+            "cnt.elements": [
+              "el.prompt"
+            ],
+            "el.prompt.form": [
+              "contextual"
+            ],
+            "el.prompt.screenAnchor": "br",
+            "el.prompt.visibility": "contextual"
+          },
+          "whenToUse": "开放世界 / 动作，操作随场景变化（攀爬、骑乘、对话）。",
+          "cost": "列表随时变化，玩家难以形成记忆；位置要固定。",
+          "examples": [
+            "steam:1174180",
+            "steam:33230",
+            "steam:242050"
+          ]
+        },
+        {
+          "name": "按钮 / 技能格上直接标键",
+          "params": {
+            "cnt.elements": [
+              "el.prompt"
+            ],
+            "el.prompt.form": [
+              "hotkeyBadge"
+            ],
+            "ix.glyphs": "brackets"
+          },
+          "whenToUse": "技能栏、MMO 热栏、跨键鼠 / 手柄 / 触屏的手游横屏（天涯明月刀在触屏键位上标字母）。",
+          "cost": "角标挤占图标面积；改键后角标必须同步。",
+          "examples": [
+            "gameui:12771",
+            "steam:1086940"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "不能改键、或提示图标与当前设备不符（手柄上显示键盘键、PC 上显示主机键），移植版尤甚。",
+          "examples": [
+            "steam:33230",
+            "steam:960910",
+            "steam:21690",
+            "steam:359870",
+            "steam:387290",
+            "steam:542050",
+            "steam:1367550"
+          ],
+          "reviewEvidence": "R3'手柄 / 键位不好'：20 款至少 1 条、7 款 ≥ 2 条、共 30 条；刺客信条 2 4 条、Heavy Rain 3，生化危机 5、FF X/X-2、Ori、Forgotton Anne、Kingdom Rush Vengeance 各 2——多为主机 → PC 或手机 → PC 的移植。"
+        }
+      ],
+      "rules": [
+        "全部动作可改键，提供几套预设 + 完全自定义；改键页按情境分组。",
+        "冲突即时标出并给'交换'选项；退出改键等待状态的方法（如 Esc）要写在屏幕上。",
+        "按键图标随最后一次输入自动切换（ctx.input = hybrid），菜单底部图例同步。",
+        "确认 / 返回 / 页签 LB-RB / 翻页 LT-RT 在所有菜单相同。",
+        "默认配置必须能玩完全部内容，不需要进设置就能用手柄（Steam Deck 认证要求）。",
+        "模拟输入（摇杆、扳机）要有数字键等价操作与灵敏度调节。"
+      ],
+      "genres": [
+        "动作",
+        "开放世界",
+        "PC / 主机移植",
+        "掌机",
+        "MMO"
+      ],
+      "sources": [
+        {
+          "title": "Game Accessibility Guidelines: Allow controls to be remapped / reconfigured",
+          "url": "https://gameaccessibilityguidelines.com/allow-controls-to-be-remapped-reconfigured",
+          "point": "改键是最有价值的无障碍功能之一；预设省事但不够，应同时给预设与完全自定义；改键并不会造成平台认证问题。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 107: Input",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-107-input",
+          "point": "可以有主输入方式，但不能强制；需要模拟输入的地方给单键数字等价操作；每个模拟输入有独立灵敏度。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 112: UI navigation",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-112-ui-navigation",
+          "point": "选择、返回、页签、翻页的提示与按键全游戏一致；若需用不同方式退出某个状态（如改键模式），界面必须说明。"
+        },
+        {
+          "title": "Steamworks: Steam Deck Compatibility Review Process",
+          "url": "https://partner.steamgames.com/doc/steamdeck/compat",
+          "point": "默认控制器配置必须能访问全部内容，玩家无需改任何设置即可用手柄游玩。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "rebind",
+          "lay.container": "fullscreen",
+          "cnt.dataShape": "form",
+          "lay.composition": "single",
+          "cmp.bindingMap": "list",
+          "cmp.listRow": [
+            "title",
+            "action"
+          ],
+          "ctx.input": "kbm",
+          "ix.glyphs": "keycap"
+        },
+        "b": {
+          "cnt.subtype": "rebind",
+          "lay.container": "fullscreen",
+          "cnt.dataShape": "form",
+          "lay.composition": "splitLR",
+          "cmp.bindingMap": "pad",
+          "cmp.listRow": [
+            "title",
+            "action"
+          ],
+          "ctx.input": "pad",
+          "ix.glyphs": "xbox",
+          "cnt.elements": [
+            "el.prompt"
+          ],
+          "el.prompt.form": [
+            "legend"
+          ]
+        },
+        "lookAt": "同一套 16 个动作。A 是键鼠列表，适合大量动作、但看不出手指要怎么摆；B 是手柄示意图 + 引线，按键位置关系一眼可见，底部图例告诉你怎么进 / 出改键。把输入切成'自动切换'，看两边图标是否跟着变。"
+      }
+    },
+    {
+      "id": "P-save-continuity",
+      "title": "存档与读档：让'中断'和'回来'都无痛",
+      "problem": "玩家随时可能被打断；存档形式（随时手动存、检查点、世界内存档点、全自动）决定节奏与张力，存档槽又要让人一眼认出'这是哪一局、玩到哪了'。存档页也是最少被设计、却最容易出事故（覆盖错档）的界面。",
+      "approaches": [
+        {
+          "name": "描述型存档槽（截图 + 时间 + 地点 + 目标）",
+          "params": {
+            "cnt.subtype": "saveSlot",
+            "cnt.dataShape": "collection",
+            "lay.arrangement": "column",
+            "cmp.slot": "rowCard",
+            "cmp.listRow": [
+              "icon",
+              "title",
+              "desc",
+              "time"
+            ],
+            "lay.detail": "persistent",
+            "ix.confirm": "double",
+            "st.statusMark": "tag"
+          },
+          "whenToUse": "长篇 RPG / CRPG，多存档、多周目（Witcher 3、BG3 的带截图存档列表）。",
+          "cost": "截图与元数据的存储与生成成本；列表长时要按时间倒序与分组。",
+          "examples": [
+            "steam:292030",
+            "steam:1086940"
+          ]
+        },
+        {
+          "name": "世界内存档点（打字机、长椅、睡觉）",
+          "params": {
+            "cnt.subtype": "saveSlot",
+            "flow.entry": "worldInteract",
+            "rel.diegesis": "diegetic",
+            "ix.confirm": "selectConfirm",
+            "mo.enter": "fade"
+          },
+          "whenToUse": "存档本身是节奏与安全区：恐怖（RE 打字机）、银河城（Hollow Knight 长椅）、种田（Stardew 睡觉即存）。",
+          "cost": "被迫中途离开会丢进度；需要'退出即挂起存档'兜底。",
+          "examples": [
+            "steam:883710",
+            "steam:367520",
+            "steam:413150"
+          ]
+        },
+        {
+          "name": "全自动存档 + 角标提示（没有存档页）",
+          "params": {
+            "cnt.elements": [
+              "el.loading"
+            ],
+            "el.loading.form": "motif",
+            "el.loading.screenAnchor": "br",
+            "el.loading.scale": 0.6,
+            "ix.dismiss": "timed"
+          },
+          "whenToUse": "Roguelite / 短局 / 线性动作：每个房间或关卡自动存（Hades、Dead Cells）。",
+          "cost": "不能回退到更早状态；存档时刻要让玩家知道，避免在存档中关机。",
+          "examples": [
+            "steam:1145360",
+            "steam:588650"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "只有检查点，退出即丢进度；或存档槽只有'存档 1 / 存档 2'+ 日期，覆盖时无确认。",
+          "examples": [],
+          "reviewEvidence": "R3 九类里没有存档类；Game Accessibility Guidelines 指出只能在检查点存档会排斥只能玩短时间或会被突然打断的玩家。"
+        }
+      ],
+      "rules": [
+        "手动存档 + 自动存档都要有；自动存档时屏幕角落给非阻断的小图标。",
+        "存档槽显示截图、地点、当前主目标、游戏时长与真实时间；覆盖存档二次确认。",
+        "保留多个可回退的存档点（经验值 ≥ 3），并标出'自动 / 手动 / 快速'。",
+        "世界内存档点的游戏提供'退出即挂起存档'。",
+        "读档页最新一档默认获得焦点，按时间倒序。"
+      ],
+      "genres": [
+        "RPG / CRPG",
+        "恐怖",
+        "银河城",
+        "种田生活",
+        "Roguelite",
+        "叙事冒险"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 109: Objective clarity",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-109-objective-clarity",
+          "point": "存档文件应带截图、时间戳、地点与进度 / 目标的简述，让玩家读档前就知道自己在哪；并提供剧情回顾。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 108: Difficulty options",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-108-difficulty-options",
+          "point": "同时提供手动存档与自动存档，让玩家重试时不会损失大量进度。"
+        },
+        {
+          "title": "Game Accessibility Guidelines: Provide a manual save feature",
+          "url": "https://gameaccessibilityguidelines.com/provide-a-manual-save-feature/",
+          "point": "只在检查点存档会排斥只能短时间游玩或可能被突然打断的玩家，应提供手动存档并配合自动存档。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "saveSlot",
+          "lay.container": "fullscreen",
+          "cnt.dataShape": "collection",
+          "lay.arrangement": "column",
+          "cnt.itemCount": 3,
+          "cmp.slot": "rowCard",
+          "cmp.listRow": [
+            "title",
+            "time"
+          ],
+          "ix.confirm": "instant"
+        },
+        "b": {
+          "cnt.subtype": "saveSlot",
+          "lay.container": "fullscreen",
+          "cnt.dataShape": "collection",
+          "lay.arrangement": "column",
+          "cnt.itemCount": 3,
+          "cmp.slot": "rowCard",
+          "cmp.listRow": [
+            "icon",
+            "title",
+            "desc",
+            "time"
+          ],
+          "lay.detail": "persistent",
+          "ix.confirm": "double",
+          "st.statusMark": "tag"
+        },
+        "lookAt": "同样 3 个存档。A 只有'存档 1 · 日期'，一点就覆盖；B 每行有截图、地点、目标一句话、'自动 / 手动'标签，右侧详情，覆盖要确认。想象隔了一个月回来——哪边能直接认出要读哪一档。"
+      }
+    },
+    {
+      "id": "P-progression-graph",
+      "title": "技能树 / 成长图：依赖关系、下一步、买不买得起，要比画风更先读出来",
+      "problem": "技能树把'网络'数据摊开。玩家要同时看到：已拥有、可购买、锁定、买不起、通往目标的路径与总代价。画风差异极大（星座、电路、经脉、镜子列表、六角思想柜），但状态编码必须统一，否则越华丽越难读。",
+      "approaches": [
+        {
+          "name": "星图 / 散点星座（浪漫、弱结构）",
+          "params": {
+            "cnt.subtype": "skill",
+            "cnt.dataShape": "network",
+            "lay.arrangement": "constellation",
+            "cmp.node": "glowDot",
+            "vis.connector": "beam",
+            "lay.overflow": "pan",
+            "st.locked": "dimmed"
+          },
+          "whenToUse": "奇幻 / 武侠 / 风格化 RPG，成长是'修行'而非'科技'（天际的星座、Wandering Sword 的经脉图）。",
+          "cost": "依赖方向不直观，路径要靠高亮；节点间距不均时手柄焦点跳转难预测。",
+          "examples": [
+            "steam:489830",
+            "steam:1876890",
+            "steam:1903340"
+          ]
+        },
+        {
+          "name": "电路 / 直角树（结构清晰，可无限扩）",
+          "params": {
+            "cnt.subtype": "skill",
+            "cnt.dataShape": "hierarchy",
+            "lay.arrangement": "tree",
+            "cmp.node": "block",
+            "vis.connector": "circuit",
+            "lay.overflow": "pan",
+            "st.locked": "lock"
+          },
+          "whenToUse": "科技 / 工厂 / 塔防 / 放置：分支多、层级深、玩家会规划很远。",
+          "cost": "冷、像工程图；节点多了要缩放与搜索。",
+          "examples": [
+            "steam:3107330",
+            "steam:3184110",
+            "steam:937310",
+            "steam:3361470",
+            "steam:2060160"
+          ]
+        },
+        {
+          "name": "中心放射环（代际 = 圈）",
+          "params": {
+            "cnt.subtype": "skill",
+            "cnt.dataShape": "network",
+            "lay.arrangement": "ring",
+            "cmp.node": "circleNumber",
+            "vis.connector": "straight"
+          },
+          "whenToUse": "科技代际清楚、分支均衡的 4X / 轻策略（Polytopia 的绿色圆形科技盘）。",
+          "cost": "外圈越来越挤，扩展性差。",
+          "examples": [
+            "steam:874390"
+          ]
+        },
+        {
+          "name": "升级列表（行 + 等级 + 价格）",
+          "params": {
+            "cnt.subtype": "skill",
+            "cnt.dataShape": "collection",
+            "lay.arrangement": "column",
+            "cmp.listRow": [
+              "icon",
+              "title",
+              "value",
+              "action"
+            ],
+            "cmp.gauge@progress": "lightUp"
+          },
+          "whenToUse": "依赖很少、主要是'加点数'的永久成长（Hades 的镜子、放置游戏的升级列表）。",
+          "cost": "没有空间感，难做'路线'取舍。",
+          "examples": [
+            "steam:1145360",
+            "steam:1197260",
+            "steam:1267910"
+          ]
+        },
+        {
+          "name": "插槽板 / 六角柜（容量制成长）",
+          "params": {
+            "cnt.subtype": "loadout",
+            "lay.arrangement": "hexGrid",
+            "cmp.slot": "cell",
+            "st.emptySlot": "dashed",
+            "lay.detail": "persistent"
+          },
+          "whenToUse": "成长是'装什么'而不是'学什么'：Disco Elysium 的思想柜、Hollow Knight 的护符槽。",
+          "cost": "容量规则要同屏讲清（剩几个槽、占几格）。",
+          "examples": [
+            "steam:632470",
+            "steam:367520"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "已拥有 / 可购买 / 锁定 / 买不起只用灰度深浅区分；选中节点不显示前置路径与总代价。",
+          "examples": [],
+          "reviewEvidence": "R3 未单列；工具 R1 复测已记录'灰度锁 + 去饱和冷却 + 灰化完成同屏分不出'，v2 为此给每个状态标了视觉通道（09 总览'数据与状态编码'）。"
+        }
+      ],
+      "rules": [
+        "四态双通道：已拥有（实心）/ 可购买（亮描边 + 价格）/ 锁定（锁或虚线 + 前置提示）/ 买不起（价格变红）；形状与颜色各编一遍。",
+        "选中节点时高亮通往它的整条前置路径，并显示总代价。",
+        "节点 > 40：可拖动大画布 + 缩放 + 语义缩放（远看只剩分支色块）+ 搜索。",
+        "撤销 / 洗点放在同屏，不藏进别的菜单。",
+        "连线样式跟媒介走：电路 → circuit，水墨 → brush，星图 → beam；节点形态用 cmp.node。"
+      ],
+      "genres": [
+        "RPG / ARPG",
+        "4X / 策略",
+        "工厂 / 塔防 / 放置",
+        "Roguelite 永久成长",
+        "武侠 / 修仙"
+      ],
+      "sources": [
+        {
+          "title": "Nielsen Norman Group: 10 Usability Heuristics",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "point": "系统状态可见（哪些可点、要多少）；用户控制与自由（随时撤销）；一致性与标准（同一状态同一表现）。"
+        },
+        {
+          "title": "Game Accessibility Guidelines: Ensure no essential information is conveyed by a fixed colour alone",
+          "url": "https://gameaccessibilityguidelines.com/ensure-no-essential-information-is-conveyed-by-a-colour-alone/",
+          "point": "节点状态除颜色外要有形状、符号或文字作第二信号。"
+        },
+        {
+          "title": "Xbox Accessibility Guideline 114: UI context",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-114-ui-context",
+          "point": "复用组件的图标、标签与'受限'状态的表现保持一致；术语要有可访问的解释。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "skill",
+          "lay.container": "fullscreen",
+          "cnt.dataShape": "network",
+          "lay.arrangement": "constellation",
+          "cmp.node": "glowDot",
+          "vis.connector": "beam",
+          "lay.overflow": "pan",
+          "st.locked": "grayscale",
+          "st.done": "grayOut",
+          "lay.detail": "transient"
+        },
+        "b": {
+          "cnt.subtype": "skill",
+          "lay.container": "fullscreen",
+          "cnt.dataShape": "network",
+          "lay.arrangement": "constellation",
+          "cmp.node": "glowDot",
+          "vis.connector": "beam",
+          "lay.overflow": "pan",
+          "st.locked": "lock",
+          "st.done": "check",
+          "st.statusMark": "icon",
+          "lay.detail": "persistent"
+        },
+        "lookAt": "同一张星图、同样的发光节点。A 的已点 / 锁定 / 可点全靠灰度深浅；B 的锁定有锁、已点有勾、右侧常驻详情列出前置与代价。开色盲模拟或眯眼看：A 的三态塌成一片灰，B 仍然分得开——画风没变，可读性变了。"
+      }
+    },
+    {
+      "id": "P-journal-codex",
+      "title": "日志、任务与图鉴：给'接下来做什么'一个随时可回看的家",
+      "problem": "'提示 / 引导不清'是 R3 最大的抱怨类（47 款 ≥ 2 条）。HUD 越少，越需要一个随时能打开的任务日志或笔记来承接'我在干什么'；图鉴则承担'收集了什么、还差什么'。它们的呈现可以从清单到手写日记、报纸、线索墙，风格空间很大。",
+      "approaches": [
+        {
+          "name": "任务清单（主线 / 支线分组 + 置顶追踪）",
+          "params": {
+            "cnt.subtype": "quest",
+            "lay.composition": "splitLR",
+            "lay.nav": "tabsTop",
+            "cmp.listRow": [
+              "icon",
+              "title",
+              "progress",
+              "status"
+            ],
+            "lay.detail": "persistent",
+            "st.done": "check",
+            "lay.pinned": "pinTop"
+          },
+          "whenToUse": "开放世界 RPG / MMO：任务多、并行推进。",
+          "cost": "容易变成待办清单的'工作感'；描述写得含糊就失去意义。",
+          "examples": [
+            "iig:world-of-warcraft",
+            "steam:292030",
+            "gameui:8283",
+            "gameui:4596"
+          ]
+        },
+        {
+          "name": "笔记本 / 手写日记（叙事内，玩家参与书写）",
+          "params": {
+            "cnt.subtype": "quest",
+            "ast.container": "notebook",
+            "rel.diegesis": "diegetic",
+            "rel.harmony": "sameMedium",
+            "typ.body.family": "kai",
+            "lay.detail": "persistent",
+            "vis.jitter": 0.4
+          },
+          "whenToUse": "解谜 / 推理 / 叙事：日志本身就是玩法（Chants of Sennaar 让玩家自己填词义，Obra Dinn 的日志书）。",
+          "cost": "手写体小字号难读；仍需记录'目标 + 地点'这两项硬信息。",
+          "examples": [
+            "steam:1931770",
+            "steam:653530",
+            "steam:837470",
+            "steam:658850",
+            "steam:110800"
+          ]
+        },
+        {
+          "name": "报纸 / 编年史（世界事件回顾）",
+          "params": {
+            "cnt.subtype": "quest",
+            "ast.container": "book",
+            "lay.composition": "splitLR",
+            "cmp.panelArt": "side",
+            "cnt.textLength": "short",
+            "typ.display.family": "serif"
+          },
+          "whenToUse": "经营 / 历史 / 叙事作，回顾的是'世界发生了什么'（Anno 1800 的报纸版式编年史、Pentiment 的手抄本页）。",
+          "cost": "不适合承载可执行的任务目标。",
+          "examples": [
+            "steam:916440",
+            "steam:1205520"
+          ]
+        },
+        {
+          "name": "线索墙 / 推理板",
+          "params": {
+            "cnt.subtype": "deduction",
+            "cnt.dataShape": "network",
+            "lay.arrangement": "scatter",
+            "vis.connector": "string",
+            "ast.container": "clueWall",
+            "ix.mode": "drag",
+            "lay.overflow": "pan"
+          },
+          "whenToUse": "侦探 / 调查：玩家要自己把线索连起来。",
+          "cost": "卡片一多就乱，需要自动整理或分组；手柄拖拽体验要专门做。",
+          "examples": [
+            "steam:986130",
+            "steam:2795000"
+          ]
+        },
+        {
+          "name": "图鉴网格（剪影 / 问号 = 未获得）",
+          "params": {
+            "cnt.subtype": "collection",
+            "lay.arrangement": "grid",
+            "cmp.slot": "cell",
+            "st.locked": "silhouette",
+            "lay.detail": "persistent",
+            "cmp.gauge@progress": "fraction"
+          },
+          "whenToUse": "收集向：让'还差什么'可见（了不起的修仙模拟器的黑剪影、Little Kitty 的问号剪影、TOEM 的集章卡）。",
+          "cost": "剪影太像会剧透；未获得项的提示要给到'去哪找'的程度。",
+          "examples": [
+            "steam:955900",
+            "steam:1177980",
+            "steam:1307580",
+            "steam:1948800"
+          ]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "零 HUD / 世界即界面，却没有可回看的目标记录，玩家停下来就不知道下一步。",
+          "examples": [
+            "steam:698670",
+            "steam:701160",
+            "steam:1182900",
+            "steam:414340",
+            "steam:424840",
+            "steam:557600"
+          ],
+          "reviewEvidence": "R3'提示 / 引导不清'：47 款 ≥ 2 条，是 9 类里最多的；Scorn 10 条、Kingdom Two Crowns 7 条居首，两者都是零 HUD 的代表；A Plague Tale: Requiem 6、Hellblade 3、Little Nightmares 3、Gorogoa 3。47 款里建造 9、生存 8。"
+        }
+      ],
+      "rules": [
+        "任务描述写成可执行动作（'去灯塔修好透镜'，而不是'调查'），当前追踪的任务置顶。",
+        "已完成任务归档到'已完成'分组，不删除。",
+        "叙事内日志也要一键可开，并至少记录'目标 + 地点'。",
+        "图鉴给总进度（x / y、%）与未获得的剪影 / 问号；提示到'在哪类地方找'。",
+        "长时间无进展时给可选提示（软提示、可关闭，ix.guideForce = soft）。",
+        "提供'前情提要'：读档或长时间离开后能回顾剧情。"
+      ],
+      "genres": [
+        "开放世界 RPG",
+        "解谜 / 侦探",
+        "恐怖 / 步行模拟",
+        "建造经营",
+        "生存",
+        "收集 / 生活"
+      ],
+      "sources": [
+        {
+          "title": "Xbox Accessibility Guideline 109: Objective clarity",
+          "url": "https://devdocs.xbox.com/build/game-principles/accessibility/xag-deep-dives/xag-109-objective-clarity",
+          "point": "玩家应随时能查看当前任务与目标，描述具体、面向动作；保留已完成任务日志，最好主线 / 支线分开；提供剧情回顾。"
+        },
+        {
+          "title": "Nielsen Norman Group: 10 Usability Heuristics",
+          "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+          "point": "识别而非回忆：不要让玩家把'接下来做什么'记在脑子里，界面要能随时给出。"
+        },
+        {
+          "title": "GDC 2021 · Parker Hamilton: Exploration in Ghost of Tsushima",
+          "url": "https://www.gdcvault.com/play/1027399/Exploration-in-Ghost-of-Tsushima",
+          "point": "即便把引导交给世界（风、烟、动物），作品仍保留可设定目标的地图与任务追踪作为后盾。"
+        }
+      ],
+      "demo": {
+        "a": {
+          "cnt.subtype": "quest",
+          "lay.container": "fullscreen",
+          "ast.container": "notebook",
+          "rel.diegesis": "diegetic",
+          "rel.harmony": "sameMedium",
+          "typ.body.family": "kai",
+          "cnt.textLength": "short",
+          "lay.detail": "persistent",
+          "st.done": "strike",
+          "vis.jitter": 0.4
+        },
+        "b": {
+          "cnt.subtype": "quest",
+          "lay.container": "fullscreen",
+          "cnt.dataShape": "collection",
+          "lay.arrangement": "column",
+          "lay.nav": "tabsTop",
+          "lay.composition": "splitLR",
+          "cmp.listRow": [
+            "icon",
+            "title",
+            "progress",
+            "status"
+          ],
+          "lay.detail": "persistent",
+          "st.done": "check",
+          "lay.pinned": "pinTop"
+        },
+        "lookAt": "同样 5 条任务。A 是手写笔记本：有温度、划掉表示完成，但'当前该做哪条'要自己找；B 是分组清单：追踪项置顶、进度条、勾选。两者可以叠加——笔记本皮肤 + 置顶追踪行，就是兼顾风格与引导的做法。"
+      }
+    }
+  ]
+}

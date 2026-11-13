@@ -1,0 +1,49 @@
+# 依赖与构建产物
+node_modules/
+dist/
+dist-single/
+*.tsbuildinfo
+__pycache__/
+*.pyc
+
+# 本地开发与视觉回归：截图、第三方参考图缓存、Godot 导出包——只在本机使用，不发布
+/qa/
+
+# 第三方截图（Steam 商店截图等）：只作本地学习参考，不再分发；用 scripts/cases/ 的脚本在本地重新抓取
+/public/cases/
+
+# 生成素材的原图与生成记录（处理好的贴图在 public/assets/tex/，随仓库发布）
+/assets/
+
+# 抓取缓存（可重新生成）
+/scripts/cases/cache/
+
+# 开发过程记录（多代理协作日志），留在本地
+/docs/m12a-progress.md
+/docs/m12b-progress.md
+/docs/m12-backlog.md
+/docs/redesign/
+/docs/tech/track-*.md
+/docs/tech/review.md
+/docs/legacy-hud/
+/docs/survey/data/m12-backlog.json
+# 素材生成的预算与批次台账（公开的说明见 docs/assets.md）
+/docs/asset-plan.md
+/docs/ui-m11-asset-list.md
+
+# 编辑器与本机配置
+/.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+
+# 从第三方 UI 资料站下载截图的脚本（站点条款禁止转载站内作品或禁止爬取，只留在本地）
+/scripts/refs/gameui-fetch.py
+/scripts/refs/gameui-sheets.py
+/scripts/refs/iig-picks.py
+# 生成文件：npm run dump:registry 按需生成
+/docs/registry.json

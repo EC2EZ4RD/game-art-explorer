@@ -1,0 +1,909 @@
+{
+ "source": "Interface In Game 游戏页，人工逐页浏览（该站禁止爬取：不存图片，只记元素计数、界面名称与我们的观察），2026-10-14；看图用的是每款手挑 2 张原图（qa/refs-cache/iig/sheet-01..09.jpg，只存本地）",
+ "games": [
+  {
+   "slug": "gris",
+   "url": "https://interfaceingame.com/games/gris/",
+   "genre": "explore",
+   "elements": {
+    "Credits": 1,
+    "In game": 7,
+    "Menu": 4,
+    "Overlay": 1,
+    "Progress": 1,
+    "Settings": 4,
+    "Tutorial": 1
+   },
+   "namedScreens": "Memento（记忆碎片）、Mirror",
+   "visual": {
+    "hud": "没有 HUD",
+    "assetScreen": "水彩渐变上的同心细线圆环，菜单项是轨道上的小圆点，字距很开的细几何无衬线标题",
+    "family": "细线几何"
+   }
+  },
+  {
+   "slug": "hades",
+   "url": "https://interfaceingame.com/games/hades/",
+   "genre": "action",
+   "elements": {
+    "Character": 1,
+    "Credits": 1,
+    "Dialogue": 2,
+    "Game over": 1,
+    "In game": 6,
+    "Inventory": 4,
+    "Level selection": 1,
+    "Loading": 1,
+    "Map": 1,
+    "Menu": 3,
+    "Overlay": 8,
+    "Quest": 1,
+    "Settings": 5,
+    "Skill tree": 3,
+    "Stats": 6,
+    "Store": 3,
+    "Tutorial": 1
+   },
+   "namedScreens": "Mirror of Night（技能树）、Well of Charon / Pool of Purging（商店）、Pact of Punishment（难度）",
+   "visual": {
+    "hud": "顶部细血条 + 名牌；左侧菱形恩赐图标竖列；左下分段血条与数字；右下货币；漫画粗描边",
+    "assetScreen": "青铜骷髅雕花框嵌紫水晶，深色内芯，小型大写衬线标题，红色列表，金边提示框",
+    "family": "重装饰雕花框"
+   }
+  },
+  {
+   "slug": "hollow-knight",
+   "url": "https://interfaceingame.com/games/hollow-knight/",
+   "genre": "platformer",
+   "elements": {
+    "Credits": 2,
+    "Dialogue": 1,
+    "Game over": 1,
+    "In game": 25,
+    "Inventory": 2,
+    "Loading": 1,
+    "Map": 1,
+    "Menu": 7,
+    "Overlay": 14,
+    "Progress": 1,
+    "Settings": 5,
+    "Store": 3,
+    "Tutorial": 2
+   },
+   "namedScreens": "Charms（护符）、Rest（长椅）、Acquired a map",
+   "visual": {
+    "hud": "左上面具形血量图标 + 灵魂容器；手绘粉笔线地图 + 衬线地名",
+    "assetScreen": "纯黑底，白色巴洛克线描花饰（角花、上下饰条），衬线字，蚀刻风圆形护符",
+    "family": "线描花饰"
+   }
+  },
+  {
+   "slug": "the-witcher-3-wild-hunt",
+   "url": "https://interfaceingame.com/games/the-witcher-3-wild-hunt/",
+   "genre": "explore",
+   "elements": {
+    "Character": 1,
+    "Credits": 2,
+    "Dialogue": 2,
+    "Game over": 2,
+    "In game": 21,
+    "Inventory": 5,
+    "Loading": 1,
+    "Map": 2,
+    "Menu": 20,
+    "Overlay": 7,
+    "Progress": 5,
+    "Quest": 2,
+    "Settings": 4,
+    "Skill tree": 1,
+    "Stats": 7,
+    "Store": 3,
+    "Tutorial": 2
+   },
+   "namedScreens": "Alchemy、Bestiary、Crafting",
+   "visual": {
+    "hud": "左上狼徽章 + 红黄条，右上圆形小地图，右侧任务文字，左下快捷物品列表",
+    "assetScreen": "暗色罩层，细灰线分格，手绘物品图标，中间 3D 纸娃娃",
+    "family": "暗色细线"
+   }
+  },
+  {
+   "slug": "world-of-warcraft",
+   "url": "https://interfaceingame.com/games/world-of-warcraft/",
+   "genre": "rpg",
+   "elements": {
+    "Character": 4,
+    "Credits": 1,
+    "Dialogue": 2,
+    "Game over": 1,
+    "In game": 32,
+    "Inventory": 9,
+    "Loading": 1,
+    "Map": 6,
+    "Menu": 14,
+    "Overlay": 16,
+    "Progress": 5,
+    "Quest": 8,
+    "Scoreboard": 1,
+    "Settings": 2,
+    "Start screen": 1,
+    "Stats": 11,
+    "Store": 2
+   },
+   "namedScreens": "Followers、Heirlooms、Flight map、Map and quest log",
+   "visual": {
+    "hud": "高密度：右侧任务追踪、左侧团队框、底部技能栏两端雕花端盖，小地图外圈金石雕环",
+    "assetScreen": "羊皮纸任务面板 + 深色木 / 金属框 + 部落徽记水印",
+    "family": "重装饰雕花框 / 羊皮纸"
+   }
+  },
+  {
+   "slug": "control",
+   "url": "https://interfaceingame.com/games/control/",
+   "genre": "horror",
+   "elements": {
+    "Character": 1,
+    "Credits": 1,
+    "Dialogue": 1,
+    "Game over": 1,
+    "In game": 11,
+    "Inventory": 9,
+    "Level selection": 1,
+    "Loading": 1,
+    "Map": 1,
+    "Menu": 17,
+    "Overlay": 11,
+    "Progress": 1,
+    "Quest": 4,
+    "Settings": 6,
+    "Skill tree": 1,
+    "Start screen": 1,
+    "Stats": 2,
+    "Tutorial": 2
+   },
+   "namedScreens": "Astral constructs、Correspondence、Options at control point",
+   "visual": {
+    "hud": "几乎没有：左上一行目标文字 + 黄色菱形，左下一条青色细血条",
+    "assetScreen": "暗色半透明发丝线网格，选中格白底，红色 / 大写小标签，瑞士式排版叠在实时场景上",
+    "family": "瑞士几何"
+   }
+  },
+  {
+   "slug": "the-legend-of-zelda-breath-of-the-wild",
+   "url": "https://interfaceingame.com/games/the-legend-of-zelda-breath-of-the-wild/",
+   "genre": "explore",
+   "elements": {
+    "Character": 3,
+    "Dialogue": 5,
+    "In game": 21,
+    "Inventory": 10,
+    "Loading": 1,
+    "Map": 4,
+    "Menu": 13,
+    "Overlay": 19,
+    "Progress": 1,
+    "Quest": 4,
+    "Settings": 3,
+    "Stats": 11,
+    "Store": 3
+   },
+   "namedScreens": "Adventure Log、Creatures collection（希卡石板）",
+   "visual": {
+    "hud": "对话：深色半透明圆角框，白色斜体，关键词红 / 蓝；选项是细描边药丸",
+    "assetScreen": "深色半透明底，图标格子，白色斜体标题，左上红心、右上卢比，右侧 3D 角色（希卡石板设定）",
+    "family": "圆润暗色 / 叙事内设备"
+   }
+  },
+  {
+   "slug": "elden-ring",
+   "url": "https://interfaceingame.com/games/elden-ring/",
+   "genre": "action",
+   "elements": {
+    "Character": 2,
+    "Dialogue": 1,
+    "In game": 11,
+    "Inventory": 3,
+    "Loading": 2,
+    "Menu": 14,
+    "Overlay": 6,
+    "Progress": 2,
+    "Settings": 3,
+    "Start screen": 1,
+    "Stats": 8,
+    "Store": 2,
+    "Tutorial": 1
+   },
+   "namedScreens": "Grace（赐福点菜单）、Smithing table、Lost grace discovered",
+   "visual": {
+    "hud": "左上三条极细血 / 蓝 / 绿条，左下装备格，底部细红 Boss 条",
+    "assetScreen": "深色渐变面板，淡金细分隔线，衬线字，物品格 + 大量属性列",
+    "family": "暗色细线"
+   }
+  },
+  {
+   "slug": "clair-obscur-expedition-33",
+   "url": "https://interfaceingame.com/games/clair-obscur-expedition-33/",
+   "genre": "rpg",
+   "elements": {
+    "Character": 3,
+    "Dialogue": 2,
+    "Game over": 1,
+    "In game": 9,
+    "Loading": 1,
+    "Menu": 10,
+    "Overlay": 2,
+    "Settings": 8,
+    "Skill tree": 1,
+    "Start screen": 4,
+    "Store": 1,
+    "Tutorial": 5
+   },
+   "namedScreens": "Celebration、Result Screen",
+   "visual": {
+    "hud": "左上衬线小型大写区域名 + 菱形目标，右侧敌人头像菱形框，左侧按键提示",
+    "assetScreen": "黑底 + 美好年代风白金细线框，斜切六角页签，衬线字，属性雷达图，角色立绘",
+    "family": "线描花饰"
+   }
+  },
+  {
+   "slug": "anno-1800",
+   "url": "https://interfaceingame.com/games/anno-1800/",
+   "genre": "builder",
+   "elements": {
+    "Character": 4,
+    "Credits": 1,
+    "Dialogue": 2,
+    "In game": 14,
+    "Level selection": 6,
+    "Loading": 1,
+    "Map": 3,
+    "Menu": 13,
+    "Overlay": 3,
+    "Progress": 5,
+    "Quest": 2,
+    "Settings": 4,
+    "Start screen": 1,
+    "Stats": 7,
+    "Tutorial": 2
+   },
+   "namedScreens": "Quest book、Chronicles、Trade routes、City attractiveness",
+   "visual": {
+    "hud": "顶部深色半透明资源栏，左侧任务卡（纸面），底部建造栏彩色图标，左下小地图",
+    "assetScreen": "大幅羊皮纸面板 + 深紫页签 + 深色缎带小标题（目标 / 奖励）+ 手绘人物肖像（维多利亚纸本）",
+    "family": "羊皮纸任务书"
+   }
+  },
+  {
+   "slug": "frostpunk",
+   "url": "https://interfaceingame.com/games/frostpunk/",
+   "genre": "builder",
+   "elements": {
+    "Character": 1,
+    "Credits": 1,
+    "Dialogue": 1,
+    "Game over": 1,
+    "In game": 23,
+    "Inventory": 3,
+    "Level selection": 6,
+    "Loading": 1,
+    "Menu": 23,
+    "Overlay": 18,
+    "Progress": 3,
+    "Quest": 5,
+    "Settings": 6,
+    "Skill tree": 8,
+    "Start screen": 1,
+    "Stats": 7,
+    "Tutorial": 3
+   },
+   "namedScreens": "Book of laws、Technology tree、Heating、You are banished",
+   "visual": {
+    "hud": "冰蓝金属框面板（蒸汽朋克），顶部圆形温度表盘，底部圆形按钮，红色不满 / 希望条",
+    "assetScreen": "烟雾墨迹手绘底 + 冰霜花饰节点 + 细连线（法典星图）",
+    "family": "重装饰雕花框（冰霜）"
+   }
+  },
+  {
+   "slug": "sid-meiers-civilization-vi",
+   "url": "https://interfaceingame.com/games/sid-meiers-civilization-vi/",
+   "genre": "strategy",
+   "elements": {
+    "Character": 5,
+    "Credits": 1,
+    "Dialogue": 3,
+    "In game": 9,
+    "Inventory": 1,
+    "Level selection": 1,
+    "Map": 2,
+    "Menu": 7,
+    "Overlay": 9,
+    "Progress": 3,
+    "Settings": 2,
+    "Skill tree": 2,
+    "Stats": 6,
+    "Tutorial": 1
+   },
+   "namedScreens": "Technology tree、Civics tree、Great people、Eureka、Make deal",
+   "visual": {
+    "hud": "顶部深蓝资源条金色细边；左侧追踪面板；地图边缘是带海怪插画的古海图",
+    "assetScreen": "深红褐皮面板 + 白色浮雕头像（伟人）+ 金色标题",
+    "family": "羊皮纸 / 古海图"
+   }
+  },
+  {
+   "slug": "cities-skylines",
+   "url": "https://interfaceingame.com/games/cities-skylines/",
+   "genre": "builder",
+   "elements": {
+    "Credits": 1,
+    "In game": 12,
+    "Level selection": 1,
+    "Loading": 1,
+    "Menu": 7,
+    "Overlay": 12,
+    "Progress": 3,
+    "Settings": 4,
+    "Stats": 7,
+    "Tutorial": 2
+   },
+   "namedScreens": "Milestones、Economy、Chirper（News）",
+   "visual": {
+    "hud": "底部深色长条；信息视图把建筑染色 + 头顶浮动图标（空间内）+ 图例面板",
+    "assetScreen": "深灰面板 + 绿色进度条 + 青色页签 + 扁平图标",
+    "family": "扁平"
+   }
+  },
+  {
+   "slug": "xcom-2",
+   "url": "https://interfaceingame.com/games/xcom-2/",
+   "genre": "strategy",
+   "elements": {
+    "Character": 10,
+    "In game": 19,
+    "Inventory": 3,
+    "Level selection": 4,
+    "Loading": 1,
+    "Map": 1,
+    "Menu": 14,
+    "Overlay": 10,
+    "Progress": 7,
+    "Quest": 9,
+    "Scoreboard": 1,
+    "Settings": 2,
+    "Skill tree": 1,
+    "Stats": 18,
+    "Store": 2,
+    "Tutorial": 5
+   },
+   "namedScreens": "Soldier stats、Build facilities、Alien activity、Begin hack",
+   "visual": {
+    "hud": "敌人身上的瞄准框与命中率（空间内），底部技能条带斜线阴影的科幻边",
+    "assetScreen": "深色半透明面板 + 青白细线 + 斜线阴影 + 军衔徽章图标",
+    "family": "科幻"
+   }
+  },
+  {
+   "slug": "bad-north",
+   "url": "https://interfaceingame.com/games/bad-north/",
+   "genre": "strategy",
+   "elements": {
+    "Credits": 1,
+    "In game": 11,
+    "Level selection": 1,
+    "Loading": 2,
+    "Map": 2,
+    "Menu": 8,
+    "Overlay": 6,
+    "Progress": 4,
+    "Settings": 2,
+    "Skill tree": 5,
+    "Start screen": 1,
+    "Tutorial": 1
+   },
+   "namedScreens": "Generating islands、Commander",
+   "visual": {
+    "hud": "顶部药丸提示 + 按键图标，左下手绘指挥官头像 + 圆形单位按钮 + 粉色缎带",
+    "assetScreen": "浅蓝手绘海图（海岸线、手写地名、岛屿图标），底部一排扁平插画头像",
+    "family": "手绘地图"
+   }
+  },
+  {
+   "slug": "mini-metro",
+   "url": "https://interfaceingame.com/games/mini-metro/",
+   "genre": "builder",
+   "elements": {
+    "Credits": 1,
+    "Game over": 2,
+    "In game": 5,
+    "Level selection": 3,
+    "Loading": 2,
+    "Menu": 7,
+    "Overlay": 2,
+    "Settings": 2,
+    "Start screen": 2,
+    "Tutorial": 1
+   },
+   "namedScreens": "Night Mode（同一界面的夜间配色）、Game Replay",
+   "visual": {
+    "hud": "（结算）超大粗无衬线字，地铁线色条",
+    "assetScreen": "色块底上的超大粗体字 + 箭头，纯排版",
+    "family": "瑞士几何"
+   }
+  },
+  {
+   "slug": "armello",
+   "url": "https://interfaceingame.com/games/armello/",
+   "genre": "card",
+   "elements": {
+    "Character": 11,
+    "Credits": 1,
+    "Dialogue": 2,
+    "In game": 30,
+    "Inventory": 8,
+    "Loading": 2,
+    "Menu": 19,
+    "Overlay": 21,
+    "Progress": 8,
+    "Quest": 7,
+    "Settings": 1,
+    "Stats": 13,
+    "Store": 4,
+    "Tutorial": 7
+   },
+   "namedScreens": "Card gallery、Clan grounds、Wyld chest unlocked、Dawn of day",
+   "visual": {
+    "hud": "事件卡：金黑雕花卡框 + 插画，黑色撕边横幅标题，下方骰子按钮",
+    "assetScreen": "绗缝纹样羊皮纸面板，卡牌金 / 蓝稀有度框，右上家族纹章挂旗",
+    "family": "重装饰卡框 / 羊皮纸"
+   }
+  },
+  {
+   "slug": "stardew-valley",
+   "url": "https://interfaceingame.com/games/stardew-valley/",
+   "genre": "life",
+   "elements": {
+    "Character": 6,
+    "Credits": 1,
+    "Dialogue": 3,
+    "In game": 30,
+    "Inventory": 6,
+    "Map": 1,
+    "Menu": 7,
+    "Overlay": 21,
+    "Progress": 2,
+    "Quest": 4,
+    "Settings": 2,
+    "Skill tree": 1,
+    "Stats": 3,
+    "Store": 2,
+    "Tutorial": 1
+   },
+   "namedScreens": "Collection、Crafts repair、Inventory full",
+   "visual": {
+    "hud": "对话：橙色木板像素框 + 米色内芯 + 像素字 + 头像框",
+    "assetScreen": "同一套像素木框浮在像素云朵天空上",
+    "family": "像素木框"
+   }
+  },
+  {
+   "slug": "animal-crossing-new-horizons",
+   "url": "https://interfaceingame.com/games/animal-crossing-new-horizons/",
+   "genre": "life",
+   "elements": {
+    "Character": 5,
+    "Credits": 1,
+    "Dialogue": 3,
+    "In game": 5,
+    "Inventory": 7,
+    "Loading": 3,
+    "Map": 1,
+    "Menu": 6,
+    "Overlay": 5,
+    "Progress": 3,
+    "Quest": 2,
+    "Settings": 1,
+    "Start screen": 1,
+    "Stats": 4,
+    "Store": 1
+   },
+   "namedScreens": "Nookphone、Passport、Recipes",
+   "visual": {
+    "hud": "对话：奶油色圆胖气泡 + 橙色药丸名牌，选项气泡",
+    "assetScreen": "圆角面板 + 淡淡的叶子图案平铺底 + 圆形页签图标 + 黄色高亮",
+    "family": "圆润图案"
+   }
+  },
+  {
+   "slug": "dont-starve",
+   "url": "https://interfaceingame.com/games/dont-starve/",
+   "genre": "survival",
+   "elements": {
+    "Character": 1,
+    "Credits": 2,
+    "Dialogue": 1,
+    "Game over": 1,
+    "In game": 7,
+    "Inventory": 2,
+    "Level selection": 3,
+    "Loading": 2,
+    "Map": 1,
+    "Menu": 9,
+    "Overlay": 5,
+    "Progress": 1,
+    "Settings": 2,
+    "Stats": 4
+   },
+   "namedScreens": "Generating world、Fridge、Structures",
+   "visual": {
+    "hud": "潦草手绘格子与表盘（日夜钟），物品栏边框抖动",
+    "assetScreen": "红色木纹底 + 手绘缎带名牌 + 椭圆头像框 + 撕边黑面板",
+    "family": "手绘抖动"
+   }
+  },
+  {
+   "slug": "no-mans-sky",
+   "url": "https://interfaceingame.com/games/no-mans-sky/",
+   "genre": "survival",
+   "elements": {
+    "Credits": 1,
+    "Dialogue": 3,
+    "In game": 22,
+    "Inventory": 10,
+    "Loading": 2,
+    "Map": 2,
+    "Menu": 20,
+    "Overlay": 4,
+    "Quest": 2,
+    "Settings": 2,
+    "Start screen": 1,
+    "Stats": 1,
+    "Store": 1
+   },
+   "namedScreens": "Binocular、Discoveries、Celebration",
+   "visual": {
+    "hud": "复古科幻细条 + 分段格，顶部罗盘弧，倾斜蓝色提示框",
+    "assetScreen": "半透明深色列表 + 橙红顶条 + 彩色方块元素图标 + 蓝色选中提示",
+    "family": "复古科幻 / 倾斜"
+   }
+  },
+  {
+   "slug": "monument-valley",
+   "url": "https://interfaceingame.com/games/monument-valley/",
+   "genre": "puzzle",
+   "elements": {
+    "Credits": 1,
+    "Dialogue": 2,
+    "In game": 8,
+    "Level selection": 4,
+    "Loading": 3,
+    "Menu": 8,
+    "Overlay": 8,
+    "Progress": 2,
+    "Settings": 1,
+    "Start screen": 3,
+    "Tutorial": 1
+   },
+   "namedScreens": "Camera Taking Photo、Level Unlock",
+   "visual": {
+    "hud": "几乎没有：左上一个细线圆圈图标",
+    "assetScreen": "直接叠在场景上的细线圆形图标 + 字距很开的大写字，没有面板",
+    "family": "细线几何"
+   }
+  },
+  {
+   "slug": "florence",
+   "url": "https://interfaceingame.com/games/florence/",
+   "genre": "narrative",
+   "elements": {
+    "Credits": 1,
+    "Dialogue": 3,
+    "In game": 24,
+    "Inventory": 1,
+    "Level selection": 1,
+    "Loading": 2,
+    "Map": 3,
+    "Menu": 4,
+    "Overlay": 1,
+    "Progress": 5,
+    "Settings": 1,
+    "Start screen": 2
+   },
+   "namedScreens": "Map with Polaroids、Adjusting Focus Bar、Dialogue Progression（对话做成拼图）",
+   "visual": {
+    "hud": "整屏插画，界面就是物件（电子表格小游戏、进度条）",
+    "assetScreen": "厨房货架就是背包（叙事内物件）",
+    "family": "插画物件"
+   }
+  },
+  {
+   "slug": "detroit-become-human",
+   "url": "https://interfaceingame.com/games/detroit-become-human/",
+   "genre": "narrative",
+   "elements": {
+    "Character": 2,
+    "Credits": 2,
+    "In game": 14,
+    "Inventory": 1,
+    "Level selection": 3,
+    "Loading": 2,
+    "Menu": 13,
+    "Overlay": 4,
+    "Progress": 2,
+    "Quest": 1,
+    "Settings": 5,
+    "Start screen": 1,
+    "Stats": 2,
+    "Tutorial": 1
+   },
+   "namedScreens": "Clue、Becoming a deviant、Chapters（流程图）",
+   "visual": {
+    "hud": "全息 AR：蓝色线框网格贴在场景里，带透视的倾斜文字面板（空间内）",
+    "assetScreen": "目标是悬浮在场景里的 3D 白色标签",
+    "family": "全息空间"
+   }
+  },
+  {
+   "slug": "slay-the-spire",
+   "url": "https://interfaceingame.com/games/slay-the-spire/",
+   "genre": "card",
+   "elements": {
+    "Character": 3,
+    "Credits": 1,
+    "Dialogue": 4,
+    "Game over": 1,
+    "In game": 12,
+    "Inventory": 1,
+    "Map": 2,
+    "Menu": 6,
+    "Overlay": 14,
+    "Progress": 5,
+    "Settings": 3,
+    "Stats": 8,
+    "Store": 1,
+    "Tutorial": 2
+   },
+   "namedScreens": "Choose a card、Rewards、The city（地图）",
+   "visual": {
+    "hud": "顶部深色信息条；彩绘能量球；彩绘卡牌框；红色箭头指向目标；石质\"结束回合\"按钮",
+    "assetScreen": "大幅彩绘立绘 + 衬线标题 + 缎带形状的返回 / 出发按钮",
+    "family": "重装饰卡框"
+   }
+  },
+  {
+   "slug": "hearthstone-heroes-of-warcraft",
+   "url": "https://interfaceingame.com/games/hearthstone-heroes-of-warcraft/",
+   "genre": "card",
+   "elements": {
+    "Character": 5,
+    "Dialogue": 5,
+    "In game": 21,
+    "Inventory": 7,
+    "Level selection": 6,
+    "Loading": 2,
+    "Map": 1,
+    "Menu": 23,
+    "Overlay": 27,
+    "Progress": 10,
+    "Quest": 5,
+    "Settings": 1,
+    "Stats": 9,
+    "Store": 5
+   },
+   "namedScreens": "Open packs、Create card、Season chest reward、New rank",
+   "visual": {
+    "hud": "获得金币：发光金袋 + 蓝色缎带横幅 + 光爆；整个牌桌是一只立体木箱",
+    "assetScreen": "翻开的收藏册（羊皮纸页）+ 木架 + 金框卡牌 + 木牌式牌组列表",
+    "family": "重装饰 / 叙事内容器"
+   }
+  },
+  {
+   "slug": "need-for-speed-heat",
+   "url": "https://interfaceingame.com/games/need-for-speed-heat/",
+   "genre": "racing",
+   "elements": {
+    "Character": 1,
+    "In game": 15,
+    "Level selection": 1,
+    "Loading": 2,
+    "Lobby": 1,
+    "Map": 1,
+    "Menu": 3,
+    "Overlay": 2,
+    "Progress": 5,
+    "Quest": 1,
+    "Settings": 2,
+    "Start screen": 1,
+    "Stats": 1,
+    "Store": 2,
+    "Tutorial": 1
+   },
+   "namedScreens": "Garage Showcase、Cops Busted Sequence、Front End Lobby",
+   "visual": {
+    "hud": "圆形小地图 + 右下弧形速度表蓝光，右上倾斜紫色目标面板",
+    "assetScreen": "车库：干净的白色页签 + 细属性条，叠在霓虹场景上",
+    "family": "扁平 / 倾斜"
+   }
+  },
+  {
+   "slug": "destiny-2",
+   "url": "https://interfaceingame.com/games/destiny-2/",
+   "genre": "shooter",
+   "elements": {
+    "Character": 7,
+    "Game over": 1,
+    "In game": 19,
+    "Inventory": 6,
+    "Loading": 2,
+    "Map": 3,
+    "Menu": 13,
+    "Overlay": 5,
+    "Progress": 7,
+    "Quest": 11,
+    "Settings": 4,
+    "Skill tree": 1,
+    "Start screen": 1,
+    "Stats": 6,
+    "Tutorial": 1
+   },
+   "namedScreens": "Tracked pursuits、Destinations、Faction reward",
+   "visual": {
+    "hud": "\"NEW MISSION\" 横幅 + 红色盾徽 + 超宽字距无衬线，左下弹药数",
+    "assetScreen": "星空背景 + 细线圆环节点 + 神圣几何徽记 + 超宽字距大写",
+    "family": "细线几何（科幻）"
+   }
+  },
+  {
+   "slug": "overwatch",
+   "url": "https://interfaceingame.com/games/overwatch/",
+   "genre": "shooter",
+   "elements": {
+    "Character": 9,
+    "Game over": 2,
+    "In game": 20,
+    "Inventory": 5,
+    "Level selection": 3,
+    "Loading": 4,
+    "Lobby": 1,
+    "Menu": 21,
+    "Overlay": 9,
+    "Progress": 15,
+    "Scoreboard": 2,
+    "Settings": 3,
+    "Stats": 16,
+    "Store": 5
+   },
+   "namedScreens": "Open loot boxes、Match top player、Assemble your team",
+   "visual": {
+    "hud": "倾斜平行四边形面板，左下六边形头像框 + 分段血格，中下大招百分比圆，右上击杀信息",
+    "assetScreen": "浅色玻璃感方块 + 蓝色顶带 + 大号数字",
+    "family": "倾斜动感"
+   }
+  },
+  {
+   "slug": "cyberpunk-2077",
+   "url": "https://interfaceingame.com/games/cyberpunk-2077/",
+   "genre": "explore",
+   "elements": {
+    "Character": 10,
+    "Credits": 3,
+    "Dialogue": 13,
+    "In game": 23,
+    "Inventory": 14,
+    "Level selection": 3,
+    "Loading": 3,
+    "Map": 5,
+    "Menu": 31,
+    "Overlay": 15,
+    "Progress": 2,
+    "Quest": 2,
+    "Settings": 14,
+    "Skill tree": 2,
+    "Start screen": 1,
+    "Stats": 16,
+    "Tutorial": 15
+   },
+   "namedScreens": "Breach protocol、Braindance editor、Cyberware、Circle menu",
+   "visual": {
+    "hud": "红 / 青故障风全息面板悬浮在场景里，细描边 + 色差",
+    "assetScreen": "黑底红线 + 中间人体全息 + 角括号格子 + 青色高亮",
+    "family": "全息空间 / 故障"
+   }
+  },
+  {
+   "slug": "red-dead-redemption-2",
+   "url": "https://interfaceingame.com/games/red-dead-redemption-2/",
+   "genre": "explore",
+   "elements": {
+    "Character": 2,
+    "Credits": 1,
+    "Game over": 2,
+    "In game": 71,
+    "Inventory": 8,
+    "Loading": 1,
+    "Map": 10,
+    "Menu": 44,
+    "Overlay": 25,
+    "Quest": 7,
+    "Settings": 11,
+    "Start screen": 1,
+    "Stats": 4,
+    "Store": 11,
+    "Tutorial": 3
+   },
+   "namedScreens": "Ability Wheel、Barber、Animal Info、Store（商品目录）",
+   "visual": {
+    "hud": "黑色墨刷矩形（笔触边）+ 西部字体，左下羊皮色圆形小地图",
+    "assetScreen": "手里拿着的纸质地图（叙事内）+ 复古制图图例",
+    "family": "墨笔 / 叙事内纸"
+   }
+  },
+  {
+   "slug": "metal-gear-solid-v-the-phantom-pain",
+   "url": "https://interfaceingame.com/games/metal-gear-solid-v-the-phantom-pain/",
+   "genre": "explore",
+   "elements": {
+    "Character": 4,
+    "Credits": 2,
+    "Game over": 1,
+    "In game": 14,
+    "Inventory": 3,
+    "Loading": 1,
+    "Map": 1,
+    "Menu": 28,
+    "Overlay": 9,
+    "Quest": 1,
+    "Settings": 5,
+    "Start screen": 2,
+    "Stats": 2,
+    "Tutorial": 4
+   },
+   "namedScreens": "Development、Database、Weapons Wheel、Music Player（iDroid）",
+   "visual": {
+    "hud": "iDroid：蓝色半透明全息设备界面叠在世界上（卡带播放器）",
+    "assetScreen": "结算：黑白单色表格 + 巨大评级字母 + 黑白照片底",
+    "family": "全息设备 / 极简表格"
+   }
+  },
+  {
+   "slug": "black-myth-wukong",
+   "url": "https://interfaceingame.com/games/black-myth-wukong/",
+   "genre": "action",
+   "elements": {
+    "In game": 7,
+    "Inventory": 4,
+    "Loading": 1,
+    "Map": 2,
+    "Menu": 28,
+    "Settings": 9,
+    "Start screen": 3,
+    "Tutorial": 2
+   },
+   "namedScreens": "Soak（泡酒）、Spirits（精魄）、Codex（影神图）",
+   "visual": {
+    "hud": "墨刷笔触端头的 Boss 血条 + 书法名字，右下葫芦图标带水墨飞溅，六角技能图标",
+    "assetScreen": "暗褐底 + 淡淡的书法与古画水印 + 细分隔线 + 衬线字 + 稀有度色条 + 3D 物品",
+    "family": "墨笔（国风）"
+   }
+  },
+  {
+   "slug": "hi-fi-rush",
+   "url": "https://interfaceingame.com/games/hi-fi-rush/",
+   "genre": "action",
+   "elements": {
+    "Dialogue": 3,
+    "In game": 4,
+    "Menu": 10,
+    "Overlay": 3,
+    "Settings": 4,
+    "Store": 4,
+    "Tutorial": 3
+   },
+   "namedScreens": "Skill Store、Home Base",
+   "visual": {
+    "hud": "漫画：锯齿黑绿血条，大号拟声字\"BOOM\"，斜体分数，节奏评级徽章",
+    "assetScreen": "倾斜漫画分格（粗黑边 + 网点 / 斜线）+ 手写体 STORE + 锯齿对话框",
+    "family": "漫画 / 倾斜"
+   }
+  }
+ ]
+}

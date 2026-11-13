@@ -1,0 +1,774 @@
+{
+  "principles": [
+    {
+      "id": "P-two-questions-per-element",
+      "title": "两个问题、逐个元素定位置：角色看不看得见 × 它在不在三维空间里",
+      "problem": "设计者常把「叙事内 / 零 HUD」当成整款游戏的一个风格开关：要么为了沉浸把需要瞬间判断的数值藏进世界，要么为了清晰把所有东西都贴在屏幕四角。Fagerholt & Lorentzon 的四象限本来是给每一条信息各自选位置的工具——同一款游戏里，生命、弹药、敌人、目标往往该落在不同象限。",
+      "approaches": [
+        {
+          "name": "全部屏幕叠加（基线）",
+          "params": { "cnt.screen": "screen.hud", "lay.container": "overlay", "rel.diegesis": "screen", "lay.hudOrg": "scattered", "cnt.elements": ["el.vitals", "el.abilities", "el.crosshair", "el.minimap", "el.threat"], "el.abilities.form": "ammo", "el.threat.form": ["edgeDir"] },
+          "whenToUse": "竞技、信息量大、需要随时精确读数；或世界观给不出任何叙事理由（抽象、街机）。",
+          "cost": "与画面分离、占四角与视野；沉浸感只能靠皮肤与情境显隐来补。",
+          "examples": ["steam:220", "steam:70", "steam:440", "iig:overwatch", "steam:7940"]
+        },
+        {
+          "name": "位置型信息挂进世界（空间内），自身状态留在屏幕",
+          "params": { "rel.diegesis": "screen", "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.form": ["healthBar"], "el.threat.worldRender": "billboard", "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi" },
+          "whenToUse": "「在哪里」本身就是信息的元素：敌人血条 / 意图、可交互物、角色想法、机器状态。",
+          "cost": "多目标同屏会堆叠；远近要定尺寸策略（见 P-spatial-render-budget）；镜头外的目标要另补边缘箭头。",
+          "examples": ["steam:1593500", "steam:814380", "steam:3314060", "steam:427520", "iig:slay-the-spire"]
+        },
+        {
+          "name": "与动作绑定的读数放到手持物上（叙事内），其余屏幕",
+          "params": { "el.abilities.form": "ammo", "el.abilities.diegesis": "diegetic", "el.abilities.attachTo": "held", "el.vitals.diegesis": "screen", "el.vitals.screenAnchor": "bl" },
+          "whenToUse": "看读数的时刻就是看手上东西的时刻：换弹看枪、用工具看工具屏。",
+          "cost": "视模被遮挡、切换武器、第三人称背身时读不到；每件手持物都要单独做一块屏。",
+          "examples": ["steam:1693980", "steam:546560", "steam:264710", "steam:698670"]
+        },
+        {
+          "name": "全部交给世界（叙事内 / 世界即界面）",
+          "params": { "rel.diegesis": "diegetic", "rel.hudVisibility": "hidden", "cnt.density": 0, "rel.harmony": "sameMedium" },
+          "whenToUse": "进程 / 叙事向，信息少且允许模糊，世界里有天然载体（钱袋、旗帜、围巾、纸地图）。",
+          "cost": "引导与地图类抱怨显著增多（见 P-guidance-ladder）；道具、动画、镜头都要为信息服务，制作成本最高。",
+          "examples": ["steam:383870", "steam:701160", "steam:638230", "steam:1092790", "steam:1135690"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "整套一刀切：生命这种要瞬间判断的量只用血迹 / 红屏等整屏效果表达，没有任何可读的量。",
+          "examples": [],
+          "reviewEvidence": "评测关键词没有按元素拆分，无法直接计数；对照实验（Peacocke 等 2018）里血迹式生命指示拖累了玩家的脱险表现，屏幕数字最好。"
+        },
+        {
+          "desc": "混搭却不讲同一个设备故事：地图做成手持实物，生命 / 弹药却是常规 HUD，两套逻辑并存、谁也不像。",
+          "examples": [],
+          "reviewEvidence": "参考库里无可计数的出处；业内讨论常拿 Far Cry 2（不在参考库）当例子，此条仅作提醒。"
+        }
+      ],
+      "rules": [
+        "先列信息清单，每条只问两句：角色看得见吗？它在世界里有位置吗？两个答案直接给出象限（屏幕叠加 / 空间内 / 叙事内 / 元 UI）。",
+        "「在哪里」本身就是信息的（敌人、交互物、目标、范围）优先空间内；「我自己怎样」的精确数值优先屏幕叠加；与手上动作绑在一起的读数（弹药、工具电量）可放手持物上做叙事内。",
+        "对照实验结论：弹药放在武器上最好，生命用屏幕数字最好，导航用空间路径线最好、罗盘最差——没有一个象限通吃。",
+        "全局 rel.diegesis 只是默认值，真正的决定写在 el.<元素>.diegesis 与 el.<元素>.attachTo 上。",
+        "参考库 452 张卡里标了叙事内 37、空间内 12、元 UI 1、整屏效果 7——叙事内多集中在恐怖、步行模拟、叙事解谜；竞技与策略几乎全是屏幕叠加 + 空间内。"
+      ],
+      "genres": ["射击", "动作冒险", "恐怖", "生存", "MOBA / RTS", "VR"],
+      "sources": [
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD: User Interfaces for Increased Player Immersion in FPS Games, Chalmers / EA DICE", "url": "https://odr.chalmers.se/handle/20.500.12380/111921", "point": "按「是否属于故事」「是否在游戏空间里」两个轴把界面元素分成非叙事、空间（几何）、叙事内、元四类；强调「虚构」和「空间」是两件事，叙事内不自动等于更沉浸。" },
+        { "title": "Peacocke, Teather, Carette, MacKenzie, McArthur (2018) An empirical comparison of first-person shooter information displays: HUDs, diegetic displays, and spatial representations. Entertainment Computing 26", "url": "https://www.yorku.ca/mack/ec2018.html", "point": "四组实验：弹药在武器上的数字最好；生命用 HUD 数字最好，血迹式指示拖后腿；导航用空间路径线最好、罗盘最差；结论是没有一类显示方式通吃，取决于信息类型、形式与位置。" },
+        { "title": "Game UI Discoveries: What Players Want（Game Developer / Gamasutra, 2010）", "url": "https://www.gamedeveloper.com/design/game-ui-discoveries-what-players-want", "point": "把四象限术语普及到业界，以 Dead Space、Far Cry 2 为例讨论把界面放进游戏世界。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "rel.diegesis": "screen", "cnt.elements": ["el.vitals", "el.abilities", "el.crosshair", "el.threat", "el.objective"], "el.vitals.screenAnchor": "bl", "el.abilities.form": "ammo", "el.abilities.screenAnchor": "br", "el.crosshair.form": ["dot"], "el.threat.form": ["healthBar"], "el.threat.screenAnchor": "tc", "el.objective.form": ["text"], "el.objective.screenAnchor": "tr" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "rel.diegesis": "screen", "cnt.elements": ["el.vitals", "el.abilities", "el.crosshair", "el.threat", "el.objective"], "el.vitals.screenAnchor": "bl", "el.abilities.form": "ammo", "el.abilities.diegesis": "diegetic", "el.abilities.attachTo": "held", "el.crosshair.form": ["dot"], "el.threat.form": ["healthBar"], "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "billboard", "el.objective.form": ["marker"], "el.objective.diegesis": "spatial", "el.objective.attachTo": "poi" },
+        "lookAt": "A 的四个信息块分在四角；B 只有生命留在左下，弹药跟着枪、敌人血条跟着敌人、目标标记钉在兴趣点上——视线不用在准星和角落之间来回跳。同一套皮肤，只改了每个元素的象限。"
+      }
+    },
+    {
+      "id": "P-know-your-game-competition",
+      "title": "先看游戏的「竞争度」：越靠技能比拼越需要屏幕 / 空间的无歧义信息，越靠叙事推进越可以交给世界",
+      "problem": "同样说「要沉浸」，竞技射击和步行模拟需要的信息精度完全不同。把叙事游戏的零 HUD 套到技能型玩法上，玩家无法做决策；把竞技式的满屏标记搬进叙事游戏，世界被挡掉。单人游戏也可以有竞争（计时、评分、挑战）。",
+      "approaches": [
+        {
+          "name": "进程 / 叙事向：叙事内 + 信号物，允许模糊",
+          "params": { "cnt.screen": "screen.hud", "rel.diegesis": "diegetic", "rel.hudVisibility": "hidden", "cnt.density": 0, "cnt.tone": "narrative" },
+          "whenToUse": "步行模拟、叙事冒险、氛围解谜：玩家的决策少，体验在「身处其中」。",
+          "cost": "迷路、卡关；新手更容易放弃（见 P-guidance-ladder）。",
+          "examples": ["steam:383870", "steam:638230", "steam:683320", "steam:1491670", "steam:1634150"]
+        },
+        {
+          "name": "混合：叙事内为主，屏幕层情境显现",
+          "params": { "rel.diegesis": "diegetic", "rel.hudVisibility": "contextual", "cnt.density": 1, "el.vitals.diegesis": "diegetic", "el.vitals.attachTo": "player" },
+          "whenToUse": "恐怖、动作冒险：有战斗决策，但张力来自世界。",
+          "cost": "两套表现要讲同一个故事；情境判定写得不好会出现「需要时才出现、出现时已晚」。",
+          "examples": ["steam:2215430", "steam:1693980", "steam:1196590", "steam:1888930"]
+        },
+        {
+          "name": "技能 / 竞技向：屏幕叠加 + 空间内，信息无歧义",
+          "params": { "rel.diegesis": "screen", "rel.hudVisibility": "always", "cnt.density": 3, "ctx.players": "team", "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.form": ["healthBar"] },
+          "whenToUse": "多人竞技、战术、ARPG、工厂：玩家要比较、预判、精确计算。",
+          "cost": "画面被信息层覆盖；美术风格只能靠皮肤与配色贴近世界。",
+          "examples": ["iig:overwatch", "steam:440", "steam:590380", "steam:2344520", "steam:427520"]
+        },
+        {
+          "name": "按模式切换：同一款游戏的故事模式少 HUD，计时 / 挑战模式加计时与路线",
+          "params": { "rel.hudVisibility": "contextual", "cnt.elements": ["el.timer", "el.objective"], "el.timer.form": "number", "el.timer.screenAnchor": "tr", "el.objective.form": ["marker"], "el.objective.diegesis": "spatial", "el.objective.attachTo": "poi" },
+          "whenToUse": "有剧情模式也有竞速 / 挑战模式的作品。",
+          "cost": "要维护两套 HUD 配方与切换逻辑。",
+          "examples": ["steam:17410", "steam:1850570", "steam:550320"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "有生存 / 战斗决策的玩法套零 HUD：状态和下一步只能靠试错。",
+          "examples": ["steam:698670", "steam:701160", "steam:361420"],
+          "reviewEvidence": "Scorn 有 10 条评测说提示 / 引导不清、4 条说地图难用（引导类全库第一）；Kingdom Two Crowns 7 条引导抱怨，同时又是「夸 UI 简洁」的头部；ASTRONEER 引导 5 条。"
+        },
+        {
+          "desc": "叙事向开放世界把竞技式信息层整套搬进来（满屏标记、清单、计数），世界被标签盖住。",
+          "examples": ["steam:289650"],
+          "reviewEvidence": "Assassin's Creed Unity 提到 UI 的 43 条评测里差评 26 条，菜单难用 3、HUD 太乱 2；R3 报告提醒这类高差评占比常是对整款游戏不满时顺带骂界面，只能当旁证。"
+        }
+      ],
+      "rules": [
+        "先把游戏放到「进程 ↔ 竞争」轴上：竞争度高 → 信息要无歧义、可比较、即时，用屏幕叠加 + 空间内，叙事内只做冗余装饰；竞争度低 → 允许模糊，甚至让「不确定」成为体验的一部分。",
+        "同一款游戏的不同模式可以用不同的放置配方（Mirror's Edge 的剧情 / 竞速 / 计时赛就是现成例子）。",
+        "熟练度也是变量：去掉 HUD 对老手的投入感有提升，对新手未必——默认值按目标玩家定，再给开关（见 P-player-tunable-immersion）。",
+        "竞技多人游戏里长时间探索全叙事内方案通常不划算：做出来的往往比玩家需要的更慢、更含糊。"
+      ],
+      "genres": ["竞技射击", "MOBA / RTS", "战术", "步行模拟", "叙事冒险", "恐怖"],
+      "sources": [
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD，第 10 章 Know Your Game", "url": "https://publications.lib.chalmers.se/records/fulltext/111921.pdf", "point": "游戏的竞争程度应反映在界面上：叙事 / 进程向用叙事内元素和信号物，模糊甚至有益；竞争向用非叙事与空间元素给出清晰信息；以 Mirror's Edge 三种模式说明同一款游戏可以分模式处理。" },
+        { "title": "Iacovides, Cox, Kennedy, Cairns, Jennett (2015) Removing the HUD: The Impact of Non-Diegetic Game Elements and Expertise on Player Involvement. CHI PLAY '15", "url": "https://oro.open.ac.uk/46759", "point": "去掉 HUD 的射击游戏对照实验：对老手的投入感（认知投入、控制感）有影响，对新手不明显；设计决策要考虑玩家熟练度。" },
+        { "title": "Llanos & Jørgensen (2011) Do Players Prefer Integrated User Interfaces? A Qualitative Study of Game UI Design Issues. DiGRA 2011", "url": "https://dl.digra.org/index.php/dl/article/view/514", "point": "定性研究：「融入世界」的界面并不自动带来更强投入，很多玩家因为信息清晰而偏好叠加式界面。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "rel.diegesis": "diegetic", "rel.hudVisibility": "contextual", "cnt.density": 0, "cnt.elements": ["el.vitals", "el.objective"], "el.vitals.attachTo": "player", "el.objective.form": ["note"], "cnt.tone": "narrative" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "rel.diegesis": "screen", "rel.hudVisibility": "always", "cnt.density": 3, "cnt.elements": ["el.vitals", "el.abilities", "el.minimap", "el.objective", "el.threat", "el.timer"], "el.objective.form": ["checklist"], "el.threat.form": ["healthBar"], "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.timer.form": "number", "el.minimap.form": "plan" },
+        "lookAt": "同一个场景，A 让玩家「读世界」（角色身上的读数 + 一张便签），B 让玩家「读仪表」（清单、小地图、计时、敌人血条）。问自己：目标玩家要的是哪种精度，失败时是想重来还是想继续看下去。"
+      }
+    },
+    {
+      "id": "P-diegetic-carrier-camera-fiction",
+      "title": "叙事内载体要过两关：世界观给得出理由，镜头一定拍得到",
+      "problem": "叙事内 UI 失败的两种典型：世界观不认（中世纪题材硬塞全息屏）、镜头看不到（第一人称把读数画在背上，俯视镜头把读数做在角色背面）。载体选对了，信息才既在世界里又读得到。",
+      "approaches": [
+        {
+          "name": "身体挂件（第三人称越肩）：脊柱灯带、后颈环灯、背包读数、身体变化",
+          "params": { "el.vitals.diegesis": "diegetic", "el.vitals.attachTo": "player", "cmp.gauge@el.vitals": "vertical", "vis.strokeGlow": 0.6 },
+          "whenToUse": "越肩 / 追尾镜头始终拍到角色背面；只需表达 1–2 个量。",
+          "cost": "切到正面过场、贴墙掩体、换装时载体可能被挡或被换掉；量多了背上放不下。",
+          "examples": ["steam:1693980", "steam:1544020", "steam:361420", "steam:414340"]
+        },
+        {
+          "name": "手、腕、武器（第一人称）",
+          "params": { "el.abilities.form": "ammo", "el.abilities.diegesis": "diegetic", "el.abilities.attachTo": "held", "el.timer.diegesis": "diegetic", "el.timer.attachTo": "held" },
+          "whenToUse": "第一人称、VR：手和视模是镜头里唯一稳定可见的身体部位。",
+          "cost": "视模占屏、抬手看表要动作时间；VR 里手部读数要能抬到眼前。",
+          "examples": ["steam:546560", "steam:698670", "steam:264710"]
+        },
+        {
+          "name": "面罩 / 座舱框（第一人称、载具、太空）",
+          "params": { "ast.container": "cockpit", "rel.diegesis": "diegetic", "cmp.gauge@el.vitals": "arc", "rel.followPost": "warp" },
+          "whenToUse": "角色本来就戴头盔、坐座舱：把读数沿面罩边缘或仪表板排布，世界观零成本。",
+          "cost": "边缘读数在余光里，精读要移视线；面罩畸变会压扁文字。",
+          "examples": ["steam:1161580", "steam:42700", "steam:1716740", "steam:275850", "steam:2707900"]
+        },
+        {
+          "name": "拿出来看的实物（纸地图、手机、相机、心电图）",
+          "params": { "ast.container": "handMap", "rel.diegesis": "diegetic", "flow.entry": "hotkey", "rel.behind": "live" },
+          "whenToUse": "信息量中等、查看频率低：地图、照片、线索、通讯。",
+          "cost": "拿出 / 收起有时间成本；手持透视让细节难读（见 P-device-bridge）。",
+          "examples": ["steam:383870", "steam:2668510", "steam:1337010", "steam:1223500", "steam:883710"]
+        },
+        {
+          "name": "整个游戏就是一台设备 / 一张桌子（2D、叙事、模拟）",
+          "params": { "ast.container": "crt", "ast.containerSurface": "desk", "rel.diegesis": "diegetic", "rel.harmony": "sameMedium", "lay.container": "fullscreen" },
+          "whenToUse": "玩法本身就是操作一台机器、一本书、一张牌桌。",
+          "cost": "每个功能都要找到物件化的说法；扩展系统时容易「找不到地方放」。",
+          "examples": ["steam:1304550", "steam:844590", "steam:658850", "steam:1350200", "steam:957960", "steam:1092790"]
+        },
+        {
+          "name": "世界状态本身（信号物，不画任何读数）",
+          "params": { "rel.diegesis": "diegetic", "rel.hudVisibility": "hidden", "cnt.density": 0, "rel.harmony": "sameMedium" },
+          "whenToUse": "信息可以由角色外观、环境颜色、物件数量自然表达（钱袋鼓不鼓、围巾长不长、颜色恢复了几种）。",
+          "cost": "只能表达粗粒度状态；美术、动画、关卡都得参与设计。",
+          "examples": ["steam:701160", "steam:368230", "steam:638230", "steam:683320", "steam:287980"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "世界观不认：没有科技设定的题材里用全息投影、悬浮读数，比屏幕叠加更出戏。",
+          "examples": [],
+          "reviewEvidence": "评测关键词无法区分这一类，暂无计数；论据来自 Fagerholt & Lorentzon 对「全息屏放进中世纪奇幻会别扭」的论述。"
+        },
+        {
+          "desc": "载体太小、太暗或在镜头边缘：学了 Dead Space 的形式，却没给足面积与亮度。",
+          "examples": ["steam:1544020"],
+          "reviewEvidence": "The Callisto Protocol（后颈环灯血量）评测里字太小 / 看不清 2 条、背包难用 3 条、地图 2 条、HUD 挡视野 2 条；同为身体挂件的 Dead Space 只有地图、引导各 1 条。"
+        }
+      ],
+      "rules": [
+        "先问镜头：越肩 → 背、肩、后颈；第一人称 → 手、腕、武器、面罩边；俯视 / 横版 → 角色身上的大色块或随身物；2D 叙事 → 整屏做成设备、书或桌面。",
+        "再问世界观：科幻 → 全息、投影、面罩；现代 → 手机、手表、纸地图、对讲机；奇幻 / 历史 → 纸、墨、旗帜、火光、身体变化；抽象 → 颜色和形体本身。",
+        "身体挂件的信息量上限约 1–2 个量；更多信息放进「拿出来看」的设备。",
+        "立项早期就告诉美术、关卡、角色组：哪些道具要兼职当信息载体（武器自己显示该换弹，就省掉一个 HUD 元素）。",
+        "Godot 落地：身上 / 手上读数用自发光材质或 SubViewport → ViewportTexture 贴到模型上；整屏设备是一个 2D 场景套壳。"
+      ],
+      "genres": ["恐怖", "生存", "科幻射击", "VR", "步行模拟", "叙事解谜", "模拟"],
+      "sources": [
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD，Know Your Game 一节", "url": "https://publications.lib.chalmers.se/records/fulltext/111921.pdf", "point": "虚构设定决定叙事内设计空间的上限：科幻 / 奇幻可以用未来科技或魔法道具解释，二战写实题材就很难；建议让各组在早期把道具当信息载体来设计。" },
+        { "title": "Dino Ignacio, Crafting Destruction: The Evolution of the Dead Space User Interface（GDC 2013）", "url": "https://gdcvault.com/play/1017723/Crafting-Destruction-The-Evolution-of", "point": "讲 Dead Space 界面从早期概念到叙事内方案的迭代：生命条、物品栏、武器选择、导航线都在游戏世界里表现，由角色的装备给出理由。" },
+        { "title": "Metro Exodus（Wikipedia，Gameplay 一节）", "url": "https://en.wikipedia.org/wiki/Metro_Exodus", "point": "HUD 极简，信息多通过实物呈现：腕表上的计时显示防毒面具滤罐剩余时间，指南针挂在手腕上指向目标。" },
+        { "title": "Godot 文档：SubViewport", "url": "https://docs.godotengine.org/en/stable/classes/class_subviewport.html", "point": "SubViewport 可以把一块 2D 界面单独渲染，再作为 ViewportTexture 贴到 3D 物体上，用来做世界里的屏幕。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.abilities"], "el.vitals.diegesis": "screen", "el.vitals.screenAnchor": "bl", "cmp.gauge@el.vitals": "bar", "el.abilities.form": "ammo", "el.abilities.screenAnchor": "br" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.abilities"], "el.vitals.diegesis": "diegetic", "el.vitals.attachTo": "player", "cmp.gauge@el.vitals": "vertical", "el.abilities.form": "ammo", "el.abilities.diegesis": "diegetic", "el.abilities.attachTo": "held", "vis.strokeGlow": 0.6 },
+        "lookAt": "读数从屏幕两角搬到角色背上和手持物上，镜头转动时跟着角色走。看的是：在当前镜头下载体是否总在画面里、是否够大够亮——换成第一人称或俯视镜头，同一套 B 就该换载体。"
+      }
+    },
+    {
+      "id": "P-guidance-ladder",
+      "title": "零 HUD 与叙事内的头号代价是「不知道去哪、能做什么」：信号物打底，再给一架按需加码的引导梯子",
+      "problem": "把 HUD 拿掉后，最先丢的是目标、路径、可交互性这些推进必需的信息。参考库的评测统计显示：叙事内 / 零 HUD 类游戏的引导与地图抱怨明显高于其余游戏，而它们很少被骂「太乱」。",
+      "approaches": [
+        {
+          "name": "信号物与光：让世界自己指路",
+          "params": { "rel.diegesis": "diegetic", "rel.hudVisibility": "hidden", "cnt.density": 0, "rel.harmony": "sameMedium" },
+          "whenToUse": "关卡可控、路线有限；美术能用光、颜色、运动对比把「答案」做成画面里最显眼的东西。",
+          "cost": "需要关卡与美术深度配合；开放世界里难以覆盖每个目标。",
+          "examples": ["steam:620", "steam:1712350", "steam:257850", "steam:424840", "steam:1313140"]
+        },
+        {
+          "name": "叙事化的方向指引（风、动物、对讲机、低语、地标）",
+          "params": { "el.objective.diegesis": "diegetic", "el.objective.attachTo": "poi", "el.objective.form": ["marker"], "rel.hudVisibility": "onDemand" },
+          "whenToUse": "开放世界想去掉路点，但还要可靠地把玩家带到目标。",
+          "cost": "指引本身要做成世界系统（风场、动物 AI、配音）；不如箭头精确。",
+          "examples": ["steam:2215430", "steam:383870", "steam:414340", "iig:the-legend-of-zelda-breath-of-the-wild"]
+        },
+        {
+          "name": "一键感知模式：按住才出现的空间高亮",
+          "params": { "el.overlay.form": ["holo"], "el.overlay.diegesis": "spatial", "el.overlay.visibility": "onDemand", "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi", "el.interact.worldRender": "outline" },
+          "whenToUse": "平时保持画面干净，玩家卡住时自己调出：可交互物、敌人位置、可攀爬路线。",
+          "cost": "玩家会习惯一直按着，最后等于常驻；需要设计冷却或代价才能保住探索感。",
+          "examples": ["steam:17410", "steam:2531310", "steam:208650", "steam:2420110", "steam:391220", "steam:1850570"]
+        },
+        {
+          "name": "分级提示：按一次看方向、两次高亮目标、三次标出路径",
+          "params": { "ix.guideForce": "soft", "el.objective.form": ["marker", "edgeArrow"], "el.objective.visibility": "onDemand", "el.guide.form": "ring" },
+          "whenToUse": "想让大多数玩家靠自己推理过关，同时不让卡关的人流失。",
+          "cost": "要写求助计数与时机判断；给得太快会让人觉得被操控，太慢又会挫败。",
+          "examples": ["steam:17410", "steam:1174180"]
+        },
+        {
+          "name": "空间路径线 / 范围（最省时，也最出戏）",
+          "params": { "el.objective.form": ["marker"], "el.objective.diegesis": "spatial", "el.objective.attachTo": "poi", "el.overlay.form": ["rangeRing"], "el.overlay.diegesis": "spatial", "el.overlay.worldRender": "decal" },
+          "whenToUse": "导航效率优先；或世界观能给路径线一个理由（装备投射的导航线）。",
+          "cost": "玩家盯着线走、不看世界；开放世界里线一多就成了网。",
+          "examples": ["steam:1693980", "steam:1222140", "gameui:13619"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "把推进必需的提示也藏起来，只剩试错。",
+          "examples": ["steam:698670", "steam:701160", "steam:1182900", "steam:361420", "steam:414340"],
+          "reviewEvidence": "参考库 36 款标了叙事内的游戏里 9 款（25%）有 ≥ 2 条「提示 / 引导不清」评测，其余 300 款是 38 款（13%）；按每千条评测算 5.4 对 2.0 条。全库电影模式（全隐）34 款里 7 款（21%），而「HUD 太乱」一类是 0 款（其余 7%）——隐藏消灭了杂乱抱怨，换来引导抱怨。出处最多：Scorn 10、Kingdom Two Crowns 7、A Plague Tale: Requiem 6、ASTRONEER 5、Hellblade 3。注：部分「无 HUD」来自商店图的营销隐藏。"
+        },
+        {
+          "desc": "零 HUD 又不给任何「我在哪」的手段（没有地图、没有地标、没有罗盘）。",
+          "examples": ["steam:1903340", "steam:257850", "steam:870780", "steam:1055540", "steam:1307580"],
+          "reviewEvidence": "地图类抱怨在叙事内组 4/36 款（11%），其余 15/300（5%）。Clair Obscur 13 条（没有小地图，全库单款最高）、Hyper Light Drifter 6、CONTROL 5、A Short Hike 4、TOEM 4。"
+        },
+        {
+          "desc": "无意中「演示」了玩家做不到的事：NPC 能开的门玩家开不了，玩家据此推理出不存在的可交互性。",
+          "examples": ["steam:7940"],
+          "reviewEvidence": "评测关键词无法计数；案例来自 Fagerholt & Lorentzon 对 Call of Duty 4 战役的分析。"
+        }
+      ],
+      "rules": [
+        "区分推进必需与可选发现：前者必须被放大（光、运动对比、信号物、可呼出的提示），后者可以藏起来当奖励。",
+        "默认零提示 → 玩家求助时逐级加码（方向 → 高亮目标 → 标出路径），而不是一开始全给。",
+        "用对比做放大器：场景里唯一在动、唯一亮着的东西就是答案；不可交互的同类物件压暗、静止，主动抑制错误推理。",
+        "零 HUD 至少保留一种「我在哪」的手段：纸地图、可见的地标、可呼出的罗盘。",
+        "感知模式要按住或切换，不要常驻——常驻就成了另一层 HUD。",
+        "对照实验里导航用空间路径线最快，罗盘最慢：路径线是效率上限，叙事化指引是沉浸上限，按游戏定位在两者之间取点。"
+      ],
+      "genres": ["探索冒险", "步行模拟", "恐怖", "解谜", "开放世界", "生存"],
+      "sources": [
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD，Establish Player Agency 一节", "url": "https://publications.lib.chalmers.se/records/fulltext/111921.pdf", "point": "提出可供性放大器 / 抑制器与信号物；用 Resident Evil 5 的窗户例子说明让唯一在动的窗帘指出出口；Mirror's Edge 用户测试中玩家更喜欢无引导，但会卡住，于是提出按一次看方向、两次高亮建筑、三次标出路径的分级引导。" },
+        { "title": "Ghost of Tsushima 创意总监访谈（Android Central）", "url": "https://www.androidcentral.com/ghost-tsushima-creative-director-interview", "point": "去掉路点是为了让玩家觉得身处对马岛：屏幕上的大量 UI 会妨碍这种感觉，引导之风在不显眼的前提下指向目标，野生动物也会把玩家引向兴趣点。" },
+        { "title": "The Design Secrets of Breath of the Wild（80.lv，整理自 CEDEC 2017 任天堂演讲）", "url": "https://80.lv/articles/the-design-secrets-of-breath-of-the-wild/", "point": "用远处可见的塔作为地标，三角形山体既遮挡视线制造惊喜又把视线引向山尖，用地形本身代替路点引导。" },
+        { "title": "Peacocke 等 (2018) Entertainment Computing 26", "url": "https://www.yorku.ca/mack/ec2018.html", "point": "导航任务中描出路径的空间线表现最好，旋转小地图接近，罗盘最差。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "rel.diegesis": "diegetic", "rel.hudVisibility": "contextual", "cnt.density": 0, "cnt.elements": ["el.vitals"], "el.vitals.attachTo": "player" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "rel.diegesis": "diegetic", "rel.hudVisibility": "contextual", "cnt.density": 0, "cnt.elements": ["el.vitals", "el.objective", "el.interact"], "el.vitals.attachTo": "player", "el.objective.form": ["marker", "edgeArrow"], "el.objective.diegesis": "spatial", "el.objective.attachTo": "poi", "el.objective.visibility": "onDemand", "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi", "el.interact.worldRender": "outline", "ix.guideForce": "soft" },
+        "lookAt": "常态画面几乎一样干净；B 多了一层按需出现的目标标记、屏幕边缘箭头和交互物描边。看的是：推进信息有没有兜底，以及兜底层是否在不需要时真的退场。"
+      }
+    },
+    {
+      "id": "P-spatial-render-budget",
+      "title": "空间内标注：先选对渲染方式（公告板 / 透视贴面 / 地面贴花 / 描边 / 边缘箭头），再给它定数量预算",
+      "problem": "头顶血条、交互提示、目标标记、范围圈都挂在世界里，但它是固定大小还是近大远小、立着还是贴地、画面板还是只描轮廓，决定了它在远处是否可读、人多时是否把画面盖满。空间内元素不属于故事，可以用纯 UI 语言表达——这是它相对叙事内的最大自由。",
+      "approaches": [
+        {
+          "name": "平面公告板（始终朝镜头、固定屏幕大小）",
+          "params": { "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "billboard", "el.threat.form": ["healthBar", "intent"] },
+          "whenToUse": "任何距离都必须读到的数值或符号：敌人血条、意图、名字、对话气泡。",
+          "cost": "人多时堆叠成墙；远处单位和近处一样大，丢失深度线索。",
+          "examples": ["steam:1593500", "steam:814380", "iig:slay-the-spire", "steam:2084000", "steam:388880", "steam:1332010"]
+        },
+        {
+          "name": "透视贴面（贴在物体表面、近大远小）",
+          "params": { "rel.worldRender": "perspective", "el.objective.diegesis": "spatial", "el.objective.attachTo": "poi", "el.objective.form": ["marker", "text"] },
+          "whenToUse": "标注属于某个物体的细节：调查线索、扫描结果、建筑控制点；靠近才需要读。",
+          "cost": "斜角与远处看不清；文字会被透视压扁。",
+          "examples": ["steam:1222140", "steam:2420110", "steam:1850570", "steam:2198150"]
+        },
+        {
+          "name": "地面贴花（预警区、范围、落点、建造网格）",
+          "params": { "el.threat.form": ["telegraph"], "el.threat.diegesis": "spatial", "el.threat.worldRender": "decal", "el.overlay.form": ["rangeRing", "gridHighlight"], "el.overlay.diegesis": "spatial", "el.overlay.worldRender": "decal" },
+          "whenToUse": "俯视 / 等距、区域型信息：哪里会被打、塔的射程、能放在哪。",
+          "cost": "贴在起伏地形上会变形；颜色容易和地面材质混；第三人称低机位时贴花几乎看不见。",
+          "examples": ["steam:590380", "steam:2239150", "steam:237990", "steam:1486630", "steam:1599600", "gameui:13619"]
+        },
+        {
+          "name": "物体描边（不画面板，只描轮廓）",
+          "params": { "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi", "el.interact.worldRender": "outline", "el.threat.worldRender": "outline" },
+          "whenToUse": "信息只是「是哪个」：可交互物、透视敌人、潜行时的听觉位置。",
+          "cost": "承载不了数值；描边色会与阵营色、稀有度色争夺同一个颜色通道。",
+          "examples": ["steam:205100", "steam:2531310", "steam:391220", "steam:208650", "steam:17410"]
+        },
+        {
+          "name": "屏幕边缘箭头（世界信息投影回屏幕）",
+          "params": { "el.threat.form": ["edgeDir"], "el.threat.diegesis": "screen", "el.threat.attachTo": "target", "el.objective.form": ["edgeArrow"] },
+          "whenToUse": "目标在镜头外：身后来袭、视野外的任务点。",
+          "cost": "只给方向不给距离；同时多个箭头会互相打架。",
+          "examples": ["steam:1593500"]
+        },
+        {
+          "name": "聚合与语义缩放（策略、建造的大量单位）",
+          "params": { "rel.semanticZoom": "iconize", "el.overlay.form": ["statusIcons"], "el.overlay.diegesis": "spatial" },
+          "whenToUse": "同屏几十上百个对象：只在出问题的对象上冒图标，拉远后图标化或切热力图。",
+          "cost": "要设计聚合规则与缩放阈值；细节只能点进去看。",
+          "examples": ["steam:427520", "steam:255710", "steam:3314060"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "每个可交互物、每个单位都常驻标签，世界被标签盖满。",
+          "examples": ["steam:289650", "steam:2198150"],
+          "reviewEvidence": "12 款标了空间内的参考卡里 2 款（17%）有 ≥ 2 条「HUD 太乱 / 挡视野」评测，其余 324 款为 6%（Tiny Glade 5、Assassin's Creed Unity 2）；样本小，且关键词也会命中「场景本身杂乱」，只能当提示。"
+        },
+        {
+          "desc": "需要远距离读数的信息用了透视贴面或贴花，远处缩成看不清的一点。",
+          "examples": [],
+          "reviewEvidence": "评测无法区分到渲染方式；用工具里的视距预览（chk.viewDistance）与最小字号检查替代。"
+        }
+      ],
+      "rules": [
+        "数值和名字用固定大小的公告板；物体细节用透视贴面；区域用地面贴花；「是哪个」用描边；镜头外用边缘箭头。同一游戏的不同元素可以各用各的（rel.worldRender 只是默认值）。",
+        "给空间标注设预算：常驻的只留当前锁定 / 最相关的一组，其余按距离、视线、相关性淡出；超预算就聚合（计数气泡、图标化）。",
+        "关键标注关掉深度测试（总在最上层），装饰性标注保留遮挡以留住深度感。",
+        "在最远交战距离和最斜视角各截一张图检查；俯视游戏还要检查贴花在高低地形上的变形。",
+        "Godot 落地：Label3D 的 billboard + fixed_size 做公告板，Decal 节点做地面贴花，描边用后处理或 next_pass 材质。"
+      ],
+      "genres": ["动作", "MOBA / RTS", "回合战术", "建造经营", "潜行", "开放世界"],
+      "sources": [
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD，Know Your Design Space 一节", "url": "https://publications.lib.chalmers.se/records/fulltext/111921.pdf", "point": "几何（空间）元素在游戏空间里但不属于故事，特别适合传达环境、导航等带空间属性的信息；因为不受虚构约束，设计者可以用最合适的视觉形式。" },
+        { "title": "Godot 文档：Label3D", "url": "https://docs.godotengine.org/en/stable/classes/class_label3d.html", "point": "Label3D 可设置朝向镜头的公告板模式、固定屏幕大小（不随距离缩放）以及关闭深度测试（总画在最上层）。" },
+        { "title": "Godot 文档：Using decals", "url": "https://docs.godotengine.org/en/stable/tutorials/3d/using_decals.html", "point": "Decal 把贴图投射到网格表面、可运行时移动，适合落点、范围等地面标注；在 Compatibility 渲染器下不可用，任意文字建议用贴近表面的 3D 文字代替。" },
+        { "title": "User Interface Design in Video Games（Game Developer）", "url": "https://www.gamedeveloper.com/design/user-interface-design-in-video-games", "point": "以 Splinter Cell: Conviction 把目标投影到场景表面为例，讨论空间投影式界面的表现力，也指出投影尺度过大时会挤压虚构的可信度。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.threat", "el.interact"], "el.threat.form": ["healthBar"], "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "billboard", "el.interact.form": ["keyPrompt"], "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi", "el.interact.worldRender": "billboard" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.threat", "el.interact"], "el.threat.form": ["healthBar", "telegraph"], "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "perspective", "el.interact.form": ["keyPrompt"], "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi", "el.interact.worldRender": "outline" },
+        "lookAt": "A 的血条和按键提示是一张张朝向镜头的牌子；B 的血条随距离缩放、预警压到地面、交互物只描一圈——画面上的「板子」变少，换来远处目标数字更难读。用视距预览比较两者。"
+      }
+    },
+    {
+      "id": "P-meta-perception",
+      "title": "元 UI（整屏效果）只用来让玩家「感到」身体状态，不用来报数值；强度跟着紧急度走，必须有冗余和开关",
+      "problem": "受击红边、低血去色、闪白、速度线把玩家和角色的感官连在一起，是 FPS 等品类的成熟惯例；但它铺满整个画面——用多了挡视野、引发不适，单独承担生命值时玩家判断不准，红色还会和敌方色撞车。",
+      "approaches": [
+        {
+          "name": "受击红边 / 隧道视野（低血）",
+          "params": { "el.vitals.diegesis": "meta", "el.vitals.metaFx": "hurtVignette", "rel.metaFx": ["hurtVignette", "hitFlash"] },
+          "whenToUse": "回血制射击、动作：生命只需要「安全 / 受伤 / 濒死」几档感受。",
+          "cost": "边缘被压暗影响余光；红色与敌方 / 警示红冲突；没有精确值。",
+          "examples": ["steam:7940", "steam:391220"]
+        },
+        {
+          "name": "低血去饱和 / 世界褪色",
+          "params": { "rel.metaFx": ["lowHpDesat"], "el.vitals.visibility": "contextual" },
+          "whenToUse": "画面色彩本身是卖点、又不想加红色的作品；或叙事上「世界在离你远去」。",
+          "cost": "褪色后威胁与环境的色相区分变弱，危险时反而更难看清敌人。",
+          "examples": ["steam:391220", "steam:414340"]
+        },
+        {
+          "name": "速度 / 状态感（速度线、边缘光框）",
+          "params": { "rel.metaFx": ["speedLines"], "el.speed.diegesis": "meta", "el.speed.metaFx": "speedLines" },
+          "whenToUse": "竞速、冲刺、技能状态：用整屏的动感代替一个速度表或状态图标。",
+          "cost": "四角最密，会压住角落 HUD；易引起晕动。",
+          "examples": ["steam:517710"]
+        },
+        {
+          "name": "有叙事理由的失真（故障、夜视、机器界面）",
+          "params": { "rel.metaFx": ["glitch"], "rel.diegesis": "meta", "rel.followPost": "crisp" },
+          "whenToUse": "世界观里本来就有「角色通过机器看世界」：义体故障、记忆机器、电视信号。",
+          "cost": "失真越重，文字和威胁越难读；需要把关键读数排除在失真之外。",
+          "examples": ["steam:1091500", "steam:15100", "gameui:13081", "steam:2379780"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "用血迹 / 红屏单独表达生命值，没有任何可读的量。",
+          "examples": [],
+          "reviewEvidence": "评测关键词没有单列「整屏效果」类，无计数；对照实验（Peacocke 等 2018）中血迹式生命指示拖累了脱险表现。"
+        },
+        {
+          "desc": "常驻或高频的整屏效果（故障、扫描线、速度线、频繁闪白）压住文字与威胁，且没有关闭项。",
+          "examples": [],
+          "reviewEvidence": "无直接计数；探索台的可读性检查已对 speedLines / glitch 给出「关掉整屏速度线 / 故障」修复项，Xbox 无障碍指南 117 与 Game Accessibility Guidelines 都要求可关闭动效与闪烁。"
+        }
+      ],
+      "rules": [
+        "元 UI 适合 2–3 档的「感受」（安全 / 受伤 / 濒死）；精确值仍放在屏幕或叙事内载体上，或在效果出现时同步显示。",
+        "强度与紧急度成正比、恢复后退去；中心约 35% 的区域保持干净（暗角从边缘往里推，不压准星和目标）。",
+        "颜色不单独承载：红边要配心跳 / 呼吸声或手柄震动——元感知同样有听觉、触觉通道。",
+        "受伤红与敌方红二选一：阵营已经用了红，受伤就改用去饱和或暗角。",
+        "所有整屏效果接 a11y.reduceMotion，并在设置里有单独强度滑条（闪白、震屏、速度线、故障）。",
+        "有叙事理由的失真可以更重，但关键读数不跟随失真（rel.followPost = crisp）。"
+      ],
+      "genres": ["射击", "动作", "竞速", "恐怖", "赛博 / 科幻"],
+      "sources": [
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD，Strengthen the Player-Avatar Perceptual Link 一节", "url": "https://publications.lib.chalmers.se/records/fulltext/111921.pdf", "point": "元感知用整屏滤镜、畸变、叠加来弥补玩家感知不到角色身体状态的缺口（红屏、边缘变黑的隧道视野、Mirror's Edge 的速度光线），适合连接感官而不适合传递精细信息；还建议开发听觉与触觉的元感知。" },
+        { "title": "Peacocke 等 (2018) Entertainment Computing 26", "url": "https://www.yorku.ca/mack/ec2018.html", "point": "生命信息用 HUD 数字表现最好，血迹式指示妨碍了玩家。" },
+        { "title": "Xbox Accessibility Guideline 117: Visual distractions and motion settings", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/117", "point": "闪烁、移动的内容要能暂停或关闭；震屏、镜头晃动、运动模糊应避免或可关；举例 Halo Infinite 允许玩家把径向模糊、震屏、整屏效果、速度线各自从 0 调到 100%。" },
+        { "title": "Game Accessibility Guidelines（Basic）", "url": "https://gameaccessibilityguidelines.com/basic/", "point": "关键信息不能只靠颜色传达，要配符号或可换色；避免闪烁画面与重复图案。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.crosshair"], "el.vitals.screenAnchor": "bl", "cmp.gauge@el.vitals": "segmented", "el.vitals.valueLabel": "current", "el.crosshair.form": ["cross"], "rel.metaFx": [] },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.crosshair"], "el.vitals.diegesis": "meta", "el.vitals.metaFx": "hurtVignette", "el.crosshair.form": ["cross"], "rel.metaFx": ["hurtVignette", "lowHpDesat", "hitFlash"] },
+        "lookAt": "用事件按钮触发「受击 / 低血」：A 读左下角还剩几格，B 只能从屏幕边缘的红和画面褪色判断——身体感更强，但说不出还剩多少；再打开色盲模拟看红边是否还分得出来。"
+      }
+    },
+    {
+      "id": "P-device-bridge",
+      "title": "设备型界面「推到镜头前」：故事上是角色手里的东西，呈现上是清晰的平面",
+      "problem": "地图、手机、终端、背包真的拿在三维世界里看，透视、光照、手部遮挡会让大量信息难读；全做成普通菜单又断开了世界。Fagerholt & Lorentzon 的「元表现」——在故事里、但不在三维空间里——是中间解：用设备的壳给出理由，用平面保证可读。",
+      "approaches": [
+        {
+          "name": "真实手持（有透视、受场景光）",
+          "params": { "cnt.screen": "screen.map", "ast.container": "handMap", "rel.diegesis": "diegetic", "rel.followPost": "stylize", "rel.behind": "live", "vis.mapStyle": "painted" },
+          "whenToUse": "信息量小、查看本身就是体验（Firewatch 拿出纸地图和指南针）。",
+          "cost": "细节难读；拿出动作有时间成本；需要手部动画与持握姿势。",
+          "examples": ["steam:383870", "steam:2668510", "steam:1337010", "steam:1223500"]
+        },
+        {
+          "name": "镜头推进后转平面（拿起设备 → 全屏设备界面）",
+          "params": { "ast.container": "phone", "mo.transition": "zoomInto", "lay.container": "fullscreen", "rel.diegesis": "meta", "rel.followPost": "crisp" },
+          "whenToUse": "信息量大（地图细节、清单、通讯、背包），又想保留设备的身份。",
+          "cost": "推进动画占时间；设备壳的比例会限制版面。",
+          "examples": ["steam:287700", "steam:945360", "steam:388880"]
+        },
+        {
+          "name": "设定框住整个 HUD（面罩、记忆机器、座舱）",
+          "params": { "rel.diegesis": "meta", "ast.container": "cockpit", "rel.followPost": "warp" },
+          "whenToUse": "世界观里角色本来就透过一层设备看世界：头盔、模拟机器、驾驶舱。",
+          "cost": "框本身占屏；畸变与边缘遮挡要控制。",
+          "examples": ["steam:15100", "steam:1161580", "steam:264710", "steam:1716740"]
+        },
+        {
+          "name": "整屏就是设备 / 桌面（二维叙事、模拟）",
+          "params": { "ast.container": "crt", "ast.containerSurface": "desk", "lay.container": "fullscreen", "rel.harmony": "sameMedium" },
+          "whenToUse": "玩法就是操作一台机器、一张书桌。",
+          "cost": "所有新功能都得找到物件化的位置。",
+          "examples": ["steam:1304550", "steam:844590", "steam:658850", "steam:1350200", "steam:1839510"]
+        },
+        {
+          "name": "纯菜单（不讲设备故事，只做叙事化命名）",
+          "params": { "ast.container": "none", "lay.container": "fullscreen", "rel.behind": "frozen", "rel.dim": 0.6 },
+          "whenToUse": "系统复杂、查看频繁（装备、技能树）；可以用叙事化的名字与材质保持氛围。",
+          "cost": "与世界断开，沉浸感全靠皮肤。",
+          "examples": ["steam:292030", "steam:1145360"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "设备界面字小、透视斜、受场景光照影响，读一行字要凑近。",
+          "examples": ["steam:1544020"],
+          "reviewEvidence": "The Callisto Protocol 字太小 2 条、背包难用 3 条、地图难用 2 条。"
+        },
+        {
+          "desc": "每次打开都要播完拿出动画、不能连按跳过，频繁查看的界面变得迟钝。",
+          "examples": ["steam:546560"],
+          "reviewEvidence": "「UI 卡顿 / 响应慢」全库只有 6 款，其中 Half-Life: Alyx（读数在手套与枪上、物品从身上取）有 2 条。"
+        }
+      ],
+      "rules": [
+        "信息量 ≤ 3 个量可以真实手持；信息量大就推进后转平面。",
+        "推进动画控制在 0.3–0.5 秒且可连按跳过；同一会话第二次打开可以直接切入。",
+        "平面化后仍保留设备的壳（边框、材质、按键位置），用 ast.container 表达，而不是换整套皮肤。",
+        "设备里的文字不跟随场景后处理（crisp），只让壳跟随画面。",
+        "Godot 落地：界面写成一个 2D 场景放进 SubViewport；手持时贴到模型（ViewportTexture），推进后放进 SubViewportContainer 全屏——同一份界面只写一次。"
+      ],
+      "genres": ["开放世界", "叙事冒险", "生存", "科幻", "模拟", "潜行"],
+      "sources": [
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD，Know Your Design Space 一节", "url": "https://publications.lib.chalmers.se/records/fulltext/111921.pdf", "point": "元表现在故事里、但画在游戏空间之外，典型是角色持有的导航仪、手机，以最适合用途的方式平面呈现；它能给「为什么玩家看得到这些信息」一个合理解释。" },
+        { "title": "How Firewatch's UI enhances immersion（UX Collective）", "url": "https://uxdesign.cc/how-firewatchs-ui-enhances-immersion-18feddbc7857", "point": "玩家每次要辨认方向都得拿出指南针和纸地图，因为护林员本人也不会自动知道北在哪；比 HUD 地图更难用，但更能卖出森林里探索的感觉。" },
+        { "title": "Godot 文档：SubViewport", "url": "https://docs.godotengine.org/en/stable/classes/class_subviewport.html", "point": "SubViewport 可单独渲染一块界面，再以 ViewportTexture 贴到物体上或放进 SubViewportContainer 显示；默认不接收输入，要由容器转发。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.map", "lay.container": "fullscreen", "ast.container": "none", "rel.behind": "frozen", "rel.dim": 0.6, "vis.mapStyle": "flatVector", "vis.mapUnexplored": "fog" },
+        "b": { "cnt.screen": "screen.map", "ast.container": "handMap", "rel.diegesis": "diegetic", "rel.behind": "live", "mo.transition": "zoomInto", "vis.mapStyle": "painted", "vis.mapUnexplored": "blank" },
+        "lookAt": "同一张地图：A 是暂停后的平面菜单，B 是角色手里摊开的纸，背后世界照常运行、未探索区是纸面空白。比较信息密度能放多少，以及「打开地图」这件事是否还属于游戏世界。"
+      }
+    },
+    {
+      "id": "P-diegetic-time",
+      "title": "叙事内菜单要先决定「世界停不停」：不暂停是张力，暂停是体贴",
+      "problem": "背包、换装、地图做成世界里的动作之后，最关键的参数其实是时间：世界继续跑，玩家在菜单里也会挨打（恐怖游戏的张力来源）；暂停则安全，但等于承认菜单在世界之外。这个决定比菜单的样子更影响体验。",
+      "approaches": [
+        {
+          "name": "世界照常运行（实时背包 / 实时对话）",
+          "params": { "cnt.screen": "screen.inventory", "rel.behind": "live", "rel.dim": 0, "ix.blocking": "none", "lay.container": "drawer", "rel.diegesis": "diegetic" },
+          "whenToUse": "恐怖、生存：让「整理背包」本身成为风险；叙事游戏里边走边对话不打断节奏。",
+          "cost": "菜单必须很浅；手柄 / 键位不顺手会被放大成死亡。",
+          "examples": ["steam:1888930", "steam:1693980", "steam:388880", "steam:21690"]
+        },
+        {
+          "name": "变慢而不停（武器 / 技能轮按住呼出）",
+          "params": { "ctx.timeModel": "pausable", "el.abilities.arrangement": "ring", "el.abilities.visibility": "onDemand" },
+          "whenToUse": "动作游戏里需要战斗中快速切换，又不想完全打断。",
+          "cost": "轮盘项数有上限（约 8）；减速时长要防滥用。",
+          "examples": ["steam:205100"]
+        },
+        {
+          "name": "冻结 + 叙事化外壳（公文箱、背包实物）",
+          "params": { "cnt.screen": "screen.inventory", "rel.behind": "frozen", "rel.dim": 0.5, "rel.sceneTone": "desaturate", "ix.blocking": "modal", "ast.container": "handheldDevice" },
+          "whenToUse": "背包本身是解谜（拼图格、组合物品），需要玩家安心思考。",
+          "cost": "张力断开；要用压暗 / 去色明确告诉玩家「时间停了」。",
+          "examples": ["steam:1196590", "steam:883710", "steam:1996010"]
+        },
+        {
+          "name": "只在安全点开放（工作台、存档点、篝火）",
+          "params": { "flow.entry": "worldInteract", "rel.behind": "live", "ix.blocking": "soft" },
+          "whenToUse": "复杂的升级 / 整理系统：把它放到世界里的安全地点，既叙事化又不必暂停。",
+          "cost": "玩家想用时可能离安全点很远；需要控制安全点密度。",
+          "examples": ["steam:1693980", "steam:1245620"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "实时菜单却做得很深：多层页签、拖拽格子，在战斗中操作等于送死。",
+          "examples": ["steam:21690", "steam:1544020"],
+          "reviewEvidence": "「背包 / 物品管理难用」全库 11 款里生存 / 恐怖是重灾区：Resident Evil 5 有 4 条（另有手柄 / 键位 2 条）、The Callisto Protocol 3 条、Resident Evil 2 3 条；Valheim 17 条最多（负重 / 格子问题，非叙事内）。"
+        },
+        {
+          "desc": "实时菜单却压暗、虚化了背景，玩家误以为安全。",
+          "examples": [],
+          "reviewEvidence": "无计数；属于 rel.behind = live 与 rel.dim / rel.sceneBlur 的组合错误，工具里可直接做 A/B。"
+        }
+      ],
+      "rules": [
+        "要张力就实时，但菜单要浅：一层、少于约 9 格、摇杆或数字键直选，换装 / 用药不超过一两次输入。",
+        "实时菜单里保留威胁信息（受击方向、敌人接近），背景不压暗不虚化；暂停菜单则用压暗、去色明确告诉玩家时间停了。",
+        "做了实时，就给安全点：在工作台 / 存档点可以放心整理。",
+        "把「开菜单时世界停不停」写进每个界面模板（rel.behind），而不是全局一个开关。"
+      ],
+      "genres": ["恐怖", "生存", "动作冒险", "潜行", "叙事冒险"],
+      "sources": [
+        { "title": "Dino Ignacio, Crafting Destruction: The Evolution of the Dead Space User Interface（GDC 2013）", "url": "https://gdcvault.com/play/1017723/Crafting-Destruction-The-Evolution-of", "point": "Dead Space 的物品栏、工作台等界面都放在游戏世界里，以加深动作恐怖的代入感。" },
+        { "title": "How Dead Space 3 pulled from Dieter Rams and Instagram（Kill Screen）", "url": "https://www.killscreen.com/how-dead-space-3-pulled-dieter-rams-and-instagram/", "point": "Ignacio 的界面思路可概括为「Simplify and hide」；Dead Space 3 的工作台用摇杆做类似收音机旋钮的选择，压缩玩家的操作步骤。" },
+        { "title": "Fagerholt & Lorentzon (2009) Beyond the HUD，Establish Player Agency 一节", "url": "https://publications.lib.chalmers.se/records/fulltext/111921.pdf", "point": "无法自然融入世界的规则应被「具象化」，让玩家能站在角色立场理解（如用敌方炮火解释地图边界），但不要为了沉浸替换掉玩家熟悉的术语。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.inventory", "lay.container": "modal", "rel.behind": "frozen", "rel.dim": 0.6, "rel.sceneTone": "desaturate", "ix.blocking": "modal", "ast.container": "none" },
+        "b": { "cnt.screen": "screen.inventory", "lay.container": "drawer", "rel.behind": "live", "rel.dim": 0, "rel.sceneTone": "none", "ix.blocking": "none", "ast.container": "handheldDevice" },
+        "lookAt": "A 打开背包时世界褪色定格；B 背包是侧边的一块手持设备，背后场景照常运行、不压暗。看背景处理是否和「时间停没停」一致，以及 B 的菜单深度是否浅到能在危险中使用。"
+      }
+    },
+    {
+      "id": "P-contextual-before-diegetic",
+      "title": "想要干净画面，先试「情境显现」，再决定要不要叙事内：时间上的隐藏比空间上的搬家便宜",
+      "problem": "叙事内要美术、动画、镜头一起配合，成本高；很多 3A 用「平时隐去、用到才出现」达到接近的干净画面。但隐藏也有代价：信息出现太晚、玩家找不到。显隐策略与放置方式是两个独立的旋钮。",
+      "approaches": [
+        {
+          "name": "常驻",
+          "params": { "rel.hudVisibility": "always" },
+          "whenToUse": "竞技、魂类：状态随时可能决定生死，玩家需要不看就知道它在那。",
+          "cost": "画面始终有遮挡；沉浸感靠皮肤补。",
+          "examples": ["steam:1245620", "steam:220", "iig:overwatch"]
+        },
+        {
+          "name": "情境显现（受伤 / 战斗 / 使用时出现，变化后停留再淡出）",
+          "params": { "rel.hudVisibility": "contextual", "el.vitals.visibility": "contextual", "el.vitals.priority": "primary" },
+          "whenToUse": "动作冒险、恐怖：探索时画面干净，战斗时信息回来。",
+          "cost": "判定写不好就「需要前一刻还不在」；淡入淡出本身是视觉噪声。",
+          "examples": ["steam:1196590", "steam:108710", "steam:387290", "steam:489830", "steam:1659420", "steam:312520"]
+        },
+        {
+          "name": "按键呼出",
+          "params": { "rel.hudVisibility": "onDemand", "el.minimap.visibility": "onDemand" },
+          "whenToUse": "地图、罗盘、目标这类「想看才看」的信息。",
+          "cost": "新手不知道有这个键；要在教程与暂停页反复提示。",
+          "examples": ["steam:2215430", "steam:205100"]
+        },
+        {
+          "name": "电影模式（全隐）+ 叙事内承担",
+          "params": { "rel.hudVisibility": "hidden", "rel.diegesis": "diegetic", "cnt.density": 0 },
+          "whenToUse": "信息全部有世界载体的作品。",
+          "cost": "见 P-guidance-ladder：引导 / 地图抱怨显著增多。",
+          "examples": ["steam:383870", "steam:414340", "steam:638230", "steam:1135690"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "全隐，但信息没有别的去处。",
+          "examples": ["steam:424840", "steam:557600", "steam:2461850", "steam:960990"],
+          "reviewEvidence": "电影模式（全隐）34 款里 7 款（21%）有 ≥ 2 条引导抱怨，其余 302 款为 13%；但「HUD 太乱」类 0 款，其余 7%。Little Nightmares 3、Gorogoa 3、Hellblade II 2、Beyond: Two Souls 2。"
+        },
+        {
+          "desc": "情境显现太激进：地图 / 目标在需要时不出现，或根本没有。",
+          "examples": ["steam:1903340", "steam:1182900"],
+          "reviewEvidence": "情境显现 39 款里地图类抱怨 3 款（8%，其余 5%）、引导类 7 款（18%，其余 13%）；Clair Obscur 地图 13 条、A Plague Tale: Requiem 引导 6 条。"
+        }
+      ],
+      "rules": [
+        "先做时间维度：每个元素问「什么时候需要」，写下出现条件和停留时长（变化后保持 2–3 秒再淡出）。",
+        "主信息（elx.priority = primary：生命、Boss）在战斗中最多变半透明，不消失。",
+        "永远给一个手动呼出（触摸板 / 按住），并在设置里允许「常驻」。",
+        "隐藏会消灭「太乱」抱怨，但会把问题换成「不知道去哪」——同时做引导梯子。",
+        "决定叙事内之前先算账：哪些信息要搬进世界、谁来做这些道具和动画；如果只是想要干净画面，情境显现通常就够了。"
+      ],
+      "genres": ["动作冒险", "开放世界", "恐怖", "平台跳跃", "魂类"],
+      "sources": [
+        { "title": "Iacovides 等 (2015) Removing the HUD. CHI PLAY '15", "url": "https://discovery.ucl.ac.uk/id/eprint/1470398/", "point": "去掉 HUD 的影响因玩家熟练度而异：老手的投入感与控制感上升，新手不明显。" },
+        { "title": "Llanos & Jørgensen (2011) Do Players Prefer Integrated User Interfaces? DiGRA", "url": "https://dl.digra.org/index.php/dl/article/view/514", "point": "透明（融入）的界面并不自动带来更强投入，叠加界面因为传达清晰常被偏好；界面设计是美学与机制之间的平衡。" },
+        { "title": "Ghost of Tsushima 创意总监访谈（Android Central）", "url": "https://www.androidcentral.com/ghost-tsushima-creative-director-interview", "point": "屏幕上的 UI 越多越妨碍「身在对马岛」的感觉，因此尽量少放、用不显眼的方式指向目标。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.minimap", "el.objective", "el.interact", "el.prompt"], "el.minimap.form": "compassBar", "el.objective.form": ["text"], "rel.hudVisibility": "always" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.minimap", "el.objective", "el.interact", "el.prompt"], "el.minimap.form": "compassBar", "el.objective.form": ["text"], "rel.hudVisibility": "contextual", "el.vitals.priority": "primary", "el.minimap.visibility": "onDemand", "el.objective.visibility": "contextual" },
+        "lookAt": "静止 3 秒后 B 的 HUD 变淡，只保留主信息，罗盘退到按住才出现；触发受击后血条回到全不透明。比较两者常态画面的干净程度，以及想找目标时要多做一步的代价。"
+      }
+    },
+    {
+      "id": "P-world-legibility-guard",
+      "title": "进了世界就要受世界的光、雾和后处理：给叙事内 / 空间内元素做可读性兜底",
+      "problem": "屏幕叠加的 UI 默认清晰地压在最上层；一旦挂进世界，就会被暗场景吞掉、被雾和景深糊掉、被斜角压扁、被 CRT 弯曲、被纸纹和描边风格化——好看但读不出来。",
+      "approaches": [
+        {
+          "name": "自发光载体：暗场景里自己亮",
+          "params": { "el.vitals.diegesis": "diegetic", "el.vitals.attachTo": "player", "vis.strokeGlow": 0.7, "typ.legibility": "textGlow" },
+          "whenToUse": "恐怖、科幻、夜间场景：读数不能依赖场景灯光。",
+          "cost": "发光元素会成为画面最亮点，抢走对威胁的注意；亮场景里发光细线反而消失。",
+          "examples": ["steam:1693980", "steam:1544020", "steam:264710", "steam:387290", "steam:257850"]
+        },
+        {
+          "name": "外壳跟随画面、读数保持清晰",
+          "params": { "rel.diegesis": "diegetic", "rel.followPost": "crisp", "rel.harmony": "unified" },
+          "whenToUse": "面罩、终端、设备界面：壳可以有畸变和材质，数字必须锐利。",
+          "cost": "壳与读数之间有一层「不像同一个东西」的缝；要在美术上处理过渡。",
+          "examples": ["steam:1161580", "steam:287700"]
+        },
+        {
+          "name": "全部跟随媒介（纸纹、描边、调色），靠大字号和高对比撑住",
+          "params": { "rel.followPost": "stylize", "rel.harmony": "sameMedium", "typ.baseSize": 18, "typ.legibility": "outline" },
+          "whenToUse": "媒介化美术（1 位色、手抄本、橡皮管动画、木桌实物）里 UI 必须是同一种画法。",
+          "cost": "风格化会吃掉细节；字号、对比都要比常规高一档。",
+          "examples": ["steam:653530", "steam:1205520", "steam:268910", "steam:1092790"]
+        },
+        {
+          "name": "跟随弯曲（CRT、镜头畸变）",
+          "params": { "rel.followPost": "warp", "ast.container": "crt" },
+          "whenToUse": "整屏就是一台旧屏幕的作品。",
+          "cost": "边角文字变形；高频扫描线和故障会伤可读性。",
+          "examples": ["steam:2379780", "gameui:13081", "steam:1304550"]
+        },
+        {
+          "name": "空间内关键标注：固定大小 + 总在最上层",
+          "params": { "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "billboard", "typ.legibility": "shadow" },
+          "whenToUse": "必须在任何距离、任何遮挡下读到的数字与符号。",
+          "cost": "失去遮挡关系与深度感，像贴纸浮在世界上。",
+          "examples": ["steam:1593500", "steam:814380"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "细线 + 发光叠在亮背景上消失；叙事内 / 媒介化文字随距离或风格化变得太小。",
+          "examples": ["steam:1544020", "steam:17410", "steam:653530", "steam:1205520"],
+          "reviewEvidence": "「字太小 / 看不清」全库 18 款，其中叙事内 / 同媒介 / 空间内组的 The Callisto Protocol、Mirror's Edge、Return of the Obra Dinn、Pentiment 各有 2 条。"
+        }
+      ],
+      "rules": [
+        "关键读数对其局部背景：文字对比 ≥ 4.5:1、图形 ≥ 3:1，在最亮和最暗的场景各测一次（科幻细线 HUD 在雪地、强光里最容易消失）。",
+        "暗场景里叙事内载体用自发光，不靠场景灯照亮。",
+        "雾、景深、运动模糊、胶片颗粒不作用在关键读数上；纸纹、描边、调色这类风格化可以作用在外壳。",
+        "默认按 D-diegesis-post：叙事内跟随纸纹 / 描边 / 调色，空间内只跟随弯曲，屏幕叠加和元 UI 不受影响；个别读数可逐元素拉回清晰。",
+        "叙事内文字设最小屏幕像素：随距离缩小到阈值就切成公告板或屏幕投影。",
+        "空间内描边与场景压暗可以兼作无障碍「高对比显示」（The Last of Us Part II 的做法），把描边设计成可加粗、可换色。"
+      ],
+      "genres": ["恐怖", "科幻", "VR", "媒介化 / 风格化美术（纸、墨、像素、CRT）", "开放世界"],
+      "sources": [
+        { "title": "WCAG 2.2：Contrast (Minimum) 与 Non-text Contrast", "url": "https://www.w3.org/TR/WCAG22/", "point": "正文对比至少 4.5:1、大字 3:1，界面组件与图形至少 3:1；游戏 UI 可借作底线。" },
+        { "title": "The Last of Us Part II 无障碍选项（PlayStation 官方页）", "url": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii/accessibility/", "point": "提供高对比显示（专门的渲染模式增强游戏内元素对比）、HUD 缩放、HUD 背景加深与换色、强化聆听模式等。" },
+        { "title": "Godot 文档：Label3D", "url": "https://docs.godotengine.org/en/stable/classes/class_label3d.html", "point": "fixed_size 让标签不随距离缩放，no_depth_test 让它画在其它物体之上。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.threat"], "el.vitals.diegesis": "diegetic", "el.vitals.attachTo": "player", "vis.strokeGlow": 0, "typ.legibility": "none", "col.lightness": "dark", "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "perspective" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.threat"], "el.vitals.diegesis": "diegetic", "el.vitals.attachTo": "player", "vis.strokeGlow": 0.7, "typ.legibility": "textGlow", "col.lightness": "dark", "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "billboard" },
+        "lookAt": "把场景切到夜间或雪地：A 的背部读数和远处敌人血条跟场景一起变暗、变小；B 自发光、固定大小，读得出来但更「像屏幕」。打开对比度检查和视距预览量化差别。"
+      }
+    },
+    {
+      "id": "P-player-tunable-immersion",
+      "title": "沉浸程度交给玩家调：逐元素开关、HUD 预设档、无障碍兜底",
+      "problem": "同一套放置方案对新手与老手、对不同视力与晕动敏感度的玩家效果相反。设计者只能给一个好的默认值，其余要交给设置页——而且这些开关本身也属于「UI 与世界关系」的设计。",
+      "approaches": [
+        {
+          "name": "逐元素开关（每类 HUD 单独显示 / 呼出 / 隐藏）",
+          "params": { "el.minimap.visibility": "onDemand", "el.objective.visibility": "contextual", "el.vitals.visibility": "always" },
+          "whenToUse": "开放世界、RPG：玩家对小地图、任务清单、伤害数字的偏好差异大。",
+          "cost": "设置页变长；要保证任意组合都不坏版面。",
+          "examples": ["steam:292030", "steam:1174180"]
+        },
+        {
+          "name": "沉浸 / 标准 / 完整三档预设",
+          "params": { "rel.hudVisibility": "contextual", "cnt.density": 1, "rel.diegesis": "screen" },
+          "whenToUse": "默认值面向大多数，沉浸档给想要零 HUD 的人，完整档给新手和高难度。",
+          "cost": "要测三套；沉浸档的引导缺口仍要兜底。",
+          "examples": ["steam:2215430", "steam:1174180"]
+        },
+        {
+          "name": "无障碍档：高对比空间描边 + 放大 HUD",
+          "params": { "a11y.highContrast": true, "a11y.uiScale": 1.4, "el.interact.worldRender": "outline", "el.threat.worldRender": "outline" },
+          "whenToUse": "低视力玩家：把世界本身的对比交给描边与压暗来补。",
+          "cost": "描边色要避开阵营 / 稀有度色；画面风格被大幅改变。",
+          "examples": ["steam:2531310"]
+        },
+        {
+          "name": "减少整屏效果",
+          "params": { "a11y.reduceMotion": true, "rel.metaFx": [], "el.vitals.diegesis": "screen" },
+          "whenToUse": "晕动、光敏、易分心的玩家；关掉元 UI 后生命信息自动回到屏幕。",
+          "cost": "失去身体感；要确保替代读数存在。",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "零 HUD 不可关，也没有任何辅助模式。",
+          "examples": ["steam:698670"],
+          "reviewEvidence": "Scorn 引导不清 10 条、地图难用 4 条，是全库零 HUD 代价最集中的一款。"
+        },
+        {
+          "desc": "整屏效果（震屏、闪白、速度线、故障）没有关闭项或强度滑条。",
+          "examples": [],
+          "reviewEvidence": "评测关键词无此类；依据 Xbox 无障碍指南 117 与 Game Accessibility Guidelines。"
+        }
+      ],
+      "rules": [
+        "设置页的 HUD 部分至少有：整体显隐策略、逐元素开关、HUD 缩放、元 UI 效果强度 / 开关。",
+        "默认值面向目标玩家；「沉浸档」可以更激进，因为是玩家自己选的。",
+        "空间内描边 / 高亮可以兼作无障碍工具，设计成可加粗、可换色。",
+        "元 UI 强度滑条从 0 开始，为 0 时屏幕上的替代读数自动出现。",
+        "这些是玩家设置（a11y.*、elx.visibility），在 Godot 里导出到设置页，不进美术配方。"
+      ],
+      "genres": ["开放世界", "RPG", "射击", "恐怖", "动作冒险"],
+      "sources": [
+        { "title": "Accessible Player Experiences：Personal Interface", "url": "https://accessible.games/accessible-player-experiences/access-patterns/personal-interface/", "point": "让玩家能显示、隐藏、缩放、固定、重排界面组件；行动不便的玩家会把组件挪近以减少光标移动。" },
+        { "title": "Xbox Accessibility Guideline 117: Visual distractions and motion settings", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/117", "point": "移动、闪烁的内容可暂停或关闭；视野、镜头晃动、运动模糊可调；以 Halo Infinite 为例，整屏效果、速度线、震屏都有独立的 0–100% 强度滑条。" },
+        { "title": "The Last of Us Part II 无障碍选项（PlayStation 官方页）", "url": "https://www.playstation.com/en-us/games/the-last-of-us-part-ii/accessibility/", "point": "视觉预设一键打开高对比显示、大号 HUD、强化聆听模式，之后每项仍可单独调整。" },
+        { "title": "Iacovides 等 (2015) Removing the HUD. CHI PLAY '15", "url": "https://oro.open.ac.uk/46759", "point": "去 HUD 的效果取决于玩家熟练度，设计要考虑目标玩家的经验。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.interact", "el.threat"], "rel.hudVisibility": "contextual", "el.vitals.diegesis": "meta", "el.vitals.metaFx": "hurtVignette", "rel.metaFx": ["hurtVignette", "speedLines"], "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi", "el.threat.diegesis": "spatial", "el.threat.attachTo": "target" },
+        "b": { "cnt.screen": "screen.hud", "lay.container": "overlay", "cnt.elements": ["el.vitals", "el.interact", "el.threat"], "rel.hudVisibility": "contextual", "el.vitals.diegesis": "screen", "rel.metaFx": [], "a11y.reduceMotion": true, "a11y.highContrast": true, "a11y.uiScale": 1.4, "el.interact.diegesis": "spatial", "el.interact.attachTo": "poi", "el.interact.worldRender": "outline", "el.threat.diegesis": "spatial", "el.threat.attachTo": "target", "el.threat.worldRender": "outline" },
+        "lookAt": "B 是同一画面打开玩家无障碍选项后的样子：整屏红边和速度线关掉、生命回到屏幕、交互物和敌人改成粗描边、HUD 放大。看哪些信息在 A 里只靠整屏效果和细小标注承担。"
+      }
+    }
+  ]
+}

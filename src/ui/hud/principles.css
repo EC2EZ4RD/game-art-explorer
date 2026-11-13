@@ -1,0 +1,162 @@
+/*
+ * 左栏"UI 原则"与视口演示条的样式（PrinciplesPanel.tsx / DemoBanner.tsx 引入）。归属：B2。前缀 pr-。
+ * 颜色一律用 src/styles.css 的变量（深浅色主题自动跟随）；卡片、小标签、按钮复用 card / chip / btn。
+ * 类名：pr-panel 面板 · pr-intro 说明行 · pr-skeleton 加载占位 · pr-area 领域分组 · pr-fold 折叠小节（pr-count 条数、pr-fold-body 内容）
+ *   pr-item 列表里的一条（pr-clamp 两行截断）· pr-core-title / pr-core-text 总则
+ *   pr-nav 详情页顶栏（pr-nav-sp / pr-nav-pos）· pr-page 原则页 / 品类篇页（.wide = 大窗）· pr-dialog 大窗
+ *   pr-title / pr-lead / pr-text 标题、一句话、正文 · pr-label 行内小标题 · pr-term 元素 / 界面名 · pr-cardref 正文里的游戏名
+ *   pr-demos / pr-demo / pr-demo-btn / pr-demo-text / pr-kind 演示按钮
+ *   pr-approaches / pr-approach / pr-approach-head / pr-approach-meta / pr-btns / pr-note 做法谱系
+ *   pr-rules 经验法则 · pr-anti 反例（.plain 不带警示色）· pr-more 证据折叠 · pr-sources 文献 · pr-variants 换一种风格 · pr-ex 代表作 · pr-share / pr-evidence
+ *   pr-demo-banner 视口演示条（.bottom / .top / .min）· pr-demo-head / pr-demo-sides / pr-demo-off / pr-demo-look / pr-demo-derived / pr-demo-tools
+ *   pr-demo-keys / pr-demo-key / pr-demo-key-name / pr-demo-key-val 两侧不同的参数 · pr-demo-steps / pr-demo-step / pr-demo-step-label 画面 / 场景切换 · pr-demo-actions
+ *   pr-demo-split 只看 A / 对半 / 只看 B · pr-ab-strip / pr-ab-label 没有演示时的 UI 左右对比提示条 · pr-ab-handle / pr-ab-grip 视口上的 A / B 分界拖动柄
+ */
+
+/* ---------- 列表 ---------- */
+.pr-panel { padding-bottom: 16px; }
+.pr-intro { color: var(--text-3); font-size: 12px; margin: 8px 12px 6px; }
+.pr-intro b { color: var(--text-2); font-weight: 600; }
+.pr-panel .kn-search { margin-bottom: 4px; }
+.pr-retry { margin: 4px 12px; }
+.pr-skeleton { padding: 6px 10px; }
+.pr-skeleton div { height: 30px; margin: 6px 0; border-radius: var(--radius); background: var(--panel-2); animation: pr-pulse 1.2s ease-in-out infinite alternate; }
+@keyframes pr-pulse { from { opacity: .45; } to { opacity: 1; } }
+
+.pr-area { border-bottom: 1px solid var(--line); }
+.pr-area > .pr-fold > summary { padding: 8px 12px; margin: 0; font-size: 13px; font-weight: 600; color: var(--text); }
+.pr-area > .pr-fold > .pr-fold-body { padding-bottom: 6px; }
+.pr-area-sum { margin: 0 12px 4px; font-size: 11.5px; color: var(--text-3); }
+
+.pr-fold > summary { cursor: pointer; font-size: 11.5px; color: var(--text-2); margin: 12px 0 4px; list-style-position: inside; user-select: none; }
+.pr-fold > summary:hover { color: var(--accent); }
+.pr-count { display: inline-block; margin-left: 6px; font-size: 10px; line-height: 16px; padding: 0 5px; border-radius: 8px; background: var(--muted-soft); color: var(--text-3); font-weight: 400; }
+.pr-fold .pr-fold > summary { margin: 6px 0 2px; }
+
+.pr-item h4 { line-height: 1.45; }
+.pr-clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.pr-area .pr-fold-body > .pr-fold { margin: 0 12px; border-bottom: 1px dashed var(--line); }
+.pr-core-title { color: var(--text); font-weight: 600; font-size: 12px; }
+.pr-core-text { margin: 2px 0 4px; font-size: 12px; color: var(--text-2); }
+
+/* ---------- 详情页 ---------- */
+.pr-nav { display: flex; align-items: center; gap: 2px; padding: 6px 8px 0 0; }
+.pr-nav .kn-back { margin: 0 0 0 12px; }
+.pr-nav-sp { flex: 1; }
+.pr-nav-pos { font-size: 11px; color: var(--text-3); min-width: 40px; text-align: center; }
+
+.pr-page { padding: 0 12px 8px; }
+.pr-title { margin: 8px 0 4px; font-size: 15px; line-height: 1.45; }
+.pr-lead { margin: 0 0 4px; font-size: 12.5px; color: var(--text); }
+.pr-text { margin: 4px 0; font-size: 12px; color: var(--text-2); line-height: 1.65; }
+.pr-label { font-size: 11px; color: var(--text-3); margin-right: 2px; line-height: 18px; }
+.pr-label-block { display: block; margin-top: 6px; }
+.pr-term { color: var(--text); border-bottom: 1px dotted var(--line-strong); }
+.pr-cardref { color: var(--text); font-weight: 600; }
+.pr-page .chip, .pr-demo-banner .chip { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+
+/* 演示 */
+.pr-demos { margin: 4px 0 2px; }
+.pr-demo { display: flex; gap: 8px; align-items: flex-start; padding: 7px 8px; margin: 5px 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel-2); }
+.pr-demo.on { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.pr-demo.note { display: block; background: transparent; border-style: dashed; }
+.pr-demo.note p { margin: 2px 0 0; font-size: 11.5px; color: var(--text-2); }
+.pr-demo-btn { flex: none; min-width: 58px; }
+.pr-demo-text { min-width: 0; flex: 1; font-size: 12px; }
+.pr-demo-text b { font-weight: 600; }
+.pr-demo-text p { margin: 3px 0 0; color: var(--text-2); font-size: 11.5px; line-height: 1.55; }
+.pr-demo-text .chips { margin-top: 4px; }
+.pr-kind { margin-left: 6px; font-size: 10px; color: var(--text-3); white-space: nowrap; }
+
+/* 做法谱系 */
+.pr-approach { padding: 8px 9px; margin: 6px 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.pr-approach.on { border-color: var(--ok); }
+.pr-approach-head { display: flex; align-items: baseline; gap: 6px; font-size: 12.5px; line-height: 1.45; }
+.pr-approach-head b { flex: 1; min-width: 0; }
+.pr-approach-meta { display: grid; grid-template-columns: 30px 1fr; gap: 3px 6px; margin-top: 5px; font-size: 11.5px; line-height: 1.55; }
+.pr-approach-meta > :nth-child(odd) { color: var(--text-3); }
+.pr-approach-meta > :nth-child(even) { color: var(--text-2); }
+.pr-approach .chips { margin-top: 5px; }
+.pr-note { margin: 5px 0 0; padding: 3px 7px; border-radius: 5px; background: var(--warn-soft); color: var(--warn); font-size: 11px; }
+.pr-btns { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+.pr-page.wide .pr-approaches { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 0 10px; }
+
+/* 法则、反例、文献、风格 */
+.pr-rules { margin: 2px 0 4px; padding-left: 18px; font-size: 12px; color: var(--text-2); line-height: 1.6; }
+.pr-rules li { margin: 3px 0; }
+.pr-anti { margin: 6px 0; padding: 4px 0 4px 8px; border-left: 3px solid var(--warn); font-size: 12px; }
+.pr-anti.plain { border-left-color: var(--line-strong); }
+.pr-anti p { margin: 2px 0; color: var(--text-2); line-height: 1.6; }
+.pr-anti .chips { margin-top: 3px; }
+.pr-more summary { cursor: pointer; font-size: 11px; color: var(--text-3); margin-top: 3px; }
+.pr-more p { font-size: 11.5px; }
+.pr-sources { margin: 2px 0; padding-left: 16px; font-size: 12px; }
+.pr-sources li { margin: 5px 0; }
+.pr-sources a { color: var(--accent); text-decoration: none; }
+.pr-sources a:hover { text-decoration: underline; }
+.pr-sources p { margin: 1px 0 0; color: var(--text-2); font-size: 11.5px; }
+.pr-variants > div { margin: 5px 0; font-size: 12px; color: var(--text-2); line-height: 1.6; }
+.pr-ex { display: grid; grid-template-columns: 84px 1fr; gap: 8px; align-items: start; margin: 6px 0; }
+.pr-ex.nothumb { grid-template-columns: 1fr; gap: 0; }
+.pr-ex p { margin: 0; font-size: 11.5px; color: var(--text-2); line-height: 1.55; }
+.pr-ex.nothumb b { font-size: 12px; }
+.pr-share { margin: 2px 0; font-size: 11px; color: var(--text-3); }
+.pr-evidence { margin: 12px 0 0; font-size: 11px; color: var(--text-3); line-height: 1.55; }
+
+/* 大窗 */
+.dialog.pr-dialog { width: min(900px, 94vw); }
+.pr-dialog .dialog-body { padding-top: 0; }
+.pr-dialog .pr-page { padding: 0; }
+
+/* ---------- 视口演示条 ---------- */
+/* 横跨在 A / B 分界上居中：两侧 HUD 被挡住的一样多（中间一列本来就被分界切成两半）；下面让开"UI A / UI B"角标与操作提示 */
+.pr-demo-banner {
+  position: absolute; left: 50%; transform: translateX(-50%); z-index: 4; width: max-content; max-width: min(560px, calc(100% - 24px)); min-width: min(320px, calc(100% - 24px));
+  display: flex; flex-direction: column; gap: 5px; padding: 8px 10px;
+  background: var(--panel); color: var(--text); border: 1px solid var(--line-strong); border-radius: var(--radius);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .22); font-size: 12px; max-height: calc(100% - 96px); overflow: auto;
+}
+.pr-demo-banner.bottom { bottom: 40px; }
+.pr-demo-banner.top { top: 10px; }
+/* 收起：只剩一行小胶囊 */
+.pr-demo-banner.min { min-width: 0; max-width: min(360px, calc(100% - 24px)); padding: 3px 4px 3px 6px; border-radius: 14px; gap: 0; overflow: hidden; }
+.pr-demo-banner.min .pr-demo-head b { font-size: 11.5px; }
+.pr-demo-head { display: flex; align-items: center; gap: 6px; }
+.pr-demo-head b { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pr-demo-head .btn { padding: 0 6px; }
+.pr-demo-sides { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.pr-demo-sides span { padding: 3px 6px; border-radius: 5px; background: var(--panel-2); color: var(--text-2); line-height: 1.45; }
+.pr-demo-sides b { display: block; font-size: 10.5px; color: var(--text-3); }
+.pr-demo-off { color: var(--warn); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.pr-demo-look { margin: 0; color: var(--text-2); line-height: 1.55; }
+.pr-demo-look b { color: var(--text); }
+.pr-demo-keys { display: flex; flex-wrap: wrap; gap: 4px; }
+.pr-demo-key { display: inline-flex; flex-direction: column; padding: 2px 7px; border-radius: 6px; background: var(--accent-soft); cursor: pointer; max-width: 100%; }
+.pr-demo-key:hover { outline: 1px solid var(--accent); }
+.pr-demo-key-name { font-size: 11px; color: var(--accent); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pr-demo-key-val { font-size: 10.5px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pr-demo-steps { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; }
+.pr-demo-step { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 3px; }
+.pr-demo-step-label { font-size: 11px; color: var(--text-3); margin-right: 2px; }
+.pr-demo-actions { display: flex; flex-wrap: wrap; gap: 4px; border-top: 1px solid var(--line); padding-top: 6px; }
+.pr-demo-derived { display: block; margin-top: 3px; color: var(--text-3); font-size: 11px; }
+.pr-demo-tools { margin: 0; padding: 3px 7px; border-radius: 5px; background: var(--warn-soft); color: var(--warn); font-size: 11px; line-height: 1.5; }
+.pr-demo-split { display: inline-flex; gap: 2px; }
+.pr-demo-steps .sel { height: 22px; font-size: 11px; padding: 0 4px; }
+@media (max-width: 820px) { .pr-demo-banner { max-width: calc(100% - 24px); } }
+
+/* 没有演示、但 UI 左右对比开着：底部居中的一条小横条 */
+.pr-ab-strip {
+  position: absolute; left: 50%; bottom: 40px; transform: translateX(-50%); z-index: 4; max-width: calc(100% - 24px);
+  display: flex; align-items: center; gap: 6px; padding: 3px 4px 3px 6px; border-radius: 14px;
+  background: var(--panel); color: var(--text); border: 1px solid var(--line-strong); box-shadow: 0 4px 18px rgba(0, 0, 0, .22); font-size: 12px;
+}
+.pr-ab-label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-2); }
+.pr-ab-strip .btn { padding: 0 6px; }
+
+/* A / B 分界拖动柄：HudSystem 已经画了白线，这里只是一条透明的可拖区域 + 一个小把手 */
+.pr-ab-handle { position: absolute; top: 0; bottom: 0; width: 14px; margin-left: -7px; z-index: 3; cursor: ew-resize; touch-action: none; }
+.pr-ab-grip {
+  position: absolute; top: 28%; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none;
+  background: #fff; color: #222; font-size: 10.5px; padding: 1px 6px; border-radius: 8px; box-shadow: 0 0 0 1px rgba(0, 0, 0, .35);
+}

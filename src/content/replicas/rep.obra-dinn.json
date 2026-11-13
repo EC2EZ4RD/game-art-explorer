@@ -1,0 +1,786 @@
+{
+ "id": "rep.obra-dinn",
+ "name": "Return of the Obra Dinn",
+ "card": "steam:653530",
+ "genre": "puzzle",
+ "family": "fam.one-bit-dither",
+ "pack": "puzzle",
+ "art": {
+  "recipe": "onebit",
+  "scene": "harbor"
+ },
+ "base": {
+  "hud.style": "parchment",
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "ix.glyphs": "keycap",
+  "rel.harmony": "sameMedium",
+  "col.source": "scene",
+  "col.strategy": "duotone",
+  "col.lightness": "light",
+  "col.surface": "#e5ffff",
+  "col.surface2": "#333319",
+  "col.text": "#333319",
+  "col.accent": "#333319",
+  "col.accent2": "#e5ffff",
+  "col.focus": "#333319",
+  "col.border": "#333319",
+  "col.dynamic": "fixed",
+  "vis.pixelScale": "world",
+  "vis.corner": "sharp",
+  "vis.fill": "solid",
+  "vis.opacity": 1,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1,
+  "vis.strokeColor": "ink",
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.ornament": 1,
+  "vis.motif": "none",
+  "ast.ornaments": [
+   "dividers"
+  ],
+  "ast.core": "procedural",
+  "ast.frame": "procedural",
+  "vis.iconStyle": "pixel",
+  "typ.body.family": "serif",
+  "typ.body.weight": "regular",
+  "typ.display.family": "serif",
+  "typ.display.weight": "regular",
+  "typ.display.case": "asIs",
+  "typ.numerals.family": "oldstyle",
+  "typ.legibility": "none",
+  "typ.titleFx": "none",
+  "rel.followPost": "full",
+  "mo.enter": "cut",
+  "mo.easing": "linear",
+  "mo.juice": 0,
+  "mo.idle": "none",
+  "ix.focus": "invert",
+  "ix.press": "none",
+  "typ.rasterize": "world"
+ },
+ "screens": [
+  {
+   "key": "title",
+   "ref": "qa/refs-cache/r2/life/img/steam_653530_0.jpg",
+   "values": {
+    "uip.screen": "tpl.title",
+    "cnt.screen": "screen.title",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 1,
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "lay.composition": "single",
+    "lay.focalSide": "center",
+    "lay.arrangement": "column",
+    "lay.grouping": "divider",
+    "cnt.focal": "title",
+    "cnt.dataShape": "text",
+    "cnt.textLength": "line",
+    "cnt.density": 1,
+    "cnt.tone": "narrative",
+    "cnt.elements": [
+     "el.title"
+    ],
+    "el.title.form": "notice",
+    "typ.display.style": "italic",
+    "typ.body.case": "asIs",
+    "typ.scale": 1.2,
+    "vis.stroke": "none",
+    "vis.ornament": 1,
+    "ast.ornaments": [
+     "dividers"
+    ],
+    "hier.emphasis": [
+     "size",
+     "typeface"
+    ],
+    "mo.enter": "fade",
+    "mo.duration": 1,
+    "ix.mode": "readOnly",
+    "ix.dismiss": "tapAnywhere",
+    "ix.continueCue": "none",
+    "lay.panelAspect": "square",
+    "typ.align@body": "center",
+    "vis.dividerStyle": "oxford",
+    "vis.dividerPlace": [
+     "betweenBlocks"
+    ],
+    "lay.titlePos": "none"
+   }
+  },
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/life/img/steam_653530_1.jpg",
+   "values": {
+    "uip.layout": "layout.puzzle",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.diegesis": "diegetic",
+    "rel.hudVisibility": "contextual",
+    "rel.behind": "live",
+    "cnt.density": 0,
+    "cnt.textLength": "none",
+    "vis.opacity": 0,
+    "cnt.elements": [
+     "el.interact"
+    ],
+    "el.interact.form": [
+     "cursor"
+    ],
+    "el.interact.diegesis": "diegetic",
+    "el.interact.attachTo": "held",
+    "el.interact.scale": 1.6,
+    "el.interact.visibility": "contextual",
+    "el.interact.priority": "ambient",
+    "rel.followPost": "full",
+    "rel.metaFx": []
+   }
+  },
+  {
+   "key": "journal",
+   "ref": "qa/refs-cache/r2/life/img/steam_653530_2.jpg",
+   "values": {
+    "uip.screen": "tpl.codex",
+    "uip.container": "ctr.book",
+    "cnt.screen": "screen.journal",
+    "lay.container": "fullscreen",
+    "ast.container": "book",
+    "ast.containerSurface": "none",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "lay.composition": "splitLR",
+    "lay.focalSide": "right",
+    "lay.detail": "none",
+    "cnt.focal": "none",
+    "cnt.dataShape": "none",
+    "cnt.textLength": "line",
+    "cnt.density": 1,
+    "cnt.elements": [
+     "el.title"
+    ],
+    "typ.display.style": "upright",
+    "vis.pattern": "dither",
+    "lay.overflow": "paged",
+    "lay.pageIndicator": "pageCurl",
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "flow.entry": "hotkey",
+    "mo.enter": "pageTurn",
+    "mo.transition": "useEnter",
+    "lay.titlePos": "none",
+    "el.title.form": "titlePage",
+    "ast.bookStyle": "flat",
+    "ast.pageLeft": "endpaper",
+    "ast.pageRight": "framed",
+    "vis.patternOpacity": 0.5
+   }
+  },
+  {
+   "key": "codex",
+   "ref": "qa/refs-cache/r2/life/img/steam_653530_4.jpg",
+   "values": {
+    "uip.screen": "tpl.codex",
+    "cnt.screen": "screen.codex",
+    "cnt.subtype": "collection",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 1,
+    "ast.container": "none",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.focal": "scene",
+    "cnt.characterRender": "engraving",
+    "cnt.dataShape": "none",
+    "cnt.textLength": "title",
+    "cnt.density": 3,
+    "lay.composition": "single",
+    "lay.nav": "hotspots",
+    "lay.overflow": "pan",
+    "lay.detail": "none",
+    "cmp.panelArt": "collage",
+    "vis.pattern": "none",
+    "vis.ornament": 0,
+    "ast.ornaments": [],
+    "typ.display.style": "italic",
+    "cnt.elements": [
+     "el.interact"
+    ],
+    "el.interact.form": [
+     "magnifier"
+    ],
+    "el.interact.attachTo": "cursor",
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "mo.enter": "cut",
+    "lay.titlePos": "none",
+    "lay.panelAspect": "4x3",
+    "cnt.illustrationRender": "engraving",
+    "lay.hotspotCue": "none"
+   }
+  },
+  {
+   "key": "deduction",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.deduction",
+    "uip.container": "ctr.book",
+    "cnt.screen": "screen.journal",
+    "cnt.subtype": "deduction",
+    "lay.container": "fullscreen",
+    "ast.container": "book",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "lay.composition": "splitLR",
+    "lay.focalSide": "left",
+    "lay.detail": "none",
+    "lay.overflow": "paged",
+    "lay.pageIndicator": "none",
+    "cnt.focal": "scene",
+    "cnt.dataShape": "form",
+    "cnt.textLength": "short",
+    "cnt.density": 2,
+    "cmp.panelArt": "side",
+    "cmp.input": "underline",
+    "cnt.elements": [],
+    "ix.mode": "select",
+    "ix.confirm": "batch",
+    "ix.focus": "invert",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "mo.enter": "cut",
+    "lay.titlePos": "none",
+    "lay.nav": "hotspots",
+    "cmp.formKind": "inlineBlanks",
+    "ast.bookStyle": "flat",
+    "lay.hotspotCue": "numbered"
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.cutscene",
+    "cnt.screen": "screen.dialogue",
+    "cnt.subtype": "cutscene",
+    "lay.container": "overlay",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "col.lightness": "dark",
+    "col.surface": "#333319",
+    "col.text": "#e5ffff",
+    "vis.opacity": 0,
+    "cnt.elements": [
+     "el.subtitle"
+    ],
+    "cmp.dialogBox@el.subtitle": "bare",
+    "el.subtitle.screenAnchor": "center",
+    "cnt.focal": "none",
+    "cnt.textLength": "none",
+    "cnt.tone": "narrative",
+    "cnt.density": 0,
+    "mo.textReveal": "fade",
+    "mo.enter": "fade",
+    "ix.skip": "none",
+    "ix.continueCue": "none",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "timed",
+    "el.subtitle.form": "lineOnly",
+    "el.subtitle.untranslated": true,
+    "el.subtitle.scale": 1.4
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "global",
+   "what": "1-bit 有序抖动（Bayer）是画面与界面共用的“灰”：书页环衬、插画阴影、书外毛边都靠抖动点阵；vis.pattern 没有 dither（halftone 是印刷网点、diagStripes 是实线条纹）",
+   "severity": "high",
+   "proposal": "vis.pattern 加 dither（bayer4 / bayer8），与画面 color.dither 共用同一网格",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-42（vis.pattern = dither：journal 左页整页抖动衬页）"
+  },
+  {
+   "screen": "global",
+   "what": "ast.container = book 的封皮、纸色、墨色写死成棕色皮革 + 米色纸 + 棕墨，不读 col.surface / col.surface2 / col.text：两色书画成棕皮羊皮纸册，journal、deduction 两屏调色板因此整个错掉",
+   "severity": "high",
+   "proposal": "book 容器的书页取 col.surface、封皮取 col.surface2、内容墨色取 col.text（或加 ast.containerMat：纸 / 皮 / 布 / 跟随调色板）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-06（book 容器读 col.surface / surface2 / text：两色书；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "global",
+   "what": "调色板锁定为两色：界面上任何元素都只能取这两色（灰盒的蓝灰、页码点、皮革棕都不该出现），并能在选项里整套切换（Macintosh、IBM、Commodore、Zenith、LCD 等）；col 没有色数锁定，col.dynamic 也没有“玩家选择调色板”",
+   "severity": "high",
+   "proposal": "col 加 paletteLock（2 / 4 色，界面最终输出按调色板量化）；col.dynamic 加 playerChoice",
+   "kind": "missingParam"
+  },
+  {
+   "screen": "global",
+   "what": "book 容器的圆角、皮革纹理、书脊中缝阴影与纸纹都是写死的；原作是正对屏幕平铺的硬边书，书脊只是一条细缝",
+   "severity": "medium",
+   "proposal": "ast.container = book 加 flat 变体（硬边、无书脊阴影、无纸纹），或让 vis.corner = sharp / vis.depth = flat 作用到容器",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-53（ast.bookStyle = flat：硬边平铺、书脊一条细缝、无纸纹）"
+  },
+  {
+   "screen": "global",
+   "what": "模板构图器在 modal / fullscreen 容器里每屏都在左上写模板名（标题 / 图鉴 / 推理板 / 过场）当表头，参数关不掉；原作所有书页、扉页、黑场都没有表头",
+   "severity": "medium",
+   "proposal": "加 lay.header（none / label / plate），或在 cnt.focal = title / scene 时默认不画表头",
+   "kind": "missingParam",
+   "resolvedBy": "lay.titlePos（title 由 tpl.title 预设）"
+  },
+  {
+   "screen": "global",
+   "what": "ix.close 的取值（auto / xTopRight / xOutside / back / cancelBtn / keyGlyph）没有“无”：title、dialogue 落到 ×，书页只好用 Esc 返回药丸键；原作不画任何关闭控件",
+   "severity": "medium",
+   "proposal": "ix.close 加 none（只靠 ix.dismiss 的按键 / 点空白退出）",
+   "kind": "missingOption",
+   "resolvedBy": "ix.close"
+  },
+  {
+   "screen": "global",
+   "what": "rel.behind = replaced + ast.bgArt = solid 的底色是场景墨色再压暗六成（实测 #11110f 近黑），不读调色板；原作书外的深底就是调色板暗色（橄榄墨 #333319），在 title / journal / codex 里占画面一半左右",
+   "severity": "medium",
+   "proposal": "bgArt = solid 时取 col.surface2（或加 col.backdrop）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-24（bgArt = solid 取色板暗色：橄榄墨深底；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "global",
+   "what": "界面按画面的低分辨率渲染：衬线字是被栅格化的衬线，不是像素字体；vis.pixelScale = world 会推出像素字",
+   "severity": "medium",
+   "proposal": "typ 加 rasterize（任意字族按世界网格栅格化），与 D-pixel 的“像素字”解耦",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-56（typ.rasterize = world：衬线字按世界网格栅格化）"
+  },
+  {
+   "screen": "global",
+   "what": "灰盒占位（src/hud/greybox.ts）的虚线外框描到了最后一条斜纹上：roundRect 路径被斜纹循环的 beginPath 覆盖，restore 不恢复路径，于是灰盒没有虚线框，反而从右下角拖出一条伸出灰盒的斜虚线（codex 伸到面板外，deduction 斜穿书脊和右页正文）",
+   "severity": "medium",
+   "proposal": "描边前重建 rect / roundRect 路径（或斜纹改用独立 Path2D）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-37（灰盒虚线外框不再拖出斜虚线；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "global",
+   "what": "16:9 画幅钉住后画布最上一像素行漏出世界画面（所有替换背景的屏顶边都有一条杂色细线），最下一行是纯黑：letterbox 1.78 与画布取整差一像素",
+   "severity": "low",
+   "proposal": "rel.behind = replaced 的底色铺满整张画布，而不是按 letterbox 取整后的内容矩形",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-24（替换背景铺满整张画布 d.full；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "global",
+   "what": "旧式数字（1796、1803 高低错落）",
+   "severity": "low",
+   "proposal": "typ.numerals.family 加 oldstyle",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "title",
+   "what": "19 世纪报纸告示的分隔线：粗细双线（牛津线）、两头尖的膨胀线，插在标题块之间；ast.ornaments = dividers 只有一种画法（两段线 + 菱形），而且只画在面板底边",
+   "severity": "high",
+   "proposal": "dividers 加线型（oxfordRule / swelledRule / plain），并可作为版面块之间的分隔插入",
+   "kind": "newDrawing",
+   "resolvedBy": "M12b-45（vis.dividerStyle = oxford + vis.dividerPlace = betweenBlocks：告示块之间的牛津线）"
+  },
+  {
+   "screen": "title",
+   "what": "告示 / 扉页式标题块：斜体大标题、宽字距小型大写引语、带引号的全大写船名、多行居中数据与联系方式，层层叠排占满纸页（journal 右页的扉页同理：三行书名 + 船图 + 副题 + 年份；现在那里只能写模板名“图鉴”）；el.title 只能一级，主体标题只有“大字 + 一行副题”",
+   "severity": "high",
+   "proposal": "el.title 加 notice / titlePage 版式：多级标题块，各级可设字号、斜体、大小写、引号与字距，块之间可插分隔线与插画位",
+   "kind": "composite",
+   "partialBy": "M12b-30（el.title.form = notice / titlePage）：告示块与扉页都画出来了，但告示缩在纸页上三分之一、船名不放大、没有插画位；扉页插画位压着一行正文"
+  },
+  {
+   "screen": "title",
+   "what": "正文是多行居中短句（每行一条数据）；textBlock 只有左对齐两端排齐的段落或单行，排版没有对齐方式参数",
+   "severity": "medium",
+   "proposal": "加 typ.align（left / center / justify），textBlock 可逐行居中",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-55（typ.align@body = center：多行居中）"
+  },
+  {
+   "screen": "title",
+   "what": "页面是满高的近方形纸页居中、两侧深色竖条留边（title 的告示、codex 的近 4:3 插画页都是）；lay.panelSize 同时缩放宽和高，弹窗永远是约 1.9:1 的横幅",
+   "severity": "medium",
+   "proposal": "lay.panelSize 拆成宽、高两项（或加 lay.panelAspect：auto / square / portrait / 4:3），或 lay.container 加 column（满高居中竖栏）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.panelAspect, lay.panelSize"
+  },
+  {
+   "screen": "title",
+   "what": "cmp.panelArt = window（主体与数据之间的插画位）只是语义，模板构图器不画：title 标题与船名之间的船图、journal 扉页的船图都落空",
+   "severity": "medium",
+   "proposal": "模板构图器实现 cmp.panelArt：window = 标题块之间的插画位（没素材时灰盒“插画（需素材）”）",
+   "kind": "renderBug",
+   "partialBy": "M12b-30（journal 的 el.title = titlePage 自带插画位，夹在书名与副题之间）；title 的 notice 块仍没有插画位"
+  },
+  {
+   "screen": "title",
+   "what": "铜版船图（三桅船侧影，title 与 journal 扉页共用）需要位图",
+   "severity": "medium",
+   "proposal": "AI 生成一张两色铜版小插画（透明底，只用调色板墨色）",
+   "kind": "asset"
+  },
+  {
+   "screen": "hud",
+   "what": "唯一的“HUD”是左下手里的骷髅怀表（世界内道具，约占画面五分之一），是第一人称手持模型；HUD 层画不出手持物本身",
+   "severity": "high",
+   "proposal": "加元素 el.tool（手持工具：怀表 / 相机 / 罗盘），以 3D 手持模型或贴屏角的两色立绘作载体，按 screenAnchor 放在画面一角",
+   "kind": "worldSpace"
+  },
+  {
+   "screen": "hud",
+   "what": "el.interact 的 attachTo = held 与 screenAnchor 都不影响位置：交互提示总画在兴趣点上，屏中只剩一个不属于原作的小箭头",
+   "severity": "medium",
+   "proposal": "attachTo = held 时提示挂在手持物上（无手持物则不画）；screenAnchor 对 diegetic 提示也生效",
+   "kind": "renderBug"
+  },
+  {
+   "screen": "hud",
+   "what": "靠近尸体时怀表开盖、指针转动：提示是道具本身的状态变化，不是额外图标",
+   "severity": "low",
+   "proposal": "el.tool 加 reactive 状态（idle / near / active），配开盖与指针动效",
+   "kind": "motion"
+  },
+  {
+   "screen": "journal",
+   "what": "书的左右页底纹与内容不对称：左页整页斜纹抖动环衬、右页是带内框线的扉页；book 容器两页同一种纸，模板只能“主体一栏 + 数据一栏”，左页不能只放底纹",
+   "severity": "medium",
+   "proposal": "ast.container = book 加左右页分设：endpaper（环衬底纹）/ framed（内框线）/ plain，左页可设为纯装饰页",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-53（ast.pageLeft = endpaper / ast.pageRight = framed：左页衬页、右页内框）"
+  },
+  {
+   "screen": "journal",
+   "what": "lay.pageIndicator = none 不生效：lay.overflow = paged 时总画四个页码点（journal 左页底、deduction 右页底）",
+   "severity": "low",
+   "proposal": "pageIndicator = none 时不画页码",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-34（lay.pageIndicator = none：不画页码点；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "journal",
+   "what": "页角是卷起的翻页角，不是页码点",
+   "severity": "low",
+   "proposal": "lay.pageIndicator 加 pageCurl（翻页角）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-53（lay.pageIndicator = pageCurl：右下翻页角）"
+  },
+  {
+   "screen": "codex",
+   "what": "插画本身就是导航：codex 整页群像点人脸跳到此人的命运页，deduction 现场素描上点编号人脸选要填命运的人；lay.nav = hotspots 会占掉整个内容区、自画虚线框与药丸名牌，不能叠在主体插画上",
+   "severity": "high",
+   "proposal": "hotspots 叠在 cnt.focal 的插画区域上（热区不占版面、不画框，只在悬停时显出编号或高亮）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.nav = hotspots（叠在主体插画上）"
+  },
+  {
+   "screen": "codex",
+   "what": "整页群像铜版画（几十个船员、多场景拼贴、抖动阴影）就是这一屏，现为蓝灰灰盒“场景（需素材）”",
+   "severity": "high",
+   "proposal": "AI 生成两色铜版 / 抖动群像插画（按调色板量化），作 cnt.focal = scene 的素材",
+   "kind": "asset"
+  },
+  {
+   "screen": "codex",
+   "what": "光标是放大镜（悬停处局部放大插画），不带文字；el.interact.form = cursor 只有箭头 + 粗体动作标签",
+   "severity": "medium",
+   "proposal": "el.interact.form 加 magnifier（局部放大镜）；cursor 的动作标签可关",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-60（el.interact.form = magnifier：不带字的放大镜光标）"
+  },
+  {
+   "screen": "codex",
+   "what": "几张场景小图互相叠压成拼贴，各配斜体引号图注（“Formosan Royalty”“Justice at Sea”）压在图上",
+   "severity": "medium",
+   "proposal": "cmp.panelArt 加 collage（多图叠压 + 斜体图注），图注字样走 typ.display",
+   "kind": "composite",
+   "partialBy": "M12b-32（cmp.panelArt = collage：倾斜小图 + 斜体引号图注）：小图排成主体上方单独一排、不叠在整页插画上，图注是极小字"
+  },
+  {
+   "screen": "codex",
+   "what": "cnt.characterRender（铜版 / 版画处理）只在主体是角色时生效，群像插画是“场景”主体时画法处理无处可写",
+   "severity": "low",
+   "proposal": "characterRender 的 activeWhen 扩到 cnt.focal = scene 与 cmp.panelArt，或加 cnt.illustrationRender",
+   "kind": "missingParam"
+  },
+  {
+   "screen": "deduction",
+   "what": "命运句是填空：“____ 被 ____ 用 ____ 杀死”，空位是下划线，点空位弹出分类词表（死因 / 凶手 / 凶器，名字按船员职位分组）；cmp.input = underline 只给一个独立输入框，文本只能是整段，el.choices = text 画成粗体带描边的编号对话选项",
+   "severity": "high",
+   "proposal": "cnt.dataShape = form 加 inlineBlanks（句内多空位，下划线）+ 点空位弹出的分类词表（按组分栏）组合件",
+   "kind": "composite",
+   "resolvedBy": "M12b-31（cmp.formKind = inlineBlanks：下划线填空命运句 + 分组词表）"
+  },
+  {
+   "screen": "deduction",
+   "what": "左页是这段记忆的现场素描（编号人脸），现为灰盒“场景（需素材）”",
+   "severity": "medium",
+   "proposal": "AI 生成两色素描插画素材（人脸位置随附热点坐标）",
+   "kind": "asset"
+  },
+  {
+   "screen": "deduction",
+   "what": "每猜对 3 人才统一确认（批量校验），确认后的条目变成不可改",
+   "severity": "low",
+   "proposal": "ix.confirm 加 batch（累计 N 项后自动校验）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-31（ix.confirm = batch：“已确认 3/9 · 每 3 人一起确认”）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "死前录音是黑场 + 居中台词：过场模板只有“直接叠加”容器才不画表头，但叠加容器不按 rel.behind = replaced 画 ast.bgArt（字幕压在实时场景上）；改成浮空弹窗才有黑场，代价是多出表头与关闭键",
+   "severity": "medium",
+   "proposal": "叠加类模板也按 rel.behind = replaced 先画 ast.bgArt；或 tpl.cutscene 加黑场变体",
+   "kind": "renderBug",
+   "resolvedBy": "lay.container = overlay（替换背景照画）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "字幕总带说话人前缀（“水手：”）：el.subtitle 的三种画法 plain / boxed / speakerColor 都写说话人；原作黑场只有一句台词",
+   "severity": "low",
+   "proposal": "el.subtitle 加 lineOnly 画法（不写说话人）",
+   "kind": "missingOption",
+   "resolvedBy": "el.subtitle.form = lineOnly"
+  },
+  {
+   "screen": "dialogue",
+   "what": "字幕字色写死 #fff + 黑描边，不读 col.text（两色调色板下应是青白、无描边）",
+   "severity": "low",
+   "proposal": "字幕字色取 col.text，描边跟 typ.legibility",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-32（字幕字色取 col.text、描边跟 typ.legibility；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "外语台词按原文显示，语言本身就是线索",
+   "severity": "low",
+   "proposal": "示例内容包加原文台词 + el.subtitle 的 untranslated 开关",
+   "kind": "content",
+   "resolvedBy": "M12b-61（el.subtitle.untranslated：黑场台词按原文显示）"
+  },
+  {
+   "screen": "codex / deduction",
+   "what": "叠在插画上的热区（lay.nav = hotspots + cnt.focal，M12a-22）总画编号小圆（写死半透明黑底 + 白字）和第一个热区的发光圈 + 药丸名牌；原作群像 / 素描上平时没有任何标记，只有放大镜光标，编号印在插画里",
+   "severity": "low",
+   "proposal": "加 lay.hotspotCue（none / hover / numbered），标记颜色取 col.text / col.surface 而不是写死黑白",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-68（lay.hotspotCue：codex 图上不标、deduction 编号小圆取纸墨色）"
+  },
+  {
+   "screen": "journal",
+   "what": "扉页标题块（el.title = titlePage）与模板按 cnt.textLength 补的一行正文不互相避让：插画位灰盒压着“警局回电了，可以出发。”，两块叠在右页同一处",
+   "severity": "low",
+   "proposal": "模板排数据行时把标题块（notice / titlePage）当占位躲开，或标题块占页时不再补正文行",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 回归修复 C1 ⑥（标题块 notice / titlePage / chapterCard 在任何模板上都算：没写数据结构、按 cnt.textLength 补的那一句不再补；主体是标题时不画第二个标题、标题块排进主体那一栏）"
+  }
+ ],
+ "scores": {
+  "title": [
+   { "layout": 4, "elements": 4, "palette": 7, "type": 5, "shape": 5, "density": 4, "overall": 4, "round": 1 },
+   { "layout": 5, "elements": 4, "palette": 7, "type": 6, "shape": 5, "density": 4, "overall": 5, "round": 2 },
+   { "layout": 7, "elements": 5, "palette": 7, "type": 6, "shape": 5, "density": 5, "overall": 6, "round": 3 },
+   { "layout": 7, "elements": 6, "palette": 7, "type": 6, "shape": 6, "density": 6, "overall": 6, "round": 4 }
+  ],
+  "hud": [
+   { "layout": 4, "elements": 2, "palette": 5, "type": 6, "shape": 2, "density": 7, "overall": 4, "round": 1 },
+   { "layout": 4, "elements": 2, "palette": 5, "type": 6, "shape": 2, "density": 7, "overall": 4, "round": 2 },
+   { "layout": 4, "elements": 2, "palette": 5, "type": 6, "shape": 2, "density": 7, "overall": 4, "round": 3 },
+   { "layout": 4, "elements": 2, "palette": 5, "type": 6, "shape": 2, "density": 7, "overall": 4, "round": 4 }
+  ],
+  "journal": [
+   { "layout": 4, "elements": 2, "palette": 3, "type": 4, "shape": 4, "density": 3, "overall": 3, "round": 1 },
+   { "layout": 5, "elements": 3, "palette": 3, "type": 5, "shape": 4, "density": 5, "overall": 4, "round": 2 },
+   { "layout": 6, "elements": 4, "palette": 7, "type": 4, "shape": 5, "density": 4, "overall": 5, "round": 3 },
+   { "layout": 7, "elements": 6, "palette": 7, "type": 5, "shape": 6, "density": 5, "overall": 6, "round": 4 }
+  ],
+  "codex": [
+   { "layout": 2, "elements": 2, "palette": 3, "type": 4, "shape": 3, "density": 2, "overall": 2, "round": 1 },
+   { "layout": 5, "elements": 3, "palette": 5, "type": 4, "shape": 4, "density": 4, "overall": 3, "round": 2 },
+   { "layout": 6, "elements": 4, "palette": 4, "type": 4, "shape": 5, "density": 4, "overall": 4, "round": 3 },
+   { "layout": 6, "elements": 5, "palette": 6, "type": 4, "shape": 5, "density": 5, "overall": 5, "round": 4 }
+  ],
+  "deduction": [
+   { "layout": 3, "elements": 2, "palette": 3, "type": 4, "shape": 4, "density": 4, "overall": 3, "round": 1 },
+   { "layout": 5, "elements": 3, "palette": 3, "type": 4, "shape": 4, "density": 4, "overall": 3, "round": 2 },
+   { "layout": 6, "elements": 4, "palette": 6, "type": 4, "shape": 5, "density": 5, "overall": 4, "round": 3 },
+   { "layout": 6, "elements": 6, "palette": 6, "type": 5, "shape": 6, "density": 6, "overall": 5, "round": 4 }
+  ],
+  "dialogue": [
+   { "layout": 4, "elements": 5, "palette": 3, "type": 5, "shape": 6, "density": 6, "overall": 4, "round": 1 },
+   { "layout": 7, "elements": 6, "palette": 6, "type": 5, "shape": 6, "density": 7, "overall": 6, "round": 2 },
+   { "layout": 8, "elements": 7, "palette": 8, "type": 5, "shape": 7, "density": 8, "overall": 7, "round": 3 },
+   { "layout": 8, "elements": 8, "palette": 8, "type": 6, "shape": 7, "density": 9, "overall": 7, "round": 4 }
+  ]
+ },
+ "round1Diffs": {
+  "title": [
+   "原作是满高近方形纸页居中、两侧深橄榄色竖条；复刻是约 1.9:1 的横幅弹窗，上下也露出大片底色",
+   "复刻左上多一个斜体表头“标题”、右上多一个 × 关闭键，原作纸页上没有任何 chrome",
+   "原作的正文是多行居中短句（船的数据、启事联系方式）；复刻是一段左对齐两端排齐的小字段落",
+   "原作标题与船名之间是居中铜版船图，船名带引号、全大写；复刻没有插画",
+   "原作有粗细双线与膨胀线把版面分成几段；复刻只有面板底边一条两段线 + 菱形",
+   "书外的深底原作是橄榄墨色 #333319，复刻近黑",
+   "标题字号层级：复刻的游戏名大、其余都很小，上半部大片空白；原作从上到下排满"
+  ],
+  "hud": [
+   "原作左下是手持骷髅怀表（世界内道具，约占画面五分之一）；复刻只有画面中部一个不属于原作的小箭头光标",
+   "两边都几乎零 HUD，没有血条、地图、目标"
+  ],
+  "journal": [
+   "书的封皮与纸色是棕色皮革 + 米色纸，原作是橄榄墨封皮 + 青白纸的两色",
+   "原作左页只有斜纹抖动环衬；复刻左页是一段正文 + 一列“银表”详情（条形值、出示 / 放回按钮）",
+   "原作右页是带内框线的扉页：书名、铜版船图、副题、年份居中；复刻右页是大字“图鉴”被一块斜纹小卡片（第三案 旧塔来信）压住，两者重叠",
+   "复刻有页码点、圆角皮革与书脊阴影，原作是平铺的硬边书"
+  ],
+  "codex": [
+   "原作整页是一幅群像铜版画（几乎满屏），复刻是空白书页上四个虚线热区框 + 药丸名牌",
+   "原作是单页近满屏的插画，两侧只露出抖动毛边；复刻是左右两页的棕皮书",
+   "原作有斜体引号图注压在插画上；复刻只有左上斜体表头“图鉴”",
+   "放大镜光标对应复刻的箭头光标 + 文字标签（标签原作没有）"
+  ],
+  "deduction": [
+   "（凭记忆）原作是一页现场素描 + 一页命运填空句；复刻是四个虚线热区框散在书页上，选项列表压在热区框上",
+   "棕皮米纸书，调色板不对",
+   "选项是粗体带描边的对话选项，不是分类词表"
+  ],
+  "dialogue": [
+   "（凭记忆）原作是全黑场、居中浅色衬线台词；复刻的台词压在实时 3D 场景上，背景是米色抖动场景而不是黑场",
+   "复刻台词偏小、带说话人前缀；居中位置与无框字幕方向正确"
+  ]
+ },
+ "round2Diffs": {
+  "title": [
+   "斜体大标题 + 宽字距小型大写副题的层级已接近原作“Lost at Sea, 1803 / THE GOOD SHIP”；纸色青白、墨色橄榄、居中对称也对了",
+   "纸页仍是约 1.9:1 的横幅弹窗（panelSize 0.75 只是把横幅放大），原作是满高近方形窄页、两侧深色竖条；复刻上下仍露大片底色",
+   "左上表头“标题”与右上 × 仍在，原作纸页上没有任何 chrome",
+   "正文只有一行居中短句，上半与中段大片留白；原作从上到下排满五六行居中的船数据与启事联系方式",
+   "没有铜版船图、没有带引号的全大写船名、没有粗细双线与膨胀线；饰条仍只有面板底边一条两段线 + 菱形",
+   "书外底色近黑（#11110f），原作是橄榄墨 #333319；画布最上一像素行漏出世界画面"
+  ],
+  "hud": [
+   "与第一轮相同：原作左下是手持骷髅怀表（约占画面五分之一的世界内道具），复刻只有画面中部一个不属于原作的小箭头光标",
+   "两边都是零 HUD、零文字，没有血条、地图、目标——这一点一致"
+  ],
+  "journal": [
+   "结构对了：书正对屏幕平铺在深底上、版面稀疏、右页居中一个大字标题、左页几乎空着",
+   "书仍是棕皮封皮 + 米色纸 + 圆角 + 书脊阴影 + 纸纹；原作是橄榄墨封皮、青白纸、硬边平铺、书脊只有一条细缝",
+   "原作左页整页是斜纹抖动环衬；复刻左页是一句居中短句 + 左上表头“图鉴”",
+   "原作右页是带内框线的扉页（三行书名 + 铜版船图 + 副题 + 年份）；复刻右页只有大字“图鉴”（模板名），无内框、无插画、无副题年份",
+   "仍画四个页码点（pageIndicator = none 不生效），右上多一个 Esc 返回药丸键；原作只有右下一个卷起的翻页角"
+  ],
+  "codex": [
+   "结构对了：满尺寸单页、主体是整页插画、纸墨回到两色",
+   "插画是蓝灰斜纹灰盒“场景（需素材）”，不是群像铜版画；蓝灰色是调色板之外的第三色",
+   "页面是 16:9 宽页、四周露近黑底；原作是近 4:3 的页面，两侧露出橄榄色抖动毛边",
+   "左上斜体表头“图鉴”、右上 Esc 药丸；原作没有 chrome，只有压在图上的斜体引号图注（拼贴小图）",
+   "光标是箭头 + 粗体标签“查看银表”，原作是放大镜（局部放大）、不带文字",
+   "灰盒没有虚线外框，反而从右下角拖出一条伸出面板外的斜虚线"
+  ],
+  "deduction": [
+   "（凭记忆）分页结构对了：左页现场素描、右页文字",
+   "书仍是棕皮米纸，调色板不对",
+   "右页是一段报纸正文 + 三条粗体描边的编号对话选项；原作是填空命运句（下划线空位，点开分类词表）",
+   "左页素描是灰盒，没有编号人脸热点",
+   "一条斜虚线从灰盒右下角斜穿书脊和右页正文（灰盒描边画错）",
+   "左上表头“推理板”、右上 Esc 药丸、右页底四个页码点，原作都没有"
+  ],
+  "dialogue": [
+   "（凭记忆）黑场 + 居中浅色台词已对上，第一轮的“台词压在实时场景上”已解决",
+   "左上表头“过场”与右上 × 关闭键仍在（为黑场改用浮空弹窗的代价）",
+   "黑场是近黑 #11110f，原作是调色板暗色（橄榄墨）",
+   "台词带说话人前缀“水手：”，两行字号与字重不一（首行粗体小字），原作是单句居中、字更大",
+   "画布最上一像素行漏出世界画面"
+  ]
+ },
+ "round3Diffs": {
+  "title": [
+   "满高近方形纸页居中、两侧露橄榄墨深底、× 去掉都对上了；左上仍写斜体表头“标题”（parchment 是旧皮肤，tpl.title 预设的 lay.titlePos = none 不算数）",
+   "插画位（cmp.panelArt = window）画在纸页最上方、标题之上，是调色板外的蓝灰灰盒；原作船图夹在“THE GOOD SHIP”与带引号的全大写船名之间",
+   "正文仍只有一行居中短句，下半大片留白；原作从上到下排满五六行居中的船数据与启事联系方式",
+   "分隔只有标题下一条 1px 灰线 + 底边两段线菱形，没有粗细双线（牛津线）与膨胀线；没有带引号的全大写船名"
+  ],
+  "hud": [
+   "与第二轮相同：原作左下是手持骷髅怀表（约占画面五分之一的世界内道具），复刻只有画面中部一个不属于原作的小箭头光标",
+   "两边都是零 HUD、零文字——这一点一致"
+  ],
+  "journal": [
+   "书已换成两色（青白纸、橄榄墨封皮融进深底），页码点、表头、Esc 药丸都去掉了；但右页的“图鉴”现在只是正文大小的小字（M12a-33 起模板名标题跟字号阶梯），原作是三行大号衬线书名",
+   "右页没有内框线、铜版船图、副题与年份；左页是一句居中短句，原作左页整页是斜纹抖动环衬",
+   "书脊仍是一道宽的灰蓝渐变阴影、纸面有纸纹噪点；原作硬边平铺、书脊只有一条细缝、纸面纯色",
+   "封皮几乎看不见（与深底同色），原作封皮是抖动灰绿的一圈毛边；右下没有卷起的翻页角"
+  ],
+  "codex": [
+   "整页压了一层五成黑（cmp.panelArt = full 现在会画“底图”插画槽并压暗一半），纸页成了调色板外的深灰，中间还透出第二个灰盒标签“底图（需素材）”",
+   "插画仍是灰盒“场景（需素材）”，不是群像铜版画；没有压在图上的斜体引号图注拼贴",
+   "热区编号小圆（半透明黑底白字）+ 第一个热区的发光圈与药丸名牌“信件”常显；原作平时图上没有任何标记，只有放大镜光标",
+   "光标仍是箭头 + 粗体标签“查看银表”，原作是放大镜、不带字；近 4:3 页面、两侧橄榄深底、无表头与 Esc 已对上"
+  ],
+  "deduction": [
+   "（凭记忆）右页仍是一段报纸正文 + 三条粗体描边的编号对话选项；原作是填空命运句（下划线空位，点开分类词表）",
+   "左页素描是蓝灰灰盒（调色板外第三色），编号热区圆点 + 高亮圈 + 药丸名牌常显；原作人脸编号印在素描里",
+   "书脊宽阴影与纸纹仍在；两色纸墨、无表头 / Esc / 页码点、斜虚线消失这几处已对上"
+  ],
+  "dialogue": [
+   "（凭记忆）黑场是橄榄墨色、无表头 / ✕、台词不带说话人前缀，都对上了",
+   "仍是两行：上面多一行粗体小字“警局回电了，可以出发。”（cnt.textLength = line 在没有主体时让模板补的一句），原作只有一句台词",
+   "台词字号偏小（约正文字号），原作黑场台词更大"
+  ]
+ },
+ "round4Diffs": {
+  "title": [
+   "告示块（斜体标题、宽字距小型大写、带引号船名、居中数据行、牛津线、年份）都画出来了，但整块缩在纸页上三分之一、接近正文字号；原作斜体大标题与全大写船名是整页最大的字，从上排到下",
+   "告示块下面横一道通宽粗线，再下面只有孤零零一句“警局回电了，可以出发。”和大片留白；原作纸页下半是船数据与启事联系方式",
+   "“THE GOOD SHIP”与船名之间没有铜版船图（告示块没有插画位），船名“旧塔”是正文大小的粗体",
+   "分隔全是牛津双线，原作还有一道两头尖的膨胀线；年份是很淡的小灰字"
+  ],
+  "hud": [
+   "与第三轮相同：原作左下是手持骷髅怀表（约占画面五分之一的世界内道具），复刻只有画面右侧一个不属于原作的小箭头光标",
+   "两边都是零 HUD、零文字——这一点一致"
+  ],
+  "journal": [
+   "右页扉页的插画位（蓝灰灰盒“插画（需素材）”）压着一行正文“警局回电了，可以出发。”，两块叠在一处；原作是三行大号书名 + 铜版船图 + 副题 + 年份",
+   "扉页内容只占右页上半、书名是一行中号斜体，下半空着；原作书名三行、占右页上三分之一",
+   "左页衬页是十字格状的点阵，原作是斜向的抖动纹理；书外没有露出抖动灰绿的封皮毛边",
+   "书约 16:10、两页偏宽，原作两页各近竖幅；硬边平铺、细书脊、右页内框、翻页角已对上"
+  ],
+  "codex": [
+   "插画仍全是灰盒：上方一排四张倾斜小图（“旧塔（需素材）”……）+ 下方一大块“场景（需素材）”，原作是整页群像铜版画",
+   "拼贴小图排成主体上方单独一排、彼此错落倾斜，不叠压在整页插画上；原作小图正放、压在群像上",
+   "斜体引号图注是小图左下角的极小字，原作“Formosan Royalty”“Justice at Sea”是压在图上的大号斜体",
+   "纸页回到青白、热区不再标号、光标换成不带字的放大镜——已对上；灰盒是调色板外的灰 / 蓝灰"
+  ],
+  "deduction": [
+   "（凭记忆）右页已是命运填空句（下划线空位、编号、✓）+ 分组词表 + “已确认 3/9 · 每 3 人一起确认”；但词表弹框压在第 3 行上，表头“人物 林红”与行内已填词叠在一起",
+   "左页素描仍是蓝灰灰盒（调色板外第三色），编号热点是浅色小圆",
+   "第 1 行的 ✓ 是黄色，调色板外的第三色",
+   "填空句字号偏小、只占右页上四分之一，下方大片空白"
+  ],
+  "dialogue": [
+   "（凭记忆）黑场 + 居中一句原文台词、无说话人前缀、字号变大，都对上",
+   "台词是通用衬线、字色偏灰白，原作是调色板亮色的游戏衬线字"
+  ]
+ },
+ "revisions": [
+  "title：lay.panelSize 0.55 → 0.75，纸页更高（弹窗比例改不了，见 gap）；cnt.textLength short → line，正文从左对齐段落改成居中一句，版面左右对称；typ.scale 1.9 → 1.2，压小模板表头“标题”；去掉 display.case = upper（原作大标题是大小写混排斜体）和无效的 rel.dim；el.title 不会画（主体已写游戏名），form 改成语义更近的 logo 并去掉无效的锚点 / 缩放",
+  "hud：去掉不生效的 el.interact.screenAnchor（diegetic + held 时锚点不起作用），交互提示降为 ambient；怀表本体写进 gap",
+  "journal：保留书容器（结构就是正对屏幕的两页书），去掉 lay.detail = persistent（多出的详情栏、条形值、按钮）、去掉 el.title 标题卡（与主体大字重叠）、去掉斜纹 vis.pattern（只会贴在小卡片上）；左页数据改成一句居中短句，右页主体是书名大字；页码指示设为 none（渲染仍画点，见 gap）；棕皮书调色板写进新 gap",
+  "codex：不用书容器，改成满尺寸弹窗（lay.panelSize 1）的单页，纸色与墨色回到两色；主体改为 scene（整页插画，灰盒标注需素材），cnt.dataShape none；去掉占满内容区的 hotspots 热区导航、散点 / 60 项集合（散点集合会画成带红线的推理便签）与底边饰条；保留放大镜光标",
+  "deduction：去掉 hotspots（占满内容区）；左页主体 = 现场素描（scene，需素材），右页 = 命运句文本，分类词表用 el.choices 文字行放右中；lay.detail none；去掉无效的 cmp.listRow / characterRender；cmp.panelArt window → side（半页素描）",
+  "dialogue：tpl.cutscene 的叠加容器不会替换背景，改为浮空弹窗（modal + floating + panelSize 1），rel.behind = replaced + solid 才能画出黑场；台词 = 居中一句 + 居中字幕两行浅色字；ix.continueCue none",
+  "gaps：新增书容器写死棕皮配色、模板表头 / 关闭键无法去掉、纯色底取不到调色板暗色、插画窗不画、hotspots 不能叠在插画上、铜版画法只对角色生效、页码指示被忽略、叠加模板不替换背景、字幕字色写死；扩写标题告示排版、满高窄页、怀表、环衬与填空的说明",
+  "R3 前（M12a 之后）：title 加 lay.panelAspect = square + lay.panelSize 0.75 → 1（满高近方形纸页，两侧露深底；页头与 ✕ 已由 tpl.title 预设去掉）；journal / codex / deduction 加 lay.titlePos / ix.close = none（书页没有表头与关闭键）；codex / deduction 加 lay.nav = hotspots（热区叠在群像 / 现场素描上，不占版面）；codex 加 lay.panelAspect = 4x3（近 4:3 的整页插画）；dialogue 改 lay.container = overlay（去掉表头与 ✕，替换背景的橄榄墨黑场照画），删掉随之不生效的 cmp.modal / lay.panelSize，加 el.subtitle.form = lineOnly（只写台词、不写说话人）。",
+  "R4 前（M12b 之后）：base typ.numerals.family body → oldstyle（年份旧式数字，#10）、加 typ.rasterize = world（衬线按世界网格栅格化，#7）；title el.title.form logo → notice（告示块：斜体大标题 + 小型大写引语 + 插画位 + 带引号船名 + 居中数据，#12），去掉 cmp.panelArt = window（告示块自带插画位，原来的图窗画在页顶），加 lay.titlePos = none（parchment 是旧皮肤，tpl.title 预设的 none 不算数，左上仍写表头“标题”）、typ.align@body = center（#13）、vis.dividerStyle = oxford + vis.dividerPlace = [betweenBlocks]（牛津线，原作底边没有饰条，#11）；journal cnt.focal / cnt.dataShape → none、cnt.elements = [el.title] + el.title.form = titlePage（右页扉页，代替模板名大字，#12 / #15），去掉 cmp.panelArt，加 ast.bookStyle = flat（#3）、ast.pageLeft = endpaper + ast.pageRight = framed + vis.pattern = dither + vis.patternOpacity 0.5（左页抖动衬页、右页内框，#20 / #0）、lay.pageIndicator none → pageCurl（#22）；codex cmp.panelArt full → collage（不再整页压暗，#26）、加 cnt.illustrationRender = engraving（#27）、el.interact.form cursor → magnifier（#25）、lay.hotspotCue = none（图上平时不标，#35）；deduction cnt.dataShape text → form + cmp.formKind = inlineBlanks + ix.confirm instant → batch（命运填空句 + 分组词表，#28 / #30），去掉 el.choices（词表由填空句带出），加 ast.bookStyle = flat、lay.hotspotCue = numbered（编号印在素描上）；dialogue 加 el.subtitle.untranslated = true（#34）、cnt.textLength line → none（去掉模板补的那句粗体小字）、el.subtitle.scale = 1.4（台词更大）。"
+ ],
+ "notes": "1-bit 同一媒介：画面和界面只有两种颜色、共用抖动点阵与低分辨率；局内零 HUD，唯一的工具是拿在手里的骷髅怀表。所有界面都是一本正对屏幕平铺在深底上的书——扉页、群像铜版画、命运填空页——排版是 19 世纪报刊与书籍的衬线体系：斜体大标题、小型大写、粗细双线和膨胀线，没有面板、没有按钮框。"
+}

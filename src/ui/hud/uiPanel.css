@@ -1,0 +1,7 @@
+/* UI 面板的 5 组（轨道 D，docs/workbench-redesign.md §7）：更多 › 小节芯片、信息元素折叠 */
+.ui-subs { padding: 6px 12px 0; }
+.ui-subs .chip { border: 1px solid transparent; cursor: pointer; font: inherit; font-size: 12px; }
+.ui-subs .chip:hover { border-color: var(--line-strong); }
+.ui-elements > summary { cursor: pointer; font-size: 11px; color: var(--text-3); margin: 14px 12px 4px; letter-spacing: .04em; }
+.ui-elements > summary:hover { color: var(--text-2); }
+.ui-tools .chip.warn { color: var(--warn); }

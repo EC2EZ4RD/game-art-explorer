@@ -1,0 +1,709 @@
+{
+ "id": "rep.forza-horizon-5",
+ "name": "Forza Horizon 5",
+ "card": "steam:1551360",
+ "genre": "racing",
+ "family": "fam.contextual-hud-aaa",
+ "pack": "racing",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "racetrack",
+  "values": {
+   "color.palette": "desert",
+   "color.saturation": 1.15
+  }
+ },
+ "base": {
+  "hud.style": "mono",
+  "uip.platform": "platform.tv",
+  "uip.business": "business.premium",
+  "typ.baseSize": 40,
+  "lay.safeMargin": 3.5,
+  "ix.glyphs": "xbox",
+  "rel.harmony": "neutral",
+  "col.source": "skin",
+  "col.strategy": "neutralAccent",
+  "col.lightness": "dark",
+  "col.surface": "#121218",
+  "col.surface2": "#24242e",
+  "col.text": "#ffffff",
+  "col.accent": "#ff2d87",
+  "col.accent2": "#ffc61a",
+  "col.focus": "#ff2d87",
+  "typ.body.family": "sans",
+  "typ.body.weight": "regular",
+  "typ.display.family": "sans",
+  "typ.display.weight": "bold",
+  "typ.display.case": "upper",
+  "typ.display.tracking": 0.04,
+  "typ.numerals.family": "display",
+  "typ.numerals.style": "upright",
+  "typ.legibility": "shadow",
+  "vis.corner": "sharp",
+  "vis.stroke": "none",
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "vis.iconStyle": "flat",
+  "ast.iconSet": "procedural",
+  "ix.focus": "outline",
+  "mo.enter": "slide",
+  "mo.easing": "easeOut",
+  "mo.duration": 0.25,
+  "mo.juice": 0.5,
+  "mo.valueChange": "countUp"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": null,
+   "values": {
+    "uip.layout": "layout.racing",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "rel.behind": "live",
+    "cnt.density": 2,
+    "vis.opacity": 0,
+    "typ.legibility": "shadow",
+    "col.accent": "#ffffff",
+    "cnt.elements": [
+     "el.rank",
+     "el.timer",
+     "el.feedback",
+     "el.minimap",
+     "el.speed",
+     "el.party",
+     "el.overlay"
+    ],
+    "cmp.gauge@el.speed": "tachometer",
+    "el.speed.screenAnchor": "br",
+    "el.speed.valueLabel": "current",
+    "el.speed.valueLabelPos": "center",
+    "el.speed.scale": 0.6,
+    "el.speed.priority": "primary",
+    "el.minimap.form": "radar",
+    "vis.silhouette@el.minimap": "circle",
+    "el.minimap.screenAnchor": "bl",
+    "el.minimap.scale": 0.78,
+    "el.rank.form": [
+     "ordinal"
+    ],
+    "el.rank.screenAnchor": "tl",
+    "el.rank.scale": 1.05,
+    "el.rank.valueLabel": "none",
+    "el.timer.form": "number",
+    "el.timer.screenAnchor": "tl",
+    "el.timer.scale": 0.75,
+    "el.timer.priority": "secondary",
+    "el.feedback.form": [
+     "chainStack"
+    ],
+    "el.feedback.screenAnchor": "tc",
+    "el.feedback.scale": 0.85,
+    "mo.valueChange@el.feedback": "countUp",
+    "el.party.form": "tag",
+    "el.party.diegesis": "spatial",
+    "el.party.attachTo": "target",
+    "el.party.worldRender": "billboard",
+    "el.party.priority": "ambient",
+    "el.overlay.form": [
+     "arrows"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "decal",
+    "el.overlay.priority": "ambient",
+    "col.coding": [
+     "status"
+    ],
+    "hier.emphasis": [
+     "size"
+    ],
+    "el.minimap.rotate": "headingUp",
+    "el.minimap.layers": [
+     "roads",
+     "route"
+    ]
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "cnt.dataShape": "spatial",
+    "cnt.density": 4,
+    "cnt.itemCount": 60,
+    "vis.mapStyle": "satellite",
+    "vis.mapUnexplored": "reveal",
+    "cmp.node": "iconBadge",
+    "col.coding": [
+     "lineId"
+    ],
+    "lay.overflow": "single",
+    "lay.detail": "transient",
+    "rel.semanticZoom": "none",
+    "vis.opacity": 0.92,
+    "typ.legibility": "shadow",
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bc",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "flow.entry": "hotkey",
+    "mo.enter": "fade",
+    "cmp.modal": "floating",
+    "ix.close": "none",
+    "typ.baseSize": 34,
+    "typ.scale": 1.2,
+    "lay.titlePos": "none",
+    "vis.mapLabels": "onMap",
+    "cmp.panelArt@tooltip": "header",
+    "lay.nav": "tabsTop",
+    "lay.navKeys": "ends"
+   }
+  },
+  {
+   "key": "pause",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.pausePc",
+    "cnt.screen": "screen.pause",
+    "cnt.subtype": "pause",
+    "lay.container": "fullscreen",
+    "rel.behind": "frozen",
+    "rel.dim": 0.45,
+    "rel.sceneBlur": 16,
+    "lay.nav": "tabsTop",
+    "lay.navDepth": 1,
+    "cmp.tab": "text",
+    "cmp.tabIndicator": "filled",
+    "cnt.dataShape": "collection",
+    "cnt.itemCount": 10,
+    "cnt.focal": "none",
+    "lay.arrangement": "mosaic",
+    "lay.columns": 5,
+    "lay.overflow": "single",
+    "lay.grouping": "card",
+    "cmp.slot": "card",
+    "cmp.card": "tile",
+    "cmp.button": "iconText",
+    "cmp.panelArt": "full",
+    "vis.opacity": 0.85,
+    "vis.corner": "sharp",
+    "typ.display.weight": "black",
+    "ix.focus": [
+     "scale",
+     "outline"
+    ],
+    "hier.emphasis": [
+     "size",
+     "color"
+    ],
+    "hier.dimInactive": 0.2,
+    "st.newCue": "newTag",
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bc",
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "flow.entry": "hotkey",
+    "mo.enter": "slide",
+    "mo.transition": "crossfade",
+    "cmp.modal": "floating",
+    "typ.scale": 1.2,
+    "st.rarityCue": [
+     "none"
+    ],
+    "lay.titlePos": "none",
+    "lay.navKeys": "ends",
+    "st.locked": "none",
+    "lay.cellSize": 320,
+    "lay.cellAspect": 1.5,
+    "lay.gap": 12,
+    "cmp.slotBadge": "none"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "速度表是复合仪表：外圈细刻度 + 转速数字 + 红区 + 指针、中心大号挡位、下方数字车速与单位；cmp.gauge = dial 只有一条粗弧（线宽固定为半径的 22%）+ 一根指针 + 一个数，画不出刻度、挡位和红区（第 2 轮仍是最大差距）",
+   "severity": "high",
+   "kind": "composite",
+   "proposal": "cmp.gauge 加 tachometer（细刻度环 + 红区 + 中心挡位 + 下方数字速度），或给 dial 加子件开关 el.speed.parts = ticks / redline / gear；弧线宽改为跟 vis.strokeWidth",
+   "resolvedBy": "cmp.gauge@el.speed = tachometer（细刻度环 + 红区 + 指针 + 中心挡位 + 下方车速）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.speed 不论 dial / number / bar 都会在仪表左侧再写一遍斜体名次（2/8），与左上角 el.rank 重复，压在赛道中央",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "el.speed 只在元素集合里没有 el.rank 时才画名次，或加子参数 el.speed.showPlace（默认跟随：有 el.rank 时关）",
+   "resolvedBy": "R4 核对：速度表旁不再写名次"
+  },
+  {
+   "screen": "hud",
+   "what": "按元素的配色 / 形覆盖（col.accent@el.speed、vis.opacity@el.minimap、vis.stroke@el.minimap 等）在局内 HUD 渲染里不生效——只有 cmp.*@el 被读；FH5 的仪表与小地图是白色、菜单焦点才是品红，只能整屏把 col.accent 改白来近似（技能链因此退成 accent2 黄色）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "makeCtx 按元素解析 col.* / vis.* 的 @el 覆盖，生成该元素自己的色板与面板 token（对应 Godot Theme 的 type variation）",
+   "resolvedBy": "M12a-01（元素上下文按 col.* / vis.*@el.<id> 打补丁；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "左上比赛信息是一列：大号名次、圈数（LAP 1/3）、比赛时间（可选最佳圈），每行带小标签、行距紧凑；现在只能用 el.rank + el.timer 两个独立元素叠放，间距由各自尺寸决定，圈数只在 el.speed 的 number 形态里出现",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "加 el.raceInfo（或 el.timer 加 raceStack 形态）：名次 / 圈数 / 时间 / 最佳圈按行堆叠、左对齐、统一小标签，可与 el.rank 合并锚在 tl"
+  },
+  {
+   "screen": "hud",
+   "what": "技能链：一串技能名（漂移、擦肩、腾空……）逐条往上叠 + 总分 + 倍率，停顿后整串存入；el.feedback 只画第一个画法（combo 大数字 + 斜体粗描边），不能列出技能名清单",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "el.feedback 加 chainStack（技能名列表 + 总分 + 倍率，干净直立字），存入时整串上飘收拢",
+   "resolvedBy": "el.feedback.form = [chainStack]（技能名逐条上叠 + 总分 × 倍率，干净直立白字）"
+  },
+  {
+   "screen": "hud",
+   "what": "驾驶辅助线是贴在路面上的 3D 箭头带，按刹车需求从蓝到黄到红渐变；el.overlay = arrows 只能在屏幕上画 4 个单色箭头，不沿赛道走",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "el.overlay 加 racingLine：沿世界路线投影的贴地箭头带，颜色按状态（加速 / 减速 / 刹车）沿线渐变"
+  },
+  {
+   "screen": "hud",
+   "what": "名次是大号序数（2ND）配小号总数（/8）的混排；el.rank = number 是同字号的 P2/8",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.rank 加 ordinal 画法：主数字 + 序数后缀大字、/总数小字，两级字号",
+   "resolvedBy": "el.rank.form = [ordinal]（大号 2ND + 小号 /8）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.rank = number 总在右侧固定 90px 处画一个\"名次\"小注，不读 el.rank.valueLabel，也没法关；FH5 名次不写标签",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "number 画法按 el.rank.valueLabel 决定旁注（none 时不画），旁注位置跟主数字宽度走",
+   "resolvedBy": "el.rank.valueLabel"
+  },
+  {
+   "screen": "hud",
+   "what": "圆形小地图随车头旋转；radar 画法以玩家为中心但朝向固定",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "el.minimap 加 rotate（车头朝上 / 北朝上）"
+  },
+  {
+   "screen": "hud",
+   "what": "小地图是暗色半透明圆底 + 白色道路线，GPS 路线是一条亮色带并标出下一检查点；radar 画法只是把场景烘焙俯视图（棕色像素格）裁成圆，没有道路线和路线带",
+   "severity": "low",
+   "kind": "newDrawing",
+   "proposal": "el.minimap 加 routeRibbon（导航路线亮带 + 下一检查点）与 roads 底图（暗底 + 道路线，按 vis.mapStyle@el.minimap 选）",
+   "partialBy": "el.minimap.layers = [roads, route]（暗底 + 白色道路线）；道路画成放射直线、路线带看不出，见新缺口"
+  },
+  {
+   "screen": "pause",
+   "what": "菜单是 Metro 式马赛克瓷砖墙：一块大照片瓷砖 + 若干小瓷砖拼成占大半屏的横向长带，每个页签一组；lay.arrangement = grid 只能等大格，且格子边长封顶 S(86)，现在只占屏幕上部一窄条",
+   "severity": "high",
+   "kind": "layoutEngine",
+   "proposal": "lay.arrangement 加 mosaic / bento（条目可跨行跨列）+ 格子尺寸参数 lay.cellSize（允许按可用高度放大）",
+   "resolvedBy": "lay.arrangement = mosaic + lay.cellAspect（一大块 + 若干小块拼成的瓷砖墙）"
+  },
+  {
+   "screen": "pause",
+   "what": "瓷砖是整幅照片 / 插画 + 底部一条暗渐变标签带（大写粗体名 + 一行小字）；cmp.card = fullArt / tile 与 cmp.panelArt = full 在集合网格里都不渲染，格子只能是图标 + 数量角标（背包语义）",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "集合网格按 cmp.card 画：fullArt = 整幅图（素材槽，未生成前灰盒）+ captionBand 标签带、不画数量角标；cmp.panelArt 在格子级生效",
+   "partialBy": "cmp.slot = card + cmp.card = tile（底部粗体标签带）；整幅图仍是品红渐变 + 图标（素材 #12），没有第二行说明"
+  },
+  {
+   "screen": "pause",
+   "what": "瓷砖与地图选中卡的头图需要活动 / 车辆 / 功能入口的宣传图（横幅照片感插画）",
+   "severity": "medium",
+   "kind": "asset",
+   "proposal": "按内容包补一组 ui_tiles 横幅图（活动、车库、改装、联机、商店入口等），fullArt / panelArt 按物品名取"
+  },
+  {
+   "screen": "pause",
+   "what": "FH5 的暂停 / 地图顶部只有页签条（页签名就是标题）、返回写在底部按键图例里；全屏模板总是画大号页面标题（暂停 / 世界地图）+ 右上 Esc 返回胶囊，改成\"直接叠加\"容器又会整个跳过模板（两屏都受影响）",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "加参数 lay.header（title / tabs / none）：tabs = 页签条兼作标题；ix.close 加 none（只靠 el.prompt 图例）",
+   "resolvedBy": "lay.titlePos, ix.close"
+  },
+  {
+   "screen": "pause",
+   "what": "聚焦瓷砖同时放大、亮色描边；ix.focus = scale 实际只画外扩描边 + 投影，格子本身不变大，也只能选一种",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "ix.focus = scale 真正放大格子（并推开相邻格）；ix.focus 改为多选（outline + scale）",
+   "resolvedBy": "ix.focus = [scale, outline]（焦点瓷砖放大 + 亮粉描边）"
+  },
+  {
+   "screen": "pause",
+   "what": "集合网格里第 6 个起的条目一律画成锁定（st.locked 没有\"无\"可选），10 个瓷砖就有一半打 ✕；为避开只能把条目数降到 5 个、单排",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "st.locked 加 none，或锁定由内容包逐条声明而不是按序号",
+   "resolvedBy": "st.locked"
+  },
+  {
+   "screen": "pause",
+   "what": "菜单 / 地图屏的底部按键图例仍是内容包的驾驶操作（油门 / 刹车 / 手刹 / 氮气）；FH5 菜单写选择 / 返回，地图写设置路线 / 筛选 / 缩放",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "内容包的 prompts 按界面分组（hud / menu / map），el.prompt 按 cnt.screen 取对应一组",
+   "resolvedBy": "R4 核对：菜单图例是选择 / 返回，地图图例是设置路线 / 选择 / 远近"
+  },
+  {
+   "screen": "pause",
+   "what": "vis.corner = sharp 时集合格子仍是 6px 圆角（slot 在面板 radius 被清空时退回默认 6），世界地图框的裁剪写死 8px 圆角；FH5 瓷砖与地图都是直角",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "slot 的退回值与 mapView 的裁剪圆角都改为读主题面板 radius（sharp = 0）",
+   "resolvedBy": "M12a-09（集合格子与地图裁剪跟 vis.corner：直角瓷砖；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "pause",
+   "what": "页签条两端有 LB / RB 肩键字形提示翻页；lay.nav = tabsTop 的页签条不画肩键",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "加 cmp.tabBumpers（none / glyphs）：按 ix.glyphs 在页签条两端画肩键",
+   "resolvedBy": "lay.navKeys"
+  },
+  {
+   "screen": "pause",
+   "what": "焦点瓷砖播放动态预览（视频或轮播图）",
+   "severity": "low",
+   "kind": "motion",
+   "proposal": "cmp.card 加 livePreview：焦点格内容轮播 / 缓慢推镜（素材槽多帧）"
+  },
+  {
+   "screen": "map",
+   "what": "世界地图铺满全屏（出血），页签、图例、选中卡都浮在地图上；tpl.worldmap 把地图画在页面内容区的圆角框里，上面是标题行、四周是深色页面底，lay.container = fullscreen + cmp.modal = floating 也不改变",
+   "severity": "high",
+   "kind": "layoutEngine",
+   "proposal": "worldmap 模板加全出血模式（地图区 = 整个画面，标题 / 页签 / 图例叠在地图上，配 typ.legibility 阴影），可由 lay.header = tabs / none 联动"
+  },
+  {
+   "screen": "map",
+   "what": "地图视图写死只画 3 个节点（固定位置），不读 cnt.itemCount（设 60 仍是 3 个）；FH5 地图的观感就是满屏的活动图标",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "mapView 按 cnt.itemCount 撒点（确定性伪随机 + 最小间距），按 rel.semanticZoom 聚合 / 省略",
+   "resolvedBy": "cnt.itemCount, rel.semanticZoom"
+  },
+  {
+   "screen": "map",
+   "what": "地图图标是按活动类型着色的圆徽 + 白色字形，完成后加星级；cmp.node = circleNumber 只有按状态着色的编号圆",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "cmp.node 加 badge（类型色圆徽 + 字形 + 状态星），颜色走 col.coding = lineId",
+   "partialBy": "cmp.node = iconBadge（圆徽 + 白字形 + 完成星）；没写 col.lineColors，类型色全落成暗灰"
+  },
+  {
+   "screen": "map",
+   "what": "选中活动弹出带头图、车级限制与奖励的信息卡，位置跟随图标；lay.detail = transient 的卡片固定在地图右上、高度固定（下半空着），会压住节点，也没有头图",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "transient 详情锚到焦点节点旁（左右自动避让、不压节点）、高度随内容；卡片顶部开 cmp.panelArt = header 插画槽",
+   "resolvedBy": "cmp.panelArt@tooltip"
+  },
+  {
+   "screen": "map",
+   "what": "卫星写实地图（vis.mapStyle = satellite）没有位图，退回场景烘焙俯视图（平涂赭黄）",
+   "severity": "medium",
+   "kind": "asset",
+   "proposal": "补 ui_map_satellite 位图（暗调实景俯视），mapAsset 按画风取"
+  },
+  {
+   "screen": "map",
+   "what": "地图左上总画一个强调色药丸地名牌（内容包的 region），没法关；FH5 地名是直接压在地图上的大写字",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "加 vis.mapLabels（none / plate / mapText）：mapText = 地名按 typ.display 写在地图上、带阴影",
+   "resolvedBy": "vis.mapLabels"
+  },
+  {
+   "screen": "pause",
+   "what": "ix.focus = scale 现在会放大焦点瓷砖，但放大参与排版：同排其余瓷砖被往右推，两排不再对齐",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "焦点放大只做绘制变换（以格心缩放、画在邻格之上），不改格子的排位",
+   "resolvedBy": "R4 核对：mosaic 下焦点放大不再推开邻格，两排对齐"
+  },
+  {
+   "screen": "hud",
+   "what": "el.minimap.layers = [roads, route] 的道路画成从玩家放射出的几条白色直线，读不出赛道形状，GPS 路线带也看不出颜色",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "roads 层取场景的道路 / 赛道中线折线（椭圆赛道画成椭圆），route 层用强调色亮带沿路线画到下一检查点"
+  },
+  {
+   "screen": "map",
+   "what": "lay.detail = transient 的选中浮卡压住顶部页签条（车行 / 车库 / 挑战被盖住）",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "浮卡排位避让模板页签条与按键图例（登记占位），放不下时翻到节点另一侧",
+   "resolvedBy": "R4 回归修复 C1 ⑦（浮动详情的 hard 加页签条 / 外挂页签；四个方向都压到 hard 时左右候选上下滑、上下候选左右滑到空当里——火山口详情落在页签条与按键提示栏之间）"
+  }
+ ],
+ "notes": "节庆式现代扁平：比赛 HUD 无底直压——右下白色复合速度表（转速弧 + 挡位 + 数字车速）、左下圆形以车为中心的 GPS 小地图、左上名次与计时一列、上中技能链计分，对手名字悬在车顶，驾驶线贴在路面；菜单是带亮粉焦点的照片瓷砖带，浮在模糊的冻结画面上、按顶部页签横向排开；地图是卫星写实底上的分类彩色圆徽 + 选中浮卡。商店截图全部没有 UI，三屏都按记忆编码，配色与细节置信度较低（第 1 轮已按评分修订：缩小仪表、白色 HUD、去掉手游式货币条与叠压元素）。",
+ "scores": {
+  "hud": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 7,
+    "elements": 5,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 5,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 7,
+    "shape": 7,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 5,
+    "type": 6,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "pause": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 7,
+    "palette": 6,
+    "type": 7,
+    "shape": 7,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "速度表是一条占右下近三分之一屏的粗品红弧，FH5 是较小的白色细刻度圆表（挡位在中心、车速在下方）",
+   "速度表左上额外画了一个斜体 2/8，与左上角名次重复，压在赛道中央",
+   "小地图是方形像素网格平面图，FH5 是左下圆形、以车为中心的小地图",
+   "名次 P2/8 字号过大（scale 1.4），与旁注'名次'一起占满左上",
+   "计时放在右上；FH5 的比赛信息（名次、圈数、时间）集中在左上一列",
+   "中央一圈品红虚线椭圆（rangeRing）不对应 FH5 的任何东西；FH5 是贴地的驾驶辅助箭头线",
+   "整体元素偏大、偏重，FH5 HUD 白字细线、留白多"
+  ],
+  "map": [
+   "地图缩在一块带大标题的深色面板里，FH5 地图铺满全屏，顶部只有页签",
+   "右上头像 + 名字与 Esc 返回胶囊、右侧单位卡（头像 + 跑车）与临时详情三者互相叠压",
+   "多出'确认选择'品红大按钮，FH5 只在底部按键图例里写操作",
+   "图标是水滴图钉，FH5 是按活动类型着色的圆徽",
+   "中心十字光标圈压在详情文字上"
+  ],
+  "pause": [
+   "顶部多了手游式的货币胶囊条（体力 / 金币 / 钻石 + 加号），FH5 没有",
+   "右上头像 + 名字 + 经验条 + 三种资源数，与 Esc 返回胶囊叠在一起",
+   "条目是 4 个小图标格（一排），FH5 是占屏幕大半的大照片瓷砖带",
+   "整屏不透明深色面板，FH5 是模糊压暗的冻结画面上直接浮着瓷砖",
+   "底部有一条横向滚动条，FH5 没有"
+  ]
+ },
+ "revisions": [
+  "HUD：速度表 scale 1.25 → 0.6、整屏 col.accent 改白（按元素的 col.accent@el.speed 渲染不读），表盘从品红粗弧变成白色弧，比例接近 FH5 右下的小圆表",
+  "HUD：小地图 plan → radar（圆形、以车为中心放大），scale 1.1 → 0.78；去掉不生效的 vis.opacity / stroke @el.minimap",
+  "HUD：名次 scale 1.4 → 1.05；计时从右上移到左上名次下方（scale 0.75），比赛信息集中到左上一列",
+  "HUD：技能链只保留 combo（只画第一个画法），scale 0.85；驾驶线 rangeRing → arrows（贴地箭头，ambient），去掉中央虚线椭圆",
+  "地图：容器改 fullscreen + cmp.modal = floating（不画整屏面板），typ.baseSize 18、typ.scale 1.2 压小标题与卡片；去掉 el.profile、el.selection、el.crosshair（互相叠压，FH5 地图没有头像卡，选中信息由 lay.detail = transient 的浮卡承担）",
+  "地图：ix.confirm = instant（去掉'确认选择'大按钮，操作写在 el.prompt 图例里）；cmp.node pin → circleNumber（圆徽）；lay.overflow pan → single（'拖动查看'提示与图例重叠，FH5 也不写）",
+  "暂停：去掉 flow.chrome = topCurrency 与 el.profile / el.resources（手游货币条、与 Esc 胶囊叠压）；容器 fullscreen + floating，rel.dim 0.45 + sceneBlur 16，瓷砖直接浮在模糊冻结画面上",
+  "暂停：网格 4 列 → 5 列、5 个条目单排（第 6 个起会被画成锁定，见 gaps）；ix.focus outline → scale（描边 + 投影的浮起感）；st.rarityCue = strip（稀有度改成侧边色条，近似 FH5 车辆稀有度色条）；lay.overflow scrollH → single；typ.scale 1.2 压小页面标题；去掉 typ.legibility = scrim",
+  "试过 lay.container = overlay 想去掉页面标题：会整个跳过模板构图（只剩按键图例），已改回 fullscreen 并记入 gaps",
+  "R3 前（M12a 之后）：hud 加 el.rank.valueLabel none（名次不写「名次」小注）；map 加 lay.titlePos / ix.close = none（满屏出血地图只留页签与图例）、vis.mapLabels = onMap、rel.semanticZoom iconize → none（60 个活动图标全画，不聚簇）、cmp.panelArt@tooltip = header（选中浮卡顶部头图）；pause 加 lay.titlePos / ix.close = none、lay.navKeys = ends（页签两端 LB / RB）、st.locked none 并把条目数 5 → 10（两排）、lay.cellSize 320 + lay.cellAspect 1.5 + lay.gap 12（瓷砖放大成占大半屏的宽格，马赛克拼接仍是缺口）、st.rarityCue [none] + cmp.slotBadge none（去掉背包语义的色条与数量）。",
+  "R4 前（M12b 之后）：hud 的 cmp.gauge@el.speed dial → tachometer（细刻度环 + 红区 + 指针 + 中心挡位 + 下方车速，#0）、el.rank.form number → [ordinal]（大号 2ND + 小号 /8，#6）、el.feedback.form combo → [chainStack]（技能名逐条上叠 + 总分 × 倍率，#4）、el.minimap.rotate = headingUp（车头朝上，#8）、el.minimap.layers = [roads, route]（暗底 + 道路线 + GPS 亮带，#9；按 B10 审查修复不写 vis.mapStyle@el.minimap）；map 的 cmp.node circleNumber → iconBadge（按活动类型着色的圆徽 + 白字形、完成加星，col.coding 已含 lineId，#22）、加 lay.nav = tabsTop + lay.navKeys = ends（顶部页签条兼作标题，两端肩键）；pause 的 ix.focus scale → [scale, outline]（放大 + 亮描边，#14）、lay.arrangement grid → mosaic + cmp.slot cell → card + cmp.card fullArt → tile（大小拼接的照片瓷砖墙、底部标签带，#10 / #11；lay.cellAspect 1.5 马赛克也读）。没写 el.timer.form = raceStack：它固定带一行 POS 名次，和 el.rank = ordinal 同屏会把名次写两遍（参考的名次是大号序数，选了 ordinal）。"
+ ],
+ "round2Diffs": {
+  "hud": [
+   "速度表仍是一条粗白弧 + 指针 + 数字：没有细刻度环、红区和中心挡位，指针线还穿过车速数字；FH5 是细刻度转速表、挡位居中、数字车速在下",
+   "速度表左侧仍写一个斜体 2/8，与左上名次重复，压在赛道和对手车上",
+   "左上名次 P2/8 旁多一个\"名次\"小注；FH5 是大号序数配小号 /总数，不写标签",
+   "左上只有名次 + 计时两行、行距很大；FH5 左上是名次、圈数、时间紧凑的一列（每行带小标签）",
+   "技能链是黄色斜体粗描边的\"×6 连漂\"（街机连击感）；FH5 是技能名逐条往上叠 + 总分 + 倍率的干净白字",
+   "小地图是圆框里的棕色像素格场景俯视图：没有道路线、没有 GPS 路线带、不随车头旋转；FH5 是暗色半透明圆底 + 亮色导航路线",
+   "驾驶辅助线是 4 个零散的白色屏幕箭头；FH5 是贴在路面、沿赛道连续、按刹车需求由蓝到红变色的箭头带"
+  ],
+  "map": [
+   "地图仍嵌在深色页面里的圆角框中，顶部是大标题\"世界地图\"、右上 ESC 胶囊；FH5 地图铺满全屏，顶部只有页签条",
+   "只画了 3 个节点（cnt.itemCount = 60 不生效）；FH5 地图上是几十上百个活动图标，密度差距最大",
+   "节点是同一种绿色（按完成状态）的编号圆；FH5 是按活动类型着色的圆徽 + 白色字形",
+   "底图是平涂赭黄的场景烘焙俯视图 + 两侧青色水面，不是暗调卫星实景",
+   "详情浮卡固定在右上、高度固定，下半截空着，还压住了第 3 个节点；没有头图、车级限制、奖励",
+   "左上多一个强调色药丸地名牌\"白石\"，FH5 地名是直接写在地图上的字",
+   "底部按键图例写的是油门 / 刹车 / 手刹 / 氮气（驾驶操作），不是设置路线 / 筛选 / 缩放这类地图操作",
+   "地图框是 8px 圆角（vis.corner = sharp 不生效）"
+  ],
+  "pause": [
+   "仍有大号页面标题\"暂停\"与右上 ESC 胶囊；FH5 顶部只有一条页签（两端 LB / RB 肩键）",
+   "条目是 5 个等大小方格（图标 + 数量角标），只占屏幕上部一窄条，下半屏空着；FH5 是占大半屏、大小拼接的照片瓷砖带",
+   "瓷砖没有照片 / 插画，也没有底部标签带（大写名 + 一行说明）",
+   "焦点只是品红描边 + 勾选菱形，格子不放大、没有动态预览",
+   "格子是 6px 圆角（vis.corner = sharp 被格子的默认圆角顶掉），FH5 瓷砖是直角",
+   "格子带稀有度色条、NEW 标签和数量角标，是背包语义；FH5 瓷砖是活动 / 功能入口",
+   "底部按键图例是驾驶操作（油门 / 刹车 / 手刹 / 氮气），不是选择 / 返回等菜单操作"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "（凭记忆）速度表仍是一条粗白弧 + 指针 + 数字，没有细刻度环、红区和中心挡位",
+   "名次是同字号的 P2/8；FH5 是大号序数（2ND）配小号 /8",
+   "左上只有名次 + 计时两行、行距大，没有圈数行与小标签",
+   "技能链是黄色斜体粗描边「×6 连漂」；FH5 是技能名逐条上叠 + 总分 + 倍率的干净白字",
+   "小地图是圆框里的棕色像素格俯视图，没有道路线与 GPS 路线带；辅助线是零散的屏幕箭头"
+  ],
+  "map": [
+   "（凭记忆）地图左右各留一条暗边（约画面宽 8%），顶部没有页签条",
+   "活动图标多是灰色编号圆（少数绿 / 黄 / 品红），FH5 是按活动类型着色的圆徽 + 白色字形",
+   "选中浮卡压住几个图标，头图是斜纹「头图（需素材）」占位，没有车级限制与奖励",
+   "底部按键图例仍是驾驶操作（油门 / 刹车 / 手刹 / 氮气）"
+  ],
+  "pause": [
+   "（凭记忆）瓷砖是 10 个等大的宽格，没有大小拼接的马赛克，只占屏幕上部约 60%",
+   "瓷砖里只有品红单色图标，没有照片 / 插画和底部标签带（大写名 + 一行说明）",
+   "焦点瓷砖放大后把同排其余瓷砖往右推，第一排比第二排错开约 8px",
+   "焦点是品红描边 + 勾选菱形，没有动态预览",
+   "底部按键图例仍是驾驶操作"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "（凭记忆）小地图的道路是从玩家放射出的几条白直线，读不出赛道，也看不到 GPS 亮带",
+   "速度表的刻度与数字偏细偏淡，压在亮色场景上不醒目",
+   "左上没有圈数行和小标签",
+   "驾驶辅助线仍是屏幕上零散的箭头，不贴赛道"
+  ],
+  "map": [
+   "（凭记忆）活动圆徽全是暗灰底，没有按活动类型着色",
+   "地图左右仍各留一条暗边",
+   "选中浮卡压住了顶部页签条（车行 / 车库 / 挑战被盖住）",
+   "浮卡头图是「需素材」占位"
+  ],
+  "pause": [
+   "（凭记忆）瓷砖是品红渐变底 + 白色线图标，没有照片 / 插画",
+   "所有瓷砖同一种品红，参考瓷砖各是不同的照片色调",
+   "标签带只有名字，没有第二行说明",
+   "焦点瓷砖没有动态预览"
+  ]
+ }
+}

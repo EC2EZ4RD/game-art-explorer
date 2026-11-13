@@ -1,0 +1,778 @@
+{
+ "id": "rep.hi-fi-rush",
+ "name": "Hi-Fi RUSH",
+ "card": "steam:1817230",
+ "genre": "action",
+ "family": "fam.comic-pop",
+ "pack": "rhythm",
+ "art": {
+  "recipe": "cel-2dfx",
+  "scene": "arena",
+  "values": {
+   "color.palette": "popart",
+   "color.saturation": 1.25
+  }
+ },
+ "base": {
+  "hud.style": "comic",
+  "col.lightness": "light",
+  "col.strategy": "polychrome",
+  "col.surface": "#ffffff",
+  "col.surface2": "#ffe83d",
+  "col.text": "#141414",
+  "col.accent": "#ffd400",
+  "col.accent2": "#ff2d87",
+  "col.focus": "#2ad4ff",
+  "col.border": "#111111",
+  "col.saturation": 1.4,
+  "col.coding": [
+   "status"
+  ],
+  "rel.harmony": "sameMedium",
+  "vis.corner": "sharp",
+  "vis.skew": -10,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 4,
+  "vis.strokeColor": "ink",
+  "vis.depth": "hardDrop",
+  "vis.pattern": "halftone",
+  "vis.patternOpacity": 0.35,
+  "vis.ornament": 2,
+  "vis.motif": "lightning",
+  "ast.fx": [
+   "speedlines"
+  ],
+  "typ.body.family": "sans",
+  "typ.body.weight": "bold",
+  "typ.display.family": "comicHand",
+  "typ.display.weight": "black",
+  "typ.display.style": "italic",
+  "typ.titleFx": "outlineShadow",
+  "typ.numerals.family": "display",
+  "typ.numerals.style": "italic",
+  "typ.legibility": "outline",
+  "vis.iconStyle": "flat",
+  "ast.iconSet": "procedural",
+  "ix.glyphs": "xbox",
+  "mo.enter": "slam",
+  "mo.easing": "overshoot",
+  "mo.juice": 1,
+  "mo.valueChange": "segment",
+  "vis.motif2": "notes"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1817230_4.jpg",
+   "values": {
+    "uip.layout": "layout.action",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "cnt.density": 1,
+    "vis.opacity": 0,
+    "typ.legibility": "outline",
+    "cnt.elements": [
+     "el.vitals",
+     "el.rank",
+     "el.timer",
+     "el.feedback",
+     "el.notify"
+    ],
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "bar",
+    "el.vitals.screenAnchor": "tl",
+    "el.vitals.scale": 1.7,
+    "el.vitals.valueLabel": "none",
+    "el.rank.form": [
+     "letterDisc"
+    ],
+    "el.rank.screenAnchor": "tr",
+    "el.rank.scale": 1.7,
+    "el.timer.form": "scoreLabel",
+    "el.timer.screenAnchor": "tr",
+    "el.timer.scale": 1.0,
+    "el.feedback.form": [
+     "comicSFX",
+     "rating",
+     "combo"
+    ],
+    "el.feedback.attachTo": "target",
+    "el.feedback.scale": 1.3,
+    "el.feedback.priority": "primary",
+    "el.notify.form": [
+     "feed"
+    ],
+    "el.notify.screenAnchor": "mr",
+    "el.notify.scale": 0.75,
+    "el.notify.priority": "ambient",
+    "hier.emphasis": [
+     "size",
+     "color"
+    ],
+    "mo.enter": "slam",
+    "mo.juice": 1,
+    "col.text": "#ffffff",
+    "col.accent2": "#ffb21a",
+    "rel.metaFx": [
+     "speedLines"
+    ],
+    "el.vitals.labels": "none",
+    "el.vitals.rowColors": [
+     "good",
+     "#f5d23c"
+    ],
+    "vis.opacity@el.notify": 0,
+    "col.text@el.notify": "#ffffff",
+    "el.vitals.lockup": "badgeBar",
+    "el.feedback.sfxSize": "hero",
+    "el.feedback.sfxBurst": "layered",
+    "el.feedback.sfxFill": "halftone",
+    "el.feedback.sfxLetterTilt": 10
+   },
+   "sim": {
+    "pose": "beatDown"
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1817230_3.jpg",
+   "values": {
+    "uip.screen": "tpl.cutscene",
+    "cnt.subtype": "npc",
+    "cnt.screen": "screen.dialogue",
+    "lay.container": "overlay",
+    "rel.behind": "live",
+    "cnt.elements": [
+     "el.subtitle"
+    ],
+    "cmp.dialogBox@el.subtitle": "bare",
+    "el.subtitle.screenAnchor": "center",
+    "el.subtitle.attachTo": "player",
+    "el.subtitle.scale": 0.8,
+    "vis.opacity": 0,
+    "typ.body.style": "italic",
+    "typ.legibility": "outline",
+    "cnt.textLength": "word",
+    "cnt.tone": "character",
+    "ix.mode": "readOnly",
+    "ix.skip": "none",
+    "ix.dismiss": "timed",
+    "ix.blocking": "none",
+    "mo.enter": "pop",
+    "mo.textReveal": "instant",
+    "typ.outlineColor": "white",
+    "el.subtitle.form": "lineOnly",
+    "typ.body.family": "comicHand"
+   }
+  },
+  {
+   "key": "cutscene",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1817230_2.jpg",
+   "values": {
+    "uip.screen": "tpl.cutscene",
+    "cnt.screen": "screen.loading",
+    "lay.container": "overlay",
+    "rel.behind": "live",
+    "cnt.elements": [
+     "el.party"
+    ],
+    "el.party.form": "videoGrid",
+    "el.party.arrangement": "row",
+    "el.party.screenAnchor": "tc",
+    "el.party.scale": 2.5,
+    "el.party.diegesis": "screen",
+    "cnt.itemCount": 5,
+    "cnt.focal": "none",
+    "cnt.characterMedium": "bust",
+    "hier.emphasis": [
+     "size",
+     "isolation"
+    ],
+    "cmp.plate@name": "tab",
+    "col.lightness": "dark",
+    "col.surface": "#1b1830",
+    "col.text": "#ffffff",
+    "vis.opacity": 1,
+    "vis.skew": 0,
+    "vis.pattern": "none",
+    "vis.depth": "flat",
+    "vis.corner": "sharp",
+    "vis.strokeWidth": 2,
+    "vis.strokeColor": "custom",
+    "col.border": "#2b2940",
+    "col.semantic": "greenRed",
+    "ix.mode": "readOnly",
+    "ix.skip": "none",
+    "el.party.gap": 0,
+    "el.party.count": 5,
+    "col.accent@el.party": "#a6e53a"
+   }
+  },
+  {
+   "key": "results",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.stats",
+    "cnt.screen": "screen.results",
+    "cnt.stage": "result",
+    "lay.container": "drawer",
+    "lay.panelSize": 0.6,
+    "rel.behind": "live",
+    "cnt.dataShape": "table",
+    "st.statViz": "table",
+    "cmp.listRow": [
+     "title",
+     "value",
+     "grade"
+    ],
+    "col.coding": [
+     "status"
+    ],
+    "cnt.elements": [
+     "el.timer"
+    ],
+    "el.timer.form": "number",
+    "el.timer.screenAnchor": "bl",
+    "col.lightness": "dark",
+    "col.surface": "#15121c",
+    "col.text": "#ffffff",
+    "vis.opacity": 0.92,
+    "vis.skew": -12,
+    "hier.emphasis": [
+     "size",
+     "color",
+     "typeface"
+    ],
+    "mo.enter": "slashIn",
+    "mo.reveal": "flyIn",
+    "mo.valueChange": "countUp",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "timed",
+    "ix.blocking": "none"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "血条是主角吉他的剪影：左端圆形琴头徽（闪电），斜切的琴颈里是斜向分段的绿色血量，下面贴一条黄色混响槽，三者共用一圈粗黑墨边、是同一个外形。现在 el.vitals 只能画两条各自独立的平直横条（cmp.gauge=bar），没有徽章，也没有共用外形",
+   "severity": "high",
+   "proposal": "el.vitals 新画法\"徽章 + 主条 + 副槽\"组合件：左端圆徽（图标读 vis.motif / ast.iconSet），主条斜切 + 斜向分段，副槽贴在主条下沿，三者共用一圈墨边；外形另给一个\"主题剪影遮罩\"选项（读素材轮廓，需美术）",
+   "kind": "composite",
+   "resolvedBy": "el.vitals.lockup = badgeBar（闪电圆徽 + 斜切主条 + 副槽共用墨边）"
+  },
+  {
+   "screen": "all",
+   "what": "vis.skew 只在示例样板的 box()（paint.ts withTransform）里生效：HUD 元素的 panel() / gauge() 和界面模板的面板都直接调 drawBox，不读 panel.skewX，所以 base 的 vis.skew=-10、results 的 -12 全都画不出来（血条、评级、评分卡都是直立的）；bar / segmented 的底槽描边来自皮肤 bar token，vis.strokeWidth=4 也不作用到血条（只有细线）",
+   "severity": "high",
+   "proposal": "让 drawBox 统一走 withTransform（或在 panel / gauge / 界面面板外包一层），vis.skew 作用到所有盒子与数值条；bar / segmented 的底槽描边读 vis.strokeWidth / vis.strokeColor",
+   "kind": "renderBug",
+   "resolvedBy": "R3 对照图：vis.skew 已作用到数值条与界面面板（血条、评分卡斜切）"
+  },
+  {
+   "screen": "hud",
+   "what": "整个 HUD 跟着音乐 BPM 一拍一跳：血条、评级字母、连击字都在拍点上缩放，这是这款 UI 的灵魂",
+   "severity": "high",
+   "proposal": "mo.idle 新取值\"节拍脉冲\"，再加 BPM / 相位参数，让所有元素在拍点上弹一下",
+   "kind": "motion"
+  },
+  {
+   "screen": "hud",
+   "what": "el.feedback.form 是多选，但渲染只画第一个画法：拟声字、PERFECT! 评价、\"4 HITS!\"连击三者同屏时只剩拟声字",
+   "severity": "high",
+   "proposal": "el.feedback 按选中的画法逐个画（各自占位，不互相覆盖）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-12（多画法拆分：拟声字 / 评价 / 连击同屏）"
+  },
+  {
+   "screen": "hud",
+   "what": "拟声字是全屏第一眼：占画面中下大半的超大字，字内渐变 + 网点填充、逐字倾斜、粗墨边，背后是多层撞色星爆（紫 / 蓝 / 橙）。comicSFX 只画固定大小的黄色星爆 + 红色小字，scale 1.3 时也只有画面约 1/5 宽，第一眼被评级字母抢走",
+   "severity": "high",
+   "proposal": "comicSFX 加子参数：尺寸档（贴目标 / 主角级·铺满中部）、字内填充（纯色 / 渐变 / 网点）、星爆配色（单色 / 多层撞色，读 col.accent / accent2 / focus）、逐字倾斜",
+   "kind": "newDrawing"
+  },
+  {
+   "screen": "hud",
+   "what": "拟声字的位置写死在\"目标挂点 + 右上偏移\"，el.feedback.attachTo / screenAnchor 都不影响它（换到目标投影偏上的场景就被顶出画面，arena 场景里落在中上只是碰巧）；也没法给子画法分别设锚点（参考里拟声字挂击中点，PERFECT! 与连击挂在右上评级下方）",
+   "severity": "medium",
+   "proposal": "comicSFX 读 attachTo 并在画面内夹紧；el.feedback 允许按子画法分别设锚点（comicSFX 挂目标，combo / rating 挂屏幕右上评级下方）",
+   "kind": "layoutEngine"
+  },
+  {
+   "screen": "hud",
+   "what": "评级是手绘橙黄大字压在黑色齿轮圆盘上，外圈是评级进度环、环上绕一行弧形小字；el.rank=letter 只画一枚固定颜色（#ffd34d）的斜体字母，没有圆盘和环",
+   "severity": "medium",
+   "proposal": "el.rank 新画法\"字母 + 圆盘 + 进度环\"（读 vis.silhouette@el.rank 与 cmp.gauge@el.rank），字母颜色读 col.accent",
+   "kind": "composite",
+   "resolvedBy": "el.rank.form = letterDisc（黑齿轮盘 + 进度环 + 弧形小字）"
+  },
+  {
+   "screen": "hud",
+   "what": "按元素的 vis.*@el.* / col.*@el.* 覆盖能过校验（resolve.ts 收了 vis.*@*），但元素画法不读：col.accent@el.vitals、vis.silhouette@el.rank、cmp.gauge@el.rank、vis.tilt@el.abilities、col.border@el.abilities 写了等于没写",
+   "severity": "medium",
+   "proposal": "元素画法统一从 ElCtx 取按元素覆盖后的 col.* / vis.* / cmp.*（与 cmp.gauge@el.vitals 已有的读法一致）",
+   "kind": "renderBug"
+  },
+  {
+   "screen": "hud",
+   "what": "el.vitals 每条前面固定画文字标签列（生命 / 爆发），第一条填充色固定 e.bad 红、第二条固定 accent2，所以\"无标签的绿色血条 + 黄色混响槽\"画不出来",
+   "severity": "medium",
+   "proposal": "elx 加 labelMode（不标 / 文字 / 图标）；el.vitals 加每条的填充色子参数（或读 col.accent@el.vitals，见按元素覆盖的缺口）",
+   "kind": "missingParam",
+   "resolvedBy": "el.vitals.labels, el.vitals.rowColors"
+  },
+  {
+   "screen": "hud",
+   "what": "击打时的黑色速度线从击中点放射；rel.metaFx=speedLines 是白色细线，只在屏幕四周、以屏幕中心为心",
+   "severity": "medium",
+   "proposal": "speedLines 加颜色（墨色 / 白 / 强调色）与圆心（屏幕中心 / 跟随命中点）两个子参数",
+   "kind": "missingParam"
+  },
+  {
+   "screen": "hud",
+   "what": "el.rank=letter 的字母在自己的盒子里左对齐，锚 tr 时字母离右上角还有一截（落在画面 67%–82% 宽），参考的评级贴着右上角",
+   "severity": "low",
+   "proposal": "元素内容按锚点对齐（锚右侧时右对齐），或让 el.rank 的盒宽跟字母实际宽度走",
+   "kind": "layoutEngine",
+   "resolvedBy": "R3 对照图：评级字母贴右上角"
+  },
+  {
+   "screen": "hud",
+   "what": "分数是\"SCORE\"小标签 + 斜体白色大数字（无底），el.timer 只有\"数字\"（画的是计时）和\"比分胶囊\"（带胶囊底），没有带小标签的分数",
+   "severity": "low",
+   "proposal": "el.timer.form 新取值\"标签 + 大号分数\"（小字标签在上、斜体数字在下、无底）",
+   "kind": "missingOption",
+   "resolvedBy": "el.timer.form = scoreLabel"
+  },
+  {
+   "screen": "hud",
+   "what": "el.notify=feed 每行固定画 45% 黑底小胶囊、首行固定黄字，不读 vis.opacity=0 与 col.*；参考是一行无底、白字黑描边的\"击毁 +200\"",
+   "severity": "low",
+   "proposal": "feed 的行底读 vis.opacity（0 = 无底、改用描边字），字色读 col.text / col.accent",
+   "kind": "renderBug",
+   "resolvedBy": "vis.opacity@el.notify, col.text@el.notify"
+  },
+  {
+   "screen": "hud",
+   "what": "节奏包的消息样本是 3 条解锁 / 成就消息，cnt.density=1 也不减行；参考只有一条击毁得分（\"击毁 +200\"）",
+   "severity": "low",
+   "proposal": "节奏包加\"击毁 / 判定得分\"类消息样本；feed 行数跟 cnt.density 走",
+   "kind": "content"
+  },
+  {
+   "screen": "hud",
+   "what": "伙伴援护头像是倾斜的小方卡（荧光绿框、带冷却），挂在血条下方；这张参考图里没出现，所以这一屏没放 el.abilities",
+   "severity": "low",
+   "proposal": "el.abilities=slots 加\"倾斜头像卡\"样式（读 vis.tilt@el.abilities 与 col.border@el.abilities）",
+   "kind": "newDrawing"
+  },
+  {
+   "screen": "all",
+   "what": "装饰母题是闪电、音符与星爆，vis.motif 没有闪电 / 音符，暂用 stars 近似",
+   "severity": "low",
+   "proposal": "vis.motif 新增\"闪电\"\"音符\"",
+   "kind": "missingOption",
+   "partialBy": "vis.motif = lightning（血条圆徽里的闪电）；音符母题（vis.motif2 notes）在这几屏看不到"
+  },
+  {
+   "screen": "dialogue",
+   "what": "闲聊台词漂在说话角色头边；el.subtitle 的无框字幕写死白字黑描边（不读 col.text），attachTo=player 不生效、只按屏幕锚点放，所以字落在画面正中偏左、颜色与参考相反",
+   "severity": "medium",
+   "proposal": "无框字幕读 col.text，并支持 attachTo=player / target（挂在角色头部上方、画面内夹紧）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-15 / 32（无框字幕挂玩家头顶、读字色与 typ.outlineColor）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "台词是漫画手写体；typ.body.family 没有\"漫画手写\"，kai 楷体子集也缺这些字，渲染回退成黑体",
+   "severity": "medium",
+   "proposal": "typ.body.family 新增\"漫画手写体\"（需字体文件）",
+   "kind": "missingOption",
+   "resolvedBy": "typ.body.family = comicHand（拉丁字母部分）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "参考是深色字 + 白描边；typ.legibility=outline 不能指定描边颜色（固定深色）",
+   "severity": "low",
+   "proposal": "typ.legibility 加描边颜色（自动反差 / 白 / 墨色 / 自定义）",
+   "kind": "missingParam",
+   "resolvedBy": "typ.outlineColor"
+  },
+  {
+   "screen": "dialogue",
+   "what": "样本是带说话人名的一整句（\"鼓鼓：……\"），参考是不带名字的一个感叹词（Whoa...）",
+   "severity": "low",
+   "proposal": "节奏包加闲聊短句 / 感叹词（bark）样本；cnt.textLength 增加\"单词\"档，此档下不画说话人名",
+   "kind": "content",
+   "resolvedBy": "cnt.textLength = word（只写一个感叹词、不写说话人名）"
+  },
+  {
+   "screen": "cutscene",
+   "what": "剧情里的视频会议墙：5 块竖屏相接成一整面墙，每块是半身立绘填满 + 底部暗色人名条 + 摄像 / 麦克风 / 挂断三枚小图标，中间一块更大、带荧光绿括角；el.party=unitCards 是留缝的独立小卡，卡里是圆头像 + 大号名字 + 血条，没有图标行，也没有中间放大",
+   "severity": "medium",
+   "proposal": "el.party 新画法\"视频通话格\"：立绘区 + 底部名条 + 图标行子参数，卡间距可为 0，按焦点放大当前一块并加括角",
+   "kind": "composite",
+   "resolvedBy": "el.party.form = videoGrid + el.party.gap 0（五块相接、中间放大带括角、名条 + 图标行）"
+  },
+  {
+   "screen": "cutscene",
+   "what": "每块屏幕是整幅半身立绘；现在只有灰色圆头像占位",
+   "severity": "medium",
+   "proposal": "给队伍成员挂半身立绘素材（cnt.characterMedium=bust 时读），需美术",
+   "kind": "asset"
+  },
+  {
+   "screen": "cutscene",
+   "what": "el.party=unitCards 固定画 4 张（尺寸写死 4 × 86），cnt.itemCount=5 不作用到 el.party",
+   "severity": "medium",
+   "proposal": "unitCards 的张数读 cnt.itemCount（或 el.party.count），盒宽随张数算",
+   "kind": "renderBug",
+   "resolvedBy": "el.party.count = 5"
+  },
+  {
+   "screen": "cutscene",
+   "what": "vis.strokeSides=corners 的定义是\"科技角括号、取景框\"，但 theme.ts 把 corners 和 all 一样处理，画成四边整框；参考的荧光绿只是括角",
+   "severity": "medium",
+   "proposal": "corners 改画四角 L 形括角（臂长读 vis.cornerSize），不画整边",
+   "kind": "renderBug",
+   "resolvedBy": "R3 对照图：vis.strokeSides = corners 画成四角括角"
+  },
+  {
+   "screen": "cutscene",
+   "what": "通话墙在剧情里是画进世界的屏幕；改成叙事内（diegetic）时板子被顶出画面上沿、被场景柱子挡住，所以这一屏只能用屏幕叠加",
+   "severity": "low",
+   "proposal": "叙事内板子加挂点 / 离地高度 / 朝向参数，并避开遮挡物",
+   "kind": "worldSpace"
+  },
+  {
+   "screen": "results",
+   "what": "凭记忆：战斗评分卡逐项（用时、节拍、受伤、连击）给字母评级，最后一个大字总评；对比表（table）只画按队员分行、带头像的记分板，没有\"类别 + 字母评级\"的行",
+   "severity": "low",
+   "proposal": "cmp.listRow 新增\"评级字母\"字段，cnt.dataShape=table 加\"按类别分行\"的变体（不画头像）",
+   "kind": "missingOption",
+   "partialBy": "cmp.listRow grade（行尾字母评级 + 表下总评；行仍按队员，不是按类别）"
+  },
+  {
+   "screen": "results",
+   "what": "tpl.stats 里 el.rank.screenAnchor=br、el.timer.screenAnchor=bl 不生效：两者都在面板里靠左往下排（SS 在左下、03:12 在中左）",
+   "severity": "low",
+   "proposal": "界面模板内的元素读 screenAnchor，按面板内九宫格放置",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12a-19（模板内元素按锚点：SS 右下、用时左下）"
+  },
+  {
+   "screen": "results",
+   "what": "ix.mode=readOnly + ix.dismiss=timed 时右上仍画关闭 ×；自动消失的评分卡不需要关闭按钮",
+   "severity": "low",
+   "proposal": "ix.dismiss=timed（或 ix.mode=readOnly）时不画关闭按钮",
+   "kind": "renderBug",
+   "resolvedBy": "ix.close 派生 none（ix.dismiss = timed）"
+  },
+  {
+   "screen": "hud",
+   "what": "拟声字整个没画出来：改成 el.feedback.sfxSize = hero + sfxBurst layered + sfxFill halftone + sfxLetterTilt、并钉 sim = beatDown 之后，静帧里没有任何拟声字（第 3 轮还有一枚黄色星爆‘咚!’）",
+   "severity": "high",
+   "proposal": "核对 hero 档拟声字的占位与画面内夹紧（是否被避让省掉或推出画面）、beatDown 姿态是否触发命中；拟声字在静帧钉法里固定出现，放不下时给检查提示",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C3 ①：主角级拟声字（sfxSize = hero）按整屏叠加画——不按世界挂点推开 / 藏、垫在其余元素下面画、范围登记成软占位（原来约六成屏宽的星爆压到 HUD、推不开就整个不画；beatDown 静帧里画出「咚！」）；R4 审查修复 ⑫：星爆夹在画面里（竖屏 / 方屏），位置挑压 HUD 少的（不再压评级 / 连击）"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 5,
+    "elements": 3,
+    "palette": 4,
+    "type": 5,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 4,
+    "type": 5,
+    "shape": 3,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 4,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 4,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "dialogue": [
+   {
+    "layout": 1,
+    "elements": 0,
+    "palette": 1,
+    "type": 0,
+    "shape": 1,
+    "density": 2,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 3,
+    "type": 3,
+    "shape": 5,
+    "density": 5,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 6,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 7,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "cutscene": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 2,
+    "type": 4,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "results": [
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "拟声字星爆被顶出画面上沿（工厂场景的目标投影点偏上，拟声字又画在目标右上方），参考里它是画面正中最大的元素；字也看不见",
+   "血条画成两条无边框的红 / 粉分段格，参考是粗黑墨边的吉他形绿色血条 + 黄色混响槽",
+   "血条下多了一排 4 个技能格（参考这张图里没有）",
+   "评级字母 SS 偏小，没有黑色圆盘和进度环",
+   "评级下方的数字是深灰色（col.text 深色），参考的分数是白字黑描边",
+   "通知消息列在右侧中部，参考的 Destroyed +200 在分数正下方",
+   "连击数与 PERFECT! 评价没画出来（el.feedback 只画第一个画法）",
+   "按元素写的 vis.skew / col.accent / vis.tilt 等覆盖不渲染，写了等于没写",
+   "世界整体是淡灰紫，参考是高饱和的青、紫、橙、粉"
+  ],
+  "dialogue": [
+   "整屏什么 UI 都没有：rel.hudVisibility=hidden（电影模式全隐）把字幕元素也一起隐藏了",
+   "参考是漂在角色旁边的一句手写小字（深色字 + 白描边），这里本该至少有一行无框字幕"
+  ],
+  "cutscene": [
+   "4 张白底网点卡片贴在画面最上沿、上半截被裁掉，参考是 5 块暗底竖屏横贯画面上半",
+   "卡片是白底，参考的屏幕是彩色立绘 + 暗色人名条，整体偏暗",
+   "字幕压在卡片下沿，参考画面里没有字幕",
+   "没有摄像 / 麦克风 / 挂断图标行、中间一块没有放大和括角"
+  ],
+  "results": [
+   "侧抽屉太窄（panelSize 0.35），表格的数字列互相压住（412 和 36 叠成\"41236\"）",
+   "SS 大字一半压在抽屉外",
+   "底部多了\"确定\"按钮，战斗评分是自动消失的",
+   "表格是按队员分行、带头像与阵营色的记分板，不是逐项字母评级"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "画面换成高饱和的青 / 粉后明暗接近参考；技能格已去掉，拟声字星爆回到画面中上（角色与评级之间）不再出画，评级下的数字与消息列变成白字黑描边——这几处已对上",
+   "血条仍是两条平直横条，前面有文字标签列（生命 / 爆发），填充是红色 + 橙色、白色底槽、细黑边，长到画面约 43% 宽；参考是带闪电琴头徽、斜切琴颈的吉他剪影：绿色斜向分段血量下贴黄色混响槽，外面一圈粗墨边，没有标签",
+   "评级 SS 放大了，但仍是一枚黄色斜体字母 + 细阴影，没有黑色齿轮圆盘、进度环和弧形小字；字母在自己的盒子里左对齐，落在画面 67%–82% 宽处，参考贴着右上角",
+   "拟声字只是一枚黄色星爆 + 红色小字\"咚!\"，约画面 1/5 宽；参考是占画面中下大半的超大字（渐变 + 网点填充、逐字倾斜），背后是多层撞色星爆，是整屏第一眼——现在第一眼落在评级 SS 上",
+   "没有 PERFECT! 评价字和\"4 HITS!\"连击（el.feedback 只画第一个画法）",
+   "评级下是计时 03:12，参考是\"SCORE\"小标签 + 斜体分数 4,800",
+   "消息列是 3 条深色底小胶囊（首条黄字），参考是分数下方一行无底的\"击毁 +200\"",
+   "速度线是白色细线、只在屏幕四周、以屏幕中心为心；参考是黑色粗线，从击中点放射到画面左上",
+   "所有元素都是直立的：base 的 vis.skew=-10 没有作用到血条、评级、消息条；参考的血条、评价字、分数都向右上斜"
+  ],
+  "dialogue": [
+   "第 1 轮的整屏空白已修好：现在有一行无框浮字，大致在画面中部，结构上对上了\"漂在画面里的一句话\"",
+   "字没有挂在角色身上：落在场地左上方、画面正中偏左，参考是角色头部右上方的一个小词（attachTo=player 不生效）",
+   "明暗正好相反：这里是白色粗斜体 + 黑描边，参考是深色手写体 + 白描边",
+   "内容是带说话人名的一整句（\"鼓鼓：数到四再进鼓……\"），字号也偏大；参考只是一个不带名字的感叹词（Whoa...），很小",
+   "字族是粗黑体斜体，参考是漫画手写体"
+  ],
+  "cutscene": [
+   "板子回到画面上半、全部在画内、横贯画面宽度（约 4%–95%），深色底 + 荧光绿边框的配色接近参考的通话墙，第 1 轮的白底卡和压在卡上的字幕都没了",
+   "只有 4 块（参考 5 块），块与块之间留缝，参考是相接成一整面墙；中间一块没有放大",
+   "每块是灰色圆头像占位 + 大号居中白色名字 + 血条（彩色头像环，最后一块红色），参考是半身立绘填满整块 + 底部暗色人名条 + 摄像 / 麦克风 / 挂断三枚小图标（绿 / 绿 / 红）",
+   "荧光绿是四边整圈描边（vis.strokeSides=corners 被画成整框）；参考只有中间一块有绿色括角，其余是细暗框",
+   "名字字号过大、居中在卡片中部；参考是小号大写字压在底部名条上"
+  ],
+  "results": [
+   "（凭记忆）抽屉加宽后数字列不再重叠，SS 完整落在框内，\"确定\"按钮已去掉",
+   "表格仍是按队员分行、带头像的记分板（完美 / 良好 / 错过 / 得分），参考是\"用时 / 节拍 / 受伤 / 连击\"逐项一行、每行一个字母评级",
+   "面板是直立的竖长框（vis.skew=-12 没有作用到界面面板），参考的评分卡是斜切的漫画框、从右侧滑入",
+   "SS 落在面板左下、03:12 落在面板中左；配方写的 el.rank 锚右下、el.timer 锚左下没有生效，读起来不像\"逐项 → 用时 → 总评\"",
+   "右上仍有关闭 ×，参考的战斗评分是自动消失的，不需要关闭按钮"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "血条已是无标签的绿色血量 + 黄色混响槽、向右上斜切、带粗墨边，但仍是两条各自独立的平直横条；参考是带闪电琴头徽、斜切琴颈的吉他剪影，两条共用一圈墨边",
+   "拟声字仍只是一枚黄色星爆 + 红色小字‘咚!’（约画面 1/6 宽）；参考是占画面中下大半的超大网点渐变字 + 多层撞色星爆，第一眼仍被右上 SS 抢走",
+   "PERFECT 与连击已画出，但堆在右侧中下一列（PERFECT 前还多一个 S 字母，‘86 COMBO’很大）；参考的 PERFECT! 与‘4 HITS!’斜挂在评级左下",
+   "评级 SS 已贴右上角，但仍是黄色斜体字母，没有黑色齿轮圆盘、进度环与弧形小字",
+   "评级下是计时 03:12 与三行通知，通知首行压在 SS 字脚上；参考是‘SCORE 4,800’ + 一行‘击毁 +200’",
+   "速度线仍是白色细线、以屏幕中心为心，参考是从击中点放射的黑色粗线"
+  ],
+  "dialogue": [
+   "台词已是深色斜体字 + 白描边、不带说话人名、字号变小，挂在场地上方；但仍是一整句（‘数到四再进鼓……’），参考只是角色头边一个感叹词‘Whoa...’",
+   "字族是粗黑体斜体，参考是漫画手写体"
+  ],
+  "cutscene": [
+   "仍只有 4 块（cnt.itemCount = 5 不作用到 el.party），块间留缝，中间一块没有放大",
+   "四角已是荧光绿括角，但每块都有；参考只有中间一块带绿括角，其余是细暗框",
+   "每块仍是灰色圆头像 + 大号居中名字 + 血条，参考是半身立绘填满 + 底部暗色名条 + 摄像 / 麦克风 / 挂断图标",
+   "画面下中多了一道‘半身立绘（需素材）’光柱占位（cnt.focal = character 带出），参考这里是世界里的主角背影",
+   "右上多一枚‘长按跳过’胶囊，参考截图里没有"
+  ],
+  "results": [
+   "（凭记忆）评分卡已是向右斜切的漫画框，SS 在右下、03:12 在左下，✕ 已去掉；但表格仍是按队员分行、带头像的记分板，原作是‘用时 / 节拍 / 受伤 / 连击’逐项一行、每行一个字母评级",
+   "面板约通屏高，表格只占上部三分之一，中段空着"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "拟声字整个不见了（第 3 轮还有黄色星爆‘咚!’）；参考第一眼是铺满中下的网点渐变大字 + 多层撞色星爆",
+   "血条已是闪电圆徽 + 斜切斜向分段主条 + 黄色副槽共用墨边，但主条是平行四边形、末端不收尖；参考整体是吉他剪影（琴颈细长、琴头箭头）",
+   "评级已是黑齿轮盘 + 进度环 + 弧形 PERFECT 小字，分数是 SCORE + 斜体大数字；但 PERFECT 与 86 COMBO 仍竖堆在右侧中下（PERFECT 前多一个 S），参考 PERFECT! 与 4 HITS! 斜挂在评级左下",
+   "速度线仍是白色细线贴屏幕四周，参考是从击中点放射的黑色粗线；‘击毁 +200’是场地中间的小黄字"
+  ],
+  "dialogue": [
+   "台词已是不带名字的一个‘Whoa...’、漫画手写斜体；但字细、约屏高 2%，参考是粗黑手写字、约大一倍、整体逆时针倾斜",
+   "字挂在场地上空中间，参考紧贴角色头部右上"
+  ],
+  "cutscene": [
+   "已是五块相接的视频墙、中间一块放大带荧光绿括角、每块底部名条 + 摄像 / 麦克风 / 挂断图标；但每块是透明窗（看得见后面的场地）+ 白色半透明人形占位，参考是不透明的彩色半身立绘（需素材）",
+   "名字左对齐、图标是白色细线 + 红色挂断；参考名字居中，下面一排绿色圆角方块图标 + 红色挂断方块",
+   "块与块之间的细框是浅色、几乎看不见，墙没有深色底；参考是深色细框、整面墙压暗"
+  ],
+  "results": [
+   "（凭记忆）行尾已有字母评级（S / B / C / A）、表下写总评，但行仍按队员（阿野 / 小冬…）+ 完美 / 良好 / 错过 / 得分列；原作是‘用时 / 节拍 / 受伤 / 连击’逐项一行",
+   "总评‘B’是表下的小字，原作总评是压轴的大字母（第 3 轮右下的大号 SS 去掉后没有了）",
+   "面板约通屏高，表格只占上部三分之一，中段仍空着"
+  ]
+ },
+ "revisions": [
+  "art：场景 factory → arena，色板 popart、饱和度 1.25：画面变成高饱和的青 / 粉 / 黄，更接近参考的明度与气氛；arena 的目标投影在画面中部，拟声字星爆落回画面中间偏上，不再被顶出画面",
+  "hud：去掉 el.abilities（参考图里没有）；血条改 cmp.gauge=bar（带墨色描边的白槽），scale 1.4 → 1.7 拉长加粗；第二条（混响）用 col.accent2=#ffb21a 染成橙黄",
+  "hud：本屏 col.text=#ffffff，计时 / 分数和消息列变成白字黑描边，和参考的分数、Destroyed 字样一致",
+  "hud：评级字母 scale 2 → 2.5；消息列从右中移到右上、排在分数下方并设为背景优先级；拟声字 scale 1.3、priority=primary，星爆落在角色与评级之间、不压评级",
+  "hud：加 rel.metaFx=speedLines，给击打瞬间补上漫画速度线；cnt.density 2 → 1",
+  "hud：删掉渲染不读的按元素覆盖（vis.skew@el.vitals、col.accent@el.vitals、vis.tilt@el.abilities、col.text@el.timer 等），只保留表达圆盘 + 进度环意图的 vis.silhouette@el.rank / cmp.gauge@el.rank，并记成缺口",
+  "dialogue：删掉 rel.hudVisibility=hidden（它让本屏一片空白）；字幕锚到画面中心（角色身边），scale 0.8 → 1.1；删掉无效的 col.text 覆盖；模板仍用 tpl.cutscene（直接叠加 + 无框字幕，比 tpl.npc 的底部对话框更接近\"漂在角色旁的一句话\"）",
+  "cutscene：去掉字幕（参考里没有，原来压在卡片上）；卡片改深色底 #1b1830 + 白字 + 荧光绿描边、直角、去网点，scale 2.4 → 2.5 横贯画面上半；el.party.diegesis=screen（叙事内板子会被顶出画面、被柱子挡住）",
+  "results：抽屉 panelSize 0.35 → 0.6，数字列不再重叠；ix.mode=readOnly 去掉\"确定\"按钮；评级字母放到右下、用时放到左下，读起来是\"逐项 → 用时 → 总评\"；删掉无用的 lay.focalSide",
+  "R3 前（M12a 之后）：hud 加 el.vitals.labels none + el.vitals.rowColors [good, 黄]（无标签的绿色血量 + 黄色混响槽）、vis.opacity@el.notify 0 + col.text@el.notify 白（无底白字的击毁得分）、el.notify 锚点 tr → mr（审查修复 A：右上一列评级 / 计时 / 评价 / 连击 / 通知比屏高还高，通知折到第二列；原作的 +200 本来就在评级列下方偏中）；dialogue 加 typ.outlineColor = white（深色字 + 白描边）、el.subtitle.form = lineOnly（不写说话人名）、el.subtitle.scale 1.1 → 0.8（参考是角色头边的一个小词）。",
+  "R3 评分（M12a 之后，未改取值）：补第 3 轮 scores 与 round3Diffs；没有新增缺口；按第 3 轮对照图给已画对的 7 条缺口标 resolvedBy。",
+  "R4 前（M12b 之后）：base typ.display.family graffiti → comicHand（graffiti 没有字体文件、落成 grotesk；漫画手写体有 Comic Neue + 站酷快乐体，去掉一条字族提醒）、vis.motif stars → lightning + vis.motif2 notes（闪电 / 音符母题，#15）；hud 加 el.vitals.lockup badgeBar（闪电圆徽 + 斜切主条 + 副槽共用墨边，#0）、el.rank.form [letter] → [letterDisc]（黑齿轮盘 + 进度环 + 弧形小字，#6；el.rank.scale 2.5 → 1.7 让盘约屏高 28%，去掉 R2 代用的 cmp.gauge@el.rank ring / vis.silhouette@el.rank circle）、el.timer.form number → scoreLabel（SCORE 小标签 + 斜体大分数，#11）、el.feedback.sfxSize hero + sfxBurst layered + sfxFill halftone + sfxLetterTilt 10（铺满中下的网点拟声字 + 多层撞色星爆，#4 / #5）、sim {pose: beatDown}（钉在随拍放大那一下，逐帧条带看节拍脉冲，#2）；没加 B7 / B10 建议的 el.abilities 倾斜头像卡（#14：这张参考截图里没有援护头像）；dialogue 加 cnt.textLength line → word（只写一个感叹词，#19）、typ.body.family comicHand（#17 的拉丁部分）；cutscene 改 el.party.form unitCards → videoGrid + el.party.gap 0 + el.party.count 5（五块相接的视频墙、中间一块放大带括角，#20 / #22）、col.accent@el.party 荧光绿（只给中间那块的括角），去掉 vis.strokeSides corners、col.border 绿 → #2b2940 + vis.strokeWidth 3 → 2（其余几块是细暗框）、cnt.focal character → none（去掉下中的立绘占位光柱）、ix.skip hold → none（参考没有长按跳过）；results 加 cmp.listRow [title, value, status] → [title, value, grade]（逐项字母评级 + 表下大字总评，#25），去掉与总评重复的 el.rank。",
+  "R4 评分（M12b 之后，未改取值）：补第 4 轮 scores 与 round4Diffs；新增缺口 1 条；按第 4 轮对照图给 7 条缺口标 resolvedBy、2 条标 partialBy。"
+ ],
+ "notes": "UI 和 3D 赛璐璐画面同一媒介的美漫波普：粗墨边、错位硬投影、网点、斜切。左上是主角吉他形血条，右上是手绘评级大字配斜体分数，击打时超大拟声字和评价字砸在画面中央，整套 HUD 随节拍一跳一跳。叙事里台词是漂在角色旁的手写字，剧情中的界面画进世界（视频会议墙）。内容包用节奏包（判定字、连击、分数），比动作包更贴近；画面用 arena + 波普色板，只为明度与气氛接近（也让拟声字落在画面中部）。results 一屏凭记忆编码。"
+}

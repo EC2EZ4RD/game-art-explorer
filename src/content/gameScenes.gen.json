@@ -1,0 +1,5462 @@
+{
+ "generated": "scripts/gen-game-scenes.ts",
+ "note": "自动生成，不要手改；改 scripts/gen-game-scenes.ts 里的表后重跑",
+ "scenes": [
+  {
+   "id": "gs.sandbox",
+   "name": "沙盒·小岛",
+   "group": "3D自由",
+   "genre": "sandbox",
+   "layout": "layout.sandbox",
+   "pack": "sandbox",
+   "skin": "skin.pixelWood",
+   "env": "sandbox",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 沙盒与物理：透视 俯仰 0° vFOV 75（人工修正：fov=28）",
+    "fov": 28
+   },
+   "look": "inspiration-fixed",
+   "desc": "方块边境：一个全是方块的世界：白天开矿建房子，夜里守住有光的地方。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "settings",
+     "label": "设置",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.settings"
+     }
+    },
+    {
+     "id": "flow.build",
+     "label": "▶建造",
+     "kind": "flow",
+     "flow": "build",
+     "values": {
+      "chk.demo": "build"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.snowline",
+   "name": "探索·雪线",
+   "group": "3D自由",
+   "genre": "explore",
+   "layout": "layout.explore",
+   "pack": "snowline",
+   "skin": "skin.thinGeo",
+   "env": "mountain",
+   "altEnvs": [
+    "oblique-village"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "look": "watercolor",
+   "desc": "雪线旅人：穿过雪线以上的松林，修补渡船，夜访灯塔。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.action",
+   "name": "动作·地牢",
+   "group": "俯视",
+   "genre": "action",
+   "layout": "layout.action",
+   "pack": "action",
+   "skin": "skin.constructivist",
+   "env": "dungeon",
+   "altEnvs": [
+    "iso-dungeon"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "cel-anime",
+   "desc": "铁炉矿坑：矮人锻工带着蒸汽锤下坑，一层一层打碎矿坑里的诅咒。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3
+     }
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.draft3"
+     }
+    },
+    {
+     "id": "route",
+     "label": "路线",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.routeMap"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "runSummary",
+     "label": "结算",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.runSummary"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.soulslike",
+   "name": "魂类·城堡",
+   "group": "3D自由",
+   "genre": "action",
+   "layout": "layout.soulslike",
+   "pack": "soulslike",
+   "skin": "skin.darkHairline",
+   "env": "castle",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30（人工修正：angle=low、fov=28）",
+    "fov": 28
+   },
+   "look": "soft-pbr",
+   "desc": "没落王城：王城的火已经灭了，最后一位守誓骑士在余烬旁醒来。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3
+     }
+    },
+    {
+     "id": "lowhp",
+     "label": "低血量",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "lowHp"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.platformer",
+   "name": "横版·洞穴",
+   "group": "横版",
+   "genre": "platformer",
+   "layout": "layout.platformer",
+   "pack": "platformer",
+   "skin": "skin.filigree",
+   "env": "cave",
+   "env2d": [
+    "sideStage-cave",
+    "sideStage"
+   ],
+   "altEnvs": [
+    "sideStage",
+    "sideStage-ruins",
+    "sideStage-shanshui",
+    "cave",
+    "paper-theater",
+    "silhouette-forest"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "side",
+    "src": "A17 横版平台：正交 俯仰 0° vFOV —",
+    "azimuth": 0
+   },
+   "look": "moebius",
+   "desc": "萤火深处：一只提灯的小甲虫，穿过沉睡的萤火王国，找回失落的光。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "cnt.elements": "el.vitals,el.resources,el.timer,el.threat",
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.shooter",
+   "name": "射击·舱室",
+   "group": "3D自由",
+   "genre": "shooter",
+   "layout": "layout.shooter",
+   "pack": "shooter",
+   "skin": "skin.scifi",
+   "env": "scifi",
+   "altEnvs": [
+    "fp-maze"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 第一人称射击：透视 俯仰 0° vFOV 70（人工修正：fov=28）",
+    "fov": 28
+   },
+   "look": "soft-pbr",
+   "desc": "轨道封锁：空间站失联三天，你的小队要登上去，把它夺回来。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "lowhp",
+     "label": "低血量",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "lowHp"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "settings",
+     "label": "设置",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.settings"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.shmup",
+   "name": "弹幕·奇境",
+   "name2d": "弹幕·竖版",
+   "group": "俯视",
+   "genre": "action",
+   "layout": "layout.shmup",
+   "pack": "shmup",
+   "skin": "skin.pixel",
+   "env": "surreal",
+   "env2d": [
+    "shmup-vertical"
+   ],
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "top",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30（人工修正：angle=top）",
+    "fov": 45
+   },
+   "look": "cel-anime",
+   "desc": "流星特攻：1992 年的街机弹幕：一架战机、三发炸弹、九位数的分数。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "cnt.elements": "el.timer,el.vitals,el.abilities,el.threat",
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.rpg",
+   "name": "RPG·庭院",
+   "group": "3D自由",
+   "genre": "rpg",
+   "layout": "layout.rpg",
+   "pack": "rpg",
+   "skin": "skin.ink",
+   "env": "courtyard",
+   "altEnvs": [
+    "scroll-street",
+    "hd2d-town"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 角色扮演（战术）：透视 俯仰 55° vFOV 40",
+    "fov": 33
+   },
+   "look": "ink-landscape",
+   "desc": "长风剑歌：加入剑宗，与同门组队进秘境，在长风城走一回江湖。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.skilltree"
+     }
+    },
+    {
+     "id": "quest",
+     "label": "任务",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.quest"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "flow.gacha",
+     "label": "▶抽卡",
+     "kind": "flow",
+     "flow": "gacha",
+     "values": {
+      "chk.demo": "gacha"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.tactics",
+   "name": "战棋·棋盘",
+   "group": "棋盘",
+   "genre": "strategy",
+   "layout": "layout.strategyTurn",
+   "pack": "tactics",
+   "skin": "skin.holo",
+   "env": "strategy",
+   "env2d": [
+    "tacticsBoard"
+   ],
+   "altEnvs": [
+    "strategy"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 策略与战术：透视 俯仰 55° vFOV 35",
+    "fov": 38
+   },
+   "look": "pixel3d",
+   "desc": "机兵防线：指挥机兵守住海岸防线，看清巨兽的每一次意图。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "formation",
+     "label": "布阵",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.formation"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.draft",
+     "label": "▶三选一",
+     "kind": "flow",
+     "flow": "draft",
+     "values": {
+      "chk.demo": "draft"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.rts",
+   "name": "RTS·赤沙",
+   "group": "俯视",
+   "genre": "strategy",
+   "layout": "layout.strategyRts",
+   "pack": "rts",
+   "skin": "skin.military",
+   "env": "desert",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 策略与战术：透视 俯仰 55° vFOV 35",
+    "fov": 38
+   },
+   "desc": "赤沙战线：在赤沙上建基地、采矿、造兵，在沙暴前夺下油田。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.draft",
+     "label": "▶三选一",
+     "kind": "flow",
+     "flow": "draft",
+     "values": {
+      "chk.demo": "draft"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.towerDefense",
+   "name": "塔防·渔港",
+   "group": "俯视",
+   "genre": "strategy",
+   "layout": "layout.towerDefense",
+   "pack": "towerDefense",
+   "skin": "skin.cozy",
+   "env": "harbor",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 策略与战术：透视 俯仰 55° vFOV 35",
+    "fov": 38
+   },
+   "desc": "渔港保卫战：在码头上架起炮台与鱼叉塔，挡住涨潮时上岸的海怪。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "levelPath",
+     "label": "关卡",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.levelPath"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.draft",
+     "label": "▶三选一",
+     "kind": "flow",
+     "flow": "draft",
+     "values": {
+      "chk.demo": "draft"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.arena",
+   "name": "MOBA·竞技场",
+   "group": "俯视",
+   "genre": "strategy",
+   "layout": "layout.moba",
+   "pack": "arena",
+   "skin": "skin.scifi",
+   "env": "arena",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 策略与战术：透视 俯仰 55° vFOV 35",
+    "fov": 38
+   },
+   "desc": "星核联赛：星际竞技联赛：四人团战推塔，也有一对一的对决。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "vs",
+     "label": "对阵",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.vs"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "settle",
+     "label": "结算",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.settle"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.draft",
+     "label": "▶三选一",
+     "kind": "flow",
+     "flow": "draft",
+     "values": {
+      "chk.demo": "draft"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.cityBuilder",
+   "name": "城建·新城",
+   "group": "俯视",
+   "genre": "builder",
+   "layout": "layout.builder",
+   "pack": "cityBuilder",
+   "skin": "skin.flat",
+   "env": "city",
+   "altEnvs": [
+    "iso-city"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "desc": "青河新城：在青河边的空地上修路、建地铁，看一个小城长成大城市。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "achievement",
+     "label": "成就",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.achievement"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.build",
+     "label": "▶建造",
+     "kind": "flow",
+     "flow": "build",
+     "values": {
+      "chk.demo": "build"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.colony",
+   "name": "殖民·雪营",
+   "group": "俯视",
+   "genre": "builder",
+   "layout": "layout.colonySim",
+   "pack": "colony",
+   "skin": "skin.swiss",
+   "env": "snowVillage",
+   "altEnvs": [
+    "iso-cutaway"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "desc": "寒光营地：一条船困在北方的冰面上，几个人要在风雪里活过第一个冬天。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "hero",
+     "label": "角色",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.hero"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.build",
+     "label": "▶建造",
+     "kind": "flow",
+     "flow": "build",
+     "values": {
+      "chk.demo": "build"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.factory",
+   "name": "工厂·车间",
+   "group": "俯视",
+   "genre": "factory",
+   "layout": "layout.factory",
+   "pack": "factory",
+   "skin": "skin.mono",
+   "env": "factory",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "high",
+    "src": "A17 工厂与自动化：正交 俯仰 45° vFOV —"
+   },
+   "desc": "铁星工厂：落在一片红色的大地上，用传送带把矿山连成工厂，再找一条回家的路。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.skilltree"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.farming",
+   "name": "农场·俯视",
+   "group": "俯视",
+   "genre": "life",
+   "layout": "layout.life",
+   "pack": "farming",
+   "skin": "skin.pixelWood",
+   "env": "farm",
+   "env2d": [
+    "tileTown-farm",
+    "tileTown"
+   ],
+   "altEnvs": [
+    "tileTown",
+    "tileTown-field",
+    "farm",
+    "oblique-village"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 生活与养成：透视 俯仰 45° vFOV 35",
+    "fov": 38
+   },
+   "look": "tile-pixel",
+   "desc": "农场日记：回到老家的农场，放羊、收小麦，和大家交朋友。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.purchase",
+     "label": "▶购买",
+     "kind": "flow",
+     "flow": "purchase",
+     "values": {
+      "chk.demo": "purchase"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.deckBuilder",
+   "name": "卡牌·牌桌",
+   "group": "立绘卡牌",
+   "genre": "card",
+   "layout": "layout.card",
+   "pack": "deckBuilder",
+   "skin": "skin.parchment",
+   "env": "tabletop",
+   "env2d": [
+    "backdrop-cards",
+    "backdrop-battle"
+   ],
+   "altEnvs": [
+    "tabletop",
+    "backdrop-battle"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 卡牌与桌面：透视 俯仰 60° vFOV 40",
+    "fov": 33
+   },
+   "desc": "七层酒馆：一层一张牌桌：集齐羁绊、看清意图，击败塔顶的酒桶巨像。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.hand"
+     }
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.draft3"
+     }
+    },
+    {
+     "id": "route",
+     "label": "路线",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.routeMap"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "runSummary",
+     "label": "结算",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.runSummary"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.draft",
+     "label": "▶三选一",
+     "kind": "flow",
+     "flow": "draft",
+     "values": {
+      "chk.demo": "draft"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.puzzle",
+   "name": "解谜·街巷",
+   "group": "俯视",
+   "genre": "puzzle",
+   "layout": "layout.puzzle",
+   "pack": "puzzle",
+   "skin": "skin.darkHairline",
+   "kit": "european",
+   "env": "street",
+   "altEnvs": [
+    "iso-illusion"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "iso",
+    "src": "A17 解谜与侦探：正交 俯仰 35.264° vFOV —"
+   },
+   "desc": "雾城疑案：1927 年的雾城，码头上死了一个船主，七位证人说法都不一样。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "deduction",
+     "label": "推理",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.deduction"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "quest",
+     "label": "任务",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.quest"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.visualNovel",
+   "name": "视觉小说·来信",
+   "group": "立绘卡牌",
+   "genre": "narrative",
+   "layout": "layout.narrative",
+   "pack": "visualNovel",
+   "skin": "skin.animeCard",
+   "env": "room",
+   "env2d": [
+    "backdrop"
+   ],
+   "altEnvs": [
+    "backdrop-desk",
+    "backdrop-title",
+    "room",
+    "stage-theater",
+    "shadow-puppet"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "high",
+    "src": "A17 叙事与视觉小说：正交 2D / 透视 俯仰 0° vFOV 30（人工修正：angle=high）"
+   },
+   "desc": "海风来信：七月回到外婆的海边小城，和三个人一起找回一封没寄出的信。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "chapter",
+     "label": "章节",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.chapterCard"
+     }
+    },
+    {
+     "id": "save",
+     "label": "存档",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.saveSlot"
+     }
+    },
+    {
+     "id": "settings",
+     "label": "设置",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.settings"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.rhythm",
+   "name": "节奏·酒馆",
+   "group": "3D自由",
+   "genre": "action",
+   "layout": "layout.rhythm",
+   "pack": "rhythm",
+   "skin": "skin.constructivist",
+   "env": "tavern",
+   "altEnvs": [
+    "rhythm-lanes",
+    "stage-theater"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "desc": "回声地下室：一支四人地下乐队，在地下室里一路唱到全城最大的 Livehouse。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "levelPath",
+     "label": "关卡",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.levelPath"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.horror",
+   "name": "恐怖·废墟",
+   "group": "3D自由",
+   "genre": "horror",
+   "layout": "layout.horror",
+   "pack": "horror",
+   "skin": "skin.mono",
+   "env": "ruins",
+   "altEnvs": [
+    "fp-maze"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 恐怖与悬疑：透视 俯仰 5° vFOV 55",
+    "fov": 23
+   },
+   "desc": "黑水疗养院：手电快没电了，地下病房里好像还有人。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "lowhp",
+     "label": "低血量",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "lowHp"
+     }
+    },
+    {
+     "id": "packGrid",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.packGrid"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "save",
+     "label": "存档",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.saveSlot"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.survival",
+   "name": "生存·林间",
+   "group": "3D自由",
+   "genre": "survival",
+   "layout": "layout.survival",
+   "pack": "survival",
+   "skin": "skin.mono",
+   "env": "forest",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "dimetric",
+    "src": "A17 生存与制作：透视 俯仰 0° vFOV 70（人工修正：angle=dimetric、fov=35）",
+    "fov": 35
+   },
+   "desc": "林间余火：坠机落在北方林海，要在第一场雪前生起火。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "lowhp",
+     "label": "低血量",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "lowHp"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.build",
+     "label": "▶建造",
+     "kind": "flow",
+     "flow": "build",
+     "values": {
+      "chk.demo": "build"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.survivors",
+   "name": "割草·深海",
+   "name2d": "割草·原野",
+   "group": "俯视",
+   "genre": "action",
+   "layout": "layout.survivors",
+   "pack": "survivors",
+   "skin": "skin.comic",
+   "env": "underwater",
+   "env2d": [
+    "tileTown-field"
+   ],
+   "altEnvs": [
+    "underwater",
+    "greybox-arena"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "desc": "深海潜航：一台小潜水机，满海的怪物，活过二十分钟！",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "cnt.elements": "el.profile,el.timer,el.resources,el.vitals,el.abilities,el.threat",
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.draft3"
+     }
+    },
+    {
+     "id": "runSummary",
+     "label": "结算",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.runSummary"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.racing",
+   "name": "竞速·山道",
+   "group": "赛道",
+   "genre": "racing",
+   "layout": "layout.racing",
+   "pack": "racing",
+   "skin": "skin.aero",
+   "env": "racetrack",
+   "altEnvs": [
+    "road-pseudo3d",
+    "mode7-track"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 竞速与驾驶：透视 俯仰 10° vFOV 60（+10 速度）",
+    "fov": 21
+   },
+   "desc": "午夜山道：夜里两点的山道上，只有你和一台旧跑车。",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.isoCity",
+   "name": "城建·小城",
+   "group": "等距",
+   "genre": "builder",
+   "layout": "layout.builder",
+   "pack": "cityBuilder",
+   "skin": "skin.cozy",
+   "env": "city",
+   "env2d": [
+    "iso-city"
+   ],
+   "altEnvs": [
+    "iso-cutaway",
+    "tileTown"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "look": "tile-pixel",
+   "desc": "等距·小城：2:1 等距读形、街区秩序、悬空剖面。UI 内容借用「青河新城」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "achievement",
+     "label": "成就",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.achievement"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.build",
+     "label": "▶建造",
+     "kind": "flow",
+     "flow": "build",
+     "values": {
+      "chk.demo": "build"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.isoDungeon",
+   "name": "动作·等距地牢",
+   "group": "等距",
+   "genre": "action",
+   "layout": "layout.action",
+   "pack": "action",
+   "skin": "skin.ornate",
+   "env": "dungeon",
+   "env2d": [
+    "iso-dungeon"
+   ],
+   "altEnvs": [
+    "arena",
+    "fp-maze"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "comic-ink-3d",
+   "desc": "等距·地牢：高后墙与切低的前墙、火光引导、敌我与陷阱辨识。UI 内容借用「铁炉矿坑」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3
+     }
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.draft3"
+     }
+    },
+    {
+     "id": "route",
+     "label": "路线",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.routeMap"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "runSummary",
+     "label": "结算",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.runSummary"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.hd2dTown",
+   "name": "RPG·小镇",
+   "group": "等距",
+   "genre": "rpg",
+   "layout": "layout.rpg",
+   "pack": "rpg",
+   "skin": "skin.darkHairline",
+   "env": "street",
+   "env2d": [
+    "hd2d-town"
+   ],
+   "altEnvs": [
+    "oblique-village",
+    "tileTown"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 角色扮演（战术）：透视 俯仰 55° vFOV 40",
+    "fov": 33
+   },
+   "look": "hd2d-sprite",
+   "desc": "HD-2D·小镇：像素人物与立体布景的融合、移轴微缩感、暖灯。UI 内容借用「长风剑歌」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.skilltree"
+     }
+    },
+    {
+     "id": "quest",
+     "label": "任务",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.quest"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "flow.gacha",
+     "label": "▶抽卡",
+     "kind": "flow",
+     "flow": "gacha",
+     "values": {
+      "chk.demo": "gacha"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.obliqueVillage",
+   "name": "冒险·村落",
+   "group": "等距",
+   "genre": "explore",
+   "layout": "layout.explore",
+   "pack": "snowline",
+   "skin": "skin.pixel",
+   "env": "farm",
+   "env2d": [
+    "oblique-village"
+   ],
+   "altEnvs": [
+    "hd2d-town",
+    "tileTown"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "look": "gouache",
+   "desc": "斜俯视·村落：3/4 俯视的正面读形、崖壁层次、可砍的灌木与可走的路。UI 内容借用「雪线旅人」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.isoIllusion",
+   "name": "解谜·错觉塔",
+   "group": "等距",
+   "genre": "puzzle",
+   "layout": "layout.puzzle",
+   "pack": "puzzle",
+   "skin": "skin.thinGeo",
+   "env": "surreal",
+   "env2d": [
+    "iso-illusion"
+   ],
+   "altEnvs": [
+    "iso-city"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "iso",
+    "src": "A17 解谜与侦探：正交 俯仰 35.264° vFOV —"
+   },
+   "look": "pastel-illusion",
+   "desc": "等距·错觉塔：视点相关的错觉连接、粉彩几何、真等距读形。UI 内容借用「雾城疑案」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "levelPath",
+     "label": "关卡",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.levelPath"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "quest",
+     "label": "任务",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.quest"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.isoCutaway",
+   "name": "模拟·剖面屋",
+   "group": "等距",
+   "genre": "builder",
+   "layout": "layout.colonySim",
+   "pack": "colony",
+   "skin": "skin.glass",
+   "env": "room",
+   "env2d": [
+    "iso-cutaway"
+   ],
+   "altEnvs": [
+    "iso-city"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "look": "toy-diorama",
+   "desc": "等距·剖面屋：去掉屋顶的剖面、家具尺度、房间分区。UI 内容借用「寒光营地」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.build"
+     }
+    },
+    {
+     "id": "hero",
+     "label": "角色",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.hero"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.build",
+     "label": "▶建造",
+     "kind": "flow",
+     "flow": "build",
+     "values": {
+      "chk.demo": "build"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.road",
+   "name": "竞速·公路",
+   "group": "伪3D",
+   "genre": "racing",
+   "layout": "layout.racing",
+   "pack": "racing",
+   "skin": "skin.synth",
+   "env": "racetrack",
+   "env2d": [
+    "road-pseudo3d"
+   ],
+   "altEnvs": [
+    "mode7-track"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 竞速与驾驶：透视 俯仰 10° vFOV 60（+10 速度）",
+    "fov": 21
+   },
+   "look": "arcade-road",
+   "desc": "伪3D·公路：条纹路面的速度感、弯道与坡顶、路边精灵的远近缩放。UI 内容借用「午夜山道」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.mode7",
+   "name": "竞速·Mode7",
+   "group": "伪3D",
+   "genre": "racing",
+   "layout": "layout.racing",
+   "pack": "racing",
+   "skin": "skin.pixel",
+   "env": "racetrack",
+   "env2d": [
+    "mode7-track"
+   ],
+   "altEnvs": [
+    "road-pseudo3d"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 竞速与驾驶：透视 俯仰 10° vFOV 60（+10 速度）",
+    "fov": 21
+   },
+   "look": "snes-mode7",
+   "desc": "Mode7·赛场：平铺地面的缩放旋转、远处的锯齿闪烁、地平线视差带。UI 内容借用「午夜山道」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.fpMaze",
+   "name": "地牢探索·迷宫",
+   "group": "伪3D",
+   "genre": "rpg",
+   "layout": "layout.rpg",
+   "pack": "rpg",
+   "skin": "skin.parchment",
+   "env": "dungeon",
+   "env2d": [
+    "fp-maze"
+   ],
+   "altEnvs": [
+    "iso-dungeon"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 角色扮演（战术）：透视 俯仰 55° vFOV 40",
+    "fov": 33
+   },
+   "look": "retro-maze",
+   "desc": "第一人称·迷宫：格子走廊的纵深、火光明暗、公告板敌人与道具。UI 内容借用「长风剑歌」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.skilltree"
+     }
+    },
+    {
+     "id": "quest",
+     "label": "任务",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.quest"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "flow.gacha",
+     "label": "▶抽卡",
+     "kind": "flow",
+     "flow": "gacha",
+     "values": {
+      "chk.demo": "gacha"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.rhythmLanes",
+   "name": "节奏·音轨",
+   "group": "伪3D",
+   "genre": "action",
+   "layout": "layout.rhythm",
+   "pack": "rhythm",
+   "skin": "skin.scifi",
+   "env": "tavern",
+   "env2d": [
+    "rhythm-lanes"
+   ],
+   "altEnvs": [
+    "stage-theater"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "synthwave",
+   "desc": "节奏·音轨：音轨透视、音符读色、判定线与节拍。UI 内容借用「回声地下室」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "levelPath",
+     "label": "关卡",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.levelPath"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.paperTheater",
+   "name": "横版·纸片剧场",
+   "group": "横版",
+   "genre": "platformer",
+   "layout": "layout.platformer",
+   "pack": "platformer",
+   "skin": "skin.candy",
+   "env": "forest",
+   "env2d": [
+    "paper-theater"
+   ],
+   "altEnvs": [
+    "stage-theater",
+    "sideStage"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "side",
+    "src": "A17 横版平台：正交 俯仰 0° vFOV —",
+    "azimuth": 0
+   },
+   "look": "papercut",
+   "desc": "纸片·剧场：纸片分层、互相投影、纸片人翻面。UI 内容借用「萤火深处」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "cnt.elements": "el.vitals,el.resources,el.timer,el.threat",
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.silhouette",
+   "name": "横版·剪影",
+   "group": "横版",
+   "genre": "platformer",
+   "layout": "layout.platformer",
+   "pack": "platformer",
+   "skin": "skin.mono",
+   "env": "forest",
+   "env2d": [
+    "silhouette-forest"
+   ],
+   "altEnvs": [
+    "sideStage",
+    "sideStage-cave"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "side",
+    "src": "A17 横版平台：正交 俯仰 0° vFOV —",
+    "azimuth": 0
+   },
+   "look": "layered-silhouette",
+   "desc": "剪影·逆光：逆光剪影、明度分层、光束。UI 内容借用「萤火深处」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3,
+      "cnt.elements": "el.vitals,el.resources,el.timer,el.threat",
+      "el.threat.form": "bossBar"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "loadout",
+     "label": "装备",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.loadout"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.scrollStreet",
+   "name": "武侠·长街",
+   "group": "横版",
+   "genre": "rpg",
+   "layout": "layout.rpg",
+   "pack": "rpg",
+   "skin": "skin.ink",
+   "env": "courtyard",
+   "env2d": [
+    "scroll-street"
+   ],
+   "altEnvs": [
+    "sideStage-shanshui",
+    "courtyard"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 角色扮演（战术）：透视 俯仰 55° vFOV 40",
+    "fov": 33
+   },
+   "look": "jiehua-scroll",
+   "desc": "卷轴·长街：斜投影界画、长卷平远、散点构图。UI 内容借用「长风剑歌」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "quest",
+     "label": "任务",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.quest"
+     }
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.worldmap"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "shop",
+     "label": "商店",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.shopCounter"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "flow.gacha",
+     "label": "▶抽卡",
+     "kind": "flow",
+     "flow": "gacha",
+     "values": {
+      "chk.demo": "gacha"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.beatemup",
+   "name": "清版·街巷",
+   "group": "横版",
+   "genre": "action",
+   "layout": "layout.action",
+   "pack": "action",
+   "skin": "skin.comic",
+   "env": "street",
+   "env2d": [
+    "beatemup-street"
+   ],
+   "altEnvs": [
+    "sideStage-ruins"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "cel-anime",
+   "desc": "清版·街巷：纵深走位、霓虹夜街、敌我辨识。UI 内容借用「铁炉矿坑」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto"
+     }
+    },
+    {
+     "id": "boss",
+     "label": "Boss",
+     "kind": "hud",
+     "values": {
+      "uip.screen": "auto",
+      "chk.simPose": "bossIntro",
+      "chk.simTime": 1.3
+     }
+    },
+    {
+     "id": "stats",
+     "label": "战绩",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.stats"
+     }
+    },
+    {
+     "id": "leaderboard",
+     "label": "排行",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.leaderboard"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "flow.levelUp",
+     "label": "▶升级",
+     "kind": "flow",
+     "flow": "levelUp",
+     "values": {
+      "chk.demo": "levelUp"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.shadowPuppet",
+   "name": "叙事·皮影戏",
+   "group": "立绘卡牌",
+   "genre": "narrative",
+   "layout": "layout.narrative",
+   "pack": "visualNovel",
+   "skin": "skin.darkGold",
+   "env": "courtyard",
+   "env2d": [
+    "shadow-puppet"
+   ],
+   "altEnvs": [
+    "stage-theater",
+    "backdrop"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "low",
+    "src": "A17 叙事与视觉小说：正交 2D / 透视 俯仰 0° vFOV 30"
+   },
+   "look": "papercut",
+   "desc": "皮影·戏台：背光透射、镂空剪影、关节分件。UI 内容借用「海风来信」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "chapter",
+     "label": "章节",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.chapterCard"
+     }
+    },
+    {
+     "id": "save",
+     "label": "存档",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.saveSlot"
+     }
+    },
+    {
+     "id": "settings",
+     "label": "设置",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.settings"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "gs.stageTheater",
+   "name": "视觉小说·舞台",
+   "group": "立绘卡牌",
+   "genre": "narrative",
+   "layout": "layout.narrative",
+   "pack": "visualNovel",
+   "skin": "skin.deco",
+   "env": "tavern",
+   "env2d": [
+    "stage-theater"
+   ],
+   "altEnvs": [
+    "shadow-puppet",
+    "backdrop"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "low",
+    "src": "A17 叙事与视觉小说：正交 2D / 透视 俯仰 0° vFOV 30"
+   },
+   "look": "oil",
+   "desc": "舞台·剧场：舞台布光、台口构图、景片层次。UI 内容借用「海风来信」",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.codex"
+     }
+    },
+    {
+     "id": "chapter",
+     "label": "章节",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.chapterCard"
+     }
+    },
+    {
+     "id": "save",
+     "label": "存档",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.saveSlot"
+     }
+    },
+    {
+     "id": "settings",
+     "label": "设置",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.settings"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.balatro",
+   "name": "小丑牌",
+   "group": "名作",
+   "genre": "card",
+   "layout": "auto",
+   "pack": "deckBuilder",
+   "skin": "skin.godotDefault",
+   "env": "backdrop-cards",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 卡牌与桌面：透视 俯仰 60° vFOV 40",
+    "fov": 33
+   },
+   "desc": "原作 Balatro",
+   "replica": "rep.balatro",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "hand",
+     "label": "手牌",
+     "kind": "replica"
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "replica"
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "replica"
+    },
+    {
+     "id": "blinds",
+     "label": "盲注",
+     "kind": "replica"
+    },
+    {
+     "id": "results",
+     "label": "结算",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.black-myth",
+   "name": "黑神话",
+   "group": "名作",
+   "genre": "action",
+   "layout": "auto",
+   "pack": "soulslike",
+   "skin": "skin.darkHairline",
+   "env": "courtyard",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Black Myth: Wukong",
+   "replica": "rep.black-myth",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "replica"
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.cities-skylines",
+   "name": "城市天际线",
+   "group": "名作",
+   "genre": "builder",
+   "layout": "auto",
+   "pack": "cityBuilder",
+   "skin": "skin.godotDefault",
+   "env": "city",
+   "altEnvs": [
+    "iso-city"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Cities: Skylines",
+   "replica": "rep.cities-skylines",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "infoview",
+     "label": "信息层",
+     "kind": "replica"
+    },
+    {
+     "id": "economy",
+     "label": "经济",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "replica"
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.civ6",
+   "name": "文明 6",
+   "group": "名作",
+   "genre": "strategy",
+   "layout": "auto",
+   "pack": "tactics",
+   "skin": "skin.darkGold",
+   "env": "strategy",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 策略与战术：透视 俯仰 55° vFOV 35",
+    "fov": 38
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Sid Meier's Civilization VI",
+   "replica": "rep.civ6",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "city",
+     "label": "城市",
+     "kind": "replica"
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "replica"
+    },
+    {
+     "id": "diplomacy",
+     "label": "外交",
+     "kind": "replica"
+    },
+    {
+     "id": "greatpeople",
+     "label": "伟人",
+     "kind": "replica"
+    },
+    {
+     "id": "wonder",
+     "label": "奇观",
+     "kind": "replica"
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.control",
+   "name": "控制",
+   "group": "名作",
+   "genre": "horror",
+   "layout": "auto",
+   "pack": "horror",
+   "skin": "skin.swiss",
+   "env": "dungeon",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 恐怖与悬疑：透视 俯仰 5° vFOV 55",
+    "fov": 23
+   },
+   "look": "soft-pbr",
+   "desc": "原作 CONTROL",
+   "replica": "rep.control",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "replica"
+    },
+    {
+     "id": "chapter",
+     "label": "章节",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.cult-of-the-lamb",
+   "name": "咩咩启示录",
+   "group": "名作",
+   "genre": "builder",
+   "layout": "auto",
+   "pack": "colony",
+   "skin": "skin.darkHairline",
+   "env": "forest",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "look": "cel-anime",
+   "desc": "原作 Cult of the Lamb",
+   "replica": "rep.cult-of-the-lamb",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "hud-boss",
+     "label": "Boss",
+     "kind": "replica"
+    },
+    {
+     "id": "hud-base",
+     "label": "基地",
+     "kind": "replica"
+    },
+    {
+     "id": "build",
+     "label": "建造",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "cards",
+     "label": "卡牌",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.cyberpunk-2077",
+   "name": "赛博朋克",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "shooter",
+   "skin": "skin.scifi",
+   "env": "city",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "look": "neon-night",
+   "desc": "原作 Cyberpunk 2077",
+   "replica": "rep.cyberpunk-2077",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "create",
+     "label": "捏人",
+     "kind": "replica"
+    },
+    {
+     "id": "hud-combat",
+     "label": "战斗",
+     "kind": "replica"
+    },
+    {
+     "id": "scan",
+     "label": "扫描",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.dead-cells",
+   "name": "死亡细胞",
+   "group": "名作",
+   "genre": "action",
+   "layout": "auto",
+   "pack": "action",
+   "skin": "skin.pixel",
+   "env": "sideStage-ruins",
+   "altEnvs": [
+    "silhouette-forest"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "glow-pixel",
+   "desc": "原作 Dead Cells",
+   "replica": "rep.dead-cells",
+   "screens": [
+    {
+     "id": "hud-world",
+     "label": "世界",
+     "kind": "replica"
+    },
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.dead-space",
+   "name": "死亡空间",
+   "group": "名作",
+   "genre": "horror",
+   "layout": "auto",
+   "pack": "horror",
+   "skin": "skin.scifi",
+   "env": "scifi",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 恐怖与悬疑：透视 俯仰 5° vFOV 55",
+    "fov": 23
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Dead Space",
+   "replica": "rep.dead-space",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "craft",
+     "label": "制作",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.disco-elysium",
+   "name": "极乐迪斯科",
+   "group": "名作",
+   "genre": "narrative",
+   "layout": "auto",
+   "pack": "puzzle",
+   "skin": "skin.darkHairline",
+   "env": "harbor",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "low",
+    "src": "A17 叙事与视觉小说：正交 2D / 透视 俯仰 0° vFOV 30"
+   },
+   "look": "oil",
+   "desc": "原作 Disco Elysium",
+   "replica": "rep.disco-elysium",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "check",
+     "label": "检定",
+     "kind": "replica"
+    },
+    {
+     "id": "journal",
+     "label": "日志",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.dont-starve",
+   "name": "饥荒",
+   "group": "名作",
+   "genre": "survival",
+   "layout": "auto",
+   "pack": "survival",
+   "skin": "skin.parchment",
+   "env": "forest",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 生存与制作：透视 俯仰 0° vFOV 70",
+    "fov": 17
+   },
+   "look": "ink-block",
+   "desc": "原作 Don't Starve",
+   "replica": "rep.dont-starve",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "craft",
+     "label": "制作",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "results",
+     "label": "结算",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.elden-ring",
+   "name": "艾尔登法环",
+   "group": "名作",
+   "genre": "action",
+   "layout": "auto",
+   "pack": "soulslike",
+   "skin": "skin.darkHairline",
+   "env": "arena",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "soft-pbr",
+   "desc": "原作 ELDEN RING",
+   "replica": "rep.elden-ring",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "replica"
+    },
+    {
+     "id": "callout",
+     "label": "大字",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.factorio",
+   "name": "异星工厂",
+   "group": "名作",
+   "genre": "builder",
+   "layout": "auto",
+   "pack": "factory",
+   "skin": "skin.greybox",
+   "env": "factory",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Factorio",
+   "replica": "rep.factorio",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "craft",
+     "label": "制作",
+     "kind": "replica"
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.forza-horizon-5",
+   "name": "极限竞速",
+   "group": "名作",
+   "genre": "racing",
+   "layout": "auto",
+   "pack": "racing",
+   "skin": "skin.mono",
+   "env": "racetrack",
+   "altEnvs": [
+    "road-pseudo3d"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 竞速与驾驶：透视 俯仰 10° vFOV 60（+10 速度）",
+    "fov": 21
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Forza Horizon 5",
+   "replica": "rep.forza-horizon-5",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.inventory"
+     }
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.npc"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.frostpunk",
+   "name": "冰汽时代",
+   "group": "名作",
+   "genre": "builder",
+   "layout": "auto",
+   "pack": "colony",
+   "skin": "skin.filigree",
+   "env": "snowVillage",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 建造与经营：透视 俯仰 50（30–75）° vFOV 40",
+    "fov": 33
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Frostpunk",
+   "replica": "rep.frostpunk",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "hud-building",
+     "label": "建筑",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "replica"
+    },
+    {
+     "id": "research",
+     "label": "研究",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "results",
+     "label": "结算",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.ghost-of-tsushima",
+   "name": "对马岛之魂",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "snowline",
+   "skin": "skin.wa",
+   "env": "mountain",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "look": "soft-pbr",
+   "desc": "原作 Ghost of Tsushima",
+   "replica": "rep.ghost-of-tsushima",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "combat",
+     "label": "战斗",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.hades",
+   "name": "哈迪斯",
+   "group": "名作",
+   "genre": "action",
+   "layout": "auto",
+   "pack": "action",
+   "skin": "skin.ornate",
+   "env": "iso-dungeon",
+   "altEnvs": [
+    "arena"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "cel-anime",
+   "desc": "原作 Hades",
+   "replica": "rep.hades",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "hud-lowhp",
+     "label": "低血量",
+     "kind": "replica"
+    },
+    {
+     "id": "skilltree",
+     "label": "技能树",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "replica"
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.hi-fi-rush",
+   "name": "完美音浪",
+   "group": "名作",
+   "genre": "action",
+   "layout": "auto",
+   "pack": "rhythm",
+   "skin": "skin.comic",
+   "env": "arena",
+   "altEnvs": [
+    "rhythm-lanes",
+    "beatemup-street"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 动作与Roguelite：透视（窄） 俯仰 55° vFOV 30",
+    "fov": 45
+   },
+   "look": "cel-2dfx",
+   "desc": "原作 Hi-Fi RUSH",
+   "replica": "rep.hi-fi-rush",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "cutscene",
+     "label": "过场",
+     "kind": "replica"
+    },
+    {
+     "id": "results",
+     "label": "结算",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.hollow-knight",
+   "name": "空洞骑士",
+   "group": "名作",
+   "genre": "platformer",
+   "layout": "auto",
+   "pack": "platformer",
+   "skin": "skin.filigree",
+   "env": "sideStage-cave",
+   "altEnvs": [
+    "silhouette-forest"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "side",
+    "src": "A17 横版平台：正交 俯仰 0° vFOV —",
+    "azimuth": 0
+   },
+   "look": "moebius",
+   "desc": "原作 Hollow Knight",
+   "replica": "rep.hollow-knight",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "chapter",
+     "label": "章节",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.into-the-breach",
+   "name": "陷阵之志",
+   "group": "名作",
+   "genre": "strategy",
+   "layout": "auto",
+   "pack": "tactics",
+   "skin": "skin.godotDefault",
+   "env": "tacticsBoard",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 策略与战术：透视 俯仰 55° vFOV 35",
+    "fov": 38
+   },
+   "look": "pixel3d",
+   "desc": "原作 Into the Breach",
+   "replica": "rep.into-the-breach",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "squad",
+     "label": "小队",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "results",
+     "label": "结算",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.obra-dinn",
+   "name": "奥伯拉丁号",
+   "group": "名作",
+   "genre": "puzzle",
+   "layout": "auto",
+   "pack": "puzzle",
+   "skin": "skin.parchment",
+   "env": "harbor",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "ortho",
+    "angle": "iso",
+    "src": "A17 解谜与侦探：正交 俯仰 35.264° vFOV —"
+   },
+   "look": "onebit",
+   "desc": "原作 Return of the Obra Dinn",
+   "replica": "rep.obra-dinn",
+   "screens": [
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "replica"
+    },
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "journal",
+     "label": "日志",
+     "kind": "replica"
+    },
+    {
+     "id": "codex",
+     "label": "图鉴",
+     "kind": "replica"
+    },
+    {
+     "id": "deduction",
+     "label": "推理",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.octopath",
+   "name": "八方旅人",
+   "group": "名作",
+   "genre": "rpg",
+   "layout": "auto",
+   "pack": "rpg",
+   "skin": "skin.darkHairline",
+   "env": "hd2d-town",
+   "altEnvs": [
+    "tileTown"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 角色扮演（战术）：透视 俯仰 55° vFOV 40",
+    "fov": 33
+   },
+   "look": "hd2d-sprite",
+   "desc": "原作 OCTOPATH TRAVELER",
+   "replica": "rep.octopath",
+   "screens": [
+    {
+     "id": "battle",
+     "label": "战斗",
+     "kind": "replica"
+    },
+    {
+     "id": "battle-boss",
+     "label": "Boss",
+     "kind": "replica"
+    },
+    {
+     "id": "field",
+     "label": "野外",
+     "kind": "replica"
+    },
+    {
+     "id": "battle-command",
+     "label": "指令",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.persona5",
+   "name": "女神异闻录5",
+   "group": "名作",
+   "genre": "rpg",
+   "layout": "auto",
+   "pack": "rpg",
+   "skin": "skin.persona",
+   "env": "room",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 角色扮演（战术）：透视 俯仰 55° vFOV 40",
+    "fov": 33
+   },
+   "look": "cel-anime",
+   "desc": "原作 Persona 5 Royal",
+   "replica": "rep.persona5",
+   "screens": [
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "battle",
+     "label": "战斗",
+     "kind": "replica"
+    },
+    {
+     "id": "allout",
+     "label": "总攻",
+     "kind": "replica"
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "replica"
+    },
+    {
+     "id": "results",
+     "label": "结算",
+     "kind": "replica"
+    },
+    {
+     "id": "calendar",
+     "label": "日历",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.slay-the-spire",
+   "name": "杀戮尖塔",
+   "group": "名作",
+   "genre": "card",
+   "layout": "auto",
+   "pack": "deckBuilder",
+   "skin": "skin.ornate",
+   "env": "backdrop-battle",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 卡牌与桌面：透视 俯仰 60° vFOV 40",
+    "fov": 33
+   },
+   "look": "oil",
+   "desc": "原作 Slay the Spire",
+   "replica": "rep.slay-the-spire",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "frontend",
+     "label": "开局",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "draft",
+     "label": "三选一",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "pause",
+     "label": "暂停",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.pausePc"
+     }
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.stardew",
+   "name": "星露谷物语",
+   "group": "名作",
+   "genre": "life",
+   "layout": "auto",
+   "pack": "farming",
+   "skin": "skin.pixelWood",
+   "env": "tileTown-farm",
+   "altEnvs": [
+    "oblique-village"
+   ],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 生活与养成：透视 俯仰 45° vFOV 35",
+    "fov": 38
+   },
+   "look": "tile-pixel",
+   "desc": "原作 Stardew Valley",
+   "replica": "rep.stardew",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "dialogue",
+     "label": "对话",
+     "kind": "replica"
+    },
+    {
+     "id": "create",
+     "label": "捏人",
+     "kind": "replica"
+    },
+    {
+     "id": "inventory",
+     "label": "背包",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    }
+   ]
+  },
+  {
+   "id": "rep:rep.xcom2",
+   "name": "幽浮 2",
+   "group": "名作",
+   "genre": "strategy",
+   "layout": "auto",
+   "pack": "tactics",
+   "skin": "skin.military",
+   "env": "city",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "high",
+    "src": "A17 策略与战术：透视 俯仰 55° vFOV 35",
+    "fov": 38
+   },
+   "look": "soft-pbr",
+   "desc": "原作 XCOM 2",
+   "replica": "rep.xcom2",
+   "screens": [
+    {
+     "id": "hud",
+     "label": "局内",
+     "kind": "replica"
+    },
+    {
+     "id": "map",
+     "label": "地图",
+     "kind": "replica"
+    },
+    {
+     "id": "base",
+     "label": "基地",
+     "kind": "replica"
+    },
+    {
+     "id": "character",
+     "label": "角色",
+     "kind": "replica"
+    },
+    {
+     "id": "results",
+     "label": "结算",
+     "kind": "replica"
+    },
+    {
+     "id": "title",
+     "label": "标题",
+     "kind": "template",
+     "values": {
+      "uip.screen": "tpl.title"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.hadesHud",
+   "name": "哈迪斯·局内",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Hades · 局内 HUD",
+   "example": "ex.hadesHud",
+   "screens": [
+    {
+     "id": "ex.hadesHud",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.hud"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.hadesDialogue",
+   "name": "哈迪斯·对话",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Hades · 对话",
+   "example": "ex.hadesDialogue",
+   "screens": [
+    {
+     "id": "ex.hadesDialogue",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.dialogue"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.hollowCharms",
+   "name": "空洞·护符",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Hollow Knight · 护符页",
+   "example": "ex.hollowCharms",
+   "screens": [
+    {
+     "id": "ex.hollowCharms",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.character"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.dotaHud",
+   "name": "刀塔 2",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Dota 2 · 局内",
+   "example": "ex.dotaHud",
+   "screens": [
+    {
+     "id": "ex.dotaHud",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.hud"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.stardewDialogue",
+   "name": "星露谷·对话",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Stardew Valley · 对话",
+   "example": "ex.stardewDialogue",
+   "screens": [
+    {
+     "id": "ex.stardewDialogue",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.dialogue"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.miniMetroResult",
+   "name": "迷你地铁",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Mini Metro · 结算",
+   "example": "ex.miniMetroResult",
+   "screens": [
+    {
+     "id": "ex.miniMetroResult",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.results"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.frostpunkEvent",
+   "name": "冰汽·抉择",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Frostpunk · 事件抉择",
+   "example": "ex.frostpunkEvent",
+   "screens": [
+    {
+     "id": "ex.frostpunkEvent",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.dialogue"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.nookphone",
+   "name": "动森·手机",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Animal Crossing · Nookphone",
+   "example": "ex.nookphone",
+   "screens": [
+    {
+     "id": "ex.nookphone",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.pause"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.sts2Combat",
+   "name": "尖塔 2",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Slay the Spire 2 · 战斗",
+   "example": "ex.sts2Combat",
+   "screens": [
+    {
+     "id": "ex.sts2Combat",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.cards"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.detroitClue",
+   "name": "底特律",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Detroit · 线索",
+   "example": "ex.detroitClue",
+   "screens": [
+    {
+     "id": "ex.detroitClue",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.hud"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.controlHud",
+   "name": "控制·局内",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Control · 局内",
+   "example": "ex.controlHud",
+   "screens": [
+    {
+     "id": "ex.controlHud",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.hud"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.nightCall",
+   "name": "夜班电话",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Night Call · 对话",
+   "example": "ex.nightCall",
+   "screens": [
+    {
+     "id": "ex.nightCall",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.dialogue"
+     }
+    }
+   ]
+  },
+  {
+   "id": "ex:ex.carcassonne",
+   "name": "卡卡颂",
+   "group": "名作",
+   "genre": "explore",
+   "layout": "auto",
+   "pack": "auto",
+   "skin": "",
+   "env": "",
+   "altEnvs": [],
+   "seed": 7,
+   "rig": {
+    "projection": "persp",
+    "angle": "low",
+    "src": "A17 探索与冒险：透视 俯仰 15° vFOV 55",
+    "fov": 23
+   },
+   "desc": "Carcassonne · 对局",
+   "example": "ex.carcassonne",
+   "screens": [
+    {
+     "id": "ex.carcassonne",
+     "label": "这一屏",
+     "kind": "template",
+     "values": {
+      "cnt.screen": "screen.hud"
+     }
+    }
+   ]
+  }
+ ]
+}

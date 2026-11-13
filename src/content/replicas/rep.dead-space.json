@@ -1,0 +1,899 @@
+{
+ "id": "rep.dead-space",
+ "name": "Dead Space",
+ "card": "steam:1693980",
+ "genre": "horror",
+ "family": "fam.scifi-diegetic",
+ "pack": "horror",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "scifi",
+  "values": {
+   "color.palette": "horror",
+   "camera.bloom": 0.6,
+   "color.brightness": 0.72,
+   "color.contrast": 1.2
+  }
+ },
+ "base": {
+  "hud.style": "scifi",
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "rel.diegesis": "diegetic",
+  "rel.harmony": "sameMedium",
+  "rel.followPost": "warp",
+  "rel.worldRender": "perspective",
+  "col.source": "skin",
+  "col.lightness": "dark",
+  "col.strategy": "mono",
+  "col.surface": "#06161c",
+  "col.surface2": "#0b2730",
+  "col.text": "#c8f6ff",
+  "col.accent": "#46d8e6",
+  "col.accent2": "#4aa8ff",
+  "col.focus": "#9ff4ff",
+  "col.border": "#46d8e6",
+  "col.coding": [
+   "status"
+  ],
+  "vis.corner": "sharp",
+  "vis.opacity": 0.22,
+  "vis.blur": 0,
+  "vis.fill": "solid",
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1,
+  "vis.strokeColor": "accent",
+  "vis.strokeGlow": 0.6,
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.motif": "brackets",
+  "vis.ornament": 1,
+  "vis.iconStyle": "render3d",
+  "ast.core": "texture",
+  "ast.coreMat": "hologram",
+  "ast.frame": "procedural",
+  "ast.iconSet": "runtimeRender",
+  "ast.fx": [
+   "glow",
+   "scanlines"
+  ],
+  "typ.body.family": "sans",
+  "typ.body.weight": "regular",
+  "typ.body.case": "upper",
+  "typ.body.tracking": 0.08,
+  "typ.display.family": "sans",
+  "typ.display.weight": "bold",
+  "typ.display.case": "upper",
+  "typ.display.tracking": 0.12,
+  "typ.numerals.family": "tabular",
+  "typ.titleFx": "titleGlow",
+  "typ.legibility": "textGlow",
+  "typ.baseSize": 26,
+  "mo.enter": "boot",
+  "mo.duration": 0.3,
+  "mo.easing": "easeOut",
+  "mo.textReveal": "instant",
+  "mo.valueChange": "segment",
+  "mo.idle": "none",
+  "st.alert": "blink",
+  "ix.focus": "focusGlow",
+  "ix.glyphs": "keycap",
+  "rel.metaFx": [
+   "hurtVignette"
+  ]
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/life/img/steam_1693980_2.jpg",
+   "values": {
+    "uip.layout": "layout.horror",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "rel.diegesis": "diegetic",
+    "cnt.density": 0,
+    "vis.opacity": 0,
+    "typ.legibility": "shadow",
+    "cnt.elements": [
+     "el.vitals",
+     "el.abilities",
+     "el.crosshair"
+    ],
+    "el.vitals.diegesis": "diegetic",
+    "el.vitals.attachTo": "player",
+    "el.vitals.worldRender": "perspective",
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "lightStrip",
+    "el.vitals.valueLabel": "none",
+    "el.vitals.priority": "primary",
+    "col.accent@el.vitals": "#3fe0d0",
+    "el.abilities.form": "ammo",
+    "el.abilities.diegesis": "spatial",
+    "el.abilities.attachTo": "held",
+    "el.abilities.worldRender": "perspective",
+    "el.abilities.screenAnchor": "center",
+    "el.abilities.scale": 0.75,
+    "el.abilities.valueLabel": "current",
+    "el.abilities.visibility": "contextual",
+    "el.crosshair.form": [
+     "triLaser"
+    ],
+    "el.crosshair.diegesis": "spatial",
+    "el.crosshair.attachTo": "held",
+    "col.accent@el.crosshair": "#46d8e6",
+    "rel.metaFx": [
+     "hurtVignette"
+    ],
+    "el.vitals.labels": "none",
+    "el.vitals.rowColors": [
+     "accent",
+     "accent"
+    ],
+    "cmp.gaugeDir@el.vitals": "v",
+    "cmp.gaugeColorBy@el.vitals": "thresholds",
+    "col.warn@el.vitals": "#f2c440",
+    "col.bad@el.vitals": "#ff4a3a",
+    "el.crosshair.laserFrom": "muzzle"
+   }
+  },
+  {
+   "key": "craft",
+   "ref": "qa/refs-cache/r2/life/img/steam_1693980_4.jpg",
+   "values": {
+    "uip.screen": "tpl.forge",
+    "cnt.screen": "screen.craft",
+    "cnt.subtype": "forge",
+    "flow.entry": "worldInteract",
+    "rel.diegesis": "spatial",
+    "rel.worldRender": "perspective",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 0.9,
+    "rel.behind": "live",
+    "rel.dim": 0.35,
+    "rel.sceneBlur": 0,
+    "ix.blocking": "soft",
+    "cnt.focal": "none",
+    "lay.composition": "splitLR",
+    "lay.nav": "tabsLeft",
+    "cmp.tab": "text",
+    "lay.detail": "persistent",
+    "cnt.dataShape": "network",
+    "lay.arrangement": "tree",
+    "cmp.node": "plainDot",
+    "vis.silhouette@node": "hexagon",
+    "vis.connector": "circuit",
+    "st.locked": "dimmed",
+    "st.emptySlot": "pit",
+    "st.delta": "arrow",
+    "st.statViz": "inlineBar",
+    "st.selected": "glow",
+    "vis.opacity": 0.2,
+    "cnt.elements": [
+     "el.cost",
+     "el.prompt"
+    ],
+    "el.cost.form": "haveNeed",
+    "el.cost.screenAnchor": "tc",
+    "el.prompt.form": [
+     "list"
+    ],
+    "el.prompt.screenAnchor": "bl",
+    "el.prompt.scale": 0.7,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "keyGlyph",
+    "mo.enter": "boot"
+   }
+  },
+  {
+   "key": "inventory",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.inventory",
+    "cnt.screen": "screen.inventory",
+    "cnt.subtype": "bag",
+    "flow.entry": "hotkey",
+    "flow.stacking": "stack",
+    "rel.diegesis": "spatial",
+    "rel.worldRender": "perspective",
+    "lay.container": "drawer",
+    "lay.panelSize": 1,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "rel.sceneBlur": 0,
+    "ix.blocking": "soft",
+    "lay.composition": "splitLR",
+    "lay.detail": "persistent",
+    "lay.nav": "tabsTop",
+    "cmp.tab": "text",
+    "cmp.tabIndicator": "underline",
+    "lay.arrangement": "grid",
+    "lay.columns": 5,
+    "cnt.itemCount": 15,
+    "cmp.slot": "cell",
+    "st.emptySlot": "dashed",
+    "st.newCue": "none",
+    "st.selected": "glow",
+    "st.rarityCue": [
+     "none"
+    ],
+    "vis.opacity": 0.22,
+    "cnt.elements": [
+     "el.resources",
+     "el.prompt"
+    ],
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "tl",
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bl",
+    "el.prompt.scale": 0.7,
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "ix.close": "keyGlyph",
+    "mo.enter": "boot",
+    "st.locked": "none"
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "flow.entry": "hotkey",
+    "rel.diegesis": "spatial",
+    "rel.worldRender": "perspective",
+    "lay.container": "modal",
+    "cmp.modal": "standard",
+    "lay.panelSize": 0.85,
+    "rel.behind": "live",
+    "rel.dim": 0.45,
+    "ix.blocking": "soft",
+    "cnt.dataShape": "spatial",
+    "vis.mapStyle": "glowSilhouette",
+    "vis.mapUnexplored": "reveal",
+    "cmp.node": "glowDot",
+    "lay.nav": "none",
+    "cmp.tab": "text",
+    "lay.overflow": "pan",
+    "lay.detail": "none",
+    "cnt.elements": [
+     "el.objective",
+     "el.prompt"
+    ],
+    "el.objective.form": [
+     "text"
+    ],
+    "el.objective.screenAnchor": "tr",
+    "col.accent@el.objective": "#ffb43a",
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bl",
+    "el.prompt.scale": 0.7,
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "keyGlyph",
+    "vis.mapFloors": "left",
+    "col.accent2": "#46d8e6"
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.screen": "screen.dialogue",
+    "cnt.subtype": "npc",
+    "rel.diegesis": "spatial",
+    "rel.worldRender": "perspective",
+    "lay.container": "window",
+    "cmp.modal": "standard",
+    "lay.panelSize": 0.38,
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "rel.sceneBlur": 0,
+    "ix.blocking": "none",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "videoFeed",
+    "cnt.characterRender": "monochrome",
+    "lay.focalSide": "left",
+    "lay.layering": "separate",
+    "lay.composition": "single",
+    "cnt.dataShape": "none",
+    "cnt.textLength": "line",
+    "cnt.elements": [
+     "el.subtitle"
+    ],
+    "cnt.tone": "character",
+    "mo.textReveal": "instant",
+    "ix.continueCue": "none",
+    "ix.skip": "none",
+    "ix.dismiss": "timed",
+    "ix.mode": "readOnly",
+    "lay.titlePos": "none",
+    "el.subtitle.anchorSpace": "screen",
+    "el.subtitle.screenAnchor": "bc"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "血条与静止能量长在 Isaac 的盔甲上（背脊 / 右肩胛），随身体转动。el.vitals 叙事内 + attachTo = player 只能挂「整个角色」，画出来是悬在头顶、始终正对镜头的一块横板；挂哪根骨头 / 哪个身体部位、贴着该部位的朝向都没有参数（真空区的氧气倒计时同样挂在身上）",
+   "severity": "high",
+   "kind": "worldSpace",
+   "proposal": "elx.attachBone（spine / shoulder / neck / wrist / helmet / weapon）+ 贴随骨骼朝向（随角色转身转动、可被身体遮挡）；el.timer 叙事内同样可挂骨骼（G-diegetic-encoding）"
+  },
+  {
+   "screen": "hud",
+   "what": "血条是沿脊柱竖排的一串自发光灯段：无底板、无文字、随血量逐段熄灭。cmp.gauge = segmented 只有横向条，段间是正方形分隔，左侧固定一列行名",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "cmp.gauge = lightStrip（竖向或沿曲线排列的灯段，熄灭段只留暗槽，自发光，可选段数与段形），无底板时不画面板",
+   "partialBy": "cmp.gauge@el.vitals = lightStrip + cmp.gaugeDir@el.vitals = v（竖排自发光灯段的画法已有：R4 只在工作台屏的面板后面露出来，HUD 屏仍不画，见 #26）"
+  },
+  {
+   "screen": "hud",
+   "what": "元素级颜色覆盖不被读取：col.accent@el.vitals、col.accent@el.crosshair 都写成青色，但生命行写死 bad 红、第二行写死 accent2 蓝（第三行写死 good 绿），切割枪激光写死 bad 红；单色青光是 Dead Space 唯一的 UI 语言，这几处恰好是本屏仅有的可见元素",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "元素上下文读取元素级 col.* 覆盖（col.accent@<元素> → 该元素的 accent）；el.vitals 的行色与 el.crosshair = laser 默认用 accent，col.strategy = mono 时不再借 bad / good / accent2",
+   "resolvedBy": "M12a-01 / M12a-02（col.accent@el.crosshair / @el.vitals 生效：激光已是青色；生命板没画出来是另一条缺口 dead-space#26；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "叙事内血条板的右半段（两行都有）被画成一团白色泛光，读不出剩余量；第二行行名被墙沿压住读不出。疑似是生命行的伤害拖尾白色填充与空段轨道在透视渲染后又被场景泛光放大，叙事内面板也参与了场景深度遮挡",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "叙事内 / 空间内的 UI 平面不吃场景 bloom（或只让亮段发光、限幅），伤害拖尾在 mono 下用 accent 的高亮而不是纯白；文字与条整体放进同一前景层，不被墙体逐像素截断"
+  },
+  {
+   "screen": "hud",
+   "what": "原作的灯带上没有任何文字；el.vitals 的行名（体力 / …）总会画，elx.valueLabel = none 只关得掉数值",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "elx.rowLabel（text / icon / none），none 时不留标签列；叙事内元素默认 none",
+   "resolvedBy": "el.vitals.labels"
+  },
+  {
+   "screen": "hud",
+   "what": "血条按剩余量整体变色：满 = 青、中 = 黄、低 = 红并闪烁；没有阈值变色的参数，st.alert = blink 只在低血时叠一层红脉冲",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "st.gaugeThresholds（满 = accent、中 = warn、低 = bad + blink 的分段阈值，作用于整条而不是只叠脉冲）（G-gauge-lib）",
+   "partialBy": "cmp.gaugeColorBy@el.vitals = thresholds（工作台屏背后露出的灯段是中血黄色；HUD 屏没画出来，满 / 低两档看不到）"
+  },
+  {
+   "screen": "hud",
+   "what": "静止能量是右肩胛上的半圆灯，与脊柱血条装在同一套 RIG 上。现在借 el.vitals.count = 2 的第二行放进同一块板子，只能和第一行同形（分段横条）；「多个读数挂在同一载体的不同部位、各自选画法」无法声明",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "叙事内载体 carrier（可复用对象：RIG / 腕表 / 头盔 / 枪身），元素用 elx.carrier + elx.attachBone 挂到载体的不同部位；或 el.vitals 每行单独选画法（cmp.gauge@el.vitals.row2 = arc）"
+  },
+  {
+   "screen": "hud",
+   "what": "弹药数是枪身侧面弹出的一小块全息数字，随枪转动。el.abilities = ammo + 空间内 + attachTo = held 在画布上不会跟到枪上，只能用 screenAnchor = center 摆在准星旁的屏幕平面上",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "attachTo = held 走世界挂点（投影到武器 / 手持物的插槽骨骼，和 player 一样做透视），数字面板随枪的朝向倾斜"
+  },
+  {
+   "screen": "hud",
+   "what": "显隐触发条件：弹药只在举枪瞄准时出现、氧气倒计时只在真空区出现、定位器按键呼出；elx.visibility = contextual 没有可选的触发条件",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "elx.showWhen（aim / damage / zone / keyHeld / lowHp / reload，可多选）+ 出现 / 消失的过渡（G-visibility）"
+  },
+  {
+   "screen": "hud",
+   "what": "等离子切割枪的瞄准是枪口射出的三道平行短激光（可横竖旋转）；el.crosshair = laser 只有一条从画面左下斜向准星的单线 + 红点",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "el.crosshair.form 加 triLaser（自枪口射出的 3 道平行线，可设线数与间距、横 / 竖），或 laser 加线数与起点（枪口 / 屏幕外）",
+   "partialBy": "el.crosshair.form = triLaser + laserFrom = muzzle（三道平行短线画出来了，方向不对，见新缺口）"
+  },
+  {
+   "screen": "hud",
+   "what": "定位器（按键呼出）是投在地面上的一条发光路径线，一路指向目标；el.objective 只有文字 / 标记 / 边缘箭头，没有贴地的路径线（参考截图里没按，所以本屏不放目标元素）",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "el.objective.form = pathLine（沿导航路径的地面贴花，按键呼出后逐段画出、渐隐）（G-diegetic-encoding）"
+  },
+  {
+   "screen": "hud",
+   "what": "低血时的心跳与喘息、氧气将尽的告警由音频承担提示，屏幕上不加任何东西；参数体系没有音频通道",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "音频作为 UI 编码通道（st.alert 可选 audio：心跳 / 喘息 / 告警音），在探索台里以说明卡呈现（G-diegetic-encoding）"
+  },
+  {
+   "screen": "*",
+   "what": "所有菜单都是从 RIG 投射到角色面前 / 身侧的全息平面：带透视角度与轻微弯曲，有投射光束，角色和场景在背后照常运行。现在用 rel.diegesis = spatial + rel.behind = live + 容器 drawer / modal / window 近似，面板是正对屏幕的平面（背包是贴右边全高的抽屉），没有投影面的形状、倾角、弯曲度和相对角色的位置",
+   "severity": "high",
+   "kind": "worldSpace",
+   "proposal": "新参数 rel.projection：投影面（平面 / 弧面 / 圆柱）、倾角与弯曲度、相对角色的位置（前方 / 肩侧 / 手腕）、投射源光束开关；面板作为世界里的平面渲染并随镜头透视"
+  },
+  {
+   "screen": "*",
+   "what": "全息的「投射展开」入场、持续的轻微闪烁与偶发信号故障；mo.enter = boot 近似；ast.fx = glitch 是常驻的整屏洋红横线，比原作重得多，所以去掉了",
+   "severity": "medium",
+   "kind": "motion",
+   "proposal": "mo.enter = projectorUnfold（自投射点展开）+ mo.idle = flicker（低幅闪烁）+ ast.fx = glitch 的强度与触发时机（偶发 / 受击 / 低血）（G-motion-transition、G-postfx）"
+  },
+  {
+   "screen": "craft / inventory / map",
+   "what": "各界面的样本内容是 horror 包的通用背包：页签都是「全部 / 物品 / 钥匙 / 文件 / 日记」、按钮「装入 / 丢弃」、花费是金币 340 / 400、工作台标题是「锻造」；工作台应是武器列表 + 能量节点数 +「安装节点」，地图左栏应是甲板 / 楼层，背包顶部应是信用点与能量节点",
+   "severity": "medium",
+   "kind": "content",
+   "proposal": "示例内容按 cnt.screen / cnt.subtype 给各自的页签与动作词（forge = 武器 / 节点，worldmap = 楼层），horror 包补一组科幻工程向的样本（信用点、能量节点、甲板名）",
+   "partialBy": "R4 核对：工作台页签换成武器 / 工具 / 零件 / 药品、按钮「装上零件」、标题「工作台」，地图左栏是楼层；背包的页签与资源仍是通用样本"
+  },
+  {
+   "screen": "craft / map / inventory",
+   "what": "col.strategy = mono 时语义色仍然出现：已完成节点与地图点是 good 绿、属性增量箭头是绿色、不足的花费是 bad 红；Dead Space 是同一青色系靠亮度区分状态",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "mono 下 done / 增量用 accent 高亮、locked 用低亮 accent，不足用 accent 闪烁或 warn 的低饱和版；drawNode 与 st.delta 读 col.strategy",
+   "resolvedBy": "M12a-02（语义色走角色、col.strategy = mono 下节点 / 增量为同一青色；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "craft",
+   "what": "工作台的主视觉是当前武器的实时 3D 全息模型（参考截图里就是台面上方那件暖橙色投影）；cnt.focal = item 只能画成带稀有度光晕的物品格，所以本轮去掉了主体",
+   "severity": "high",
+   "kind": "worldSpace",
+   "proposal": "cnt.focal = item 时可选「实时 3D 模型展台」（把 cnt.characterMedium = model3d 推广到物品，或 ast.iconSet = runtimeRender 作用于主体），可选全息材质与暖色投影"
+  },
+  {
+   "screen": "craft",
+   "what": "vis.silhouette@node = hexagon 没有被节点画法读取，节点仍是实心圆",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "drawNode 读 vis.silhouette@node（hexagon / diamond / box…）作为节点外形",
+   "resolvedBy": "M12a-29（drawNode 读 vis.silhouette@node：六边形节点；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "craft",
+   "what": "原作的升级节点是不带序号的空心 / 实心小点；cmp.node 的圆节点总是写序号",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "cmp.node 加 plainDot（无序号，空心 = 未装、实心 = 已装）",
+   "resolvedBy": "cmp.node = plainDot（不写序号的空心 / 实心小点）"
+  },
+  {
+   "screen": "inventory",
+   "what": "Dead Space 的物品没有稀有度、也没有锁定格，但 st.rarityCue / st.locked 没有「无」：样本里 15 格有 10 格画了锁叉，物品格左侧还有蓝 / 紫稀有度色条",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "st.rarityCue = none、st.locked = none；或 col.coding 不含 rarity 时不画稀有度",
+   "resolvedBy": "st.rarityCue, st.locked"
+  },
+  {
+   "screen": "inventory",
+   "what": "物品图标应是 3D 渲染的实物小模型；vis.iconStyle = render3d + ast.iconSet = runtimeRender 在画布上没有效果，退回平面线框符号",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "ast.iconSet = runtimeRender 时用离屏 3D 渲染物品图标（或退回图集里 render3d 风格的素材），而不是符号"
+  },
+  {
+   "screen": "map",
+   "what": "地图是可旋转的三维全息体块图：房间按楼层挤出成半透明体块、当前目标房间橙色高亮、玩家是一个箭头、可切换楼层；vis.mapStyle = glowSilhouette 只画出几条竖向亮线 + 发光斑，读不出房间，目标高亮与玩家箭头都画不出",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "vis.mapStyle = volumetric3d（体块化三维地图 + 楼层切换 + 目标房间高亮色）；cmp.node = playerArrow（G-map-lib）",
+   "partialBy": "vis.mapFloors = left（左栏楼层列表 3F–B2）；体块房间、目标房间高亮、玩家箭头仍没有"
+  },
+  {
+   "screen": "dialogue",
+   "what": "通讯与视频日志是半透明的视频窗（说话人的视频画面、扫描线、偶发信号中断）；cnt.characterMedium = liveAction 只画灰盒人形 +「真人影像（需素材）」标签，没有「视频窗」这种介质",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "cnt.characterMedium = videoFeed（带扫描线与信号噪声的视频框，接说话人素材，无素材时画噪声帧）",
+   "resolvedBy": "cnt.characterMedium = videoFeed（REC + 扫描线的影像窗；说话人素材见 #25）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "字幕在屏幕底部、与视频窗分开；视频窗悬在 Isaac 面前一侧、较小。模板把字幕写在窗内右侧，窗口居中偏上",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "窗内画面 + 屏幕底部字幕分开放置（el.subtitle 在模板里也按整屏锚点排）；window 容器可设相对角色的位置（与 rel.projection 一起）",
+   "resolvedBy": "el.subtitle.anchorSpace, el.subtitle.screenAnchor"
+  },
+  {
+   "screen": "dialogue",
+   "what": "通讯窗没有标题栏和关闭控件；模板总会画「NPC 对话」大标题，ix.close 也没有「无」（ix.dismiss = timed 时仍画 ESC 胶囊）",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "界面标题可关（lay.header = none 或 el.title.form = none），ix.close = none",
+   "resolvedBy": "lay.titlePos（ix.close 由 timed 派生 none）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "说话人的视频帧需要素材（真人影像或说话人立绘的扫描线版本）",
+   "severity": "low",
+   "kind": "asset",
+   "proposal": "为 horror 包准备 2–3 个说话人视频帧 / 半身像素材，接 cnt.characterMedium = videoFeed"
+  },
+  {
+   "screen": "hud / craft",
+   "what": "叙事内的 el.vitals（挂 player）第三轮在 HUD 屏上不画了：弹药 el.abilities（挂 held）落到同一挂点后，生命板疑似被世界挂点的避让隐藏；工作台屏反而在面板背后透出这块两行分段板（带白色泛光）",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "世界挂点元素之间按 elx.attachOffset 错开（push）而不是隐藏叙事内的主读数；界面模板屏不画局内 HUD 的叙事内板子（或按 flow.stacking / elx.keepOnMenu 统一决定）"
+  },
+  {
+   "screen": "craft / inventory",
+   "what": "模板里锚在 tl / tc 的元素不再排进页头行：背包的资源行（el.resources = tl）压住标题「背包」，工作台的花费（el.cost = tc）落进节点区；第二轮它们都排在标题右侧的页头行里",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "模板容器里锚 tl / tc 的元素默认 anchorSpace = header，并给标题让位（排在标题右侧）；锚到 data 时与节点 / 格子互相避让",
+   "resolvedBy": "R4 核对：背包的资源行排回「背包」右侧的页头行，工作台的花费回到页头行"
+  },
+  {
+   "screen": "hud",
+   "what": "el.crosshair = triLaser + laserFrom = muzzle 的三道平行线从角色身上竖直向上画，不沿枪口 / 瞄准方向射向前方的敌人",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "triLaser 的方向取挂点（枪口）到准星的投影方向，三道线垂直于该方向等距排开、长度按 laser 的射程"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 2,
+    "elements": 2,
+    "palette": 4,
+    "type": 3,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 3,
+    "round": 4
+   }
+  ],
+  "craft": [
+   {
+    "layout": 3,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "inventory": [
+   {
+    "layout": 4,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 8,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 3,
+    "elements": 2,
+    "palette": 3,
+    "type": 5,
+    "shape": 4,
+    "density": 3,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 7,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "dialogue": [
+   {
+    "layout": 1,
+    "elements": 0,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 1,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "屏幕左上角画了一个大号弹药数「6 / 14」+ 弹点；参考里屏幕平面上没有任何常驻读数，弹药是枪身上弹出的全息数字",
+   "全局 rel.diegesis = diegetic 把字幕也变成了叙事内板子，和血条、静止能量两块板子挂在同一个点上，叠成一团发光字",
+   "黄色菱形路点「12 M」、交互提示：参考里都没有（定位器要按键才出现）",
+   "瞄准激光是红色，参考里切割枪的激光是青蓝色",
+   "血条板子是横向带标签的条，不是背上竖向的分段灯带，也不会按血量变色",
+   "textGlow 让浮空字幕糊成一片白光"
+  ],
+  "craft": [
+   "中间一个巨大的橙色发光物品框（cnt.focal = item 的稀有度光晕）压着节点树，不是原作的样子",
+   "节点树挤在左侧三分之一，发光点是一团团绿色雾斑",
+   "右上 ESC 胶囊压着资源数；右下花费「340 / 400」压着「确认选择」按钮；底部图例和按钮挤在一起",
+   "角上的同心圆饰件、横贯面板的洋红色故障线不是 Dead Space 的全息语言（细线框 + 取景角 + 轻扫描线）",
+   "参考截图本身是打开菜单前的工作台：台面上方悬浮着武器的暖色全息投影；打开后才是投射在台前的青色面板"
+  ],
+  "inventory": [
+   "面板居中；原作的背包投在 Isaac 一侧，角色留在画面另一侧，游戏不暂停",
+   "底部按键图例和详情栏的「装入 / 丢弃」按钮叠在一起",
+   "物品格带紫 / 蓝稀有度描边和锁叉，原作物品没有稀有度",
+   "同心圆角饰与洋红色故障横线"
+  ],
+  "map": [
+   "绿色战术网格底图；原作是暗底上的青色全息房间（三维体块）",
+   "浮动详情卡「电池」与路点「12 M」叠在地图中间；按键图例压着「确定」按钮和「拖动查看」",
+   "地图点是绿色水滴图钉",
+   "当前目标没有以文字出现"
+  ],
+  "dialogue": [
+   "没有选界面模板，退回了通用背包样本（「物品」列表 + 详情），完全不是通讯画面",
+   "应是一块投在 Isaac 面前的全息视频窗：说话人画面 + 一句字幕，不压暗、不阻断"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "血条与静止能量仍是一块悬在 Isaac 头顶上方、正对镜头的横板（两行分段条 + 行名）；参考是背脊上一列竖向青色灯带 + 右肩胛上的半圆灯，紧贴盔甲、随身体转动",
+   "生命行是红色、第二行是蓝色；参考整条灯带是单一的青绿色（低血时才变黄 / 红）",
+   "两行条的右半段被画成一团白色泛光，读不出剩余量；第二行的行名被墙沿压住、读不出；参考的灯带上没有任何文字",
+   "弹药「6 / 14」+ 一排小点浮在画面中心、准星左上方的屏幕平面上，不跟枪；参考是枪身侧面弹出的一小块全息数字",
+   "瞄准激光仍是一条从左下斜向中心的红线 + 红点；参考是切割枪枪口射出的三道平行的青蓝色短激光",
+   "屏幕平面上已没有路点、字幕、交互提示和左上角读数，留白与参考一致（本轮改善）"
+  ],
+  "craft": [
+   "参考截图是打开菜单前的工作台：唯一的 UI 是台面上方悬浮的暖橙色武器全息投影；我们没有武器主体，打开后的面板是一块正对屏幕、占 90% 画面的平面，没有投影倾角与投射光束",
+   "已装节点是 good 绿、花费「340」是 bad 红、属性增量箭头「→ 74」是绿色，打破了单色青光",
+   "节点是带序号的实心圆，vis.silhouette@node = hexagon 没有生效；节点阵是通用的二叉树形，原作是沿电路走线分支的节点阵",
+   "左页签是「全部 / 物品 / 钥匙 / 文件 / 日记」，按钮是「装入 / 丢弃」，花费是金币 340 / 400：都是通用背包样本，原作应是武器列表、能量节点数与「安装节点」",
+   "版面已干净：橙色光晕框、洋红横线都没了，花费、图例与按钮不再互相压（本轮改善）"
+  ],
+  "inventory": [
+   "面板是贴右边、占满整个高度的抽屉；原作是投在 Isaac 身侧、带透视角度的浮空全息平面，不贴屏幕边",
+   "15 格里有 10 格右上角画了锁叉，物品格左侧仍有蓝 / 紫稀有度色条；原作物品没有锁定、也没有稀有度",
+   "物品图标是平面线框符号（橙色闪电、心形……）；原作是 3D 渲染的物品小模型",
+   "资源行是金币 + 闪电 + 方块的通用样本；原作顶部是信用点与能量节点",
+   "底部图例与按钮已分开，左侧场景可见、不压暗（本轮改善）"
+  ],
+  "map": [
+   "地图主体只有几条竖向青色亮线、一条折线和三团发光斑，读不出房间；原作是按楼层挤出的半透明三维体块房间，可旋转",
+   "两团绿色发光斑（glowDot 的已完成态）不是 Dead Space 的配色；当前目标房间没有橙色高亮，也没有玩家箭头",
+   "左栏是「全部 / 物品 / 钥匙 / 文件 / 日记」页签；原作应是甲板 / 楼层切换",
+   "目标「线索 · 恢复电力」已以文字放在右上，浮动详情卡与确定按钮已去掉，按键图例不再压按钮（本轮改善）"
+  ],
+  "dialogue": [
+   "已是一块不压暗、不阻断的全息窗（左人形、右字幕），但窗口居中偏上、正对屏幕、占画面一半，还带「NPC 对话」大标题和 ESC 胶囊；原作的通讯窗更小、没有标题栏和关闭控件，悬在 Isaac 面前一侧",
+   "说话人位置是灰盒青色人形 +「真人影像（需素材）」标签，不是带扫描线 / 信号噪声的视频画面",
+   "字幕写在窗内右侧；原作字幕在屏幕底部，与视频窗分开"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "背脊血条 / 静止能量这轮完全没画出来（第二轮那块悬浮板消失了，疑似与挪到同一挂点的弹药读数相撞后被隐藏）；参考是背上一列青色灯带 + 右肩胛半圆灯",
+   "弹药「6 / 14」浮在角色头顶上方的走廊上空；参考是枪身侧面弹出的一小块全息数字",
+   "瞄准激光已是青色，但仍是一条从左下斜向中心的单线 + 圆点；参考是枪口射出的三道平行短激光"
+  ],
+  "craft": [
+   "参考截图是打开菜单前的工作台：唯一的 UI 是台面上方的暖橙色武器全息投影；我们没有武器主体，面板正对屏幕、占 90% 画面",
+   "面板后面透出一块两行分段条 + 白色泛光的板子（局内 HUD 的生命板），HUD 屏上反而没有",
+   "花费「340 / 400」从页头行落进了节点区，贴着 1 号节点",
+   "节点是带序号的六边形，沿通用二叉树排；原作是不带序号的空心 / 实心小点，沿电路分支",
+   "页签、按钮、花费仍是通用背包样本（全部 / 物品…、装入 / 丢弃、金币）"
+  ],
+  "inventory": [
+   "（凭记忆）面板是贴右边、占满整高的抽屉；原作是投在 Isaac 身侧、带透视的浮空全息平面",
+   "资源行（金币 340、闪电、方块）压在标题「背包」上",
+   "物品图标是平面符号（闪电仍是橙色），原作是 3D 渲染的物品小模型",
+   "资源仍是通用样本，原作顶部是信用点与能量节点"
+  ],
+  "map": [
+   "（凭记忆）地图是蓝色双线走廊 + 发光斑，读不出按楼层挤出的三维体块房间",
+   "走廊线是第二强调色的蓝（#4aa8ff），和其余的青色不是一个色",
+   "地图区不再有暗底，背后 3D 场景透上来和线条混在一起",
+   "目标房间没有橙色高亮、没有玩家箭头；左栏仍是「全部 / 物品 / 钥匙…」，应是甲板 / 楼层"
+  ],
+  "dialogue": [
+   "（凭记忆）通讯窗仍在画面正中、约画面宽一半；原作更小、悬在 Isaac 面前一侧",
+   "说话人是灰盒青色人形 +「真人影像（需素材）」标签，不是带扫描线 / 信号噪声的视频画面"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "背脊灯带（el.vitals）在 HUD 屏仍没画出来，竖排灯段反而透在工作台屏的面板后面",
+   "三道平行激光是从角色身上竖直向上的短线，不沿枪口朝向射向敌人",
+   "弹药「6 / 14」仍浮在角色头顶上方的走廊上空，不在枪身侧面",
+   "没有右肩胛的静止能量半圆灯"
+  ],
+  "craft": [
+   "参考是开菜单前的工作台，唯一的 UI 是台面上方的暖橙武器全息；我们没有武器主体，面板占约 80% 画面",
+   "面板后面透出两列黄色灯段（局内 HUD 的生命灯带），压住页头的「340 / 400」",
+   "节点已是不写序号的空心 / 实心小点，但仍是通用二叉树排布，不是沿电路分支",
+   "详情只有名字 + 两行字，没有武器数值对比"
+  ],
+  "inventory": [
+   "（凭记忆）面板仍是贴右边、占满整高的抽屉；原作是投在 Isaac 身侧、带透视的浮空全息平面",
+   "物品图标是平面符号，原作是 3D 渲染的物品小模型",
+   "页签与资源仍是通用样本（全部 / 物品 / 钥匙 / 文件、金币），原作顶部是信用点与能量节点"
+  ],
+  "map": [
+   "（凭记忆）地图仍是青色走廊线 + 发光斑，读不出按楼层挤出的三维体块房间",
+   "目标房间没有橙色高亮，也没有玩家箭头",
+   "地图区仍透出背后的 3D 场景，走廊线和墙体混在一起"
+  ],
+  "dialogue": [
+   "（凭记忆）通讯窗仍在画面正中偏上、约画面宽一半；原作更小、悬在 Isaac 面前一侧",
+   "影像窗外面又套了一层青色括角框，成了框中框",
+   "说话人仍是灰盒人形（「影像窗（需素材）」），扫描线只有两道"
+  ]
+ },
+ "revisions": [
+  "base：vis.motif geometric → brackets（取景角括号代替同心圆角饰）；ast.fx 去掉 glitch（常驻洋红横线），保留 glow + scanlines；art.values 加 color.brightness 0.72、color.contrast 1.2，让场景接近参考的暗调高反差",
+  "hud：元素只留 el.vitals（叙事内挂玩家，count = 2：血 + 静止能量两行分段灯带放在同一块 RIG 板上）、el.abilities（弹药，空间内挂手持物，screenAnchor = center、scale 0.75，放到枪口 / 准星旁而不是左上角）、el.crosshair（激光，加 col.accent@el.crosshair 青色）；删掉 el.resources（并进 vitals 第二行）、el.interact、el.objective、el.subtitle（参考里都没有，字幕还被全局叙事内带成了浮空板）；本屏 typ.legibility textGlow → shadow",
+  "craft：容器 fullscreen → modal（panelSize 0.9，投在台前、场景可见、不虚化）；cnt.focal item → none（去掉橙色光晕框）；lay.composition three → splitLR（左页签 = 武器列表、中节点树、右常驻详情 = 属性条 + a → b）；cmp.node glowDot → circleNumber（清楚的圆节点 + 电路走线）；删 el.resources，el.cost（haveNeed）移到 tc；ix.confirm selectConfirm → instant（去掉压住花费的确认按钮）；ix.close = keyGlyph；el.prompt 改 list 放 bl、scale 0.7，避开节点树与详情按钮",
+  "inventory：容器 modal → drawer（panelSize 1：面板在右，左侧留给角色与场景，不压暗）；5 列 15 格；st.rarityCue = strip（稀有度只剩细侧条）；el.prompt 放 bl、scale 0.7，不再压详情按钮",
+  "map：vis.mapStyle tactical → glowSilhouette（暗底青色轮廓）；vis.mapUnexplored = reveal；cmp.node pin → glowDot；lay.detail transient → none（去掉浮动详情卡）；lay.nav = tabsLeft（楼层列表）；el.objective 改为 text 放 tr；el.prompt 放 bl、scale 0.7；ix.mode = select + ix.confirm = instant（去掉确定按钮）；ix.close = keyGlyph；容器改为 standard 面板 0.85",
+  "dialogue：加 uip.screen = tpl.npc，容器 window（panelSize 0.5，不压暗、非阻断）；cnt.focal = character + cnt.characterMedium = liveAction（青色全息人形，需素材）+ cnt.characterRender = monochrome；lay.composition = splitLR、lay.focalSide = left（左视频右字幕）、lay.layering = separate（覆盖模板的面板压立绘）；cnt.dataShape = text + cnt.textLength = line；cnt.elements 清空（不再画立绘切入）；ix.skip / ix.continueCue = none（覆盖模板的视觉小说控件）；ix.close = keyGlyph",
+  "gaps：删除「工作台节点树无需新参数」一条（已表达），新增武器 3D 全息主体、节点三态颜色、物品无稀有度 / 锁定、元素级颜色覆盖不生效四条；血条、静止能量、弹药、投影面、地图、视频窗几条按本轮的近似写法更新",
+  "R3 前（M12a 之后）：hud 加 el.vitals.labels none、el.vitals.rowColors [accent, accent]（两行都取 col.accent@el.vitals 的青，不再借第二强调色的蓝）；inventory 加 st.rarityCue [none]、st.locked none（物品没有稀有度、没有锁格）；dialogue 加 lay.titlePos none、删掉显式的 ix.close keyGlyph（timed 派生 none），台词改由屏幕底部的 el.subtitle（anchorSpace = screen、bc）画，窗里只留说话人画面（cnt.dataShape none、lay.composition single、lay.panelSize 0.5 → 0.38，更小的通讯窗）。",
+  "R4 前（M12b 之后）：hud 的 cmp.gauge@el.vitals segmented → lightStrip + cmp.gaugeDir@el.vitals = v（脊柱竖排自发光灯段、熄灭段只留暗槽，el.vitals 自动竖条并排，#1）、cmp.gaugeColorBy@el.vitals = thresholds + col.warn / col.bad@el.vitals 黄 / 红（满青、中黄、低红，mono 下要显式给坏色才不被压成青，#5）、el.crosshair.form laser → triLaser + laserFrom = muzzle（枪口三道平行短激光，#9）；craft 的 cmp.node circleNumber → plainDot（不写序号的空心 / 实心小点，#18）；map 加 vis.mapFloors = left、lay.nav tabsLeft → none（左栏换成楼层列表，不再是背包分类）、rel.dim 0.2 → 0.45（地图区压暗，场景不和走廊线混在一起）、col.accent2 = #46d8e6（走廊线回到同一青色）；dialogue 的 cnt.characterMedium liveAction → videoFeed（扫描线 + 信号中断的视频窗，#22；没再写 cmp.dialogBox = codec：两者二选一，codec 是 MGS 式双头像通讯框）。"
+ ],
+ "notes": "几乎所有读数都长在 Isaac 身上：背脊灯带是血、肩胛半圆是静止能量、枪侧全息数字是弹药，屏幕平面上没有任何常驻面板。背包、地图、通讯与升级台都以青色全息平面的形式投射在角色面前展开，且不暂停游戏，单色青光是唯一的 UI 语言，恐怖感来自「看菜单时怪物照样能扑过来」。"
+}

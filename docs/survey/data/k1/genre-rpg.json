@@ -1,0 +1,1821 @@
+{
+  "meta": {
+    "task": "K1 品类需求 · 探索 / 角色扮演 / 叙事",
+    "date": "2026-10-14",
+    "sources": "src/content/uiRefs.json（explore 47 + rpg 24 + narrative 17 = 88 张卡，参数与笔记全量统计）；qa/refs-cache/r2/arpg/sheet-01..08、10、12..16 与 life/sheet-06..08、17 共 18 张对照图（覆盖本三类 80 / 88 款；arpg sheet-09、11 的 8 款同系列 / 同模板作只用卡片笔记），另逐张细看 20 张单图；docs/survey/11-r2-arpg.md、13-r2-life.md、06-genre-camera-ui.md（A1 / A5 / A16）、12-r3-reviews.md 与 data/ui-review-stats.json（评测只用计数，不引原文）",
+    "scope": "手游商城、奖励弹窗、抽卡、签到、首充、通行证、红包、广告不在研究范围：GameUI 卡里的商城 / 活动页（gameui:12983 的商店页、gameui:13641 的活动标题）只作风格旁证，不从中归纳规则；局内的 NPC 交易只在背包约定里顺带一句。",
+    "caveat": "约 35 张 3A 卡（商店图无 UI）按该作已知 HUD 记录，置信度低于看得见 UI 的卡；比例数字以卡片参数为准，参数没标的不计入分母以外的判断。"
+  },
+  "genres": [
+    {
+      "genre": "explore",
+      "subgenres": [
+        "开放世界动作冒险（3A：巫师 3、刺客信条全系、荒野大镖客、对马岛、地平线、霍格沃茨）",
+        "步行模拟 / 艺术探索（GRIS、Journey、Dear Esther、Firewatch、ABZU）",
+        "潜行与线性动作冒险（耻辱 1 / 2、古墓丽影、A Plague Tale、Stray、蝙蝠侠）",
+        "第一人称点击探索解谜（Riven）",
+        "风格化小品探索（A Short Hike、Knights And Bikes、The Artful Escape、Rain World、Prince of Persia 2008）",
+        "手游横 / 竖屏探索（GameUI 7 款，只看局内与对话，商城 / 活动页不计）"
+      ],
+      "cards": 47,
+      "coreQuestions": [
+        "下一步往哪走：只需要方向 + 大致距离（罗盘条、小地图、或世界里的引导物），完整地图是按需打开的",
+        "眼前什么能互动：可攀爬、可拾取、可对话的东西要先在世界里被看见（描边、闪点、提示键挂在物体上）",
+        "我还撑得住吗：生命 / 体力（攀爬、冲刺、游泳、憋气）——只在变化或危险时才需要看",
+        "环境本身危险吗：温度、天气、时间段、噪声 / 被发现的程度",
+        "刚刚发生了什么：发现新地点、拿到物品、任务更新——一句话，几秒后消失",
+        "这里来过吗、还剩什么没找：已探索区与收集进度（打开地图时才回答，不常驻）"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "零 HUD · 世界即界面：状态长在角色和环境上（围巾长度、手臂纹路、画面颜色），屏幕上只剩字幕",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "hidden",
+            "cnt.density": 0,
+            "rel.diegesis": "diegetic",
+            "rel.harmony": "sameMedium",
+            "cnt.elements": ["el.subtitle"],
+            "el.subtitle.screenAnchor": "bc",
+            "typ.legibility": "shadow"
+          },
+          "share": "7 / 47 张卡 HUD 全隐（GRIS、Journey、Hellblade、Dear Esther、Riven、Firewatch、ABZU）；叙事内 8 / 47；信息密度为极简的 16 / 47",
+          "examples": ["steam:683320", "steam:638230", "steam:414340", "steam:520720", "steam:1712350", "steam:383870", "steam:384190"]
+        },
+        {
+          "pattern": "情境显现的角落组件：平时几乎空屏，受伤、攀爬、骑乘、瞄准时相关组件才淡入（3A 动作冒险的主流）",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "contextual",
+            "cnt.density": 1,
+            "cnt.elements": ["el.vitals", "el.minimap", "el.prompt", "el.interact", "el.notify"],
+            "el.minimap.form": "radar",
+            "el.minimap.screenAnchor": "bl",
+            "cmp.gauge@el.vitals": "ring",
+            "el.vitals.screenAnchor": "bl",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.screenAnchor": "br",
+            "el.interact.form": ["keyPrompt"],
+            "el.interact.attachTo": "poi",
+            "el.notify.form": ["toast"],
+            "el.notify.screenAnchor": "tl"
+          },
+          "share": "10 / 47 情境显现（荒野大镖客 2、天际、对马岛、波斯王子、Rain World、死亡搁浅、古墓丽影、A Plague Tale、Stray 等）；常驻的一款都没标",
+          "examples": ["steam:1174180", "steam:489830", "steam:2215430", "steam:19980", "steam:312520", "steam:1850570", "steam:391220", "steam:1182900", "steam:1332010"]
+        },
+        {
+          "pattern": "顶部罗盘条 + 底部 / 右下状态：方向信息压成一条横带，地图、目标都折叠进罗盘刻度（开放世界 RPG 式）",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "contextual",
+            "cnt.elements": ["el.minimap", "el.vitals", "el.objective", "el.abilities"],
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "el.objective.form": ["marker"],
+            "el.objective.attachTo": "poi",
+            "cmp.gauge@el.vitals": "bar",
+            "el.vitals.count": 3,
+            "el.vitals.screenAnchor": "bc",
+            "el.vitals.visibility": "contextual",
+            "el.abilities.form": "slots",
+            "el.abilities.screenAnchor": "br"
+          },
+          "share": "罗盘条 5 / 47，标了位置的 4 张全在上中（天际、霍格沃茨、刺客信条 奥德赛、地平线 西之绝境；Starfield 未标位置）",
+          "examples": ["steam:489830", "steam:990080", "steam:812140", "steam:2420110", "steam:1716740"]
+        },
+        {
+          "pattern": "四角常驻 + 平面小地图：左上血、角落圆形小地图、右侧任务清单、右下武器 / 技能（巫师 3、刺客信条系列、Far Cry、蜘蛛侠）",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.density": 2,
+            "cnt.elements": ["el.vitals", "el.minimap", "el.objective", "el.abilities", "el.prompt"],
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "tl",
+            "el.minimap.form": "plan",
+            "vis.silhouette@el.minimap": "circle",
+            "el.minimap.screenAnchor": "bl",
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "mr",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.screenAnchor": "tr"
+          },
+          "share": "平面小地图 11 / 47（标了位置的：左下 5、右下 3、右上 2），加上圆环雷达 2 张，小地图类整体左下 7 张最多；标了血条位置的 13 张里左上 9 张",
+          "examples": ["steam:292030", "steam:242050", "steam:33230", "steam:289650", "steam:298110", "steam:1817070", "iig:the-legend-of-zelda-breath-of-the-wild"]
+        },
+        {
+          "pattern": "空间内感知 / 侦探视觉：按键切到第二层，世界去色、可交互物与敌人描边、全息标签浮在物体上；平时不画",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.diegesis": "spatial",
+            "rel.worldRender": "outline",
+            "rel.sceneTone": "duotone",
+            "col.dynamic": "perMode",
+            "col.strategy": "mono",
+            "cnt.elements": ["el.overlay", "el.interact", "el.threat"],
+            "el.overlay.form": ["holo"],
+            "el.interact.form": ["bracket"],
+            "el.interact.attachTo": "poi",
+            "el.threat.form": ["healthBar"],
+            "el.threat.attachTo": "target"
+          },
+          "share": "空间内 4 / 47（蝙蝠侠 阿卡姆骑士、耻辱、刺客信条 大革命、地平线）；古墓丽影的生存直觉、死亡搁浅的扫描是同一思路",
+          "examples": ["steam:208650", "steam:205100", "steam:289650", "steam:2420110", "steam:391220", "steam:1850570"]
+        },
+        {
+          "pattern": "叙事内物件承载：地图、指南针、仪表是主角手里或座舱里的实物，打开时世界不暂停",
+          "params": {
+            "cnt.screen": "screen.map",
+            "lay.container": "overlay",
+            "rel.diegesis": "diegetic",
+            "ast.container": "handMap",
+            "rel.behind": "live",
+            "vis.mapStyle": "painted",
+            "rel.hudVisibility": "hidden"
+          },
+          "share": "叙事内 8 / 47（Firewatch 手持地图、荒野大镖客 宝藏图、Starfield 座舱仪表、Journey 围巾、Riven 机关刻痕……）",
+          "examples": ["steam:383870", "steam:2668510", "steam:1716740", "steam:638230", "steam:1712350"]
+        },
+        {
+          "pattern": "触屏竖屏探索：顶部资源胶囊、浮动摇杆、右下大按钮，目标画成地面光圈，引导靠底部 NPC 对话卡",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "ctx.orientation": "portrait",
+            "ctx.device": "phone",
+            "ctx.input": "touch",
+            "ix.touchStick": "floating",
+            "ix.thumbZone": "oneHand",
+            "lay.hudOrg": "scattered",
+            "cnt.density": 2,
+            "cnt.elements": ["el.resources", "el.prompt", "el.guide", "el.objective"],
+            "el.resources.form": "pills",
+            "el.resources.screenAnchor": "tc",
+            "el.prompt.form": ["touchButtons"],
+            "el.prompt.screenAnchor": "br",
+            "el.guide.form": "npcBubble",
+            "el.objective.form": ["marker"],
+            "el.objective.worldRender": "decal",
+            "vis.corner": "round"
+          },
+          "share": "竖屏 5 / 47，全部是 GameUI 手游（商城 / 活动页不计入）",
+          "examples": ["gameui:13619", "gameui:13082", "gameui:13586"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.minimap",
+          "forms": ["plan", "compassBar", "radar"],
+          "anchors": ["bl", "tc", "br", "tr"],
+          "why": "探索类的第一元素，三种形态回答的问题不同：罗盘条只回答「朝哪」，把画面中心留给风景（5 张，标了位置的 4 张全在上中）；平面小地图回答「周围的结构」，适合城市与密集据点（11 张；连同雷达，小地图类左下 7 张最多，因为右下常被武器 / 技能占）；圆环雷达适合骑乘与荒野（荒野大镖客 1 / 2）。零 HUD 作干脆不画，代价见 pitfalls。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["marker", "text", "checklist", "edgeArrow"],
+          "anchors": ["tr", "mr", "tl"],
+          "why": "3A 开放世界把目标做成挂在兴趣点上的世界标记，清单只在追踪任务时出现（巫师 3 小地图下方的清单）；对马岛、Hellblade 把目标完全交给环境（风、符文），罗盘条作把目标并进刻度。探索类的目标文字越短越好：一个动词 + 一个地名。"
+        },
+        {
+          "element": "el.vitals",
+          "forms": ["bar", "segmented", "ring", "thinBar", "icons"],
+          "anchors": ["tl", "bl", "bc"],
+          "why": "这个品类里血量不是核心信息，多数只在受伤 / 冲刺时才出现（天际底部三条、荒野大镖客 2 的三个小圆环）。形态跟画风走：写实作用细条 / 横条，卡通作用心形图标列（旷野之息、Eastward），可数的回复量用分段格（刺客信条 IV、波斯王子）。左上 9 张，左下 3 张。"
+        },
+        {
+          "element": "el.interact",
+          "forms": ["keyPrompt", "bracket", "cursor"],
+          "anchors": ["center", "br"],
+          "why": "探索的一半操作是「检查 / 拾取 / 攀爬 / 对话」，提示要挂在物体上（elx.attachTo = poi），而不是固定在角落；古墓丽影用描边高亮代替常驻提示，Stray 只在可交互处出现一个按键图标。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["contextual", "legend"],
+          "anchors": ["br", "tr", "bc"],
+          "why": "情境按键随状态整组替换：刺客信条右上「头 / 手 / 脚」对应手柄四键，荒野大镖客 2 右下竖排列表，骑马 / 驾船时整组换掉。图标集要跟输入方式走（D-input）。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["toast", "banner", "band", "pickupText"],
+          "anchors": ["tl", "tc"],
+          "why": "探索的奖励感主要来自这里：发现地点的大字横幅（书法 / 衬线，带细线与小字副标题）、任务更新、拾取小字。荒野大镖客用左上黑底提示卡。必须短、自动消失、不叠成一摞（对马岛的挡视野抱怨多来自字幕与提示）。"
+        },
+        {
+          "element": "el.subtitle",
+          "forms": ["bare", "bar", "bubble"],
+          "anchors": ["bc"],
+          "why": "形态取 cmp.dialogBox 的值。步行模拟里字幕是唯一常驻的文字（Dear Esther 旁白、Firewatch 对讲机）；画面常是亮天空和雾，所以无框字幕至少要文字投影，最好有半透明底板（06 文档 A16：任何背景上 4.5:1）。"
+        },
+        {
+          "element": "el.clock",
+          "forms": ["clock", "sunDial", "weather"],
+          "anchors": ["tr", "bl"],
+          "why": "昼夜与天气会改变能做的事和危险程度：巫师 3 把时间写在右上小地图边上，荒野大镖客的天气影响追踪。纯艺术探索作不画，靠光线本身表达。"
+        },
+        {
+          "element": "el.meter",
+          "forms": ["withIcon", "single"],
+          "anchors": ["br", "bl"],
+          "why": "把「环境危险」做成一个常驻小仪表：旷野之息小地图旁的温度计与声音计、刺客信条 大革命的人群发现度眼睛。画法用 cmp.gauge@el.meter = thermometer / eye。"
+        },
+        {
+          "element": "el.overlay",
+          "forms": ["holo", "statusIcons", "rangeRing"],
+          "anchors": ["center"],
+          "why": "扫描 / 感知模式把信息投到世界上（地平线的聚焦、死亡搁浅的地形扫描标记、蝙蝠侠的侦探模式），平时完全不画——这是「零 HUD」与「信息充足」两全的主要办法。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["slots", "ammo", "ultimate", "hotbar"],
+          "anchors": ["br"],
+          "why": "动作冒险的能力 / 道具在右下（霍格沃茨菱形四格法术、刺客信条 奥德赛四技能、蜘蛛侠小工具轮、Far Cry 弹药），标了位置的 3 张全在右下；选择多的用按住呼出的轮盘（耻辱）。"
+        },
+        {
+          "element": "el.threat",
+          "forms": ["healthBar", "visionCone", "edgeDir"],
+          "anchors": ["tc"],
+          "why": "只有潜行 / 战斗向探索作需要：被谁看见、从哪个方向来。纯探索作没有。挂在目标上（elx.attachTo = target），屏外威胁用边缘方向提示。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "探索 HUD 的第一旋钮是显隐（rel.hudVisibility）和密度（cnt.density）：全隐 7、情境显现 10、极简 + 稀疏 31 / 47。保留的元素按「方向 > 互动 > 状态 > 通知」排序；HUD 元素允许玩家逐项关闭（巫师 3、耻辱 2、荒野大镖客 2 都这样做）。",
+          "examples": ["steam:292030", "steam:489830", "steam:1174180", "steam:2215430", "steam:638230"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "全屏地图走「物件感」：羊皮纸 / 手绘水彩（巫师 3、刺客信条 IV、荒野大镖客、A Short Hike 的手绘纸张），或干脆是主角手里的纸（Firewatch、荒野大镖客 宝藏图，打开时世界不暂停）。未探索区用留白或云雾；3A 开放世界的图标密度高，需要图例筛选与追踪标记。零 HUD 作若把地图也省掉会被骂。",
+          "examples": ["steam:292030", "steam:2668510", "steam:383870", "steam:1055540", "steam:242050"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "两种骨架：①人物纸娃娃居中或偏右 + 一侧或两侧格子（巫师 3 暗底；旷野之息顶部页签、左侧黑底方格、右侧人物、左下说明）；②贴纸 / 卡片横排（Knights And Bikes 底部撕边贴纸卡）。比较值用数字箭头，稀有度用边框色（刺客信条 奥德赛灰 / 蓝 / 紫 / 金）。与 NPC 交易时复用同一版式、左右两栏分属双方。",
+          "examples": ["steam:292030", "iig:the-legend-of-zelda-breath-of-the-wild", "steam:592480", "steam:812140"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "探索作的对话是轻量的、不切场景：Stray 深色方角卡 + 名字标头 + 右下「继续」键；旷野之息半透明黑底圆角框 + 关键词彩色 + 右侧竖排胶囊选项；A Short Hike 白色像素气泡挂在头上；The Artful Escape 右侧堆叠黑色圆角气泡；Firewatch 用对讲机语音 + 字幕代替对话框。",
+          "examples": ["steam:1332010", "iig:the-legend-of-zelda-breath-of-the-wild", "steam:1055540", "steam:1122680", "steam:383870"]
+        },
+        {
+          "screen": "screen.title",
+          "conventions": "标题即风景：GRIS 在水彩渐变上画同心圆 + 字距很大的细衬线；Journey 沙丘上的极简字。菜单项少，直接压在实时场景上，几乎没有面板。",
+          "examples": ["steam:683320", "steam:638230"]
+        },
+        {
+          "screen": "screen.skilltree",
+          "conventions": "成长界面与世界观合一：天际把技能树画成星空星座（对应 tpl.skilltree 的 constellation + glowDot）。",
+          "examples": ["steam:489830"]
+        },
+        {
+          "screen": "screen.journal",
+          "conventions": "任务日志 = 清单 + 叙述文本；HUD 上只追踪一条。西部题材用剪报与木刻粗衬线（荒野大镖客），奇幻用羊皮纸书页（魔兽世界）。",
+          "examples": ["steam:2668510", "steam:292030", "iig:world-of-warcraft"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "潜行任务结算：黑底等宽数据表 + 大号字母评级（MGSV），评分维度都是可数的（用时、被发现次数、击杀数）。只讲成绩，不做奖励演出。",
+          "examples": ["steam:287700"]
+        },
+        {
+          "screen": "screen.pause",
+          "conventions": "把系统菜单做成世界里的装置：MGSV 的 iDroid 是全息蓝单色面板，Starfield 的座舱屏；切进去时用镜头推进到物件（mo.transition = zoomInto）。",
+          "examples": ["steam:287700", "steam:1716740"]
+        },
+        {
+          "screen": "screen.tutorial",
+          "conventions": "零 HUD 作的教学也叙事化：Hellblade 用耳边低语，TUNIC 用游戏里捡到的说明书页，Hyper Light Drifter 用无文字象形图——但要配一个能回看的地方。",
+          "examples": ["steam:414340", "steam:553420", "steam:257850"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "极简单色", "count": 13, "why": "零 HUD / 极简流派：信息退到世界里，剩下的字幕与菜单只用一种颜色和细字，不和艺术画面抢（GRIS、Journey、Firewatch、ABZU、Riven、Rain World、死亡搁浅）。" },
+        { "family": "暗色细线", "count": 10, "why": "写实 3A 开放世界的默认：深色半透明底 + 细线 + 白字，在任何光照下都可读，又不像「游戏面板」那样厚重（巫师 3、刺客信条系列、荒野大镖客 2、耻辱）。" },
+        { "family": "扁平 / Material", "count": 6, "why": "现代都市 / 漫改题材：干净白字、扁平色块，和照片级城市不冲突（蜘蛛侠三部、Far Cry 4、Stray）。" },
+        { "family": "科幻 HUD", "count": 3, "why": "题材驱动：切角面板、双色、故障闪烁（赛博朋克 2077）、全息侦探模式（蝙蝠侠）、座舱仪表（Starfield）。" },
+        { "family": "圆润友好", "count": 2, "why": "卡通开放世界与休闲手游：圆角、心形、半透明黑底（旷野之息、超星觉醒）。" },
+        { "family": "漫画对话框", "count": 2, "why": "手游剧情用漫画分格 + 拟声字（曙光重临、恐龙哪里跑）。" },
+        { "family": "和风", "count": 1, "why": "对马岛：书法标题、毛笔笔触面板——文化题材直接决定皮肤。" },
+        { "family": "羊皮纸任务书", "count": 1, "why": "荒野大镖客：西部海报木刻字 + 纸质地图。" },
+        { "family": "合成波 / 蒸汽波", "count": 1, "why": "The Artful Escape：霓虹色块网格，界面跟着音乐演出走。" },
+        { "family": "手绘笔记本", "count": 1, "why": "Knights And Bikes：旧照片暗角 + 撕边贴纸卡，童年回忆题材。" },
+        { "family": "线描花饰", "count": 1, "why": "霍格沃茨：金色细线装饰 + 衬线字，魔法学院的书卷气。" },
+        { "family": "军事战术", "count": 1, "why": "MGSV：等宽数据表、单色全息设备菜单。" },
+        { "family": "全息空间", "count": 1, "why": "地平线：聚焦扫描时的全息部件高亮。" },
+        { "family": "像素位图", "count": 1, "why": "A Short Hike：UI 与世界同一像素网格。" },
+        { "family": "孟菲斯", "count": 1, "why": "手游（超级幻影猫）的粗描边漫画分格 + 浅蓝格子底。" },
+        { "family": "糖果卡通（Q 版）", "count": 1, "why": "休闲手游（贪吃怪大作战）：米白圆角卡 + 橙色关闭叉。" },
+        { "family": "倾斜动感", "count": 1, "why": "手游（超时空跑跑）：超大涂鸦字标题（只作风格旁证，活动页本身不研究）。" }
+      ],
+      "exemplars": [
+        { "card": "steam:2215430", "why": "引导之风代替任务箭头、HUD 平时全隐按键呼出、书法标题 + 毛笔面板：叙事内引导的标杆。R3 里夸 UI 的 3 条与挡视野的 4 条同时存在，正好说明「零 HUD」也要管字幕与提示的堆叠。" },
+        { "card": "steam:638230", "why": "零 HUD 最纯粹的例子：围巾长度 = 飞行能量，符文亮度 = 剩余量。R3 没有任何 UI 类抱怨达到门槛。" },
+        { "card": "steam:383870", "why": "地图与指南针就是主角手里的纸，打开时世界照常运行；对讲机语音代替对话框。" },
+        { "card": "steam:292030", "why": "四角常驻的经典布局（左上头像 + 血条 + 法印、右上圆形小地图带时间、下方任务清单），且每个 HUD 元素都能单独关。" },
+        { "card": "steam:489830", "why": "顶部罗盘条 + 底部三条只在变化时出现 + 星座技能树：开放世界 RPG 式探索 HUD 的模板。" },
+        { "card": "iig:the-legend-of-zelda-breath-of-the-wild", "why": "心形血量、小地图旁的温度 / 声音计、对话关键词着色 + 右侧胶囊选项：卡通探索作的完整一套。" },
+        { "card": "steam:1850570", "why": "白色细字全大写、扫描后世界里浮出地形标记：极简科幻的探索 HUD；R3 提到 UI 的 83 条里 72 条是好评。" },
+        { "card": "steam:2420110", "why": "罗盘条 + 聚焦时机器部件全息高亮（空间内），把「看懂敌人」做成一种感知模式。" },
+        { "card": "steam:1332010", "why": "几乎无 HUD，机器人对话是深色方角卡 + 名字标头，翻译机器人当叙事入口；提到 UI 的 49 条评测里 48 条是好评。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "零 HUD / 极简却没有替代的引导手段（环境引导、可回看的提示、按需呼出的目标），新手不知道下一步做什么",
+          "examples": ["steam:1182900", "steam:414340", "steam:1716740", "steam:683320"],
+          "reviewEvidence": "R3：A Plague Tale: Requiem 引导抱怨 6 条、Hellblade 3 条、Starfield 3 条；全库 47 款有此类抱怨，头部还有 Scorn 10、Kingdom Two Crowns 7——同样属于「世界即界面」流派"
+        },
+        {
+          "desc": "去掉小地图或地图过于写意，方向感全靠记忆",
+          "examples": ["steam:1055540", "steam:257850", "steam:1903340"],
+          "reviewEvidence": "R3：A Short Hike 地图抱怨 4 条、Hyper Light Drifter 6 条、Clair Obscur 13 条（全库单款最多）；全库 19 款"
+        },
+        {
+          "desc": "字幕、提示卡、拾取通知、问号图标在画面上层层叠加，挡住本来要看的风景",
+          "examples": ["steam:2215430", "steam:312520", "steam:289650", "steam:1716740"],
+          "reviewEvidence": "R3：对马岛 挡视野 4 条、Rain World 3 条、刺客信条 大革命 2 条、Starfield 2 条；全库 22 款"
+        },
+        {
+          "desc": "菜单层级深、背包难管理（开放世界 RPG 的物品量大）",
+          "examples": ["steam:1716740", "steam:289650", "steam:489830", "steam:1091500", "steam:368500"],
+          "reviewEvidence": "R3：Starfield 菜单 4 条、刺客信条 大革命 3 条、天际 菜单 2 + 背包 2、赛博朋克 菜单 2 + 卡顿 2、刺客信条 枭雄 2"
+        },
+        {
+          "desc": "按显示器距离设计字号，电视 / 掌机上看不清",
+          "examples": ["steam:403640", "steam:990080", "steam:1850570"],
+          "reviewEvidence": "R3：耻辱 2 字太小 2 条，霍格沃茨、死亡搁浅各 1 条；全库 18 款（含战神：诸神黄昏 3）"
+        },
+        {
+          "desc": "情境按键与手柄键位对应不直观（同一键在不同状态下含义变化，提示跟不上）",
+          "examples": ["steam:33230", "steam:2215430"],
+          "reviewEvidence": "R3：刺客信条 2 手柄 / 键位抱怨 4 条，对马岛 1 条"
+        },
+        {
+          "desc": "战利品稀有度只靠颜色区分（灰 / 蓝 / 紫 / 金），色盲玩家分不开",
+          "examples": ["steam:812140"],
+          "reviewEvidence": "无评测证据；06 文档 A5 可读性规则：稀有度色阶要配边框形状或粗细"
+        }
+      ],
+      "demos": [
+        {
+          "title": "同一段野外跑图：四角常驻 vs 情境显现",
+          "a": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.density": 2,
+            "cnt.elements": ["el.vitals", "el.minimap", "el.clock", "el.objective", "el.abilities", "el.prompt"],
+            "cmp.gauge@el.vitals": "bar",
+            "el.vitals.count": 2,
+            "el.vitals.screenAnchor": "tl",
+            "el.minimap.form": "plan",
+            "vis.silhouette@el.minimap": "circle",
+            "el.minimap.screenAnchor": "tr",
+            "el.clock.form": "clock",
+            "el.clock.screenAnchor": "tr",
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "mr",
+            "el.abilities.form": "slots",
+            "el.abilities.screenAnchor": "br",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.screenAnchor": "br",
+            "col.lightness": "dark",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "contextual",
+            "cnt.density": 1,
+            "cnt.elements": ["el.vitals", "el.minimap", "el.objective", "el.prompt"],
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.count": 2,
+            "el.vitals.visibility": "contextual",
+            "el.vitals.screenAnchor": "bc",
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "el.objective.form": ["marker"],
+            "el.objective.attachTo": "poi",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.visibility": "contextual",
+            "el.prompt.screenAnchor": "br",
+            "vis.opacity": 0,
+            "typ.legibility": "shadow"
+          },
+          "lookAt": "看画面中心和上半屏：a 四角都有面板，b 只剩一条罗盘和世界里的标记，受伤 / 攀爬时细条才出现。用屏占比读数对比，再想清楚 b 丢掉的时间与技能冷却要靠什么补（光线、角色动作、按键呼出）。"
+        },
+        {
+          "title": "目标指引：屏幕标记 + 边缘箭头 vs 世界里的环境引导",
+          "a": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "always",
+            "cnt.elements": ["el.objective", "el.minimap"],
+            "el.objective.form": ["marker", "edgeArrow", "text"],
+            "el.objective.diegesis": "screen",
+            "el.objective.screenAnchor": "tr",
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc"
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "hidden",
+            "rel.diegesis": "diegetic",
+            "rel.harmony": "sameMedium",
+            "cnt.elements": ["el.objective"],
+            "el.objective.form": ["marker"],
+            "el.objective.diegesis": "diegetic",
+            "el.objective.attachTo": "poi",
+            "el.objective.worldRender": "decal"
+          },
+          "lookAt": "同一个目标点：a 用图标 + 屏幕边缘箭头 + 一行字，b 只在世界里留下痕迹。切到雾天和夜晚看 b 还找不找得到路——这正是对马岛被夸、A Plague Tale / Hellblade 被骂引导不清的分界线。"
+        },
+        {
+          "title": "大地图：羊皮纸手绘 vs 战术全息",
+          "a": {
+            "cnt.screen": "screen.map",
+            "lay.container": "fullscreen",
+            "rel.behind": "replaced",
+            "cnt.dataShape": "spatial",
+            "vis.mapStyle": "parchment",
+            "vis.mapUnexplored": "blank",
+            "cmp.node": "pin",
+            "vis.connector": "dashed",
+            "ast.core": "texture",
+            "ast.coreMat": "parchment",
+            "typ.display.family": "serif",
+            "col.lightness": "light"
+          },
+          "b": {
+            "cnt.screen": "screen.map",
+            "lay.container": "fullscreen",
+            "rel.behind": "replaced",
+            "cnt.dataShape": "spatial",
+            "vis.mapStyle": "tactical",
+            "vis.mapUnexplored": "outlineOnly",
+            "cmp.node": "glowDot",
+            "vis.connector": "beam",
+            "ast.core": "texture",
+            "ast.coreMat": "hologram",
+            "typ.display.family": "condensed",
+            "typ.display.case": "upper",
+            "col.strategy": "mono",
+            "col.lightness": "dark"
+          },
+          "lookAt": "同一组兴趣点在两种地图画风下的气质差别：未探索区是纸面留白还是线框轮廓、标记是图钉还是发光点、路线是虚线还是光束；再看图例和地名在两种底上是否都可读。"
+        },
+        {
+          "title": "感知模式：常态 HUD vs 扫描 / 侦探视觉层",
+          "a": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "contextual",
+            "rel.diegesis": "screen",
+            "rel.sceneTone": "none",
+            "cnt.elements": ["el.minimap", "el.interact"],
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "el.interact.form": ["keyPrompt"],
+            "el.interact.attachTo": "poi"
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "contextual",
+            "rel.diegesis": "spatial",
+            "rel.sceneTone": "duotone",
+            "rel.worldRender": "outline",
+            "col.dynamic": "perMode",
+            "col.strategy": "mono",
+            "ast.fx": ["scanlines"],
+            "cnt.elements": ["el.minimap", "el.interact", "el.overlay", "el.threat"],
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "el.interact.form": ["bracket"],
+            "el.interact.attachTo": "poi",
+            "el.interact.worldRender": "outline",
+            "el.overlay.form": ["holo", "statusIcons"],
+            "el.threat.form": ["healthBar", "visionCone"],
+            "el.threat.attachTo": "target"
+          },
+          "lookAt": "b 是按键切入的第二层：场景整体去色成双色调，可交互物与敌人描边、全息标签浮在物体上。看两层之间的切换是否一眼可辨，以及 b 的信息量回到常态时是否完全收走。"
+        },
+        {
+          "title": "同一份探索信息：电视手柄横屏 vs 手机单手竖屏",
+          "a": {
+            "ctx.device": "tv",
+            "ctx.orientation": "landscape",
+            "ctx.input": "pad",
+            "ix.glyphs": "playstation",
+            "cnt.screen": "screen.hud",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "contextual",
+            "cnt.elements": ["el.vitals", "el.minimap", "el.prompt", "el.objective"],
+            "el.vitals.screenAnchor": "tl",
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.screenAnchor": "br",
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "tr"
+          },
+          "b": {
+            "ctx.device": "phone",
+            "ctx.orientation": "portrait",
+            "ctx.input": "touch",
+            "ix.glyphs": "touch",
+            "ix.touchStick": "floating",
+            "ix.thumbZone": "oneHand",
+            "cnt.screen": "screen.hud",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.elements": ["el.vitals", "el.minimap", "el.prompt", "el.objective", "el.guide"],
+            "el.vitals.screenAnchor": "tc",
+            "el.minimap.form": "plan",
+            "vis.silhouette@el.minimap": "circle",
+            "el.minimap.screenAnchor": "tl",
+            "el.prompt.form": ["touchButtons"],
+            "el.prompt.screenAnchor": "br",
+            "el.objective.form": ["marker"],
+            "el.objective.attachTo": "poi",
+            "el.objective.worldRender": "decal",
+            "el.guide.form": "ring",
+            "vis.corner": "round"
+          },
+          "lookAt": "按派生规则 D-device / D-orient / D-input 重排：b 的操作集中到拇指区、目标改成地面光圈、提示变成触屏按钮、字更大更少。看哪些信息在竖屏里被迫常驻（没有按键呼出）。"
+        }
+      ],
+      "contentPack": {
+        "names": "探索类需要的样例内容：地名与地标（可发现的地点、营地、塔、渡口）、一句话目标（动词 + 地名）、环境状态（时间、天气、温度 / 氧气 / 噪声）、少量可数资源（水、口粮、弹药、零件）、拾取物与工具、发现提示与情境按键、简短的 NPC 搭话。以下按 4 个题材给出，互不相同，避免所有样张都长得像一个游戏。",
+        "themes": [
+          {
+            "theme": "荒野徒步（写实开放世界）",
+            "resources": ["水壶 2/3", "干肉 ×4", "火柴 ×12", "绷带 ×3", "铜币 86"],
+            "stats": ["生命", "体力（攀爬 / 冲刺）", "体温", "饱腹"],
+            "items": ["旧罗盘", "登山镐", "猎弓 + 骨箭 ×17", "防风斗篷", "矿灯"],
+            "objectives": ["沿河谷找到废弃矿井入口", "日落前回到营地", "调查瞭望塔上的火光（可选）"],
+            "mapFeatures": ["瞭望塔", "废弃矿井", "石桥渡口", "营火点", "鹰巢峭壁", "温泉", "坍塌的驿站"],
+            "prompts": ["攀爬", "拾取", "检查", "点燃营火", "休息到天亮"],
+            "notifications": ["发现地点 · 灰鹭湖", "任务更新：矿井里有人", "获得 · 登山镐"],
+            "clockWeather": ["傍晚 18:40", "起雾", "大风 · 体感 -6°C"],
+            "dialogue": ["猎户：往北别走夜路，那边的桥塌了。", "你：我只是路过，借个火。"]
+          },
+          {
+            "theme": "群岛航海",
+            "resources": ["淡水 40/60", "补给箱 ×6", "帆布 ×2", "银币 312"],
+            "stats": ["船体耐久", "船员士气", "风向 / 风速"],
+            "items": ["黄铜六分仪", "海图残页 3/5", "鱼叉", "信号火箭 ×2"],
+            "objectives": ["在风暴来临前驶入北湾", "找到第三块海图残页", "把信送到灯塔看守手里"],
+            "mapFeatures": ["灯塔", "沉船残骸", "暗礁区", "潮汐洞窟", "渔村栈桥", "无名小岛"],
+            "prompts": ["升帆", "收帆", "抛锚", "登岸", "潜水"],
+            "notifications": ["风向改变 · 东北风", "发现沉船 · 白鹈号", "淡水不足"],
+            "dialogue": ["老水手：潮水退了才看得见那条路。", "你：那就等潮水。"]
+          },
+          {
+            "theme": "废墟机械（科幻探索）",
+            "resources": ["电量 72%", "氧气 05:40", "零件 ×23", "数据碎片 4/9"],
+            "stats": ["护盾", "机体温度", "信号强度"],
+            "items": ["扫描仪", "切割枪", "中继信标 ×2", "维修凝胶"],
+            "objectives": ["重启第二座中继塔", "沿信号源找到坠毁舱", "读取 3 份船员日志（可选）"],
+            "mapFeatures": ["中继塔", "坠毁舱", "冷却井", "地下轨道站", "晶体峡谷"],
+            "prompts": ["扫描", "接入终端", "切割", "放置信标"],
+            "notifications": ["扫描完成 · 发现 3 个可交互点", "氧气低于 20%", "日志已记录 · 船员 07"],
+            "dialogue": ["终端：最后一次校准时间未知。", "随身 AI：前方结构不稳定，建议绕行。"]
+          },
+          {
+            "theme": "城市屋顶潜行",
+            "resources": ["开锁针 ×5", "烟雾弹 ×2", "赏金 1,450"],
+            "stats": ["生命", "被发现进度", "噪声"],
+            "items": ["钩索", "短刀", "安眠飞镖 ×6", "钥匙 · 钟楼侧门"],
+            "objectives": ["在钟声敲响前潜入议员宅邸", "全程不被发现（可选）", "找到那本账簿"],
+            "mapFeatures": ["钟楼", "屋顶花园", "下水道入口", "巡逻路线", "运河码头"],
+            "prompts": ["攀上", "潜行", "击昏", "躲藏", "偷听"],
+            "notifications": ["警戒解除", "你被发现了", "新路线 · 屋顶通道"],
+            "dialogue": ["守卫甲：你听见了吗？", "守卫乙：是猫吧。"]
+          }
+        ]
+      },
+      "paramGaps": [
+        "el.objective.form 缺「环境引导」选项（风向、鸟群、油漆 / 布条标记、光路）：现在只能用 el.objective.diegesis = diegetic + marker 近似，画出来仍是一个图标（证据 steam:2215430、steam:414340）",
+        "缺玩家侧的 HUD 自定义：逐元素开关与预设（全显 / 精简 / 沉浸），巫师 3、耻辱 2、荒野大镖客 2 都当标配；elx.visibility 是设计参数不是玩家选项，建议在 a11y 组加 a11y.hudPreset",
+        "缺「被发现进度」的专门表达：潜行冒险的眼睛标记（steam:289650）现在只能 el.meter + cmp.gauge = eye 近似，el.threat.form 有视锥但没有挂在敌人头上的发现度填充",
+        "缺「感知 / 扫描模式」作为一个整体状态：现在要同时改 rel.sceneTone、el.overlay、rel.worldRender、col.dynamic 四处，建议一个模式开关（或一条微调方向 / 叠加预设）并演示切换转场",
+        "大地图缺标记密度与图例筛选参数：开放世界「问号清单」的密度是 3A 与艺术探索作风格差异的大头，建议 map 级参数 poiDensity + 图例筛选开关",
+        "缺地点发现卡的专属画法：现在用 el.notify = banner / band 近似，建议 el.title.form 增加 placeName（大字地名 + 细线 + 小字副标题，可书法 / 衬线）"
+      ]
+    },
+    {
+      "genre": "rpg",
+      "subgenres": [
+        "CRPG（俯视 / 等距，回合或即时暂停：博德之门 3、暗黑地牢 1 / 2）",
+        "回合 / ATB JRPG（最终幻想 VIII / IX / X、Octopath Traveler、Persona 5、Metaphor）",
+        "动作 RPG（最终幻想 XVI、最终幻想 VII 重制、王国之心、Clair Obscur 的探索段）",
+        "暗黑式刷宝 ARPG（暗黑破坏神 IV）",
+        "MMO（魔兽世界）",
+        "风格化 RPG（RPG Time、Eastward）",
+        "手游 RPG（原神、星穹铁道、剑与远征 启程、逆水寒、王牌三国志；抽卡 / 商城页不计）"
+      ],
+      "cards": 24,
+      "coreQuestions": [
+        "队伍里每个人现在怎样：HP / MP / 行动资源 + 异常状态，谁快倒了",
+        "轮到谁、下一个是谁：行动顺序或 ATB 充能",
+        "我现在能做什么、代价是什么：指令 / 技能的消耗、冷却、射程；不能用的要一眼看出",
+        "敌人怕什么、接下来要干什么：弱点、护盾 / 破防、意图或读条",
+        "这件装备比身上的好吗：数值差（↑↓）与稀有度",
+        "离下一级、下一个能力还有多远：经验条、技能点",
+        "主线在哪、今天还剩几天：任务追踪、日历与期限（日程制 RPG）",
+        "这个对话选项有没有门槛：属性检定、成功率、会不会得罪人"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "整合底座：下半屏一整条，装队伍肖像、技能栏、资源，甚至地牢小地图；上半屏留给战斗",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "console",
+            "cnt.density": 3,
+            "cnt.elements": ["el.party", "el.abilities", "el.resources", "el.minimap"],
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "bc",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "row",
+            "el.abilities.screenAnchor": "bc",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "bl",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "br",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "stone",
+            "vis.ornament": 3
+          },
+          "share": "整合底座 4 / 24（博德之门 3、暗黑 IV、暗黑地牢 1 / 2）",
+          "examples": ["steam:1086940", "steam:2344520", "steam:262060", "steam:1940340"]
+        },
+        {
+          "pattern": "JRPG 贴边指令窗：左下竖排指令菜单 + 光标，右下队伍名牌（名字 / HP / MP / ATB），渐变半透明窗",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "ctx.timeModel": "turn",
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": 2,
+            "cnt.elements": ["el.party", "el.abilities", "el.turnOrder", "el.threat", "el.feedback"],
+            "el.party.form": "tag",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "br",
+            "el.party.valueLabel": "currentMax",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "column",
+            "el.abilities.screenAnchor": "bl",
+            "el.turnOrder.form": "portraitQueue",
+            "el.turnOrder.screenAnchor": "tr",
+            "el.threat.form": ["healthBar"],
+            "el.threat.attachTo": "target",
+            "el.feedback.form": ["floatNumbers"],
+            "vis.fill": "gradient",
+            "vis.gloss": "topShine",
+            "ix.focus": "cursor"
+          },
+          "share": "贴边整条 2 / 24（最终幻想 VIII / IX）；队伍名牌 5 / 24（FF VII 重制、VIII、IX、X 在右下，Octopath 在右上）",
+          "examples": ["steam:39150", "steam:377840", "steam:359870", "steam:1462040", "steam:921570"]
+        },
+        {
+          "pattern": "动作 RPG 分散角落：主角血条环绕头像（弧形）、队友小头像环、Boss 长条在顶部、技能 4 格在角上",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.density": 2,
+            "cnt.elements": ["el.vitals", "el.party", "el.abilities", "el.threat"],
+            "cmp.gauge@el.vitals": "arc",
+            "el.vitals.screenAnchor": "br",
+            "el.party.form": "frames",
+            "el.party.screenAnchor": "tr",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "column",
+            "el.abilities.screenAnchor": "bl",
+            "el.threat.form": ["bossBar"],
+            "el.threat.screenAnchor": "tc",
+            "vis.stroke": "solid"
+          },
+          "share": "分散组件 5 / 24（王国之心、Persona 5、Metaphor、魔兽世界、原神）；另有 FF XVI、FF VII 重制按同一思路摆",
+          "examples": ["steam:2552430", "steam:2515020", "steam:1462040", "gameui:1691"]
+        },
+        {
+          "pattern": "日程制 RPG 的拼贴 HUD：角落一块斜放的日期 / 天气牌是视觉锚，菜单是异形剪纸块 + 斜排大字，入场斜切划入",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "scattered",
+            "cnt.elements": ["el.clock", "el.party", "el.prompt"],
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tl",
+            "el.party.form": "scoreRow",
+            "el.party.screenAnchor": "br",
+            "el.prompt.form": ["legend"],
+            "el.prompt.screenAnchor": "br",
+            "vis.edge": "ornate",
+            "vis.tilt": 6,
+            "col.strategy": "duotone",
+            "typ.display.family": "ransom",
+            "mo.enter": "slashIn"
+          },
+          "share": "2 / 24（Persona 5 Royal 左上日历、Metaphor 右上斜放日期 + 剩余天数）",
+          "examples": ["steam:1687950", "steam:2679460"]
+        },
+        {
+          "pattern": "MMO 多栏：多排技能栏、可拖动窗口、右侧任务追踪、左上头像框、左下聊天——信息极密但玩家可重排",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "window",
+            "lay.hudOrg": "scattered",
+            "cnt.density": 4,
+            "cnt.elements": ["el.abilities", "el.party", "el.minimap", "el.objective", "el.chat", "el.threat"],
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "grid",
+            "el.abilities.screenAnchor": "bc",
+            "el.party.form": "frames",
+            "el.party.screenAnchor": "tl",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "mr",
+            "el.chat.form": "lines",
+            "el.chat.screenAnchor": "bl",
+            "el.threat.form": ["targetFrame"],
+            "el.threat.screenAnchor": "tc",
+            "ast.frameMat": "gold"
+          },
+          "share": "1 / 24（魔兽世界，信息密度极密）；对应现有品类布局 layout.rpg",
+          "examples": ["iig:world-of-warcraft"]
+        },
+        {
+          "pattern": "整屏是一件物件：游戏画在作业本上，状态栏是贴在书桌四周的手工卡纸和玩具（画在玩法区外的边框里）",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "inMargin",
+            "lay.playfield": "boardWindow",
+            "ast.container": "desk",
+            "rel.diegesis": "diegetic",
+            "rel.harmony": "sameMedium",
+            "cnt.density": 4,
+            "typ.display.family": "handwritten",
+            "vis.iconStyle": "painted",
+            "ast.frameMat": "paper"
+          },
+          "share": "1 / 24（RPG Time）；同类思路见 Knights And Bikes 的旧照片暗角",
+          "examples": ["steam:1839510"]
+        },
+        {
+          "pattern": "探索态极简：跑图时只有左上地名 + 一行目标，进战斗才换成完整战斗 HUD",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "contextual",
+            "cnt.density": 1,
+            "cnt.elements": ["el.objective"],
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "tl",
+            "typ.display.family": "serif",
+            "vis.opacity": 0,
+            "typ.legibility": "shadow"
+          },
+          "share": "1 / 24 明确标注（Clair Obscur）；FF XVI 探索时同样稀疏",
+          "examples": ["steam:1903340", "steam:2515020"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.party",
+          "forms": ["tag", "frames", "portraitRow", "scoreRow", "portraits"],
+          "anchors": ["br", "bl", "bc", "tr", "tl", "mr"],
+          "why": "RPG 的头号元素：队伍制时生命值并进队伍条。队伍条锚在右下的 5 / 24（4 张 JRPG 名牌 + Persona 5 的头像分数条），CRPG 头像竖列放左下（博德之门 3），地城底座里是一排肖像（暗黑地牢），手游放右侧（原神）。当前行动者要放大或高亮，异常状态用小图标挂在头像上。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["slots", "ultimate", "hotbar"],
+          "anchors": ["bc", "br", "bl"],
+          "why": "三种骨架：CRPG / MMO 是下中长热栏（多页、可拖）；JRPG 是左下竖排指令菜单 + 光标（攻击 / 技能 / 道具，用 elx.arrangement = column 近似）；动作 RPG 是角上 4 格。技能格 6 张、大招充能 1 张；下中 3、右下 2、左下 1。"
+        },
+        {
+          "element": "el.turnOrder",
+          "forms": ["portraitQueue", "timeline", "icons"],
+          "anchors": ["tl", "tr", "tc"],
+          "why": "回合 RPG 的「轮到谁」：FF X 战斗右上的行动顺序栏、Octopath 左上头像队列 + 下一回合预览、暗黑地牢 2 右上回合数 + 头像。能插队的技能要在队列上预览结果。"
+        },
+        {
+          "element": "el.threat",
+          "forms": ["intent", "healthBar", "bossBar", "targetFrame"],
+          "anchors": ["tc"],
+          "why": "敌人信息挂在敌人身上：Octopath 敌人脚下的弱点格（未知用问号，护盾数在旁边）、FF XVI 顶部 Boss 长条带名字和韧性槽、暗黑地牢 2 敌人脚下的血条。稀有度色与元素色不能撞（06 文档 A5）。"
+        },
+        {
+          "element": "el.feedback",
+          "forms": ["floatNumbers", "rating"],
+          "anchors": ["center"],
+          "why": "伤害数字的字体是风格信号：Octopath 用大号衬线、Persona 用拼贴手写；「弱点！/ 暴击 / 抵抗」评价字配合弱点系统。挂在目标上。"
+        },
+        {
+          "element": "el.vitals",
+          "forms": ["thinBar", "bar", "arc", "orb", "icons"],
+          "anchors": ["tl", "br", "bc", "bl"],
+          "why": "只有单主角操作时才单独画：FF XVI 左上横条、王国之心环绕头像的弧形条、暗黑 IV 左右液体球、Eastward 心形格。队伍制时并入 el.party。"
+        },
+        {
+          "element": "el.choices",
+          "forms": ["text", "buttons"],
+          "anchors": ["bc", "mr"],
+          "why": "对话是 RPG 的一半：博德之门 3 是电影镜头 + 底部编号选项 + 骰子检定，选项前面用彩色标签标出检定类型（hier.inline = chip）。选项要能标出门槛、已选过、锁定（见 paramGaps）。"
+        },
+        {
+          "element": "el.subtitle",
+          "forms": ["bubble", "bar"],
+          "anchors": ["bc"],
+          "why": "形态取 cmp.dialogBox：带尾气泡 5 张（FF IX 灰蓝渐变圆角窗、Eastward 像素气泡、Persona / Metaphor 锯齿异形框），底部通栏 2 张（FF VIII 左上带说话人名、博德之门 3）。"
+        },
+        {
+          "element": "el.clock",
+          "forms": ["calendar", "dayCounter"],
+          "anchors": ["tl", "tr"],
+          "why": "日程制 RPG 的日期牌是整个 HUD 的视觉锚：Persona 5 左上大号日期 + 星期 + 天气，Metaphor 右上斜放并在地图页写出任务还剩几天。"
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["plan"],
+          "anchors": ["tr", "tl"],
+          "why": "开放世界 RPG 保留平面小地图（魔兽世界右上、原神 / 星穹铁道左上）；Clair Obscur 去掉小地图后成为单款最集中的评测抱怨（13 条）。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["checklist", "text"],
+          "anchors": ["mr", "tl", "ml"],
+          "why": "MMO / 开放世界在右侧挂任务追踪清单（魔兽世界），手游在左侧（原神）；线性 RPG 探索时只给一行（Clair Obscur 左上）。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["band", "banner", "cutIn"],
+          "anchors": ["center", "tc"],
+          "why": "关键时刻用整屏大字（暗黑地牢 2 的事件标题黑底大字）、全员立绘切入（Persona）、任务开始居中半透明横幅（原神）。要短、可跳过。"
+        },
+        {
+          "element": "el.chat",
+          "forms": ["lines"],
+          "anchors": ["bl"],
+          "why": "只有 MMO 需要（魔兽世界左下频道文本行）；单机 RPG 不画。"
+        },
+        {
+          "element": "el.profile",
+          "forms": ["levelBar", "avatarLevel"],
+          "anchors": ["tl"],
+          "why": "Lv + 经验条主要在角色页和战后出现，局内常驻少见；MMO 把头像 + 等级放在左上头像框里。"
+        },
+        {
+          "element": "el.resources",
+          "forms": ["iconNumber"],
+          "anchors": ["bl", "br"],
+          "why": "金币、补给多放在地城底座左下（暗黑地牢）或菜单里，探索 / 战斗 HUD 上很少常驻。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "RPG 有两套 HUD：探索态（稀疏、只留目标 / 小地图）与战斗态（队伍、指令、行动顺序、敌人弱点）。切换本身是演出（遇敌转场）。战斗态的骨架由时间模型决定：回合 / ATB → 贴边指令窗 + 名牌；即时暂停 / 回合 CRPG → 整合底座热栏；动作 → 分散角落。",
+          "examples": ["steam:377840", "steam:1086940", "steam:921570", "steam:2552430", "steam:1940340"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "四种做法：①电影镜头 + 底部编号选项 + 检定骰子（博德之门 3）；②拼贴锯齿框 + 半身立绘切入 + 斜放名字牌 + 右下快进 / 自动 / 日志键（Persona 5、Metaphor）；③带尾渐变窗挂在角色旁（FF IX）；④底部通栏左上写说话人名（FF VIII）。说话人名牌 + 继续提示 + 回看是最低配置。",
+          "examples": ["steam:1086940", "steam:1687950", "steam:2679460", "steam:377840", "steam:39150"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "两极：①黑底 + 大立绘居右 + 细线衬线字 + 手写感装饰线，技能用菱形节点连线（Clair Obscur）；②石框密表：左肖像、中间属性 / 怪癖 / 装备、右侧技能与抗性、最右名册（暗黑地牢）。风格化的做法是超大描边英文压在立绘上（Metaphor 的队伍页）。竖屏手游创角：上半立绘、下半色块选项卡 + 底部确认大按钮（剑与远征 启程）。装备 / 义体页的另一种骨架是人体剖面居中 + 四周插槽连线（赛博朋克 2077）。",
+          "examples": ["steam:1903340", "steam:262060", "steam:2679460", "gameui:8436", "steam:1091500"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "网格 + 一侧详情；稀有度至少两种手段冗余（边框色 + 底色，暗黑 IV）；比较值用 ↑↓ 数字；有负重的要把重量写在背包页固定位置；竖屏手游用白底网格 + 物品底色按稀有度（几何王国）。与 NPC 交易复用同一版式。",
+          "examples": ["steam:2344520", "steam:1086940", "steam:292030", "gameui:12983"]
+        },
+        {
+          "screen": "screen.skilltree",
+          "conventions": "节点画法即世界观：菱形节点 + 细连线（Clair Obscur）、星座（天际）、六边形格（极乐迪斯科的思想柜）。锁定节点用灰度或剪影，可点亮的要有发光提示。",
+          "examples": ["steam:1903340", "steam:489830", "steam:632470"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "绘本插画地图 + 黑白标签 + 左上地名说明 + 右上任务期限倒计时（Metaphor）；纸板立体书地图（RPG Time）；手游平面地图配左上小地图（原神）。",
+          "examples": ["steam:2679460", "steam:1839510", "gameui:1691"]
+        },
+        {
+          "screen": "screen.journal",
+          "conventions": "任务日志写成书页（魔兽世界的羊皮纸书页）；分主线 / 支线 / 委托，追踪中的任务高亮。",
+          "examples": ["iig:world-of-warcraft", "steam:2668510"]
+        },
+        {
+          "screen": "screen.frontend",
+          "conventions": "创角 / 捏脸与登录选服：竖屏上半立绘、下半米白卡上的圆形色块（剑与远征 启程）；国风登录用宣纸底面板 + 竹叶灯笼角饰 + 书法标题 + 带朱红点的签条按钮（逆水寒）。",
+          "examples": ["gameui:8436", "gameui:9375"]
+        },
+        {
+          "screen": "screen.loading",
+          "conventions": "开场动画只在右上留一个「跳过」小字（黑暗之潮），章节转场用整屏黑底大字（暗黑地牢 2）。",
+          "examples": ["gameui:3711", "steam:1940340"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "暗金金属牌", "count": 4, "why": "西幻 / 地城的「装备感」：深色底 + 金属金边、铆钉、骷髅母题（博德之门 3、暗黑 IV、魔兽世界、黑暗之潮）。" },
+        { "family": "JRPG 窗口", "count": 4, "why": "回合制 JRPG 的传统：蓝灰渐变半透明窗 + 白色细边 + 手指光标，二十多年没变（FF VIII / IX / X、Octopath）。" },
+        { "family": "暗色细线", "count": 3, "why": "写实画面的动作 RPG：深色半透明 + 细线，让位给 3D 画面（FF VII 重制、FF XVI、暗黑地牢 2）。" },
+        { "family": "二次元白卡细线", "count": 3, "why": "二次元手游 RPG：米白 / 深色圆角卡 + 细线 + 白色胶囊按钮（原神、剑与远征 启程 ×2）。" },
+        { "family": "Persona 拼贴", "count": 2, "why": "日程制 RPG 用强风格菜单当品牌：红黑白或双色调、剪纸异形块、斜排大字（Persona 5、Metaphor）。" },
+        { "family": "线描花饰", "count": 1, "why": "Clair Obscur：美好年代的细线衬线 + 手写感装饰线，配油画质感立绘。" },
+        { "family": "重装饰雕花框", "count": 1, "why": "暗黑地牢：石雕底座与手绘粗黑线插画同一画风（UI 与画面同一媒介）。" },
+        { "family": "糖果卡通（Q 版）", "count": 1, "why": "王国之心：饱和色描边指令菜单 + 环绕头像的弧形条，迪士尼式明快。" },
+        { "family": "手绘笔记本", "count": 1, "why": "RPG Time：整屏书桌 + 作业本 + 手工卡纸。" },
+        { "family": "像素位图", "count": 1, "why": "Eastward：心形格 + 像素气泡，与世界同网格。" },
+        { "family": "国风水墨 / 墨笔", "count": 1, "why": "逆水寒：宣纸面板、书法标题、竹叶灯笼角饰。" },
+        { "family": "科幻 HUD", "count": 1, "why": "星穹铁道：半透明深色切角面板 + 白细字 + 白色胶囊按钮。" },
+        { "family": "手游抽卡金框", "count": 1, "why": "王牌三国志的立绘展示页（只作风格旁证：抽卡与养成付费页不研究）。" }
+      ],
+      "exemplars": [
+        { "card": "steam:1086940", "why": "CRPG 现代标准：底部中央多页可拖热栏、左下队伍竖列、对话是电影镜头 + 底部编号选项 + 骰子检定。" },
+        { "card": "steam:262060", "why": "UI 与画面同一媒介的教科书：石雕底座与手绘粗黑线插画一体，角色页是密而有序的石框表格。" },
+        { "card": "steam:2679460", "why": "风格化到极致仍被夸好用（R3 夸 UI 2 条，列在全库夸 UI 头部）：剪纸异形菜单、斜放日期牌、绘本地图带期限倒计时。" },
+        { "card": "steam:1687950", "why": "日期 / 天气牌 + 锯齿对话框 + 立绘切入 + 右下快进 / 自动 / 日志键：日程制 RPG 的完整一套；提到 UI 的 79 条里 72 条好评。" },
+        { "card": "steam:921570", "why": "回合战斗信息设计的范本：左上头像行动队列 + 下回合预览、敌人脚下弱点格（未知是问号）+ 护盾数、伤害数字用大号衬线。" },
+        { "card": "steam:2552430", "why": "动作 RPG 的另一种骨架：左下竖排指令菜单（饱和色描边）+ 右下环绕头像的弧形血 / 魔条 + 右上队友小头像。" },
+        { "card": "steam:1903340", "why": "探索态只留地名 + 一行目标、角色页黑底大立绘 + 细线衬线：极简而华丽；同时是「去掉小地图」代价的反面教材（地图抱怨 13 条）。" },
+        { "card": "steam:39150", "why": "经典 JRPG 窗口：左下指令窗、右下名字 / HP / ATB，对话窗左上写说话人名。" },
+        { "card": "steam:1839510", "why": "画在玩法区外的边框里：整屏是书桌，状态栏是手工卡纸和玩具，地图是纸板立体书。" },
+        { "card": "steam:1940340", "why": "回合地城的现代版：敌我脚下血条 + 右上回合与头像、底部技能行 + 站位点、关键事件整屏黑底大字。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "为了画面干净去掉小地图，又没有足够好用的大地图或指引",
+          "examples": ["steam:1903340", "steam:921570", "steam:2515020"],
+          "reviewEvidence": "R3：Clair Obscur 地图抱怨 13 条（全库单款最多）；Octopath、FF XVI、王国之心各 1 条"
+        },
+        {
+          "desc": "系统多层叠加（指令、卡片、联动技、职业）而教学与提示跟不上",
+          "examples": ["steam:2552430", "steam:1462040", "steam:2344520"],
+          "reviewEvidence": "R3：王国之心 HD 引导抱怨 5 条、FF VII 重制 3 条、暗黑 IV 2 条"
+        },
+        {
+          "desc": "整合底座 / 战斗 HUD 信息过密，或掉落物标签铺满屏幕",
+          "examples": ["steam:1086940", "steam:2344520"],
+          "reviewEvidence": "R3：博德之门 3、暗黑 IV 各有 2 条挡视野 / 太乱抱怨；暗黑 IV 提到 UI 的 69 条里 56 条是差评，但多是对整款游戏不满时顺带提及，不能直接当 UI 证据"
+        },
+        {
+          "desc": "背包格子与负重管理繁琐",
+          "examples": ["steam:1086940", "steam:1940340", "steam:489830"],
+          "reviewEvidence": "R3：天际 背包 2 条；博德之门 3、暗黑地牢 2 各 1 条（未达门槛）；全库背包抱怨 11 款，集中在生存类"
+        },
+        {
+          "desc": "稀有度色阶与元素属性色撞色（火红、冰蓝、毒绿），且只靠颜色区分",
+          "examples": ["steam:2344520", "steam:812140"],
+          "reviewEvidence": "无评测证据；06 文档 A5：稀有度色要配边框形状或粗细，并检查与技能元素色的冲突"
+        },
+        {
+          "desc": "风格化菜单动画过长、不能跳过，拖慢高频操作",
+          "examples": ["steam:1687950", "steam:2679460", "steam:377840"],
+          "reviewEvidence": "R3 没有直接计数；06 文档引 Persona 5 早期 UI 动画遮挡画面后被削弱；同为拼贴风的 Metaphor 是夸 UI 的头部之一——关键在动画时长与可跳过，而不是风格本身"
+        },
+        {
+          "desc": "老 JRPG 重制沿用原版按键映射与 4:3 布局，手柄操作别扭",
+          "examples": ["steam:359870", "steam:377840"],
+          "reviewEvidence": "R3：FF X/X-2 HD 手柄 / 键位抱怨 2 条；FF IX 卡顿 1 条"
+        }
+      ],
+      "demos": [
+        {
+          "title": "战斗 HUD：JRPG 贴边指令窗 vs 暗黑式整合底座",
+          "a": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "ctx.timeModel": "turn",
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": 2,
+            "cnt.elements": ["el.party", "el.abilities", "el.turnOrder", "el.threat", "el.feedback"],
+            "el.party.form": "tag",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "br",
+            "el.party.valueLabel": "currentMax",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "column",
+            "el.abilities.screenAnchor": "bl",
+            "el.turnOrder.form": "portraitQueue",
+            "el.turnOrder.screenAnchor": "tr",
+            "el.threat.form": ["healthBar"],
+            "el.threat.attachTo": "target",
+            "el.feedback.form": ["floatNumbers"],
+            "vis.corner": "round",
+            "vis.fill": "gradient",
+            "vis.gloss": "topShine",
+            "vis.stroke": "double",
+            "vis.strokeColor": "highlightEdge",
+            "col.lightness": "dark",
+            "ix.focus": "cursor"
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "ctx.timeModel": "realtime",
+            "lay.hudOrg": "console",
+            "cnt.density": 3,
+            "cnt.elements": ["el.vitals", "el.resources", "el.abilities", "el.minimap", "el.threat"],
+            "cmp.gauge@el.vitals": "orb",
+            "el.vitals.screenAnchor": "bc",
+            "el.resources.form": "gauge",
+            "cmp.gauge@el.resources": "orb",
+            "el.resources.screenAnchor": "bc",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "row",
+            "el.abilities.screenAnchor": "bc",
+            "st.cooldown": "radialWipe",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "el.threat.form": ["bossBar"],
+            "el.threat.screenAnchor": "tc",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "iron",
+            "vis.motif": "skulls",
+            "vis.ornament": 2,
+            "col.lightness": "dark"
+          },
+          "lookAt": "时间模型怎样决定骨架：a 的信息贴着左右下边、靠光标选指令，b 全部收进中下一条底座、靠热键。看两者把画面的哪一块留给战斗，以及多人队伍（a）和单主角（b）的生命值放在哪。"
+        },
+        {
+          "title": "行动顺序：头像队列 vs 速度时间轴",
+          "a": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "ctx.timeModel": "turn",
+            "cnt.elements": ["el.turnOrder", "el.party", "el.threat"],
+            "el.turnOrder.form": "portraitQueue",
+            "el.turnOrder.arrangement": "row",
+            "el.turnOrder.screenAnchor": "tl",
+            "el.party.form": "tag",
+            "el.party.screenAnchor": "tr",
+            "el.threat.form": ["intent"],
+            "el.threat.attachTo": "target"
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "ctx.timeModel": "turn",
+            "cnt.elements": ["el.turnOrder", "el.party", "el.threat"],
+            "el.turnOrder.form": "timeline",
+            "el.turnOrder.screenAnchor": "tc",
+            "el.party.form": "tag",
+            "el.party.screenAnchor": "tr",
+            "el.threat.form": ["intent"],
+            "el.threat.attachTo": "target"
+          },
+          "lookAt": "a 只告诉「谁先谁后」，b 还告诉「快多少」。想象一个会让敌人推迟行动的技能：在哪一种上更容易预览结果？队列长度超过 8 人时哪一种还读得清？"
+        },
+        {
+          "title": "角色页：大立绘留白 vs 石框密表",
+          "a": {
+            "cnt.screen": "screen.character",
+            "lay.container": "fullscreen",
+            "rel.behind": "replaced",
+            "ast.bgArt": "solid",
+            "cnt.focal": "character",
+            "cnt.characterMedium": "full",
+            "lay.focalSide": "right",
+            "lay.layering": "breakout",
+            "cnt.density": 1,
+            "cnt.dataShape": "record",
+            "st.statViz": "table",
+            "typ.display.family": "serif",
+            "typ.body.family": "serif",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1,
+            "vis.ornament": 1,
+            "vis.motif": "floral",
+            "vis.opacity": 0,
+            "col.lightness": "dark",
+            "col.strategy": "mono"
+          },
+          "b": {
+            "cnt.screen": "screen.character",
+            "lay.container": "fullscreen",
+            "rel.behind": "frozen",
+            "rel.dim": 0.6,
+            "cnt.focal": "character",
+            "cnt.characterMedium": "bust",
+            "lay.focalSide": "left",
+            "lay.composition": "three",
+            "cnt.density": 4,
+            "cnt.dataShape": "record",
+            "st.statViz": "table",
+            "lay.grouping": "panel",
+            "ast.core": "texture",
+            "ast.coreMat": "stone",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "stone",
+            "vis.ornament": 3,
+            "vis.motif": "skulls",
+            "typ.display.family": "gothic",
+            "col.lightness": "dark",
+            "col.coding": ["status"]
+          },
+          "lookAt": "同一份角色数据（属性、技能、装备、抗性）：a 让立绘做主角、数值退成细线表格，b 让数据做主角、三栏塞满。眯眼看：a 第一眼是人，b 第一眼是哪一栏？哪种更适合需要频繁比较的地城 RPG？"
+        },
+        {
+          "title": "对话：电影镜头 + 编号选项 vs 拼贴锯齿框 + 立绘切入",
+          "a": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "tray",
+            "rel.behind": "live",
+            "cnt.focal": "scene",
+            "cnt.characterMedium": "model3d",
+            "cmp.dialogBox": "bar",
+            "cnt.elements": ["el.subtitle", "el.choices", "el.party"],
+            "el.choices.form": "text",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "bc",
+            "typ.numbering": "arabic",
+            "hier.inline": "chip",
+            "typ.body.family": "serif",
+            "vis.opacity": 0.85,
+            "col.lightness": "dark",
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "bl"
+          },
+          "b": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "cnt.focal": "character",
+            "cnt.characterMedium": "bust",
+            "lay.focalSide": "left",
+            "lay.layering": "breakout",
+            "cmp.dialogBox": "bubble",
+            "cmp.plate@name": "slashBand",
+            "vis.edge": "jagged",
+            "vis.tilt": 4,
+            "col.strategy": "duotone",
+            "typ.display.family": "ransom",
+            "mo.enter": "slashIn",
+            "ix.skip": "vnControls",
+            "ix.skipAnchor": "br",
+            "cnt.elements": ["el.subtitle", "el.clock"],
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tl"
+          },
+          "lookAt": "a 把演出交给 3D 镜头，文字退到底部、选项前用彩色标签写检定类型；b 让 UI 自己当演出（锯齿框、斜名牌、立绘出框）。看选项多到 5 条、台词长到 3 行时两种各自怎么撑。"
+        },
+        {
+          "title": "战利品稀有度：只靠边框色 vs 多手段冗余",
+          "a": {
+            "cnt.screen": "screen.inventory",
+            "lay.container": "fullscreen",
+            "cnt.dataShape": "collection",
+            "lay.arrangement": "grid",
+            "cmp.slot": "cell",
+            "col.coding": ["rarity"],
+            "col.rarityScale": "diablo",
+            "st.rarityCue": ["border"],
+            "st.delta": "arrow",
+            "lay.detail": "transient"
+          },
+          "b": {
+            "cnt.screen": "screen.inventory",
+            "lay.container": "fullscreen",
+            "cnt.dataShape": "collection",
+            "lay.composition": "splitLR",
+            "lay.arrangement": "grid",
+            "cmp.slot": "cell",
+            "col.coding": ["rarity"],
+            "col.rarityScale": "diablo",
+            "st.rarityCue": ["border", "bg", "frameShape", "strip"],
+            "st.delta": "sideBySide",
+            "lay.detail": "persistent"
+          },
+          "lookAt": "开色盲模拟后看 5 档稀有度在 a、b 里还能不能分开；再看比较装备时眼睛要移动多远（a 悬停弹出、b 常驻右侧前后对比）。"
+        }
+      ],
+      "contentPack": {
+        "names": "RPG 需要的样例内容：一支 3–4 人的队伍（名字、职业、等级、HP / MP 或行动资源）、六维或同类属性、可数的消耗品与装备（带稀有度与数值差）、技能名 + 消耗、异常状态、敌人与弱点、对话检定、主线 / 支线目标、地名与日期。以下 4 个题材互不相同。",
+        "themes": [
+          {
+            "theme": "西幻地城 CRPG（俯视 / 回合）",
+            "party": ["圣骑士 · 艾尔德 Lv6", "游荡者 · 薇拉 Lv6", "灵能法师 · 奥森 Lv5", "德鲁伊 · 穆恩 Lv6"],
+            "stats": ["力量 16", "敏捷 14", "体质 15", "智力 10", "感知 12", "魅力 13", "护甲等级 17", "生命 42/58"],
+            "resources": ["金币 1,240", "行动 / 附赠行动", "法术位 3/4", "露营补给 40"],
+            "skills": ["圣光斩（1 行动 · 近战）", "闪避（附赠行动）", "火球术（3 环法术位）", "荆棘召唤"],
+            "items": ["长剑 +1（稀有）", "治疗药水 ×3", "开锁工具", "巨魔皮甲（史诗）", "卷轴 · 识别术"],
+            "status": ["中毒 · 2 回合", "祝福", "恐惧", "倒地"],
+            "checks": ["说服 · 难度 14", "察觉 · 难度 12（已失败）", "力量 · 难度 18"],
+            "objectives": ["查明地下墓穴里的钟声", "把护符还给守墓人", "找回失踪的学徒（可选）"],
+            "dialogue": ["守墓人：你们身上有墓土的味道。", "1. [说服] 我们是来帮你的。", "2. 我们只要钥匙。", "3. （动手）"],
+            "mapFeatures": ["地下墓穴", "钟楼废墟", "商队营地", "封印之门", "传送石"]
+          },
+          {
+            "theme": "回合制 JRPG（队伍 / 行动顺序）",
+            "party": ["莉瑟 HP 812/812 MP 64", "卡恩 HP 1,034/1,210 MP 22", "小葵 HP 540/690 MP 118", "铁叔 HP 1,402/1,402 MP 10"],
+            "commands": ["攻击", "技能", "道具", "防御", "逃跑"],
+            "skills": ["疾风斩 MP 8", "冰棱 MP 12", "全体治愈 MP 30", "挑衅"],
+            "weaknesses": ["火", "冰", "雷", "风", "光", "暗", "剑", "弓"],
+            "enemies": ["石甲蜥（弱：冰 / 弓）", "雾林巫女", "沼泽巨蟹 · 头目"],
+            "items": ["回复药", "魔力水", "复苏草", "烟雾瓶"],
+            "feedback": ["弱点！", "暴击", "未命中", "抵抗"],
+            "afterBattle": ["经验 +1,240", "莉瑟 升到 Lv 23", "习得 · 疾风斩"],
+            "locations": ["风车镇", "水晶洞", "王都上层区", "古代遗迹 · 第三层"],
+            "dialogue": ["卡恩：别逞强，换我上。", "小葵：……那个，我好像知道它怕什么。"]
+          },
+          {
+            "theme": "东方武侠（动作 RPG）",
+            "stats": ["气血", "内力", "真气（满三格可放绝学）", "声望 · 侠义 / 恶名"],
+            "skills": ["回风拂柳", "铁锁横江", "踏雪无痕（轻功）"],
+            "items": ["金创药", "解毒丹", "银两 362 两", "残页 · 剑谱第四式"],
+            "status": ["点穴", "中毒", "内伤", "走火入魔"],
+            "objectives": ["前往落雁渡寻找船家", "调查镖局失镖一案", "拜访山中隐士（可选）"],
+            "mapFeatures": ["落雁渡", "青石镇", "断魂崖", "茶寮", "山门"],
+            "dialogue": ["船家：今夜江上有雾，不开船。", "（递上银两）", "（亮出腰牌）"]
+          },
+          {
+            "theme": "科幻小队 RPG",
+            "party": ["队长 · 雷恩", "黑客 · 七号", "医疗兵 · 阿米拉", "重装 · 博格"],
+            "resources": ["信用点 8,450", "黑客点 3/5", "能量电池 ×4"],
+            "stats": ["护盾", "装甲", "过热", "义体负载 7/10"],
+            "items": ["等离子步枪 Mk II", "纳米修复针", "破解芯片", "义眼 · 热成像"],
+            "objectives": ["在空间站自毁前带走数据核心", "说服港口工会让道"],
+            "mapFeatures": ["对接环", "货运舱", "中央反应堆", "贫民层集市"],
+            "dialogue": ["工会代表：你们的船不在名单上。", "[黑客 · 难度 12] 那现在呢？"]
+          }
+        ]
+      },
+      "paramGaps": [
+        "el.choices 缺选项标注：技能检定（属性 + 难度 / 成功率）、已选过变灰、需求未满足锁定、后果预告——博德之门 3、极乐迪斯科的核心；建议 el.choices.annotate（多选：check / seen / locked / consequence），现在只能用 hier.inline = chip 近似",
+        "el.threat 缺「弱点格 / 护盾计数」（未知用问号、命中后揭示图标、旁边写剩余护盾数）——Octopath 式破防系统；现在只能用 intent 近似（steam:921570）",
+        "缺「指令菜单」作为独立形态：JRPG 的攻击 / 技能 / 道具竖列 + 光标现在只能借 el.abilities + elx.arrangement = column，与技能格混在一起；建议 el.abilities.form 增加 commandList",
+        "缺队伍站位 / 阵列位置指示（1–4 站位点、技能的偏好站位与目标点）——暗黑地牢；cmp.gauge = lightUp 能画出点但没有语义",
+        "cmp.gauge = arc 没有「环绕 el.party 头像」的挂载关系（王国之心式头像 + 弧形条），现在只能分别摆放",
+        "第二生命值（压力 / 理智 / 士气）用 el.vitals.count = 2 近似，缺「可溢出、到阈值触发事件」的表达",
+        "缺 RPG 常见的期限读数：Metaphor 地图右上的任务剩余天数可以用 el.timer = smallText 近似，但没有和 el.clock 日历牌联动的「距期限 N 天」形态"
+      ]
+    },
+    {
+      "genre": "narrative",
+      "subgenres": [
+        "步行模拟 / 互动小品（Venba、Behind the Frame、Florence、Miniatures）",
+        "互动电影 / 分支剧情（Heavy Rain、Beyond: Two Souls、Detroit: Become Human）",
+        "对话 RPG / 文字冒险（Disco Elysium、Kentucky Route Zero、Pentiment）",
+        "日程养成叙事 / 视觉小说式（I Was a Teenage Exocolonist）",
+        "漫画 / 动画剧叙事（Stilstand、Goodbye Volcano High、Night in the Woods、Forgotton Anne、Minute of Islands）",
+        "媒介即玩法（IMMORTALITY 的剪辑台）"
+      ],
+      "cards": 17,
+      "coreQuestions": [
+        "谁在说话、对谁说：名字、位置、立绘高亮或气泡尾巴，非说话人压暗",
+        "说了什么、刚才说过什么：当前台词 + 能回看的历史",
+        "我能怎么回应、哪些选择有分量：选项、检定、限时、已选过",
+        "现在是什么时候：第几天、什么时段、还剩多少时间",
+        "我的选择改变了什么：关系、属性、后果提示——轻、短、可忽略",
+        "画面里什么能互动：零 HUD 画面里靠光标变化或小圆点提示",
+        "我在故事的哪里：章节、流程图、存档"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "零 HUD · 交互即画面：做菜步骤就是锅和食材、画画就是手里的笔，屏幕上没有任何常驻元素",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "hidden",
+            "cnt.density": 0,
+            "rel.diegesis": "diegetic",
+            "rel.harmony": "sameMedium",
+            "cnt.elements": ["el.interact", "el.subtitle"],
+            "el.interact.form": ["cursor"],
+            "el.interact.attachTo": "poi",
+            "el.subtitle.screenAnchor": "bc"
+          },
+          "share": "信息密度极简 12 / 17；HUD 全隐 6 / 17（Beyond、Heavy Rain、Behind the Frame、Venba、Goodbye Volcano High、Miniatures）；叙事内 4 / 17",
+          "examples": ["steam:1491670", "steam:1634150", "steam:2428840", "steam:1310330", "iig:florence"]
+        },
+        {
+          "pattern": "对话挂在角色身上：气泡跟着说话人走，边走边说不暂停，选项也是头顶的小气泡",
+          "params": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "cmp.dialogBox": "bubble",
+            "cnt.elements": ["el.subtitle", "el.choices"],
+            "el.subtitle.attachTo": "player",
+            "el.choices.form": "bubbles",
+            "el.choices.attachTo": "player",
+            "ix.blocking": "none",
+            "col.lightness": "dark"
+          },
+          "share": "带尾气泡 3 / 17（Night in the Woods、Pentiment、Stilstand）；OXENFREE（恐怖批）是边走边选的代表",
+          "examples": ["steam:481510", "steam:1205520", "steam:1282320", "steam:388880"]
+        },
+        {
+          "pattern": "小说式文本栏：对话是右侧整栏滚动文本，像读小说；或角落一列无框文字，画面保持完整",
+          "params": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "drawer",
+            "lay.composition": "splitLR",
+            "cmp.dialogBox": "chatThread",
+            "lay.overflow": "scrollV",
+            "cnt.textLength": "long",
+            "cnt.elements": ["el.subtitle", "el.choices"],
+            "el.subtitle.screenAnchor": "mr",
+            "el.choices.form": "text",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "mr",
+            "typ.body.family": "serif",
+            "hier.inline": "keyword",
+            "col.lightness": "dark"
+          },
+          "share": "聊天软件式 1 / 17（Disco Elysium）+ 无框字幕 1 / 17（Kentucky Route Zero）",
+          "examples": ["steam:632470", "steam:231200"]
+        },
+        {
+          "pattern": "贴边常驻属性 + 日程：左侧竖条属性、顶部日程条，叙事选择直接改这些数值",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": 4,
+            "cnt.elements": ["el.meter", "el.clock", "el.profile", "el.notify"],
+            "el.meter.form": "stack",
+            "cmp.gauge@el.meter": "thinBar",
+            "el.meter.screenAnchor": "ml",
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tc",
+            "el.profile.form": "avatarLevel",
+            "el.profile.screenAnchor": "tl",
+            "el.notify.form": ["toast"],
+            "el.notify.screenAnchor": "tr",
+            "vis.corner": "round",
+            "col.strategy": "polychrome"
+          },
+          "share": "贴边整条 2 / 17（I Was a Teenage Exocolonist、Disco Elysium 左下肖像 + 右下时钟）",
+          "examples": ["steam:1148760", "steam:632470"]
+        },
+        {
+          "pattern": "空间内文字：选项与按键提示以文字浮在角色头边或物体上，随镜头透视",
+          "params": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.diegesis": "spatial",
+            "rel.worldRender": "perspective",
+            "rel.hudVisibility": "hidden",
+            "cnt.elements": ["el.choices", "el.prompt", "el.objective"],
+            "el.choices.form": "text",
+            "el.choices.attachTo": "player",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.attachTo": "poi",
+            "el.objective.form": ["marker", "text"],
+            "el.objective.attachTo": "poi",
+            "col.strategy": "mono"
+          },
+          "share": "空间内 2 / 17（Heavy Rain 选项旋转浮现、Detroit 证据标签全息细线框）",
+          "examples": ["steam:960910", "steam:1222140", "steam:960990"]
+        },
+        {
+          "pattern": "作品即媒介：整部作品是一本手抄本、一套漫画分格、一张剪辑台，UI 就是媒介本身的部件",
+          "params": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "overlay",
+            "rel.diegesis": "diegetic",
+            "rel.harmony": "sameMedium",
+            "ast.container": "book",
+            "ast.core": "texture",
+            "ast.coreMat": "parchment",
+            "cmp.dialogBox": "bubble",
+            "typ.display.family": "calligraphy",
+            "vis.ornament": 2
+          },
+          "share": "同一媒介 2 / 17（Pentiment、Stilstand）+ 叙事内 4 / 17（IMMORTALITY 剪辑台、Florence、Behind the Frame、Venba）",
+          "examples": ["steam:1205520", "steam:1282320", "steam:1350200", "iig:florence"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.subtitle",
+          "forms": ["bubble", "bar", "bare", "chatThread", "fullPage"],
+          "anchors": ["bc", "mr", "bl"],
+          "why": "叙事类的主体元素，形态取 cmp.dialogBox：气泡挂角色（NITW 黑底白字圆角、Pentiment 羊皮纸卷、Stilstand 手写），右栏小说（Disco），角落无框文字（KRZ），底部黑条（Minute of Islands）。说话人识别靠名字 + 位置 + 非说话人压暗（06 文档 A16）。"
+        },
+        {
+          "element": "el.choices",
+          "forms": ["text", "buttons", "bubbles", "banners"],
+          "anchors": ["mr", "bc", "center"],
+          "why": "选择是叙事游戏唯一的「操作」：Disco 编号红字行、Pentiment 左列圆形图标 + 缎带标签、Exocolonist 右侧圆角条、OXENFREE 头顶小气泡、Heavy Rain 环绕头部的浮字。已选 / 锁定状态不能只靠颜色（06 文档 A16）。"
+        },
+        {
+          "element": "el.clock",
+          "forms": ["calendar", "clock", "dayCounter"],
+          "anchors": ["br", "tc", "tl"],
+          "why": "时间是叙事的资源：Disco 右下时钟 + 第几天，Exocolonist 顶部日程条。只在时间推动剧情的作品里画。"
+        },
+        {
+          "element": "el.meter",
+          "forms": ["stack", "withIcon"],
+          "anchors": ["ml"],
+          "why": "叙事养成把属性做成常驻竖条（Exocolonist 左侧共情 / 说服 / 勇气等），每次选择都能看见它在动；纯叙事作不画。"
+        },
+        {
+          "element": "el.party",
+          "forms": ["portraitRow"],
+          "anchors": ["bl"],
+          "why": "Disco 左下油画肖像 + 两个小状态图标，是主角的「健康 / 士气」入口；单主角叙事作里它也是打开角色页的按钮。"
+        },
+        {
+          "element": "el.interact",
+          "forms": ["cursor", "keyPrompt"],
+          "anchors": ["center"],
+          "why": "零 HUD 画面里唯一的提示：Forgotton Anne 交互时出现小圆形提示，Minute of Islands 的物体旁小提示，Behind the Frame 是画笔本身。挂在物体上。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["text", "marker"],
+          "anchors": ["bc"],
+          "why": "叙事作的目标多以旁白句出现：Minute of Islands 底部黑条 + 小图标一句话；Detroit 侦查时证据标签挂在物体上。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["toast", "cutIn"],
+          "anchors": ["tr", "tl", "tc"],
+          "why": "选择后果与关系变化的提示：短、角落、可忽略；Exocolonist 的属性提升提示属于这一类。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["contextual", "legend"],
+          "anchors": ["bc", "br"],
+          "why": "QTE 与情境按键只在需要时浮现（Beyond、Heavy Rain）；对话界面右下放快进 / 自动 / 日志一组（ix.skip = vnControls）。"
+        },
+        {
+          "element": "el.title",
+          "forms": ["titleCard", "artTitle"],
+          "anchors": ["center"],
+          "why": "章节标题卡是叙事节奏的标点：Stilstand 的手写大字标题格、Goodbye Volcano High 的动画剧片头；对应 tpl.chapterCard。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.dialogue",
+          "conventions": "叙事类的主屏。按「画面占比」排：气泡挂角色（画面完整）→ 角落无框文字（画面完整 + 去色）→ 底部通栏 + 立绘（画面让一条）→ 右侧整栏小说（画面让 1/3，换来长文与历史）→ 全屏文本（NVL）。说话人名、继续提示、回看是最低配置；长文本要滚动与关键词着色。",
+          "examples": ["steam:481510", "steam:231200", "steam:632470", "steam:1205520", "steam:1148760"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "Disco 角色页是油画肖像格 + 大号衬线数字的技能矩阵；Pentiment 的背景选择是左列圆形图标 + 缎带标签 + 右侧说明卡，提示「按住确认」。叙事 RPG 的角色页同时是性格设定，不只是数值。",
+          "examples": ["steam:632470", "steam:1205520"]
+        },
+        {
+          "screen": "screen.skilltree",
+          "conventions": "思想柜：六边形格子 + 右侧说明，研究中的思想有计时（Disco）。成长树也写成叙事文本。",
+          "examples": ["steam:632470"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "Disco 背包：中间人物纸娃娃 + 两侧衣物格 + 底部手绘物品格；Exocolonist 装备是圆角卡片 + 属性徽章的网格。物品描述常是一段叙事文字。",
+          "examples": ["steam:632470", "steam:1148760"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "地图也是叙事媒介：KRZ 的公路地图是黑底细线路网 + 小地名；Pentiment 的书页即地图（手抄本插图页）。",
+          "examples": ["steam:231200", "steam:1205520"]
+        },
+        {
+          "screen": "screen.cards",
+          "conventions": "叙事养成把挑战做成卡牌对决：圆角卡 + 属性徽章，全屏半透明蓝框（Exocolonist）。",
+          "examples": ["steam:1148760"]
+        },
+        {
+          "screen": "screen.journal",
+          "conventions": "日志 / 笔记本是叙事解谜的主界面：Obra Dinn 的 19 世纪书页排版日志、Chants of Sennaar 由玩家自己填写词义的手绘笔记（解谜批）。",
+          "examples": ["steam:653530", "steam:1931770"]
+        },
+        {
+          "screen": "screen.hud",
+          "conventions": "多数叙事作没有局内 HUD；有的话只是一条情境提示（Minute of Islands 底部黑条）或侦查模式的空间内标签（Detroit）。剪辑台 / 设备界面作品里，HUD 就是那台设备（IMMORTALITY 的胶片格与时间码）。",
+          "examples": ["steam:1049710", "steam:1222140", "steam:1350200"]
+        },
+        {
+          "screen": "screen.loading",
+          "conventions": "章节标题卡：黑场 / 纯色底上的手写或衬线大字，淡入、自动消失（对应 tpl.chapterCard）；漫画叙事用一整格画当标题。",
+          "examples": ["steam:1282320", "steam:1310330"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "极简单色", "count": 12, "why": "叙事作把画面本身当界面，剩下的文字只用一种颜色、无框或细框，不打扰插画 / 电影画面（KRZ、Venba、Behind the Frame、Heavy Rain、Beyond 等）。" },
+        { "family": "科幻 HUD", "count": 1, "why": "Detroit：蓝白单色全息细线框，题材是仿生人视角。" },
+        { "family": "暗色细线", "count": 1, "why": "Disco Elysium：深色右栏 + 细线分栏 + 油画图标 + 大号衬线数字（更准确地说是「油画 + 报刊排版」，现有皮肤没有）。" },
+        { "family": "羊皮纸任务书", "count": 1, "why": "Pentiment：手抄本羊皮纸气泡 + 每个角色不同字体（更准确是「中世纪手抄本 / 泥金装饰」，现有皮肤只能近似）。" },
+        { "family": "二次元白卡细线", "count": 1, "why": "Exocolonist：半透明蓝框 + 圆角卡 + 多色属性条，视觉小说式养成。" },
+        { "family": "漫画对话框", "count": 1, "why": "Stilstand：铅笔素描漫画分格 + 手写气泡，整部作品就是界面。" }
+      ],
+      "exemplars": [
+        { "card": "steam:632470", "why": "小说式对话的标杆：右侧整栏滚动文本、技能人格当说话人、检定写在台词前、编号红字选项；左下油画肖像 + 右下时钟；角色页、思想柜、背包都是同一套油画 + 衬线语言。提到 UI 的 58 条里 53 条好评。" },
+        { "card": "steam:1205520", "why": "字体即身份：每个角色用不同字体说话，气泡是羊皮纸卷，书页即地图——同一媒介做到底；代价是字小难读（2 条抱怨）。" },
+        { "card": "steam:231200", "why": "角落无框文字列表 + 黑底细线公路地图：几乎不画 UI，却有极强的作者风格。" },
+        { "card": "steam:1148760", "why": "叙事养成的信息密度上限：左侧属性竖条、顶部日程条常驻，挑战做成卡牌对决。" },
+        { "card": "steam:1222140", "why": "空间内 UI：侦查时证据标签以全息细线框悬浮在物体上，蓝白单色。提到 UI 的 79 条里 75 条好评。" },
+        { "card": "steam:481510", "why": "零 HUD + 黑底白字圆角气泡挂在头上：最轻的对话形态，37 条提到 UI 的评测全是好评。" },
+        { "card": "steam:1350200", "why": "剪辑台本身就是界面：胶片格、时间码、底部小图标——媒介即玩法。" },
+        { "card": "steam:1282320", "why": "铅笔素描漫画分格 + 手写气泡：画面与文字是同一支笔。" },
+        { "card": "steam:388880", "why": "（恐怖批）对话选项是浮在角色头顶的三个小气泡，边走边说不暂停——叙事 UI 不打断移动的做法。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "为了媒介统一用了风格化字体（手抄体、手写体），正文字号又小，长文本难读",
+          "examples": ["steam:1205520", "steam:1491670", "steam:653530"],
+          "reviewEvidence": "R3：Pentiment 字太小 / 难读 2 条、Venba 1 条；Obra Dinn（解谜批）2 条"
+        },
+        {
+          "desc": "QTE 与浮空提示出现得突然、与手柄键位对应不清，失败了也不知道为什么",
+          "examples": ["steam:960910", "steam:960990", "steam:542050"],
+          "reviewEvidence": "R3：Heavy Rain 手柄 / 键位 3 条 + 引导 2 条；Beyond 引导 2 条（提到 UI 的 48 条里 23 条差评）；Forgotton Anne 手柄 2 条"
+        },
+        {
+          "desc": "零 HUD 叙事里缺方向感，不知道还能去哪、要找谁",
+          "examples": ["steam:1148760", "steam:1931770", "steam:1307580"],
+          "reviewEvidence": "R3：Exocolonist 地图抱怨 2 条；Chants of Sennaar 5 条、TOEM 4 条（同类「界面就是画面」作品）"
+        },
+        {
+          "desc": "台词直接压在高频 / 高亮背景上，没有底板或投影",
+          "examples": ["steam:231200", "steam:1310330"],
+          "reviewEvidence": "无评测证据；06 文档 A16：文本框在任何背景上都要 4.5:1，靠半透明底板或渐变遮罩（KRZ 靠暗场景避开了这个问题）"
+        },
+        {
+          "desc": "选项的已选 / 未选 / 锁定只靠颜色区分",
+          "examples": ["steam:632470", "steam:1205520"],
+          "reviewEvidence": "无评测证据；06 文档 A16 可读性规则"
+        }
+      ],
+      "demos": [
+        {
+          "title": "说话人呈现：底部通栏 + 半身立绘 vs 气泡挂头边走边说",
+          "a": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "tray",
+            "rel.behind": "frozen",
+            "cmp.dialogBox": "bar",
+            "cnt.focal": "character",
+            "cnt.characterMedium": "bust",
+            "lay.focalSide": "left",
+            "lay.layering": "behind",
+            "hier.dimInactive": 0.3,
+            "cmp.plate@name": "tab",
+            "mo.textReveal": "typewriter",
+            "ix.continueCue": "blinkArrow",
+            "ix.skip": "vnControls",
+            "cnt.elements": ["el.subtitle", "el.choices"],
+            "el.choices.form": "buttons",
+            "el.choices.arrangement": "column"
+          },
+          "b": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "cmp.dialogBox": "bubble",
+            "cnt.focal": "scene",
+            "mo.textReveal": "instant",
+            "ix.dismiss": "timed",
+            "ix.blocking": "none",
+            "cnt.elements": ["el.subtitle", "el.choices"],
+            "el.subtitle.attachTo": "player",
+            "el.choices.form": "bubbles",
+            "el.choices.attachTo": "player",
+            "el.choices.arrangement": "row",
+            "col.lightness": "dark",
+            "vis.corner": "round"
+          },
+          "lookAt": "a 把世界停下来、让立绘说话；b 世界照常走、台词跟着角色。三个人同屏说话时，在哪一种里更快认出是谁在说？亮背景上 b 的气泡要不要深色底？"
+        },
+        {
+          "title": "长文本：右栏小说 vs 角落无框文字 + 黑白场景",
+          "a": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "drawer",
+            "lay.composition": "splitLR",
+            "rel.behind": "live",
+            "cmp.dialogBox": "chatThread",
+            "lay.overflow": "scrollV",
+            "cnt.textLength": "long",
+            "typ.body.family": "serif",
+            "hier.inline": "keyword",
+            "col.lightness": "dark",
+            "cnt.elements": ["el.subtitle", "el.choices", "el.party", "el.clock"],
+            "el.subtitle.screenAnchor": "mr",
+            "el.choices.form": "text",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "mr",
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "bl",
+            "el.clock.form": "clock",
+            "el.clock.screenAnchor": "br"
+          },
+          "b": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "rel.sceneTone": "mono",
+            "cmp.dialogBox": "bare",
+            "cnt.textLength": "short",
+            "vis.opacity": 0,
+            "typ.legibility": "shadow",
+            "typ.body.family": "sans",
+            "ix.focus": "bar",
+            "cnt.elements": ["el.subtitle", "el.choices"],
+            "el.subtitle.screenAnchor": "bl",
+            "el.choices.form": "text",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "bl"
+          },
+          "lookAt": "a 用 1/3 画面换来长文和可回看的历史，b 保住整幅画面但只能放短句。把同一段 6 句对话放进去：a 是否自然、b 是否需要分页？b 的场景去色后文字对比度是否足够？"
+        },
+        {
+          "title": "选项：暂停后的按钮列 vs 世界里的限时浮字",
+          "a": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "modal",
+            "rel.behind": "frozen",
+            "rel.dim": 0.5,
+            "rel.sceneBlur": 6,
+            "cnt.elements": ["el.choices"],
+            "el.choices.form": "buttons",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "center",
+            "ix.mode": "select",
+            "ix.confirm": "selectConfirm",
+            "ix.blocking": "modal"
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "rel.diegesis": "spatial",
+            "cnt.elements": ["el.choices", "el.prompt"],
+            "el.choices.form": "text",
+            "el.choices.diegesis": "spatial",
+            "el.choices.attachTo": "player",
+            "el.choices.arrangement": "ring",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.attachTo": "player",
+            "ix.mode": "timing",
+            "ix.continueCue": "countdown",
+            "ix.blocking": "none"
+          },
+          "lookAt": "a 给玩家时间想，b 用时间压力逼出本能反应。看 b 的浮字在角色头部周围是否会被动作遮住、倒计时是否清楚；这正是 Heavy Rain 被抱怨按键提示不清的位置。"
+        },
+        {
+          "title": "同一媒介（手抄本）vs 中性叠加（干净无衬线）",
+          "a": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "rel.harmony": "sameMedium",
+            "cmp.dialogBox": "bubble",
+            "ast.core": "texture",
+            "ast.coreMat": "parchment",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "parchment",
+            "vis.edge": "torn",
+            "vis.ornament": 2,
+            "typ.display.family": "calligraphy",
+            "typ.body.family": "serif",
+            "cnt.elements": ["el.subtitle", "el.choices"],
+            "el.choices.form": "banners",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "ml"
+          },
+          "b": {
+            "cnt.screen": "screen.dialogue",
+            "lay.container": "overlay",
+            "rel.behind": "live",
+            "rel.harmony": "neutral",
+            "cmp.dialogBox": "bubble",
+            "ast.core": "procedural",
+            "vis.opacity": 0.85,
+            "vis.corner": "round",
+            "col.lightness": "dark",
+            "typ.body.family": "sans",
+            "cnt.elements": ["el.subtitle", "el.choices"],
+            "el.choices.form": "buttons",
+            "el.choices.arrangement": "column",
+            "el.choices.screenAnchor": "ml"
+          },
+          "lookAt": "a 让对话像书页的一部分，b 像现代软件叠在画面上。开最小字号检查与 2 倍文字缩放：a 的手抄体在小字号下还能读吗（Pentiment 的抱怨）？b 是否完全丢了时代感？"
+        },
+        {
+          "title": "同一段日常：零 HUD vs 贴边属性 + 日程",
+          "a": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "rel.hudVisibility": "hidden",
+            "cnt.density": 0,
+            "rel.diegesis": "diegetic",
+            "cnt.elements": ["el.interact"],
+            "el.interact.form": ["cursor"],
+            "el.interact.attachTo": "poi"
+          },
+          "b": {
+            "cnt.screen": "screen.hud",
+            "lay.container": "overlay",
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": 4,
+            "cnt.elements": ["el.meter", "el.clock", "el.profile", "el.resources", "el.notify"],
+            "el.meter.form": "stack",
+            "cmp.gauge@el.meter": "thinBar",
+            "el.meter.screenAnchor": "ml",
+            "el.clock.form": "calendar",
+            "el.clock.screenAnchor": "tc",
+            "el.profile.form": "avatarLevel",
+            "el.profile.screenAnchor": "tl",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tc",
+            "el.notify.form": ["toast"],
+            "el.notify.screenAnchor": "tr",
+            "vis.corner": "round",
+            "col.strategy": "polychrome",
+            "typ.display.family": "round"
+          },
+          "lookAt": "a 让玩家只看这一刻（Venba 式），b 让玩家时刻看见选择的累计结果（Exocolonist 式）。同一个选择发生后，b 的属性条与提示是否抢走了情绪？a 又丢了哪些玩家其实想知道的东西？"
+        }
+      ],
+      "contentPack": {
+        "names": "叙事类需要的样例内容：有名字和语气的说话人（2–4 个）、3–6 句台词、3–4 个选项（含检定 / 锁定 / 已选过）、日期与时段、地点名、关系或属性变化提示、章节名、日志条目；零 HUD 小品需要可互动的物件和步骤。以下 5 个题材互不相同。",
+        "themes": [
+          {
+            "theme": "公路夜车（独白与选择）",
+            "time": ["02:14", "第 3 夜", "剩余油量 1/4"],
+            "locations": ["9 号出口加油站", "河湾汽车旅馆", "废弃露天影院"],
+            "speakers": ["你", "搭车人", "电台主持"],
+            "dialogue": ["搭车人：你也睡不着？", "电台主持：……接下来是一首老歌。", "搭车人：前面那个出口，别下去。"],
+            "choices": ["保持沉默", "问她要去哪", "打开收音机", "（在下一个出口停车）"],
+            "consequences": ["她把这件事记在心里。"],
+            "chapter": ["第一幕 · 加油站"]
+          },
+          {
+            "theme": "侦探与内心声音（对话 RPG）",
+            "voices": ["逻辑", "共情", "直觉", "耐力", "话术"],
+            "checks": ["直觉 · 中等 10 · 成功", "话术 · 困难 13 · 失败（升级后可重试）"],
+            "dialogue": ["逻辑：他在撒谎，鞋印的方向对不上。", "共情：他怕的不是你，是被别人知道。", "码头工头：我什么都没看见。"],
+            "choices": ["1. 鞋印怎么解释？", "2. [话术] 你要是帮我，我就当没来过。", "3. （离开）"],
+            "journal": ["案件：码头工人之死", "线索：只有一只鞋印", "任务：找回你的警徽"],
+            "time": ["第 2 天 · 14:20"],
+            "items": ["旧外套", "手电筒", "警用笔记本"]
+          },
+          {
+            "theme": "校园日常与关系（日程养成叙事）",
+            "date": ["4 月 12 日 · 周六 · 放学后", "小雨", "距文化祭 9 天"],
+            "attributes": ["勇气 Lv3", "学识 Lv2", "体贴 Lv4", "灵巧 Lv1"],
+            "relationships": ["小原 · 友情 ★★★", "社团前辈 · 信任 ★★", "图书管理员 · ？"],
+            "places": ["天台", "图书馆", "车站前商店街", "社团活动室"],
+            "dialogue": ["小原：周末……你有空吗？", "前辈：海报的事，拜托你了。"],
+            "choices": ["一起去看海", "我还有作业", "（送出手作书签）"],
+            "notifications": ["与小原的关系加深了", "勇气 提升"]
+          },
+          {
+            "theme": "中世纪手抄本（同一媒介叙事）",
+            "chapter": ["卷二 · 冬", "第三日 · 晨祷"],
+            "places": ["修道院缮写室", "磨坊", "集市广场", "钟楼"],
+            "backgrounds": ["学者", "工匠", "药草师", "说书人"],
+            "speakers": ["院长", "磨坊主", "你"],
+            "dialogue": ["院长：墨还没干，别碰那一页。", "磨坊主：今年的税比去年重。"],
+            "choices": ["替他求情", "沉默", "引用经文"],
+            "consequences": ["这件事会被写进编年史。"]
+          },
+          {
+            "theme": "家常小品（零 HUD 交互叙事）",
+            "steps": ["洗米", "切洋葱", "等油冒烟", "凭感觉撒盐"],
+            "objects": ["旧菜谱（缺了一页）", "一封没寄出的信", "相框", "收音机"],
+            "dialogue": ["妈妈：火小一点。", "儿子：我们学校不吃这个。"],
+            "chapter": ["1988 · 夏", "2002 · 冬"]
+          }
+        ]
+      },
+      "paramGaps": [
+        "缺「逐说话人样式」：Pentiment 用字体区分身份与阶层，typ 只能全局或按组件覆盖；建议说话人样式表（字体 / 颜色 / 名牌）或 typ.body.family@speaker 作用域",
+        "缺限时选项：Heavy Rain、Detroit、OXENFREE 的选项带倒计时或会自动消失；ix.continueCue = countdown 只用于「继续」，建议 el.choices.timer（无 / 进度条 / 选项逐渐淡出）",
+        "缺选择后果 / 关系变化的专门提示形态（一行小字、关系 ↑↓、角落淡出）：现用 el.notify = toast 近似；建议 el.notify.form 增加 consequence",
+        "对话回看（backlog）只作为 ix.skip = vnControls 的一部分存在，缺回看页本身的版式（Disco 的右栏天然就是历史，VN 是单独的日志页）",
+        "缺分支流程图界面：章节结束时的分支树（已走 / 未走 / 锁定）可用 cnt.dataShape = network + lay.arrangement = tree 近似，但缺三态组合的预设",
+        "el.subtitle 没有自己的画法参数：说话人标注方式（名字 / 颜色 / 方向箭头）、字幕底板、字号档——字幕可读性是叙事与探索类最常见的无障碍诉求",
+        "缺两个叙事常见皮肤：中世纪手抄本 / 泥金装饰（首字下沉、页边插画、手抄体）与「油画 + 报刊排版」（Disco 式油画肖像格、大号衬线数字、细线分栏）；现在只能用羊皮纸任务书、暗色细线近似"
+      ]
+    }
+  ]
+}

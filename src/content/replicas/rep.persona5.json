@@ -1,0 +1,1022 @@
+{
+ "id": "rep.persona5",
+ "name": "Persona 5 Royal",
+ "card": "steam:1687950",
+ "genre": "rpg",
+ "family": "fam.persona-collage",
+ "pack": "rpg",
+ "art": {
+  "recipe": "cel-anime",
+  "scene": "room"
+ },
+ "base": {
+  "hud.style": "persona",
+  "ctx.device": "tv",
+  "ctx.input": "pad",
+  "ix.glyphs": "playstation",
+  "rel.harmony": "neutral",
+  "rel.followPost": "crisp",
+  "col.source": "uiPalette",
+  "col.lightness": "dark",
+  "col.surface": "#0b0b0b",
+  "col.surface2": "#e60012",
+  "col.text": "#ffffff",
+  "col.accent": "#e60012",
+  "col.accent2": "#ffffff",
+  "col.focus": "#e60012",
+  "col.border": "#ffffff",
+  "col.strategy": "duotone",
+  "vis.corner": "sharp",
+  "vis.edge": "clean",
+  "vis.skew": -8,
+  "vis.tilt": 4,
+  "vis.jitter": 0,
+  "vis.opacity": 1,
+  "vis.fill": "solid",
+  "vis.stroke": "sticker",
+  "vis.strokeWidth": 2,
+  "vis.strokeColor": "custom",
+  "vis.depth": "hardDrop",
+  "vis.pattern": "none",
+  "vis.ornament": 0,
+  "vis.motif": "stars",
+  "vis.iconStyle": "silhouette",
+  "ast.frame": "procedural",
+  "typ.body.family": "sans",
+  "typ.body.weight": "bold",
+  "typ.display.family": "ransom",
+  "typ.display.weight": "black",
+  "typ.titleFx": "outline",
+  "typ.numerals.family": "display",
+  "typ.numerals.style": "italic",
+  "typ.legibility": "outline",
+  "typ.scale": 1.5,
+  "cmp.plate": "slashBand",
+  "cmp.plate@name": "slashBand",
+  "cmp.plate@title": "slashBand",
+  "hier.emphasis": [
+   "size",
+   "color"
+  ],
+  "ix.focus": "scale",
+  "mo.enter": "slashIn",
+  "mo.transition": "useEnter",
+  "mo.easing": "overshoot",
+  "mo.duration": 0.2,
+  "mo.juice": 0.9,
+  "mo.idle": "sway",
+  "lay.layering": "breakout",
+  "vis.tiltLayers": "boxAndContent",
+  "vis.panelShape": "randomQuad",
+  "vis.shapeJitter": 0.12,
+  "vis.panelShape@el.party": "shard",
+  "typ.display.scope": [
+   "title",
+   "nameplate",
+   "menuItem"
+  ]
+ },
+ "screens": [
+  {
+   "key": "dialogue",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1687950_0.jpg",
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.screen": "screen.dialogue",
+    "cnt.subtype": "npc",
+    "lay.container": "overlay",
+    "cmp.dialogBox": "polygon",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "bust",
+    "lay.focalSide": "left",
+    "lay.layering": "separate",
+    "cnt.textLength": "short",
+    "cnt.tone": "character",
+    "mo.textReveal": "typewriter",
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "ix.dismiss": "tapAnywhere",
+    "ix.continueCue": "blinkArrow",
+    "ix.skip": "none",
+    "cnt.elements": [
+     "el.subtitle",
+     "el.clock",
+     "el.prompt"
+    ],
+    "el.subtitle.screenAnchor": "bc",
+    "el.subtitle.scale": 1.4,
+    "el.clock.form": [
+     "collage"
+    ],
+    "el.clock.screenAnchor": "tl",
+    "el.clock.scale": 1.3,
+    "el.clock.priority": "primary",
+    "el.prompt.form": [
+     "list"
+    ],
+    "el.prompt.arrangement": "column",
+    "el.prompt.screenAnchor": "br",
+    "el.prompt.scale": 0.85,
+    "el.prompt.priority": "ambient",
+    "el.subtitle.anchorSpace": "screen",
+    "el.clock.anchorSpace": "screen",
+    "el.prompt.anchorSpace": "screen",
+    "col.surface@dialog": "#000000",
+    "vis.opacity@dialog": 1,
+    "cmp.dialogTail": "zigzag",
+    "col.surface@name": "#ffffff",
+    "col.text@name": "#0b0b0b"
+   }
+  },
+  {
+   "key": "battle",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1687950_5.jpg",
+   "values": {
+    "uip.layout": "layout.strategyTurn",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "ctx.timeModel": "turn",
+    "rel.hudVisibility": "always",
+    "cnt.density": 1,
+    "cnt.elements": [
+     "el.party",
+     "el.notify"
+    ],
+    "el.party.form": "shard",
+    "el.party.arrangement": "row",
+    "el.party.screenAnchor": "br",
+    "el.party.valueLabel": "current",
+    "el.party.valueLabelPos": "above",
+    "el.party.scale": 1,
+    "cmp.gauge@el.party": "thinBar",
+    "col.accent@el.party": "#3fe0c5",
+    "col.accent2@el.party": "#ff4fc8",
+    "el.notify.form": [
+     "banner"
+    ],
+    "el.notify.screenAnchor": "tl",
+    "el.notify.scale": 0.55,
+    "vis.stroke@el.notify": "solid",
+    "vis.strokeColor@el.notify": "accent",
+    "vis.skew@el.notify": -10,
+    "mo.juice": 1,
+    "col.surface@el.notify": "#000000",
+    "vis.opacity@el.notify": 1,
+    "el.party.activeEmphasis": "scale",
+    "cnt.characterRender": "cutout"
+   }
+  },
+  {
+   "key": "allout",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_1687950_4.jpg",
+   "values": {
+    "uip.screen": "tpl.callout",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "callout",
+    "cnt.stage": "ceremony",
+    "flow.stacking": "replace",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "full",
+    "lay.focalSide": "right",
+    "lay.layering": "breakout",
+    "cnt.elements": [
+     "el.notify"
+    ],
+    "cmp.plate@title": "slashBand",
+    "typ.display.family": "gothic",
+    "typ.display.case": "asIs",
+    "col.surface": "#c8102e",
+    "col.accent": "#ffffff",
+    "col.dynamic": "perMode",
+    "vis.pattern": "halftone",
+    "vis.patternOpacity": 0.35,
+    "vis.tilt": 10,
+    "vis.motif": "floral",
+    "vis.ornament": 0,
+    "mo.enter": "slashIn",
+    "mo.reward": 3,
+    "cnt.textLength": "title",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "timed",
+    "col.surface@title": "#0b0b0b",
+    "col.text@title": "#ffd6e6",
+    "el.notify.form": [
+     "finisherCard"
+    ],
+    "col.accent@el.notify": "#d81e5b",
+    "vis.tilt@el.notify": 0
+   }
+  },
+  {
+   "key": "pause",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.pausePc",
+    "cnt.screen": "screen.pause",
+    "cnt.subtype": "pause",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "full",
+    "cnt.characterRender": "monochrome",
+    "lay.focalSide": "left",
+    "lay.layering": "breakout",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "cascade",
+    "cnt.itemCount": 8,
+    "cmp.button": "text",
+    "cmp.buttonBox": false,
+    "ix.focus": "scale",
+    "ix.mode": "select",
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "br",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "mo.enter": "slashIn",
+    "mo.idle": "sway",
+    "col.surface2": "#140304",
+    "lay.cascadeSpread": "diagonal",
+    "vis.depthColor": "accent",
+    "vis.depthOffset": 12,
+    "vis.depthAngle": 150
+   }
+  },
+  {
+   "key": "results",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.settle",
+    "cnt.screen": "screen.results",
+    "cnt.subtype": "rpgSettle",
+    "cnt.stage": "result",
+    "lay.container": "fullscreen",
+    "rel.behind": "frozen",
+    "rel.dim": 0.3,
+    "cnt.focal": "title",
+    "lay.focalSide": "left",
+    "lay.layering": "separate",
+    "cnt.dataShape": "table",
+    "st.statViz": "inlineBar",
+    "vis.pattern": "diagStripes",
+    "vis.patternOpacity": 0.06,
+    "cnt.tone": "encouraging",
+    "cnt.elements": [
+     "el.reward"
+    ],
+    "el.reward.form": "icons",
+    "el.reward.screenAnchor": "br",
+    "st.rarityCue": [
+     "none"
+    ],
+    "ops.actions": [],
+    "st.delta": "plus",
+    "mo.valueChange": "countUp",
+    "mo.reveal": "flyIn",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "ix.continueCue": "keyGlyph",
+    "mo.enter": "slashIn",
+    "vis.depthColor": "accent",
+    "vis.depthOffset": 12,
+    "vis.depthAngle": 150
+   }
+  },
+  {
+   "key": "calendar",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.chapterCard",
+    "cnt.screen": "screen.loading",
+    "cnt.subtype": "chapter",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.focal": "none",
+    "cnt.dataShape": "none",
+    "cnt.elements": [
+     "el.clock"
+    ],
+    "el.clock.form": [
+     "dateStrip"
+    ],
+    "el.clock.screenAnchor": "center",
+    "el.clock.scale": 1.2,
+    "el.clock.priority": "primary",
+    "typ.numbering": "arabic",
+    "mo.enter": "slide",
+    "cnt.textLength": "title",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "timed",
+    "el.clock.anchorSpace": "container",
+    "col.surface2": "#140304"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "all",
+   "what": "每块面板都应倾斜、各自转一个小角度；词表里 vis.skew / vis.tilt 写得出，但信息元素的 panel() 强制 rotate = 0，界面模板容器、标牌（cmp.plate）、按键提示都不读 skew / tilt，第 2 轮渲染里所有面板仍是正放矩形（逐元素的 vis.skew@el.notify = -10 同样没生效）",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "panel() / plate() / 模板容器按 vis.skew + vis.tilt 套变换，tilt 按种子逐块取 ±tilt 内的随机角；渲染器读 vis.*@el.* 覆盖",
+   "resolvedBy": "M12b-40（vis.tilt + vis.tiltLayers = boxAndContent：每块面板连字一起各转一个小角度）"
+  },
+  {
+   "screen": "all",
+   "what": "面板轮廓是不规则四边形 / 尖碎片：四个角各自随机偏移（对话框、日历白条、技能名条），队伍条底下是黑色尖碎片；vis.silhouette 只有 box / trapezoid / ribbon 等规整形",
+   "severity": "high",
+   "kind": "missingOption",
+   "proposal": "vis.silhouette 加 randomQuad（逐角随机偏移 + 种子）与 shard（尖碎片）",
+   "resolvedBy": "M12b-39（vis.panelShape = randomQuad / shard：不规则四边形对白框、尖碎片队伍条）"
+  },
+  {
+   "screen": "all",
+   "what": "边框是黑-白-黑三层贴纸边（黑底外包白粗边，白边外再垫一圈黑）；vis.stroke 只有 solid / double / dashed，solid 2.5 只画出单层白细边",
+   "severity": "high",
+   "kind": "missingOption",
+   "proposal": "vis.stroke 加 sticker（内黑-白-外黑三层，白层宽度读 vis.strokeWidth）",
+   "resolvedBy": "M12b-37（vis.stroke = sticker：黑-白-黑贴纸边）"
+  },
+  {
+   "screen": "all",
+   "what": "typ.display.family = ransom 实际只是一套粗黑体：标题条“暂停 / 结算 / 章节标题卡”都是整齐粗黑字，没有逐字换字体、反白方块、错位旋转的勒索信混排",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "ransom 真正按字逐个换字体 / 字重 / 反白方块 / 小角度（按种子），中英文都适用",
+   "resolvedBy": "M12a-33（ransom 逐字混排：日历牌勒索信字；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "对话框是倾斜黑色多边形（约占屏宽一半、三行正文左对齐、白粗描边），名签是贴在框左上角的白色斜签（黑字、首字母反白方块）。el.subtitle 在词表里没有 form（代码里有 plain / boxed / speakerColor 但没暴露），只能借 cmp.dialogBox = bar 画成固定高度的单行字幕条（“名字：台词”一行），没有名签、没有多行",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "词表加 el.subtitle.form（plain / boxed / speakerColor / dialogBox）；dialogBox = 多行文本框 + 名签，框形读 vis.silhouette / vis.stroke，名签画法读 cmp.plate@nameplate",
+   "resolvedBy": "M12b-21（cmp.dialogBox = polygon：倾斜黑多边形对白框 + 左上白名签）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "左上日历牌是常驻标识，是一组无底板的拼贴：超大描边数字月 / 日各自旋转错位，星期黑字压白条、时段（Morning / After School）单独一块斜白条，天气图标垫白色星芒；el.clock = calendar 只有规整日历页（红顶条 + 黑底大数字 + 时辰）",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "el.clock 加 collage（日期各部件独立旋转、错位叠放、描边大数字，天气垫星芒，无底板）",
+   "resolvedBy": "M12b-08（el.clock.form = collage：无底拼贴日历，描边大数字 + 时段斜白条 + 星芒）"
+  },
+  {
+   "screen": "allout",
+   "what": "总攻击收尾是整屏专属插画卡：角色漫画立绘出血、网点、主题花边框（这张是玫瑰 + 菱形格 + 编织纹），口号写在转约 -25° 的黑色卷轴飘带上（白 / 浅粉哥特黑体两行、粉色内描边），每个角色配色与花边主题不同；现在只能拼成“整屏红底网点面板 + 左上斜带模板名 + 居中立绘灰盒”",
+   "severity": "high",
+   "kind": "composite",
+   "proposal": "el.notify 加 finisherCard（整屏插画 + 主题边框 + 斜飘带口号），边框主题由 vis.motif 给，飘带读 cmp.plate@title（ribbon / scrollHead）+ vis.tilt",
+   "partialBy": "M12b-20（el.notify.form = finisherCard）：整屏收尾卡 + 边框 + 斜飘带口号画出来了，但飘带在下中、一行无衬线字，边框是细白双线 + 小角花，不是主题花边"
+  },
+  {
+   "screen": "allout",
+   "what": "总攻击收尾的角色漫画插画与玫瑰 / 菱形格花边框本身是位图美术",
+   "severity": "high",
+   "kind": "asset",
+   "proposal": "ast.bgArt = comicPanels 槽位接每角色插画 + 边框贴图（needs art）"
+  },
+  {
+   "screen": "all",
+   "what": "面板背后错位垫一块红或白；vis.depth = hardDrop 的错位块只能是墨黑，没有颜色槽",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "加 vis.depthColor（ink / accent / accent2 / surface2），hardDrop / softDrop 读它",
+   "resolvedBy": "M12b-36（vis.depthColor = accent + depthOffset / depthAngle：面板背后错位红块）"
+  },
+  {
+   "screen": "all",
+   "what": "勒索信混排的作用范围：P5 的标题、名签、菜单词、日历都用混排，正文是干净粗无衬线；字族参数没有“哪些角色用 display 字族”的作用域，名签 / 菜单词只能跟 body",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "加 typ.display.scope（title / nameplate / menuItem / numerals，多选）",
+   "resolvedBy": "M12b-55（typ.display.scope = [title, nameplate, menuItem]：勒索信只给标题、名签、菜单词，正文干净）"
+  },
+  {
+   "screen": "all",
+   "what": "字幕条和通知横幅的底是写死的半透明黑（el.subtitle boxed = rgba(0,0,0,0.6)、el.notify banner = 0.55）+ 强调色细线，不读 col.surface、vis.opacity、vis.stroke：对话字幕在亮场景上成了灰条，技能名横幅成了灰蓝条，参考都是实心黑底 + 白 / 红描边",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "el.subtitle（boxed）与 el.notify（banner）的底改走 panel()，读 col.surface / vis.opacity / vis.stroke / vis.strokeColor",
+   "resolvedBy": "col.surface / vis.opacity / vis.stroke / vis.strokeColor@dialog（@el.notify）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "对话框尾巴是一道锯齿闪电形尖尾，从框左下角指向说话人立绘；cmp.dialogBox 没有尾巴形状",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "加 cmp.dialogTail（none / smooth / zigzag / spike），尾巴指向 lay.focalSide 一侧的主体",
+   "resolvedBy": "M12b-21（cmp.dialogTail = zigzag：锯齿尾巴指向立绘）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "lay.container = overlay 时模板不画主体：cnt.focal = character、cnt.characterMedium = bust、lay.focalSide = left 都设了，左下说话人半身立绘连灰盒都没有",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "overlay 模板也按 cnt.focal / lay.focalSide / cnt.characterMedium 画主体（半身贴底边）",
+   "resolvedBy": "M12a-25（overlay 模板也画主体：左侧说话人；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "battle",
+   "what": "队伍条每人是一块黑色尖碎片 + 白描黑剪影头像，下面斜排青色 HP / 粉色 SP 斜体大数字，各配一根同色细斜条，四人互相交叠、略成阶梯；el.party = unitCards 只给等宽正放的黑底白边竖卡 + 灰圆头像 + 名字 + 一根绿 / 红血条",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "el.party 加 vitalsShard（碎片底 + 剪影头像 + HP / SP 双数字双细条，颜色槽 col.accent@el.party / col.accent2@el.party，成员间负间距交叠）",
+   "resolvedBy": "M12b-18（el.party.form = shard：交叠尖碎片 + 剪影头像 + 青 HP / 粉 SP 双数字双细条）"
+  },
+  {
+   "screen": "battle",
+   "what": "el.party = unitCards 不读 elx.valueLabel / elx.valueLabelPos（设了 current + above 也不画数字）；col.accent@el.party / col.accent2@el.party 这类逐元素颜色覆盖渲染器不读（只有 cmp.*@el.* 生效），血条仍是绿 / 红",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "队伍各画法读 valueLabel；渲染器给元素上下文合并 col.* / vis.*@el.* 覆盖",
+   "resolvedBy": "M12a-13 / M12a-01（el.party 读 valueLabel 与 col.accent@el.party：HP 数字 + 青色细条；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "battle",
+   "what": "指令菜单（凭记忆，这张参考里没有）：手柄每个键对应一条指令，按键图标 + 斜排文字围在当前角色身边成一簇，选中项放大变红；现在 el.abilities 与 el.prompt 各画各的，没有“键位 + 指令名”合成一簇、贴着角色的画法",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "el.abilities 加 buttonCluster（按手柄键位排布的指令簇，attachTo = player，按键形读 ix.glyphs）"
+  },
+  {
+   "screen": "all",
+   "what": "对话左下说话人半身立绘、主菜单主角黑白姿势全身像、队伍条的面具剪影头像都需要立绘素材，rpg 内容包里没有",
+   "severity": "medium",
+   "kind": "asset",
+   "proposal": "内容包加 bust / full / cutout 头像槽位并给占位素材（needs art）"
+  },
+  {
+   "screen": "allout",
+   "what": "模板标题写死成模板名：总攻击收尾显示“战斗大字提示”（应是一句角色口号），日期过渡显示“章节标题卡”（P5 这里没有标题）；没有“示例标题文案”或“不画模板标题”的取值",
+   "severity": "medium",
+   "kind": "content",
+   "proposal": "内容包给 callout / chapter 模板准备口号 / 日期类示例标题；加一个不画模板标题的取值",
+   "resolvedBy": "M12b-61（allout 写口号、calendar 不画模板名）"
+  },
+  {
+   "screen": "all",
+   "what": "动效是这套 UI 的一半：每次切屏都是整屏图形转场（红黑条带扫过、碎片），菜单项待机时持续抖动摇摆，选中项猛地放大换色；mo.transition = useEnter 与 mo.idle = sway 只能近似",
+   "severity": "medium",
+   "kind": "motion",
+   "proposal": "mo.transition 加 graphicWipe（整屏图形擦除，可选条带 / 碎片），mo.idle 加 jitter（逐项抖动）"
+  },
+  {
+   "screen": "pause",
+   "what": "主菜单（凭记忆）：菜单词沿对角线错落排开、每个词转不同角度、字号不一且是全屏最大的字，选中词垫红色多边形并放大；lay.arrangement = column 只能做成整齐竖列，词的字号与按键图例差不多",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "lay.arrangement 加 cascade（对角线错落、逐项不同角度与字号，按种子）",
+   "resolvedBy": "lay.arrangement = cascade"
+  },
+  {
+   "screen": "results",
+   "what": "战斗结算（凭记忆，无参考）：倾斜白条列出 EXP / 金钱 / 获得物，下方队员头像 + 经验条 + LEVEL UP 章，背景是最后出手的角色；tpl.settle 只能给“左大字 + 右击杀 / 死亡 / 复活 / 输出对比表 + 右下奖励格”这种竞技计分板结构",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "tpl.settle 加 rpg 变体（斜条奖励清单 + 队员经验条 + 升级章）；补一张结算参考截图后再细化",
+   "resolvedBy": "M12b-30（cnt.subtype = rpgSettle：斜白条 EXP / 金钱 / 获得物 + 队员经验条 + LEVEL UP）"
+  },
+  {
+   "screen": "calendar",
+   "what": "日期过渡（凭记忆）：一条横贯屏幕中部的日期带滚动到下一天，当天格放大、天气图标落下、已过的日子划掉；cnt.dataShape = sequence + 7 列网格画出来是签到式“第 N 天 + 奖励图标”卡",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "el.clock 加 dateStrip（横向日期带：描边日期数字 + 星期 + 天气，当天格放大，已过的划掉）",
+   "resolvedBy": "M12b-08（el.clock.form = dateStrip：横向日期带，已过划掉、当天放大）"
+  },
+  {
+   "screen": "all",
+   "what": "ctx.device = tv 推出 typ.baseSize = 26（px@1080p），但 HUD 按画布 CSS 像素直接画、不按 1080p 换算：928×522 的复刻画布上字和元素都放大约一倍（第 1 轮字过大、元素互相压住的主因）；这里只好把 typ.baseSize 手动压到 15",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "HUD 绘制按画幅高度 / 1080 统一缩放（typ.baseSize、ix.touchSize、元素尺寸都按 px@1080p 解释）",
+   "resolvedBy": "M12a-05（px@1080p：HUD 按画幅缩放；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "lay.container = tray 会把日历、按键、字幕全挤进底部整宽托盘（第 1 轮叠成一团的原因），元素没法选“按整屏锚点”；托盘宽度也不读 lay.panelSize",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "加 elx.anchorSpace（screen / container）；tray 宽度读 lay.panelSize",
+   "resolvedBy": "elx.anchorSpace = screen"
+  },
+  {
+   "screen": "battle",
+   "what": "队伍头像是面具角色的黑白剪纸剪影；cnt.characterRender 只有 color / sketch / relief / engraving / lineart / monochrome，monochrome 是单色填充，不是白描黑剪影",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "cnt.characterRender 加 cutout（黑底白线剪纸剪影），队伍头像也读它",
+   "resolvedBy": "M12b-32（cnt.characterRender = cutout：队伍头像是黑底白线剪影）"
+  },
+  {
+   "screen": "battle",
+   "what": "当前行动角色在队伍条里更大（最前、带 HP / SP 字样），其余三人缩小；elx.priority 只作用到整个元素，不能放大队伍里的单个成员",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "队伍类元素加“当前成员放大”（如 elx.activeEmphasis：none / scale / raise）",
+   "resolvedBy": "M12b-18（el.party.activeEmphasis = scale：当前角色最大）"
+  },
+  {
+   "screen": "all",
+   "what": "rpg 内容包的示例文字不对口：对话屏右下按键提示是战斗动作（拾取 / 剑气 / 选敌 / 背包），P5 是 FFWD / Auto / Log 对话控制；暂停菜单是标题屏项（继续游戏 / 新游戏 / 读取存档…），P5 局内主菜单是技能 / 物品 / 装备 / 人格面具 / 状态 / 协力者 / 系统；技能名横幅写的是“发现新区域”",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "el.prompt 在 cnt.screen = dialogue 时取对话控制组（快进 / 自动 / 记录）；内容包分出“局内主菜单”与“标题菜单”两组；el.notify 在 combat 子类型下取技能名",
+   "partialBy": "M12b-61：对话屏按键提示已是快进 / 自动 / 记录、暂停已是局内主菜单；battle 的技能名横幅仍写“发现 新区域：落霞峰”"
+  },
+  {
+   "screen": "pause",
+   "what": "cmp.buttonBox = false、cmp.button = text 时菜单行仍垫一块深灰底，选中行是红底整行 + 白内框",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "buttonBox = false 时菜单行不垫底，选中态只换字色 / 垫强调色形",
+   "resolvedBy": "M12a-27 / M12a-35（cmp.buttonBox = false 的菜单行不垫底；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "lay.layering = breakout 且主体素材缺失时，主体灰盒画了两遍（src/hud/compose/screen.ts 先在面板内画一次，最后又上移、加高再画一次）：暂停与总攻击两屏都是两个头、两层“全身立绘（需素材）”标签叠在一起",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "breakout 时只在最后画一次主体（素材缺失时也一样）",
+   "resolvedBy": "M12a-37（breakout 主体只画一次：双重立绘去掉；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "results",
+   "what": "模板带进来的多选值清不掉：tpl.settle 的 ops.actions = [share] 在本屏写 ops.actions = [] 后仍画出“分享”按钮（Persona 没有分享键），tpl.stats 的 col.coding = [team] 写成别的值后表格行仍按阵营染蓝 / 橙——多选参数按并集合并，没有“显式清空”",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "多选参数支持显式空集（[] 或 none）覆盖预设层，或给 ops.actions / col.coding 加 none 选项",
+   "resolvedBy": "M12a-07（ops.actions = [] 清空：「分享」去掉；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "calendar",
+   "what": "章节卡模板里两个主体不互相避让：七格日期贴在屏幕上方，居中日历牌的红顶条压在格子下缘",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "模板主体与 el.* 元素做避让（按包围盒下推，或改排在剩余区域中部）",
+   "resolvedBy": "el.clock.anchorSpace = container"
+  },
+  {
+   "screen": "allout",
+   "what": "ix.close 没有“无关闭控件”：自动消失的演出屏（总攻击收尾、日期过渡）也必须画一个右上 X / Esc 提示 / 返回箭头，这里只能退而用最小的 keyGlyph 药丸",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "ix.close 加 none（ix.dismiss = timed / tapAnywhere 时默认 none）",
+   "resolvedBy": "ix.close 派生 none（timed）"
+  },
+  {
+   "screen": "pause",
+   "what": "lay.arrangement = cascade 不按可用区域铺开：逐项只右移约 26px、行距 0.92 行高、字号从 2.4 倍递减到 1.05 倍，六项挤在数据区右上一小块，选中项的红色斜块压住下一项；P5 主菜单词沿对角线横贯右半屏、是全屏最大的字",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "cascade 按数据区的对角线均分步长（x / y 步长 = 区域 / 项数），字号阶梯下限可调（或 lay.cascadeSpread），选中块留出行距",
+   "resolvedBy": "M12b-22（lay.cascadeSpread = diagonal：菜单词沿对角线铺开右半屏）"
+  },
+  {
+   "screen": "results / allout / calendar",
+   "what": "vis.tilt 只转面板盒子：结算的表格行与奖励格、总攻击的立绘、日期格仍正放，行贴出斜面板的边；P5 是框、字、图整块一起转",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "vis.tilt 加作用范围（box / boxAndContent），模板容器在 boxAndContent 时把内容一起旋转",
+   "resolvedBy": "M12b-40（vis.tiltLayers = boxAndContent：结算白条、日期格随面板一起转）"
+  },
+  {
+   "screen": "allout",
+   "what": "全屏模板只有主体（没有数据区）时 lay.focalSide 不生效：主体总占满整栏、立绘居中；总攻击收尾的角色应偏右、从右缘出血",
+   "severity": "low",
+   "kind": "layoutEngine",
+   "proposal": "只有主体时按 lay.focalSide 把主体放在一侧（left / right 贴边，可出血），与叠加容器的“主体站一侧贴底”同口径",
+   "resolvedBy": "M12b-64（只有主体时 lay.focalSide = right 生效：立绘站到右侧；它被收尾卡盖住，见本轮写值建议）"
+  }
+ ],
+ "scores": {
+  "dialogue": [
+   {
+    "layout": 2,
+    "elements": 3,
+    "palette": 6,
+    "type": 3,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 3,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 7,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 6,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "battle": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "allout": [
+   {
+    "layout": 2,
+    "elements": 2,
+    "palette": 3,
+    "type": 3,
+    "shape": 2,
+    "density": 3,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 3,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "pause": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 7,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 7,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 7,
+    "shape": 7,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "results": [
+   {
+    "layout": 1,
+    "elements": 2,
+    "palette": 5,
+    "type": 2,
+    "shape": 3,
+    "density": 1,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 6,
+    "type": 3,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 3,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 7,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "calendar": [
+   {
+    "layout": 2,
+    "elements": 3,
+    "palette": 6,
+    "type": 3,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 6,
+    "type": 3,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "dialogue": [
+   "lay.container = tray 把所有元素都按托盘锚点排：日历牌（scale 1.5 × 电视字号）跑到画面左下、压在对话框上，参考里它在整屏左上角",
+   "对话框是整宽托盘 + 波浪花边（vis.edge = ornate），参考是约半屏宽的倾斜黑框、白描边、直边",
+   "多出参考里没有的选项气泡（el.choices = bubbles）、红色胶囊\"确定\"按钮、整排\"自动 / 快进 / 记录 / 存档\"红胶囊（ix.skip 画法），参考右下只有一列小号 FFWD / Auto / Log 按键提示",
+   "按键图例横排在托盘中部，参考是右下竖列",
+   "字号整体过大（电视 26px 基准 + typ.scale 1.8），一屏塞不下",
+   "左下说话人半身立绘没有（只露出\"（需素材）\"灰盒字）"
+  ],
+  "battle": [
+   "队伍画成右缘一竖列大圆头像（el.party = portraits 不管 arrangement），参考是右下一横排四人",
+   "多出参考里没有的四格技能栏（el.abilities）和顶部红色锁定准星 + 小血条（el.threat = lockOn）",
+   "技能名横幅占了上方六成宽、灰蓝底，参考是左上一条短小的黑底红描边斜条",
+   "队伍颜色是绿 / 红圆环，参考是青色 HP、粉色 SP 数字与细条"
+  ],
+  "allout": [
+   "整屏黑底 + 金色巴洛克角花（vis.motif = floral 的金饰），参考是粉红玫瑰与菱形格边框",
+   "金属渐变大字游戏名（el.title = artTitle）+ 英文副标题，参考只有一句黑色哥特体口号写在左上白色斜带上",
+   "多出立绘切入条（el.notify = cutIn：圆头像 + 喊招）、右上 X 关闭、模板名\"战斗大字提示\"被大标题压住",
+   "角色插画只有灰盒\"全身立绘（需素材）\""
+  ],
+  "pause": [
+   "cnt.subtype = menu 让列表回落成任务行（击败狼妖 / 收集灵草），不是主菜单词",
+   "typ.scale 2.1 + 按钮底框：行太高，只排下两条",
+   "按键图例与立绘标签在左下叠在一起",
+   "四角星芒角饰（vis.ornament 2）参考里没有；菜单没有对角错落"
+  ],
+  "results": [
+   "没有设 uip.screen：标题、金属大字游戏名、队伍头像竖列、统计行、奖励格、确定按钮、关闭 X 全部叠在一起",
+   "队伍头像和右上关闭键重叠，统计数字溢出面板右缘",
+   "立绘灰盒标签与\"继续\"提示压在左下"
+  ],
+  "calendar": [
+   "cnt.subtype = loading 但没设模板：标题写成\"读取\"，读取条数字 36,820、半透明大日历牌、通行证式轨道（×10…×60 奖励格）全部叠在一屏中间",
+   "日历牌 scale 2.5 盖住整屏，参考（凭记忆）是一条横向日期带 + 当天放大"
+  ]
+ },
+ "round2Diffs": {
+  "dialogue": [
+   "日历牌位置对了（左上），但画成规整日历页：红顶条“春·长风 3 年” + 黑底大数字 + “子时 ☁”，约占 21% 屏宽、33% 屏高，比参考大约一半；参考是无底板拼贴——大号描边月 / 日数字各自旋转、MONDAY 黑字白条、Morning 斜白条、太阳垫白星芒",
+   "对话框是一条半透明黑（在亮场景上显灰）单行字幕条，居中、约 2/3 屏宽，落在屏高 64%–73%（bc 锚点下方还空着约 27%）；参考是偏右下的倾斜黑色多边形（白粗描边，x 约 27%–80%、y 约 70%–97%），三行正文左对齐",
+   "没有名签（参考：框左上白色斜签，黑字、首字母反白方块）与锯齿闪电尾巴",
+   "左侧说话人半身立绘没有（overlay 下连灰盒都不画）",
+   "右下按键提示的位置、竖列、尺度都对了，但是 4 条战斗动作（拾取 / 剑气 / 选敌 / 背包），参考是 3 条对话控制（FFWD / Auto / Log）",
+   "所有块都正放，没有倾斜、旋转与贴纸边；正文粗无衬线白字与参考一致"
+  ],
+  "battle": [
+   "队伍条位置、人数、横排都对了（右下四人，约 40% 屏宽），但每人是等宽正放、互相留缝的黑底白边竖卡 + 灰色圆头像 + 名字 + 一根绿 / 红血条；参考没有卡框，是黑色尖碎片 + 白描黑剪影头像，互相交叠略成阶梯",
+   "没有数值：参考每人斜排青色 HP / 粉色 SP 斜体大数字 + 两根同色细斜条，当前角色最大并带 HP / SP 字样",
+   "技能名横幅位置对（左上、短条），但是正放的半透明灰蓝底 + 上下红细线、字偏小；参考是黑底红描边的斜条，白色粗体字",
+   "横幅文字是“发现 新区域：落霞峰”（通知内容），不是技能名"
+  ],
+  "allout": [
+   "整屏红底网点面板 + 细白边框，红色调与网点接近参考的粉红网点底；但参考是角色漫画插画出血 + 玫瑰 / 菱形格 / 编织纹主题花边框，粉 / 红 / 黑 / 墨绿 / 蓝多色",
+   "左上口号带位置对，但画成白色斜平行四边形 + 白字黑描边的模板名“战斗大字提示”（几乎读不出）；参考是转约 -25° 的黑色卷轴形飘带，白 / 浅粉哥特黑体两行口号、粉色内描边（第 1 轮把它记成了白带，配方里 col.accent = 白 因此选反了，留到下一轮改）",
+   "居中白色半透明立绘灰盒，头和身体各画了两遍错开，“全身立绘（需素材）”标签叠了两层；参考角色偏右、从右缘出血",
+   "右上多一个 Esc 返回药丸（自动消失的演出屏不该有关闭控件）"
+  ],
+  "pause": [
+   "（凭记忆）构图“左主角、右菜单、右下按键图例”大体对，不再叠在一起；但菜单是整齐竖列、每行垫深灰底，选中行红底整行 + 白内框；记忆中是对角线错落、逐词旋转的大号混排字，选中词垫红色多边形",
+   "菜单词字号小（与按键图例接近），记忆中菜单词是全屏最大的元素",
+   "菜单项是标题屏选项（继续游戏 / 新游戏 / 读取存档 / 设置 / 制作人员 / 退出），不是局内主菜单（技能 / 物品 / 装备 / 人格面具 / 状态 / 协力者 / 系统）",
+   "左侧红色立绘灰盒头身画了两遍、标签叠两层；记忆中是黑白主角姿势像",
+   "背景只有纯黑 + 白细框，缺红黑图形碎片"
+  ],
+  "results": [
+   "（凭记忆）不再叠成一团：左大字“通关”、右对比表、右下奖励格、底部“继续”提示都排开了；但这是竞技计分板结构（击杀 / 死亡 / 复活 / 输出），记忆中 P5 是倾斜白条列出 EXP / 金钱 / 获得物、队员头像 + 经验条 + LEVEL UP 章、背景是最后出手的角色",
+   "右下多一个“分享”按钮（ops.actions = [] 清不掉）",
+   "奖励格是带绿 / 紫 / 橙稀有度侧条的方格，记忆中是斜白条文字列表",
+   "标题条“结算”是正放粗黑体，所有块都正放"
+  ],
+  "calendar": [
+   "（凭记忆）不再叠成一团，但七格是签到式“第 N 天”卡（前三格打勾 + 金币 / 星星奖励图标），不是日期 / 星期 / 天气",
+   "七格贴在屏幕上方，居中日历牌的红顶条压在格子下缘；记忆中日期带横贯屏幕中部，当天格放大、已过的日子划掉",
+   "左上标题条写着模板名“章节标题卡”，记忆中没有标题条；右上 Esc 返回药丸多余（自动消失的过场）",
+   "日历牌是规整方块，缺描边大数字的拼贴"
+  ]
+ },
+ "round3Diffs": {
+  "dialogue": [
+   "对白框已是实心黑底 + 白描边、随手倾斜、落在底部；但仍是居中的单行字幕条（“名字：台词”），参考是偏右下的倾斜黑色多边形 + 三行正文 + 左上白色斜名签 + 锯齿尾巴",
+   "左侧说话人现在画出来了，但是一个红色半透明剪影灰盒（“半身立绘（需素材）”），参考是大号半身立绘",
+   "日历牌已倾斜、红顶条 + 勒索信混排字，但仍是带底板的规整日历页；参考是无底板的描边大数字拼贴、MONDAY / Morning 斜白条、太阳星芒",
+   "右下多出一排红色胶囊“自动 / 快进 / 记录 / 存档”（ix.skip = vnControls），上方的按键提示仍是 4 条战斗动作；参考只有一列 FFWD / Auto / Log"
+  ],
+  "battle": [
+   "技能名横幅已是实心黑底红描边斜条、位置对；文字仍是“发现 新区域：落霞峰”（通知内容），字偏小",
+   "队伍仍是四张等宽卡（现在倾斜、粉色描边）+ 灰圆头像 + 名字；参考是交叠的黑色尖碎片 + 白描黑剪影头像，没有彩色描边",
+   "每人一个白色 HP 数字 + 一根青色细条（数值与青色已出来）；参考是青色 HP / 粉色 SP 两个斜体大数字 + 两根同色细斜条，当前角色最大"
+  ],
+  "allout": [
+   "整块红底网点面板随手倾斜约 10°、背后整屏红，Esc 药丸与双重立绘都去掉了；但仍是一整块面板 + 居中立绘灰盒，参考是角色漫画插画出血 + 玫瑰 / 菱形格花边框，多色",
+   "口号带已是左上黑底浅粉字斜条，但写的是模板名“战斗大字提示”、一行小字；参考是转约 -25° 的黑色卷轴飘带、两行大号哥特体口号",
+   "立绘居中且正放（lay.focalSide = right 不生效，面板转了立绘不转）；参考角色偏右、从右缘出血"
+  ],
+  "pause": [
+   "（凭记忆）菜单词已对角错落、逐项转角、字号递减、选中项垫红色斜块；但六项挤在面板右上一小块（每项只右移约 26px、行距不到一行），选中红块压住“新游戏”，最后几项缩到图例大小；记忆中菜单词横贯右半屏、是全屏最大的字",
+   "菜单项仍是标题屏选项（继续游戏 / 新游戏…），不是局内主菜单",
+   "主角是红色单色剪影灰盒，记忆中是黑白姿势像；右上仍有“Esc 返回”药丸，右下图例是战斗动作",
+   "背景只有倾斜的黑面板 + 近黑底，缺红黑图形碎片"
+  ],
+  "results": [
+   "（凭记忆）仍是竞技计分板结构（击杀 / 死亡 / 复活 / 输出 + 红色进度条），不是倾斜白条列出 EXP / 金钱 / 获得物 + 队员经验条 + LEVEL UP 章",
+   "表格面板倾斜了，但表格行、奖励格仍正放，左侧头像贴出斜面板边",
+   "大字“通关”直接站在冻结的场景上（分栏只给数据画面板），比第二轮更像拼贴；但它是正放的白字黑描边，不是勒索信混排",
+   "右上仍有“Esc 返回”药丸，底部“继续”提示被面板压住一半；“分享”与稀有度条已去掉"
+  ],
+  "calendar": [
+   "（凭记忆）七格仍是签到式“第 N 天”卡（打勾 + 金币 / 星星），不是日期 / 星期 / 天气",
+   "日期格贴在面板顶上，第一格伸出倾斜面板的左上边；记忆中日期带横贯屏幕中部，当天格放大、已过的划掉",
+   "居中日历牌已是勒索信大数字 + 倾斜，但仍是带底板的规整日历页；页头与 Esc 已去掉"
+  ]
+ },
+ "round4Diffs": {
+  "dialogue": [
+   "说话人是一条从顶到底的红色半透明剪影灰盒（“半身立绘（需素材）”），参考左下是大号半身立绘",
+   "对白只有一行，框居中偏右、比参考大；参考三行正文、框偏右下",
+   "名签是框左上一小块白底黑字，参考是更大的倾斜白签、首字母反白",
+   "拼贴日历（描边大数字、AFTER SCHOOL 斜白条、星芒）、贴纸边多边形框、锯齿尾巴、右下快进 / 自动 / 记录竖列都已对上；星期写成方框里的“五”"
+  ],
+  "battle": [
+   "队伍条已是交叠的黑色尖碎片 + 白线剪影头像 + 青 HP / 粉 SP 双数字双细条、当前角色最大；但数字逐位垫勒索信色块（数字字形跟了展示字族），参考是干净的斜体描边数字",
+   "每块碎片下多写了角色名，当前角色没有 HP / SP 字样",
+   "技能名横幅仍写“发现 新区域：落霞峰”、字小，参考是“Riot Gun”这类技能名"
+  ],
+  "allout": [
+   "插画与主体都是灰盒：卡里是“插画（需素材）”，右侧全身立绘被收尾卡盖住只露出一个头；参考是出血的角色漫画插画",
+   "口号飘带在画面下中、一行无衬线白字（“第三卷 落霞”），参考在左上、约 -25° 的黑卷轴、两行大号哥特体口号",
+   "边框是细白双线 + 四角小花饰，参考是玫瑰 / 菱形格 / 编织纹的厚主题边框、多色",
+   "左上另有一条小黑斜签“长风 破阵!”，参考只有一条口号飘带"
+  ],
+  "pause": [
+   "（凭记忆）主角是红色单色剪影灰盒，记忆中是黑白主角姿势像",
+   "菜单词沿对角线铺开、勒索信混排、选中垫红块，但字号逐项递减、后几项与按键图例差不多大；记忆中每个词都很大、角度更夸张",
+   "背景是倾斜的近黑面板 + 白框（背后错位红块已有），缺红黑图形碎片",
+   "最后一项“设置”挤到按键图例行旁边"
+  ],
+  "results": [
+   "（凭记忆）已是倾斜白条列 EXP / 铜钱 / 获得物 + 底部队员卡、经验条、LEVEL UP 章；但白条只占面板上三分之一，中间大片空黑",
+   "白条里的名称是很小的字，只有右端数值大；记忆中名称与数值都是大号斜体",
+   "大字“通关”是正放的白字黑描边，不是勒索信混排；队员卡头像是圆形灰盒"
+  ],
+  "calendar": [
+   "（凭记忆）已是横向日期带（星期 + 天气，已过的划掉、当天红底放大）；但整条只占屏宽约三分之一，缩在一块大的倾斜黑面板中间",
+   "背景是带白框的近黑面板，记忆中日期带直接横贯红黑背景的中部",
+   "星期写成汉字数字，记忆中是英文缩写"
+  ]
+ },
+ "revisions": [
+  "整体：typ.baseSize 压到 15、typ.scale 1.8 → 1.5——电视 26px 基准在 928×522 画布上把所有元素放大一倍，是第 1 轮叠成一团的主因（另记一条缺口）",
+  "整体：vis.edge ornate → clean、vis.jitter 0.2 → 0（ornate 画成波浪花边、抖动画成手绘歪线，Persona 是干净的直边多边形）；vis.stroke double → solid 2.5px 白边（参考是单层粗白边）；去掉 vis.pattern halftone 与 vis.ornament 2（面板上满屏网点和四角星芒都不是这套 UI 的面板样式）；col.saturation 1.2 去掉",
+  "整体：ix.focus invert → scale（invert 是差值混合，把红色选中条反成青色；Persona 的选中是红底 + 放大）",
+  "dialogue：lay.container tray → overlay，元素改按整屏锚点排——日历牌回到左上（scale 1.3）、字幕框在底部居中（cmp.dialogBox = bar 让字幕画成黑底，scale 1.4）、按键提示改 list 竖列放右下（scale 0.85、ambient）；删掉参考里没有的 el.choices",
+  "battle：删掉参考里没有的 el.abilities 与 el.threat；el.party portraits → unitCards（右下一横排四张黑底白边卡，约占屏宽四成、高四分之一，与参考的四人剪影条同位同量）；技能名横幅缩到 0.55，留在左上；cnt.density 2 → 1",
+  "allout：保留 tpl.callout 但 flow.stacking = replace（不在下面先画 HUD 样本）；删掉 el.title = artTitle（金属大字）与 el.notify = cutIn；面板改红底（col.surface #c8102e）+ 0.35 网点，col.accent 改白让模板标题条成为左上白斜带、标题字 gothic；去掉金色角花（vis.ornament 0）；ix.close = keyGlyph 代替 X",
+  "pause：cnt.subtype menu → pause（列表回到主菜单词）；typ.scale 2.1 与 cmp.buttonBox true 去掉（六个菜单词都排得下，第一项红底）；按键图例仍在右下",
+  "results：补上 uip.screen = tpl.settle（第 1 轮没设模板），主体改为结果大字（cnt.focal = title）左、对比表右（st.statViz = inlineBar：每行一条红色进度条，近似队员经验条）、获得物右下；删掉 el.title 与 el.party（表格里已有队员行）；st.rarityCue = strip（去掉彩色稀有度整框），面板加极淡斜线；试过 tpl.stats（没有分享键）但它的 col.coding = team 清不掉、表格行被染成蓝 / 橙，所以留在 tpl.settle",
+  "calendar：补上 uip.screen = tpl.chapterCard（黑场、自动消失），主数据改 sequence + 7 列网格当一周日期带，日历牌 scale 2.5 → 1.2 居中，不再与读取条 / 奖励轨道叠在一起",
+  "gaps：第一条补充\"词表有 vis.skew / vis.tilt 但元素与模板面板不套变换\"；对话框、日历、队伍、总攻击、主菜单、日期带几条按现在的近似写法更新；新增：对话立绘在 overlay 模板里不画、tv 基准字号不按 1080p 换算、ix.close 缺 none",
+  "R3 前（M12a 之后）：dialogue 加 el.subtitle / el.clock / el.prompt 的 anchorSpace = screen（按整屏排，不挤进托盘）、对白框部件 dialog 的实心黑底 + 白描边（col.surface / vis.opacity / vis.stroke / vis.strokeColor@dialog）；battle 的技能名横幅补 col.surface@el.notify 黑 + vis.opacity@el.notify 1（实心黑底红描边）；allout / calendar 删掉显式的 ix.close keyGlyph（timed 派生 none，演出屏不画关闭控件）；allout 加 col.surface@title 黑 + col.text@title 浅粉（口号飘带黑底浅粉字，第二轮记的配色选反）；pause 加 lay.arrangement = cascade（对角错落、逐项转角的大号菜单词）；pause / calendar 的 col.surface2 #e60012 → 近黑（M12a-24 起 solid 背景读 col.surface2，整屏会变红；allout 保留红底）；calendar 加 el.clock.anchorSpace = container（日历牌避开日期格）；results 加 st.rarityCue [none]（奖励格不带稀有度条）。calendar / results 的页头已由模板预设去掉。",
+  "R4 前（M12b 之后）：base vis.tilt 6 → 4 + vis.tiltLayers = boxAndContent（框、字、图整块一起转，#0 / #33）、vis.stroke solid → sticker + strokeWidth 2.5 → 2 + strokeColor accent2 → custom（黑-白-黑贴纸边，#2）、vis.panelShape = randomQuad + shapeJitter 0.12 + vis.panelShape@el.party = shard（不规则四边形 / 尖碎片，#1）、typ.display.scope = [title, nameplate, menuItem]（勒索信只给标题、名签、菜单词，正文干净，#9）；dialogue cmp.dialogBox bar → polygon + cmp.dialogTail = zigzag（倾斜黑多边形框 + 锯齿尾巴，#4 / #11），去掉 vis.stroke@dialog / vis.strokeColor@dialog（框也走贴纸边），col.surface@name 白 + col.text@name 黑（白色斜名签黑字）、el.clock.form calendar → collage（无底拼贴日历，#5），ix.skip vnControls → none（去掉底部一排红胶囊，FFWD / Auto / Log 由 el.prompt 竖列承担）；battle el.party.form unitCards → shard + activeEmphasis = scale（交叠尖碎片 + 剪影头像 + 青 HP / 粉 SP 斜体数字，当前角色最大，#13 / #25）、cnt.characterRender = cutout（#24）；allout cnt.elements = [el.notify] + el.notify.form = [finisherCard]（整屏收尾卡 + 主题边框 + 斜飘带口号，#6），col.accent@el.notify 玫红（卡底不跟这屏的白强调色）、vis.tilt@el.notify = 0（飘带用默认 −25°）；pause lay.cascadeSpread = diagonal（菜单词沿对角线铺开、全屏最大，#32）、vis.depthColor = accent + depthOffset 12 + depthAngle 150（面板背后错位红块，#8）、ix.close keyGlyph → none；results cnt.subtype settle → rpgSettle（斜白条 EXP / 金钱 / 获得物 + 队员经验条 + LEVEL UP，#20）、同 pause 的红垫块、ix.close → none；calendar el.clock.form calendar → dateStrip（横贯中部的日期带，#21），cnt.dataShape sequence → none 并去掉 lay.arrangement / lay.columns / cnt.itemCount（不再画签到式「第 N 天」卡）。没写：battle 的 el.abilities = buttonCluster（参考截图是技能演出，没有指令簇）。"
+ ],
+ "notes": "界面本身就是演出：红黑白三色，每块都是各自旋转的不规则多边形加黑白贴纸边，标题、名签、菜单词用勒索信式混排字；左上手绘拼贴日历牌是常驻标识；对话框是倾斜黑块 + 锯齿尾巴指向立绘，右下竖排 FFWD / Auto / Log 按键提示；战斗里队伍是右下一排黑白剪影头像 + 青色 HP 粉色 SP 数字，技能名是红描边黑斜条；总攻击收尾整屏换成角色专属漫画插画卡。3D 场景是普通赛璐珞，个性几乎全部由 UI 承担。探索台画不出倾斜 / 旋转（vis.skew、vis.tilt 只在词表里），所以复刻里所有面板都是正放的。内容包按品类用 rpg（剑侠题材文字只作占位）。"
+}

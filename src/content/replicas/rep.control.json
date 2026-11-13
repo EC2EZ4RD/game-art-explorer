@@ -1,0 +1,978 @@
+{
+ "id": "rep.control",
+ "name": "CONTROL",
+ "card": "steam:870780",
+ "genre": "horror",
+ "family": "fam.swiss",
+ "pack": "horror",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "dungeon",
+  "values": {
+   "color.palette": "night",
+   "color.brightness": 0.55,
+   "color.saturation": 0.45,
+   "color.temperature": -0.25,
+   "color.contrast": 1.15,
+   "camera.angle": "low"
+  }
+ },
+ "base": {
+  "hud.style": "swiss",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#141414",
+  "col.surface2": "#2b2b2b",
+  "col.text": "#f2f2f2",
+  "col.accent": "#d8262e",
+  "col.accent2": "#f5d10f",
+  "col.focus": "#d4d4d4",
+  "col.border": "#5e5e5e",
+  "col.coding": [
+   "status"
+  ],
+  "rel.harmony": "contrast",
+  "vis.corner": "sharp",
+  "vis.fill": "solid",
+  "vis.opacity": 0.7,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1,
+  "vis.strokeSides": "topBottom",
+  "vis.strokeColor": "custom",
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "typ.body.family": "sans",
+  "typ.body.weight": "regular",
+  "typ.display.family": "condensed",
+  "typ.display.weight": "bold",
+  "typ.display.case": "upper",
+  "typ.display.tracking": 0.02,
+  "typ.numerals.family": "tabular",
+  "typ.legibility": "shadow",
+  "vis.iconStyle": "line",
+  "ast.iconSet": "font",
+  "lay.grid": "columns12",
+  "lay.grouping": "divider",
+  "ix.focus": "invert",
+  "ix.glyphs": "xbox",
+  "ix.glyphTint": "mono",
+  "mo.enter": "fade",
+  "mo.duration": 0.2,
+  "mo.easing": "easeOut",
+  "mo.textReveal": "instant",
+  "mo.juice": 0.2,
+  "typ.baseSize": 28,
+  "typ.scale": 1.4,
+  "st.newCue": "none",
+  "col.rarityScale": "metal"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/iig/img/control__control-health-bar.jpg",
+   "values": {
+    "uip.layout": "layout.horror",
+    "hud.style": "mono",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "rel.behind": "live",
+    "cnt.density": 1,
+    "vis.opacity": 0,
+    "typ.legibility": "shadow",
+    "typ.baseSize": 22,
+    "typ.body.weight": "bold",
+    "lay.safeMargin": 6,
+    "elx.scale": 1,
+    "cnt.elements": [
+     "el.objective",
+     "el.vitals"
+    ],
+    "el.objective.form": [
+     "text"
+    ],
+    "el.objective.screenAnchor": "tl",
+    "el.objective.visibility": "contextual",
+    "el.objective.priority": "primary",
+    "el.objective.marker": "diamondNested",
+    "vis.silhouette@el.objective": "diamond",
+    "col.accent@el.objective": "#f5d10f",
+    "col.quest": "#ffe14d",
+    "el.vitals.diegesis": "screen",
+    "el.vitals.attachTo": "none",
+    "cmp.gauge@el.vitals": "bar",
+    "el.vitals.count": 1,
+    "el.vitals.screenAnchor": "bl",
+    "el.vitals.scale": 0.55,
+    "el.vitals.valueLabel": "none",
+    "col.accent@el.vitals": "#14b4c8",
+    "mo.valueChange@el.vitals": "smooth",
+    "el.vitals.labels": "icon",
+    "el.vitals.rowIcons": [
+     "plus"
+    ],
+    "el.vitals.thickness": 2.5,
+    "col.trackStroke@el.vitals": "none",
+    "col.track@el.vitals": "#00000000"
+   }
+  },
+  {
+   "key": "inventory",
+   "ref": "qa/refs-cache/iig/img/control__control-select-weapon-mods.jpg",
+   "values": {
+    "uip.screen": "tpl.inventory",
+    "cnt.screen": "screen.inventory",
+    "cnt.subtype": "bag",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "frozen",
+    "rel.dim": 0.45,
+    "rel.sceneTone": "desaturate",
+    "elx.scale": 0.6,
+    "lay.composition": "single",
+    "lay.nav": "breadcrumb",
+    "cmp.tab": "text",
+    "lay.pinned": "pinTop",
+    "lay.arrangement": "grid",
+    "lay.columns": 6,
+    "cnt.itemCount": 30,
+    "cnt.dataShape": "collection",
+    "cnt.focal": "none",
+    "cmp.slot": "cell",
+    "vis.opacity": 0.45,
+    "vis.strokeSides": "all",
+    "vis.pattern": "diagStripes",
+    "vis.patternOpacity": 0.18,
+    "st.emptySlot": "pit",
+    "st.locked": "none",
+    "st.selected": "dashed",
+    "ix.focus": "invert",
+    "lay.overflow": "scrollV",
+    "lay.detail": "transient",
+    "lay.floatDock": "gridEdge",
+    "cmp.detailFields@tooltip": [
+     "name",
+     "type",
+     "desc",
+     "statCards",
+     "lockRow",
+     "warnRow"
+    ],
+    "cmp.listRow": [
+     "title",
+     "value",
+     "status"
+    ],
+    "st.delta": "plus",
+    "st.rarityCue": [
+     "none",
+     "roman"
+    ],
+    "vis.stroke@card": "dashed",
+    "hier.emphasis": [
+     "color",
+     "typeface"
+    ],
+    "hier.inline": "red",
+    "cnt.textLength": "short",
+    "vis.iconStyle": "line",
+    "cnt.elements": [
+     "el.resources",
+     "el.prompt"
+    ],
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "tr",
+    "el.prompt.form": [
+     "list"
+    ],
+    "el.prompt.screenAnchor": "br",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "back",
+    "flow.stacking": "replace",
+    "mo.enter": "fade",
+    "col.icon": "#f2f2f2",
+    "col.quest": "#f2f2f2",
+    "col.good": "#14b4c8",
+    "cmp.slotBadge": "none",
+    "cmp.tabIndicator": "weight",
+    "lay.cellAspect": 0.8,
+    "cnt.slotCount": 30,
+    "cnt.filledCount": 4,
+    "el.prompt.anchorSpace": "detail"
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "frozen",
+    "rel.dim": 0.9,
+    "rel.sceneTone": "none",
+    "vis.opacity": 0,
+    "elx.scale": 0.6,
+    "col.accent": "#f5d10f",
+    "col.quest": "#ffe14d",
+    "vis.mapStyle": "linePlan",
+    "vis.mapUnexplored": "outlineOnly",
+    "vis.mapFloors": "left",
+    "cnt.dataShape": "spatial",
+    "cmp.node": "pin",
+    "vis.silhouette@node": "diamond",
+    "lay.overflow": "pan",
+    "lay.panHint": "none",
+    "rel.semanticZoom": "labels",
+    "lay.nav": "tabsTop",
+    "cmp.tab": "text",
+    "cmp.tabIndicator": "underline",
+    "lay.detail": "none",
+    "typ.body.case": "upper",
+    "typ.body.tracking": 0.06,
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bc",
+    "ix.mode": "select",
+    "ix.confirm": "instant",
+    "ix.dismiss": "key",
+    "ix.close": "back",
+    "vis.mapLabels": "onMap",
+    "col.text@mapLabel": "#ffffff",
+    "vis.mapInk": "#e6e6e6",
+    "col.nodeDone": "#d4d4d4"
+   }
+  },
+  {
+   "key": "codex",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.codex",
+    "cnt.screen": "screen.codex",
+    "cnt.subtype": "collection",
+    "ast.container": "none",
+    "lay.container": "modal",
+    "lay.panelSize": 0.8,
+    "cmp.modal": "floating",
+    "rel.behind": "frozen",
+    "rel.dim": 0.85,
+    "rel.sceneTone": "none",
+    "vis.opacity": 0.35,
+    "elx.scale": 0.75,
+    "lay.nav": "tabsLeft",
+    "lay.navDepth": 1,
+    "cmp.tab": "text",
+    "lay.composition": "single",
+    "lay.arrangement": "column",
+    "lay.detail": "persistent",
+    "cmp.detailFields": [
+     "name",
+     "longText"
+    ],
+    "cnt.dataShape": "text",
+    "cnt.textLength": "long",
+    "cnt.focal": "none",
+    "cnt.tone": "narrative",
+    "hier.inlineMap": [
+     "redact"
+    ],
+    "hier.redactRatio": 0.12,
+    "lay.overflow": "scrollV",
+    "ix.focus": "invert",
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "br",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "key",
+    "ix.close": "back",
+    "cmp.tabIndicator": "weight"
+   }
+  },
+  {
+   "key": "chapter",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.chapterCard",
+    "cnt.screen": "screen.loading",
+    "cnt.subtype": "chapter",
+    "lay.container": "overlay",
+    "rel.behind": "live",
+    "vis.opacity": 0,
+    "vis.stroke": "none",
+    "lay.safeMargin": 2,
+    "cnt.elements": [
+     "el.title"
+    ],
+    "el.title.form": "titleCard",
+    "el.title.screenAnchor": "ml",
+    "el.title.scale": 2.5,
+    "el.title.size": 25,
+    "el.title.fit": "width",
+    "el.title.bleed": 0.1,
+    "typ.direction": "horizontal",
+    "typ.display.family": "sans",
+    "typ.display.weight": "black",
+    "typ.display.case": "upper",
+    "typ.display.tracking": -0.03,
+    "typ.scale": 2.2,
+    "typ.numbering": "arabic",
+    "typ.titleFx": "none",
+    "typ.legibility": "shadow",
+    "col.text": "#ffffff",
+    "cnt.textLength": "title",
+    "mo.enter": "cut",
+    "ix.mode": "readOnly",
+    "ix.dismiss": "timed",
+    "ix.blocking": "none"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "codex",
+   "what": "凭记忆：局里文件的被涂黑词（实心条盖住单词）是这款文件 UI 最有辨识度的文本处理；hier.inline 没有这种取值，正文只能是整块白字",
+   "severity": "high",
+   "proposal": "hier.inline 新增“涂黑 / 删密”取值：正文里按比例随机几处词换成实心条（条色取 col.text，可设覆盖比例）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-57（hier.inlineMap = [redact] + hier.redactRatio：正文里的涂黑条）"
+  },
+  {
+   "screen": "inventory",
+   "what": "6 列网格里只有 4 格装着改造，其余是空的排线格；模板按 cnt.itemCount 把每格都画满物品，没有“N 格里装了 M 件”，只能用 st.locked = dimmed 把第 6 格起的图标压暗冒充空格，渲染出来仍是 30 格满图标",
+   "severity": "high",
+   "proposal": "加 lay.slotCount（格子总数）或 cnt.fillRatio，超出物品数的格子按 st.emptySlot 画空格（排线格不画图标、不画数量）",
+   "kind": "missingParam",
+   "resolvedBy": "cnt.slotCount, cnt.filledCount, st.locked"
+  },
+  {
+   "screen": "hud",
+   "what": "血条填充色写死为危险红（e.bad），col.accent@el.vitals（青色 #14b4c8）不生效；参考的青色短条是 HUD 仅有的两个元素之一",
+   "severity": "high",
+   "proposal": "生命条颜色先读 col.accent@el.vitals，再回落到新的 col.good / col.bad 角色，最后才是 e.bad",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-01 / M12a-02 / M12a-12（生命条读 col.accent@el.vitals：青色短条；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "map",
+   "what": "凭记忆：地图是近黑底上的细白线楼层平面图（墙是线稿，不是实心块）；现有 vis.mapStyle 没有“单色线稿平面图”：schematic 烘成蓝图蓝底，chalk 是深灰绿底 + 白色实心墙块，只能借 chalk 近似",
+   "severity": "high",
+   "proposal": "vis.mapStyle 新增 linePlan（单色线稿：底取 col.surface、墙只描轮廓线取 col.text），或让 schematic 的底色 / 线色跟 col.surface / col.text 走",
+   "kind": "missingOption",
+   "resolvedBy": "vis.mapStyle = chalk（轮廓画风）, vis.mapInk"
+  },
+  {
+   "screen": "all",
+   "what": "按元素 / 组件的视觉覆盖键（col.accent@el.*、vis.silhouette@node、vis.opacity@slot、vis.stroke@card）能通过校验但渲染器不读，只能整屏改全局值（所以背包整屏强调色改白、地图整屏改黄，背包的红标题与青数值因此画不出）",
+   "severity": "medium",
+   "proposal": "makeCtx 的 accent 与 slot / drawNode / panel 的样式按 <参数>@<元素或组件> 先查覆盖再回全局（resolve.at 已有，接到 theme / slot / drawNode 上）",
+   "kind": "renderBug",
+   "partialBy": "M12a-01（vis.silhouette@node 菱形、col.icon / col.good 按角色取色已生效）；背包详情的红标题仍画不出（见 #11）"
+  },
+  {
+   "screen": "hud",
+   "what": "血条只能是“体力”文字标签 + 细条：标签固定是文字、关不掉，条高跟条长一起按 el.vitals.scale 缩（做不出参考那种短而粗的条，现在条高约屏高 0.6%，参考约 1.9%），底槽总是画出来",
+   "severity": "medium",
+   "proposal": "el.vitals 加 labelStyle（文字 / 图标 / 无，图标如 + 号）、条高与条长分开的尺寸、“无底槽”开关",
+   "kind": "missingParam",
+   "resolvedBy": "el.vitals.labels, el.vitals.thickness, col.trackStroke@el.vitals, col.track@el.vitals"
+  },
+  {
+   "screen": "chapter",
+   "what": "巨型全大写无衬线标题直接压在实时画面上，字高约屏高四分之一，有时出血到屏幕外被裁切；现在只能把 typ.baseSize 提到 26、el.title.scale 拉到上限 2.5，标题约屏高 17%，序号行（正文字档）跟着一起放大成第二行巨字，标题只横跨画面 12%–61%，也没有出血裁切",
+   "severity": "medium",
+   "proposal": "el.title 加绝对字号（占屏高百分比，标题与序号分开设）、“横贯画面”宽度适配（按画宽撑满）与“出血裁切”开关",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-55（el.title.size 25 + el.title.fit = width + el.title.bleed：横贯画面的巨字，序号回到小字）"
+  },
+  {
+   "screen": "codex",
+   "what": "凭记忆：文件页是“左侧分类 → 文件标题列表 → 右侧文件正文（顶部文件标题 / 编号）”三段；lay.detail = persistent 的详情栏永远画物品卡（名字、两根数值条、装入 / 丢弃按钮），右栏写不了长正文，只好用左页签当分类列 + 整块正文近似，丢了标题列表与文件标题，正文还只占阅读区上方三分之一",
+   "severity": "medium",
+   "proposal": "组合一个“文件阅读”部件：分类列 + 标题列表（选中反白）+ 正文栏（窄体大写文件标题 + 长正文铺满可滚动区）；或让 lay.detail 的内容跟 cnt.dataShape / cnt.textLength 走：text + long 时详情栏画标题 + 长正文、不画数值条与按钮",
+   "kind": "composite",
+   "partialBy": "M12b-14（lay.detail = persistent + cmp.detailFields = [name, longText]：右栏文件名 + 正文）；没有文件标题列表，右栏长文只剩一行"
+  },
+  {
+   "screen": "inventory",
+   "what": "左上是面包屑导航（← 返回键 + B 键 + “装配 / 武器改造”，上级灰、当前白）；lay.nav 没有面包屑，模板标题只能写一个词（“‹ 背包”）",
+   "severity": "medium",
+   "proposal": "lay.nav 新增 breadcrumb（返回箭头 + 按键图标 + 上级灰字 / 当前白字）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-16（lay.nav = breadcrumb：← B 背包 / 全部）"
+  },
+  {
+   "screen": "inventory",
+   "what": "网格分两段：上面一排已装配（一张占三列宽的武器形态卡 + 3 个改造槽），下面是 6 列库存；lay.pinned = pinTop 不进画法，网格也不支持跨列格子",
+   "severity": "medium",
+   "proposal": "网格支持跨列格子；lay.pinned = pinTop 画成单独一行（与下方网格留间距）并可设格子尺寸",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12b-10（lay.pinned = pinTop：置顶行第一格占三列画成横版瓷砖卡 + 3 个改造槽，下面 6 列库存；B7 快照核过）"
+  },
+  {
+   "screen": "inventory",
+   "what": "详情列是一个组合部件：红色窄体标题 + 灰色等级 + 说明 + 若干虚线框属性卡（属性名左、青色数值右、右上灰色稀有度字）+ 锁定行（锁图标 + Unlock by upgrading）+ 红色警示行，从屏高 25% 一直排到 85%、标题区不带框；transient 详情只是一张带框和排线、写名字和两行说明的小卡，persistent 又会画数值条和按钮并贴到最右",
+   "severity": "medium",
+   "proposal": "详情加“属性卡堆叠”画法：标题块无框，st.statViz = table 时左名右值、不画条，属性卡框读 vis.stroke@card（dashed），st.locked = lock 在详情里画锁 + 文字行；persistent 详情可设起始位置（紧跟网格）",
+   "kind": "composite",
+   "resolvedBy": "M12b-14（lay.floatDock = gridEdge + cmp.detailFields@tooltip：标题 / 类别 / 说明 / 虚线属性卡 / 锁定行 / 红色警示行，紧挨网格右缘）"
+  },
+  {
+   "screen": "inventory",
+   "what": "格子图标是白色线性图标，而详情标题（GRIP）与警示字是红色：模板里格子 / 资源 / 列表图标都取 col.accent 或物品自带色（闪电橙 / 选中蓝、金币金），标题取正文色，没法“图标白、标题红”；这一屏只好把强调色改成近白，红色标题因此画不出，资源图标仍是彩色",
+   "severity": "medium",
+   "proposal": "新增 col.icon（图标色角色，slot() / icon() / 资源图标默认用它；col.strategy = mono 时等于文字色，物品自带色只在 col.icon = item 时用）与 typ.display.color（标题色：text / accent / custom）",
+   "kind": "missingParam",
+   "partialBy": "M12a-03 / M12b-68（col.icon 白：格子与资源图标是白色线性图标）；详情标题仍是白字，参考红色"
+  },
+  {
+   "screen": "map",
+   "what": "凭记忆：多层楼叠在同一张图上、靠楼层切换来看（评测里地图难读的主因）；地图没有楼层 / 层级参数，标题下只能放物品分类页签（全部 / 物品 / 钥匙 / 文件）",
+   "severity": "medium",
+   "proposal": "地图加“楼层 / 层级切换”参数（左侧或顶部楼层列表，当前层白、其他层灰），地图页签内容跟 cnt.screen 走",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-25（vis.mapFloors = left：左侧楼层列 + 顶部楼层页签）"
+  },
+  {
+   "screen": "all",
+   "what": "按键提示图标：ix.glyphs = xbox 一律画彩色圆钮（A 绿 B 红 X 蓝 Y 黄），本作是单色白圈黑字 / 白描边圈；彩色圆钮在背包、地图、图鉴三屏都很显眼",
+   "severity": "medium",
+   "proposal": "ix.glyphs 旁加 ix.glyphTint（品牌色 / 单色 / 跟随文字色）",
+   "kind": "missingParam",
+   "resolvedBy": "M12b-59（ix.glyphTint = mono：单色白圈键位）"
+  },
+  {
+   "screen": "hud",
+   "what": "目标是两行：黄色窄体全大写标题 + 白色粗体说明，标题前有“描边菱形套实心小菱形”图标；el.objective 的 text 画法不画前缀图标，标题色写死 #e3b341（偏橙，不是本作的亮黄），vis.silhouette@el.objective / col.accent@el.objective 都不进画法",
+   "severity": "low",
+   "proposal": "el.objective 的 text 画法加前缀标记（读 vis.silhouette@el.objective，菱形可选“描边套实心”），标题色读 col.accent@el.objective",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-28（el.objective.marker = diamondNested + col.quest 亮黄）"
+  },
+  {
+   "screen": "hud",
+   "what": "示例内容：目标标题是分类字“线索”、说明是一行短字“恢复电力”；参考标题是任务名、说明是两行长句",
+   "severity": "low",
+   "proposal": "示例包里 el.objective 的标题改写任务名、说明给一句能折成两行的长句",
+   "kind": "content",
+   "resolvedBy": "M12b-61（目标标题是任务名、说明是两行长句）"
+  },
+  {
+   "screen": "all",
+   "what": "格子与地图窗在 vis.corner = sharp 时仍是 6–8px 小圆角",
+   "severity": "low",
+   "proposal": "slot 与地图视窗的转角跟 vis.corner",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-09（格子与地图裁剪跟 vis.corner：sharp = 直角；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "页签总是画深色底块、选中项黑底（背包顶部页签、地图页签、图鉴左侧竖排页签都是），cmp.tabIndicator 不进画法；参考的排序行 / 分类列是纯文字，选中只靠变白变粗或反白条",
+   "severity": "low",
+   "proposal": "cmp.tabIndicator 生效并新增“仅字重 / 明度”取值；页签行前可挂一个按键图标（ORDER (Y)）",
+   "kind": "renderBug",
+   "resolvedBy": "cmp.tabIndicator"
+  },
+  {
+   "screen": "map",
+   "what": "地图左上的地名总是画成强调色实底胶囊（黄底白字几乎读不出）；参考是白色窄体大写扇区名直写",
+   "severity": "low",
+   "proposal": "地名牌读 cmp.plate（none = 直写文字，颜色取 col.text）",
+   "kind": "renderBug",
+   "resolvedBy": "vis.mapLabels, col.text@mapLabel"
+  },
+  {
+   "screen": "map",
+   "what": "已访问节点固定画绿色（pal.good），当前节点是水滴图钉；cmp.node 没有菱形，参考的任务目标是黄色菱形",
+   "severity": "low",
+   "proposal": "cmp.node 新增 diamond；已访问节点色读 col.accent2 / col.focus",
+   "kind": "missingOption",
+   "resolvedBy": "vis.silhouette@node, col.nodeDone"
+  },
+  {
+   "screen": "map",
+   "what": "整屏地图用的是 160px 的小地图烘焙图放大，墙块边缘明显发糊",
+   "severity": "low",
+   "proposal": "整屏地图按视窗尺寸（× devicePixelRatio）单独烘焙，或墙体改成矢量描线",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-66（整屏地图按视窗尺寸烘焙：墙线清晰）"
+  },
+  {
+   "screen": "inventory",
+   "what": "每个格子都画右下角数量（改造没有数量）",
+   "severity": "low",
+   "proposal": "slot 的数量角标加开关（st.qty 或跟 cnt.dataShape）",
+   "kind": "missingParam",
+   "resolvedBy": "cmp.slotBadge"
+  },
+  {
+   "screen": "inventory",
+   "what": "稀有度是格子右上角的细罗马数字竖线（I / II）加属性卡右上的文字“Common”；st.rarityCue 没有这种档位记号",
+   "severity": "low",
+   "proposal": "st.rarityCue 新增“罗马数字档位”（格子右上细字）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-01（st.rarityCue = roman：格子右上细罗马数字）"
+  },
+  {
+   "screen": "inventory",
+   "what": "格子是竖长的（约 115×145），模板格子固定正方形",
+   "severity": "low",
+   "proposal": "cmp.slot 加宽高比（lay.slotAspect）",
+   "kind": "missingParam",
+   "resolvedBy": "lay.cellAspect"
+  },
+  {
+   "screen": "inventory",
+   "what": "选中的已装配改造卡用虚线框；st.selected 没有虚线框取值（vis.stroke@card = dashed 也不进画法，见“按元素覆盖不生效”）",
+   "severity": "low",
+   "proposal": "st.selected 新增 dashed（虚线框）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-01（st.selected = dashed：已装配卡虚线框）"
+  },
+  {
+   "screen": "inventory",
+   "what": "正向数值（-6% 弹药消耗、+2 弹丸）是青色，模板的增量 / 好状态色写死为绿色 pal.good",
+   "severity": "low",
+   "proposal": "新增 col.good / col.bad 颜色角色（与 col.coding = status 联动）",
+   "kind": "missingParam",
+   "resolvedBy": "col.good"
+  },
+  {
+   "screen": "inventory",
+   "what": "网格的竖滚动条画在屏幕最右（约 97%）；参考的竖线紧贴网格右侧，同时当网格与详情的分隔线。按键提示（EQUIP / DECONSTRUCT）挂在详情栏右下，模板的 el.prompt 只能贴屏幕角",
+   "severity": "low",
+   "proposal": "滚动条跟随它滚动的容器（网格）右缘；el.prompt 可挂到详情栏（attachTo = detail）",
+   "kind": "layoutEngine",
+   "resolvedBy": "el.prompt.anchorSpace"
+  },
+  {
+   "screen": "inventory",
+   "what": "已装配的武器形态卡里是一把手枪的灰度渲染图（左上灰字“Grip”），格子图标库里没有这种大幅物品插图",
+   "severity": "low",
+   "proposal": "宽卡支持物品插图位（cnt.focal = item 或 ast.itemArt），示例包给几张武器灰度剪影",
+   "kind": "asset"
+  },
+  {
+   "screen": "all",
+   "what": "按键提示内容是通用操作（调查 / 手电 / 潜行 / 物品）；参考背包是 EQUIP / DECONSTRUCT，图鉴应是返回 / 翻页这类阅读操作",
+   "severity": "low",
+   "proposal": "示例包的按键提示按 cnt.screen / ix.mode 给不同的操作词",
+   "kind": "content",
+   "partialBy": "M12b-61（图鉴 上一页 / 下一页 / 返回、地图 设置路线 / 选择 / 远近 / 返回、背包 确定 / 返回 / 切换 / 排序）；背包不是 EQUIP / DECONSTRUCT"
+  },
+  {
+   "screen": "codex",
+   "what": "中文换行没有避头尾：逗号被排到行首（“，拍两下就好”）",
+   "severity": "low",
+   "proposal": "文本折行加 CJK 避头尾规则（行首不放 ，。、；：？！ 等）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-33（wrapLines 的 CJK 避头尾；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "inventory",
+   "what": "lay.detail = transient 的浮动详情现在贴到屏幕右上角（约 82%–97% 宽），与网格隔着半屏；参考的详情列紧挨网格右侧的分隔线，从屏高约 25% 排到 85%",
+   "severity": "medium",
+   "proposal": "浮动详情默认停靠在网格（数据区）右缘之外紧挨着，顶边与焦点格或网格顶对齐；让出的宽（reservedRight）从网格右缘量起而不是从屏幕右缘",
+   "kind": "layoutEngine",
+   "resolvedBy": "M12b-14（lay.floatDock = gridEdge：详情列紧挨网格右缘）"
+  },
+  {
+   "screen": "map",
+   "what": "vis.silhouette@node = diamond 对 cmp.node = pin 不生效：世界地图节点仍是水滴图钉；col.nodeDone 生效后当前目标也不再有黄色，所有节点同为白色",
+   "severity": "low",
+   "proposal": "pin 节点读 vis.silhouette@node（diamond = 菱形标记），当前 / 目标节点用 col.quest 或 col.accent",
+   "kind": "renderBug",
+   "resolvedBy": "M12b-66（pin 节点读 vis.silhouette@node：白色菱形，当前目标亮黄菱形）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.vitals.labels = icon 的行图标按行语义写死（生命 = 心形），参考是 + 号，没法换",
+   "severity": "low",
+   "proposal": "el.vitals.labels = icon 时可逐行指定图标（如 el.vitals.rowIcons：heart / plus / shield / bolt……）",
+   "kind": "missingOption",
+   "resolvedBy": "M12b-68（el.vitals.rowIcons = [plus]：血条前是 + 号）"
+  },
+  {
+   "screen": "map",
+   "what": "vis.mapStyle = linePlan 把每个墙格单独描一圈框，墙画成一串串小方格（梯子状），不是连续的细白轮廓线；整屏读起来像格子图而不是楼层平面图",
+   "severity": "medium",
+   "proposal": "linePlan 先把相邻墙格合并成区域，只描区域的外轮廓（并集描边 / marching squares），线宽按 1–2px@1080p",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C4（linePlan 的房间 = 建筑占地按格心取的并集轮廓，一条路径一次描边：墙块拼的墙是一条连续的双线、内侧与地面边重合；线宽 1.25 烘焙像素，约 1–2 px@1080p。浏览器目检待 lead）"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 2,
+    "elements": 3,
+    "palette": 4,
+    "type": 2,
+    "shape": 5,
+    "density": 4,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 8,
+    "elements": 5,
+    "palette": 5,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 8,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 7,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 8,
+    "palette": 8,
+    "type": 6,
+    "shape": 7,
+    "density": 8,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "inventory": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 4,
+    "type": 3,
+    "shape": 5,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 6,
+    "type": 5,
+    "shape": 7,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 3,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 3,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "codex": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "chapter": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 4,
+    "density": 6,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 6,
+    "overall": 6,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 6,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 7,
+    "palette": 7,
+    "type": 7,
+    "shape": 7,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "左上的目标文字没画出来：el.objective.form 第一项是 marker，画成了画面中央目标头顶的黄色实心菱形 + “12 m”距离；参考是左上黄色窄体大写标题 + 白色粗体说明两行",
+   "血条跑到画面中央：layout.horror 预设的 el.vitals.diegesis = diegetic / attachTo = player 没被覆盖，血条挂在角色头顶；参考在左下角",
+   "血条带“体力”文字标签、亮红填充、浅色实心底槽；参考是前面一个 + 号、青色实心短条、看不出底槽",
+   "字与条偏大（基准字号 20 → 版面缩放约 1.46）",
+   "画面是正午蓝天下的亮色迷宫，参考是阴暗的青灰色粗野主义大厅（只比明暗：亮得多）"
+  ],
+  "inventory": [
+   "整屏画了一块带斜线排线的大面板（含上下外框线）；参考没有任何外框，菜单直接压在压暗的冻结场景上",
+   "左上是大号粗体“背包”标题 + 返回按钮，字高约为参考面包屑的 3 倍；参考是小字面包屑“← B 装配 / 武器改造”",
+   "格子约 72px、24 格全部装满，图标是红色实心符号（跟随 col.accent），带 SR / SSR 彩色字母、NEW 红角标、锁定 ✕ 与数量；参考 4 个白色线性图标、其余是空的排线格，右上只有细小罗马数字档位",
+   "详情常驻在最右一栏（约 56%–96%），含红色数值条与“+12”、底部两个按钮；参考详情在中间一栏（约 44%–65%）：红色窄体标题 + 灰色副标题 + 说明 + 虚线框改造卡",
+   "按键列表（A 调查 / X 手电……）放在右中，直接压在详情文字上；参考的 EQUIP / DECONSTRUCT 在详情右下、互不遮挡",
+   "页签是带底块的“全部 / 物品 / 钥匙 / 文件”，选中项黑底；参考是“ORDER (Y) New Rarity Type”一行纯文字",
+   "参考左上还有已装配一行（宽武器卡 + 3 个改造槽），这里没有"
+  ],
+  "map": [
+   "地图是蓝底浅蓝方块的蓝图风（vis.mapStyle = schematic 的烘焙色）；凭记忆参考是黑 / 深灰底上的灰白楼层平面线稿",
+   "地图外有整屏面板的上下两条横线，左上地名是红色胶囊“黑水”，右上是红色“Esc 返回”胶囊；参考没有面板与胶囊，扇区名是白色窄体大写字",
+   "节点是绿色 / 红色图钉；参考的任务目标是黄色菱形",
+   "地图中间浮着一张“电池”物品详情（lay.detail = transient 写的是物品），右下多了“确定”按钮"
+  ],
+  "codex": [
+   "外面套了整屏深色面板（带上下横线）",
+   "右侧常驻详情写的是物品：名字 + 说明 + 两根红色数值条 + 装入 / 丢弃按钮，与文件阅读无关",
+   "底部按键图例与详情的按钮重叠（“装入”压在 A 图标上）",
+   "没有文件分类 / 标题列表；凭记忆参考是左侧分类与标题列表 + 右侧文件正文（带涂黑条），正文占画面大块"
+  ],
+  "chapter": [
+   "标题“地下病房”只有约屏高 9%；参考的任务标题卡字高约屏高四分之一、几乎横贯画面",
+   "titleCard 的透明面板仍画了全宽的上下两条细线（底稿的 vis.stroke = solid + topBottom）；参考没有任何线",
+   "整块字偏小、偏左上，压不住画面"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "位置已对上（目标左 4.6% / 上 9%，血条左 4.6% / 下 89%），剩下的是画法：目标标题前没有“描边菱形套实心小菱形”图标，标题色是偏橙的 #e3b341，参考是亮黄 #f5d10f",
+   "目标两行的内容不对：标题是分类字“线索”、说明只有一行短字“恢复电力”；参考标题是任务名（窄体全大写），说明是两行粗体白字长句",
+   "血条仍是“体力”文字标签 + 红色填充 + 暗色底槽的细条（条高约屏高 0.6%）；参考是 + 号图标 + 青色实心短粗条（约屏高 1.9%，看不出底槽）"
+  ],
+  "inventory": [
+   "左上是“‹ 背包”（方框返回键 + 粗体白字），下面一排带深色底块的页签（全部 / 物品 / 钥匙 / 文件，选中黑底）；参考是小字面包屑“← B 装配 / 武器改造”和一行纯文字排序“ORDER (Y) New Rarity Type”",
+   "没有已装配一行（宽武器卡 + 改造槽），网格从标题下直接开始",
+   "30 格全部装满实心白图标（心、方块、星、信封、菱形），第 6 格起只是压暗；参考只有 4 格有白色线性图标，其余都是空排线格；格子是正方形且有 6px 小圆角，参考是竖长直角格（约 115×145）",
+   "每格右下都有数量、左侧有金 / 银稀有度细条；选中格里是蓝色闪电、其他格的闪电是橙色；参考选中格反白、图标深色线性，稀有度只是右上角细罗马数字",
+   "详情是一张带细框 + 排线的小卡（白色“电池” + 两行说明），只占屏高 19%–37%；参考是无框的红色窄体标题 + 灰色 LEVEL 1 + 说明 + 虚线框属性卡（左属性名、右青色数值）+ 两条锁定行 + 第二张卡 + 红色警示字，一直延伸到屏高 85%",
+   "资源图标是彩色（金币、橙色闪电），没有 Exit Menu；参考是白色单色图标 + 右上“Exit Menu”",
+   "按键提示是 4 个彩色 Xbox 圆钮竖排（调查 / 手电 / 潜行 / 物品）贴在最右下（约 85% / 80%–90%）；参考是单色白圈的 EQUIP / DECONSTRUCT 两项，紧挨详情栏右下（约 65% / 74%–78%）",
+   "竖滚动条在屏幕最右（约 97%）；参考的竖线紧贴网格右侧（约 43%），同时当网格与详情的分隔线",
+   "整屏没有红色和青色：标题红、增量青都画不出（这一屏强调色改成了近白）"
+  ],
+  "map": [
+   "地图仍是 chalk 风：深灰绿底 + 白色实心粗墙块，而且明显发糊（160px 的小地图烘焙图被放大到整屏）；凭记忆参考是近黑底上的细白线楼层平面图（线稿、不是实心块），线条清晰",
+   "左上地名是黄色实底胶囊“黑水”，白字压黄底几乎读不出；参考是白色窄体大写扇区名直接写在图上",
+   "节点是绿色水滴图钉（已访问）+ 黄色水滴图钉（当前）；参考的任务目标是黄色菱形，没有绿色",
+   "标题下是物品分类页签（全部 / 物品 / 钥匙 / 文件），与地图无关，且带深色底块；参考没有这排页签（或是楼层切换）",
+   "地图窗是带约 8px 圆角的嵌入面板，四周留黑边；参考地图铺满画面、无框",
+   "底部图例是彩色 Xbox 圆钮的通用操作（调查 / 手电 / 潜行 / 物品），不是地图图例；没有楼层切换"
+  ],
+  "codex": [
+   "正文没有涂黑条（这款文件 UI 最有辨识度的处理）",
+   "左侧分类列之后直接是正文：没有文件标题列表，正文上方也没有文件标题 / 编号；凭记忆参考是“分类 → 文件标题列表 → 文件正文”三段",
+   "左侧分类是深色底块的竖排页签，选中项黑底白字；凭记忆参考是纯文字列表、选中项反白条",
+   "标题“图鉴”是普通粗体 + 方框返回键，不是窄体全大写",
+   "正文是粗体白字、行距紧，整块挤在阅读区上方三分之一，下面大片空；中文换行把逗号放到了行首（“，拍两下就好”）",
+   "按键图例是彩色圆钮的通用操作（调查 / 手电 / 潜行 / 物品），不是“返回 / 翻页”这类阅读操作"
+  ],
+  "chapter": [
+   "两行都是巨字：序号“第三夜”约屏高 15%、标题“地下病房”约 17%；凭记忆参考是一行主标题、字高约屏高四分之一，序号很小或没有",
+   "标题只占画面宽度 12%–61%，没有横贯画面，也没有出血裁切",
+   "序号行是细字重（regular）、标题是 black，两行字重反差是参考没有的；整块偏左上（屏高 25%–68%）"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "目标标题前仍没有「描边菱形套实心小菱形」图标（标题色已是亮黄）",
+   "目标两行的内容不对：标题是分类字「线索」、说明只有一行「恢复电力」；参考标题是窄体全大写任务名，说明是两行粗体白字长句",
+   "血条已是青色短粗实心条、看不出底槽（对），但条前是心形小图标，参考是 + 号"
+  ],
+  "inventory": [
+   "详情卡跑到了屏幕右上角（约 82%–97% 宽），离开网格；参考详情列紧挨网格右侧的分隔线（约 44%–65%），从屏高 25% 排到 85%",
+   "详情仍是一张带框 + 排线、写名字和两行说明的小卡；参考是无框的红色窄体标题 + 灰色 LEVEL + 说明 + 虚线框属性卡（青色数值）+ 锁定行 + 红色警示字",
+   "左上是「‹ 背包」标题与四个分类页签（已是纯文字），参考是小字面包屑「← B 装配 / 武器改造」和一行排序；没有已装配一行（宽武器卡 + 改造槽）",
+   "按键提示仍是 4 个彩色 Xbox 圆钮竖排（调查 / 手电 / 潜行 / 物品）贴在最右下；参考是单色白圈的 EQUIP / DECONSTRUCT，紧挨详情栏",
+   "格子仍带左侧稀有度细条、近正方形；资源栏的闪电图标仍是橙色"
+  ],
+  "map": [
+   "地图几乎全黑：只有左上角一小块已探索区（白色轮廓墙，仍发糊）压在标题与页签下面，其余被 vis.mapUnexplored = dark 压成纯黑；参考（凭记忆）是铺满画面、线条清晰的细白线楼层平面图",
+   "节点是白色水滴图钉、没有当前目标的黄色；参考任务目标是黄色菱形",
+   "图上看不到白色扇区名",
+   "标题下仍是物品分类页签（已是纯文字 + 黄色下划线），底部图例是彩色 Xbox 圆钮的通用操作 + 「拖动查看」，没有楼层切换"
+  ],
+  "codex": [
+   "正文没有涂黑条（这款文件 UI 最有辨识度的处理）",
+   "左侧分类之后直接是正文：没有文件标题列表、正文上方也没有文件标题 / 编号；正文上方反而多了一行「物 / 钥 / 文」二级页签",
+   "正文整块挤在阅读区上方三分之一，下面大片空",
+   "标题「图鉴」是普通粗体 + 方框返回键，不是窄体全大写；按键图例是彩色圆钮的通用操作"
+  ],
+  "chapter": [
+   "标题比第 2 轮还小：「地下病房」约屏高 15%、只横跨约 8%–44% 宽；凭记忆参考是一行横贯画面、字高约屏高四分之一的巨字，有时出血裁切",
+   "序号「第三夜」仍是第二行巨字（约屏高 12%），参考序号很小或没有",
+   "序号细字重、标题 black，两行字重反差参考没有；整块偏左上"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "目标标题与说明是中文粗体，参考是窄体全大写英文",
+   "说明两行的行距比参考宽"
+  ],
+  "inventory": [
+   "详情标题「电池」是白字，参考是红色窄体；属性卡数值是黄色，参考是青色",
+   "置顶行第一格是青色实底卡 + 闪电图标，参考是灰色武器形态卡（手枪剪影）",
+   "详情列只排到屏高约一半，参考从 25% 排到 85%",
+   "按键提示（确定 / 返回 / 切换 / 排序）贴在屏幕右下，参考 EQUIP / DECONSTRUCT 紧挨详情栏；左上仍多一个「‹ 背包」标题",
+   "网格比参考大一圈、格子近方"
+  ],
+  "map": [
+   "（凭记忆）墙按格子逐个描框，画成一串串小方格（梯子状），原作是连续的细白线平面图",
+   "地图上有大块灰色雾斑",
+   "按键图例里仍有「拖动查看」"
+  ],
+  "codex": [
+   "（凭记忆）没有文件标题列表：正文在中栏，右栏只有文件名 + 一行；原作是 分类 → 标题列表 → 正文",
+   "正文仍挤在阅读区上方，下面大片空",
+   "页头「图鉴」是普通粗体 + 方框返回键，不是窄体全大写"
+  ],
+  "chapter": [
+   "（凭记忆）标题字高约屏高四成，比原作约四分之一更大；右端贴到屏边但没有出血裁切",
+   "序号「第三夜」是正文细字，与标题左对齐在左上"
+  ]
+ },
+ "revisions": [
+  "画面：art.values 加 night 色板、曝光 0.55、饱和 0.45、色温 -0.25、对比 1.15、低机位，把正午亮色迷宫压成参考那种阴暗冷色室内的明暗（lighting.* 不在复刻校验器的画面前缀里，没用）",
+  "整体：base 加 typ.baseSize 15、typ.scale 1.4、st.newCue = none、col.rarityScale = metal；菜单各屏加 elx.scale（模板构图器与屏内元素都读它）：背包 / 地图 0.6，格子约 56px、正文约 9px（522 高画面），对应参考 115px / 18px@1080",
+  "局内 HUD：el.objective.form 改成只有 text（marker 排第一会画成世界标记）→ 左上黄色窄体标题 + 白色粗体说明（typ.body.weight = bold、priority primary）；el.vitals 显式设 diegesis = screen、attachTo = none，覆盖 layout.horror 的“挂在角色身上”；el.vitals.scale 0.55 得到约 80px 的短条；typ.baseSize 12、lay.safeMargin 6、elx.scale 1，两者落在参考的左 4.6%、上 8% / 下 90% 处",
+  "局内 HUD：这一屏 hud.style 换成 mono（灰阶 + 一个强调色、几乎无容器，正是这款 HUD 的写法）：新皮肤的血条底槽是 15% 透明白，不再是 swiss 旧皮肤的 #eee 实色槽，接近参考看不出底槽的短条",
+  "背包：cmp.modal = floating 去掉整屏面板与外框线；lay.detail persistent → transient，详情卡落在网格右侧约 45%–62%，正好是参考中间详情栏的位置，同时去掉了红色数值条与装入 / 丢弃按钮；ix.mode = select + ix.confirm = instant 不画底部按钮；按键列表 el.prompt 从右中挪到右下，不再压详情",
+  "背包：col.accent 在这一屏改成近白 #e6e6e6——模板里格子图标、资源图标、选中描边都跟随强调色，参考是白色线性图标（代价：红色标题仍画不出，记 gap）；vis.strokeSides = all（#5e5e5e 细线）给每格画参考那种细网格线，vis.opacity 0.45 + 斜线排线 0.18 做半透明排线格；ix.focus = invert 让第一格反白",
+  "背包：st.locked = dimmed，第 6 格起图标压暗，只剩前 5 格亮，近似参考“4 格有改造、其余空格”（“空格占多数”本身表达不了，记 gap）；cnt.itemCount 30 = 5 行，网格块高度接近参考的已装配行 + 4 行；st.rarityCue letter → strip（不再出现 SR / SSR 抽卡字样，只剩格子左侧一条铜银金细条）",
+  "地图：cmp.modal = floating 去掉面板线；rel.sceneTone desaturate → none（去色罩是灰色，none 才是参考的近黑底）；vis.mapStyle schematic → chalk（schematic 烘出来是蓝图蓝，chalk 是深灰底 + 白墙块，最接近黑底灰白楼层图，记 gap）；col.accent 在这一屏改黄 #f5d10f，当前节点成黄色目标色；lay.detail none 去掉物品浮窗；ix.mode select + instant 去掉“确定”；ix.close keyGlyph → back，去掉红色“Esc 返回”胶囊",
+  "图鉴：lay.detail persistent → none（它只会画物品卡）；lay.nav = tabsLeft 当左侧文件分类列，正文 text + long 当文件阅读区；lay.container fullscreen → modal + lay.panelSize 0.8 + cmp.modal floating（不画框，正文栏收窄成阅读宽度）、elx.scale 0.75 放大正文；rel.sceneTone none 让背后近黑；ix.mode readOnly；按键图例放右下，不再与按钮相撞",
+  "章节卡：vis.stroke = none 去掉全宽细线；这一屏 typ.baseSize 26 + el.title.scale 2.5（上限）把标题推到约屏高 23%、贴左中，序号与标题成两行巨字，接近参考横贯画面的大字",
+  "gaps：删除“vis.pattern 只能全局”（去掉大面板后全局排线正好只落在格子与详情卡上）；改写章节巨字、血条、背包详情栏、地图示意图；新增图标色绑强调色 / 标题色、空格占多数、数量角标与格子圆角、手柄图标单色、地名胶囊与节点色、正向数值色、按元素颜色覆盖不生效、文件列表 + 正文",
+  "R3 前（M12a 之后）：hud 加 el.vitals.labels = icon（+ 号）、el.vitals.thickness 2.5（短粗条）、col.trackStroke@el.vitals = none + 透明 col.track@el.vitals（看不出底槽）；inventory 去掉这一屏的近白 col.accent，改写 col.icon / col.quest 白（白色线性图标与资源图标，强调色回到红），加 col.good 青（正向数值）、cmp.slotBadge = none、cmp.tabIndicator = weight、lay.cellAspect 0.8（竖长格）、cnt.slotCount 30 + cnt.filledCount 4 + st.locked = none（4 格有改造、其余空排线格，不再压暗冒充）、el.prompt.anchorSpace = detail + br（EQUIP / DECONSTRUCT 挂详情栏）；map 加 vis.mapLabels = onMap + col.text@mapLabel 白、vis.mapInk 近白（chalk 现在是轮廓线画风 = 黑底白线平面图）、col.nodeDone 灰白（不再画绿色已访问）；codex 加 cmp.tabIndicator = weight。chapter 的 el.title.scale 保持 2.5：titleCard 的框宽 = 360 × 缩放，与字数无关，降到 1.4 框能放下但标题字从现在的 90 降到 66 设计单位（约屏高 12%，参考约 25%），透明框出画不影响画面，留给缺口 #6。",
+  "R4 前（M12b 之后）：base 加 ix.glyphTint = mono（按键字形改白圈白字，不再是彩色 Xbox 圆钮）；hud：el.objective.marker = diamondNested（标题前描边菱形套实心小菱形）+ col.quest #ffe14d（本作亮黄）、el.vitals.rowIcons = [plus]（血条前是 + 号不是心形）；inventory：lay.nav = breadcrumb（← B 装配 / 武器改造）、st.rarityCue [strip] → [none, roman]（参考格子右上细罗马数字、没有左侧色条，建议里的 strip 不写）、st.selected = dashed（已装配的虚线框）、lay.floatDock = gridEdge + cmp.detailFields@tooltip = [name, type, desc, statCards, lockRow, warnRow]（详情列紧挨网格右缘：标题 / 等级 / 说明 / 虚线属性卡 / 锁定行 / 警示行）；map：vis.mapStyle chalk → linePlan（近黑底细白线平面图）、vis.mapUnexplored dark → outlineOnly（不再大片纯黑）、vis.mapFloors = left（楼层列）、lay.panHint = none（去掉拖动查看）、col.quest 亮黄（当前目标节点）；codex：hier.inlineMap = [redact] + hier.redactRatio 0.12（删密涂黑条）、lay.detail = persistent + cmp.detailFields = [name, longText]（右栏文件标题 + 长正文）、lay.navDepth 2 → 1（去掉正文上方的物 / 钥 / 文二级页签）；chapter：el.title.size 25 + el.title.fit = width + el.title.bleed 0.1（标题字高约屏高四分之一、横贯画面并出血裁切），去掉这一屏的 typ.baseSize 48（标题字号改由 el.title.size 定后，序号行回到正文小字，不再是第二行巨字）"
+ ],
+ "notes": "冷静的瑞士 / 粗野主义排版压在电影化写实画面上：HUD 只剩左上一行黄色窄体大写目标加白字说明、左下一条青色短血条，不画任何底。菜单没有外框，直接压在压暗去色的冻结场景上：半透明暗格配细斜线排线与细网格线、白色线性图标、反白选中、红色窄体大写标题、青绿色增量、锁图标；巨型无衬线标题直接压在场景上当章节卡。map / codex / chapter 三屏凭记忆编码。"
+}

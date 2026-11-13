@@ -1,0 +1,1466 @@
+{
+ "id": "rep.disco-elysium",
+ "name": "Disco Elysium",
+ "card": "steam:632470",
+ "genre": "narrative",
+ "family": "fam.if-column-dark-literary",
+ "pack": "puzzle",
+ "art": {
+  "recipe": "oil",
+  "scene": "harbor",
+  "values": {
+   "color.saturation": 0.72,
+   "color.brightness": 0.8
+  }
+ },
+ "base": {
+  "hud.style": "darkHairline",
+  "ctx.device": "pc",
+  "ctx.input": "kbm",
+  "ctx.timeModel": "realtime",
+  "rel.harmony": "contrast",
+  "rel.followPost": "crisp",
+  "col.source": "uiPalette",
+  "col.lightness": "dark",
+  "col.surface": "#0c0c0e",
+  "col.surface2": "#1d1e21",
+  "col.text": "#d3cec4",
+  "col.accent": "#d64a2a",
+  "col.accent2": "#2e8e95",
+  "col.focus": "#ffffff",
+  "col.border": "#8d9194",
+  "col.strategy": "neutralAccent",
+  "col.coding": [
+   "lineId",
+   "status"
+  ],
+  "vis.corner": "sharp",
+  "vis.fill": "gradient",
+  "vis.opacity": 0.9,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1,
+  "vis.strokeColor": "custom",
+  "vis.depth": "flat",
+  "vis.ornament": 1,
+  "vis.motif": "none",
+  "ast.frame": "procedural",
+  "ast.core": "procedural",
+  "ast.iconSet": "asset",
+  "vis.iconStyle": "painted",
+  "typ.body.family": "serif",
+  "typ.body.weight": "regular",
+  "typ.display.family": "condensed",
+  "typ.display.weight": "bold",
+  "typ.display.case": "upper",
+  "typ.display.tracking": 0.02,
+  "typ.numerals.family": "display",
+  "typ.legibility": "shadow",
+  "typ.baseSize": 28,
+  "hier.inline": "keyword",
+  "cmp.plate@title": "bleedLabel",
+  "cmp.tab": "text",
+  "cmp.tabIndicator": "filled",
+  "cmp.button": "text",
+  "flow.navPersistent": true,
+  "st.newCue": "redDot",
+  "mo.enter": "slide",
+  "mo.easing": "easeOut",
+  "mo.duration": 0.25,
+  "mo.textReveal": "lineByLine",
+  "mo.juice": 0.1,
+  "cmp.buttonBox@el.toolbar": false,
+  "col.surface@title": "#e8e8e4",
+  "col.text@title": "#111111",
+  "st.rarityCue": [
+   "none"
+  ],
+  "st.locked": "none",
+  "vis.edge@plate": "printWorn",
+  "ast.ornaments": [
+   "none",
+   "rulerRail"
+  ],
+  "ast.ornamentScope": "templatePanels",
+  "col.lineColors": [
+   "#4fb6d2",
+   "#7f5ccf",
+   "#c8405f",
+   "#e3b83a"
+  ]
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/life/img/steam_632470_0.jpg",
+   "values": {
+    "uip.layout": "layout.puzzle",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "cnt.density": 1,
+    "lay.safeMargin": 0,
+    "cnt.elements": [
+     "el.vitals",
+     "el.party",
+     "el.resources",
+     "el.clock",
+     "el.toolbar",
+     "el.interact",
+     "el.subtitle"
+    ],
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "segmented",
+    "el.vitals.screenAnchor": "bl",
+    "el.vitals.valueLabel": "current",
+    "el.vitals.valueLabelPos": "end",
+    "el.vitals.scale": 0.65,
+    "col.accent@el.vitals": "#e8752a",
+    "col.accent2@el.vitals": "#2fa3b4",
+    "el.party.form": "portraitCard",
+    "el.party.arrangement": "row",
+    "el.party.screenAnchor": "bl",
+    "el.party.scale": 0.65,
+    "el.party.priority": "primary",
+    "el.resources.form": "iconNumber",
+    "el.resources.screenAnchor": "br",
+    "el.resources.scale": 0.6,
+    "el.resources.priority": "ambient",
+    "el.clock.form": "clock",
+    "el.clock.screenAnchor": "br",
+    "el.clock.scale": 1.0,
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.arrangement": "row",
+    "el.toolbar.screenAnchor": "br",
+    "el.interact.form": [
+     "poiRing"
+    ],
+    "el.interact.diegesis": "spatial",
+    "el.interact.attachTo": "poi",
+    "el.interact.worldRender": "billboard",
+    "el.interact.visibility": "contextual",
+    "el.subtitle.diegesis": "spatial",
+    "el.subtitle.attachTo": "target",
+    "el.subtitle.scale": 0.85,
+    "cmp.dialogBox@el.subtitle": "bubble",
+    "typ.legibility@el.subtitle": "scrim",
+    "el.resources.count": 1,
+    "el.clock.stackDir": "rowBar",
+    "el.toolbar.stackDir": "rowBar",
+    "typ.numerals.weight": "light",
+    "el.party.halo": true,
+    "el.party.count": 2,
+    "el.vitals.attach": [
+     "iconValue"
+    ],
+    "el.vitals.dockTo": "el.party",
+    "el.vitals.dockSide": "above",
+    "el.vitals.dockSlot": 1
+   }
+  },
+  {
+   "key": "character",
+   "ref": "qa/refs-cache/r2/life/img/steam_632470_1.jpg",
+   "values": {
+    "uip.screen": "tpl.hero",
+    "cnt.screen": "screen.character",
+    "cnt.subtype": "skill",
+    "lay.container": "fullscreen",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "lay.composition": "single",
+    "cnt.focal": "none",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "grid",
+    "lay.columns": 7,
+    "cnt.itemCount": 28,
+    "cnt.density": 4,
+    "cmp.slot": "portraitCard",
+    "lay.grouping": "divider",
+    "lay.detail": "hero",
+    "lay.overflow": "single",
+    "lay.nav": "none",
+    "st.selected": "outline",
+    "st.statViz": "table",
+    "hier.emphasis": [
+     "size",
+     "typeface"
+    ],
+    "cnt.elements": [
+     "el.cta",
+     "el.toolbar"
+    ],
+    "el.cta.form": "wide",
+    "el.cta.screenAnchor": "bl",
+    "el.cta.scale": 0.7,
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.screenAnchor": "br",
+    "hier.cta": "color",
+    "col.semantic": "perAction",
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "flow.entry": "hotkey",
+    "flow.stacking": "replace",
+    "el.toolbar.anchorSpace": "screen",
+    "col.actionColors": [
+     "#d64a2a",
+     "#2e8e95"
+    ],
+    "ast.ornaments": [
+     "none",
+     "rulerRail",
+     "inkBacking"
+    ],
+    "el.toolbar.screenCode": "code"
+   }
+  },
+  {
+   "key": "inventory",
+   "ref": "qa/refs-cache/r2/life/img/steam_632470_2.jpg",
+   "values": {
+    "uip.screen": "tpl.loadout",
+    "cnt.screen": "screen.inventory",
+    "cnt.subtype": "loadout",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "frozen",
+    "rel.dim": 0.1,
+    "rel.sceneTone": [
+     "halftone"
+    ],
+    "lay.composition": "three",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "model3d",
+    "lay.focalSide": "center",
+    "lay.layering": "separate",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "flankColumns",
+    "lay.columns": 8,
+    "cnt.itemCount": 18,
+    "cmp.slot": "cell",
+    "st.emptySlot": "pit",
+    "st.selected": "fill",
+    "st.delta": "plus",
+    "st.statViz": "table",
+    "lay.detail": "persistent",
+    "lay.nav": "none",
+    "lay.overflow": "scrollV",
+    "cnt.density": 3,
+    "cnt.elements": [
+     "el.vitals",
+     "el.toolbar"
+    ],
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "segmented",
+    "el.vitals.valueLabel": "currentMax",
+    "el.vitals.valueLabelPos": "end",
+    "el.vitals.screenAnchor": "ml",
+    "el.vitals.scale": 0.8,
+    "col.accent@el.vitals": "#e8752a",
+    "col.accent2@el.vitals": "#2fa3b4",
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.screenAnchor": "br",
+    "ix.mode": "drag",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "flow.entry": "hotkey",
+    "el.toolbar.anchorSpace": "screen",
+    "cmp.leader": "straight",
+    "cmp.slotGroupTitle": "above",
+    "lay.sideRegion": "list",
+    "el.toolbar.screenCode": "code"
+   }
+  },
+  {
+   "key": "skilltree",
+   "ref": "qa/refs-cache/r2/life/img/steam_632470_3.jpg",
+   "values": {
+    "uip.screen": "tpl.skilltree",
+    "cnt.screen": "screen.skilltree",
+    "cnt.subtype": "skill",
+    "lay.container": "fullscreen",
+    "rel.behind": "frozen",
+    "rel.dim": 0.15,
+    "rel.sceneTone": "duotone",
+    "cnt.focal": "character",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "hexGrid",
+    "lay.columns": 3,
+    "cnt.itemCount": 12,
+    "lay.overflow": "single",
+    "cnt.density": 3,
+    "cmp.slot": "cell",
+    "vis.silhouette@slot": "diamond",
+    "st.emptySlot": "silhouette",
+    "st.selected": "outline",
+    "st.newCue": "none",
+    "lay.detail": "persistent",
+    "lay.nav": "none",
+    "cnt.elements": [
+     "el.toolbar"
+    ],
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.screenAnchor": "br",
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "flow.entry": "hotkey",
+    "el.toolbar.scale": 0.85,
+    "ix.close": "none",
+    "el.toolbar.anchorSpace": "screen",
+    "lay.composition": "three",
+    "lay.sideRegion": "detail",
+    "cmp.slotLabel": "plate",
+    "ast.ornaments": [
+     "none",
+     "rulerRail",
+     "registration"
+    ],
+    "el.toolbar.screenCode": "code"
+   }
+  },
+  {
+   "key": "dialogue",
+   "ref": "qa/refs-cache/r2/life/img/steam_632470_5.jpg",
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.screen": "screen.dialogue",
+    "cnt.subtype": "npc",
+    "lay.container": "drawer",
+    "lay.panelSize": 0.55,
+    "cmp.dialogBox": "transcript",
+    "cnt.dataShape": "text",
+    "cnt.textLength": "short",
+    "cnt.focal": "none",
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "vis.opacity": 0.92,
+    "cnt.tone": "narrative",
+    "cnt.density": 3,
+    "lay.overflow": "scrollV",
+    "mo.textReveal": "lineByLine",
+    "hier.inline": "keyword",
+    "hier.dimInactive": 0.4,
+    "cmp.plate@name": "none",
+    "typ.numbering": "arabic",
+    "ix.skip": "none",
+    "ix.continueCue": "none",
+    "ix.dismiss": "forced",
+    "ix.mode": "select",
+    "cnt.elements": [
+     "el.choices",
+     "el.vitals",
+     "el.party",
+     "el.toolbar",
+     "el.clock"
+    ],
+    "el.choices.form": "text",
+    "el.choices.arrangement": "column",
+    "el.choices.screenAnchor": "bl",
+    "col.accent@el.choices": "#ffffff",
+    "col.text@el.choices": "#d9502f",
+    "lay.titlePos": "none",
+    "el.choices.scale": 0.78,
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "segmented",
+    "el.vitals.labels": "none",
+    "el.vitals.screenAnchor": "bl",
+    "el.vitals.anchorSpace": "screen",
+    "el.vitals.scale": 0.65,
+    "col.accent@el.vitals": "#e8752a",
+    "col.accent2@el.vitals": "#2fa3b4",
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.screenAnchor": "br",
+    "el.toolbar.anchorSpace": "screen",
+    "el.toolbar.scale": 0.85,
+    "el.clock.form": "clock",
+    "el.clock.screenAnchor": "br",
+    "el.clock.anchorSpace": "screen",
+    "el.clock.stackDir": "row",
+    "lay.focalSide": "followLine",
+    "hier.inlineMap": [
+     "category",
+     "note"
+    ],
+    "ix.focus": [
+     "textColor"
+    ],
+    "typ.numerals.weight": "light",
+    "el.party.form": "portraitCard",
+    "el.party.count": 1,
+    "el.party.screenAnchor": "bl",
+    "el.party.anchorSpace": "screen",
+    "el.party.scale": 0.65,
+    "el.vitals.attach": [
+     "iconValue"
+    ],
+    "el.vitals.dockTo": "el.party",
+    "el.vitals.dockSide": "above"
+   }
+  },
+  {
+   "key": "check",
+   "ref": "qa/refs-cache/r2/life/img/steam_632470_4.jpg",
+   "values": {
+    "uip.screen": "tpl.npc",
+    "cnt.screen": "screen.dialogue",
+    "cnt.subtype": "npc",
+    "cnt.stage": "result",
+    "lay.container": "drawer",
+    "lay.panelSize": 0.55,
+    "cmp.dialogBox": "transcript",
+    "cnt.dataShape": "text",
+    "cnt.textLength": "short",
+    "cnt.focal": "none",
+    "rel.behind": "live",
+    "rel.dim": 0,
+    "vis.opacity": 0.92,
+    "lay.overflow": "scrollV",
+    "hier.inline": "keyword",
+    "typ.numbering": "arabic",
+    "ix.skip": "none",
+    "ix.continueCue": "none",
+    "ix.dismiss": "forced",
+    "ix.mode": "select",
+    "cnt.elements": [
+     "el.choices",
+     "el.notify",
+     "el.overlay",
+     "el.feedback"
+    ],
+    "el.choices.form": "text",
+    "el.choices.arrangement": "column",
+    "el.choices.screenAnchor": "bl",
+    "col.accent@el.choices": "#ffffff",
+    "col.text@el.choices": "#d9502f",
+    "el.notify.form": [
+     "toast"
+    ],
+    "el.notify.screenAnchor": "bc",
+    "el.notify.priority": "primary",
+    "col.accent@el.notify": "#2bb35a",
+    "vis.corner@el.notify": "round",
+    "vis.cornerSize@el.notify": 50,
+    "el.overlay.form": [
+     "holo"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "perspective",
+    "col.accent@el.overlay": "#39d2e6",
+    "col.coding": [
+     "lineId",
+     "status",
+     "resultTone"
+    ],
+    "el.notify.scale": 0.8,
+    "lay.titlePos": "none",
+    "el.choices.scale": 0.78,
+    "lay.focalSide": "followLine",
+    "hier.inlineMap": [
+     "category",
+     "note"
+    ],
+    "ix.focus": [
+     "textColor"
+    ],
+    "el.choices.labelStyle": "checkTag",
+    "el.notify.anchorSpace": "screen",
+    "el.feedback.form": [
+     "dice"
+    ],
+    "el.feedback.anchorSpace": "screen",
+    "el.feedback.dockTo": "el.notify",
+    "el.feedback.dockSide": "above"
+   }
+  },
+  {
+   "key": "journal",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.quest",
+    "cnt.screen": "screen.journal",
+    "cnt.subtype": "quest",
+    "lay.container": "fullscreen",
+    "rel.behind": "frozen",
+    "rel.dim": 0.6,
+    "lay.composition": "splitLR",
+    "cnt.focal": "none",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "column",
+    "lay.detail": "persistent",
+    "lay.overflow": "scrollV",
+    "lay.grouping": "divider",
+    "cmp.listRow": [
+     "title",
+     "time"
+    ],
+    "st.done": "strike",
+    "st.newCue": "redDot",
+    "col.semantic": "accentOnly",
+    "lay.nav": "tabsTop",
+    "cnt.textLength": "short",
+    "cnt.density": 3,
+    "vis.mapStyle": "painted",
+    "vis.mapUnexplored": "dark",
+    "cnt.elements": [
+     "el.toolbar"
+    ],
+    "el.toolbar.form": "microMenu",
+    "el.toolbar.screenAnchor": "br",
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "ix.close": "none",
+    "flow.entry": "hotkey",
+    "cnt.itemCount": 5,
+    "cmp.listRowBox": "plain",
+    "el.toolbar.anchorSpace": "screen",
+    "col.coding": [
+     "status"
+    ],
+    "col.good": "#7d7a74",
+    "cmp.tabIndicator": "weight",
+    "el.toolbar.screenCode": "code"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "all",
+   "what": "每块面板两侧是一根灰色金属导轨：尺子式刻度 + 细竖排小字编号（像胶片边 / 档案柜滑轨），面板上下沿还有带编号的金属横条；这是整套 UI 的骨架，参数里只有线，没有\"带刻度与编号的导轨\"",
+   "severity": "high",
+   "proposal": "ast.ornaments 加 rulerRail（刻度导轨 + 小字编号），或 vis.strokeSides 加 leftRight 并给描边加 ticks 图案",
+   "kind": "newDrawing",
+   "resolvedBy": "ast.ornaments = [none, rulerRail] + ast.ornamentScope = templatePanels（主面板 / 日志栏两侧灰色刻度导轨；比原作细，编号小字读不出）"
+  },
+  {
+   "screen": "character / inventory / skilltree / journal",
+   "what": "菜单模板的页头只画白字：cmp.plate@title = tab、col.surface@plate / col.text@plate 写进了配方，但模板页头不读它们（第二轮所有菜单屏的标题仍是面板内白字）",
+   "severity": "high",
+   "proposal": "模板页头读 cmp.plate@title 与 col.surface@plate / col.text@plate",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-23（模板页头读 cmp.plate@title 与 @plate 的颜色：白纸黑字标签；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "页头是一张白纸标签：近白底、黑色粗窄体全大写（CHARACTER SHEET / INVENTORY / THOUGHT CABINET），伸出面板、出血到屏幕左 / 右边缘，带轻微印刷磨损；cmp.plate 没有\"出血到屏幕边\"的形，材质也没有印刷磨损",
+   "severity": "high",
+   "proposal": "cmp.plate 加 bleedLabel（出血到屏幕边的纸标签，底 / 字取 col.surface@plate / col.text@plate）；材质加 printWorn",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.plate@title = bleedLabel + vis.edge@plate = printWorn（白纸黑字标签出血到屏幕左边、带印刷磨损）"
+  },
+  {
+   "screen": "all",
+   "what": "逐元素颜色覆盖（col.accent@el.vitals 橙、col.text@el.choices 红橙、col.accent@el.notify 绿、col.accent@el.overlay 青）能写进配方但画布上不生效：生命条是皮肤红、选项第一条强调色其余白字、检定胶囊是皮肤面板色；原作的红橙选项和属性色是辨识度来源",
+   "severity": "high",
+   "proposal": "makeCtx 按 <col.*>@el.<id> 生成逐元素色板（与 cmp.* 的逐元素覆盖同口径）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-01（逐元素颜色：生命橙 / 士气青、选项红橙、检定胶囊绿；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "all",
+   "what": "cmp.buttonBox@el.toolbar = false 不生效：渲染器没有任何地方读 cmp.buttonBox，工具栏仍是 5 个带框方钮；原作是无底框的细线图标",
+   "severity": "medium",
+   "proposal": "按钮 / 工具栏绘制读 cmp.buttonBox（false = 只画图标），支持 @el 覆盖",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-35（cmp.buttonBox@el.toolbar = false：无底细线图标；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "character / inventory / skilltree",
+   "what": "格子按样本稀有度画蓝 / 紫 / 橙边框，st.rarityCue 默认 border、没有\"无\"；原作的技能、物品、思想都没有稀有度色，饱和的蓝紫破坏了灰调 + 属性色的配色",
+   "severity": "medium",
+   "proposal": "st.rarityCue 加 none（不表达稀有度）",
+   "kind": "missingOption",
+   "resolvedBy": "st.rarityCue"
+  },
+  {
+   "screen": "all",
+   "what": "st.locked 没有\"无\"：样本把第 5 个以后的条目一律画成锁定，原作的技能表、背包都没有锁定项，只好用 grayscale 当最不违和的锁法",
+   "severity": "low",
+   "proposal": "st.locked 加 none（本屏没有锁定 / 未获得的条目）",
+   "kind": "missingOption",
+   "resolvedBy": "st.locked"
+  },
+  {
+   "screen": "character / inventory / skilltree / journal / dialogue / check",
+   "what": "关闭钮去不掉：菜单屏是右上红色\"ESC 返回\"药丸（keyGlyph），对话栏是 X；原作所有界面都没有关闭钮（靠工具栏 / 按键切换）",
+   "severity": "low",
+   "proposal": "ix.close 加 none",
+   "kind": "missingOption",
+   "resolvedBy": "ix.close"
+  },
+  {
+   "screen": "dialogue / check",
+   "what": "侧抽屉容器总会画页头（模板名\"NPC 对话\"）；原作的日志栏没有标题，最上面直接是滚动的文本",
+   "severity": "medium",
+   "proposal": "lay.header 开关（容器不画页头），或 cmp.dialogBox = fullPage 时默认无页头",
+   "kind": "missingParam",
+   "resolvedBy": "lay.titlePos"
+  },
+  {
+   "screen": "dialogue / check / character / inventory / skilltree",
+   "what": "界面模板里的信息元素只能排在容器里：原作打开日志 / 菜单时，左下主角肖像与生命 / 士气、右下时钟与工具栏仍留在屏幕角上，检定骰子画在栏外的场景里；我们只能删掉或挤进面板（全屏菜单的工具栏只能放进面板、贴着详情栏按钮）",
+   "severity": "high",
+   "proposal": "elx.anchorFrame（container | screen）：元素按整屏而不是容器排锚点；或 flow.chrome 加 hud（菜单 / 对话屏保留局内 HUD 的指定元素）",
+   "kind": "layoutEngine",
+   "resolvedBy": "elx.anchorSpace"
+  },
+  {
+   "screen": "hud / character / dialogue / check / inventory / skilltree",
+   "what": "油画肖像：HUD 队伍卡、技能卡、对话说话人小像、详情栏大图、物品大图都是同一种手绘油画；样本只有圆形剪影和物品图标",
+   "severity": "medium",
+   "proposal": "肖像 / 技能 / 思想图集素材（油画风），按 cnt.pack 提供",
+   "kind": "asset"
+  },
+  {
+   "screen": "hud",
+   "what": "队伍头像是方形油画肖像竖卡（无名字、无圈、无条），金的头像后有白色圆光环；el.party = unitCards 是圆形剪影 + 绿 / 红圈 + 名字 + 血条",
+   "severity": "medium",
+   "proposal": "el.party.form 加 portraitCard（方形肖像、无圈无名，可选背后光环）",
+   "kind": "newDrawing",
+   "resolvedBy": "el.party.form = portraitCard + el.party.halo（两张方形肖像卡、无名无圈无条，第一张背后光环；肖像本身是素材缺口 #10）"
+  },
+  {
+   "screen": "hud",
+   "what": "元素的条目数量不能定：队伍样本永远 4 人（原作 2 人），资源样本永远 3 种货币（原作 1 个金额）",
+   "severity": "low",
+   "proposal": "elx.count 子参数（el.party / el.resources 等通用），与 el.vitals.count 同口径",
+   "kind": "missingParam",
+   "resolvedBy": "el.party.count = 2、el.resources.count = 1"
+  },
+  {
+   "screen": "hud",
+   "what": "生命与士气是两个小色块图标（橙十字 / 青脑形），数值写在图标里，坐在第一张头像卡的上沿；我们是独立浮在卡片上方的两根带标签长条",
+   "severity": "medium",
+   "proposal": "el.vitals 加 iconValue 画法（图标内写数值）+ elx.attachTo = el.party（挂在另一元素的边上）",
+   "kind": "composite",
+   "resolvedBy": "el.vitals.attach = [iconValue] + elx.dockTo = el.party / above（生命 / 士气两枚写数小色块坐在第一张卡上沿）"
+  },
+  {
+   "screen": "hud",
+   "what": "同一元素的多根条只能共用一套强调色（生命橙、士气青只能借 col.accent / col.accent2）",
+   "severity": "low",
+   "proposal": "el.vitals.colors = [..]（逐条颜色）",
+   "kind": "missingParam",
+   "resolvedBy": "M12a-12（el.vitals.rowColors 逐行颜色；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "右下是一条暗色细条：细线图标 + 金额 + 大号细体时间 + 小字 Day N 同一行；同锚点元素只能上下叠（时钟面板在上、工具栏在下）",
+   "severity": "medium",
+   "proposal": "同锚点元素允许横排（elx.stack = row），并可共用一条底条",
+   "kind": "layoutEngine",
+   "resolvedBy": "elx.stackDir = rowBar"
+  },
+  {
+   "screen": "hud",
+   "what": "时间是大号细体数字；typ.numerals 只能选字族，不能单独定字重",
+   "severity": "low",
+   "proposal": "typ.numerals.weight",
+   "kind": "missingParam",
+   "resolvedBy": "typ.numerals.weight = light"
+  },
+  {
+   "screen": "hud",
+   "what": "打开某个菜单时工具栏最右端出现大号细体三字母代码（CHR / INV / THC）",
+   "severity": "low",
+   "proposal": "el.toolbar 加 screenCode 子选项（当前屏代码标签）",
+   "kind": "missingOption",
+   "resolvedBy": "el.toolbar.screenCode = code（CHR / INV / JRN；思想柜屏落回 INV，见新缺口）"
+  },
+  {
+   "screen": "hud",
+   "what": "字幕设为 cmp.dialogBox@el.subtitle = bubble + 挂在说话人上，渲染仍是顶部居中的无框白字长句；el.subtitle 只认 plain / boxed / speakerColor，不读 bubble，也不挂到说话人",
+   "severity": "medium",
+   "proposal": "el.subtitle 读 cmp.dialogBox = bubble，并在 elx.attachTo = target 时画在说话人头顶",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-15 / M12a-32（字幕读 cmp.dialogBox = bubble 并挂在说话人旁；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "可交互物件上是绿色小圆环标记（环 + 中心点），没有文字；el.interact 只有按键提示 / 括号 / 气泡 / 光标",
+   "severity": "low",
+   "proposal": "el.interact.form 加 poiRing",
+   "kind": "missingOption",
+   "resolvedBy": "el.interact.form = [poiRing]（绿色小圆环 + 中心点）"
+  },
+  {
+   "screen": "character",
+   "what": "技能是 4 行 × 6 张油画肖像竖卡：底部白色窄体名字、右下白方块黑数字的数值角标；cmp.slot = cell 是方格 + 物品图标 + 数量角标（tallCard 还没试，但也没有名字栏和数值方块）",
+   "severity": "high",
+   "proposal": "cmp.slot 加 portraitCard（竖卡 + 底部名字 + 角标数值方块），或给 tallCard 加这两项",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.slot = portraitCard（竖卡 + 底部名字 + 白方块数值；肖像本身是素材缺口 #10）"
+  },
+  {
+   "screen": "character",
+   "what": "名字上方一排菱形点（实心 = 已学、空心 = 上限），属性块和技能点也用同样的菱形点阵",
+   "severity": "medium",
+   "proposal": "cmp.gauge 加 diamondPips（菱形点阵，实心 / 空心区分当前与上限）",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "character",
+   "what": "每行最左是属性块：彩色水墨团（青 / 紫 / 品红 / 黄）上压一个超大白色数字、下面菱形点和属性名；同色在属性小方块和对话技能名上反复出现",
+   "severity": "medium",
+   "proposal": "ast.fx@el.* = ink 作数字底衬，按 col.coding = lineId 取色；或 st.statViz 加 inkNumber",
+   "kind": "newDrawing",
+   "resolvedBy": "ast.ornaments 加 inkBacking + col.lineColors（每行最左的彩色墨团 + 超大白数字）"
+  },
+  {
+   "screen": "character",
+   "what": "右栏详情是一套组合：OVERVIEW / INFO 小页签 + 技能大图 + 白底名签 + 说明 + TOTAL 数值方块 + 经验 / 技能点 + LEVEL UP / REVERT；常驻详情只有名字、描述、数值条、两个按钮",
+   "severity": "medium",
+   "proposal": "lay.detail 加 hero 版式（大图 + 名签 + 页签 + 大数值方块），复用 cmp.plate / st.statViz = bigNumber",
+   "kind": "composite",
+   "partialBy": "lay.detail = hero（页签 + 名字 + 等级 + TOTAL 大数值方块 + 升级）；没有技能大图与白底名签"
+  },
+  {
+   "screen": "character",
+   "what": "按钮各有色：ACCEPT 砖红实底 + ▼（贴底边窄条），LEVEL UP 青到橙横向渐变，REVERT 青色实底 + ×；同屏三种按钮配色无法由 col.semantic 一个取值给出",
+   "severity": "low",
+   "proposal": "col.semantic 加 perAction（逐按钮配色）或允许 col.gradient@button",
+   "kind": "missingOption",
+   "resolvedBy": "col.semantic = perAction, col.actionColors"
+  },
+  {
+   "screen": "inventory",
+   "what": "背后冻结的场景被盖上一层大网点（暖米黄 + 青双色半调网点）；rel.sceneTone = duotone 只有双色调色，画出来是整片红棕",
+   "severity": "medium",
+   "proposal": "rel.sceneTone 加 halftone（双色网点），或 rel.scenePattern 与 vis.pattern 共用图案表",
+   "kind": "missingOption",
+   "partialBy": "rel.sceneTone = [halftone]（背后铺了双色网点；点色跟强调色走，成了暗红灰，见新缺口）"
+  },
+  {
+   "screen": "inventory",
+   "what": "纸娃娃装备槽是角色两侧的两竖列小格，每格一个白色小槽名（HAT / JACKET / SHIRT…），细引线连到身体部位，同时右栏还有物品格；loadout 模板里装备槽与物品格二选一（第二轮设 collection + grid 后装备槽消失）",
+   "severity": "medium",
+   "proposal": "tpl.loadout 同时画装备槽与物品格；lay.arrangement 加 flankColumns（主体两侧对称两列）；vis.connector 允许连到主体部位（leaderLine）",
+   "kind": "composite",
+   "partialBy": "lay.arrangement = flankColumns + cmp.leader = straight + cmp.slotGroupTitle = above（带槽名的装备槽 + 引线连到身体）；槽组全挤在左栏、不在角色两侧，见新缺口"
+  },
+  {
+   "screen": "inventory",
+   "what": "右侧物品格里已装备的格子整格填橙色",
+   "severity": "low",
+   "proposal": "st.selected 加 fill（整格填强调色）",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "inventory / skilltree",
+   "what": "原作背包与思想柜都是三块：左栏属性（属性数字、HEALTH / MORALE、加成列表）、中间角色 + 装备槽 / 菱形槽、右栏（详情 + 物品格 / 思想列表）；一屏只能有一个主体 + 一个主数据区 + 常驻详情",
+   "severity": "medium",
+   "proposal": "lay.composition = three 时允许第三区（lay.sideRegion = list | elements | detail），或加 cnt.dataShape2（第二数据区）",
+   "kind": "layoutEngine",
+   "partialBy": "lay.composition = three + lay.sideRegion（背包分成三块、思想柜是格阵 / 角色 / 详情）；第三栏放出来的是任务列表，不是物品格 + 详情"
+  },
+  {
+   "screen": "inventory",
+   "what": "角色是红色剪影占位（\"3D 实时模型（需素材）\"）；原作是场景里的 3D 角色",
+   "severity": "low",
+   "proposal": "cnt.characterMedium = model3d 时渲染场景里的玩家模型（或接角色素材）",
+   "kind": "worldSpace"
+  },
+  {
+   "screen": "skilltree",
+   "what": "vis.silhouette@slot = diamond 不生效：思想槽仍画成方格",
+   "severity": "medium",
+   "proposal": "cmp.slot 的格子外形读 vis.silhouette@slot（diamond / hexagon / circle）",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-09（格子外形读 vis.silhouette@slot：菱形槽；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "lay.arrangement = hexGrid 的行距小于格高：第二行起格子上沿压住上一行的格子",
+   "severity": "medium",
+   "proposal": "hexGrid 按格子实际高度（和外形）算行距；菱形时按 0.5 格高错位",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C2 ⑧ + R4 审查修复 ⑲（有格下标牌的菱形 / 六角格按列咬合：相邻两列错开半个行距、行距按整格高 + 标牌，标牌不再被下一行压住；反推格高时扣掉末行标牌，12 格都画）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "每个菱形槽下压一块标签：已内化 = 橙底、研究中 = 米白底，空槽是模糊灰菱形；格子没有\"格下标牌\"",
+   "severity": "medium",
+   "proposal": "cmp.slot 加 labelPlate（格下标牌，按状态换底色）",
+   "kind": "newDrawing",
+   "resolvedBy": "cmp.slotLabel = plate（格下标牌：橙 = 已内化、米白 = 研究中）"
+  },
+  {
+   "screen": "skilltree",
+   "what": "中区四角有印刷套准用的 + 号",
+   "severity": "low",
+   "proposal": "vis.motif 加 registration（套准十字）",
+   "kind": "missingOption",
+   "resolvedBy": "ast.ornaments 加 registration（中区四角套准十字）"
+  },
+  {
+   "screen": "dialogue / check",
+   "what": "日志栏是累积的多段记录：每段以说话人开头（白色粗体全大写 + 破折号）、文本从选项往上堆满整栏；cmp.dialogBox = fullPage 只画一段旁白、下面留大片空白",
+   "severity": "high",
+   "proposal": "fullPage 画成 transcript：多段\"说话人 — 台词\"自下而上堆叠，说话人走 typ.display；样本内容包给出多说话人台词",
+   "kind": "newDrawing",
+   "resolvedBy": "cmp.dialogBox = transcript（多段「说话人 — 台词」累积日志）"
+  },
+  {
+   "screen": "dialogue / check",
+   "what": "技能发言时技能名按所属属性着色、后面跟灰色方括号的难度与结果（[Easy: Success]）；hier.inline = keyword 只有一种强调色，也没有方括号注记",
+   "severity": "high",
+   "proposal": "hier.inline 加 categoryColor（按 col.coding 的类别色给关键词着色），并加 bracketNote（灰色方括号注记）",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "dialogue / check",
+   "what": "当前说话者（NPC 或某个技能）的油画小肖像浮在对话栏左外侧、与当前段落同高，随说话人切换；cnt.focal = character + avatar 只能画成屏幕中央的大圆头像",
+   "severity": "medium",
+   "proposal": "lay.focalSide 加 followLine（立绘贴在面板外侧、跟随当前文本行）",
+   "kind": "layoutEngine",
+   "resolvedBy": "lay.focalSide = followLine（栏外当前说话人小像，与当前段落同高；肖像是素材缺口 #10）"
+  },
+  {
+   "screen": "dialogue",
+   "what": "悬停选项只把字色从红橙提亮为白，没有色条、描边或光标",
+   "severity": "low",
+   "proposal": "ix.focus 加 textColor（只换字色）",
+   "kind": "missingOption",
+   "resolvedBy": "ix.focus = [textColor]（悬停选项只把字色提亮为白）"
+  },
+  {
+   "screen": "check",
+   "what": "技能检定结果是画面中下方两枚白色骰子（显示点数），挂在场景里而不是日志栏里；没有骰子元素",
+   "severity": "medium",
+   "proposal": "el.feedback.form 加 dice（骰子点数），可放在场景中下方",
+   "kind": "newDrawing",
+   "resolvedBy": "el.feedback = [dice] + elx.dockTo = el.notify（两枚白骰子 + 结果胶囊在栏外场景中下方）"
+  },
+  {
+   "screen": "check",
+   "what": "检定胶囊不随结果换色：col.coding 写了 resultTone、col.accent@el.notify 写了绿，toast 仍是皮肤暗底 + 白边",
+   "severity": "medium",
+   "proposal": "el.notify 在 col.coding 含 resultTone 时按结果取成功绿 / 失败红",
+   "kind": "renderBug",
+   "resolvedBy": "M12a-32（el.notify 按 resultTone 着色：检定胶囊绿；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "check",
+   "what": "检定通知的样本文案是\"成就解锁：完美推理\"，不是检定结果（CHECK SUCCESS / FAILURE）",
+   "severity": "low",
+   "proposal": "cnt.stage = result 的通知文案用检定结果",
+   "kind": "content",
+   "resolvedBy": "cnt.stage = result（胶囊写「检定成功」）"
+  },
+  {
+   "screen": "check",
+   "what": "检定前悬停选项会出现百分比与加减项的说明卡；红色检定（不可重试）和白色检定（可重试）的选项颜色不同",
+   "severity": "low",
+   "proposal": "el.choices 加 checkTag（选项后缀的检定标签 + 悬停概率卡），颜色按 col.coding 区分",
+   "kind": "newDrawing",
+   "resolvedBy": "el.choices.labelStyle = checkTag（选项后缀检定标签 + 概率卡）"
+  },
+  {
+   "screen": "check",
+   "what": "Visual Calculus 推演是世界内的全息重建：青色线框勾出建筑、红色半透明幽灵车辆、白色速度线；el.overlay = holo 只是地面上的同心椭圆",
+   "severity": "low",
+   "proposal": "el.overlay 加 reconstruction（场景内线框 + 幽灵物体），用 elx.worldRender = perspective 渲染",
+   "kind": "worldSpace"
+  },
+  {
+   "screen": "journal",
+   "what": "日志一屏凭记忆编码，没有参考截图；任务清单（已完成划掉、限时任务带时钟）与马丁内斯地图的画风和分栏比例未核对",
+   "severity": "low",
+   "proposal": "补一张日志 / 地图参考截图后再细化",
+   "kind": "content"
+  },
+  {
+   "screen": "journal",
+   "what": "任务详情栏的样本是物品（\"银表\"描述 + 可信 / 关联数值条），不是任务说明",
+   "severity": "low",
+   "proposal": "tpl.quest 的常驻详情取任务样本（说明 + 子目标）",
+   "kind": "content",
+   "resolvedBy": "R4 核对：日志详情是任务说明 + 子目标（✓ / ○）；底部动作按钮仍是物品的，见新缺口"
+  },
+  {
+   "screen": "journal",
+   "what": "列表行都画成带边框的卡片行；（记忆）原作是无框文字行 + 勾选框",
+   "severity": "low",
+   "proposal": "cmp.listRow 加 plain（无框行，仅分隔线）",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.listRowBox"
+  },
+  {
+   "screen": "dialogue / character",
+   "what": "钉在屏幕角上的元素（anchorSpace = screen）和模板容器互不避让：对话屏右下的时钟框与工具栏压在日志栏底部、盖住选项；技能表的 el.cta（screenAnchor = bl）画到了面板右下，压住屏幕右下的工具栏",
+   "severity": "medium",
+   "proposal": "anchorSpace = screen 的元素登记进模板的占位表，容器（抽屉 / 全屏面板）按它们让出底边；el.cta 在模板里按自己的 screenAnchor 排",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 核对：对话屏日志栏让出右下时钟与工具栏，技能表的「开始调查」回到左下"
+  },
+  {
+   "screen": "hud",
+   "what": "elx.stackDir = rowBar 的共用底条按各元素外框拼格，格宽不按内容收：右下金额一项占了一大段空格、小字沉在格底，整条约画面宽 58%",
+   "severity": "low",
+   "proposal": "rowBar 的格宽按内容收（fitContent）、格内垂直居中；或沿用 lay.edgeBarSlots 的段 / 格排法",
+   "kind": "layoutEngine",
+   "partialBy": "R4 核对：整条从约画面宽 58% 收到约 48%；金额仍是左端小字、时钟仍套自己的框"
+  },
+  {
+   "screen": "skilltree",
+   "what": "格子换成菱形外形（vis.silhouette@slot = diamond）后，数量角标仍按方格的右下角定位，落在菱形外面的空白处",
+   "severity": "low",
+   "proposal": "格子角标按外形的内切区定位（菱形放在下尖内侧），或外形不是方格时默认 cmp.slotBadge = none",
+   "kind": "renderBug"
+  },
+  {
+   "screen": "dialogue / check",
+   "what": "cmp.dialogBox = transcript 的段首「技能 [难度：结果] —」整段画成白色粗体：hier.inlineMap = [category, note] 没作用到段首，技能名不按属性色（col.lineColors）、方括号注记不是灰色",
+   "severity": "high",
+   "proposal": "transcript 的说话人段首走 inlineMap：技能名按 col.coding = lineId 的类别色，方括号注记用 col.muted",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C2 ①（累积日志按原串拆条目：段首「{c1:技能} [[难度：结果]]」走富文本，技能名按 col.lineColors 类别色、方括号注记次要色；正文里的 {k:…} 也着色）"
+  },
+  {
+   "screen": "inventory",
+   "what": "lay.arrangement = flankColumns 的装备槽组没有分到角色两侧，全挤进左侧暗栏；同在左栏的 el.vitals（生命 / 士气）与「身体」「饰品」两组槽互相压住",
+   "severity": "medium",
+   "proposal": "flankColumns 按主体左右各排一列槽组；左栏里的元素登记占位，槽组避让",
+   "kind": "layoutEngine",
+   "resolvedBy": "R4 回归修复 C2 ⑤（第三区占了右栏时右列从人像那一栏的右侧切出来，格组分到人像两侧；左列的格组竖向躲开同栏的生命 / 士气）；R4 审查修复 ⑯：一栏放不下全部格组时格子缩小 / 从栏顶依次排，不再夹在栏顶叠在一起"
+  },
+  {
+   "screen": "inventory",
+   "what": "lay.sideRegion = list 的第三栏取的是任务样本（码头命案、证人问话……），不是物品；原作右栏是物品格 + 详情，sideRegion 也没有「格子 + 详情」这一项",
+   "severity": "medium",
+   "proposal": "第三栏列表按 cnt.screen / subtype 取样本（背包 = 物品）；sideRegion 加 grid（物品格 + 常驻详情）",
+   "kind": "missingOption"
+  },
+  {
+   "screen": "inventory",
+   "what": "rel.sceneTone = halftone 的网点色写死为强调色 / 第二强调色：Disco 的强调色是红橙，网点成了暗红灰，原作是暖米黄 + 青；网点色不能单独设",
+   "severity": "low",
+   "proposal": "加 rel.halftoneColors（两色，默认跟强调色）",
+   "kind": "missingParam"
+  },
+  {
+   "screen": "skilltree",
+   "what": "el.toolbar.screenCode 在思想柜屏写成 INV：代码表的键是 screen.skill，cnt.screen = screen.skilltree 查不到就落回 INV（应为 THC）",
+   "severity": "low",
+   "proposal": "代码表补 screen.skilltree → THC（或按 uip.screen = tpl.skilltree 取）",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C3 ⑨：屏代码表的键改成 screen.skilltree（原来写成 screen.skill 查不到），思想柜写 THC"
+  },
+  {
+   "screen": "skilltree / journal",
+   "what": "思想柜页头写成「侦探的本领」（与技能表同一个标题）；日志的任务详情底部仍是「出示 / 放回」物品按钮",
+   "severity": "low",
+   "proposal": "puzzle 包按 uip.screen 给页头名（思想柜）；tpl.quest 的详情不画物品动作按钮",
+   "kind": "content"
+  }
+ ],
+ "notes": "越浓的油画世界配越素的排版：对话是右侧整栏滚动的小说式文本，说话人粗体大写开头、技能名按四种属性色着色、选项是红橙编号行；页头是白纸黑字粗窄体标签伸出屏幕边；技能是油画肖像竖卡 + 白方块数值 + 菱形点，属性是彩色墨团上的大号数字；每块面板两侧都有带刻度和编号的灰色导轨，菜单下方常驻一条细线图标工具栏。内容包选了侦探题材的 puzzle（码头命案），与原作最接近。第二轮：所有非 HUD 屏都套模板再覆盖（对话 / 检定 = tpl.npc + 侧抽屉 + 叙述文本，技能表 = tpl.hero + 7 列格阵，背包 = tpl.loadout + 浮空无底，思想柜 = tpl.skilltree + 错位格阵，日志 = tpl.quest），删掉只能挤进容器的 HUD 元素。",
+ "scores": {
+  "hud": [
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "character": [
+   {
+    "layout": 2,
+    "elements": 2,
+    "palette": 5,
+    "type": 4,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 5,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "inventory": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 3,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "skilltree": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 4,
+    "type": 4,
+    "shape": 3,
+    "density": 4,
+    "overall": 3,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "dialogue": [
+   {
+    "layout": 4,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 7,
+    "elements": 5,
+    "palette": 6,
+    "type": 6,
+    "shape": 5,
+    "density": 5,
+    "overall": 6,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 7,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "check": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 6,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "journal": [
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 5,
+    "type": 4,
+    "shape": 4,
+    "density": 4,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "队伍画成 4 个带绿 / 红圈的大圆头像 + 名字，铺满左下近半屏；原作是贴在左下角的 2 张矩形油画肖像竖卡",
+   "生命 / 士气是带文字标签的长分段条，压在头像下方；原作是头像卡上沿两个橙 / 青小色块图标",
+   "时钟装在带框面板里，右下 5 个带框方钮与时钟上下叠成两层；原作是一条暗色细条：无框细线图标 + 右端大号细体时间",
+   "资源栏画了 3 种货币；原作只有一个小金额",
+   "字幕是顶部居中的无框白字长句；原作是挂在说话人头顶的小黑框短句"
+  ],
+  "character": [
+   "没有覆盖 tpl.hero 的主体：中间画了巨大的 96.5% 和两张商品竖卡，完全没有 4×6 技能肖像网格",
+   "页签（全部 / 证物 / 人物 / 地点）横在页面顶部；原作只有详情栏里 OVERVIEW / INFO 两个小页签",
+   "el.profile 等级条压在详情栏的数值条上，el.title 的红色页眉牌压在模板标题和详情栏上",
+   "工具栏压住详情栏底部按钮",
+   "原作右栏的技能大图、白底名签、TOTAL 数值方块、LEVEL UP / REVERT 都没有对应"
+  ],
+  "inventory": [
+   "整屏一块深色面板 + 红色压色；原作中间是透出场景的暖色网点画面，只有左右两块暗色面板",
+   "装备槽排成一个环、挤在左三分之一，没有围着角色；原作是角色两侧两竖列小格 + 引线",
+   "没有物品格与物品详情（原作右栏：物品大图 + 名签 + 说明 + TOOLS / CLOTHES 页签 + 6×3 物品格）",
+   "el.title 的红色'证物'页眉牌压在模板标题上；生命 / 士气条压在装备环上"
+  ],
+  "skilltree": [
+   "12 个方格排成 4 列规则网格；原作是三列错位的菱形槽，槽下压橙 / 米白标签",
+   "生命 / 士气条、el.profile 等级条、el.cta 宽按钮和详情栏互相压叠，红色页眉牌压住模板标题",
+   "缺少中栏思想列表（研究中的行带百分比、整行橙色高亮）",
+   "工具栏压在详情栏按钮上"
+  ],
+  "dialogue": [
+   "没有设 uip.screen：抽屉里塞进了队伍头像、时钟、资源、工具栏，叠成一团；原作这些 HUD 留在屏幕角上，日志栏里只有文字和选项",
+   "台词只有一行字幕，溢出抽屉左缘被裁掉；原作是一整栏多段小说式日志（说话人粗体大写开头）",
+   "说话人画成栏内的大圆头像；原作是栏外左侧、与当前段落同高的小幅油画肖像",
+   "选项第一条红、其余白；原作全部红橙，悬停才变白"
+  ],
+  "check": [
+   "'发现新线索'横幅溢出抽屉右缘被截断；原作是场景中下方的两枚白骰子 + 绿色 CHECK SUCCESS 胶囊",
+   "模板带进来的'自动 / 快进 / 记录 / 存档'红药丸压在抽屉上方，原作没有",
+   "台词、选项与 dialogue 同样的问题；全息圈是平面同心圆，原作是场景内线框重建"
+  ],
+  "journal": [
+   "没有设 uip.screen（靠子功能落到模板）；el.title 的红色'证物'牌和模板标题'任务'叠在一起",
+   "行是带边框的卡片行（凭记忆：原作是无框文字行 + 勾选框，已完成划掉）",
+   "工具栏压住详情栏底部按钮"
+  ]
+ },
+ "revisions": [
+  "base：加 st.locked = grayscale——样本把第 5 个以后的条目画成锁定，默认是 ✕ 锁图标；灰度最接近原作的灰调技能肖像与未填的思想槽",
+  "base：加 cmp.buttonBox@el.toolbar = false（原作工具栏是无底框的细线图标）",
+  "art：color.brightness 0.8、color.saturation 0.72，让背后世界接近原作偏暗、低饱和的油画氛围",
+  "hud：队伍 portraitRow → unitCards（矩形肖像卡）缩到 0.65；生命 / 士气排在队伍之前（叠在卡片上方）并缩到 0.65；右下按 资源 → 时钟 → 工具栏 叠放，工具栏贴屏幕底边；时钟 1.2 → 1.0；字幕改 cmp.dialogBox@el.subtitle = bubble（挂在说话人上方的小句）并缩到 0.85",
+  "character：保留 tpl.hero，覆盖 cnt.focal = none、collection + grid 7 列 × 28 格（4 行，左列当属性块）、cmp.slot = cell、lay.detail = persistent、lay.nav = none、背景 solid；删 el.title / el.profile；ACCEPT = el.cta wide 放左下 0.7；工具栏改 bc 避开详情栏按钮",
+  "inventory：tpl.loadout + cmp.modal = floating（不画整屏面板，背后冻结场景 + 双色调透出来）；lay.composition = splitLR + lay.focalSide = center → 角色模型在上中，物品格（8 列）+ 常驻详情在下方；生命 / 士气放 ml（原作左栏）；工具栏放 mr；删 el.title",
+  "skilltree：hexGrid 3 列 × 12 格（错位排布 ≈ 原作菱形格阵）、未填的用 grayscale、详情常驻、无页签；删 el.title / el.vitals / el.profile / el.cta（原作的 FORGET 由详情栏按钮表达）；ix.close = keyGlyph；工具栏 bc 0.85",
+  "dialogue：uip.layout → uip.screen = tpl.npc；lay.container = drawer 0.55 + cnt.dataShape = text（短段）画成右侧整栏日志，cmp.dialogBox = fullPage（累积式全文）；元素只留 el.choices（文字行、栏底）；删 party / vitals / clock / resources / toolbar / subtitle（它们只能排进抽屉里）；选项 col.text@el.choices 红橙、col.accent@el.choices 白（悬停）；试过 cnt.focal = character + avatar + behind 画说话人，结果是屏幕正中的大圆，撤掉",
+  "check：同 dialogue 的日志栏；检定结果 el.notify banner → toast（小胶囊，意图绿色），放栏底选项上方；保留 holo 叠层（场景内）；ix.skip = none 去掉模板的跳过药丸",
+  "journal：补 uip.screen = tpl.quest；删 el.title；cmp.listRow = 标题 / 状态 / 时间，st.done = strike，col.semantic = accentOnly，cnt.itemCount 5；工具栏 bc",
+  "R3 前（M12a 之后）：base 的 col.surface@plate / col.text@plate 改写成 @title（只改页头标题牌，不再连带 Esc 胶囊），st.rarityCue [none]、st.locked grayscale → none（技能、物品、思想都没有稀有度和锁定）；五屏删掉不生效的 vis.iconStyle@el.toolbar（iconStyle 不按元素读，全局保持 painted 给油画图标）；hud 加 el.resources.count 1、el.clock / el.toolbar 的 stackDir = rowBar（右下金额 + 时钟 + 工具栏共一条暗底细条）；character / inventory / skilltree / journal 加 ix.close none、工具栏改 br + anchorSpace = screen（贴屏幕右下角，不在面板里）；character 加 col.semantic = perAction + col.actionColors（确认砖红 / 返回青）；journal 加 cmp.listRowBox = plain（无框文字行）；dialogue / check 加 lay.titlePos none（✕ 由 forced 派生去掉）、el.choices.scale 0.78（409 宽的选项放进 320 宽抽屉，不再靠版式兜底缩放）；dialogue 另把主角肖像（el.profile）+ 生命 / 士气（el.vitals）钉在屏幕左下、工具栏 + 时钟钉在右下（anchorSpace = screen），对应参考里打开日志栏时仍留在屏角的局内 HUD。",
+  "R4 前（M12b 之后）：base 的 cmp.plate@title tab → bleedLabel + vis.edge@plate = printWorn（白纸标签出血到屏幕边、印刷磨损，#2）、ast.ornaments = [none, rulerRail] + ast.ornamentScope = templatePanels（主面板两侧刻度导轨、清掉模板带来的「—◆—」分隔饰，#0）、col.lineColors = 智力青 / 精神紫 / 体格品红 / 运动黄（属性块与技能名同色）；hud 的 el.party unitCards → portraitCard + halo + count 2（两张方形肖像卡、金背后白光环，#11 / #12）、el.vitals.attach = [iconValue] + dockTo el.party / above / dockSlot 1（生命 / 士气两枚写数小色块坐在第一张卡上沿，#13）、typ.numerals.weight = light（大号细体时间，#16）、el.interact.form = [poiRing]（#19）；character 的 cnt.subtype hero → skill + cmp.slot = portraitCard（技能肖像竖卡 + 白方块数值，#20）、lay.detail = hero（页签 + 大图 + 名签 + TOTAL，#23）、ast.ornaments 加 inkBacking（每行最左的墨团属性块，#22；没用 B8 的 statTable 进详情——参考的属性块在格阵第一列）；inventory 的 rel.sceneTone duotone → [halftone]（#25）、st.selected = fill（#27）、lay.composition = three + lay.arrangement = flankColumns + cmp.leader = straight + cmp.slotGroupTitle = above + lay.sideRegion = list（角色两侧装备槽 + 引线、右栏物品，#26 / #28）；skilltree 加 cnt.focal = character + lay.composition = three + lay.sideRegion = detail（#28）、cmp.slotLabel = plate（#32）、ast.ornaments 加 registration（#33）；character / inventory / skilltree / journal 的工具栏加 el.toolbar.screenCode = code（CHR / INV / THC，#17）；dialogue / check 的 cmp.dialogBox fullPage → transcript + lay.focalSide = followLine（多段「说话人 — 台词」+ 栏外小像，#34 / #36）、hier.inlineMap = [category, note]（#35）、ix.focus = [textColor]（#37，语义）；dialogue 的 el.profile 换成 el.party（portraitCard、count 1、贴屏幕左下）+ el.vitals.attach = [iconValue] 停在它上沿、typ.numerals.weight = light；check 加 el.choices.labelStyle = checkTag（#41）、el.feedback = [dice] 停在检定胶囊上方、el.notify.anchorSpace = screen（骰子 + 结果在栏外场景中下方，#38）；journal 的 col.coding = [status]（任务名不按类别色）、col.good = 灰（划掉的完成行是灰字）、cmp.listRow 去掉 status 圆点、cmp.tabIndicator = weight（小号文字页签）。"
+ ],
+ "round2Diffs": {
+  "hud": [
+   "队伍是 4 张矩形单位卡（圆形剪影 + 绿 / 红圈 + 名字 + 绿血条），横跨左下约三分之一屏；原作只有贴角的 2 张方形油画肖像卡，无名字、无圈、无条",
+   "生命 / 士气是两根带文字标签和数值的长分段条，浮在卡片上方，颜色是皮肤的红 / 青（覆盖写的橙没生效）；原作是第一张卡上沿两个橙十字 / 青脑形小图标，数值写在图标里",
+   "右下仍是两层：带框时钟面板 + 下面 5 个带框方钮（cmp.buttonBox@el.toolbar = false 没生效）；原作是一条暗色细条：无框细线图标 + 右端大号细体时间与 Day N，同一行",
+   "资源是 3 种货币小图标排在时钟上方；原作只有时钟左边一个小金额",
+   "字幕仍是顶部居中的无框白字长句（cmp.dialogBox@el.subtitle = bubble 没生效）；原作是说话人头顶的小黑框短句",
+   "交互提示是光标 + \"查看银表\"文字；原作是场景物件上的绿色小圆环标记"
+  ],
+  "character": [
+   "7 列 × 4 行的密格、右侧常驻详情、左下宽按钮这三块结构对上了",
+   "格子里是物品图标（卷轴 / 钥匙 / 硬币）并带蓝 / 紫 / 橙稀有度边框；原作是灰调油画肖像竖卡，没有稀有度色，少数整张被属性色染色",
+   "第一列只是普通格子；原作是属性块：彩色墨团 + 超大白数字 + 菱形点 + 属性名",
+   "格子右下角标是数量（1 / 2 / 128），位置对；原作是白方块黑数字的技能值，名字上方还有一排菱形点",
+   "详情栏只有名字、描述、两根数值条和出示 / 放回；原作是 OVERVIEW / INFO 小页签 + 技能大图 + 白底名签 + 说明 + TOTAL 数值方块 + LEVEL UP / REVERT 两色按钮",
+   "页头\"角色详情\"是面板内的白色粗字；原作是右上出血到屏幕边的白纸黑字 CHARACTER SHEET 标签",
+   "整屏一圈细框 + 底部\"—◆—\"装饰 + 右上红色\"ESC 返回\"药丸；原作没有外框和关闭钮，两侧是带刻度的导轨",
+   "工具栏 5 个带框方钮挤在底部中间、贴着出示 / 放回；原作是右下角一条无框细线图标 + CHR 代码",
+   "开始调查是浮起的大号橙按钮；原作 ACCEPT 是贴底边的窄红条 + ▼"
+  ],
+  "inventory": [
+   "背后场景透出来、角色站在中间的大关系对上了；但整片被压成红棕双色调、没有网点，原作是暖米黄 + 青的半调网点",
+   "角色是红色剪影占位（\"3D 实时模型（需素材）\"标签）",
+   "装备槽没有了（上一轮的环形槽被物品格顶掉）；原作是角色两侧各一竖列小格 + 白色槽名 + 引线",
+   "物品格 8×2 + 详情横在屏幕下半；原作在右侧暗栏：物品大图 + 白底名签 + 说明 + TOOLS / CLOTHES 页签 + 6×3 格",
+   "没有左侧暗栏（四属性数字、HEALTH / MORALE、加成列表），生命 / 士气条直接浮在场景上",
+   "工具栏浮在右侧中部；原作贴右下底边并带 INV 代码",
+   "格子带蓝 / 紫稀有度边框；左上白字标题、右上\"ESC 返回\"药丸，原作是 INVENTORY 白纸标签、无关闭钮"
+  ],
+  "skilltree": [
+   "12 格三列错位排布 + 右侧常驻详情的骨架有了，但格子是方的，且第二行起格子上沿压住上一行（行距小于格高）",
+   "vis.silhouette@slot = diamond 没生效；格下没有橙（已内化）/ 米白（研究中）标签牌",
+   "面板是不透明暗底盖满整屏；原作中区透出场景，角色站在格阵下方并连着电线，四角有套准 + 号",
+   "没有中间的思想列表（研究中带百分比、整行橙色高亮）和左栏属性 / 加成",
+   "详情栏没有思想大图、白底名签、PROBLEM / SOLUTION 页签，按钮是出示 / 放回而不是 FORGET",
+   "稀有度蓝 / 紫边框、ESC 返回药丸、底部\"—◆—\"装饰、带框工具栏同 character"
+  ],
+  "dialogue": [
+   "右侧整栏日志的位置与宽度、栏底编号选项、右侧滚动条都对上了",
+   "栏里只有一段报纸式旁白，没有\"说话人 — 台词\"的多段累积，没有说话人粗体大写、技能名属性色、灰色 [难度: 结果] 注记",
+   "文字和选项之间留了大片空白；原作文本贴着选项往上堆满整栏",
+   "选项第一条红橙、其余白（col.text@el.choices 没生效）；原作三条都是红橙",
+   "栏顶有\"NPC 对话\"标题 + 关闭 X；原作没有页头",
+   "栏外左侧没有当前说话人的油画小肖像；屏幕左下的主角肖像与生命 / 士气、右下时钟与工具栏都没有"
+  ],
+  "check": [
+   "检定结果是栏内选项上方的暗色药丸\"成就解锁：完美推理\"（白边 + 星形图标）；原作是场景中下方两枚白骰子 + 绿色 CHECK SUCCESS 胶囊",
+   "药丸不是绿色（col.accent@el.notify 和 col.coding = resultTone 都没生效），文案是成就而不是检定结果",
+   "全息是地面上的青色同心椭圆；原作是场景内的青色线框建筑 + 红色幽灵车辆 + 白色速度线",
+   "日志栏的问题同 dialogue（单段旁白、选项一红其余白、有页头和 X、没有栏外技能肖像）"
+  ],
+  "journal": [
+   "（无参考图，凭记忆）el.title 叠压已修好，左列表 + 右详情的分栏成立，工具栏不再压住按钮",
+   "行仍是带边框的卡片行 + \"进行中\"红药丸；记忆中原作是无框文字行，已完成的划掉、限时任务带时钟图标",
+   "详情栏显示的是物品\"银表\"的描述 + 两根数值条，不是任务说明",
+   "页签是红底实心块；记忆中原作是小号文字页签",
+   "没有马丁内斯地图；ESC 返回药丸、带框工具栏、底部\"—◆—\"装饰同其他菜单屏"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "队伍仍是 4 张单位卡（圆形剪影 + 绿 / 红圈 + 名字 + 血条）；原作是贴角的 2 张方形油画肖像，无名字、无圈、无条",
+   "生命 / 士气已是橙 / 青，但仍是两根带行名的长分段条浮在卡片上方；原作是第一张卡上沿两个小图标，数值写在图标里",
+   "右下已并成一条暗底细条，但条太宽（约画面宽 58%）：金额小字缩在左段底角，时钟还套着自己的框；原作是紧凑一行：图标 + 金额 + 大号细体时间",
+   "字幕已是挂在说话人旁的黑框，但是一句很长的宽框；原作是头顶的小黑框短句",
+   "交互提示仍是光标 + 文字，原作是物件上的绿色小圆环"
+  ],
+  "character": [
+   "格子里是物品图标（多数画成红橙实心符号）；原作是灰调油画肖像竖卡 + 底部名字 + 白方块数值",
+   "第一列不是属性块（彩色墨团 + 超大白数字 + 菱形点）",
+   "左下的宽按钮「开始调查」画到了面板右下，压住屏幕右下的工具栏图标",
+   "页头已是白纸黑字标签，但在面板内左上；原作在右上、出血到屏幕边",
+   "详情栏只有名字 + 说明 + 两根条 + 出示 / 放回；原作有页签、大图、名签、TOTAL 方块与 LEVEL UP / REVERT",
+   "底部仍有「—◆—」分隔饰"
+  ],
+  "inventory": [
+   "背后场景不再压红棕，但也没有暖米黄 + 青的双色网点",
+   "装备槽仍缺（角色两侧两竖列小格 + 槽名 + 引线），角色是红色剪影占位",
+   "物品格 + 详情横在屏幕下半一块暗板里；原作在右侧暗栏（大图 + 名签 + 页签 + 6×3 格），左侧还有属性暗栏",
+   "生命 / 士气是带行名的分段条，浮在场景左中",
+   "物品图标多为红橙实心符号，原作是油画物品图"
+  ],
+  "skilltree": [
+   "菱形槽已出现，但 12 格挤成一整块斜向菱形阵、彼此相贴；原作是三列错位、彼此分开的菱形",
+   "数量角标（3 / 2 / 1）落在菱形外面的空白处",
+   "格下没有橙（已内化）/ 米白（研究中）标签牌",
+   "面板不透明盖满整屏；原作中区透出场景，角色站在格阵下方",
+   "没有中间的思想列表和左栏属性 / 加成"
+  ],
+  "dialogue": [
+   "栏里仍只有一段报纸式旁白，没有「说话人 — 台词」多段累积和属性色技能名、方括号注记",
+   "选项字变小，红橙字带深色阴影发糊；原作三条红橙选项清楚",
+   "右下的时钟框与工具栏压在日志栏底部（盖住第 3 条选项一角）；原作日志栏让出底部细条",
+   "左下主角是圆形剪影 + 等级徽章 + 名字；原作是方形油画肖像卡，上沿两个小图标",
+   "栏外左侧没有当前说话人的油画小肖像"
+  ],
+  "check": [
+   "检定胶囊已是绿色，但在日志栏里、文案是「成就解锁：完美推理」；原作是场景中下方两枚白骰子 + CHECK SUCCESS",
+   "全息仍是地面上的青色同心椭圆，原作是线框建筑 + 红色幽灵车辆 + 白色速度线",
+   "选项小而发糊、日志栏只有单段旁白（同 dialogue）"
+  ],
+  "journal": [
+   "（凭记忆）已完成的行是绿色字 + 删除线，原作是灰色划掉",
+   "页签是红底实心块，原作是小号文字页签",
+   "行尾是彩色状态圆点，原作是行首勾选框",
+   "详情栏仍是物品「银表」+ 两根数值条，不是任务说明 + 子目标；没有马丁内斯地图"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "两张肖像卡是透明空框 + 灰色剪影，没有油画肖像和黑色卡底",
+   "金的光环是一团白色泛光，盖住第一张卡的上半",
+   "右下细条仍约画面宽 48%：时钟套着自己的框，金额是左端的小字",
+   "字幕仍是一句很长的宽框，原作是头顶的小黑框短句"
+  ],
+  "character": [
+   "技能卡是饱和的纯色底 + 通用符号头像，原作是灰调油画肖像；数值方块全写 0",
+   "只有 2 行 × 5 张，原作 4 行 × 6 张，格阵下方大半面板空着",
+   "页头纸标签在左上，原作 CHARACTER SHEET 在右上；标签上的墨点做旧太重",
+   "卡上没有菱形点（已学 / 上限）",
+   "详情没有技能大图和白底名签"
+  ],
+  "inventory": [
+   "装备槽全挤在左侧暗栏里，没有分在角色两侧；生命 / 士气条压住「身体」「饰品」两组槽",
+   "右栏是一列任务名（码头命案、证人问话……），不是物品格 + 详情",
+   "网点是暗红灰的花纹，不是暖米黄 + 青的大网点",
+   "角色仍是红色剪影占位"
+  ],
+  "skilltree": [
+   "菱形槽仍挤成相贴的斜向一块，下一行的菱形压住上一行的标签",
+   "中间是圆形头像占位，原作是站在格阵下方的角色；没有中间的思想列表和左栏属性 / 加成",
+   "页头写「侦探的本领」（与技能表同名），工具栏代码是 INV 而不是 THC",
+   "菱形槽是饱和纯色底 + 符号，原作是油画思想图"
+  ],
+  "dialogue": [
+   "技能名和方括号注记都是白色粗体，原作技能名按属性着色、注记是灰色",
+   "选项仍小，带发糊的暗色光晕",
+   "栏外的说话人小像是灰色剪影占位",
+   "日志栏上方约三分之一空着，原作文本从选项往上堆满整栏",
+   "右下时钟仍套着自己的框"
+  ],
+  "check": [
+   "全息仍是地面上的青色同心椭圆，原作是线框建筑 + 红色幽灵车辆 + 白色速度线",
+   "「检定成功」是宽圆角绿胶囊，原作是更窄的直角绿条 + 大写字",
+   "技能名与注记不按属性着色（同 dialogue）；检定标签与概率卡的字很小"
+  ],
+  "journal": [
+   "（凭记忆）任务详情底部仍是「出示 / 放回」物品按钮",
+   "没有马丁内斯地图",
+   "行首没有勾选框；这一页看不到灰色划掉的已完成行",
+   "列表与详情的下半屏大片空着"
+  ]
+ }
+}

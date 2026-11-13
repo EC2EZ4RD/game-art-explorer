@@ -1,0 +1,2602 @@
+{
+  "fetchedAt": "2026-10-13T10:43:34.185Z",
+  "region": "US（cc=us）",
+  "scopeNote": "热度信号，不代表美术质量",
+  "method": "store.steampowered.com/search/results（infinite=1，按 start 翻页）解析 data-ds-appid；GetItems 的 type 字段过滤，只保留 type=0（游戏）",
+  "lists": {
+    "topsellers": {
+      "label": "热销榜",
+      "url": "https://store.steampowered.com/search/?filter=topsellers&cc=us",
+      "totalCount": 9092,
+      "pages": [
+        {
+          "start": 0,
+          "rows": 50
+        },
+        {
+          "start": 50,
+          "rows": 50
+        },
+        {
+          "start": 100,
+          "rows": 50
+        }
+      ],
+      "count": 100,
+      "items": [
+        {
+          "rank": 1,
+          "steamRank": 1,
+          "appid": 3393110,
+          "name": "AION 2",
+          "nameZh": null,
+          "title": "AION 2",
+          "release": "Oct 5, 2026",
+          "developers": [
+            "NC"
+          ]
+        },
+        {
+          "rank": 2,
+          "steamRank": 2,
+          "appid": 5155360,
+          "name": "Hood Warfare 2",
+          "nameZh": null,
+          "title": "Hood Warfare 2",
+          "release": "Oct 8, 2026",
+          "developers": [
+            "Trapstar Games"
+          ]
+        },
+        {
+          "rank": 3,
+          "steamRank": 3,
+          "appid": 730,
+          "name": "Counter-Strike 2",
+          "nameZh": null,
+          "title": "Counter-Strike 2",
+          "release": "Aug 21, 2012",
+          "developers": [
+            "Valve"
+          ]
+        },
+        {
+          "rank": 4,
+          "steamRank": 4,
+          "appid": 3219030,
+          "name": "Planet Zoo 2",
+          "nameZh": "《动物园之星 2》",
+          "title": "Planet Zoo 2",
+          "release": "Oct 13, 2026",
+          "developers": [
+            "Frontier Developments"
+          ]
+        },
+        {
+          "rank": 5,
+          "steamRank": 5,
+          "appid": 4078430,
+          "name": "STAR WARS: Galactic Racer™",
+          "nameZh": "星球大战：银河赛车手™",
+          "title": "STAR WARS: Galactic Racer™",
+          "release": "Oct 6, 2026",
+          "developers": [
+            "Fuse Games"
+          ]
+        },
+        {
+          "rank": 6,
+          "steamRank": 7,
+          "appid": 1808500,
+          "name": "ARC Raiders",
+          "nameZh": null,
+          "title": "ARC Raiders",
+          "release": "Oct 30, 2025",
+          "developers": [
+            "Embark Studios"
+          ]
+        },
+        {
+          "rank": 7,
+          "steamRank": 8,
+          "appid": 632360,
+          "name": "Risk of Rain 2",
+          "nameZh": "雨中冒险 2",
+          "title": "Risk of Rain 2",
+          "release": "Aug 11, 2020",
+          "developers": [
+            "Hopoo Games"
+          ]
+        },
+        {
+          "rank": 8,
+          "steamRank": 9,
+          "appid": 570,
+          "name": "Dota 2",
+          "nameZh": null,
+          "title": "Dota 2",
+          "release": "Jul 9, 2013",
+          "developers": [
+            "Valve"
+          ]
+        },
+        {
+          "rank": 9,
+          "steamRank": 10,
+          "appid": 216150,
+          "name": "MapleStory",
+          "nameZh": null,
+          "title": "MapleStory",
+          "release": "Aug 9, 2012",
+          "developers": [
+            "NEXON Korea Corporation"
+          ]
+        },
+        {
+          "rank": 10,
+          "steamRank": 12,
+          "appid": 3010850,
+          "name": "Gears of War: E-Day",
+          "nameZh": null,
+          "title": "Gears of War: E-Day",
+          "release": "Oct 6, 2026",
+          "developers": [
+            "The Coalition"
+          ]
+        },
+        {
+          "rank": 11,
+          "steamRank": 13,
+          "appid": 1867240,
+          "name": "WARDOGS",
+          "nameZh": null,
+          "title": "WARDOGS",
+          "release": "Sep 10, 2026",
+          "developers": [
+            "BULKHEAD"
+          ]
+        },
+        {
+          "rank": 12,
+          "steamRank": 15,
+          "appid": 2767030,
+          "name": "Marvel Rivals",
+          "nameZh": "漫威争锋",
+          "title": "Marvel Rivals",
+          "release": "Dec 5, 2024",
+          "developers": [
+            "NetEase Games"
+          ]
+        },
+        {
+          "rank": 13,
+          "steamRank": 16,
+          "appid": 4126040,
+          "name": "Aniimo",
+          "nameZh": "伊莫",
+          "title": "Aniimo",
+          "release": "Sep 15, 2026",
+          "developers": [
+            "Pawprint Studio"
+          ]
+        },
+        {
+          "rank": 14,
+          "steamRank": 17,
+          "appid": 1551980,
+          "name": "Clive Barker's Hellraiser: Revival",
+          "nameZh": null,
+          "title": "Clive Barker's Hellraiser: Revival",
+          "release": "Oct 8, 2026",
+          "developers": [
+            "Saber Interactive"
+          ]
+        },
+        {
+          "rank": 15,
+          "steamRank": 18,
+          "appid": 4435490,
+          "name": "Call of Duty®: Modern Warfare® 4",
+          "nameZh": "使命召唤®：现代战争® 4",
+          "title": "Call of Duty®: Modern Warfare® 4",
+          "release": "Oct 22, 2026",
+          "developers": [
+            "Infinity Ward",
+            "Beenox",
+            "Digital Legends",
+            "Activision Shanghai",
+            "Raven Software",
+            "Treyarch",
+            "Sledgehammer Games",
+            "High Moon Studios"
+          ]
+        },
+        {
+          "rank": 16,
+          "steamRank": 19,
+          "appid": 4019220,
+          "name": "Dressmaker",
+          "nameZh": "针影裁梦",
+          "title": "Dressmaker",
+          "release": "Sep 21, 2026",
+          "developers": [
+            "Cozy Lives"
+          ]
+        },
+        {
+          "rank": 17,
+          "steamRank": 20,
+          "appid": 230410,
+          "name": "Warframe",
+          "nameZh": "Warframe 星际战甲",
+          "title": "Warframe",
+          "release": "Mar 25, 2013",
+          "developers": [
+            "Digital Extremes"
+          ]
+        },
+        {
+          "rank": 18,
+          "steamRank": 21,
+          "appid": 976730,
+          "name": "Halo: The Master Chief Collection",
+          "nameZh": null,
+          "title": "Halo: The Master Chief Collection",
+          "release": "Dec 3, 2019",
+          "developers": [
+            "343 Industries",
+            "Splash Damage",
+            "Ruffian Games",
+            "Bungie",
+            "Saber Interactive"
+          ]
+        },
+        {
+          "rank": 19,
+          "steamRank": 22,
+          "appid": 2054970,
+          "name": "Dragon's Dogma 2",
+          "nameZh": null,
+          "title": "Dragon's Dogma 2",
+          "release": "Mar 21, 2024",
+          "developers": [
+            "CAPCOM Co., Ltd."
+          ]
+        },
+        {
+          "rank": 20,
+          "steamRank": 24,
+          "appid": 2357570,
+          "name": "Overwatch®",
+          "nameZh": "《守望先锋®》",
+          "title": "Overwatch®",
+          "release": "Aug 10, 2023",
+          "developers": [
+            "Blizzard Entertainment, Inc."
+          ]
+        },
+        {
+          "rank": 21,
+          "steamRank": 26,
+          "appid": 1172470,
+          "name": "Apex Legends™",
+          "nameZh": null,
+          "title": "Apex Legends™",
+          "release": "Nov 4, 2020",
+          "developers": [
+            "Respawn"
+          ]
+        },
+        {
+          "rank": 22,
+          "steamRank": 27,
+          "appid": 2288340,
+          "name": "ACE COMBAT 8: WINGS OF THEVE",
+          "nameZh": "空战奇兵8 希孚之翼 (ACE COMBAT 8: WINGS OF THEVE)",
+          "title": "ACE COMBAT 8: WINGS OF THEVE",
+          "release": "Oct 1, 2026",
+          "developers": [
+            "Bandai Namco Aces Inc."
+          ]
+        },
+        {
+          "rank": 23,
+          "steamRank": 28,
+          "appid": 3513350,
+          "name": "Wuthering Waves",
+          "nameZh": null,
+          "title": "Wuthering Waves",
+          "release": "Apr 28, 2025",
+          "developers": [
+            "KURO GAMES"
+          ]
+        },
+        {
+          "rank": 24,
+          "steamRank": 29,
+          "appid": 4231820,
+          "name": "Castlevania: Belmont's Curse",
+          "nameZh": null,
+          "title": "Castlevania: Belmont's Curse",
+          "release": "Oct 14, 2026",
+          "developers": [
+            "KONAMI",
+            " Evil Empire"
+          ]
+        },
+        {
+          "rank": 25,
+          "steamRank": 30,
+          "appid": 381210,
+          "name": "Dead by Daylight",
+          "nameZh": "黎明杀机",
+          "title": "Dead by Daylight",
+          "release": "Jun 14, 2016",
+          "developers": [
+            "Behaviour Interactive Inc."
+          ]
+        },
+        {
+          "rank": 26,
+          "steamRank": 32,
+          "appid": 359550,
+          "name": "Tom Clancy's Rainbow Six Siege",
+          "nameZh": "彩虹六号：围攻",
+          "title": "Tom Clancy's Rainbow Six Siege",
+          "release": "Dec 1, 2015",
+          "developers": [
+            "Ubisoft Montreal"
+          ]
+        },
+        {
+          "rank": 27,
+          "steamRank": 34,
+          "appid": 39210,
+          "name": "FINAL FANTASY XIV Online",
+          "nameZh": null,
+          "title": "FINAL FANTASY XIV Online",
+          "release": "Feb 18, 2014",
+          "developers": [
+            "Square Enix"
+          ]
+        },
+        {
+          "rank": 28,
+          "steamRank": 35,
+          "appid": 1085660,
+          "name": "Destiny 2",
+          "nameZh": "命运2",
+          "title": "Destiny 2",
+          "release": "Oct 1, 2019",
+          "developers": [
+            "Bungie"
+          ]
+        },
+        {
+          "rank": 29,
+          "steamRank": 36,
+          "appid": 553850,
+          "name": "HELLDIVERS™ 2",
+          "nameZh": "HELLDIVERS™ 绝地潜兵2",
+          "title": "HELLDIVERS™ 2",
+          "release": "Feb 8, 2024",
+          "developers": [
+            "Arrowhead Game Studios"
+          ]
+        },
+        {
+          "rank": 30,
+          "steamRank": 37,
+          "appid": 3240220,
+          "name": "Grand Theft Auto V Enhanced",
+          "nameZh": "Grand Theft Auto V 增强版",
+          "title": "Grand Theft Auto V Enhanced",
+          "release": "Mar 4, 2025",
+          "developers": [
+            "Rockstar North"
+          ]
+        },
+        {
+          "rank": 31,
+          "steamRank": 38,
+          "appid": 4080220,
+          "name": "EA SPORTS FC™ 27",
+          "nameZh": null,
+          "title": "EA SPORTS FC™ 27",
+          "release": "Sep 24, 2026",
+          "developers": [
+            "EA CANADA",
+            "EA Romania"
+          ]
+        },
+        {
+          "rank": 32,
+          "steamRank": 39,
+          "appid": 3940610,
+          "name": "EA SPORTS™ Madden NFL 27",
+          "nameZh": "EA SPORTS™《Madden NFL 27》",
+          "title": "EA SPORTS™ Madden NFL 27",
+          "release": "Aug 13, 2026",
+          "developers": [
+            "Tiburon"
+          ]
+        },
+        {
+          "rank": 33,
+          "steamRank": 40,
+          "appid": 4356430,
+          "name": "NBA 2K27",
+          "nameZh": "《NBA 2K27》",
+          "title": "NBA 2K27",
+          "release": "Sep 3, 2026",
+          "developers": [
+            "Visual Concepts"
+          ]
+        },
+        {
+          "rank": 34,
+          "steamRank": 41,
+          "appid": 236390,
+          "name": "War Thunder",
+          "nameZh": "战争雷霆",
+          "title": "War Thunder",
+          "release": "Aug 15, 2013",
+          "developers": [
+            "Gaijin Entertainment"
+          ]
+        },
+        {
+          "rank": 35,
+          "steamRank": 42,
+          "appid": 1142710,
+          "name": "Total War: WARHAMMER III",
+          "nameZh": "全面战争：战锤3",
+          "title": "Total War: WARHAMMER III",
+          "release": "Feb 16, 2022",
+          "developers": [
+            "CREATIVE ASSEMBLY",
+            "Feral Interactive"
+          ]
+        },
+        {
+          "rank": 36,
+          "steamRank": 43,
+          "appid": 438100,
+          "name": "VRChat",
+          "nameZh": null,
+          "title": "VRChat",
+          "release": "Feb 1, 2017",
+          "developers": [
+            "VRChat Inc."
+          ]
+        },
+        {
+          "rank": 37,
+          "steamRank": 44,
+          "appid": 1174180,
+          "name": "Red Dead Redemption 2",
+          "nameZh": null,
+          "title": "Red Dead Redemption 2",
+          "release": "Dec 5, 2019",
+          "developers": [
+            "Rockstar Games"
+          ]
+        },
+        {
+          "rank": 38,
+          "steamRank": 45,
+          "appid": 1151340,
+          "name": "Fallout 76",
+          "nameZh": null,
+          "title": "Fallout 76",
+          "release": "Apr 14, 2020",
+          "developers": [
+            "Bethesda Game Studios"
+          ]
+        },
+        {
+          "rank": 39,
+          "steamRank": 46,
+          "appid": 3743140,
+          "name": "Battleplan",
+          "nameZh": null,
+          "title": "Battleplan",
+          "release": "Oct 12, 2026",
+          "developers": [
+            "Foolish Mortals Games Inc."
+          ]
+        },
+        {
+          "rank": 40,
+          "steamRank": 47,
+          "appid": 1374490,
+          "name": "RuneScape: Dragonwilds",
+          "nameZh": "RuneScape: Dragonwilds 符文世界：龙之荒野",
+          "title": "RuneScape: Dragonwilds",
+          "release": "Sep 15, 2026",
+          "developers": [
+            "Jagex Ltd"
+          ]
+        },
+        {
+          "rank": 41,
+          "steamRank": 48,
+          "appid": 306130,
+          "name": "The Elder Scrolls® Online",
+          "nameZh": "《上古卷轴OL》",
+          "title": "The Elder Scrolls® Online",
+          "release": "May 22, 2017",
+          "developers": [
+            "ZeniMax Online Studios"
+          ]
+        },
+        {
+          "rank": 42,
+          "steamRank": 49,
+          "appid": 4032350,
+          "name": "EA SPORTS™ College Football 27",
+          "nameZh": null,
+          "title": "EA SPORTS™ College Football 27",
+          "release": "Jul 9, 2026",
+          "developers": [
+            "Tiburon"
+          ]
+        },
+        {
+          "rank": 43,
+          "steamRank": 50,
+          "appid": 1158310,
+          "name": "Crusader Kings III",
+          "nameZh": null,
+          "title": "Crusader Kings III",
+          "release": "Sep 1, 2020",
+          "developers": [
+            "Paradox Development Studio"
+          ]
+        },
+        {
+          "rank": 44,
+          "steamRank": 51,
+          "appid": 252490,
+          "name": "Rust",
+          "nameZh": null,
+          "title": "Rust",
+          "release": "Feb 8, 2018",
+          "developers": [
+            "Facepunch Studios"
+          ]
+        },
+        {
+          "rank": 45,
+          "steamRank": 52,
+          "appid": 440,
+          "name": "Team Fortress 2",
+          "nameZh": null,
+          "title": "Team Fortress 2",
+          "release": "Oct 10, 2007",
+          "developers": [
+            "Valve"
+          ]
+        },
+        {
+          "rank": 46,
+          "steamRank": 53,
+          "appid": 2141910,
+          "name": "Magic: The Gathering Arena",
+          "nameZh": null,
+          "title": "Magic: The Gathering Arena",
+          "release": "May 23, 2023",
+          "developers": [
+            "Wizards of the Coast"
+          ]
+        },
+        {
+          "rank": 47,
+          "steamRank": 54,
+          "appid": 2254990,
+          "name": "Permafrost",
+          "nameZh": "永冻纪元 - Permafrost",
+          "title": "Permafrost",
+          "release": "Oct 9, 2026",
+          "developers": [
+            "SpaceRocket Games"
+          ]
+        },
+        {
+          "rank": 48,
+          "steamRank": 55,
+          "appid": 2333000,
+          "name": "Silver Pines",
+          "nameZh": "银松镇",
+          "title": "Silver Pines",
+          "release": "Oct 8, 2026",
+          "developers": [
+            "Wych Elm"
+          ]
+        },
+        {
+          "rank": 49,
+          "steamRank": 56,
+          "appid": 2139460,
+          "name": "Once Human",
+          "nameZh": "七日世界",
+          "title": "Once Human",
+          "release": "Jul 9, 2024",
+          "developers": [
+            "Starry Studio"
+          ]
+        },
+        {
+          "rank": 50,
+          "steamRank": 57,
+          "appid": 1245620,
+          "name": "ELDEN RING",
+          "nameZh": "艾尔登法环",
+          "title": "ELDEN RING",
+          "release": "Feb 24, 2022",
+          "developers": [
+            "FromSoftware, Inc."
+          ]
+        },
+        {
+          "rank": 51,
+          "steamRank": 58,
+          "appid": 2071280,
+          "name": "Ravenswatch",
+          "nameZh": "Ravenswatch 鸦卫奇旅",
+          "title": "Ravenswatch",
+          "release": "Sep 26, 2024",
+          "developers": [
+            "Passtech Games"
+          ]
+        },
+        {
+          "rank": 52,
+          "steamRank": 59,
+          "appid": 266410,
+          "name": "iRacing",
+          "nameZh": null,
+          "title": "iRacing",
+          "release": "Jan 12, 2015",
+          "developers": [
+            "iRacing.com Motorsport Simulations",
+            "iRacing"
+          ]
+        },
+        {
+          "rank": 53,
+          "steamRank": 60,
+          "appid": 3669870,
+          "name": "CONTROL Resonant",
+          "nameZh": "控制: 共振",
+          "title": "CONTROL Resonant",
+          "release": "Sep 24, 2026",
+          "developers": [
+            "Remedy Entertainment"
+          ]
+        },
+        {
+          "rank": 54,
+          "steamRank": 61,
+          "appid": 2887580,
+          "name": "Active Matter",
+          "nameZh": "活性物质",
+          "title": "Active Matter",
+          "release": "Sep 15, 2026",
+          "developers": [
+            "Matter Team"
+          ]
+        },
+        {
+          "rank": 55,
+          "steamRank": 62,
+          "appid": 4001890,
+          "name": "How to Fish",
+          "nameZh": "渔力全开",
+          "title": "How to Fish",
+          "release": "Aug 20, 2026",
+          "developers": [
+            "Dazed Games"
+          ]
+        },
+        {
+          "rank": 56,
+          "steamRank": 63,
+          "appid": 1364780,
+          "name": "Street Fighter™ 6",
+          "nameZh": "Street Fighter 6",
+          "title": "Street Fighter™ 6",
+          "release": "Jun 1, 2023",
+          "developers": [
+            "CAPCOM Co., Ltd."
+          ]
+        },
+        {
+          "rank": 57,
+          "steamRank": 64,
+          "appid": 3932890,
+          "name": "Escape from Tarkov",
+          "nameZh": null,
+          "title": "Escape from Tarkov",
+          "release": "Nov 15, 2025",
+          "developers": [
+            "Battlestate Games"
+          ]
+        },
+        {
+          "rank": 58,
+          "steamRank": 66,
+          "appid": 499170,
+          "name": "Order of the Sinking Star",
+          "nameZh": "沉星之序",
+          "title": "Order of the Sinking Star",
+          "release": "Oct 8, 2026",
+          "developers": [
+            "Thekla, Inc."
+          ]
+        },
+        {
+          "rank": 59,
+          "steamRank": 67,
+          "appid": 1623730,
+          "name": "Palworld",
+          "nameZh": "Palworld / 幻兽帕鲁",
+          "title": "Palworld",
+          "release": "Jul 9, 2026",
+          "developers": [
+            "Pocketpair"
+          ]
+        },
+        {
+          "rank": 60,
+          "steamRank": 69,
+          "appid": 108600,
+          "name": "Project Zomboid",
+          "nameZh": null,
+          "title": "Project Zomboid",
+          "release": "Nov 8, 2013",
+          "developers": [
+            "The Indie Stone"
+          ]
+        },
+        {
+          "rank": 61,
+          "steamRank": 70,
+          "appid": 270880,
+          "name": "American Truck Simulator",
+          "nameZh": null,
+          "title": "American Truck Simulator",
+          "release": "Feb 2, 2016",
+          "developers": [
+            "SCS Software"
+          ]
+        },
+        {
+          "rank": 62,
+          "steamRank": 71,
+          "appid": 1086940,
+          "name": "Baldur's Gate 3",
+          "nameZh": "博德之门3",
+          "title": "Baldur's Gate 3",
+          "release": "Aug 3, 2023",
+          "developers": [
+            "Larian Studios"
+          ]
+        },
+        {
+          "rank": 63,
+          "steamRank": 72,
+          "appid": 1478500,
+          "name": "Big Walk",
+          "nameZh": null,
+          "title": "Big Walk",
+          "release": "Aug 4, 2026",
+          "developers": [
+            "House House"
+          ]
+        },
+        {
+          "rank": 64,
+          "steamRank": 73,
+          "appid": 2406770,
+          "name": "Bodycam",
+          "nameZh": null,
+          "title": "Bodycam",
+          "release": "Jun 7, 2024",
+          "developers": [
+            "Reissad Studio"
+          ]
+        },
+        {
+          "rank": 65,
+          "steamRank": 74,
+          "appid": 1621690,
+          "name": "Core Keeper",
+          "nameZh": "护核纪元",
+          "title": "Core Keeper",
+          "release": "Aug 27, 2024",
+          "developers": [
+            "Pugstorm"
+          ]
+        },
+        {
+          "rank": 66,
+          "steamRank": 75,
+          "appid": 2183900,
+          "name": "Warhammer 40,000: Space Marine 2",
+          "nameZh": "Warhammer 40,000: 星际战士2",
+          "title": "Warhammer 40,000: Space Marine 2",
+          "release": "Sep 9, 2024",
+          "developers": [
+            "Saber Interactive"
+          ]
+        },
+        {
+          "rank": 67,
+          "steamRank": 76,
+          "appid": 3259780,
+          "name": "FINAL FANTASY RESONANCE",
+          "nameZh": null,
+          "title": "FINAL FANTASY RESONANCE",
+          "release": "Oct 22, 2026",
+          "developers": [
+            "Square Enix",
+            "LANCARSE Ltd."
+          ]
+        },
+        {
+          "rank": 68,
+          "steamRank": 77,
+          "appid": 3883570,
+          "name": "Invokyr",
+          "nameZh": "勇敢者之试炼 : Invokyr",
+          "title": "Invokyr",
+          "release": "Oct 8, 2026",
+          "developers": [
+            "Ludogram"
+          ]
+        },
+        {
+          "rank": 69,
+          "steamRank": 78,
+          "appid": 1289670,
+          "name": "EA Play",
+          "nameZh": null,
+          "title": "EA Play",
+          "release": "Aug 31, 2020",
+          "developers": [
+            "Electronic Arts"
+          ]
+        },
+        {
+          "rank": 70,
+          "steamRank": 79,
+          "appid": 3557620,
+          "name": "Blue Archive",
+          "nameZh": null,
+          "title": "Blue Archive",
+          "release": "Jul 3, 2025",
+          "developers": [
+            "NEXON Games"
+          ]
+        },
+        {
+          "rank": 71,
+          "steamRank": 80,
+          "appid": 2073850,
+          "name": "THE FINALS",
+          "nameZh": null,
+          "title": "THE FINALS",
+          "release": "Dec 7, 2023",
+          "developers": [
+            "Embark Studios"
+          ]
+        },
+        {
+          "rank": 72,
+          "steamRank": 81,
+          "appid": 4656000,
+          "name": "BOMBANANA!",
+          "nameZh": null,
+          "title": "BOMBANANA!",
+          "release": "Sep 2, 2026",
+          "developers": [
+            "Lefto Studio"
+          ]
+        },
+        {
+          "rank": 73,
+          "steamRank": 82,
+          "appid": 3493540,
+          "name": "Transport Fever 3",
+          "nameZh": null,
+          "title": "Transport Fever 3",
+          "release": "Sep 29, 2026",
+          "developers": [
+            "Urban Games"
+          ]
+        },
+        {
+          "rank": 74,
+          "steamRank": 83,
+          "appid": 1361210,
+          "name": "Warhammer 40,000: Darktide",
+          "nameZh": "战锤40K：暗潮",
+          "title": "Warhammer 40,000: Darktide",
+          "release": "Nov 30, 2022",
+          "developers": [
+            "Fatshark"
+          ]
+        },
+        {
+          "rank": 75,
+          "steamRank": 84,
+          "appid": 3751260,
+          "name": "The Blood of Dawnwalker",
+          "nameZh": "The Blood of Dawnwalker 黎明行者之血",
+          "title": "The Blood of Dawnwalker",
+          "release": "Sep 2, 2026",
+          "developers": [
+            "Rebel Wolves"
+          ]
+        },
+        {
+          "rank": 76,
+          "steamRank": 85,
+          "appid": 3164500,
+          "name": "Schedule I",
+          "nameZh": null,
+          "title": "Schedule I",
+          "release": "Mar 24, 2025",
+          "developers": [
+            "TVGS"
+          ]
+        },
+        {
+          "rank": 77,
+          "steamRank": 86,
+          "appid": 440900,
+          "name": "Conan Exiles Enhanced",
+          "nameZh": null,
+          "title": "Conan Exiles Enhanced",
+          "release": "May 8, 2018",
+          "developers": [
+            "Funcom",
+            "Inflexion Games"
+          ]
+        },
+        {
+          "rank": 78,
+          "steamRank": 87,
+          "appid": 892970,
+          "name": "Valheim",
+          "nameZh": "Valheim: 英灵神殿",
+          "title": "Valheim",
+          "release": "Sep 9, 2026",
+          "developers": [
+            "Iron Gate AB"
+          ]
+        },
+        {
+          "rank": 79,
+          "steamRank": 88,
+          "appid": 1222670,
+          "name": "The Sims™ 4",
+          "nameZh": null,
+          "title": "The Sims™ 4",
+          "release": "Jun 18, 2020",
+          "developers": [
+            "Maxis"
+          ]
+        },
+        {
+          "rank": 80,
+          "steamRank": 89,
+          "appid": 4584110,
+          "name": "Soul Land: Awakening World",
+          "nameZh": null,
+          "title": "Soul Land: Awakening World",
+          "release": "Jun 1, 2026",
+          "developers": [
+            "37GAMES"
+          ]
+        },
+        {
+          "rank": 81,
+          "steamRank": 90,
+          "appid": 2075800,
+          "name": "STAR WARS Zero Company™",
+          "nameZh": "星球大战 零号连队™",
+          "title": "STAR WARS Zero Company™",
+          "release": "Aug 27, 2026",
+          "developers": [
+            "Bit Reactor"
+          ]
+        },
+        {
+          "rank": 82,
+          "steamRank": 91,
+          "appid": 2124120,
+          "name": "SULFUR",
+          "nameZh": "火湖",
+          "title": "SULFUR",
+          "release": "Oct 28, 2024",
+          "developers": [
+            "Perfect Random"
+          ]
+        },
+        {
+          "rank": 83,
+          "steamRank": 92,
+          "appid": 1912410,
+          "name": "Minecraft Dungeons II",
+          "nameZh": null,
+          "title": "Minecraft Dungeons II",
+          "release": "Sep 29, 2026",
+          "developers": [
+            "Mojang Studios",
+            "Double Eleven"
+          ]
+        },
+        {
+          "rank": 84,
+          "steamRank": 93,
+          "appid": 582660,
+          "name": "Black Desert",
+          "nameZh": null,
+          "title": "Black Desert",
+          "release": "May 24, 2017",
+          "developers": [
+            "Pearl Abyss"
+          ]
+        },
+        {
+          "rank": 85,
+          "steamRank": 94,
+          "appid": 2868840,
+          "name": "Slay the Spire 2",
+          "nameZh": null,
+          "title": "Slay the Spire 2",
+          "release": "Mar 5, 2026",
+          "developers": [
+            "Mega Crit"
+          ]
+        },
+        {
+          "rank": 86,
+          "steamRank": 96,
+          "appid": 2807960,
+          "name": "Battlefield™ 6",
+          "nameZh": "战地风云™ 6",
+          "title": "Battlefield™ 6",
+          "release": "Oct 10, 2025",
+          "developers": [
+            "Battlefield Studios"
+          ]
+        },
+        {
+          "rank": 87,
+          "steamRank": 97,
+          "appid": 4115450,
+          "name": "Phantom Blade Zero",
+          "nameZh": "影之刃零",
+          "title": "Phantom Blade Zero",
+          "release": "Oct 28, 2026",
+          "developers": [
+            "S-GAME Studio"
+          ]
+        },
+        {
+          "rank": 88,
+          "steamRank": 98,
+          "appid": 281990,
+          "name": "Stellaris",
+          "nameZh": null,
+          "title": "Stellaris",
+          "release": "May 9, 2016",
+          "developers": [
+            "Paradox Development Studio"
+          ]
+        },
+        {
+          "rank": 89,
+          "steamRank": 99,
+          "appid": 1295660,
+          "name": "Sid Meier's Civilization VII",
+          "nameZh": "席德·梅尔的文明VII",
+          "title": "Sid Meier's Civilization VII",
+          "release": "Feb 10, 2025",
+          "developers": [
+            "Firaxis Games"
+          ]
+        },
+        {
+          "rank": 90,
+          "steamRank": 100,
+          "appid": 1449850,
+          "name": "Yu-Gi-Oh! Master Duel",
+          "nameZh": null,
+          "title": "Yu-Gi-Oh! Master Duel",
+          "release": "Jan 18, 2022",
+          "developers": [
+            "KONAMI"
+          ]
+        },
+        {
+          "rank": 91,
+          "steamRank": 101,
+          "appid": 4025700,
+          "name": "Heartopia",
+          "nameZh": "心动小镇",
+          "title": "Heartopia",
+          "release": "Jan 16, 2026",
+          "developers": [
+            "XD"
+          ]
+        },
+        {
+          "rank": 92,
+          "steamRank": 102,
+          "appid": 2073620,
+          "name": "Arena Breakout: Infinite",
+          "nameZh": "暗区突围：无限",
+          "title": "Arena Breakout: Infinite",
+          "release": "Sep 15, 2025",
+          "developers": [
+            "Morefun Studios"
+          ]
+        },
+        {
+          "rank": 93,
+          "steamRank": 103,
+          "appid": 2483190,
+          "name": "Forza Horizon 6",
+          "nameZh": "极限竞速：地平线 6",
+          "title": "Forza Horizon 6",
+          "release": "May 18, 2026",
+          "developers": [
+            "Playground Games"
+          ]
+        },
+        {
+          "rank": 94,
+          "steamRank": 104,
+          "appid": 1286830,
+          "name": "STAR WARS™: The Old Republic™",
+          "nameZh": null,
+          "title": "STAR WARS™: The Old Republic™",
+          "release": "Jul 21, 2020",
+          "developers": [
+            "Broadsword"
+          ]
+        },
+        {
+          "rank": 95,
+          "steamRank": 105,
+          "appid": 578080,
+          "name": "PUBG: BATTLEGROUNDS",
+          "nameZh": null,
+          "title": "PUBG: BATTLEGROUNDS",
+          "release": "Dec 21, 2017",
+          "developers": [
+            "PUBG Corporation"
+          ]
+        },
+        {
+          "rank": 96,
+          "steamRank": 106,
+          "appid": 1203620,
+          "name": "Enshrouded",
+          "nameZh": "雾锁王国 (Enshrouded)",
+          "title": "Enshrouded",
+          "release": "Jan 24, 2024",
+          "developers": [
+            "Keen Games GmbH"
+          ]
+        },
+        {
+          "rank": 97,
+          "steamRank": 107,
+          "appid": 1091500,
+          "name": "Cyberpunk 2077",
+          "nameZh": "赛博朋克 2077",
+          "title": "Cyberpunk 2077",
+          "release": "Dec 9, 2020",
+          "developers": [
+            "CD PROJEKT RED"
+          ]
+        },
+        {
+          "rank": 98,
+          "steamRank": 108,
+          "appid": 690830,
+          "name": "Foundation",
+          "nameZh": "基石 Foundation",
+          "title": "Foundation",
+          "release": "Jan 31, 2025",
+          "developers": [
+            "Polymorph Games"
+          ]
+        },
+        {
+          "rank": 99,
+          "steamRank": 109,
+          "appid": 2001070,
+          "name": "Heart of the Machine",
+          "nameZh": "人工智能的选择 Heart of the Machine",
+          "title": "Heart of the Machine",
+          "release": "Mar 6, 2026",
+          "developers": [
+            "Arcen Games"
+          ]
+        },
+        {
+          "rank": 100,
+          "steamRank": 110,
+          "appid": 3031880,
+          "name": "Car Park Capital",
+          "nameZh": null,
+          "title": "Car Park Capital",
+          "release": "Oct 9, 2026",
+          "developers": [
+            "Hilkojj Interactive"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "steamRank": 6,
+          "appid": 4165890,
+          "title": "Steam Frame",
+          "type": 10,
+          "typeName": "硬件",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 11,
+          "appid": 3055670,
+          "title": "Risk of Rain 2: Hallowed Concepts",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 14,
+          "appid": 1675200,
+          "title": "Steam Deck",
+          "type": 10,
+          "typeName": "硬件",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 23,
+          "appid": 4165870,
+          "title": "Steam Controller",
+          "type": 10,
+          "typeName": "硬件",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 25,
+          "appid": 4165910,
+          "title": "Steam Machine",
+          "type": 10,
+          "typeName": "硬件",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 31,
+          "appid": 2593290,
+          "title": "Dragon's Dogma 2: Dark Arisen Expansion",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 33,
+          "appid": 5201760,
+          "title": "ARC Raiders - Frozen Trail Collector Set",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 65,
+          "appid": 2781620,
+          "title": "Risk of Rain 2: Alloyed Collective",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 68,
+          "appid": 4809870,
+          "title": "Ravenswatch - Kintaro",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 95,
+          "appid": 5142560,
+          "title": "MapleStory Classic World - Zakum Package",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        }
+      ]
+    },
+    "popularwishlist": {
+      "label": "热门愿望单",
+      "url": "https://store.steampowered.com/search/?filter=popularwishlist&cc=us",
+      "totalCount": 5360,
+      "pages": [
+        {
+          "start": 0,
+          "rows": 50
+        },
+        {
+          "start": 50,
+          "rows": 50
+        },
+        {
+          "start": 100,
+          "rows": 50
+        }
+      ],
+      "count": 100,
+      "items": [
+        {
+          "rank": 1,
+          "steamRank": 1,
+          "appid": 1422450,
+          "name": "Deadlock",
+          "nameZh": null,
+          "title": "Deadlock",
+          "release": "To be announced",
+          "developers": [
+            "Valve"
+          ]
+        },
+        {
+          "rank": 2,
+          "steamRank": 2,
+          "appid": 2719590,
+          "name": "Light No Fire",
+          "nameZh": "Light No Fire 无火之光",
+          "title": "Light No Fire",
+          "release": "To be announced",
+          "developers": [
+            "Hello Games"
+          ]
+        },
+        {
+          "rank": 3,
+          "steamRank": 3,
+          "appid": 4534960,
+          "name": "Dear Passengers",
+          "nameZh": null,
+          "title": "Dear Passengers",
+          "release": "2026",
+          "developers": [
+            "FLEXUS"
+          ]
+        },
+        {
+          "rank": 4,
+          "steamRank": 4,
+          "appid": 2769570,
+          "name": "Fable",
+          "nameZh": "神鬼寓言",
+          "title": "Fable",
+          "release": "Feb 23, 2027",
+          "developers": [
+            "Playground Games"
+          ]
+        },
+        {
+          "rank": 5,
+          "steamRank": 5,
+          "appid": 1774880,
+          "name": "Blight: Survival",
+          "nameZh": null,
+          "title": "Blight: Survival",
+          "release": "To be announced",
+          "developers": [
+            "Haenir Studio"
+          ]
+        },
+        {
+          "rank": 6,
+          "steamRank": 6,
+          "appid": 4115450,
+          "name": "Phantom Blade Zero",
+          "nameZh": "影之刃零",
+          "title": "Phantom Blade Zero",
+          "release": "Oct 28, 2026",
+          "developers": [
+            "S-GAME Studio"
+          ]
+        },
+        {
+          "rank": 7,
+          "steamRank": 7,
+          "appid": 4199910,
+          "name": "Total War: WARHAMMER 40,000",
+          "nameZh": "全面战争：战锤40000",
+          "title": "Total War: WARHAMMER 40,000",
+          "release": "To be announced",
+          "developers": [
+            "Creative Assembly"
+          ]
+        },
+        {
+          "rank": 8,
+          "steamRank": 8,
+          "appid": 4824610,
+          "name": "Resident Evil Veronica",
+          "nameZh": null,
+          "title": "Resident Evil Veronica",
+          "release": "2027",
+          "developers": [
+            "CAPCOM Co., Ltd."
+          ]
+        },
+        {
+          "rank": 9,
+          "steamRank": 9,
+          "appid": 2109770,
+          "name": "Kingmakers",
+          "nameZh": null,
+          "title": "Kingmakers",
+          "release": "Coming soon",
+          "developers": [
+            "Redemption Road"
+          ]
+        },
+        {
+          "rank": 10,
+          "steamRank": 10,
+          "appid": 1846700,
+          "name": "Witchbrook",
+          "nameZh": "巫奇魔法学院 Witchbrook",
+          "title": "Witchbrook",
+          "release": "2026",
+          "developers": [
+            "Chucklefish",
+            "Robotality"
+          ]
+        },
+        {
+          "rank": 11,
+          "steamRank": 11,
+          "appid": 1757350,
+          "name": "ILL",
+          "nameZh": null,
+          "title": "ILL",
+          "release": "2027",
+          "developers": [
+            "Team Clout inc."
+          ]
+        },
+        {
+          "rank": 12,
+          "steamRank": 12,
+          "appid": 2050420,
+          "name": "ARK 2",
+          "nameZh": null,
+          "title": "ARK 2",
+          "release": "To be announced",
+          "developers": [
+            "Studio Wildcard",
+            "Grove Street Games"
+          ]
+        },
+        {
+          "rank": 13,
+          "steamRank": 13,
+          "appid": 4095380,
+          "name": "Soulframe",
+          "nameZh": null,
+          "title": "Soulframe",
+          "release": "Coming soon",
+          "developers": [
+            "Digital Extremes"
+          ]
+        },
+        {
+          "rank": 14,
+          "steamRank": 14,
+          "appid": 2381520,
+          "name": "Unrecord",
+          "nameZh": null,
+          "title": "Unrecord",
+          "release": "To be announced",
+          "developers": [
+            "Drama Studios"
+          ]
+        },
+        {
+          "rank": 15,
+          "steamRank": 15,
+          "appid": 2590240,
+          "name": "METRO 2039",
+          "nameZh": "地铁2039 ",
+          "title": "METRO 2039",
+          "release": "Feb 4, 2027",
+          "developers": [
+            "4A Games"
+          ]
+        },
+        {
+          "rank": 16,
+          "steamRank": 16,
+          "appid": 2929250,
+          "name": "over the hill",
+          "nameZh": "越过山丘 over the hill",
+          "title": "over the hill",
+          "release": "Oct 14, 2026",
+          "developers": [
+            "Funselektor Labs Inc."
+          ]
+        },
+        {
+          "rank": 17,
+          "steamRank": 18,
+          "appid": 2963950,
+          "name": "Persona 4 Revival ",
+          "nameZh": "女神异闻录４ Revival",
+          "title": "Persona 4 Revival",
+          "release": "Feb 17, 2027",
+          "developers": [
+            "ATLUS"
+          ]
+        },
+        {
+          "rank": 18,
+          "steamRank": 19,
+          "appid": 2272360,
+          "name": "Warhammer 40,000: Dawn of War IV",
+          "nameZh": null,
+          "title": "Warhammer 40,000: Dawn of War IV",
+          "release": "Dec 3, 2026",
+          "developers": [
+            "KING Art"
+          ]
+        },
+        {
+          "rank": 19,
+          "steamRank": 20,
+          "appid": 3292470,
+          "name": "Tides of Annihilation",
+          "nameZh": "湮灭之潮",
+          "title": "Tides of Annihilation",
+          "release": "Coming soon",
+          "developers": [
+            "Eclipse Glow Games"
+          ]
+        },
+        {
+          "rank": 20,
+          "steamRank": 21,
+          "appid": 3727390,
+          "name": "The Expanse: Osiris Reborn",
+          "nameZh": "苍穹浩瀚：奥西里斯重生",
+          "title": "The Expanse: Osiris Reborn",
+          "release": "Q2 2027",
+          "developers": [
+            "Owlcat Games"
+          ]
+        },
+        {
+          "rank": 21,
+          "steamRank": 22,
+          "appid": 3558670,
+          "name": "Tomb Raider: Legacy of Atlantis",
+          "nameZh": "《古墓丽影：亚特兰蒂斯遗迹》",
+          "title": "Tomb Raider: Legacy of Atlantis",
+          "release": "Feb 12, 2027",
+          "developers": [
+            "Crystal Dynamics",
+            "Flying Wild Hog"
+          ]
+        },
+        {
+          "rank": 22,
+          "steamRank": 23,
+          "appid": 2873440,
+          "name": "Chrono Odyssey",
+          "nameZh": null,
+          "title": "Chrono Odyssey",
+          "release": "To be announced",
+          "developers": [
+            "Chrono Studio"
+          ]
+        },
+        {
+          "rank": 23,
+          "steamRank": 24,
+          "appid": 3710600,
+          "name": "Warhammer 40,000: Dark Heresy",
+          "nameZh": "Warhammer 40,000: 黑暗异端",
+          "title": "Warhammer 40,000: Dark Heresy",
+          "release": "Coming soon",
+          "developers": [
+            "Owlcat Games"
+          ]
+        },
+        {
+          "rank": 24,
+          "steamRank": 25,
+          "appid": 1340720,
+          "name": "State of Decay 3",
+          "nameZh": null,
+          "title": "State of Decay 3",
+          "release": "To be announced",
+          "developers": [
+            "Undead Labs"
+          ]
+        },
+        {
+          "rank": 25,
+          "steamRank": 26,
+          "appid": 2814860,
+          "name": "Vindictus: Defying Fate",
+          "nameZh": null,
+          "title": "Vindictus: Defying Fate",
+          "release": "2027",
+          "developers": [
+            "NEXON"
+          ]
+        },
+        {
+          "rank": 26,
+          "steamRank": 27,
+          "appid": 2582960,
+          "name": "NAKWON: LAST PARADISE",
+          "nameZh": "纳克园: 最后的乐园",
+          "title": "NAKWON: LAST PARADISE",
+          "release": "To be announced",
+          "developers": [
+            "NEXON"
+          ]
+        },
+        {
+          "rank": 27,
+          "steamRank": 28,
+          "appid": 2231020,
+          "name": "Chronicles: Medieval",
+          "nameZh": null,
+          "title": "Chronicles: Medieval",
+          "release": "2027",
+          "developers": [
+            "Raw Power Games"
+          ]
+        },
+        {
+          "rank": 28,
+          "steamRank": 29,
+          "appid": 4077740,
+          "name": "PUBG: Black Budget",
+          "nameZh": null,
+          "title": "PUBG: Black Budget",
+          "release": "To be announced",
+          "developers": [
+            "PUBG Corporation"
+          ]
+        },
+        {
+          "rank": 29,
+          "steamRank": 30,
+          "appid": 2340970,
+          "name": "Railborn",
+          "nameZh": "轨界新生",
+          "title": "Railborn",
+          "release": "2027",
+          "developers": [
+            "Washbear Studio"
+          ]
+        },
+        {
+          "rank": 30,
+          "steamRank": 31,
+          "appid": 1940080,
+          "name": "Rooted",
+          "nameZh": null,
+          "title": "Rooted",
+          "release": "2027",
+          "developers": [
+            "Headlight Studio"
+          ]
+        },
+        {
+          "rank": 31,
+          "steamRank": 32,
+          "appid": 2828710,
+          "name": "Valor Mortis",
+          "nameZh": "不朽遗志 Valor Mortis",
+          "title": "Valor Mortis",
+          "release": "Oct 13, 2026",
+          "developers": [
+            "One More Level"
+          ]
+        },
+        {
+          "rank": 32,
+          "steamRank": 33,
+          "appid": 3978820,
+          "name": "Rules of Engagement: The Grey State",
+          "nameZh": "灰境行者",
+          "title": "Rules of Engagement: The Grey State",
+          "release": "To be announced",
+          "developers": [
+            "Grey State Studio"
+          ]
+        },
+        {
+          "rank": 33,
+          "steamRank": 34,
+          "appid": 2649560,
+          "name": "Persona 6",
+          "nameZh": "女神异闻录６",
+          "title": "Persona 6",
+          "release": "To be announced",
+          "developers": [
+            "ATLUS"
+          ]
+        },
+        {
+          "rank": 34,
+          "steamRank": 35,
+          "appid": 3016620,
+          "name": "Alkahest",
+          "nameZh": null,
+          "title": "Alkahest",
+          "release": "To be announced",
+          "developers": [
+            "Push On"
+          ]
+        },
+        {
+          "rank": 35,
+          "steamRank": 36,
+          "appid": 4231820,
+          "name": "Castlevania: Belmont's Curse",
+          "nameZh": null,
+          "title": "Castlevania: Belmont's Curse",
+          "release": "Oct 14, 2026",
+          "developers": [
+            "KONAMI",
+            " Evil Empire"
+          ]
+        },
+        {
+          "rank": 36,
+          "steamRank": 37,
+          "appid": 1280190,
+          "name": "Falling Frontier",
+          "nameZh": "坠落边界 Falling Frontier",
+          "title": "Falling Frontier",
+          "release": "Coming soon",
+          "developers": [
+            "Stutter Fox Studios"
+          ]
+        },
+        {
+          "rank": 37,
+          "steamRank": 38,
+          "appid": 1687540,
+          "name": "Showa American Story",
+          "nameZh": "昭和米国物语",
+          "title": "Showa American Story",
+          "release": "2026",
+          "developers": [
+            "NEKCOM Entertainment"
+          ]
+        },
+        {
+          "rank": 38,
+          "steamRank": 39,
+          "appid": 2179480,
+          "name": "Ardem",
+          "nameZh": null,
+          "title": "Ardem",
+          "release": "2027",
+          "developers": [
+            "Techtive Games"
+          ]
+        },
+        {
+          "rank": 39,
+          "steamRank": 40,
+          "appid": 4743930,
+          "name": "Guild Wars 3™",
+          "nameZh": null,
+          "title": "Guild Wars 3™",
+          "release": "To be announced",
+          "developers": [
+            "ArenaNet®"
+          ]
+        },
+        {
+          "rank": 40,
+          "steamRank": 41,
+          "appid": 1313230,
+          "name": "Beautiful Light",
+          "nameZh": null,
+          "title": "Beautiful Light",
+          "release": "December 2026",
+          "developers": [
+            "Deep Worlds SA"
+          ]
+        },
+        {
+          "rank": 41,
+          "steamRank": 42,
+          "appid": 2724650,
+          "name": "The Bustling World",
+          "nameZh": "烽火与炊烟",
+          "title": "The Bustling World",
+          "release": "To be announced",
+          "developers": [
+            "FireWo Games"
+          ]
+        },
+        {
+          "rank": 42,
+          "steamRank": 43,
+          "appid": 2161710,
+          "name": "NO LAW",
+          "nameZh": null,
+          "title": "NO LAW",
+          "release": "2027",
+          "developers": [
+            "Neon Giant"
+          ]
+        },
+        {
+          "rank": 43,
+          "steamRank": 44,
+          "appid": 2956040,
+          "name": "PVKK: Planetenverteidigungskanonenkommandant",
+          "nameZh": null,
+          "title": "PVKK: Planetenverteidigungskanonenkommandant",
+          "release": "2027",
+          "developers": [
+            "Bippinbits"
+          ]
+        },
+        {
+          "rank": 44,
+          "steamRank": 45,
+          "appid": 2861080,
+          "name": "Haunted Paws",
+          "nameZh": " 闹鬼爪子 Haunted Paws",
+          "title": "Haunted Paws",
+          "release": "To be announced",
+          "developers": [
+            "LazyFlock"
+          ]
+        },
+        {
+          "rank": 45,
+          "steamRank": 46,
+          "appid": 3255110,
+          "name": "Grave Seasons",
+          "nameZh": "埋谷季",
+          "title": "Grave Seasons",
+          "release": "Mar 9, 2027",
+          "developers": [
+            "Perfect Garbage"
+          ]
+        },
+        {
+          "rank": 46,
+          "steamRank": 47,
+          "appid": 3864580,
+          "name": "P.O.N.",
+          "nameZh": null,
+          "title": "P.O.N.",
+          "release": "Coming soon",
+          "developers": [
+            "Team VAC"
+          ]
+        },
+        {
+          "rank": 47,
+          "steamRank": 48,
+          "appid": 2295170,
+          "name": "Emberville",
+          "nameZh": "余烬之镇 Emberville",
+          "title": "Emberville",
+          "release": "Oct 27, 2026",
+          "developers": [
+            "Cygnus Cross"
+          ]
+        },
+        {
+          "rank": 48,
+          "steamRank": 49,
+          "appid": 2439280,
+          "name": "Clockwork Revolution",
+          "nameZh": null,
+          "title": "Clockwork Revolution",
+          "release": "2027",
+          "developers": [
+            "inXile Entertainment"
+          ]
+        },
+        {
+          "rank": 49,
+          "steamRank": 50,
+          "appid": 3161310,
+          "name": "Hela: of Mice & Magic",
+          "nameZh": "Hela：鼠鼠奇旅",
+          "title": "Hela: of Mice & Magic",
+          "release": "Dec 1, 2026",
+          "developers": [
+            "Windup"
+          ]
+        },
+        {
+          "rank": 50,
+          "steamRank": 51,
+          "appid": 5072600,
+          "name": "Family Time",
+          "nameZh": null,
+          "title": "Family Time",
+          "release": "Q1 2027",
+          "developers": [
+            "sgthale"
+          ]
+        },
+        {
+          "rank": 51,
+          "steamRank": 52,
+          "appid": 2610770,
+          "name": "Dust Front RTS",
+          "nameZh": null,
+          "title": "Dust Front RTS",
+          "release": "To be announced",
+          "developers": [
+            "rtsDimon"
+          ]
+        },
+        {
+          "rank": 52,
+          "steamRank": 53,
+          "appid": 4435490,
+          "name": "Call of Duty®: Modern Warfare® 4",
+          "nameZh": "使命召唤®：现代战争® 4",
+          "title": "Call of Duty®: Modern Warfare® 4",
+          "release": "Oct 22, 2026",
+          "developers": [
+            "Infinity Ward",
+            "Beenox",
+            "Digital Legends",
+            "Activision Shanghai",
+            "Raven Software",
+            "Treyarch",
+            "Sledgehammer Games",
+            "High Moon Studios"
+          ]
+        },
+        {
+          "rank": 53,
+          "steamRank": 54,
+          "appid": 3259780,
+          "name": "FINAL FANTASY RESONANCE",
+          "nameZh": null,
+          "title": "FINAL FANTASY RESONANCE",
+          "release": "Oct 22, 2026",
+          "developers": [
+            "Square Enix",
+            "LANCARSE Ltd."
+          ]
+        },
+        {
+          "rank": 54,
+          "steamRank": 55,
+          "appid": 4354570,
+          "name": "FINAL FANTASY VII REVELATION",
+          "nameZh": null,
+          "title": "FINAL FANTASY VII REVELATION",
+          "release": "Apr 8, 2027",
+          "developers": [
+            "Square Enix"
+          ]
+        },
+        {
+          "rank": 55,
+          "steamRank": 56,
+          "appid": 2318330,
+          "name": "Neverway",
+          "nameZh": null,
+          "title": "Neverway",
+          "release": "2027",
+          "developers": [
+            "Coldblood Inc."
+          ]
+        },
+        {
+          "rank": 56,
+          "steamRank": 57,
+          "appid": 1228610,
+          "name": "KARLSON",
+          "nameZh": null,
+          "title": "KARLSON",
+          "release": "Coming soon",
+          "developers": [
+            "Dani"
+          ]
+        },
+        {
+          "rank": 57,
+          "steamRank": 59,
+          "appid": 4260840,
+          "name": "STRANGER THAN HEAVEN",
+          "nameZh": null,
+          "title": "STRANGER THAN HEAVEN",
+          "release": "Jan 14, 2027",
+          "developers": [
+            "RGG Studio"
+          ]
+        },
+        {
+          "rank": 58,
+          "steamRank": 60,
+          "appid": 3230960,
+          "name": "EXODUS",
+          "nameZh": null,
+          "title": "EXODUS",
+          "release": "Apr 7, 2027",
+          "developers": [
+            "Archetype Entertainment"
+          ]
+        },
+        {
+          "rank": 59,
+          "steamRank": 61,
+          "appid": 1952620,
+          "name": "The Lost Wild",
+          "nameZh": null,
+          "title": "The Lost Wild",
+          "release": "2027",
+          "developers": [
+            "Great Ape Games"
+          ]
+        },
+        {
+          "rank": 60,
+          "steamRank": 62,
+          "appid": 1752080,
+          "name": "HUNGER",
+          "nameZh": null,
+          "title": "HUNGER",
+          "release": "Coming soon",
+          "developers": [
+            "GOOD FUN CORPORATION"
+          ]
+        },
+        {
+          "rank": 61,
+          "steamRank": 63,
+          "appid": 2692660,
+          "name": "Car Mechanic Simulator 2026",
+          "nameZh": null,
+          "title": "Car Mechanic Simulator 2026",
+          "release": "2026",
+          "developers": [
+            "Red Dot Games"
+          ]
+        },
+        {
+          "rank": 62,
+          "steamRank": 64,
+          "appid": 3337850,
+          "name": "KYORA",
+          "nameZh": null,
+          "title": "KYORA",
+          "release": "Coming soon",
+          "developers": [
+            "Pugstorm"
+          ]
+        },
+        {
+          "rank": 63,
+          "steamRank": 65,
+          "appid": 3073940,
+          "name": "God Save Birmingham",
+          "nameZh": null,
+          "title": "God Save Birmingham",
+          "release": "To be announced",
+          "developers": [
+            "Ocean Drive Studio, Inc."
+          ]
+        },
+        {
+          "rank": 64,
+          "steamRank": 66,
+          "appid": 1373910,
+          "name": "Anvil Empires",
+          "nameZh": null,
+          "title": "Anvil Empires",
+          "release": "To be announced",
+          "developers": [
+            "Siege Camp"
+          ]
+        },
+        {
+          "rank": 65,
+          "steamRank": 67,
+          "appid": 1586260,
+          "name": "BLACKFROST: The Long Dark 2",
+          "nameZh": null,
+          "title": "BLACKFROST: The Long Dark 2",
+          "release": "2027",
+          "developers": [
+            "Hinterland Studio Inc."
+          ]
+        },
+        {
+          "rank": 66,
+          "steamRank": 68,
+          "appid": 4150720,
+          "name": "Drunken Goddess Reflux",
+          "nameZh": "酒鬼女神的酒诡",
+          "title": "Drunken Goddess Reflux",
+          "release": "To be announced",
+          "developers": [
+            "Alliance Arts",
+            "WHO YOU"
+          ]
+        },
+        {
+          "rank": 67,
+          "steamRank": 69,
+          "appid": 2153760,
+          "name": "Stronghold 4",
+          "nameZh": "Stronghold 4 要塞4",
+          "title": "Stronghold 4",
+          "release": "Dec 7, 2026",
+          "developers": [
+            "Firefly Studios"
+          ]
+        },
+        {
+          "rank": 68,
+          "steamRank": 70,
+          "appid": 2454980,
+          "name": "Drakantos",
+          "nameZh": null,
+          "title": "Drakantos",
+          "release": "Coming soon",
+          "developers": [
+            "Wingeon Game Studios LLC"
+          ]
+        },
+        {
+          "rank": 69,
+          "steamRank": 72,
+          "appid": 3281420,
+          "name": "Paradise",
+          "nameZh": null,
+          "title": "Paradise",
+          "release": "Coming soon",
+          "developers": [
+            "Ultra Games",
+            "Ultra Technologies"
+          ]
+        },
+        {
+          "rank": 70,
+          "steamRank": 73,
+          "appid": 2239770,
+          "name": "Don't Starve Elsewhere",
+          "nameZh": "饥荒：异域",
+          "title": "Don't Starve Elsewhere",
+          "release": "To be announced",
+          "developers": [
+            " Klei Entertainment"
+          ]
+        },
+        {
+          "rank": 71,
+          "steamRank": 74,
+          "appid": 2090210,
+          "name": "Threads of Time",
+          "nameZh": null,
+          "title": "Threads of Time",
+          "release": "To be announced",
+          "developers": [
+            "Riyo Games"
+          ]
+        },
+        {
+          "rank": 72,
+          "steamRank": 75,
+          "appid": 4228810,
+          "name": "Fourteen Years of Flames",
+          "nameZh": "烽火十四",
+          "title": "Fourteen Years of Flames",
+          "release": "To be announced",
+          "developers": [
+            "烽火工作室"
+          ]
+        },
+        {
+          "rank": 73,
+          "steamRank": 76,
+          "appid": 2871520,
+          "name": "Deep Dish Dungeon",
+          "nameZh": "深馅地牢",
+          "title": "Deep Dish Dungeon",
+          "release": "Oct 13, 2026",
+          "developers": [
+            "Behold Studios"
+          ]
+        },
+        {
+          "rank": 74,
+          "steamRank": 77,
+          "appid": 2849490,
+          "name": "Outward 2",
+          "nameZh": " 物质世界2：远征",
+          "title": "Outward 2",
+          "release": "Feb 7, 2027",
+          "developers": [
+            "Nine Dots Studio"
+          ]
+        },
+        {
+          "rank": 75,
+          "steamRank": 79,
+          "appid": 3371050,
+          "name": "Zeverland",
+          "nameZh": null,
+          "title": "Zeverland",
+          "release": "Coming soon",
+          "developers": [
+            "Quantum Quirks"
+          ]
+        },
+        {
+          "rank": 76,
+          "steamRank": 80,
+          "appid": 3517740,
+          "name": "Frostrail",
+          "nameZh": null,
+          "title": "Frostrail",
+          "release": "Q4 2026",
+          "developers": [
+            "FakeFish"
+          ]
+        },
+        {
+          "rank": 77,
+          "steamRank": 81,
+          "appid": 3642910,
+          "name": "Wyldheart",
+          "nameZh": "荒野雄心 / Wyldheart",
+          "title": "Wyldheart",
+          "release": "Coming soon",
+          "developers": [
+            "Wayfinder Studios"
+          ]
+        },
+        {
+          "rank": 78,
+          "steamRank": 82,
+          "appid": 4031890,
+          "name": "Palworld: Palfarm",
+          "nameZh": "幻兽帕鲁：帕鲁农场 / Palworld: Palfarm",
+          "title": "Palworld: Palfarm",
+          "release": "To be announced",
+          "developers": [
+            "Pocketpair"
+          ]
+        },
+        {
+          "rank": 79,
+          "steamRank": 83,
+          "appid": 1818140,
+          "name": "Den of Wolves",
+          "nameZh": null,
+          "title": "Den of Wolves",
+          "release": "To be announced",
+          "developers": [
+            "10 Chambers"
+          ]
+        },
+        {
+          "rank": 80,
+          "steamRank": 84,
+          "appid": 3788800,
+          "name": "Atomic Heart 2",
+          "nameZh": "原子之心 2",
+          "title": "Atomic Heart 2",
+          "release": "To be announced",
+          "developers": [
+            "Mundfish"
+          ]
+        },
+        {
+          "rank": 81,
+          "steamRank": 85,
+          "appid": 3218230,
+          "name": "ArcheAge Chronicles",
+          "nameZh": "上古世纪编年史",
+          "title": "ArcheAge Chronicles",
+          "release": "To be announced",
+          "developers": [
+            "XLGAMES"
+          ]
+        },
+        {
+          "rank": 82,
+          "steamRank": 86,
+          "appid": 4954910,
+          "name": "Scam With Your Friends",
+          "nameZh": null,
+          "title": "Scam With Your Friends",
+          "release": "Oct 15, 2026",
+          "developers": [
+            "JakeHub",
+            "Metater"
+          ]
+        },
+        {
+          "rank": 83,
+          "steamRank": 87,
+          "appid": 4767480,
+          "name": "Lords of the Fallen II",
+          "nameZh": null,
+          "title": "Lords of the Fallen II",
+          "release": "Coming soon",
+          "developers": [
+            "CI Games"
+          ]
+        },
+        {
+          "rank": 84,
+          "steamRank": 88,
+          "appid": 2235430,
+          "name": "Holstin",
+          "nameZh": null,
+          "title": "Holstin",
+          "release": "To be announced",
+          "developers": [
+            "Sonka"
+          ]
+        },
+        {
+          "rank": 85,
+          "steamRank": 89,
+          "appid": 2165810,
+          "name": "Streets of Rogue 2",
+          "nameZh": null,
+          "title": "Streets of Rogue 2",
+          "release": "Coming soon",
+          "developers": [
+            "Matt Dabrowski"
+          ]
+        },
+        {
+          "rank": 86,
+          "steamRank": 90,
+          "appid": 2924520,
+          "name": "ONTOS",
+          "nameZh": null,
+          "title": "ONTOS",
+          "release": "2027",
+          "developers": [
+            "Frictional Games"
+          ]
+        },
+        {
+          "rank": 87,
+          "steamRank": 91,
+          "appid": 3283240,
+          "name": "THE LIFT: Supernatural Handyman Simulator",
+          "nameZh": "升降梯外: 超自然修理工模拟器",
+          "title": "THE LIFT: Supernatural Handyman Simulator",
+          "release": "2027",
+          "developers": [
+            "Fantastic Signals"
+          ]
+        },
+        {
+          "rank": 88,
+          "steamRank": 92,
+          "appid": 1257610,
+          "name": "Prison Architect 2",
+          "nameZh": null,
+          "title": "Prison Architect 2",
+          "release": "To be announced",
+          "developers": [
+            "Double Eleven",
+            "Kokku"
+          ]
+        },
+        {
+          "rank": 89,
+          "steamRank": 93,
+          "appid": 1614330,
+          "name": "Crowsworn",
+          "nameZh": null,
+          "title": "Crowsworn",
+          "release": "To be announced",
+          "developers": [
+            "Mongoose Rodeo"
+          ]
+        },
+        {
+          "rank": 90,
+          "steamRank": 94,
+          "appid": 1416070,
+          "name": "beta decay",
+          "nameZh": null,
+          "title": "beta decay",
+          "release": "To be announced",
+          "developers": [
+            "Rotoscope Studios"
+          ]
+        },
+        {
+          "rank": 91,
+          "steamRank": 95,
+          "appid": 3219030,
+          "name": "Planet Zoo 2",
+          "nameZh": "《动物园之星 2》",
+          "title": "Planet Zoo 2",
+          "release": "Oct 13, 2026",
+          "developers": [
+            "Frontier Developments"
+          ]
+        },
+        {
+          "rank": 92,
+          "steamRank": 96,
+          "appid": 3629430,
+          "name": "DREADMOOR",
+          "nameZh": "渊舟蚀影 | DREADMOOR",
+          "title": "DREADMOOR",
+          "release": "Q4 2026",
+          "developers": [
+            "Dream Dock"
+          ]
+        },
+        {
+          "rank": 93,
+          "steamRank": 97,
+          "appid": 3078150,
+          "name": "Hawthorn",
+          "nameZh": null,
+          "title": "Hawthorn",
+          "release": "To be announced",
+          "developers": [
+            "NEARstudios"
+          ]
+        },
+        {
+          "rank": 94,
+          "steamRank": 98,
+          "appid": 4614080,
+          "name": "Cartel Pilots Wanted",
+          "nameZh": "大佬要的急",
+          "title": "Cartel Pilots Wanted",
+          "release": "To be announced",
+          "developers": [
+            "OldYacht"
+          ]
+        },
+        {
+          "rank": 95,
+          "steamRank": 99,
+          "appid": 1579420,
+          "name": "Guardians of the Wild Sky",
+          "nameZh": null,
+          "title": "Guardians of the Wild Sky",
+          "release": "Coming soon",
+          "developers": [
+            "Blue Isle Studios"
+          ]
+        },
+        {
+          "rank": 96,
+          "steamRank": 100,
+          "appid": 3714800,
+          "name": "Warlock: Dungeons & Dragons",
+          "nameZh": null,
+          "title": "Warlock: Dungeons & Dragons",
+          "release": "2027",
+          "developers": [
+            "Invoke Studios"
+          ]
+        },
+        {
+          "rank": 97,
+          "steamRank": 101,
+          "appid": 2437390,
+          "name": "Enginefall",
+          "nameZh": "夺轨战",
+          "title": "Enginefall",
+          "release": "2027",
+          "developers": [
+            "Red Rover Interactive"
+          ]
+        },
+        {
+          "rank": 98,
+          "steamRank": 102,
+          "appid": 4258290,
+          "name": "We Are So Cooked",
+          "nameZh": null,
+          "title": "We Are So Cooked",
+          "release": "Q1 2027",
+          "developers": [
+            "Dwarven Brothers"
+          ]
+        },
+        {
+          "rank": 99,
+          "steamRank": 103,
+          "appid": 2838950,
+          "name": "Game of Thrones: War for Westeros",
+          "nameZh": "权力游戏：征战维斯特洛",
+          "title": "Game of Thrones: War for Westeros",
+          "release": "2027",
+          "developers": [
+            "PlaySide"
+          ]
+        },
+        {
+          "rank": 100,
+          "steamRank": 104,
+          "appid": 2800370,
+          "name": "30 Days on Ship",
+          "nameZh": null,
+          "title": "30 Days on Ship",
+          "release": "Coming soon",
+          "developers": [
+            "Madnetic Games"
+          ]
+        }
+      ],
+      "excluded": [
+        {
+          "steamRank": 17,
+          "appid": 5006530,
+          "title": "The Witcher 3: Wild Hunt — Songs of the Past",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 58,
+          "appid": 3809270,
+          "title": "Euro Truck Simulator 2 - Coaches",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 71,
+          "appid": 1536500,
+          "title": "Euro Truck Simulator 2 - Heart of Russia",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        },
+        {
+          "steamRank": 78,
+          "appid": 4829700,
+          "title": "Monster Hunter Wilds: Ascendance",
+          "type": 4,
+          "typeName": "DLC",
+          "reason": "非游戏（硬件/DLC 等）"
+        }
+      ]
+    }
+  }
+}

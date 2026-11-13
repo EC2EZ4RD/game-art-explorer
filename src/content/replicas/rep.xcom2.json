@@ -1,0 +1,1098 @@
+{
+ "id": "rep.xcom2",
+ "name": "XCOM 2",
+ "card": "steam:268500",
+ "genre": "strategy",
+ "family": "fam.military-command",
+ "pack": "tactics",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "city",
+  "values": {
+   "camera.angle": "high",
+   "color.grade": "tealOrange",
+   "color.temperature": -0.4,
+   "color.brightness": 0.7
+  }
+ },
+ "base": {
+  "uip.platform": "platform.pc",
+  "uip.business": "business.premium",
+  "hud.style": "military",
+  "ctx.timeModel": "turn",
+  "ix.glyphs": "keycap",
+  "col.source": "uiPalette",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#0b1519",
+  "col.surface2": "#162a30",
+  "col.text": "#dcecee",
+  "col.accent": "#7fe0f0",
+  "col.accent2": "#f3c94b",
+  "col.focus": "#f3c94b",
+  "col.border": "#9fc9cf",
+  "col.saturation": 0.85,
+  "col.coding": [
+   "team",
+   "status"
+  ],
+  "col.teams": "blueRed",
+  "col.dynamic": "perFaction",
+  "col.semantic": "accentOnly",
+  "vis.corner": "chamfer",
+  "vis.cornerSize": 6,
+  "vis.fill": "solid",
+  "vis.opacity": 0.78,
+  "vis.blur": 0,
+  "vis.stroke": "solid",
+  "vis.strokeWidth": 1,
+  "vis.strokeColor": "custom",
+  "vis.strokeSides": "all",
+  "vis.strokeGlow": 0.15,
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.pattern": "diagStripes",
+  "vis.patternOpacity": 0.08,
+  "vis.pattern@titleBar": "diagStripes",
+  "vis.ornament": 1,
+  "vis.motif": "brackets",
+  "vis.iconStyle": "line",
+  "ast.iconSet": "font",
+  "ast.core": "procedural",
+  "ast.frame": "procedural",
+  "cmp.plate@title": "plaque",
+  "cmp.button": "text",
+  "cmp.tabIndicator": "filled",
+  "typ.body.family": "condensed",
+  "typ.body.weight": "regular",
+  "typ.body.case": "asIs",
+  "typ.body.tracking": 0.02,
+  "typ.display.family": "condensed",
+  "typ.display.weight": "regular",
+  "typ.display.case": "asIs",
+  "typ.numerals.family": "display",
+  "typ.titleFx": "none",
+  "typ.legibility": "shadow",
+  "typ.baseSize": 24,
+  "typ.scale": 1.4,
+  "hier.emphasis": [
+   "size",
+   "color"
+  ],
+  "hier.cta": "color",
+  "rel.harmony": "neutral",
+  "rel.diegesis": "screen",
+  "rel.worldRender": "billboard",
+  "mo.enter": "slide",
+  "mo.duration": 0.2,
+  "mo.easing": "easeOut",
+  "mo.textReveal": "instant",
+  "mo.valueChange": "segment",
+  "mo.idle": "none",
+  "mo.juice": 0.3,
+  "mo.transition": "zoomInto",
+  "ix.focus": "outline",
+  "ix.press": "darken",
+  "st.alert": "redTint",
+  "st.cooldown": "dimNumber",
+  "st.selected": "outline",
+  "st.locked": "lock",
+  "cmp.badge": "chevron",
+  "typ.titlePrefix": "chevron",
+  "vis.patternArea": "header"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_268500_4.jpg",
+   "values": {
+    "uip.layout": "layout.strategyTurn",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "cnt.stage": "confirm",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "cnt.density": 3,
+    "cnt.elements": [
+     "el.profile",
+     "el.selection",
+     "el.abilities",
+     "el.prompt",
+     "el.threat",
+     "el.crosshair",
+     "el.timer"
+    ],
+    "el.profile.form": "avatarLevel",
+    "el.profile.screenAnchor": "bl",
+    "el.profile.scale": 0.75,
+    "vis.opacity@el.profile": 0,
+    "el.selection.form": "shotCalc",
+    "el.selection.screenAnchor": "bc",
+    "el.selection.scale": 0.9,
+    "el.selection.priority": "primary",
+    "el.selection.valueLabel": "percent",
+    "st.statViz": "table",
+    "cmp.listRow": [
+     "title",
+     "value"
+    ],
+    "lay.grouping": "divider",
+    "el.abilities.form": "weapon",
+    "el.abilities.screenAnchor": "br",
+    "el.abilities.scale": 0.8,
+    "vis.silhouette@el.abilities": "box",
+    "el.prompt.form": [
+     "hotkeyBadge"
+    ],
+    "el.threat.form": [
+     "healthBar",
+     "hitChance",
+     "targetRow"
+    ],
+    "el.threat.diegesis": "spatial",
+    "el.threat.attachTo": "target",
+    "el.threat.worldRender": "billboard",
+    "el.threat.valueLabel": "percent",
+    "el.threat.scale": 1.3,
+    "cmp.gauge@el.threat": "segmented",
+    "col.accent@el.threat": "#e2453c",
+    "el.crosshair.form": [
+     "reticle"
+    ],
+    "el.crosshair.attachTo": "target",
+    "el.crosshair.scale": 1.25,
+    "col.accent@el.crosshair": "#cfe7ea",
+    "el.timer.form": "ringCounter",
+    "el.timer.screenAnchor": "tr",
+    "el.timer.scale": 0.8,
+    "vis.silhouette@el.timer": "circle",
+    "vis.stroke@el.timer": "double",
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "el.threat.targetRow.attachTo": "none",
+    "el.threat.targetRow.dockTo": "el.selection",
+    "el.threat.targetRow.dockSide": "above",
+    "el.threat.targetRow.dockAlign": "center",
+    "el.timer.caption": "mission"
+   }
+  },
+  {
+   "key": "map",
+   "ref": "qa/refs-cache/r2/strategy/img/steam_268500_5.jpg",
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "cnt.stage": "confirm",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "live",
+    "rel.sceneTone": [
+     "vignette"
+    ],
+    "rel.dim": 0.4,
+    "cnt.dataShape": "none",
+    "cnt.focal": "none",
+    "cnt.textLength": "title",
+    "cnt.tone": "narrative",
+    "vis.mapStyle": "tactical",
+    "vis.mapUnexplored": "reveal",
+    "cmp.node": "pin",
+    "vis.silhouette@node": "hexagon",
+    "lay.composition": "three",
+    "lay.detail": "persistent",
+    "lay.overflow": "pan",
+    "cmp.panelArt": "window",
+    "cnt.elements": [
+     "el.selection",
+     "el.objective",
+     "el.overlay",
+     "el.cta"
+    ],
+    "el.selection.form": "dossier",
+    "el.selection.screenAnchor": "ml",
+    "el.selection.scale": 1.15,
+    "el.selection.priority": "primary",
+    "el.objective.form": [
+     "marker"
+    ],
+    "el.objective.attachTo": "target",
+    "el.overlay.form": [
+     "rangeRing"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.attachTo": "target",
+    "el.cta.form": "stack",
+    "el.cta.screenAnchor": "mr",
+    "el.cta.scale": 0.7,
+    "col.surface": "#140709",
+    "col.surface2": "#2a0c10",
+    "col.text": "#f2dfe0",
+    "col.accent": "#ff3b45",
+    "col.accent2": "#ff7a7f",
+    "col.border": "#e2313d",
+    "col.focus": "#ff5a62",
+    "vis.opacity": 0.85,
+    "vis.strokeWidth": 1.5,
+    "vis.strokeGlow": 0.5,
+    "vis.pattern": "none",
+    "ast.fx": [
+     "glow",
+     "scanlines",
+     "glitch"
+    ],
+    "typ.display.weight": "bold",
+    "hier.emphasis": [
+     "color",
+     "size"
+    ],
+    "cmp.buttonBox": true,
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "ix.dismiss": "button",
+    "ix.close": "none",
+    "mo.enter": "glitchIn",
+    "mo.textReveal": "scramble",
+    "st.alert": "fullAlarm",
+    "cmp.buttonFace": "outline",
+    "lay.titlePos": "none",
+    "ast.screenEdge": [
+     "glyphBand",
+     "hexVignette"
+    ],
+    "ast.screenEdgeColor": "#d64545",
+    "cmp.panelArtFx": [
+     "nightVision",
+     "tear",
+     "scanlines"
+    ],
+    "vis.silhouette@el.objective": "hexagon",
+    "col.accent@el.objective": "#ffffff",
+    "el.objective.crosshair": true,
+    "el.objective.distance": false
+   }
+  },
+  {
+   "key": "base",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.build",
+    "cnt.screen": "screen.build",
+    "cnt.subtype": "home",
+    "lay.container": "overlay",
+    "rel.behind": "live",
+    "cnt.focal": "none",
+    "cnt.dataShape": "collection",
+    "lay.arrangement": "grid",
+    "lay.columns": 3,
+    "cnt.itemCount": 12,
+    "cmp.slot": "cell",
+    "st.locked": "dimmed",
+    "st.emptySlot": "dashed",
+    "cnt.elements": [
+     "el.objective",
+     "el.resources",
+     "el.overlay",
+     "el.toolbar"
+    ],
+    "el.objective.form": [
+     "checklist"
+    ],
+    "el.objective.screenAnchor": "tl",
+    "el.resources.form": "labeledStrip",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "tc",
+    "el.overlay.form": [
+     "statusIcons"
+    ],
+    "el.overlay.diegesis": "spatial",
+    "el.overlay.worldRender": "billboard",
+    "el.toolbar.form": "categoryTabs",
+    "el.toolbar.arrangement": "row",
+    "el.toolbar.screenAnchor": "bc",
+    "el.toolbar.scale": 0.85,
+    "cmp.tab": "text",
+    "ix.mode": "select",
+    "ix.confirm": "selectConfirm",
+    "ix.dismiss": "key",
+    "mo.transition": "zoomInto",
+    "el.resources.count": 7
+   }
+  },
+  {
+   "key": "character",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.hero",
+    "cnt.screen": "screen.character",
+    "cnt.subtype": "hero",
+    "lay.container": "fullscreen",
+    "cmp.modal": "perRegion",
+    "rel.behind": "live",
+    "rel.dim": 0.6,
+    "cnt.focal": "character",
+    "cnt.characterMedium": "model3d",
+    "lay.composition": "splitLR",
+    "lay.focalSide": "left",
+    "lay.layering": "separate",
+    "lay.nav": "tabsLeft",
+    "lay.navDepth": 1,
+    "lay.detail": "persistent",
+    "cnt.dataShape": "record",
+    "lay.arrangement": "column",
+    "lay.overflow": "paged",
+    "lay.pageIndicator": "arrows",
+    "lay.grouping": "divider",
+    "cmp.slot": "rowCard",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "value"
+    ],
+    "st.statViz": "table",
+    "st.delta": "arrow",
+    "st.newCue": "glowPulse",
+    "cnt.elements": [
+     "el.profile"
+    ],
+    "ix.mode": "select",
+    "ix.focus": "invert",
+    "ix.dismiss": "key",
+    "ix.close": "back",
+    "el.profile.form": "idCard",
+    "el.profile.anchorSpace": "header",
+    "cmp.plate@title": "stripedFlank",
+    "lay.titleAlign": "center"
+   }
+  },
+  {
+   "key": "results",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.stats",
+    "cnt.screen": "screen.results",
+    "cnt.subtype": "stats",
+    "cnt.stage": "result",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "live",
+    "rel.dim": 0.5,
+    "cnt.focal": "character",
+    "cnt.characterMedium": "model3d",
+    "lay.focalSide": "center",
+    "lay.layering": "separate",
+    "cnt.dataShape": "none",
+    "cnt.tone": "system",
+    "cmp.listRow": [
+     "icon",
+     "title",
+     "value",
+     "status"
+    ],
+    "st.statViz": "table",
+    "st.statusMark": "tag",
+    "col.coding": [
+     "status"
+    ],
+    "cnt.elements": [
+     "el.party",
+     "el.cta"
+    ],
+    "el.party.form": "rosterCard",
+    "el.party.arrangement": "row",
+    "el.party.screenAnchor": "bc",
+    "el.party.scale": 1.3,
+    "el.cta.form": "wide",
+    "el.cta.screenAnchor": "br",
+    "el.cta.scale": 0.7,
+    "hier.emphasis": [
+     "color",
+     "typeface"
+    ],
+    "mo.reveal": "flyIn",
+    "mo.valueChange": "countUp",
+    "ix.mode": "singleCTA",
+    "ix.dismiss": "button",
+    "cmp.buttonFace": "outline",
+    "lay.titlePos": "none",
+    "ix.close": "none",
+    "el.party.spread": "fillWidth"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "开火面板（命中计算）是局内的视觉中心：正中技能名铭牌、两侧斜纹带；左右镜像两张加成明细表（左 HIT：瞄准 / 距离，右 CRIT：侧击 / 武器暴击），两端各一个大号百分比，正中绿色伤害区间大字，技能图标行嵌在面板底边。用 el.selection = panel 顶替：第二轮位置已贴底居中，但面板里仍是圆头像 + 名字 + 两条彩色状态条，镜像明细、两端大数字、伤害区间都画不出来",
+   "severity": "high",
+   "kind": "composite",
+   "proposal": "新元素 el.odds（命中 / 暴击 / 伤害三个数 + 左右镜像加成明细 + 中央铭牌 + 底边技能行，组合现有的 plate / listRow / el.abilities），或 el.selection.form 新增 shotCalc",
+   "resolvedBy": "M12b-15（el.selection.form = shotCalc：正中铭牌 + 左右镜像加成明细 + HIT / CRIT 大数 + 伤害区间 + 底边技能行）"
+  },
+  {
+   "screen": "hud",
+   "what": "元素尺寸只能用 el.<元素>.scale 等比缩放，宽高比由内容推出：开火面板替身最多做到约 45% 宽 × 24% 高，参考是约 60% 宽 × 16% 高的宽扁条；放大到 1.5 又会压到左下 / 右下元素、被避让推到画面中间（第一轮）",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "el.<元素>.width（占屏宽比例）或 el.<元素>.aspect；或 lay.hudOrg 增加“底部通栏”槽位，让面板横向铺开、两侧元素让出角落",
+   "resolvedBy": "M12b-05 / M12b-15（elx.width / height 元素宽高；shotCalc 已排成约 48% 宽的宽扁条，要更宽见本轮写值建议）"
+  },
+  {
+   "screen": "hud",
+   "what": "斜纹只出现在标题铭牌两侧的页眉带与右上任务名下方的细条里，面板本体是纯色；vis.pattern 只能铺满整块面板（第二轮强度 0.08 仍整块铺开）",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "cmp.plate 新增 stripedFlank（铭牌 + 两侧斜纹带），或 vis.pattern 增加作用范围（整面板 / 页眉带 / 边条）",
+   "resolvedBy": "M12b-42 / M12b-47（vis.patternArea = header + cmp.plate@title = stripedFlank：斜纹只在页眉带，面板本体纯色）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.threat 多选画法只画第一个（第二轮只有头顶一条很短的红色连续条，hitChance 的红字命中率被丢掉）；healthBar 与 el.resources 的 gauge 画法都固定画连续条，不读 cmp.gauge@el.threat / cmp.gauge@el.resources = segmented（参考的敌人血条与弹匣都是分段格）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "el.threat 画出全部选中的画法；healthBar / gauge 画法读 cmp.gauge（按元素覆盖优先）",
+   "resolvedBy": "M12a-11 / M12a-14（el.threat 多选画法全画、gauge 读 cmp.gauge = segmented；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "hud",
+   "what": "开火面板正上方是一排敌人小头像（当前目标黄色高亮、下面小字命中率），用来切换目标；el.threat 的各画法只能共用一个挂点，也没有“目标切换行”画法",
+   "severity": "low",
+   "kind": "newDrawing",
+   "proposal": "新元素 el.targets（目标头像行 + 各自命中率 + 当前高亮），或 el.threat 按画法分别给锚点（el.threat.<画法>.screenAnchor）",
+   "resolvedBy": "M12b-19 / M12b-05（el.threat.targetRow 停在开火面板上方：目标头像 + 命中率、当前黄框）"
+  },
+  {
+   "screen": "hud",
+   "what": "el.crosshair 不读 attachTo = target，永远画在屏幕正中；ring 是白芯黑边的粗圈，线宽随 scale 一起变粗（第二轮 scale 1.5 时是约 40px 的粗圈，参考是约 70px 的 1px 细圈套在目标身上）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "el.crosshair 读 attachTo（挂到目标）；ring 的半径与线宽分开（线宽不随 scale）",
+   "resolvedBy": "el.crosshair.attachTo, el.crosshair.scale（线宽不随 scale）"
+  },
+  {
+   "screen": "hud",
+   "what": "瞄准标记是细圈 + 贯穿目标的长十字细线（横竖线伸出圈外很远）；el.crosshair 的 ring / cross 只有屏幕中心式准星",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "el.crosshair.form 新增 reticle（细圈 + 长十字线，臂长 / 线宽 / 中心缺口可调）",
+   "resolvedBy": "M12b-60（el.crosshair.form = reticle：细圈 + 贯穿长十字）"
+  },
+  {
+   "screen": "hud",
+   "what": "右下是当前武器的线稿剪影 + 一排横向白色弹匣格；没有“武器 + 弹药”元素，只能借 el.resources = gauge（第二轮仍是“零件 24/30”绿色连续条），而 el.abilities.form = ammo 又与技能格互斥",
+   "severity": "medium",
+   "kind": "composite",
+   "proposal": "新元素 el.weapon（武器线稿图标 + 弹药分段格，可借 ast.iconSet 的武器图标），或允许同一元素多实例",
+   "resolvedBy": "M12b-09（el.abilities.form = weapon：武器线稿 + 白色弹匣格）"
+  },
+  {
+   "screen": "hud",
+   "what": "回合计数是双同心细圆环 + 中心大数字，左侧配任务名与斜纹副标题，没有“00:45”式时钟；el.timer = badge 画实心小圆 + 一串计时数字（第二轮：青色小圆“3” + 00:45），任务名只能叠在它上方（同一锚点竖排）",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "el.timer.form 新增 ringCounter（双环 + 大数字、不画时钟），可带侧标签（任务名 + 副标题）；或 cmp.gauge 新增 ringCounter",
+   "resolvedBy": "M12b-06（el.timer.form = ringCounter + caption = mission：双环数字 + 任务名斜纹侧标签）"
+  },
+  {
+   "screen": "hud",
+   "what": "移动模式（截图外）：地面上的掩体盾牌图标（满盾 / 半盾）、移动范围的双层边界（蓝 = 一次行动、黄 = 冲刺）、路径线与落点；el.overlay 的 gridHighlight / rangeRing 只能近似，没有“掩体等级”这种语义图标",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "el.overlay.form 新增 coverIcons 与 moveRange（双层可达边界 + 路径线）"
+  },
+  {
+   "screen": "map",
+   "what": "战略层的外星警报版：屏幕上下两条红色外星文字饰带、四周红色六角网格暗角，是这屏的定调元素；没有“整屏边缘饰带 / 网格暗角”的槽位，第二轮只能用 rel.sceneTone = tint 把整屏染红",
+   "severity": "high",
+   "kind": "missingOption",
+   "proposal": "ast.watermark 新增 glyphBand（异星 / 符文文字带，上下或四边）与 hexVignette，或 ast.frame 增加整屏边框作用域",
+   "partialBy": "M12b-51（ast.screenEdge = [glyphBand, hexVignette]）：四周红色六角暗角画出来了，上下两条异星文字饰带没画出"
+  },
+  {
+   "screen": "map",
+   "what": "rel.sceneTone = tint 是在场景上平涂一层强调色（不透明度取 max(rel.dim, 0.35)），既不压暗、也吃掉了 rel.dim：第二轮 #ff3b45 × 0.4 把场景刷成发亮的浅粉；参考是暗的蓝黑地球，红色只在四周",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "tint 改为先按 rel.dim 压暗、再用强调色做 multiply / color 混合；允许与 vignette 叠加（中间暗、四周红）",
+   "resolvedBy": "rel.sceneTone [tint, vignette]"
+  },
+  {
+   "screen": "map",
+   "what": "地球仪本身就是 3D 世界，任务卡与按钮直接浮在上面：tpl.worldmap 的 cnt.dataShape = spatial 只会在面板里画一张 2D 地图（第一轮的绿色网格），第二轮只能写 dataShape = none + floating，让实时场景当地图，任务标记也只是屏幕元素",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "vis.mapStyle 新增 liveScene（地图 = 实时场景，不画地图面板，节点 / 航线 / 范围画在世界坐标上）"
+  },
+  {
+   "screen": "map",
+   "what": "同一套界面有两套阵营色（XCOM 青、ADVENT / 外星红），col.dynamic = perFaction 只声明“会换”，不能在一份配方里写出第二套色板，只能逐屏覆盖 col.*",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "col.palettes[]：多套色板 + 切换条件（阵营 / 警报级别）"
+  },
+  {
+   "screen": "map",
+   "what": "左侧任务卡：标题 + 优先级小字、横向情报图窗、“> 行动代号”、目标（图标 + 一行）、说明段落、底部文字饰条；el.selection = card 是圆形头像 + 名字 + 三条属性条（第二轮仍是火力 / 装甲 / 机动绿条）",
+   "severity": "medium",
+   "kind": "newDrawing",
+   "proposal": "el.selection.form 新增 dossier（横向图窗 + 标题 / 副标题 + 小节标题 + 段落 + 底部饰条）",
+   "resolvedBy": "M12b-15（el.selection.form = dossier：> 标题 + 优先级、情报图窗、> 行动代号、目标、说明段落、REF 页脚）"
+  },
+  {
+   "screen": "map",
+   "what": "cmp.panelArt = window（面板里嵌插画窗）渲染器不读；图窗内的处理（绿色夜视调色、横向撕裂、扫描线）也无处指定",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "cmp.panelArt 生效；新增图窗处理参数（nightVision / tear / scanlines）",
+   "resolvedBy": "M12b-32（cmp.panelArtFx = [nightVision, tear, scanlines]：任务卡情报图窗夜视绿 + 撕裂 + 扫描线）"
+  },
+  {
+   "screen": "map",
+   "what": "任务卡里的情报图是一张监控画面（据点俯拍），需要位图素材",
+   "severity": "low",
+   "kind": "asset",
+   "proposal": "needs art：情报图 / 监控画面若干张（按任务类型），配合图窗处理参数使用"
+  },
+  {
+   "screen": "map",
+   "what": "任务地点标记是白 / 红六角图钉 + 穿过它的红色细十字线；el.objective = marker 固定画黄色菱形 + 距离字（第二轮：黄菱形 + “3 格”），不读 vis.silhouette 与强调色（vis.silhouette@node = hexagon 只作用于地图面板里的节点）",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "marker 画法读 vis.silhouette@el.objective 与 col.accent；距离字可关",
+   "resolvedBy": "M12b-28（vis.silhouette@el.objective = hexagon + el.objective.crosshair / distance：白六角图钉 + 贯穿细线、无距离字）"
+  },
+  {
+   "screen": "map",
+   "what": "右侧行动区是一个红框暗底小面板，里面竖排两条全宽描边按钮（发起任务 / 取消）+ 底部小字；el.cta = dual 只能并排两颗",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.cta.form 新增 stack（竖排、主次按钮同宽），可带外框面板",
+   "resolvedBy": "M12b-17（el.cta.form = stack：红框暗底里竖排两条同宽描边钮）"
+  },
+  {
+   "screen": "base",
+   "what": "复仇者号“蚂蚁农场”：整艘飞船的 3D 侧剖面就是菜单，每个舱室是一个可选格子（3 列 × 4 层，未挖掘的格子堆满碎石），舱室上方浮着房间名牌，镜头推进舱室进入子界面；格子无法长在 3D 剖面里，第二轮只能让实时场景顶替剖面，舱室上方只有几个青色小状态图标",
+   "severity": "high",
+   "kind": "worldSpace",
+   "proposal": "lay.arrangement 新增 cutaway（剖面房间格 + 房间名牌，格子按世界坐标对齐剖面），与 rel.diegesis = spatial 的空间内菜单配合"
+  },
+  {
+   "screen": "base",
+   "what": "lay.container = overlay 的模板只画元素（overlayTemplate → drawElements），数据区参数全部无效：本屏的 lay.arrangement = grid、lay.columns 3、cnt.itemCount 12、cmp.slot = cell、st.emptySlot = dashed、st.locked = dimmed 一格都没画",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "overlay 模板也画数据区（直接铺在场景上、无外框），或校验时提示“overlay 下这些参数不生效”",
+   "resolvedBy": "M12a-25（overlay 模板也画数据区与主体；B1 核对 R3 对照图）"
+  },
+  {
+   "screen": "base",
+   "what": "资源栏是顶部一条暗底横条，供给 / 情报 / 合金 / 超铀 / 电力 / 工程师 / 科学家各带文字标签 + 数值（凭记忆）；el.resources = iconNumber 只有三个小图标 + 数字",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "el.resources.form 新增 labeledStrip（暗底通栏 + 文字标签 + 数值，项数随内容包）",
+   "resolvedBy": "M12b-06（el.resources.form = labeledStrip：顶部暗底资源通栏、七项带文字标签）"
+  },
+  {
+   "screen": "character",
+   "what": "武器库与任务总结的主体都是士兵 3D 模型（武器库一人站在正中，总结整队一排）；现在只能画半透明剪影 + “3D 实时模型（需素材）”标签",
+   "severity": "medium",
+   "kind": "asset",
+   "proposal": "needs art：士兵 3D 模型（或按兵种的渲染图），cnt.characterMedium = model3d 时使用"
+  },
+  {
+   "screen": "character",
+   "what": "侧面板带三维透视倾角（屏幕面板绕竖轴转一点，像贴在 3D 空间里的全息板），切换士兵的箭头跟着倾斜；面板只能正对屏幕",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "vis.perspective：面板绕 Y 轴倾角（G-perspective），左右分区对称"
+  },
+  {
+   "screen": "character",
+   "what": "cmp.modal 只有“整屏一块面板”与 floating“全不画”两种：floating 后左侧菜单、右侧装备详情直接浮在场景上，没有底板（字压在楼上、下半屏空）；XCOM 是每个分区各一块深色半透明切角面板 + 青色细框",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "cmp.modal 新增 panels（不画整屏外框，但导航 / 详情 / 数据各分区各画一块面板）",
+   "resolvedBy": "cmp.modal = perRegion"
+  },
+  {
+   "screen": "character",
+   "what": "左上的士兵铭牌（军衔章 + 名字 + 绰号 + 兵种 + 一行属性）放不进去：模板里的元素与页眉、数据区共用整块外框，el.profile = idCard 放 tl 会压在页眉和详情上（第一轮的重叠），第二轮只能去掉",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "元素增加所在区域 el.<元素>.region（页眉 / 主体 / 数据区 / 外框），页眉区可放 idCard 并顶掉模板名",
+   "resolvedBy": "el.profile.anchorSpace = header"
+  },
+  {
+   "screen": "character",
+   "what": "左右切换士兵的箭头：lay.pageIndicator = arrows 渲染器不读，lay.overflow = paged 只画圆点（第二轮改 single，箭头没画）",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "lay.overflow = paged 时按 lay.pageIndicator 画两侧箭头，或单独的“切换对象”箭头参数",
+   "resolvedBy": "lay.overflow = paged, lay.pageIndicator = arrows"
+  },
+  {
+   "screen": "character",
+   "what": "左侧竖排是内容包的背包分类页签（全部 / 火力 / 装甲 / 零件 / 任务），画成窄色块；原作是士兵操作菜单（自定义 / 晋升 / 装备 / 战斗模拟 / 解雇），宽文字行",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "内容包给角色界面一组“对象操作”菜单项；lay.nav = tabsLeft 的页签宽度随文字（或新增 listLeft）",
+   "resolvedBy": "M12b-61（角色界面左侧取士兵操作菜单：自定义 / 升级 / 装备 / 对战 / 离队）"
+  },
+  {
+   "screen": "results",
+   "what": "任务总结：整支小队（4–6 人）站成一排；cnt.focal = character 只能画一个剪影（第二轮一个大剪影在正中）",
+   "severity": "medium",
+   "kind": "missingOption",
+   "proposal": "cnt.characterMedium 新增 lineup（N 人一排，人数随 el.party）"
+  },
+  {
+   "screen": "results",
+   "what": "每人脚下一张对应的数据卡，卡跟着站位铺满全宽；el.party = unitCards 只能在一个锚点等距排一行（第二轮四张卡挤在中间约 45% 宽），无法与各角色站位绑定",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "el.party.attachTo 支持多挂点（每张卡挂一个角色），或 el.party 增加铺满宽度的排布",
+   "partialBy": "M12b-18（el.party.spread = fillWidth）：四张卡铺到约七成屏宽，但不按士兵站位（只有一个剪影）"
+  },
+  {
+   "screen": "results",
+   "what": "总结卡片内容是军衔章、名字、击杀数、晋升 / 负伤标签；el.party = unitCards 画圆头像（绿 / 红环）+ 兵种名 + 血条，st.statusMark = tag 与 cmp.listRow 的 status 都不进卡片",
+   "severity": "low",
+   "kind": "newDrawing",
+   "proposal": "el.party.form 新增 rosterCard（军衔章 + 名字 + 一两项数值 + 状态标签，读 st.statusMark）",
+   "resolvedBy": "M12b-18（el.party.form = rosterCard：军衔章 + 兵种 + LV + 击杀 + 升级 / 受伤标签）"
+  },
+  {
+   "screen": "results",
+   "what": "el.cta 的文字总是内容包的“开始作战”，结算屏上也是；原作这里是“继续”",
+   "severity": "low",
+   "kind": "content",
+   "proposal": "el.cta 文字按 cnt.stage / 界面类型取（结算 → 继续，出击 → 开始作战），或 el.cta.label",
+   "resolvedBy": "M12b-61（结算屏 el.cta 写“继续”）"
+  },
+  {
+   "screen": "global",
+   "what": "按元素 / 组件覆盖的 vis.* / col.* 不生效（只有 cmp.* 经 core.ts 的 cmp() 按元素读）：本配方的 vis.pattern@titleBar、vis.silhouette@el.timer = circle 与 vis.stroke@el.timer = double（第二轮回合章仍是单线实心小圆）、vis.silhouette@el.abilities、vis.opacity@el.profile、col.accent@el.threat、col.accent@el.crosshair、vis.silhouette@node 都没有独立效果",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "画某元素 / 组件时叠加 <参数>@<目标> 的 vis.* / col.* 覆盖，生成局部 token（对应 Godot Theme 的 type variation），不新增词表",
+   "resolvedBy": "M12b-68（按元素 / 部件的 vis.* / col.* 覆盖都生效：回合双环、红色敌人条、白六角任务标记、斜纹只在页眉）"
+  },
+  {
+   "screen": "global",
+   "what": "cmp.button = text 渲染器不读（src/hud 里没有读它的代码），按钮一律画成强调色实心块：地图“开始作战”实心红、总结“开始作战”实心亮青；XCOM 的按钮是深底 + 细框 + 彩色字",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "button() 读 cmp.button（text / outline / filled……，按元素覆盖优先），el.cta 与模板按钮都走它",
+   "resolvedBy": "cmp.buttonFace = outline"
+  },
+  {
+   "screen": "global",
+   "what": "全屏 / 浮空模板总画模板名页眉：地图“世界地图”、武器库“角色详情”（加返回键）、总结“数据统计”（加 × 关闭）；XCOM 这些界面都没有这种页眉（武器库那里是士兵铭牌）",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "lay.header：模板名 / 隐藏 / 换成元素（如 idCard）",
+   "resolvedBy": "lay.titlePos, ix.close, el.profile.anchorSpace = header"
+  },
+  {
+   "screen": "global",
+   "what": "军衔 V 形章到处出现：局内左下士兵名前、武器库士兵铭牌、任务总结每张卡；el.profile = avatarLevel 画圆头像 + 晶体等级角标，cmp.badge = chevron 只替换“通用奖章 / 纹章”且换成金绿光泽位图（第一轮把回合章画成了它，第二轮已去掉）",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "cmp.badge 的 chevron 增加程序化扁平线稿画法（按等级加杠）；el.profile 的等级角标与 el.party 的卡片读 cmp.badge",
+   "resolvedBy": "cmp.badge = chevron（程序线稿军衔章）"
+  },
+  {
+   "screen": "global",
+   "what": "标题前的单箭头“>”与双箭头“>>”（如“> 行动代号”）是排版签名；vis.motif = brackets 只有角括号",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "vis.motif 新增 chevrons，或 typ 增加标题前缀符号参数",
+   "resolvedBy": "M12b-43（typ.titlePrefix = chevron：“> 胜利条件”“> 海岸”）"
+  },
+  {
+   "screen": "hud",
+   "what": "cmp.badge = chevron 作用到 el.timer = badge 时画成金绿光泽的位图军衔章（程序线稿只用在头像等级角标与卡片上），回合计数章因此变成军衔章",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "el.timer 的徽章不读通用 cmp.badge（或只认 roundel / none），chevron 一律走程序线稿画法",
+   "resolvedBy": "M12b-06（el.timer.form = ringCounter：回合章不再读 cmp.badge 的军衔章）"
+  }
+ ],
+ "notes": "战术指挥式军事界面：深青黑半透明切角面板 + 1px 浅青细线 + 标题两侧的斜纹页眉带，窄体科技字，整体字小、数字大。局内的视觉中心是贴底的开火面板（命中率 / 伤害 / 暴击三个大数），敌人红色分段血条与命中率挂在世界里、目标身上套一个细瞄准圈，右上是任务名 + 回合圆环；战略层把整屏染成外星警报红（文字饰带 + 六角网格 + 故障情报图），与 XCOM 自己的青色构成阵营色切换；基地、武器库、任务总结都是 3D 场景（剖面飞船、士兵模型）上浮几块面板，而不是整屏菜单。",
+ "scores": {
+  "hud": [
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 4,
+    "overall": 4,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 8,
+    "elements": 8,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 7,
+    "overall": 7,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 7,
+    "type": 5,
+    "shape": 5,
+    "density": 4,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "base": [
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 6,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 4,
+    "density": 3,
+    "overall": 3,
+    "round": 3
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 4
+   }
+  ],
+  "character": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "results": [
+   {
+    "layout": 2,
+    "elements": 3,
+    "palette": 5,
+    "type": 4,
+    "shape": 3,
+    "density": 3,
+    "overall": 3,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 4,
+    "palette": 6,
+    "type": 4,
+    "shape": 5,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 4,
+    "shape": 6,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 5,
+    "shape": 6,
+    "density": 6,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "选中面板（开火面板的替身）太宽，压到左下 / 右下元素，被避让推到画面正中（约 43%–76% 高），参考里开火面板贴底、宽扁（约 60% 宽 × 16% 高）",
+   "面板和字都太大：scale 1.5 × primary 让标题约 22px，参考的字都很小，只有百分比数字稍大",
+   "面板里是圆头像 + 名字 + 装甲 / 过热两条状态条；参考是技能名铭牌 + 左右镜像明细表 + HIT / CRIT 大百分比 + 绿色伤害区间，没有头像",
+   "地面画了一片菱形格子高亮（gridHighlight）与 4 / 2 / 1 飘字（floatNumbers），瞄准截图里都没有",
+   "准星只是屏幕中央的小十字；参考是套在目标身上的细圈 + 长十字线",
+   "敌人只画了白色 85% 命中率；参考是红色分段血条 + 红字命中率",
+   "右上回合计数画成金绿光泽的 V 形军衔章（cmp.badge = chevron 的位图），参考是青白双圆环 + 数字",
+   "所有面板铺满斜纹（patternOpacity 0.15），参考只有页眉带有斜纹",
+   "右下用'零件 24/30'绿色连续条代替弹匣格，参考是武器线稿 + 白色弹匣分段（仍是缺口）"
+  ],
+  "map": [
+   "左侧画了一张绿色网格 2D 地图（tpl.worldmap 的 spatial 数据），参考里地图就是背后的 3D 地球，左侧应是任务卡",
+   "中间一块灰盒'场景（需素材）'（cnt.focal = scene），参考没有",
+   "el.title = header 画出一条横贯的红色'整 备'色带压在地图上，参考没有",
+   "整屏是不透明的深红黑全屏面板，盖住了世界；参考是红色调的地球透出来，四周红色饰带",
+   "范围圈是青色同心椭圆（holo），参考是红色六角目标标记",
+   "右侧两颗按钮（返回 / 开始作战）位置对了，但太宽太大"
+  ],
+  "base": [
+   "右上多了一张日历卡（冬 · 2089 年 / 3 / 清晨），复仇者号界面没有这么大的日历",
+   "资源行在上中，原作资源条在右上",
+   "右下的按键图例条与底部快捷栏抢位置，原作没有",
+   "底部快捷栏偏大、斜纹偏重",
+   "看不出'蚂蚁农场'剖面（仍是缺口）"
+  ],
+  "character": [
+   "整屏铺满带斜纹的全屏面板，原作武器库是 3D 房间里浮着几块面板",
+   "el.profile = idCard 放在左上，压在页眉'角色详情'和左侧详情条上（严重重叠）",
+   "人物剪影挤在右侧，原作士兵模型在中间、左侧是菜单列表",
+   "没有左侧竖排菜单（自定义 / 晋升 / 装备……）",
+   "底部有分页圆点，原作是左右箭头切换士兵"
+  ],
+  "results": [
+   "上方一条青色'整 备'大色带（el.title = header 取了内容包的菜单页眉），原作没有",
+   "四张单位卡压在统计表上，统计表又被右下'开始作战'按钮盖住，三者互相重叠",
+   "整屏斜纹全屏面板，原作是机库里的小队实景",
+   "只有一个剪影站在中间，原作是一排士兵、每人脚下一张卡"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "位置结构已对上：开火面板替身贴底居中、技能格在其下，左下士兵名、右上任务名 + 回合章、右下资源条，第一轮的地面格子与飘字已去掉",
+   "替身面板约 45% 宽 × 24% 高、上沿到画面 64%；参考开火面板约 60% 宽 × 16% 高、贴在最底（约 80%–97%），更宽更扁",
+   "面板内仍是圆头像 + 名字 + 射程 / 移动 + 装甲 / 过热两条彩色条；参考是技能名铭牌 + 左右镜像加成明细 + 两端 HIT / CRIT 大百分比 + 中间绿色伤害区间",
+   "面板里的绿 / 黄状态条让配色偏杂；参考面板内几乎只有白字 + 青细线，绿色只给伤害数字",
+   "技能格在面板下方另起一行、带深色方底；参考是白色线稿图标嵌在面板底边",
+   "敌人只剩头顶一条很短的红色连续条，命中率没画；参考是红色分段血条 + 红字 100%",
+   "准星是屏幕正中一个白芯黑边的粗圈（约 40px）；参考是套在目标身上的 1px 细圈 + 贯穿的长十字线",
+   "右上回合章是青色实心小圆“3” + 计时数字 00:45；参考是双同心细圆环 + 大数字，左侧任务名 + 斜纹副标题，没有时钟",
+   "右下仍是“零件 24/30”绿色连续条；参考是武器线稿 + 白色分段弹匣格",
+   "左下名字前是圆头像 + 晶体角标、下面一条黄细线；参考是军衔章 + 白字名字，无底板",
+   "整块面板铺着淡斜纹（0.08）；参考只有铭牌两侧有斜纹带"
+  ],
+  "map": [
+   "大结构对了：左侧红框暗底任务卡、右侧行动按钮、中间任务标记，第一轮的绿色 2D 地图、“场景（需素材）”灰盒、“整备”色带都已去掉",
+   "整屏是一层半透明强调红平涂，画面成了发亮的浅粉；参考是暗的蓝黑地球，红色集中在四周（比第一轮的不透明深红黑更远离参考的明暗）",
+   "缺上下两条红色异星文字饰带与四周六角网格暗角——参考最显眼的定调元素",
+   "左上多了模板页眉“世界地图”",
+   "任务卡是圆头像 + 名字 + 火力 / 装甲 / 机动三条绿条；参考是标题 + 优先级、夜视绿监控图窗、“> 行动代号”、目标、说明段落、底部文字饰条。卡上的品红 / 青故障横条有一点参考的数据损坏感",
+   "右侧是并排两颗按钮（返回暗底、开始作战实心红块，字很小）；参考是一个红框暗底小面板，里面竖排两条全宽描边按钮",
+   "任务标记是黄色菱形 + “3 格”，外加一圈红色虚线椭圆；参考是白 / 红六角图钉 + 穿过它的红色细十字瞄准线"
+  ],
+  "base": [
+   "比第一轮干净：日历卡与按键图例去掉，资源移到右上，左上任务清单，底部分类页签 + 图标快捷栏（凭记忆比较）",
+   "配方里的 3 列 × 4 层舱室格（grid / cell / 12 格 / 空格虚线 / 锁定变暗）一格都没画：overlay 容器的模板只画元素；原作的主体就是飞船剖面里的舱室格",
+   "舱室上方没有房间名牌，只有三四个青色小菱形状态图标",
+   "资源是三个小图标 + 数字浮在右上；原作是顶部一条暗底资源栏，各项带文字标签",
+   "底栏页签头是实心亮青色块，比原作的深色底栏亮、重"
+  ],
+  "character": [
+   "结构接近：左侧竖排菜单、偏左的士兵剪影、右侧装备详情（属性条 + →74 变化）+ 安装 / 拆解，压暗场景当武器库；第一轮的整屏斜纹面板与重叠都已去掉（凭记忆比较）",
+   "左上是模板页眉“角色详情” + 返回键；原作这里是士兵铭牌（军衔章 + 名字 + 绰号 + 兵种 + 一行属性）",
+   "左侧是窄色块的背包分类页签（全部 / 火力 / 装甲……）；原作是宽文字行的士兵操作菜单（自定义 / 晋升 / 装备 / 战斗模拟……）",
+   "右侧详情直接浮在场景上、没有底板，字压在楼上，下半屏空；原作每块都是深色半透明切角面板 + 青色细框，并带三维倾角",
+   "士兵是半透明青色剪影 + “3D 实时模型（需素材）”标签，偏左而不在正中",
+   "没有左右切换士兵的箭头"
+  ],
+  "results": [
+   "卡片、剪影、按钮不再互相压：四张单位卡排在下方，按钮在右下（凭记忆比较）",
+   "只有一个居中大剪影；原作是整支小队站成一排，每人脚下一张卡",
+   "四张卡只占中间约 45% 宽；原作的卡跟着士兵铺满全宽",
+   "卡片是圆头像（绿 / 红环）+ 兵种名 + 血条；原作是军衔章、名字、击杀数、晋升 / 负伤标签",
+   "左上模板页眉“数据统计”与右上 × 关闭键原作没有",
+   "右下按钮是实心亮青大色块、字很小，文字仍是“开始作战”；原作是深底细框按钮，文字是“继续”"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "敌人头顶已是红色分段血条 + 命中率（两个画法都画了），准星换成挂在目标上的细圈 + 十字；但血条下还叠一个“35%”，十字不贯穿目标",
+   "右上回合章变成金绿光泽的 V 形军衔章位图（base 加回的 cmp.badge = chevron 作用到了计时徽章）；参考是双同心细圆环 + 大数字，第二轮的青色小圆反而更近",
+   "开火面板替身仍是圆头像 + 名字 + 绿 / 黄状态条（现在带百分比），没有镜像加成明细、两端 HIT / CRIT 大数、伤害区间",
+   "右下资源已是分段格，但是绿色“零件 24/30”；参考是武器线稿 + 白色弹匣格",
+   "左下头像角标已是线稿军衔章；整块面板仍铺淡斜纹"
+  ],
+  "map": [
+   "页眉“世界地图”去掉；任务卡顶部换成情报图窗灰盒（cmp.panelArt = window 生效）；右侧按钮成了深底红框彩字的描边按钮——三处都更近",
+   "场景仍偏亮粉红，暗角只压了四周；参考是暗的蓝黑地球、红色集中在四周饰带",
+   "缺上下红色异星文字饰带与六角网格暗角",
+   "任务卡下半仍是火力 / 装甲 / 机动三条绿条；任务标记仍是黄菱形 + “3 格” + 红虚线椭圆"
+  ],
+  "base": [
+   "（凭记忆）叠加模板现在会画数据区与主体：画面中部多一个“场景（需素材）”灰盒 + 绿色摆放虚影 + ✓ / ✗，下半横贯一条浅白色 2D 平面图带（spatial 数据，编号格与色块），右下多“确认选择”——比第二轮乱",
+   "仍没有 3 列 × 4 层的舱室剖面格与房间名牌；浅白图带与深色界面的配色不搭",
+   "底栏页签已改成深底、只有选中项亮青；资源仍是三个小图标 + 数字"
+  ],
+  "character": [
+   "（凭记忆）左上页头行放进了士兵铭牌、详情区是一块半透明切角面板 + 角括号，两侧有切换箭头——结构更近",
+   "页头是一整条带斜纹的通栏，铭牌是圆头像 + UID + Lv + 兵种药丸；原作是军衔章 + 名字 + 绰号 + 一行属性、无通栏",
+   "切换箭头画在详情面板两侧中部，原作在士兵两侧；左侧仍是窄色块的背包分类页签",
+   "士兵仍是半透明青色剪影灰盒；面板没有三维倾角"
+  ],
+  "results": [
+   "（凭记忆）页眉与 × 去掉，卡片左上加了线稿军衔章，按钮成了深底细框——都更近",
+   "仍只有一个居中大剪影；四张卡挤在中间约 45% 宽，没有跟着士兵铺满",
+   "卡片仍是圆头像 + 兵种名 + 血条，没有击杀数与晋升 / 负伤标签；按钮文字仍是“开始作战”"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "开火面板已是正中铭牌 + 左右镜像加成明细 + 两端 HIT / CRIT 大数 + 绿色伤害区间 + 底边技能行，上方有目标切换头像行；但面板比参考略窄略高、底色更实，页眉是整条斜纹带而不是铭牌两侧的斜纹",
+   "右上回合章已是双同心细环 + 数字 + 任务名斜纹侧标签，但环与数字是半透明细青线，在亮楼面上很淡；参考是醒目的白环大数字",
+   "左下是圆头像 + 名字，参考是军衔章 + 白字名字、没有头像",
+   "目标上的细圈 + 长十字、头顶红色分段血条 + 命中率、右下武器线稿 + 白色弹匣格都已对上"
+  ],
+  "map": [
+   "画面上方横着一条整屏宽的绿色夜视灰盒“插画（需素材）”（模板自己的插画窗），压住上四分之一屏，参考没有",
+   "四周已有红色六角网格暗角，但上下两条红色异星文字饰带没画出来",
+   "中间多一圈红色虚线范围椭圆，参考只有六角图钉 + 细十字",
+   "左侧 dossier 任务卡（> 标题 + 优先级、夜视撕裂情报图窗、> 行动代号、目标、段落、REF 页脚）、右侧红框竖排描边钮、白六角任务图钉都已对上"
+  ],
+  "base": [
+   "（凭记忆）舱室是左侧一块 3 × 4 的图标方砖面板，不是长在飞船剖面里的房间格，也没有房间名牌",
+   "场景里浮着绿色摆放虚影 + ✓ / ✗、右下“确认选择”，是建造模式的东西，复仇者号总览没有",
+   "底栏是攻击 / 移动 / 防守 / 技能 / 修理页签 + 图标条，记忆中是研究 / 工程 / 军械库 / 指挥室等设施菜单",
+   "顶部暗底资源通栏（七项带文字标签）已对上，灰盒与浅白平面图带去掉了"
+  ],
+  "character": [
+   "（凭记忆）页头仍是一整条带斜纹的通栏，右侧又写回模板名“角色详情”（斜纹侧翼标牌）；原作只有士兵铭牌，没有通栏与标题",
+   "铭牌是圆头像 + UID + Lv + 兵种药丸，原作是军衔章 + 名字 + 绰号 + 一行属性",
+   "左侧菜单内容已是士兵操作（自定义 / 升级 / 装备 / 对战 / 离队），但仍是窄色块页签，原作是宽文字行",
+   "切换箭头仍在详情面板两侧；士兵是青色剪影灰盒，面板没有三维倾角"
+  ],
+  "results": [
+   "（凭记忆）仍只有一个居中大剪影，原作是整支小队站成一排",
+   "四张卡已是军衔章 + 兵种 + LV + 击杀 + 升级 / 受伤标签、铺到约七成屏宽；但不按士兵站位，卡名是兵种而不是士兵名",
+   "右下“继续”深底细框按钮已对上"
+  ]
+ },
+ "revisions": [
+  "base：去掉 cmp.badge = chevron（它把回合圆章换成金绿光泽位图；不选时程序画青色圆章 + 数字，更接近原作的青白圆环），军衔章写进缺口；vis.patternOpacity 0.15 → 0.08（斜纹只留一点，不再铺满每块面板）；typ.scale 1.5 → 1.4（标题小一号）",
+  "hud：选中面板 scale 1.5 → 1.1（仍是 primary），宽约 45%、不再压到左下 / 右下元素，不被避让推到画面中间，贴底成为开火面板的位置；技能格 scale 0.7 → 0.55 紧贴面板下方；去掉不在瞄准截图里的 el.overlay（格子高亮）与 el.feedback（飘字）",
+  "hud：el.threat 画法顺序改为 healthBar 在前（只画第一个：敌人头顶的红条），scale 1.3；el.crosshair 改为 ring 在前、scale 1.5，画出瞄准圈（2.5 时线太粗）；el.timer scale 0.8、el.profile scale 0.75，压低次要信息的字号",
+  "map：容器保持全屏但 cmp.modal = floating（不画整屏面板），rel.behind = live + rel.sceneTone = tint + rel.dim 0.4，让红色调的实时场景当地球；cnt.dataShape = none、cnt.focal = none、cnt.textLength = title（short 会让模板补一段公告文字），去掉绿色 2D 地图、'场景（需素材）'灰盒、公告段落与详情栏",
+  "map：左侧任务卡用 el.selection = card（ml，scale 1.15，primary：红框 + 角括号 + 故障扫描线）；el.objective 改为 marker 挂在目标上当任务地点标记，el.overlay 改为红色虚线 rangeRing；右侧 el.cta = dual 缩到 0.7；去掉 el.title 的'整备'色带",
+  "base：去掉日历卡（el.clock）与按键图例（el.prompt）；资源行移到右上；快捷栏 scale 0.85",
+  "character：全屏 + floating + rel.dim 0.6，去掉斜纹全屏大面板，压暗的场景当武器库；lay.nav = tabsLeft 画出左侧竖排菜单，lay.focalSide = left 让士兵剪影站在菜单右边、右侧是 record 详情（属性条 + a→b 箭头 + 安装 / 拆解）；去掉与页眉重叠的 el.profile 与按键图例（cnt.elements = []）；lay.overflow 改 single（不画分页圆点，箭头写进缺口）",
+  "results：全屏 + floating + rel.dim 0.5，cnt.dataShape = none 去掉与卡片重叠的统计表；中间一个士兵剪影（3D 模型 needs art）+ 脚下一排 el.party = unitCards（scale 1.3），右下 el.cta = wide 缩到 0.7、与卡片不再横向重叠；去掉 el.title 的'整备'色带",
+  "缺口：新增 el.threat 只画第一个画法、准星不跟目标且线宽随半径变粗、军衔章、地图 = 实时场景 / 页眉开关、任务卡图窗（dossier）、任务地点六角标记、模板元素的区域锚定、小队一排模型；改写开火面板、弹药、回合圆环、剖面、武器库各条为本轮的近似方式",
+  "R3 前（M12a 之后）：base 加 cmp.badge = chevron（等级 / 军衔章换成程序线稿 V 形杠）；hud 的 el.crosshair.scale 1.5 → 1.25（准星已挂到目标、线宽不随缩放，1.25 约 70px@1080p 的细圈）；map 的 rel.sceneTone tint → [tint, vignette]（先压暗再染、四周暗角，不再整屏刷粉）、cmp.buttonFace = outline（深底细框彩字按钮）、lay.titlePos / ix.close = none；character 加 cmp.modal = perRegion（导航 / 详情各一块半透明切角面板）、士兵铭牌 el.profile = idCard + anchorSpace = header（放进页头行、顶掉模板名）、lay.overflow = paged + lay.pageIndicator = arrows（左右切换士兵的箭头），页头与返回键保留；results 加 cmp.buttonFace = outline、lay.titlePos / ix.close = none。",
+  "R4 前（M12b 之后）：base 加 typ.titlePrefix = chevron（标题前「>」，#36）、vis.patternArea = header（斜纹只铺页眉带，面板本体纯色，#2）；hud el.selection.form panel → shotCalc + scale 1.1 → 0.9（正中铭牌 + 左右镜像明细 + HIT / CRIT 大数 + 伤害区间 + 底边技能行，#0），el.abilities.form slots → weapon + screenAnchor bc → br + scale 0.8（右下武器线稿 + 弹匣格，#7；技能行改由 shotCalc 底边承担，去掉 arrangement），去掉 el.resources（原来的弹匣替身「零件 24/30」）与 el.objective（任务名改由回合计数的侧标签写），el.threat.form 加 targetRow + targetRow.attachTo none / dockTo el.selection / dockSide above / dockAlign center（开火面板正上方的目标切换行，#4），el.crosshair.form [ring, cross] → [reticle]（细圈 + 长十字，#6），el.timer.form badge → ringCounter + caption = mission（双环大数字 + 任务名，不再画成军衔章，#8 / #37）；map rel.sceneTone [tint, vignette] → [vignette]（不再整屏刷粉），加 ast.screenEdge = [glyphBand, hexVignette] + ast.screenEdgeColor 红（上下异星字带 + 六角暗角，#10），el.selection.form card → dossier（任务卡，#14）+ cmp.panelArtFx = [nightVision, tear, scanlines]（情报图窗处理，#15），el.cta.form dual → stack（竖排两条同宽钮，#18），vis.silhouette@el.objective = hexagon + col.accent@el.objective 白 + el.objective.crosshair = true + el.objective.distance = false（白六角图钉 + 贯穿十字、去掉「3 格」，#17）；base el.resources.form iconNumber → labeledStrip + screenAnchor tr → tc + count 7（顶部暗底资源通栏，#21），cnt.focal scene → none + cnt.dataShape spatial → collection（去掉「场景（需素材）」灰盒、摆放虚影与浅白平面图带，改画 3 列 × 4 行的舱室格，#19 近似）；character cmp.plate@title = stripedFlank + lay.titleAlign = center（页头斜纹侧翼，#2）；results el.party.form unitCards → rosterCard + el.party.spread = fillWidth（军衔章 + 名字 + 击杀 + 晋升 / 负伤标签，卡铺满宽，#29 / #30）。没写：hud 的 el.overlay = [coverIcons, moveRange]（#9 是移动模式，参考截图是瞄准时刻）。"
+ ]
+}

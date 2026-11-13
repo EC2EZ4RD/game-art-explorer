@@ -1,0 +1,806 @@
+{
+ "id": "rep.ghost-of-tsushima",
+ "name": "Ghost of Tsushima",
+ "card": "steam:2215430",
+ "genre": "explore",
+ "family": "fam.wa",
+ "pack": "snowline",
+ "art": {
+  "recipe": "soft-pbr",
+  "scene": "mountain",
+  "values": {
+   "camera.angle": "low",
+   "color.saturation": 1.15,
+   "color.grade": "tealOrange"
+  }
+ },
+ "base": {
+  "uip.platform": "platform.tv",
+  "uip.business": "business.premium",
+  "hud.style": "wa",
+  "ctx.input": "pad",
+  "ix.glyphs": "playstation",
+  "col.source": "uiPalette",
+  "col.lightness": "dark",
+  "col.strategy": "neutralAccent",
+  "col.surface": "#0f0e0c",
+  "col.surface2": "#1c1a17",
+  "col.text": "#efe9dd",
+  "col.accent": "#ebe3d1",
+  "col.accent2": "#d6ad4f",
+  "col.focus": "#f4efe4",
+  "col.saturation": 0.7,
+  "vis.corner": "sharp",
+  "vis.edge": "brush",
+  "vis.stroke": "none",
+  "vis.fill": "gradient",
+  "vis.opacity": 0.8,
+  "vis.depth": "flat",
+  "vis.gloss": "none",
+  "vis.pattern": "none",
+  "vis.ornament": 0,
+  "vis.motif": "none",
+  "vis.iconStyle": "silhouette",
+  "ast.iconSet": "procedural",
+  "ast.core": "procedural",
+  "cmp.plate": "none",
+  "typ.body.family": "serif",
+  "typ.body.weight": "regular",
+  "typ.display.family": "serif",
+  "typ.display.weight": "regular",
+  "typ.display.case": "upper",
+  "typ.display.tracking": 0.18,
+  "typ.titleFx": "none",
+  "typ.legibility": "shadow",
+  "typ.direction": "horizontal",
+  "rel.diegesis": "screen",
+  "rel.harmony": "neutral",
+  "rel.hudVisibility": "contextual",
+  "cnt.density": 0,
+  "mo.enter": "inkSpread",
+  "mo.duration": 0.35,
+  "mo.easing": "easeOut",
+  "mo.textReveal": "fade",
+  "mo.idle": "none",
+  "mo.transition": "crossfade",
+  "ix.focus": "brushSwash",
+  "st.alert": "redTint",
+  "typ.display.secondary": "latinCaps"
+ },
+ "screens": [
+  {
+   "key": "hud",
+   "ref": "qa/refs-cache/r2/arpg/img/steam_2215430_5.jpg",
+   "values": {
+    "uip.layout": "layout.explore",
+    "cnt.screen": "screen.hud",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "hidden",
+    "cnt.density": 0,
+    "vis.opacity": 0,
+    "cnt.elements": [
+     "el.objective",
+     "el.interact",
+     "el.notify"
+    ],
+    "el.objective.form": [
+     "text"
+    ],
+    "el.objective.screenAnchor": "tl",
+    "el.objective.visibility": "onDemand",
+    "el.interact.form": [
+     "keyPrompt"
+    ],
+    "el.interact.attachTo": "poi",
+    "el.interact.visibility": "contextual",
+    "el.notify.form": [
+     "banner"
+    ],
+    "el.notify.screenAnchor": "bl",
+    "el.notify.visibility": "contextual",
+    "flow.entry": "hotkey"
+   }
+  },
+  {
+   "key": "combat",
+   "ref": null,
+   "values": {
+    "uip.layout": "layout.soulslike",
+    "cnt.screen": "screen.hud",
+    "cnt.subtype": "combat",
+    "lay.container": "overlay",
+    "lay.hudOrg": "scattered",
+    "rel.hudVisibility": "always",
+    "cnt.density": 1,
+    "vis.opacity": 0,
+    "cnt.elements": [
+     "el.vitals",
+     "el.abilities",
+     "el.abilities#2",
+     "el.threat"
+    ],
+    "el.vitals.count": 2,
+    "cmp.gauge@el.vitals": "thinBar",
+    "el.vitals.screenAnchor": "bl",
+    "el.vitals.priority": "primary",
+    "el.vitals.scale": 0.8,
+    "mo.valueChange@el.vitals": "trail",
+    "el.abilities.form": "slots",
+    "el.abilities.arrangement": "cross",
+    "el.abilities.screenAnchor": "br",
+    "el.abilities.scale": 0.8,
+    "el.abilities.valueLabel": "current",
+    "vis.silhouette@el.abilities": "none",
+    "el.threat.form": [
+     "bossBar",
+     "healthBar",
+     "glint",
+     "detection"
+    ],
+    "el.threat.screenAnchor": "tc",
+    "el.threat.scale": 0.8,
+    "cmp.gauge@el.threat": "thinBar",
+    "mo.juice": 0.3,
+    "st.cooldown": "desat",
+    "st.selected": "bar",
+    "el.vitals.labels": "none",
+    "el.vitals.rowForms": [
+     "thinBar",
+     "segmented"
+    ],
+    "col.accent@el.vitals": "#efe9dd",
+    "col.track": "darkScrim",
+    "cmp.gaugeUnitShape@el.vitals": "brush",
+    "el.abilities.keyHint": "none",
+    "el.abilities#2.arrangement": "cross",
+    "el.abilities#2.screenAnchor": "br",
+    "el.abilities#2.count": 4,
+    "el.abilities#2.scale": 0.8,
+    "el.abilities#2.keyHint": "none",
+    "el.threat.detectShape": "diamond"
+   }
+  },
+  {
+   "key": "map",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.worldmap",
+    "cnt.screen": "screen.map",
+    "cnt.subtype": "worldmap",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "replaced",
+    "ast.bgArt": "solid",
+    "cnt.dataShape": "spatial",
+    "cnt.focal": "none",
+    "lay.composition": "single",
+    "lay.overflow": "pan",
+    "lay.detail": "none",
+    "vis.mapStyle": "desatTerrain",
+    "vis.mapUnexplored": "cloudSwirl",
+    "cmp.node": "pin",
+    "vis.silhouette@node": "none",
+    "cnt.elements": [
+     "el.prompt"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "br",
+    "el.prompt.scale": 0.8,
+    "st.done": "grayOut",
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "mo.enter": "fade",
+    "rel.hudVisibility": "always",
+    "ix.close": "none",
+    "vis.mapLabels": "onMap",
+    "lay.panHint": "none"
+   }
+  },
+  {
+   "key": "character",
+   "ref": null,
+   "values": {
+    "uip.screen": "tpl.loadout",
+    "cnt.screen": "screen.character",
+    "cnt.subtype": "loadout",
+    "lay.container": "fullscreen",
+    "cmp.modal": "floating",
+    "rel.behind": "replaced",
+    "cnt.focal": "character",
+    "cnt.characterMedium": "silhouette",
+    "cnt.dataShape": "collection",
+    "lay.composition": "splitLR",
+    "lay.focalSide": "right",
+    "lay.nav": "tabsTop",
+    "cmp.tab": "text",
+    "cmp.tabIndicator": "underline",
+    "lay.arrangement": "column",
+    "lay.detail": "persistent",
+    "lay.grouping": "whitespace",
+    "cmp.slot": "rowCard",
+    "cmp.listRow": [
+     "icon",
+     "title"
+    ],
+    "st.selected": "check",
+    "st.delta": "newOnly",
+    "st.locked": "dimmed",
+    "vis.iconStyle": "silhouette",
+    "vis.opacity": 0.1,
+    "cnt.elements": [
+     "el.prompt",
+     "el.resources"
+    ],
+    "el.prompt.form": [
+     "legend"
+    ],
+    "el.prompt.screenAnchor": "bc",
+    "el.prompt.scale": 0.8,
+    "el.resources.form": "iconNumber",
+    "el.resources.arrangement": "row",
+    "el.resources.screenAnchor": "tc",
+    "el.resources.scale": 0.8,
+    "ix.mode": "select",
+    "ix.dismiss": "key",
+    "rel.hudVisibility": "always",
+    "ast.bgArt": "solid",
+    "ix.close": "none",
+    "vis.panelShape": "brushStroke",
+    "vis.brushDryness": 0.6,
+    "vis.brushTip": 0.25,
+    "col.surface2": "#0a0908"
+   }
+  }
+ ],
+ "gaps": [
+  {
+   "screen": "hud",
+   "what": "引导之风：没有任务箭头和路点，方向由风吹草浪、落叶飘向、触摸板上滑召唤的一阵风给出，另有金鸟、狐狸、远处烟柱作为环境路标；el.objective.form 只有屏幕图形（文字 / 清单 / 标记 / 边缘箭头 / 便签），表达不了“用世界本身指路”，本屏只好整屏不画 UI（rel.hudVisibility = hidden）",
+   "severity": "high",
+   "kind": "worldSpace",
+   "proposal": "el.objective.form 新增 environmental（风 / 生物 / 烟柱引导），带强度与触发方式（常驻 / 手势召唤）"
+  },
+  {
+   "screen": "global",
+   "what": "毛笔笔触本身就是面板形状：提示卡、标题背后、选中带都是一笔干笔刷（两端飞白、有笔向）；vis.edge = brush 只让矩形边缘抖动，表达不了“笔触即面板”",
+   "severity": "high",
+   "kind": "newDrawing",
+   "proposal": "cmp.plate / vis.silhouette 新增 brushStroke（干笔刷形面板：飞白强度、笔向、笔锋长度）",
+   "partialBy": "vis.panelShape = brushStroke + vis.brushDryness / brushTip（选中带是一笔干笔刷；标题背后、提示卡未用）"
+  },
+  {
+   "screen": "character",
+   "what": "选中高亮画错：列表选中行固定画一圈强调色描边（vis.edge = brush 时成锯齿白框），不读 ix.focus；ix.focus = brushSwash 用 multiply 混合画强调色笔刷，在黑底上完全看不见。本作选中项 = 黑底上一笔白色笔刷带 + 文字反成深色",
+   "severity": "high",
+   "kind": "renderBug",
+   "proposal": "列表选中行改读 ix.focus / st.selected；brushSwash 在 col.lightness = dark 时用 normal 混合画浅色笔刷，焦点项文字换成 col.surface 色",
+   "resolvedBy": "M12a-27（列表选中行读 ix.focus：brushSwash 画白色笔刷带、字反深色；R3 对照图确认）"
+  },
+  {
+   "screen": "map",
+   "what": "地图画风：vis.mapStyle = painted 是暖黄羊皮纸 + 西式城堡 / 灯塔的插画底图，没有本作那种去饱和、偏暗的写实地形；vis.mapUnexplored = fog 画成米黄渐隐，本作未探索区是一团团卷云纹；白色 UI 压在暗地图上才读得清，压在羊皮纸上读不清",
+   "severity": "high",
+   "kind": "missingOption",
+   "proposal": "vis.mapStyle 新增 inkTerrain（去饱和写实地形，需底图素材）；vis.mapUnexplored 新增 cloudSwirl（卷云纹遮盖）",
+   "partialBy": "vis.mapStyle = desatTerrain + vis.mapUnexplored = cloudSwirl（去饱和与卷云纹有了；地形是马赛克、卷云过大过亮）"
+  },
+  {
+   "screen": "global",
+   "what": "强调色底上的字色不跟底色走：col.accent 设成暖白后，选中页签（皮肤键帽字色）、主按钮“使用”、胶囊（plate pill 字色写死 #fff）都是浅底浅字，读不出（装备页“全部 / 使用 / 剪影”、地图“雪线 / Esc 返回”）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "新增派生色 col.onAccent（auto = 按强调色亮度取 col.surface 或白），键帽 / 胶囊 / 主按钮 / 选中页签统一读它",
+   "resolvedBy": "M12a-04（onAccent：‘剪影’胶囊等浅底改深字）"
+  },
+  {
+   "screen": "character",
+   "what": "页签不读组件参数：drawNav 的选中页签固定画皮肤键帽实心块、未选页签固定画 6% 浅色底块，cmp.tab = text 与 cmp.tabIndicator = underline 都不生效；本作页签是宽字距文字 + 选中项下方一笔笔触",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "drawNav 读 cmp.tab（text 时不画底）与 cmp.tabIndicator（underline / filled / raised），underline 在 vis.edge = brush 时画成一笔笔触短线",
+   "resolvedBy": "M12a-22（cmp.tab = text + 笔触下划线；R3 对照图确认）"
+  },
+  {
+   "screen": "combat",
+   "what": "生命条颜色写死为危险红 e.bad（只有色盲预设能换），对决敌人条也是；col.accent@el.vitals / @el.threat 能过校验但渲染不读。本作生命是白色细条，第二条用 col.accent2（这里设成决心金）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "el.vitals 每条、bossBar 读 col.accent@el.*（或新增 col.health 角色色）",
+   "resolvedBy": "col.accent@el.vitals"
+  },
+  {
+   "screen": "combat",
+   "what": "生命条前固定写“生命 / 护盾”文字标签，关不掉；本作两条都没有标签",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "el.vitals.labels 开关（或 elx.valueLabel = none 时连标签一起隐藏）",
+   "resolvedBy": "el.vitals.labels"
+  },
+  {
+   "screen": "combat",
+   "what": "决心是生命条下方一排金色笔刷短段，与白色连续细血条画法不同；cmp.gauge@el.vitals 对整组条只能取一种画法，这里两条都是 thinBar",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "按条序号覆盖数值图形（如 cmp.gauge@el.vitals#2 = segmented，段形可选 brush）",
+   "resolvedBy": "el.vitals.rowForms"
+  },
+  {
+   "screen": "combat",
+   "what": "el.abilities.arrangement = cross 没有实现：暗器（苦无 / 粘雷 / 烟雾弹 / 黑火药）画成一排 4 格（slots 只分 row / column）",
+   "severity": "medium",
+   "kind": "renderBug",
+   "proposal": "技能格实现 cross 排布：上下左右四格，中心留空，每格配对应方向键",
+   "resolvedBy": "M12a-20（el.abilities.arrangement = cross）"
+  },
+  {
+   "screen": "combat",
+   "what": "按住肩键时另有四种架势的十字切换，与暗器十字两簇并存；el.abilities 只能有一份",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "允许元素多实例（el.abilities#2）或新增 el.stance（十字 / 扇形，带当前架势高亮）",
+   "resolvedBy": "el.abilities#2（arrangement cross，第二个十字）"
+  },
+  {
+   "screen": "combat",
+   "what": "敌人出招前武器上闪红光（不可格挡）/ 蓝光（可闪避或格挡）的闪光预警，以及潜行时敌人头顶的白色菱形发现度（填满后变黄、变红）；el.threat 只有地面预警区（telegraph，已去掉），没有“武器闪光”与“头顶发现度”",
+   "severity": "medium",
+   "kind": "worldSpace",
+   "proposal": "el.threat.form 新增 glint（世界内闪光，颜色带语义）与 detection（头顶发现度，cmp.gauge = eye / diamond）"
+  },
+  {
+   "screen": "global",
+   "what": "标题是双文字系统：竖排书法汉字（大）与宽字距全大写衬线英文（小）并置，用在标题画面、故事开篇卡、地图区名；typ.display.family 只能选一种字族",
+   "severity": "medium",
+   "kind": "missingParam",
+   "proposal": "typ.display.secondary（副标题字族、字号比、排向）；typ.direction = verticalTitle 只作用于汉字行"
+  },
+  {
+   "screen": "character",
+   "what": "装备页的主体是可旋转的 3D 实时角色（换装即时预览）；cnt.characterMedium = model3d 只有“3D 实时模型（需素材）”灰盒，这里退成灰色渐变程序剪影",
+   "severity": "medium",
+   "kind": "asset",
+   "proposal": "model3d 槽用游戏内实时渲染的角色或一张预渲染全身像填（needs art）"
+  },
+  {
+   "screen": "map",
+   "what": "地图本体总被装进正文区内的圆角矩形（四周留约 4% 黑边，页眉单独一行），本作地图整屏出血，区名与图例直接压在地图上",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "cnt.dataShape = spatial 且 cmp.modal = floating 时地图铺满整屏，页眉、区名与元素叠在地图上",
+   "resolvedBy": "M12a-30（地图整屏出血 + 上下暗带）"
+  },
+  {
+   "screen": "global",
+   "what": "ctx.device = tv 推出 typ.baseSize = 26（px@1080p），但 HUD 按画布 CSS 像素直接画、不按 1080p 换算：928×522 的复刻画布上字与元素放大约一倍，只能手动压到 13、lay.safeMargin 3",
+   "severity": "medium",
+   "kind": "layoutEngine",
+   "proposal": "HUD 绘制按画幅高度 / 1080 统一缩放（typ.baseSize、ix.touchSize、元素尺寸都按 px@1080p 解释）",
+   "resolvedBy": "typ.baseSize 改按 px@1080p（M12a-05），去掉 lay.safeMargin 3 的权宜"
+  },
+  {
+   "screen": "combat",
+   "what": "暗器格角标画错：每格左上固定画 1–4 热键数字（ctx.input = pad 也画）；el.abilities.valueLabel = current 不画剩余数量（只有 hotbar 画数量）",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "键位角标跟 ctx.input / ix.glyphs（手柄时画方向键图标或不画）；slots 读 elx.valueLabel 画数量",
+   "resolvedBy": "M12a-20（手柄时不画 1–4 数字、slots 画剩余数量；方向箭头见 round3Diffs）"
+  },
+  {
+   "screen": "combat",
+   "what": "st.cooldown = desat 画成整格灰色半透明块（rgba 128 灰 0.6），不是把图标去色；格子本身无底（vis.opacity 0）时冷却格反成唯一有底的格子",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "desat 改为降饱和 / 压暗绘制图标本身，不铺底",
+   "resolvedBy": "R3 对照图：冷却格只把图标去色，不再铺灰块"
+  },
+  {
+   "screen": "combat",
+   "what": "细条的空槽 = 字色低透明度，在亮天空 / 海面上看不见（敌人条只剩已填的一段红线）；本作细条下有一层暗色半透明槽",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "cmp.gauge 的槽色 / 槽不透明度（或屏幕叠加 HUD 默认用 col.surface 半透明暗槽）",
+   "resolvedBy": "col.track = darkScrim"
+  },
+  {
+   "screen": "map",
+   "what": "地图图标是一套和风白色剪影（神社、温泉、竹桩、狐狸窝、俳句点）；ast.iconSet 没有这套",
+   "severity": "low",
+   "kind": "asset",
+   "proposal": "ast.iconSet 素材库加入和风剪影图标集（needs art）"
+  },
+  {
+   "screen": "map",
+   "what": "cmp.node = pin 画成水滴图钉，颜色按状态写死（完成 = 绿、当前 = 强调色），st.done = grayOut 对地图节点不生效",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "地图节点读 st.done / st.locked 决定压暗与去色，图钉颜色跟 col.accent",
+   "resolvedBy": "R3 对照图：地图图钉按 st.done = grayOut 压灰，不再写死绿色"
+  },
+  {
+   "screen": "map",
+   "what": "lay.overflow = pan 固定在右下画“✥ 拖动查看”小字，本作没有",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "拖动提示受 lay.pageIndicator = none 控制（或并入按键图例）"
+  },
+  {
+   "screen": "map",
+   "what": "关闭控件没有“不画”这一项（不设时退回右上 ×），本作的返回只写在底部图例里（○ 返回），这里用 keyGlyph 在右上画了“Esc 返回”胶囊（装备页同）",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "ix.close 新增 legend（并入 el.prompt 按键图例，不单独画）",
+   "resolvedBy": "ix.close"
+  },
+  {
+   "screen": "character",
+   "what": "常驻详情栏底部固定画“使用 / 丢弃”两个按钮，并与按键图例在两条基线上并排；本作只有底部一行按键图例",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "详情按钮跟 ix.mode / ix.confirm 走（手柄 + select 时不画，交给图例）",
+   "resolvedBy": "R3 对照图：详情栏不再画‘使用 / 丢弃’，底部只有一行按键图例"
+  },
+  {
+   "screen": "character",
+   "what": "列表行标题字重写死 700，typ.body.weight = regular 不生效",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "listRows 标题字重读 typ.body.weight（选中项可加一级）",
+   "resolvedBy": "M12a-27（列表行标题读 typ.body.weight）"
+  },
+  {
+   "screen": "global",
+   "what": "按键图例里触摸板键帽的占位比画出来的键宽，后面的“背包”离键约是其他键的两倍远（地图、装备页同）",
+   "severity": "low",
+   "kind": "renderBug",
+   "proposal": "图例按键帽实际绘制宽度排下一段文字",
+   "resolvedBy": "R3 对照图：图例按键帽实际宽度排字（‘背包’间距正常）"
+  },
+  {
+   "screen": "global",
+   "what": "黑泽明模式（黑白 + 胶片颗粒 + 风噪）是可选的整屏电影模式，UI 是否跟着变黑白由 rel.followPost 决定；无法把“整屏画面模式”声明为玩家选项",
+   "severity": "low",
+   "kind": "missingParam",
+   "proposal": "玩家选项组增加画面模式开关，联动 rel.followPost"
+  },
+  {
+   "screen": "hud",
+   "what": "HUD 和引导之风靠触摸板上滑手势呼出；ix 里没有手势型输入与对应提示图标",
+   "severity": "low",
+   "kind": "missingOption",
+   "proposal": "flow.entry 新增 gesture，ix.glyphs 增加触摸板手势图标"
+  },
+  {
+   "screen": "combat",
+   "what": "分段条的段只有规整矩形：决心是一排两端飞白的金色笔刷短段，el.vitals.rowForms 第二行 segmented 只能画成方块",
+   "severity": "medium",
+   "proposal": "segmented 加段形子参数（rect / brush / pip / diamond），brush 时每段画一笔干笔刷",
+   "kind": "missingOption",
+   "resolvedBy": "cmp.gaugeUnitShape@el.vitals = brush"
+  },
+  {
+   "screen": "character",
+   "what": "brushSwash 焦点行里字已反成深色，但行首图标仍是白色，压在白色笔刷带上几乎看不见；笔刷带也伸出列表左缘、顶到详情栏",
+   "severity": "low",
+   "proposal": "焦点行的图标与字一起取 onAccent 色；笔刷带长度限制在列表栏内（左右留笔锋余量）",
+   "kind": "renderBug",
+   "resolvedBy": "R4 对照图：焦点行图标转深色、笔刷带收在列表栏内"
+  },
+  {
+   "screen": "map",
+   "what": "vis.mapUnexplored = fog 只在当前位置周围揭开一小块，其余整片米黄纸雾，已访问的图钉也埋在雾里；地图读起来大半是空白",
+   "severity": "low",
+   "proposal": "雾的揭开范围按全部已访问节点与已走路线算（半径可调），雾色读 col.surface2 或可选",
+   "kind": "renderBug",
+   "partialBy": "cloudSwirl 揭开范围沿已访问图钉与路线（揭开带很窄）"
+  },
+  {
+   "screen": "map",
+   "what": "（凭记忆）vis.mapStyle = desatTerrain 揭开的地形是块状马赛克：低分辨率烘焙图放大后边缘一格一格的锯齿",
+   "severity": "medium",
+   "proposal": "desatTerrain 按地图面板尺寸烘焙（或放大时平滑插值），揭开遮罩的边按设备分辨率画",
+   "kind": "renderBug",
+   "resolvedBy": "R4 回归修复 C4（desatTerrain 等连续色调的陆地每格一个像素画进 N × N 小画布、平滑放大铺满，不再是一格 4–8 px 的方块马赛克；有场景时揭雾遮罩的探索格画成圆斑（192 见方），揭开的边不再一格一格成台阶。浏览器目检待 lead）"
+  },
+  {
+   "screen": "map",
+   "what": "（凭记忆）cloudSwirl 的卷云是约屏高 12% 的规则浮雕旋涡，等距平铺在浅灰底上；本作卷云更小、成簇、整体更暗，白色 UI 压在上面才读得清",
+   "severity": "low",
+   "proposal": "cloudSwirl 加尺寸 / 密度 / 随机度子参数（如 vis.mapCloudScale、vis.mapCloudDensity），亮线与暗影线的对比读 col.fog",
+   "kind": "missingParam"
+  }
+ ],
+ "scores": {
+  "hud": [
+   {
+    "layout": 1,
+    "elements": 1,
+    "palette": 3,
+    "type": 2,
+    "shape": 2,
+    "density": 1,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 9,
+    "elements": 8,
+    "palette": 8,
+    "type": 8,
+    "shape": 8,
+    "density": 9,
+    "overall": 8,
+    "round": 2
+   },
+   {
+    "layout": 9,
+    "elements": 8,
+    "palette": 8,
+    "type": 8,
+    "shape": 8,
+    "density": 9,
+    "overall": 8,
+    "round": 3
+   },
+   {
+    "layout": 9,
+    "elements": 8,
+    "palette": 8,
+    "type": 8,
+    "shape": 8,
+    "density": 9,
+    "overall": 8,
+    "round": 4
+   }
+  ],
+  "combat": [
+   {
+    "layout": 1,
+    "elements": 2,
+    "palette": 3,
+    "type": 2,
+    "shape": 2,
+    "density": 1,
+    "overall": 1,
+    "round": 1
+   },
+   {
+    "layout": 6,
+    "elements": 4,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 7,
+    "overall": 5,
+    "round": 2
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 6,
+    "density": 7,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 7,
+    "elements": 6,
+    "palette": 7,
+    "type": 5,
+    "shape": 7,
+    "density": 7,
+    "overall": 6,
+    "round": 4
+   }
+  ],
+  "map": [
+   {
+    "layout": 2,
+    "elements": 2,
+    "palette": 3,
+    "type": 3,
+    "shape": 2,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 4,
+    "elements": 4,
+    "palette": 4,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 4,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 5,
+    "palette": 5,
+    "type": 5,
+    "shape": 5,
+    "density": 5,
+    "overall": 5,
+    "round": 4
+   }
+  ],
+  "character": [
+   {
+    "layout": 3,
+    "elements": 3,
+    "palette": 4,
+    "type": 3,
+    "shape": 3,
+    "density": 2,
+    "overall": 2,
+    "round": 1
+   },
+   {
+    "layout": 5,
+    "elements": 5,
+    "palette": 6,
+    "type": 5,
+    "shape": 4,
+    "density": 5,
+    "overall": 4,
+    "round": 2
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 6,
+    "type": 6,
+    "shape": 6,
+    "density": 5,
+    "overall": 6,
+    "round": 3
+   },
+   {
+    "layout": 6,
+    "elements": 6,
+    "palette": 7,
+    "type": 6,
+    "shape": 7,
+    "density": 5,
+    "overall": 6,
+    "round": 4
+   }
+  ]
+ },
+ "round1Diffs": {
+  "hud": [
+   "参考画面完全没有 UI（探索时 HUD 全隐，方向交给风、鸟和烟）；复刻在画面中上部叠了一大团元素",
+   "根因：base 的 rel.diegesis = diegetic 让所有元素都画成挂在玩家身上的世界内板子，生命条、技能格、横幅、目标挤在同一处互相压住",
+   "黑底米色双线大横幅“发现新区域：雪线”横贯画面中部，参考没有",
+   "“生命 / 护盾”标签与 1–3 号技能格压在横幅上，字号约为正常的两倍（电视平台 typ.baseSize 26 在 928×522 画布上）"
+  ],
+  "combat": [
+   "同样因 rel.diegesis = diegetic，生命 / 护盾条、Boss 条、技能格全部叠在画面中上部一块世界板上；本作生命与决心在左下、暗器在右下、对决时敌人名与血条在上方",
+   "字号巨大：“生命 / 护盾 / 霜脊巨像”约 30px（电视 26px 基准）",
+   "生命条粉红 + 米白两色粗条；本作是白色细血条 + 下方金色决心短段",
+   "地面预警圈（telegraph）画成红色椭圆；本作没有地面预警，用的是武器闪光",
+   "底部中央的情境按键提示与技能格重叠；技能格图标是深色图集位图，在亮场景上成黑块"
+  ],
+  "map": [
+   "地图被挤成底部一条：cnt.focal = scene 在上半区画了“场景（需素材）”灰盒",
+   "el.title = header 又画了一块米色“行囊”页眉牌，压在模板“世界地图”标题上",
+   "lay.detail = transient 画了一张“木材”物品详情浮卡，盖在地图与按键图例上",
+   "按键图例压在地图条上；四角樱花角饰与面板外框（vis.ornament 1 + sakura）是本作没有的",
+   "本作地图整屏出血、白色剪影图标、灰白云雾，复刻是装在带框面板里的一条"
+  ],
+  "character": [
+   "字号过大：标题、页签、行文字约为参考的两倍，列表只放得下 2 行",
+   "右上资源栏与“ESC 返回”胶囊重叠",
+   "剪影旁一块“3D 实时模型（需素材）”灰盒胶囊，和按键图例叠在一起",
+   "四角樱花角饰与面板外框、半透明场景底；本作菜单是无框黑底",
+   "选中页签是实心米色块，本作是文字页签 + 笔触下划线；选中行是抖动描边框，本作是白色笔刷底"
+  ]
+ },
+ "round2Diffs": {
+  "hud": [
+   "与参考一致：探索状态整屏零 UI（rel.hudVisibility = hidden），第 1 轮叠在画面中上部的一团元素全部去掉",
+   "参考里给方向的是远处烟柱与风（世界美术 / 世界内引导），复刻画面里没有任何指路信号；引导之风仍无法用参数表达（缺口），评分不计世界美术",
+   "呼出状态（触摸板上滑后左上的目标文字、风向）没有单独渲染，元素表里的目标 / 交互 / 通知只作说明"
+  ],
+  "combat": [
+   "分区对了：生命 + 第二条在左下、暗器四格在右下、对决敌人条在上中，字号回到正常量级，不再叠成一团",
+   "生命条仍是写死的危险红，对决敌人条也是红；本作生命是白色细条（col.accent@el.vitals 不生效）",
+   "两条前仍写“生命 / 护盾”标签（本作无标签）；第二条是连续金色细条，不是决心那排金色笔刷短段",
+   "暗器四格横排一行，每格左上标 1–4 热键数字；本作是方向键十字排布、无数字、显示剩余数量（valueLabel = current 没画出来）",
+   "st.cooldown = desat 把第 2、4 格画成整块灰色半透明笔刷块，而不是把图标去色；看上去两格有底、两格没底",
+   "细条空槽几乎透明，在亮天空上看不见，敌人条只剩左边一段红线；敌人名是浅灰小字只靠阴影，可读性弱",
+   "白色剪影图标、选中格下方白色短横（st.selected = bar）方向对了；架势十字、武器闪光预警、潜行发现度仍没有（缺口）"
+  ],
+  "map": [
+   "黑底、左上宽字距衬线“世界地图”方向对了，第 1 轮的场景灰盒、行囊页眉、物品浮卡、樱花角饰都已去掉，地图占满正文区",
+   "地图仍装在四周留黑边的圆角矩形里，页眉单独占一行；本作整屏出血，区名与图例直接压在地图上",
+   "底图是暖黄羊皮纸 + 西式城堡 / 灯塔的手绘图（vis.mapStyle = painted），本作是去饱和、偏暗的写实地形 + 卷云遮盖未探索区；右侧未探索区画成米黄渐隐而不是云纹",
+   "节点是水滴图钉：两枚绿色（完成色写死）、一枚白色；本作是成片的和风白色剪影图标，完成后压暗",
+   "左上区名“雪线”与右上“Esc 返回”都是暖白胶囊上的白字，几乎读不出",
+   "右下按键图例的浅色字直接压在浅色羊皮纸上；触摸板键后的“背包”离键明显更远；下方仍有“✥ 拖动查看”小字"
+  ],
+  "character": [
+   "黑底、暖白衬线、宽字距标题、列表在左 / 角色在右的分区已接近本作菜单；字号回到正常，列表放得下 6 行，资源栏不再撞“Esc 返回”",
+   "选中页签“全部”与主按钮“使用”是暖白实心块上的浅色字，读不出；其余页签是深灰实心块——本作页签只有文字，选中项下方一笔笔触",
+   "选中行仍是一圈抖动的白描边框（vis.edge = brush 抖边），不是本作的白色干笔刷带 + 深色字；ix.focus = brushSwash 仍不可见",
+   "列表行标题是粗体衬线（字重写死 700），本作是常规字重",
+   "右侧是灰色渐变程序剪影，下方“剪影”胶囊同样白底浅字；本作是可旋转的 3D 实时角色",
+   "底部“使用 / 丢弃”按钮与按键图例在两条基线上并排、互不对齐；本作只有一行按键图例"
+  ]
+ },
+ "round3Diffs": {
+  "hud": [
+   "与第 2 轮相同、与参考一致：探索状态整屏零 UI",
+   "参考里指路的烟柱与风属于世界内引导，复刻画面没有任何指路信号（引导之风缺口，评分不计世界美术）"
+  ],
+  "combat": [
+   "（凭记忆）左下已是无标签的白色连续细血条 + 暗槽，下面一排金色决心段；但决心段是规整的矩形块，本作是金色笔刷短段",
+   "暗器已排成十字（上下左右四格 + 剩余数量），但每格旁画着文字箭头 ↑←→↓，数量 3 / 4 / 5 / 6 挂在格子右下；本作十字本身就对应方向键，不另画箭头",
+   "架势十字、武器闪光预警、潜行发现度仍没有"
+  ],
+  "map": [
+   "（凭记忆）地图已整屏出血、上下压暗带，区名直写在地图上、图例压在底部暗带上；但未探索区被米黄羊皮纸雾整片盖住，只在冰湖周围露出一小块暖黄手绘地形，画面大半是空白",
+   "本作是去饱和、偏暗的写实地形 + 卷云纹遮盖未探索区；白色衬线标题与区名压在浅米黄底上对比弱，只靠顶部暗带托住",
+   "图钉已统一压暗成灰色，但仍是水滴图钉、而且埋在雾里；本作是成片的和风白色剪影图标",
+   "图例末尾仍带‘✥ 拖动查看’"
+  ],
+  "character": [
+   "（凭记忆）右侧仍是灰色渐变程序剪影 + ‘剪影’胶囊，本作是可旋转的 3D 实时角色",
+   "选中行的白色笔刷带向左伸出列表边、右端顶到详情栏；行首白色菱形图标压在白色笔刷上几乎看不见（只有字反成了深色）",
+   "背景是暖深褐灰（纯色背景读 col.surface2 #1c1a17），比第 2 轮的近黑浅一档；本作菜单是近黑底"
+  ]
+ },
+ "round4Diffs": {
+  "hud": [
+   "与第 3 轮相同、与参考一致：探索状态整屏零 UI",
+   "参考里指路的烟柱与风属于世界内引导，复刻画面没有任何指路信号（引导之风缺口，评分不计世界美术）"
+  ],
+  "combat": [
+   "（凭记忆）决心已是一排金色笔刷短段、暗器十字去掉了方向箭头；但架势十字（el.abilities#2）叠在暗器十字正下方、图标与暗器相同，没有架势图标与当前高亮",
+   "武器闪光预警与头顶白色菱形发现度在静帧里看不到",
+   "暗器数量是挂在格子右下的小号数字，两个十字顶格下各多一道白色短横"
+  ],
+  "map": [
+   "（凭记忆）未探索区已是卷云纹、地形去饱和，但卷云是约屏高 12% 的规则浮雕旋涡、平铺在浅灰底上，画面整体发白；本作偏暗",
+   "揭开的地形是块状马赛克（低分辨率放大、边缘锯齿），揭开带很窄",
+   "白色区名‘雪线’与底部图例压在浅灰卷云上读不清；图例末尾仍有‘✥ 拖动查看’",
+   "图钉仍是灰色水滴，不是和风白色剪影图标"
+  ],
+  "character": [
+   "（凭记忆）选中带已是一笔两端飞白的干笔刷、行首菱形转深色、底色近黑；但右侧仍是灰色程序剪影 + ‘剪影’胶囊，不是 3D 实时角色",
+   "详情栏是物品说明 + 两条属性条，标题背后没有笔刷",
+   "页签选中项下的笔触短线偏细"
+  ]
+ },
+ "revisions": [
+  "base：rel.diegesis diegetic → screen。叙事内会把所有 HUD 元素画成挂在玩家身上的世界板（第 1 轮叠成一团的根因）；本作 HUD 是屏幕叠加，“用世界指路”的引导之风记在缺口里",
+  "base：typ.baseSize 13、lay.safeMargin 3（保留电视平台的手柄 + PlayStation 键位图标，只把 26px 基准与 5% 过扫描边距压回 928×522 画布的比例）",
+  "base：vis.ornament 1 → 0、vis.motif sakura → none，去掉四角樱花角饰与面板花边——本作菜单无框无纹样，和风只靠黑底、留白、衬线与笔触",
+  "base：col.accent 金 → 暖白 #ebe3d1（图标、选中、主按钮在本作都是白），col.accent2 红 → 决心金 #d6ad4f（第二条细条 = 决心）；ast.iconSet asset → procedural，图标成白色剪影符号（图集位图在亮场景上是黑块）",
+  "hud：rel.hudVisibility = hidden，整屏不画——参考与本作的探索状态都是零 HUD；元素表只留目标（按键呼出）、交互、通知（情境显现）作说明，去掉生命、技能、按键提示",
+  "combat：只留生命 + 决心（左下，primary，thinBar，scale 0.8）、暗器四格（右下，slots，scale 0.8，st.selected = bar 白色下划线，st.cooldown = desat）、对决敌人条（上中，bossBar + thinBar，scale 0.8）；去掉地面预警与情境按键；rel.hudVisibility = always（这一屏是交战中 HUD 全显的状态，contextual 会在 3 秒后整体变淡）",
+  "map：cmp.modal = floating + rel.behind replaced + ast.bgArt solid（黑底、无面板框）；cnt.focal none（去掉场景灰盒，地图占满正文区）；去掉 el.title、el.objective、el.overlay；lay.detail none（去掉物品浮卡）；按键图例 scale 0.8 放右下；rel.hudVisibility always；页眉字族回到衬线",
+  "character：cmp.modal = floating + 纯黑背景（本作菜单在黑底上）；cnt.characterMedium model3d → silhouette（不画需素材灰盒，缺口记 needs art）；lay.detail persistent + st.delta newOnly（去掉绿色 → 74）；vis.opacity 0.1 让列表行近乎透明；资源栏移到上中、scale 0.8，避开右上“Esc 返回”；按键图例下中 scale 0.8；ix.dismiss = key + ix.close = keyGlyph（不设时退回右上 ×）",
+  "gaps：新增生命条红色写死、条标签关不掉、cross 排布未实现、brushSwash 在黑底不可见、页签下划线不生效、地图不能整屏出血、电视基准字号、3D 实时模型需素材、详情按钮、拖动提示 / 关闭控件；把地图节点状态色并入和风图标缺口，把地面预警已去掉写进闪光预警缺口",
+  "R3 前（M12a 之后）：base 去掉 lay.safeMargin 3（第二轮为抵消电视字号画成两倍的权宜；M12a-05 起电视按 px@1080p 画，回到平台的 5% 安全边）；combat 加 el.vitals.labels none、el.vitals.rowForms [thinBar, segmented]（白色连续细血条 + 决心一排短段）、col.accent@el.vitals 暖白（生命条白色，第二行仍取 col.accent2 的决心金）、col.track = darkScrim（细条下垫暗槽，亮天空上可读）；map 加 ix.close none（返回只在图例里）、vis.mapLabels = onMap（区名直写在地图上，不再是暖白胶囊白字）；character 加 ix.close none。",
+  "R3 评分（M12a 之后，未改取值）：补第 3 轮 scores 与 round3Diffs；新增缺口 3 条；按第 3 轮对照图给已画对的 11 条缺口标 resolvedBy。",
+  "R4 前（M12b 之后）：base 加 typ.display.secondary latinCaps（英文副题按宽字距大写衬线并置，#12）；combat 加 cmp.gaugeUnitShape@el.vitals brush（决心段画成金色笔刷短段，#28）、el.abilities.keyHint none（十字本身对应方向键，去掉 ↑←→↓ 字样箭头）、cnt.elements 加 el.abilities#2（架势十字：arrangement cross、screenAnchor br、count 4、scale 0.8、keyHint none，#10）、el.threat.form [bossBar] → [bossBar, healthBar, glint, detection] + el.threat.detectShape diamond（武器闪光预警 + 头顶白色菱形发现度，保留 Boss 条，#11）；map 加 vis.mapStyle painted → desatTerrain + vis.mapUnexplored fog → cloudSwirl（去饱和暗地形 + 卷云纹，#3）、lay.panHint none（去掉「✥ 拖动查看」，#21）；character 加 vis.panelShape brushStroke + vis.brushDryness 0.6 + vis.brushTip 0.25（一笔干笔刷即面板 / 选中带，#1）、col.surface2 #1c1a17 → #0a0908（纯色背景回到近黑）。",
+  "R4 评分（M12b 之后，未改取值）：补第 4 轮 scores 与 round4Diffs；新增缺口 2 条；按第 4 轮对照图给 3 条缺口标 resolvedBy、3 条标 partialBy。"
+ ],
+ "notes": "零 HUD 优先：探索时屏幕上什么都没有，方向交给风、鸟和烟；交战时才在左下出现白色细血条与金色决心、右下出现暗器白色剪影。菜单是黑底 + 暖白衬线大写（宽字距）+ 毛笔笔触高亮，和风感来自笔触、留白与书法标题，而不是纹样和边框。"
+}

@@ -1,0 +1,37 @@
+{
+ "files": {
+  "red": "ui_ribbons_red.png",
+  "blue": "ui_ribbons_blue.png",
+  "gold": "ui_ribbons_gold.png"
+ },
+ "size": {
+  "red": [
+   900,
+   138
+  ],
+  "blue": [
+   900,
+   140
+  ],
+  "gold": [
+   900,
+   140
+  ]
+ },
+ "cap": {
+  "red": [
+   58,
+   57
+  ],
+  "blue": [
+   59,
+   59
+  ],
+  "gold": [
+   59,
+   58
+  ]
+ },
+ "found": 3,
+ "id": "ui_ribbons"
+}

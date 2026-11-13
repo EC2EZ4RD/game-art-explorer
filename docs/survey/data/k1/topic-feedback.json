@@ -1,0 +1,917 @@
+{
+  "meta": {
+    "topic": "反馈、动效与演出（打击感、数值、转场、动效语言）",
+    "date": "2026-10-14",
+    "scope": "局内反馈、数值变化、震屏 / 顿帧、整屏状态效果、动效性格、转场、事件通告、预告、结算节奏、减少动效。手游商城 / 抽卡 / 签到 / 首充 / 通行证 / 红包 / 广告类演出不在范围内，也没有从中归纳原则；手游战斗 HUD 保留。",
+    "evidenceBase": "452 张参考卡（src/content/uiRefs.json 的 params 与 note、qa/refs-cache/r2 五批 notes.txt 与对照图）；R3 评测统计（ui-review-stats.json、12-r3-reviews.md）；本地评测缓存的关键词粗筛（见 reviewKeywordCounts）；文献与官方指南（见各原则 sources）。",
+    "reviewKeywordCounts": {
+      "method": "对 qa/refs-cache/reviews 下 336 款的缓存评测按原文去重（65,951 条），用中英关键词正则只数命中条数与好评 / 差评，不保存原文；关键词粗筛会误命中（例如「flashy」多指战斗华丽而不是抱怨），只用来看哪类话题常被提起、出在哪些游戏。",
+      "打击感（中文）": "193 条 / 55 款，其中好评 167；最多：God of War 17、Katana ZERO 14、Hades 12、Ori and the Will of the Wisps 10、Devil May Cry 5 10、Clair Obscur 8、STAR WARS Jedi: Survivor 8、Batman: Arkham Knight 7、Dead Cells 7、God of War Ragnarök 7",
+      "打击感差 / 没有打击感": "7 条 / 7 款（每款 1 条）",
+      "punchy / impactful / weighty / hit feedback（英文）": "154 条 / 94 款，好评 146",
+      "floaty / no impact / weightless": "31 条 / 22 款，差评 20；The Witcher 3 4、Ori and the Blind Forest DE 3",
+      "光敏 / 癫痫 / 频闪 / 光污染 / flashing lights": "74 条 / 40 款（好评 37、差评 37）；CONTROL 9、FINAL FANTASY XVI 5、Nodebuster 4、Just Shapes & Beats 4、Sayonara Wild Hearts 3、Hyper Light Drifter 2（均为差评）",
+      "其中只算 epilepsy / photosensitive / seizure / strobe / 光敏 / 癫痫": "38 条 / 23 款；≥ 2 条的 9 款：Nodebuster 5、Sayonara Wild Hearts 4、Just Shapes & Beats 3、Mirror's Edge 2、Ratchet & Clank: Rift Apart 2、AC Syndicate 2、Genesis Noir 2、Mirror Drop 2、CONTROL 2",
+      "晕 / motion sickness / nausea": "202 条 / 98 款；Stray 14、Portal 2 8、Return of the Obra Dinn 8、Detroit 6、Firewatch 6、BioShock Infinite 6",
+      "震屏 / screen shake / camera shake": "8 条 / 8 款（玩家很少点名震屏，更多描述结果「晕」）",
+      "伤害数字 / damage numbers / 飘字": "11 条 / 8 款",
+      "跳过动画 / 战斗动画太长": "11 条 / 9 款；Darkest Dungeon 2、Red Dead Redemption 2 2"
+    },
+    "paramGaps": [
+      "震屏幅度与顿帧时长目前都折叠在 mo.juice 一个系数里；Godot 导出时建议拆成 shake / hitstop / flash 三个子系数（mo.juice 仍做总乘数），玩家设置也按这三项分别给滑条。",
+      "a11y.reduceMotion 只有一个总开关；XAG 117 与 Halo Infinite、Overwatch 的做法是震屏、整屏效果、速度线、HUD 抖动分项可调。",
+      "伤害数字只有 el.feedback.form = floatNumbers 一个取值，缺「逐击 / 累计 / 都显示 / 关」与「尺寸按伤害占比」两个子参数（Apex Legends 的四档就是现成词表）。",
+      "el.notify 缺「队列 / 合并同类 / 战斗中延后」的行为参数。"
+    ]
+  },
+  "principles": [
+    {
+      "id": "P-juice-budget",
+      "title": "反馈强度是一笔预算：按事件分量与品类节奏分配，而不是全局拉满",
+      "problem": "「打击感」常被理解成全局特效拉满：捡一枚金币和击杀 Boss 一样闪、一样震，玩家分不出轻重，久玩疲劳、光敏风险上升；反过来，解谜和经营界面套用动作游戏的震屏与砸入，会打断思考、显得廉价。设计者需要一个从「冷静」到「夸张」的刻度，以及按事件分级的分配方法。",
+      "approaches": [
+        {
+          "name": "冷静：状态变化本身就是反馈",
+          "params": { "mo.juice": 0.05, "mo.enter": "cut", "mo.easing": "easeOut", "ix.press": "darken", "mo.valueChange": "instant" },
+          "whenToUse": "解谜、经营、极简策略、需要长时间盯着看的界面。操作的结果（线路接通、格子变色、数字更新）已经足够清楚，额外修饰只会干扰。",
+          "cost": "新手可能感觉不到操作已经生效，需要靠清晰的状态差异（颜色、形状、位置）补；宣传视频里显得「平」。",
+          "examples": ["steam:287980", "steam:1455840", "steam:2198150", "steam:2674590"]
+        },
+        {
+          "name": "克制但有重量：手感交给动画、音效与镜头，UI 只记账",
+          "params": { "mo.juice": 0.35, "rel.hudVisibility": "contextual", "mo.valueChange@el.vitals": "trail", "rel.metaFx": ["hurtVignette"] },
+          "whenToUse": "写实 3A 动作、魂类。评测里被夸打击感最多的就是这一类（God of War、黑神话、Sekiro 一系），它们的 HUD 反而很少。",
+          "cost": "依赖角色动画、顿帧、音效和镜头的投入；UI 层面「看不出」打击感，原型阶段容易被误判为反馈不足。",
+          "examples": ["steam:1593500", "steam:2358720", "steam:814380", "steam:1245620", "steam:2322010"]
+        },
+        {
+          "name": "数字即爽感：反馈落在数字跳动、累乘和燃烧上",
+          "params": { "mo.juice": 0.6, "mo.valueChange": "countUp", "typ.numerals.family": "display", "el.feedback.form": ["floatNumbers"] },
+          "whenToUse": "Roguelite、构筑卡牌、增量 / 放置：乐趣来自数值成长，玩家要看到「数变大」的过程（Balatro 分数翻倍时数字燃烧抖动，Cookie Clicker 以数字跳动为主要反馈）。",
+          "cost": "数值通胀后必须有缩写、合并与上限规则，否则满屏数字；数字字体成为风格的一部分，要单独设计。",
+          "examples": ["steam:2379780", "steam:1454400", "steam:3107330", "steam:588650", "steam:1145360"]
+        },
+        {
+          "name": "夸张：漫画、节奏与 Persona 式演出",
+          "params": { "mo.juice": 0.9, "mo.enter": "slam", "mo.easing": "overshoot", "el.feedback.form": ["comicSFX", "rating"], "ast.fx": ["speedlines"] },
+          "whenToUse": "风格化动作、节奏动作、漫画 / 拼贴风。夸张本身就是美术风格（Hi-Fi Rush 整屏拟声字、DMC5 评价字母越打越大）。",
+          "cost": "高频小事件必须降档，否则第三次就吵；光敏检测与屏占检查必做；本地化（拟声字、斜排字）成本高。",
+          "examples": ["steam:1817230", "iig:hi-fi-rush", "steam:601150", "steam:1687950", "gameui:12857"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "所有事件同一强度：拾取、普通命中、暴击、击杀、升级全部闪白 + 震屏 + 放大，重要事件反而淹没。",
+          "examples": [],
+          "reviewEvidence": "本地评测粗筛：「打击感」被提到 193 条（55 款），好评 167 条，集中在分量拿捏得好的动作游戏（God of War 17、Katana ZERO 14、Hades 12、DMC5 10）；光敏 / 频闪 / 光污染类 74 条（40 款），高强度视觉作品居多（CONTROL 9、Nodebuster 4、Just Shapes & Beats 4、Sayonara Wild Hearts 3）。两端都说明「强度对不对」比「有没有」更常被讨论。"
+        },
+        {
+          "desc": "在冷静品类里硬加动作游戏的反馈：经营 / 建造的确认操作也震屏、也砸入。",
+          "examples": [],
+          "reviewEvidence": "评测统计没有直接计数。间接参考：R3「菜单 / 界面难用」24 款里建造经营类集中（Valheim 7、Planet Zoo 3、Parkasaurus 3），这类界面玩家要的是快和确定。"
+        }
+      ],
+      "rules": [
+        "先给事件分级（例如 0 日常 / 1 有效命中 / 2 关键 / 3 里程碑），每一级规定能用哪些通道（颜色、缩放、震屏、闪白、音效、顿帧）和上限，再定全局 mo.juice。",
+        "mo.juice 当作全局乘数；高频元素用 mo.juice@el.<元素> 单独降档。",
+        "事件越高频，反馈越轻：每秒会发生多次的反馈最多用 1–2 个通道。",
+        "品类起点（经验值，要靠试玩校准）：解谜 / 经营 ≤ 0.15，写实动作 0.3–0.45，Roguelite / 割草 0.5–0.7，漫画 / 节奏 0.8 以上。",
+        "拉高强度之前先开特效遮挡检查（chk.fxOcclusion），并把光敏检测排进计划。"
+      ],
+      "genres": ["动作", "Roguelite", "节奏", "割草", "卡牌构筑", "解谜 / 经营（反向：要压低）"],
+      "sources": [
+        { "title": "Martin Jonasson & Petri Purho, Juice It or Lose It（GDC Europe 2012；Game Developer 报道）", "url": "https://www.gamedeveloper.com/design/video-is-your-game-juicy-enough-", "point": "用打砖块原型现场演示：补间、挤压拉伸、事件时放大缩小、震屏等小反馈叠加，让同一玩法明显更好玩；把 juice 概括为用最少的输入换最多的输出。" },
+        { "title": "Folmer Kelly, Don't Juice It or Lose It（GDC Europe 独立游戏峰会；Game Developer 报道）", "url": "https://gamedeveloper.com/design/video-indies-resist-the-urge-to-juice-it-or-lose-it-", "point": "反方观点：润色让游戏更热闹，但可能削弱沉浸感；反馈强度要服从作品气质。" },
+        { "title": "Dominic Kao, The Effects of Juiciness in an Action RPG, Entertainment Computing 34 (2020)（二手摘要）", "url": "https://www.goodreads.com/author_blog_posts/19932694-the-effects-of-juiciness-in-an-action-rpg-new-study", "point": "同一款 ARPG 做无 / 中 / 高 / 极端四档反馈对照，中档与高档在各项体验指标上都好于无和极端——强度存在最佳区间。原文未读，只据摘要。" },
+        { "title": "Martin Pichlmair & Mads Johansen, Designing Game Feel: A Survey（arXiv:2011.09201，后发表于 IEEE Transactions on Games）", "url": "https://arxiv.org/abs/2011.09201", "point": "把手感研究归成三种体验目标——物理感、放大、支持——分别对应调参、加 juice、精简流程；juice 只是三种打磨手段之一。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "mo.juice": 0.1, "mo.enter": "fade", "mo.easing": "easeOut", "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "mo.juice": 0.9, "mo.enter": "slam", "mo.easing": "overshoot", "el.feedback.form": ["comicSFX", "rating"], "chk.demo": "combatBeat" },
+        "lookAt": "同一段战斗节拍：A 只有数值和颜色变化，B 有砸入、回弹和拟声字。看 B 在节拍循环到第三遍时是不是开始吵，再想想自己的游戏每分钟有多少次这样的事件。"
+      }
+    },
+    {
+      "id": "P-hit-channel-split",
+      "title": "命中反馈分层：世界层回答「打中了吗」，UI 层只回答「打了多少 / 打得怎样」",
+      "problem": "把所有反馈都塞进 UI（飘字、命中标记、评价字、连击数）会盖住战场和敌人的出招前摇；全部交给世界特效，玩家又读不出数值、弱点和表现评价。需要先决定每一类信息由哪一层承担，再选 UI 层的画法。",
+      "approaches": [
+        {
+          "name": "世界层为主，UI 只挂一条目标血条",
+          "params": { "cnt.elements": ["el.vitals", "el.threat"], "el.threat.form": ["healthBar"], "el.threat.attachTo": "target", "rel.hudVisibility": "contextual", "mo.juice": 0.4 },
+          "whenToUse": "写实动作、魂类、潜行：受击闪白、击退、血溅、音效和顿帧已经说明「打中了」，UI 只需要目标血量。",
+          "cost": "数值深度难以传达（伤害公式、抗性只能靠文字说明或试错）。",
+          "examples": ["steam:1593500", "steam:814380", "steam:2322010", "steam:1627720"]
+        },
+        {
+          "name": "飘字挂在目标上",
+          "params": { "el.feedback.form": ["floatNumbers"], "el.feedback.attachTo": "target", "typ.legibility": "outline", "typ.numerals.family": "display" },
+          "whenToUse": "ARPG、Roguelite、JRPG、刷宝射击：伤害数值是玩家构筑的结果，需要逐下看见（Hades、Dead Cells、Octopath 的大号衬线伤害数字、Borderlands 2 的彩色飘字）。",
+          "cost": "多敌人、高攻速时刷屏，需要合并与上限（见 P-damage-number-legibility）。",
+          "examples": ["steam:1145360", "steam:588650", "steam:921570", "steam:49520", "gameui:6836"]
+        },
+        {
+          "name": "命中标记：反馈留在准星上",
+          "params": { "el.feedback.form": ["hitMarker"], "el.feedback.screenAnchor": "center", "el.crosshair.form": ["cross"] },
+          "whenToUse": "第一 / 第三人称射击：玩家视线钉在准星，命中、爆头、击杀用准星旁的标记和声音区分，不让视线离开中心（探索台的射击品类布局默认就是 命中标记 + 飘字）。",
+          "cost": "标记本身的信息量很小；爆头、护盾、击杀要靠形状和颜色再分级。卡片笔记里没有直接记到命中标记，例子按该作已知 HUD。",
+          "examples": ["iig:overwatch", "steam:440"]
+        },
+        {
+          "name": "拟声字：把反馈画成漫画的一部分",
+          "params": { "el.feedback.form": ["comicSFX"], "el.feedback.screenAnchor": "center", "vis.stroke": "solid", "typ.display.family": "graffiti" },
+          "whenToUse": "画面本身就是漫画 / 卡通渲染时（Hi-Fi Rush 击打时整屏拟声字，竖屏手游的 BOOM 与命中拟声字）。",
+          "cost": "大字遮挡最多，只能留给重击或终结；要和画面同一套描边、字体与网点，不然像贴纸。",
+          "examples": ["steam:1817230", "iig:hi-fi-rush", "gameui:12857", "gameui:13586"]
+        },
+        {
+          "name": "评价字与连击数：反馈的是「打得怎样」",
+          "params": { "el.feedback.form": ["rating", "combo"], "el.feedback.screenAnchor": "mr", "typ.numerals.style": "italic" },
+          "whenToUse": "风格动作、节奏、竞速特技：评价字母（DMC5 右侧 D→SSS）、连击数（Arkham 左上）、判定字（音游中间 EXACT）把技巧表现变成可追求的目标。",
+          "cost": "需要一套评分规则（不重复招式、节拍准度）；放在中心会挡判定，节奏游戏除外。",
+          "examples": ["steam:601150", "steam:208650", "steam:200260", "steam:952040", "steam:508980", "steam:620980"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "飘字、命中特效、评价字全部压在目标身上，盖住敌人的出招前摇和地面预警。",
+          "examples": ["steam:1145350"],
+          "reviewEvidence": "R3「HUD 太乱 / 挡视野」22 款，Hades II 4 条（有评测把房间狭小、视觉杂乱和敌人数量放在一起说），Bloons TD 6 5 条、艾尔登法环 3 条。"
+        },
+        {
+          "desc": "同一信息在每一层重复：每一下都同时有命中标记、飘字、闪白、震屏，信号多但信息没有增加。",
+          "examples": [],
+          "reviewEvidence": "评测统计没有直接计数；Hicks 等 2019 的实验显示视觉修饰主要提升「好看」，对胜任感只在特定条件下有帮助。"
+        }
+      ],
+      "rules": [
+        "先列玩家这一下需要知道什么：打中没有 → 世界层（受击闪白、击退、音效、顿帧）；打了多少 → 数字；打得好不好 → 评价 / 连击；有没有效（弱点、抵抗）→ 字样或颜色（如 WEAK）。",
+        "每类信息只交给一层；UI 层的反馈放在战场外围或目标头顶的小范围。",
+        "越写实，UI 反馈越少；越风格化，UI 反馈越可以成为画面的一部分，但必须用画面同一套线条、字体与配色。",
+        "射击类的反馈留在准星附近，不让视线离开中心。",
+        "评价字、连击数放侧边（DMC 在右侧中部、Arkham 在左上），不要挡住画面中心的敌人。"
+      ],
+      "genres": ["动作", "ARPG", "射击", "Roguelite", "节奏", "JRPG"],
+      "sources": [
+        { "title": "Jan Willem Nijman（Vlambeer）对 Nuclear Throne 一发手枪的反馈拆解（Rock Paper Shotgun 访谈的转述）", "url": "https://infovore.org/?p=5275", "point": "一次开枪拆成十几层：枪声、弹壳、镜头后坐几像素、快速衰减的震屏、枪械后坐、枪口闪、命中特效与材质音、敌人白闪 + 击退约 3 像素 / 帧、每次命中暂停约 10–20 毫秒。大部分都在世界层，UI 几乎不参与。" },
+        { "title": "Hicks et al., Juicy Game Design: Understanding the Impact of Visual Embellishments on Player Experience, CHI PLAY 2019", "url": "https://doi.org/10.1145/3311350.3347171", "point": "视觉修饰是重复表达已有信息的设计元素；两项实验里它们稳定提升视觉吸引力，但对胜任感等体验只在特定情况下有影响。" },
+        { "title": "Riot Games, Clarity in League（2021）", "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "point": "画面上越重要的事件越该吸引注意；视觉噪声会叠加，炫目是有代价的；特效必须与判定范围一致。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "el.feedback.form": ["floatNumbers"], "el.feedback.attachTo": "target", "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "el.feedback.form": ["rating", "combo"], "el.feedback.screenAnchor": "mr", "chk.demo": "combatBeat" },
+        "lookAt": "A 让视线停在敌人身上读数字；B 把「打得怎样」挪到右侧，敌人身上只剩世界特效。比较两者下能不能同时看清敌人的下一次出招。"
+      }
+    },
+    {
+      "id": "P-damage-number-legibility",
+      "title": "伤害数字：大小表达分量、颜色加字样表达类型、高频合并、玩家可关",
+      "problem": "在数值型战斗里伤害数字是主要反馈，但多段、持续和群体伤害会刷屏；暴击、弱点、护盾、治疗、受伤混在一起分不清；细字在亮色特效或雪地上看不见；数字盖住敌人。",
+      "approaches": [
+        {
+          "name": "逐击飘字",
+          "params": { "el.feedback.form": ["floatNumbers"], "el.feedback.attachTo": "target", "typ.numerals.family": "display", "typ.legibility": "outline" },
+          "whenToUse": "节奏慢、单次伤害大的战斗（回合制 JRPG、ARPG 的重击）：每个数字都值得读（Octopath 的大号衬线伤害数字）。",
+          "cost": "攻速一高就刷屏；数字字体、描边、出现与消失的动效都要单独设计。",
+          "examples": ["steam:921570", "steam:1145360", "steam:49520"]
+        },
+        {
+          "name": "累计合并：同一目标的一串伤害合成一个跳动的总数",
+          "params": { "el.feedback.form": ["floatNumbers"], "el.feedback.attachTo": "target", "mo.valueChange@el.feedback": "countUp", "typ.numerals.family": "display" },
+          "whenToUse": "多段攻击、持续伤害、自动战斗与割草类：玩家关心这一轮总共打了多少（自动战斗手游的「总伤害大字」、Balatro 的筹码 × 倍率累算）。",
+          "cost": "看不到单下的暴击；需要定义合并窗口（多久没有新伤害就结算）。",
+          "examples": ["gameui:6853", "steam:2379780", "gameui:7312"]
+        },
+        {
+          "name": "只在关键时出大字：弱点、暴击、破防",
+          "params": { "el.feedback.form": ["floatNumbers", "rating"], "el.feedback.scale": 1.6, "col.coding": ["element", "status"] },
+          "whenToUse": "有弱点 / 破防机制的回合制或动作 RPG：普通伤害小而淡，触发机制时数字变大并配字样（Octopath 的 WEAK 与破防时的大号数字）。",
+          "cost": "需要清楚的分级规则；若关键事件太频繁，大字就失去意义。",
+          "examples": ["steam:921570", "steam:49520"]
+        },
+        {
+          "name": "数字挂在血条端点，不飘",
+          "params": { "el.threat.form": ["bossBar"], "el.threat.valueLabel": "delta", "el.threat.valueLabelPos": "end", "el.threat.screenAnchor": "bc" },
+          "whenToUse": "魂类与 Boss 战：本次连段的伤害累计写在 Boss 长条一端，战场中心完全干净（艾尔登法环、Lies of P 的底部 Boss 条）。",
+          "cost": "小怪身上看不到数值；数字远离攻击点，弱点反馈要另靠特效和音效。",
+          "examples": ["steam:1245620", "steam:1627720"]
+        },
+        {
+          "name": "不显示数字，只看血条差值",
+          "params": { "el.threat.form": ["healthBar"], "el.threat.attachTo": "target", "mo.valueChange@el.threat": "trail" },
+          "whenToUse": "写实动作、生存恐怖：伤害用拖尾的差值和敌人的受击反应表达，数字会破坏氛围。",
+          "cost": "构筑与数值比较只能靠菜单；玩家在社区里自己算伤害。",
+          "examples": ["steam:814380", "steam:200260"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "高攻速下逐击飘字，数字摞成一列盖住敌人和弹幕。",
+          "examples": [],
+          "reviewEvidence": "伤害数字本身在 6.6 万条评测里只被点名 11 条（8 款）——做对了玩家不提；但它的代价会出现在「HUD 太乱 / 挡视野」这一类（22 款，Bloons TD 6 5、Hades II 4、艾尔登法环 3）。"
+        },
+        {
+          "desc": "暴击、治疗、护盾只靠颜色区分，色弱玩家与亮色特效下都分不清。",
+          "examples": [],
+          "reviewEvidence": "评测统计未单列此项；对应 Game Accessibility Guidelines「关键信息不能只靠颜色」。"
+        },
+        {
+          "desc": "细字无描边，在雪地、沙地、闪光特效上读不出。",
+          "examples": ["steam:892970"],
+          "reviewEvidence": "R3「字太小 / 看不清」18 款，Valheim 3 条（同一款还有背包 17、菜单 7 条抱怨）；社区为它做的伤害数字模组正是改成粗体描边。"
+        }
+      ],
+      "rules": [
+        "尺寸按「占目标血量的比例」或事件等级映射，不按绝对值——数值膨胀后绝对值会失控。",
+        "颜色编码伤害类型（暴击、弱点、护盾、治疗、自己受伤），同时用字形或字样做冗余（WEAK、CRIT、斜体、图标）。",
+        "出伤挂在目标上，受伤挂在自己或屏幕边缘，两类不进同一区域。",
+        "高频伤害合并成一个持续刷新的数字；超过 4–5 位用缩写（12.3K）。",
+        "提供开关：关 / 逐击 / 累计 / 都显示（Apex Legends 的四档）。",
+        "数字用大号展示数字字体 + 描边或投影（typ.legibility），不用正文细字；暴击可以停留更久而不是更大。"
+      ],
+      "genres": ["ARPG", "Roguelite", "刷宝射击", "JRPG", "MMO", "自动战斗手游", "割草"],
+      "sources": [
+        { "title": "Shacknews, How to change damage numbers in Apex Legends", "url": "https://shacknews.com/article/110042/how-to-change-damage-numbers-in-apex-legends", "point": "伤害数字有关闭、累计、逐击飘字、两者都显示四档；颜色区分爆头、护盾与本体受伤。" },
+        { "title": "Game Accessibility Guidelines, Ensure no essential information is conveyed by a colour alone", "url": "https://gameaccessibilityguidelines.com/ensure-no-essential-information-is-conveyed-by-a-colour-alone/", "point": "关键信息除了颜色，还要有形状、文字或图标等第二种通道。" },
+        { "title": "Riot Games, Clarity in League（2021）", "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "point": "注意力应按事件的影响大小分配，噪声会叠加——同样适用于数字的大小与数量。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "el.feedback.form": ["floatNumbers"], "el.feedback.attachTo": "target", "typ.legibility": "none", "typ.numerals.family": "body", "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "el.feedback.form": ["floatNumbers"], "el.feedback.attachTo": "target", "typ.legibility": "outline", "typ.numerals.family": "display", "mo.valueChange@el.feedback": "countUp", "chk.fxOcclusion": true, "chk.demo": "combatBeat" },
+        "lookAt": "A 每下一个细数字，连击时摞成一列、在亮色特效上看不清；B 合并成一个跳动的描边大数字。打开特效遮挡检查，看敌人有没有被数字挡住。"
+      }
+    },
+    {
+      "id": "P-value-change-visible",
+      "title": "数值变化要「看得见差值」：真值立即落位，差值层按角色选拖尾、分段或滚动",
+      "problem": "血量、资源瞬间跳到新值，玩家来不及知道刚才掉了多少；整条做成慢慢下降，读数又滞后，玩家以为还有血。零 HUD 的游戏还要决定：数值变化时要不要让 HUD 短暂出现。",
+      "approaches": [
+        {
+          "name": "瞬变：读数优先",
+          "params": { "mo.valueChange": "instant", "typ.numerals.family": "tabular" },
+          "whenToUse": "策略、经营、自动化：数字要拿来比较和计算，任何过渡都是误差（Mini Metro、Factorio、Beltmatic）。",
+          "cost": "变化不显眼，重要变化要靠颜色或图标另行提示。",
+          "examples": ["steam:287980", "steam:427520", "steam:2674590"]
+        },
+        {
+          "name": "延迟拖尾：真值立即落，亮色差值段随后追上",
+          "params": { "mo.valueChange@el.vitals": "trail", "cmp.gauge@el.vitals": "bar", "el.threat.form": ["bossBar"], "mo.valueChange@el.threat": "trail" },
+          "whenToUse": "动作、格斗、魂类的血条与 Boss 条：一串连击掉了多少一眼可见（探索台的格斗与魂类布局默认就是拖尾）。",
+          "cost": "两层进度条 + 计时器；拖尾追的时机要调，连续受击时不能永远追不上。",
+          "examples": ["steam:1245620", "steam:2358720", "steam:1627720", "steam:814380"]
+        },
+        {
+          "name": "分段跳：一格一格地掉",
+          "params": { "mo.valueChange@el.vitals": "segment", "cmp.gauge@el.vitals": "segmented" },
+          "whenToUse": "血量少而离散（3–10 格）的平台、像素动作、英雄射击：每一格就是一次失误，掉格本身就是反馈（Hollow Knight 面具、Hyper Light Drifter 血格、Overwatch 分段血块、DMC5 分段血条）。",
+          "cost": "精细伤害无法表达；格数一多就退化成普通条。",
+          "examples": ["steam:367520", "steam:257850", "iig:overwatch", "steam:601150", "steam:268910"]
+        },
+        {
+          "name": "数字滚动：加钱、加分、结算",
+          "params": { "mo.valueChange@el.resources": "countUp", "el.resources.form": "bigNumber" },
+          "whenToUse": "增量、构筑、得分类：滚动的过程就是奖励（Cookie Clicker、Balatro）。",
+          "cost": "滚动期间读数不准；必须能被按键立即完成。",
+          "examples": ["steam:1454400", "steam:2379780", "steam:63710"]
+        },
+        {
+          "name": "变化即出现：数值一变 HUD 才短暂显现",
+          "params": { "rel.hudVisibility": "contextual", "el.vitals.visibility": "contextual", "el.vitals.valueLabel": "delta" },
+          "whenToUse": "零 HUD / 情境显现的探索作：平时干净，掉血、拾取、用弹药时才出现（天际的三条、Ori 的光点、生化危机村庄、FEZ、神秘海域）。",
+          "cost": "显现时长太短会错过；玩家无法随时查询，要配按键呼出。",
+          "examples": ["steam:489830", "steam:387290", "steam:1196590", "steam:224760", "steam:1659420", "steam:108710"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "整条血条平滑下降，真值本身被动画延迟——玩家按读数判断还剩血，实际已经濒死。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数；相近的「UI 卡顿 / 响应慢」6 款（DEATHLOOP 3、Prince of Persia 2、Half-Life: Alyx 2、Cyberpunk 2077 2 等），说明玩家对界面跟不上操作很敏感。"
+        },
+        {
+          "desc": "拖尾停顿太久或追得太慢：连续受击时差值段一直挂着，失去「刚才这一下」的意义。",
+          "examples": [],
+          "reviewEvidence": "无评测计数（经验规则）。"
+        },
+        {
+          "desc": "情境显现的条只闪一下就消失，或者一直不出现，玩家不知道自己状态。",
+          "examples": ["steam:2215430"],
+          "reviewEvidence": "R3：零 HUD 的代价主要表现为「提示 / 引导不清」（47 款，Scorn 10、Kingdom Two Crowns 7）与「地图难用」；状态读数本身被点名得少。"
+        }
+      ],
+      "rules": [
+        "真值在 0.1 秒内落位（Nielsen 的「即时」阈值），装饰性过渡只加在差值层。",
+        "拖尾：先停约 0.3–0.6 秒再追，让一串连击累成一段；追的速度要快于下一次受击的间隔（经验值）。",
+        "掉血和回血用不同表现：掉血留亮色差值段，回血先显示半透明的预回复段再填满。",
+        "数字滚动的时长随数额的对数增长并设上限，按键立即完成。",
+        "离散小数值（≤ 10）用分段或图标，不做平滑；需要精确比较的读数不做任何过渡。"
+      ],
+      "genres": ["动作", "格斗", "魂类", "平台", "增量 / 放置", "探索（情境显现）"],
+      "sources": [
+        { "title": "Jakob Nielsen, Response Times: The 3 Important Limits（Nielsen Norman Group）", "url": "https://www.nngroup.com/articles/response-times-3-important-limits/", "point": "约 0.1 秒内的响应让人觉得即时，结果本身就是反馈；约 1 秒内思路不断；超过 10 秒必须给进度与取消。" },
+        { "title": "Deadline Fighter 开发日志 3（itch.io，独立开发者实践记录）", "url": "https://elvenji.itch.io/deadline-fighter/devlog/957932/devlog-3-mejorando-enemigos-e-interfaz", "point": "作者用「两层条 + 计时器」做延迟血条，发现它让受击更容易被察觉、画面也更好看。属于实践记录，不是研究。" },
+        { "title": "Material Components for Android, Motion（Material 3 动效文档）", "url": "https://github.com/material-components/material-components-android/blob/master/docs/theming/Motion.md", "point": "动画覆盖的面积或距离越大，时长越长，才能让感知速度一致——数字滚动与拖尾时长也应随变化量增长。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "cnt.elements": ["el.vitals", "el.threat"], "mo.valueChange@el.vitals": "instant", "cmp.gauge@el.vitals": "bar", "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "cnt.elements": ["el.vitals", "el.threat"], "mo.valueChange@el.vitals": "trail", "cmp.gauge@el.vitals": "bar", "chk.demo": "combatBeat" },
+        "lookAt": "连续三次受击：A 只能看到最终剩余；B 的亮色差值段留住了这一串连击一共掉了多少，然后才追上。"
+      }
+    },
+    {
+      "id": "P-shake-hitstop",
+      "title": "震屏与顿帧：短、快速衰减、按强度分级、设上限、HUD 不跟着抖",
+      "problem": "震屏和顿帧是「重量感」最便宜的来源，但过量或持续会让人晕、遮挡判断，HUD 文字跟着抖会读不出；割草和多人混战里，每下都顿帧会把节奏拖垮。",
+      "approaches": [
+        {
+          "name": "不震：画面保持稳定",
+          "params": { "mo.juice": 0.05, "ctx.timeModel": "turn" },
+          "whenToUse": "回合制、策略、经营、需要精确读格子与读图的游戏。",
+          "cost": "需要其它通道表达分量（音效、单元格高亮、单位动画）。",
+          "examples": ["steam:287980", "steam:1455840", "steam:1054490"]
+        },
+        {
+          "name": "微震 + 短顿帧：只在命中与受击",
+          "params": { "mo.juice": 0.35, "rel.metaFx": ["hitFlash"], "mo.juice@el.vitals": 0 },
+          "whenToUse": "大多数动作、平台、射击的默认档（Dead Cells、Hades、Katana ZERO、Hyper Light Drifter）。",
+          "cost": "数值要逐武器调；没有顿帧的投射物和多段攻击要另设更短的档位。",
+          "examples": ["steam:588650", "steam:1145360", "steam:460950", "steam:257850"]
+        },
+        {
+          "name": "重击分级：普通 / 重击 / 终结各一档，终结加定格",
+          "params": { "mo.juice": 0.7, "rel.metaFx": ["hitFlash"], "el.feedback.form": ["rating"], "mo.juice@el.vitals": 0 },
+          "whenToUse": "风格动作与写实动作的重攻击、处决、Boss 最后一击（DMC5、God of War 系列）。",
+          "cost": "需要事件分级表；多人同屏时顿帧会让别人的操作也停（Sakurai 在大乱斗里因此把顿帧压短）。",
+          "examples": ["steam:601150", "steam:1593500", "steam:2322010"]
+        },
+        {
+          "name": "只抖 UI 元素，不动镜头",
+          "params": { "mo.juice": 0.2, "mo.juice@el.feedback": 0.85, "mo.valueChange@el.feedback": "countUp" },
+          "whenToUse": "卡牌、回合制、构筑类想要爽感又不能晃牌桌：抖的是分数和数字本身（Balatro 结算时数字燃烧抖动、Cookie Clicker 的数字跳动）。",
+          "cost": "抖动中的数字读不准，抖完必须停稳。",
+          "examples": ["steam:2379780", "steam:1454400"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "震屏作用到整个 UI 层，血条、准星和文字跟着晃。",
+          "examples": [],
+          "reviewEvidence": "评测里直接说「震屏」的只有 8 条（8 款），但「晕 / motion sickness」类有 202 条（98 款），集中在第一人称和镜头运动多的作品（Stray 14、Portal 2 8、Obra Dinn 8、Firewatch 6、BioShock Infinite 6）——玩家描述结果而不是原因。Overwatch 2 也把镜头抖动和 HUD 抖动分成了两个选项。"
+        },
+        {
+          "desc": "持续性震屏（环境地震、低血时一直抖）或每个小怪都顿帧，节奏被拖慢。",
+          "examples": [],
+          "reviewEvidence": "评测无直接计数；Sakurai 指出无双类游戏几乎不用顿帧，因为会拖慢一次打一大片的节奏。"
+        }
+      ],
+      "rules": [
+        "震屏用 trauma 模型：事件往一个 0–1 的值上累加，实际幅度 = trauma 的平方，随时间快速衰减，位移由平滑噪声驱动而不是纯随机（Eiserloh）。",
+        "震屏只作用于游戏镜头，HUD 默认不抖（探索台里写 mo.juice@el.vitals = 0）；需要 UI 抖时只抖单个元素。",
+        "顿帧按攻击强度分级并设上限；投射物与多段攻击更短；同屏敌人很多（割草）时减少或取消。",
+        "顿帧期间让受击者抖动、幅度由大到小，地面左右抖、空中上下抖（Sakurai）。",
+        "给玩家 0 / 50% / 100% 三档，默认不一定是 100%（Celeste 1.4 新增 50% 档并设为默认）。"
+      ],
+      "genres": ["动作", "平台", "射击", "格斗", "割草（要压低）", "卡牌（只抖 UI）"],
+      "sources": [
+        { "title": "Squirrel Eiserloh, Math for Game Programmers: Juicing Your Cameras With Math（GDC 2016；Game Developer 报道）", "url": "https://www.gamedeveloper.com/programming/video-sprucing-up-cameras-with-math", "point": "讲震屏的几种类型与镜头跟随的数学；常见实现是 trauma 值累加、平方后作为幅度、随时间衰减、用噪声驱动位移。" },
+        { "title": "Bevy 官方示例 2D screen shake（按该演讲实现）", "url": "https://bevy.org/examples/camera/2d-screen-shake/", "point": "trauma 在 0–1 之间并随时间衰减；只在渲染时偏移镜头，游戏逻辑不受影响；位移有上限、由噪声函数驱动。" },
+        { "title": "Jan Willem Nijman 对 Nuclear Throne 射击反馈的拆解", "url": "https://infovore.org/?p=5275", "point": "震屏值每次射击累加、快速衰减；每次命中暂停约 10–20 毫秒——顿帧以毫秒计，而不是以秒计。" },
+        { "title": "樱井政博 Famitsu 专栏 Vol.490 关于顿帧（Source Gaming 非官方译文）", "url": "https://sourcegaming.info/2015/11/11/thoughts-on-hitstop-sakurais-famitsu-column-vol-490-1/", "point": "攻击越强顿帧越长但设上限；投射物顿帧更短；受击者在顿帧中抖动、幅度递减，地面左右抖、空中上下抖；抖动幅度随镜头距离调整。" },
+        { "title": "John Nesky, 50 Camera Mistakes（GDC 2014）", "url": "https://gdcvault.com/play/1021262/50-Camera", "point": "震屏过度、镜头随步伐上下晃都被列为镜头错误（编号据二手转述，见 06 文档）。" },
+        { "title": "Celeste v1.4.0.0 更新日志", "url": "https://maddymakesgamesinc.itch.io/celeste/devlog/237097/v1400-changelog", "point": "新增 50% 震屏档并设为默认；同时已有光敏模式。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "mo.juice": 0.95, "rel.metaFx": ["hitFlash", "hurtVignette"], "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "mo.juice": 0.4, "mo.juice@el.vitals": 0, "rel.metaFx": ["hurtVignette"], "chk.demo": "combatBeat" },
+        "lookAt": "A 每一下都闪白、大幅震，血条也跟着晃；B 镜头轻震、血条不动、只留受击红边。连续五次受击后，比较哪一边还能马上读出剩余血量。"
+      }
+    },
+    {
+      "id": "P-meta-screen-states",
+      "title": "整屏状态效果留给「用余光感知的状态」：分级、只占边缘、避开闪光阈值",
+      "problem": "低血、受击、高速、被入侵这类状态，需要玩家不看 HUD 也能感知；但整屏红光、闪烁、色差会遮挡、致眩，饱和红色闪烁更是光敏高风险。",
+      "approaches": [
+        {
+          "name": "受击红边：瞬时、只在边缘",
+          "params": { "rel.metaFx": ["hurtVignette"], "el.vitals.diegesis": "meta", "el.vitals.metaFx": "hurtVignette" },
+          "whenToUse": "第一 / 第三人称射击与动作：受击方向和「刚被打」需要周边视觉感知。",
+          "cost": "和低血状态共用红色会混淆；方向信息要另画箭头。",
+          "examples": ["steam:391220", "steam:1196590"]
+        },
+        {
+          "name": "低血去饱和：持续、缓慢、低对比",
+          "params": { "rel.metaFx": ["lowHpDesat"], "rel.hudVisibility": "contextual" },
+          "whenToUse": "写实、恐怖、叙事动作：用画面颜色流失代替血条（古墓丽影受伤时去色 + 红边、Hellblade 零 HUD）。",
+          "cost": "去色会降低敌我颜色编码的可辨性；色弱玩家可能察觉不到。",
+          "examples": ["steam:391220", "steam:414340", "steam:2461850"]
+        },
+        {
+          "name": "速度线 / 边缘光：速度、冲刺、专注",
+          "params": { "rel.metaFx": ["speedLines"] },
+          "whenToUse": "竞速、冲刺、子弹时间：Redout 用整屏速度线 + FOV 拉伸代替速度表；Knights and Bikes 用边缘光框。",
+          "cost": "与运动模糊、FOV 变化叠加时最容易引起晕动。",
+          "examples": ["steam:517710", "steam:592480"]
+        },
+        {
+          "name": "故障 / 色差：风格化的系统异常",
+          "params": { "rel.metaFx": ["glitch"], "ast.fx": ["scanlines"] },
+          "whenToUse": "赛博、CRT、元叙事：被黑、义体过载、系统出错（Cyberpunk 2077 的故障闪烁、绝区零与 Balatro 的 CRT 质感）。",
+          "cost": "故障本身就是快速闪变，必须控制频率与面积；文字在故障期间不可读。",
+          "examples": ["steam:1091500", "gameui:13081", "steam:2379780"]
+        },
+        {
+          "name": "全局警报：只给极少数危机时刻",
+          "params": { "st.alert": "fullAlarm" },
+          "whenToUse": "全局危机、倒计时最后阶段、基地被突袭（XCOM 2 全球地图的红色警报全息）。",
+          "cost": "光敏风险最高的一档，只能短暂出现、不能持续闪烁。",
+          "examples": ["steam:268500"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "大片饱和红色长时间铺满或反复闪烁。",
+          "examples": ["steam:870780"],
+          "reviewEvidence": "本地评测关键词「光污染 / 光敏 / 癫痫 / flashing lights」：CONTROL 9 条，中文评测多次说大片红色场景与红光闪烁看得眼睛疼，还有评测在开头单独写了光敏警告；全库 74 条 / 40 款。R3 里 CONTROL 同时有挡视野 4、地图 5 条。"
+        },
+        {
+          "desc": "低血暗角太重，盖住准星、敌人和 HUD 数字。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数。"
+        },
+        {
+          "desc": "「刚被打」和「快死了」用同一种红色效果，玩家分不清是瞬时还是持续状态。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数（设计规则）。"
+        }
+      ],
+      "rules": [
+        "瞬时事件（受击）用短闪；持续状态（低血、中毒）用缓慢、低对比的去色或暗角，两者不用同一种表现。",
+        "效果只占屏幕边缘，中心大约一半区域保持原样；HUD 文字不受后处理影响。",
+        "闪烁每秒不超过 3 次、面积不超过约 20–25% 屏幕；饱和红色的阈值更低，要先去饱和或减小面积（XAG 118）。",
+        "同一时刻最多一种持续整屏效果；每种效果都能单独关或降低强度。",
+        "警报类（st.alert = fullAlarm）只做一次性脉冲，持续状态退回红色调（redTint）或图标。"
+      ],
+      "genres": ["射击", "动作", "恐怖", "竞速", "赛博 / 科幻叙事"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 118: Photosensitivity", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/118", "point": "亮度闪光与红色闪光都以约每秒 3 次、约 20% 屏幕面积为失败阈值；饱和红的判定更严；对策是去饱和、降对比、降频率、缩面积；所有游戏都应做光敏测试。" },
+        { "title": "Game Accessibility Guidelines, Avoid flickering images and repetitive patterns", "url": "https://gameaccessibilityguidelines.com/avoid-flickering-images-and-repetitive-patterns/", "point": "避免超过 5 秒的闪烁、每秒超过 3 次且占 25% 以上屏幕的闪光；突然的大幅亮度变化和与红色之间的切换也算闪光；可用 Harding 测试。" },
+        { "title": "Xbox Accessibility Guideline 117: Visual distractions and motion settings", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/117", "point": "镜头抖动、晃动、运动模糊要么避免要么可关；Halo Infinite 把径向模糊、震屏、整屏效果、速度线分别做成 0–100% 滑条。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "rel.metaFx": ["hurtVignette", "lowHpDesat", "hitFlash"], "st.alert": "fullAlarm", "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "rel.metaFx": ["hurtVignette", "lowHpDesat"], "st.alert": "redTint", "chk.demo": "combatBeat" },
+        "lookAt": "低血时 A 是整屏红光 + 扫描线 + 每下闪白，B 只有边缘红晕和慢慢去色。看画面中心的敌人与血条数字是否始终可读。"
+      }
+    },
+    {
+      "id": "P-motion-personality",
+      "title": "动效语言是皮肤的一部分：缓动、时长、帧率、入场方式随美术风格成套切换",
+      "problem": "换了皮肤但动效还是同一套淡入缓出，风格就只在静帧里成立；反过来，把漫画式砸入放进冷静的瑞士风界面，或给水墨界面配故障闪现，都会出戏。探索台现有 38 套皮肤里，重装饰雕花框、线描花饰、暗色细线、暗金金属牌、装饰艺术、合成波 6 套没有任何 mo.* 取值，动效完全落到默认值。",
+      "approaches": [
+        {
+          "name": "瑞士 / 军事 / 数据表：硬切、短、线性",
+          "params": { "mo.enter": "cut", "mo.duration": 0.1, "mo.easing": "linear", "ix.focus": "invert", "typ.numerals.family": "tabular" },
+          "whenToUse": "信息即审美的界面：CONTROL 的黑底白字表格、MGSV 的等宽结算表、Mini Metro。动效越少越显得精确。",
+          "cost": "界面切换缺少空间感，层级关系要靠版式表达。",
+          "examples": ["steam:870780", "steam:287700", "steam:287980"]
+        },
+        {
+          "name": "像素：线性、一拍二、打字机",
+          "params": { "mo.easing": "linear", "mo.frameRate": "onTwos", "mo.textReveal": "typewriter", "vis.pixelScale": "world" },
+          "whenToUse": "像素画面：UI 的运动也落在像素网格和低帧率上，平滑缓动会和世界的动画节奏打架。",
+          "cost": "低帧率动效读起来更「卡」，按钮按下反馈要更明显来补偿。",
+          "examples": ["steam:413150", "steam:588650", "steam:257850", "steam:460950"]
+        },
+        {
+          "name": "墨与纸：笔刷擦出、卷轴展开、慢淡入",
+          "params": { "mo.enter": "inkSpread", "mo.duration": 0.5, "mo.easing": "easeOut", "vis.edge": "brush", "typ.display.family": "calligraphy" },
+          "whenToUse": "国风、和风、手抄本：招式名的巨型竖排书法（Wandering Sword）、对马岛的毛笔笔触面板。",
+          "cost": "笔刷遮罩需要素材；0.5 秒级的入场不适合高频菜单，只用在标题、章节和演出。",
+          "examples": ["steam:1876890", "steam:2215430", "gameui:11870"]
+        },
+        {
+          "name": "科幻：扫描开机、乱码解码",
+          "params": { "mo.enter": "boot", "mo.textReveal": "scramble", "ast.fx": ["scanlines"] },
+          "whenToUse": "科幻 HUD、全息、终端：界面像设备一样「启动」（Cyberpunk 2077、星穹铁道的切角面板）。",
+          "cost": "乱码解码会推迟可读时间；高频文本应改成淡入。",
+          "examples": ["steam:1091500", "gameui:8283", "steam:1693980"]
+        },
+        {
+          "name": "漫画 / Persona：斜切划入、砸入、回弹",
+          "params": { "mo.enter": "slashIn", "mo.easing": "overshoot", "mo.duration": 0.2, "vis.skew": -8, "mo.juice": 0.85 },
+          "whenToUse": "拼贴、倾斜动感、漫画风：Persona 5 / Metaphor 的斜切菜单、Esports Godfather 的斜切横幅、DMC5 的砸入。动效是这类风格最重要的识别点。",
+          "cost": "每个菜单往往要单独设计与编程（Metaphor 的导演说过这很费工）；早期 Persona 5 的 UI 动画曾多到盖住画面，后来才减量。",
+          "examples": ["steam:1687950", "steam:2679460", "steam:1278540", "steam:601150"]
+        },
+        {
+          "name": "圆润友好 / 糖果：弹簧、缩小回弹、轻摇",
+          "params": { "mo.easing": "spring", "ix.press": "squash", "mo.idle": "sway", "vis.corner": "round" },
+          "whenToUse": "休闲、治愈、派对：按钮像软糖一样被按下、弹回（例子按参考卡的皮肤家族归类，动效未在静帧中直接观察）。",
+          "cost": "回弹量过大显得轻浮；待机轻摇会分散阅读，长文本界面要关掉。",
+          "examples": ["steam:972660", "steam:960090", "gameui:3055"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "只换静态皮肤、不换动效：几套风格共用同一种淡入缓出，切换皮肤时「动起来都一样」。",
+          "examples": [],
+          "reviewEvidence": "静帧和评测都很难直接反映动效风格，没有评测计数；证据来自本工具 38 套皮肤预设的盘点（6 套没有动效取值）。旁证：动效最重的 Persona 5 Royal 在 R3 里提到 UI 的 79 条评测有 72 条是好评，说明强风格动效做成体系时会被当成卖点。"
+        },
+        {
+          "desc": "动画多而长，盖住画面、拖慢操作。",
+          "examples": ["steam:1687950"],
+          "reviewEvidence": "关键词粗筛「跳过动画 / 动画太长」只有 11 条（9 款），这一类更多体现在开发史（06 文档引 Persona 5 早期减少 UI 动画）而不是评测里。"
+        },
+        {
+          "desc": "回弹或弹簧用在严肃、恐怖、魂类题材上，界面显得轻佻。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数（风格匹配规则）。"
+        }
+      ],
+      "rules": [
+        "每套皮肤至少定义 5 个动效 token：入场方式（mo.enter）、时长（mo.duration）、缓动（mo.easing）、文字出现（mo.textReveal）、按下反馈（ix.press）；导出时与颜色、字体同级。",
+        "时长随移动距离和面积增长：小控件约 50–200 ms、中等面板 250–400 ms、整屏 450 ms 以上（Material 的 short / medium / long 档）。",
+        "回弹量随题材：严肃题材为 0；友好题材约 15%（细微）到 30%（明显）；多数界面不超过 0.4（Apple 的弹簧建议）。",
+        "帧率跟画面走：画面一拍二，UI 动画也一拍二（派生规则 D-frame）。",
+        "一套 UI 的入场方式不超过两种：日常一种、演出一种。"
+      ],
+      "genres": ["所有品类（随美术风格）", "风格化动作", "JRPG", "像素", "国风", "科幻"],
+      "sources": [
+        { "title": "Apple WWDC23, Animate with springs", "url": "https://developer.apple.com/videos/play/wwdc2023/10158/", "point": "弹簧动画用「时长 + 回弹」两个参数描述；默认回弹为 0，约 15% 细微、约 30% 明显，多数 UI 不宜超过 0.4；回弹量要与产品性格一致；弹簧可保留速度、被中途打断而不跳变。" },
+        { "title": "Material Components for Android, Motion（Material 3 动效文档）", "url": "https://github.com/material-components/material-components-android/blob/master/docs/theming/Motion.md", "point": "时长分 short 50–200、medium 250–400、long 450–600、extra long 700–1000 毫秒；面积或距离越大用越长的档；标准缓动用于功能性动效，强调缓动用于更有表现力的动效。" },
+        { "title": "Wikipedia, Persona 5（Art design）", "url": "https://en.wikipedia.org/wiki/Persona_5", "point": "早期 UI 动画多到遮挡画面，团队减少动画并调整文字方向，在风格与可用性之间取平衡（06 文档 [47]）。" },
+        { "title": "Push Square, 桥野桂谈 Metaphor: ReFantazio / Persona 的菜单制作", "url": "https://www.pushsquare.com/news/2024/10/making-metaphor-refantazio-personas-immaculate-menus-is-really-annoying-says-director", "point": "每个菜单都有独立设计与独立程序，非常耗时；Persona 5 的异形菜单一开始也很难读——强风格动效的成本主要在工时与可读性。" },
+        { "title": "Game Developer, The 12 principles of animation in video games", "url": "https://gamedeveloper.com/production/the-12-principles-of-animation-in-video-games", "point": "迪士尼十二原则（预备、跟随、挤压拉伸、缓入缓出等）在游戏里要为响应性让步：预备动作太长会让操作发软。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.dialogue", "vis.edge": "brush", "typ.display.family": "calligraphy", "mo.enter": "glitchIn", "mo.textReveal": "scramble", "mo.easing": "overshoot" },
+        "b": { "cnt.screen": "screen.dialogue", "vis.edge": "brush", "typ.display.family": "calligraphy", "mo.enter": "inkSpread", "mo.textReveal": "fade", "mo.easing": "easeOut", "mo.duration": 0.5 },
+        "lookAt": "同一张水墨笔触、书法标题的对话框：A 用故障闪现 + 乱码解码 + 回弹进场，静帧没问题，一动就出戏；B 用墨晕擦出 + 淡入文字，动起来才是同一种风格。"
+      }
+    },
+    {
+      "id": "P-transition-frequency",
+      "title": "转场长度与使用频率成反比：高频界面近乎瞬时，稀有节点才给仪式",
+      "problem": "精心做的转场到第一百次打开背包时就成了等待；章节、Boss、关键事件这类稀有时刻又需要停顿来标记分量。转场类型还承担「新界面和旧界面是什么关系」的信息。",
+      "approaches": [
+        {
+          "name": "瞬切 / 极短：暂停、背包、地图来回切",
+          "params": { "mo.transition": "useEnter", "mo.enter": "cut", "mo.duration": 0.1, "flow.stacking": "replace" },
+          "whenToUse": "一局里出现几十上百次的界面；工厂、经营、策略类的面板切换（Factorio、Mini Metro）。",
+          "cost": "缺少空间关系，迷路感要靠稳定的版式和导航补。",
+          "examples": ["steam:427520", "steam:287980"]
+        },
+        {
+          "name": "下层后退：叠层时保留上下文",
+          "params": { "flow.stacking": "pushBack", "rel.behind": "live", "rel.dim": 0.5, "rel.sceneBlur": 8, "mo.enter": "slide", "mo.duration": 0.25 },
+          "whenToUse": "弹出层、详情、事件抉择：玩家要知道自己还在原来的位置，背后场景缩小、压暗、虚化（Frostpunk 的事件抉择压暗背景；The Last of Us Part I 打开背包时游戏不暂停，角色蹲下翻包，背后是实时场景）。",
+          "cost": "实时背景要额外渲染；背后是否继续运行要和暂停逻辑一致。",
+          "examples": ["steam:323190", "steam:1888930"]
+        },
+        {
+          "name": "镜头推进到物件：进入的是世界里的东西",
+          "params": { "mo.transition": "zoomInto", "rel.diegesis": "diegetic", "ast.container": "book" },
+          "whenToUse": "叙事内界面：手抄本、牌桌、设备（Potion Craft 整屏是一本手抄本、Inscryption 的牌桌就是界面、Dead Space 投影在角色面前的全息菜单）。",
+          "cost": "推进镜头时长难以压到很短，高频使用时要提供快捷直达。",
+          "examples": ["steam:1210320", "steam:1092790", "steam:1693980"]
+        },
+        {
+          "name": "仪式性大字转场：章节、Boss、关键事件",
+          "params": { "el.notify.form": ["band"], "mo.enter": "slam", "mo.duration": 0.8, "ix.skip": "button", "el.title.form": "titleCard" },
+          "whenToUse": "一局只出现几次的节点：暗黑地牢 2 的关键事件整屏黑底大字、Alan Wake 像电视剧片头的章节标题、UnMetal 的 Boss 战前 VS 立绘切入。",
+          "cost": "第二次起要能跳过；多次出现会贬值。",
+          "examples": ["steam:1940340", "steam:108710", "steam:1203710", "steam:1876890"]
+        },
+        {
+          "name": "可加速的重复演出：倍速与跳过",
+          "params": { "el.gameSpeed.form": "speedBar", "ix.skip": "button", "mo.duration": 0.2 },
+          "whenToUse": "回合制和自动战斗里每回合都播的攻击动画：手游样本 39 款战斗界面里 18 款没有摇杆、靠倍速 / 托管 / 跳过推进（15 文档）。",
+          "cost": "加速后反馈层次被压扁，要保证关键事件（暴击、阵亡）在倍速下仍可辨认。",
+          "examples": ["gameui:7312", "gameui:7082", "gameui:6904", "steam:262060"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "高频界面用长转场：每次打开背包都要 0.6 秒以上的飞入或翻书，输入在动画播完前不响应。",
+          "examples": [],
+          "reviewEvidence": "R3「UI 卡顿 / 响应慢」6 款：DEATHLOOP 3、Prince of Persia 2、Half-Life: Alyx 2、Cyberpunk 2077 2、Enshrouded 2、弈仙牌 2（关键词粗筛，也混有性能卡顿）。"
+        },
+        {
+          "desc": "不可跳过、不可加速的重复演出。",
+          "examples": ["steam:262060"],
+          "reviewEvidence": "关键词「跳过动画 / 战斗动画太长」粗筛 11 条（9 款），Darkest Dungeon 2 条、Red Dead Redemption 2 2 条；手游样本里倍速 / 跳过按钮是自动战斗界面的标配。"
+        }
+      ],
+      "rules": [
+        "用「每局出现次数 × 时长」估算总等待：一局出现 50 次以上的界面，进入时长 ≤ 150 ms 或直接切（经验值）。",
+        "动画开始时就接受输入：可打断、可连按穿透，不要等动画播完才响应。",
+        "稀有节点（章节、Boss、结算）可以给 0.8–2 秒，但第二次起允许跳过或加速。",
+        "转场类型表达关系：进入世界物件用推进（zoomInto），同级切换用交叉淡化，弹出层用淡入（对应 Material 的容器变换 / 淡出淡入 / 淡入）。",
+        "转场期间背后画面冻结还是继续（rel.behind）要和游戏是否暂停一致。"
+      ],
+      "genres": ["所有品类", "RPG（菜单多）", "回合制 / 自动战斗", "叙事"],
+      "sources": [
+        { "title": "Jakob Nielsen, Response Times: The 3 Important Limits", "url": "https://www.nngroup.com/articles/response-times-3-important-limits/", "point": "0.1 秒内感觉即时，1 秒内思路不断，10 秒是注意力上限——高频界面的转场应落在第一档。" },
+        { "title": "Material Components for Android, Motion（转场模式）", "url": "https://github.com/material-components/material-components-android/blob/master/docs/theming/Motion.md", "point": "容器变换用于从一个元素展开成新界面，共享轴用于有前后 / 层级关系的页面，淡出淡入用于没有强关系的切换，淡入用于屏内出现的弹窗与菜单。" },
+        { "title": "W3C, Understanding WCAG 2.3.3 Animation from Interactions", "url": "https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html", "point": "由交互触发的非必要运动动画应能关闭；示例之一就是在减少动效开启时关掉翻页转场。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.inventory", "mo.enter": "pageTurn", "mo.duration": 0.9, "mo.transition": "useEnter" },
+        "b": { "cnt.screen": "screen.inventory", "mo.enter": "fade", "mo.duration": 0.15, "mo.transition": "crossfade" },
+        "lookAt": "连续开关背包五次：A 的翻书很漂亮，但第三次起就像在等；B 几乎瞬时。再想想这个界面一局要开多少次。"
+      }
+    },
+    {
+      "id": "P-event-callout-tiers",
+      "title": "事件通告分级：越大越少、越大越短，只有最高一级可以占据画面中心",
+      "problem": "拾取、任务更新、升级、击杀、Boss 登场都想被看见。全做成横贯大字就互相抢、遮挡战斗；全做成小字又会错过关键节点。",
+      "approaches": [
+        {
+          "name": "滚动消息列：低优先级、可堆叠",
+          "params": { "el.notify.form": ["feed"], "el.notify.screenAnchor": "tl", "mo.enter": "slide", "ix.blocking": "none" },
+          "whenToUse": "RTS、殖民模拟、生存：大量小事件需要留痕、可回看（Tooth and Tail 左上消息列）。",
+          "cost": "容易被忽略；需要上限和淡出。",
+          "examples": ["steam:286000"]
+        },
+        {
+          "name": "拾取小字 / 提示卡：单条、短暂",
+          "params": { "el.notify.form": ["pickupText", "toast"], "ix.dismiss": "timed", "el.notify.screenAnchor": "tl" },
+          "whenToUse": "收集、拾取、轻量成就（Red Dead Redemption 的提示卡、Rayman Origins 和 FEZ 的收集数在拾取时浮出）。",
+          "cost": "多条同时到达时需要排队与合并。",
+          "examples": ["steam:2668510", "steam:207490", "steam:224760"]
+        },
+        {
+          "name": "横幅：任务开始 / 完成、奇观落成",
+          "params": { "el.notify.form": ["banner"], "el.notify.screenAnchor": "tc", "mo.enter": "slide" },
+          "whenToUse": "中等分量的里程碑（文明 6 的奇观横幅、原神任务开始的半透明横幅、Destiny 2 左下的 NEW MISSION 横幅）。",
+          "cost": "同一时刻只能有一条，要有队列。",
+          "examples": ["steam:289070", "gameui:1691", "steam:1085660"]
+        },
+        {
+          "name": "整屏横贯大字带：Boss 登场、战斗开始、关键事件",
+          "params": { "el.notify.form": ["band"], "mo.enter": "slam", "mo.duration": 0.6, "ix.blocking": "none" },
+          "whenToUse": "一局个位数次的节点（暗黑地牢 2 的关键事件大字、Wandering Sword 的招式名书法大字、手游的战斗开始 / 首领登场大字、Crashday 的特技加分大字）。",
+          "cost": "遮挡最多；只要出现频率一高就贬值。",
+          "examples": ["steam:1940340", "steam:1876890", "gameui:6951", "gameui:12994", "steam:508980"]
+        },
+        {
+          "name": "立绘切入：角色的大招与对决",
+          "params": { "el.notify.form": ["cutIn"], "mo.enter": "slashIn", "mo.duration": 0.4 },
+          "whenToUse": "角色驱动的 RPG 与动作：Persona 5 对话与总攻击的立绘切入、UnMetal 的 VS 立绘。",
+          "cost": "需要立绘素材；连续触发时要节流。",
+          "examples": ["steam:1687950", "steam:1203710"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "提示和过场文字压在战斗中心，或者阻断输入。",
+          "examples": ["steam:2215430"],
+          "reviewEvidence": "R3：对马岛之魂「挡视野」4 条，12 文档注明多来自过场字幕和提示；同一款同时是「夸 UI 简洁」的头部（3 条）。「HUD 太乱 / 挡视野」共 22 款。"
+        },
+        {
+          "desc": "最高级别被滥用：每次拾取、每个小任务都整屏大字。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数。"
+        },
+        {
+          "desc": "多条通知同时到达时互相覆盖，没有队列与合并。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数。"
+        }
+      ],
+      "rules": [
+        "分四级：消息列（可堆叠，上限 3–5 条）→ 拾取 / 提示卡（单条 1.5–3 秒）→ 横幅（同一时刻只有 1 条）→ 大字带 / 立绘切入（每局个位数次）。",
+        "级别越高越远离操作热区，并保持非阻断（ix.blocking = none）。",
+        "同类事件合并（显示「+3 木材」而不是三条）。",
+        "大字带的字体用皮肤的标题字（书法、漫画、哥特），这是风格最显眼的地方。",
+        "战斗中把非战斗通知延后到脱战再播。"
+      ],
+      "genres": ["开放世界", "RPG", "动作", "策略 / RTS", "殖民模拟", "竞速"],
+      "sources": [
+        { "title": "Riot Games, Clarity in League（2021）", "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "point": "注意力应与事件的分量成比例；视觉噪声会叠加，大型事件可以更吵，但吵是有代价的。" },
+        { "title": "Xbox Accessibility Guideline 117", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/117", "point": "会自动更新、滚动或闪动的内容要允许玩家暂停、隐藏或控制更新频率；文字背后有动态画面时可提供不透明底板。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "cnt.elements": ["el.vitals", "el.notify", "el.threat"], "el.notify.form": ["band"], "el.notify.screenAnchor": "center", "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "cnt.elements": ["el.vitals", "el.notify", "el.threat"], "el.notify.form": ["feed"], "el.notify.screenAnchor": "tl", "chk.demo": "combatBeat" },
+        "lookAt": "同样的「拾取 + 任务更新」：A 横贯屏幕挡住敌人，B 进入左上消息列。只把 Boss 登场这一类事件保留为大字带。"
+      }
+    },
+    {
+      "id": "P-feedforward",
+      "title": "先预告、再结算：意图、预警、命中率让反馈成为可计划的信息",
+      "problem": "只在事后给反馈（被打了才知道）会让玩家觉得不公平、只能背板；在策略、卡牌和魂类战斗里，「对方下一步要做什么」本身就是最重要的反馈。预告做得好，事后的反馈就可以更轻。",
+      "approaches": [
+        {
+          "name": "意图图标 + 数字：回合制与卡牌",
+          "params": { "el.threat.form": ["intent"], "el.threat.attachTo": "target" },
+          "whenToUse": "敌人头顶显示下一步要攻击 / 防御 / 施法和数值（Slay the Spire、Shogun Showdown 的攻击意图与倒计时、Slice & Dice、Alina of the Arena）。",
+          "cost": "敌人设计要可预告；随机性被压缩，惊喜感下降。",
+          "examples": ["iig:slay-the-spire", "steam:2084000", "steam:1775490", "steam:1668690"]
+        },
+        {
+          "name": "地面预警区：攻击范围画在世界里",
+          "params": { "el.threat.form": ["telegraph"], "el.threat.worldRender": "decal" },
+          "whenToUse": "战术与动作：Into the Breach 把敌人下一回合的攻击格和方向直接画在地图上；弹幕和节奏游戏用先亮后打的危险区（Just Shapes & Beats 的品红色危险物）。",
+          "cost": "贴花和特效要与判定完全一致；多个预警叠加时要分层。",
+          "examples": ["steam:590380", "steam:531510"]
+        },
+        {
+          "name": "命中率与结果预览：确认前就看到后果",
+          "params": { "el.threat.form": ["hitChance"], "ix.confirm": "ghost" },
+          "whenToUse": "回合战术：XCOM 2 的命中率百分比、幽灵预览加确认，让确认按钮本身成为反馈。",
+          "cost": "数字会被玩家逐字理解（95% 落空引起的愤怒），需要公开的概率规则。",
+          "examples": ["steam:268500", "steam:590380"]
+        },
+        {
+          "name": "瞬时危险标记：实时动作的预告",
+          "params": { "el.threat.form": ["intent"], "el.threat.attachTo": "target", "mo.juice@el.threat": 0.6 },
+          "whenToUse": "实时动作的不可防御攻击与反击时机：只狼的红色「危」字、Arkham 系列敌人头顶的反击闪电标记。",
+          "cost": "预告窗口必须足够反应；标记过多会变成噪声。",
+          "examples": ["steam:814380", "steam:200260", "steam:208650"]
+        },
+        {
+          "name": "视锥：潜行的感知预告",
+          "params": { "el.threat.form": ["visionCone"], "el.threat.worldRender": "decal" },
+          "whenToUse": "潜行与俯视战术（Intravenous 的敌人视锥）。",
+          "cost": "视锥与真实感知规则必须一致，否则玩家会觉得被骗。",
+          "examples": ["steam:1486630"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "预告与实际不一致：预警区比真实判定小、特效与命中范围不符。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数；Riot 把特效与判定不一致列为最主要的挫败来源之一。"
+        },
+        {
+          "desc": "预告信息过量：每个单位都挂意图、血条、状态和数字，压成一片。",
+          "examples": [],
+          "reviewEvidence": "R3「HUD 太乱 / 挡视野」里的策略 / 塔防：Bloons TD 6 5 条、Total War: WARHAMMER II 2 条（关键词粗筛，含误命中，只能说明这类品类常被抱怨画面信息过满）。"
+        }
+      ],
+      "rules": [
+        "预告用与结算相同的视觉语言（同色、同图标）；结算时让预告「兑现」，例如预警格先闪一下再生效。",
+        "实时游戏的预告窗口要留出反应时间；回合制直接给数字。",
+        "预告只给决策需要的那一层：意图类别 + 数值，细节放到悬停或按住。",
+        "幽灵预览让确认按钮本身成为反馈（ix.confirm = ghost）。",
+        "预告越完整，命中时的 UI 反馈越可以轻（Into the Breach 的反馈主要在预告阶段）。"
+      ],
+      "genres": ["回合战术", "构筑卡牌", "魂类 / 动作", "潜行", "弹幕 / 节奏"],
+      "sources": [
+        { "title": "Wikipedia, Into the Breach", "url": "https://en.wikipedia.org/wiki/Into_the_Breach", "point": "敌人的攻击在下一回合前就显示出来，玩家的乐趣在于利用这些已知信息去推动、阻挡和抵消攻击（06 文档 [26]）。" },
+        { "title": "Rock Paper Shotgun 2018 年 Into the Breach 界面设计报道（转载）", "url": "https://reads.mhlakhani.com/posts/582127219_10156233399322220", "point": "Justin Ma 表示团队每次都会为了清晰而放弃很酷的想法；能被清楚表达的机制才值得加入。" },
+        { "title": "Riot Games, Clarity in League（2021）", "url": "https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/", "point": "技能特效必须与判定范围一致，不一致是主要的挫败来源。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "ctx.timeModel": "turn", "cnt.elements": ["el.vitals", "el.threat", "el.cta"], "el.threat.form": ["healthBar"] },
+        "b": { "cnt.screen": "screen.hud", "ctx.timeModel": "turn", "cnt.elements": ["el.vitals", "el.threat", "el.cta"], "el.threat.form": ["healthBar", "intent", "hitChance"], "ix.confirm": "ghost" },
+        "lookAt": "A 只能在结算后知道敌人做了什么；B 出手前就能看到敌人的下一步和这一下的结果。注意 B 的命中反馈可以更轻，因为惊讶已经被预告消化了。"
+      }
+    },
+    {
+      "id": "P-result-tally",
+      "title": "结算节奏：结论先行、逐项计数、评级盖章，全程一键完成",
+      "problem": "结算页一次堆满数字没有高潮；逐项演出又太慢，重复刷关时成为负担。失败与胜利用同一套庆祝动效也不对。（本原则只讲关卡 / 对局结算与评级，不涉及抽卡与奖励开箱。）",
+      "approaches": [
+        {
+          "name": "直接给表：数据型结算",
+          "params": { "cnt.subtype": "stats", "mo.reveal": "direct", "mo.valueChange": "instant", "typ.numerals.family": "tabular" },
+          "whenToUse": "冷静、数据驱动的作品：MGSV 的黑底等宽数据表、Mini Metro 的结算。",
+          "cost": "没有情绪高点；评级要靠排版（大字母）而不是动效。",
+          "examples": ["steam:287700", "steam:287980"]
+        },
+        {
+          "name": "逐项计数 + 字母评级盖章",
+          "params": { "cnt.subtype": "settle", "mo.valueChange": "countUp", "el.rank.form": ["letter"], "mo.enter": "slam", "ix.skip": "button" },
+          "whenToUse": "动作、潜行、节奏：评级字母是整段的重拍（DMC5 按字母评分、MGSV 大字母评级、Sayonara Wild Hearts 关末评级、The WereCleaner 钉在软木板上的星级报告）。",
+          "cost": "需要清晰的评分规则；重复刷关时必须可跳过。",
+          "examples": ["steam:601150", "steam:287700", "steam:1122720", "steam:2795000"]
+        },
+        {
+          "name": "累算过程即演出",
+          "params": { "mo.valueChange": "countUp", "mo.juice": 0.8, "mo.juice@el.timer": 0.9, "typ.numerals.family": "pixel" },
+          "whenToUse": "得分驱动的构筑与街机：Balatro 每张牌依次加筹码、乘倍率，分数翻倍时数字燃烧——结算本身就是玩法高潮；BIT.TRIP RUNNER 的像素分数条。",
+          "cost": "演出与可读性冲突：玩家需要知道每一步加了多少；需要加速档。",
+          "examples": ["steam:2379780", "steam:63710"]
+        },
+        {
+          "name": "胜负大字 + 少量数据",
+          "params": { "cnt.subtype": "victory", "el.title.form": "artTitle", "mo.enter": "slam", "ix.continueCue": "keyGlyph" },
+          "whenToUse": "对战与关卡制：VICTORY / DEFEAT 斜体大字（AFK 2）、Squad Busters 的第一名大数字、通关 Well Done 大字（Star Blast）。",
+          "cost": "信息量少，想复盘的玩家要另进统计页。",
+          "examples": ["gameui:5744", "gameui:13024", "gameui:4332"]
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "不可跳过的逐项计数，每次通关都要看完。",
+          "examples": [],
+          "reviewEvidence": "关键词「跳过动画 / 动画太长」粗筛 11 条（9 款），数量不大但集中在重复游玩的作品（Darkest Dungeon 2 条）。"
+        },
+        {
+          "desc": "失败也用胜利的庆祝演出，或者失败页只有一句话、不告诉玩家差在哪。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数。"
+        }
+      ],
+      "rules": [
+        "结论先行：胜负 / 评级在第一秒就能看到（或先用剪影、空槽预告位置），细项随后计数。",
+        "计数总时长随项目数增长但设上限（例如 3 秒内），任意键立即完成全部计数，再按一次进入下一步。",
+        "评级字母用砸入 + 短震作为整段唯一的重拍。",
+        "失败页演出强度降到最低（mo.reward 0–1），给出「差在哪」的数据和重试入口。",
+        "数据型作品用等宽数字，计数时数位不跳动（typ.numerals.family = tabular）。"
+      ],
+      "genres": ["动作", "潜行", "节奏", "街机 / 得分", "构筑卡牌", "对战"],
+      "sources": [
+        { "title": "Jakob Nielsen, Response Times: The 3 Important Limits", "url": "https://www.nngroup.com/articles/response-times-3-important-limits/", "point": "超过约 10 秒的等待会让人分心，必须能看到进度或取消——长结算演出要可跳过。" },
+        { "title": "Dominic Kao, The Effects of Juiciness in an Action RPG（二手摘要）", "url": "https://www.goodreads.com/author_blog_posts/19932694-the-effects-of-juiciness-in-an-action-rpg-new-study", "point": "极端强度的反馈不比中高强度更好——结算演出同样存在适度区间。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.results", "cnt.subtype": "settle", "mo.valueChange": "countUp", "el.rank.form": ["letter"], "mo.enter": "slam", "mo.duration": 1.2, "ix.skip": "none" },
+        "b": { "cnt.screen": "screen.results", "cnt.subtype": "settle", "mo.valueChange": "countUp", "el.rank.form": ["letter"], "mo.enter": "slam", "mo.duration": 0.4, "ix.skip": "button" },
+        "lookAt": "同样的逐项计数 + 字母评级：A 每项慢慢滚、不可跳过；B 快速计完、可一键完成，评级砸入仍然是唯一的重拍。想象第十次通关时的感受。"
+      }
+    },
+    {
+      "id": "P-reduced-motion-channels",
+      "title": "减少动效是分通道替换，不是一刀切：去掉位移、闪烁和抖动，保留信息",
+      "problem": "震屏、闪白、速度线、背景动画会让一部分玩家眩晕、偏头痛甚至癫痫发作；但简单地「全部关掉」会让受击、拾取等关键反馈消失，游戏变得难以理解。",
+      "approaches": [
+        {
+          "name": "总开关：读系统设置",
+          "params": { "a11y.reduceMotion": true },
+          "whenToUse": "最低要求：开启后反馈强度为 0、入场改淡入、关闭待机动效、去掉闪白与震屏、演出强度上限 1（派生规则 D-reduceMotion）；默认值读平台的减少动效设置。",
+          "cost": "一刀切，喜欢震屏但怕闪光的玩家没有中间选项。",
+          "examples": []
+        },
+        {
+          "name": "逐通道调节：震屏、整屏效果、HUD 抖动分开",
+          "params": { "mo.juice": 0.3, "mo.juice@el.vitals": 0, "rel.metaFx": ["hurtVignette"], "a11y.reduceMotion": false },
+          "whenToUse": "动作、射击、开放世界：Cyberpunk 2077 可调附加镜头运动，巫师 3 的 HUD 元素可以逐个关闭；XAG 117 记录的 Halo Infinite 把模糊、震屏、整屏效果、速度线分别做成滑条。",
+          "cost": "设置页变长，要有预设（标准 / 低刺激）兜底；探索台目前只有总开关，见 meta.paramGaps。",
+          "examples": ["steam:1091500", "steam:292030"]
+        },
+        {
+          "name": "替换而非删除",
+          "params": { "a11y.reduceMotion": true, "mo.enter": "fade", "rel.metaFx": ["edgeGlow"], "mo.idle": "none", "st.alert": "warnIcon" },
+          "whenToUse": "任何动效有承载信息的地方：滑入 / 缩放换成淡入，闪白换成描边或边缘光，震屏换成短暂的边缘高亮，闪烁警报换成静态图标。",
+          "cost": "每个反馈要设计第二套表现，工作量翻倍。",
+          "examples": []
+        },
+        {
+          "name": "静止背景与不透明底板",
+          "params": { "mo.idle": "none", "a11y.reduceTransparency": true, "typ.legibility": "scrim" },
+          "whenToUse": "菜单背景动画、带动态画面的文字区：可关闭背景动画（XAG 117 中 HyperDot 的做法），文字下垫不透明底板。",
+          "cost": "界面变「平」，标题界面的氛围损失最大。",
+          "examples": []
+        },
+        {
+          "name": "低刺激整体叠加",
+          "params": { "a11y.reduceMotion": true, "a11y.reduceTransparency": true, "mo.juice": 0, "rel.metaFx": [] },
+          "whenToUse": "探索台的「低刺激」叠加预设（ov.lowStim）：给自闭谱系、偏头痛、前庭敏感的玩家一个一键选项。",
+          "cost": "需要在 QA 中把低刺激模式当成一套独立皮肤测试。",
+          "examples": []
+        }
+      ],
+      "antiPatterns": [
+        {
+          "desc": "强闪烁没有警告也没有选项。",
+          "examples": ["steam:257850", "steam:3107330", "steam:531510", "steam:1122720"],
+          "reviewEvidence": "本地评测只算 epilepsy / photosensitive / seizure / strobe / 光敏 / 癫痫：38 条（23 款）。Hyper Light Drifter 有差评明确说闪光强烈且找不到无障碍选项；Nodebuster 5、Sayonara Wild Hearts 4、Just Shapes & Beats 3 多为好评里附带的光敏警告——玩家在替开发者补警告。"
+        },
+        {
+          "desc": "关掉动效后信息也没了：受击不再有任何提示，拾取没有出现提示。",
+          "examples": [],
+          "reviewEvidence": "评测统计无直接计数（替换原则）。"
+        },
+        {
+          "desc": "把选项叫作「癫痫安全模式」，承诺了做不到的事。",
+          "examples": [],
+          "reviewEvidence": "无评测计数；Game Accessibility Guidelines 明确建议按控制对象命名（如「屏幕闪光效果」）。"
+        }
+      ],
+      "rules": [
+        "默认值读系统的减少动效设置（prefers-reduced-motion / 平台 Reduce Motion），游戏内可以覆盖。",
+        "按通道分：震屏、闪白 / 闪烁、整屏后处理（模糊、色差、速度线）、背景与待机动画、文字动画、镜头晃动；每项至少能关。",
+        "替换规则：空间位移（滑、缩放、旋转）→ 淡入淡出；闪白 → 描边或图标；震屏 → 边缘短亮；闪烁警报 → 静态图标。颜色与透明度变化不算运动动画，可以保留。",
+        "选项按它控制的东西命名，不承诺「癫痫安全」。",
+        "发布前对默认设置跑光敏测试（Harding 一类工具）——默认设置本身也必须过阈值，选项只是额外保障。"
+      ],
+      "genres": ["所有品类", "动作 / 射击", "节奏 / 弹幕", "第一人称"],
+      "sources": [
+        { "title": "Xbox Accessibility Guideline 117", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/117", "point": "闪动、滚动、自动更新的内容要能暂停或关闭；镜头抖动、晃动、运动模糊要避免或可关；示例包括 Halo Infinite 的逐项滑条、Cyberpunk 2077 的附加镜头运动调节、HyperDot 的背景动画开关。" },
+        { "title": "Xbox Accessibility Guideline 118", "url": "https://learn.microsoft.com/en-us/gaming/accessibility/xbox-accessibility-guidelines/118", "point": "首选是从内容里消除光敏触发，而不是只放警告页；约 4000 人中有 1 人光敏。" },
+        { "title": "W3C, Understanding WCAG 2.3.3 Animation from Interactions", "url": "https://www.w3.org/WAI/WCAG21/Understanding/animation-from-interactions.html", "point": "交互触发的非必要运动应能关闭；颜色和透明度变化不改变大小、形状、位置时不算运动动画。" },
+        { "title": "MDN, prefers-reduced-motion", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion", "point": "该设置来自各操作系统的减少动效选项；建议把有风险的运动换成淡入或溶解，而不是简单拿掉反馈。" },
+        { "title": "Game Accessibility Guidelines, Avoid flickering images and repetitive patterns", "url": "https://gameaccessibilityguidelines.com/avoid-flickering-images-and-repetitive-patterns/", "point": "不要把设置叫作「癫痫安全」，按它控制的内容命名；例子有 Towerfall 的触发项开关。" },
+        { "title": "Celeste v1.4.0.0 更新日志", "url": "https://maddymakesgamesinc.itch.io/celeste/devlog/237097/v1400-changelog", "point": "震屏增加 50% 档并设为默认，另有光敏模式——默认值本身就可以是中档。" }
+      ],
+      "demo": {
+        "a": { "cnt.screen": "screen.hud", "a11y.reduceMotion": false, "mo.juice": 0.8, "mo.enter": "slam", "rel.metaFx": ["hitFlash", "speedLines"], "mo.idle": "float", "chk.demo": "combatBeat" },
+        "b": { "cnt.screen": "screen.hud", "a11y.reduceMotion": true, "mo.enter": "fade", "rel.metaFx": ["edgeGlow"], "st.alert": "warnIcon", "chk.demo": "combatBeat" },
+        "lookAt": "B 不是什么都不动：受击仍有边缘光、警示变成静态图标、面板仍会淡入，只是去掉了位移、震动、闪白和漂浮粒子。逐一检查 A 里的每个反馈在 B 里还有没有对应物。"
+      }
+    }
+  ]
+}

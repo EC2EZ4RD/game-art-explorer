@@ -1,0 +1,1159 @@
+{
+  "id": "rep.slay-the-spire",
+  "name": "Slay the Spire",
+  "card": "iig:slay-the-spire",
+  "genre": "card",
+  "family": "fam.tabletop-card-table",
+  "pack": "deckBuilder",
+  "art": {
+    "recipe": "oil",
+    "scene": "backdrop-battle",
+    "values": {
+      "color.palette": "gothic",
+      "color.brightness": 0.65,
+      "surface.vignette": 0.45
+    }
+  },
+  "base": {
+    "hud.style": "ornate",
+    "uip.keyword": "none",
+    "uip.platform": "platform.pc",
+    "uip.business": "business.premium",
+    "ctx.timeModel": "turn",
+    "ctx.input": "kbm",
+    "col.source": "skin",
+    "col.lightness": "dark",
+    "col.strategy": "neutralAccent",
+    "col.surface": "#1d2a33",
+    "col.surface2": "#2b4650",
+    "col.text": "#fff6e2",
+    "col.accent": "#3b7280",
+    "col.accent2": "#efc851",
+    "col.border": "#b4c3c4",
+    "col.focus": "#7fe8ff",
+    "col.coding": [
+      "status",
+      "rarity",
+      "lineId"
+    ],
+    "rel.harmony": "sameMedium",
+    "typ.body.family": "slab",
+    "typ.body.weight": "regular",
+    "typ.body.case": "asIs",
+    "typ.display.family": "slab",
+    "typ.display.weight": "bold",
+    "typ.display.case": "asIs",
+    "typ.numerals.family": "body",
+    "typ.titleFx": "outlineShadow",
+    "typ.legibility": "outline",
+    "typ.baseSize": 30,
+    "hier.inline": "keyword",
+    "vis.corner": "round",
+    "vis.cornerSize": 3,
+    "vis.opacity": 0.88,
+    "vis.fill": "solid",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 2,
+    "vis.strokeColor": "custom",
+    "vis.depth": "softDrop",
+    "vis.gloss": "none",
+    "vis.ornament": 1,
+    "vis.motif": "none",
+    "vis.iconStyle": "painted",
+    "ast.iconSet": "asset",
+    "ast.frame": "procedural",
+    "ops.compliance": [
+      "version"
+    ],
+    "ix.focus": "scale",
+    "mo.easing": "easeOut",
+    "mo.duration": 0.25,
+    "mo.juice": 0.6,
+    "mo.valueChange": "trail",
+    "mo.transition": "crossfade",
+    "st.selected": "glow",
+    "st.locked": "lock",
+    "hier.inlineMap": [
+      "keyword",
+      "buff",
+      "debuff",
+      "upgraded"
+    ],
+    "col.rarityScale": "greyBlueGold"
+  },
+  "screens": [
+    {
+      "key": "hud",
+      "ref": "qa/refs-cache/iig/img/slay-the-spire__slay-the-spire-attack-enemy.jpg",
+      "values": {
+        "uip.layout": "layout.card",
+        "cnt.screen": "screen.hud",
+        "lay.container": "overlay",
+        "lay.hudOrg": "edgeBar",
+        "lay.safeMargin": 1,
+        "rel.behind": "live",
+        "rel.hudVisibility": "always",
+        "rel.worldRender": "billboard",
+        "cnt.density": 3,
+        "vis.opacity": 1,
+        "cnt.elements": [
+          "el.vitals",
+          "el.vitals#2",
+          "el.profile",
+          "el.consumables",
+          "el.passives",
+          "el.piles",
+          "el.resources",
+          "el.timer",
+          "el.toolbar",
+          "el.abilities",
+          "el.threat",
+          "el.crosshair",
+          "el.piles#2",
+          "el.cta"
+        ],
+        "el.vitals.screenAnchor": "tl",
+        "cmp.gauge@el.vitals": "bar",
+        "el.vitals.count": 1,
+        "el.vitals.valueLabel": "currentMax",
+        "el.vitals.valueLabelPos": "inside",
+        "el.vitals.scale": 0.85,
+        "el.resources.form": "gauge",
+        "cmp.gauge@el.resources": "orb",
+        "el.resources.valueLabel": "currentMax",
+        "el.resources.valueLabelPos": "center",
+        "el.resources.screenAnchor": "bl",
+        "el.resources.scale": 0.8,
+        "el.timer.form": "number",
+        "el.timer.screenAnchor": "tc",
+        "el.timer.priority": "ambient",
+        "el.timer.scale": 0.7,
+        "el.toolbar.form": "iconStrip",
+        "el.toolbar.arrangement": "row",
+        "el.toolbar.screenAnchor": "tr",
+        "el.toolbar.priority": "ambient",
+        "el.toolbar.scale": 0.8,
+        "el.abilities.form": "cards",
+        "el.abilities.arrangement": "fan",
+        "el.abilities.screenAnchor": "bc",
+        "el.abilities.scale": 1.2,
+        "el.abilities.priority": "primary",
+        "cmp.card": "tcg",
+        "el.threat.form": [
+          "intent",
+          "healthBar"
+        ],
+        "el.threat.diegesis": "spatial",
+        "el.threat.attachTo": "target",
+        "el.threat.worldRender": "billboard",
+        "el.threat.valueLabel": "currentMax",
+        "cmp.gauge@el.threat": "bar",
+        "el.crosshair.form": [
+          "aimArrow"
+        ],
+        "el.cta.form": "wide",
+        "el.cta.screenAnchor": "br",
+        "el.cta.scale": 0.5,
+        "hier.emphasis": [
+          "size",
+          "glow"
+        ],
+        "ix.mode": "drag",
+        "ix.confirm": "instant",
+        "mo.idle": "float",
+        "vis.silhouette@el.cta": "hexagon",
+        "col.surface@el.abilities": "#a3352b",
+        "col.accent@el.resources": "#f08a24",
+        "lay.hudEdge": [
+          "top"
+        ],
+        "el.vitals.attachWidth": "actor",
+        "cmp.gaugeExtra@el.vitals": [
+          "shieldTint",
+          "statusRow"
+        ],
+        "el.vitals#2.screenAnchor": "tl",
+        "cmp.gauge@el.vitals#2": "number",
+        "el.vitals#2.count": 1,
+        "el.vitals#2.valueLabel": "currentMax",
+        "cmp.gaugeExtra@el.vitals#2": [],
+        "el.profile.form": "nameText",
+        "el.profile.screenAnchor": "tl",
+        "el.consumables.screenAnchor": "tl",
+        "st.emptySlot@el.consumables": "dashed",
+        "el.passives.screenAnchor": "tl",
+        "el.passives.edgeBar": "exclude",
+        "el.piles.screenAnchor": "bl",
+        "el.piles#2.kinds": [
+          "exhaust",
+          "discard"
+        ],
+        "el.piles#2.screenAnchor": "br",
+        "lay.edgeBarSlots": [
+          "el.profile",
+          "el.vitals#2",
+          "el.consumables",
+          "el.timer",
+          "el.toolbar"
+        ],
+        "el.toolbar.count": 3,
+        "vis.connector@el.crosshair": "chevronChain",
+        "el.crosshair.aimFrom": "hand",
+        "cmp.cardColorBy": [
+          "bannerRarity",
+          "artType",
+          "playableGlow",
+          "costAffordable"
+        ],
+        "lay.cardOverlap@el.abilities": 0.3,
+        "lay.cardBleed@el.abilities": 0.25,
+        "st.selected@el.abilities": "lift"
+      }
+    },
+    {
+      "key": "frontend",
+      "ref": "qa/refs-cache/iig/img/slay-the-spire__slay-the-spire-choose-your-character.jpg",
+      "values": {
+        "uip.screen": "tpl.create",
+        "cnt.subtype": "create",
+        "lay.container": "overlay",
+        "rel.behind": "replaced",
+        "ast.bgArt": "keyArt",
+        "cnt.focal": "none",
+        "lay.composition": "splitLR",
+        "lay.focalSide": "right",
+        "lay.nav": "none",
+        "lay.detail": "none",
+        "cnt.dataShape": "none",
+        "cnt.textLength": "short",
+        "cnt.tone": "narrative",
+        "cnt.elements": [
+          "el.selection",
+          "el.party",
+          "el.cta"
+        ],
+        "el.selection.form": "bareText",
+        "el.selection.screenAnchor": "ml",
+        "el.party.form": "emblemTiles",
+        "el.party.arrangement": "row",
+        "el.party.screenAnchor": "bc",
+        "el.party.scale": 0.85,
+        "el.cta.form": "splitCorners",
+        "el.cta.screenAnchor": "br",
+        "el.cta.scale": 0.7,
+        "col.focus": "#f2c94c",
+        "st.selected": "glow",
+        "st.locked": "lock",
+        "hier.cta": "color",
+        "hier.emphasis": [
+          "size",
+          "color"
+        ],
+        "ix.mode": "select",
+        "ix.confirm": "selectConfirm",
+        "ix.dismiss": "button",
+        "ix.close": "none",
+        "typ.legibility": "shadow",
+        "mo.enter": "fade",
+        "mo.idle": "float",
+        "vis.silhouette@el.cta": "ribbon"
+      }
+    },
+    {
+      "key": "map",
+      "ref": null,
+      "values": {
+        "uip.screen": "tpl.routeMap",
+        "cnt.subtype": "routeMap",
+        "lay.container": "modal",
+        "cmp.modal": "standard",
+        "lay.panelSize": 1,
+        "rel.behind": "frozen",
+        "rel.dim": 0.55,
+        "flow.chrome": [
+          "statusBar"
+        ],
+        "ast.core": "texture",
+        "ast.coreMat": "parchment",
+        "vis.edge": "torn",
+        "vis.opacity": 1,
+        "vis.stroke": "none",
+        "col.lightness": "light",
+        "col.surface": "#dccca3",
+        "col.text": "#3b2b1f",
+        "vis.mapStyle": "parchment",
+        "vis.mapUnexplored": "reveal",
+        "vis.connector": "dashed",
+        "cmp.node": "inkIcon",
+        "vis.iconStyle": "silhouette",
+        "cnt.dataShape": "network",
+        "cnt.density": 3,
+        "lay.arrangement": "tree",
+        "lay.overflow": "longScroll",
+        "lay.focalSide": "center",
+        "lay.detail": "none",
+        "st.done": "inkCircle",
+        "st.newCue": "glowPulse",
+        "hier.emphasis": [
+          "size"
+        ],
+        "typ.titleFx": "none",
+        "typ.legibility": "none",
+        "ix.mode": "select",
+        "ix.confirm": "instant",
+        "ix.dismiss": "button",
+        "flow.entry": "tapEntry",
+        "mo.enter": "slide",
+        "ix.close": "none",
+        "lay.titlePos": "none",
+        "lay.panelAspect": "portrait",
+        "lay.flowDir": "up",
+        "lay.branching": "seeded",
+        "lay.layers": 15,
+        "lay.rootEmphasis": "end",
+        "col.text@hudBar": "#fff6e2"
+      }
+    },
+    {
+      "key": "draft",
+      "ref": null,
+      "values": {
+        "uip.screen": "tpl.draft3",
+        "cnt.subtype": "draft3",
+        "cnt.stage": "entry",
+        "lay.container": "fullscreen",
+        "cmp.modal": "floating",
+        "rel.behind": "frozen",
+        "rel.dim": 0.7,
+        "flow.chrome": [
+          "statusBar"
+        ],
+        "vis.opacity": 1,
+        "cnt.dataShape": "collection",
+        "cnt.itemCount": 3,
+        "lay.arrangement": "row",
+        "cmp.slot": "tallCard",
+        "cmp.card": "tcg",
+        "st.rarityCue": [
+          "border"
+        ],
+        "col.coding": [
+          "rarity",
+          "lineId"
+        ],
+        "col.rarityScale": "greyBlueGold",
+        "cnt.elements": [
+          "el.cta"
+        ],
+        "el.cta.form": "wide",
+        "el.cta.screenAnchor": "bc",
+        "el.cta.priority": "secondary",
+        "el.cta.scale": 0.75,
+        "hier.emphasis": [
+          "size"
+        ],
+        "ix.mode": "select",
+        "ix.confirm": "instant",
+        "ix.dismiss": "button",
+        "ix.focus": "scale",
+        "mo.reveal": "flyIn",
+        "mo.enter": "pop",
+        "typ.baseSize": 26,
+        "ix.close": "none",
+        "vis.silhouette@el.cta": "hexagon",
+        "col.surface@card": "#a3352b",
+        "lay.titlePos": "none",
+        "ops.actions": [],
+        "cmp.cardColorBy": [
+          "bannerRarity",
+          "artType"
+        ]
+      }
+    },
+    {
+      "key": "dialogue",
+      "ref": null,
+      "values": {
+        "uip.screen": "tpl.npc",
+        "cnt.subtype": "npc",
+        "lay.container": "fullscreen",
+        "cmp.modal": "floating",
+        "rel.behind": "frozen",
+        "rel.dim": 0.6,
+        "flow.chrome": [
+          "statusBar"
+        ],
+        "lay.composition": "splitLR",
+        "lay.focalSide": "left",
+        "lay.layering": "separate",
+        "cnt.focal": "scene",
+        "cmp.panelArt": "side",
+        "cnt.dataShape": "text",
+        "cnt.textLength": "short",
+        "cnt.tone": "narrative",
+        "cmp.dialogBox": "bare",
+        "cnt.elements": [
+          "el.choices"
+        ],
+        "el.choices.form": "buttons",
+        "el.choices.arrangement": "column",
+        "el.choices.screenAnchor": "br",
+        "hier.inline": "keyword",
+        "col.coding": [
+          "status"
+        ],
+        "mo.textReveal": "typewriter",
+        "ix.mode": "select",
+        "ix.dismiss": "forced",
+        "ix.continueCue": "none",
+        "ix.skip": "none",
+        "ix.focus": "focusGlow",
+        "typ.legibility": "outline",
+        "el.choices.labelStyle": "bracketTag",
+        "el.choices.align": "left",
+        "el.choices.lockedItem": 3,
+        "el.choices.defaultFocus": "none",
+        "cmp.panelArtFrame": "ornate",
+        "cmp.plate@name": "none"
+      }
+    }
+  ],
+  "gaps": [
+    {
+      "screen": "hud",
+      "what": "顶栏底条不画：lay.hudOrg = edgeBar 不画贴边的深色半透明条，也不把锚在上沿的元素收进条里；round 2 的生命条（左上）、计时（上中）、系统按钮（右上）仍各自悬空，参考是一条横贯全屏的顶栏",
+      "severity": "high",
+      "proposal": "edgeBar 画出贴边底条（约 6% 屏高、深色渐变半透明），锚在这条边上的元素按顺序排进条内，统一字号与基线",
+      "kind": "renderBug",
+      "resolvedBy": "lay.hudOrg, lay.hudEdge"
+    },
+    {
+      "screen": "hud",
+      "what": "卡牌不按 cmp.card = tcg 画：手牌 el.abilities = cards 与选卡页 cmp.slot = tallCard 都画成通用面板 + 中央线描符号 + 序号 / 名字，没有左上圆形费用、名条、插画窗、类型标签、文本框（hud 与 draft 两屏）",
+      "severity": "high",
+      "proposal": "el.abilities = cards 与 tallCard 卡位按 cmp.card 画（费用角标 / 名条 / 插画窗 / 类型条 / 文本框），插画窗无素材时用类型符号占位",
+      "kind": "renderBug",
+      "resolvedBy": "M12b-12（手牌与选卡页按 cmp.card = tcg 画：费用球、名条、插画窗、类型条、文本框；B7 快照核过）"
+    },
+    {
+      "screen": "all",
+      "what": "按元素 / 按组件的颜色、外形、材质覆盖（col.surface@card、col.accent@el.cta、ast.coreMat@el.cta、col.text@el.title、col.surface@el.party……）能通过校验但渲染器不读：round 2 用本屏 col.surface 把手牌染红，右上系统按钮也跟着变红；能量条是默认绿；结束回合 / 出发缎带 / 选项只能吃全局强调色；结束回合的石质纹理画不出",
+      "severity": "high",
+      "proposal": "makeCtx 按元素 / 组件解析 col.* / vis.* / ast.* 覆盖键，生成该元素的局部主题（panel / key / bar token）",
+      "kind": "renderBug",
+      "resolvedBy": "col.surface@el.abilities, col.surface@card, vis.silhouette@el.cta"
+    },
+    {
+      "screen": "frontend",
+      "what": "选角界面整屏是当前角色的主视觉插画（角色半身 + 色调漩涡），随选中切换，是这一屏的主体；复刻包没有这张图",
+      "severity": "high",
+      "proposal": "needs art：每个可选角色一张主视觉；ast.bgArt = keyArt 按 el.party 的选中项切换",
+      "kind": "asset"
+    },
+    {
+      "screen": "all",
+      "what": "顶栏把异质字段排成一行：角色名 + 职业小字、红心血量、金币袋 + 金色数字、药水槽、层数、右端地图 / 牌组（张数角标）/ 设置；地图、选卡、事件三屏同一条常驻。flow.chrome = topCurrency 画成手游货币胶囊（每个带“+”），同一个 el.vitals 也不能既在顶栏出读数、又在角色脚下画条",
+      "severity": "medium",
+      "proposal": "flow.chrome 增加 topBar（买断制顶栏，无“+”）；新参数 lay.edgeBarSlots（条内字段、顺序、分隔方式）；允许元素多实例（el.vitals#2 = 顶栏数字读数）",
+      "kind": "composite",
+      "partialBy": "M12b-04 / M12b-05（el.vitals#2 + el.profile = nameText + el.consumables + lay.edgeBarSlots：hud 顶栏一行字段）：没有金币、层数位置是计时；地图 / 选卡 / 事件三屏的 statusBar 顶栏仍是钻石 / 金币 / 体力 / 回合，不是同一条"
+    },
+    {
+      "screen": "hud",
+      "what": "TCG 卡的语义着色：按角色换整卡底色（红 / 绿 / 蓝 / 紫），按类型换插画窗形状（攻击尖底、技能方框、能力圆拱），按稀有度换名条色，可打出时青色外发光、能量不足时费用变红",
+      "severity": "medium",
+      "proposal": "cmp.card 子参数 frameColorBy（角色 / 阵营）、artWindowShapeBy（类型）、bannerColorBy（稀有度）、playableGlow、costBadge 形状",
+      "kind": "missingParam",
+      "resolvedBy": "M12b-12（cmp.cardColorBy = bannerRarity / artType / playableGlow / costAffordable：稀有度名条、类型插画窗、可打出青光）"
+    },
+    {
+      "screen": "hud",
+      "what": "手牌扇形：参考手牌很大（约屏高 1/3）、相邻卡互相叠压、下缘出屏，悬停那张抬高放大显示全文；复刻 5 张卡等距排开、互不叠压、整张露出，el.abilities.scale = 1.2 仍偏小",
+      "severity": "medium",
+      "proposal": "arrangement = fan 加 overlap / bleedBottom / hoverLift 子项（扇形半径与叠压比按张数自适应）",
+      "kind": "layoutEngine",
+      "resolvedBy": "M12b-69（lay.cardOverlap / cardBleed@el.abilities + st.selected = lift：手牌叠压、下缘出屏）"
+    },
+    {
+      "screen": "hud",
+      "what": "能量是左下一颗橙色发光圆球 + 球心“3/4”；el.resources.form = gauge 不论 cmp.gauge@el.resources 取 orb 还是 ring，都画成带标签的横条（round 2 仍是绿色横条）",
+      "severity": "medium",
+      "proposal": "el.resources 的 gauge 画法按 cmp.gauge@el.resources 取形（orb / ring / arc，默认约 96px，数值写在球心）",
+      "kind": "renderBug",
+      "resolvedBy": "M12a-11（el.resources 的 gauge 按 cmp.gauge@el.resources = orb：能量球；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "hud",
+      "what": "左下抽牌堆、右下弃牌堆和其上方的消耗堆：牌背图标 + 圆形红 / 紫计数角标，点开查看；cnt.elements 没有“牌堆”",
+      "severity": "medium",
+      "proposal": "cnt.elements 增加 el.piles（抽牌堆 / 弃牌堆 / 消耗堆），form = deckIcon + countBadge，锚点左下 / 右下，与同角的 el.cta 上下叠放",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-29（el.piles / el.piles#2：左下抽牌堆、右下消耗 / 弃牌堆 + 计数角标）"
+    },
+    {
+      "screen": "hud",
+      "what": "顶栏下方常驻一行遗物图标（彩绘小物件，部分带计数角标，过多时左右翻页），是被动道具陈列，没有对应的信息元素",
+      "severity": "medium",
+      "proposal": "cnt.elements 增加 el.passives（遗物 / 被动道具列），form = iconRow / iconGrid，带计数角标与翻页",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-29（el.passives：顶栏下一行遗物图标 + 计数）"
+    },
+    {
+      "screen": "hud",
+      "what": "玩家血条挂在角色脚下（圆头细条、数字压在条中）；elx.attachTo = player 对条形元素不生效，仍按 screenAnchor 放在左上",
+      "severity": "medium",
+      "proposal": "条形元素挂世界挂点时按挂点定位（脚下偏移、宽度跟随角色包围盒）",
+      "kind": "renderBug",
+      "resolvedBy": "el.vitals.attachTo（layout.card 预设）, el.vitals.attachWidth"
+    },
+    {
+      "screen": "hud",
+      "what": "el.threat.form = [intent, healthBar] 只画出意图图标 + 数字，敌人脚下的血条、名字、状态图标没画",
+      "severity": "medium",
+      "proposal": "el.threat 的多选 form 逐项绘制：healthBar 挂在目标脚下，名字与状态行跟随",
+      "kind": "renderBug",
+      "partialBy": "M12a-11（el.threat 多画法逐项画）：意图 + 血条 28/80 画出，名字与状态行没有"
+    },
+    {
+      "screen": "hud",
+      "what": "玩家血条左端压一枚蓝色格挡盾徽 + 数字，有格挡时整条变蓝，条下一行增益 / 减益小图标带层数；cmp.gauge 没有端头徽章与状态染色，元素没有状态行",
+      "severity": "medium",
+      "proposal": "cmp.gauge 加 endBadge 子项与 tintWhen；el.vitals.statusRow / el.threat.statusRow = icons（带层数）",
+      "kind": "missingParam",
+      "partialBy": "M12b-03（cmp.gaugeExtra@el.vitals = [shieldTint, statusRow]）：格挡章与状态图标行画出，但脚下的条本身几乎看不见"
+    },
+    {
+      "screen": "hud",
+      "what": "出牌指向箭头是一串红色 V 形分段沿贝塞尔排列、末端大箭头，从被拖的卡弧向目标；el.crosshair = aimArrow 只画一条短白线 + 强调色小箭头",
+      "severity": "medium",
+      "proposal": "vis.connector@el.crosshair 增加 chevronChain（分段 V 形链）；aimArrow 起点挂手牌、终点挂目标",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-24（vis.connector@el.crosshair = chevronChain + aimFrom = hand：红色 V 形链从手牌出发）"
+    },
+    {
+      "screen": "frontend",
+      "what": "lay.container = overlay 的模板形态在 rel.behind = replaced 时也不画 ast.bgArt，背后透出的是实时场景",
+      "severity": "medium",
+      "proposal": "overlay 形态的模板在 rel.behind = replaced 时画 ast.bgArt（无素材时画占位主视觉）",
+      "kind": "renderBug",
+      "resolvedBy": "M12a-24 / M12a-25（overlay 模板在替换背景下画 ast.bgArt；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "frontend",
+      "what": "“返回 / 出发”分居左下、右下（返回红、出发青）；el.cta 只能放一个锚点，round 2 只有右下“出发”；地图的“返回”也应是左下红缎带，复刻画成纸内右下的“取消”",
+      "severity": "medium",
+      "proposal": "el.cta.form 增加 splitCorners（主次按钮分居两角，次按钮用 col.semantic 的取消色）",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-17（el.cta.form = splitCorners：左下返回、右下出发）"
+    },
+    {
+      "screen": "frontend",
+      "what": "选角按钮是浅青灰方形瓷砖（倒角浮雕、线描角色徽记），选中金色外发光，未解锁显示挂锁，悬停在旁边弹出深色说明框；el.party = unitCards 画成深色小卡 + 圆头像 + 名字 + 血条",
+      "severity": "medium",
+      "proposal": "el.party.form 增加 emblemTiles（方砖 + 线描徽记 + 锁 + 悬停说明）；或 ast.coreMat 增加 porcelainTile 并按元素生效",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-18（el.party.form = emblemTiles：浅青灰方砖 + 徽记 + 挂锁 + 悬停说明框）"
+    },
+    {
+      "screen": "map",
+      "what": "节点是无底的墨色剪影图标（怪物、精英、休息、商店、问号、宝箱）；cmp.node 只有带框的圆 / 头像 / 建筑等，round 2 画成描边圆 + 汉字",
+      "severity": "medium",
+      "proposal": "cmp.node 增加 inkIcon（无底、跟随 col.text 的墨色剪影，可去节点轻缩放）",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-23（cmp.node = inkIcon：无底墨色剪影节点）"
+    },
+    {
+      "screen": "map",
+      "what": "地图是竖幅羊皮纸长卷、占满屏幕中部、上下滚动；弹窗只有 lay.panelSize（大小）没有宽高比，round 2 是横幅居中弹窗",
+      "severity": "medium",
+      "proposal": "容器宽高比参数 lay.panelAspect（landscape / square / portrait），portrait + lay.overflow = longScroll 时按竖向长卷画",
+      "kind": "missingParam",
+      "resolvedBy": "lay.panelAspect, lay.panelSize"
+    },
+    {
+      "screen": "map",
+      "what": "路线图约 15 层、自下而上，每层 2–6 个节点、路径交错，顶端一个 Boss 大节点；lay.arrangement = tree 是固定 6 层、左右对称的树",
+      "severity": "medium",
+      "proposal": "tree 排布加层数、方向（bottomUp）、按种子随机分叉与合流，顶端 boss 节点放大",
+      "kind": "layoutEngine",
+      "resolvedBy": "M12b-24（lay.flowDir = up + branching = seeded + layers 15 + rootEmphasis = end：自下而上约 15 层、分叉交错）"
+    },
+    {
+      "screen": "dialogue",
+      "what": "事件页左侧是一幅事件插画，复刻只能画“场景（需素材）”斜线灰盒，且占了半屏",
+      "severity": "medium",
+      "proposal": "needs art：事件插画（每个事件一张）",
+      "kind": "asset"
+    },
+    {
+      "screen": "all",
+      "what": "字体是 Kreon 一类的板衬线（slab serif），标题、正文、数字同一家族，全部带深色粗描边；typ.*.family 只有衬线 / 无衬线等，没有板衬线",
+      "severity": "medium",
+      "proposal": "typ.body.family / typ.display.family 增加 slab",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-54（typ.*.family = slab：板衬线）"
+    },
+    {
+      "screen": "all",
+      "what": "正文用多种颜色区分含义：金色 = 关键词与遗物名，绿色 = 被加成后的数值，红色 = 伤害 / 代价，蓝色 = 升级后的数值；hier.inline = keyword 只有一种强调色",
+      "severity": "medium",
+      "proposal": "hier.inline 支持多色语义映射（keyword / buff / debuff / upgraded 各取一色）",
+      "kind": "missingParam",
+      "resolvedBy": "M12b-57（hier.inlineMap：卡牌与选项里增益绿 / 代价红；关键词色见新缺口）"
+    },
+    {
+      "screen": "hud",
+      "what": "药水槽（顶栏里 3 个可点的消耗品格，空槽是虚线瓶形）没有独立表达；el.abilities 已被手牌占用",
+      "severity": "low",
+      "proposal": "cnt.elements 增加 el.consumables（form = slots，空槽用 st.emptySlot），或允许 el.abilities 第二实例 form = hotbar 放进顶栏",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-29（el.consumables：顶栏药水槽 + 虚线空槽）"
+    },
+    {
+      "screen": "hud",
+      "what": "右上系统入口是 3 个无底彩绘图标（地图、牌组带张数角标、齿轮）；el.toolbar = microMenu 画成 5 个带边框的方形按钮",
+      "severity": "low",
+      "proposal": "el.toolbar.form 增加 iconStrip（无底、按 ast.iconSet 取图标、可带计数角标），个数随 cnt.density",
+      "kind": "newDrawing",
+      "resolvedBy": "M12b-17（el.toolbar.form = iconStrip：右上三个无底图标、牌组带张数）"
+    },
+    {
+      "screen": "hud",
+      "what": "左上一行纯文字“名字 + 职业小字”；el.profile 的四种画法都带头像圈 / 缎带 / 名片 / 经验条，放上去比不放更不像（round 1 起已删掉）",
+      "severity": "low",
+      "proposal": "el.profile.form 增加 nameText（名字 + 小字副标题，无底无头像，可收进顶栏）",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-18（el.profile.form = nameText：名字 + 职业小字）"
+    },
+    {
+      "screen": "hud",
+      "what": "场景里没有敌人实体，el.threat.attachTo = target 落到了唯一的角色（主角）头顶；参考意图在敌人头顶，目标四角出现黄色锁定括号",
+      "severity": "low",
+      "proposal": "示例场景提供独立的敌方挂点（敌人 billboard），target 与 player 挂点分开；锁定括号用 el.threat.form = lockOn 画在目标挂点四角",
+      "kind": "worldSpace"
+    },
+    {
+      "screen": "hud",
+      "what": "结束回合在敌方回合整块变灰、文字换成“敌方回合”；st.cooldown 只有转圈 / 数字 / 去色 / 填充，没有“非本方回合”的整块禁用态",
+      "severity": "low",
+      "proposal": "st.cooldown 增加 turnLocked（整块去色 + 换文案），给 el.cta 用",
+      "kind": "missingOption"
+    },
+    {
+      "screen": "hud",
+      "what": "结束回合可按时一道光从左扫到右、能量球内火焰旋转、抽牌从抽牌堆飞入手牌、打出的牌飞向弃牌堆；mo.* 只有通用缓动 / 力度 / 待机漂浮",
+      "severity": "low",
+      "proposal": "mo.idle@el.cta = sheen（光扫）；新参数 mo.cardFlow（deckToHand / handToDiscard，牌在牌堆与手牌之间飞行）",
+      "kind": "motion"
+    },
+    {
+      "screen": "hud",
+      "what": "版本号 v1.2.0（ops.compliance = version）压在右下结束回合按钮的右端，两者不互相避让",
+      "severity": "low",
+      "proposal": "合规层文字参与锚点避让：与同角元素重叠时上移或换到空角",
+      "kind": "layoutEngine",
+      "resolvedBy": "M12a-17（合规层读帧占位表：版本号不再压结束回合；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "all",
+      "what": "el.cta 的文字来自内容包（deckBuilder 包的“开始牌局”），结束回合 / 跳过 / 出发 / 返回都只能显示同一句",
+      "severity": "low",
+      "proposal": "内容包按界面提供 el.cta 文案（hud = 结束回合、draft = 跳过、create = 出发），或增加 el.cta.label 文本参数",
+      "kind": "content",
+      "resolvedBy": "M12b-61（按界面取 el.cta 文案：结束回合 / 跳过 / 出发 / 返回）"
+    },
+    {
+      "screen": "all",
+      "what": "宽缎带从屏幕边伸出（贴边一端平切出血、朝内一端燕尾）；vis.silhouette = ribbon 两端都是燕尾、离屏幕边留白",
+      "severity": "low",
+      "proposal": "cmp.plate / vis.silhouette 加 edgeBleed（贴边出血，只留朝内一端的燕尾）",
+      "kind": "missingParam"
+    },
+    {
+      "screen": "frontend",
+      "what": "角色说明直接写在插画上、没有底框：金色大号角色名、HP / 金币行、两行介绍、初始遗物行；只能借 el.title = logo（游戏名 + 英文副标题）+ el.selection = tooltip（带底框的说明卡）拼出来",
+      "severity": "low",
+      "proposal": "el.selection.form 增加 bareText（无底说明块：标题 + 数值行 + 段落）；el.title.form 增加 itemName（当前选中项的名字作大标题）",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-15（el.selection.form = bareText：角色名 + 数值行 + 介绍直接写在背景上）"
+    },
+    {
+      "screen": "map",
+      "what": "走过的节点被手绘墨圈圈住；st.done 的勾 / 印章 / 灰化 / 划线 / 标签都不是",
+      "severity": "low",
+      "proposal": "st.done 增加 inkCircle",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-23（st.done = inkCircle：走过的节点手绘墨圈）"
+    },
+    {
+      "screen": "map",
+      "what": "右侧单独一张羊皮纸图例卡（节点图标 + 名称）",
+      "severity": "low",
+      "proposal": "el.overlay.form 增加 legendCard（图标 + 名称列表的小卡，材质随 ast.coreMat）",
+      "kind": "missingOption"
+    },
+    {
+      "screen": "map",
+      "what": "地图顶端用彩绘大头像钉出本层 Boss",
+      "severity": "low",
+      "proposal": "needs art：Boss 头像；cmp.node 的终点节点可换成大号头像（cmp.node = avatar 放大）",
+      "kind": "asset"
+    },
+    {
+      "screen": "map",
+      "what": "弹窗底部一条深灰渐变页脚带压在羊皮纸上（放“取消”的那一行）：内芯是材质（ast.core = texture、vis.stroke = none）时页脚仍按深色面板画",
+      "severity": "low",
+      "proposal": "内芯为材质时页脚不另画底色，或按 ast.coreMat 着色",
+      "kind": "renderBug",
+      "resolvedBy": "M12a-06（材质内芯不另画深色页脚带；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "all",
+      "what": "模板标题关不掉：地图、选卡页参考都没有标题，cnt.elements 不含 el.title 时模板仍画“路线节点地图”“三选一升级”",
+      "severity": "low",
+      "proposal": "新参数 lay.templateTitle（show / none），或模板标题跟随 el.title 是否在 cnt.elements",
+      "kind": "missingParam",
+      "resolvedBy": "lay.titlePos"
+    },
+    {
+      "screen": "all",
+      "what": "StS 的选卡、事件页没有任何关闭控件；ix.close 没有“无”，ix.dismiss = forced / button 时兜底都画关闭控件，只能退而用 keyGlyph（“Esc 返回”小胶囊）",
+      "severity": "low",
+      "proposal": "ix.close 增加 none，或 ix.dismiss = forced 时推出不画关闭控件",
+      "kind": "missingOption",
+      "resolvedBy": "ix.close"
+    },
+    {
+      "screen": "draft",
+      "what": "卡牌稀有度色阶是灰 / 蓝 / 金，col.rarityScale 的三档（白绿蓝紫橙、蓝紫金、铜银金）都不对，暂用 metal 近似",
+      "severity": "low",
+      "proposal": "col.rarityScale 增加 greyBlueGold",
+      "kind": "missingOption",
+      "resolvedBy": "M12b-33（col.rarityScale = greyBlueGold：灰 / 蓝 / 金名条）"
+    },
+    {
+      "screen": "draft",
+      "what": "选卡页只有三张卡和下方“跳过”；tpl.draft3 带的 ops.actions = retry（“再抽 10 次”）在 union 合并下清不掉，本屏写空列表也无效（round 2 仍画在右下）",
+      "severity": "low",
+      "proposal": "多选参数允许显式清空（写 [] 或 none 时替换而不是并集）",
+      "kind": "renderBug",
+      "resolvedBy": "ops.actions []"
+    },
+    {
+      "screen": "dialogue",
+      "what": "事件插画外有一圈雕花画框；cmp.panelArt = side 只画无框的图窗",
+      "severity": "low",
+      "proposal": "cmp.panelArt 的图窗外框走 ast.frame / ast.frameMat（雕花九宫格）",
+      "kind": "newDrawing",
+      "resolvedBy": "M12b-32（cmp.panelArtFrame = ornate：事件插画雕花框）"
+    },
+    {
+      "screen": "dialogue",
+      "what": "事件选项按钮写成“[选项名] 效果”、左对齐：方括号里的选项名金色，效果里收益绿、代价红，不满足条件的选项整行变灰并写明原因，悬停才变亮；el.choices = buttons 是居中文字、第一项实心高亮",
+      "severity": "low",
+      "proposal": "el.choices 加 labelStyle = bracketTag 与 align = left，默认无高亮项，并接入 hier.inline 的多色映射",
+      "kind": "missingParam",
+      "resolvedBy": "M12b-22 / M12b-57（el.choices.labelStyle = bracketTag + align = left + lockedItem + defaultFocus = none）"
+    },
+    {
+      "screen": "dialogue",
+      "what": "中文正文换行没有避头尾，句号“。”被推到行首",
+      "severity": "low",
+      "proposal": "文本排版加 CJK 避头尾（句读号、右引号不出现在行首，左引号不落行尾）",
+      "kind": "layoutEngine",
+      "resolvedBy": "M12a-33（CJK 避头尾：句号不在行首；B1 核对 R3 对照图）"
+    },
+    {
+      "screen": "draft",
+      "what": "模板按钮行把 el.cta 与 ops.actions 并到同一行右对齐（M12a-35），el.cta.screenAnchor = bc 不再生效：三选一的“跳过”跑到右下角；StS 的“跳过”在三张卡正下方居中",
+      "severity": "low",
+      "proposal": "模板按钮行的对齐读 el.cta.screenAnchor（bc → 居中），或加 lay.buttonRowAlign（left / center / right）",
+      "kind": "layoutEngine",
+      "resolvedBy": "M12b-64（模板按钮行按 el.cta.screenAnchor = bc 居中：“跳过”在三张卡下方）"
+    },
+    {
+      "screen": "map",
+      "what": "flow.chrome = statusBar 的模板顶栏不读 col.text@hudBar：地图屏正文色是深棕（浅色羊皮纸），写了 col.text@hudBar 浅色后顶栏字仍是深棕、压在深青底上看不见（draft / dialogue 的同一条顶栏正常）",
+      "severity": "medium",
+      "proposal": "模板顶栏的字按 @hudBar → 全局查 col.text，或按顶栏自己的底色取对比字色",
+      "kind": "renderBug",
+      "resolvedBy": "R4 回归修复 C2 ②（模板顶栏 statusBar / topStrip 的字按部件 hudBar 取，写了 col.text@hudBar 时就是它）"
+    },
+    {
+      "screen": "dialogue",
+      "what": "hier.inlineMap 的关键词色固定取强调色：StS 的强调色是按钮的青石色，事件正文的关键词与选项方括号名因此是暗青、对比很低（参考是金色），没法单独给关键词换色",
+      "severity": "low",
+      "proposal": "加颜色角色 col.keyword（没写时取强调色），或让 hier.inlineMap 的各类分别指定颜色角色",
+      "kind": "missingParam"
+    }
+  ],
+  "scores": {
+    "hud": [
+      {
+        "layout": 1,
+        "elements": 1,
+        "palette": 3,
+        "type": 4,
+        "shape": 2,
+        "density": 2,
+        "overall": 1,
+        "round": 1
+      },
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 5,
+        "type": 5,
+        "shape": 4,
+        "density": 4,
+        "overall": 3,
+        "round": 2
+      },
+      {
+        "layout": 6,
+        "elements": 5,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 5,
+        "overall": 5,
+        "round": 3
+      },
+      {
+        "layout": 8,
+        "elements": 8,
+        "palette": 7,
+        "type": 6,
+        "shape": 7,
+        "density": 7,
+        "overall": 7,
+        "round": 4
+      }
+    ],
+    "frontend": [
+      {
+        "layout": 2,
+        "elements": 2,
+        "palette": 3,
+        "type": 4,
+        "shape": 2,
+        "density": 2,
+        "overall": 2,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 3,
+        "palette": 4,
+        "type": 5,
+        "shape": 3,
+        "density": 5,
+        "overall": 3,
+        "round": 2
+      },
+      {
+        "layout": 4,
+        "elements": 3,
+        "palette": 3,
+        "type": 5,
+        "shape": 3,
+        "density": 3,
+        "overall": 2,
+        "round": 3
+      },
+      {
+        "layout": 6,
+        "elements": 6,
+        "palette": 5,
+        "type": 6,
+        "shape": 6,
+        "density": 5,
+        "overall": 5,
+        "round": 4
+      }
+    ],
+    "map": [
+      {
+        "layout": 4,
+        "elements": 4,
+        "palette": 2,
+        "type": 4,
+        "shape": 2,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 5,
+        "elements": 4,
+        "palette": 6,
+        "type": 6,
+        "shape": 5,
+        "density": 5,
+        "overall": 5,
+        "round": 2
+      },
+      {
+        "layout": 7,
+        "elements": 4,
+        "palette": 6,
+        "type": 5,
+        "shape": 6,
+        "density": 5,
+        "overall": 6,
+        "round": 3
+      },
+      {
+        "layout": 7,
+        "elements": 6,
+        "palette": 6,
+        "type": 5,
+        "shape": 7,
+        "density": 6,
+        "overall": 6,
+        "round": 4
+      }
+    ],
+    "draft": [
+      {
+        "layout": 4,
+        "elements": 4,
+        "palette": 3,
+        "type": 4,
+        "shape": 3,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 6,
+        "elements": 4,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 6,
+        "overall": 5,
+        "round": 2
+      },
+      {
+        "layout": 6,
+        "elements": 4,
+        "palette": 6,
+        "type": 5,
+        "shape": 5,
+        "density": 6,
+        "overall": 6,
+        "round": 3
+      },
+      {
+        "layout": 7,
+        "elements": 7,
+        "palette": 6,
+        "type": 6,
+        "shape": 7,
+        "density": 6,
+        "overall": 7,
+        "round": 4
+      }
+    ],
+    "dialogue": [
+      {
+        "layout": 3,
+        "elements": 4,
+        "palette": 3,
+        "type": 4,
+        "shape": 3,
+        "density": 4,
+        "overall": 3,
+        "round": 1
+      },
+      {
+        "layout": 6,
+        "elements": 4,
+        "palette": 5,
+        "type": 5,
+        "shape": 4,
+        "density": 5,
+        "overall": 4,
+        "round": 2
+      },
+      {
+        "layout": 6,
+        "elements": 4,
+        "palette": 5,
+        "type": 6,
+        "shape": 5,
+        "density": 5,
+        "overall": 5,
+        "round": 3
+      },
+      {
+        "layout": 7,
+        "elements": 6,
+        "palette": 6,
+        "type": 6,
+        "shape": 6,
+        "density": 6,
+        "overall": 6,
+        "round": 4
+      }
+    ]
+  },
+  "round1Diffs": {
+    "hud": [
+      "整屏画成了通用背包样本（“卡组”标题 + 页签 + 左列表 + 右详情 + 升级 / 移除按钮），根本不是战斗 HUD：layout.card 自带 cnt.screen = screen.cards，这一屏被当成了非 HUD 界面",
+      "参考里的战斗元素全部缺失：底部扇形手牌、左下能量球、右下结束回合、敌人头顶意图、红色指向箭头、角色脚下血条",
+      "顶栏（深色半透明横条：名字、血、金币、药水、层数、地图 / 牌组 / 设置）缺失",
+      "面板是红色格纹底 + 金色卷草角花 + 菱形宝石端盖 + 顶部金缎带（kw.ornate 的雕花金饰），StS 的界面面板朴素、没有金饰",
+      "主按钮是黄色实心（强调色 #efc851 填充），StS 的按钮是青石色"
+    ],
+    "frontend": [
+      "没有铺满全屏的角色主视觉，整屏被一块深色全屏面板盖住，四角金卷草",
+      "角色头像圈、“重击”说明、浮动详情框在左上互相压叠；巨型黄色“卡组”标题条横在画面中间",
+      "多出参考里没有的东西：模板标题“创建角色”、伤害 / 耗能条、升级 / 移除按钮、生命条、货币行、顶部货币胶囊、“半身立绘（需素材）”标签",
+      "选角是下中一排 4 个方形瓷砖按钮，复刻是圆头像 + 名字 + 血条",
+      "返回 / 出发是贴在左下、右下屏幕边的缎带，复刻是右下一颗黄色大按钮"
+    ],
+    "map": [
+      "应是浅色羊皮纸 + 墨线节点，复刻是压暗的斜线灰盒（手持地图需素材）上的半透明深色节点，整屏偏暗",
+      "右侧多出“重击”详情栏（伤害 / 耗能条）与升级 / 移除 / 取消按钮，参考右侧只有一张图例卡",
+      "标题是带描边投影的白字，像贴在画面上而不是印在纸上",
+      "节点是带汉字的圆，参考是无底框的墨色剪影图标；树是固定 6 层，参考是自下而上的长卷"
+    ],
+    "draft": [
+      "卡面是深青色面板 + 金色角花，StS 的卡是整张红色（铁甲）卡框",
+      "巨型黄色“卡组”标题条压在三张卡上方，盖住了“三选一”标题",
+      "“开始牌局”按钮压在三张卡中下部，“再抽 10 次”压在右卡上，右上多出 × 关闭",
+      "卡之间挂着菱形宝石端盖（饰件），三张卡偏小"
+    ],
+    "dialogue": [
+      "整屏是一块带金角花、顶部金缎带的居中弹窗，参考是压暗场景上左图右文的事件页",
+      "“场景（需素材）”灰盒铺满整块面板，正文与选项压在灰盒上",
+      "多出巨型黄色“卡组”标题条与右上 ×",
+      "正文只有一行字幕“酒保：…”，参考是一段事件叙述",
+      "第一个选项是黄色实心，StS 的选项是深色描边长条、悬停才变亮"
+    ]
+  },
+  "round2Diffs": {
+    "hud": [
+      "结构对了：底部扇形手牌、左下能量、右下长六边形结束回合、右上系统入口、左上生命都落在参考的位置；但上沿没有那条深色半透明顶栏，生命条 / 计时 / 系统按钮各自悬空",
+      "手牌是 5 张纯红布纹卡 + 青色线描符号 + 左上序号：没有费用圆、名条、插画窗、类型标签、文本框；卡偏小、等距排开互不叠压、整张露出（参考约屏高 1/3、相互叠压、下缘出屏）",
+      "能量是左下绿色横条“能量 2/3”，参考是橙色发光圆球、球心“3/4”",
+      "上中是大号“00:45”计时，参考是顶栏里小号的“楼梯图标 + 28”（层数）；下轮可改用 el.clock = dayCounter 并缩小",
+      "右上是 5 个红底方框按钮（吃到了本屏给手牌用的红色 col.surface），参考是 3 个无底彩绘图标（地图、牌组带张数、齿轮）",
+      "敌人意图（盾徽 + 9×2）浮在主角头顶；敌人脚下的血条、名字、状态图标都没有；指向箭头只是一条短白线 + 青色箭头，参考是从手牌弧向敌人的红色 V 形分段长链",
+      "仍缺：顶栏下的遗物行、左下抽牌堆 / 右下弃牌堆 / 消耗堆的计数角标、角色脚下的圆头血条 + 格挡盾 + 增益图标",
+      "结束回合的文字是内容包的“开始牌局”；按钮偏小、压在右下角最底，右端与版本号 v1.2.0 重叠（参考在右侧偏下，下方留给弃牌堆）",
+      "卡面、按钮上的布纹来自 art.recipe = oil + rel.harmony = sameMedium 推出的 ast.core = texture / ast.coreMat = cloth，参考卡面是光滑彩绘；下轮可在 base 写 ast.core = procedural"
+    ],
+    "frontend": [
+      "版式对了：左中大标题 + 说明块、下中一排 4 个选角格、右下青色缎带",
+      "背景仍是实时地牢场景（overlay 形态不画 ast.bgArt），参考整屏是角色主视觉（红色漩涡 + 金面具角色半身），这是这一屏的主体",
+      "大标题是游戏 logo“七层酒馆 / SEVEN STOREY TAVERN”，参考是金色的角色名；说明是带深色底框和描边的提示卡，参考是直接写在插画上的无底文字（HP / 金币行、两行介绍、初始遗物行、解锁进度）",
+      "选角是 4 张深色小卡（圆头像 + 名字 + 血条），参考是 4 块浅青灰倒角方砖（线描徽记 / 挂锁），选中金色外发光，悬停在旁边弹出深色说明框",
+      "“出发”缎带两端都是燕尾、离右边缘留白，参考从右边缘伸出；左下红色“返回”缎带与“Set Seed”金字链接缺失；按钮文字是内容包的“开始牌局”"
+    ],
+    "map": [
+      "浅色羊皮纸 + 撕边 + 墨色字 + 虚线连线，纸面感已接近参考（round 1 是压暗灰盒）",
+      "横幅居中弹窗（约 3/4 屏宽），参考是竖幅长卷占满屏幕中部、上下滚动，底部起点、顶部 Boss",
+      "节点是描边圆 + 汉字（战 / 精 / 店 / 火 / ? / 王），参考是无底墨色剪影图标；可去节点画成青色实心圆，参考是轻微缩放跳动；走过的节点没有手绘墨圈",
+      "固定 6 层、左右对称的树，参考约 15 层、每层节点数不一、路径交错",
+      "缺右侧羊皮纸图例卡与顶端 Boss 彩绘头像；多出左上模板标题“路线节点地图”",
+      "面板底部一条深灰渐变页脚带压在纸上，“取消”是带框青色按钮、放在纸内右下；参考是左下屏幕边的红色“返回”缎带",
+      "顶部是手游货币胶囊（能量 / 金币 / 钻石，各带“+”），参考是与战斗同一条顶栏"
+    ],
+    "draft": [
+      "版式接近：压暗冻结的战斗画面上三张大红卡居中一排，下方居中一个青石长六边形按钮",
+      "卡面是红色布纹底 + 中央线描符号 + 名字 + 一行说明，不是 TCG 卡（无费用圆、名条、插画窗、类型标签、文本框）",
+      "稀有度只靠外框色（中卡金框、右卡灰框），左卡被选中时外面再套一圈青框；参考稀有度在名条与卡框上（灰 / 蓝 / 金），悬停是放大",
+      "多出左上标题“三选一升级”、右上“Esc 返回”胶囊、右下“再抽 10 次”；“跳过”显示成“开始牌局”",
+      "顶部是手游货币胶囊而不是战斗顶栏"
+    ],
+    "dialogue": [
+      "左图右文的事件页结构对了，选项按钮列在右下",
+      "左侧是“场景（需素材）”斜线灰盒、没有画框，占了半屏，参考是带雕花画框的事件插画",
+      "左上是模板标题“NPC 对话”（参考的标题是事件名），右上“Esc 返回”（参考事件页没有关闭控件）",
+      "选项：第一项青色实心、文字居中，其余深色布纹底；参考是一样的深色长条、左对齐“[选项名] 效果”，选项名金色、收益绿 / 代价红，悬停才变亮",
+      "正文单色白字，参考关键词金色、数值彩色；换行把句号“。”推到了行首",
+      "顶部是手游货币胶囊而不是战斗顶栏"
+    ]
+  },
+  "round3Diffs": {
+    "hud": [
+      "顶栏画出来了（贯通上沿的青石纹理带），但里面只有居中计时 + 右端 5 个带框方钮；参考是名字 / 血 / 金币 / 药水 / 层数一行 + 3 个无底彩绘图标",
+      "能量已是左下橙色圆球（2/3）、手牌是贴底的倾斜扇形且大小接近参考；但卡面仍是红布纹 + 线描符号 + 序号，不是 TCG 卡",
+      "生命条已挂在角色脚下（“生命 58/80”）、敌人血条 28/80 + 意图在头顶；但条很短、读数压在条上，场景里没有敌人实体，两者都挂在主角身上",
+      "仍缺遗物行、抽牌堆 / 弃牌堆 / 消耗堆；指向箭头仍是短白线 + 青箭头",
+      "结束回合文字仍是“开始牌局”；版本号移到它下方，不再重叠"
+    ],
+    "frontend": [
+      "背景已按 ast.bgArt = keyArt 画，但是整屏灰蓝斜纹占位灰盒；参考整屏是角色主视觉（红色漩涡 + 金面具角色）",
+      "叠加形态在替换背景下现在走模板构图器：顶部多出 record 数据（“重击” + 伤害 / 耗能条 → 74）与一张压在上面的浮动详情卡，左下多出“升级 / 移除”按钮（原作此处是红色“返回”缎带）",
+      "选角仍是深色小卡 + 圆头像 + 血条，参考是浅青灰倒角方砖（徽记 / 挂锁）",
+      "大标题是游戏 logo、说明是带底框的提示卡；参考是金色角色名 + 直接写在插画上的说明"
+    ],
+    "map": [
+      "（凭记忆）竖幅羊皮纸长卷、撕边、无标题 / 取消钮 / 页脚带都对上；顶栏改成贯通上沿的买断制条（无 +）",
+      "顶栏里的字是地图屏的深棕正文色，压在深青石底上几乎看不见",
+      "大多数节点画成带挂锁的撕边小砖（样本锁定态），第一排是红虚线圈 + 汉字；参考是无底墨色剪影图标，可去节点轻缩放",
+      "6 层、每层 3–4 个，比第二轮的对称树更像长卷，但远少于约 15 层；缺右侧图例卡与顶端 Boss 头像"
+    ],
+    "draft": [
+      "（凭记忆）标题、Esc 药丸、“再抽 10 次”都去掉，顶部是与战斗同一条的顶栏",
+      "卡面仍不是 TCG 卡（无费用圆、名条、插画窗、类型条）；稀有度只靠外框色，选中项外再套青框",
+      "“跳过”按钮被并进模板按钮行、右对齐到右下角（el.cta.screenAnchor = bc 不生效）；参考在三张卡下方居中，文字仍是“开始牌局”"
+    ],
+    "dialogue": [
+      "（凭记忆）左图右文的事件页结构对，Esc 去掉，正文换行不再把“。”推到行首，正文与选项装进一块深色面板",
+      "左上是梯形名签“酒保”（对话类模板现在把说话人写进页头）；原作标题是事件名、不垫牌",
+      "左侧仍是“场景（需素材）”斜线灰盒、没有画框",
+      "选项第一项青色实心、文字居中；参考是一样的深色长条、左对齐“[选项名] 效果”，选项名金色、收益绿 / 代价红"
+    ]
+  },
+  "round4Diffs": {
+    "hud": [
+      "顶栏已是名字 + 职业、生命、药水槽（含虚线空槽）、计时、右端三个无底图标，下面一行遗物；但条底是青石纹理而不是深色半透明，没有金币，层数位置是计时“00:45”",
+      "手牌已是叠压出屏的 TCG 卡（费用圆、稀有度名条、类型插画窗、类型签、彩色数值），但卡身是红色格纹布纹、插画窗只有线描符号，费用圆是深青色而不是能量橙",
+      "场景没有敌人：意图、敌人血条、V 形指向链都落在主角身上，链很短；参考链从手牌弧向右侧敌人",
+      "主角脚下的血条几乎看不见（只剩“生命 58/80”字 + 格挡章 + 状态图标）；能量球、牌堆、结束回合都已对上"
+    ],
+    "frontend": [
+      "背景仍是灰蓝斜纹灰盒，参考整屏是角色主视觉（红色漩涡 + 金面具角色）",
+      "右上多一段酒馆告示正文，参考没有",
+      "角色名是偏红的粗板衬线，参考是金色；“返回”缎带是深蓝，参考是红色，也没有 Set Seed 金字",
+      "无底说明块、浅青灰方砖（选中金光、挂锁、悬停说明框）、两角出血缎带都已对上"
+    ],
+    "map": [
+      "（凭记忆）路线已是自下而上约 15 层、分叉交错的墨色剪影节点，走过的有手绘墨圈；但大多数节点上叠着挂锁（样本锁定态）",
+      "顶栏字仍是深棕、压在深青底上看不见，内容是钻石 / 金币 / 体力 / 回合 / 计时，不是战斗那条顶栏",
+      "缺右侧图例卡；顶端 Boss 头像滚出了视窗"
+    ],
+    "draft": [
+      "（凭记忆）三张已是 TCG 卡、“跳过”已在卡下居中；但插画窗是纯色渐变（紫 / 绿），说明只有一行、文本框下半空",
+      "卡身是红色格纹布纹，费用圆是深青色；“跳过”按钮很小",
+      "顶栏是钻石 / 金币 / 体力 / 回合 / 计时，不是战斗顶栏的名字 / 血 / 金币 / 药水 / 层数"
+    ],
+    "dialogue": [
+      "（凭记忆）选项已是左对齐“[选项名] 效果”、收益绿 / 代价红、无默认高亮、第 3 项压灰写“条件不足”，插画套了雕花金框；但方括号名与正文关键词是暗青色，参考是金色",
+      "插画仍是“场景（需素材）”灰盒",
+      "左上是说话人“酒保”而不是事件名；正文只有两行，文本面板中部大片空",
+      "顶栏是钻石 / 金币 / 体力等，不是战斗顶栏"
+    ]
+  },
+  "revisions": [
+    "HUD：cnt.screen 改为 screen.hud（layout.card 默认带 screen.cards，会落到界面模板而不是局内 HUD）；删掉称号横幅 el.profile（参考顶栏只有一行名字，缎带 + 头像圈反而更不像）与飘字 el.feedback（参考没有）",
+    "HUD：锚点按参考摆：生命条左上（顶栏读数位置）、层数 el.timer 小号上中、系统入口 el.toolbar 右上、能量左下、手牌下中、结束回合右下；手牌 1.2、能量 0.8、结束回合 0.5，三者不再横向重叠，手牌回到屏幕底边",
+    "HUD：本屏 col.surface = #a3352b + vis.opacity = 1 → 手牌是实心红卡（铁甲卡框色）；本屏 vis.silhouette = hexagon → 结束回合成为两端尖的长六边形；去掉本屏的渐变半透明（那是给顶栏的，顶栏画不出来）",
+    "整体：uip.keyword = none，去掉 kw.ornate 带来的金卷草角花、宝石、端盖、外发光；删掉 ast.ornaments = ribbons（每块面板顶上的金缎带）——StS 的面板朴素",
+    "整体：强调色改为青石色 #3b7280（结束回合、出发缎带、可选节点、选项悬停都是这个色），金色 #efc851 移到第二强调色",
+    "整体：flow.chrome = topCurrency 从 base 移到地图 / 选卡 / 事件三屏（StS 这三屏顶栏常驻，选角界面没有顶栏）",
+    "画面：art.values 加 color.palette = gothic、color.brightness = 0.65、surface.vignette = 0.45，背景从灰白日景压成暗色地牢，明暗接近参考",
+    "选角：tpl.create 改成直接叠加形态（lay.container = overlay：不画模板标题与全屏深色面板）；元素换成 el.title = logo（左中大字名）、el.selection = tooltip（左中说明）、el.party = unitCards（下中 4 个方块选角）、el.cta = wide + 本屏 vis.silhouette = ribbon（右下青色缎带“出发”）；cnt.focal = none（主视觉里已有角色，不再叠“半身立绘需素材”）；ix.close = cancelBtn（左下“返回”）",
+    "地图：放弃手持地图容器（灰盒），改为居中弹窗 + 内芯羊皮纸材质 + 撕边 + 浅色面板 + 墨色字 + 无描边，标题去掉描边投影；lay.detail = none 去掉详情栏；ix.close = cancelBtn（参考的“返回”）",
+    "选卡：fullscreen + cmp.modal = floating（无面板，压暗冻结的战斗画面），本屏 col.surface 红色 → 三张红卡；删掉 el.title（巨型“卡组”标题条）；el.cta 作“跳过”放下中，本屏 typ.baseSize = 14 让卡与按钮不再重叠；ix.close = keyGlyph 代替右上 ×",
+    "事件：fullscreen + floating（压暗场景上直接排版），cnt.dataShape = text 让左侧插画窗 + 右侧事件正文分栏；删掉 el.title 与字幕行；选项按钮列放右下；ix.dismiss = forced、ix.close = keyGlyph 代替 ×",
+    "R3 前（M12a 之后）：hud 的冲突按审查修复 A 处理——加 lay.hudEdge [top]（顶栏收上沿的计时与系统入口），生命条按 layout.card 预设挂在角色脚下（参考的主血条就在脚下），加 el.vitals.attachWidth = actor、valueLabelPos end → inside（数字压在条中）；顶栏里的生命读数与脚下血条只能取一，取脚下；hud / frontend / draft 的全局 vis.silhouette（hexagon / ribbon）改成 vis.silhouette@el.cta（M12a-09 起全局外形会把格子、头像、按钮都换形，原意只给结束回合 / 出发 / 跳过按钮）；hud / draft 的本屏 col.surface 红改成 col.surface@el.abilities / col.surface@card（只染手牌 / 卡牌，系统按钮不再变红）；hud 加 col.accent@el.resources 橙（能量球）；map / draft / dialogue 的 flow.chrome topCurrency → statusBar（买断制顶栏，无 +）；map 加 lay.panelAspect = portrait + lay.panelSize 1（竖幅长卷）与 lay.titlePos / ix.close = none；draft 加 lay.titlePos / ix.close = none、ops.actions []（去掉再抽）；dialogue 删掉显式的 ix.close keyGlyph（forced 派生 none）。",
+    "R4 前（M12b 之后）：base typ.body.family / typ.display.family serif → slab（板衬线，#21）、加 hier.inlineMap = [keyword, buff, debuff, upgraded]（关键词金 / 增益绿 / 代价红 / 升级蓝，#22）、col.rarityScale = greyBlueGold（#39）；hud 的 cnt.elements 加 el.vitals#2（顶栏血量读数：screenAnchor tl + cmp.gauge@el.vitals#2 = number + count 1 + valueLabel currentMax，cmp.gaugeExtra@el.vitals#2 = [] 不带格挡 / 状态行）、el.profile（nameText，名字 + 职业小字）、el.consumables（顶栏药水槽，st.emptySlot@el.consumables = dashed，#23）、el.passives（遗物行，el.passives.edgeBar = exclude 留在顶栏下，#9）、el.piles（左下抽牌堆）与 el.piles#2（kinds [exhaust, discard]，右下，#8），加 lay.edgeBarSlots = [el.profile, el.vitals#2, el.consumables, el.timer, el.toolbar]（顶栏一行字段，#4）；el.toolbar.form microMenu → iconStrip + count 3（无底彩绘图标，#24）；vis.connector@el.crosshair = chevronChain + el.crosshair.aimFrom = hand（红色 V 形链从手牌弧向目标，#13）；cmp.gaugeExtra@el.vitals = [shieldTint, statusRow]（格挡盾徽与状态行，#12）；cmp.cardColorBy = [bannerRarity, artType, playableGlow, costAffordable]（#5，没写 frameLine：参考手牌全是铁甲红，按类别着色会把样本牌染成多色）、lay.cardOverlap@el.abilities 0.3 + lay.cardBleed@el.abilities 0.25 + st.selected@el.abilities = lift（叠压、出屏、选中抬起，#6）；frontend 去掉 el.title（游戏 logo），el.selection.form tooltip → bareText（写在插画上的角色名 + 数值 + 介绍，#32）、el.party.form unitCards → emblemTiles（浅青灰方砖 + 徽记 + 挂锁，#16）、el.cta.form wide → splitCorners（左返回右出发，#15），cnt.dataShape record → none + lay.detail transient → none（去掉顶部的卡牌数据、浮动详情与升级 / 移除钮），ix.close cancelBtn → none（返回由分角钮承担）；map lay.flowDir = up + lay.branching = seeded + lay.layers 15 + lay.rootEmphasis = end（自下而上约 15 层、顶端 Boss，#19），cmp.node building → inkIcon（#17）、st.done stamp → inkCircle（#33）、col.text@hudBar 浅色（顶栏字原来跟地图的深棕正文色、看不见）；draft col.rarityScale metal → greyBlueGold、cmp.cardColorBy = [bannerRarity, artType]；dialogue el.choices.labelStyle = bracketTag + align left + lockedItem 3 + defaultFocus none（「[选项名] 效果」左对齐、无默认高亮、第 3 项压灰，#42），cmp.panelArtFrame = ornate（插画雕花框，#41），cmp.plate@name = none（页头名字不垫牌）。没写：st.cooldown@el.cta = turnLocked（参考是本方回合、End Turn 可按）；cmp.plate@title = swallowtail / cmp.plateBleed（几屏都没有标题行，空操作）；frontend 的 ast.core@el.party = texture + porcelain（emblemTiles 自带方砖底色，不读内芯材质）。"
+  ],
+  "notes": "UI 分两层：屏幕层只有一条深色半透明顶栏（角色名、血、金币、药水、层数、地图 / 牌组 / 设置）加四角的能量球、牌堆和结束回合；战斗信息都挂在世界里（角色脚下的圆头血条 + 格挡盾，敌人头顶意图图标 + 伤害数字、脚下血条与名字）。视觉重量集中在彩绘 TCG 卡牌和缎带 / 石青按钮上，面板本身朴素（没有金饰）；字体是带深色描边的板衬线，关键词与数值多色着色。地图换成浅色羊皮纸墨线节点图，是全作唯一的浅色界面。地图、选牌奖励、事件三屏按对这款游戏的了解编码。"
+}

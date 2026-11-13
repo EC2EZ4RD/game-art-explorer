@@ -1,0 +1,74 @@
+/*
+ * 配方图库（轨道 C：StyleGallery）。只用全局颜色变量（--panel / --line / --accent …），不覆盖外壳的类名。
+ *   c-gal 外框 · c-gal-head 标题行 · c-gal-chips 分类芯片 · c-card 图片卡 · c-thumb 缩略图 · c-gal-foot 叠加 + 更多
+ *   c-chip / c-ico / c-link 小控件 · c-pop 感觉▾弹层 · c-menu 右键混搭菜单 · c-param-flash 右栏参数行闪一下（配方卡看点悬停）
+ */
+.c-gal { position: relative; display: flex; flex-direction: column; height: 100%; min-height: 0; background: var(--panel); }
+.c-gal-head { display: flex; align-items: center; gap: 2px; height: 40px; padding: 0 8px 0 12px; flex: none; }
+.c-gal-head b { font-size: 14px; }
+.c-gal-sp { flex: 1; }
+.c-ico { border: 0; background: transparent; border-radius: 6px; width: 28px; height: 28px; cursor: pointer; font-size: 14px; line-height: 1; opacity: .8; }
+.c-ico:hover { background: var(--panel-2); opacity: 1; }
+.c-ico.on { background: var(--accent-soft); opacity: 1; }
+.c-keep:not(.on) { filter: grayscale(1); opacity: .45; }
+.c-keep.on { box-shadow: inset 0 0 0 1px var(--accent); }
+.c-ico-caret { width: 16px; margin-left: -2px; font-size: 10px; }
+.c-gal-search { padding: 0 12px 6px; flex: none; }
+.c-gal-search input { width: 100%; border: 1px solid var(--line-strong); border-radius: 6px; background: var(--panel); padding: 3px 8px; }
+.c-gal-chips { display: flex; flex-wrap: wrap; gap: 4px; padding: 0 12px 8px; flex: none; }
+.c-chip { border: 1px solid var(--line); background: var(--panel); color: var(--text-2); border-radius: 999px; padding: 1px 9px; font-size: 12px; line-height: 20px; cursor: pointer; white-space: nowrap; }
+.c-chip:hover { border-color: var(--line-strong); color: var(--text); }
+.c-chip.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.c-chip.small { padding: 0 7px; font-size: 11.5px; line-height: 18px; }
+.c-link { border: 0; background: transparent; color: var(--accent); cursor: pointer; padding: 2px 4px; font-size: 12px; }
+.c-link:hover { text-decoration: underline; }
+
+.c-gal-scroll { flex: 1; min-height: 0; overflow-y: auto; padding: 0 12px 8px; }
+.c-gal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.c-gal-sec { grid-column: 1 / -1; font-size: 11px; line-height: 14px; color: var(--text-3); padding: 2px 0 0; letter-spacing: .04em; }
+.c-gal-empty { grid-column: 1 / -1; color: var(--text-3); padding: 16px 0; text-align: center; }
+
+/* 名字压在缩略图底部（渐变衬底）：一行卡 = 72px 图 + 8px 间距，288 宽的左栏首屏能放约 16 张 */
+.c-card { position: relative; display: block; padding: 0; border: 0; background: transparent; cursor: pointer; text-align: left; min-width: 0; border-radius: 7px; }
+.c-thumb { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 6px; border: 1px solid var(--line); background: var(--panel-2); transition: transform .12s, box-shadow .12s; }
+.c-card:hover .c-thumb { box-shadow: 0 2px 10px rgba(0, 0, 0, .18); }
+.c-card.on .c-thumb { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+/* 当前画面（风格研究库 / 案例 / 复刻）只是借用了这张配方：虚线 */
+.c-card.via .c-thumb { outline: 2px dashed var(--accent); outline-offset: 1px; border-color: transparent; }
+.c-card:focus-visible { outline: none; }
+.c-card:focus-visible .c-thumb { outline: 2px dashed var(--accent); outline-offset: 1px; }
+.c-card-name { position: absolute; left: 1px; right: 1px; bottom: 1px; display: flex; align-items: center; gap: 4px; font-size: 12px; line-height: 16px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 12px 6px 3px; border-radius: 0 0 5px 5px; background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .66)); text-shadow: 0 1px 2px rgba(0, 0, 0, .7); pointer-events: none; }
+.c-card.on .c-card-name { font-weight: 700; }
+.c-dot { font-style: normal; font-size: 9px; color: var(--ok); flex: none; }
+.c-dot.partial { color: var(--warn); }
+.c-dot.ref { color: var(--text-3); }
+/* 角标：局部 / 2D / 仅参考（只在需要时出现，实时的卡不挂任何标记） */
+.c-badges { position: absolute; top: 4px; right: 4px; display: flex; gap: 3px; pointer-events: none; }
+.c-badge { font-size: 10px; line-height: 14px; padding: 0 4px; border-radius: 3px; background: rgba(0, 0, 0, .55); color: #fff; }
+.c-thumb.none { display: flex; align-items: center; justify-content: center; }
+.c-thumb.none em { font-style: normal; font-size: 11px; color: rgba(255, 255, 255, .9); background: rgba(0, 0, 0, .3); padding: 1px 6px; border-radius: 3px; }
+.c-thumb.cat-pixel { background: repeating-conic-gradient(#3b4a6b 0 25%, #5a6c94 0 50%) 0 0 / 12px 12px; }
+.c-thumb.cat-paint { background: linear-gradient(135deg, #c98b5a, #7a5c8f); }
+.c-thumb.cat-east { background: linear-gradient(180deg, #e9e2d0, #8d9a8a); }
+.c-thumb.cat-flat { background: linear-gradient(90deg, #e04a3a 0 33%, #f2c230 33% 66%, #2f5fa8 66%); }
+.c-thumb.cat-form { background: radial-gradient(circle at 35% 35%, #9fd1a1, #4e7d6a); }
+.c-thumb.cat-light { background: radial-gradient(circle at 70% 30%, #f7e3a8, #2a2f3d 70%); }
+
+.c-gal-foot { flex: none; border-top: 1px solid var(--line); padding: 5px 12px 6px; display: flex; flex-direction: column; gap: 4px; }
+.c-gal-ov { display: flex; flex-wrap: nowrap; align-items: center; gap: 3px; min-width: 0; }
+.c-ov-wrap { display: contents; }
+.c-ov-sep { width: 1px; height: 14px; background: var(--line-strong); margin: 0 2px; }
+.c-gal-ov .c-chip.small { padding: 0 6px; }
+.c-gal-lab { font-size: 11px; color: var(--text-3); margin-right: 2px; }
+.c-gal-more { display: flex; justify-content: space-between; padding: 10px 0 2px; }
+
+.c-pop { position: absolute; z-index: 20; left: 8px; right: 8px; top: 104px; background: var(--panel); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: 0 8px 24px rgba(0, 0, 0, .18); padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.c-pop-row, .c-pop-moods { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.c-pop-close { align-self: flex-end; }
+.c-menu { position: absolute; z-index: 30; width: 130px; background: var(--panel); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: 0 8px 24px rgba(0, 0, 0, .2); padding: 6px; }
+.c-menu-title { font-size: 11px; color: var(--text-3); margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c-menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+
+/* 配方卡看点悬停时，右栏对应参数行闪一下 */
+.c-param-flash { animation: c-flash 0.9s ease-in-out infinite alternate; border-radius: 6px; }
+@keyframes c-flash { from { box-shadow: inset 0 0 0 2px var(--accent); background: var(--accent-soft); } to { box-shadow: inset 0 0 0 1px var(--accent); } }

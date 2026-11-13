@@ -1,0 +1,1734 @@
+{
+  "meta": {
+    "date": "2026-10-14",
+    "scope": "K1 品类需求：动作 / 平台跳跃 / 射击 / 竞速（不含手游商城、奖励、抽卡、签到、首充、通行证、红包、广告等运营界面）",
+    "sources": [
+      "src/content/uiRefs.json：action 24 + platformer 16 + shooter 19 + racing 18 = 77 张卡（参数 + 笔记）；另引手游批里的触屏战斗 HUD 卡（gameui:6750、gameui:7134、gameui:12771、gameui:6729）与探索批里动作冒险的 HUD 显隐卡作旁证",
+      "看图：qa/refs-cache/r2/arpg sheet-01/02/03/04/06/09/11/12，qa/refs-cache/r2/card sheet-03 至 sheet-12，共 68 款目标品类游戏；单图细看 Hades、ELDEN RING、Black Myth: Wukong、Overwatch、NFS Heat、Hollow Knight 地图、Hi-Fi RUSH（IIG 原图）以及 Call of Duty 4、Half-Life 2、Katana ZERO、Crashday、Garfield Kart: Furious Racing、Stumble Guys、暖雪手游、空之要塞启航",
+      "docs/survey/11-r2-arpg.md、14-r2-card.md、15-r4-mobile.md、06-genre-camera-ui.md（A2 / A3 / A4 / A14、0.5 通用可读性）、12-r3-reviews.md + data/ui-review-stats.json（只用计数，不引原文）"
+    ],
+    "caveat": "77 张卡里 28 张是'商店图无 UI'，按该作已知 HUD 编码（置信度低）；R3 评测抱怨是关键词粗筛计数，一款 ≥ 2 条才算出处，适合找'哪类问题常被提起'，不适合精确比较两款游戏。"
+  },
+  "genres": [
+    {
+      "genre": "action",
+      "subgenres": [
+        "魂类（ELDEN RING、Lies of P、Sekiro、Black Myth: Wukong）",
+        "电影式动作冒险（God of War 两作、STAR WARS Jedi: Survivor、Kena、Batman: Arkham City）",
+        "俯视 / 横版动作 Roguelite（Hades 两作、Dead Cells、Hyper Light Drifter、TUNIC）",
+        "角色动作 / 风格评价（Devil May Cry 5、Hi-Fi RUSH）",
+        "清版合作（Castle Crashers）",
+        "音乐动作 / 弹幕闪避（Sayonara Wild Hearts、Just Shapes & Beats、Beat Saber VR）",
+        "潜行跑酷动作（Assassin's Creed）",
+        "手游动作（幻塔、绝区零剧情屏；触屏战斗 HUD 取自手游批：暖雪、天涯明月刀、三界天骄）"
+      ],
+      "cards": 24,
+      "evidenceNote": "24 张里 8 张商店图无 UI（战神两作、星战、刺客、Kena、Batman 等按已知 HUD 记）。能看清 HUD 的：Hades、ELDEN RING、Black Myth: Wukong（IIG 原图）、Hi-Fi RUSH、Castle Crashers、Hyper Light Drifter、Just Shapes & Beats、Assassin's Creed、Hades II、Dead Cells。",
+      "coreQuestions": [
+        "我还能挨几下：血量，以及治疗还剩几次（药壶 / 葫芦 / 回血次数）。细条要配'延迟拖尾'，才看得清这一下掉了多少。",
+        "下一次闪避 / 格挡 / 技能的资源够不够：体力、法力、怒气、架势这类会被一次操作花掉的条。",
+        "敌人下一招是什么、能不能挡：前摇高亮、攻击类型颜色（例如红色 = 不可格挡）、头顶警示字。这条比自己的任何数值都优先。",
+        "Boss 还剩多少、进了第几阶段：Boss 长条加名字，放在不挡战斗的位置（底中或顶中）。",
+        "哪个技能 / 道具已就绪：冷却扇形、就绪发光；快捷栏当前选中的是哪一格。",
+        "屏幕外有没有攻击来：屏幕边缘来袭方向箭头。越肩镜头尤其需要，因为背后看不到。",
+        "我打得怎么样：连击数、风格评价字母（角色动作类的核心奖励回路）、伤害飘字。",
+        "这一局拿到了哪些构筑：Roguelite 的祝福 / 遗物 / 被动列。细节不必一眼看清，但件数要能一眼数出来。"
+      ],
+      "principles": [
+        "威胁 > 自身：敌人前摇和 Boss 状态的显眼程度要高于玩家自己的特效与数值（06 文档 A2：玩家特效降亮度，把注意力留给威胁）。",
+        "四角留白：所有常驻元素贴边，画面中央 60% 留给战斗。Hades 把装饰预算拉满（vis.ornament = 3）仍然不挡战斗，因为装饰只出现在边缘。",
+        "数值要'可数'而不是'可读'：战斗中没时间读数字，所以用细条长度、分段格、图标个数。只有 Roguelite 这种可以停下来想的品类，才在条尾加 122/160 这样的读数。",
+        "显隐跟着镜头走：电影式一镜到底的作品默认情境显现（rel.hudVisibility = contextual），魂类与 Roguelite 默认常驻。镜头越近、越电影，HUD 越该退场。",
+        "反馈元素能决定作品性格：DMC5 / Hi-Fi RUSH 把评价字、拟声字放大成 HUD 的主角，同一套血条加技能的版式，只要换掉反馈这一层，作品性格就变了。"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "魂系四角：常驻三细条 + 十字快捷栏 + 底中 Boss 长条 + 右下货币",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.density": "1",
+            "el.vitals.count": 3,
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "tl",
+            "mo.valueChange@el.vitals": "trail",
+            "el.abilities.form": "hotbar",
+            "el.abilities.arrangement": "cross",
+            "el.abilities.screenAnchor": "bl",
+            "el.threat.form": ["bossBar"],
+            "el.threat.screenAnchor": "bc",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "br",
+            "el.minimap.form": "compassBar",
+            "el.minimap.screenAnchor": "tc",
+            "typ.display.family": "serif",
+            "vis.ornament": "1"
+          },
+          "share": "4 / 24（ELDEN RING、Lies of P、Black Myth: Wukong、Sekiro）。血条位置分两派：ELDEN RING 在左上，Lies of P 与黑神话在左下；Boss 条都在底中",
+          "examples": ["steam:1245620", "steam:1627720", "steam:2358720", "steam:814380"]
+        },
+        {
+          "pattern": "电影式情境显现：左下细条 + 右下大招 / 符文，敌人头顶小血条，平时几乎无 UI",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "contextual",
+            "cnt.density": "1",
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "bl",
+            "el.vitals.visibility": "contextual",
+            "el.abilities.form": "ultimate",
+            "el.abilities.screenAnchor": "br",
+            "el.threat.form": ["healthBar", "edgeDir"],
+            "el.threat.attachTo": "target",
+            "el.threat.diegesis": "spatial"
+          },
+          "share": "约 6 / 24（God of War、God of War Ragnarök、Jedi: Survivor、Kena、Batman: Arkham City；Sekiro 的敌人头顶条也属这一型），其中 5 张商店图无 UI",
+          "examples": ["steam:1593500", "steam:2322010", "steam:1774580", "steam:1954200", "steam:200260"]
+        },
+        {
+          "pattern": "俯视 Roguelite：四角 + 侧边构筑列（祝福竖排）+ 顶中 Boss 条 + 飘字",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.density": "2",
+            "cmp.gauge@el.vitals": "bar",
+            "el.vitals.screenAnchor": "bl",
+            "el.vitals.valueLabel": "currentMax",
+            "el.vitals.valueLabelPos": "end",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "column",
+            "el.abilities.screenAnchor": "ml",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "br",
+            "el.threat.form": ["bossBar", "healthBar"],
+            "el.threat.screenAnchor": "tc",
+            "el.feedback.form": ["floatNumbers"],
+            "el.feedback.attachTo": "target",
+            "vis.ornament": "3"
+          },
+          "share": "3 / 24（Hades、Hades II、Dead Cells）。Hades 的双 Boss 条在顶中并排；Dead Cells 是变体：左下大血条 + 下中四格武器 + 右上小地图",
+          "examples": ["steam:1145360", "steam:1145350", "steam:588650"]
+        },
+        {
+          "pattern": "风格评价 / 漫画反馈：评价字母独占一角并越打越大，拟声字整屏砸入",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "2",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "tl",
+            "el.feedback.form": ["rating", "combo", "comicSFX"],
+            "el.feedback.screenAnchor": "tr",
+            "el.feedback.scale": 1.8,
+            "mo.enter": "slam",
+            "mo.juice": 0.9,
+            "vis.skew": -10,
+            "typ.display.family": "graffiti"
+          },
+          "share": "3 / 24（Devil May Cry 5、Hi-Fi RUSH 两张卡）。Batman 的连击数是弱化版：只有数字，没有评价档",
+          "examples": ["steam:601150", "steam:1817230", "iig:hi-fi-rush", "steam:200260"]
+        },
+        {
+          "pattern": "合作清版：顶部一排玩家头像框（每人一色）+ 底部 Boss 条",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "ctx.players": "sharedCoop",
+            "cnt.density": "2",
+            "el.party.form": "frames",
+            "el.party.screenAnchor": "tc",
+            "el.party.arrangement": "row",
+            "cmp.gauge@el.vitals": "bar",
+            "col.coding": ["player"],
+            "el.threat.form": ["bossBar"],
+            "el.threat.screenAnchor": "bc",
+            "vis.stroke": "solid"
+          },
+          "share": "1 / 24（Castle Crashers）。分屏合作见平台跳跃的 It Takes Two",
+          "examples": ["steam:204360"]
+        },
+        {
+          "pattern": "音乐动作：零 HUD，危险色是唯一信号，顶部只有一条关卡进度细线",
+          "params": {
+            "rel.hudVisibility": "hidden",
+            "cnt.density": "0",
+            "col.strategy": "duotone",
+            "el.timer.form": "gauge",
+            "cmp.gauge@el.timer": "thinBar",
+            "el.timer.screenAnchor": "tc",
+            "el.feedback.form": ["rating"]
+          },
+          "share": "3 / 24（Just Shapes & Beats：玩家青、危险品红，顶部细进度条带检查点；Sayonara Wild Hearts 只在关末给评级；Beat Saber 的分数浮在轨道两侧，是空间内 UI）",
+          "examples": ["steam:531510", "steam:1122720", "steam:620980"]
+        },
+        {
+          "pattern": "像素小格 + 世界承担：左上一小排血格 / 能量，其余信息交给画面里的发光图形",
+          "params": {
+            "rel.hudVisibility": "always",
+            "cnt.density": "0",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "tl",
+            "el.vitals.scale": 0.7,
+            "vis.pixelScale": "world",
+            "rel.harmony": "sameMedium",
+            "vis.iconStyle": "pixel"
+          },
+          "share": "2 / 24（Hyper Light Drifter、TUNIC；TUNIC 右上还有三格道具，说明书是叙事内的纸页）",
+          "examples": ["steam:257850", "steam:553420"]
+        },
+        {
+          "pattern": "元 UI：整个 HUD 是剧情里一台机器的界面（同步率、计时、故障闪烁）",
+          "params": {
+            "rel.diegesis": "meta",
+            "cnt.density": "1",
+            "el.timer.screenAnchor": "tl",
+            "el.prompt.form": ["contextual"],
+            "el.prompt.screenAnchor": "tr",
+            "rel.metaFx": ["glitch"]
+          },
+          "share": "1 / 24（Assassin's Creed：Animus 同步率 + 计时，右侧把头 / 手 / 脚映射成手柄按键的菱形图）。绝区零剧情屏用老电视故障效果，是同一思路的变体",
+          "examples": ["steam:15100", "gameui:13081"]
+        },
+        {
+          "pattern": "手游横屏触屏动作：左侧浮动摇杆 + 右下大攻击键 + 弧形技能键，左上头像细条",
+          "params": {
+            "ctx.input": "touch",
+            "ctx.orientation": "landscape",
+            "ix.touchStick": "floating",
+            "ix.touchCluster": "arc",
+            "ix.thumbZone": "twoThumbs",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "ring",
+            "el.abilities.screenAnchor": "br",
+            "vis.silhouette@el.abilities": "circle",
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "tl",
+            "el.profile.form": "avatarLevel",
+            "el.profile.screenAnchor": "tl",
+            "cnt.density": "1"
+          },
+          "share": "库外补充：动作 24 张里没有触屏战斗卡，取自手游批（暖雪是动作 Roguelite，天涯明月刀与三界天骄是 MMO 战斗）",
+          "examples": ["gameui:6750", "gameui:12771", "gameui:6729"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.vitals",
+          "forms": ["thinBar ×7（魂系、战神、TUNIC）", "bar ×6（Hades、Dead Cells、Jedi、Kena、Hi-Fi RUSH 的斜吉他形）", "segmented ×2（DMC5、Hyper Light Drifter）", "el.vitals.count = 3（血 / 体力 / 法力三条并排）"],
+          "anchors": ["bl ×9", "tl ×5"],
+          "why": "动作游戏只能用余光读血。放在左下，离画面下半部的角色更近；魂类放左上，是为了把整个下半屏让给快捷栏和 Boss 条。细条加延迟拖尾能看清'这一下掉了多少'，比读数字快。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["hotbar ×5（魂系四格快捷栏、黑神话的葫芦 + 法术盘）", "slots ×3（Hades 左侧祝福竖列、Dead Cells 下中四格）", "ultimate ×2（战神怒气 / 符文冷却）", "触屏：大攻击键 + 弧形技能（暖雪）"],
+          "anchors": ["br ×4", "bl ×3", "ml ×1", "bc ×1", "tr ×1"],
+          "why": "动作的技能是'按的'而不是'看的'，手柄玩家靠肌肉记忆，所以图标只需要表达就绪 / 冷却 / 当前选中。魂系用十字四格对应十字键，键位和格子的位置一一对上。"
+        },
+        {
+          "element": "el.threat",
+          "forms": ["bossBar ×4（魂系底中带名字；Hades 顶中两条并排）", "healthBar ×4（头顶小血条，attachTo = target：战神、Sekiro、Batman）", "telegraph（God of War Ragnarök 攻击前用颜色圈区分攻击类型；Sekiro 头顶红色'危'字）", "edgeDir（God of War 屏幕边缘来袭箭头）"],
+          "anchors": ["bc", "tc", "挂在目标上"],
+          "why": "这个品类的核心是读敌人。Boss 条做成全屏最长的元素，是在告诉玩家'这场战斗的进度'；小怪血条挂在头顶，视线不用离开目标。前摇提示决定能不能活下来，所以要有颜色以外的冗余（字符、形状）。"
+        },
+        {
+          "element": "el.feedback",
+          "forms": ["rating（DMC5 评价从 D 升到 SSS；Hi-Fi RUSH 字母评级；Sayonara 关末评级）", "comicSFX（Hi-Fi RUSH 整屏网点拟声字）", "combo（Batman 连击数、Hi-Fi RUSH 的 6 HITS）", "floatNumbers（Hades、Dead Cells 伤害飘字）"],
+          "anchors": ["tr / mr（评价字）", "挂在目标上（飘字）", "center（拟声字）"],
+          "why": "反馈是动作类的奖励回路。评价字放在右侧固定位置，好让玩家用余光确认'还在升档'；飘字挂在目标上，确认'打中了谁'。反馈的夸张程度（mo.juice）直接决定作品性格。"
+        },
+        {
+          "element": "el.resources",
+          "forms": ["iconNumber（Hades 右下货币 342、ELDEN RING 右下框内卢恩数）"],
+          "anchors": ["br"],
+          "why": "货币在战斗中不重要，放在最不占注意力的右下角，只在拾取时跳动。"
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["compassBar（ELDEN RING 顶部罗盘条，只标方位与地标）", "plan（Dead Cells 右上）", "多数动作游戏不放小地图"],
+          "anchors": ["tc", "tr"],
+          "why": "线性关卡和竞技场式战斗不需要小地图。开放世界动作用罗盘条，只给方向、不给地形，避免玩家盯着地图跑。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["contextual（Assassin's Creed 右侧头 / 手 / 脚对应按键的菱形图；ELDEN RING 左中'Parry'一类动作名小签）"],
+          "anchors": ["tr", "ml"],
+          "why": "动作类按键随情境变（攀爬、处决、弹反），所以只在可用时提示当前能做的动作。"
+        },
+        {
+          "element": "el.party",
+          "forms": ["frames（Castle Crashers 顶部四人头像 + 血 / 魔条，每人一色）"],
+          "anchors": ["tc"],
+          "why": "同屏合作要能一眼找到'我是哪个'，所以用玩家色编码头像框，而不是一律同色。"
+        },
+        {
+          "element": "el.timer",
+          "forms": ["number（Assassin's Creed 左上计时）", "gauge（Just Shapes & Beats 顶部关卡进度细线 + 检查点三角）"],
+          "anchors": ["tl", "tc"],
+          "why": "计时只在试炼 / 关卡制作品里出现；音乐动作用'歌曲进度'代替血量，告诉玩家离终点还多远。"
+        },
+        {
+          "element": "el.subtitle",
+          "forms": ["无框字幕压在底部中间（幻塔、绝区零剧情）"],
+          "anchors": ["bc"],
+          "why": "动作游戏的剧情常在实时场景里播，无框字幕不打断画面；可读性靠描边 / 投影（D-lightness-text）。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "四角分散、中央留白；Boss 条是最长的元素（底中或顶中）；血 / 技能分左右下角；评价 / 连击放右侧；电影向默认情境显现，魂系与 Roguelite 常驻。",
+          "examples": ["steam:1245620", "steam:1145360", "steam:2358720", "steam:1817230"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "暗底或半透明黑底 + 细线方格，右侧是大图标和说明文字，顶部是分类页签；整体比 HUD 正式，但仍是暗色细线，不加厚框。",
+          "examples": ["steam:1245620", "steam:2358720"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "装备页是'左格右表'：左侧装备格，右侧一长列属性数值，衬线标题；角色本身不占画面（和 RPG 的纸娃娃居中不同）。",
+          "examples": ["steam:1245620"]
+        },
+        {
+          "screen": "screen.skilltree",
+          "conventions": "Roguelite 的永久成长做成'列表式天赋'：紫金雕花外框里一列条目，每条是图标 + 名称 + 数值，而不是连线的树。",
+          "examples": ["steam:1145360"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "左侧大立绘 + 底部带名牌的文本框（Hades 金框、Hades II 圆角深色框）；Hi-Fi RUSH 用漫画分格把几个说话人排成一排；手游剧情多用无框字幕。",
+          "examples": ["steam:1145360", "steam:1145350", "steam:1817230", "gameui:3522"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "关卡评价以字母为最大元素（DMC5 的 D 到 SSS），下面再列时间、伤害等细项；音乐动作只给一张评级卡。",
+          "examples": ["steam:601150", "steam:1122720"]
+        },
+        {
+          "screen": "screen.title",
+          "conventions": "卡通动作：彩色粗描边大按钮竖排堆在左侧，右侧是角色群像插画（Castle Crashers）。",
+          "examples": ["steam:204360"]
+        },
+        {
+          "screen": "screen.loading",
+          "conventions": "深色渐变 + 一条细进度线（幻塔）；或者把读取屏做成作品母题的道具，例如老电视加胶片齿孔边（绝区零）。",
+          "examples": ["gameui:3522", "gameui:13081"]
+        },
+        {
+          "screen": "screen.codex",
+          "conventions": "叙事内说明书：图鉴 / 教程是游戏里捡到的纸页，用读不懂的文字写，靠插图传达信息（TUNIC）。",
+          "examples": ["steam:553420"]
+        },
+        {
+          "screen": "screen.levelselect",
+          "conventions": "音乐动作：深色底上的关卡节点路径，节点即歌曲。",
+          "examples": ["steam:531510"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "暗色细线", "count": 5, "why": "魂类与写实暗调动作（ELDEN RING、Lies of P、黑神话、Sekiro、Batman）。UI 要比画面更'退后'：深色半透明、淡金细线、衬线或书法字，让 Boss 和场景当主角。" },
+        { "family": "极简单色", "count": 3, "why": "一镜到底的电影动作（God of War 两作）把 HUD 当干扰源，只留细条；Just Shapes & Beats 整个界面只用一个危险色。" },
+        { "family": "科幻 HUD", "count": 3, "why": "设定里本来就有机器或科技（星战、刺客的 Animus、科幻手游幻塔），切角与细发光线才有理由出现。" },
+        { "family": "重装饰雕花框", "count": 2, "why": "Hades 两作：插画式俯视 + 神话题材，UI 是插画的延续（描金雕花、骷髅母题、新艺术标题字）。" },
+        { "family": "像素位图", "count": 2, "why": "Hyper Light Drifter、Dead Cells：UI 与世界同一像素网格（vis.pixelScale = world），血格和图标都是像素画。" },
+        { "family": "合成波 / 蒸汽波", "count": 2, "why": "音乐 MV 化的动作（Sayonara Wild Hearts、Beat Saber）：粉紫或红蓝双色同时贯穿画面与 UI。" },
+        { "family": "漫画对话框", "count": 2, "why": "Hi-Fi RUSH：卡通渲染 + 节奏打击，用网点拟声字、粗描边、斜块评级。" },
+        { "family": "倾斜动感", "count": 1, "why": "DMC5：哥特金属评价字斜着砸入，HUD 本身就在'耍帅'。" },
+        { "family": "糖果卡通（Q 版）", "count": 1, "why": "Castle Crashers：粗描边涂鸦字、彩色大按钮，和手绘角色同一笔触。" },
+        { "family": "手绘笔记本", "count": 1, "why": "TUNIC：说明书是纸页，UI 被叙事化。" },
+        { "family": "圆润友好", "count": 1, "why": "Kena：低龄友好的动作冒险（商店图无 UI，置信度低）。" },
+        { "family": "CRT 终端", "count": 1, "why": "绝区零剧情屏：老电视故障效果是作品的城市母题。" }
+      ],
+      "exemplars": [
+        { "card": "steam:1245620", "why": "魂系模板最完整：左上八角头像槽 + 三细条（红 / 蓝 / 绿）、顶中罗盘条、左下十字四格、底中 Boss 条带名字、右下框内货币。所有元素贴边，中央全空。" },
+        { "card": "steam:1145360", "why": "俯视 Roguelite 的四角加侧列：左侧菱形祝福竖列带等级、左下血条带读数、顶中两条 Boss 条并排、右下货币。装饰预算拉满但只在边缘，所以不挡战斗。" },
+        { "card": "steam:2358720", "why": "同一个魂系版式，只靠 Boss 条两端的祥云卷纹和书法标题就换成了东方；右下六边形法术格 + 葫芦，血条情境显现。" },
+        { "card": "steam:1817230", "why": "反馈层当主角：左上斜吉他形血条、右上漫画爆炸框评级字母、整屏网点拟声字。HUD 风格就是游戏的节奏性格。" },
+        { "card": "steam:601150", "why": "风格评价字从 D 升到 SSS，越打越大越华丽，结算也按字母评分（商店图无 UI，按已知 HUD 记）。" },
+        { "card": "steam:531510", "why": "无 HUD 的极端：玩家青、危险品红，界面只剩一条顶部进度线，颜色就是全部规则。" },
+        { "card": "steam:204360", "why": "同屏四人合作：顶栏四个头像框，每人一色，名字、血、魔都在框里。" },
+        { "card": "gameui:6750", "why": "触屏动作模板：左上头像 + 细血条 + 计时，右下大剑形攻击键 + 弧形技能键，左半屏浮动摇杆。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "零 / 近零 HUD 让新手迷路、看不懂目标：极简动作作把引导全交给世界，玩家不知道去哪、该做什么。",
+          "examples": ["steam:1954200", "steam:1774580", "steam:1245620", "steam:553420"],
+          "reviewEvidence": "R3'提示 / 引导不清'在本品类有 4 款 ≥ 2 条：Kena 3 条、STAR WARS Jedi: Survivor 3 条、ELDEN RING 3 条、TUNIC 2 条（关键词粗筛）。"
+        },
+        {
+          "desc": "省掉小地图后回头找路成本很高：像素动作与魂类常被说地图难用或没有地图。",
+          "examples": ["steam:257850", "steam:2358720"],
+          "reviewEvidence": "地图难用 / 没有地图：Hyper Light Drifter 6 条（本品类单款最集中）、Black Myth: Wukong 2 条。"
+        },
+        {
+          "desc": "特效与 HUD 抢画面：俯视动作满屏特效、Boss 条与飘字叠在一起，敌弹被吞掉。",
+          "examples": ["steam:1145350", "steam:1245620", "steam:257850"],
+          "reviewEvidence": "HUD 太乱 / 挡视野：Hades II 4 条、ELDEN RING 3 条、Hyper Light Drifter 3 条。"
+        },
+        {
+          "desc": "3A 动作的字太小：电视距离下，细衬线小字（物品说明、字幕）和过细的血条都难读。",
+          "examples": ["steam:2322010", "steam:1593500", "steam:814380", "steam:1145350", "steam:257850"],
+          "reviewEvidence": "字太小 / 看不清：God of War Ragnarök 3 条、God of War 2 条、Sekiro 2 条、Hades II 2 条、Hyper Light Drifter 2 条，共 5 款达标，是本批四个品类里最多的。"
+        },
+        {
+          "desc": "只靠颜色区分攻击类型：用红 / 蓝 / 黄圈表示不可格挡、破盾等，色盲玩家分不出；需要字符或形状冗余（Sekiro 的'危'字就是一种）。",
+          "examples": ["steam:2322010", "steam:814380"],
+          "reviewEvidence": "评测里没有直接计数；依据 06 文档 A2 与 0.5 第 8 条（形状 + 色相 + 明度三重编码，颜色不单独承载信息）。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "常驻魂系四角 vs 电影式情境显现",
+          "a": {
+            "rel.hudVisibility": "always",
+            "el.vitals.count": 3,
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "tl",
+            "el.abilities.form": "hotbar",
+            "el.abilities.arrangement": "cross",
+            "el.abilities.screenAnchor": "bl",
+            "el.threat.form": ["bossBar"],
+            "el.threat.screenAnchor": "bc",
+            "el.minimap.form": "compassBar"
+          },
+          "b": {
+            "rel.hudVisibility": "contextual",
+            "el.vitals.count": 2,
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "bl",
+            "el.abilities.form": "ultimate",
+            "el.abilities.screenAnchor": "br",
+            "el.threat.form": ["healthBar", "edgeDir"],
+            "el.threat.attachTo": "target"
+          },
+          "lookAt": "非战斗时屏幕上还剩什么；Boss 战时两种做法的信息是否一样完整；视线要在角色、敌人和角落之间跑多远。"
+        },
+        {
+          "title": "伤害飘字 vs 风格评价字母：同一场连段的反馈性格",
+          "a": {
+            "el.feedback.form": ["floatNumbers"],
+            "el.feedback.attachTo": "target",
+            "mo.enter": "fade",
+            "mo.juice": 0.3
+          },
+          "b": {
+            "el.feedback.form": ["rating", "combo", "comicSFX"],
+            "el.feedback.screenAnchor": "tr",
+            "el.feedback.scale": 1.8,
+            "mo.enter": "slam",
+            "mo.juice": 0.9,
+            "typ.display.family": "graffiti",
+            "vis.skew": -10
+          },
+          "lookAt": "连段时眼睛被拉到哪里；拟声字有没有盖住敌人的前摇；'冷静'和'耍帅'的分界在哪个参数上。"
+        },
+        {
+          "title": "同一魂系版式换皮：暗色细线 vs 重装饰雕花框",
+          "a": {
+            "vis.ornament": "1",
+            "ast.frame": "procedural",
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 1,
+            "col.lightness": "dark",
+            "typ.display.family": "serif",
+            "vis.motif": "none"
+          },
+          "b": {
+            "vis.ornament": "3",
+            "ast.frame": "carvedNinePatch",
+            "ast.frameMat": "bronze",
+            "vis.motif": "skulls",
+            "typ.display.family": "artNouveau",
+            "typ.titleFx": "metal"
+          },
+          "lookAt": "Boss 条与快捷栏的边框：装饰只在端头，还是包满整条；暗场景里 UI 还能不能和画面分开。"
+        },
+        {
+          "title": "敌人信息：头顶小血条 vs 底中 Boss 长条",
+          "a": {
+            "el.threat.form": ["healthBar"],
+            "el.threat.attachTo": "target",
+            "el.threat.diegesis": "spatial",
+            "el.threat.scale": 0.6
+          },
+          "b": {
+            "el.threat.form": ["bossBar"],
+            "el.threat.screenAnchor": "bc",
+            "el.threat.scale": 1.6,
+            "el.threat.valueLabel": "none"
+          },
+          "lookAt": "多敌人时头顶条会不会乱；单 Boss 时长条能否成为'战斗进度'的仪式感。"
+        },
+        {
+          "title": "攻击预警：只靠颜色 vs 颜色 + 符号冗余",
+          "a": {
+            "el.threat.form": ["telegraph"],
+            "col.coding": ["status"],
+            "st.alert": "redTint"
+          },
+          "b": {
+            "el.threat.form": ["telegraph", "intent"],
+            "col.coding": ["status"],
+            "st.alert": "warnIcon"
+          },
+          "lookAt": "打开色盲模拟（chk.cvd = deutan）后，两种攻击类型是否还分得开。"
+        },
+        {
+          "title": "主机手柄 vs 手机横屏触屏：技能从'看的图标'变成'按的按钮'",
+          "a": {
+            "ctx.input": "pad",
+            "ctx.device": "tv",
+            "ix.glyphs": "xbox",
+            "el.abilities.form": "hotbar",
+            "el.abilities.arrangement": "cross",
+            "el.abilities.screenAnchor": "bl"
+          },
+          "b": {
+            "ctx.input": "touch",
+            "ctx.device": "phone",
+            "ctx.orientation": "landscape",
+            "ix.touchStick": "floating",
+            "ix.touchCluster": "arc",
+            "ix.thumbZone": "twoThumbs",
+            "el.abilities.form": "slots",
+            "el.abilities.arrangement": "ring",
+            "el.abilities.screenAnchor": "br",
+            "vis.silhouette@el.abilities": "circle"
+          },
+          "lookAt": "技能格的尺寸、位置、形状怎么变；触屏版右下拇指区会不会挡住角色前方的敌人。"
+        }
+      ],
+      "contentPack": {
+        "names": "地名：钟楼外庭、沉灰矿道、雾港旧城、裂谷祭坛；角色：灰烬旅人（主角）、守钟人巴尔、渡鸦婆婆、铁面执刑者；Boss：裂钟守（二阶段改名为'裂钟守 · 狂怒'）",
+        "resources": ["灵息 12,480（击杀掉落、死后留在原地）", "药壶 3 / 3（治疗次数）", "怒火槽（满了放大招）", "体力（闪避 / 重击消耗）", "锻铁碎片 ×7（升级武器）"],
+        "units": ["小怪：持盾卫兵、钩索刺客、腐沼爬行者、飞蛾群", "精英：铁面执刑者（会抓投，攻击前头顶出现'抓'字）", "Boss：裂钟守（两阶段，二阶段地面出现环形预警）"],
+        "items": ["主武器：长柄镰、双短刃、重锤", "副手：圆盾、短火铳", "法术：雷印、霜步、回响分身", "消耗品：烈酒、毒雾瓶、照明粉"],
+        "builds": ["祝福：雷霆斩（命中附带连锁闪电）Lv.2", "祝福：余烬步（冲刺留下火痕）", "祝福：铁皮（受击减伤 15%）", "遗物：裂纹指环、旧神之眼"],
+        "stats": ["攻击 128", "暴击 12%", "韧性 40", "负重 32.5 / 60", "完美闪避窗口 0.25 s"],
+        "objectives": ["击败钟楼守卫", "找到通往下层的升降梯", "试炼：3 分钟内清空竞技场"],
+        "dialogue": ["守门老兵：钟响之前，别回头。", "商贩：灵息换铁，童叟无欺。", "Boss 开场：又一个想敲钟的人。"],
+        "feedback": ["评价档：D / C / B / A / S / SS / SSS", "拟声字：锵！ 轰！ 咔嚓！", "大字提示：完美闪避 / 破防 / 处决"],
+        "mapFeatures": ["歇脚石（存档 + 回满药壶）", "捷径升降梯", "从另一侧才能打开的铁门", "竞技场封门", "Boss 雾门"]
+      },
+      "paramGaps": [
+        {
+          "need": "敌人的第二条：架势 / 韧性 / 破防条（中间向两边涨，满了可处决）",
+          "evidence": ["steam:814380", "steam:2515020"],
+          "proposal": "el.threat 加条数参数（同 el.vitals.count），或 el.threat.form 加 stagger 取值；画法可复用 cmp.gauge = bipolar。"
+        },
+        {
+          "need": "攻击类型 / 威胁等级的语义颜色与符号",
+          "evidence": ["steam:2322010", "steam:814380"],
+          "proposal": "col.coding 加 attackType（不可格挡 / 可弹反 / 普通）；el.threat.form 加 warnGlyph（头顶警示字或符号），用来满足颜色冗余检查（chk.redundancy）。"
+        },
+        {
+          "need": "风格评价的升档与衰减：评价字随连段升档、停手后衰减条走空降档",
+          "evidence": ["steam:601150", "steam:1817230", "iig:hi-fi-rush"],
+          "proposal": "el.feedback 加评价档位数与衰减条开关；mo.valueChange@el.feedback 加 tierUp 取值（升档砸入、降档碎裂）。"
+        },
+        {
+          "need": "增益 / 减益状态行（图标 + 层数 + 剩余时间），Roguelite 的祝福竖列",
+          "evidence": ["steam:1145360", "steam:1145350"],
+          "proposal": "新元素 el.status，可挂在血条下或独立成侧列；现在只能借 el.abilities 竖列或 el.overlay.form = statusIcons 近似，语义不对。"
+        },
+        {
+          "need": "UI 随音乐节拍脉动（节奏动作里 HUD 与世界一起跟着 BPM 跳动）",
+          "evidence": ["steam:1817230", "steam:531510", "steam:1122720", "steam:620980"],
+          "proposal": "mo.idle 加 beatPulse（按 BPM 缩放 / 闪动），与 layout.rhythm 配套。"
+        },
+        {
+          "need": "玩家侧的 HUD 分项开关与整体透明度（动作冒险普遍提供）",
+          "evidence": ["steam:292030", "steam:403640", "steam:1174180"],
+          "proposal": "a11y 组加 hudToggles（按元素开关）与 hudOpacity；探索台做成'玩家设置预览'，不进随机。"
+        }
+      ]
+    },
+    {
+      "genre": "platformer",
+      "subgenres": [
+        "氛围解谜平台 / 零 HUD（INSIDE、LIMBO、Neva）",
+        "情境显现的精致平台（Ori 三作、Rayman Origins、FEZ）",
+        "类银河城（Hollow Knight；Dead Cells 在库里归动作）",
+        "节奏 / 速度跑酷（BIT.TRIP RUNNER、Katana ZERO）",
+        "3D 平台射击（Ratchet & Clank: Rift Apart）",
+        "第一人称跑酷 / 解谜（Mirror's Edge、Portal 2）",
+        "卡通 Boss Rush（Cuphead）",
+        "分屏合作（It Takes Two）",
+        "手游横版（触屏十字键 + 跳跃键，取自手游批 gameui:7134）"
+      ],
+      "cards": 16,
+      "evidenceNote": "16 张里 7 张商店图无 UI（Ori、Ratchet、Rayman、It Takes Two、Cuphead 等）。零 HUD 作品看图即可确认（INSIDE、LIMBO、Neva、FEZ）；Hollow Knight、BIT.TRIP RUNNER、Katana ZERO 的截图里 HUD 清楚可见。",
+      "coreQuestions": [
+        "能站在哪、哪里会死：这是画面的事，不是 HUD 的事。平台顶边、尖刺、深坑靠美术区分，HUD 绝不能遮住它们。",
+        "我还能挨几下：图标式血量（面具、发光圆点、扑克牌 HP）要能一眼数出格数。",
+        "能力 / 资源就绪了吗：灵魂罐、冲刺充能、超级技能卡。",
+        "这一段收集了多少：拾取时才浮出的计数，平时不常驻。",
+        "我在哪、出口在哪（类银河城）：按键呼出全屏地图，加上进入新区域时的区名大字。",
+        "用时 / 分数 / 节奏（跑酷、速通）：贴着顶边的一条分数与计时。"
+      ],
+      "principles": [
+        "横版的四条屏幕边都是玩法区：危险可能从任何一边进来，所以角落元素要小、要贴边，必要时情境显现。",
+        "伤害按'格'算：平台跳跃一次掉一格，用图标列（cmp.gauge = icons）比横条好数；格数一般 3–9。",
+        "收集计数用'拾取时浮出'：FEZ、Rayman、Ori 都只在变化时显示，平时把画面完整还给美术。",
+        "地图是独立屏而不是小地图：类银河城把地图做成按键呼出的全屏（Hollow Knight），区名大字承担'我到了新地方'的仪式感。",
+        "画风就是 UI 的来源：像素作 UI 与世界同网格，手绘作 UI 用同一笔触（Cuphead 扑克牌、Hollow Knight 白线花饰）。"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "零 HUD / 电影模式：不画任何常驻 UI，生死与进度全靠画面",
+          "params": {
+            "rel.hudVisibility": "hidden",
+            "cnt.density": "0",
+            "lay.container": "none",
+            "rel.harmony": "sameMedium"
+          },
+          "share": "4 / 16（INSIDE、LIMBO、Neva、Mirror's Edge），Rayman Origins 近零",
+          "examples": ["steam:304430", "steam:48000", "steam:2420660", "steam:17410"]
+        },
+        {
+          "pattern": "情境显现：底中一排发光小图标 / 收集计数，只在变化时出现",
+          "params": {
+            "rel.hudVisibility": "contextual",
+            "cnt.density": "0",
+            "cmp.gauge@el.vitals": "icons",
+            "el.vitals.screenAnchor": "bc",
+            "el.vitals.visibility": "contextual",
+            "el.resources.form": "iconNumber",
+            "el.resources.visibility": "contextual",
+            "mo.enter": "fade"
+          },
+          "share": "5 / 16（Ori 三作、FEZ、Rayman Origins）",
+          "examples": ["steam:387290", "steam:261570", "steam:1057090", "steam:224760", "steam:207490"]
+        },
+        {
+          "pattern": "类银河城左上角簇：面具血量 + 灵魂罐 + 货币，地图按键呼出成全屏",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.density": "1",
+            "cmp.gauge@el.vitals": "icons",
+            "el.vitals.screenAnchor": "tl",
+            "el.resources.form": "gauge",
+            "cmp.gauge@el.resources": "orb",
+            "el.resources.screenAnchor": "tl",
+            "el.minimap.form": "plan",
+            "el.minimap.visibility": "onDemand",
+            "el.minimap.screenAnchor": "center",
+            "vis.motif": "floral",
+            "typ.display.family": "serif"
+          },
+          "share": "1 / 16（Hollow Knight）。Dead Cells 是变体：左下血条 + 右上常驻小地图",
+          "examples": ["steam:367520", "steam:588650"]
+        },
+        {
+          "pattern": "顶部贴边整条：分数 / 模式 / 计时排成一条",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "cnt.density": "1",
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tc",
+            "typ.numerals.family": "pixel",
+            "vis.pixelScale": "world",
+            "el.notify.form": ["band"]
+          },
+          "share": "2 / 16（BIT.TRIP RUNNER：像素分数 + 黄框模式牌（HYPER）+ 金块数；Katana ZERO：霓虹计时条随剩余时间缩短，el.timer.form = gauge）",
+          "examples": ["steam:63710", "steam:460950"]
+        },
+        {
+          "pattern": "3D 平台射击四角：左上分段血，右上武器 + 弹药 + 货币，武器轮按住呼出",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "2",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "tl",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "tr",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tr"
+          },
+          "share": "1 / 16（Ratchet & Clank: Rift Apart，商店图无 UI）",
+          "examples": ["steam:1895880"]
+        },
+        {
+          "pattern": "画风同媒介的角落牌：血量画成作品世界里的物件",
+          "params": {
+            "cnt.density": "0",
+            "cmp.gauge@el.vitals": "number",
+            "el.vitals.screenAnchor": "bl",
+            "rel.harmony": "sameMedium",
+            "typ.display.family": "graffiti",
+            "ast.iconSet": "asset"
+          },
+          "share": "1 / 16（Cuphead：左下扑克牌形 HP 牌 + 超级技能卡，1930 年代动画片头字）",
+          "examples": ["steam:268910"]
+        },
+        {
+          "pattern": "叙事内 / 空间内：状态写在准星或世界里",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "cnt.density": "0",
+            "el.crosshair.form": ["dot"],
+            "el.crosshair.screenAnchor": "center",
+            "rel.worldRender": "outline"
+          },
+          "share": "2 / 16（Portal 2：准星两侧蓝 / 橙表示两个传送门的状态，提示是测试室墙上的标识牌；Mirror's Edge：可攀爬路线被环境染红）",
+          "examples": ["steam:620", "steam:17410"]
+        },
+        {
+          "pattern": "分屏合作：每个视口角落一条小血条",
+          "params": {
+            "ctx.players": "split",
+            "lay.playfield": "split",
+            "cnt.density": "0",
+            "cmp.gauge@el.vitals": "thinBar",
+            "el.vitals.screenAnchor": "bl",
+            "el.vitals.scale": 0.6
+          },
+          "share": "1 / 16（It Takes Two，商店图无 UI）",
+          "examples": ["steam:1426210"]
+        },
+        {
+          "pattern": "手游横版触屏：左下十字键 + 右下跳跃大键，右上自动 / 暂停",
+          "params": {
+            "ctx.input": "touch",
+            "ctx.orientation": "landscape",
+            "ix.touchStick": "dpad",
+            "ix.touchCluster": "twoButtons",
+            "ix.thumbZone": "twoThumbs",
+            "el.gameSpeed.form": "pauseMenu",
+            "el.gameSpeed.screenAnchor": "tr"
+          },
+          "share": "库外补充：平台 16 张里没有触屏卡，取自手游批",
+          "examples": ["gameui:7134"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.vitals",
+          "forms": ["icons（Hollow Knight 一排面具、Ori 底中发光圆点）", "number（Cuphead 扑克牌 HP 3）", "segmented（Ratchet & Clank 分段条）", "thinBar（It Takes Two 视口角小条）"],
+          "anchors": ["tl ×2", "bl ×1", "bc ×1"],
+          "why": "一次受伤掉一格，所以'还剩几格'比百分比重要；放在角落而且很小，画面中心要留给跳跃路线。Ori 放底中，是因为它的关卡多向上延伸。"
+        },
+        {
+          "element": "el.resources",
+          "forms": ["gauge → orb（Hollow Knight 灵魂罐，攻击充能、用来回血和放法术）", "iconNumber（Hollow Knight 货币、Ratchet 螺栓）", "拾取时浮出的计数（FEZ 方块、Rayman 收集物）"],
+          "anchors": ["tl", "tr"],
+          "why": "收集是平台跳跃的第二玩法，但计数不需要常驻：拾取时跳出来确认就够了。"
+        },
+        {
+          "element": "el.timer",
+          "forms": ["number（BIT.TRIP RUNNER 像素分数）", "gauge（Katana ZERO 顶部计时条越来越短）"],
+          "anchors": ["tc ×2"],
+          "why": "跑酷和速通类的计时就是玩法压力本身，所以放在最显眼的顶中，并做成会变短的条来制造紧迫感。"
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["plan + 按键呼出全屏（Hollow Knight：暗底白线房间、顶部衬线区名、图钉 / 长椅图标）"],
+          "anchors": ["center（呼出时）"],
+          "why": "精确跳跃时不能分心看角落地图；呼出式全屏地图把'探索规划'和'操作'分成两个时刻。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["ammo（Ratchet 武器 + 弹药，右上）", "技能轮，情境显现（Ori and the Will of the Wisps 底中）"],
+          "anchors": ["tr", "bc"],
+          "why": "多数平台作的能力是'永久解锁的移动方式'，不需要冷却 UI；只有带战斗或射击的平台作才显示。"
+        },
+        {
+          "element": "el.crosshair",
+          "forms": ["dot（Portal 2：一个点，两侧蓝 / 橙半环表示两个传送门是否已放置）"],
+          "anchors": ["center"],
+          "why": "第一人称解谜平台：准星同时承担状态读数，HUD 就可以只剩这一个点。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["band（进入新区域时的区名大字 + 花饰分隔线，Hollow Knight）", "banner（BIT.TRIP RUNNER 关前像素大字挑战牌）"],
+          "anchors": ["tc", "center"],
+          "why": "零 / 少 HUD 的平台作，靠区名大字告诉玩家'到了一个新地方'，同时也是存档和迷路时的参照。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["touchButtons（手游：十字键 + 跳跃键）", "世界内提示（Portal 2 测试室墙上的标识牌）"],
+          "anchors": ["bl", "br"],
+          "why": "平台作的操作少而固定，教学可以交给世界；触屏版必须把跳跃键做成最大的按钮。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "零或极少常驻；血量用图标列，放左上或底中；收集计数拾取时浮出；跑酷类用顶部贴边整条放分数和计时。",
+          "examples": ["steam:367520", "steam:387290", "steam:63710", "steam:304430"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "全屏、按键呼出：暗底上白线画房间轮廓，顶部衬线区名，图钉 / 存档点用圆形图标；没走过的地方不画，背景是半透明的当前场景。",
+          "examples": ["steam:367520"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "护符 / 能力页不用面板底，只有黑底上的白色线描卷草纹边框：上方是已装备槽，下方是收藏格，右侧是说明。",
+          "examples": ["steam:367520"]
+        },
+        {
+          "screen": "screen.title",
+          "conventions": "标题屏就是作品的海报：1930 年代动画片头字 + 角色插画（Cuphead）。",
+          "examples": ["steam:268910"]
+        },
+        {
+          "screen": "screen.tutorial",
+          "conventions": "关前挑战牌：纯色底上的像素大字写本关目标（BIT.TRIP RUNNER）；Portal 2 把教程做成测试室墙上的标识牌。",
+          "examples": ["steam:63710", "steam:620"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "极简单色", "count": 10, "why": "零 HUD 与情境显现的作品都归在这里：剪影（LIMBO、INSIDE）、水彩（Neva）、光影（Ori）；Cuphead、Portal 2、It Takes Two 这类 HUD 极少的作品也在内。美术就是卖点，UI 主动隐身。" },
+        { "family": "像素位图", "count": 3, "why": "FEZ、BIT.TRIP RUNNER、Katana ZERO：UI 与世界同一像素网格；BIT.TRIP 用彩虹拖尾和模式框给分数加'装饰'，Katana ZERO 用霓虹细条。" },
+        { "family": "线描花饰", "count": 1, "why": "Hollow Knight：黑底 + 白线卷草纹，昆虫王国的新艺术风延伸到菜单、地图和区名。" },
+        { "family": "科幻 HUD", "count": 1, "why": "Ratchet & Clank：科幻射击平台，分段血条与武器轮。" },
+        { "family": "糖果卡通（Q 版）", "count": 1, "why": "Rayman Origins：手绘卡通，几乎无 HUD，收集物拾取时浮出。" }
+      ],
+      "exemplars": [
+        { "card": "steam:367520", "why": "少而有性格：左上灵魂罐 + 一排面具 + 一个货币数；地图、护符页、区名都用同一套白线花饰和衬线字。" },
+        { "card": "steam:387290", "why": "情境显现的标杆：底中一排发光小圆点，只在生命 / 能量变化时出现。" },
+        { "card": "steam:304430", "why": "零 HUD 的极端：所有信息由光影和角色动作承担（LIMBO 同理）。" },
+        { "card": "steam:63710", "why": "贴边整条：顶部一条像素分数，模式框（HYPER / EXTRA）像状态升级，进度和收集都在这一条里。" },
+        { "card": "steam:460950", "why": "计时条就是关卡压力：顶中霓虹细条随剩余时间缩短，左上电池格是慢动作能量。" },
+        { "card": "steam:268910", "why": "HUD 与画风同媒介：扑克牌血量 + 超级技能卡，像片子里的道具。" },
+        { "card": "steam:620", "why": "准星本身就是状态读数：蓝 / 橙两半表示两个传送门，HUD 只剩这一个点。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "情境显现 / 零 HUD 让玩家不知道去哪、能力是否就绪（引导不清）。",
+          "examples": ["steam:1057090", "steam:261570", "steam:387290", "steam:367520"],
+          "reviewEvidence": "R3'提示 / 引导不清'：Ori and the Will of the Wisps 3 条、Ori and the Blind Forest 2 条、Hollow Knight 2 条；平台类 3 款达标。"
+        },
+        {
+          "desc": "极简画面里的细字（字幕、菜单）在电视距离下看不清。",
+          "examples": ["steam:17410", "steam:2420660"],
+          "reviewEvidence": "字太小：Mirror's Edge 2 条、Neva 2 条。"
+        },
+        {
+          "desc": "3D 平台把射击 HUD 搬进来后变挤：武器轮、弹药、货币、地图同时出现。",
+          "examples": ["steam:1895880"],
+          "reviewEvidence": "Ratchet & Clank: Rift Apart：HUD 太乱 2 条、地图难用 2 条。"
+        },
+        {
+          "desc": "按键提示与手柄不一致。",
+          "examples": ["steam:387290"],
+          "reviewEvidence": "Ori and the Blind Forest DE：手柄 / 键位 2 条。"
+        },
+        {
+          "desc": "像素 UI 非整数缩放或亚像素滚动时闪烁；UI 与世界像素网格不一致时显得'贴上去'。",
+          "examples": ["steam:224760", "steam:63710", "steam:460950"],
+          "reviewEvidence": "评测无计数；依据 06 文档 A3 陷阱（像素对齐）与派生规则 D-pixel（UI 与世界同网格）。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "零 HUD vs 情境显现",
+          "a": {
+            "rel.hudVisibility": "hidden",
+            "cnt.density": "0",
+            "lay.container": "none"
+          },
+          "b": {
+            "rel.hudVisibility": "contextual",
+            "cnt.density": "0",
+            "cmp.gauge@el.vitals": "icons",
+            "el.vitals.screenAnchor": "bc",
+            "el.vitals.visibility": "contextual",
+            "el.resources.visibility": "contextual"
+          },
+          "lookAt": "受伤、拾取那一刻 HUD 从哪里浮出、停留多久；平时画面是否完整。"
+        },
+        {
+          "title": "血量：图标格 vs 横条",
+          "a": {
+            "cmp.gauge@el.vitals": "icons",
+            "el.vitals.screenAnchor": "tl",
+            "el.vitals.valueLabel": "none",
+            "vis.iconStyle": "silhouette"
+          },
+          "b": {
+            "cmp.gauge@el.vitals": "bar",
+            "el.vitals.screenAnchor": "tl",
+            "el.vitals.valueLabel": "currentMax"
+          },
+          "lookAt": "能不能一眼数出'还能挨几下'；图标格在 3 格和 9 格时的读法差别。"
+        },
+        {
+          "title": "角落簇 vs 顶部贴边整条",
+          "a": {
+            "lay.hudOrg": "scattered",
+            "el.vitals.screenAnchor": "tl",
+            "el.resources.screenAnchor": "tl",
+            "el.timer.screenAnchor": "tr"
+          },
+          "b": {
+            "lay.hudOrg": "edgeBar",
+            "el.vitals.screenAnchor": "tc",
+            "el.resources.screenAnchor": "tc",
+            "el.timer.screenAnchor": "tc",
+            "typ.numerals.family": "pixel"
+          },
+          "lookAt": "顶部一条会不会挡住从上方落下的危险；贴边整条读起来是否更像'比赛记分'。"
+        },
+        {
+          "title": "全屏地图：纸面手绘 vs 像素房间格",
+          "a": {
+            "cnt.screen": "screen.map",
+            "vis.mapStyle": "parchment",
+            "vis.mapUnexplored": "blank",
+            "ast.coreMat": "parchment"
+          },
+          "b": {
+            "cnt.screen": "screen.map",
+            "vis.mapStyle": "pixelRooms",
+            "vis.mapUnexplored": "dark"
+          },
+          "lookAt": "未探索区怎么表达；图钉 / 存档点图标在两种底上是否都认得出。"
+        },
+        {
+          "title": "屏幕叠加血量 vs 画在角色身上（叙事内）",
+          "a": {
+            "rel.diegesis": "screen",
+            "cmp.gauge@el.vitals": "icons",
+            "el.vitals.screenAnchor": "tl"
+          },
+          "b": {
+            "rel.diegesis": "diegetic",
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "player",
+            "cnt.density": "0"
+          },
+          "lookAt": "去掉角落 UI 后还能不能读出血量；角色动画和颜色要承担多少信息（对照探索类的 Journey、Hellblade）。"
+        }
+      ],
+      "contentPack": {
+        "names": "区域：蘑菇深窟、雾桥、齿轮钟塔、沉水温室；角色：小灯（主角）、地图匠阿蔓、迷路的旅人、齿轮修女；Boss：锈钟巨像",
+        "resources": ["光种 ×128（散落的收集物，拾取时浮出计数）", "碎晶 1 / 3（本关隐藏收集）", "灵能罐（攻击敌人充能，满了可以回血）", "冲刺充能 ●●○", "货币：铜扣 ×420"],
+        "units": ["跳跳菇", "刺背甲虫", "吊挂蝙蝠", "巡逻灯塔守卫", "Boss：锈钟巨像（会把平台震塌）"],
+        "items": ["能力：二段跳、空中冲刺、贴墙滑、钩爪、下劈弹跳", "徽记：磁吸（自动吸收集物）、厚壳（血量 +1）、轻足（落地无声）"],
+        "stats": ["血量 5 格", "死亡 23 次", "用时 04:12.38", "本区收集 86%"],
+        "objectives": ["找到通往钟塔的钥匙", "计时挑战：60 秒内抵达终点", "收集本关全部 3 枚碎晶"],
+        "dialogue": ["地图匠：走过的路，我才画得出来。", "迷路的旅人：上面有风，你能跳得比想象中更远。"],
+        "feedback": ["区名大字：雾桥 · The Fogbridge", "获得能力卡：空中冲刺——在空中按冲刺键"],
+        "mapFeatures": ["歇脚灯（存档点）", "传送站", "可打破的假墙", "单向门", "地图匠小屋", "危险：尖刺、岩浆、坍塌平台"]
+      },
+      "paramGaps": [
+        {
+          "need": "逐元素显隐的触发条件：情境显现到底'在什么时候'出现（受伤 / 数值变化 / 拾取 / 战斗中 / 瞄准 / 静止），以及停留多久",
+          "evidence": ["steam:387290", "steam:224760", "steam:207490", "steam:1659420", "steam:1593500"],
+          "proposal": "elx.visibility = contextual 时补 elx.showOn（多选）和停留时长；全局的 rel.hudVisibility = fadeIdle 只能表达'静止时'这一种。"
+        },
+        {
+          "need": "关卡线性进度条（横跑 / 音乐关卡：一条线 + 检查点 + 自己的位置）",
+          "evidence": ["steam:63710", "steam:531510"],
+          "proposal": "与竞速的'赛道进度条带'合并为 el.minimap.form = progressStrip（见 racing 的 paramGaps）。"
+        }
+      ]
+    },
+    {
+      "genre": "shooter",
+      "subgenres": [
+        "经典 / 叙事 FPS（Half-Life 系列、BioShock 两作、DEATHLOOP、Far Cry 3）",
+        "军事 FPS（Call of Duty 系列、Battlefield 1）",
+        "英雄 / 职业竞技射击（Overwatch、Team Fortress 2）",
+        "刷宝射击（Destiny 2、Borderlands 2）",
+        "第三人称动作射击（Uncharted、Resident Evil 5）",
+        "VR 射击（Half-Life: Alyx）",
+        "竖屏二次元射击手游（NIKKE、发条总动员；库里主要是剧情屏）",
+        "俯视双摇杆 / 弹幕射击：库里没有对应卡，只有 layout.shmup 预设"
+      ],
+      "cards": 19,
+      "evidenceNote": "19 张里 10 张商店图无 UI（3A 射击的商店图几乎都是宣传渲染）。能看清 HUD 的：Half-Life 2、Half-Life、Call of Duty 4、Overwatch（IIG 原图），以及 Destiny 2 的地图屏。俯视双摇杆 / 弹幕射击的结论只来自 layout.shmup 预设与 06 文档，置信度低。",
+      "coreQuestions": [
+        "我在瞄哪、打中没有：准星（亮芯 + 暗边，任何背景上都可见）+ 命中标记 / 击杀确认。",
+        "弹匣还剩几发、要不要换弹：弹匣和备弹两个数，低弹量时变色。",
+        "我还剩多少血 / 护甲：大号数字或分段块，放在左下余光里。",
+        "谁在打我、从哪边：伤害方向指示 + 受击红边。",
+        "目标在哪、进度如何：世界内目标标记（出屏时贴边箭头）、占点百分比、比分。",
+        "谁是敌、谁是友：阵营色（建议橙蓝而非红绿）+ 名牌 + 描边。",
+        "技能 / 大招 / 手雷就绪了吗：冷却数字、充能环。",
+        "刚刚发生了什么：右上击杀信息流，以及目标被占、队友阵亡的广播。"
+      ],
+      "principles": [
+        "准星是唯一允许常驻在画面中心的东西，其余元素一律退到四角；准星的反馈（命中标记、扩散）比数值更重要。",
+        "两下角分工：左下'我'（血 / 护甲 / 头像），右下'我的枪'（弹药 / 技能）。这个约定从 Half-Life 延续到 Overwatch，玩家已经形成肌肉记忆。",
+        "竞技越强，信息越多但越统一：Overwatch 用一种倾斜大写字体和一套阵营色，管住了十几个元素。",
+        "叙事射击可以把 HUD 交给年代美术（BioShock 装饰艺术、DEATHLOOP 60 年代拼贴），代价是可读性风险要靠检查补回来。",
+        "VR 和载具里只能叙事内：屏幕叠加在 VR 里会'贴脸'，所以数值必须长在手套、枪或座舱上。"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "两下角式：左下血 / 护甲大数字，右下弹药，中心准星",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "rel.hudVisibility": "always",
+            "cnt.density": "1",
+            "cmp.gauge@el.vitals": "number",
+            "el.vitals.screenAnchor": "bl",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "el.crosshair.form": ["cross"],
+            "el.crosshair.screenAnchor": "center",
+            "typ.numerals.family": "display",
+            "vis.opacity": 0.4
+          },
+          "share": "约 7 / 19（Half-Life、Half-Life 2、Team Fortress 2、BioShock 两作、CoD MW2、CoD4；Far Cry 3 按已知 HUD 也是这一型）",
+          "examples": ["steam:220", "steam:70", "steam:440", "steam:7670", "steam:10180"]
+        },
+        {
+          "pattern": "军事雷达式：左上方形雷达 + 世界内目标标记 + 队友名牌 + 右下弹药 / 手雷",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "1",
+            "el.minimap.form": "radar",
+            "el.minimap.screenAnchor": "tl",
+            "el.objective.form": ["marker", "edgeArrow"],
+            "el.objective.diegesis": "spatial",
+            "el.party.form": "tag",
+            "el.party.attachTo": "target",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br",
+            "el.threat.form": ["edgeDir"],
+            "rel.metaFx": ["hurtVignette"],
+            "col.teams": "greenRed",
+            "typ.body.family": "mono"
+          },
+          "share": "3 / 19（Call of Duty 4、MW2、Black Ops 的军事战术风；CoD4 截图里雷达红点为敌、绿点为友，目标上方有红色三角标）",
+          "examples": ["steam:7940", "steam:10180", "steam:42700"]
+        },
+        {
+          "pattern": "英雄竞技式：左下头像 + 分段血，底中大招环，右下技能，顶中目标，右上击杀流",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "ctx.players": "team",
+            "cnt.density": "2",
+            "el.profile.form": "avatarLevel",
+            "el.profile.screenAnchor": "bl",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.screenAnchor": "bl",
+            "el.vitals.valueLabel": "currentMax",
+            "el.abilities.form": "ultimate",
+            "el.abilities.screenAnchor": "bc",
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "tc",
+            "el.notify.form": ["feed"],
+            "el.notify.screenAnchor": "tr",
+            "el.feedback.form": ["hitMarker"],
+            "col.teams": "blueRed",
+            "vis.skew": -8,
+            "typ.body.style": "italic"
+          },
+          "share": "2 / 19（Overwatch；Team Fortress 2 是更早的简版：左下十字 + 血量数字，红 / 蓝队伍色）",
+          "examples": ["iig:overwatch", "steam:440"]
+        },
+        {
+          "pattern": "时代风格化 HUD：UI 直接用作品的年代美术",
+          "params": {
+            "cnt.density": "1",
+            "rel.harmony": "unified",
+            "typ.display.family": "artNouveau",
+            "vis.motif": "geometric",
+            "vis.silhouette": "circle",
+            "vis.ornament": "2"
+          },
+          "share": "4 / 19（BioShock、BioShock Infinite 用装饰艺术圆框；DEATHLOOP 用 60 年代拼贴海报；Borderlands 2 用粗描边漫画）",
+          "examples": ["steam:7670", "steam:8870", "steam:1252330", "steam:49520"]
+        },
+        {
+          "pattern": "叙事内：数值长在手套、枪或座舱上",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "cnt.density": "0",
+            "el.vitals.diegesis": "diegetic",
+            "el.vitals.attachTo": "held",
+            "el.abilities.diegesis": "diegetic",
+            "el.abilities.attachTo": "held"
+          },
+          "share": "2 / 19（Half-Life: Alyx 把血量和弹药放在手套与枪上；Call of Duty: Black Ops 直升机座舱仪表就是界面）",
+          "examples": ["steam:546560", "steam:42700"]
+        },
+        {
+          "pattern": "情境显现 TPS：开枪才出现弹药，准星只在瞄准时出现",
+          "params": {
+            "rel.hudVisibility": "contextual",
+            "cnt.density": "0",
+            "el.abilities.form": "ammo",
+            "el.abilities.visibility": "contextual",
+            "el.abilities.screenAnchor": "br",
+            "el.crosshair.form": ["dot"],
+            "el.crosshair.visibility": "contextual"
+          },
+          "share": "2 / 19（Uncharted；Resident Evil 5 还加了宽银幕黑边），都是商店图无 UI",
+          "examples": ["steam:1659420", "steam:21690"]
+        },
+        {
+          "pattern": "竖屏射击手游：库里只有开场与剧情屏，战斗 HUD 缺样本",
+          "params": {
+            "ctx.orientation": "portrait",
+            "ctx.input": "touch",
+            "ix.thumbZone": "oneHand",
+            "cmp.dialogBox": "bar"
+          },
+          "share": "2 / 19（NIKKE、发条总动员）",
+          "examples": ["gameui:5879", "gameui:13717"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.crosshair",
+          "forms": ["cross（静态十字）", "dot（Portal 2 / TPS 的点）", "dynamic（移动、连射时扩散，layout.shooter 的默认值）"],
+          "anchors": ["center"],
+          "why": "射击里唯一常驻在画面中心的元素。要用双色（亮芯 + 暗边），才能在任何背景上可见（06 文档 A4）；扩散直接告诉玩家'现在打不准'。"
+        },
+        {
+          "element": "el.vitals",
+          "forms": ["number ×3（Half-Life 系列橙色大数字 + 小号大写标签、TF2 十字 + 数字）", "segmented（Overwatch 每 25 点一格，200 / 200 读数在上）"],
+          "anchors": ["bl ×4"],
+          "why": "射击的伤害快而碎，数字比条更精确，竞技玩家要算'还能不能吃一枪'；分段块兼顾两者：既能扫一眼读，也能精确计算。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["ammo（右下弹匣 / 备弹，Overwatch 的 8/25 一类）", "ultimate（Overwatch 底中百分比环）", "技能格带冷却数字（Overwatch 右下斜框）"],
+          "anchors": ["br", "bc"],
+          "why": "弹药与技能放在开枪手（右手）一侧，和左下的'我'分开；大招放底中，因为它是全队关注的节奏点。"
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["radar（CoD4 左上方形雷达，红点敌 / 绿点友）", "compassBar（开放世界射击常用）"],
+          "anchors": ["tl"],
+          "why": "军事射击要看包抄方向，所以用雷达；放左上，是为了不和左下的血量挤在一起。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["marker（CoD4 目标上方的红色三角标）", "text（Overwatch 顶中两队百分比 + 点位字母，下方横幅'CONTESTING POINT!'）", "edgeArrow（目标出屏时贴边）"],
+          "anchors": ["tc", "挂在目标上"],
+          "why": "目标要同时有'在哪'（世界内标记）和'进度如何'（顶中百分比）两种读法。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["feed（Overwatch 右上击杀流：队伍色名字 + 头像 + 武器图标）", "banner（Destiny 2 任务开始时左下红色横幅 + 地名小字）", "准星下方小字（Overwatch 击杀名 + 加分）"],
+          "anchors": ["tr", "bl", "center 偏下"],
+          "why": "多人射击里事件很多，信息流在右上滚动、不打断瞄准；与自己直接相关的击杀确认放在准星下方，眼睛不用离开中心。"
+        },
+        {
+          "element": "el.feedback",
+          "forms": ["hitMarker（命中标记）", "floatNumbers（Borderlands 2 彩色伤害数字）"],
+          "anchors": ["center", "挂在目标上"],
+          "why": "命中标记确认'打到了'；刷宝射击把伤害数字当奖励来展示，颜色编码伤害类型。"
+        },
+        {
+          "element": "el.threat",
+          "forms": ["edgeDir（受击方向）", "healthBar（Borderlands 敌人头顶条）"],
+          "anchors": ["屏幕边缘", "挂在目标上"],
+          "why": "第一人称看不到身后，受击方向是'活下来'的关键信息。"
+        },
+        {
+          "element": "el.profile",
+          "forms": ["avatarLevel（Overwatch 六边形英雄头像 + 等级）"],
+          "anchors": ["bl"],
+          "why": "英雄射击要提醒'我现在是谁'（换英雄后技能完全不同），头像放在血量旁边。"
+        },
+        {
+          "element": "el.party",
+          "forms": ["tag（CoD4 队友头顶名牌、Overwatch 敌人头顶名字）"],
+          "anchors": ["挂在角色上"],
+          "why": "敌我识别不能只靠模型，名牌加阵营色是第二道保险。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "左下'我'、右下'枪'、中心准星、顶中目标 / 比分、右上信息流、左上雷达（军事）；写实作品多用白字半透明，竞技作品用统一的倾斜大写字体和阵营色。",
+          "examples": ["steam:220", "iig:overwatch", "steam:7940"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "刷宝射击的导航是星图：太空背景上的行星节点（圆形图标 + 名称），底部按键图例，不画地形。",
+          "examples": ["steam:1085660"]
+        },
+        {
+          "screen": "screen.rank",
+          "conventions": "生涯数据：浅色玻璃卡数字表（每格一个大数字 + 小说明，排成网格），顶部页签切换模式。",
+          "examples": ["iig:overwatch"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "竖屏射击手游以剧情为主：1930 年代动画风漫画格 + 下方羊皮纸文本（发条总动员）；二次元白卡细线（NIKKE）。",
+          "examples": ["gameui:13717", "gameui:5879"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "极简单色", "count": 5, "why": "多是商店图无 UI 的写实射击（Battlefield 1、Far Cry 3、RE5、Uncharted、Alyx）：写实画面里 HUD 走白色细字 + 半透明，几乎不加装饰（置信度低）。" },
+        { "family": "军事战术", "count": 3, "why": "Call of Duty 三作：模板字、方形雷达、绿 / 红敌友点。" },
+        { "family": "科幻 HUD", "count": 2, "why": "Half-Life 2 用半透明圆角黑底 + 橙色数字（防护服界面）；Destiny 2 用星图与窄体字。" },
+        { "family": "装饰艺术", "count": 2, "why": "BioShock 两作：海底城与天空城的装饰艺术 / 新艺术就是叙事主题，HUD 圆框跟着走。" },
+        { "family": "扁平 / Material", "count": 2, "why": "TF2、Overwatch：竞技射击要求清晰，纯色、倾斜大写、阵营色。" },
+        { "family": "漫画对话框", "count": 2, "why": "Borderlands 2 用粗描边卡通渲染与彩色飘字；发条总动员用 1930 年代动画风。" },
+        { "family": "Persona 拼贴", "count": 1, "why": "DEATHLOOP：60 年代海报风的彩色斜切块 + 拼贴大字。" },
+        { "family": "像素位图", "count": 1, "why": "Half-Life（1998）：低清像素字与图标的时代产物。" },
+        { "family": "二次元白卡细线", "count": 1, "why": "NIKKE：竖屏二次元手游的白卡细线。" }
+      ],
+      "exemplars": [
+        { "card": "steam:220", "why": "两下角式的原型：左下 HEALTH / SUIT、右下 AMMO，半透明圆角黑底 + 橙色大数字 + 小号大写标签。" },
+        { "card": "iig:overwatch", "why": "信息最全又不乱：倾斜大写字统一全部元素；头像 + 分段血、底中大招环、右下技能斜框带冷却数字、顶中占点百分比、右上击杀流。" },
+        { "card": "steam:7940", "why": "军事型：左上方形雷达、目标上方三角标、队友头顶名牌、右下弹药与手雷。" },
+        { "card": "steam:7670", "why": "HUD 借作品的年代风格（装饰艺术圆框），世界里的海报招牌是风格来源。" },
+        { "card": "steam:546560", "why": "VR 只能叙事内：血量和弹药都在手套和枪上。" },
+        { "card": "steam:1252330", "why": "拼贴海报式 HUD 的风格上限，但也是本品类 UI 卡顿抱怨的头部（见陷阱）。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "目标与下一步不清：大型刷宝与叙事射击的任务指引模糊。",
+          "examples": ["steam:1085660", "steam:70", "steam:546560"],
+          "reviewEvidence": "R3'提示 / 引导不清'：Destiny 2 4 条、Half-Life（1998）2 条、Half-Life: Alyx 2 条；射击类 3 款达标。"
+        },
+        {
+          "desc": "UI 动画拖沓、菜单响应慢。",
+          "examples": ["steam:1252330", "steam:546560"],
+          "reviewEvidence": "UI 卡顿 / 响应慢：DEATHLOOP 3 条、Half-Life: Alyx 2 条（Battlefield 1 只有 1 条，未达标）。"
+        },
+        {
+          "desc": "UI 不随分辨率缩放，宽屏 / 高分屏下 HUD 过小或错位。",
+          "examples": ["steam:8870"],
+          "reviewEvidence": "UI 缩放 / 分辨率：BioShock Infinite 4 条，是全库这一类的头部。"
+        },
+        {
+          "desc": "TPS 生存射击的格子背包与实时管理难用，手柄操作别扭。",
+          "examples": ["steam:21690"],
+          "reviewEvidence": "Resident Evil 5：背包 / 物品管理 4 条、手柄 / 键位 2 条。"
+        },
+        {
+          "desc": "菜单繁琐。",
+          "examples": ["steam:220240"],
+          "reviewEvidence": "菜单 / 界面难用：Far Cry 3 2 条。"
+        },
+        {
+          "desc": "敌友只靠红 / 绿区分，红绿色弱玩家分不出。",
+          "examples": ["steam:7940"],
+          "reviewEvidence": "评测无计数；依据 06 文档 A4 与 0.5 第 8 条：推荐橙 / 蓝并拉开明度，提供色盲预设。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "血量：大号数字 vs 分段块 + 头像",
+          "a": {
+            "cmp.gauge@el.vitals": "number",
+            "el.vitals.screenAnchor": "bl",
+            "typ.numerals.family": "display"
+          },
+          "b": {
+            "cmp.gauge@el.vitals": "segmented",
+            "el.vitals.valueLabel": "currentMax",
+            "el.profile.form": "avatarLevel",
+            "el.profile.screenAnchor": "bl",
+            "vis.skew": -8,
+            "vis.corner": "chamfer"
+          },
+          "lookAt": "余光里哪种更快读出'危险了'；分段每格代表多少血。"
+        },
+        {
+          "title": "弹药：屏幕叠加 vs 叙事内（画在枪上）",
+          "a": {
+            "rel.diegesis": "screen",
+            "el.abilities.form": "ammo",
+            "el.abilities.screenAnchor": "br"
+          },
+          "b": {
+            "rel.diegesis": "diegetic",
+            "el.abilities.form": "ammo",
+            "el.abilities.diegesis": "diegetic",
+            "el.abilities.attachTo": "held",
+            "cnt.density": "0"
+          },
+          "lookAt": "换弹时机还能不能用余光判断；枪模型转出画面（冲刺、近战）时信息去了哪里。"
+        },
+        {
+          "title": "同一两下角版式换年代：军事战术 vs 装饰艺术",
+          "a": {
+            "typ.body.family": "mono",
+            "typ.display.family": "stencil",
+            "col.lightness": "dark",
+            "vis.corner": "sharp",
+            "vis.motif": "brackets",
+            "vis.ornament": "0"
+          },
+          "b": {
+            "typ.display.family": "artNouveau",
+            "vis.motif": "geometric",
+            "vis.ornament": "2",
+            "vis.silhouette": "circle",
+            "ast.frame": "cornersOnly",
+            "ast.frameMat": "bronze"
+          },
+          "lookAt": "风格变了以后数字是否仍一眼可读；装饰有没有挤占准星周围。"
+        },
+        {
+          "title": "准星：静态十字 vs 动态扩散 + 命中标记",
+          "a": {
+            "el.crosshair.form": ["cross"],
+            "mo.juice": 0.2
+          },
+          "b": {
+            "el.crosshair.form": ["dynamic"],
+            "el.feedback.form": ["hitMarker"],
+            "el.feedback.screenAnchor": "center",
+            "mo.juice": 0.7
+          },
+          "lookAt": "连射时扩散是否在'说话'；命中标记在亮天空和暗走廊上是否都看得见。"
+        },
+        {
+          "title": "阵营色：红绿 vs 橙蓝",
+          "a": {
+            "col.teams": "greenRed",
+            "col.coding": ["team"]
+          },
+          "b": {
+            "col.teams": "orangeBlue",
+            "col.coding": ["team"]
+          },
+          "lookAt": "打开色盲模拟（chk.cvd = deutan）后，雷达点和名牌的敌友是否还分得开。"
+        },
+        {
+          "title": "常驻 vs 情境显现（第三人称）",
+          "a": {
+            "rel.hudVisibility": "always"
+          },
+          "b": {
+            "rel.hudVisibility": "contextual",
+            "el.abilities.visibility": "contextual",
+            "el.crosshair.visibility": "contextual"
+          },
+          "lookAt": "非战斗时画面的电影感；交火瞬间 HUD 浮出的速度够不够快。"
+        }
+      ],
+      "contentPack": {
+        "names": "地图：盐湖炼厂、旧港货场、北坡天线站、沉船码头；队员代号：灰隼、铁砧、微光、老钟；敌方：灰幕公司安保部队",
+        "resources": ["弹药 24 / 120（弹匣 / 备弹）", "手雷 ×2", "护甲 50", "生命 100", "大招充能 36%", "补给点数 1,250"],
+        "units": ["突击兵", "狙击手（镜片反光预警）", "盾兵", "无人机蜂群", "重装机甲（Boss，弱点高亮）"],
+        "items": ["步枪「短号 R4」", "泵动霰弹「门环」", "射钉枪", "粘性雷", "便携护盾", "医疗针"],
+        "stats": ["击杀 / 死亡 1.42", "命中率 31.6%", "爆头 288", "占点时间 09:41", "场均伤害 6,920"],
+        "objectives": ["占领 B 点", "护送货车到下一个检查点", "摧毁防空炮（剩余 2）", "在增援到达前撤离"],
+        "dialogue": ["无线电：灰隼，二楼窗口有狙击。", "指挥：目标已标记，四十秒内到位。", "队友：换弹，掩护我！"],
+        "feedback": ["击杀流：灰隼 [步枪] 安保突击兵", "广播：B 点正在被争夺", "连杀：三连击破", "命中确认：爆头 +50"],
+        "mapFeatures": ["占领点 A / B / C", "补给箱", "重生点", "高处狙击位", "可破坏墙", "撤离区（绿色烟雾）"]
+      },
+      "paramGaps": [
+        {
+          "need": "玩家自定义准星（颜色 / 形状 / 大小 / 描边 / 透明度）",
+          "evidence": ["iig:overwatch", "steam:440"],
+          "proposal": "a11y 组加 crosshairCustom（颜色、形状、大小、描边），在探索台做成'玩家设置预览'。06 文档 A4 引 GAG：团队色和准星色应可自定义。"
+        },
+        {
+          "need": "弹药读数格式：弹匣 / 备弹、子弹图标列，以及低弹量阈值警示",
+          "evidence": ["steam:220", "steam:7940", "iig:overwatch"],
+          "proposal": "elx.valueLabel 加 magReserve 取值；el.abilities 加低量阈值，与 st.alert 联动（低于阈值变色 / 闪烁）。"
+        }
+      ]
+    },
+    {
+      "genre": "racing",
+      "subgenres": [
+        "开放世界 / 街头竞速（Forza Horizon 5、Need For Speed Heat、NIGHT-RUNNERS PROLOGUE）",
+        "卡丁车 / 吉祥物竞速（Garfield Kart 两作、Sonic & SEGA All-Stars Racing）",
+        "特技 / 碰撞竞速（Crashday Redline Edition）",
+        "反重力竞速（Redout）",
+        "俯视 / 微缩赛道（Circuit Superstars、Absolute Drift、art of rally）",
+        "物理 / 独立小品（Zeepkist、Barro 2020、Slackers - Carts of Glory）",
+        "复古霓虹俯视（Razortron 2000）",
+        "派对淘汰赛跑（Stumble Guys、蛋仔派对，库里归在竞速）",
+        "音游（MUSYNX 在库里误归竞速，只用它的判定字与选曲页作旁证）"
+      ],
+      "cards": 18,
+      "evidenceNote": "竞速 18 张多为 E 档，评测量少（一半以上不足 100 条），R3 证据很薄；但商店图大多能看到 HUD（只有 3 张无 UI）。看图核对过：NFS Heat、Crashday、Garfield Kart 两作、Stumble Guys、Slackers、Razortron 2000、Circuit Superstars、Absolute Drift、NIGHT-RUNNERS。",
+      "coreQuestions": [
+        "我第几名 / 一共几人：全品类最重要的一个数，卡丁车把它做成全屏最大的字。",
+        "第几圈 / 还剩几圈，或者剩余时间 / 下一个检查点。",
+        "下一个弯往哪、离多远：小地图上的路线线、赛道进度条、路面上的行车线。",
+        "开多快、挂几档：模拟向才重要；街机向可以只用速度线和镜头来表达。",
+        "和前车 / 最佳成绩差多少：分段计时与红绿差值（要配 +/− 号，不能只靠颜色）。",
+        "道具 / 氮气 / 特技槽就绪了吗。",
+        "车还撑得住吗：车损、体力（Slackers 的体力瓶、Crashday 的车损剪影）。",
+        "刚才那一下值多少分：特技 / 漂移的倍率与连段分。"
+      ],
+      "principles": [
+        "追尾镜头下，前方赛道在画面中下部，所以 HUD 往四角和顶边推，底部中间尽量空着（Crashday 把剩余时间放在底中，是信息过载的代价）。",
+        "名次是第一信息：越街机越放大（Garfield Kart 左上巨型橙色数字），越写实越收敛（NIGHT-RUNNERS 左上小号斜体）。",
+        "速度表是风格位：同样是右下角，NFS Heat 用转速弧 + 档位 + 氮气瓶，Razortron 用斜框霓虹数字，Redout 干脆删掉、改用速度线和 FOV。",
+        "竞速的'地图'有三种问题：要去哪（GPS 路线线）、我和对手的相对位置（竖条进度）、赛道形状（俯视小图标）。先想清楚回答哪一个。",
+        "速度感特效要设上限：速度线、运动模糊、FOV 拉伸叠加会淹没赛道边界，还会引起晕动（06 文档 A14）。"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "三件套四角：右下表盘，左上名次 / 计时，左下圆形地图，右上目标",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "1",
+            "cnt.elements": ["el.speed", "el.rank", "el.timer", "el.minimap", "el.objective"],
+            "cmp.gauge@el.speed": "dial",
+            "el.speed.screenAnchor": "br",
+            "el.speed.valueLabel": "current",
+            "el.speed.valueLabelPos": "center",
+            "el.rank.form": ["number"],
+            "el.rank.screenAnchor": "tl",
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tl",
+            "el.minimap.form": "radar",
+            "vis.silhouette@el.minimap": "circle",
+            "el.minimap.screenAnchor": "bl",
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "tr"
+          },
+          "share": "约 6 / 18（NIGHT-RUNNERS、Forza Horizon 5、NFS Heat、Crashday、Slackers 的右下表盘；Garfield Kart 部分元素也同型）",
+          "examples": ["steam:2707900", "steam:1551360", "iig:need-for-speed-heat", "steam:508980", "steam:2354000"]
+        },
+        {
+          "pattern": "卡丁车大名次：左上巨型名次，左侧竖条赛道进度带对手头像，顶中道具格，右上圈数",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "cnt.density": "2",
+            "el.rank.form": ["number"],
+            "el.rank.screenAnchor": "tl",
+            "el.rank.scale": 2.2,
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tr",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "ml",
+            "el.minimap.arrangement": "column",
+            "el.abilities.form": "slots",
+            "el.abilities.screenAnchor": "tc",
+            "rel.metaFx": ["speedLines"],
+            "vis.stroke": "solid",
+            "vis.corner": "round",
+            "typ.numerals.family": "display"
+          },
+          "share": "3 / 18（Garfield Kart: Furious Racing、Garfield Kart、Sonic & SEGA All-Stars Racing）。竖条进度现在只能用 plan + column 近似，见 paramGaps",
+          "examples": ["steam:1085510", "steam:362930", "steam:34190"]
+        },
+        {
+          "pattern": "零 / 近零 HUD：角落一行小字或干脆不画，风景是主角",
+          "params": {
+            "cnt.density": "0",
+            "el.timer.form": "smallText",
+            "el.timer.screenAnchor": "tl",
+            "typ.body.family": "sans",
+            "col.lightness": "light"
+          },
+          "share": "4 / 18（art of rally 只有起点倒计时和分段时间；Barro 2020 零 HUD；Absolute Drift 左上一行黑色小字配白色几何场景；Zeepkist 右下大号速度 + 左下圈数小字）",
+          "examples": ["steam:550320", "steam:1168660", "steam:320140", "steam:1440670"]
+        },
+        {
+          "pattern": "速度靠画面不靠表：去掉速度表，用整屏速度线和 FOV 拉伸表达",
+          "params": {
+            "cnt.density": "1",
+            "cnt.elements": ["el.rank", "el.timer"],
+            "rel.metaFx": ["speedLines"],
+            "ast.fx": ["speedlines"]
+          },
+          "share": "1 / 18（Redout 反重力竞速）",
+          "examples": ["steam:517710"]
+        },
+        {
+          "pattern": "霓虹斜框数字：一个元素承担全部风格",
+          "params": {
+            "cnt.density": "0",
+            "cmp.gauge@el.speed": "number",
+            "el.speed.screenAnchor": "bl",
+            "vis.skew": -12,
+            "col.strategy": "duotone",
+            "vis.stroke": "solid",
+            "vis.strokeGlow": 0.8,
+            "typ.numerals.family": "display"
+          },
+          "share": "1 / 18（Razortron 2000：左下霓虹斜框速度数字，选车页是霓虹线框网格）",
+          "examples": ["steam:539720"]
+        },
+        {
+          "pattern": "实时名次表：左上竖列名字 + 分数 / 差距，右下赛道小图标",
+          "params": {
+            "cnt.density": "1",
+            "el.rank.form": ["number"],
+            "el.rank.screenAnchor": "tl",
+            "el.party.form": "tag",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "tl",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "br"
+          },
+          "share": "2 / 18（Circuit Superstars 左上名次 + 排名表；Crashday 左上实时得分表）。名次表现在借 el.party 近似，见 paramGaps",
+          "examples": ["steam:1097130", "steam:508980"]
+        },
+        {
+          "pattern": "派对淘汰赛跑（触屏）：左上目标胶囊，右上晋级人数，玩家头顶名字，左摇杆右跳跃",
+          "params": {
+            "ctx.input": "touch",
+            "ix.touchStick": "fixed",
+            "el.prompt.form": ["touchButtons"],
+            "el.prompt.screenAnchor": "br",
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "tl",
+            "el.timer.form": "badge",
+            "el.timer.screenAnchor": "tr",
+            "el.party.form": "tag",
+            "el.party.attachTo": "target",
+            "cnt.density": "2",
+            "vis.stroke": "solid",
+            "vis.corner": "round"
+          },
+          "share": "2 / 18（Stumble Guys、蛋仔派对）",
+          "examples": ["steam:1677740", "gameui:3055"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.speed",
+          "forms": ["dial ×4（圆形表盘 + 中心数字 + 档位：NFS Heat、NIGHT-RUNNERS、Crashday、Slackers）", "number（卡上 1 张：Razortron 斜框霓虹数字；Zeepkist 笔记里的右下大号速度数字也属此型）", "不画（Redout 用速度线代替）"],
+          "anchors": ["br ×5", "bl ×1"],
+          "why": "速度表放右下，接近油门 / 扳机手的心理位置，也离开了画面中下部的路面；表盘的弧形本身在'表演'加速，数字只是精确读数。"
+        },
+        {
+          "element": "el.rank",
+          "forms": ["number ×4（Garfield Kart: Furious Racing 左上超大橙色 5/8；Garfield Kart 右上；Circuit Superstars、NIGHT-RUNNERS 左上）"],
+          "anchors": ["tl ×2", "tr ×1"],
+          "why": "名次是竞速最核心的状态，放在最先被扫视的左上；分母（共几人）用小字。"
+        },
+        {
+          "element": "el.timer",
+          "forms": ["number（NIGHT-RUNNERS 左上圈速）", "scorePill（Slackers 带时钟图标的圆角计时胶囊）", "smallText（Absolute Drift、Zeepkist 角落小字）", "圈数 ROUND 1/3（Garfield Kart: Furious Racing 右上）"],
+          "anchors": ["tl ×3", "tr", "tc", "br"],
+          "why": "计时赛里计时就是主角；排位赛里圈数比时间重要，常和名次分在左右两角。"
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["radar / 圆形 GPS（NFS Heat 左下，黄线路线 + 下方地名；Crashday、Forza 左下）", "竖条赛道进度 + 对手头像（Garfield Kart: Furious Racing 左侧）", "赛道形状小图标（Circuit Superstars 右下）"],
+          "anchors": ["bl ×3", "ml", "br"],
+          "why": "开放世界要回答'下一个路口往哪'，所以用带路线线的 GPS；封闭赛道要回答'我和对手差多远'，竖条比平面地图更直接。"
+        },
+        {
+          "element": "el.feedback",
+          "forms": ["rating（Crashday 中央橙色斜体 STUNT BONUS!）", "combo（4x Combo Score 倍率分）"],
+          "anchors": ["center"],
+          "why": "特技 / 漂移是竞速里的'连击'，倍率字放在车的上方，飘过视线但不挡路。"
+        },
+        {
+          "element": "el.objective",
+          "forms": ["checklist（NFS Heat 右上紫色半透明面板 + 勾选圈）", "text（Stumble Guys 左上 Objective 小标签 + 白色胶囊大字）"],
+          "anchors": ["tr", "tl"],
+          "why": "生涯 / 开放世界才有任务清单；派对赛每轮规则不同，所以开局先用胶囊大字宣布本轮目标。"
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["slots（卡丁车道具格：Garfield Kart 顶中两个圆格）", "gauge（氮气 / 体力：NFS Heat 氮气瓶、Slackers 体力瓶贴在速度表旁）"],
+          "anchors": ["tc", "br"],
+          "why": "道具格放顶中，用余光就能确认有没有道具；氮气挂在速度表旁，因为两者在操作上是同一只手。"
+        },
+        {
+          "element": "el.party",
+          "forms": ["tag（Stumble Guys 玩家头顶名字）", "名次表（Crashday、Circuit Superstars 左上竖列）"],
+          "anchors": ["挂在车 / 角色上", "tl"],
+          "why": "多人竞速要知道'前面那辆是谁'；名次表让落后的玩家知道差距。"
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["touchButtons（Stumble Guys 左下摇杆 + 右下跳跃大圆钮）"],
+          "anchors": ["bl", "br"],
+          "why": "触屏派对竞速的操作只有'移动 + 跳'，两个大键足够。"
+        },
+        {
+          "element": "el.notify",
+          "forms": ["起跑倒计时大字（art of rally）", "band（最后一圈、新纪录）"],
+          "anchors": ["center"],
+          "why": "竞速的关键时刻（起跑、最后一圈、冲线）需要整屏横贯的仪式感，其余时间不打扰。"
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "四角三件套（速度右下、名次左上、地图左下），底部中间与画面中下部的路面留空；街机向放大名次并加速度线，写实向收敛成白色细字。",
+          "examples": ["iig:need-for-speed-heat", "steam:1085510", "steam:508980"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "选车 / 车库 / 换装：Garfield Kart 是红框圆角卡 + 一排角色头像页签 + 属性条（速度 / 加速 / 操控）+ 一句话简介；NFS Heat 车库是左侧紫粉细线列表 + 右侧人物与车；Razortron 是霓虹线框网格上的车列 + 像素属性条；派对类是白底圆角卡 + 右侧换装格。",
+          "examples": ["steam:362930", "iig:need-for-speed-heat", "steam:539720", "gameui:3055", "steam:1677740"]
+        },
+        {
+          "screen": "screen.build",
+          "conventions": "赛道编辑器：左侧图块面板（分类 + 方格图块）+ 中央俯视网格（Crashday）；改装页是车库场景里的细线数据（NIGHT-RUNNERS）。",
+          "examples": ["steam:508980", "steam:2707900"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "用三维领奖台（实物台子 + 车手模型 + 彩带）代替表格（Circuit Superstars）。",
+          "examples": ["steam:1097130"]
+        },
+        {
+          "screen": "screen.levelselect",
+          "conventions": "选赛道 / 选曲：斜放的插画卡片轮播 + 左右箭头 + 难度标签（MUSYNX 旁证）。",
+          "examples": ["steam:952040"]
+        },
+        {
+          "screen": "screen.settings",
+          "conventions": "派对竞速的设置 / 捏人面板：白底圆角卡 + 黄色斜切按钮，蓝黄撞色（蛋仔派对）。",
+          "examples": ["gameui:3055"]
+        }
+      ],
+      "styleTendencies": [
+        { "family": "极简单色", "count": 6, "why": "写实与低多边形竞速（art of rally、Forza、Absolute Drift、Crashday、Barro、Zeepkist）：白色细字 + 半透明圆形表盘，或干脆零 HUD，风景和赛道本身就是卖点。" },
+        { "family": "糖果卡通（Q 版）", "count": 6, "why": "卡丁车与派对（Garfield Kart 两作、Sonic、Stumble Guys、Slackers、蛋仔）：粗描边、圆角、橙黄大字名次，和吉祥物画风一体。" },
+        { "family": "科幻 HUD", "count": 3, "why": "夜间街头与未来竞速（NIGHT-RUNNERS、Redout、NFS Heat）：细线、霓虹、紫粉双色。" },
+        { "family": "合成波 / 蒸汽波", "count": 2, "why": "Razortron 2000 的霓虹线框网格；MUSYNX 的霓虹判定字（音游旁证）。" },
+        { "family": "扁平 / Material", "count": 1, "why": "Circuit Superstars：微缩俯视赛道，扁平图标 + 实物领奖台。" }
+      ],
+      "exemplars": [
+        { "card": "iig:need-for-speed-heat", "why": "写实街头竞速最完整：左下圆形 GPS（黄色路线线 + 地名）、右下转速弧 + 速度 + 档位 + 氮气瓶、右上紫色半透明任务清单。" },
+        { "card": "steam:1085510", "why": "卡丁车把名次放到最大：左上巨型橙色名次，左侧竖条赛道进度带对手头像，顶中道具格，右上圈数和收集。" },
+        { "card": "steam:508980", "why": "信息最多但分区清楚：左上实时得分表、顶中分数、中央特技大字、底中剩余时间、左下雷达、右下表盘、右上车损剪影。" },
+        { "card": "steam:539720", "why": "一个元素也能撑起风格：左下斜框霓虹速度数字。" },
+        { "card": "steam:550320", "why": "零 HUD 的竞速：低多边形风景就是界面，只留起点倒计时与分段时间。" },
+        { "card": "steam:517710", "why": "速度靠画面：没有速度表，整屏速度线 + FOV 拉伸。" },
+        { "card": "steam:1677740", "why": "触屏派对竞速：左上目标胶囊、右上晋级人数、头顶名字、两个大触屏键。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "车库 / 菜单与 HUD 读数在电视距离下太小。",
+          "examples": ["steam:1551360", "steam:952040"],
+          "reviewEvidence": "R3'字太小'：Forza Horizon 5 2 条、MUSYNX 2 条。"
+        },
+        {
+          "desc": "改装 / 编辑器的菜单层级深、难用。",
+          "examples": ["steam:2707900", "steam:1440670"],
+          "reviewEvidence": "菜单 / 界面难用：NIGHT-RUNNERS PROLOGUE 2 条、Zeepkist 2 条（两款评测量都不大）。"
+        },
+        {
+          "desc": "速度感特效叠加（速度线 + 运动模糊 + FOV）淹没赛道边界、引起晕动。",
+          "examples": ["steam:517710", "steam:1085510"],
+          "reviewEvidence": "评测无计数（Redout 只有 27 条评测）；依据 06 文档 A14：速度感特效设上限，FOV 变化率 ≤ 10°/s（经验值）。"
+        },
+        {
+          "desc": "元素过多时往底部中间放，挡住近处路线（追尾镜头下，路面就在画面中下部）。",
+          "examples": ["steam:508980"],
+          "reviewEvidence": "评测无计数；看图归纳（Crashday 的剩余时间压在底中）。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "速度：圆形表盘 vs 速度线（不画表）",
+          "a": {
+            "cmp.gauge@el.speed": "dial",
+            "el.speed.screenAnchor": "br",
+            "el.speed.valueLabel": "current",
+            "el.speed.valueLabelPos": "center"
+          },
+          "b": {
+            "cnt.elements": ["el.rank", "el.timer", "el.minimap"],
+            "rel.metaFx": ["speedLines"],
+            "ast.fx": ["speedlines"]
+          },
+          "lookAt": "去掉速度表后还能不能感觉到快；速度线有没有盖住路肩。"
+        },
+        {
+          "title": "同一组元素换性格：写实街头 vs 卡丁车",
+          "a": {
+            "vis.stroke": "none",
+            "col.lightness": "dark",
+            "vis.opacity": 0.35,
+            "typ.display.family": "condensed",
+            "typ.display.style": "italic",
+            "el.rank.scale": 1
+          },
+          "b": {
+            "vis.stroke": "solid",
+            "vis.strokeWidth": 3,
+            "vis.corner": "round",
+            "typ.display.family": "round",
+            "typ.numerals.family": "display",
+            "el.rank.scale": 2.2,
+            "col.strategy": "polychrome"
+          },
+          "lookAt": "名次数字的大小与描边；同一张赛道截图上，哪种 HUD 更像'玩具'。"
+        },
+        {
+          "title": "地图：圆形 GPS vs 竖条赛道进度",
+          "a": {
+            "el.minimap.form": "radar",
+            "vis.silhouette@el.minimap": "circle",
+            "el.minimap.screenAnchor": "bl"
+          },
+          "b": {
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "ml",
+            "el.minimap.arrangement": "column",
+            "el.minimap.scale": 0.7
+          },
+          "lookAt": "玩家得到的是'下一个弯往哪'，还是'我和对手的相对位置'。"
+        },
+        {
+          "title": "四角常驻 vs 零 HUD（俯视拉力）",
+          "a": {
+            "rel.hudVisibility": "always",
+            "cnt.density": "2"
+          },
+          "b": {
+            "rel.hudVisibility": "hidden",
+            "cnt.density": "0"
+          },
+          "lookAt": "风景占比；没有名次和圈数时，玩家还能不能判断比赛形势。"
+        },
+        {
+          "title": "手柄 vs 触屏派对",
+          "a": {
+            "ctx.input": "pad",
+            "ix.glyphs": "xbox",
+            "el.prompt.form": ["legend"]
+          },
+          "b": {
+            "ctx.input": "touch",
+            "ix.touchStick": "fixed",
+            "el.prompt.form": ["touchButtons"],
+            "el.prompt.screenAnchor": "br",
+            "ix.touchSize": 96
+          },
+          "lookAt": "触屏键占掉左下 / 右下后，速度表和地图被挤到哪里。"
+        }
+      ],
+      "contentPack": {
+        "names": "赛道：盐湖环线、海崖公路、旧港夜赛道、松林拉力赛段；车手：斑马罗丝、小钉、老烟枪、雾灯车队；车辆：GT-7「北风」、短轴卡丁「豆芽」、拉力掀背「碎石」",
+        "resources": ["氮气 ▮▮▮▯（3 段）", "道具：弹簧拳、滑油桶、追踪火箭、护盾泡泡", "特技分 3,950 ×4", "车损 82%", "生涯现金 / 声望"],
+        "units": ["对手车手（头顶名字 + 名次）", "追兵警车（热度 ★★★）", "AI 车队：雾灯 ×3"],
+        "items": ["改装件：涡轮 Lv.3、轻量化轮毂、街道轮胎", "外观：拉花、车漆、尾翼"],
+        "stats": ["极速 284 km/h", "0–100 km/h 3.9 s", "操控 ●●●●○", "重量 1,240 kg", "最佳圈 01:12.408"],
+        "objectives": ["第 3 圈前进入前三", "2:30 内通过 6 个检查点", "漂移连段达到 10,000 分", "甩掉追兵"],
+        "dialogue": ["车队无线电：下一个右发夹弯，提前收油。", "对手：追得上再说。"],
+        "feedback": ["起跑：3 · 2 · 1 · GO", "最后一圈！", "新圈速纪录 −0.412", "逆行！", "特技奖励：空中转体 ×2"],
+        "mapFeatures": ["检查点拱门", "加速板", "捷径（木板桥）", "维修区 / 进站", "跳台", "道具箱"]
+      },
+      "paramGaps": [
+        {
+          "need": "速度表的附属读数：档位 / 转速红区 / 氮气 / 车损",
+          "evidence": ["iig:need-for-speed-heat", "steam:2707900", "steam:508980", "steam:2354000"],
+          "proposal": "el.speed 加 parts（gear / rpm / boost / damage，多选），或允许 cmp.gauge = dial 带内圈第二读数；现在 el.speed 只有通用模板参数。"
+        },
+        {
+          "need": "线性进度条带：一条线标出自己、对手头像和检查点（竞速竖条 / 横版与音乐关卡的横条）",
+          "evidence": ["steam:1085510", "steam:531510", "steam:63710"],
+          "proposal": "el.minimap.form 加 progressStrip（横 / 竖），与 cmp.gauge = track 配合。"
+        },
+        {
+          "need": "分段计时与差值：圈速 + 与最佳 / 前车的 ±差值（红绿 + 正负号冗余）",
+          "evidence": ["steam:550320", "steam:2707900"],
+          "proposal": "el.timer.form 加 split；现在只能用 elx.valueLabel = delta 近似，表达不了'当前圈 / 最佳圈 / 差值'三联。"
+        },
+        {
+          "need": "实时名次表：名次 + 名字 + 差距 / 分数，自己那一行高亮",
+          "evidence": ["steam:508980", "steam:1097130"],
+          "proposal": "el.party.form 加 standings（竖列表）；现在借 el.party.form = tag + column 近似。"
+        },
+        {
+          "need": "el.speed 与 el.rank 语义重叠：词表里 el.speed 的标签是'速度 / 名次'，而名次已有 el.rank",
+          "evidence": ["steam:1085510", "steam:1097130"],
+          "proposal": "把 el.speed 的标签改为'速度 / 档位'，名次只归 el.rank。"
+        }
+      ]
+    }
+  ]
+}

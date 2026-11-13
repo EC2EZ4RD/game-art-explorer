@@ -1,0 +1,139 @@
+/*
+ * 左栏"UI 风格图谱"的样式（UiAtlasPanel.tsx 引入）。归属：B3。前缀 at-。
+ * 颜色一律用 src/styles.css 的变量（深浅色主题自动跟随）；卡片、小标签、按钮复用 card / chip / btn。
+ * 类名：at-panel 面板 · at-filters 筛选行 · at-cur 当前皮肤属于 · at-group 门类 · at-fam 家族条目 · at-subs / at-sub 子族
+ *   at-page 家族页 · at-crumbs 面包屑 · at-body 页面主体（.wide = 大窗两栏）· at-sec 可折叠小节 · at-apply 套用块
+ *   at-grammar / at-ax 10 轴语法表 · at-convert 改造步骤 · at-pairing 美术搭配 · at-ex 代表作 · at-fail 失败模式
+ *   at-needs "待补参考"标记 · at-dim 次要说明 · at-count 计数 · at-caret 折叠箭头 · at-dialog 大窗
+ */
+
+.at-panel { padding-bottom: 16px; }
+.at-pad { padding: 0 12px; }
+.at-count { font-size: 11px; color: var(--text-3); font-weight: 400; }
+.at-caret { display: inline-block; width: 11px; flex: none; font-size: 10px; color: var(--text-3); }
+.at-needs { color: var(--warn); }
+.at-dim, .at-body p.at-dim { color: var(--text-3); font-size: 11.5px; }
+.at-label { font-size: 11px; color: var(--text-3); line-height: 18px; margin-right: 2px; }
+
+/* ---------- 列表 ---------- */
+
+.at-filters { padding: 0 10px; margin: 4px 0 6px; }
+.at-row { display: flex; gap: 6px; margin-top: 6px; }
+.at-row select { flex: 1; min-width: 0; font-size: 12px; }
+.at-filters .chips { align-items: center; }
+.at-filters .at-count { margin-left: auto; }
+
+.at-cur { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; padding: 0 12px; margin: 2px 0 4px; font-size: 11.5px; color: var(--text-3); }
+
+.at-group { border-top: 1px solid var(--line); }
+.at-group:last-child { border-bottom: 1px solid var(--line); }
+.at-group-head { padding: 7px 12px 5px; cursor: pointer; }
+.at-group-head:hover { background: var(--panel-2); }
+.at-group-line { display: flex; align-items: baseline; gap: 4px; }
+.at-group-line b { font-size: 12.5px; }
+.at-group-line .at-count { margin-left: auto; white-space: nowrap; }
+.at-group-head p { margin: 2px 0 0 15px; font-size: 11.5px; line-height: 1.5; color: var(--text-3); }
+.at-group-head p.at-clamp { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.at-group.open { padding-bottom: 6px; }
+
+.at-fam-head { display: flex; align-items: flex-start; gap: 6px; }
+.at-fam-head h4 { flex: 1; min-width: 0; }
+.at-fam .chips { align-items: center; }
+
+.at-subs { display: grid; gap: 2px; margin-top: 6px; padding-left: 6px; border-left: 2px solid var(--line); cursor: default; }
+.at-sub { padding: 4px 6px; border-radius: 6px; cursor: pointer; }
+.at-sub:hover { background: var(--muted-soft); }
+.at-sub.on { box-shadow: 0 0 0 1px var(--accent) inset; }
+.at-sub-head { display: flex; align-items: center; gap: 4px; }
+.at-sub-head b { flex: 1; min-width: 0; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.at-sub p, .at-body .at-sub p {
+  margin: 1px 0 0; font-size: 11.5px; line-height: 1.45; color: var(--text-2);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+}
+
+/* ---------- 家族页 ---------- */
+
+.at-crumbs { display: flex; align-items: center; gap: 6px; padding: 8px 12px 0; font-size: 12px; min-width: 0; }
+.at-crumbs .kn-back { margin: 0; flex: none; }
+.at-crumb { color: var(--text-3); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.at-grow { flex: 1; }
+
+.at-body p { margin: 4px 0; font-size: 12px; line-height: 1.55; color: var(--text-2); }
+.at-title { margin: 8px 0 2px; font-size: 15px; line-height: 1.35; }
+.at-body .at-lead { margin: 2px 0 4px; font-size: 13px; font-weight: 600; color: var(--text); }
+
+.at-when { margin-top: 8px; }
+.at-when p { display: grid; grid-template-columns: 30px 1fr; gap: 6px; }
+.at-ok, .at-warn { font-size: 11px; font-weight: 600; line-height: 18px; }
+.at-ok { color: var(--ok); }
+.at-warn { color: var(--warn); }
+
+.at-apply { margin: 10px 0 4px; padding: 8px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel-2); }
+.at-apply .btn { white-space: normal; text-align: left; line-height: 1.4; }
+.at-apply .btn.at-apply-main { width: 100%; text-align: center; padding: 5px 8px; font-weight: 600; }
+.at-body .at-ctx, .at-ctx { margin: 4px 0 6px; font-size: 11.5px; color: var(--text-2); }
+.at-apply-row { display: flex; flex-wrap: wrap; gap: 4px; }
+.at-body p.at-note { margin: 6px 0 0; font-size: 11px; color: var(--text-3); }
+.at-body p.at-note.done { color: var(--ok); font-weight: 600; }
+
+.at-sec { border-top: 1px solid var(--line); margin-top: 6px; }
+.at-sec-head {
+  display: flex; align-items: center; gap: 4px; width: 100%; padding: 7px 0 5px;
+  border: 0; background: transparent; color: var(--text); font: inherit; font-size: 12px; font-weight: 600; text-align: left; cursor: pointer;
+}
+.at-sec-head:hover { color: var(--accent); }
+.at-sec-head .at-count { margin-left: auto; }
+.at-sec-body { padding-bottom: 6px; }
+
+.at-variant, .at-pairing, .at-pr, .at-ex { padding: 6px 0; border-bottom: 1px dashed var(--line); }
+.at-variant:last-child, .at-pairing:last-child, .at-pr:last-child { border-bottom: 0; }
+.at-variant-head, .at-pairing-head { display: flex; align-items: center; gap: 6px; }
+.at-variant-head b, .at-pairing-head b { flex: 1; min-width: 0; font-size: 12px; }
+.at-pr p { margin: 3px 0 0; }
+
+/* 10 轴语法表：左边一个字的轴名，右边文字 + 这一轴的参数 */
+.at-ax { display: grid; grid-template-columns: 26px 1fr; gap: 6px; padding: 5px 0; border-bottom: 1px dashed var(--line); }
+.at-ax:last-of-type { border-bottom: 0; }
+.at-ax-name { font-size: 13px; font-weight: 700; color: var(--accent); text-align: center; cursor: help; padding-top: 1px; }
+.at-ax-body { min-width: 0; }
+.at-ax-body p { margin: 0 0 2px; }
+.at-ax-body .chips { margin-top: 3px; }
+.at-param { display: inline-flex; align-items: center; gap: 3px; max-width: 100%; min-width: 0; }
+.at-inherit { opacity: .55; }
+.at-swatch { display: inline-block; flex: none; width: 10px; height: 10px; border-radius: 3px; border: 1px solid var(--line-strong); }
+
+.at-convert { list-style: none; margin: 6px 0; padding: 0; }
+.at-convert li { display: grid; grid-template-columns: 74px 1fr; gap: 6px; align-items: start; margin: 5px 0; font-size: 12px; }
+.at-convert li .btn, .at-convert li > .chip { justify-self: stretch; text-align: center; }
+.at-convert li b { font-weight: 600; }
+.at-convert li small { display: block; font-size: 11px; line-height: 1.45; color: var(--text-3); }
+
+.at-genre { display: flex; align-items: baseline; gap: 6px; margin: 4px 0; }
+.at-genre .chip { flex: none; }
+.at-genre > span:last-child { font-size: 11.5px; line-height: 1.45; color: var(--text-2); }
+
+.at-ex.thumb { display: grid; grid-template-columns: 96px 1fr; gap: 8px; }
+.at-ex-img { min-width: 0; }
+.at-ex-img .kn-ref { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.at-ex-img .kn-note { display: block; text-align: center; padding: 14px 2px; }
+.at-ex-text { min-width: 0; }
+.at-ex-text b { font-size: 12px; }
+.at-ex-text > .chip { margin-left: 4px; }
+.at-ex-text p { margin: 2px 0 0; }
+.at-more { margin: 6px 0 2px; }
+.at-more summary { cursor: pointer; font-size: 11.5px; color: var(--accent); }
+
+.at-fail { margin: 6px 0; padding: 2px 0 2px 8px; border-left: 2px solid var(--warn); }
+.at-fail p { margin: 0 0 2px; }
+
+.at-gaps { margin: 4px 0; padding-left: 16px; font-size: 12px; line-height: 1.5; color: var(--text-2); }
+.at-gaps li { margin: 3px 0; }
+.at-gaps.at-done li { color: var(--text-3); }
+.at-gaps a { color: var(--accent); }
+
+/* ---------- 大窗 ---------- */
+
+.at-dialog { width: min(1120px, 96vw); }
+.at-body.wide .at-top { max-width: 760px; }
+.at-body.wide .at-secs { columns: 2 380px; column-gap: 28px; }
+.at-body.wide .at-sec { break-inside: avoid; }

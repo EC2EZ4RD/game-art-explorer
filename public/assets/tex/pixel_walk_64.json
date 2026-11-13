@@ -1,0 +1,27 @@
+{
+ "files": {
+  "sheet": "pixel_walk_64.png"
+ },
+ "pitch": 11.0,
+ "phase": 9.25,
+ "pitchConfidence": 0.7662302851676941,
+ "frames": 16,
+ "cell": 48,
+ "grid": [
+  4,
+  4
+ ],
+ "rows": [
+  "down",
+  "left",
+  "right",
+  "up"
+ ],
+ "colors": 24,
+ "spriteSize": [
+  25,
+  41
+ ],
+ "filter": "nearest",
+ "id": "pixel_walk_64"
+}

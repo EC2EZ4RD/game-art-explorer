@@ -1,0 +1,20 @@
+{
+ "files": {
+  "image": "ui_frame_wood.png",
+  "godot": "ui_frame_wood_godot.png"
+ },
+ "size": [
+  1024,
+  1024
+ ],
+ "band": 102,
+ "slice": 122,
+ "sizeGodot": [
+  192,
+  192
+ ],
+ "sliceGodot": 23,
+ "bandGodot": 19,
+ "coverage": 0.3138561248779297,
+ "id": "ui_frame_wood"
+}

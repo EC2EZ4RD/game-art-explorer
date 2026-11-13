@@ -1,0 +1,18 @@
+{
+ "files": {
+  "bust": "ui_char_bust_chibi_bust.png",
+  "chibi": "ui_char_bust_chibi_chibi.png"
+ },
+ "size": {
+  "bust": [
+   942,
+   1408
+  ],
+  "chibi": [
+   797,
+   1368
+  ]
+ },
+ "found": 2,
+ "id": "ui_char_bust_chibi"
+}

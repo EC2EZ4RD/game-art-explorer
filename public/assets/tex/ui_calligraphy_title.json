@@ -1,0 +1,11 @@
+{
+ "files": {
+  "image": "ui_calligraphy_title.png"
+ },
+ "size": [
+  1600,
+  567
+ ],
+ "note": "黑墨 + alpha；使用时可按字色着色（source-in）",
+ "id": "ui_calligraphy_title"
+}

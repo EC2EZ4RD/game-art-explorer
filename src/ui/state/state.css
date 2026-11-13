@@ -1,0 +1,200 @@
+/* 轨道 A：重置菜单、历史列表（src/ui/state/*）。颜色用外壳的主题变量（styles.css :root），深浅色都跟着走 */
+
+.st-menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 248px;
+  max-width: 320px;
+  padding: 4px;
+  font-size: 13px;
+  color: var(--text, #24211d);
+}
+
+.st-head {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 8px 2px;
+  font-size: 12px;
+  color: var(--text-3, #8d877c);
+}
+.st-head b {
+  font-weight: 600;
+  color: var(--text-2, #5f5a52);
+}
+
+.st-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 6px 8px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.st-item:hover:not(:disabled),
+.st-item:focus-visible {
+  background: var(--accent-soft, #e3ebfb);
+  outline: none;
+}
+.st-item:disabled {
+  cursor: default;
+  color: var(--text-3, #8d877c);
+}
+.st-item .st-n {
+  flex: none;
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: 9px;
+  background: var(--accent-soft, #e3ebfb);
+  color: var(--accent, #3b6fd8);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.st-item .st-dim {
+  flex: none;
+  font-size: 12px;
+  color: var(--text-3, #8d877c);
+}
+.st-item.st-strong .st-label {
+  font-weight: 600;
+}
+.st-item.st-sub {
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.st-sep {
+  height: 1px;
+  margin: 4px 6px;
+  background: var(--line, #dedad2);
+}
+
+/* 历史列表 */
+.st-hist {
+  max-height: min(460px, 70vh);
+  overflow-y: auto;
+}
+.st-hist .st-item .st-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.st-hist .st-now {
+  background: var(--panel-2, #f0ede7);
+  font-weight: 600;
+}
+.st-hist .st-future {
+  color: var(--text-3, #8d877c);
+}
+.st-empty {
+  padding: 8px;
+  color: var(--text-3, #8d877c);
+  font-size: 12px;
+}
+
+/* 参数行的 •↺（ParamRow / UiParamRow） */
+.row-reset {
+  flex: none;
+  margin-left: 2px;
+  padding: 0 4px;
+  border: 0;
+  border-radius: 4px;
+  background: none;
+  color: var(--accent, #3b6fd8);
+  font: inherit;
+  font-size: 12px;
+  line-height: 18px;
+  cursor: pointer;
+}
+.row-reset:hover,
+.row-reset:focus-visible {
+  background: var(--accent-soft, #e3ebfb);
+  outline: none;
+}
+.row-info {
+  flex: none;
+  padding: 0 3px;
+  border: 0;
+  background: none;
+  color: var(--text-3, #8d877c);
+  font-size: 12px;
+  line-height: 18px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.row:hover .row-info,
+.row-info:focus-visible {
+  opacity: 1;
+}
+.row-off {
+  flex: none;
+  font-size: 11px;
+  color: var(--text-3, #8d877c);
+}
+/* 锁定的镜头：「锁定」小标、「配方 X」建议芯片（ParamRow，整合修复 F→A） */
+.row-lock {
+  flex: none;
+  padding: 0 4px;
+  border-radius: 3px;
+  background: var(--accent-soft, #e3ebfb);
+  color: var(--accent, #3b6fd8);
+  font-size: 10px;
+  line-height: 16px;
+}
+.row-sug {
+  flex: none;
+  max-width: 120px;
+  overflow: hidden;
+  padding: 0 6px;
+  border: 1px dashed var(--line, #dedad2);
+  border-radius: 9px;
+  background: none;
+  color: var(--text-2, #5f5a52);
+  font: inherit;
+  font-size: 11px;
+  line-height: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+button.row-sug {
+  cursor: pointer;
+}
+button.row-sug:hover,
+button.row-sug:focus-visible {
+  border-style: solid;
+  border-color: var(--accent, #3b6fd8);
+  color: var(--accent, #3b6fd8);
+  outline: none;
+}
+
+/* ResetButton：外壳没有自己的弹出菜单时用的按钮 + 浮层 */
+.st-dd {
+  position: relative;
+  display: inline-block;
+}
+.st-dd > summary {
+  list-style: none;
+  cursor: pointer;
+}
+.st-dd > summary::-webkit-details-marker {
+  display: none;
+}
+.st-dd-pop {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 60;
+  border: 1px solid var(--line, #dedad2);
+  border-radius: var(--radius, 8px);
+  background: var(--panel, #fbfaf7);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+}

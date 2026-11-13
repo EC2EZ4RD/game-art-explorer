@@ -1,0 +1,60 @@
+/*
+ * 画框下方 · 配方卡（轨道 C：StyleDeck）。芯片 / 链接的样式在 ../left/gallery.css（c-chip / c-link）。
+ *   c-deck 外框 · c-deck-first 首次打开的一行引导 · c-deck-top 名字 + 三条看点 · c-deck-mid 像这些游戏 + 配套 UI · c-deck-bot 变体 / 相邻 / 最好看 / 复制 / 更多
+ */
+.c-deck { position: relative; display: flex; flex-direction: column; gap: 10px; padding: 10px 14px; height: 100%; min-height: 0; box-sizing: border-box; color: var(--text); }
+/* 一行版：内容贴顶（外壳给的高度比一行多时，不在中间悬空） */
+.c-deck.one-row { justify-content: flex-start; gap: 6px; padding: 6px 12px; }
+.c-deck.one-row .c-deck-top { flex-wrap: nowrap; }
+.c-deck.is-guide { justify-content: center; }
+.c-deck-guide { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 28px; color: var(--text-2); font-size: 13px; }
+.c-deck-first { font-size: 12px; color: var(--accent); line-height: 16px; }
+.c-deck-top { display: flex; align-items: center; gap: 14px; min-width: 0; flex-wrap: wrap; }
+.c-deck-name { font-size: 15px; white-space: nowrap; }
+.c-deck-name small { font-weight: 400; color: var(--text-2); font-size: 12px; }
+.c-bullets { display: flex; gap: 6px; margin: 0; padding: 0; list-style: none; flex-wrap: wrap; min-width: 0; }
+.c-bullets button, .c-bullets span { display: flex; align-items: center; gap: 5px; border: 1px solid var(--line); background: var(--panel); border-radius: 8px; padding: 4px 10px; font-size: 13px; white-space: nowrap; }
+.c-bullets button { cursor: pointer; }
+.c-bullets button:hover { border-color: var(--accent); background: var(--accent-soft); }
+.c-bullets.is-text span { border-style: dashed; color: var(--text-2); }
+.c-bullets i { font-style: normal; color: var(--accent); font-weight: 700; }
+/* 中间一行（像这些游戏 + 配套 UI 色板）不折行：StyleDeck 按宽度少放几张游戏截图 */
+.c-deck-mid { display: flex; gap: 24px; flex-wrap: nowrap; min-width: 0; overflow: hidden; padding: 2px; margin: -2px; }
+.c-deck-sec { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.c-deck-lab { font-size: 11px; color: var(--text-3); white-space: nowrap; }
+.c-games { display: flex; gap: 6px; flex-wrap: wrap; }
+.c-game { padding: 0; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; cursor: pointer; background: var(--panel-2); width: 128px; aspect-ratio: 16 / 9; }
+.c-game img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.c-game:hover { border-color: var(--accent); }
+.c-skins { display: flex; gap: 6px; flex-wrap: nowrap; }
+/* 配套 UI 用 D 的皮肤色板（.sw，152×64 + 名字） */
+.c-swatch { display: contents; }
+.c-deck-bot { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; min-width: 0; }
+.c-deck-inline { display: inline-flex; align-items: center; gap: 4px; }
+/* 立绘场景的一句提示（原因在悬停里） */
+.c-deck-note { font-size: 12px; color: var(--text-3); white-space: nowrap; cursor: help; border-bottom: 1px dotted var(--line-strong); }
+.c-sp { flex: 1; }
+.c-btn { border: 1px solid var(--line-strong); background: var(--panel); border-radius: 6px; padding: 2px 10px; cursor: pointer; white-space: nowrap; font-size: 12.5px; line-height: 20px; }
+.c-btn:hover { background: var(--panel-2); }
+.c-btn.on { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.c-btn.caret { padding: 2px 6px; margin-left: -1px; }
+.c-copy { position: relative; display: inline-flex; align-items: center; }
+.c-copy > .c-btn:first-child { border-radius: 6px 0 0 6px; }
+.c-copy > .c-btn.caret { border-radius: 0 6px 6px 0; }
+/* 浮层挂在 body 上（DeckPop，position: fixed，位置由脚本按按钮算并夹在视口内）：不受画框下方 overflow:hidden 的裁切 */
+.c-fixed-pop { position: fixed; z-index: 320; box-sizing: border-box; overflow: auto; }
+.c-fixed-pop.passive { pointer-events: none; overflow: visible; }
+.c-copy-msg { white-space: nowrap; font-size: 12px; background: var(--text); color: var(--panel); padding: 2px 8px; border-radius: 4px; }
+.c-copy-pop, .c-more-pop { width: min(520px, calc(100vw - 16px)); background: var(--panel); color: var(--text); border: 1px solid var(--line-strong); border-radius: 8px; box-shadow: 0 10px 30px rgba(0, 0, 0, .22); padding: 8px; display: flex; flex-direction: column; gap: 6px; }
+.c-copy-head { display: flex; align-items: center; gap: 6px; flex: none; }
+.c-copy-note { font-size: 12px; color: var(--warn); }
+.c-copy-n { font-size: 11px; color: var(--text-3); }
+.c-copy-pop textarea { width: 100%; resize: vertical; font: 12px/1.55 var(--font); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; background: var(--panel-2); color: var(--text); box-sizing: border-box; }
+.c-copy-check { font-size: 12px; }
+.c-copy-check .ok { color: var(--ok); }
+.c-copy-check .warn, .c-more-pop .warn { color: var(--warn); }
+.c-more { position: relative; }
+.c-more-pop { width: min(440px, calc(100vw - 16px)); font-size: 12.5px; }
+.c-more-pop p { margin: 0; line-height: 1.55; }
+.c-more-pop b { margin-right: 6px; color: var(--text-2); }
+.c-more-dim { color: var(--text-3); font-size: 11px; margin-left: 4px; }

@@ -1,0 +1,136 @@
+/* 轨道 A：方向板（缩略图网格）。颜色用外壳的主题变量（styles.css :root） */
+
+.fav-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.fav-tile {
+  position: relative;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.fav-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--line, #dedad2);
+  border-radius: 6px;
+  background: var(--panel-2, #f0ede7);
+  cursor: pointer;
+}
+.fav-thumb:hover,
+.fav-thumb:focus-visible {
+  border-color: var(--accent, #3b6fd8);
+  outline: none;
+}
+.fav-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fav-noimg {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  font-size: 12px;
+  color: var(--text-3, #8d877c);
+}
+.fav-tile figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  font-size: 12px;
+}
+.fav-tile figcaption b {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+}
+.fav-note {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-2, #5f5a52);
+}
+.fav-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+.fav-tags i {
+  padding: 0 5px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-style: normal;
+}
+.fav-tags i.ok {
+  background: var(--ok-soft, #e1f2e8);
+  color: var(--ok, #2f8a57);
+}
+.fav-tags i.warn {
+  background: var(--warn-soft, #fbeedd);
+  color: var(--warn, #b5651d);
+}
+.fav-del {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.fav-tile:hover .fav-del,
+.fav-del:focus-visible {
+  opacity: 1;
+}
+
+/* ☆ 一下就收藏的小卡（审查修复 24）：浮在右栏上方，不压画框；4 秒后消失，鼠标停在上面时不消失 */
+.fav-toast {
+  position: fixed;
+  top: 52px;
+  right: 16px;
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(360px, calc(100vw - 32px));
+  padding: 6px 8px;
+  border: 1px solid var(--line, #dedad2);
+  border-radius: var(--radius, 8px);
+  background: var(--panel, #fbfaf7);
+  color: var(--text, #24211d);
+  font-size: 13px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
+}
+.fav-toast img {
+  flex: none;
+  width: 64px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.fav-toast-text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,97 @@
+/*
+ * UI 知识库共用样式（KnowledgeBits.tsx 引入；docs/t1-tool-knowledge.md）。
+ * 归属：B1。前缀 kn-。颜色一律用 src/styles.css 的变量（--panel / --line / --text-2 / --accent …），深浅色主题自动跟随。
+ * 预留类名（B1 可以加，不要改名）：
+ *   kn-loading 加载提示 · kn-note 截图仅本地说明 · kn-ref 参考截图 · kn-thumbs / kn-thumb / kn-thumb-none 缩略图
+ *   kn-cards 例子游戏名 · kn-chip-principle / kn-chip-family / kn-chip-param 三种小标签
+ *   kn-why 参数行里"为什么 / 什么时候用"整块 · kn-why-item 一条做法 · kn-why-head 标题行 · kn-why-meta 适用 / 代价
+ *   kn-back 详情页的返回 · kn-detail 详情页容器 · kn-sec 详情页小节标题 · kn-kv 键值表 · kn-steps 步骤列表
+ *   kn-search 列表搜索框行 · kn-empty 空列表
+ */
+
+.kn-loading { font-style: italic; }
+.kn-note { display: inline-block; font-size: 11px; color: var(--text-3); padding: 2px 6px; border: 1px dashed var(--line-strong); border-radius: 6px; }
+.kn-note.inline { border: 0; padding: 0; }
+.kn-ref { display: block; max-width: 100%; border-radius: 6px; border: 1px solid var(--line); cursor: zoom-in; }
+
+.kn-thumbs { display: grid; grid-template-columns: repeat(auto-fill, minmax(84px, 1fr)); gap: 6px; padding: 4px 0; }
+.kn-thumb { margin: 0; cursor: pointer; min-width: 0; }
+.kn-thumb img, .kn-thumb-none { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 5px; border: 1px solid var(--line); background: var(--panel-2); display: block; }
+.kn-thumb-none { display: flex; align-items: center; justify-content: center; text-align: center; font-size: 10px; color: var(--text-3); padding: 4px; }
+.kn-thumb figcaption { font-size: 10.5px; color: var(--text-2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-top: 2px; }
+.kn-thumb:hover img { border-color: var(--accent); }
+
+.kn-cards { display: inline-flex; flex-wrap: wrap; gap: 3px; }
+.kn-chip-principle, .kn-chip-family, .kn-chip-param { max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.kn-chip-family { background: var(--ok-soft); color: var(--ok); }
+
+.kn-back { display: inline-block; margin: 8px 12px 0; font-size: 12px; color: var(--accent); cursor: pointer; }
+.kn-back:hover { text-decoration: underline; }
+.kn-detail { padding: 0 12px 16px; }
+.kn-detail p { margin: 4px 0; font-size: 12px; color: var(--text-2); }
+.kn-sec { font-size: 11px; color: var(--text-3); letter-spacing: .04em; margin: 12px 0 4px; }
+.kn-kv { display: grid; grid-template-columns: 52px 1fr; gap: 3px 8px; font-size: 12px; margin: 4px 0; }
+.kn-kv > :nth-child(odd) { color: var(--text-3); }
+.kn-steps { margin: 4px 0; padding-left: 18px; font-size: 12px; color: var(--text-2); }
+.kn-search { padding: 0 10px; }
+.kn-empty { color: var(--text-3); font-size: 12px; margin: 10px 12px; }
+
+/* ---------- 共用小件的打磨（B1） ---------- */
+/* 小标签单行省略：chip 默认是行内元素，max-width / 省略号要 inline-block 才生效 */
+.kn-chip-principle, .kn-chip-family, .kn-chip-param { display: inline-block; vertical-align: bottom; white-space: nowrap; }
+.kn-more { border: 1px dashed var(--line-strong); line-height: 16px; }
+.kn-thumb.can img { cursor: zoom-in; }
+.kn-thumb.can:hover figcaption { color: var(--accent); }
+.kn-link { border: 0; background: none; padding: 0; margin-left: 6px; font: inherit; font-size: 11px; color: var(--accent); cursor: pointer; }
+.kn-link:hover { text-decoration: underline; }
+
+/* ---------- G1 参数行的依据（ParamWhy.tsx） ----------
+ * kn-badge 行头徽标（.hit 当前取值有做法 / 家族撑腰 · .on 已展开 · .wait 加载中占位 · .none 暂无原则）
+ * kn-why-top 整块标题行 · kn-why-cur 当前取值 · kn-why-note 理由一句话 · kn-why-name 做法名 · kn-why-val 做法的取值
+ * kn-why-from 出自哪条原则 · kn-why-act 套用按钮行 · kn-why-change 会改什么 · kn-why-open / kn-why-more 展开链接 · kn-why-hint 小注
+ * kn-el-why 元素检查器里的"怎么画它" · kn-flash 跳到参数时闪一下
+ */
+.kn-badge { flex: none; border: 0; margin: 0; font: inherit; font-size: 10px; line-height: 16px; padding: 0 5px; border-radius: 8px; background: var(--muted-soft); color: var(--text-3); cursor: pointer; white-space: nowrap; }
+.kn-badge:hover { color: var(--text-2); box-shadow: inset 0 0 0 1px var(--line-strong); }
+.kn-badge.hit { background: var(--accent-soft); color: var(--accent); }
+.kn-badge.on { box-shadow: inset 0 0 0 1px currentColor; }
+.kn-badge.wait { cursor: default; opacity: .55; }
+.kn-badge.wait:hover { box-shadow: none; color: var(--text-3); }
+.kn-badge.none { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+
+.kn-why { margin: 6px 0 2px; padding: 6px 8px 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); font-size: 12px; line-height: 1.5; color: var(--text-2); cursor: auto; }
+.kn-why-top { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.kn-why-top b { font-size: 12px; color: var(--text); white-space: nowrap; }
+.kn-why-cur { font-size: 11px; color: var(--text-3); min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.kn-why-note { margin: 4px 0 0; }
+.kn-why .kn-sec { margin: 8px 0 3px; }
+.kn-why .chips { margin-top: 0; }
+.kn-why-item { padding: 5px 0 6px; border-top: 1px dashed var(--line); }
+.kn-sec + .kn-why-item, .kn-why-top + .kn-why-item { border-top: 0; padding-top: 2px; }
+.kn-why-item.match { border-left: 2px solid var(--ok); padding-left: 6px; margin-left: -8px; }
+.kn-why-head { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+.kn-why-name { font-weight: 600; color: var(--text); }
+.kn-why-val { font-size: 11px; color: var(--text-3); }
+.kn-why-from { font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.kn-why-from .kn-chip-principle { max-width: 70%; }
+.kn-why-meta { display: grid; grid-template-columns: 34px 1fr; gap: 6px; margin-top: 2px; }
+.kn-why-meta > span:first-child { color: var(--text-3); font-size: 11px; white-space: nowrap; }
+.kn-why-meta > div { min-width: 0; }
+.kn-why-meta.warn > div { color: var(--warn); }
+.kn-why-act { display: flex; align-items: center; gap: 6px; margin-top: 5px; min-width: 0; }
+.kn-why-change { font-size: 11px; color: var(--text-3); min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.kn-why-open { margin-left: 40px; }
+.kn-why-more { display: block; margin: 4px 0 0; }
+.kn-why-hint { display: block; font-size: 11px; color: var(--text-3); margin-top: 2px; }
+.kn-why .kn-thumbs { grid-template-columns: repeat(auto-fill, minmax(76px, 1fr)); }
+
+.kn-el-why { padding: 4px 12px 0; }
+.kn-el-why > .kn-why { margin-top: 6px; }
+
+@keyframes kn-flash { from { background: var(--accent-soft); } to { background: transparent; } }
+.row.kn-flash { animation: kn-flash 1.6s ease-out; }
+
+/* 家族小标签里的"待补参考"记号（空心小圆点，说明在 title 里） */
+.kn-needs-mark { font-style: normal; margin-left: 3px; font-size: 9px; color: var(--warn); vertical-align: 1px; }
+/* 返回上一条（与"← 全部原则 / ← 图谱 / ← 复刻库"并排） */
+.kn-back-prev { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: bottom; }

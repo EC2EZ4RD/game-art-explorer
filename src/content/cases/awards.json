@@ -1,0 +1,2469 @@
+{
+  "generatedAt": "2026-10-13T10:30:53.911Z",
+  "source": "docs/survey/03-cases-and-sources.md 第二节（IGF 以维基百科与 igf.com 存档为准；BAFTA 年份为游戏年度，括号为颁奖年）",
+  "count": 307,
+  "awards": [
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Eclipsium",
+      "result": "winner",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Blippo+",
+      "result": "nominee",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "CARIMARA: Beneath the forlorn limbs",
+      "result": "nominee",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Loco Motive",
+      "result": "nominee",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Morsels",
+      "result": "nominee",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Skate Story",
+      "result": "nominee",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Sol Cesto",
+      "result": "honorable",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Is This Seat Taken?",
+      "result": "honorable",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "The Drifter",
+      "result": "honorable",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Demonschool",
+      "result": "honorable",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "Henry Halfhead",
+      "result": "honorable",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2026,
+      "name": "PBJ - The Musical",
+      "result": "honorable",
+      "source": "https://igf.com/article/baby-steps-strolls-to-lead-with-5-nominations-at-2026-igf-awards/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Hauntii",
+      "result": "winner",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Children of the Sun",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Consume Me",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Judero",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Nine Sols",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Thank Goodness You're Here!",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Crow Country",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Death of the Reprobate",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Miniatures",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Tiny Glade",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2025,
+      "name": "Ultros",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2025/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Phonopolis",
+      "result": "winner",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Anthology of the Killer",
+      "result": "nominee",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Clash: Artifacts of Chaos",
+      "result": "nominee",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Darkest Dungeon II",
+      "result": "nominee",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Little Goody Two Shoes",
+      "result": "nominee",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Venba",
+      "result": "nominee",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "30 Birds",
+      "result": "honorable",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Chants of Sennaar",
+      "result": "honorable",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "Goodbye Volcano High",
+      "result": "honorable",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "NIDUS",
+      "result": "honorable",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2024,
+      "name": "SLUDGE LIFE 2",
+      "result": "honorable",
+      "source": "https://press-start.com.au/news/2024/03/21/the-independent-games-festival-awards-2024-finalists-have-been-revealed/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "RPG Time: The Legend of Wright",
+      "result": "winner",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Afterglitch",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "How Deep Is the Dark Water?",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Potionomics",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "To Hell With the Ugly",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "TUNIC",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "I Was a Teenage Exocolonist",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Melatonin",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "NAIAD",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Potion Craft",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Return to Monkey Island",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Swordship",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Terra Nil",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2023,
+      "name": "Voodoo Detective",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2023/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Papetura",
+      "result": "winner",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "The Eternal Cylinder",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Behind the Frame",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Fuzz Dungeon",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "The Wild at Heart",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Jett: The Far Shore",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Inscryption",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "A Musical Story",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Kena",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Saturnalia",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Stonefly",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2022,
+      "name": "Cris Tales",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2022/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Genesis Noir",
+      "result": "winner",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Arrog",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "In Other Waters",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Shady Part of Me",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Call of the Sea",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Carto",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Stilstand",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Bloodroots",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "OMORI",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Chicory",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Going Under",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2021,
+      "name": "Umurangi Generation",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2021/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Knights and Bikes",
+      "result": "winner",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Mutazione",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Void Bastards",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Creature in the Well",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Eastward",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Stone Story RPG",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "LUNA The Shadow Dust",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Eastshade",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Minute of Islands",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Katana ZERO",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Song of Bloom",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "A Short Hike",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2020,
+      "name": "Creaks",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2020/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Mirror Drop",
+      "result": "winner",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Alto's Odyssey",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Forgotton Anne",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Hypnospace Outlaw",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Just Shapes & Beats",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Return of the Obra Dinn",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Beat Saber",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Guildlings",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Iconoclasts",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Moss",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Paratopic",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Subnautica",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2019,
+      "name": "Wandersong",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2019/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "CHUCHEL",
+      "result": "winner",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Night in the Woods",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Cuphead",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "ECHO",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Luna",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "The Gardens Between",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Jettomero",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Dead Cells",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "AER",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Tooth and Tail",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Rain World",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Shape of the World",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2018,
+      "name": "Hollow Knight",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2018/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Hyper Light Drifter",
+      "result": "winner",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "The Flame in the Flood",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "INSIDE",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Virginia",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Old Man's Journey",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "She Remembered Caterpillars",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Inks",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Night in the Woods",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Mu Cartographer",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Future Unfolding",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Sundered",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2017,
+      "name": "Un Pas Fragile",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2017/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "OXENFREE",
+      "result": "winner",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Armello",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Darkest Dungeon",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "GNOG",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Mini Metro",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "PANORAMICAL",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Alto's Adventure",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Astroneer",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Epistory",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Forkride Grilltime Sloth",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Future Unfolding",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2016,
+      "name": "Kingdom",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2016/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Metamorphabet",
+      "result": "winner",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Donut County",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "else Heart.Break()",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Lumino City",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Memory of a Broken Dimension",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Oquonie",
+      "result": "nominee",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Crawl",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Future Unfolding",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Hyper Light Drifter",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "Mini Metro",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "The Sailor's Dream",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2015,
+      "name": "The Vanishing of Ethan Carter",
+      "result": "honorable",
+      "source": "https://igf.com/archive-2015/"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2014,
+      "name": "Gorogoa",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2013,
+      "name": "Kentucky Route Zero",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2012,
+      "name": "Dear Esther",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2011,
+      "name": "BIT.TRIP RUNNER",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2010,
+      "name": "Limbo",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2009,
+      "name": "Machinarium",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2008,
+      "name": "Fez",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "IGF",
+      "award": "IGF Excellence in Visual Art",
+      "year": 2007,
+      "name": "Castle Crashers",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/Independent_Games_Festival"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2025,
+      "name": "Death Stranding 2",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement",
+      "yearLabel": "2025（2026年4月颁奖）"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2025,
+      "name": "Clair Obscur: Expedition 33",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement",
+      "yearLabel": "2025（2026年4月颁奖）"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2025,
+      "name": "Dispatch",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement",
+      "yearLabel": "2025（2026年4月颁奖）"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2025,
+      "name": "Ghost of Yōtei",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement",
+      "yearLabel": "2025（2026年4月颁奖）"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2025,
+      "name": "Hollow Knight: Silksong",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement",
+      "yearLabel": "2025（2026年4月颁奖）"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2025,
+      "name": "South of Midnight",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement",
+      "yearLabel": "2025（2026年4月颁奖）"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2024,
+      "name": "Neva",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2024,
+      "name": "Astro Bot",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2024,
+      "name": "Black Myth: Wukong",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2024,
+      "name": "Harold Halibut",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2024,
+      "name": "Hellblade II",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2024,
+      "name": "Still Wakes the Deep",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2023,
+      "name": "Alan Wake 2",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2023,
+      "name": "Baldur's Gate 3",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2023,
+      "name": "Cocoon",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2023,
+      "name": "Diablo IV",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2023,
+      "name": "FFXVI",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2023,
+      "name": "Hi-Fi Rush",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2022,
+      "name": "Tunic",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2022,
+      "name": "Elden Ring",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2022,
+      "name": "GoW Ragnarök",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2022,
+      "name": "Immortality",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2022,
+      "name": "Pentiment",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2022,
+      "name": "A Plague Tale: Requiem",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2021,
+      "name": "The Artful Escape",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2021,
+      "name": "It Takes Two",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2021,
+      "name": "Psychonauts 2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2021,
+      "name": "Ratchet & Clank: Rift Apart",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2021,
+      "name": "Returnal",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2021,
+      "name": "RE Village",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2020,
+      "name": "Hades",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2020,
+      "name": "Cyberpunk 2077",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2020,
+      "name": "Dreams",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2020,
+      "name": "TLOU2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2020,
+      "name": "Ghost of Tsushima",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2020,
+      "name": "Half-Life: Alyx",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2019,
+      "name": "Sayonara Wild Hearts",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2019,
+      "name": "Concrete Genie",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2019,
+      "name": "Death Stranding",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2019,
+      "name": "Control",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2019,
+      "name": "Disco Elysium",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2019,
+      "name": "Knights and Bikes",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2018,
+      "name": "Return of the Obra Dinn",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2018,
+      "name": "Detroit",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2018,
+      "name": "God of War",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2018,
+      "name": "Spider-Man",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2018,
+      "name": "Gris",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2018,
+      "name": "RDR2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2017,
+      "name": "Hellblade",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2017,
+      "name": "Cuphead",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2017,
+      "name": "Gorogoa",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2017,
+      "name": "Horizon ZD",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2017,
+      "name": "Uncharted: TLL",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2017,
+      "name": "Zelda: BotW",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2016,
+      "name": "Inside",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2016,
+      "name": "Abzû",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2016,
+      "name": "Dishonored 2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2016,
+      "name": "The Last Guardian",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2016,
+      "name": "Uncharted 4",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2016,
+      "name": "Unravel",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2015,
+      "name": "Ori and the Blind Forest",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2015,
+      "name": "AC Syndicate",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2015,
+      "name": "Arkham Knight",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2015,
+      "name": "Everybody's Gone to the Rapture",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2015,
+      "name": "MGSV",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2015,
+      "name": "Witcher 3",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2014,
+      "name": "Lumino City",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2014,
+      "name": "AC Unity",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2014,
+      "name": "Far Cry 4",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2014,
+      "name": "Valiant Hearts",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2014,
+      "name": "Hohokum",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2014,
+      "name": "Monument Valley",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2013,
+      "name": "Tearaway",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2013,
+      "name": "BioShock Infinite",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2013,
+      "name": "Beyond",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2013,
+      "name": "TLOU",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2013,
+      "name": "Device 6",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2013,
+      "name": "Ni no Kuni",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2012,
+      "name": "Journey",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2012,
+      "name": "The Room",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2012,
+      "name": "Halo 4",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2012,
+      "name": "Dear Esther",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2012,
+      "name": "Borderlands 2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2012,
+      "name": "Far Cry 3",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2011,
+      "name": "Rayman Origins",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2011,
+      "name": "Arkham City",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2011,
+      "name": "L.A. Noire",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2011,
+      "name": "LBP2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2011,
+      "name": "Uncharted 3",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2011,
+      "name": "Skyrim",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2010,
+      "name": "God of War III",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2010,
+      "name": "AC Brotherhood",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2010,
+      "name": "CoD BO",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2010,
+      "name": "Heavy Rain",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2010,
+      "name": "Limbo",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "BAFTA",
+      "award": "BAFTA Artistic Achievement",
+      "year": 2010,
+      "name": "Mass Effect 2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/British_Academy_Games_Award_for_Artistic_Achievement"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2025,
+      "name": "Clair Obscur: Expedition 33",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2025"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2025,
+      "name": "Death Stranding 2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2025"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2025,
+      "name": "Ghost of Yōtei",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2025"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2025,
+      "name": "Hades II",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2025"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2025,
+      "name": "Hollow Knight: Silksong",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2025"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2024,
+      "name": "Metaphor: ReFantazio",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2024"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2024,
+      "name": "Astro Bot",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2024"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2024,
+      "name": "Black Myth: Wukong",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2024"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2024,
+      "name": "Elden Ring: Shadow of the Erdtree",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2024"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2024,
+      "name": "Neva",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2024"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2023,
+      "name": "Alan Wake 2",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2023"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2023,
+      "name": "Hi-Fi Rush",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2023"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2023,
+      "name": "Lies of P",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2023"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2023,
+      "name": "Super Mario Bros. Wonder",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2023"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2023,
+      "name": "Zelda: TotK",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2023"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2022,
+      "name": "Elden Ring",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2022"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2022,
+      "name": "GoW Ragnarök",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2022"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2022,
+      "name": "Horizon FW",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2022"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2022,
+      "name": "Scorn",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2022"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2022,
+      "name": "Stray",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2022"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2021,
+      "name": "Deathloop",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2021"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2021,
+      "name": "Kena",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2021"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2021,
+      "name": "Psychonauts 2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2021"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2021,
+      "name": "Ratchet & Clank: Rift Apart",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2021"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2021,
+      "name": "The Artful Escape",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2021"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2020,
+      "name": "Ghost of Tsushima",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2020"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2020,
+      "name": "FFVII Remake",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2020"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2020,
+      "name": "Hades",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2020"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2020,
+      "name": "TLOU2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2020"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2020,
+      "name": "Ori and the Will of the Wisps",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2020"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2019,
+      "name": "Control",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2019"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2019,
+      "name": "Death Stranding",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2019"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2019,
+      "name": "Gris",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2019"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2019,
+      "name": "Zelda: Link's Awakening",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2019"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2019,
+      "name": "Sayonara Wild Hearts",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2019"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2019,
+      "name": "Sekiro",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2019"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2018,
+      "name": "Return of the Obra Dinn",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2018"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2018,
+      "name": "AC Odyssey",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2018"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2018,
+      "name": "God of War",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2018"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2018,
+      "name": "RDR2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2018"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2018,
+      "name": "Octopath Traveler",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2018"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2017,
+      "name": "Cuphead",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2017"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2017,
+      "name": "Destiny 2",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2017"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2017,
+      "name": "Horizon ZD",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2017"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2017,
+      "name": "Persona 5",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2017"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2017,
+      "name": "Zelda: BotW",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2017"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2016,
+      "name": "Inside",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2016"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2016,
+      "name": "Abzû",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2016"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2016,
+      "name": "Firewatch",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2016"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2016,
+      "name": "Overwatch",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2016"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2016,
+      "name": "Uncharted 4",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2016"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2015,
+      "name": "Ori and the Blind Forest",
+      "result": "winner",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2015"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2015,
+      "name": "Arkham Knight",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2015"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2015,
+      "name": "Bloodborne",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2015"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2015,
+      "name": "MGSV",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2015"
+    },
+    {
+      "awardKey": "TGA",
+      "award": "TGA Best Art Direction",
+      "year": 2015,
+      "name": "Witcher 3",
+      "result": "nominee",
+      "source": "https://en.wikipedia.org/wiki/The_Game_Awards_2015"
+    }
+  ]
+}

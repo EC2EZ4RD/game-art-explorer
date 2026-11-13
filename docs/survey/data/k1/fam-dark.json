@@ -1,0 +1,1992 @@
+{
+ "families": [
+  {
+   "family": "暗色细线",
+   "skin": "skin.darkHairline",
+   "noCards": false,
+   "definition": "没有\"框\"的深色界面：整屏或半屏深色罩层直接压在实时 / 冻结画面上，分组只靠 1px 发丝线（竖向栏线、行间横线，两端渐隐）和留白，面板没有外轮廓、厚度和材质。颜色压成暖灰骨架 + 骨白字，彩色只留给稀有度、状态和 HUD 细条；装饰预算 0–1。辨认口诀：删掉所有线，界面仍然成立——线只负责分隔；与暗金金属牌比没有厚度和金属边，与线描花饰比线不画花样。",
+   "grammar": {
+    "shape": "从灰盒出发：删掉面板四边描边、圆角归零、去掉投影；把信息区改成\"左网格 / 中详情 / 右属性表\"三栏，栏与栏之间各放一根竖线；小部件（头像、快捷栏）才用八角或方形小框。",
+    "line": "1px、只比底色亮 15–25% 的暖灰或淡金线，两端渐隐；只画单边（左栏线、行底线、标题下划线），永远不画完整四边框。",
+    "surface": "不要实体面板：整屏 60–85% 黑罩层，或从一侧向另一侧的黑→透明渐变（ELDEN RING 标题带）；格子是更暗的内凹方块，空格放灰色剪影。",
+    "color": "暖灰底 #0d0c0a–#1a1714、骨白字 #d8cfbd 一类；选中用暖金 / 米白提亮；高饱和色只给稀有度色条（Wukong 格子底边）和红 / 蓝 / 绿三细条。",
+    "type": "衬线正文与标题（魂系、重返未来：1999 的宋体）或窄体无衬线小型大写（Witcher 3、刺客信条）；常规字重，不描边，只加淡投影；数值右对齐成列。",
+    "material": "几乎无材质：格子里的旧石噪点、10% 以内的古画 / 书法水印（Wukong 背包）。",
+    "ornament": "预算 0–1：细条两端小金属端头、标题前小徽记、身份勋章（Witcher 狼头）。超过这个量就滑向暗金金属牌。",
+    "icon": "去饱和的写实 3D 渲染物品图或写实手绘图；系统图标单色小线稿；按键提示 = 平台图标 + 小字。",
+    "motion": "截图看不出；按同类常识：淡入、缓出、0.15–0.25s，选中柔光渐亮，HUD 情境显现 / 静止渐隐。",
+    "layout": "HUD 散布四角且极少（左上细条、左下快捷栏、底中 Boss 条、右上小地图）；菜单整屏三栏，3D 角色或大物件放中央。"
+   },
+   "params": {
+    "col.lightness": "dark",
+    "col.strategy": "mono",
+    "col.surface": "#14120f",
+    "col.text": "#d9d0bd",
+    "vis.corner": "sharp",
+    "vis.fill": "gradient",
+    "vis.opacity": 0.75,
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 1,
+    "vis.strokeColor": "metal",
+    "vis.strokeSides": "left",
+    "vis.depth": "flat",
+    "vis.ornament": 1,
+    "vis.motif": "none",
+    "lay.grouping": "divider",
+    "typ.body.family": "serif",
+    "typ.display.family": "serif",
+    "typ.display.weight": "regular",
+    "typ.legibility": "shadow",
+    "vis.iconStyle": "realistic",
+    "st.emptySlot": "silhouette",
+    "ix.focus": "focusGlow",
+    "rel.hudVisibility": "contextual",
+    "cmp.gauge@el.vitals": "thinBar"
+   },
+   "artPairing": [
+    {
+     "artStyle": "哥特暗黑幻想 (Gothic dark fantasy)",
+     "relation": "neutral",
+     "why": "调子统一（暖灰、烛光暖金），UI 不模仿石雕，只是退后；魂系的标准搭配。"
+    },
+    {
+     "artStyle": "照片写实 (Photorealism)",
+     "relation": "neutral",
+     "why": "写实画面细节已满，无框细线是降噪最多的做法（ELDEN RING、Black Myth: Wukong）。"
+    },
+    {
+     "artStyle": "电影化写实 (Cinematic)",
+     "relation": "neutral",
+     "why": "开放世界 3A：HUD 几乎全隐，保护构图。"
+    },
+    {
+     "artStyle": "水墨（泼墨/破墨）(Ink wash)",
+     "relation": "neutral",
+     "why": "写实画面 + 书法 / 古画水印的 UI：把文化母题放进 UI 而不是画面（Wukong）。"
+    },
+    {
+     "artStyle": "油画／厚涂 (Oil/impasto)",
+     "relation": "contrast",
+     "why": "Disco Elysium：纯黑排版栏框住油画，越浓的画配越素的 UI。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "explore",
+     "count": 10,
+     "why": "3A 开放世界：HUD 让位给风景、菜单深色无框，信息靠情境显现。"
+    },
+    {
+     "genre": "strategy",
+     "count": 7,
+     "why": "多为深色数据面板子类：长时间盯表格，深底减少疲劳，但与本家族语法只共享\"深色\"。"
+    },
+    {
+     "genre": "action",
+     "count": 5,
+     "why": "魂系动作：极简细条 HUD + 厚重属性页，深色衬背景与暗黑美术同调。"
+    },
+    {
+     "genre": "card",
+     "count": 5,
+     "why": "该批次里的暗底文学排版与二次元暗调（Disco 式长文、重返未来：1999）。"
+    },
+    {
+     "genre": "builder",
+     "count": 5,
+     "why": "建造 / 城建的深色侧面板（Timberborn、Kenshi），属数据面板子类。"
+    },
+    {
+     "genre": "mobile",
+     "count": 5,
+     "why": "手游横屏战斗：深色半透明顶条 + 细边技能键，证据只有单张。"
+    },
+    {
+     "genre": "rpg",
+     "count": 3,
+     "why": "Darkest Dungeon II、FF7R / FFXVI：深色细线 HUD 或黑底大字事件。"
+    },
+    {
+     "genre": "survival",
+     "count": 2,
+     "why": "Valheim / Enshrouded：同样的暗色细线 HUD，背包可读性压力大。"
+    },
+    {
+     "genre": "factory",
+     "count": 2,
+     "why": "像素工具式深色面板（Farmer Was Replaced、Widget Inc.）。"
+    },
+    {
+     "genre": "narrative",
+     "count": 1,
+     "why": "黑底长文对话（Disco Elysium）。"
+    },
+    {
+     "genre": "sandbox",
+     "count": 1,
+     "why": "深蓝推理板（Shadows of Doubt）。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:1245620",
+     "why": "标尺：无框三栏 + 竖栏线 + 衬线 + 灰剪影空格 + 三细条端头。"
+    },
+    {
+     "card": "steam:2358720",
+     "why": "细线骨架 + 国风点缀（毛笔选中条、书法 / 古画水印、稀有度色条）。"
+    },
+    {
+     "card": "steam:292030",
+     "why": "窄体无衬线变体：近黑底、细灰角框、中央 3D 纸娃娃。"
+    },
+    {
+     "card": "gameui:4596",
+     "why": "手游横屏版：宋体 + 竖排菱形页签 + 单一橙色主按钮。"
+    },
+    {
+     "card": "steam:632470",
+     "why": "暗底文学排版：纯黑文本栏、纸标签页头、油画肖像格。"
+    },
+    {
+     "card": "steam:281990",
+     "why": "边界样本：深色数据面板，说明\"深色\"不等于本家族。"
+    }
+   ],
+   "subfamilies": [
+    {
+     "family": "暗色细线·魂系衬线",
+     "skin": "skin.darkHairline",
+     "noCards": false,
+     "definition": "暗色细线的本体：魂系 / 写实暗黑动作 RPG 的菜单与 HUD。整屏渐变罩层 + 竖向栏线分栏 + 衬线字 + 写实物品图，HUD 只剩几条细条和一个十字快捷栏。手游里的二次元暗调作品（重返未来：1999）把同一套语法搬到横屏：宋体 + 左侧竖排菱形页签 + 唯一的橙色主按钮。",
+     "grammar": {
+      "shape": "不画面板外框；只有物品格是方块，头像 / 快捷栏用小八角框（ELDEN RING 左上头像框、十字四格）。",
+      "line": "1px 暖灰竖向栏线把属性区切成三列，标题下一条细线；HUD 细条两端带极小金属端头。",
+      "surface": "整屏 70–85% 黑罩层压在虚化的实时场景上，左上标题带向右渐隐；物品格是更暗的内凹石纹块，空格放灰色剪影。",
+      "color": "单色暖灰骨架 + 骨白字；选中格提亮成暖金 / 米白；HUD 细条红 / 蓝 / 绿是唯一高饱和色。",
+      "type": "衬线正文与标题（Garamond / 宋体一类），常规字重；数值右对齐成表格列；按键提示是手柄图标 + 衬线小字。",
+      "material": "格子内的旧石噪点；不做金属反光。",
+      "ornament": "预算 1：细条端头、标题前小徽记方块。",
+      "icon": "写实 3D 渲染物品图（去饱和），系统图标为单色小线稿。",
+      "motion": "截图看不出；按同类常识：淡入、缓出、短时长，选中态柔光渐亮，不弹跳。",
+      "layout": "菜单三栏：左物品网格、中详情、右角色属性表；HUD 左上三细条、左下十字快捷栏、底中 Boss 长条带名字。"
+     },
+     "params": {
+      "typ.body.family": "serif",
+      "typ.display.family": "serif",
+      "lay.grouping": "divider",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeSides": "left",
+      "vis.opacity": 0.8,
+      "vis.fill": "gradient",
+      "col.strategy": "mono",
+      "col.lightness": "dark",
+      "vis.iconStyle": "realistic",
+      "st.emptySlot": "silhouette",
+      "st.selected": "glow",
+      "lay.composition": "three",
+      "cmp.gauge@el.vitals": "thinBar",
+      "el.vitals.count": 3,
+      "el.threat.form": [
+       "bossBar"
+      ],
+      "el.threat.screenAnchor": "bc",
+      "el.abilities.arrangement": "cross"
+     },
+     "artPairing": [
+      {
+       "artStyle": "哥特暗黑幻想 (Gothic dark fantasy)",
+       "relation": "neutral",
+       "why": "暖灰 + 骨白呼应石雕与烛光的调子，但 UI 不模仿石头材质，只是退后让画面说话。"
+      },
+      {
+       "artStyle": "照片写实 (Photorealism)",
+       "relation": "neutral",
+       "why": "写实画面信息量已经很大，UI 用无框细线把视觉噪声降到最低（ELDEN RING、Black Myth: Wukong）。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "action",
+       "count": 4,
+       "why": "魂系 / 暗黑动作的标准答案。"
+      },
+      {
+       "genre": "card",
+       "count": 1,
+       "why": "重返未来：1999（卡牌批次）把同一语法搬到手游。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1245620",
+       "why": "本家族的标尺：装备页无框三栏 + 竖栏线 + 衬线 + 空格灰剪影；HUD 三细条带小金属端头。"
+      },
+      {
+       "card": "steam:2358720",
+       "why": "同骨架加国风：选中页签是宣纸色毛笔条，格子底部稀有度色条，背景淡古画与书法水印。"
+      },
+      {
+       "card": "gameui:4596",
+       "why": "手游横屏版：宋体、左侧竖排菱形页签、+ 号空格、只给主按钮一块橙色。"
+      },
+      {
+       "card": "steam:1627720",
+       "why": "魂系布局（血条左下、Boss 条底中）；商店图无 UI，只能按已知描述归入。"
+      },
+      {
+       "card": "steam:814380",
+       "why": "书法标题 + 红色\"危\"字警示，是墨笔方向的变体；商店图无 UI。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "墨笔点缀",
+       "diff": "在魂系细线骨架上加：选中页签用毛笔干刷白条（ix.focus = brushSwash），背景 8–12% 古画 / 书法水印，Boss 条两端换成祥云卷线。",
+       "cards": [
+        "steam:2358720",
+        "steam:814380"
+       ]
+      },
+      {
+       "name": "二次元暗调（手游）",
+       "diff": "字体换宋体，页签改左侧竖排 + 菱形选中标记，主按钮给唯一一块橙色；空格用 + 号而不是灰剪影。",
+       "cards": [
+        "gameui:4596"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "细条和细字压在亮场景（雪地、云海、天空）上几乎看不见：Wukong 的 Boss 条叠在白色云海上，ELDEN RING 三细条只靠一道暗描边撑住。",
+       "evidence": [
+        "steam:2358720",
+        "steam:1245620"
+       ]
+      },
+      {
+       "desc": "衬线细字在电视距离偏小：评测关键词\"字太小\"命中只狼 2 条、艾尔登法环 1 条。",
+       "evidence": [
+        "steam:814380",
+        "steam:1245620"
+       ]
+      }
+     ],
+     "skinGap": "skin.darkHairline 画的是四边细框的半透明面板，而这一类根本没有面板外框：缺\"整屏罩层 + 栏线分组\"的组合（strokeSides 默认四边），缺写实物品图（预设是 painted），缺空格灰剪影与选中暖光。",
+     "paramGaps": [
+      "两端渐隐的发丝线",
+      "HUD 细条两端的小金属端头 / 八角头像框没有组件级样式"
+     ]
+    },
+    {
+     "family": "暗色细线·写实开放世界",
+     "skin": "skin.darkHairline",
+     "noCards": false,
+     "definition": "3A 写实开放世界的\"几乎无 HUD\"：常驻元素只有小地图 / 罗盘、一两条血条和情境按键提示，可在设置里逐项关闭；菜单是近黑整屏 + 细灰线分组 + 窄体无衬线小型大写 + 中央 3D 人物纸娃娃。与魂系衬线的区别是字体（窄体无衬线）和菜单中央的 3D 角色。",
+     "grammar": {
+      "shape": "细灰线小框只强调四角或上缘（Witcher 3 装备组外框），大部分区域无框。",
+      "line": "1px 中灰线，常只画角或一条边；分组标题下细线。",
+      "surface": "近乎全黑的烟雾质感整屏底（Witcher 3 背包），HUD 无底，靠投影可读。",
+      "color": "黑 + 中灰 + 白字，琥珀色只给按键提示与数值；血条红、体力黄。",
+      "type": "窄体无衬线小型大写标题（WEAPONS / ARMOR）、窄体正文，数字等宽。",
+      "material": "无。",
+      "ornament": "预算 0–1：身份徽章（狼头勋章）是唯一的装饰物，属于借用暗金金属牌的节点装饰。",
+      "icon": "写实物品图；系统图标单色。",
+      "motion": "截图看不出；HUD 情境显现、静止渐隐是这一类的默认。",
+      "layout": "HUD 左上血条 + 右上圆形小地图带时间 / 天气 + 右侧任务清单；菜单左格子、中 3D 角色、右装备槽。"
+     },
+     "params": {
+      "typ.body.family": "condensed",
+      "typ.display.family": "condensed",
+      "typ.display.case": "smallCaps",
+      "rel.hudVisibility": "contextual",
+      "cnt.density": 1,
+      "el.minimap.form": "plan",
+      "el.minimap.screenAnchor": "tr",
+      "vis.opacity": 0.9,
+      "col.lightness": "dark",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeSides": "corners",
+      "cnt.characterMedium": "model3d",
+      "vis.iconStyle": "realistic",
+      "typ.legibility": "shadow"
+     },
+     "artPairing": [
+      {
+       "artStyle": "电影化写实 (Cinematic)",
+       "relation": "neutral",
+       "why": "HUD 退到几乎看不见，保住电影构图；菜单用黑底把 3D 角色当主体。"
+      },
+      {
+       "artStyle": "风格化写实 (Stylized realism)",
+       "relation": "neutral",
+       "why": "Dishonored 系列：画面已高度设计，UI 只做克制的细条与能力轮。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "explore",
+       "count": 10,
+       "why": "刺客信条、巫师 3、荒野大镖客 2 等。"
+      },
+      {
+       "genre": "rpg",
+       "count": 2,
+       "why": "FF7R / FFXVI 的 3A HUD。"
+      },
+      {
+       "genre": "survival",
+       "count": 2,
+       "why": "Valheim、Enshrouded。"
+      },
+      {
+       "genre": "action",
+       "count": 1,
+       "why": "Batman: Arkham City。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:292030",
+       "why": "唯一有清晰菜单截图的一张：近黑底、细灰角框、窄体小型大写、中央 3D 纸娃娃。"
+      },
+      {
+       "card": "steam:2515020",
+       "why": "Boss 条在顶部带名字与韧性槽，HUD 用细线小字，截图可见。"
+      },
+      {
+       "card": "steam:1174180",
+       "why": "雷达下三个小圆环核心值、HUD 可设为只在需要时出现。"
+      },
+      {
+       "card": "steam:812140",
+       "why": "顶部罗盘条 + 战利品按稀有度上色，是\"开放世界细线 + 稀有度色\"的样板（商店图无 UI）。"
+      },
+      {
+       "card": "steam:205100",
+       "why": "能力轮按住呼出、透视描边属空间内，HUD 极少（商店图无 UI）。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "刺客信条系列",
+       "diff": "小地图左下 / 右下、右上情境按键对应手柄四键；同一系列 6 款卡只换锚点。",
+       "cards": [
+        "steam:33230",
+        "steam:48190",
+        "steam:242050",
+        "steam:289650",
+        "steam:368500",
+        "steam:812140"
+       ]
+      },
+      {
+       "name": "生存建造",
+       "diff": "同样的暗色细线 HUD，但菜单是大量格子背包，可读性压力大得多。",
+       "cards": [
+        "steam:892970",
+        "steam:1203620"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "证据薄：本子类 15 张卡里 11 张的商店截图没有 UI，归类靠对该作 HUD 的已知描述，置信度低于看得见 UI 的卡。",
+       "evidence": [
+        "steam:812140",
+        "steam:289650",
+        "steam:200260",
+        "steam:48190"
+       ]
+      },
+      {
+       "desc": "暗色格子背包在生存类里是投诉重灾区：Valheim 提到 UI 的 176 条评测里负面 132 条，\"背包难用\"命中 17 条（主要是机制，不全是风格）。",
+       "evidence": [
+        "steam:892970"
+       ]
+      }
+     ],
+     "skinGap": "skin.darkHairline 用衬线体；本子类是窄体无衬线小型大写，且需要\"只画四角 / 上缘\"的细框和中央 3D 角色位。",
+     "paramGaps": [
+      "细框只在角上加粗的\"角标框\"（strokeSides = corners 只能画角，不能\"整框细 + 角加粗\"）"
+     ]
+    },
+    {
+     "family": "暗色细线·暗底文学排版",
+     "skin": null,
+     "noCards": false,
+     "definition": "把界面当书页：纯黑或深蓝底上的长段衬线文字、编号选项和少量白纸标签，插画（油画肖像、像素场景）放在文字旁边作配图。HUD 很少，主屏就是一栏滚动文本或一块线索板。与魂系衬线的区别：主体是文字流而不是格子，强调色用于关键词着色。",
+     "grammar": {
+      "shape": "竖长文本栏（Disco Elysium 右侧整栏）、带白底黑字的纸标签页头（CHARACTER SHEET）。",
+      "line": "细线把选项分隔成行；选项两端方括号或细金线（Depersonalization）。",
+      "surface": "100% 实底黑 / 深蓝，不透明；配图区与文字区并排。",
+      "color": "黑白为主，技能名 / 关键词着色（青、红、金），失败与成功用冷暖。",
+      "type": "衬线正文、行距宽；大号衬线数字作属性值；事件大字用哥特 / 烧边展示体（Darkest Dungeon II 的整屏大字）。",
+      "material": "无，或纸标签。",
+      "ornament": "预算 0–1：白纸标签、金色小菱形资源图标。",
+      "icon": "油画 / 手绘肖像格（Disco Elysium 技能格）。",
+      "motion": "截图看不出；文字逐行出现。",
+      "layout": "左配图右文本（splitLR），或整屏线索板 + 红绳。"
+     },
+     "params": {
+      "col.lightness": "dark",
+      "vis.opacity": 1,
+      "typ.body.family": "serif",
+      "typ.display.family": "serif",
+      "cmp.dialogBox": "chatThread",
+      "lay.composition": "splitLR",
+      "cnt.textLength": "long",
+      "hier.inline": "keyword",
+      "cmp.plate": "tab",
+      "vis.iconStyle": "painted",
+      "el.choices.form": "text",
+      "mo.textReveal": "lineByLine",
+      "col.strategy": "neutralAccent"
+     },
+     "artPairing": [
+      {
+       "artStyle": "油画／厚涂 (Oil/impasto)",
+       "relation": "contrast",
+       "why": "Disco Elysium 用纯黑排版框住油画：画面越浓，文字栏越素。"
+      },
+      {
+       "artStyle": "现代高位像素 (Hi-bit)",
+       "relation": "contrast",
+       "why": "Depersonalization 左半像素场景、右半黑底长文，靠介质反差分出\"看\"和\"读\"。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "card",
+       "count": 2,
+       "why": "Depersonalization、魔镜物语（卡牌批次）。"
+      },
+      {
+       "genre": "narrative",
+       "count": 1,
+       "why": "Disco Elysium。"
+      },
+      {
+       "genre": "sandbox",
+       "count": 1,
+       "why": "Shadows of Doubt。"
+      },
+      {
+       "genre": "rpg",
+       "count": 1,
+       "why": "Darkest Dungeon II 的整屏大字。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:632470",
+       "why": "右侧整栏滚动对话、白纸标签页头、油画肖像技能格、大号衬线数字。"
+      },
+      {
+       "card": "steam:1477070",
+       "why": "黑底长段衬线文本 + 方括号选项 + 金色菱形资源图标。"
+      },
+      {
+       "card": "steam:1940340",
+       "why": "关键事件整屏黑底 + 烧边哥特大字横贯（Respectful / Hold the Line）。"
+      },
+      {
+       "card": "steam:986130",
+       "why": "深蓝推理板 + 证据卡 + 红绳，对话是左侧深色选项列表。"
+      },
+      {
+       "card": "gameui:3239",
+       "why": "边界样本：暗紫插画上的叙事旁白字幕；契约页是灰石板卷 + 蜡封，证据弱。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "长文 + 小号衬线在低分辨率下吃力；Shadows of Doubt 提到 UI 的 46 条里负面 21 条（关键词只命中引导 1 条，不能全归因于排版）。",
+       "evidence": [
+        "steam:986130"
+       ]
+      }
+     ],
+     "skinGap": "没有对应皮肤：需要\"实底黑 + 长文排版 + 关键词着色 + 纸标签页头\"的组合，现有 darkHairline 是半透明网格面板。",
+     "paramGaps": [
+      "事件大字的烧边 / 做旧展示体（typ.titleFx 无\"烧边 / 做旧\"）"
+     ]
+    },
+    {
+     "family": "暗色细线·功能数据面板",
+     "skin": null,
+     "noCards": false,
+     "definition": "策略 / 模拟 / 工厂 / 像素独立游戏的\"深色工具界面\"：深灰或深绿半透明面板、细边框、无衬线小字、高密度表格和图标。它和魂系细线只共享\"深色\"一个特征——没有罩层、没有衬线、没有克制留白，信息密度 3–4。参考库把它们归进暗色细线，实际更接近极简单色 / 科幻 HUD / 像素位图的深色模式。",
+     "grammar": {
+      "shape": "直角或小切角矩形面板，贴边整条（Kenshi 底部控制带、Wesnoth 右侧栏）或可拖动窗口（The Farmer Was Replaced 代码窗）。",
+      "line": "1px 中灰 / 青绿细边（Stellaris）或 2px 倒角灰边（Kenshi、Legend Creatures）。",
+      "surface": "深灰 / 深绿 80–90% 不透明；石纹或金属纹偶尔出现（Wesnoth、Widget Inc.）。",
+      "color": "中性深灰 + 状态色编码（绿好红坏）+ 阵营色；强调色常是青绿或绿色。",
+      "type": "无衬线小字或像素字、等宽数字；Digseum / Farmer 用等宽终端字。",
+      "material": "石、铁、皮革少量；多数是平涂。",
+      "ornament": "预算 0。",
+      "icon": "小图标阵列，扁平或像素。",
+      "motion": "截图看不出。",
+      "layout": "贴边整条 + 多窗口，表格 / 树状科技树（方框节点 + 直线 / 电路连线）。"
+     },
+     "params": {
+      "col.lightness": "dark",
+      "vis.opacity": 0.85,
+      "vis.corner": "sharp",
+      "vis.stroke": "solid",
+      "vis.strokeWidth": 1,
+      "vis.strokeColor": "darker",
+      "typ.body.family": "sans",
+      "typ.numerals.family": "tabular",
+      "cnt.density": 4,
+      "st.statViz": "table",
+      "lay.hudOrg": "edgeBar",
+      "col.coding": [
+       "status",
+       "team"
+      ],
+      "vis.ornament": 0,
+      "lay.arrangement": "tree",
+      "vis.connector": "straight"
+     },
+     "artPairing": [
+      {
+       "artStyle": "现代高位像素 (Hi-bit)",
+       "relation": "neutral",
+       "why": "Songs of Syx、Wesnoth、Widget Inc.：像素世界上叠深色表格，UI 不跟像素化（或只跟一半）。"
+      },
+      {
+       "artStyle": "极简抽象 (Minimalist/abstract)",
+       "relation": "neutral",
+       "why": "The Farmer Was Replaced：浅色 3D 场景上浮深色代码窗，深色只为区分\"工具\"和\"世界\"。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "strategy",
+       "count": 7,
+       "why": "策略的深色信息面板。"
+      },
+      {
+       "genre": "builder",
+       "count": 5,
+       "why": "城建 / 经营。"
+      },
+      {
+       "genre": "factory",
+       "count": 2,
+       "why": "工厂 / 编程。"
+      },
+      {
+       "genre": "card",
+       "count": 2,
+       "why": "Chrono Ark、Alina of the Arena。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:281990",
+       "why": "深色半透明 + 青绿细边 + 切角 + 左侧抽屉头图，最接近科幻 HUD 的边界样本。"
+      },
+      {
+       "card": "steam:233860",
+       "why": "底部整条灰色倒角控制带：小队头像行 + 选中面板 + 速度控制。"
+      },
+      {
+       "card": "steam:1162750",
+       "why": "极密的深色表格面板，信息墙的极端。"
+      },
+      {
+       "card": "steam:1062090",
+       "why": "深色半透明 + 绿色强调的建筑侧面板，较克制。"
+      },
+      {
+       "card": "steam:1775490",
+       "why": "彩色细线框区分职业的像素卡牌界面，说明\"暗色 + 细线\"也可以多色。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "像素工具界面",
+       "diff": "面板与字都像素化、等宽字，按钮是绿 / 红色块；更像 CRT 终端的深色版本。",
+       "cards": [
+        "steam:3361470",
+        "steam:3184110",
+        "steam:2060160",
+        "steam:1191840"
+       ]
+      },
+      {
+       "name": "卡牌 / 战斗面板",
+       "diff": "深色六角或横条行，敌人意图图标，信息集中在底部手牌条。",
+       "cards": [
+        "steam:1668690",
+        "steam:1188930",
+        "steam:1775490"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "家族过载：47 张暗色细线里 16 张是这一类，只共享\"深色\"，稀释了暗色细线的识别度；Stellaris 青绿切角更像科幻 HUD，Digseum / Widget Inc. 是像素工具界面。",
+       "evidence": [
+        "steam:281990",
+        "steam:3361470",
+        "steam:3184110"
+       ]
+      },
+      {
+       "desc": "深色小字密表格被嫌难用：Songs of Syx 提到 UI 的 79 条里负面 25 条（菜单 / 太乱 / 引导共 5 条命中）；Stellaris 54 条里负面 25 条。",
+       "evidence": [
+        "steam:1162750",
+        "steam:281990"
+       ]
+      }
+     ],
+     "skinGap": "暗色细线皮肤的衬线、写实图标、罩层都不适用；这一类应由\"极简单色 / 灰盒 + 深色面板 + 状态色编码\"组合得到，不该占用暗色细线皮肤。",
+     "paramGaps": []
+    }
+   ],
+   "variants": [
+    {
+     "name": "手游横屏战斗",
+     "diff": "深色半透明顶条（双方主将 + 兵力）或左上细血条，右下圆形技能键加细金属边；元素尺寸按触屏放大，线仍是细线。证据只有单张截图。",
+     "cards": [
+      "gameui:8901",
+      "gameui:6750",
+      "gameui:12771",
+      "gameui:6864",
+      "gameui:7155"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "细线细条在亮场景里消失：Wukong Boss 条叠在白色云海上、ELDEN RING 细条压在天空上，只能靠暗描边或投影补救——本家族必须配文字可读辅助。",
+     "evidence": [
+      "steam:2358720",
+      "steam:1245620"
+     ]
+    },
+    {
+     "desc": "衬线细字在电视距离偏小：\"字太小\"命中只狼 2、耻辱 2 2、艾尔登法环 1 条。",
+     "evidence": [
+      "steam:814380",
+      "steam:403640",
+      "steam:1245620"
+     ]
+    },
+    {
+     "desc": "被当成\"深色默认\"：参考库 47 张里 16 张是策略 / 模拟深色数据面板、5 张是暗底文学排版，只共享深色，家族识别度被稀释。",
+     "evidence": [
+      "steam:281990",
+      "steam:3361470",
+      "steam:1162750"
+     ]
+    },
+    {
+     "desc": "证据薄：写实开放世界子类大多数卡的商店截图没有 UI，靠已知描述归类。",
+     "evidence": [
+      "steam:812140",
+      "steam:200260",
+      "steam:48190"
+     ]
+    }
+   ],
+   "skinGap": "skin.darkHairline 的方向是对的（深色、渐变、衬线、细金线、分隔饰条），但：①它仍画完整四边细框的半透明面板，本家族的\"面板\"其实是整屏罩层 + 栏线（需要 strokeSides 单边 + lay.grouping 分隔线 + rel.dim）；②图标设成手绘彩绘，实际主力是去饱和的写实渲染；③缺空格灰剪影、选中暖光、HUD 三细条端头这些辨识点；④没有窄体无衬线（Witcher / 刺客信条）与国风墨笔两个变体；⑤refs 只列三款，没覆盖文学排版和手游横屏。",
+   "paramGaps": [
+    "两端渐隐的发丝线：vis.stroke 只有实线 / 双线 / 虚线。",
+    "栏线体系：strokeSides 是面板级的，表达不了\"三栏各一根竖线、行底一根横线\"的网格化分隔。",
+    "\"菜单本身就是方向性渐变罩层\"：rel.dim 只描述弹窗背后的暗幕，没有\"左浓右淡\"的罩层方向。",
+    "格子级材质（内凹石纹格）与面板材质分不开：ast.coreMat 只到面板级。",
+    "HUD 细条端头、八角小头像框这类组件级小样式只能用全局饰件开关。"
+   ]
+  },
+  {
+   "family": "暗金金属牌",
+   "skin": "skin.darkGold",
+   "noCards": false,
+   "definition": "把面板做成一块\"造出来的金属 / 皮革牌子\"：100% 实底、2–4px 金铜边带倒角高光，常有第二道内线，端头钉铆钉或装端盖，人物 / 阵营用圆形勋章；内芯是有色相的深色底（酒红、梅紫、藏青、皮革褐、石灰）。装饰集中在\"节点\"上（端盖、勋章、名牌、角缺口），边框本身是厚度均匀、可九宫格重复的型材。辨认口诀：能沿边裁一段下来无限重复——与重装饰雕花框（一整幅独一无二的雕塑）区别在此；与暗色细线区别在于有厚度、有材质、实底。",
+   "grammar": {
+    "shape": "矩形或小切角矩形，轮廓不破；长条两端加端盖（WoW 动作条兽首、Total War 单位条徽记柱）；圆形 / 盾形勋章出框骑在面板角或上缘（Songs of Conquest）。从灰盒改：不透明度拉满、加倒角、四角加小缺口、顶上加一块名牌。",
+    "line": "2–4px 金 / 铜边，一道亮高光一道暗边；内侧再走 1px 细金线成双线（Civ VI、Songs of Conquest）；分隔线是带菱形中节的金线。",
+    "surface": "100% 实底：酒红、梅紫、藏青、皮革褐或石纹；可叠极淡阵营徽记水印（WoW）。不做半透明、不做模糊。",
+    "color": "金铜 + 一种宝石色深底 + 少量阵营色（蓝 / 红 / 橙）；稀有度白绿蓝紫橙；标题金色、正文米白。",
+    "type": "衬线小型大写（Civ VI）或奇幻 / 哥特展示体（WoW、Darkest 系）金色标题，带金属渐变；正文无衬线或衬线小字。",
+    "material": "金、青铜、铁、皮革、石；高光是金属渐变不是发光；理想形态是九宫格素材（平框型材）。",
+    "ornament": "预算 2：铆钉、端盖、徽章底座、名牌、角缺口；母题偏纹章（盾、旗、兽首、桂冠），不用卷草。",
+    "icon": "彩绘图标装进金边圆勋章或金属方格；人物可做浮雕（Civ VI 骨白半身像）。",
+    "motion": "截图看不出；常识：按钮按下下沉、高价值提示用金属扫光，转场偏慢偏稳。",
+    "layout": "ARPG / MMO：下中整合底座 + 圆形小地图；策略：顶部资源金条 + 居中大面板 + 卡片列；手游：底部金框导航 + 金色名牌对话框。"
+   },
+   "params": {
+    "col.lightness": "dark",
+    "col.strategy": "neutralAccent",
+    "col.surface": "#2e1a17",
+    "col.accent": "#c9a24a",
+    "vis.opacity": 1,
+    "ast.frame": "procedural",
+    "ast.frameMat": "gold",
+    "ast.core": "texture",
+    "ast.coreMat": "leather",
+    "vis.corner": "chamfer",
+    "vis.cornerSize": 3,
+    "vis.depth": "bevel",
+    "vis.gloss": "metalGrad",
+    "vis.stroke": "double",
+    "vis.strokeWidth": 3,
+    "vis.strokeColor": "metal",
+    "ast.ornaments": [
+     "rivets",
+     "endcaps",
+     "badgeBase"
+    ],
+    "vis.ornament": 2,
+    "vis.motif": "rivets",
+    "cmp.plate": "plaque",
+    "typ.display.family": "serif",
+    "typ.display.case": "smallCaps",
+    "typ.titleFx": "metal",
+    "vis.iconStyle": "painted",
+    "vis.silhouette@el.party": "circle"
+   },
+   "artPairing": [
+    {
+     "artStyle": "手绘贴图风格化 (Hand-painted texture)",
+     "relation": "sameMedium",
+     "why": "WoW：UI 的金属、皮革、石材和世界一样是手绘贴图。"
+    },
+    {
+     "artStyle": "高奇幻 (High fantasy)",
+     "relation": "neutral",
+     "why": "饱和的奇幻地图（Songs of Conquest、BG3）需要一块沉稳实底面板来聚焦。"
+    },
+    {
+     "artStyle": "哥特暗黑幻想 (Gothic dark fantasy)",
+     "relation": "sameMedium",
+     "why": "Diablo IV、Total War: WARHAMMER II：铁石底座与世界材质同源。"
+    },
+    {
+     "artStyle": "风格化PBR／英雄射击风 (Stylized PBR)",
+     "relation": "contrast",
+     "why": "Civ VI 的卡通化地图配博物馆式珐琅面板，给轻快画面加\"历史分量\"。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "mobile",
+     "count": 6,
+     "why": "欧美卡通 / 奇幻手游的金框导航与名牌，多为单张或开场截图，证据弱。"
+    },
+    {
+     "genre": "strategy",
+     "count": 5,
+     "why": "纹章珐琅板与整合底座：Civ VI、Songs of Conquest、Total War。"
+    },
+    {
+     "genre": "rpg",
+     "count": 4,
+     "why": "ARPG / MMO 下中整合底座：WoW、Diablo IV、BG3。"
+    },
+    {
+     "genre": "card",
+     "count": 3,
+     "why": "卡通手游金框（AFK、圣树唤歌、艾尔多战记）。"
+    },
+    {
+     "genre": "puzzle",
+     "count": 2,
+     "why": "三消 / 卷轴商人手游，只有对话框名牌可用。"
+    },
+    {
+     "genre": "builder",
+     "count": 1,
+     "why": "Mr.Mine 铁框放置，边界样本。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:289070",
+     "why": "纹章珐琅板标尺：酒红卡列、双金线、浮雕半身像、胶囊页签嵌铜托槽。"
+    },
+    {
+     "card": "steam:867210",
+     "why": "梅紫对阵面板 + 金边 + 圆形领主勋章与阵营挂旗出框。"
+    },
+    {
+     "card": "iig:world-of-warcraft",
+     "why": "整合底座标尺：动作条兽首端盖、金石雕环小地图、皮革面板 + 阵营水印。"
+    },
+    {
+     "card": "steam:594570",
+     "why": "石框 + 金饰单位卡条、领主勋章、带框古地图小地图。"
+    },
+    {
+     "card": "gameui:3830",
+     "why": "手游轻量版：暗底对话框只在四角走细金线 + 一块金色名牌，说明金属牌可以减到只剩\"名牌 + 角\"。"
+    },
+    {
+     "card": "steam:2344520",
+     "why": "下中血球底座（商店图无 UI，按已知描述）。"
+    }
+   ],
+   "subfamilies": [
+    {
+     "family": "暗金金属牌·整合底座",
+     "skin": "skin.darkGold",
+     "noCards": false,
+     "definition": "ARPG / MMO / 全面战争的下中整合底座：一整条金属或石材型材，两端是兽首、徽记柱等端盖，中间技能方格、左右血球或领主圆形勋章。菜单面板是皮革 / 石纹实底 + 金边 + 金色奇幻展示体标题。",
+     "grammar": {
+      "shape": "长条底座 + 两端端盖；圆形勋章（领主头像、小地图）骑在底座两端或角落。",
+      "line": "2–3px 金铜边 + 倒角高光；技能格是金属方框。",
+      "surface": "皮革 / 石 / 深色金属实底；阵营徽记水印（WoW 任务面板的部落徽）。",
+      "color": "金铜 + 深褐 / 深灰，稀有度白绿蓝紫橙。",
+      "type": "奇幻展示体或哥特体金色标题（WoW \"Missions\"），正文无衬线。",
+      "material": "金属、石雕、皮革（手绘贴图质感）。",
+      "ornament": "预算 2–3：端盖兽首、小地图外圈金石雕环与环绕按钮。",
+      "icon": "彩绘方形技能图标 + 金属格；圆形任务图标。",
+      "motion": "截图看不出。",
+      "layout": "下中底座 + 右上圆形小地图 + 右侧任务追踪（WoW 高密度）；Total War 底部单位卡条 + 左下领主勋章 + 右下圆形控制。"
+     },
+     "params": {
+      "lay.hudOrg": "console",
+      "el.abilities.form": "slots",
+      "el.abilities.screenAnchor": "bc",
+      "cmp.gauge@el.vitals": "orb",
+      "ast.ornaments": [
+       "endcaps",
+       "badgeBase",
+       "rivets"
+      ],
+      "ast.frameMat": "stone",
+      "vis.depth": "bevel",
+      "vis.gloss": "metalGrad",
+      "vis.ornament": 3,
+      "typ.display.family": "gothic",
+      "col.rarityScale": "diablo",
+      "st.rarityCue": [
+       "border",
+       "bg"
+      ],
+      "el.minimap.form": "plan",
+      "vis.silhouette@el.minimap": "circle"
+     },
+     "artPairing": [
+      {
+       "artStyle": "手绘贴图风格化 (Hand-painted texture)",
+       "relation": "sameMedium",
+       "why": "WoW 的金属 / 石 / 皮革 UI 和世界一样是手绘贴图质感。"
+      },
+      {
+       "artStyle": "哥特暗黑幻想 (Gothic dark fantasy)",
+       "relation": "sameMedium",
+       "why": "Diablo IV：石雕 / 铁质底座与地牢材质同源。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "rpg",
+       "count": 4,
+       "why": "ARPG / MMO 底座。"
+      },
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "Total War 单位卡条。"
+      },
+      {
+       "genre": "mobile",
+       "count": 1,
+       "why": "仙侠 MMO / 暗黑手游。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "iig:world-of-warcraft",
+       "why": "动作条两端兽首端盖、小地图金石雕环、皮革任务面板 + 阵营水印 + 金色标题。"
+      },
+      {
+       "card": "steam:594570",
+       "why": "底部单位卡条（石框 + 金饰）、左下领主勋章、右上带框古地图小地图。"
+      },
+      {
+       "card": "steam:2344520",
+       "why": "下中底座左右血球 + 中间技能格，装备稀有度上色（商店图无 UI）。"
+      },
+      {
+       "card": "steam:1086940",
+       "why": "下中整合技能热栏 + 左下队伍头像竖列（商店图无 UI）。"
+      },
+      {
+       "card": "gameui:6729",
+       "why": "仙侠 MMO 手游版：金色战力牌、金边技能圆钮、左侧任务条，金色装饰量最高（单张截图）。"
+      },
+      {
+       "card": "gameui:3711",
+       "why": "只有开场动画（暗金天使与城堡），本子类的调性参考，不含 UI。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "底座吃屏幕：Total War / WoW 的常驻底座 + 多排技能栏使信息密度到 4；评测关键词\"太乱\"命中 BG3 2 条、Total War 2 条。",
+       "evidence": [
+        "steam:1086940",
+        "steam:594570"
+       ]
+      }
+     ],
+     "skinGap": "skin.darkGold 没有底座布局倾向，也没有端盖 / 血球 / 圆形勋章这些辨识件。",
+     "paramGaps": [
+      "端盖样式（兽首 / 徽记柱 / 翼）只能开关 endcaps，选不了形"
+     ]
+    },
+    {
+     "family": "暗金金属牌·纹章珐琅板",
+     "skin": "skin.darkGold",
+     "noCards": false,
+     "definition": "策略游戏的\"博物馆 / 纹章\"面板：酒红、梅紫、藏青等有色相的深色实底像珐琅，外缘金线 + 内缘第二道细金线，转角小缺口；人物用浮雕半身像或圆形勋章，阵营用挂旗与盾徽。比整合底座更平、更像一块奖牌或展板。",
+     "grammar": {
+      "shape": "大面板 + 顶部标题带；卡片列（Civ VI 伟人页 7 列），每列内又有带缺角的小框；圆头像 / 挂旗出框压在面板上缘（Songs of Conquest 对阵面板）。",
+      "line": "外金线 + 内细金线（双线），角上小缺口或小花托；页签是胶囊，嵌在铜色托槽里。",
+      "surface": "100% 实底酒红 / 梅紫 / 藏青，顶部标题带用另一种深色（Civ VI 藏青标题带 + 酒红卡面）。",
+      "color": "金 + 一种宝石色深底 + 阵营对比色（蓝 vs 橙 / 红）。",
+      "type": "衬线小型大写标题（GREAT PEOPLE、人名）；正文无衬线小字。",
+      "material": "珐琅、黄铜；浮雕像（骨白色半身像）。",
+      "ornament": "预算 2：挂旗、盾徽、圆形勋章、角缺口。",
+      "icon": "浮雕 / 彩绘人物勋章，金环包边。",
+      "motion": "截图看不出。",
+      "layout": "居中大面板 + 横向卡片列；对阵面板左右两角各挂一个阵营勋章 + 旗。"
+     },
+     "params": {
+      "col.surface": "#3b1518",
+      "col.accent": "#c9a24a",
+      "vis.stroke": "double",
+      "vis.strokeWidth": 2,
+      "vis.strokeColor": "metal",
+      "vis.corner": "chamfer",
+      "vis.cornerSize": 3,
+      "vis.depth": "innerShadow",
+      "cnt.characterRender": "relief",
+      "vis.silhouette@el.party": "circle",
+      "cmp.plate": "crest",
+      "cmp.tab": "text",
+      "cmp.tabIndicator": "filled",
+      "typ.display.case": "smallCaps",
+      "col.coding": [
+       "team"
+      ],
+      "lay.layering": "breakout"
+     },
+     "artPairing": [
+      {
+       "artStyle": "高奇幻 (High fantasy)",
+       "relation": "neutral",
+       "why": "Songs of Conquest：明亮奇幻地图上压一块暗色珐琅面板，靠明度差聚焦。"
+      },
+      {
+       "artStyle": "风格化PBR／英雄射击风 (Stylized PBR)",
+       "relation": "contrast",
+       "why": "Civ VI 的卡通化 3D 地图配历史博物馆式面板，用\"文物感\"给轻快画面加分量。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "strategy",
+       "count": 4,
+       "why": "策略 / 4X 的博物馆式面板。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:289070",
+       "why": "酒红珐琅卡列 + 双金线 + 骨白浮雕半身像 + 胶囊页签嵌铜托槽。"
+      },
+      {
+       "card": "steam:867210",
+       "why": "梅紫对阵面板，两角圆头像 + 阵营挂旗出框，金边按钮。"
+      },
+      {
+       "card": "gameui:3909",
+       "why": "只拿到写实开场插画，UI 待补图；按原卡归入，证据弱。"
+      },
+      {
+       "card": "gameui:4717",
+       "why": "只有开场插画与登录门，证据弱。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "面板多、层级深：Civ VI 提到 UI 的 43 条评测里负面 14 条，\"菜单难用\"命中 2 条。",
+       "evidence": [
+        "steam:289070"
+       ]
+      }
+     ],
+     "skinGap": "skin.darkGold 不设面板底色（落回灰黑），本子类的灵魂是\"有色相的珐琅底 + 双金线\"；也缺浮雕人像与挂旗。",
+     "paramGaps": [
+      "面板底色与阵营色绑定（对阵两侧各用己方色底）"
+     ]
+    }
+   ],
+   "variants": [
+    {
+     "name": "欧美卡通木金框（手游 / 放置）",
+     "diff": "把金属换成木 + 金包边、内芯换羊皮纸（浅色），图标彩绘卡通；面板更亮、圆角更大，接近拟物 / 像素木框。gameui:3630 只有签到海报、gameui:3059 大厅满是运营入口，这两张只看框的做法、不据其界面归纳。",
+     "cards": [
+      "gameui:1168",
+      "gameui:3059",
+      "gameui:2827",
+      "steam:1397920",
+      "gameui:3630"
+     ]
+    },
+    {
+     "name": "手游竖屏自动战斗",
+     "diff": "只剩底部英雄头像条的金框和倍速 / 暂停钮的金属圆框；单张截图，证据弱。",
+     "cards": [
+      "gameui:12746",
+      "gameui:7312",
+      "gameui:6951",
+      "gameui:6826",
+      "gameui:7134"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "金叠金、金叠暖色画面时对比不足，装饰件和图标抢视线；\"太乱\"命中 BG3 2、Total War 2、Diablo IV 2 条。",
+     "evidence": [
+      "steam:1086940",
+      "steam:594570",
+      "steam:2344520"
+     ]
+    },
+    {
+     "desc": "证据混杂：21 张里 13 张来自 GameUI（多为开场动画、登录插画或单张战斗截图），真正看得见金属牌面板的只有 Civ VI、Songs of Conquest、WoW、Total War、Call of Antia 等几张。",
+     "evidence": [
+      "gameui:3711",
+      "gameui:3909",
+      "gameui:4717"
+     ]
+    },
+    {
+     "desc": "Diablo IV 提到 UI 的 69 条评测里负面 56 条，但 R3 文档提醒多为整款不满时顺带批评，不能当风格失败的证据。",
+     "evidence": [
+      "steam:2344520"
+     ]
+    }
+   ],
+   "skinGap": "skin.darkGold 只有\"实底 + 1px 金线 + 金属渐变 + 倒角 + 衬线\"，而且挂的关键词 kw.luxury 给的是\"只有四角件 + 花叶卷草\"——那其实是金色线描花饰，把皮肤推向了错误的家族。缺：①2–4px 型材边 + 内侧第二道细线（双线）；②有色相的珐琅 / 皮革底色（col.surface 未设）；③端盖、铆钉、勋章底座、名牌这些节点装饰；④圆形勋章出框；⑤refs 全是 GameUI 手游，缺 Civ VI / WoW / Total War / Songs of Conquest 这些桌面标杆。",
+   "paramGaps": [
+    "金属型材的截面（凸圆、凹槽、双阶）没有参数：strokeWidth + bevel 只能做一条平边。",
+    "端盖样式（兽首 / 徽记柱 / 翼）只能开关，选不了形。",
+    "小部件出框骑边（勋章压在面板角上）：lay.layering 只管主体与面板。",
+    "面板底色随阵营切换的绑定（对阵两侧各用己方色）。"
+   ]
+  },
+  {
+   "family": "重装饰雕花框",
+   "skin": "skin.ornate",
+   "noCards": false,
+   "definition": "框本身是一件插画或雕塑：一整幅独一无二、具象的彩绘 / 雕刻外框（青铜骷髅镜框、鎏金画框、石雕拱柱），厚度占面板短边 10–25%，轮廓被顶冠、侧柱、底部悬挂的关闭徽章打破，常嵌发光宝石；内芯反而平涂、内容很素。它多半是世界里的一件东西，并且和游戏画面用同一种画法（同描边、同上色）。辨认口诀：换一个尺寸就得重画——与暗金金属牌（可重复的型材 + 节点装饰）区别在此；HUD 通常保持轻量，雕花只给\"停下来看\"的一两屏。",
+   "grammar": {
+    "shape": "外轮廓不是矩形：顶部中央冠饰（Hades 镜框的人面 + 双宝石）、两侧立柱 / 骷髅、底部悬挂圆形关闭钮；内窗矩形或拱形。从暗金金属牌再往前一步：把均匀边框换成一整幅外框插画，加冠饰、破轮廓。",
+    "line": "与游戏插画同款的轮廓线（Hades 漫画粗描边、Darkest Dungeon 粗线黑块）；框内只留一条内窗边，不再加细线。",
+    "surface": "内芯近黑平涂（可加一道斜向反光），或羊皮纸卷 / 书页；框是多色彩绘或鎏金。",
+    "color": "框用材质色（铜金、石灰、鎏金）+ 一个宝石强调色（紫、红、青）；条目文字用高饱和语义色（Hades 红色条目、绿色数值、灰色 MAX）。",
+    "type": "小型大写衬线标题 + 斜体衬线引言；哥特 / 手写体人名（Darkest Dungeon）；卡牌用粗衬线名牌。",
+    "material": "青铜、鎏金、石雕、木雕、皮面书；手绘高光暗部而非程序渐变。",
+    "ornament": "预算 3：骷髅、人面、玫瑰、翼、宝石、端盖、悬挂徽章，且必须\"具象\"（认得出是什么东西）。",
+    "icon": "彩绘图标，带与框同款的描边；卡牌是彩绘插画窗 + 缎带名牌。",
+    "motion": "截图看不出；常识：框先入场再亮内芯，宝石待机微光。",
+    "layout": "①菜单级：居中一块大框 + 单列表（Hades 镜子、Hearthstone 收藏册）；②画面级：框包玩法区、HUD 写进立柱或底座（Sol Cesto、Little Goody Two Shoes、Darkest Dungeon）。局内 HUD 仍是散件（Hades 左侧菱形图标列 + 左下细血条）。"
+   },
+   "params": {
+    "ast.frame": "carvedNinePatch",
+    "ast.frameMat": "bronze",
+    "ast.core": "procedural",
+    "col.lightness": "dark",
+    "col.strategy": "neutralAccent",
+    "vis.opacity": 1,
+    "vis.edge": "ornate",
+    "vis.ornament": 3,
+    "vis.motif": "skulls",
+    "ast.ornaments": [
+     "corners",
+     "gems",
+     "badgeBase",
+     "endcaps"
+    ],
+    "ast.fx": [
+     "glow"
+    ],
+    "vis.iconStyle": "painted",
+    "typ.display.family": "serif",
+    "typ.display.case": "smallCaps",
+    "rel.harmony": "sameMedium",
+    "ix.close": "xOutside",
+    "cmp.plate": "plaque",
+    "st.rarityCue": [
+     "border",
+     "frameShape"
+    ],
+    "hier.inline": "keyword",
+    "lay.hudOrg": "scattered",
+    "cnt.density": 2
+   },
+   "artPairing": [
+    {
+     "artStyle": "美漫概念插画／Borderlands式",
+     "relation": "sameMedium",
+     "why": "Hades：镜框与角色同为粗描边硬阴影手绘。"
+    },
+    {
+     "artStyle": "粗线黑块／羊皮纸哥特",
+     "relation": "sameMedium",
+     "why": "Darkest Dungeon：石雕底座和人物同一套粗线黑块 + 暖羊皮纸调。"
+    },
+    {
+     "artStyle": "手绘贴图风格化 (Hand-painted texture)",
+     "relation": "sameMedium",
+     "why": "Hearthstone：木箱、金框、卡面都是手绘贴图。"
+    },
+    {
+     "artStyle": "中世纪手抄本 (Illuminated manuscript)",
+     "relation": "sameMedium",
+     "why": "Sol Cesto：侧柱像页边装饰。"
+    },
+    {
+     "artStyle": "现代高位像素 (Hi-bit)",
+     "relation": "contrast",
+     "why": "Little Goody Two Shoes：像素玩法区外的手绘鎏金框，介质反差即风格。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "action",
+     "count": 2,
+     "why": "Hades 系列：菜单级器物框，局内 HUD 仍轻。"
+    },
+    {
+     "genre": "strategy",
+     "count": 2,
+     "why": "Sol Cesto 塔罗立柱包玩法区；剑与远征：启程只有 CG。"
+    },
+    {
+     "genre": "card",
+     "count": 2,
+     "why": "卡牌的实物路线：收藏册、木箱、彩绘卡框。"
+    },
+    {
+     "genre": "rpg",
+     "count": 1,
+     "why": "Darkest Dungeon 石雕底座。"
+    },
+    {
+     "genre": "builder",
+     "count": 1,
+     "why": "Cult of the Lamb，截图 UI 少。"
+    },
+    {
+     "genre": "mobile",
+     "count": 1,
+     "why": "巫师血脉，单张。"
+    },
+    {
+     "genre": "horror",
+     "count": 1,
+     "why": "Little Goody Two Shoes 鎏金画框包像素玩法区。"
+    },
+    {
+     "genre": "puzzle",
+     "count": 1,
+     "why": "Puzzle&Palace 捏人页的金色相框。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:1145360",
+     "why": "标尺：青铜骷髅镜框 + 紫水晶 + 纯黑内芯单列表 + 悬挂红 X；局内 HUD 依旧很轻。"
+    },
+    {
+     "card": "steam:262060",
+     "why": "下半屏石雕拱柱底座，与插画同一画风。"
+    },
+    {
+     "card": "steam:2738490",
+     "why": "塔罗立柱包住玩法区，HUD 全在框里。"
+    },
+    {
+     "card": "steam:1812370",
+     "why": "鎏金宝石画框包像素玩法区。"
+    },
+    {
+     "card": "iig:hearthstone-heroes-of-warcraft",
+     "why": "木箱 + 收藏册 + 金框卡，\"实物\"路线。"
+    },
+    {
+     "card": "iig:slay-the-spire",
+     "why": "彩绘卡框 + 石质结束回合铭牌。"
+    }
+   ],
+   "subfamilies": [
+    {
+     "family": "重装饰雕花框·同画风器物框",
+     "skin": "skin.ornate",
+     "noCards": false,
+     "definition": "框是一件用游戏本身画法画出来的器物：Hades 的\"夜之镜\"（青铜骷髅、人面、紫水晶，漫画粗描边）、Darkest Dungeon 下半屏的哥特石雕拱柱底座（粗线黑块同款）。框与画面同一媒介，所以再厚也不显得突兀。",
+     "grammar": {
+      "shape": "顶冠 + 两侧立柱 / 骷髅 + 底部悬挂关闭徽章；或下半屏整条石雕底座两端立雕像。",
+      "line": "与插画同款粗黑描边。",
+      "surface": "内芯近黑平涂，可加一道斜向反光（镜面感）。",
+      "color": "铜金 / 石灰 + 一种宝石色（紫、红火光）；条目文字用红 / 绿语义色。",
+      "type": "小型大写衬线标题 + 斜体引言；Darkest Dungeon 用哥特 / 手写名字。",
+      "material": "青铜、石雕，手绘明暗。",
+      "ornament": "预算 3：骷髅、人面、玫瑰、宝石、悬挂徽章。",
+      "icon": "同描边的彩绘菱形 / 方形图标。",
+      "motion": "截图看不出；常识：宝石微光待机。",
+      "layout": "居中单列表大框（菜单级），局内 HUD 仍是轻量散件。"
+     },
+     "params": {
+      "ast.frame": "carvedNinePatch",
+      "ast.frameMat": "bronze",
+      "rel.harmony": "sameMedium",
+      "rel.followPost": "stylize",
+      "vis.motif": "skulls",
+      "vis.ornament": 3,
+      "vis.edge": "ornate",
+      "ix.close": "xOutside",
+      "ast.ornaments": [
+       "gems",
+       "badgeBase",
+       "endcaps"
+      ],
+      "ast.fx": [
+       "glow"
+      ],
+      "typ.display.family": "serif",
+      "typ.display.case": "smallCaps",
+      "vis.iconStyle": "painted",
+      "hier.inline": "keyword"
+     },
+     "artPairing": [
+      {
+       "artStyle": "美漫概念插画／Borderlands式",
+       "relation": "sameMedium",
+       "why": "Hades：粗描边硬阴影插画，镜框用同样的描边和上色。"
+      },
+      {
+       "artStyle": "粗线黑块／羊皮纸哥特",
+       "relation": "sameMedium",
+       "why": "Darkest Dungeon：石雕底座和角色同一套粗线黑块。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "action",
+       "count": 2,
+       "why": "Hades 系列。"
+      },
+      {
+       "genre": "rpg",
+       "count": 1,
+       "why": "Darkest Dungeon。"
+      },
+      {
+       "genre": "builder",
+       "count": 1,
+       "why": "Cult of the Lamb。"
+      },
+      {
+       "genre": "mobile",
+       "count": 1,
+       "why": "巫师血脉。"
+      },
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "剑与远征：启程（只有 CG）。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:1145360",
+       "why": "标尺：夜之镜青铜骷髅框嵌紫水晶，内芯纯黑单列表，底部悬挂红 X 徽章。"
+      },
+      {
+       "card": "steam:262060",
+       "why": "下半屏石雕拱柱底座 + 顶部火炬徽章，和插画同一画风。"
+      },
+      {
+       "card": "steam:1145350",
+       "why": "续作把对话框改成圆角深色框 + 细银卷线名牌，框变轻了，靠近线描花饰。"
+      },
+      {
+       "card": "steam:1313140",
+       "why": "红黑 + 青绿邪教主题，信仰仪表在左上；HUD 很轻、靠场景里发光的仪式物件，框的证据少。"
+      },
+      {
+       "card": "gameui:6814",
+       "why": "竖屏回合大字 + 底部圆钮，暗紫装饰底；单张截图，证据弱。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [
+      {
+       "name": "证据弱的手游 / CG",
+       "diff": "巫师血脉只看到回合大字与暗紫底；剑与远征：启程只有开场动画（彩窗、凯尔特结绳树），不是 UI。",
+       "cards": [
+        "gameui:6814",
+        "gameui:13176",
+        "steam:1313140"
+       ]
+      }
+     ],
+     "failureModes": [
+      {
+       "desc": "续作 HUD 变挤：Hades II 提到 UI 的评测里\"太乱\"命中 4、\"字太小\"命中 2。",
+       "evidence": [
+        "steam:1145350"
+       ]
+      }
+     ],
+     "skinGap": "skin.ornate 只有倒角 + 深色 + 衬线，框要靠 kw.ornate 才有雕花九宫格，而九宫格做不出 Hades 镜框这种\"每条边都不一样\"的整幅器物。",
+     "paramGaps": [
+      "框的厚度（占面板短边比例）",
+      "\"这块框是哪件世界物品\"（镜子 / 祭坛 / 拱门）：ast.container 里没有"
+     ]
+    },
+    {
+     "family": "重装饰雕花框·画框包玩法区",
+     "skin": "skin.ornate",
+     "noCards": false,
+     "definition": "整幅雕花 / 彩绘框包住玩法区，HUD 写进框里：Sol Cesto 两侧塔罗牌式立柱（心形、人物、书页图标）、Little Goody Two Shoes 小游戏的鎏金宝石画框、Puzzle&Palace 捏人页的金色椭圆画框。框就是一件相框 / 牌面，玩法区是框里的\"画\"。",
+     "grammar": {
+      "shape": "玩法区外整圈框，两侧宽、上下窄；或椭圆 / 拱形相框居中。",
+      "line": "彩绘轮廓，框内另有一圈细珠串或星点边（Sol Cesto 提示条的星点边）。",
+      "surface": "框是多色彩绘或 3D 鎏金；玩法区保留原画面。",
+      "color": "框多色（粉、青、奶油 / 鎏金 + 宝石）；与暗色系家族不同，可以很亮。",
+      "type": "展示衬线或手写。",
+      "material": "鎏金木雕、彩绘手抄本页边。",
+      "ornament": "预算 3：宝石按钮、心形、人物立像。",
+      "icon": "彩绘，嵌在框的格子里。",
+      "motion": "截图看不出。",
+      "layout": "lay.hudOrg = 画在边框里；血量 / 道具 / 地图都是立柱里的格子。"
+     },
+     "params": {
+      "lay.hudOrg": "inMargin",
+      "lay.playfield": "boardWindow",
+      "ast.frame": "carvedNinePatch",
+      "ast.frameMat": "gold",
+      "vis.ornament": 3,
+      "vis.motif": "hearts",
+      "vis.iconStyle": "painted",
+      "ast.container": "photoFrame",
+      "vis.edge": "ornate",
+      "col.strategy": "polychrome"
+     },
+     "artPairing": [
+      {
+       "artStyle": "中世纪手抄本 (Illuminated manuscript)",
+       "relation": "sameMedium",
+       "why": "Sol Cesto 的侧柱像手抄本页边装饰，和画面同一套民俗插画。"
+      },
+      {
+       "artStyle": "现代高位像素 (Hi-bit)",
+       "relation": "contrast",
+       "why": "Little Goody Two Shoes：像素玩法区外套一圈手绘鎏金框，介质反差就是风格。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "strategy",
+       "count": 1,
+       "why": "Sol Cesto。"
+      },
+      {
+       "genre": "horror",
+       "count": 1,
+       "why": "Little Goody Two Shoes。"
+      },
+      {
+       "genre": "puzzle",
+       "count": 1,
+       "why": "Puzzle&Palace。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "steam:2738490",
+       "why": "两侧塔罗立柱承载全部 HUD，关卡选择是星座散点图。"
+      },
+      {
+       "card": "steam:1812370",
+       "why": "像素玩法区外的鎏金宝石画框 + 两侧立绘；对话是卷边羊皮纸条。"
+      },
+      {
+       "card": "gameui:4972",
+       "why": "捏人页的金色椭圆 / 拱形画框装整幅立绘，框是房间里的实物。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [
+      {
+       "desc": "框占掉大块屏幕，宽屏两侧被装饰吃掉；Sol Cesto 评测\"菜单难用\"命中 1 条，证据有限。",
+       "evidence": [
+        "steam:2738490"
+       ]
+      }
+     ],
+     "skinGap": "skin.ornate 是深色面板皮肤，表达不了\"框包玩法区、HUD 进框\"的布局，也不允许亮色多彩框。",
+     "paramGaps": [
+      "边框立柱里的 HUD 格位（哪个元素放进哪根柱）没有槽位"
+     ]
+    },
+    {
+     "family": "重装饰雕花框·实物牌桌与卡框",
+     "skin": "skin.ornate",
+     "noCards": false,
+     "definition": "卡牌游戏的\"实物\"路线：整屏是木箱 / 牌桌 / 翻开的收藏册，卡牌有彩绘金框、缎带名牌、宝石费用角标；结束回合是石质或金属铭牌按钮。重的是卡框和容器，不是面板。",
+     "grammar": {
+      "shape": "卡牌竖长框 + 顶部插画窗 + 中部缎带名牌 + 底部文本框；容器是书（双页 4×2）或木箱。",
+      "line": "卡框粗金边 + 内细边。",
+      "surface": "羊皮纸书页、木纹、石板。",
+      "color": "木褐 + 金 + 宝石蓝（费用）；新卡蓝色光晕。",
+      "type": "粗衬线展示体名牌（Hearthstone）、衬线卡名（Slay the Spire）。",
+      "material": "木、金、羊皮纸、宝石、石。",
+      "ornament": "预算 3：缎带、宝石、卷叶书眉。",
+      "icon": "彩绘插画窗。",
+      "motion": "截图看不出；常识：开书 / 翻页、镜头推进到物件。",
+      "layout": "左书页卡网格 + 右侧牌组列表（木架上的名牌行）。"
+     },
+     "params": {
+      "ast.container": "book",
+      "cmp.card": "tcg",
+      "ast.frame": "carvedNinePatch",
+      "ast.frameMat": "wood",
+      "ast.coreMat": "parchment",
+      "vis.ornament": 3,
+      "vis.depth": "bevel",
+      "cmp.plate": "ribbon",
+      "vis.iconStyle": "painted",
+      "st.newCue": "glowPulse",
+      "mo.transition": "zoomInto",
+      "typ.display.weight": "bold"
+     },
+     "artPairing": [
+      {
+       "artStyle": "手绘贴图风格化 (Hand-painted texture)",
+       "relation": "sameMedium",
+       "why": "Hearthstone 的木箱、金框和卡面插画都是手绘贴图质感。"
+      },
+      {
+       "artStyle": "美漫概念插画／Borderlands式",
+       "relation": "sameMedium",
+       "why": "Slay the Spire 彩绘卡框与角色同为描边手绘。"
+      }
+     ],
+     "genres": [
+      {
+       "genre": "card",
+       "count": 2,
+       "why": "Hearthstone、Slay the Spire。"
+      }
+     ],
+     "exemplars": [
+      {
+       "card": "iig:hearthstone-heroes-of-warcraft",
+       "why": "皮面木框收藏册（双页 4×2）+ 金框卡 + 木架牌组名牌。"
+      },
+      {
+       "card": "iig:slay-the-spire",
+       "why": "彩绘卡框 + 缎带卡名 + 石质\"结束回合\"铭牌；原卡被归在暗金金属牌，按画面改归这里。"
+      }
+     ],
+     "subfamilies": [],
+     "variants": [],
+     "failureModes": [],
+     "skinGap": "skin.ornate 没有卡牌版式与场景容器；这一类的重点是 cmp.card + ast.container，而不是面板皮肤。",
+     "paramGaps": [
+      "卡框稀有度换形（普通 / 金卡框形状不同）只能用 st.rarityCue = frameShape 开关，没有卡框素材槽"
+     ]
+    }
+   ],
+   "variants": [],
+   "failureModes": [
+    {
+     "desc": "框吃面积：Hades 镜框的外框占掉整块面板一半以上的面积，只适合信息少的单列表；放进信息多的界面就挤（Hades II \"太乱\"命中 4 条）。",
+     "evidence": [
+      "steam:1145360",
+      "steam:1145350"
+     ]
+    },
+    {
+     "desc": "家族边界被材质名误导：Frostpunk 被记成\"冰霜雕花框\"，实际是银色细铁艺线 + 墨烟底，没有体积，应归线描花饰；Slay the Spire 被记成暗金金属牌，实际是彩绘卡框。",
+     "evidence": [
+      "steam:323190",
+      "iig:slay-the-spire"
+     ]
+    },
+    {
+     "desc": "证据弱：Cult of the Lamb 截图几乎没有 UI，剑与远征：启程只有开场动画。",
+     "evidence": [
+      "steam:1313140",
+      "gameui:13176"
+     ]
+    }
+   ],
+   "skinGap": "skin.ornate 的 values 只有倒角、深色、衬线小型大写和彩绘图标——没有框；雕花九宫格要靠关键词 kw.ornate 才出现，而且九宫格本身做不出\"每条边都不一样、顶冠破轮廓\"的整幅器物框。refs 里 WoW 应属暗金金属牌、Frostpunk 应属线描花饰（kw.frost 也把 Frostpunk 当成冰霜雕花九宫格，方向相反）。另缺：悬挂关闭徽章（ix.close = xOutside）、同媒介描边（rel.harmony = sameMedium）、\"框包玩法区\"的布局变体。",
+   "paramGaps": [
+    "外框厚度（占面板短边百分比）没有参数。",
+    "破轮廓件的位置：顶冠、侧挂件、底部悬挂物。",
+    "整幅非九宫格外框（\"九宫格 + 顶冠 / 底坠\"三段式）：ast.frame 只有九宫格与四角件。",
+    "框对应的世界物品（镜子、祭坛、拱门）：ast.container 只有相框、书、牌桌等。"
+   ]
+  },
+  {
+   "family": "线描花饰",
+   "skin": "skin.filigree",
+   "noCards": false,
+   "definition": "只有线、没有面的装饰：深色罩层（或几乎全黑）上浮着白 / 银 / 金色细线花饰——四个互不相连的角花、标题两侧对称的书法花线、上下饰条、翻页菱形箭头。线有粗细起伏和涡旋收尾，像钢笔花体或铸铁花窗；它们不围合成完整的框，面板本身透明。辨认口诀：把线去掉就只剩文字浮在黑底上——与暗色细线比，线是主角且有形（卷草、涡旋、尖角）；与重装饰雕花框比，没有体积和彩绘材质；与装饰艺术比，曲线有机而不是对称直线几何。",
+   "grammar": {
+    "shape": "不画框体：四个独立角花 + 顶部中央标题花线 + 底部中央饰条 + 两侧菱形翻页箭头（Hollow Knight 护符页）；需要承载内容时用两端卷铁的开口横牌（Frostpunk \"GO BACK\" 横牌）。从灰盒改：删掉面板底与四边框，把角换成卷草角花，标题挪到上缘中央并在两侧加对称花线。",
+    "line": "1–2.5px，带书法式粗细调制和涡旋端点；白（HK）、冷银（Frostpunk）、淡金（Hogwarts Legacy）；长分隔线两端渐隐（HK 中部横线）。",
+    "surface": "透明：靠整屏 80–90% 黑罩（HK 冻结画面压到近黑）或墨烟飞白晕边（Frostpunk 法典页四周）给底；局部可用极淡深蓝块（Frostpunk 建筑面板）。",
+    "color": "严格单色（白 / 银 / 金三选一）+ 一个冷色焦点光（HK 选中物的淡蓝光晕、Frostpunk 已签法令的青色发光）。",
+    "type": "衬线（HK 古典罗马体、Frostpunk 高反差衬线），常规字重；HK 用句首大写，Clair Obscur 用小型大写 + 细下划线。",
+    "material": "线描平涂；可配墨烟（Frostpunk）或做旧笔刷底块（Clair Obscur 撕边暗块）。",
+    "ornament": "预算 2：角花、标题花线、饰条、节点花托（Frostpunk 法令节点四周的冰霜卷叶）；母题是卷草、涡旋、铁艺卷、结绳纹。",
+    "icon": "单色手绘 / 蚀刻感图标（HK 灰白护符、Frostpunk 圆形徽章），不是线性 UI 图标；空位是小圆环。",
+    "motion": "截图看不出；常识：线条描出、淡入，选中角花收拢包住目标。",
+    "layout": "整屏菜单：左\"已装备\"、中网格、右详情（HK）；或星图 / 树状节点网络（Frostpunk 法典）；HUD 只有图标列（HK 面具血量 + 灵魂罐），地图是粉笔线稿。"
+   },
+   "params": {
+    "vis.opacity": 0,
+    "ast.frame": "cornersOnly",
+    "ast.frameMat": "lineArt",
+    "vis.stroke": "solid",
+    "vis.strokeWidth": 1.5,
+    "vis.strokeColor": "custom",
+    "col.border": "#ece9e1",
+    "vis.motif": "floral",
+    "vis.ornament": 2,
+    "ast.ornaments": [
+     "corners",
+     "dividers"
+    ],
+    "col.strategy": "mono",
+    "col.lightness": "dark",
+    "typ.body.family": "serif",
+    "typ.display.family": "serif",
+    "typ.display.weight": "regular",
+    "typ.legibility": "shadow",
+    "vis.iconStyle": "painted",
+    "rel.behind": "frozen",
+    "rel.dim": 0.85,
+    "ix.focus": "cursor",
+    "st.emptySlot": "pit",
+    "cmp.modal": "floating",
+    "lay.pageIndicator": "arrows"
+   },
+   "artPairing": [
+    {
+     "artStyle": "手绘墨线／空洞骑士式",
+     "relation": "sameMedium",
+     "why": "Hollow Knight：白色花线就是画面里黑白手绘线的延伸，地图也是粉笔线稿。"
+    },
+    {
+     "artStyle": "蒸汽朋克 (Steampunk)",
+     "relation": "sameMedium",
+     "why": "Frostpunk：银色铁艺卷线对应维多利亚铸铁与蒸汽机械。"
+    },
+    {
+     "artStyle": "新艺术 (Art Nouveau)",
+     "relation": "sameMedium",
+     "why": "鞭形曲线、植物纹是本家族线条的直接来源（Clair Obscur 的美好年代取材）。"
+    },
+    {
+     "artStyle": "照片写实 (Photorealism)",
+     "relation": "contrast",
+     "why": "Clair Obscur / Hogwarts Legacy：写实 3D 上压一层平面线描，靠\"平面 vs 立体\"区分 UI 与世界。"
+    },
+    {
+     "artStyle": "Eyvind Earle式 (Mid-century decorative)",
+     "relation": "neutral",
+     "why": "The Banner Saga：平面装饰画风配北欧结绳头饰 + 缎带属性条。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "platformer",
+     "count": 1,
+     "why": "Hollow Knight：2D 手绘黑白画风的自然延伸。"
+    },
+    {
+     "genre": "builder",
+     "count": 1,
+     "why": "Frostpunk：维多利亚铁艺 + 墨烟。"
+    },
+    {
+     "genre": "rpg",
+     "count": 1,
+     "why": "Clair Obscur：美好年代取材。"
+    },
+    {
+     "genre": "explore",
+     "count": 1,
+     "why": "Hogwarts Legacy：魔法学院的金线。"
+    },
+    {
+     "genre": "strategy",
+     "count": 1,
+     "why": "The Banner Saga：北欧结绳 + 缎带。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:367520",
+     "why": "标尺：近黑罩层上的白色巴洛克角花、标题花线、渐隐横线、角花选中光标、小圆环空位。"
+    },
+    {
+     "card": "steam:323190",
+     "why": "冷银铁艺版：两端卷铁的开口横牌、冰霜卷叶节点花托、墨烟晕边、圆形银边按钮。原卡归在重装饰雕花框，按画面改归这里。"
+    },
+    {
+     "card": "steam:1903340",
+     "why": "美好年代版：小型大写衬线 + 细下划线、菱形图标托、撕边笔刷暗块、背景装饰艺术格纹。"
+    },
+    {
+     "card": "steam:237990",
+     "why": "北欧版：标题栏结绳纹 + 彩色燕尾缎带属性条，装饰性衬线标题。"
+    },
+    {
+     "card": "steam:990080",
+     "why": "金线魔法版：右下菱形四格法术、金色细线 + 衬线（商店图无 UI）。"
+    }
+   ],
+   "subfamilies": [],
+   "variants": [
+    {
+     "name": "巴洛克白线",
+     "diff": "纯白书法花线 + 近黑罩层，零色彩，只给选中物一点淡蓝光。",
+     "cards": [
+      "steam:367520"
+     ]
+    },
+    {
+     "name": "铁艺冰霜",
+     "diff": "线换成冷银、端头是铸铁卷；面板局部有半透明深蓝底、切角开口横牌；底用墨烟飞白；强调色青。",
+     "cards": [
+      "steam:323190"
+     ]
+    },
+    {
+     "name": "美好年代破边",
+     "diff": "线变短、变成标题下划线和箭头端；按钮是做旧笔刷暗块 + 箭头尾；混入装饰艺术格纹底——是线描花饰与装饰艺术的交界。",
+     "cards": [
+      "steam:1903340"
+     ]
+    },
+    {
+     "name": "金线魔法",
+     "diff": "线换淡金、搭配写实 3D；菱形技能格。证据只有已知描述。",
+     "cards": [
+      "steam:990080"
+     ]
+    },
+    {
+     "name": "北欧缎带",
+     "diff": "花线换成结绳纹，主要装置变成彩色燕尾缎带条；面板是深石板紫。",
+     "cards": [
+      "steam:237990"
+     ]
+    },
+    {
+     "name": "跨家族借用",
+     "diff": "暗色细线 / 重装饰的作品在局部用线描花饰：Wukong Boss 条两端祥云卷线、Hades II 对话框名牌的细银卷线。",
+     "cards": [
+      "steam:2358720",
+      "steam:1145350"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "透明面板压在实时亮画面上就读不清：HK 的做法是把背后冻结画面压到近黑；没有罩层时细白线和衬线字都会消失。",
+     "evidence": [
+      "steam:367520"
+     ]
+    },
+    {
+     "desc": "大世界 + 线描菜单的地图被大量抱怨：Clair Obscur \"地图难用\"命中 13 条（问题在地图功能，不全是风格）。",
+     "evidence": [
+      "steam:1903340"
+     ]
+    },
+    {
+     "desc": "只有 5 张卡，且 Hogwarts Legacy 商店图无 UI；家族证据集中在 HK、Frostpunk、Clair Obscur 三张。",
+     "evidence": [
+      "steam:990080"
+     ]
+    }
+   ],
+   "skinGap": "skin.filigree 方向对，但：①vis.opacity = 0 又不配罩层，叠在实时画面上会不可读——缺 rel.behind = 冻结 + rel.dim ≈ 0.85；②iconStyle = 线性是错的，HK / Frostpunk 用单色手绘蚀刻图标；③一律小型大写，HK 是句首大写；④只有角花和饰条，缺标题两侧对称花线、两侧翻页菱形箭头、角花选中光标；⑤程序画的等宽线像铁丝，缺粗细调制与涡旋端点；⑥Frostpunk 这类冷银铁艺版没有对应，反被 kw.frost 当成冰霜雕花九宫格。",
+   "paramGaps": [
+    "\"只有四角件且四角之间不连线\"：ast.frame = cornersOnly 时四角之间仍由程序线连边。",
+    "线条粗细调制（书法笔锋）与涡旋端点。",
+    "标题两侧对称花线（标题花托）：cmp.plate 只有卷轴头最接近。",
+    "选中光标 = 四个小角花包住目标：ix.focus 的光标只有手指 / 三角 / 括号。",
+    "铁艺卷、北欧结绳纹母题：vis.motif 只有花叶卷草。"
+   ]
+  },
+  {
+   "family": "装饰艺术",
+   "skin": "skin.deco",
+   "noCards": false,
+   "definition": "1920–30 年代装饰艺术的几何对称：黑 + 金（或墨绿、海军蓝 + 金），细双线框、切角、阶梯形与放射纹，标题是宽字距的几何大写。参考库三款都不是靠面板皮肤，而是靠环境取材——BioShock 的招牌与海报、Grim Fandango 用暗灰几何纹样柱填满 4:3 两侧黑边——HUD 本身几乎为零。辨认口诀：所有装饰都能用尺规画出且左右对称——与线描花饰（有机曲线）区别在此；与暗金金属牌比，金是细线和平面色块，不是有厚度的型材。",
+   "grammar": {
+    "shape": "切角矩形、阶梯形（金字塔台阶）顶部、扇形 / 半圆放射头饰；严格左右对称。从灰盒改：转角改切角、边框改双线、标题居中并在上方加阶梯或扇形头饰、按钮成对镜像。",
+    "line": "1px 双线（内外两道金线，间隔 2–3px）；竖向三线一组的平行线束；V 形人字纹。",
+    "surface": "实底深色（黑、海军蓝、墨绿），可铺 5–10% 透明度的几何平铺或放射纹（Grim Fandango 侧柱的暗灰交错几何浮雕）。",
+    "color": "黑 + 金为主，第二色墨绿或宝石青；高对比低饱和。",
+    "type": "几何无衬线大写，细或常规字重，字距 0.15–0.3em；中文要另配细黑 / 细宋并收窄字距。参考卡把 BioShock 标题字记成\"新艺术\"，严格说装饰艺术是几何体。",
+    "material": "黄铜 / 金箔平涂、黑漆、大理石；不做倒角浮雕。",
+    "ornament": "预算 2：阶梯端盖、放射扇、人字纹、三线竖条，对称放在标题上方与面板两端。",
+    "icon": "单色金线或剪影图标，几何化。",
+    "motion": "截图看不出；常识：从中线向两侧对称展开、金线描出、像电梯门 / 幕布开合。",
+    "layout": "对称居中：标题居中、按钮成对、栏目镜像；或把装饰放进 4:3 两侧边柱（Grim Fandango），或干脆交给世界里的招牌（BioShock）。"
+   },
+   "params": {
+    "vis.corner": "chamfer",
+    "vis.cornerSize": 8,
+    "ast.frame": "procedural",
+    "vis.stroke": "double",
+    "vis.strokeWidth": 1,
+    "vis.strokeColor": "metal",
+    "vis.opacity": 1,
+    "vis.depth": "flat",
+    "col.lightness": "dark",
+    "col.strategy": "duotone",
+    "col.surface": "#0e1525",
+    "col.accent": "#c9a54c",
+    "vis.motif": "geometric",
+    "vis.ornament": 2,
+    "vis.pattern": "geometricTile",
+    "vis.patternOpacity": 0.08,
+    "ast.ornaments": [
+     "endcaps",
+     "dividers"
+    ],
+    "typ.display.family": "sans",
+    "typ.display.weight": "light",
+    "typ.display.case": "upper",
+    "typ.display.tracking": 0.22,
+    "typ.body.family": "serif",
+    "lay.focalSide": "center"
+   },
+   "artPairing": [
+    {
+     "artStyle": "装饰艺术 (Art Deco)",
+     "relation": "sameMedium",
+     "why": "BioShock：UI 圆框与世界里的海报、招牌同源，UI 只是把环境语言搬上屏幕。"
+    },
+    {
+     "artStyle": "墨西哥民间／亡灵节",
+     "relation": "sameMedium",
+     "why": "Grim Fandango：装饰艺术 + 亡灵节纹样填满两侧边柱，与场景建筑同一套几何。"
+    },
+    {
+     "artStyle": "柴油朋克 (Dieselpunk)",
+     "relation": "neutral",
+     "why": "同一时代的机械美学，装饰艺术面板天然契合。"
+    },
+    {
+     "artStyle": "黑色漫画 (Noir comic)",
+     "relation": "neutral",
+     "why": "黑金高反差与黑色电影的光影气质一致。"
+    }
+   ],
+   "genres": [
+    {
+     "genre": "shooter",
+     "count": 2,
+     "why": "BioShock 两作：时代美术即世界观，HUD 取圆框与字体。"
+    },
+    {
+     "genre": "puzzle",
+     "count": 1,
+     "why": "Grim Fandango：冒险解谜，零 HUD，边柱纹样。"
+    }
+   ],
+   "exemplars": [
+    {
+     "card": "steam:316790",
+     "why": "4:3 画面两侧用暗灰几何纹样柱填满，零 HUD，字幕是小号彩字。"
+    },
+    {
+     "card": "steam:7670",
+     "why": "风格来源在叙事内：海报、\"MEDICAL PAVILION\"拱形招牌；HUD 左上血 / EVE 条（商店图无 UI）。"
+    },
+    {
+     "card": "steam:8870",
+     "why": "装饰艺术圆框 HUD（左上盾 + 血条、右下弹药），截图只有环境（商店图无 UI）。"
+    }
+   ],
+   "subfamilies": [],
+   "variants": [
+    {
+     "name": "叙事内取材",
+     "diff": "面板几乎不做，装饰艺术全部交给世界里的招牌、海报、建筑；HUD 只取圆框与字体。",
+     "cards": [
+      "steam:7670",
+      "steam:8870"
+     ]
+    },
+    {
+     "name": "4:3 边柱纹样",
+     "diff": "玩法区保持 4:3，两侧黑边用低对比几何纹样填满（不抢画面）；不需要任何面板。",
+     "cards": [
+      "steam:316790"
+     ]
+    },
+    {
+     "name": "跨家族借用",
+     "diff": "Clair Obscur 菜单背景铺装饰艺术格纹，前景却是线描花饰与笔刷破边。",
+     "cards": [
+      "steam:1903340"
+     ]
+    }
+   ],
+   "failureModes": [
+    {
+     "desc": "细金双线在低分辨率 / 电视距离发虚；BioShock Infinite 评测\"UI 缩放 / 分辨率\"命中 4 条、\"字太小\"1 条。",
+     "evidence": [
+      "steam:8870"
+     ]
+    },
+    {
+     "desc": "参考证据几乎全是叙事内环境和边柱，没有一张真正的装饰艺术菜单面板截图，皮肤是推断出来的；样本只有 3 张。",
+     "evidence": [
+      "steam:7670",
+      "steam:8870",
+      "steam:316790"
+     ]
+    },
+    {
+     "desc": "宽字距全大写不能直接用于中文（06 文档 B17 陷阱），装饰纹太多会压过信息；Grim Fandango 的解法是把纹样压到很低对比、只放在玩法区外。",
+     "evidence": [
+      "steam:316790"
+     ]
+    }
+   ],
+   "skinGap": "skin.deco 已有切角、双线金边、宽字距大写、几何母题，但：①缺阶梯 / 扇形头饰和放射纹这两个最有辨识度的形（只能退化成双线切角框，像普通金边面板）；②没有几何平铺底纹（vis.pattern 未设）；③没有\"边柱填充\"与\"叙事内招牌\"两种参考库里真实存在的用法；④色板只有海军蓝 + 金，缺 BioShock 的墨绿 / 青铜；⑤中文标题字没有对应方案。",
+   "paramGaps": [
+    "阶梯形 / 扇形放射头饰：vis.silhouette 没有阶梯与扇形。",
+    "装饰艺术几何展示字体：typ.display.family 只有无衬线细体可借用，参考卡因此误记成新艺术。",
+    "静态放射纹（sunburst 底纹）：只能借 ast.fx 的放射光芒（那是发光特效）。",
+    "左右镜像对称约束：lay.focalSide = 两侧 只用于对阵。",
+    "4:3 两侧边柱的纹样填充：lay.playfield = 小窗加黑边 时黑边区域没有图案 / 材质参数。"
+   ]
+  }
+ ],
+ "assignments": {
+  "gameui:1168": "暗金金属牌",
+  "gameui:12746": "暗金金属牌",
+  "gameui:12771": "暗色细线",
+  "gameui:13176": "重装饰雕花框·同画风器物框",
+  "gameui:2827": "暗金金属牌",
+  "gameui:3059": "暗金金属牌",
+  "gameui:3239": "暗色细线·暗底文学排版",
+  "gameui:3630": "暗金金属牌",
+  "gameui:3711": "暗金金属牌·整合底座",
+  "gameui:3830": "暗金金属牌",
+  "gameui:3909": "暗金金属牌·纹章珐琅板",
+  "gameui:4596": "暗色细线·魂系衬线",
+  "gameui:4717": "暗金金属牌·纹章珐琅板",
+  "gameui:4972": "重装饰雕花框·画框包玩法区",
+  "gameui:6729": "暗金金属牌·整合底座",
+  "gameui:6750": "暗色细线",
+  "gameui:6814": "重装饰雕花框·同画风器物框",
+  "gameui:6826": "暗金金属牌",
+  "gameui:6864": "暗色细线",
+  "gameui:6951": "暗金金属牌",
+  "gameui:7134": "暗金金属牌",
+  "gameui:7155": "暗色细线",
+  "gameui:7312": "暗金金属牌",
+  "gameui:8901": "暗色细线",
+  "iig:hearthstone-heroes-of-warcraft": "重装饰雕花框·实物牌桌与卡框",
+  "iig:slay-the-spire": "重装饰雕花框·实物牌桌与卡框",
+  "iig:world-of-warcraft": "暗金金属牌·整合底座",
+  "steam:102600": "暗色细线·功能数据面板",
+  "steam:1062090": "暗色细线·功能数据面板",
+  "steam:1086940": "暗金金属牌·整合底座",
+  "steam:1145350": "重装饰雕花框·同画风器物框",
+  "steam:1145360": "重装饰雕花框·同画风器物框",
+  "steam:1162750": "暗色细线·功能数据面板",
+  "steam:1174180": "暗色细线·写实开放世界",
+  "steam:1188930": "暗色细线·功能数据面板",
+  "steam:1191840": "暗色细线·功能数据面板",
+  "steam:1203620": "暗色细线·写实开放世界",
+  "steam:1245620": "暗色细线·魂系衬线",
+  "steam:1313140": "重装饰雕花框·同画风器物框",
+  "steam:1397920": "暗金金属牌",
+  "steam:1462040": "暗色细线·写实开放世界",
+  "steam:1477070": "暗色细线·暗底文学排版",
+  "steam:1486630": "暗色细线·功能数据面板",
+  "steam:1627720": "暗色细线·魂系衬线",
+  "steam:1668690": "暗色细线·功能数据面板",
+  "steam:1775490": "暗色细线·功能数据面板",
+  "steam:1812370": "重装饰雕花框·画框包玩法区",
+  "steam:1903340": "线描花饰",
+  "steam:1940340": "暗色细线·暗底文学排版",
+  "steam:200260": "暗色细线·写实开放世界",
+  "steam:205100": "暗色细线·写实开放世界",
+  "steam:2060160": "暗色细线·功能数据面板",
+  "steam:233860": "暗色细线·功能数据面板",
+  "steam:2344520": "暗金金属牌·整合底座",
+  "steam:2358720": "暗色细线·魂系衬线",
+  "steam:237990": "线描花饰",
+  "steam:242050": "暗色细线·写实开放世界",
+  "steam:2515020": "暗色细线·写实开放世界",
+  "steam:262060": "重装饰雕花框·同画风器物框",
+  "steam:2738490": "重装饰雕花框·画框包玩法区",
+  "steam:281990": "暗色细线·功能数据面板",
+  "steam:286000": "暗色细线·功能数据面板",
+  "steam:289070": "暗金金属牌·纹章珐琅板",
+  "steam:289650": "暗色细线·写实开放世界",
+  "steam:292030": "暗色细线·写实开放世界",
+  "steam:316790": "装饰艺术",
+  "steam:3184110": "暗色细线·功能数据面板",
+  "steam:323190": "线描花饰",
+  "steam:33230": "暗色细线·写实开放世界",
+  "steam:3361470": "暗色细线·功能数据面板",
+  "steam:367520": "线描花饰",
+  "steam:368500": "暗色细线·写实开放世界",
+  "steam:403640": "暗色细线·写实开放世界",
+  "steam:427520": "暗色细线·功能数据面板",
+  "steam:48190": "暗色细线·写实开放世界",
+  "steam:594570": "暗金金属牌·整合底座",
+  "steam:599390": "暗色细线·功能数据面板",
+  "steam:632470": "暗色细线·暗底文学排版",
+  "steam:7670": "装饰艺术",
+  "steam:812140": "暗色细线·写实开放世界",
+  "steam:814380": "暗色细线·魂系衬线",
+  "steam:867210": "暗金金属牌·纹章珐琅板",
+  "steam:8870": "装饰艺术",
+  "steam:892970": "暗色细线·写实开放世界",
+  "steam:986130": "暗色细线·暗底文学排版",
+  "steam:990080": "线描花饰"
+ }
+}

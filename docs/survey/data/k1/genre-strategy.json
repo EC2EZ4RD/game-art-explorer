@@ -1,0 +1,1514 @@
+{
+  "genres": [
+    {
+      "genre": "strategy",
+      "subgenres": [
+        "回合战术 / 战棋（格子 + 单位：Into the Breach、XCOM 2、Battle for Wesnoth、The Banner Saga、手游战棋 英杰传）",
+        "Roguelike 战术（骰子 / 牌 / 棋盘当行动：Slice & Dice、Shogun Showdown、Shotgun King、Cobalt Core、Yi Xian）",
+        "4X / 回合大战略（Civilization VI、The Battle of Polytopia、Songs of Conquest）",
+        "实时可暂停大战略（Stellaris）",
+        "RTS / 即时战术（Total War: WARHAMMER II 战场、Tooth and Tail、Rusted Warfare、Bad North）",
+        "塔防（Kingdom Rush 三作、Bloons TD 5 / 6、Infinitode 2、Defender's Quest、Wall World、The Perfect Tower II、Orcs Must Die!）",
+        "自动战斗 / 自走棋（样本薄：Legend Creatures、手游自动战斗 奇缘之旅 / 铸仙之境）",
+        "叙事 / 拼图式策略（Wildermyth、Inkulinati、Dorfromantik、Sol Cesto）",
+        "手游 SLG / 战棋的战斗 HUD（英杰传、Epic Age、霸业；只看战斗界面，不看运营）"
+      ],
+      "cards": 59,
+      "sample": "genre = strategy 共 59 张卡。6 张只有运营 / 首充截图（快来当领主、守卫都市等），按用户要求不研究；6 张只有开场 / 登录（明日方舟、重返帝国等），只用于选阵营与读取页；5 张是误标的潜行 / 动作（MGS2、Party Hard、Intravenous、The WereCleaner、UnMetal），只当风格旁证。规律主要来自其余约 42 张 Steam / IIG 卡，另看了 4 张手游战斗 HUD（英杰传、死亡突围、奇缘之旅、铸仙之境）。看图：strategy 批对照图 sheet-01..17 里全部策略 / 工厂款（约 45 款）+ 20 张单图放大（Into the Breach、XCOM 2、Civ VI、Total War、Stellaris、Wesnoth、Polytopia、Shogun Showdown、Songs of Conquest、Slice & Dice、Banner Saga、Kingdom Rush、Bloons TD 6、Tooth and Tail、Infinitode 2、英杰传 等）。评测证据来自 ui-review-stats.json（只用计数，不引原文）。",
+      "keyFindings": [
+        "意图优先：策略 HUD 的第一信息不是“我还剩多少血”，而是“对方下一步做什么 + 我这一步有多确定”。意图箭头、预警格、出手顺序、命中率都挂在世界里（空间内），屏幕层只放汇总。",
+        "四角分散是最常见的版式（标了 HUD 组织的 24 张里 11 张），贴边侧栏（8 张）在经典战棋、塔防商店、复古 RTS 里依然强势；整合底座只在大规模 RTS（Total War）出现；4 张把 HUD 画在玩法区外的边框里。",
+        "结束回合 / 下一波几乎都在右下，并且是全屏最大的单个按钮（Polytopia、Civ VI、Songs of Conquest、Cobalt Core、英杰传）；Into the Breach 把它和撤销 / 重置放在左上组成“回合控制区”，是有意识的反例。",
+        "信息密度两极并存：0（Bad North、Dorfromantik）与 4（Stellaris、Total War）。密度由每回合的决策数量决定，不由画风决定。",
+        "深色面板压倒性（标了明度的 21 张里 17 张）：地图本身彩色，面板要退后；浅色只出现在极简（Bad North）或剧情 VN 段（Sunrider）。",
+        "地图画风是这个品类的第二层皮肤：羊皮纸古地图 5、手绘水彩 4、战术线框 / 全息 2——历史 / 奇幻用纸，科幻用线框。",
+        "阵营色是第一层级，但优秀样本都有形状冗余：Total War 的军旗、Tooth and Tail 单位头顶的阵营圆章、Civ VI 的国境线。",
+        "塔防是品类内外观最“商业”的一支（糖果 / 拟物木牌），且版式近乎公式：左上生命 + 金币 + 波次、右侧商店或点地建造、右下播放 / 快进。",
+        "风格可以完全换（像素、新艺术、宣纸、塔罗雕花、霓虹），但“意图格、阵营色、结束回合、资源增量”的层级不应随皮肤漂移——这是探索台在这个品类里该锁住的东西。"
+      ],
+      "coreQuestions": [
+        "敌人下一步打哪、打多少、谁先出手？（Into the Breach 把攻击格和出手顺序编号画在地图上；Shogun Showdown 在敌人头顶给方向 + 回合倒计时；Slice & Dice 在敌人行旁给意图格）",
+        "我这一步的结果有多确定：命中率 / 暴击率 / 伤害区间，以及由哪些修正项构成（XCOM 2 的开火确认条把瞄准、距离、侧翼加成逐项列出）",
+        "我选中的是谁、它还能做什么：剩余移动范围（格子高亮）、可用技能与冷却、行动点、是否已行动",
+        "谁是我的、谁是敌人、谁中立？远景也要分得清（Total War 战场上的白 / 红军旗、Civ VI 的国境线色、单位头顶的阵营圆章）",
+        "资源够不够、每回合 +多少、还差多少才能造下一个（4X 顶栏存量 + 每回合增量；塔防左上金币 + 商店里每座塔的价格）",
+        "进度与时限：第几回合 / 第几波 / 还剩几回合胜利、下一波何时来、来的是什么（Polytopia 顶部回合数、Bloons TD 6 的 31/40、Into the Breach“3 回合后胜利”、Shogun Showdown 顶部波次轨道）",
+        "全局态势：哪里出事了、领土与迷雾怎样（小地图、消息流、国境与未探索区）",
+        "现在还有什么待我决定：研究没选、单位没动、事件没处理（Civ VI 右下主按钮会先变成“选择研究”）",
+        "（塔防）这座塔能打到哪、放在这里花多少、升级后强多少",
+        "（实时 / 可暂停）现在是暂停还是在跑、倍速多少"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "四角分散：资源在上、小地图左下、选中信息左下 / 右下、结束回合右下（4X、回合战术、塔防主流）",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "el.resources.screenAnchor": "tl",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "bl",
+            "el.selection.screenAnchor": "bl",
+            "el.cta.screenAnchor": "br"
+          },
+          "share": "11 / 24 张标了 HUD 组织的卡（strategy 主样本）",
+          "examples": ["steam:289070", "steam:867210", "steam:590380", "steam:268500", "steam:246420", "steam:2084000", "steam:286000", "steam:937310"]
+        },
+        {
+          "pattern": "贴边整条：一条侧栏（多在右侧）收纳小地图 + 选中单位 + 建造 / 塔商店，玩法区是干净的矩形（经典战棋、复古 RTS、塔防商店、大战略抽屉）",
+          "params": {
+            "lay.hudOrg": "edgeBar",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "mr",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "mr",
+            "el.minimap.screenAnchor": "tr"
+          },
+          "share": "8 / 24（另：全部策略卡里建造栏 / 商店贴右 5 张、贴左 3 张）",
+          "examples": ["steam:599390", "steam:960090", "steam:647960", "steam:281990", "steam:2187290", "steam:1191840", "steam:218410"]
+        },
+        {
+          "pattern": "整合底座：底部整条单位卡 + 两端圆形徽章 + 右上小地图（大规模 RTS）",
+          "params": {
+            "lay.hudOrg": "console",
+            "el.party.form": "unitCards",
+            "el.party.arrangement": "row",
+            "el.party.screenAnchor": "bc",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "ast.frameMat": "stone",
+            "vis.ornament": 3
+          },
+          "share": "1 / 24（Total War；建造批的 Evil Genius、模拟人生也是底座）",
+          "examples": ["steam:594570"]
+        },
+        {
+          "pattern": "画在玩法区外的边框里：棋盘 / 关卡是一扇窗，两侧装饰立柱或木框承载全部 HUD",
+          "params": {
+            "lay.hudOrg": "inMargin",
+            "lay.playfield": "boardWindow",
+            "ast.frame": "carvedNinePatch",
+            "vis.ornament": 3
+          },
+          "share": "4 / 24（Sol Cesto 塔罗立柱、Shotgun King 两侧竖排牌、Bloons TD 5 木框、ShapeHero Factory 四周木框）",
+          "examples": ["steam:2738490", "steam:1972440", "steam:306020", "steam:2389040"]
+        },
+        {
+          "pattern": "世界即 UI / 几乎无 HUD：只留分数或待放物件，其余信息靠场景（决策空间小的策略）",
+          "params": {
+            "cnt.density": 0,
+            "rel.hudVisibility": "contextual",
+            "lay.container": "overlay",
+            "vis.ornament": 0
+          },
+          "share": "标了密度的 25 张里 6 张为“极简”，真正的策略是 Bad North、Dorfromantik（另 4 张是误标的潜行 / 开场）；建造批的 Thronefall、Kingdom 系同理",
+          "examples": ["steam:688420", "steam:1455840", "steam:102600"]
+        },
+        {
+          "pattern": "左右对阵两列：我方一列、敌方一列，中间是交互区（Roguelike 战术 / 叙事战术）",
+          "params": {
+            "lay.composition": "splitLR",
+            "lay.focalSide": "both",
+            "el.party.form": "frames",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "ml",
+            "el.threat.form": ["intent"]
+          },
+          "share": "约 4 张（Slice & Dice 两列、Inkulinati 顶部双方头像排、Cobalt Core 与 Wildermyth 左侧英雄竖列）",
+          "examples": ["steam:1775490", "steam:957960", "steam:2179850", "steam:763890"]
+        },
+        {
+          "pattern": "底部托盘 / 手牌：行动来自一组牌、骰子或地块，放在底部中间的托盘里",
+          "params": {
+            "el.abilities.form": "cards",
+            "el.abilities.screenAnchor": "bc",
+            "el.cta.screenAnchor": "br",
+            "ctx.timeModel": "turn"
+          },
+          "share": "手牌 4 张（Shogun Showdown 木托盘、Cobalt Core、Yi Xian、Dorfromantik 右下地块堆）",
+          "examples": ["steam:2084000", "steam:2179850", "steam:1948800", "steam:1455840"]
+        },
+        {
+          "pattern": "叙事容器：整局摊在书 / 纸 / 电脑上，UI 是容器里的物件",
+          "params": {
+            "rel.diegesis": "diegetic",
+            "ast.container": "book",
+            "ast.containerSurface": "table"
+          },
+          "share": "3 张（Inkulinati 桌上的古书、Wildermyth 羊皮纸漫画页、Progressbar95 整台旧电脑）",
+          "examples": ["steam:957960", "steam:763890", "steam:1304550"]
+        },
+        {
+          "pattern": "竖屏上下分区（手游）：上半战场、下半阵容与操作，倍速 / 跳过竖排在一侧",
+          "params": {
+            "ctx.orientation": "portrait",
+            "lay.composition": "splitTB",
+            "el.party.form": "frames",
+            "el.party.screenAnchor": "bc",
+            "el.gameSpeed.screenAnchor": "mr"
+          },
+          "share": "2 张手游战斗 HUD",
+          "examples": ["gameui:12994", "gameui:7082"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.threat",
+          "forms": ["intent", "telegraph", "hitChance", "healthBar", "visionCone"],
+          "anchors": ["attachTo=target"],
+          "why": "策略区别于动作的关键元素：把敌人的下一步画出来。卡片编码意图 3 张（Into the Breach 红箭头 + 斜线预警格；Shogun Showdown 头顶方向 + 倒计时；Slice & Dice 敌人行旁的意图格），命中率 1 张（XCOM 2 敌人头顶百分比）；塔防只用敌人头顶小血条（Kingdom Rush）。意图是空间内 UI，挂在目标上，用警示色并与阵营色分开。",
+          "examples": ["steam:590380", "steam:2084000", "steam:1775490", "steam:268500", "steam:246420"]
+        },
+        {
+          "element": "el.overlay",
+          "forms": ["gridHighlight", "arrows", "rangeRing", "statusIcons"],
+          "anchors": ["diegesis=spatial", "worldRender=decal"],
+          "why": "移动 / 攻击范围的格子高亮是回合战术的底层语言：The Banner Saga 用蓝（可移动）+ 黄（加码可多走）两档，英杰传用蓝移动 + 红攻击；Total War 战役图用发光行军路线；塔防用射程圈；Civ VI 在每格上叠产出图标。叠层要用独立色板，不和地形撞色。",
+          "examples": ["steam:237990", "gameui:7158", "steam:594570", "steam:289070", "steam:590380"]
+        },
+        {
+          "element": "el.selection",
+          "forms": ["card", "panel", "tooltip"],
+          "anchors": ["bl", "mr", "br"],
+          "why": "选中单位卡是“决策输入面板”：Into the Breach 左下头像 + 武器格 + 情境按键提示；XCOM 2 左下名牌 + 底部中间开火确认条；Wesnoth 右侧栏的单位属性；Tooth and Tail 右下单位卡（造价 + 时间，角色插画出框压面板）；英杰传左下半身像 + 攻防数值；Infinitode 2 右侧常驻详情（属性 + 升级 + 出售）。地形说明用临时 tooltip（Into the Breach 右下“水格”）。",
+          "examples": ["steam:590380", "steam:268500", "steam:599390", "steam:286000", "gameui:7158", "steam:937310"]
+        },
+        {
+          "element": "el.cta",
+          "forms": ["round", "wide"],
+          "anchors": ["br", "tl"],
+          "why": "结束回合 / 下一波是每回合必按的按钮：右下大圆钮最常见（Polytopia 勾号圆钮、Civ VI、Songs of Conquest、Cobalt Core、英杰传“待机”在拇指区）；塔防的“下一波”同位（Infinitode 2 右下大箭头、Bloons 右下播放）。Into the Breach 把它放左上，与撤销移动、重置回合组成回合控制区。Civ VI 的主按钮会先变成待处理事项，全部处理完才是下一回合。",
+          "examples": ["steam:874390", "steam:289070", "steam:867210", "steam:2179850", "gameui:7158", "steam:590380", "steam:937310"]
+        },
+        {
+          "element": "el.timer",
+          "forms": ["number", "turnBanner", "badge", "gauge"],
+          "anchors": ["tc", "tr"],
+          "why": "回合 / 波次 / 胜利倒计时：Polytopia 顶部中间“分数 / 星 / 回合”三个大数字；Into the Breach 右上“3 回合后胜利”；Bloons TD 6 右上 31/40；Kingdom Rush 左上波次木牌；Shogun Showdown 顶部“WAVE 3/5”+ 骷髅点轨道直到 Boss；XCOM 2 右上六边形回合倒计时；Songs of Conquest 右下“第 4 轮”。",
+          "examples": ["steam:874390", "steam:590380", "steam:960090", "steam:2084000", "steam:268500", "steam:867210"]
+        },
+        {
+          "element": "el.resources",
+          "forms": ["iconNumber", "gauge", "bigNumber"],
+          "anchors": ["tl", "tc", "tr", "bl"],
+          "why": "4X / 大战略：顶部一整行图标 + 数字，并给每回合增量（Civ VI、Stellaris、Songs of Conquest 右上）；塔防：左上生命 + 金币（左上锚点 4 张：Kingdom Rush 三作 + Bloons TD 6）；RTS：Tooth and Tail 左下大号“粮食”数字；Roguelike 战术把能量做成数值图形（Cobalt Core 左下圆、Slice & Dice 法力格）。",
+          "examples": ["steam:289070", "steam:281990", "steam:867210", "steam:246420", "steam:960090", "steam:286000", "steam:2179850"]
+        },
+        {
+          "element": "el.party",
+          "forms": ["frames", "portraits", "unitCards", "portraitRow"],
+          "anchors": ["ml", "bc", "tr", "mr"],
+          "why": "头像框是队伍最常见的画法（7 张）；战术小队多竖排在左侧（Into the Breach、Wildermyth、Cobalt Core、Slice & Dice）；RTS 底部整条单位卡（Total War）；自动战斗底部肖像行（Legend Creatures）；4X 用右上一排对手领袖头像做外交入口（Civ VI），Songs of Conquest 右缘竖排英雄 / 城镇。",
+          "examples": ["steam:590380", "steam:763890", "steam:2179850", "steam:1775490", "steam:594570", "steam:1191840", "steam:289070", "steam:867210"]
+        },
+        {
+          "element": "el.turnOrder",
+          "forms": ["portraitQueue", "icons"],
+          "anchors": ["bl", "bc", "attachTo=target"],
+          "why": "行动顺序让玩家规划“谁先动”：The Banner Saga 左下当前单位大头像 + 后续小头像队列；Into the Breach 直接把敌人出手顺序编号画在格子上（挂在目标上的小图标队列）；铸仙之境底部头像行动条。卡片里没有单独编码，属于看图补充。",
+          "examples": ["steam:237990", "steam:590380", "gameui:7082"]
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["plan"],
+          "anchors": ["bl", "tr"],
+          "why": "4X / RTS 必备，回合战术、塔防、Roguelike 战术通常整张地图一屏可见、不需要。左下（Civ VI 带透镜按钮、Songs of Conquest、Tooth and Tail 的菱形小地图跟等距视角一致）与右上（Wesnoth 侧栏顶部、Total War）各半。",
+          "examples": ["steam:289070", "steam:867210", "steam:286000", "steam:599390", "steam:594570"]
+        },
+        {
+          "element": "el.toolbar",
+          "forms": ["buttonRow", "microMenu", "categoryTabs"],
+          "anchors": ["mr", "ml", "bc", "br"],
+          "why": "塔防商店贴右（Bloons TD 6 / 5 双列塔格 + 价格；Rusted Warfare 的 RTS 建造栏也贴右窄条）、贴左（Infinitode 2 塔类型色块列、Defender's Quest 左侧来波列表）；Polytopia 右下四个大圆钮（设置 / 统计 / 科技 / 结束）；Tooth and Tail 底部中间一排出兵圆钮；Stellaris 左缘图标竖列。",
+          "examples": ["steam:960090", "steam:306020", "steam:647960", "steam:937310", "steam:218410", "steam:874390", "steam:286000", "steam:281990"]
+        },
+        {
+          "element": "el.objective",
+          "forms": ["checklist", "text"],
+          "anchors": ["tr", "tl", "ml"],
+          "why": "关卡目标与附加目标：Into the Breach 右上附加目标（星）；Tooth and Tail 左上目标带倒计时（[3:36] 保护商人）；Songs of Conquest 左侧“消灭所有敌人 0/3”。策略目标多带计数或时限，要能一眼看出完成度。",
+          "examples": ["steam:590380", "steam:286000", "steam:867210"]
+        },
+        {
+          "element": "el.meter",
+          "forms": ["single", "paired", "stack"],
+          "anchors": ["tl", "tc", "bl"],
+          "why": "全局态势条：Into the Breach 左上电网（分段格，城市共享血量 + 电网防御百分比）；Total War 顶部中间双方力量对比；Wall World 左下多根竖条资源计。",
+          "examples": ["steam:590380", "steam:594570", "steam:2187290"]
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["slots", "cards"],
+          "anchors": ["bc", "bl", "br"],
+          "why": "技能格 5 张、手牌 4 张：Kingdom Rush 左下英雄头像 + 两个技能圆钮；XCOM 2 底部技能图标排；Shogun Showdown 底部木托盘里的技能牌；Cobalt Core 底部卡牌行；Dorfromantik 右下待放地块堆 + 剩余数。",
+          "examples": ["steam:246420", "steam:268500", "steam:2084000", "steam:2179850", "steam:1455840"]
+        },
+        {
+          "element": "el.vitals",
+          "forms": ["segmented", "icons", "number"],
+          "anchors": ["attachTo=target", "tl"],
+          "why": "单位血量多做成挂在单位身上的小分段格（Into the Breach 机甲头顶绿格、Shogun Showdown 格子下的血点、Slice & Dice 名字下的心形点、Inkulinati 单位脚下的纸条名牌）；塔防的“基地生命”是左上图标 + 数字（Bloons 心形 200、Kingdom Rush 20）。",
+          "examples": ["steam:590380", "steam:2084000", "steam:1775490", "steam:957960", "steam:960090"]
+        },
+        {
+          "element": "el.gameSpeed",
+          "forms": ["playFF", "speedBar", "x2", "autoBattle"],
+          "anchors": ["br", "tl", "bc", "mr"],
+          "why": "塔防右下大绿播放 / 快进（Bloons TD 6）；Infinitode 2 左上暂停；Stellaris 右上日期与速度 + 底部中间“已暂停”标记；手游自动战斗把暂停 / 倍速放左上（奇缘之旅）或右侧竖排（铸仙之境）。",
+          "examples": ["steam:960090", "steam:937310", "steam:281990", "gameui:6904", "gameui:7082"]
+        },
+        {
+          "element": "el.notify",
+          "forms": ["banner", "feed", "band", "cutIn"],
+          "anchors": ["tc", "tl"],
+          "why": "Civ VI 奇观完成顶部横幅；Tooth and Tail 左上消息流；Wandering Sword 招式名巨型竖排书法压画面；UnMetal Boss 前 VS 立绘切入；小小英雄“首领登场”横贯大字。策略的通知以“态势变化”为主，频率高，宜用不阻断的横幅 / 消息流。",
+          "examples": ["steam:289070", "steam:286000", "steam:1876890", "steam:1203710", "gameui:12994"]
+        },
+        {
+          "element": "el.cost",
+          "forms": ["inButton", "iconNumber", "haveNeed"],
+          "anchors": ["mr", "br"],
+          "why": "塔防商店里每座塔下方直接写价格（Bloons TD 6），买不起时变灰；Tooth and Tail 单位卡写造价 + 生产时间；4X 的生产 / 研究消耗要给“还差多少回合”。",
+          "examples": ["steam:960090", "steam:286000", "steam:289070"]
+        },
+        {
+          "element": "el.clock",
+          "forms": ["sunDial", "dayCounter"],
+          "anchors": ["mr", "tr"],
+          "why": "时间影响战斗时才需要：Wesnoth 侧栏里画了当前昼夜的小插画（昼夜改变阵营强弱）；Shogun Showdown 右上小字记录天数 / 时长 / 回合 / 连击。",
+          "examples": ["steam:599390", "steam:2084000"]
+        },
+        {
+          "element": "el.feedback",
+          "forms": ["floatNumbers", "comicSFX", "combo"],
+          "anchors": ["attachTo=target"],
+          "why": "策略的命中反馈优先级低于动作游戏，但塔防用它做爽感：Kingdom Rush 的拟声字（BOOM、POW）是风格的一部分；Shogun Showdown 的“COMBO!”。注意它不能盖住意图与血量。",
+          "examples": ["steam:246420", "steam:2084000", "steam:960090"]
+        },
+        {
+          "element": "el.choices",
+          "forms": ["buttons", "text"],
+          "anchors": ["bc", "center"],
+          "why": "策略里的对话多是“事件抉择”：Wildermyth 漫画分格下方一排选项按钮；Defender's Quest 立绘 + 气泡；选项要写清后果（资源 ±、士气 ±、回合数）。",
+          "examples": ["steam:763890", "steam:218410", "steam:313730"]
+        },
+        {
+          "element": "el.prompt",
+          "forms": ["hotkeyBadge", "contextual", "list"],
+          "anchors": ["attachTo=cursor", "tc"],
+          "why": "RTS / 4X 的建造与指令用图标角标热键；Into the Breach 在选中卡旁给情境按键（右键 / Q 解除）；Your Only Move Is HUSTLE 顶部平铺整排键位说明——像调试面板，评测里引导不清 3 条。",
+          "examples": ["steam:590380", "steam:2212330"]
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "见 hudOrganization：四角分散 / 贴边侧栏 / 整合底座 / 边框内 / 世界即 UI 五种。固定组合：资源在上沿、小地图在一角、选中卡在左下、结束回合右下；意图、范围、血量挂在世界里。深色面板 17 / 21。",
+          "examples": ["steam:590380", "steam:289070", "steam:599390", "steam:594570", "steam:688420"]
+        },
+        {
+          "screen": "screen.map",
+          "conventions": "战役 / 世界 / 关卡地图：羊皮纸古地图（Civ VI 未探索区是纸面留白、Total War 彩绘古地图 + 发光行军路线、Shogun Showdown 卷边羊皮纸）与手绘水彩（Kingdom Rush 系关卡旗帜、Defender's Quest 节点带星级）为主；科幻用战术线框 / 全息（Stellaris 星系图 + 势力色块、XCOM 2 红色全息地球）；Roguelike 用节点路线（ShapeHero Factory 羊皮纸虚线节点、Sol Cesto 星座散点）；休闲塔防用漂浮微缩岛（Bloons TD 5）。",
+          "examples": ["steam:289070", "steam:594570", "steam:2084000", "steam:246420", "steam:218410", "steam:281990", "steam:268500", "steam:2389040", "steam:2738490", "steam:306020"]
+        },
+        {
+          "screen": "screen.skilltree",
+          "conventions": "科技 / 研究树：树状连线为主，连线样式决定气质——电路走线（Infinitode 2）、放射圆环（Polytopia 绿色圆形节点放射排布，附一句科技成本说明）、横向长卷（Civ VI 科技 / 市政树，IIG）；国风用圆形散点（Wandering Sword 经脉 / 武学图）。",
+          "examples": ["steam:937310", "steam:874390", "steam:289070", "steam:1876890"]
+        },
+        {
+          "screen": "screen.match",
+          "conventions": "战前部署 / 编队 / 对阵：Into the Breach 选小队（左机甲立绘 + 右列表 + 随机按钮）；Songs of Conquest 战前对阵（暗红羊皮纸 + 双方纹章 + 六角布阵 + 自动 / 手动战斗两个按钮）；UnMetal Boss 前 VS 大字立绘。",
+          "examples": ["steam:590380", "steam:867210", "steam:1203710"]
+        },
+        {
+          "screen": "screen.results",
+          "conventions": "战后结算：数据表 + 星级 / 评分为主；The WereCleaner 把报告纸钉在软木板上（叙事内）；Songs of Conquest 战报面板；手游对战结算用领奖台 + 排名行（爆裂小队，只看结算版式）。",
+          "examples": ["steam:867210", "steam:2795000", "gameui:13024"]
+        },
+        {
+          "screen": "screen.dialogue",
+          "conventions": "事件与剧情：漫画分格 + 选项（Wildermyth）、全身立绘 + 白气泡（Defender's Quest）、VN 无框字幕 + 自动 / 跳过（Sunrider、少女前线：云图计划）。策略对话的重点是选项后果，不是演出。",
+          "examples": ["steam:763890", "steam:218410", "steam:313730", "gameui:3033"]
+        },
+        {
+          "screen": "screen.character",
+          "conventions": "英雄 / 单位详情：The Banner Saga 用彩色长缎带条同时表示上限与当前；Kingdom Rush Vengeance 塔装备页是深色石框 + 大立绘卡；XCOM 2 士兵属性（IIG）；Wandering Sword 宣纸属性页。",
+          "examples": ["steam:237990", "steam:1367550", "steam:268500", "steam:1876890"]
+        },
+        {
+          "screen": "screen.codex",
+          "conventions": "兵种 / 卡牌百科：Tooth and Tail 整幅插画 + 黑底文字面板（ENCYCLOPEDIA 大字）；Yi Xian 宣纸底卡牌图鉴网格。",
+          "examples": ["steam:286000", "steam:1948800"]
+        },
+        {
+          "screen": "screen.frontend",
+          "conventions": "选阵营 / 领袖 / 部族：Civ VI 左侧深蓝列表 + 右侧 3D 领袖立像；Polytopia 粉色天空上一格格圆形部族头像；无限王国左侧羊皮纸说明 + 纹章、右侧大幅场景插画。",
+          "examples": ["steam:289070", "steam:874390", "gameui:2630"]
+        },
+        {
+          "screen": "screen.cards",
+          "conventions": "Roguelike 战术的构筑 / 三选一：Cobalt Core“PICK A CARD”大字 + 三张卡 + 跳过；Yi Xian 三选一圆章卡（选择仙命）；Shotgun King 两侧竖排双方增益牌。",
+          "examples": ["steam:2179850", "steam:1948800", "steam:1972440"]
+        },
+        {
+          "screen": "screen.inventory",
+          "conventions": "策略里的道具页多是大网格（Legend Creatures 灰色石框里的道具方格），弱于 RPG；UnMetal 是带页签的物品 / 被动 / 武器三区。",
+          "examples": ["steam:1191840", "steam:1203710"]
+        }
+      ],
+      "styleTendencies": [
+        {
+          "family": "暗色细线",
+          "count": 7,
+          "why": "信息密集的地图类（Wesnoth、Stellaris、Tooth and Tail、Slice & Dice）：深色半透明面板 + 细边让地图上的阵营色和地形当主角；与“深色面板 17 / 21”一致。"
+        },
+        {
+          "family": "像素位图",
+          "count": 5,
+          "why": "独立回合战术与复古 RTS（Into the Breach、Rusted Warfare、Shotgun King、Wall World）：像素网格与格子玩法同构，7 张让 UI 与世界同网格；Into the Breach 证明像素也能做到最高可读性（深底 + 亮描边 + 单一黄色强调）。"
+        },
+        {
+          "family": "极简单色",
+          "count": 4,
+          "why": "决策空间小的策略（Dorfromantik 放地块、Bad North 指挥几支小队）把 UI 收到几乎没有；Infinitode 2 是另一面——暗底 + 彩色方块图标的高密度极简。"
+        },
+        {
+          "family": "暗金金属牌",
+          "count": 3,
+          "why": "历史 / 奇幻大战略的“帝国感”（Civ VI、Songs of Conquest、Total War）：深色底 + 金 / 石框 + 纹章，装饰预算 2–3。"
+        },
+        {
+          "family": "拟物",
+          "count": 3,
+          "why": "休闲塔防（Kingdom Rush 三作）：木牌 + 羊皮纸实物质感，手绘彩绘图标，标题描边。"
+        },
+        {
+          "family": "糖果卡通（Q 版）",
+          "count": 3,
+          "why": "大众塔防与手游（Bloons TD 5 / 6、爆裂小队）：3D 渲染图标、软塑料立体、描边标题；后期特效与 UI 一起挤屏（见 pitfalls）。"
+        },
+        {
+          "family": "军事战术",
+          "count": 3,
+          "why": "科幻战术（XCOM 2）：切角、斜线阴影、双色调、全息地图；另 2 张是误标的潜行游戏，只作风格旁证。"
+        },
+        {
+          "family": "国风水墨 / 墨笔",
+          "count": 2,
+          "why": "国风策略（Yi Xian、Wandering Sword）：宣纸内芯、竖排书法、墨晕；建造批的鬼谷八荒、了不起的修仙模拟器同一路。"
+        },
+        {
+          "family": "手绘笔记本",
+          "count": 2,
+          "why": "叙事策略把整局放进书 / 纸本（Inkulinati、Wildermyth），UI 是纸上的物件；代价是字小（Wildermyth 字太小 2 条）。"
+        },
+        {
+          "family": "扁平 / Material",
+          "count": 2,
+          "why": "低多边形 4X（Polytopia）用扁平圆钮 + 纯色背景；放置塔防（The Perfect Tower II）用大色块面板 + 窄体大写。"
+        },
+        {
+          "family": "合成波 / 蒸汽波",
+          "count": 2,
+          "why": "霓虹像素卡牌战术（Cobalt Core，UI 提及 50 条里 49 条好评）与复古电脑（Progressbar95）。"
+        },
+        {
+          "family": "二次元白卡细线",
+          "count": 2,
+          "why": "二次元战术游戏的剧情部分（Sunrider、少女前线：云图计划）：立绘 + 无框字幕 + 白底表格。"
+        },
+        {
+          "family": "圆润友好",
+          "count": 2,
+          "why": "轻量回合 RPG / 手游战斗（Cureocity、小小英雄）：圆角头像 + 中间大橙色行动键。"
+        },
+        {
+          "family": "羊皮纸任务书",
+          "count": 2,
+          "why": "工厂塔防混合（ShapeHero Factory）：木框 + 羊皮纸地面 + 虚线路线图。"
+        },
+        {
+          "family": "重装饰雕花框",
+          "count": 1,
+          "why": "Sol Cesto：塔罗牌式雕花立柱边框，HUD 全部画在框里；美术提及 47%、夸 UI 2 条。"
+        },
+        {
+          "family": "线描花饰",
+          "count": 1,
+          "why": "The Banner Saga：新艺术运动衬线标题 + 青铜 + 彩色缎带属性条，与北欧手绘动画统一。"
+        },
+        {
+          "family": "像素木框",
+          "count": 1,
+          "why": "Shogun Showdown：像素 + 木托盘 + 卷边羊皮纸地图。"
+        },
+        {
+          "family": "JRPG 窗口",
+          "count": 1,
+          "why": "Defender's Quest：JRPG 式窗口 + 全身立绘的塔防。"
+        }
+      ],
+      "exemplars": [
+        { "card": "steam:590380", "why": "Into the Breach：清晰度的标杆——敌人攻击格 + 出手顺序编号画在地图上，左上“结束回合 / 撤销 / 重置 / 电网”是回合控制区，右上胜利倒计时 + 附加目标，左下选中机甲卡 + 情境按键，右下地形说明。UI 提及 36 条无一类抱怨达到 2 条。开发者公开说过宁可为清晰牺牲酷点子（06 文档 A12）。" },
+        { "card": "steam:268500", "why": "XCOM 2：命中率挂在敌人身上，开火确认条把命中 / 暴击 / 伤害区间与每项修正逐条列出；底部技能排 + 斜线阴影；战略层是红色全息地球。" },
+        { "card": "steam:289070", "why": "Civ VI：4X 信息分层的范本——顶部资源行、右上对手领袖排、左下小地图 + 透镜、右下主按钮随待办变化；每格产出图标与城市横幅在世界里；未探索区是古地图纸面留白。夸 UI 2 条，但也有菜单难用 2 条（见 pitfalls）。" },
+        { "card": "steam:594570", "why": "Total War: WARHAMMER II：整合底座（底部整条单位卡 + 两端圆徽章）+ 战场上的白 / 红阵营军旗（拉远仍可读）+ 右上小地图；战役图彩绘古地图 + 发光行军路线。" },
+        { "card": "steam:599390", "why": "Battle for Wesnoth：经典贴边侧栏——小地图、昼夜插画、选中单位属性全在右侧暗色石纹栏，六角格地图是干净矩形；UI 提及 11 条全是好评。" },
+        { "card": "steam:874390", "why": "The Battle of Polytopia：极简 4X——顶部三个大数字（分数 / 星 / 回合）+ 右下四个大圆钮，科技树是放射圆环；扁平低多边形与 UI 统一。" },
+        { "card": "steam:2084000", "why": "Shogun Showdown：意图 + 回合倒计时挂在敌人头顶，顶部波次骷髅轨道，底部木托盘放技能牌；一条横线就是整个战场。" },
+        { "card": "steam:1775490", "why": "Slice & Dice：我方 / 敌方左右两列，每行一个角色 + 骰子格；点开是整张骰面展开图（所有可能结果一次看完）；底部重掷次数、撤销、结束回合。" },
+        { "card": "steam:237990", "why": "The Banner Saga：两档移动格（蓝 / 黄）、左下行动顺序头像队列、彩色缎带属性条与新艺术标题——风格化不牺牲战术信息。" },
+        { "card": "steam:246420", "why": "Kingdom Rush：塔防标准答案——左上生命 / 金币 / 波次小木牌、左下英雄 + 技能圆钮、敌人小血条、拟声字反馈；世界地图是手绘地图 + 关卡旗帜。" },
+        { "card": "steam:937310", "why": "Infinitode 2：塔防的“工具型”做法——左侧塔类型色块列、右侧常驻详情（属性表 + 升级条 + 出售价）、右下下一波大箭头；研究树是电路图。" },
+        { "card": "steam:2738490", "why": "Sol Cesto：把 HUD 全部画进两侧塔罗雕花立柱，玩法区是一扇窗；装饰预算拉满但信息位置固定。" },
+        { "card": "steam:957960", "why": "Inkulinati：整局在桌上的古书里，真实的手入画；双方单位头像排在页眉两侧，单位名牌与血量是纸条。叙事内容器的极端例子。" },
+        { "card": "steam:688420", "why": "Bad North：局内几乎无 UI，选指挥官是极简白卡；genre = strategy 里“夸 UI”最多（3 条）——决策空间小，极简才成立。" },
+        { "card": "steam:286000", "why": "Tooth and Tail：为手柄设计的 RTS——左上带倒计时的目标、左下菱形小地图 + 大号粮食数、底部出兵圆钮、右下单位卡（立绘出框）；单位头顶阵营圆章带数量。" },
+        { "card": "steam:281990", "why": "Stellaris：实时可暂停大战略的高密度做法——顶部资源条、左侧抽屉面板带头图、右侧大纲列表（星区 / 星港 / 舰队）、右上日期与速度、底部“已暂停”；星系图是发光线框 + 势力色块，势力徽记直接压在领土上。也是反面教材（见 pitfalls）。" },
+        { "card": "steam:960090", "why": "Bloons TD 6：塔防右侧商店 + 左上生命金币 + 右上回合 + 右下播放快进的公式化版式；同时是“挡视野”抱怨最多的一款。" },
+        { "card": "gameui:7158", "why": "英杰传（手游战棋）：蓝色移动格 + 红色攻击格、左下选中单位面板、右下拇指区大圆键“待机”、右上回合 1/20——PC 战棋版式搬到触屏的直接答案。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "塔防后期特效与单位数量爆炸，加上贴边商店，把战场淹没——看不清敌人走到哪、塔打到哪",
+          "examples": ["steam:960090"],
+          "reviewEvidence": "Bloons TD 6：“HUD 太乱 / 挡视野”5 条，在 R3 全库这一类并列第 1（与 Tiny Glade 同为 5 条）；但它的 UI 提及 31 条里 30 条是好评——问题集中在后期画面密度，不在控件本身。"
+        },
+        {
+          "desc": "大规模 RTS 的底座 + 单位旗帜 + 特效叠加，挡住战场",
+          "examples": ["steam:594570"],
+          "reviewEvidence": "Total War: WARHAMMER II：“挡视野”2 条。"
+        },
+        {
+          "desc": "大战略信息过量、面板叠面板、入口难找",
+          "examples": ["steam:281990", "steam:289070"],
+          "reviewEvidence": "Stellaris：UI 提及 54 条里 25 条差评（本品类差评占比最高之一），菜单难用、挡视野各 1 条；Civ VI：UI 提及 43 条里 14 条差评，菜单难用 2 条、挡视野 1 条。R3 提醒：差评占比高也可能是对整款游戏不满时顺带提到界面。"
+        },
+        {
+          "desc": "规则说明缺位：零 / 极简 HUD 或调试面板式 UI 让新手不知道该看哪、该干什么",
+          "examples": ["steam:2212330", "steam:701160", "steam:268500"],
+          "reviewEvidence": "Your Only Move Is HUSTLE：引导不清 3 条（键位说明与预测开关平铺在屏上）；XCOM 2：引导不清 2 条；建造批 Kingdom Two Crowns 引导不清 7 条是零 HUD 的同一代价。对照：Bad North 也极简却被夸 UI 3 条——它的规则少。"
+        },
+        {
+          "desc": "纸本 / 插画风里用小号手写字或细衬线，正文看不清",
+          "examples": ["steam:763890"],
+          "reviewEvidence": "Wildermyth：字太小 2 条。"
+        },
+        {
+          "desc": "鼠标 / 触屏优先的塔防与回合策略移植到手柄，点地建造与菜单焦点不顺",
+          "examples": ["steam:1367550"],
+          "reviewEvidence": "Kingdom Rush Vengeance：手柄 / 键位不好 2 条。"
+        },
+        {
+          "desc": "回合策略的出牌 / 结算演出太长，拖慢回合节奏",
+          "examples": ["steam:1948800"],
+          "reviewEvidence": "Yi Xian：UI 卡顿 / 响应慢 2 条。"
+        },
+        {
+          "desc": "重装饰金框面板与高密度信息并存，界面评价两极",
+          "examples": ["steam:867210"],
+          "reviewEvidence": "Songs of Conquest：UI 提及 27 条里 12 条差评，关键词粗筛只归出“菜单难用”1 条——原因未定，弱证据，留待逐条复核。"
+        },
+        {
+          "desc": "阵营色用红 / 绿、状态只靠颜色；迷雾把阵营色洗掉",
+          "examples": [],
+          "reviewEvidence": "无直接评测证据；来自 06 文档 A12 可读性规则（红绿色觉障碍约占男性 8–10%，阵营要有形状冗余）。看图正例：Total War 军旗形状、Tooth and Tail 阵营圆章。"
+        },
+        {
+          "desc": "意图 / 范围格与地形纹理“同频”，看不出哪格危险",
+          "examples": [],
+          "reviewEvidence": "无直接评测证据；06 文档 A12 测试片段“意图层”。看图正例：Into the Breach 用斜线红格 + 编号与地形区分，The Banner Saga 用蓝 / 黄两档纯色格压在雪地上。"
+        },
+        {
+          "desc": "按“结束回合”时不提醒还有未行动单位或未处理事项",
+          "examples": [],
+          "reviewEvidence": "无直接评测证据；看图正例：Civ VI 的主按钮先变成待处理事项（如“选择研究”），Into the Breach 把撤销 / 重置放在结束回合旁边。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "敌人意图：只给血条 vs 画出下一步",
+          "a": {
+            "ctx.timeModel": "turn",
+            "el.threat.form": ["healthBar"],
+            "el.threat.attachTo": "target",
+            "el.overlay.form": ["gridHighlight"]
+          },
+          "b": {
+            "ctx.timeModel": "turn",
+            "el.threat.form": ["healthBar", "intent", "telegraph"],
+            "el.threat.attachTo": "target",
+            "el.overlay.form": ["gridHighlight", "arrows"],
+            "el.turnOrder.form": "icons",
+            "el.turnOrder.attachTo": "target"
+          },
+          "lookAt": "1 秒内能不能说出“哪几格会挨打、谁先出手”；b 的预警格有没有盖住地形和己方单位（Into the Breach 用斜线红格 + 出手编号）。"
+        },
+        {
+          "title": "命中预测：一个大数字 vs 拆开修正项",
+          "a": {
+            "el.threat.form": ["hitChance"],
+            "st.statViz": "bigNumber",
+            "lay.detail": "none"
+          },
+          "b": {
+            "el.threat.form": ["hitChance"],
+            "st.statViz": "table",
+            "lay.detail": "persistent",
+            "st.delta": "plus"
+          },
+          "lookAt": "玩家能否看出“为什么是 65%”，并知道怎么把它提高（XCOM 2 的开火确认条：左边命中修正、右边暴击修正）。"
+        },
+        {
+          "title": "结束回合放哪：右下大圆钮 vs 左上回合控制区",
+          "a": {
+            "el.cta.form": "round",
+            "el.cta.screenAnchor": "br",
+            "vis.silhouette@el.cta": "circle",
+            "el.cta.scale": 1.4
+          },
+          "b": {
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "tl",
+            "el.meter.form": "single",
+            "cmp.gauge@el.meter": "segmented",
+            "el.meter.screenAnchor": "tl"
+          },
+          "lookAt": "右下是 4X / 触屏的拇指区惯例（Polytopia、Civ VI、英杰传）；左上把“结束 / 撤销 / 电网”放成一组（Into the Breach），误触少、和全局状态同看，但离视线终点远。"
+        },
+        {
+          "title": "4X 资源：只显示存量 vs 存量 + 每回合增量",
+          "a": {
+            "el.resources.form": "iconNumber",
+            "el.resources.arrangement": "row",
+            "el.resources.screenAnchor": "tl",
+            "el.resources.valueLabel": "current"
+          },
+          "b": {
+            "el.resources.form": "iconNumber",
+            "el.resources.arrangement": "row",
+            "el.resources.screenAnchor": "tl",
+            "el.resources.valueLabel": "delta",
+            "col.coding": ["status"]
+          },
+          "lookAt": "能否一眼看出哪一项在亏（负增量标红 + 负号）；顶栏一行放 6–8 项时数字是否还能对齐（等宽数字）。"
+        },
+        {
+          "title": "HUD 组织：四角分散 vs 贴边侧栏",
+          "a": {
+            "lay.hudOrg": "scattered",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "bl",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "bl",
+            "el.resources.screenAnchor": "tl",
+            "el.cta.screenAnchor": "br"
+          },
+          "b": {
+            "lay.hudOrg": "edgeBar",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "mr",
+            "el.clock.form": "sunDial",
+            "el.clock.screenAnchor": "mr",
+            "el.cta.screenAnchor": "br",
+            "ast.frameMat": "stone"
+          },
+          "lookAt": "地图可视面积（屏占比读数）与视线往返：侧栏把信息收进一条、玩法区是干净矩形（Wesnoth）；四角分散给地图更多面积但视线要跳四个角（Civ VI、Songs of Conquest）。"
+        },
+        {
+          "title": "塔防建造：右侧整条商店 vs 点地弹出环形菜单",
+          "a": {
+            "lay.hudOrg": "edgeBar",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.arrangement": "grid",
+            "el.toolbar.screenAnchor": "mr",
+            "el.cost.form": "inButton"
+          },
+          "b": {
+            "lay.hudOrg": "scattered",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.arrangement": "ring",
+            "el.toolbar.attachTo": "poi",
+            "el.cost.form": "inButton"
+          },
+          "lookAt": "屏占比（Bloons TD 6 右栏约占屏宽 1/6）与“看敌人 → 看商店 → 看格子”的视线距离；环形菜单会不会挡住塔周围的路。"
+        },
+        {
+          "title": "世界即 UI vs 常驻战术面板",
+          "a": {
+            "cnt.density": 0,
+            "rel.hudVisibility": "contextual",
+            "lay.container": "overlay",
+            "col.lightness": "light"
+          },
+          "b": {
+            "cnt.density": 3,
+            "rel.hudVisibility": "always",
+            "lay.hudOrg": "edgeBar",
+            "col.lightness": "dark"
+          },
+          "lookAt": "新手能否从画面本身读出规则；同一张战场在 b 里信息是否抢走了画面（Bad North 被夸简洁，HUSTLE 被骂引导不清）。"
+        },
+        {
+          "title": "战役地图画风：羊皮纸古地图 vs 战术全息",
+          "a": {
+            "cnt.screen": "screen.map",
+            "vis.mapStyle": "parchment",
+            "vis.mapUnexplored": "blank",
+            "vis.connector": "brush",
+            "ast.frameMat": "gold"
+          },
+          "b": {
+            "cnt.screen": "screen.map",
+            "vis.mapStyle": "tactical",
+            "vis.mapUnexplored": "dark",
+            "vis.connector": "beam",
+            "vis.corner": "chamfer"
+          },
+          "lookAt": "阵营 / 势力色在两种底上是否都分得清；纸面留白式未探索区（Civ VI）vs 压暗（Stellaris）哪个更能引起“想去看”的好奇。"
+        },
+        {
+          "title": "阵营色：蓝我红敌 vs 橙蓝 + 形状冗余（红色盲模拟下看）",
+          "a": {
+            "col.coding": ["team"],
+            "col.teams": "blueRed",
+            "chk.cvd": "protan"
+          },
+          "b": {
+            "col.coding": ["team"],
+            "col.teams": "orangeBlue",
+            "vis.silhouette@el.party": "shield",
+            "chk.cvd": "protan",
+            "chk.redundancy": true
+          },
+          "lookAt": "色盲模拟下远景单位的阵营是否仍可分；b 是否靠形状（盾形旗 vs 圆章）也能分。"
+        },
+        {
+          "title": "语义缩放：拉远仍是模型 vs 拉远变阵营军旗",
+          "a": {
+            "rel.semanticZoom": "none",
+            "col.coding": ["team"]
+          },
+          "b": {
+            "rel.semanticZoom": "iconize",
+            "rel.worldRender": "billboard",
+            "col.coding": ["team"]
+          },
+          "lookAt": "Total War 的白 / 红军旗：拉远后军团数量、阵营、交战位置是否比看模型更好读。"
+        },
+        {
+          "title": "行动顺序：不显示 vs 左下头像队列",
+          "a": {
+            "ctx.timeModel": "turn",
+            "el.party.form": "frames",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "ml"
+          },
+          "b": {
+            "ctx.timeModel": "turn",
+            "el.party.form": "frames",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "ml",
+            "el.turnOrder.form": "portraitQueue",
+            "el.turnOrder.screenAnchor": "bl"
+          },
+          "lookAt": "The Banner Saga 式“当前大头像 + 后续小头像”：玩家能否规划下一轮谁先动，左侧小队列与左下队列会不会重复。"
+        },
+        {
+          "title": "同一套回合战术 HUD 的两张皮：像素深底细描边 vs 新艺术衬线 + 青铜缎带",
+          "a": {
+            "vis.pixelScale": "x2",
+            "vis.corner": "sharp",
+            "vis.stroke": "solid",
+            "col.lightness": "dark",
+            "col.strategy": "neutralAccent",
+            "typ.display.family": "pixel",
+            "vis.ornament": 0
+          },
+          "b": {
+            "typ.display.family": "artNouveau",
+            "ast.frameMat": "bronze",
+            "vis.motif": "floral",
+            "vis.ornament": 2,
+            "cmp.plate": "ribbon",
+            "st.statViz": "inlineBar",
+            "col.lightness": "dark"
+          },
+          "lookAt": "风格换了，意图格、阵营色、结束回合这些必须一眼读出的东西是否仍然最显眼（层级不随皮肤漂移）。"
+        },
+        {
+          "title": "叙事容器：屏幕叠加 vs 整局摊在书上",
+          "a": {
+            "rel.diegesis": "screen",
+            "ast.container": "none"
+          },
+          "b": {
+            "rel.diegesis": "diegetic",
+            "ast.container": "book",
+            "ast.containerSurface": "table",
+            "vis.edge": "brush",
+            "typ.display.family": "handwritten"
+          },
+          "lookAt": "Inkulinati 式“书即战场”：单位名牌、血量、头像排变成纸上的物件后，信息位置是否仍然稳定、字是否还够大。"
+        },
+        {
+          "title": "触屏战棋：PC 右下小按钮 vs 拇指区大圆键",
+          "a": {
+            "ctx.input": "kbm",
+            "el.cta.form": "round",
+            "el.cta.screenAnchor": "br"
+          },
+          "b": {
+            "ctx.input": "touch",
+            "ctx.orientation": "landscape",
+            "ix.thumbZone": "twoThumbs",
+            "ix.touchCluster": "arc",
+            "el.cta.form": "round",
+            "el.cta.screenAnchor": "br",
+            "el.cta.scale": 1.6
+          },
+          "lookAt": "英杰传把“待机”做成右下拇指区最大的键，左下选中面板留给左手区；看触控尺寸检查是否通过、是否挡住右下角的格子。"
+        }
+      ],
+      "subgenreProfiles": [
+        {
+          "subgenre": "回合战术 / 战棋",
+          "params": {
+            "ctx.timeModel": "turn",
+            "lay.hudOrg": "scattered",
+            "el.threat.form": ["intent", "telegraph"],
+            "el.threat.attachTo": "target",
+            "el.overlay.form": ["gridHighlight", "arrows"],
+            "el.overlay.diegesis": "spatial",
+            "el.overlay.worldRender": "decal",
+            "el.selection.form": "card",
+            "el.selection.screenAnchor": "bl",
+            "el.party.form": "frames",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "ml",
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "tl",
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "tr",
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tr",
+            "el.vitals.diegesis": "spatial",
+            "el.vitals.attachTo": "target",
+            "cmp.gauge@el.vitals": "segmented",
+            "el.turnOrder.form": "icons",
+            "el.turnOrder.attachTo": "target"
+          },
+          "examples": ["steam:590380", "steam:268500", "steam:237990"],
+          "note": "Into the Breach 式；把 el.cta 改为 br + round 即 XCOM / 战棋手游式。"
+        },
+        {
+          "subgenre": "Roguelike 战术（骰 / 牌 / 棋盘）",
+          "params": {
+            "ctx.timeModel": "turn",
+            "lay.composition": "splitLR",
+            "lay.focalSide": "both",
+            "el.party.form": "frames",
+            "el.party.arrangement": "column",
+            "el.party.screenAnchor": "ml",
+            "el.threat.form": ["intent"],
+            "el.threat.attachTo": "target",
+            "el.abilities.form": "cards",
+            "el.abilities.screenAnchor": "bc",
+            "el.resources.form": "gauge",
+            "cmp.gauge@el.resources": "segmented",
+            "el.cta.form": "wide",
+            "el.cta.screenAnchor": "br",
+            "cmp.slot": "cell",
+            "vis.pixelScale": "x2",
+            "vis.stroke": "solid",
+            "col.lightness": "dark"
+          },
+          "examples": ["steam:1775490", "steam:2179850", "steam:2084000"],
+          "note": "Slice & Dice / Cobalt Core 式；Shogun Showdown 把双方放在一条横线上，可改 lay.composition = single。"
+        },
+        {
+          "subgenre": "4X / 回合大战略",
+          "params": {
+            "ctx.timeModel": "turn",
+            "lay.hudOrg": "scattered",
+            "rel.semanticZoom": "iconize",
+            "el.resources.form": "iconNumber",
+            "el.resources.arrangement": "row",
+            "el.resources.screenAnchor": "tl",
+            "el.resources.valueLabel": "delta",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "bl",
+            "el.cta.form": "round",
+            "el.cta.screenAnchor": "br",
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "tr",
+            "el.notify.form": ["banner"],
+            "el.notify.screenAnchor": "tc",
+            "el.overlay.form": ["statusIcons"],
+            "el.selection.form": "panel",
+            "el.selection.screenAnchor": "bl",
+            "vis.mapStyle": "parchment",
+            "vis.mapUnexplored": "blank",
+            "col.coding": ["team"]
+          },
+          "examples": ["steam:289070", "steam:867210", "steam:874390"],
+          "note": "Civ VI 式；Polytopia 版去掉小地图与资源行，只留顶部三个数字 + 右下四个圆钮。"
+        },
+        {
+          "subgenre": "实时可暂停大战略",
+          "params": {
+            "ctx.timeModel": "pausable",
+            "lay.hudOrg": "edgeBar",
+            "lay.container": "drawer",
+            "cmp.panelArt": "header",
+            "el.resources.form": "iconNumber",
+            "el.resources.arrangement": "row",
+            "el.resources.screenAnchor": "tc",
+            "el.resources.valueLabel": "delta",
+            "el.gameSpeed.form": "speedBar",
+            "el.gameSpeed.screenAnchor": "tr",
+            "el.toolbar.form": "microMenu",
+            "el.toolbar.screenAnchor": "ml",
+            "el.objective.form": ["checklist"],
+            "el.objective.screenAnchor": "mr",
+            "vis.mapStyle": "tactical",
+            "rel.semanticZoom": "iconize",
+            "cnt.density": 4,
+            "col.lightness": "dark"
+          },
+          "examples": ["steam:281990"],
+          "note": "Stellaris 式；注意它也是“信息过量”的反面证据。"
+        },
+        {
+          "subgenre": "RTS / 即时战术",
+          "params": {
+            "ctx.timeModel": "realtime",
+            "lay.hudOrg": "console",
+            "el.party.form": "unitCards",
+            "el.party.arrangement": "row",
+            "el.party.screenAnchor": "bc",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "el.meter.form": "paired",
+            "cmp.gauge@el.meter": "bipolar",
+            "el.meter.screenAnchor": "tc",
+            "rel.worldRender": "billboard",
+            "rel.semanticZoom": "iconize",
+            "el.prompt.form": ["hotkeyBadge"],
+            "el.notify.form": ["feed"],
+            "el.notify.screenAnchor": "tl",
+            "col.coding": ["team"]
+          },
+          "examples": ["steam:594570", "steam:286000", "steam:647960"],
+          "note": "Total War 式；复古 RTS 改 lay.hudOrg = edgeBar + el.toolbar 贴右（Rusted Warfare）。"
+        },
+        {
+          "subgenre": "塔防",
+          "params": {
+            "ctx.timeModel": "pausable",
+            "lay.hudOrg": "edgeBar",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.arrangement": "grid",
+            "el.toolbar.screenAnchor": "mr",
+            "el.cost.form": "inButton",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tl",
+            "cmp.gauge@el.vitals": "number",
+            "el.vitals.screenAnchor": "tl",
+            "el.timer.form": "number",
+            "el.timer.valueLabel": "currentMax",
+            "el.timer.screenAnchor": "tr",
+            "el.gameSpeed.form": "playFF",
+            "el.gameSpeed.screenAnchor": "br",
+            "el.overlay.form": ["rangeRing"],
+            "el.threat.form": ["healthBar"],
+            "el.threat.attachTo": "target",
+            "el.feedback.form": ["floatNumbers"]
+          },
+          "examples": ["steam:960090", "steam:246420", "steam:937310"],
+          "note": "Bloons TD 6 式；Kingdom Rush 版改 lay.hudOrg = scattered、技能放左下；Infinitode 版加 lay.detail = persistent 右侧详情。"
+        },
+        {
+          "subgenre": "自动战斗 / 自走棋（样本薄）",
+          "params": {
+            "ctx.timeModel": "turn",
+            "el.party.form": "portraitRow",
+            "el.party.screenAnchor": "bc",
+            "el.timer.form": "badge",
+            "el.timer.screenAnchor": "tc",
+            "el.gameSpeed.form": "x2",
+            "el.gameSpeed.screenAnchor": "tl",
+            "el.meter.form": "stack",
+            "cmp.gauge@el.meter": "segmented",
+            "el.meter.screenAnchor": "ml",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "bl",
+            "el.overlay.form": ["gridHighlight"]
+          },
+          "examples": ["steam:1191840", "gameui:6904", "gameui:7082"],
+          "note": "只有 Legend Creatures 与两款手游自动战斗作证据；羁绊列表、备战席的形态需要下一批补（见 paramGaps）。"
+        }
+      ],
+      "contentPack": {
+        "names": {
+          "factions": ["北港联邦（蓝）", "赭岩王国（橙）", "雾泽部落（紫）", "中立：流寇 / 野兽（灰）"],
+          "resources": ["粮食", "木材", "石料", "铁矿", "金币", "科研点", "文化", "信仰", "士气", "人口上限", "补给", "指令点", "魔力", "电网完整度"],
+          "resourceReadouts": ["金币 312（+18 / 回合）", "粮食 46（-3 / 回合）", "科研 22 / 回合 · 冶铁 还需 4 回合", "人口 7 / 10"],
+          "units": ["长枪兵", "弓手", "轻骑兵", "斥候", "攻城弩车", "工兵", "医护兵", "法师", "侦察无人机", "重装机甲", "旗手"],
+          "unitStats": ["生命 12 / 12", "护甲 2", "移动 4 格", "射程 3", "攻击 3–5", "命中 72%", "暴击 15%", "士气：高昂 / 动摇 / 溃散", "经验 · 军衔 下士", "行动点 2 / 2", "已行动"],
+          "statusEffects": ["中毒 2 回合", "眩晕", "掩体：半掩", "隐蔽", "鼓舞 +1 攻击", "燃烧"],
+          "buildings": ["兵营", "市场", "粮仓", "城墙", "研究院", "瞭望塔", "港口", "神殿", "铁匠铺"],
+          "techs": ["冶铁", "骑术", "灌溉", "航海", "火药", "印刷术", "无线电", "轨道运载"],
+          "objectives": ["守住据点 3 回合", "10 回合内占领 2 座城", "护送补给车抵达北桥", "消灭所有敌军（0 / 3）", "附加：发电站不受损", "第 20 波前不让敌人进城"],
+          "mapFeatures": ["平原", "森林（防御 +1）", "丘陵（视野 +1）", "河流 / 浅滩", "桥", "沼泽（移动 -1）", "矿点", "遗迹", "边境线", "补给线", "战争迷雾", "未探索区"],
+          "events": ["斥候回报：东边发现敌军营地", "商队请求护送（+60 金币 / 耽误 1 回合）", "粮仓失火：救火还是保兵营", "邻国提出停战 10 回合"],
+          "dialogue": ["左翼顶不住了，请求增援！", "城墙修好了，大人。", "情报说他们会在黎明进攻。", "这座桥一旦丢了，补给就断了。"],
+          "notifications": ["研究完成：冶铁", "新单位可招募：轻骑兵", "北港人口增长到 8", "雾中出现敌军", "奇观建成：天文台"],
+          "towerDefense": ["箭塔", "炮塔", "冰霜塔", "雷电塔", "兵营塔", "生命 20", "金币 527", "波次 10 / 17", "下一波 00:12", "敌人：步兵 / 盾兵 / 飞行 / 快速 / 精英 / 首领"],
+          "autobattler": ["羁绊：铁卫 2 / 4", "人口 6 / 8", "刷新（2 金）", "第 12 回合 · 准备 00:20", "连胜 3", "备战席 5 / 8"]
+        }
+      },
+      "paramGaps": [
+        "战斗预测面板（攻方 / 守方伤害、命中、反击、前后血量对比）没有专门元素；XCOM 2 的修正项拆解只能用 st.statViz = table 近似。建议新增 el.forecast（画法：命中条 + 修正项列表 / 双方对打条 / 前后血条）。",
+        "敌人意图的“倒计时”与“出手顺序”没有子参数：Shogun Showdown 头顶的回合倒计时、Into the Breach 的出手编号都要靠 el.threat + el.turnOrder 拼。建议 el.threat 增加 intentCountdown / intentOrder。",
+        "波次预告（下一波的构成与倒计时）没有元素：Defender's Quest 左侧来波列表、Shogun Showdown 顶部骷髅轨道、Bloons 的 31/40。建议 el.timer.form 增加 waveQueue，或新元素 el.wave。",
+        "撤销 / 重置回合 / 时间回溯控件没有参数（Into the Breach 撤销移动 + 重置回合、Slice & Dice 撤销）。建议 ix.undo：无 / 撤销一步 / 重置回合 / 时间回溯。",
+        "世界内的己方单位 / 城市铭牌（城市名 + 人口 + 生产进度 + 城防；军旗 + 兵力圆章）没有对应元素：el.threat 只管敌人、el.selection.form = tag 只管选中。建议 el.worldLabel（城市横幅 / 军旗 / 计数圆章），可挂 target / poi。",
+        "领土 / 国境线着色不在 el.overlay.form 里（Civ VI、Stellaris、Polytopia 都靠国境读态势；Stellaris 还把势力徽记压在领土上）。建议 el.overlay.form 增加 borders。",
+        "信息透镜切换（Civ VI 小地图旁的透镜按钮；建造批 Cities: Skylines 的信息视图）没有“透镜选择器”控件。建议 el.overlay 增加 lensPicker，或 el.toolbar.form 增加 lensTabs。",
+        "主行动按钮的“下一待办”模式（Civ VI 右下先变成“选择研究”，处理完才是“下一回合”）没有参数。建议 el.cta.mode：固定结束回合 / 下一待办 / 下一波。",
+        "单位“已行动 / 未行动”在地图上的表现缺失：st.done 是给列表用的（绿勾 / 灰化），地图上要灰化已行动单位、给未行动单位脉冲。建议 st.done 允许 @el.party 与世界内渲染。",
+        "范围高亮只有一档：The Banner Saga 蓝（可移动）+ 黄（加码多走）、英杰传蓝移动 + 红攻击。建议 gridHighlight 增加档位数与语义（移动 / 冲刺 / 攻击 / 危险），并参与色盲检查。",
+        "4X 外交关系（战争 / 和平 / 同盟）没有颜色编码：col.coding 有阵营色但没有“关系状态色”；对手领袖排可用 el.party 近似。",
+        "自走棋样本不足：库里没有 Teamfight Tactics / Dota Underlords / 金铲铲之战这一类，羁绊列表（el.meter = stack 近似）、备战席、商店刷新的形态缺一手证据，下一批 R2 应补。",
+        "“展开全部可能结果”的详情形态（Slice & Dice 的骰面展开图）在 lay.detail 里没有对应选项，属于 Roguelike 战术特有的低优先级缺口。"
+      ]
+    },
+    {
+      "genre": "factory",
+      "subgenres": [
+        "物流工厂 / 自动化（Factorio、Dyson Sphere Program、Satisfactory、Beltmatic、Widget Inc.、River Town Factory）",
+        "编程自动化 / 编程解谜（The Farmer Was Replaced、A=B、Plasma、Craftomation 101、Autonauts）",
+        "放置 / 增量（Melvor Idle、Mr.Mine、Nodebuster、Digseum、The Perfect Tower II）",
+        "工厂 + 塔防 / 战斗混合（ShapeHero Factory、The Perfect Tower II、Wall World）",
+        "经营型生产（Maltese's Fluffy Onsen）"
+      ],
+      "cards": 7,
+      "sample": "genre = factory 只有 7 张（多是编程类与放置类）。为覆盖真正的物流工厂，补看了 11 张标在 builder / survival / strategy 下的同类卡：Factorio、Dyson Sphere Program、Satisfactory、Beltmatic、Autonauts、River Town Factory、Nodebuster、Mr.Mine、Digseum、ShapeHero Factory、The Perfect Tower II，合计 18 张。对照图 strategy 批 sheet-02 / 03 / 06 / 08 / 09 / 14 / 15 / 16 + life 批 sheet-15，单图放大 Factorio、Dyson Sphere Program、Beltmatic、Widget Inc.、Craftomation 101、The Farmer Was Replaced。局限：Factorio、Autonauts、Satisfactory 的商店图几乎全是纯画面，HUD 编码置信度低。",
+      "keyFindings": [
+        "工厂本身是主信息：商店图里 HUD 很少，信息靠世界内的带子颜色、物品图标、机器状态图标（Factorio 带子按等级分黄 / 红 / 蓝，Beltmatic 每个物品直接写数字）；HUD 只给建造栏、资源和里程碑。",
+        "深色面板 11 / 12：科幻切角半透明（Dyson Sphere Program、Satisfactory、Plasma）与暗色细线（Factorio、Widget Inc.）占了一大半——让彩色物流在深底上跳出来。",
+        "科技 / 解锁树是这个品类最有辨识度的二级界面：18 张里 6 张编码了树状排布，连线多用电路走线或直线方框。",
+        "编程类把代码编辑器当 UI 主体：等宽字、深色窗口，要么浮在世界上（The Farmer Was Replaced），要么整屏终端（A=B）。",
+        "放置类走网页 / 后台风（左导航 + 卡片网格 + 长列表 + 大数字），与物流工厂同名但是完全不同的 UI 语言。",
+        "建造栏几乎都在底部中间（Factorio 快捷栏、Dyson Sphere Program、River Town Factory、Beltmatic），大型建造菜单则按键呼出成模态大面板（Satisfactory）。"
+      ],
+      "coreQuestions": [
+        "产线在转吗：哪台机器停了、为什么停（缺料 / 缺电 / 出口堵塞 / 没设配方）",
+        "物流往哪走、带上是什么：方向箭头 + 物品颜色 / 图标 / 数字（Factorio 带子等级色、Beltmatic 物品上的数字）",
+        "产量够不够：当前速率 vs 需求速率，瓶颈在哪（Beltmatic 中央枢纽 2k / 4k）",
+        "下一个里程碑要什么、我有多少（Widget Inc. 左上“当前里程碑 0 / 961”、配方提示里的有 / 需 21 / 21 与 4 / 34）",
+        "电够不够（Dyson Sphere Program 底部建造栏旁的能量条）",
+        "我手上拿的是什么、现在处于放置 / 拆除 / 复制哪种模式（Beltmatic 底栏的复制 / 粘贴 / 剪切 / 清除 / 拆除）",
+        "（编程类）程序跑到哪一步、在运行还是暂停（The Farmer Was Replaced 代码窗的运行 / 停止，Craftomation 101 底部播放 / 暂停 / 单步 + 电量）",
+        "（放置类）每秒 / 每分钟产出多少、下一次升级多少钱、离线时攒了多少"
+      ],
+      "hudOrganization": [
+        {
+          "pattern": "分散组件 + 底部中央建造栏 / 快捷栏，小地图或雷达在一角",
+          "params": {
+            "lay.hudOrg": "scattered",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "el.resources.screenAnchor": "tl",
+            "el.minimap.form": "radar",
+            "el.minimap.screenAnchor": "br"
+          },
+          "share": "4 / 18（Factorio、Dyson Sphere Program、River Town Factory 卡片编码；Beltmatic 为看图补充）",
+          "examples": ["steam:427520", "steam:1366540", "steam:2281410", "steam:2674590"]
+        },
+        {
+          "pattern": "浮动代码窗 / 节点图压在世界上，世界是程序的执行结果",
+          "params": {
+            "lay.container": "window",
+            "typ.body.family": "mono",
+            "col.lightness": "dark",
+            "rel.behind": "live"
+          },
+          "share": "4 / 18（The Farmer Was Replaced、Plasma、A=B、Craftomation 101）",
+          "examples": ["steam:2060160", "steam:1409160", "steam:1720850", "steam:1724140"]
+        },
+        {
+          "pattern": "网页式左右分栏：左侧导航长列表 + 右侧卡片网格 / 长列表（放置类）",
+          "params": {
+            "lay.composition": "splitLR",
+            "lay.nav": "tabsLeft",
+            "cmp.listRow": ["icon", "title", "progress"],
+            "cnt.density": 4
+          },
+          "share": "3 / 18（Melvor Idle、Craftomation 101 右侧指令列表、The Perfect Tower II 工坊长列表）",
+          "examples": ["steam:1267910", "steam:1724140", "steam:1197260"]
+        },
+        {
+          "pattern": "模态建造大面板：分类页签 + 图标方格 + 右侧详情",
+          "params": {
+            "lay.container": "modal",
+            "lay.nav": "tabsLeft",
+            "cmp.slot": "cell",
+            "vis.iconStyle": "render3d",
+            "rel.behind": "live"
+          },
+          "share": "3 / 18（Satisfactory 建造菜单、Plasma 零件库、Maltese's Fluffy Onsen 装饰弹窗）",
+          "examples": ["steam:526870", "steam:1409160", "steam:3404470"]
+        },
+        {
+          "pattern": "画在玩法区外的边框里：铁 / 木框侧栏承载资源与进度",
+          "params": {
+            "lay.hudOrg": "inMargin",
+            "ast.frameMat": "iron",
+            "vis.ornament": 2
+          },
+          "share": "2 / 18（Mr.Mine 左右铁框竖条、ShapeHero Factory 四周木框）",
+          "examples": ["steam:1397920", "steam:2389040"]
+        },
+        {
+          "pattern": "工厂即信息：几乎无 HUD，机器上叠空间内状态图标，拉远图标化",
+          "params": {
+            "cnt.density": 0,
+            "rel.hudVisibility": "contextual",
+            "el.overlay.form": ["statusIcons", "arrows"],
+            "el.overlay.diegesis": "spatial",
+            "rel.semanticZoom": "iconize"
+          },
+          "share": "商店图里 2 / 18 几乎看不到 HUD（Factorio、Autonauts）；Factorio 卡片编码了机器状态叠层",
+          "examples": ["steam:427520", "steam:979120"]
+        }
+      ],
+      "elements": [
+        {
+          "element": "el.toolbar",
+          "forms": ["buttonRow", "categoryTabs"],
+          "anchors": ["bc"],
+          "why": "建造入口是工厂 HUD 的主体：Dyson Sphere Program 底部中间图标排 + 能量条；Beltmatic 底栏带文字标签的工具（传送带 / 桥 / 采集器 / 加法器 / 乘法器）+ 编辑工具；River Town Factory 底部木条；Satisfactory 按键呼出分类大面板。",
+          "examples": ["steam:1366540", "steam:2674590", "steam:2281410", "steam:526870"]
+        },
+        {
+          "element": "el.abilities",
+          "forms": ["hotbar"],
+          "anchors": ["bc"],
+          "why": "Factorio / Dyson Sphere Program 的快捷栏放“手上要放的建筑”，与建造栏合一；数字键对应格子。",
+          "examples": ["steam:427520", "steam:1366540"]
+        },
+        {
+          "element": "el.overlay",
+          "forms": ["statusIcons", "arrows", "buildGrid", "heatmap"],
+          "anchors": ["diegesis=spatial", "worldRender=decal"],
+          "why": "机器状态（缺料 / 缺电 / 满仓）用空间内图标 + 颜色 + 动画三重编码（06 文档 A10）；带子方向箭头任何缩放都要可读；Craftomation 101 用彩色曲线画机器人路线；建造时的网格贴花。信息模式（叠配方图标）是可读性的关键补丁。",
+          "examples": ["steam:427520", "steam:1724140", "steam:2674590"]
+        },
+        {
+          "element": "el.resources",
+          "forms": ["iconNumber", "bigNumber"],
+          "anchors": ["tl", "tc", "tr"],
+          "why": "图标 + 缩写数字一行（The Farmer Was Replaced 左上 9k / 10.1k / 6.1k；Widget Inc. 右上）；放置类改成大号数字并顶部居中（Mr.Mine 顶部密集资源表、Melvor Idle）。数字会涨到很大，缩写规则是必需品。",
+          "examples": ["steam:2060160", "steam:3184110", "steam:1397920", "steam:1267910"]
+        },
+        {
+          "element": "el.objective",
+          "forms": ["text", "checklist"],
+          "anchors": ["tl", "center"],
+          "why": "里程碑驱动：Widget Inc. 左上“当前里程碑：第 3 阶段 0 / 961”；Beltmatic 把目标做成地图中央的枢纽（当前数字 + 速率 2k / 4k + 等级），目标本身是世界里的物件。",
+          "examples": ["steam:3184110", "steam:2674590"]
+        },
+        {
+          "element": "el.cost",
+          "forms": ["haveNeed", "slots", "inButton"],
+          "anchors": ["attachTo=cursor"],
+          "why": "配方 / 建造的材料有 / 需：Widget Inc. 悬停提示里“21 / 21 基础零件、4 / 34 旋转零件”；Maltese's Fluffy Onsen 装饰格下方的价签；放置类升级按钮内嵌价格（Digseum）。",
+          "examples": ["steam:3184110", "steam:3404470", "steam:3361470"]
+        },
+        {
+          "element": "el.selection",
+          "forms": ["tooltip", "panel"],
+          "anchors": ["attachTo=cursor", "mr"],
+          "why": "机器 / 建筑详情：Widget Inc. 用跟随光标的 tooltip（名称 + 说明 + 有 / 需 + 右键取消）；Beltmatic 升级面板是半透明蓝表格；大型工厂需要常驻面板显示配方、进度与输入输出。",
+          "examples": ["steam:3184110", "steam:2674590"]
+        },
+        {
+          "element": "el.meter",
+          "forms": ["withIcon", "single"],
+          "anchors": ["bc", "bl"],
+          "why": "电力 / 能源是全局约束：Dyson Sphere Program 底部建造栏左侧的能量条；Wall World 左下多根竖条资源计。",
+          "examples": ["steam:1366540", "steam:2187290"]
+        },
+        {
+          "element": "el.minimap",
+          "forms": ["radar", "plan"],
+          "anchors": ["bl", "br"],
+          "why": "Dyson Sphere Program 左下是星球雷达（球面）+ 坐标，右下是一组圆形系统按钮；平面工厂多用全屏地图而不是常驻小地图。",
+          "examples": ["steam:1366540"]
+        },
+        {
+          "element": "el.gameSpeed",
+          "forms": ["playFF", "speedBar"],
+          "anchors": ["bc", "tr"],
+          "why": "编程类的执行控制：Craftomation 101 底部暂停 / 播放 / 单步 + 电量百分比；The Farmer Was Replaced 每个代码窗自带运行 / 停止。",
+          "examples": ["steam:1724140", "steam:2060160"]
+        },
+        {
+          "element": "el.notify",
+          "forms": ["toast", "modalCard"],
+          "anchors": ["tr", "center"],
+          "why": "研究完成、机器故障用不阻断的提示；放置类的“欢迎回来”离线收益汇总是居中弹窗（Melvor Idle）。",
+          "examples": ["steam:1267910"]
+        },
+        {
+          "element": "el.timer",
+          "forms": ["number"],
+          "anchors": ["tc"],
+          "why": "工厂 + 塔防混合才需要：ShapeHero Factory 顶部中间波次倒计时，The Perfect Tower II 顶部“WAVE 15 / 100”。",
+          "examples": ["steam:2389040", "steam:1197260"]
+        }
+      ],
+      "screens": [
+        {
+          "screen": "screen.hud",
+          "conventions": "建造栏 / 快捷栏底部中间、资源一行在上沿、能源条贴着建造栏；状态与物流信息全在世界里。深色面板 11 / 12。",
+          "examples": ["steam:427520", "steam:1366540", "steam:2674590"]
+        },
+        {
+          "screen": "screen.build",
+          "conventions": "建造菜单：常驻底栏（Dyson Sphere Program、Beltmatic）或按键呼出的模态大面板（Satisfactory：暗色半透明 + 橙色强调 + 分类图标格；Plasma：3D 渲染零件方格；Maltese's Fluffy Onsen：木框 + 左侧竖排图标页签 + 价签）。",
+          "examples": ["steam:526870", "steam:1409160", "steam:3404470", "steam:1366540"]
+        },
+        {
+          "screen": "screen.craft",
+          "conventions": "配方 / 制造：输入 → 输出 + 有 / 需；The Perfect Tower II 的工厂页是红色大色块 + 机器图标格 + 底部库存；Widget Inc. 的制造器把配方放在悬停提示里。",
+          "examples": ["steam:1197260", "steam:3184110"]
+        },
+        {
+          "screen": "screen.skilltree",
+          "conventions": "研究 / 解锁树：电路走线 + 方块节点（Widget Inc.）、发光点节点 + 转生入口（Nodebuster）、方框 + 直线（Digseum、The Farmer Was Replaced）；节点上写等级 / 价格，买不起变暗。",
+          "examples": ["steam:3184110", "steam:3107330", "steam:3361470", "steam:2060160"]
+        },
+        {
+          "screen": "screen.codex",
+          "conventions": "物品百科：Craftomation 101 的百科是米黄纸卡 + 物品方格 + 右侧详情。",
+          "examples": ["steam:1724140"]
+        }
+      ],
+      "styleTendencies": [
+        {
+          "family": "暗色细线",
+          "count": 4,
+          "why": "Factorio、Widget Inc.、The Farmer Was Replaced、Digseum：深色细框面板退后，让彩色带子、物品和代码高亮当主角。"
+        },
+        {
+          "family": "科幻 HUD",
+          "count": 4,
+          "why": "Dyson Sphere Program、Satisfactory、Plasma、Nodebuster：切角、半透明深蓝 / 橙色强调、线性图标——太空 / 工业题材的默认答案。"
+        },
+        {
+          "family": "扁平 / Material",
+          "count": 3,
+          "why": "Melvor Idle、Craftomation 101、The Perfect Tower II：网页 / 工具软件感，长列表 + 卡片 + 纯色块。"
+        },
+        {
+          "family": "极简单色",
+          "count": 3,
+          "why": "A=B（黑白细线 + 等宽字）、Beltmatic（蓝网格 + 黑带 + 彩色方块）、Autonauts（几乎无 UI）。"
+        },
+        {
+          "family": "像素木框",
+          "count": 2,
+          "why": "小规模手工坊（River Town Factory 国风像素工厂、Maltese's Fluffy Onsen）：木框 + 米黄纸内芯，适合规模小、节奏慢的生产。"
+        },
+        {
+          "family": "暗金金属牌",
+          "count": 1,
+          "why": "Mr.Mine：铁框侧栏 + 密集数字表，放置挖矿的“机器舱”感。"
+        },
+        {
+          "family": "羊皮纸任务书",
+          "count": 1,
+          "why": "ShapeHero Factory：木框 + 羊皮纸地面，工厂 + 塔防混合的奇幻外观。"
+        }
+      ],
+      "exemplars": [
+        { "card": "steam:427520", "why": "Factorio：工厂本身就是信息——带子按等级分色、管道与物品可辨、机器上叠状态图标；HUD 让位给世界。UI 提及 62 条里 59 条好评。" },
+        { "card": "steam:1366540", "why": "Dyson Sphere Program：深色半透明切角科幻条、底部建造栏 + 能量条、左下星球雷达、右下圆形系统按钮簇；戴森球本身是巨型全息结构。" },
+        { "card": "steam:2674590", "why": "Beltmatic：极简工厂——每个物品直接写数字，地图中央枢纽显示目标与速率，底栏是带文字的工具；规则全在世界里。" },
+        { "card": "steam:3184110", "why": "Widget Inc.：左上里程碑计数、悬停提示里的有 / 需、电路式科技树——小体量工厂的完整信息链。" },
+        { "card": "steam:2060160", "why": "The Farmer Was Replaced：代码窗浮在体素农田上，资源一行在左上用缩写数字；编程类“世界 = 程序结果”的版式。" },
+        { "card": "steam:1724140", "why": "Craftomation 101：右侧橙色指令长列表 + 顶部程序页签 + 彩色曲线路线 + 底部播放控制；百科是米黄纸卡。" },
+        { "card": "steam:3107330", "why": "Nodebuster：电路板式直角连线 + 发光方块节点 + 等宽像素字的升级树。" },
+        { "card": "steam:526870", "why": "Satisfactory：第一人称工厂的模态建造面板（暗色半透明 + 橙色强调）；UI 提及 100 条里 92 条好评，但也有背包 / 菜单抱怨。" },
+        { "card": "steam:1720850", "why": "A=B：纯黑白细线框 + 等宽字，只有题目、代码区、测试用例三块——编程解谜的最小 UI。" },
+        { "card": "steam:2389040", "why": "ShapeHero Factory：工厂 + 塔防混合，四周木框 + 羊皮纸地面，路线选择是羊皮纸地图上的虚线节点。" },
+        { "card": "steam:2281410", "why": "River Town Factory：国风像素工厂，底部木条物品栏 + 右上小木牌时间，证明工厂类也能走温暖手工风。" }
+      ],
+      "pitfalls": [
+        {
+          "desc": "建造 / 制作菜单层级深、分类不直观，找一个建筑要翻好几层",
+          "examples": ["steam:1366540", "steam:526870"],
+          "reviewEvidence": "Dyson Sphere Program：菜单 / 界面难用 3 条（R3 全库这一类前列），另有字太小 1 条；Satisfactory：背包 / 物品管理 2 条、菜单难用 1 条。"
+        },
+        {
+          "desc": "网页式固定尺寸 UI 不随分辨率 / 显示器缩放",
+          "examples": ["steam:1267910"],
+          "reviewEvidence": "Melvor Idle：UI 缩放 / 分辨率 2 条；UI 提及 28 条里 12 条差评。"
+        },
+        {
+          "desc": "机器全是金属灰褐色、彼此没有色相区分；状态只靠红绿灯",
+          "examples": [],
+          "reviewEvidence": "无直接评测证据；来自 06 文档 A10 美术陷阱。看图正例：Factorio 用带子等级色（黄 / 红 / 蓝）与管道色把物流分开，Beltmatic 用纯色方块区分机器。"
+        },
+        {
+          "desc": "大量机器同步运动形成动画噪声，盖过真正的状态变化",
+          "examples": [],
+          "reviewEvidence": "无直接评测证据；06 文档 A10 美术陷阱。"
+        },
+        {
+          "desc": "放置 / 增量 UI 的数字涨到很大后，完整位数、缩写、科学计数法混用，长列表与大色块一起堆满屏",
+          "examples": ["steam:1197260", "steam:1397920"],
+          "reviewEvidence": "弱证据：The Perfect Tower II 的 UI 提及 19 条里 10 条差评（关键词未归入具体类别，菜单难用 1 条）；数字混排来自看图。"
+        },
+        {
+          "desc": "编程类的规则 / 语法说明不足",
+          "examples": ["steam:2060160", "steam:1720850"],
+          "reviewEvidence": "弱证据：The Farmer Was Replaced、A=B 各有引导不清 1 条（未达 ≥ 2 条的出处门槛）。"
+        },
+        {
+          "desc": "工厂与战斗混合时两套信息逻辑打架（工厂要密集信息，战斗要清场视野）",
+          "examples": ["steam:2187290", "steam:2389040"],
+          "reviewEvidence": "弱证据：Wall World 的 UI 提及 34 条里 14 条差评（未归入具体类别）；ShapeHero Factory 评测样本只有 10 条。"
+        }
+      ],
+      "demos": [
+        {
+          "title": "机器状态：彩色圆点 vs 图标 + 警示（绿色盲模拟下看）",
+          "a": {
+            "el.overlay.form": ["statusIcons"],
+            "el.overlay.diegesis": "spatial",
+            "st.statusMark": "dot",
+            "chk.cvd": "deutan"
+          },
+          "b": {
+            "el.overlay.form": ["statusIcons"],
+            "el.overlay.diegesis": "spatial",
+            "st.statusMark": "icon",
+            "st.alert": "warnIcon",
+            "chk.cvd": "deutan",
+            "chk.redundancy": true
+          },
+          "lookAt": "色盲模拟下“运转 / 缺料 / 缺电”是否还分得开；b 的图标在最远缩放下会不会糊成噪点。"
+        },
+        {
+          "title": "拉远：保持模型 vs 图标化（信息模式）",
+          "a": {
+            "rel.semanticZoom": "none",
+            "el.overlay.form": ["arrows"]
+          },
+          "b": {
+            "rel.semanticZoom": "iconize",
+            "el.overlay.form": ["statusIcons", "arrows"],
+            "el.overlay.visibility": "onDemand"
+          },
+          "lookAt": "缩到最远时，带子方向和物品种类是否还可读（06 文档 A10 的“100×100 工厂”测试）；按键呼出的配方图标叠层能不能替代逐台点开。"
+        },
+        {
+          "title": "研究树连线：电路走线 + 发光点 vs 星图散点 + 曲线",
+          "a": {
+            "cnt.screen": "screen.skilltree",
+            "lay.arrangement": "tree",
+            "vis.connector": "circuit",
+            "cmp.node": "glowDot",
+            "col.lightness": "dark"
+          },
+          "b": {
+            "cnt.screen": "screen.skilltree",
+            "lay.arrangement": "constellation",
+            "vis.connector": "curve",
+            "cmp.node": "circleNumber",
+            "col.lightness": "dark"
+          },
+          "lookAt": "依赖关系是否一眼可追（电路走线横平竖直更像“工程图”）；节点上的等级 / 价格放得下吗。"
+        },
+        {
+          "title": "代码与世界：浮动窗口压在农田上 vs 整屏终端",
+          "a": {
+            "lay.container": "window",
+            "rel.behind": "live",
+            "typ.body.family": "mono",
+            "col.lightness": "dark"
+          },
+          "b": {
+            "lay.container": "fullscreen",
+            "ast.container": "crt",
+            "typ.body.family": "mono",
+            "col.strategy": "mono",
+            "vis.ornament": 0
+          },
+          "lookAt": "The Farmer Was Replaced 式“边写边看结果”与 A=B 式“只看代码和测试”的取舍：世界是否还在讲故事。"
+        },
+        {
+          "title": "资源读数：图标 + 缩写数字 vs 大号滚动数字",
+          "a": {
+            "el.resources.form": "iconNumber",
+            "el.resources.arrangement": "row",
+            "el.resources.screenAnchor": "tl",
+            "mo.valueChange": "instant",
+            "typ.numerals.family": "tabular"
+          },
+          "b": {
+            "el.resources.form": "bigNumber",
+            "el.resources.scale": 1.6,
+            "el.resources.screenAnchor": "tc",
+            "mo.valueChange": "countUp",
+            "typ.numerals.family": "display"
+          },
+          "lookAt": "物流工厂要同时盯 6–10 种资源（a），放置类只盯一个主数字涨（b）；数字滚动会不会让人读不出当前值。"
+        },
+        {
+          "title": "建造入口：底部常驻图标排 vs 按键呼出的分类大面板",
+          "a": {
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "el.toolbar.visibility": "always"
+          },
+          "b": {
+            "el.toolbar.form": "categoryTabs",
+            "lay.container": "modal",
+            "lay.nav": "tabsLeft",
+            "cmp.slot": "cell",
+            "flow.entry": "hotkey"
+          },
+          "lookAt": "建筑种类 < 20 时常驻底栏更快（Beltmatic、Dyson Sphere Program）；种类上百时模态面板更好找但打断操作（Satisfactory，菜单抱怨的来源之一）。"
+        },
+        {
+          "title": "面板皮肤：科幻切角半透明 vs 像素木框米黄纸",
+          "a": {
+            "vis.corner": "chamfer",
+            "vis.opacity": 0.6,
+            "col.lightness": "dark",
+            "vis.stroke": "solid",
+            "vis.iconStyle": "line"
+          },
+          "b": {
+            "vis.pixelScale": "world",
+            "ast.frameMat": "wood",
+            "ast.coreMat": "paper",
+            "vis.iconStyle": "pixel",
+            "col.lightness": "light"
+          },
+          "lookAt": "同样的产线信息在两种皮里层级是否一致；木框适合小规模手工坊（River Town Factory），大规模物流（Dyson Sphere Program）需要退后的半透明面板。"
+        }
+      ],
+      "subgenreProfiles": [
+        {
+          "subgenre": "物流工厂",
+          "params": {
+            "ctx.timeModel": "realtime",
+            "lay.hudOrg": "scattered",
+            "rel.semanticZoom": "iconize",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "el.abilities.form": "hotbar",
+            "el.abilities.screenAnchor": "bc",
+            "el.minimap.form": "plan",
+            "el.minimap.screenAnchor": "tr",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tl",
+            "el.overlay.form": ["statusIcons", "arrows", "buildGrid"],
+            "el.overlay.diegesis": "spatial",
+            "el.meter.form": "withIcon",
+            "el.meter.screenAnchor": "bc",
+            "el.objective.form": ["text"],
+            "el.objective.screenAnchor": "tl",
+            "col.lightness": "dark",
+            "cnt.density": 3
+          },
+          "examples": ["steam:427520", "steam:1366540", "steam:3184110"],
+          "note": "与现有 layout.factory 预设相比，多了能源条（el.meter）与里程碑（el.objective）。"
+        },
+        {
+          "subgenre": "编程自动化",
+          "params": {
+            "lay.container": "window",
+            "rel.behind": "live",
+            "typ.body.family": "mono",
+            "el.gameSpeed.form": "playFF",
+            "el.gameSpeed.screenAnchor": "bc",
+            "el.resources.form": "iconNumber",
+            "el.resources.screenAnchor": "tl",
+            "lay.arrangement": "tree",
+            "vis.connector": "straight",
+            "col.lightness": "dark"
+          },
+          "examples": ["steam:2060160", "steam:1724140", "steam:1720850"],
+          "note": "A=B 版改 lay.container = fullscreen + ast.container = crt。"
+        },
+        {
+          "subgenre": "放置 / 增量",
+          "params": {
+            "lay.composition": "splitLR",
+            "lay.nav": "tabsLeft",
+            "el.resources.form": "bigNumber",
+            "el.resources.screenAnchor": "tc",
+            "mo.valueChange": "countUp",
+            "cmp.listRow": ["icon", "title", "value", "action"],
+            "el.cost.form": "inButton",
+            "el.notify.form": ["modalCard"],
+            "cnt.density": 4
+          },
+          "examples": ["steam:1267910", "steam:1397920", "steam:3361470"],
+          "note": "Melvor Idle 式网页后台风；注意 UI 缩放（见 pitfalls）。"
+        },
+        {
+          "subgenre": "工厂 + 塔防混合",
+          "params": {
+            "lay.hudOrg": "inMargin",
+            "ast.frameMat": "wood",
+            "ast.coreMat": "parchment",
+            "el.timer.form": "number",
+            "el.timer.screenAnchor": "tc",
+            "el.toolbar.form": "buttonRow",
+            "el.toolbar.screenAnchor": "bc",
+            "vis.pixelScale": "world"
+          },
+          "examples": ["steam:2389040", "steam:1197260"],
+          "note": "ShapeHero Factory 式。"
+        }
+      ],
+      "contentPack": {
+        "names": {
+          "rawResources": ["铁矿", "铜矿", "煤", "石英砂", "原油", "木材", "水"],
+          "intermediates": ["铁板", "铜线", "齿轮", "电路板", "塑料", "钢梁", "玻璃"],
+          "products": ["马达", "电池", "传感器", "无人机外壳", "信号塔模块"],
+          "machines": ["采矿机", "熔炉", "组装机 Mk1", "化工厂", "分拣臂", "传送带（慢 / 快 / 极速）", "储物箱", "发电机", "研究站"],
+          "machineStates": ["运转中", "缺料", "缺电", "出口堵塞", "未设置配方", "待机"],
+          "rates": ["铁板 120 / 分（需求 180 / 分）", "电力 4.2 MW / 5.0 MW", "效率 87%", "库存 1.2k"],
+          "recipes": ["铁矿 ×1 → 铁板 ×1（3.2 秒）", "铁板 ×1 + 铜线 ×3 → 电路板 ×1", "原油 ×10 → 塑料 ×2"],
+          "milestones": ["第 3 阶段：自动化电路板 0 / 500", "解锁：传送带 Mk2", "研究：高级熔炼"],
+          "programming": ["move(North)", "harvest()", "if can_harvest():", "while True:", "传感器读数 = 12"],
+          "idle": ["每秒 +3.2K", "离线 2 小时 14 分，收获 +1.2M", "下一级 4.5M", "转生：获得 12 点"],
+          "mapFeatures": ["矿脉（储量 1.2M）", "水源", "污染区", "敌巢", "铁路", "电线杆覆盖范围"],
+          "notifications": ["研究完成：高级熔炼", "熔炉 #12 缺煤", "电力不足：部分机器降速", "储物箱已满"]
+        }
+      },
+      "paramGaps": [
+        "生产速率 / 吞吐（当前 vs 需求、每分钟）没有专门的数值标注：elx.valueLabel 没有“速率”项，st.statViz 也没有流量图或产量折线。建议 elx.valueLabel 增加 rate（/ 秒、/ 分），st.statViz 增加 flow / lineChart。",
+        "配方 / 输入输出（A + B → C）没有组件形态：el.cost.form = slots 只覆盖“材料格”。建议 cmp.recipe：横向箭头式 / 纵向列表式 / 节点图。",
+        "建造模式状态（放置 / 拆除 / 复制 / 蓝图）没有参数：拆除模式整屏变红、复制模式框选高亮是工厂品类标配（Beltmatic 底栏有复制 / 粘贴 / 剪切 / 拆除）。建议 ix.buildMode，或 el.toolbar 增加模式指示。",
+        "大数缩写与计数法（K / M / B、科学计数、工程计数）没有参数：typ.numerals 只管字体。建议 typ.numerals.notation：完整 / 缩写 / 科学 / 工程。",
+        "节点编程画布 / 代码编辑器没有界面子类型：cnt.subtype 里没有“编程 / 节点图”，只能用 lay.container = window + typ.body.family = mono 近似。建议 cnt.subtype 增加 programming，cmp 增加 codeEditor / nodeGraph。",
+        "物流网络叠层（电网覆盖、管网、机器人作业范围）只能用 el.overlay.form = rangeRing 近似。建议 el.overlay.form 增加 network。",
+        "世界内的物品 / 目标标签（Beltmatic 每个物品上的数字、中央枢纽的目标读数）没有对应元素，与策略的 el.worldLabel 缺口是同一件事。",
+        "放置类的“离线收益 / 欢迎回来”汇总没有模板，只能用 el.notify.form = modalCard 近似（Melvor Idle）。"
+      ]
+    }
+  ]
+}
